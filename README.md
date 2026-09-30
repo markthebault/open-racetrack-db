@@ -1,6 +1,10 @@
 # Open Racetrack Database
 
-An open catalogue of racetracks and their layouts. Each layout shows a simple route trace and its start/finish line on an OpenStreetMap background. A trace represents the course; it is not a surveyed centerline or a racing line.
+Browse circuits, compare layouts, and download their geographic traces as GeoJSON. Open Racetrack Database is a small static website backed by versioned JSON, with source records for every course. Start and finish lines appear when timing evidence is available.
+
+![Open Racetrack Database showing the Spa-Francorchamps circuit](Docs/assets/preview.png)
+
+*Actual viewer screenshot. Course trace © OpenStreetMap contributors, ODbL 1.0. The screenshot uses public data and includes no private timing overlay.*
 
 ## European preview
 
