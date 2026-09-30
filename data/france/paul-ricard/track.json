@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-paul-ricard",
+  "name": "Circuit Paul Ricard",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    5.792448859704645,
+    43.252771945147636
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Full circuit, Chicane Nord",
+      "file": "layouts/main.geojson",
+      "description": "Full course through the complete mapped Chicane Nord on way 229454180, the rounded Courbe de Signes on way 23463089 and the named Verrerie, Sainte-Baume, Beausset, Bendor and Pont sections. Pit ways, driving-center roads and connecting alternatives are excluded."
+    },
+    {
+      "id": "mistral-straight",
+      "name": "Full circuit, Mistral straight",
+      "file": "layouts/mistral-straight.geojson",
+      "description": "Full course uses the complete Mistral straight on way 686705519, bypassing Chicane Nord. The rounded Courbe de Signes and the remaining main-course sections are retained."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:43:02.799Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Paul Ricard official site and circuit plan",
+      "url": "https://www.circuitpaulricard.com/fr/infos-pratiques/plan-et-acces",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:43:02.799Z",
+      "evidenceNote": "Supports named circuit sections and venue identification. Reference only; no coordinates are copied or traced. Chicane and straight variants use exact OSM ways."
+    }
+  ]
+}

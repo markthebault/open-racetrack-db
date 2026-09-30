@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "at-salzburgring",
+  "name": "Salzburgring",
+  "aliases": [],
+  "country": {
+    "code": "AT",
+    "name": "Austria",
+    "slug": "austria"
+  },
+  "locality": "Plainfeld",
+  "location": [
+    13.167087440186913,
+    47.82260584766359
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "grand-prix",
+  "layouts": [
+    {
+      "id": "grand-prix",
+      "name": "Main circuit",
+      "file": "layouts/grand-prix.geojson",
+      "description": "Draft route assembled from the connected main raceway ways. OSM one-way directions are retained. The pit lane, training loop, and mapped area are excluded. Visual review is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:04:12.374Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Its selected way geometry is the source for this draft track trace."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Salzburgring official site",
+      "url": "https://salzburgring.com/en/directions",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:10:24Z",
+      "evidenceNote": "Supports venue or layout naming only. No public coordinates are traced from this page."
+    }
+  ]
+}

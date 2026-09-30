@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "es-jerez",
+  "name": "Circuito de Jerez",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    -6.032881678846154,
+    36.70858978076922
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "grand-prix",
+  "layouts": [
+    {
+      "id": "grand-prix",
+      "name": "Car circuit, Senna chicane",
+      "file": "layouts/grand-prix.geojson",
+      "description": "Full course through the mapped Chicane Senna on way 773658478; the Alex Criville bypass is excluded."
+    },
+    {
+      "id": "motorcycle",
+      "name": "Motorcycle circuit, without chicane",
+      "file": "layouts/motorcycle.geojson",
+      "description": "Full course through Curva Alex Criville on way 2497152 instead of the mapped Senna chicane."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:41:15.509Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Jerez official circuit description",
+      "url": "https://circuitodejerez.com/en/circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:41:15.509Z",
+      "evidenceNote": "Identifies the car circuit with Senna chicane and the motorcycle circuit without it. Reference only; all coordinates come from OSM."
+    }
+  ]
+}

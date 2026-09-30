@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "de-nurburgring",
+  "name": "Nürburgring",
+  "aliases": [],
+  "country": {
+    "code": "DE",
+    "name": "Germany",
+    "slug": "germany"
+  },
+  "locality": "Nürburg",
+  "location": [
+    6.958648871982425,
+    50.35833146100961
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference",
+    "venue-layout-reference"
+  ],
+  "defaultLayoutId": "grand-prix",
+  "layouts": [
+    {
+      "id": "grand-prix",
+      "name": "Grand Prix, Sprint configuration preview",
+      "file": "layouts/grand-prix.geojson",
+      "description": "Draft preview follows the OSM ways tagged Nürburgring Sprintstrecke and closes at the mapped timing-node way. The official full Grand Prix configuration is 5.148 km. This mapped loop is about 3.61 km; its relation to the full configuration needs route research."
+    },
+    {
+      "id": "nordschleife",
+      "name": "Nordschleife full circuit",
+      "file": "layouts/nordschleife.geojson",
+      "description": "Draft loop assembled along connected OSM raceway ways, retaining mapped one-way directions. The trace measures about 20.73 km against the operator reference of 20.832 km. Visual review and exact route closure review are still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:04:31.281Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Its selected way geometry is the source for this draft track trace."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Nürburgring official track information",
+      "url": "https://www.nuerburgring.de/info/nuerburgring/race-tracks/grand-prix-track?locale=en",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:10:24Z",
+      "evidenceNote": "Supports venue or layout naming only. No public coordinates are traced from this page."
+    },
+    {
+      "id": "venue-layout-reference",
+      "type": "reference",
+      "title": "Additional official layout information",
+      "url": "https://www.nuerburgring.de/info/nuerburgring/race-tracks/nordschleife?locale=en",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:10:24Z",
+      "evidenceNote": "Supports the stated course configuration only. No public coordinates are traced from this page."
+    }
+  ]
+}

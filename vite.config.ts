@@ -1,0 +1,3 @@
+import {defineConfig} from 'vite';
+import {readFile} from 'node:fs/promises';
+export default defineConfig({base:process.env.VITE_BASE_PATH??'/',plugins:[{name:'local-data',configureServer(server){server.middlewares.use(async(req,res,next)=>{const path=req.url?.split('?')[0]??'';const prefix=`${process.env.VITE_BASE_PATH??'/'}data/`;if(!path.startsWith(prefix)||path.includes('..'))return next();try{const bytes=await readFile(`data/${path.slice(prefix.length)}`);res.setHeader('Content-Type','application/json');res.end(bytes);}catch{res.statusCode=404;res.end('Data not found');}});}}],server:{host:'0.0.0.0'},preview:{host:'0.0.0.0'}});

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-anneau-du-rhin",
+  "name": "Anneau du Rhin",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "locality": "Biltzheim",
+  "location": [
+    7.421217675000002,
+    47.94899168061224
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference",
+    "venue-layout-reference"
+  ],
+  "defaultLayoutId": "3-7-km",
+  "layouts": [
+    {
+      "id": "3-0-km",
+      "name": "3.0 km course",
+      "file": "layouts/3-0-km.geojson",
+      "description": "Draft route uses the OSM Biltzheim connector to replace the shorter 835 m arc of the closed alternative loop. The OSM trace measures about 2.80 km, below the nominal 3.0 km name. Confirm the exact historical layout before review."
+    },
+    {
+      "id": "3-7-km",
+      "name": "3.7 km course",
+      "file": "layouts/3-7-km.geojson",
+      "description": "Draft route follows OSM way 40816550, tagged as the Alternative circuit. The trace measures about 3.47 km against the nominal 3.7 km label. Visual review is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:04:24.589Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Its selected way geometry is the source for this draft track trace."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Anneau du Rhin official circuit information",
+      "url": "https://www.anneau-du-rhin.com/circuits/competition-3km/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:10:24Z",
+      "evidenceNote": "Supports venue or layout naming only. No public coordinates are traced from this page."
+    },
+    {
+      "id": "venue-layout-reference",
+      "type": "reference",
+      "title": "Additional official layout information",
+      "url": "https://www.anneau-du-rhin.com/moto/presentation/notre-circuit/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:10:24Z",
+      "evidenceNote": "Supports the stated course configuration only. No public coordinates are traced from this page."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "es-barcelona-catalunya",
+  "name": "Circuit de Barcelona-Catalunya",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    2.2579282674208145,
+    41.56961556651584
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "grand-prix",
+  "layouts": [
+    {
+      "id": "grand-prix",
+      "name": "Grand Prix, without final chicane",
+      "file": "layouts/grand-prix.geojson",
+      "description": "Full course uses the mapped Turn 10 arc on way 893732520 and the direct final corners on way 1560896066. The final-sector chicane, Nissan alternative, short-course connector and long-lap penalty detour are excluded."
+    },
+    {
+      "id": "with-chicane",
+      "name": "Grand Prix, with final chicane",
+      "file": "layouts/with-chicane.geojson",
+      "description": "Same Turn 10 arc as the main course, with the mapped final-sector chicane on ways 1057826347 and 967275593. The Nissan alternative and long-lap penalty detour are excluded."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:41:13.515Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Barcelona official layout change, 2023",
+      "url": "https://www.circuitcat.com/en/news/formula-1/the-formula-1-aws-gran-premio-de-espana-2023-changes-its-track-configuration/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:41:13.515Z",
+      "evidenceNote": "Identifies Grand Prix configurations with and without the final chicane. Reference only; all coordinates come from OSM."
+    }
+  ]
+}

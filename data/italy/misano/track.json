@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "it-misano",
+  "name": "Misano World Circuit",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    12.68290012405063,
+    43.96168140253165
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "International, long circuit",
+      "file": "layouts/main.geojson",
+      "description": "Long course through Curva del Carro on way 624263857. The mapped short-course connector and MotoGP long-lap penalty detour are excluded."
+    },
+    {
+      "id": "short",
+      "name": "International, short circuit",
+      "file": "layouts/short.geojson",
+      "description": "Short course uses the mapped connector on way 230406260 in place of Curva del Carro. The MotoGP long-lap penalty detour is excluded."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:38:48.437Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "Misano official facility rules, circuit characteristics",
+      "url": "https://www.misanocircuit.com/wp-content/uploads/2023/07/EN-IL01PSE-Regolamento_2023_07_06-2.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:38:48.437Z",
+      "evidenceNote": "Identifies international long and short circuits and clockwise travel. Reference only; no coordinates are copied or traced."
+    }
+  ]
+}

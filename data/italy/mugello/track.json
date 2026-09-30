@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "it-mugello",
+  "name": "Mugello Circuit",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    11.370991639728107,
+    43.99651962567975
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "grand-prix",
+  "layouts": [
+    {
+      "id": "grand-prix",
+      "name": "Grand Prix",
+      "file": "layouts/grand-prix.geojson",
+      "description": "Full course through San Donato, Luco, Poggio Secco, both Arrabbiata corners, Correntaio, Biondetti and Bucine. Separate Mugellino ways, bypasses and pit lanes are excluded."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:39:37.678Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "FIA licensed circuit list, 1 December 2025",
+      "url": "https://www.fia.com/sites/default/files/circuits_fia20251201.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:39:37.678Z",
+      "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "it-monza",
+  "name": "Autodromo Nazionale Monza",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    9.287213264856224,
+    45.623132264217276
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "grand-prix",
+  "layouts": [
+    {
+      "id": "grand-prix",
+      "name": "Grand Prix",
+      "file": "layouts/grand-prix.geojson",
+      "description": "Main road course through Variante del Rettifilo, Variante della Roggia, both Lesmo corners, Variante Ascari and Curva Alboreto. The historic banked oval, Junior loop and chicane bypasses are excluded."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:36:36.836Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "FIA licensed circuit list, 1 December 2025",
+      "url": "https://www.fia.com/sites/default/files/circuits_fia20251201.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:36:36.836Z",
+      "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    }
+  ]
+}

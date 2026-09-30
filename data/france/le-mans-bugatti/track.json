@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-le-mans-bugatti",
+  "name": "Le Mans Bugatti Circuit",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    0.2124024704620464,
+    47.9544840410891
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "venue-reference"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Bugatti circuit",
+      "file": "layouts/main.geojson",
+      "description": "Closed Bugatti course through Dunlop, La Chapelle, Musée, Garage Vert, Chemin aux Bœufs, Garage Bleu and Raccordement. The 24-hour circuit branches, Porsche Center roads, pit entries/exits and long-lap penalty detour are excluded."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap raceway snapshot",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T16:41:11.711Z",
+      "evidenceNote": "Pinned, sanitized Overpass snapshot. Exact source way versions and slices are recorded in the layout recipes. Geometry comes only from OSM."
+    },
+    {
+      "id": "venue-reference",
+      "type": "reference",
+      "title": "FIA licensed circuit list, 1 December 2025",
+      "url": "https://www.fia.com/sites/default/files/circuits_fia20251201.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T16:41:11.711Z",
+      "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    }
+  ]
+}

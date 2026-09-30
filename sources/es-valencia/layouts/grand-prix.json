@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "trackId": "es-valencia",
+  "layoutId": "grand-prix",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "6f52790b1769bdea113fcacf0e4df610d8ec1ce3b56348c0f4b9f5f070a3e425",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Complete main loop on ways 1336518434, 51765219 and 1007068425. Formula E connectors, Shortcut 1, pit lane and MotoGP long-lap detour are excluded. Route order is counterclockwise; OSM direction tags are absent.",
+    "Approximate OSM raceway trace; geometry is a draft pending independent layout review.",
+    "Some selected OSM ways have no one-way direction tag. The displayed route order is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 1336518434,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 39
+    },
+    {
+      "wayId": 51765219,
+      "wayVersion": 15,
+      "fromIndex": 0,
+      "toIndex": 72
+    },
+    {
+      "wayId": 1007068425,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 23
+    }
+  ],
+  "gates": []
+}
