@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "it-cremona-circuit-259583123",
+  "name": "Cremona Circuit",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    10.309422752631583,
+    45.08450101315791
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/259583125",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:18.140Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

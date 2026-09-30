@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ie-mondello-park-87185988",
+  "name": "Mondello Park",
+  "aliases": [],
+  "country": {
+    "code": "IE",
+    "name": "Ireland",
+    "slug": "ireland"
+  },
+  "location": [
+    -6.7486195156716375,
+    53.25713406044775
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/86127389",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:35.016Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

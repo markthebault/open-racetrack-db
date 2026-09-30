@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-knockhill-racing-circuit-170005848",
+  "name": "Knockhill Racing Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -3.5043389365853668,
+    56.12922807804877
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/654603367",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

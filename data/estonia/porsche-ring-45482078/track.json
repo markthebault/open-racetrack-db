@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ee-porsche-ring-45482078",
+  "name": "Porsche Ring",
+  "aliases": [],
+  "country": {
+    "code": "EE",
+    "name": "Estonia",
+    "slug": "estonia"
+  },
+  "location": [
+    24.451768452941177,
+    58.40152983088234
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/766548594",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:16:27.959Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "fi-premier-park-377440680",
+  "name": "Premier Park",
+  "aliases": [],
+  "country": {
+    "code": "FI",
+    "name": "Finland",
+    "slug": "finland"
+  },
+  "location": [
+    25.428205068292687,
+    60.34558299756096
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/377440681",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:10:03.186Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

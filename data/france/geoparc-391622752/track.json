@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-geoparc-391622752",
+  "name": "Géoparc",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    6.9168887633663365,
+    48.301871658415834
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/1353722633",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

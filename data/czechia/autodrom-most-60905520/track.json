@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cz-autodrom-most-60905520",
+  "name": "Autodrom Most",
+  "aliases": [],
+  "country": {
+    "code": "CZ",
+    "name": "Czechia",
+    "slug": "czechia"
+  },
+  "location": [
+    13.600071759154924,
+    50.51941022253523
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/803094679",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:11:32.823Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

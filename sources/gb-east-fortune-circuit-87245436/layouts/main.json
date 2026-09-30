@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "trackId": "gb-east-fortune-circuit-87245436",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "2d5ab662af6223e5dc42f23947f561e18169971a29a20acc2d145af6f1ae7355",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 87245436,
+      "wayVersion": 8,
+      "fromIndex": 4,
+      "toIndex": 0
+    },
+    {
+      "wayId": 143776624,
+      "wayVersion": 4,
+      "fromIndex": 52,
+      "toIndex": 0
+    },
+    {
+      "wayId": 87454770,
+      "wayVersion": 8,
+      "fromIndex": 1,
+      "toIndex": 0
+    }
+  ],
+  "gates": []
+}

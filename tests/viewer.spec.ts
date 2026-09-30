@@ -33,10 +33,14 @@ test('country and name filters combine, and a layout deep link restores selectio
  await page.goto('/?track=de-hockenheimring&layout=national');
  await expect(page.locator('#message')).toHaveText('Layout ready');
  await expect(page.locator('#layout')).toHaveValue('national');
+ const traceBox=await page.locator('.leaflet-overlay-pane path[stroke="#ffb347"]').boundingBox();expect(traceBox!.width).toBeGreaterThan(100);expect(traceBox!.height).toBeGreaterThan(100);
  await page.locator('#country').selectOption('IT');await page.locator('#search').fill('Monza');
  await expect(page.locator('#count')).toHaveText('1 tracks');
  await expect(page.locator('#venues .venue-name')).toHaveText('Autodromo Nazionale Monza');
- await page.locator('#reset').click();await expect(page.locator('#count')).toHaveText('18 tracks');
+ const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
+ await page.locator('#reset').click();await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
+ await page.locator('.coverage summary').click();await expect(page.locator('.coverage table tr')).toHaveCount(47);
+ await expect(page.locator('.coverage')).toContainText('Brno');
 });
 
 test('delayed venue loading removes stale controls and cannot overwrite a later selection',async({page})=>{

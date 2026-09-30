@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "trackId": "fi-kemora-circuit-231449083",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "f640e2d2e1306976071ebc67f8b4479a0881461745364a00dd885b9091f50134",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 231449083,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 63
+    },
+    {
+      "wayId": 429006923,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 26
+    }
+  ],
+  "gates": []
+}

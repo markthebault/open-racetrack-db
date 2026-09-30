@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "trackId": "es-circuito-fk1-41362127",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "d088817721fa7619a02f8a4e8b1bf0d7da0dda727c3754106cfa6839232876be",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 41362127,
+      "wayVersion": 5,
+      "fromIndex": 1,
+      "toIndex": 4
+    },
+    {
+      "wayId": 102877780,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 5
+    },
+    {
+      "wayId": 102877790,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 4
+    },
+    {
+      "wayId": 102877780,
+      "wayVersion": 3,
+      "fromIndex": 6,
+      "toIndex": 74
+    },
+    {
+      "wayId": 102877795,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 12
+    },
+    {
+      "wayId": 41362127,
+      "wayVersion": 5,
+      "fromIndex": 8,
+      "toIndex": 43
+    },
+    {
+      "wayId": 102877788,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 6
+    }
+  ],
+  "gates": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-circuit-automobile-de-loire-atlantique-205747014",
+  "name": "Circuit automobile de Loire-Atlantique",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    -1.7989494134078214,
+    47.34506646089388
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/712418087",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

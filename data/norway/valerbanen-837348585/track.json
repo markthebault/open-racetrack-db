@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "no-valerbanen-837348585",
+  "name": "Vålerbanen",
+  "aliases": [],
+  "country": {
+    "code": "NO",
+    "name": "Norway",
+    "slug": "norway"
+  },
+  "location": [
+    11.811248249056604,
+    60.705307986792455
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/16222089",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:09:06.682Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

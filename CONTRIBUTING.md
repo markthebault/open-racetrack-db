@@ -12,3 +12,7 @@
 An explicit `--refresh` import writes to ignored `sources-staging/<id>/`. Compare the new snapshot and topology with the saved sources, update and inspect affected recipes, then promote the staged snapshot, query and import manifest together. Update recipe hashes and source retrieval dates before regeneration. Keep the prior files until validation succeeds. Refreshes never automatically replace reviewed sources.
 
 Code is MIT; OSM-derived database content is ODbL 1.0 with OpenStreetMap attribution. The build copies only `data/` and application assets. Private overlays, raw archives and temporary review files stay outside the public output.
+
+## European inventory
+
+Use `npm run discover:europe -- --country GB` to acquire one country's extract, or omit the country for a resumable serial run. `npm run expand:europe` works offline from pinned extracts. Its new course selections stay draft. The name patterns in `sources/europe/road-circuits.json` are classification hints only; add independent venue evidence and inspect the route before marking it reviewed. Pending groups and named facilities remain in `data/europe-coverage.json`, including countries with no published course. See [the coverage report](Docs/07-european-coverage.md) for discovery limits and remaining work.

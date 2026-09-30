@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "fi-vantaa-circuit-1054317833",
+  "name": "Vantaa Circuit",
+  "aliases": [],
+  "country": {
+    "code": "FI",
+    "name": "Finland",
+    "slug": "finland"
+  },
+  "location": [
+    24.93303155925926,
+    60.33469874629631
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/1092277469",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:10:03.186Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

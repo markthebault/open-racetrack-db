@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "trackId": "se-kinnekulle-ring-24783023",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "c0f3089db885fe2d77214d547846b519d3a07aeb2bfca1625fb4c5e589690fb1",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 24783023,
+      "wayVersion": 8,
+      "fromIndex": 34,
+      "toIndex": 0
+    },
+    {
+      "wayId": 367288571,
+      "wayVersion": 2,
+      "fromIndex": 103,
+      "toIndex": 0
+    }
+  ],
+  "gates": []
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "trackId": "cz-autodrom-sosnova-30857652",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "313f747b9db122a8b79ddeb7c5aaf114eab6861cd2ed4d56fe91a623d64c0eba",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 30857652,
+      "wayVersion": 8,
+      "fromIndex": 0,
+      "toIndex": 1
+    },
+    {
+      "wayId": 30857653,
+      "wayVersion": 7,
+      "fromIndex": 21,
+      "toIndex": 0
+    },
+    {
+      "wayId": 30857652,
+      "wayVersion": 8,
+      "fromIndex": 5,
+      "toIndex": 11
+    },
+    {
+      "wayId": 30857653,
+      "wayVersion": 7,
+      "fromIndex": 47,
+      "toIndex": 26
+    },
+    {
+      "wayId": 30857652,
+      "wayVersion": 8,
+      "fromIndex": 15,
+      "toIndex": 40
+    }
+  ],
+  "gates": []
+}

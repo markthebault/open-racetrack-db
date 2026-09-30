@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "trackId": "fr-circuit-du-manoir-de-l-automobile-203158898",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "95461e5da591844a465e8a887536cd786f4e12b3e3ada001d2e7d3a1109bb017",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 203158898,
+      "wayVersion": 3,
+      "fromIndex": 16,
+      "toIndex": 0
+    },
+    {
+      "wayId": 205739329,
+      "wayVersion": 5,
+      "fromIndex": 150,
+      "toIndex": 27
+    },
+    {
+      "wayId": 1330728244,
+      "wayVersion": 2,
+      "fromIndex": 0,
+      "toIndex": 15
+    },
+    {
+      "wayId": 205739329,
+      "wayVersion": 5,
+      "fromIndex": 2,
+      "toIndex": 0
+    },
+    {
+      "wayId": 205739329,
+      "wayVersion": 5,
+      "fromIndex": 182,
+      "toIndex": 161
+    }
+  ],
+  "gates": []
+}

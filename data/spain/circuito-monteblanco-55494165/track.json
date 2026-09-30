@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "es-circuito-monteblanco-55494165",
+  "name": "Circuito Monteblanco",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    -6.5716112244186045,
+    37.3614580139535
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/3400195",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.980Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

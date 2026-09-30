@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-anglesey-circuit-108374689",
+  "name": "Anglesey Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -4.498142172661869,
+    53.18959190287765
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/264840724",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

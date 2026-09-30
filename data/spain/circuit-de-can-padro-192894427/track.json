@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "es-circuit-de-can-padro-192894427",
+  "name": "Circuit de Can Padró",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    1.8793841835051552,
+    41.65406005670104
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/192894427",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.980Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "no-arctic-circle-raceway-42990647",
+  "name": "Arctic Circle Raceway",
+  "aliases": [],
+  "country": {
+    "code": "NO",
+    "name": "Norway",
+    "slug": "norway"
+  },
+  "location": [
+    14.440465777551019,
+    66.42158674591839
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/11616580",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:09:06.682Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

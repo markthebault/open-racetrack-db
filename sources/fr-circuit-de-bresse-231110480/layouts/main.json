@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "trackId": "fr-circuit-de-bresse-231110480",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "3bd079de8dfa85dd87cb18c168bdda05d49c034747821725888e2960fa9fec1e",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 231110502,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 4
+    },
+    {
+      "wayId": 231110480,
+      "wayVersion": 3,
+      "fromIndex": 75,
+      "toIndex": 93
+    },
+    {
+      "wayId": 262098472,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 24
+    },
+    {
+      "wayId": 231110480,
+      "wayVersion": 3,
+      "fromIndex": 1,
+      "toIndex": 58
+    },
+    {
+      "wayId": 231110513,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 8
+    },
+    {
+      "wayId": 231110480,
+      "wayVersion": 3,
+      "fromIndex": 61,
+      "toIndex": 69
+    },
+    {
+      "wayId": 231110509,
+      "wayVersion": 1,
+      "fromIndex": 6,
+      "toIndex": 0
+    },
+    {
+      "wayId": 231110480,
+      "wayVersion": 3,
+      "fromIndex": 110,
+      "toIndex": 107
+    }
+  ],
+  "gates": []
+}

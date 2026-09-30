@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "trackId": "it-autodromo-concordia-672397901",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "24f98c89e998b882a9eb15f86b7db95175a2804dadced03e37e4471efb34d719",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 672397901,
+      "wayVersion": 6,
+      "fromIndex": 0,
+      "toIndex": 36
+    },
+    {
+      "wayId": 682234675,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 35
+    },
+    {
+      "wayId": 682234674,
+      "wayVersion": 5,
+      "fromIndex": 0,
+      "toIndex": 3
+    },
+    {
+      "wayId": 1395648386,
+      "wayVersion": 2,
+      "fromIndex": 18,
+      "toIndex": 8
+    },
+    {
+      "wayId": 682234674,
+      "wayVersion": 5,
+      "fromIndex": 6,
+      "toIndex": 36
+    }
+  ],
+  "gates": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "es-motorland-aragon-230256659",
+  "name": "Motorland Aragón",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    -0.20592696380697048,
+    41.07952818579087
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/2609655",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.980Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

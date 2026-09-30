@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-oulton-park-circuit-21831735",
+  "name": "Oulton Park Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -2.616036193220339,
+    53.175958480508456
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/108809509",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

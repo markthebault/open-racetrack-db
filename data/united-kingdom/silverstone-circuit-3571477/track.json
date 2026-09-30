@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-silverstone-circuit-3571477",
+  "name": "Silverstone Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -1.0159168835907335,
+    52.07182327316606
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/156355633",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

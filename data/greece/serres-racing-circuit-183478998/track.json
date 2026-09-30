@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gr-serres-racing-circuit-183478998",
+  "name": "Serres Racing Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GR",
+    "name": "Greece",
+    "slug": "greece"
+  },
+  "location": [
+    23.515953263571433,
+    41.071906845000015
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/553200731",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:16:21.051Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "de-test-und-prasentationsstrecke-bilster-berg-180270505",
+  "name": "Test- und Präsentationsstrecke Bilster Berg",
+  "aliases": [],
+  "country": {
+    "code": "DE",
+    "name": "Germany",
+    "slug": "germany"
+  },
+  "location": [
+    9.066888716806725,
+    51.7922550516807
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/8857007",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.611Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

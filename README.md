@@ -8,9 +8,9 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 ## European preview
 
-The preview now covers **18 venues and 27 layouts across seven EU countries**, including 15 venues added after the initial five-layout review build.
+The preview contains **161 venues and 170 draft traces across 25 European countries**, including the UK, Norway, and the Balkans. The acquisition inventory covers **46 countries**. Browse by country, search a venue, switch available layouts, and download an attributed GeoJSON trace.
 
-New venues: Hockenheimring, Spa-Francorchamps, Zolder, Zandvoort, Assen, Monza, Imola, Misano, Mugello, Paul Ricard, Magny-Cours, Le Mans Bugatti, Barcelona-Catalunya, Jerez, and Valencia. Hockenheim, Imola, Misano, Paul Ricard, Barcelona, and Jerez have selectable alternatives.
+The goal is all permanent car and motorcycle circuits across Europe. **Coverage is still incomplete:** many mapped facilities need classification or a usable course trace, and named layout confirmation remains outstanding. The viewer's European coverage panel links to the full review inventory. See [coverage and remaining work](Docs/07-european-coverage.md).
 
 Track traces come only from pinned OpenStreetMap source data and explicit route recipes. Every route is currently marked **draft**. The local preview displays start/finish GPS references from the maintainer's Racelogic archive, with estimated 25 m display lines. The importer reads only the start/finish XML, never CIR files, map pictures, or track boundaries. Private timing stays outside the reusable database, downloads, and production build.
 
@@ -22,13 +22,18 @@ Use Node.js 24 LTS and npm (Node 26 also works for the current preview):
 
 ```sh
 npm ci
-npm run import:timing -- --archive /path/to/racelogic-tracks-db.zip
-npm run import:osm -- --track at-salzburgring
-npm run import:osm -- --track fr-anneau-du-rhin
-npm run import:osm -- --track de-nurburgring
-npm run generate:data
 npm run dev -- --host 0.0.0.0
 ```
+
+Committed data is sufficient to run the viewer. Maintainers can acquire and resume country discovery separately:
+
+```sh
+npm run discover:europe
+npm run expand:europe
+npm run generate:data
+```
+
+Discovery is serial, caches sanitized snapshots, and observes Overpass retry delays. Expansion produces draft candidates from shared OSM node IDs. It does not verify a named layout. Inspect the recipes and source notes before promoting a draft. Short courses below 1 km and routes without a closed source cycle need manual selection.
 
 To build and serve the production preview:
 

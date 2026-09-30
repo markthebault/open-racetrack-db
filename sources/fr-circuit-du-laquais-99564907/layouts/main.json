@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "trackId": "fr-circuit-du-laquais-99564907",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "1cab05f13819a665f1fe88f37ad54adb25dff5927d8c43335b7dbc83354de4cb",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 99564907,
+      "wayVersion": 5,
+      "fromIndex": 4,
+      "toIndex": 0
+    },
+    {
+      "wayId": 99564952,
+      "wayVersion": 6,
+      "fromIndex": 0,
+      "toIndex": 12
+    },
+    {
+      "wayId": 115827042,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 2
+    },
+    {
+      "wayId": 99564907,
+      "wayVersion": 5,
+      "fromIndex": 52,
+      "toIndex": 45
+    },
+    {
+      "wayId": 432059817,
+      "wayVersion": 3,
+      "fromIndex": 12,
+      "toIndex": 0
+    },
+    {
+      "wayId": 99564907,
+      "wayVersion": 5,
+      "fromIndex": 39,
+      "toIndex": 11
+    },
+    {
+      "wayId": 432059816,
+      "wayVersion": 3,
+      "fromIndex": 18,
+      "toIndex": 0
+    }
+  ],
+  "gates": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "de-circuit-meppen-206291125",
+  "name": "Circuit Meppen",
+  "aliases": [],
+  "country": {
+    "code": "DE",
+    "name": "Germany",
+    "slug": "germany"
+  },
+  "location": [
+    7.281729671014491,
+    52.756804935265684
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/1246272045",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.611Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

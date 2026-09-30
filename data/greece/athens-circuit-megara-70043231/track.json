@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "gr-athens-circuit-megara-70043231",
+  "name": "Athens Circuit Megara",
+  "aliases": [],
+  "country": {
+    "code": "GR",
+    "name": "Greece",
+    "slug": "greece"
+  },
+  "location": [
+    23.362383750526313,
+    37.98721771157895
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/271994590",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:16:21.051Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

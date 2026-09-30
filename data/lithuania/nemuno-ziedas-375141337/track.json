@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "lt-nemuno-ziedas-375141337",
+  "name": "Nemuno žiedas",
+  "aliases": [],
+  "country": {
+    "code": "LT",
+    "name": "Lithuania",
+    "slug": "lithuania"
+  },
+  "location": [
+    23.7093888388889,
+    54.91648241161613
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/7916262",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:17:30.868Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "de-motorsport-arena-oschersleben-89251023",
+  "name": "Motorsport Arena Oschersleben",
+  "aliases": [],
+  "country": {
+    "code": "DE",
+    "name": "Germany",
+    "slug": "germany"
+  },
+  "location": [
+    11.274932988235301,
+    52.028742201307196
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/89262089",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.611Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

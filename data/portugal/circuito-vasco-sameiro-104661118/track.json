@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "pt-circuito-vasco-sameiro-104661118",
+  "name": "Circuito Vasco Sameiro",
+  "aliases": [],
+  "country": {
+    "code": "PT",
+    "name": "Portugal",
+    "slug": "portugal"
+  },
+  "location": [
+    -8.445399519298245,
+    41.58604842807017
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/104661118",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:22.293Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

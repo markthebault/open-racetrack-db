@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ro-transilvania-motor-ring-488429454",
+  "name": "Transilvania Motor Ring",
+  "aliases": [],
+  "country": {
+    "code": "RO",
+    "name": "Romania",
+    "slug": "romania"
+  },
+  "location": [
+    24.423687027333337,
+    46.43180706666668
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/12536336",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:12:56.393Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ru-sochi-autodrom-306234479",
+  "name": "Sochi Autodrom",
+  "aliases": [],
+  "country": {
+    "code": "RU",
+    "name": "Russia",
+    "slug": "russia"
+  },
+  "location": [
+    39.96541175340908,
+    43.409163261363624
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/1235494683",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:21:42.508Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

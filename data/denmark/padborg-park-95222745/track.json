@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "dk-padborg-park-95222745",
+  "name": "Padborg Park",
+  "aliases": [],
+  "country": {
+    "code": "DK",
+    "name": "Denmark",
+    "slug": "denmark"
+  },
+  "location": [
+    9.27446884453782,
+    54.86857786050422
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/459468608",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:10:13.286Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

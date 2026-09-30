@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "hu-hungaroring-231328650",
+  "name": "Hungaroring",
+  "aliases": [],
+  "country": {
+    "code": "HU",
+    "name": "Hungary",
+    "slug": "hungary"
+  },
+  "location": [
+    19.250767938694633,
+    47.58245180652678
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/3938368",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:12:04.166Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}
