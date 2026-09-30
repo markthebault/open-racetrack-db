@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "us-road-atlanta-9292566",
+  "name": "Road Atlanta",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -83.8154416963855,
+    34.14394662530118
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/18036031",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

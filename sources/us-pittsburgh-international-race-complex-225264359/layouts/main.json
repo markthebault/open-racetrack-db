@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "trackId": "us-pittsburgh-international-race-complex-225264359",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "d7881e00772bff3879184e04f6f43cf0d0dc4ea4630b1768906e6af7835aeb39",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 225264359,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 7
+    },
+    {
+      "wayId": 377973196,
+      "wayVersion": 1,
+      "fromIndex": 10,
+      "toIndex": 8
+    },
+    {
+      "wayId": 377724561,
+      "wayVersion": 2,
+      "fromIndex": 0,
+      "toIndex": 7
+    },
+    {
+      "wayId": 377564192,
+      "wayVersion": 5,
+      "fromIndex": 8,
+      "toIndex": 98
+    },
+    {
+      "wayId": 225264359,
+      "wayVersion": 4,
+      "fromIndex": 13,
+      "toIndex": 37
+    }
+  ],
+  "gates": []
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "sv-pista-el-jabali-37713353",
+  "name": "Pista El Jabalí",
+  "aliases": [],
+  "country": {
+    "code": "SV",
+    "name": "El Salvador",
+    "slug": "el-salvador"
+  },
+  "location": [
+    -89.32986426978412,
+    13.809467564748207
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/37713353",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:40:00.196Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

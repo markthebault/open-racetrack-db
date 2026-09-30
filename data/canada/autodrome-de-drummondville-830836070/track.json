@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ca-autodrome-de-drummondville-830836070",
+  "name": "Autodrome de Drummondville",
+  "aliases": [],
+  "country": {
+    "code": "CA",
+    "name": "Canada",
+    "slug": "canada"
+  },
+  "location": [
+    -72.5520685707317,
+    45.90576703170731
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/830836070",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

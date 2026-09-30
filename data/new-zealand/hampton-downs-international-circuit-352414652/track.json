@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "nz-hampton-downs-international-circuit-352414652",
+  "name": "Hampton Downs International Circuit",
+  "aliases": [],
+  "country": {
+    "code": "NZ",
+    "name": "New Zealand",
+    "slug": "new-zealand"
+  },
+  "location": [
+    175.0764093416667,
+    -37.35392112738092
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/533301291",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:17:47.114Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

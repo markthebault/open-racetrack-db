@@ -16,3 +16,11 @@ Code is MIT; OSM-derived database content is ODbL 1.0 with OpenStreetMap attribu
 ## European inventory
 
 Use `npm run discover:europe -- --country GB` to acquire one country's extract, or omit the country for a resumable serial run. `npm run expand:europe` works offline from pinned extracts. Its new course selections stay draft. The name patterns in `sources/europe/road-circuits.json` are classification hints only; add independent venue evidence and inspect the route before marking it reviewed. Pending groups and named facilities remain in `data/europe-coverage.json`, including countries with no published course. See [the coverage report](Docs/07-european-coverage.md) for discovery limits and remaining work.
+
+## Worldwide inventory
+
+Run `npm run discover:world` for the remaining ISO countries and territories, including full Russia, or add `-- --country US` for one additional country. Valid pinned extracts are reused. Country-area markers partition each batch; an absent marker records an unavailable acquisition area, not a country with no circuits. Never run multiple discovery processes concurrently.
+
+Run `npm run expand:world` and `npm run generate:data` offline. European recipes remain available and the worldwide inventory combines their source records with the new extracts. Explicit multilingual karting and pit-lane names are excluded. World candidates can be as short as 500 m to retain small car circuits and paved ovals. Unknown identities, complex branches, course associations and unmapped geometry remain pending. Repeated venue names are allowed at distinct locations.
+
+`npm run validate:world` checks country snapshot hashes and catalogue references. Reference websites support identity only; validators reject their use as coordinate sources. A source-cycle selection and a nearby private start/finish point cannot establish a reviewed named layout. See [worldwide coverage](Docs/08-worldwide-coverage.md).

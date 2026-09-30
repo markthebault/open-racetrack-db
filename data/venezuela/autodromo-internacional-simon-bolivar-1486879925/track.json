@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ve-autodromo-internacional-simon-bolivar-1486879925",
+  "name": "Autódromo Internacional Simón Bolívar",
+  "aliases": [],
+  "country": {
+    "code": "VE",
+    "name": "Venezuela",
+    "slug": "venezuela"
+  },
+  "location": [
+    -62.886567624545435,
+    8.183705498181816
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/902025201",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:41:48.539Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

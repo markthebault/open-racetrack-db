@@ -5,7 +5,7 @@ export function exclusion(way:Way){
  const t=way.tags??{},name=[t.name,t['name:en'],t.service,t.description].filter(Boolean).join(' ').toLowerCase();
  if(t.area==='yes')return 'area representation, no reusable course trace';
  if(t['disused:highway']||t.disused==='yes'||t.abandoned==='yes')return 'disused or abandoned';
- if(/kart|motocr[oòóô]s|motorcross|go[ -]?cart|\bmx\b|trial|autocross|^paddock$|pit[ _-]?(lane|entry|exit)|boxen(gasse|ausfahrt)|box(es|e)?\b|^stand$|safety car|long[ _-]?lap|penalty|dragstrip|quartermile/i.test(name)||/kart|motocross|bmx|cycling|running|horse/.test(t.sport??''))return 'karting, motocross, service lane or unrelated facility';
+ if(/kart|карт|мотокрос|автокрос|sand dune|off[- ]road|カート|卡丁|카트|ピット|维修通道|motocr[oòóô]s|motorcross|go[ -]?cart|\bmx\b|trial|autocross|^paddock$|pit[ _-]?(lane|road|entry|exit)|boxen(gasse|ausfahrt)|box(es|e)?\b|^stand$|safety car|long[ _-]?lap|penalty|dragstrip|quartermile/i.test(name)||/kart|motocross|bmx|cycling|running|horse/.test(t.sport??''))return 'karting, motocross, service lane or unrelated facility';
  if(t.service==='pit_lane'||t.raceway==='pit_lane')return 'pit lane';
  return undefined;
 }
@@ -20,7 +20,7 @@ export function components(ways:Way[]){
 }
 
 type Edge=Segment&{a:number;b:number;lengthM:number};
-export function candidateLoops(ways:Way[],limit=400){
+export function candidateLoops(ways:Way[],limit=400,minimumLengthM=1000){
  const owners=new Map<number,Set<number>>();for(const w of ways)for(const node of w.nodes){const set=owners.get(node)??new Set();set.add(w.id);owners.set(node,set);}
  const adjacency=new Map<number,Edge[]>();
  for(const w of ways){const indices=w.nodes.map((n,i)=>i===0||i===w.nodes.length-1||owners.get(n)!.size>1?i:-1).filter(i=>i>=0);
@@ -35,7 +35,7 @@ export function candidateLoops(ways:Way[],limit=400){
   if(++steps>150000||loops.length>=limit){truncated=true;return;}
   for(const e of adjacency.get(node)??[]){if(e.b<start||size+e.lengthM>30000)continue;
    const previous=path.at(-1);if(previous?.wayId===e.wayId&&previous.fromIndex===e.toIndex&&previous.toIndex===e.fromIndex)continue;
-   if(e.b===start){const route=[...path,e];if(size+e.lengthM<1000)continue;
+   if(e.b===start){const route=[...path,e];if(size+e.lengthM<minimumLengthM)continue;
     // Remove reverse duplicates while preserving the pinned direction chosen for the recipe.
     const tokens=route.map(e=>`${e.wayId}:${Math.min(e.fromIndex,e.toIndex)}:${Math.max(e.fromIndex,e.toIndex)}`).sort();const key=tokens.join('|');if(keys.has(key))continue;keys.add(key);
     const segments:Segment[]=[];for(const edge of route){const {wayId,wayVersion,fromIndex,toIndex}=edge,previous=segments.at(-1);if(previous?.wayId===wayId&&previous.toIndex===fromIndex&&(previous.toIndex-previous.fromIndex)*(toIndex-fromIndex)>0)previous.toIndex=toIndex;else segments.push({wayId,wayVersion,fromIndex,toIndex});}

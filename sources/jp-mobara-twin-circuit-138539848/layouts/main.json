@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "trackId": "jp-mobara-twin-circuit-138539848",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "273c0d45eb292baeed633d7622f42ce9db6e05becbc8ae97cc023066c817f568",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 138539848,
+      "wayVersion": 6,
+      "fromIndex": 69,
+      "toIndex": 0
+    },
+    {
+      "wayId": 138539848,
+      "wayVersion": 6,
+      "fromIndex": 87,
+      "toIndex": 69
+    }
+  ],
+  "gates": []
+}

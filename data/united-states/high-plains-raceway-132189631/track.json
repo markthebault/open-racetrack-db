@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "us-high-plains-raceway-132189631",
+  "name": "High Plains Raceway",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -103.89834550695652,
+    39.73627769739132
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/42851781",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

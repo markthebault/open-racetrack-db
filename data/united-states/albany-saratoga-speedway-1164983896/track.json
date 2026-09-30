@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "us-albany-saratoga-speedway-1164983896",
+  "name": "Albany-Saratoga Speedway",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -73.78219748500001,
+    42.98857267500001
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/1164983895",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

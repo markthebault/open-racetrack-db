@@ -21,3 +21,6 @@ const pilotVenues = [
 ];
 const bootstrapPath=new URL('../sources/europe/bootstrap.json',import.meta.url);
 export const venues=[...pilotVenues,...(existsSync(bootstrapPath)?JSON.parse(readFileSync(bootstrapPath,'utf8')):[])];
+
+const worldBootstrapPath=new URL('../sources/world/bootstrap.json',import.meta.url);
+if(existsSync(worldBootstrapPath))venues.push(...JSON.parse(readFileSync(worldBootstrapPath,'utf8')));

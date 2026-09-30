@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "us-roebling-road-raceway-193696511",
+  "name": "Roebling Road Raceway",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -81.32174227431192,
+    32.168594663302734
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/31469363",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

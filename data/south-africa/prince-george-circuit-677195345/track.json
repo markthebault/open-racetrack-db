@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "za-prince-george-circuit-677195345",
+  "name": "Prince George Circuit",
+  "aliases": [],
+  "country": {
+    "code": "ZA",
+    "name": "South Africa",
+    "slug": "south-africa"
+  },
+  "location": [
+    27.873263883928576,
+    -33.04771438392858
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/776766332",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:25:05.976Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "id-mandalika-international-street-circuit-942267289",
+  "name": "Mandalika International Street Circuit",
+  "aliases": [
+    "Sirkuit Internasional Mandalika"
+  ],
+  "country": {
+    "code": "ID",
+    "name": "Indonesia",
+    "slug": "indonesia"
+  },
+  "location": [
+    116.30468554329896,
+    -8.899252455670105
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/942267288",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:42.731Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

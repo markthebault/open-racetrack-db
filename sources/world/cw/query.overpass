@@ -1,0 +1,1 @@
+[out:json][timeout:90][maxsize:268435456];area["ISO3166-1"~"^(CI|CK|CM|CO|CR|CU|CV|CW|CX|DJ|DM|DO)$"]->.countries;foreach.countries->.country(.country out tags;(way["highway"="raceway"](area.country);nwr["leisure"~"^(sports_centre|sports_complex)$"]["sport"~"motor"](area.country);relation["type"="site"]["site"~"^(raceway|motorsport|racetrack)$"](area.country););out meta geom;);

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "trackId": "us-nola-motorsports-park-298904844",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "455ccef29142e5e09505e039dca4110d3bdbc39051a5009360412a147319577c",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 298904865,
+      "wayVersion": 7,
+      "fromIndex": 34,
+      "toIndex": 0
+    },
+    {
+      "wayId": 298904865,
+      "wayVersion": 7,
+      "fromIndex": 130,
+      "toIndex": 34
+    }
+  ],
+  "gates": []
+}

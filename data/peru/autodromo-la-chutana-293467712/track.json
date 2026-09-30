@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "pe-autodromo-la-chutana-293467712",
+  "name": "Autódromo La Chutana",
+  "aliases": [],
+  "country": {
+    "code": "PE",
+    "name": "Peru",
+    "slug": "peru"
+  },
+  "locality": "San Bartolo",
+  "location": [
+    -76.75225159770112,
+    -12.397310047126439
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/293470533",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:37:46.722Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

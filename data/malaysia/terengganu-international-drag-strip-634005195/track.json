@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "my-terengganu-international-drag-strip-634005195",
+  "name": "Terengganu International Drag Strip",
+  "aliases": [],
+  "country": {
+    "code": "MY",
+    "name": "Malaysia",
+    "slug": "malaysia"
+  },
+  "location": [
+    103.10132632777776,
+    5.364194272222224
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/634005196",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:44.724Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

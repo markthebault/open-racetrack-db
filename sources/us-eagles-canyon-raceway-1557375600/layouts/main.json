@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "trackId": "us-eagles-canyon-raceway-1557375600",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "4577bebcfc8f1eac4247471711b98faf5f35e17c1f226c53fb667d961d58f1de",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 1557375603,
+      "wayVersion": 5,
+      "fromIndex": 51,
+      "toIndex": 0
+    },
+    {
+      "wayId": 1557375603,
+      "wayVersion": 5,
+      "fromIndex": 194,
+      "toIndex": 51
+    }
+  ],
+  "gates": []
+}

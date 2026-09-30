@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ph-batangas-racing-circuit-113961777",
+  "name": "Batangas Racing Circuit",
+  "aliases": [],
+  "country": {
+    "code": "PH",
+    "name": "Philippines",
+    "slug": "philippines"
+  },
+  "location": [
+    121.27634077777778,
+    13.821217052525252
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/113961539",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:38:41.522Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

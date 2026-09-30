@@ -10,7 +10,7 @@ test('every catalogue layout opens, draws a trace and offers reusable data',asyn
  await page.goto('/');await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
  for(const entry of catalogue.tracks){
   const track=validateTrack(JSON.parse(await readFile(`data/${entry.file}`,'utf8')));
-  await page.locator('#venues button').filter({has:page.locator('.venue-name',{hasText:entry.name})}).click();
+  await page.locator(`#venues button[data-track-id="${entry.id}"]`).click();
   await expect(page.locator('#selection h2')).toHaveText(track.name);
   await expect(page.locator('#message')).toHaveText('Layout ready');
   for(const layout of track.layouts){
@@ -39,7 +39,7 @@ test('country and name filters combine, and a layout deep link restores selectio
  await expect(page.locator('#venues .venue-name')).toHaveText('Autodromo Nazionale Monza');
  const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
  await page.locator('#reset').click();await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
- await page.locator('.coverage summary').click();await expect(page.locator('.coverage table tr')).toHaveCount(47);
+ await page.locator('.coverage summary').click();await expect(page.locator('.coverage table tr')).toHaveCount(251);
  await expect(page.locator('.coverage')).toContainText('Brno');
 });
 
@@ -67,4 +67,14 @@ test('mobile layout switching keeps the map and download usable',async({page})=>
  await page.locator('#map').scrollIntoViewIfNeeded();await expect(page.locator('#map')).toBeInViewport();
  await expect(page.locator('.leaflet-control-attribution')).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
+});
+
+
+test('OSM venue names render as literal tooltip text',async({page})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));for(const track of catalogue.tracks)track.name='Marker <strong>untrusted</strong>';
+ await page.route('**/data/index.json',route=>route.fulfill({json:catalogue}));
+ await page.goto('/');await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
+ await page.locator('.leaflet-overlay-pane .leaflet-interactive').first().dispatchEvent('mouseover');
+ await expect(page.locator('.leaflet-tooltip')).toHaveText('Marker <strong>untrusted</strong>');await expect(page.locator('.leaflet-tooltip strong')).toHaveCount(0);
 });

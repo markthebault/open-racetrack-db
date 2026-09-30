@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "br-autodromo-internacional-ayrton-senna-288004307",
+  "name": "Autódromo Internacional Ayrton Senna",
+  "aliases": [],
+  "country": {
+    "code": "BR",
+    "name": "Brazil",
+    "slug": "brazil"
+  },
+  "location": [
+    -49.19274305625,
+    -16.7174179875
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/11969004",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:38.302Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

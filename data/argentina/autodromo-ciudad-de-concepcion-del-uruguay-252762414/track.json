@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ar-autodromo-ciudad-de-concepcion-del-uruguay-252762414",
+  "name": "Autódromo Ciudad de Concepción del Uruguay",
+  "aliases": [],
+  "country": {
+    "code": "AR",
+    "name": "Argentina",
+    "slug": "argentina"
+  },
+  "location": [
+    -58.31511128695655,
+    -32.45516448115943
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/252762355",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.542Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

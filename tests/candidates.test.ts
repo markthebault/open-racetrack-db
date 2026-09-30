@@ -12,9 +12,14 @@ test('coincident coordinates do not connect separate source node identities',()=
 });
 test('filter retains a named racing corner and excludes pit lanes and karting',()=>{
  assert.equal(exclusion({...loop,tags:{name:'Paddock Hill Bend'}}),undefined);
- assert.ok(exclusion({...loop,tags:{name:'Pit lane'}}));assert.ok(exclusion({...loop,tags:{sport:'karting'}}));assert.ok(exclusion({...loop,tags:{area:'yes'}}));
+ assert.ok(exclusion({...loop,tags:{name:'Pit lane'}}));assert.ok(exclusion({...loop,tags:{name:'Pit Road'}}));assert.ok(exclusion({...loop,tags:{name:'Сочинский картодром'}}));assert.ok(exclusion({...loop,tags:{name:'Sand Dune Course'}}));assert.ok(exclusion({...loop,tags:{sport:'karting'}}));assert.ok(exclusion({...loop,tags:{area:'yes'}}));
 });
 test('unknown travel direction remains explicit and bounded enumeration reports truncation',()=>{
  assert.equal(candidateLoops([{...loop,tags:{}}]).loops[0].directionKnown,false);
  assert.equal(candidateLoops([loop],0).truncated,true);
+});
+
+test('short permanent circuits can be selected with a scope-specific threshold',()=>{
+ const short={...loop,geometry:loop.geometry.map(p=>({lon:p.lon/5,lat:p.lat/5}))};
+ assert.equal(candidateLoops([short]).loops.length,0);assert.equal(candidateLoops([short],400,500).loops.length,1);
 });

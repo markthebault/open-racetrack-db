@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "in-buddh-international-circuit-169886195",
+  "name": "Buddh International Circuit",
+  "aliases": [],
+  "country": {
+    "code": "IN",
+    "name": "India",
+    "slug": "india"
+  },
+  "location": [
+    77.53408401256547,
+    28.348105343455508
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/2261609",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:52.703Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

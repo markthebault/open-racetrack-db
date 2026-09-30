@@ -1,0 +1,15 @@
+# Road America
+
+Geometry: **draft**. Public timing: **missing**. Inspector: Codex, 2026-09-30.
+
+Parent country snapshot: `world/us/osm.json`, SHA-256 `7e47953f68e565fb534ff05c0fad13deb32996c66103f61b844ef51979488410`. Venue subset SHA-256: `db0d0d166dea9d22850e5fa19d4927b3468e80e1c1ed6c59bd4f4927ecd574dc`.
+
+## Connected course candidate
+
+Recipe: `layouts/main.json`. Approximate trace length: 6493.4 m. Candidate count: 2. Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review. Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.
+
+Identity: [OSM way 701713461](https://www.openstreetmap.org/way/701713461). Source geometry: [way 122090286](https://www.openstreetmap.org/way/122090286), [way 122090295](https://www.openstreetmap.org/way/122090295), [way 122090296](https://www.openstreetmap.org/way/122090296), [way 122090243](https://www.openstreetmap.org/way/122090243), [way 122090251](https://www.openstreetmap.org/way/122090251), [way 122090282](https://www.openstreetmap.org/way/122090282), [way 122090297](https://www.openstreetmap.org/way/122090297), [way 122090270](https://www.openstreetmap.org/way/122090270), [way 122090263](https://www.openstreetmap.org/way/122090263), [way 122090289](https://www.openstreetmap.org/way/122090289), [way 122090268](https://www.openstreetmap.org/way/122090268), [way 122090299](https://www.openstreetmap.org/way/122090299), [way 122090258](https://www.openstreetmap.org/way/122090258), [way 122090260](https://www.openstreetmap.org/way/122090260), [way 122090240](https://www.openstreetmap.org/way/122090240), [way 122090275](https://www.openstreetmap.org/way/122090275), [way 122090272](https://www.openstreetmap.org/way/122090272), [way 122090284](https://www.openstreetmap.org/way/122090284), [way 122090298](https://www.openstreetmap.org/way/122090298), [way 110527567](https://www.openstreetmap.org/way/110527567), [way 122090265](https://www.openstreetmap.org/way/122090265), [way 122090279](https://www.openstreetmap.org/way/122090279), [way 122090248](https://www.openstreetmap.org/way/122090248), [way 122090267](https://www.openstreetmap.org/way/122090267), [way 122090239](https://www.openstreetmap.org/way/122090239), [way 122090291](https://www.openstreetmap.org/way/122090291), [way 122090276](https://www.openstreetmap.org/way/122090276).
+
+Pit, karting, motocross, service and unrelated ways are filtered before selection. Branches within the remaining graph are hypotheses, not independent evidence of named configurations. No geometry is marked reviewed. Public timing is absent pending a reusable source. Private start/finish comparisons do not establish a named layout or redistribution rights. No CIR, track-map or Racelogic boundary file is read.
+
+Remaining work: confirm the selected course against venue evidence, inspect every ambiguous branch and travel direction, and add independently reusable timing evidence.

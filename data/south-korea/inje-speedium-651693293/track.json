@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "kr-inje-speedium-651693293",
+  "name": "Inje Speedium",
+  "aliases": [],
+  "country": {
+    "code": "KR",
+    "name": "South Korea",
+    "slug": "south-korea"
+  },
+  "location": [
+    128.29102674482763,
+    38.00067534965517
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/826321358",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:38.772Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}
