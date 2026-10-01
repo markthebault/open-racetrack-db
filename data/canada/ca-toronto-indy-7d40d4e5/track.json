@@ -8,17 +8,41 @@
     "name": "Canada",
     "slug": "canada"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -79.41580725,
+    43.6328859
+  ],
+  "sourceIds": [
+    "osm-selection-toronto-indy-independent-roads-4005323"
+  ],
   "defaultLayoutId": "toronto-indy",
   "layouts": [
     {
       "id": "toronto-indy",
       "name": "Toronto Indy",
       "referenceId": "Canada/Toronto Indy",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/toronto-indy.geojson",
+      "description": "Draft configuration: The series official Toronto event map identifies Princes Boulevard, Canada Boulevard, Lake Shore Boulevard, Ontario Drive, the western Princes return, Manitoba Drive and Nova Scotia Avenue with the inward return to the front straight. This independent connected public-road route retains that full sequence and excludes the eastern access spur and northern parking bypass. Temporary event corner radii and carriageway placement remain draft; public source coordinates are unchanged. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2972.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-toronto-indy-independent-roads-4005323",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/4005323",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:06:05.036Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-toronto-indy",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.indycar.com/Schedule/2024/Toronto",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:06:05.036Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 873,
-    "unmappedLayouts": 134,
+    "draftMapped": 878,
+    "unmappedLayouts": 129,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2520,11 +2520,14 @@
       "name": "Toronto Indy",
       "timingMode": "shared",
       "trackId": "ca-toronto-indy-7d40d4e5",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "toronto-indy"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -7349,11 +7352,14 @@
       "name": "Bombarral",
       "timingMode": "shared",
       "trackId": "pt-bombarral-423b0d2b",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bombarral"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -7362,11 +7368,14 @@
       "name": "Bombarral B2",
       "timingMode": "shared",
       "trackId": "pt-bombarral-b2-9936078e",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bombarral-b2"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9904,14 +9913,14 @@
       "name": "Bedford Autodrome GT",
       "timingMode": "shared",
       "trackId": "gb-bedford-autodrome-27782784",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bedford-autodrome-gt"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "gb-bedford-autodrome-27782784"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -11873,14 +11882,14 @@
       "name": "Briggs & Stratton Motorplex",
       "timingMode": "shared",
       "trackId": "us-road-america-110527567",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "briggs-stratton-motorplex"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-road-america-110527567"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17966,15 +17975,13 @@
       "name": "Toronto Indy",
       "country": "Canada",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Toronto Indy"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ca-toronto-motorsports-park-440159413",
@@ -20206,15 +20213,13 @@
       "name": "Bedford Autodrome",
       "country": "United Kingdom",
       "actualLayoutCount": 6,
-      "actualTraceCount": 5,
+      "actualTraceCount": 6,
       "expectedRecordCount": 6,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 5,
-      "missingRecordNames": [
-        "Bedford Autodrome GT"
-      ],
+      "mappedRecordCount": 6,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-bicester-heritage-091776aa",
@@ -23195,30 +23200,26 @@
       "name": "Bombarral",
       "country": "Portugal",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bombarral"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "pt-bombarral-b2-9936078e",
       "name": "Bombarral B2",
       "country": "Portugal",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bombarral B2"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "pt-circuito-do-sol-703181698",
@@ -26054,12 +26055,11 @@
       "name": "Road America",
       "country": "United States",
       "actualLayoutCount": 5,
-      "actualTraceCount": 3,
+      "actualTraceCount": 4,
       "expectedRecordCount": 4,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 2,
+      "mappedRecordCount": 3,
       "missingRecordNames": [
-        "Briggs & Stratton Motorplex",
         "Road America Short"
       ],
       "unassociatedLayoutIds": [
@@ -26846,13 +26846,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Canada/Toronto Indy",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Canada/Trois Rivieres",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27078,20 +27071,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Portugal/Bombarral",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Portugal/Bombarral B2",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Portugal/Macao RX",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27226,13 +27205,6 @@
     },
     {
       "recordId": "United Arab Emirates/Yas Marina South",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Bedford Autodrome GT",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -27476,13 +27448,6 @@
     },
     {
       "recordId": "United States/Belle Isle GP",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Briggs & Stratton Motorplex",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

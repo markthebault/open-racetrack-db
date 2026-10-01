@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-110527567"
+    "osm-network-110527567",
+    "osm-selection-122200529"
   ],
   "defaultLayoutId": "briggs-stratton-motorplex",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "briggs-stratton-motorplex",
       "name": "Briggs & Stratton Motorplex",
       "referenceId": "United States/Briggs & Stratton Motorplex",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/briggs-stratton-motorplex.geojson",
+      "description": "Draft configuration: The operator Motorplex track plan identifies the full paved course with two southern hairpins, the middle return and northern inner dogleg. The northeast staging shortcut and unpaved branch are excluded. Independent public nodes supply the trace; the archive image is used only to distinguish the named course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1109.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "road-america",
@@ -71,6 +72,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-122200529",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/122200529",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-briggs-stratton-motorplex",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.roadamerica.com/motorplex",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

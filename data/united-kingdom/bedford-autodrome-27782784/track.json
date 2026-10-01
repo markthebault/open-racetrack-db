@@ -50,8 +50,8 @@
       "id": "bedford-autodrome-gt",
       "name": "Bedford Autodrome GT",
       "referenceId": "United Kingdom/Bedford Autodrome GT",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bedford-autodrome-gt.geojson",
+      "description": "Draft configuration: The operator red GT diagram identifies the full western outer course, northeastern triangle with the eastern serpentine, and smooth southern and central returns. Western pit/access ways and small service bulges are excluded. The public mapped route measures 5255.1 m, materially below the 5906 m catalogue timing scalar and the operator advertised 6.11 km; these distances remain separately recorded and the exact independently mapped route remains a draft needing distance and alignment review. No route coordinates are stretched to reconcile the figures. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5255.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "bedford-autodrome-southwest",
@@ -82,6 +82,15 @@
     },
     {
       "id": "selection-identity-bedford-autodrome-southwest",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-bedford-autodrome-gt",
       "type": "reference",
       "title": "Configuration identification reference",
       "url": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
