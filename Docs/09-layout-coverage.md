@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 859
-- unmappedLayouts: 148
+- draftMapped: 873
+- unmappedLayouts: 134
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -64,7 +64,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Austria | Salzburgring | 1 | 1 | 1 |  |  |
 | Austria | Wachauring Melk | 1 | 1 | 1 |  |  |
 | Australia | Adelaide International Raceway | 1 | 0 | 0 |  | main |
-| Australia | Adelaide Parklands Circuit | 1 | 1 | 0 | Adelaide Parklands Circuit |  |
+| Australia | Adelaide Parklands Circuit | 1 | 1 | 1 |  |  |
 | Australia | Albert Park | 1 | 1 | 1 |  |  |
 | Australia | Baskerville Raceway | 1 | 1 | 1 |  |  |
 | Australia | Bathurst | 1 | 1 | 1 |  |  |
@@ -150,7 +150,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Delaware Speedway | 1 | 0 | 0 |  | main |
 | Canada | Dunnville Autodrome | 1 | 0 | 0 |  | main |
 | Canada | Gilles Villeneuve | 1 | 1 | 1 |  |  |
-| Canada | Goodwood Kartways | 1 | 1 | 0 | Goodwood Kartways |  |
+| Canada | Goodwood Kartways | 3 | 1 | 1 |  | goodwood-standard-long; goodwood-long-chicane |
 | Canada | Mission Raceway | 2 | 1 | 1 |  | main |
 | Canada | RAD Torque Raceway | 1 | 1 | 1 |  |  |
 | Canada | Rocky Mountain Motorsports | 2 | 1 | 1 |  | main |
@@ -206,7 +206,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Germany | Black Forest Short | 1 | 1 | 1 |  |  |
 | Germany | Circuit Meppen | 1 | 1 | 1 |  |  |
 | Germany | Estering | 3 | 1 | 1 |  | estering-standard; estering-joker |
-| Germany | Gross Doelln | 1 | 1 | 0 | Gross Doelln |  |
+| Germany | Gross Doelln | 1 | 1 | 1 |  |  |
 | Germany | Harzring | 1 | 1 | 1 |  |  |
 | Germany | Hockenheimring | 3 | 3 | 3 |  |  |
 | Germany | Lausitzring | 8 | 8 | 8 |  |  |
@@ -414,7 +414,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Indonesia | Sentul International Circuit | 1 | 0 | 0 |  | main |
 | Ireland | Mondello Park | 4 | 3 | 3 |  | main |
 | Israel | Arad Circuit | 1 | 1 | 1 |  |  |
-| Isle of Man | TT Course | 1 | 1 | 0 | TT Course |  |
+| Isle of Man | TT Course | 1 | 1 | 1 |  |  |
 | India | Aruani Grid | 1 | 1 | 1 |  |  |
 | India | Buddh International Circuit | 2 | 1 | 1 |  | main |
 | India | Chennai | 1 | 1 | 1 |  |  |
@@ -571,7 +571,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Sweden | Falkenbergs Motorbana | 1 | 1 | 1 |  |  |
 | Sweden | Gotland Ring | 5 | 4 | 1 | Gotland Ring 4.1; Gotland Ring 6.0; Gotland Ring 7.3 | main |
 | Sweden | Holjes Motorclub | 1 | 1 | 1 |  |  |
-| Sweden | Karlskoga Motorstadion | 2 | 1 | 0 | Gellerason GP 2019 | main |
+| Sweden | Karlskoga Motorstadion | 2 | 1 | 1 |  | main |
 | Sweden | Kinnekulle Ring | 1 | 1 | 1 |  |  |
 | Sweden | Ljungbyhed Park | 1 | 1 | 0 | Ljungbyhed Park |  |
 | Sweden | Ljungbyhed Park Alt SF | 1 | 1 | 0 | Ljungbyhed Park Alt SF |  |
@@ -628,7 +628,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Buttonwillow Race | 8 | 8 | 8 |  |  |
 | United States | Buttonwillow The Circuit | 1 | 1 | 1 |  |  |
 | United States | Carolina Motorsports Park | 3 | 2 | 2 |  | main |
-| United States | Charlotte Motor Speedway | 5 | 4 | 1 | Charlotte Motor Speedway Full; Charlotte Motor Speedway ROVAL; Charlotte Motor Speedway Short | main |
+| United States | Charlotte Motor Speedway | 5 | 4 | 3 | Charlotte Motor Speedway Short | main |
 | United States | Chelsea Handling Track | 1 | 1 | 1 |  |  |
 | United States | Chicagoland Speedway | 1 | 0 | 0 |  | main |
 | United States | Chuckwalla Valley Raceway | 1 | 1 | 1 |  |  |
@@ -649,7 +649,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Fontana Raceway Infield Course | 1 | 1 | 0 | Fontana Raceway Infield Course |  |
 | United States | Fontana Raceway Road Course | 1 | 1 | 0 | Fontana Raceway Road Course |  |
 | United States | Fort Devens | 1 | 1 | 0 | Fort Devens |  |
-| United States | G2 Motorsports Park | 4 | 3 | 1 | G2 Motorsports Park Combined; G2 Motorsports Park West | main |
+| United States | G2 Motorsports Park | 4 | 3 | 2 | G2 Motorsports Park West | main |
 | United States | GingerMan Raceway | 1 | 1 | 1 |  |  |
 | United States | GingerMan T10b | 1 | 1 | 1 |  |  |
 | United States | GoPro Motorplex | 1 | 1 | 1 |  |  |
@@ -715,7 +715,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Pikes Peak Hillclimb | 1 | 1 | 1 |  |  |
 | United States | Pikes Peak International Raceway | 2 | 1 | 1 |  | main |
 | United States | Pittsburgh International Race Complex | 4 | 3 | 3 |  | main |
-| United States | Pocono Raceway | 3 | 2 | 1 | Pocono - 2.5 Mile Road Course | main |
+| United States | Pocono Raceway | 3 | 2 | 2 |  | main |
 | United States | Podium | 1 | 1 | 1 |  |  |
 | United States | Polecat Driving Academy | 1 | 1 | 1 |  |  |
 | United States | Portland International Raceway | 1 | 1 | 1 |  |  |
@@ -743,7 +743,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Sebring International Raceway | 7 | 6 | 6 |  | main |
 | United States | Sonoma Kart Circuit | 1 | 1 | 0 | Sonoma Kart Circuit |  |
 | United States | Sonoma Raceway 2020 | 8 | 7 | 7 |  | main |
-| United States | Spring Mountain Motorsports Ranch | 15 | 14 | 9 | Charleston Peak North; Spring Mountain Raceway; Spring Mtn Raceway East A; Spring Mtn Raceway Lauda B; Spring Mtn Raceway Lauda C | main |
+| United States | Spring Mountain Motorsports Ranch | 15 | 14 | 14 |  | main |
 | United States | St Petersburg Street Circuit | 1 | 1 | 1 |  |  |
 | United States | Summit Point Jefferson | 1 | 1 | 1 |  |  |
 | United States | Summit Point Motorsports Park | 2 | 1 | 1 |  | main |
@@ -795,7 +795,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Argentina/Rosario Extended Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Rosario Intermediate Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Rosario Short Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/Adelaide Parklands Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Homebush |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -807,7 +806,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Brazil/Kartodromo Granja Viana |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/Goodwood Kartways | 77095786; 1111888556; 1111888557 | 3 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Canada/ICAR Mirabel LONG chicane |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Toronto Indy |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -827,10 +825,8 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Long |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Germany/Gross Doelln |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Isle Of Man/TT Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Balocco Alfa Romeo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Vallelunga Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -853,7 +849,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Navarra Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Gellerason GP 2019 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 4.1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 6.0 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 7.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -903,16 +898,12 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Briggs & Stratton Motorplex |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Bunny Loop |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Buttonwillow Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Charleston Peak North |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Charlotte Motor Speedway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Charlotte Motor Speedway ROVAL | 116107372; 402168714; 402168718; 585912895; 1432059704 | 2 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Dixon Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Infield Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Road Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fort Devens |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/G2 Motorsports Park Combined |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/G2 Motorsports Park West |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Porsche 2mile |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -924,15 +915,10 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/New York Safety Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Pocono - 2.5 Mile Road Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Road America Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Sonoma Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Spring Mountain Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Spring Mtn Raceway East A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Spring Mtn Raceway Lauda B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Spring Mtn Raceway Lauda C |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Thermal Club Twin Palms Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Vietnam/Hanoi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -992,7 +978,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Argentina | Rosario Short Circuit | ar-autodromo-juan-manuel-fangio-293583938 |  | missing-layout |
 | Argentina | Rosario Turismo Carretera | ar-autodromo-juan-manuel-fangio-293583938 | rosario-turismo-carretera | draft-mapped |
 | Argentina | Termas de Rio Hondo | ar-autodromo-de-termas-de-rio-hondo-170936090 | termas-de-rio-hondo | draft-mapped |
-| Australia | Adelaide Parklands Circuit | au-adelaide-parklands-circuit-8073f56a |  | missing-layout |
+| Australia | Adelaide Parklands Circuit | au-adelaide-parklands-circuit-8073f56a | adelaide-parklands-circuit | draft-mapped |
 | Australia | Albert Park | au-albert-park-3785d160 | albert-park | draft-mapped |
 | Australia | Barbagallo | au-wanneroo-raceway-44191932 | main | draft-mapped |
 | Australia | Baskerville | au-baskerville-raceway-139014945 | main | draft-mapped |
@@ -1086,7 +1072,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Canadian Tire Motorsports Park DDT | ca-canadian-tire-motorsports-park-ddt-78298a58 | canadian-tire-motorsports-park-ddt | draft-mapped |
 | Canada | Castrol Raceway | ca-rad-torque-raceway-486902392 | main | draft-mapped |
 | Canada | Gilles Villeneuve | ca-gilles-villeneuve-rl | main | draft-mapped |
-| Canada | Goodwood Kartways | ca-goodwood-kartways-6e03d980 |  | missing-layout |
+| Canada | Goodwood Kartways | ca-goodwood-kartways-6e03d980 | goodwood-kartways | draft-mapped |
 | Canada | ICAR Mirabel | ca-circuit-icar-1043569622 | icar-mirabel | draft-mapped |
 | Canada | ICAR Mirabel LONG | ca-circuit-icar-1043569622 | icar-mirabel-long | draft-mapped |
 | Canada | ICAR Mirabel LONG chicane | ca-circuit-icar-1043569622 |  | missing-layout |
@@ -1245,7 +1231,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Germany | Black Forest Long | de-black-forest-long-reference | main | draft-mapped |
 | Germany | Black Forest Short | de-black-forest-short-reference | main | draft-mapped |
 | Germany | Estering Combo | de-estering-f9d6a5de | estering-combo | draft-mapped |
-| Germany | Gross Doelln | de-gross-doelln-8c6a694d |  | missing-layout |
+| Germany | Gross Doelln | de-gross-doelln-8c6a694d | gross-doelln | draft-mapped |
 | Germany | Harzring | de-harzring-reference | main | draft-mapped |
 | Germany | Hockenheim GP | de-hockenheimring | grand-prix | draft-mapped |
 | Germany | Hockenheimring National | de-hockenheimring | national | draft-mapped |
@@ -1292,7 +1278,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Ireland | Mondello Park International | ie-mondello-park-87185988 | mondello-park-international | draft-mapped |
 | Ireland | Mondello Park National | ie-mondello-park-87185988 | mondello-park-national | draft-mapped |
 | Ireland | Mondello Park Short Loop | ie-mondello-park-87185988 | mondello-park-short-loop | draft-mapped |
-| Isle Of Man | TT Course | im-tt-course-92e7b8f5 |  | missing-layout |
+| Isle Of Man | TT Course | im-tt-course-92e7b8f5 | tt-course | draft-mapped |
 | Israel | Arad Circuit | il-arad-circuit-e5b28a92 | arad-circuit | draft-mapped |
 | Italy | Adria | it-adria-international-raceway-1092277630 | adria | draft-mapped |
 | Italy | Adria International Raceway Full | it-adria-international-raceway-1092277630 |  | missing-layout |
@@ -1505,7 +1491,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Sweden | Anderstorp Raceway | se-anderstorp-raceway-167798646 | anderstorp-raceway | draft-mapped |
 | Sweden | Drive Centre Arena | se-drive-centre-arena-09bd002c |  | missing-layout |
 | Sweden | Falkenberg Raceway | se-falkenbergs-motorbana-343515644 | main | draft-mapped |
-| Sweden | Gellerason GP 2019 | se-karlskoga-motorstadion-290177249 |  | missing-layout |
+| Sweden | Gellerason GP 2019 | se-karlskoga-motorstadion-290177249 | gellerason-gp-2019 | draft-mapped |
 | Sweden | Gotland Ring 3.1 | se-gotland-ring-311644846 | gotland-ring-3-1 | draft-mapped |
 | Sweden | Gotland Ring 4.1 | se-gotland-ring-311644846 |  | missing-layout |
 | Sweden | Gotland Ring 6.0 | se-gotland-ring-311644846 |  | missing-layout |
@@ -1715,12 +1701,12 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Carolina Motorsports Park A | us-carolina-motorsports-park-261069261 | carolina-motorsports-park-a | draft-mapped |
 | United States | Carolina Motorsports Park B | us-carolina-motorsports-park-261069261 | carolina-motorsports-park-b | draft-mapped |
 | United States | Charleston Peak Full | us-spring-mountain-motorsports-ranch-127683895 | charleston-peak-full | draft-mapped |
-| United States | Charleston Peak North | us-spring-mountain-motorsports-ranch-127683895 |  | missing-layout |
+| United States | Charleston Peak North | us-spring-mountain-motorsports-ranch-127683895 | charleston-peak-north | draft-mapped |
 | United States | Charleston Peak Short | us-spring-mountain-motorsports-ranch-127683895 | charleston-peak-short | draft-mapped |
 | United States | Charleston Peak South | us-spring-mountain-motorsports-ranch-127683895 | charleston-peak-south | draft-mapped |
-| United States | Charlotte Motor Speedway Full | us-charlotte-motor-speedway-116034341 |  | missing-layout |
+| United States | Charlotte Motor Speedway Full | us-charlotte-motor-speedway-116034341 | charlotte-motor-speedway-full | draft-mapped |
 | United States | Charlotte Motor Speedway Infield | us-charlotte-motor-speedway-116034341 | charlotte-motor-speedway-infield | draft-mapped |
-| United States | Charlotte Motor Speedway ROVAL | us-charlotte-motor-speedway-116034341 |  | missing-layout |
+| United States | Charlotte Motor Speedway ROVAL | us-charlotte-motor-speedway-116034341 | charlotte-motor-speedway-roval | draft-mapped |
 | United States | Charlotte Motor Speedway Short | us-charlotte-motor-speedway-116034341 |  | missing-layout |
 | United States | Chelsea Handling Track | us-chelsea-handling-track-reference | main | draft-mapped |
 | United States | Chuckwalla Valley Raceway | us-chuckwalla-valley-raceway-f9c21c83 | chuckwalla-valley-raceway | draft-mapped |
@@ -1742,7 +1728,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Fontana Raceway Road Course | us-fontana-raceway-road-course-33a99dd4 |  | missing-layout |
 | United States | Fort Devens | us-fort-devens-7cacf24a |  | missing-layout |
 | United States | G2 Motorsports Park 3.1 mile | us-g2-motorsports-park-1538039260 | g2-motorsports-park-3-1-mile | draft-mapped |
-| United States | G2 Motorsports Park Combined | us-g2-motorsports-park-1538039260 |  | missing-layout |
+| United States | G2 Motorsports Park Combined | us-g2-motorsports-park-1538039260 | g2-motorsports-park-combined | draft-mapped |
 | United States | G2 Motorsports Park West | us-g2-motorsports-park-1538039260 |  | missing-layout |
 | United States | Gateway Motorsports Park | us-world-wide-technology-raceway-road-course-180008394 |  | missing-layout |
 | United States | Gateway Motorsports Porsche 2mile | us-world-wide-technology-raceway-road-course-180008394 |  | missing-layout |
@@ -1856,7 +1842,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Pittsburgh Int Race Complex Full | us-pittsburgh-international-race-complex-225264359 | pittsburgh-int-race-complex-full | draft-mapped |
 | United States | Pittsburgh Int Race Complex North | us-pittsburgh-international-race-complex-225264359 | pittsburgh-int-race-complex-north | draft-mapped |
 | United States | Pittsburgh Int Race Complex South | us-pittsburgh-international-race-complex-225264359 | pittsburgh-int-race-complex-south | draft-mapped |
-| United States | Pocono - 2.5 Mile Road Course | us-pocono-raceway-109767460 |  | missing-layout |
+| United States | Pocono - 2.5 Mile Road Course | us-pocono-raceway-109767460 | pocono-2-5-mile-road-course | draft-mapped |
 | United States | Pocono - Outer | us-pocono-raceway-109767460 | pocono-outer | draft-mapped |
 | United States | Podium Full | us-podium-b03bd24f | podium-full | draft-mapped |
 | United States | Polecat Driving Academy | us-polecat-driving-academy-rl | main | draft-mapped |
@@ -1900,11 +1886,11 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Sonoma Raceway Stock Car | us-sonoma-raceway-2020-28825444 | sonoma-raceway-stock-car | draft-mapped |
 | United States | Sonoma Raceway with 7A | us-sonoma-raceway-2020-28825444 | sonoma-raceway-with-7a | draft-mapped |
 | United States | Spokane County Raceway | us-qlispe-raceway-park-93067101 | spokane-county-raceway | draft-mapped |
-| United States | Spring Mountain Raceway | us-spring-mountain-motorsports-ranch-127683895 |  | missing-layout |
-| United States | Spring Mtn Raceway East A | us-spring-mountain-motorsports-ranch-127683895 |  | missing-layout |
+| United States | Spring Mountain Raceway | us-spring-mountain-motorsports-ranch-127683895 | spring-mountain-raceway | draft-mapped |
+| United States | Spring Mtn Raceway East A | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-east-a | draft-mapped |
 | United States | Spring Mtn Raceway East B | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-east-b | draft-mapped |
-| United States | Spring Mtn Raceway Lauda B | us-spring-mountain-motorsports-ranch-127683895 |  | missing-layout |
-| United States | Spring Mtn Raceway Lauda C | us-spring-mountain-motorsports-ranch-127683895 |  | missing-layout |
+| United States | Spring Mtn Raceway Lauda B | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-lauda-b | draft-mapped |
+| United States | Spring Mtn Raceway Lauda C | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-lauda-c | draft-mapped |
 | United States | Spring Mtn Raceway Moss B | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-moss-b | draft-mapped |
 | United States | Spring Mtn Raceway Moss C | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-moss-c | draft-mapped |
 | United States | Spring Mtn Raceway Villeneuve A | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-villeneuve-a | draft-mapped |

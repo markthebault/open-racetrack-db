@@ -8,17 +8,81 @@
     "name": "Canada",
     "slug": "canada"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -79.22794445,
+    44.0473024
+  ],
+  "sourceIds": [
+    "osm-components-77095786",
+    "osm-network-goodwood-kartways"
+  ],
   "defaultLayoutId": "goodwood-kartways",
   "layouts": [
     {
       "id": "goodwood-kartways",
       "name": "Goodwood Kartways",
       "referenceId": "Canada/Goodwood Kartways",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/goodwood-kartways.geojson",
+      "description": "Combined mapped configurations: Goodwood Standard Long Track, Goodwood Long Track with Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "goodwood-standard-long",
+      "name": "Goodwood Standard Long Track",
+      "file": "layouts/goodwood-standard-long.geojson",
+      "description": "The operator event identifies Goodwood Standard Long Track. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern straight. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied."
+    },
+    {
+      "id": "goodwood-long-chicane",
+      "name": "Goodwood Long Track with Chicane",
+      "file": "layouts/goodwood-long-chicane.geojson",
+      "description": "The operator event identifies Goodwood Long Track with Chicane. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern bus-stop alternative. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-77095786",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/77095786",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-goodwood-standard-long",
+      "type": "reference",
+      "title": "Goodwood Standard Long Track identification",
+      "url": "https://goodwoodkartways.com/trak-club-race-thirteen-standard-long-track-configuration-qualifying-format/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The operator event identifies Goodwood Standard Long Track. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern straight. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-goodwood-long-chicane",
+      "type": "reference",
+      "title": "Goodwood Long Track with Chicane identification",
+      "url": "https://goodwoodkartways.com/wp-content/uploads/2022/06/2022-TRAK-RACE-SEVEN-DETAILS.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The operator event identifies Goodwood Long Track with Chicane. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern bus-stop alternative. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-goodwood-kartways",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/77095786",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T21:15:28.087Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-goodwood-kartways",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://goodwoodkartways.com/trak-club-race-thirteen-standard-long-track-configuration-qualifying-format/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T21:15:28.087Z",
+      "evidenceNote": "The operator publishes Standard Long Track and Long Track with Chicane events, and its facility plan identifies the complete northern loop, central hairpins and southern return. This general venue configuration groups those two independently mapped lap choices, excluding the northern training shortcuts and the paddock access spur. Contemporary bus-stop alignment and historical catalogue correspondence remain draft. Shared edges count once. The independent unique branch distance is 856.6 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }
