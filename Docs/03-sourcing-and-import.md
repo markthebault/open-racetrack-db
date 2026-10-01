@@ -9,6 +9,7 @@ Use these source categories:
 | Source | Permitted role |
 | --- | --- |
 | OSM ways and nodes | Route coordinates, venue location, and timing positions when mapped |
+| Public-domain georeferenced aerial imagery | Independently digitized centerlines with pinned raster, extent, pixel vertices and documented reuse evidence |
 | Independent contributed survey | Coordinates with documented contributor rights and compatible permission |
 | Track operator data with explicit permission | Coordinates within the permission's scope |
 | Official circuit website or public event documentation | Factual layout identification; map tracing only with suitable rights |
@@ -92,6 +93,14 @@ Remove contributor usernames, user IDs, and unrelated metadata. Preserve all tag
 | `queryFile` | `query.overpass` |
 
 Store a separate source record if non-OSM coordinates are used. Keep its original reusable evidence and conversion steps in the venue's `sources/` directory. Do not pretend a survey or permitted source came from OSM.
+
+### Public-domain imagery
+
+For courses absent from public road mapping, NAIP orthoimagery is an independent coordinate source. The [USGS NAIP service](https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer) identifies its imagery as public domain. Preserve the exported raster, its SHA-256, actual export dimensions and EPSG:3857 extent, and available acquisition metadata. Record the [USGS reuse evidence](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip) in the source file.
+
+Place manually reviewed centerline vertices in raster pixel coordinates. The converter uses pixel centers and the exported extent, then converts Web Mercator to WGS84. Keep vertices close enough to follow corners, inspect the route over its source image, and identify the course from operator documentation. Course coordinates must not be taken from a private comparison image or fitted to its distance. Historic imagery can differ from current infrastructure; retain that limitation and draft status.
+
+`npm run import:imagery -- --archive /absolute/path/to/tracks.zip --reference 'Country/Layout name' --source sources/venue/imagery-course.json --distance-tolerance 100` validates the pinned image, source declaration, route closure, timing neighborhood and documented distance allowance before registration. It reads timing metadata only. Generation verifies the source and image hashes offline. Imagery sources have their own `imagery` type and attribution. Their recipes use `geometrySource: "imagery"`; they never masquerade as OSM ways.
 
 Normal generation uses only pinned local source material. It MUST work without network access. A refresh can change OSM way topology; do not silently repair a broken recipe against new data.
 

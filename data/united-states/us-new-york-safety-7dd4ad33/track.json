@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -74.7796443,
+    42.489374
+  ],
+  "sourceIds": [
+    "usgs-naip-2019-nyst"
+  ],
   "defaultLayoutId": "new-york-safety-track",
   "layouts": [
     {
       "id": "new-york-safety-track",
       "name": "New York Safety Track",
       "referenceId": "United States/New York Safety Track",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/new-york-safety-track.geojson",
+      "description": "The full paved circuit follows the main straight, northern hairpin, upper switchback and southern wooded technical section visible in the independent 2019 aerial image. Pit-entry and paddock driveways are excluded. The operator identifies one full circuit with 18 turns; its advertised 2.2-mile length is approximate and is not used to scale the geometry. Independently digitized aerial centerline: 3141.9 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-naip-2019-nyst",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-01T23:00:01.567169Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash c01e5b10dd53edfffcca0ce283068c6cf4f7246b6c4838d3c409a62f05099298; reproducible pixel-to-coordinate conversion. The full paved circuit follows the main straight, northern hairpin, upper switchback and southern wooded technical section visible in the independent 2019 aerial image. Pit-entry and paddock driveways are excluded. The operator identifies one full circuit with 18 turns; its advertised 2.2-mile length is approximate and is not used to scale the geometry."
+    },
+    {
+      "id": "imagery-identity-new-york-safety-track",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://nyst.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T23:00:01.567169Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

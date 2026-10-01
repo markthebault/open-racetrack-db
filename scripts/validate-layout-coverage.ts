@@ -4,6 +4,9 @@ import {assemble} from './route';
 import {length} from '../src/geo';
 import {readNetworkSelection} from './network-selection';
 import {buildCourseNetwork} from './course-network';
+import {createHash} from 'node:crypto';
+import {dirname} from 'node:path';
+import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
 import type {LayoutCoverage} from '../src/layout-coverage';
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8'));
 const report:LayoutCoverage=await read('data/layout-coverage.json'),index=await read('data/index.json');
@@ -57,3 +60,21 @@ for(const selection of networks.records){
  assert.ok(selection.evidence&&track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
 }
 console.log(`Validated ${networks.records.length} identified aggregate networks and their component provenance.`);
+
+const imagery=await read('sources/reference/imagery-course-selections.json');
+assert.equal(imagery.schemaVersion,1);assert.equal(new Set(imagery.records.map((s:any)=>s.referenceId)).size,imagery.records.length);
+for(const selection of imagery.records){
+ const registration=catalogue.records.find((r:any)=>r.referenceId===selection.referenceId);assert.ok(registration?.geometryAvailable);
+ const entry=index.tracks.find((t:any)=>t.id===registration.trackId),track=await read(`data/${entry.file}`);
+ const recipe=await read(`sources/${track.id}/layouts/${registration.layoutId}.json`);
+ assert.equal(selection.sourcePath,`sources/${track.id}/${recipe.snapshotFile}`);
+ const bytes=await readFile(selection.sourcePath),source=imageryCourseSchema.parse(JSON.parse(bytes.toString()));
+ const hash=(b:Uint8Array)=>createHash('sha256').update(b).digest('hex');
+ assert.equal(hash(bytes),selection.snapshotSha256);assert.equal(recipe.snapshotSha256,selection.snapshotSha256);
+ const raster=await readFile(`${dirname(selection.sourcePath)}/${source.imageryFile}`);
+ assert.equal(hash(raster),source.imagerySha256);assert.equal(source.imagerySha256,selection.imagerySha256);validateImageryRaster(source,raster);
+ const data=buildImageryCourse(recipe,source,track);assert.ok(Math.abs(data.metadata.lengthM-selection.expectedLengthM)<.15);
+ assert.equal(source.identificationUrl,selection.identificationUrl);assert.equal(source.evidence,selection.evidence);
+ assert.ok(track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
+}
+console.log(`Validated ${imagery.records.length} independently digitized imagery courses, raster hashes and georeferencing.`);

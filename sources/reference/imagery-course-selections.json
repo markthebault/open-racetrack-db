@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "policy": "Course coordinates are independently digitized from licensed georeferenced aerial imagery. Pinned raster and source hashes reproduce each draft centerline. Timing GPS remains private.",
+  "records": [
+    {
+      "referenceId": "United States/New York Safety Track",
+      "sourcePath": "sources/us-new-york-safety-7dd4ad33/imagery-course.json",
+      "snapshotSha256": "371bb54c88a170b430d6778ffc07d7e3e0b8d6a45eb31bd1e0e7d4a0e330490a",
+      "imagerySha256": "c01e5b10dd53edfffcca0ce283068c6cf4f7246b6c4838d3c409a62f05099298",
+      "expectedLengthM": 3141.9,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://nyst.com/",
+      "evidence": "The full paved circuit follows the main straight, northern hairpin, upper switchback and southern wooded technical section visible in the independent 2019 aerial image. Pit-entry and paddock driveways are excluded. The operator identifies one full circuit with 18 turns; its advertised 2.2-mile length is approximate and is not used to scale the geometry."
+    },
+    {
+      "referenceId": "United States/Dixon Kart Circuit",
+      "sourcePath": "sources/us-dixon-kart-circuit-30c5083d/imagery-course-dixon-kart-circuit.json",
+      "snapshotSha256": "4c6b7c396873645d366a86d0a89e7fff8cdd96075287048fdb733f2c2ebe9c66",
+      "imagerySha256": "07dbd408acd56aa46a9ccb66ef310371dbe8adbb437ea96dff8368be5fb98718",
+      "expectedLengthM": 645.9,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://www.worldkarting.com/tracks/",
+      "evidence": "The association lists Kinsmen Kart Club at Dixon. The independently visible paved full circuit retains the northeastern bulb, central hairpin and two western hairpins. The small diagonal infield connector, pit access and neighboring dirt speedway are excluded. Fine corner alignment and driving direction remain draft."
+    },
+    {
+      "referenceId": "United States/Buttonwillow Kart Circuit",
+      "sourcePath": "sources/us-buttonwillow-kart-circuit-ff072e84/imagery-course-buttonwillow-kart-circuit.json",
+      "snapshotSha256": "605a3bf8b863d571bf201b24978f26894287a5b1cc5b1bd872b1c8cca1789146",
+      "imagerySha256": "623e741244915ab858429bee266d8175eb5751fbce7d919ee1356b0f6da22e36",
+      "expectedLengthM": 1025,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://buttonwillowraceway.com/wp-content/uploads/2024/11/brp-kart-map-kart-01.pdf",
+      "evidence": "The operator's Kart #1 course uses both west and east kart loops: Long Beach, The Glen, Zolder, Daytona, Imola, Monza, the Mulsanne Straight and Monte Carlo triangular return via Spa. The independently visible paved centerline retains those branches and excludes the oval shortcut, hot pits and surrounding main road circuit. Operator route dimensions identify a full course of roughly 952 m; mapping is not scaled to that distance."
+    }
+  ]
+}

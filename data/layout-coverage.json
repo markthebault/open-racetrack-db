@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 886,
-    "unmappedLayouts": 121,
+    "draftMapped": 889,
+    "unmappedLayouts": 118,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11968,11 +11968,14 @@
       "name": "Buttonwillow Kart Circuit",
       "timingMode": "shared",
       "trackId": "us-buttonwillow-kart-circuit-ff072e84",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "buttonwillow-kart-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-buttonwillow-500521b7",
@@ -12462,11 +12465,14 @@
       "name": "Dixon Kart Circuit",
       "timingMode": "shared",
       "trackId": "us-dixon-kart-circuit-30c5083d",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "dixon-kart-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -14172,11 +14178,14 @@
       "name": "New York Safety Track",
       "timingMode": "shared",
       "trackId": "us-new-york-safety-7dd4ad33",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "new-york-safety-track"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -24490,15 +24499,13 @@
       "name": "Buttonwillow Kart Circuit",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Buttonwillow Kart Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-buttonwillow-race-44479961",
@@ -24701,15 +24708,13 @@
       "name": "Dixon Kart Circuit",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Dixon Kart Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-dominion-raceway-089a1544",
@@ -25566,15 +25571,13 @@
       "name": "New York Safety",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "New York Safety Track"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-nola-motorsports-park-298904844",
@@ -27410,13 +27413,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/Buttonwillow Kart Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/Charlotte Motor Speedway Short",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27425,13 +27421,6 @@
     },
     {
       "recordId": "United States/Detroit City Airport",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Dixon Kart Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -27516,13 +27505,6 @@
     },
     {
       "recordId": "United States/Music City Grand Prix",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/New York Safety Track",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

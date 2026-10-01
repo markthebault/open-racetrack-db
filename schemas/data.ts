@@ -4,7 +4,7 @@ const slug=z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),text=z.string().min(1)
 export const position=z.tuple([z.number().min(-180).max(180),z.number().min(-90).max(90)]);
 const path=z.string().refine(s=>!s.includes('..')&&!s.includes('\\')&&!s.startsWith('/')&&!s.includes(':')&&s.length>0,'Unsafe relative path');
 const country=z.strictObject({code:z.string().regex(/^[A-Z]{2}$/),name:text,slug});
-const source=z.strictObject({id:slug,type:z.enum(['osm','survey','permission','reference']),title:text,url:z.url().refine(s=>/^https?:/.test(s)),license:text,retrievedAt:z.iso.datetime(),evidenceNote:text});
+const source=z.strictObject({id:slug,type:z.enum(['osm','survey','permission','imagery','reference']),title:text,url:z.url().refine(s=>/^https?:/.test(s)),license:text,retrievedAt:z.iso.datetime(),evidenceNote:text});
 const entry=z.strictObject({id:slug,name:text,file:path.nullable(),referenceId:text.optional(),missingGeometryReason:text.optional(),description:z.string().optional()});
 export const trackSchema=z.strictObject({schemaVersion:z.literal(1),id:slug,name:text,aliases:z.array(text),country,locality:text.optional(),location:position.nullable(),sourceIds:z.array(slug),defaultLayoutId:slug,layouts:z.array(entry).min(1),sources:z.array(source)});
 export const indexSchema=z.strictObject({schemaVersion:z.literal(1),tracks:z.array(z.strictObject({id:slug,name:text,aliases:z.array(text),country,locality:text.optional(),location:position.nullable(),file:path,traceCount:z.number().int().nonnegative(),layoutCount:z.number().int().positive()}))});

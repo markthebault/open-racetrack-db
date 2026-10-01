@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 886
-- unmappedLayouts: 121
+- draftMapped: 889
+- unmappedLayouts: 118
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -624,7 +624,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Bunny Loop | 1 | 1 | 0 | Bunny Loop |  |
 | United States | Bushnell Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Buttonwillow | 4 | 4 | 4 |  |  |
-| United States | Buttonwillow Kart Circuit | 1 | 1 | 0 | Buttonwillow Kart Circuit |  |
+| United States | Buttonwillow Kart Circuit | 1 | 1 | 1 |  |  |
 | United States | Buttonwillow Race | 8 | 8 | 8 |  |  |
 | United States | Buttonwillow The Circuit | 1 | 1 | 1 |  |  |
 | United States | Carolina Motorsports Park | 3 | 2 | 2 |  | main |
@@ -639,7 +639,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Daytona International Speedway | 2 | 1 | 1 |  | main |
 | United States | Detroit City Airport | 1 | 1 | 0 | Detroit City Airport |  |
 | United States | Detroit Street Circuit | 1 | 1 | 1 |  |  |
-| United States | Dixon Kart Circuit | 1 | 1 | 0 | Dixon Kart Circuit |  |
+| United States | Dixon Kart Circuit | 1 | 1 | 1 |  |  |
 | United States | Dominion Raceway | 1 | 1 | 1 |  |  |
 | United States | Dover Motor Speedway | 1 | 0 | 0 |  | main |
 | United States | Driveway Austin - | 2 | 2 | 2 |  |  |
@@ -700,7 +700,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | New Jersey Lightning | 1 | 1 | 1 |  |  |
 | United States | New Jersey Raceway Park | 1 | 1 | 1 |  |  |
 | United States | New Jersey Thunderbolt | 1 | 1 | 1 |  |  |
-| United States | New York Safety | 1 | 1 | 0 | New York Safety Track |  |
+| United States | New York Safety | 1 | 1 | 1 |  |  |
 | United States | NOLA Motorsports Park | 3 | 2 | 1 | Nola Motorsports Park | main |
 | United States | Norway Speedway | 1 | 1 | 1 |  |  |
 | United States | Norway Speedway Dirt | 1 | 1 | 1 |  |  |
@@ -884,10 +884,8 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Belle Isle |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Belle Isle GP |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Bunny Loop |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Buttonwillow Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Dixon Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Infield Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Road Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fort Devens |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -900,7 +898,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Michelin Laurens Proving Grounds |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/New York Safety Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1673,7 +1670,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Bushnell Motorsports Park | us-bushnell-motorsports-park-16aaa9aa | bushnell-motorsports-park | draft-mapped |
 | United States | Buttonwillow | us-buttonwillow-500521b7 | buttonwillow | draft-mapped |
 | United States | Buttonwillow 25a | us-buttonwillow-500521b7 | buttonwillow-25a | draft-mapped |
-| United States | Buttonwillow Kart Circuit | us-buttonwillow-kart-circuit-ff072e84 |  | missing-layout |
+| United States | Buttonwillow Kart Circuit | us-buttonwillow-kart-circuit-ff072e84 | buttonwillow-kart-circuit | draft-mapped |
 | United States | Buttonwillow Race 01 | us-buttonwillow-race-44479961 | buttonwillow-race-01 | draft-mapped |
 | United States | Buttonwillow Race 02 | us-buttonwillow-race-44479961 | buttonwillow-race-02 | draft-mapped |
 | United States | Buttonwillow Race 03 | us-buttonwillow-race-44479961 | buttonwillow-race-03 | draft-mapped |
@@ -1704,7 +1701,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Daytona 24 Hour | us-daytona-international-speedway-11371365 | daytona-24-hour | draft-mapped |
 | United States | Detroit City Airport | us-detroit-city-airport-f3ab2023 |  | missing-layout |
 | United States | Detroit Street Circuit | us-detroit-street-circuit-54f7fe14 | detroit-street-circuit | draft-mapped |
-| United States | Dixon Kart Circuit | us-dixon-kart-circuit-30c5083d |  | missing-layout |
+| United States | Dixon Kart Circuit | us-dixon-kart-circuit-30c5083d | dixon-kart-circuit | draft-mapped |
 | United States | Dominion Raceway | us-dominion-raceway-089a1544 | dominion-raceway | draft-mapped |
 | United States | Driveway Austin - Elevation Course | us-driveway-austin-elevation-course-e8d7a8bf | driveway-austin-elevation-course | draft-mapped |
 | United States | Driveway Austin - Grand Prix Course | us-driveway-austin-4113af5e | driveway-austin-grand-prix-course | draft-mapped |
@@ -1812,7 +1809,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | New Jersey Lightning | us-new-jersey-lightning-reference | main | draft-mapped |
 | United States | New Jersey Raceway Park | us-new-jersey-raceway-park-a3427ce5 | new-jersey-raceway-park | draft-mapped |
 | United States | New Jersey Thunderbolt | us-new-jersey-thunderbolt-08305c9a | new-jersey-thunderbolt | draft-mapped |
-| United States | New York Safety Track | us-new-york-safety-7dd4ad33 |  | missing-layout |
+| United States | New York Safety Track | us-new-york-safety-7dd4ad33 | new-york-safety-track | draft-mapped |
 | United States | Nola Motorsports Park | us-nola-motorsports-park-298904844 |  | missing-layout |
 | United States | Nola Motorsports Park Course A | us-nola-motorsports-park-298904844 | nola-motorsports-park-course-a | draft-mapped |
 | United States | Norway Speedway | us-norway-speedway-28bd57a2 | norway-speedway | draft-mapped |

@@ -3,21 +3,30 @@ import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
 import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout} from '../schemas/data';
 import {buildCourseNetwork} from './course-network';
+import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const outputs=new Map<string,string>();
 for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.isDirectory()).sort((a,b)=>a.name.localeCompare(b.name))){for(const folder of (await readdir(`data/${country.name}`,{withFileTypes:true})).filter(d=>d.isDirectory())){
- const dir=`data/${country.name}/${folder.name}`,track=validateTrack(await json(`${dir}/track.json`));if(!track.layouts.some(l=>l.file!==null))continue;const manifest=await json(`sources/${track.id}/import.json`),snapshot=await readFile(`sources/${track.id}/osm.json`,'utf8');
+ const dir=`data/${country.name}/${folder.name}`,track=validateTrack(await json(`${dir}/track.json`));if(!track.layouts.some(l=>l.file!==null))continue;const manifest=await json(`sources/${track.id}/import.json`),baseFile=manifest.snapshotFile??'osm.json';if(!/^[a-z0-9][a-z0-9-]*\.json$/.test(baseFile))throw new Error('Unsafe base snapshot filename');const snapshot=await readFile(`sources/${track.id}/${baseFile}`,'utf8');
  const hash=createHash('sha256').update(snapshot).digest('hex');if(hash!==manifest.snapshotSha256)throw new Error(`${track.id}: snapshot hash mismatch`);
 
  await readFile(`sources/${track.id}/review.md`,'utf8');
- for(const layout of track.layouts){if(layout.file===null)continue;const recipe=await json(`sources/${track.id}/layouts/${layout.id}.json`);const sourceFile=recipe.snapshotFile??'osm.json';if(!/^[a-z0-9][a-z0-9-]*\.json$/.test(sourceFile))throw new Error('Unsafe recipe source filename');
- const sourceBytes=sourceFile==='osm.json'?snapshot:await readFile(`sources/${track.id}/${sourceFile}`,'utf8'),sourceHash=createHash('sha256').update(sourceBytes).digest('hex');
- if(sourceFile!=='osm.json'&&!manifest.snapshots?.some((s:any)=>s.file===sourceFile&&s.sha256===sourceHash&&s.sourceId===recipe.sourceId))throw new Error(`${track.id}: unregistered layout source`);
- const ways=JSON.parse(sourceBytes).elements.filter((e:any)=>e.type==='way') as Way[];
+ for(const layout of track.layouts){if(layout.file===null)continue;const recipe=await json(`sources/${track.id}/layouts/${layout.id}.json`);const sourceFile=recipe.snapshotFile??baseFile;if(!/^[a-z0-9][a-z0-9-]*\.json$/.test(sourceFile))throw new Error('Unsafe recipe source filename');
+ const sourceBytes=sourceFile===baseFile?snapshot:await readFile(`sources/${track.id}/${sourceFile}`,'utf8'),sourceHash=createHash('sha256').update(sourceBytes).digest('hex');
+ if(sourceFile!==baseFile&&!manifest.snapshots?.some((s:any)=>s.file===sourceFile&&s.sha256===sourceHash&&s.sourceId===recipe.sourceId))throw new Error(`${track.id}: unregistered layout source`);
  if(recipe.snapshotSha256!==sourceHash)throw new Error(`${track.id}/${layout.id}: recipe hash mismatch`);if(recipe.trackId!==track.id||recipe.layoutId!==layout.id)throw new Error(`${track.id}/${layout.id}: recipe identity mismatch`);
+ if(recipe.geometrySource==='imagery'){
+  const source=imageryCourseSchema.parse(JSON.parse(sourceBytes)),image=await readFile(`sources/${track.id}/${source.imageryFile}`);
+  if(createHash('sha256').update(image).digest('hex')!==source.imagerySha256)throw new Error('Imagery raster hash mismatch');
+  validateImageryRaster(source,image);
+  const data=buildImageryCourse(recipe,source,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(data,null,2)+'\n');
+  if(!generate)validateLayout(await json(path),track,layout.id);
+  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from pinned reusable imagery`);continue;
+ }
+ const ways=JSON.parse(sourceBytes).elements.filter((e:any)=>e.type==='way') as Way[];
  if(recipe.geometryKind==='network'){
   const data=buildCourseNetwork(recipe,ways,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(data,null,2)+'\n');
   if(!generate)validateLayout(await json(path),track,layout.id);

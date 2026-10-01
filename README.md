@@ -10,11 +10,11 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 The viewer contains **763 venues across 74 countries**, with every one of the **1,007 supplied layout entries** registered. Search a venue, select a layout, and download an attributed GeoJSON trace when geometry is available.
 
-**886 supplied entries have draft course traces; 121 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) explain which source limitations still need work.
+**889 supplied entries have draft course traces; 118 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) explain which source limitations still need work.
 
-Course coordinates come from pinned OpenStreetMap data and explicit route recipes. All traces remain drafts. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
+Course coordinates come from pinned OpenStreetMap data or independently digitized public-domain aerial imagery. Explicit recipes preserve each source and its attribution. All traces remain drafts. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
 
-The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files or course boundaries. A separate manual review uses layout pictures only to identify branch choices; all course coordinates come from independent source nodes. Private timing stays outside the public database, downloads and build.
+The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files or course boundaries. A separate manual review uses layout pictures only to identify branch choices; course coordinates come from independent mapping or reusable aerial images. Private timing stays outside the public database, downloads and build.
 
 Nürburgring has nine catalogue entries, with distinct GP and Sprint traces. All eight Paul Ricard entries have draft traces, including the two short-course chicane variants and separate training circuit. Independently mapped open courses include Pikes Peak, Osnabrück, Harewood, Gurston Down and Aintree Sprint. Some separate-gate entries still use a supporting public loop; the local timing overlay trims the preview.
 
@@ -54,7 +54,7 @@ On the Mac Mini, the current preview is available to connected Tailscale devices
 
 ## Data and code licenses
 
-Original application code is MIT licensed. OSM-derived database content is attributed to OpenStreetMap contributors and distributed under ODbL 1.0. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
+Original application code is MIT licensed. Database content is distributed under ODbL 1.0. OSM-derived courses credit OpenStreetMap contributors; independently digitized NAIP courses credit USGS, USDA and The National Map. The original NAIP imagery is public domain. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
 
 ## Layout completeness
 
