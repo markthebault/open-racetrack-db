@@ -39,7 +39,9 @@
     "recover:circuits": "tsx scripts/recover-relation-courses.ts",
     "import:roads": "tsx scripts/import-road-courses.ts",
     "research:gaps": "tsx scripts/research-layout-gaps.ts",
-    "audit:archive": "tsx scripts/audit-archive-inventory.ts"
+    "audit:archive": "tsx scripts/audit-archive-inventory.ts",
+    "import:selections": "tsx scripts/import-course-selections.ts",
+    "discover:network": "node scripts/discover-course-network.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

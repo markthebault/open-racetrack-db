@@ -13,7 +13,8 @@
     51.532881700000004
   ],
   "sourceIds": [
-    "osm-network-31323174"
+    "osm-network-31323174",
+    "osm-selection-31323174"
   ],
   "defaultLayoutId": "lausitzring-2-mile",
   "layouts": [
@@ -21,8 +22,8 @@
       "id": "lausitzring-2-mile",
       "name": "Lausitzring 2 Mile",
       "referenceId": "Germany/Lausitzring 2 Mile",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-2-mile.geojson",
+      "description": "Draft configuration: Full triangular superspeedway oval; excludes the infield and its eastern return spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3241.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lausitzring-combo",
@@ -36,42 +37,42 @@
       "name": "Lausitzring GP 3.2km",
       "referenceId": "Germany/Lausitzring GP 3.2km",
       "file": "layouts/lausitzring-gp-3-2km.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3095.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
+      "description": "Draft configuration: Two western infield bends, short middle connector and short eastern return; excludes pit lanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3147.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lausitzring-gp-3-4km",
       "name": "Lausitzring GP 3.4km",
       "referenceId": "Germany/Lausitzring GP 3.4km",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-gp-3-4km.geojson",
+      "description": "Draft configuration: Two western infield bends, short middle connector and the full rounded eastern return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3373.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lausitzring-gp-3-4km-inc-turn-1",
       "name": "Lausitzring GP 3.4km Inc. Turn 1",
       "referenceId": "Germany/Lausitzring GP 3.4km Inc. Turn 1",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-gp-3-4km-inc-turn-1.geojson",
+      "description": "Draft configuration: Banked western Turn 1, short middle connector and the full rounded eastern return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3457.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lausitzring-gp-4-3km",
       "name": "Lausitzring GP 4.3km",
       "referenceId": "Germany/Lausitzring GP 4.3km",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-gp-4-3km.geojson",
+      "description": "Draft configuration: Two western infield bends, long lower infield loop and short eastern return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4254.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lausitzring-gp-4-5km",
       "name": "Lausitzring GP 4.5km",
       "referenceId": "Germany/Lausitzring GP 4.5km",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-gp-4-5km.geojson",
+      "description": "Draft configuration: Two western infield bends, long lower infield loop and full rounded eastern return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4490.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lausitzring-gp-4-5km-inc-turn-1",
       "name": "Lausitzring GP 4.5km Inc. Turn 1",
       "referenceId": "Germany/Lausitzring GP 4.5km Inc. Turn 1",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-gp-4-5km-inc-turn-1.geojson",
+      "description": "Draft configuration: Banked western Turn 1, long lower infield loop and full rounded eastern return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4574.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -83,6 +84,78 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:55.611Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-31323174",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/31323174",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-lausitzring-2-mile",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lausitzring-gp-3-4km",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lausitzring-gp-3-4km-inc-turn-1",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lausitzring-gp-4-3km",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lausitzring-gp-4-5km",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lausitzring-gp-4-5km-inc-turn-1",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lausitzring-gp-3-2km",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

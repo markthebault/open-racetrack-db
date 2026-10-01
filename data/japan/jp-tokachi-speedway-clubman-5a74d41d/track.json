@@ -8,17 +8,41 @@
     "name": "Japan",
     "slug": "japan"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    143.29146014999998,
+    42.6290274
+  ],
+  "sourceIds": [
+    "osm-selection-187997017"
+  ],
   "defaultLayoutId": "tokachi-speedway-clubman",
   "layouts": [
     {
       "id": "tokachi-speedway-clubman",
       "name": "Tokachi Speedway Clubman",
       "referenceId": "Japan/Tokachi Speedway Clubman",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/tokachi-speedway-clubman.geojson",
+      "description": "Draft configuration: Clubman configuration uses the long northern straight and lower central bend, excluding the western Grand Prix extension and optional northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3402.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-187997017",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/187997017",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-tokachi-speedway-clubman",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://tokachi-sp.com/facility/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -13,7 +13,8 @@
     35.491462
   ],
   "sourceIds": [
-    "osm-network-34350797"
+    "osm-network-34350797",
+    "osm-selection-21298956"
   ],
   "defaultLayoutId": "buttonwillow",
   "layouts": [
@@ -21,29 +22,29 @@
       "id": "buttonwillow",
       "name": "Buttonwillow",
       "referenceId": "United States/Buttonwillow",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/buttonwillow.geojson",
+      "description": "Draft configuration: Matches the numbered Race 13 configuration: Sweeper, Lost Hill and Bus Stop, with original Off Ramp. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4456.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "buttonwillow-25a",
       "name": "Buttonwillow 25a",
       "referenceId": "United States/Buttonwillow 25a",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/buttonwillow-25a.geojson",
+      "description": "Draft configuration: Star Mazda Turn and Lost Hill; Bus Stop bypassed. Uses A-section rather than original Off Ramp. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4697.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "buttonwillow-west-no-phil-hill",
       "name": "Buttonwillow West no Phil Hill",
       "referenceId": "United States/Buttonwillow West no Phil Hill",
       "file": "layouts/buttonwillow-west-no-phil-hill.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2629.9 m. Difference from the supplied layout distance 20.9 m. Course configuration still requires visual review."
+      "description": "Draft configuration: Western-only Pacific connection with Sweeper; Lost Hill bypassed. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2629.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "buttonwillow-west-with-phil-hill",
       "name": "Buttonwillow West with Phil Hill",
       "referenceId": "United States/Buttonwillow West with Phil Hill",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/buttonwillow-west-with-phil-hill.geojson",
+      "description": "Draft configuration: Western-only Pacific connection with Sweeper and Lost Hill. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2669.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -55,6 +56,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-21298956",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/relation/21298956",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:47:09.746Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-buttonwillow",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://buttonwillowraceway.com/track-info/track-maps/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:47:09.746Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-buttonwillow-25a",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://buttonwillowraceway.com/track-info/track-maps/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:47:09.746Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-buttonwillow-west-with-phil-hill",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://buttonwillowraceway.com/track-info/track-maps/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:47:09.746Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-buttonwillow-west-no-phil-hill",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://buttonwillowraceway.com/track-info/track-maps/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:47:09.746Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

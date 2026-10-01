@@ -8,17 +8,41 @@
     "name": "India",
     "slug": "india"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    79.98464609999999,
+    13.00189085
+  ],
+  "sourceIds": [
+    "osm-selection-25671471"
+  ],
   "defaultLayoutId": "chennai",
   "layouts": [
     {
       "id": "chennai",
       "name": "Chennai",
       "referenceId": "India/Chennai",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/chennai.geojson",
+      "description": "Draft configuration: Full circuit with western double return and eastern outer loop; excludes the shorter eastern-only course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3724.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-25671471",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/25671471",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:52.703Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-chennai",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/25671471",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:19:52.703Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

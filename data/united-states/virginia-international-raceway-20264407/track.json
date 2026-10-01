@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-20264407"
+    "osm-network-20264407",
+    "osm-selection-20264407"
   ],
   "defaultLayoutId": "virginia-int-raceway-full",
   "layouts": [
@@ -28,22 +29,22 @@
       "id": "virginia-int-raceway-full",
       "name": "Virginia Int Raceway Full",
       "referenceId": "United States/Virginia Int Raceway Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/virginia-int-raceway-full.geojson",
+      "description": "Draft configuration: Full outer road course with direct southwestern straight; excludes both central infield connectors. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5266.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "virginia-int-raceway-grand",
       "name": "Virginia Int Raceway Grand",
       "referenceId": "United States/Virginia Int Raceway Grand",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/virginia-int-raceway-grand.geojson",
+      "description": "Draft configuration: Grand course combining the northern outer section, central linked bends and long southern infield hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6646.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "virginia-int-raceway-grand-east",
       "name": "Virginia Int Raceway Grand East",
       "referenceId": "United States/Virginia Int Raceway Grand East",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/virginia-int-raceway-grand-east.geojson",
+      "description": "Draft configuration: Grand East course using the eastern central connector and long southern infield hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6475.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "virginia-int-raceway-north",
@@ -56,15 +57,15 @@
       "id": "virginia-int-raceway-scca",
       "name": "Virginia Int Raceway SCCA",
       "referenceId": "United States/Virginia Int Raceway SCCA",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/virginia-int-raceway-scca.geojson",
+      "description": "Draft configuration: Full outer road course with direct southwestern straight; excludes both central infield connectors. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5266.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "virginia-int-raceway-south",
       "name": "Virginia Int Raceway South",
       "referenceId": "United States/Virginia Int Raceway South",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/virginia-int-raceway-south.geojson",
+      "description": "Draft configuration: South course using the central crossover and southern outer section; excludes the northern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2646.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -85,6 +86,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-20264407",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-virginia-int-raceway-full",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-virginia-int-raceway-grand",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-virginia-int-raceway-grand-east",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-virginia-int-raceway-scca",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-virginia-int-raceway-south",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

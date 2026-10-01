@@ -1,5 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {assemble} from './route';
+import {length} from '../src/geo';
 import type {LayoutCoverage} from '../src/layout-coverage';
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8'));
 const report:LayoutCoverage=await read('data/layout-coverage.json'),index=await read('data/index.json');
@@ -20,3 +22,23 @@ const expectedGaps=catalogue.records.filter((r:any)=>!r.geometryAvailable).map((
 assert.deepEqual(research.records.map((r:any)=>r.referenceId).sort(),expectedGaps);assert.equal(new Set(research.records.map((r:any)=>r.referenceId)).size,research.records.length);
 const reasons:Record<string,number>={};for(const row of research.records){const registration=catalogue.records.find((r:any)=>r.referenceId===row.referenceId);assert.equal(row.trackId,registration.trackId);assert.equal(row.layoutId,registration.layoutId);assert.ok(row.nextStep);assert.deepEqual(Object.keys(row).filter(k=>/^(point|gates|coordinates|lat|lon|latitude|longitude|bounds)$/i.test(k)),[]);reasons[row.reason]=(reasons[row.reason]??0)+1;}
 assert.deepEqual(research.summary,reasons);console.log(`Validated source limitations for all ${research.records.length} remaining geometry gaps.`);
+
+const selections=await read('sources/reference/course-selections.json');
+assert.equal(selections.schemaVersion,1);
+assert.equal(new Set(selections.records.map((s:any)=>s.referenceId)).size,selections.records.length);
+for(const selection of selections.records){
+ const registration=catalogue.records.find((r:any)=>r.referenceId===selection.referenceId);assert.ok(registration?.geometryAvailable);
+ const recipe=await read(`sources/${registration.trackId}/layouts/${registration.layoutId}.json`);
+ assert.deepEqual(recipe.segments,selection.segments);assert.equal(recipe.closed,selection.closed);
+ const snapshot=await read(`sources/${registration.trackId}/${recipe.snapshotFile}`);
+ const trace=assemble(snapshot.elements,recipe.segments,recipe.closed);
+ assert.ok(Math.abs(length(trace)-selection.expectedLengthM)<.15);
+ for(const segment of recipe.segments){
+  const tags=snapshot.elements.find((w:any)=>w.id===segment.wayId).tags??{};
+  assert.notEqual(tags.area,'yes');assert.ok(!/^pit[_ -]?lane$/i.test(tags.service??''));assert.ok(!/^pit[_ -]?lane$/i.test(tags.raceway??''));
+  assert.ok(!/^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(tags.name??''));
+ }
+ const entry=index.tracks.find((t:any)=>t.id===registration.trackId),track=await read(`data/${entry.file}`);
+ assert.ok(track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
+}
+console.log(`Validated ${selections.records.length} explicitly identified course selections against exact source recipes.`);

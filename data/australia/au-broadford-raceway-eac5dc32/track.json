@@ -8,17 +8,41 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    145.08297025000002,
+    -37.2161316
+  ],
+  "sourceIds": [
+    "osm-selection-345816065"
+  ],
   "defaultLayoutId": "broadford-raceway",
   "layouts": [
     {
       "id": "broadford-raceway",
       "name": "Broadford Raceway",
       "referenceId": "Australia/Broadford Raceway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/broadford-raceway.geojson",
+      "description": "Draft configuration: The single independently mapped road circuit matches the long northern loop and southern infield hairpin. The supplied scalar distance exceeds the source trace by 652 m; geometry is retained at its actual source distance. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2164.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-345816065",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/345816065",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-broadford-raceway",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.broadfordmotorcyclecomplex.com.au/about-us/maps/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

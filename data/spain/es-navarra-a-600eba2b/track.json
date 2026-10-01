@@ -8,17 +8,41 @@
     "name": "Spain",
     "slug": "spain"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -2.1654069,
+    42.56008995
+  ],
+  "sourceIds": [
+    "osm-selection-navarra-2020-103746067"
+  ],
   "defaultLayoutId": "navarra-a",
   "layouts": [
     {
       "id": "navarra-a",
       "name": "Navarra A",
       "referenceId": "Spain/Navarra A",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/navarra-a.geojson",
+      "description": "Draft configuration: Original pre-2024 circuit uses the northern hairpin, western return and two southeastern switchbacks, before the 2024 extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3924.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-navarra-2020-103746067",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/103746067",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T16:22:48.060Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-navarra-a",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.msv.com/news/2024/jan/29/msv-announces-major-twophase-redevelopment-at-circuito-de-navarra",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T16:22:48.060Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "venue-reference"
+    "venue-reference",
+    "osm-selection-45854556"
   ],
   "defaultLayoutId": "grand-prix",
   "layouts": [
@@ -29,8 +30,8 @@
       "id": "magny-cours-club",
       "name": "Magny Cours Club",
       "referenceId": "France/Magny Cours Club",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/magny-cours-club.geojson",
+      "description": "Draft configuration: Club configuration retains the northern kink, eastern tight turn and southern curved return; straight shortcuts excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2547.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -51,6 +52,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:43:04.719Z",
       "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    },
+    {
+      "id": "osm-selection-45854556",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/45854556",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-magny-cours-club",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.circuitmagnycours.com/piste-club/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

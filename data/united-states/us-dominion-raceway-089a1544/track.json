@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -77.50312794999999,
+    38.13973365
+  ],
+  "sourceIds": [
+    "osm-selection-553061025"
+  ],
   "defaultLayoutId": "dominion-raceway",
   "layouts": [
     {
       "id": "dominion-raceway",
       "name": "Dominion Raceway",
       "referenceId": "United States/Dominion Raceway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/dominion-raceway.geojson",
+      "description": "Draft configuration: Full road circuit with long diagonal straight and northern infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3183.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-553061025",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/553061025",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-dominion-raceway",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/553061025",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

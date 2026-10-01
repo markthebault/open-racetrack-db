@@ -8,17 +8,41 @@
     "name": "Hungary",
     "slug": "hungary"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    19.37945995,
+    47.2463616
+  ],
+  "sourceIds": [
+    "osm-selection-182453038"
+  ],
   "defaultLayoutId": "kakucs-ring",
   "layouts": [
     {
       "id": "kakucs-ring",
       "name": "Kakucs Ring",
       "referenceId": "Hungary/Kakucs Ring",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/kakucs-ring.geojson",
+      "description": "Draft configuration: Full circuit with rounded northern bulge, southern return and eastern outer corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1006.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-182453038",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/182453038",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:12:04.161Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-kakucs-ring",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/182453038",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:12:04.161Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -77.97172135,
+    39.235740500000006
+  ],
+  "sourceIds": [
+    "osm-selection-471472805"
+  ],
   "defaultLayoutId": "summit-point-motorsports-park",
   "layouts": [
     {
       "id": "summit-point-motorsports-park",
       "name": "Summit Point Motorsports Park",
       "referenceId": "United States/Summit Point Motorsports Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/summit-point-motorsports-park.geojson",
+      "description": "Draft configuration: Main course with northern hooked corner, southeastern long return and direct eastern straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3218.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-471472805",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/471472805",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-summit-point-motorsports-park",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/471472805",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

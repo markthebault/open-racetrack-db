@@ -13,7 +13,8 @@
     39.54033263499996
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-28825115"
   ],
   "defaultLayoutId": "thunderhill-raceway-park-5mile",
   "layouts": [
@@ -27,36 +28,36 @@
       "id": "thunderhill-raceway-park-5mile",
       "name": "Thunderhill Raceway Park - 5mile",
       "referenceId": "United States/Thunderhill Raceway Park - 5mile",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thunderhill-raceway-park-5mile.geojson",
+      "description": "Draft configuration: Combined configuration links both circuits, retains the southwestern Omega section and uses the eastern Hill Bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 7339.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-east",
       "name": "Thunderhill Raceway Park East",
       "referenceId": "United States/Thunderhill Raceway Park East",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thunderhill-raceway-park-east.geojson",
+      "description": "Draft configuration: Eastern circuit uses the Hill Bypass and excludes the western circuit connectors. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4595.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-no-turn-5",
       "name": "Thunderhill Raceway Park no Turn 5",
       "referenceId": "United States/Thunderhill Raceway Park no Turn 5",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thunderhill-raceway-park-no-turn-5.geojson",
+      "description": "Draft configuration: Eastern circuit bypasses the Cyclone at Turn 5 using the independently named Hill Bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4595.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-turn-5",
       "name": "Thunderhill Raceway Park Turn 5",
       "referenceId": "United States/Thunderhill Raceway Park Turn 5",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thunderhill-raceway-park-turn-5.geojson",
+      "description": "Draft configuration: Eastern circuit retains the Cyclone at Turn 5 and excludes the Hill Bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4608.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-west",
       "name": "Thunderhill Raceway Park West",
       "referenceId": "United States/Thunderhill Raceway Park West",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thunderhill-raceway-park-west.geojson",
+      "description": "Draft configuration: Western circuit retains the southwestern Omega section and excludes the eastern circuit. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2673.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -68,6 +69,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-28825115",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/28825115",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-thunderhill-raceway-park-5mile",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thunderhill.com/track-info/track-maps",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-thunderhill-raceway-park-east",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thunderhill.com/track-info/track-maps",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-thunderhill-raceway-park-no-turn-5",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thunderhill.com/track-info/track-maps",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-thunderhill-raceway-park-turn-5",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thunderhill.com/track-info/track-maps",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-thunderhill-raceway-park-west",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thunderhill.com/track-info/track-maps",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

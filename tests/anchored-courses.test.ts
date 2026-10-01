@@ -13,6 +13,10 @@ test('equally long distinct configurations remain ambiguous',()=>{
  const c=way(3,[2,4,1],[[7.001,50],[7.0005,49.999],[7,50]]),nominal=length(assemble([a,b],[{wayId:1,wayVersion:1,fromIndex:0,toIndex:1},{wayId:2,wayVersion:1,fromIndex:0,toIndex:2}],true));
  const found=anchoredCourses([a,b,c],[7.0005,50],nominal,{toleranceM:2,separationM:2});assert.equal(found.unique,false);assert.equal(found.candidates.length,2);
 });
+test('duplicate source labels retain a unique geometric route',()=>{
+ const nominal=length(assemble([a,b],[{wayId:1,wayVersion:1,fromIndex:0,toIndex:1},{wayId:2,wayVersion:1,fromIndex:0,toIndex:2}],true));
+ const found=anchoredCourses([a,b,{...a,id:10},{...b,id:11}],[7.0005,50],nominal,{toleranceM:1,separationM:1});assert.equal(found.truncated,false);assert.equal(found.unique,true);assert.equal(found.candidates.length,1);
+});
 test('missing node connectivity, excessive displacement and exhausted search never count as unique',()=>{
  const c={...b,nodes:[20,3,1]};assert.equal(anchoredCourses([a,c],[7.0005,50],310).unique,false);assert.equal(anchoredCourses([a,b],[7.1,50],310).unique,false);assert.equal(anchoredCourses([a,b],[7.0005,50],310,{maximumSteps:0}).unique,false);
 });

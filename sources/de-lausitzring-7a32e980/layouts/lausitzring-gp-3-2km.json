@@ -2,27 +2,27 @@
   "schemaVersion": 1,
   "trackId": "de-lausitzring-7a32e980",
   "layoutId": "lausitzring-gp-3-2km",
-  "sourceId": "osm-network-31323174",
-  "snapshotFile": "course-network-31323174.json",
-  "snapshotSha256": "2ffcd3439562e13e28912032b9bf66b92cf7080ef7bc0993631128784598f188",
+  "sourceId": "osm-selection-31323174",
+  "snapshotFile": "selected-network-31323174.json",
+  "snapshotSha256": "8a6f292e3af603cb4228f1fc85b7d1836dbe3b3e14e9d84429701c278e626a88",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3095.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
+    "Draft configuration: Two western infield bends, short middle connector and short eastern return; excludes pit lanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3147.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
   ],
   "segments": [
     {
-      "wayId": 766116000,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 17
+      "wayId": 115077605,
+      "wayVersion": 10,
+      "fromIndex": 139,
+      "toIndex": 142
     },
     {
       "wayId": 766115999,
       "wayVersion": 7,
-      "fromIndex": 8,
+      "fromIndex": 0,
       "toIndex": 38
     },
     {
@@ -35,31 +35,37 @@
       "wayId": 115077605,
       "wayVersion": 10,
       "fromIndex": 25,
-      "toIndex": 28
+      "toIndex": 26
     },
     {
-      "wayId": 766116408,
+      "wayId": 470915848,
+      "wayVersion": 5,
+      "fromIndex": 0,
+      "toIndex": 1
+    },
+    {
+      "wayId": 864182816,
       "wayVersion": 1,
       "fromIndex": 0,
-      "toIndex": 2
+      "toIndex": 9
     },
     {
-      "wayId": 115077607,
-      "wayVersion": 13,
-      "fromIndex": 0,
-      "toIndex": 14
-    },
-    {
-      "wayId": 34401939,
-      "wayVersion": 7,
-      "fromIndex": 0,
-      "toIndex": 10
+      "wayId": 115077605,
+      "wayVersion": 10,
+      "fromIndex": 59,
+      "toIndex": 103
     },
     {
       "wayId": 827584052,
       "wayVersion": 2,
-      "fromIndex": 16,
+      "fromIndex": 0,
       "toIndex": 23
+    },
+    {
+      "wayId": 766116001,
+      "wayVersion": 2,
+      "fromIndex": 0,
+      "toIndex": 2
     }
   ],
   "gates": []

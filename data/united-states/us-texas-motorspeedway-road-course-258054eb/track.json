@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -97.281468,
+    33.0366085
+  ],
+  "sourceIds": [
+    "osm-selection-104503520"
+  ],
   "defaultLayoutId": "texas-motorspeedway-road-course",
   "layouts": [
     {
       "id": "texas-motorspeedway-road-course",
       "name": "Texas Motorspeedway Road Course",
       "referenceId": "United States/Texas Motorspeedway Road Course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/texas-motorspeedway-road-course.geojson",
+      "description": "Draft configuration: Road course using the full outer oval and kinked southern infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3719.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-104503520",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/104503520",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-texas-motorspeedway-road-course",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/104503520",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

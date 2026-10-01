@@ -13,7 +13,8 @@
     36.662008936
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-187447521"
   ],
   "defaultLayoutId": "nikko",
   "layouts": [
@@ -27,15 +28,15 @@
       "id": "nikko",
       "name": "Nikko",
       "referenceId": "Japan/Nikko",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/nikko.geojson",
+      "description": "Draft configuration: Full circuit including the southern inner hairpin and northern hooked turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1020.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "nikko-circuit",
       "name": "Nikko Circuit",
       "referenceId": "Japan/Nikko Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/nikko-circuit.geojson",
+      "description": "Draft configuration: Full circuit including the southern inner hairpin and northern hooked turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1020.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -47,6 +48,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:13.081Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-187447521",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/187447521",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-nikko",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/187447521",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-nikko-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/187447521",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

@@ -8,17 +8,41 @@
     "name": "Chile",
     "slug": "chile"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -70.63067825,
+    -34.03728305
+  ],
+  "sourceIds": [
+    "osm-selection-360785716"
+  ],
   "defaultLayoutId": "autodromo-de-codegua",
   "layouts": [
     {
       "id": "autodromo-de-codegua",
       "name": "Autodromo de Codegua",
       "referenceId": "Chile/Autodromo de Codegua",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-de-codegua.geojson",
+      "description": "Draft configuration: Full course with rounded northwestern corner, two northern linked bends and both southern parallel returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4393.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-360785716",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/360785716",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:43.163Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-autodromo-de-codegua",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/360785716",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:43.163Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

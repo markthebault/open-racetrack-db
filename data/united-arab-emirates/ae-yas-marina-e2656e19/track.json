@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-relation-11378665",
-    "osm-network-168477013"
+    "osm-network-168477013",
+    "osm-selection-168477013",
+    "osm-selection-yas-2020-168477013"
   ],
   "defaultLayoutId": "yas-marina-combo",
   "layouts": [
@@ -43,29 +45,29 @@
       "id": "yas-marina-north",
       "name": "Yas Marina North",
       "referenceId": "United Arab Emirates/Yas Marina North",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/yas-marina-north.geojson",
+      "description": "Draft configuration: Historical northern configuration retains the top hairpin and smooth western straight, excluding the western chicane and GP southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3119.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-north-chicane",
       "name": "Yas Marina North Chicane",
       "referenceId": "United Arab Emirates/Yas Marina North Chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/yas-marina-north-chicane.geojson",
+      "description": "Draft configuration: Historical northern configuration retains the top hairpin and adds the western straight chicane, excluding the southern GP extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3144.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-north-corkscrew",
       "name": "Yas Marina North Corkscrew",
       "referenceId": "United Arab Emirates/Yas Marina North Corkscrew",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/yas-marina-north-corkscrew.geojson",
+      "description": "Draft configuration: Northern short course closing through the central corkscrew connector and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2300.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-north-handling",
       "name": "Yas Marina North Handling",
       "referenceId": "United Arab Emirates/Yas Marina North Handling",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/yas-marina-north-handling.geojson",
+      "description": "Draft configuration: Northern handling circuit including the western and southern stepped returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 964.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-south",
@@ -93,6 +95,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:19:59.057Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-168477013",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/168477013",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:59.056Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-yas-marina-north-corkscrew",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/168477013",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:19:59.056Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-yas-marina-north-handling",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/168477013",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:19:59.056Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-selection-yas-2020-168477013",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/168477013",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T16:22:45.600Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-yas-marina-north",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://static.myconnect.ae/-/media/yasconnect/project/ymc/venuehire/yas-marina-circuit-overview.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T16:22:45.600Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-yas-marina-north-chicane",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://static.myconnect.ae/-/media/yasconnect/project/ymc/venuehire/yas-marina-circuit-overview.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T16:22:45.600Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

@@ -8,17 +8,41 @@
     "name": "Brazil",
     "slug": "brazil"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -51.0191399,
+    -30.04853325
+  ],
+  "sourceIds": [
+    "osm-selection-112022834"
+  ],
   "defaultLayoutId": "taruma",
   "layouts": [
     {
       "id": "taruma",
       "name": "Taruma",
       "referenceId": "Brazil/Taruma",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/taruma.geojson",
+      "description": "Draft configuration: Full course with rounded southwestern return and direct northern straight; excludes the added northern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3024.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-112022834",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/112022834",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:38.274Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-taruma",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/112022834",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:38.274Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

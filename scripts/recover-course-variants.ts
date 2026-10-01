@@ -10,7 +10,7 @@ const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];if(!a
 const {records}=readTimingArchive(archive),read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),save=async(p:string,x:unknown)=>writeFile(p,JSON.stringify(x,null,2)+'\n');
 const registry=await read('sources/reference/catalogue.json'),index=await read('data/index.json'),matches=await read('sources/reference/layout-matches.json');
 const aliases:Record<string,string>={'Czech Republic':'CZ','Turkey':'TR','United Kingdom':'GB','Canary Islands':'ES','Isle Of Man':'IM','Russia':'RU','South Korea':'KR','Taiwan':'TW','Vietnam':'VN','United States':'US','United Arab Emirates':'AE'};
-const eligible=(w:Way)=>w.tags?.area!=='yes'&&(w.tags?.highway==='raceway'||w.tags?.['disused:highway']==='raceway')&&w.tags?.service!=='pit_lane'&&w.tags?.raceway!=='pit_lane'&&!/pit[ _-]?(lane|road|entry|exit)|boxengasse|boxenausfahrt|sortie stands/i.test(w.tags?.name??'');
+const eligible=(w:Way)=>w.tags?.area!=='yes'&&(w.tags?.highway==='raceway'||w.tags?.['disused:highway']==='raceway')&&!/^pit[_ -]?lane$/i.test(w.tags?.service??'')&&!/^pit[_ -]?lane$/i.test(w.tags?.raceway??'')&&!/pit[ _-]?(lane|road|entry|exit)|boxengasse|boxenausfahrt|sortie stands/i.test(w.tags?.name??'');
 let added=0;const unresolved:any[]=[];
 for(const name of new Set(records.map(r=>r.country))){
  const country=worldCountries.find(c=>c.code===aliases[name]||c.name.toLowerCase()===name.toLowerCase())!;

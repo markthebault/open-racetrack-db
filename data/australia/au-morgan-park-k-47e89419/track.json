@@ -8,17 +8,41 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    152.0342291,
+    -28.2605075
+  ],
+  "sourceIds": [
+    "osm-selection-677545751"
+  ],
   "defaultLayoutId": "morgan-park-k",
   "layouts": [
     {
       "id": "morgan-park-k",
       "name": "Morgan Park K",
       "referenceId": "Australia/Morgan Park K",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/morgan-park-k.geojson",
+      "description": "Draft configuration: Full northern extension and southwestern loop, excluding the interior oval and service detours. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2976.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-677545751",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/677545751",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-morgan-park-k",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.morganparkraceway.com.au/our-track",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

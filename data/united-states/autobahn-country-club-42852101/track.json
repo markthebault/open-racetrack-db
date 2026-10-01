@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-42852101"
+    "osm-network-42852101",
+    "osm-selection-42852101"
   ],
   "defaultLayoutId": "autobahn-country-club",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "autobahn-country-club",
       "name": "Autobahn Country Club",
       "referenceId": "United States/Autobahn Country Club",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autobahn-country-club.geojson",
+      "description": "Draft configuration: Combined north and south courses, with the long western straight and both infield returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5688.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "autobahn-country-club-north",
@@ -42,8 +43,8 @@
       "id": "autobahn-country-club-south",
       "name": "Autobahn Country Club South",
       "referenceId": "United States/Autobahn Country Club South",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autobahn-country-club-south.geojson",
+      "description": "Draft configuration: South course with its short northern connector, eastern turnaround and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3312.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -73,6 +74,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-42852101",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/42852101",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-autobahn-country-club",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/42852101",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-autobahn-country-club-south",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/42852101",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

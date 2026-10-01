@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -80.262699,
+    25.904058149999997
+  ],
+  "sourceIds": [
+    "osm-selection-917322254"
+  ],
   "defaultLayoutId": "miami-concours-club-outer-loop",
   "layouts": [
     {
       "id": "miami-concours-club-outer-loop",
       "name": "Miami Concours Club Outer Loop",
       "referenceId": "United States/Miami Concours Club Outer Loop",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/miami-concours-club-outer-loop.geojson",
+      "description": "Draft configuration: Outer loop with both long western returns and direct northern connector; excludes the extra triangular northern detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2724.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-917322254",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/917322254",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-miami-concours-club-outer-loop",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/917322254",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

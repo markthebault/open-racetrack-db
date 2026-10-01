@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-542888894"
+    "osm-network-542888894",
+    "osm-selection-542888894"
   ],
   "defaultLayoutId": "tailem-bend-east",
   "layouts": [
@@ -35,8 +36,8 @@
       "id": "tailem-bend-gt",
       "name": "Tailem Bend GT",
       "referenceId": "Australia/Tailem Bend GT",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/tailem-bend-gt.geojson",
+      "description": "Draft configuration: Full GT configuration combines the eastern and western loops, excluding the rectangular northern pit detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 7759.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "tailem-bend-international",
@@ -85,6 +86,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-542888894",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/542888894",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-tailem-bend-gt",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thebend.com.au/motor-racing-circuit",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

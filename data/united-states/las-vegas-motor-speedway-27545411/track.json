@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-125207287",
-    "osm-network-51319172"
+    "osm-network-51319172",
+    "osm-selection-51319172"
   ],
   "defaultLayoutId": "main",
   "layouts": [
@@ -51,8 +52,8 @@
       "id": "lvms-outfield-road-course-chicane",
       "name": "LVMS Outfield Road Course Chicane",
       "referenceId": "United States/LVMS Outfield Road Course Chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-outfield-road-course-chicane.geojson",
+      "description": "Draft configuration: Outfield road course including the northern connector chicane and southern angled return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3896.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lvms-super-speedway",
@@ -96,6 +97,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-51319172",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/51319172",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-lvms-outfield-road-course-chicane",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/51319172",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

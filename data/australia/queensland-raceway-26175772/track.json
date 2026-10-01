@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-26175772"
+    "osm-network-26175772",
+    "osm-selection-26175772"
   ],
   "defaultLayoutId": "queensland-raceway-club-circuit",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "queensland-raceway-club-circuit",
       "name": "Queensland Raceway Club Circuit",
       "referenceId": "Australia/Queensland Raceway Club Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/queensland-raceway-club-circuit.geojson",
+      "description": "Draft configuration: Southern club configuration uses the curved infield crossover and excludes the northern loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2164.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "queensland-raceway-combo-circuit",
@@ -42,22 +43,22 @@
       "id": "queensland-raceway-national-circuit",
       "name": "Queensland Raceway National Circuit",
       "referenceId": "Australia/Queensland Raceway National Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/queensland-raceway-national-circuit.geojson",
+      "description": "Draft configuration: Full paperclip configuration excludes both infield shortcut detours. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3157.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "queensland-raceway-sportsman",
       "name": "Queensland Raceway Sportsman",
       "referenceId": "Australia/Queensland Raceway Sportsman",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/queensland-raceway-sportsman.geojson",
+      "description": "Draft configuration: Full western straight and northern infield crossover; excludes the southern shortcut. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2173.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "queensland-raceway-sprint-circuit",
       "name": "Queensland Raceway Sprint Circuit",
       "referenceId": "Australia/Queensland Raceway Sprint Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/queensland-raceway-sprint-circuit.geojson",
+      "description": "Draft configuration: Compact configuration uses both curved crossovers. The historical catalogue distance differs from the source trace by 139 m; the route is identified by its two crossover branches. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2014.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -78,6 +79,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-26175772",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/26175772",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-queensland-raceway-club-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.qldraceways.com.au/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-queensland-raceway-national-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.qldraceways.com.au/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-queensland-raceway-sportsman",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.qldraceways.com.au/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-queensland-raceway-sprint-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.qldraceways.com.au/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:55.544Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }
