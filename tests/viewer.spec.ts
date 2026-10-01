@@ -23,7 +23,7 @@ test('every catalogue entry opens and only mapped layouts offer traces and downl
    const response=await request.get((await page.locator('#download').getAttribute('href'))!);
    expect(response.ok()).toBeTruthy();const data=await response.json();
    expect(data.metadata.trackId).toBe(track.id);expect(data.metadata.layoutId).toBe(layout.id);
-   expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);
+   expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);if(data.metadata.geometryKind==='network'){expect(data.metadata.schemaVersion).toBe(2);expect(data.features[0].geometry.type).toBe('MultiLineString');await expect(page.locator('#selection')).toContainText('Track network');}
   }
  }
  expect(errors).toEqual([]);
@@ -107,4 +107,20 @@ test('Pikes Peak is an open hillclimb rather than an artificially closed loop',a
  await page.goto('/?track=us-pikes-peak-hillclimb-ab97c20e&layout=pikes-peak-hillclimb');await expect(page.locator('#message')).toHaveText('Layout ready');
  const data=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json(),trace=data.features[0].geometry.coordinates;
  expect(data.metadata.closed).toBe(false);expect(data.metadata.timingMode).toBe('separate');expect(data.metadata.lengthM).toBeGreaterThan(19000);expect(trace[0]).not.toEqual(trace.at(-1));
+});
+
+test('Queensland aggregate preserves its four configurations and switches back to a driving route',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ const index=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
+ const entry=index.tracks.find(t=>t.name.includes('Queensland Raceway'))!;
+ const track=validateTrack(JSON.parse(await readFile(`data/${entry.file}`,'utf8')));
+ const combo=track.layouts.find(l=>l.name.includes('Combo'))!;
+ await page.goto(`/?track=${track.id}&layout=${combo.id}`);await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#selection')).toContainText('Track network');await expect(page.locator('#selection')).toContainText('Mapped branch length');
+ const network=await(await request.get((await page.locator('#download').getAttribute('href'))!)).json();
+ expect(network.features[0].geometry.type).toBe('MultiLineString');expect(network.features[0].geometry.coordinates).toHaveLength(4);
+ expect(network.metadata.closed).toBe(false);expect(network.metadata.lengthM).toBeLessThan(6000);
+ await page.locator('#layout').selectOption('queensland-raceway-national-circuit');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#selection')).toContainText('Closed circuit');await expect(page.locator('#selection')).not.toContainText('Track network');
+ const course=await(await request.get((await page.locator('#download').getAttribute('href'))!)).json();expect(course.features[0].geometry.type).toBe('LineString');
 });

@@ -2,7 +2,8 @@ import {readFile,writeFile,mkdir,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {readTimingArchive} from './reference-timing';
 import {assemble,type Way} from './route';
-import {bounds,length,nearestEdge} from '../src/geo';
+import {bounds,length} from '../src/geo';
+import {validateSelectionTiming} from './selection-timing';
 
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];
 if(!args.includes('--archive')||!archive)throw new Error('Use --archive /absolute/path/to/archive.zip');
@@ -37,9 +38,8 @@ for(const selection of selections){
   return tags.area==='yes'||/^pit[_ -]?lane$/i.test(tags.service??'')||/^pit[_ -]?lane$/i.test(tags.raceway??'')||/^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(tags.name??'');
  }))throw new Error('Selected course includes an area or pit/service lane');
  if(Math.abs(measured-selection.expectedLengthM)>.15)throw new Error('Selected independent trace changed');
- if(record.gates.some(g=>nearestEdge(g.point,trace).displacementM>30))throw new Error('Selected course fails timing-location check');
+ const timingMode=validateSelectionTiming(record,trace,selection.closed);
  if(record.nominalLengthM&&Math.abs(measured-record.nominalLengthM)>selection.maximumDistanceDifferenceM)throw new Error('Selected course exceeds documented distance allowance');
- if(record.gates.length!==1||!selection.closed)throw new Error('This importer currently accepts closed shared-timing courses only');
  const identity=selection.relationId??Math.min(...selection.sourceWayIds);
  const url=selection.relationId?`https://www.openstreetmap.org/relation/${selection.relationId}`:`https://www.openstreetmap.org/way/${identity}`;
  const networkKey=selection.sourcePath?.match(/^sources\/course-networks\/([a-z0-9-]+)\/osm\.json$/)?.[1];
@@ -69,7 +69,7 @@ for(const selection of selections){
   if(existing<0)track.sources.push(source);else track.sources[existing]=source;
  }
  if(!track.location){const b=bounds(trace);track.location=[(b[0]+b[2])/2,(b[1]+b[3])/2];}
- await save(`${root}/layouts/${layout.id}.json`,{schemaVersion:1,trackId:track.id,layoutId:layout.id,sourceId,snapshotFile:file,snapshotSha256:hash,closed:selection.closed,timingMode:'shared',geometryStatus:'draft',reviewedAt:null,notes:[note],segments:selection.segments,gates:[]});
+ await save(`${root}/layouts/${layout.id}.json`,{schemaVersion:1,trackId:track.id,layoutId:layout.id,sourceId,snapshotFile:file,snapshotSha256:hash,closed:selection.closed,timingMode,geometryStatus:'draft',reviewedAt:null,notes:[note],segments:selection.segments,gates:[]});
  if(!registration.geometryAvailable)added++;
  layout.file=`layouts/${layout.id}.geojson`;layout.description=note;delete layout.missingGeometryReason;
  registration.geometryAvailable=true;matches[`${track.id}/${layout.id}`]={recordId:record.id,name:record.name,evidence:note};

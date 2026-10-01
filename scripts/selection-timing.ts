@@ -1,0 +1,17 @@
+import {distance, equal, nearestEdge, type Position} from '../src/geo';
+import type {TimingRecord} from './reference-timing';
+
+// Open drafts must end at independently mapped nodes near the two timing gates.
+// Being near a gate somewhere along a longer road is insufficient.
+export function validateSelectionTiming(record: TimingRecord, trace: Position[], closed: boolean) {
+ if (trace.length < 2) throw new Error('Selected course has no route');
+ if (record.gates.some(g => nearestEdge(g.point, trace).displacementM > 30)) throw new Error('Selected course fails timing-location check');
+ if (closed) {
+  if (record.gates.length !== 1 || record.gates[0].role !== 'start_finish' || !equal(trace[0], trace.at(-1)!)) throw new Error('Closed course requires shared timing');
+  return 'shared' as const;
+ }
+ const start = record.gates.find(g => g.role === 'start'), finish = record.gates.find(g => g.role === 'finish');
+ if (record.gates.length !== 2 || !start || !finish || equal(trace[0], trace.at(-1)!)) throw new Error('Open course requires separate timing and distinct endpoints');
+ if (distance(start.point, trace[0]) > 30 || distance(finish.point, trace.at(-1)!) > 30) throw new Error('Open source endpoints do not agree with timing positions');
+ return 'separate' as const;
+}

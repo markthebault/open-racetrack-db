@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-45482078"
+    "osm-selection-45482078",
+    "osm-network-sauga-circuit-combo"
   ],
   "defaultLayoutId": "sauga-circuit-audruring",
   "layouts": [
@@ -35,8 +36,8 @@
       "id": "sauga-circuit-combo",
       "name": "Sauga Circuit Combo",
       "referenceId": "Estonia/Sauga Circuit Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sauga-circuit-combo.geojson",
+      "description": "Combined mapped configurations: Sauga Circuit Long, Sauga Circuit short. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "sauga-circuit-long",
@@ -98,6 +99,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:16:27.958Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-sauga-circuit-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/45482078",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:39:01.015Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-sauga-circuit-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/45482078",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:39:01.015Z",
+      "evidenceNote": "Historical Sauga aggregate combines its long and short configurations. The catalogue diagram identifies their shared central split and the northern and southern lobes. The later Audruring perimeter is excluded. Identification only; no image coordinates copied."
     }
   ]
 }

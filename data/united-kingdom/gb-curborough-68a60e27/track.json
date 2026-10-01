@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -1.80694225,
+    52.71305955
+  ],
+  "sourceIds": [
+    "osm-selection-182334323"
+  ],
   "defaultLayoutId": "curborough",
   "layouts": [
     {
       "id": "curborough",
       "name": "Curborough",
       "referenceId": "United Kingdom/Curborough",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/curborough.geojson",
+      "description": "Draft configuration: Open single-lap sprint follows Startline Straight, Woodside, the eastern loop and Shenstone Straight to the finish. The operator course plan identifies the 831 m single-lap route; the independent source-node selection measures 827.9 m. The catalogue scalar 983 m and diagram include untimed approach/run-on areas. Those areas and the alternate Flagpole connector are excluded from the timed draft; both endpoint nodes agree with private start and finish gates. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 827.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-182334323",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/182334323",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-curborough",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.curborough.co.uk/curborough-course-layout/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

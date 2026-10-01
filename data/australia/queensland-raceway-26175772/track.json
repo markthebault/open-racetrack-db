@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-26175772",
-    "osm-selection-26175772"
+    "osm-selection-26175772",
+    "osm-network-queensland-raceway-combo-circuit"
   ],
   "defaultLayoutId": "queensland-raceway-club-circuit",
   "layouts": [
@@ -36,8 +37,8 @@
       "id": "queensland-raceway-combo-circuit",
       "name": "Queensland Raceway Combo Circuit",
       "referenceId": "Australia/Queensland Raceway Combo Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/queensland-raceway-combo-circuit.geojson",
+      "description": "Combined mapped configurations: Queensland Raceway Club Circuit, Queensland Raceway National Circuit, Queensland Raceway Sportsman, Queensland Raceway Sprint Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "queensland-raceway-national-circuit",
@@ -124,6 +125,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:16:55.544Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-queensland-raceway-combo-circuit",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/26175772",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.909Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-queensland-raceway-combo-circuit",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.qldraceways.com.au/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.909Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Queensland Raceway Club Circuit, Queensland Raceway National Circuit, Queensland Raceway Sportsman, Queensland Raceway Sprint Circuit. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

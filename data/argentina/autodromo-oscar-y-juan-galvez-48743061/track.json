@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-48743061"
+    "osm-selection-48743061",
+    "osm-network-buenos-aires-combo"
   ],
   "defaultLayoutId": "buenos-aires-combo",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "buenos-aires-combo",
       "name": "Buenos Aires Combo",
       "referenceId": "Argentina/Buenos Aires Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/buenos-aires-combo.geojson",
+      "description": "Combined mapped configurations: Buenos Aires G, Buenos Aires H, Oscar and Juan Circuit No. 12, Oscar and Juan Circuit No. 15, Oscar and Juan Circuit No. 5, Oscar and Juan Circuit No. 5-S, Oscar and Juan Circuit No. 6, Oscar and Juan Circuit No. 6-S, Oscar and Juan Circuit No. 7, Oscar and Juan Circuit No. 8, Oscar and Juan Circuit No. 9, Oscar and Juan Circuit No. 9-S, Oscar and Juan No. 12 (Chicane), Oscar and Juan No. 15 (Chicane). Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "buenos-aires-g",
@@ -274,6 +275,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:16:32.523Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-buenos-aires-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/48743061",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.898Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-buenos-aires-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://buenosaires.gob.ar/gcaba_historico/gobierno/autodromo-oscar-y-juan-galvez",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.898Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Buenos Aires G, Buenos Aires H, Oscar and Juan Circuit No. 12, Oscar and Juan Circuit No. 15, Oscar and Juan Circuit No. 5, Oscar and Juan Circuit No. 5-S, Oscar and Juan Circuit No. 6, Oscar and Juan Circuit No. 6-S, Oscar and Juan Circuit No. 7, Oscar and Juan Circuit No. 8, Oscar and Juan Circuit No. 9, Oscar and Juan Circuit No. 9-S, Oscar and Juan No. 12 (Chicane), Oscar and Juan No. 15 (Chicane). The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

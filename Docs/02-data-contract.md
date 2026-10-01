@@ -297,3 +297,7 @@ A layout can have `file: null` with a `missingGeometryReason`. It remains select
 A venue containing only unavailable layouts can have `location: null` and empty source lists. Any venue with a trace requires an independent location and source records. Missing geometry does not satisfy route coverage.
 
 Recipes may select a pinned alternate snapshot using `snapshotFile`. The snapshot filename, SHA-256 and source ID must also appear in the venue's import manifest. Each recipe uses the exact source versions in its selected snapshot.
+
+## Aggregate course networks (schema 2)
+
+An aggregate catalogue configuration can show several course branches together. Such a layout has `metadata.schemaVersion: 2`, `geometryKind: "network"`, `closed: false` and one trace feature whose geometry is a `MultiLineString` with at least two separately identified source paths. Each path retains its exact source coordinates. Separate paths are never connected by a synthetic edge. This is a network view, not a driving lap. Shared geographic edges count once in `lengthM`; the viewer labels that measurement mapped branch length. The bounding box includes every path. Gate features remain two-endpoint `LineString` features and must intersect a real path. Networks are draft-only in this implementation. Normal route files retain the schema 1 contract.

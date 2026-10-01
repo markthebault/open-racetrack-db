@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "trackId": "ae-dubai-autodrome-87272771",
+  "layoutId": "dubai-autodrome-combo",
+  "sourceId": "osm-network-dubai-autodrome-combo",
+  "snapshotFile": "network-dubai-autodrome-combo.json",
+  "snapshotSha256": "02ebb1f8b86b9a7f8283395c262f1ddda833120349cdbc52c5c38e649531a6f9",
+  "geometryStatus": "draft",
+  "timingMode": "shared",
+  "reviewedAt": null,
+  "notes": [],
+  "gates": [],
+  "paths": [
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 87277405,
+          "wayVersion": 12,
+          "fromIndex": 207,
+          "toIndex": 282
+        },
+        {
+          "wayId": 87277405,
+          "wayVersion": 12,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 87272813,
+          "wayVersion": 6,
+          "fromIndex": 0,
+          "toIndex": 11
+        },
+        {
+          "wayId": 87277405,
+          "wayVersion": 12,
+          "fromIndex": 116,
+          "toIndex": 117
+        },
+        {
+          "wayId": 87273026,
+          "wayVersion": 8,
+          "fromIndex": 0,
+          "toIndex": 29
+        }
+      ]
+    },
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 87277405,
+          "wayVersion": 12,
+          "fromIndex": 207,
+          "toIndex": 282
+        },
+        {
+          "wayId": 87277405,
+          "wayVersion": 12,
+          "fromIndex": 0,
+          "toIndex": 207
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "layoutId": "dubai-autodrome-club-circuit",
+      "snapshotFile": "selected-network-87272771.json",
+      "snapshotSha256": "2974c19e4201eed9726b3fa6782e9065bfb44ebec98c68e2e596240153cb4e2f"
+    },
+    {
+      "layoutId": "dubai-autodrome-gp-circuit",
+      "snapshotFile": "course-network-87272771.json",
+      "snapshotSha256": "20f0f5314320008bc4a2709b0d5c0ebbfc2867891a91c7f37e770a100e782cdc"
+    }
+  ]
+}

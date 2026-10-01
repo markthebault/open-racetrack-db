@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-108159182",
-    "osm-selection-108159182"
+    "osm-selection-108159182",
+    "osm-network-homestead-combo"
   ],
   "defaultLayoutId": "homestead-combo",
   "layouts": [
@@ -29,8 +30,8 @@
       "id": "homestead-combo",
       "name": "Homestead Combo",
       "referenceId": "United States/Homestead Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/homestead-combo.geojson",
+      "description": "Combined mapped configurations: Homestead Modified Road Course, Homestead Oval Course, Homestead Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "homestead-modified-road-course",
@@ -90,6 +91,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-homestead-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/108159182",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.949Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-homestead-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/108159182",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.949Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Homestead Modified Road Course, Homestead Oval Course, Homestead Road Course. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

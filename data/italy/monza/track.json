@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "venue-reference",
-    "osm-network-19842206"
+    "osm-network-19842206",
+    "osm-network-monza-combo"
   ],
   "defaultLayoutId": "grand-prix",
   "layouts": [
@@ -30,8 +31,8 @@
       "id": "monza-combo",
       "name": "Monza Combo",
       "referenceId": "Italy/Monza Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/monza-combo.geojson",
+      "description": "Combined mapped configurations: Monza, Monza without Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "monza-without-chicane",
@@ -68,6 +69,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:18.140Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-network-monza-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/19842206",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.921Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-monza-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.921Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Monza, Monza without Chicane. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -200,3 +200,7 @@ It MUST exclude local filesystem paths embedded in data, reference files, prior 
 Add `.local/` and temporary import staging to `.gitignore` during implementation. Keep actual private comparison material outside the repository where possible. An ignored file must still be excluded from the build by construction.
 
 Do not place a private-data test fixture in Git to test that it is excluded. Use a harmless synthetic sentinel for that test.
+
+## Aggregate branch selections
+
+`sources/reference/course-network-selections.json` records reviewed aggregate configurations and the identified component layout IDs. Network recipes use schema 2 with `paths`, each holding an ordered source-segment recipe and its own closure flag. Every component records its original snapshot filename and SHA-256. Acquisition does not merge conflicting versions of a way. Build validation reproduces all component paths, excludes pit lanes and areas, checks the aggregate snapshot and rejects duplicate paths. The network does not imply that its components form one continuous driving route or that all configurations at a venue belong to the aggregate. Select branches against independent identification evidence and the catalogue layout facts before importing.

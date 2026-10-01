@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-network-31323174",
-    "osm-selection-31323174"
+    "osm-selection-31323174",
+    "osm-network-lausitzring-combo"
   ],
   "defaultLayoutId": "lausitzring-2-mile",
   "layouts": [
@@ -29,8 +30,8 @@
       "id": "lausitzring-combo",
       "name": "Lausitzring Combo",
       "referenceId": "Germany/Lausitzring Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-combo.geojson",
+      "description": "Combined mapped configurations: Lausitzring 2 Mile, Lausitzring GP 3.2km, Lausitzring GP 3.4km, Lausitzring GP 3.4km Inc. Turn 1, Lausitzring GP 4.3km, Lausitzring GP 4.5km, Lausitzring GP 4.5km Inc. Turn 1. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "lausitzring-gp-3-2km",
@@ -156,6 +157,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:06:55.461Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-lausitzring-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/115077605",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.916Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-lausitzring-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://dekra-lausitzring.de/leistungen/streckenelemente/grand-prix-strecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.916Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Lausitzring 2 Mile, Lausitzring GP 3.2km, Lausitzring GP 3.4km, Lausitzring GP 3.4km Inc. Turn 1, Lausitzring GP 4.3km, Lausitzring GP 4.5km, Lausitzring GP 4.5km Inc. Turn 1. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-9292566"
+    "osm-selection-9292566",
+    "osm-network-road-atlanta-combo"
   ],
   "defaultLayoutId": "road-atlanta",
   "layouts": [
@@ -35,8 +36,8 @@
       "id": "road-atlanta-combo",
       "name": "Road Atlanta Combo",
       "referenceId": "United States/Road Atlanta Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/road-atlanta-combo.geojson",
+      "description": "Combined mapped configurations: Road Atlanta, Road Atlanta Short, Road Atlanta SRO Practice. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "road-atlanta-short",
@@ -98,6 +99,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-road-atlanta-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/9292566",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.961Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-road-atlanta-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/9292566",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.961Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Road Atlanta, Road Atlanta Short, Road Atlanta SRO Practice. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -2,6 +2,8 @@ import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {assemble} from './route';
 import {length} from '../src/geo';
+import {readNetworkSelection} from './network-selection';
+import {buildCourseNetwork} from './course-network';
 import type {LayoutCoverage} from '../src/layout-coverage';
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8'));
 const report:LayoutCoverage=await read('data/layout-coverage.json'),index=await read('data/index.json');
@@ -42,3 +44,16 @@ for(const selection of selections.records){
  assert.ok(track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
 }
 console.log(`Validated ${selections.records.length} explicitly identified course selections against exact source recipes.`);
+
+const networks=await read('sources/reference/course-network-selections.json');
+assert.equal(networks.schemaVersion,1);assert.equal(new Set(networks.records.map((s:any)=>s.referenceId)).size,networks.records.length);
+for(const selection of networks.records){
+ const registration=catalogue.records.find((r:any)=>r.referenceId===selection.referenceId);assert.ok(registration?.geometryAvailable);
+ const entry=index.tracks.find((t:any)=>t.id===registration.trackId),track=await read(`data/${entry.file}`);
+ const recipe=await read(`sources/${track.id}/layouts/${registration.layoutId}.json`),network=await readNetworkSelection(track.id,selection.layoutIds);
+ assert.deepEqual(recipe.paths,network.paths);assert.deepEqual(recipe.components,network.components);
+ const snapshot=await read(`sources/${track.id}/${recipe.snapshotFile}`),data=buildCourseNetwork(recipe,snapshot.elements,track);
+ assert.ok(Math.abs(data.metadata.lengthM-selection.expectedLengthM)<.15);
+ assert.ok(selection.evidence&&track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
+}
+console.log(`Validated ${networks.records.length} identified aggregate networks and their component provenance.`);

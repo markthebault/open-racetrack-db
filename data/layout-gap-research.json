@@ -3,13 +3,12 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 32,
+    "configuration-evidence-required": 13,
     "course-distance-discrepancy": 72,
     "independent-geometry-missing": 68,
     "ambiguous-source-branches": 35,
     "source-connectivity-incomplete": 7,
-    "open-course-evidence-required": 14,
-    "search-incomplete": 2
+    "open-course-evidence-required": 11
   },
   "records": [
     {
@@ -39,14 +38,6 @@
       "closestSourceLengthM": 4197.3,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Argentina/Buenos Aires Combo",
-      "trackId": "ar-autodromo-oscar-y-juan-galvez-48743061",
-      "layoutId": "buenos-aires-combo",
-      "sourcePath": "sources/world/ar/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "Argentina/Circuito De Rosario Combo",
@@ -187,14 +178,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Australia/Queensland Raceway Combo Circuit",
-      "trackId": "au-queensland-raceway-26175772",
-      "layoutId": "queensland-raceway-combo-circuit",
-      "sourcePath": "sources/world/au/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "Australia/Surfer's Paradise",
@@ -523,14 +506,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "Denmark/Jyllands-Ringen Combo",
-      "trackId": "dk-jyllandsringen-102145328",
-      "layoutId": "jyllands-ringen-combo",
-      "sourcePath": "sources/europe/dk/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "Dominican Republic/Speedway Park",
       "trackId": "do-speedway-park-87fad81e",
       "layoutId": "speedway-park",
@@ -555,14 +530,6 @@
       "closestSourceLengthM": 3127.5,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Estonia/Sauga Circuit Combo",
-      "trackId": "ee-porsche-ring-45482078",
-      "layoutId": "sauga-circuit-combo",
-      "sourcePath": "sources/europe/ee/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "Finland/Seinajoki",
@@ -830,14 +797,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "Germany/Lausitzring Combo",
-      "trackId": "de-lausitzring-7a32e980",
-      "layoutId": "lausitzring-combo",
-      "sourcePath": "sources/europe/de/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "Germany/Porsche Leipzig A",
       "trackId": "de-porsche-leipzig-a-1a7399b8",
       "layoutId": "porsche-leipzig-a",
@@ -995,14 +954,6 @@
       "closestSourceLengthM": 5590.3,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Italy/Monza Combo",
-      "trackId": "it-monza",
-      "layoutId": "monza-combo",
-      "sourcePath": "sources/europe/it/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "Italy/Vallelunga Full",
@@ -1212,14 +1163,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "Malaysia/Sepang Combo",
-      "trackId": "my-sepang-international-circuit-23410503",
-      "layoutId": "sepang-combo",
-      "sourcePath": "sources/world/my/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "Mexico/Autodromo Bosques del Angel",
       "trackId": "mx-autodromo-bosques-del-angel-f23feef9",
       "layoutId": "autodromo-bosques-del-angel",
@@ -1287,14 +1230,6 @@
       "closestSourceLengthM": 3282.1,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "New Zealand/Taupo Motorsport Park Combo",
-      "trackId": "nz-taupo-international-motorsport-park-90114324",
-      "layoutId": "taupo-motorsport-park-combo",
-      "sourcePath": "sources/world/nz/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "Poland/Silesia Ring",
@@ -1673,39 +1608,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "South Korea/Korea International Circuit",
-      "trackId": "kr-korea-international-circuit-234764328",
-      "layoutId": "korea-international-circuit",
-      "sourcePath": "sources/world/kr/osm.json",
-      "sourceWayIds": [
-        234764328,
-        234764539,
-        234764658,
-        708763326,
-        816544779
-      ],
-      "candidateCount": 0,
-      "reason": "search-incomplete",
-      "nextStep": "Constrain route branches using independent layout evidence before continuing bounded search."
-    },
-    {
-      "referenceId": "South Korea/Korea International Short Circuit",
-      "trackId": "kr-korea-international-circuit-234764328",
-      "layoutId": "korea-international-short-circuit",
-      "sourcePath": "sources/world/kr/osm.json",
-      "sourceWayIds": [
-        234764328,
-        234764539,
-        234764658,
-        708763326,
-        816544779
-      ],
-      "candidateCount": 77088,
-      "closestSourceLengthM": 3306.4,
-      "reason": "search-incomplete",
-      "nextStep": "Constrain route branches using independent layout evidence before continuing bounded search."
-    },
-    {
       "referenceId": "Spain/Andalucia Layout 1 5k",
       "trackId": "es-circuito-costa-de-almeria-29362442",
       "layoutId": "andalucia-layout-1-5k",
@@ -2054,14 +1956,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United Arab Emirates/Dubai Autodrome Combo",
-      "trackId": "ae-dubai-autodrome-87272771",
-      "layoutId": "dubai-autodrome-combo",
-      "sourcePath": "sources/world/ae/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "United Arab Emirates/Yas Marina Combo",
       "trackId": "ae-yas-marina-e2656e19",
       "layoutId": "yas-marina-combo",
@@ -2120,14 +2014,6 @@
       "candidateCount": 0,
       "reason": "source-connectivity-incomplete",
       "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
-    },
-    {
-      "referenceId": "United Kingdom/Anglesey Combo",
-      "trackId": "gb-anglesey-circuit-108374689",
-      "layoutId": "anglesey-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United Kingdom/Bedford Autodrome GT",
@@ -2250,14 +2136,6 @@
       "referenceId": "United Kingdom/Castle Combe Western Sprint",
       "trackId": "gb-castle-combe-circuit-35406015",
       "layoutId": "castle-combe-western-sprint",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "open-course-evidence-required",
-      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
-      "referenceId": "United Kingdom/Curborough",
-      "trackId": "gb-curborough-68a60e27",
-      "layoutId": "curborough",
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "open-course-evidence-required",
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
@@ -2431,14 +2309,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United Kingdom/Loton Hillclimb",
-      "trackId": "gb-loton-hillclimb-2b41199e",
-      "layoutId": "loton-hillclimb",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "open-course-evidence-required",
-      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
       "referenceId": "United Kingdom/Lydden Hill Infield",
       "trackId": "gb-lydden-hill-infield-8b6d41b9",
       "layoutId": "lydden-hill-infield",
@@ -2546,22 +2416,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "United Kingdom/Oulton Park Combo",
-      "trackId": "gb-oulton-park-circuit-21831735",
-      "layoutId": "oulton-park-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United Kingdom/Prescott Hill Climb",
-      "trackId": "gb-prescott-hill-climb-cff4bee0",
-      "layoutId": "prescott-hill-climb",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "open-course-evidence-required",
-      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
       "referenceId": "United Kingdom/ProDrive",
       "trackId": "gb-prodrive-bf598a18",
       "layoutId": "prodrive",
@@ -2622,14 +2476,6 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "open-course-evidence-required",
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
-      "referenceId": "United Kingdom/Snetterton Combo",
-      "trackId": "gb-snetterton-motor-racing-circuit-145755937",
-      "layoutId": "snetterton-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United Kingdom/Thorsway MX",
@@ -3121,22 +2967,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United States/Heartland Park of Topeka Combo",
-      "trackId": "us-heartland-park-raceway-137283766",
-      "layoutId": "heartland-park-of-topeka-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United States/Homestead Combo",
-      "trackId": "us-homestead-miami-speedway-108159182",
-      "layoutId": "homestead-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "United States/Inde Motorsports Combo",
       "trackId": "us-inde-motorsports-b9c30311",
       "layoutId": "inde-motorsports-combo",
@@ -3182,14 +3012,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/LVMS Combo",
-      "trackId": "us-las-vegas-motor-speedway-27545411",
-      "layoutId": "lvms-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United States/LVMS Super Speedway",
@@ -3245,22 +3067,6 @@
       "closestSourceLengthM": 2240,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United States/Miller Motorsports Park Combo",
-      "trackId": "us-utah-motorsports-campus-343796175",
-      "layoutId": "miller-motorsports-park-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United States/Monticello Motor Club Combo",
-      "trackId": "us-monticello-motor-club-235166661",
-      "layoutId": "monticello-motor-club-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United States/Music City Grand Prix",
@@ -3404,22 +3210,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/Road Atlanta Combo",
-      "trackId": "us-road-atlanta-9292566",
-      "layoutId": "road-atlanta-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United States/Sebring Combo",
-      "trackId": "us-sebring-international-raceway-426154257",
-      "layoutId": "sebring-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United States/Sonoma Kart Circuit",

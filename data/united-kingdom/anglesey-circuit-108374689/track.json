@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-108374689",
-    "osm-selection-108374689"
+    "osm-selection-108374689",
+    "osm-network-anglesey-combo"
   ],
   "defaultLayoutId": "anglesey-club",
   "layouts": [
@@ -43,8 +44,8 @@
       "id": "anglesey-combo",
       "name": "Anglesey Combo",
       "referenceId": "United Kingdom/Anglesey Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/anglesey-combo.geojson",
+      "description": "Combined mapped configurations: Anglesey Club, Anglesey Coastal, Anglesey International, Anglesey National. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "anglesey-international",
@@ -97,6 +98,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:00:20.961Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-anglesey-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/108374689",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.938Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-anglesey-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.angleseycircuit.co.uk/organiser/circuit-days/page/2/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.938Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Anglesey Club, Anglesey Coastal, Anglesey International, Anglesey National. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

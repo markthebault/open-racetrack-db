@@ -31,8 +31,8 @@
       "id": "lvms-combo",
       "name": "LVMS Combo",
       "referenceId": "United States/LVMS Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-combo.geojson",
+      "description": "Draft configuration: The aggregate catalogue picture identifies the outside road course only, with its full northern and southern extensions. The operator distinguishes this 2.4-mile outside course from the separate superspeedway and inside road course. Those other facilities are excluded. This diagram contains one independently mapped cycle, so it remains a regular route rather than a network with duplicate paths. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3896.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lvms-infield-road-course",
@@ -112,6 +112,15 @@
       "type": "reference",
       "title": "Configuration identification reference",
       "url": "https://www.openstreetmap.org/way/51319172",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lvms-combo",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.lvms.com/tracks/road-course/",
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."

@@ -1,7 +1,8 @@
 import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
-import {validateTrack,validateLayout,indexSchema,type Layout} from '../schemas/data';
+import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout} from '../schemas/data';
+import {buildCourseNetwork} from './course-network';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
@@ -17,6 +18,11 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
  if(sourceFile!=='osm.json'&&!manifest.snapshots?.some((s:any)=>s.file===sourceFile&&s.sha256===sourceHash&&s.sourceId===recipe.sourceId))throw new Error(`${track.id}: unregistered layout source`);
  const ways=JSON.parse(sourceBytes).elements.filter((e:any)=>e.type==='way') as Way[];
  if(recipe.snapshotSha256!==sourceHash)throw new Error(`${track.id}/${layout.id}: recipe hash mismatch`);if(recipe.trackId!==track.id||recipe.layoutId!==layout.id)throw new Error(`${track.id}/${layout.id}: recipe identity mismatch`);
+ if(recipe.geometryKind==='network'){
+  const data=buildCourseNetwork(recipe,ways,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(data,null,2)+'\n');
+  if(!generate)validateLayout(await json(path),track,layout.id);
+  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m of independently mapped branches`);continue;
+ }
  for(const segment of recipe.segments){const way=ways.find(w=>w.id===segment.wayId);if(/^pit[_ -]?lane$/i.test(way?.tags?.service??'')||/^pit[_ -]?lane$/i.test(way?.tags?.raceway??''))throw new Error(`${track.id}/${layout.id}: pit lane is not a course trace`);}
  let coordinates=assemble(ways,recipe.segments,recipe.closed);const features:Layout['features']=[];const anchors=new Map();
  for(const g of recipe.gates){const segment=recipe.segments[g.anchorSegmentIndex],way=ways.find(w=>w.id===segment?.wayId);if(!way)throw new Error('Gate anchor: missing way');const part=slice(way,segment),a=part[g.anchorEdgeIndex]?.point,b=part[g.anchorEdgeIndex+1]?.point;if(!a||!b)throw new Error('Gate anchor: edge out of bounds');let endpoints;
@@ -27,7 +33,7 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
  features.sort((a,b)=>['start_finish','start','finish'].indexOf(a.id)-['start_finish','start','finish'].indexOf(b.id));
  const timingStatus=!features.length?'missing':recipe.timingMode==='separate'&&features.length===1?'partial':features.every(f=>'positionStatus'in f.properties&&f.properties.positionStatus==='verified')?'verified':'estimated';
  features.unshift({type:'Feature',id:'trace',properties:{role:'trace',sourceIds:[recipe.sourceId]},geometry:{type:'LineString',coordinates}});
- const data=validateLayout({type:'FeatureCollection',bbox:bounds(features.flatMap(f=>f.geometry.coordinates)),metadata:{schemaVersion:1,trackId:track.id,layoutId:layout.id,license:'ODbL-1.0',attribution:'© OpenStreetMap contributors',closed:recipe.closed,geometryStatus:recipe.geometryStatus,timingStatus,timingMode:recipe.timingMode,lengthM:length(coordinates),reviewedAt:recipe.reviewedAt,notes:recipe.notes},features},track,layout.id);
+ const data=validateLayout({type:'FeatureCollection',bbox:bounds(features.flatMap(f=>geometryPaths(f.geometry).flat())),metadata:{schemaVersion:1,trackId:track.id,layoutId:layout.id,license:'ODbL-1.0',attribution:'© OpenStreetMap contributors',closed:recipe.closed,geometryStatus:recipe.geometryStatus,timingStatus,timingMode:recipe.timingMode,lengthM:length(coordinates),reviewedAt:recipe.reviewedAt,notes:recipe.notes},features},track,layout.id);
  const path=`${dir}/${layout.file}`,bytes=JSON.stringify(data,null,2)+'\n';outputs.set(path,bytes);
  if(!generate)validateLayout(await json(path),track,layout.id);
  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m; ${data.metadata.geometryStatus}, timing ${data.metadata.timingStatus}`);

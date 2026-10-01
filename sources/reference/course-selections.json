@@ -15032,6 +15032,223 @@
       ],
       "expectedLengthM": 4753.7,
       "maximumDistanceDifferenceM": 65
+    },
+    {
+      "referenceId": "South Korea/Korea International Short Circuit",
+      "sourcePath": "sources/world/kr/osm.json",
+      "sourceWayIds": [
+        234764328,
+        234764539,
+        234764658,
+        816544779
+      ],
+      "closed": true,
+      "evidence": "Northern short course uses the independently named GP Circuit branch and B Course connector, excluding the Permanent Circuit southern loop and overlapping duplicate course way. The catalogue diagram identifies the same northern perimeter and infield return. The operator distinguishes the 3.29 km B Course from the 3.04 km A Course.",
+      "identificationUrl": "https://www.koreacircuit.com/",
+      "segments": [
+        {
+          "wayId": 234764539,
+          "wayVersion": 18,
+          "fromIndex": 10,
+          "toIndex": 116
+        },
+        {
+          "wayId": 816544779,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 29
+        }
+      ],
+      "expectedLengthM": 3306.4,
+      "maximumDistanceDifferenceM": 15
+    },
+    {
+      "referenceId": "South Korea/Korea International Circuit",
+      "sourcePath": "sources/world/kr/osm.json",
+      "sourceWayIds": [
+        708763326
+      ],
+      "closed": true,
+      "evidence": "Full GP course follows the entire closed portion of the independently named YEONGAM F1 Track way, retaining both the northern GP sector and southern permanent sector. The source way includes a short overlapping prefix outside its closed portion; the recipe uses the actual repeated source node as its closure. The operator identifies the same full configuration at 5.615 km; this independent source measures 5,594.4 m against the catalogue 5,666 m. No coordinates are adjusted.",
+      "identificationUrl": "https://www.koreacircuit.com/Tracks",
+      "segments": [
+        {
+          "wayId": 708763326,
+          "wayVersion": 2,
+          "fromIndex": 1,
+          "toIndex": 275
+        }
+      ],
+      "expectedLengthM": 5594.4,
+      "maximumDistanceDifferenceM": 85
+    },
+    {
+      "referenceId": "United Kingdom/Curborough",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "sourceWayIds": [
+        182334323,
+        182334324,
+        205522086,
+        205522093,
+        205522540,
+        182334325,
+        205522087,
+        205522095,
+        205522543
+      ],
+      "closed": false,
+      "evidence": "Open single-lap sprint follows Startline Straight, Woodside, the eastern loop and Shenstone Straight to the finish. The operator course plan identifies the 831 m single-lap route; the independent source-node selection measures 827.9 m. The catalogue scalar 983 m and diagram include untimed approach/run-on areas. Those areas and the alternate Flagpole connector are excluded from the timed draft; both endpoint nodes agree with private start and finish gates.",
+      "identificationUrl": "https://www.curborough.co.uk/curborough-course-layout/",
+      "segments": [
+        {
+          "wayId": 182334323,
+          "wayVersion": 4,
+          "fromIndex": 16,
+          "toIndex": 25
+        },
+        {
+          "wayId": 182334324,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 12
+        },
+        {
+          "wayId": 205522095,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 8
+        },
+        {
+          "wayId": 205522543,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 4
+        },
+        {
+          "wayId": 205522087,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 11
+        },
+        {
+          "wayId": 205522093,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ],
+      "expectedLengthM": 827.9,
+      "maximumDistanceDifferenceM": 170
+    },
+    {
+      "referenceId": "United Kingdom/Prescott Hill Climb",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "sourceWayIds": [
+        300949282,
+        300949284,
+        300949283
+      ],
+      "closed": false,
+      "evidence": "Open long hillclimb retains the central hairpin and full climbing branch, excluding the shorter bypass and return spur. The operator describes a 1,127-yard course (about 1,030.6 m), consistent with the independent 1,033.1 m timed source path. The catalogue scalar 1,222 m differs; geometry is neither extended nor scaled. Separate endpoint nodes agree with private timing gates.",
+      "identificationUrl": "https://www.prescotthillclimb.co.uk/venue-information",
+      "segments": [
+        {
+          "wayId": 300949282,
+          "wayVersion": 2,
+          "fromIndex": 35,
+          "toIndex": 1
+        },
+        {
+          "wayId": 300949284,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 35
+        }
+      ],
+      "expectedLengthM": 1033.1,
+      "maximumDistanceDifferenceM": 205
+    },
+    {
+      "referenceId": "United Kingdom/Loton Hillclimb",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "sourceWayIds": [
+        377112802
+      ],
+      "closed": false,
+      "evidence": "Open climb follows the forward timed section of the independently named Loton Park Speed Hill Climb source way. The operator identifies the uphill course; the catalogue picture also shows the southern return loop, which is excluded from this timed draft. Separate endpoint nodes agree with timing gates. This independent timed section measures 1,303.5 m while the catalogue scalar 2,019 m describes a longer extent; no return-road detour or coordinate scaling is used to match that number.",
+      "identificationUrl": "https://www.hdlcc.com/",
+      "segments": [
+        {
+          "wayId": 377112802,
+          "wayVersion": 6,
+          "fromIndex": 2,
+          "toIndex": 53
+        }
+      ],
+      "expectedLengthM": 1303.5,
+      "maximumDistanceDifferenceM": 730
+    },
+    {
+      "referenceId": "United States/LVMS Combo",
+      "sourcePath": "sources/world/us/osm.json",
+      "sourceWayIds": [
+        210537852,
+        210537849,
+        904783967,
+        904783966,
+        904783965,
+        904783962,
+        51319172
+      ],
+      "segments": [
+        {
+          "wayId": 210537852,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 13
+        },
+        {
+          "wayId": 210537849,
+          "wayVersion": 4,
+          "fromIndex": 37,
+          "toIndex": 105
+        },
+        {
+          "wayId": 904783967,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 49
+        },
+        {
+          "wayId": 904783966,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 3
+        },
+        {
+          "wayId": 904783965,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 31
+        },
+        {
+          "wayId": 904783962,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 51319172,
+          "wayVersion": 10,
+          "fromIndex": 0,
+          "toIndex": 129
+        }
+      ],
+      "closed": true,
+      "expectedLengthM": 3896.2,
+      "maximumDistanceDifferenceM": 0,
+      "evidence": "The aggregate catalogue picture identifies the outside road course only, with its full northern and southern extensions. The operator distinguishes this 2.4-mile outside course from the separate superspeedway and inside road course. Those other facilities are excluded. This diagram contains one independently mapped cycle, so it remains a regular route rather than a network with duplicate paths.",
+      "identificationUrl": "https://www.lvms.com/tracks/road-course/"
     }
   ]
 }

@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-21831735"
+    "osm-network-21831735",
+    "osm-network-oulton-park-combo"
   ],
   "defaultLayoutId": "oulton-park-combo",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "oulton-park-combo",
       "name": "Oulton Park Combo",
       "referenceId": "United Kingdom/Oulton Park Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/oulton-park-combo.geojson",
+      "description": "Combined mapped configurations: Oulton Park Fosters Circuit, Oulton Park International, Oulton Park Island Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "oulton-park-fosters-circuit",
@@ -71,6 +72,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-network-oulton-park-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/21831735",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.940Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-oulton-park-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/108809509",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.940Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Oulton Park Fosters Circuit, Oulton Park International, Oulton Park Island Circuit. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

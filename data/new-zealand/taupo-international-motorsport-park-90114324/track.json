@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-90114324",
-    "osm-selection-90114324"
+    "osm-selection-90114324",
+    "osm-network-taupo-motorsport-park-combo"
   ],
   "defaultLayoutId": "taupo-motorsport-park-combo",
   "layouts": [
@@ -29,8 +30,8 @@
       "id": "taupo-motorsport-park-combo",
       "name": "Taupo Motorsport Park Combo",
       "referenceId": "New Zealand/Taupo Motorsport Park Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/taupo-motorsport-park-combo.geojson",
+      "description": "Combined mapped configurations: Taupo Motorsport Park Track 1, Taupo Motorsport Park Track 2, Taupo Motorsport Park Track 4. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "taupo-motorsport-park-track-1",
@@ -99,6 +100,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:17:47.114Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-taupo-motorsport-park-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/90114329",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.928Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-taupo-motorsport-park-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/90114324",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.928Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Taupo Motorsport Park Track 1, Taupo Motorsport Park Track 2, Taupo Motorsport Park Track 4. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 777
-- unmappedLayouts: 230
+- draftMapped: 801
+- unmappedLayouts: 206
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -18,7 +18,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 
 | Country | Venue | Catalogue layouts | Reference records | Explicitly mapped | Missing layout names | Unassociated public layout IDs |
 | --- | --- | ---: | ---: | ---: | --- | --- |
-| United Arab Emirates | Dubai Autodrome | 7 | 6 | 5 | Dubai Autodrome Combo | main |
+| United Arab Emirates | Dubai Autodrome | 7 | 6 | 6 |  | main |
 | United Arab Emirates | Yas Marina | 8 | 8 | 6 | Yas Marina Combo; Yas Marina South |  |
 | United Arab Emirates | Yas Marina South2 | 1 | 1 | 1 |  |  |
 | Argentina | Autodromo Asociacion Volantes Mar y Valle | 1 | 0 | 0 |  | main |
@@ -46,7 +46,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Argentina | Autódromo Municipal "Enrique Quique Freile" | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Municipal Hernesto Mario Soto | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Oscar Cabalén | 1 | 0 | 0 |  | main |
-| Argentina | Autódromo Oscar y Juan Gálvez | 16 | 15 | 14 | Buenos Aires Combo | main |
+| Argentina | Autódromo Oscar y Juan Gálvez | 16 | 15 | 15 |  | main |
 | Argentina | Autódromo Parque Ciudad de Río Cuarto | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Parque Provincia del Neuquén | 1 | 1 | 1 |  |  |
 | Argentina | Autódromo Provincia de La Pampa | 2 | 1 | 0 | Autodromo de La Pampa | main |
@@ -91,7 +91,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Australia | One Raceway | 2 | 1 | 0 | One Raceway Goulburn | main |
 | Australia | Oran Park Raceway | 1 | 1 | 0 | Oran Park Raceway |  |
 | Australia | Phillip Island Grand Prix Circuit | 1 | 1 | 1 |  |  |
-| Australia | Queensland Raceway | 6 | 5 | 4 | Queensland Raceway Combo Circuit | main |
+| Australia | Queensland Raceway | 6 | 5 | 5 |  | main |
 | Australia | Sandown International Raceway | 1 | 1 | 1 |  |  |
 | Australia | Surfer's Paradise | 1 | 1 | 0 | Surfer's Paradise |  |
 | Australia | Sydney Motorsport Park | 5 | 4 | 4 |  | main |
@@ -209,7 +209,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Germany | Gross Doelln | 1 | 1 | 0 | Gross Doelln |  |
 | Germany | Harzring | 1 | 1 | 1 |  |  |
 | Germany | Hockenheimring | 3 | 3 | 3 |  |  |
-| Germany | Lausitzring | 8 | 8 | 7 | Lausitzring Combo |  |
+| Germany | Lausitzring | 8 | 8 | 8 |  |  |
 | Germany | Motorsport Arena Oschersleben | 2 | 1 | 1 |  | main |
 | Germany | Norisring | 1 | 1 | 1 |  |  |
 | Germany | Nürburgring | 9 | 9 | 9 |  |  |
@@ -219,11 +219,11 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Germany | Sachsenring | 1 | 1 | 1 |  |  |
 | Germany | Test- und Präsentationsstrecke Bilster Berg | 6 | 5 | 5 |  | main |
 | Denmark | FDM Sjællandsringen | 2 | 1 | 1 |  | main |
-| Denmark | Jyllandsringen | 4 | 3 | 2 | Jyllands-Ringen Combo | main |
+| Denmark | Jyllandsringen | 4 | 3 | 3 |  | main |
 | Denmark | Padborg Park | 1 | 1 | 1 |  |  |
 | Denmark | Ring Djursland | 1 | 1 | 1 |  |  |
 | Dominican Republic | Speedway Park | 1 | 1 | 0 | Speedway Park |  |
-| Estonia | Porsche Ring | 5 | 4 | 3 | Sauga Circuit Combo | main |
+| Estonia | Porsche Ring | 5 | 4 | 4 |  | main |
 | Spain | Alcarras | 1 | 1 | 1 |  |  |
 | Spain | Circuit de Barcelona-Catalunya | 2 | 2 | 2 |  |  |
 | Spain | Circuit de Calafat | 1 | 1 | 1 |  |  |
@@ -317,7 +317,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | France | RKC Karting Paris | 1 | 1 | 1 |  |  |
 | France | Verze | 1 | 1 | 1 |  |  |
 | United Kingdom | Aintree Motor Racing Circuit | 3 | 2 | 2 |  | main |
-| United Kingdom | Anglesey Circuit | 6 | 5 | 4 | Anglesey Combo | main |
+| United Kingdom | Anglesey Circuit | 6 | 5 | 5 |  | main |
 | United Kingdom | Bayford Meadows | 1 | 1 | 1 |  |  |
 | United Kingdom | Bedford Autodrome | 6 | 6 | 5 | Bedford Autodrome GT |  |
 | United Kingdom | Bicester Heritage | 1 | 1 | 0 | Bicester Heritage |  |
@@ -335,7 +335,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Castle Combe Circuit | 3 | 2 | 1 | Castle Combe Western Sprint | main |
 | United Kingdom | Clay Pigeon Raceway | 1 | 1 | 1 |  |  |
 | United Kingdom | Croft Circuit | 1 | 1 | 1 |  |  |
-| United Kingdom | Curborough | 1 | 1 | 0 | Curborough |  |
+| United Kingdom | Curborough | 1 | 1 | 1 |  |  |
 | United Kingdom | Daytona MK | 1 | 1 | 1 |  |  |
 | United Kingdom | Daytona Sandown Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Donington Park | 3 | 2 | 2 |  | main |
@@ -364,7 +364,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Knockhill Racing Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Larkhall Kart Circuit | 1 | 1 | 0 | Larkhall Kart Circuit |  |
 | United Kingdom | Llandow Circuit | 1 | 1 | 1 |  |  |
-| United Kingdom | Loton Hillclimb | 1 | 1 | 0 | Loton Hillclimb |  |
+| United Kingdom | Loton Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Lydd Karting Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Lydden Hill | 1 | 1 | 1 |  |  |
 | United Kingdom | Lydden Hill Infield | 1 | 1 | 0 | Lydden Hill Infield |  |
@@ -374,10 +374,10 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Millbrook High Speed Circuit | 1 | 1 | 0 | Millbrook High Speed Circuit |  |
 | United Kingdom | Millbrook Hill Route | 1 | 1 | 0 | Millbrook Hill Route Full |  |
 | United Kingdom | Nutts Corner | 1 | 1 | 0 | Nutts Corner |  |
-| United Kingdom | Oulton Park Circuit | 5 | 4 | 3 | Oulton Park Combo | main |
+| United Kingdom | Oulton Park Circuit | 5 | 4 | 4 |  | main |
 | United Kingdom | Pembrey Circuit | 3 | 2 | 2 |  | main |
 | United Kingdom | PFI | 1 | 1 | 1 |  |  |
-| United Kingdom | Prescott Hill Climb | 1 | 1 | 0 | Prescott Hill Climb |  |
+| United Kingdom | Prescott Hill Climb | 1 | 1 | 1 |  |  |
 | United Kingdom | Prestwold Hall | 1 | 1 | 1 |  |  |
 | United Kingdom | ProDrive | 1 | 1 | 0 | ProDrive |  |
 | United Kingdom | RAF Woodbridge | 1 | 1 | 0 | RAF Woodbridge |  |
@@ -392,7 +392,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Shelsley Walsh Hillclimb | 1 | 1 | 0 | Shelsley Walsh Hillclimb |  |
 | United Kingdom | Shenington Kart Racing | 1 | 1 | 1 |  |  |
 | United Kingdom | Silverstone Circuit | 9 | 8 | 6 | Silverstone RX; Silverstone Combo | main |
-| United Kingdom | Snetterton Motor Racing Circuit | 5 | 4 | 3 | Snetterton Combo | main |
+| United Kingdom | Snetterton Motor Racing Circuit | 5 | 4 | 4 |  | main |
 | United Kingdom | Thorsway MX | 1 | 1 | 0 | Thorsway MX |  |
 | United Kingdom | Three Sisters | 1 | 1 | 0 | Three Sisters |  |
 | United Kingdom | Thruxton Circuit | 1 | 1 | 1 |  |  |
@@ -438,7 +438,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Italy | Autodromo Enzo e Dino Ferrari | 2 | 2 | 2 |  |  |
 | Italy | Misano World Circuit | 2 | 1 | 1 |  | short |
 | Italy | Modena | 1 | 1 | 1 |  |  |
-| Italy | Autodromo Nazionale Monza | 3 | 3 | 2 | Monza Combo |  |
+| Italy | Autodromo Nazionale Monza | 3 | 3 | 3 |  |  |
 | Italy | Motodromo Castelletto di Branduzzo | 1 | 1 | 1 |  |  |
 | Italy | Mugello Circuit | 1 | 1 | 1 |  |  |
 | Italy | Nardo Handling | 1 | 1 | 1 |  |  |
@@ -478,7 +478,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | South Korea | Ansan | 1 | 1 | 0 | Ansan |  |
 | South Korea | Everland Speedway | 1 | 1 | 1 |  |  |
 | South Korea | Inje Speedium | 1 | 1 | 1 |  |  |
-| South Korea | Korea International Circuit | 4 | 3 | 1 | Korea International Circuit; Korea International Short Circuit | main |
+| South Korea | Korea International Circuit | 4 | 3 | 3 |  | main |
 | South Korea | TaeBaek Racing Park | 1 | 1 | 1 |  |  |
 | Kuwait | Kuwait Motor Town | 5 | 4 | 3 | Kuwait Motor Town GP Chicane | main |
 | Kazakhstan | Sokol International Racetrack | 1 | 1 | 1 |  |  |
@@ -499,7 +499,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Mexico | Moises Solana Circuit | 1 | 1 | 1 |  |  |
 | Mexico | Ovalo Aguscaliente | 1 | 1 | 1 |  |  |
 | Malaysia | Johor Circuit | 2 | 1 | 1 |  | main |
-| Malaysia | Sepang International Circuit | 4 | 3 | 2 | Sepang Combo | main |
+| Malaysia | Sepang International Circuit | 4 | 3 | 3 |  | main |
 | Malaysia | Terengganu International Drag Strip | 1 | 0 | 0 |  | main |
 | Mozambique | Autodromo ATCM | 1 | 1 | 1 |  |  |
 | Netherlands | TT Circuit Assen | 1 | 1 | 1 |  |  |
@@ -518,7 +518,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | New Zealand | Manfeild: Circuit Chris Amon | 2 | 1 | 1 |  | main |
 | New Zealand | Pukekohe Park | 1 | 1 | 1 |  |  |
 | New Zealand | Ruapuna | 1 | 1 | 0 | Ruapuna |  |
-| New Zealand | Taupo International Motorsport Park | 5 | 4 | 3 | Taupo Motorsport Park Combo | main |
+| New Zealand | Taupo International Motorsport Park | 5 | 4 | 4 |  | main |
 | New Zealand | Teretonga Park | 2 | 1 | 1 |  | main |
 | New Zealand | Timaru International Motor Raceway | 1 | 1 | 1 |  |  |
 | Panama | Autodromo Panama | 1 | 1 | 1 |  |  |
@@ -658,11 +658,11 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Hallett | 1 | 1 | 1 |  |  |
 | United States | Harris Hill Raceway | 1 | 1 | 1 |  |  |
 | United States | Hastings Motorsport Park | 1 | 1 | 1 |  |  |
-| United States | Heartland Park Raceway | 7 | 6 | 5 | Heartland Park of Topeka Combo | main |
+| United States | Heartland Park Raceway | 7 | 6 | 6 |  | main |
 | United States | Hedge Hollow Raceway | 2 | 2 | 2 |  |  |
 | United States | High Plains Raceway | 2 | 1 | 1 |  | main |
 | United States | High Plains Speedway | 1 | 0 | 0 |  | main |
-| United States | Homestead-Miami Speedway | 5 | 4 | 3 | Homestead Combo | main |
+| United States | Homestead-Miami Speedway | 5 | 4 | 4 |  | main |
 | United States | Inde Motorsports | 1 | 1 | 0 | Inde Motorsports Combo |  |
 | United States | Inde Motorsports Ranch | 8 | 8 | 8 |  |  |
 | United States | Indianapolis Motor Speedway | 4 | 3 | 3 |  | main |
@@ -672,7 +672,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Kansas Speedway Road Course | 1 | 0 | 0 |  | main |
 | United States | Kentucky Speedway | 1 | 1 | 1 |  |  |
 | United States | Las Vegas | 1 | 1 | 1 |  |  |
-| United States | Las Vegas Motor Speedway | 7 | 7 | 4 | LVMS Combo; LVMS Super Speedway; LVMS Super Speedway Infield |  |
+| United States | Las Vegas Motor Speedway | 7 | 7 | 5 | LVMS Super Speedway; LVMS Super Speedway Infield |  |
 | United States | Lil' Texas Motor Speedway Track | 1 | 0 | 0 |  | main |
 | United States | Lime Rock Park | 2 | 1 | 0 | Lime Rock | main |
 | United States | Long Beach Street Circuit | 1 | 1 | 0 | Long Beach Street Circuit |  |
@@ -687,7 +687,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | MidAmerica Motorplex | 1 | 1 | 1 |  |  |
 | United States | Milford Road Course | 1 | 1 | 1 |  |  |
 | United States | Milwaukee Mile | 1 | 0 | 0 |  | main |
-| United States | Monticello Motor Club | 6 | 5 | 4 | Monticello Motor Club Combo | main |
+| United States | Monticello Motor Club | 6 | 5 | 5 |  | main |
 | United States | Motor Enclave | 1 | 1 | 1 |  |  |
 | United States | Motor Speedway Resort Houston | 1 | 1 | 1 |  |  |
 | United States | Motorsport Ranch | 4 | 3 | 3 |  | main |
@@ -736,11 +736,11 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Reno Fernley H | 1 | 1 | 0 | Reno Fernley H |  |
 | United States | Richmond Raceway Complex | 1 | 0 | 0 |  | main |
 | United States | Road America | 5 | 4 | 2 | Briggs & Stratton Motorplex; Road America Short | main |
-| United States | Road Atlanta | 5 | 4 | 3 | Road Atlanta Combo | main |
+| United States | Road Atlanta | 5 | 4 | 4 |  | main |
 | United States | Rockingham Speedway Infield Course | 2 | 1 | 1 |  | main |
 | United States | Roebling Road Raceway | 1 | 1 | 1 |  |  |
 | United States | Sandia Motor Speedway | 1 | 1 | 1 |  |  |
-| United States | Sebring International Raceway | 7 | 6 | 5 | Sebring Combo | main |
+| United States | Sebring International Raceway | 7 | 6 | 6 |  | main |
 | United States | Sonoma Kart Circuit | 1 | 1 | 0 | Sonoma Kart Circuit |  |
 | United States | Sonoma Raceway 2020 | 8 | 7 | 6 | Sonoma Raceway Combo | main |
 | United States | Spring Mountain Motorsports Ranch | 15 | 14 | 9 | Charleston Peak North; Spring Mountain Raceway; Spring Mtn Raceway East A; Spring Mtn Raceway Lauda B; Spring Mtn Raceway Lauda C | main |
@@ -758,7 +758,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | The Thermal Club | 8 | 7 | 6 | Thermal Club Twin Palms Short | main |
 | United States | Thompson Speedway | 3 | 2 | 2 |  | main |
 | United States | Thunderhill Raceway Park | 6 | 5 | 5 |  | main |
-| United States | Utah Motorsports Campus | 6 | 5 | 4 | Miller Motorsports Park Combo | main |
+| United States | Utah Motorsports Campus | 6 | 5 | 5 |  | main |
 | United States | VA City Hill Climb | 1 | 1 | 0 | VA City Hill Climb |  |
 | United States | Virginia International Raceway | 7 | 6 | 6 |  | main |
 | United States | Waterford Hills | 2 | 1 | 1 |  | main |
@@ -790,7 +790,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | --- | --- | ---: | --- |
 | Argentina/Autodromo de Concordia Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Autodromo de La Pampa |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Argentina/Buenos Aires Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Protrero de los Funes |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Rosario Alt Extended Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -803,7 +802,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/One Raceway Goulburn |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Oran Park Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/Queensland Raceway Combo Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -827,9 +825,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Cyprus/Achna Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Cyprus/Achna Speedway Full Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Czech Republic/Autodrom Sosnova |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Denmark/Jyllands-Ringen Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Dominican Republic/Speedway Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Estonia/Sauga Circuit Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Ales |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -844,27 +840,23 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Germany/ADAC Schlusselfeld |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Estering Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Gross Doelln |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Germany/Lausitzring Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Isle Of Man/TT Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Balocco Alfa Romeo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Italy/Monza Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Vallelunga Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Vallelunga Outer |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Japan/Sendai Highland |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Kuwait/Kuwait Motor Town GP Chicane |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Malaysia/Sepang Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Highlands Motorsports Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 6 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
-| New Zealand/Taupo Motorsport Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Poland/Silesia Ring | 631651845; 631651846; 631651847; 631651848; 631651852; 631651853 | 8 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Poland/Slomczyn RallyCross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Poland/Tor Jastrzab |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -883,8 +875,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Serbia/NAVAK Driving Academy Old |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Africa/Knysna Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| South Korea/Korea International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| South Korea/Korea International Short Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Andalucia Layout 1 5k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Andalucia Layout 2 4k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit de Montjuïc |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -908,10 +898,8 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Taiwan/Penbay FIA International Drag |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay National |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Arab Emirates/Dubai Autodrome Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Arab Emirates/Yas Marina Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Arab Emirates/Yas Marina South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Anglesey Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bedford Autodrome GT |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bicester Heritage |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Boyndie Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -923,7 +911,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Carver Barracks |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Castle Combe Western Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Curborough |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Driftland |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Dunsfold |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Dunsfold Top Gear |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -936,7 +923,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Keevil Airfeild |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Larkhall Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Loton Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Mallory Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Millbrook Handling Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -944,15 +930,12 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Millbrook Hill Route Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/M-Sport Proving Ground |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
-| United Kingdom/Oulton Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Prescott Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/ProDrive |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Rissington Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Rockingham Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Rushmore Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Shelsley Walsh Hillclimb | 306501331; 661290385; 661290386 | 1 | A named OSM route candidate exists, but venue association, timing proximity or travel convention did not pass the automatic checks. Inspect before adding. |
-| United Kingdom/Snetterton Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Three Sisters |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Silverstone RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -984,17 +967,12 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Motorsports Porsche 2mile |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Heartland Park of Topeka Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Homestead Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Inde Motorsports Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Lime Rock | 17179697 | 0 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United States/Long Beach Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/LVMS Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Michelin Laurens Proving Grounds |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Miller Motorsports Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Monticello Motor Club Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/NCM West |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/New York Safety Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1004,8 +982,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Road America Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Road Atlanta Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Sebring Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Sonoma Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Sonoma Raceway Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Spring Mountain Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1047,7 +1023,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Argentina | Autodromo Rosamonte | ar-autodromo-rosamonte-97397524 | autodromo-rosamonte | draft-mapped |
 | Argentina | Autodromo Rosendo Hernandez | ar-autodromo-rosendo-hernandez-193768834 | autodromo-rosendo-hernandez | draft-mapped |
 | Argentina | Autodromo Viedma | ar-autodromo-ciudad-de-viedma-174256195 | main | draft-mapped |
-| Argentina | Buenos Aires Combo | ar-autodromo-oscar-y-juan-galvez-48743061 |  | missing-layout |
+| Argentina | Buenos Aires Combo | ar-autodromo-oscar-y-juan-galvez-48743061 | buenos-aires-combo | draft-mapped |
 | Argentina | Buenos Aires G | ar-autodromo-oscar-y-juan-galvez-48743061 | buenos-aires-g | draft-mapped |
 | Argentina | Buenos Aires H | ar-autodromo-oscar-y-juan-galvez-48743061 | buenos-aires-h | draft-mapped |
 | Argentina | Circuito De Rosario Combo | ar-autodromo-juan-manuel-fangio-293583938 |  | missing-layout |
@@ -1103,7 +1079,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Oran Park Raceway | au-oran-park-raceway-692abacd |  | missing-layout |
 | Australia | Philip Island | au-phillip-island-grand-prix-circuit-43598473 | main | draft-mapped |
 | Australia | Queensland Raceway Club Circuit | au-queensland-raceway-26175772 | queensland-raceway-club-circuit | draft-mapped |
-| Australia | Queensland Raceway Combo Circuit | au-queensland-raceway-26175772 |  | missing-layout |
+| Australia | Queensland Raceway Combo Circuit | au-queensland-raceway-26175772 | queensland-raceway-combo-circuit | draft-mapped |
 | Australia | Queensland Raceway National Circuit | au-queensland-raceway-26175772 | queensland-raceway-national-circuit | draft-mapped |
 | Australia | Queensland Raceway Sportsman | au-queensland-raceway-26175772 | queensland-raceway-sportsman | draft-mapped |
 | Australia | Queensland Raceway Sprint Circuit | au-queensland-raceway-26175772 | queensland-raceway-sprint-circuit | draft-mapped |
@@ -1226,7 +1202,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Czech Republic | Autodrom Sosnova | cz-autodrom-sosnova-30857652 |  | missing-layout |
 | Czech Republic | Brno | cz-brno-8554280d | brno | draft-mapped |
 | Czech Republic | Kartarena Cheb | cz-kartarena-cheb-cbe11e6f | kartarena-cheb | draft-mapped |
-| Denmark | Jyllands-Ringen Combo | dk-jyllandsringen-102145328 |  | missing-layout |
+| Denmark | Jyllands-Ringen Combo | dk-jyllandsringen-102145328 | jyllands-ringen-combo | draft-mapped |
 | Denmark | Jyllands-Ringen-GL | dk-jyllandsringen-102145328 | jyllands-ringen-gl | draft-mapped |
 | Denmark | Jyllands-Ringen-NY | dk-jyllandsringen-102145328 | jyllands-ringen-ny | draft-mapped |
 | Denmark | Padborg Park | dk-padborg-park-95222745 | main | draft-mapped |
@@ -1235,7 +1211,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Dominican Republic | Speedway Park | do-speedway-park-87fad81e |  | missing-layout |
 | El Salvador | Autodromo el Jabali | sv-pista-el-jabali-37713353 | main | draft-mapped |
 | Estonia | Sauga Circuit Audruring | ee-porsche-ring-45482078 | sauga-circuit-audruring | draft-mapped |
-| Estonia | Sauga Circuit Combo | ee-porsche-ring-45482078 |  | missing-layout |
+| Estonia | Sauga Circuit Combo | ee-porsche-ring-45482078 | sauga-circuit-combo | draft-mapped |
 | Estonia | Sauga Circuit Long | ee-porsche-ring-45482078 | sauga-circuit-long | draft-mapped |
 | Estonia | Sauga Circuit short | ee-porsche-ring-45482078 | sauga-circuit-short | draft-mapped |
 | Finland | Ahvenisto | fi-ahveniston-moottorirata-20303307 | main | draft-mapped |
@@ -1333,7 +1309,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Germany | Hockenheimring National | de-hockenheimring | national | draft-mapped |
 | Germany | Hockenheimring Short Track | de-hockenheimring | short | draft-mapped |
 | Germany | Lausitzring 2 Mile | de-lausitzring-7a32e980 | lausitzring-2-mile | draft-mapped |
-| Germany | Lausitzring Combo | de-lausitzring-7a32e980 |  | missing-layout |
+| Germany | Lausitzring Combo | de-lausitzring-7a32e980 | lausitzring-combo | draft-mapped |
 | Germany | Lausitzring GP 3.2km | de-lausitzring-7a32e980 | lausitzring-gp-3-2km | draft-mapped |
 | Germany | Lausitzring GP 3.4km | de-lausitzring-7a32e980 | lausitzring-gp-3-4km | draft-mapped |
 | Germany | Lausitzring GP 3.4km Inc. Turn 1 | de-lausitzring-7a32e980 | lausitzring-gp-3-4km-inc-turn-1 | draft-mapped |
@@ -1391,7 +1367,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Italy | Misano | it-misano | main | draft-mapped |
 | Italy | Modena | it-modena-929ca255 | modena | draft-mapped |
 | Italy | Monza | it-monza | grand-prix | draft-mapped |
-| Italy | Monza Combo | it-monza |  | missing-layout |
+| Italy | Monza Combo | it-monza | monza-combo | draft-mapped |
 | Italy | Monza without Chicane | it-monza | monza-without-chicane | draft-mapped |
 | Italy | Mugello | it-mugello | grand-prix | draft-mapped |
 | Italy | Nardo Handling Track | it-nardo-handling-c15106fb | nardo-handling-track | draft-mapped |
@@ -1442,7 +1418,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Lithuania | Palanga Street Circuit | lt-palanga-street-circuit-a9c06d36 |  | missing-layout |
 | Malaysia | Litar Johor | my-johor-circuit-263456140 | litar-johor | draft-mapped |
 | Malaysia | Sepang | my-sepang-international-circuit-23410503 | sepang | draft-mapped |
-| Malaysia | Sepang Combo | my-sepang-international-circuit-23410503 |  | missing-layout |
+| Malaysia | Sepang Combo | my-sepang-international-circuit-23410503 | sepang-combo | draft-mapped |
 | Malaysia | Sepang North Loop | my-sepang-international-circuit-23410503 | sepang-north-loop | draft-mapped |
 | Mexico | Autodromo Bosques del Angel | mx-autodromo-bosques-del-angel-f23feef9 |  | missing-layout |
 | Mexico | Autodromo EcoCentro Queretaro | mx-autodromo-ecocentro-queretaro-4ca8e015 | autodromo-ecocentro-queretaro | draft-mapped |
@@ -1468,7 +1444,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | New Zealand | Manfeild | nz-manfeild-circuit-chris-amon-348055800 | manfeild | draft-mapped |
 | New Zealand | Pukekohe Park Raceway | nz-pukekohe-park-630395828 | main | draft-mapped |
 | New Zealand | Ruapuna | nz-ruapuna-e0b8962a |  | missing-layout |
-| New Zealand | Taupo Motorsport Park Combo | nz-taupo-international-motorsport-park-90114324 |  | missing-layout |
+| New Zealand | Taupo Motorsport Park Combo | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-combo | draft-mapped |
 | New Zealand | Taupo Motorsport Park Track 1 | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-track-1 | draft-mapped |
 | New Zealand | Taupo Motorsport Park Track 2 | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-track-2 | draft-mapped |
 | New Zealand | Taupo Motorsport Park Track 4 | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-track-4 | draft-mapped |
@@ -1545,8 +1521,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | South Korea | Everland Speedway | kr-everland-speedway-6b81a616 | everland-speedway | draft-mapped |
 | South Korea | Inje Speedium | kr-inje-speedium-651693293 | main | draft-mapped |
 | South Korea | Korea Int Circuit National | kr-korea-international-circuit-234764328 | korea-int-circuit-national | draft-mapped |
-| South Korea | Korea International Circuit | kr-korea-international-circuit-234764328 |  | missing-layout |
-| South Korea | Korea International Short Circuit | kr-korea-international-circuit-234764328 |  | missing-layout |
+| South Korea | Korea International Circuit | kr-korea-international-circuit-234764328 | korea-international-circuit | draft-mapped |
+| South Korea | Korea International Short Circuit | kr-korea-international-circuit-234764328 | korea-international-short-circuit | draft-mapped |
 | South Korea | TaeBaek Racing Park | kr-taebaek-racing-park-reference | main | draft-mapped |
 | Spain | Albacete Old | es-circuito-de-albacete-42783924 | albacete-old | draft-mapped |
 | Spain | Alcarras | es-alcarras-b9a87582 | alcarras | draft-mapped |
@@ -1627,7 +1603,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Turkey | Pinarbasi | tr-pinarbasi-a1cd89d9 | pinarbasi | draft-mapped |
 | Ukraine | Chayka | ua-chayka-41647961 | chayka | draft-mapped |
 | United Arab Emirates | Dubai Autodrome Club Circuit | ae-dubai-autodrome-87272771 | dubai-autodrome-club-circuit | draft-mapped |
-| United Arab Emirates | Dubai Autodrome Combo | ae-dubai-autodrome-87272771 |  | missing-layout |
+| United Arab Emirates | Dubai Autodrome Combo | ae-dubai-autodrome-87272771 | dubai-autodrome-combo | draft-mapped |
 | United Arab Emirates | Dubai Autodrome GP Circuit | ae-dubai-autodrome-87272771 | dubai-autodrome-gp-circuit | draft-mapped |
 | United Arab Emirates | Dubai Autodrome Hill | ae-dubai-autodrome-87272771 | dubai-autodrome-hill | draft-mapped |
 | United Arab Emirates | Dubai Autodrome International | ae-dubai-autodrome-87272771 | dubai-autodrome-international | draft-mapped |
@@ -1645,7 +1621,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Aintree Sprint | gb-aintree-motor-racing-circuit-121110221 | aintree-sprint | draft-mapped |
 | United Kingdom | Anglesey Club | gb-anglesey-circuit-108374689 | anglesey-club | draft-mapped |
 | United Kingdom | Anglesey Coastal | gb-anglesey-circuit-108374689 | anglesey-coastal | draft-mapped |
-| United Kingdom | Anglesey Combo | gb-anglesey-circuit-108374689 |  | missing-layout |
+| United Kingdom | Anglesey Combo | gb-anglesey-circuit-108374689 | anglesey-combo | draft-mapped |
 | United Kingdom | Anglesey International | gb-anglesey-circuit-108374689 | anglesey-international | draft-mapped |
 | United Kingdom | Anglesey National | gb-anglesey-circuit-108374689 | anglesey-national | draft-mapped |
 | United Kingdom | Bayford Meadows | gb-bayford-meadows-reference | main | draft-mapped |
@@ -1674,7 +1650,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Castle Combe Western Sprint | gb-castle-combe-circuit-35406015 |  | missing-layout |
 | United Kingdom | Clay Pigeon Raceway | gb-clay-pigeon-raceway-reference | main | draft-mapped |
 | United Kingdom | Croft | gb-croft-circuit-25805724 | main | draft-mapped |
-| United Kingdom | Curborough | gb-curborough-68a60e27 |  | missing-layout |
+| United Kingdom | Curborough | gb-curborough-68a60e27 | curborough | draft-mapped |
 | United Kingdom | Daytona MK | gb-daytona-mk-2c22f005 | daytona-mk | draft-mapped |
 | United Kingdom | Daytona Sandown Park | gb-daytona-sandown-park-76f92956 | daytona-sandown-park | draft-mapped |
 | United Kingdom | Donington GP | gb-donington-park-27131003 | donington-gp | draft-mapped |
@@ -1704,7 +1680,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Knockhill | gb-knockhill-racing-circuit-170005848 | main | draft-mapped |
 | United Kingdom | Larkhall Kart Circuit | gb-larkhall-kart-circuit-2b78a780 |  | missing-layout |
 | United Kingdom | Llandow | gb-llandow-circuit-84554110 | main | draft-mapped |
-| United Kingdom | Loton Hillclimb | gb-loton-hillclimb-2b41199e |  | missing-layout |
+| United Kingdom | Loton Hillclimb | gb-loton-hillclimb-2b41199e | loton-hillclimb | draft-mapped |
 | United Kingdom | Lydd Karting Circuit | gb-lydd-karting-circuit-6376d69a | lydd-karting-circuit | draft-mapped |
 | United Kingdom | Lydden Hill | gb-lydden-hill-3c587916 | lydden-hill | draft-mapped |
 | United Kingdom | Lydden Hill Infield | gb-lydden-hill-infield-8b6d41b9 |  | missing-layout |
@@ -1716,14 +1692,14 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Millbrook Hill Route Full | gb-millbrook-hill-route-372dafdf |  | missing-layout |
 | United Kingdom | M-Sport Proving Ground | gb-m-sport-proving-ground-fe7c7315 |  | missing-layout |
 | United Kingdom | Nutts Corner | gb-nutts-corner-6fa16d73 |  | missing-layout |
-| United Kingdom | Oulton Park Combo | gb-oulton-park-circuit-21831735 |  | missing-layout |
+| United Kingdom | Oulton Park Combo | gb-oulton-park-circuit-21831735 | oulton-park-combo | draft-mapped |
 | United Kingdom | Oulton Park Fosters Circuit | gb-oulton-park-circuit-21831735 | oulton-park-fosters-circuit | draft-mapped |
 | United Kingdom | Oulton Park International | gb-oulton-park-circuit-21831735 | oulton-park-international | draft-mapped |
 | United Kingdom | Oulton Park Island Circuit | gb-oulton-park-circuit-21831735 | oulton-park-island-circuit | draft-mapped |
 | United Kingdom | Pembrey | gb-pembrey-circuit-177186595 | pembrey | draft-mapped |
 | United Kingdom | Pembrey Clubman | gb-pembrey-circuit-177186595 | pembrey-clubman | draft-mapped |
 | United Kingdom | PFI | gb-pfi-80957d6a | pfi | draft-mapped |
-| United Kingdom | Prescott Hill Climb | gb-prescott-hill-climb-cff4bee0 |  | missing-layout |
+| United Kingdom | Prescott Hill Climb | gb-prescott-hill-climb-cff4bee0 | prescott-hill-climb | draft-mapped |
 | United Kingdom | Prestwold Hall | gb-prestwold-hall-reference | main | draft-mapped |
 | United Kingdom | ProDrive | gb-prodrive-bf598a18 |  | missing-layout |
 | United Kingdom | RAF Woodbridge | gb-raf-woodbridge-02bc9a03 |  | missing-layout |
@@ -1740,7 +1716,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Shelsley Walsh Hillclimb | gb-shelsley-walsh-hillclimb-aaa3a45c |  | missing-layout |
 | United Kingdom | Shenington Kart Racing Club | gb-shenington-kart-racing-a8ff3102 | shenington-kart-racing-club | draft-mapped |
 | United Kingdom | Silverstone Stowe | gb-silverstone-circuit-3571477 | silverstone-stowe | draft-mapped |
-| United Kingdom | Snetterton Combo | gb-snetterton-motor-racing-circuit-145755937 |  | missing-layout |
+| United Kingdom | Snetterton Combo | gb-snetterton-motor-racing-circuit-145755937 | snetterton-combo | draft-mapped |
 | United Kingdom | Snetterton100 | gb-snetterton-motor-racing-circuit-145755937 | snetterton100 | draft-mapped |
 | United Kingdom | Snetterton200 | gb-snetterton-motor-racing-circuit-145755937 | snetterton200 | draft-mapped |
 | United Kingdom | Snetterton300 | gb-snetterton-motor-racing-circuit-145755937 | snetterton300 | draft-mapped |
@@ -1843,12 +1819,12 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Heartland Park of Topeka A | us-heartland-park-raceway-137283766 | heartland-park-of-topeka-a | draft-mapped |
 | United States | Heartland Park of Topeka B | us-heartland-park-raceway-137283766 | heartland-park-of-topeka-b | draft-mapped |
 | United States | Heartland Park of Topeka C | us-heartland-park-raceway-137283766 | heartland-park-of-topeka-c | draft-mapped |
-| United States | Heartland Park of Topeka Combo | us-heartland-park-raceway-137283766 |  | missing-layout |
+| United States | Heartland Park of Topeka Combo | us-heartland-park-raceway-137283766 | heartland-park-of-topeka-combo | draft-mapped |
 | United States | Heartland Park of Topeka D | us-heartland-park-raceway-137283766 | heartland-park-of-topeka-d | draft-mapped |
 | United States | Hedge Hollow Circuit | us-hedge-hollow-raceway-914202229 | main | draft-mapped |
 | United States | Hedge Hollow Outer | us-hedge-hollow-raceway-914202229 | hedge-hollow-outer | draft-mapped |
 | United States | High Plains Raceway | us-high-plains-raceway-132189631 | high-plains-raceway | draft-mapped |
-| United States | Homestead Combo | us-homestead-miami-speedway-108159182 |  | missing-layout |
+| United States | Homestead Combo | us-homestead-miami-speedway-108159182 | homestead-combo | draft-mapped |
 | United States | Homestead Modified Road Course | us-homestead-miami-speedway-108159182 | homestead-modified-road-course | draft-mapped |
 | United States | Homestead Oval Course | us-homestead-miami-speedway-108159182 | homestead-oval-course | draft-mapped |
 | United States | Homestead Road Course | us-homestead-miami-speedway-108159182 | homestead-road-course | draft-mapped |
@@ -1871,7 +1847,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Las Vegas Motor Speedway | us-las-vegas-motor-speedway-27545411 | main | draft-mapped |
 | United States | Lime Rock | us-lime-rock-park-17179697 |  | missing-layout |
 | United States | Long Beach Street Circuit | us-long-beach-street-circuit-5f06f492 |  | missing-layout |
-| United States | LVMS Combo | us-las-vegas-motor-speedway-27545411 |  | missing-layout |
+| United States | LVMS Combo | us-las-vegas-motor-speedway-27545411 | lvms-combo | draft-mapped |
 | United States | LVMS Exotics Racing | us-lvms-exotics-racing-dd5324f3 | lvms-exotics-racing | draft-mapped |
 | United States | LVMS Infield Road Course | us-las-vegas-motor-speedway-27545411 | lvms-infield-road-course | draft-mapped |
 | United States | LVMS Outfield Road Course | us-las-vegas-motor-speedway-27545411 | lvms-outfield-road-course | draft-mapped |
@@ -1890,12 +1866,12 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Mid Ohio Raceway - without chicane | us-mid-ohio-sports-car-course-444205375 | mid-ohio-raceway-without-chicane | draft-mapped |
 | United States | MidAmerica Motorplex | us-midamerica-motorplex-a85e50bc | midamerica-motorplex | draft-mapped |
 | United States | Milford Road Course | us-milford-road-course-6e8e65d4 | milford-road-course | draft-mapped |
-| United States | Miller Motorsports Park Combo | us-utah-motorsports-campus-343796175 |  | missing-layout |
+| United States | Miller Motorsports Park Combo | us-utah-motorsports-campus-343796175 | miller-motorsports-park-combo | draft-mapped |
 | United States | Miller Motorsports Park East | us-utah-motorsports-campus-343796175 | miller-motorsports-park-east | draft-mapped |
 | United States | Miller Motorsports Park Full | us-utah-motorsports-campus-343796175 | miller-motorsports-park-full | draft-mapped |
 | United States | Miller Motorsports Park Outer | us-utah-motorsports-campus-343796175 | miller-motorsports-park-outer | draft-mapped |
 | United States | Miller Motorsports Park West | us-utah-motorsports-campus-343796175 | miller-motorsports-park-west | draft-mapped |
-| United States | Monticello Motor Club Combo | us-monticello-motor-club-235166661 |  | missing-layout |
+| United States | Monticello Motor Club Combo | us-monticello-motor-club-235166661 | monticello-motor-club-combo | draft-mapped |
 | United States | Monticello Motor Club Full | us-monticello-motor-club-235166661 | monticello-motor-club-full | draft-mapped |
 | United States | Monticello Motor Club Mushroom | us-monticello-motor-club-235166661 | monticello-motor-club-mushroom | draft-mapped |
 | United States | Monticello Motor Club North | us-monticello-motor-club-235166661 | monticello-motor-club-north | draft-mapped |
@@ -1961,14 +1937,14 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Road America Short | us-road-america-110527567 |  | missing-layout |
 | United States | Road America SRO Practice | us-road-america-110527567 | road-america-sro-practice | draft-mapped |
 | United States | Road Atlanta | us-road-atlanta-9292566 | road-atlanta | draft-mapped |
-| United States | Road Atlanta Combo | us-road-atlanta-9292566 |  | missing-layout |
+| United States | Road Atlanta Combo | us-road-atlanta-9292566 | road-atlanta-combo | draft-mapped |
 | United States | Road Atlanta Short | us-road-atlanta-9292566 | road-atlanta-short | draft-mapped |
 | United States | Road Atlanta SRO Practice | us-road-atlanta-9292566 | road-atlanta-sro-practice | draft-mapped |
 | United States | Rockingham Infield Course | us-rockingham-speedway-infield-course-245545512 | rockingham-infield-course | draft-mapped |
 | United States | Roebling Road | us-roebling-road-raceway-193696511 | main | draft-mapped |
 | United States | Sandia Motor Speedway | us-sandia-motor-speedway-2915dd70 | sandia-motor-speedway | draft-mapped |
 | United States | Sebring | us-sebring-international-raceway-426154257 | sebring | draft-mapped |
-| United States | Sebring Combo | us-sebring-international-raceway-426154257 |  | missing-layout |
+| United States | Sebring Combo | us-sebring-international-raceway-426154257 | sebring-combo | draft-mapped |
 | United States | Sebring Johnson Club | us-sebring-international-raceway-426154257 | sebring-johnson-club | draft-mapped |
 | United States | Sebring Johnson Club Alt SF | us-sebring-international-raceway-426154257 | sebring-johnson-club-alt-sf | draft-mapped |
 | United States | Sebring School Circuit | us-sebring-international-raceway-426154257 | sebring-school-circuit | draft-mapped |
