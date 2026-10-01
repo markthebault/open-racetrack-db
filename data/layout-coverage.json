@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 840,
-    "unmappedLayouts": 167,
+    "draftMapped": 843,
+    "unmappedLayouts": 164,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2229,11 +2229,14 @@
       "name": "Canadian Tire Motorsports Park DDT",
       "timingMode": "shared",
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "canadian-tire-motorsports-park-ddt"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -11334,11 +11337,14 @@
       "name": "Three Sisters",
       "timingMode": "shared",
       "trackId": "gb-three-sisters-d8b843ac",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "three-sisters"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -13293,11 +13299,14 @@
       "name": "Long Beach Street Circuit",
       "timingMode": "shared",
       "trackId": "us-long-beach-street-circuit-5f06f492",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "long-beach-street-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17663,15 +17672,16 @@
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
       "name": "Canadian Tire Motorsports Park DDT",
       "country": "Canada",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Canadian Tire Motorsports Park DDT"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "ddt-two-kinks",
+        "ddt-one-kink"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -21215,15 +21225,17 @@
       "trackId": "gb-three-sisters-d8b843ac",
       "name": "Three Sisters",
       "country": "United Kingdom",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 4,
+      "actualTraceCount": 4,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Three Sisters"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "three-sisters-full",
+        "three-sisters-perimeter",
+        "three-sisters-club"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -25159,15 +25171,13 @@
       "name": "Long Beach Street Circuit",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Long Beach Street Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-lvms-exotics-racing-dd5324f3",
@@ -26799,13 +26809,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Canada/Canadian Tire Motorsports Park DDT",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Canada/Goodwood Kartways",
       "matchingNamedWayIds": [
         77095786,
@@ -27519,13 +27522,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Kingdom/Three Sisters",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Silverstone RX",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27715,13 +27711,6 @@
     },
     {
       "recordId": "United States/Inde Motorsports Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Long Beach Street Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

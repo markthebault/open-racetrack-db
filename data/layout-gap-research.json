@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 9,
-    "course-distance-discrepancy": 55,
-    "independent-geometry-missing": 56,
+    "course-distance-discrepancy": 53,
+    "independent-geometry-missing": 55,
     "ambiguous-source-branches": 29,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 11
@@ -303,23 +303,6 @@
       "closestSourceLengthM": 1013.6,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Canada/Canadian Tire Motorsports Park DDT",
-      "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
-      "layoutId": "canadian-tire-motorsports-park-ddt",
-      "sourcePath": "sources/world/ca/osm.json",
-      "sourceWayIds": [
-        77852104,
-        366375901,
-        366375906,
-        366375907,
-        366488128
-      ],
-      "candidateCount": 15,
-      "closestSourceLengthM": 3031.6,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Canada/Goodwood Kartways",
@@ -1977,37 +1960,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United Kingdom/Three Sisters",
-      "trackId": "gb-three-sisters-d8b843ac",
-      "layoutId": "three-sisters",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        893420087,
-        893420088,
-        893420089,
-        893420090,
-        893420091,
-        893420092,
-        893420093,
-        893420094,
-        893420095,
-        893420096,
-        893420097,
-        893420098,
-        893420099,
-        893420100,
-        893420101,
-        893420104,
-        1208384873,
-        1208384874,
-        1208384875
-      ],
-      "candidateCount": 10,
-      "closestSourceLengthM": 1509.6,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "United Kingdom/Silverstone RX",
       "trackId": "gb-silverstone-circuit-3571477",
       "layoutId": "silverstone-rx",
@@ -2425,15 +2377,6 @@
       "sourcePath": "sources/world/us/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United States/Long Beach Street Circuit",
-      "trackId": "us-long-beach-street-circuit-5f06f492",
-      "layoutId": "long-beach-street-circuit",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "United States/LVMS Super Speedway",

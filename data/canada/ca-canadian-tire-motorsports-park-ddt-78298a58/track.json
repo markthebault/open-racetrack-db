@@ -8,17 +8,81 @@
     "name": "Canada",
     "slug": "canada"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -78.68569135,
+    44.0502952
+  ],
+  "sourceIds": [
+    "osm-components-77852104",
+    "osm-network-canadian-tire-motorsports-park-ddt"
+  ],
   "defaultLayoutId": "canadian-tire-motorsports-park-ddt",
   "layouts": [
     {
       "id": "canadian-tire-motorsports-park-ddt",
       "name": "Canadian Tire Motorsports Park DDT",
       "referenceId": "Canada/Canadian Tire Motorsports Park DDT",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/canadian-tire-motorsports-park-ddt.geojson",
+      "description": "Combined mapped configurations: Driver Development Track Two Kinks, Driver Development Track One Kink. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "ddt-two-kinks",
+      "name": "Driver Development Track Two Kinks",
+      "file": "layouts/ddt-two-kinks.geojson",
+      "description": "The organizer May 2024 course plan identifies the main northern training circuit and inner Turn 13 return, with two kinks and the complete southern loop. Exact independent source distance is 2892.7 m compared with the operator rounded 2.88 km. Northern pit-parallel and angular central access shortcuts are excluded."
+    },
+    {
+      "id": "ddt-one-kink",
+      "name": "Driver Development Track One Kink",
+      "file": "layouts/ddt-one-kink.geojson",
+      "description": "The organizer May 2022 course plan identifies the main northern training circuit and straight return bypassing Turn 13, with the complete southern loop. Exact independent source distance is 2842.1 m. Northern pit-parallel and angular central access shortcuts are excluded."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-77852104",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/77852104",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-ddt-two-kinks",
+      "type": "reference",
+      "title": "Driver Development Track Two Kinks identification",
+      "url": "https://ontariotimeattack.ca/wp-content/uploads/2024/05/Supp-regs-Lapping-Day-DDT.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The organizer May 2024 course plan identifies the main northern training circuit and inner Turn 13 return, with two kinks and the complete southern loop. Exact independent source distance is 2892.7 m compared with the operator rounded 2.88 km. Northern pit-parallel and angular central access shortcuts are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ddt-one-kink",
+      "type": "reference",
+      "title": "Driver Development Track One Kink identification",
+      "url": "https://ontariotimeattack.ca/wp-content/uploads/2022/04/CTMP-DDT-1-Kink-Map-Event-1-May-15-2022.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The organizer May 2022 course plan identifies the main northern training circuit and straight return bypassing Turn 13, with the complete southern loop. Exact independent source distance is 2842.1 m. Northern pit-parallel and angular central access shortcuts are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-canadian-tire-motorsports-park-ddt",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/77852104",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:13:43.315Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-canadian-tire-motorsports-park-ddt",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://ontariotimeattack.ca/wp-content/uploads/2024/05/Supp-regs-Lapping-Day-DDT.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:13:43.315Z",
+      "evidenceNote": "The general Driver Development Track entry is represented by the publicly identified One Kink and Two Kinks driving configurations. Both retain the full southern loop and main northern track; the second uses the inner Turn 13 return. Northern pit-parallel and angular central access cuts are excluded. The separately advertised Intermediate training route has not been independently identified and is not asserted by this set. The independent unique branch distance is 2984.4 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 840
-- unmappedLayouts: 167
+- draftMapped: 843
+- unmappedLayouts: 164
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -142,7 +142,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Calabogie Motorsports Park | 2 | 1 | 1 |  | main |
 | Canada | Cameron Speedway Kart Circuit | 1 | 1 | 0 | Cameron Speedway Kart Circuit |  |
 | Canada | Canadian Tire Motorsport Park | 2 | 2 | 2 |  |  |
-| Canada | Canadian Tire Motorsports Park DDT | 1 | 1 | 0 | Canadian Tire Motorsports Park DDT |  |
+| Canada | Canadian Tire Motorsports Park DDT | 3 | 1 | 1 |  | ddt-two-kinks; ddt-one-kink |
 | Canada | Cayuga Motor Speedway | 1 | 0 | 0 |  | main |
 | Canada | Circuit ICAR | 4 | 3 | 2 | ICAR Mirabel LONG chicane | main |
 | Canada | Circuit Mont-Tremblant | 2 | 1 | 1 |  | main |
@@ -394,7 +394,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Silverstone Circuit | 9 | 8 | 7 | Silverstone RX | main |
 | United Kingdom | Snetterton Motor Racing Circuit | 5 | 4 | 4 |  | main |
 | United Kingdom | Thorsway MX | 1 | 1 | 0 | Thorsway MX |  |
-| United Kingdom | Three Sisters | 1 | 1 | 0 | Three Sisters |  |
+| United Kingdom | Three Sisters | 4 | 1 | 1 |  | three-sisters-full; three-sisters-perimeter; three-sisters-club |
 | United Kingdom | Thruxton Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Tullyroan Oval Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Whilton Mill | 2 | 2 | 2 |  |  |
@@ -675,7 +675,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Las Vegas Motor Speedway | 7 | 7 | 5 | LVMS Super Speedway; LVMS Super Speedway Infield |  |
 | United States | Lil' Texas Motor Speedway Track | 1 | 0 | 0 |  | main |
 | United States | Lime Rock Park | 2 | 1 | 1 |  | main |
-| United States | Long Beach Street Circuit | 1 | 1 | 0 | Long Beach Street Circuit |  |
+| United States | Long Beach Street Circuit | 1 | 1 | 1 |  |  |
 | United States | LVMS Exotics Racing | 1 | 1 | 1 |  |  |
 | United States | M1 Concourse | 1 | 1 | 1 |  |  |
 | United States | Martinsville Speedway | 1 | 0 | 0 |  | main |
@@ -808,7 +808,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Brazil/Kartodromo Granja Viana |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Bulgaria/Drakon |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/Canadian Tire Motorsports Park DDT |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Goodwood Kartways | 77095786; 1111888556; 1111888557 | 3 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Canada/ICAR Mirabel LONG chicane |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -906,7 +905,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Rushmore Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Shelsley Walsh Hillclimb | 306501331; 661290385; 661290386 | 1 | A named OSM route candidate exists, but venue association, timing proximity or travel convention did not pass the automatic checks. Inspect before adding. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Three Sisters |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Silverstone RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex I |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex II |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -934,7 +932,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Road 1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Inde Motorsports Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Long Beach Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Michelin Laurens Proving Grounds |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1102,7 +1099,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Calabogie | ca-calabogie-motorsports-park-279357480 | calabogie | draft-mapped |
 | Canada | Cameron Speedway Kart Circuit | ca-cameron-speedway-kart-circuit-f7997f0a |  | missing-layout |
 | Canada | Canadian Tire Motorsports Park | ca-canadian-tire-motorsport-park-37059242 | main | draft-mapped |
-| Canada | Canadian Tire Motorsports Park DDT | ca-canadian-tire-motorsports-park-ddt-78298a58 |  | missing-layout |
+| Canada | Canadian Tire Motorsports Park DDT | ca-canadian-tire-motorsports-park-ddt-78298a58 | canadian-tire-motorsports-park-ddt | draft-mapped |
 | Canada | Castrol Raceway | ca-rad-torque-raceway-486902392 | main | draft-mapped |
 | Canada | Gilles Villeneuve | ca-gilles-villeneuve-rl | main | draft-mapped |
 | Canada | Goodwood Kartways | ca-goodwood-kartways-6e03d980 |  | missing-layout |
@@ -1682,7 +1679,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Snetterton200 | gb-snetterton-motor-racing-circuit-145755937 | snetterton200 | draft-mapped |
 | United Kingdom | Snetterton300 | gb-snetterton-motor-racing-circuit-145755937 | snetterton300 | draft-mapped |
 | United Kingdom | Thorsway MX | gb-thorsway-mx-ad3657ee |  | missing-layout |
-| United Kingdom | Three Sisters | gb-three-sisters-d8b843ac |  | missing-layout |
+| United Kingdom | Three Sisters | gb-three-sisters-d8b843ac | three-sisters | draft-mapped |
 | United Kingdom | Thruxton | gb-thruxton-circuit-7736906 | main | draft-mapped |
 | United Kingdom | Tullyroan Oval Circuit | gb-tullyroan-oval-circuit-67c5cdb4 | tullyroan-oval-circuit | draft-mapped |
 | United Kingdom | Whilton Mill International | gb-whilton-mill-8610510a | whilton-mill-international | draft-mapped |
@@ -1807,7 +1804,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Las Vegas GP | us-las-vegas-ea6b36a5 | las-vegas-gp | draft-mapped |
 | United States | Las Vegas Motor Speedway | us-las-vegas-motor-speedway-27545411 | main | draft-mapped |
 | United States | Lime Rock | us-lime-rock-park-17179697 | lime-rock | draft-mapped |
-| United States | Long Beach Street Circuit | us-long-beach-street-circuit-5f06f492 |  | missing-layout |
+| United States | Long Beach Street Circuit | us-long-beach-street-circuit-5f06f492 | long-beach-street-circuit | draft-mapped |
 | United States | LVMS Combo | us-las-vegas-motor-speedway-27545411 | lvms-combo | draft-mapped |
 | United States | LVMS Exotics Racing | us-lvms-exotics-racing-dd5324f3 | lvms-exotics-racing | draft-mapped |
 | United States | LVMS Infield Road Course | us-las-vegas-motor-speedway-27545411 | lvms-infield-road-course | draft-mapped |

@@ -310,6 +310,58 @@
           "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf"
         }
       ]
+    },
+    {
+      "referenceId": "United Kingdom/Three Sisters",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "three-sisters-full",
+        "three-sisters-perimeter",
+        "three-sisters-club"
+      ],
+      "expectedLengthM": 1712.2,
+      "identificationUrl": "https://threesisterscircuit.co.uk/cars/car-track-attacks",
+      "evidence": "The general venue configuration includes the operator named Full, Perimeter and Club circuits. The published route diagrams identify the outer Coward Summit return, inner Penrith climb, Lucy Valley and complete Joey Dunlop hairpin. Each route is separately selectable. Their union excludes the angular pit detour and is displayed as a configuration network rather than a lap. The independent unique branch distance is 1712.2 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "three-sisters-full",
+          "name": "Three Sisters Full Circuit",
+          "url": "https://threesisterscircuit.co.uk/cars/car-track-attacks"
+        },
+        {
+          "layoutId": "three-sisters-perimeter",
+          "name": "Three Sisters Perimeter Circuit",
+          "url": "https://threesisterscircuit.co.uk/cars/car-track-attacks"
+        },
+        {
+          "layoutId": "three-sisters-club",
+          "name": "Three Sisters Club Circuit",
+          "url": "https://threesisterscircuit.co.uk/adults/open/3s40-indiv-enduro"
+        }
+      ]
+    },
+    {
+      "referenceId": "Canada/Canadian Tire Motorsports Park DDT",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "ddt-two-kinks",
+        "ddt-one-kink"
+      ],
+      "expectedLengthM": 2984.4,
+      "identificationUrl": "https://ontariotimeattack.ca/wp-content/uploads/2024/05/Supp-regs-Lapping-Day-DDT.pdf",
+      "evidence": "The general Driver Development Track entry is represented by the publicly identified One Kink and Two Kinks driving configurations. Both retain the full southern loop and main northern track; the second uses the inner Turn 13 return. Northern pit-parallel and angular central access cuts are excluded. The separately advertised Intermediate training route has not been independently identified and is not asserted by this set. The independent unique branch distance is 2984.4 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "ddt-two-kinks",
+          "name": "Driver Development Track Two Kinks",
+          "url": "https://ontariotimeattack.ca/wp-content/uploads/2024/05/Supp-regs-Lapping-Day-DDT.pdf"
+        },
+        {
+          "layoutId": "ddt-one-kink",
+          "name": "Driver Development Track One Kink",
+          "url": "https://ontariotimeattack.ca/wp-content/uploads/2022/04/CTMP-DDT-1-Kink-Map-Event-1-May-15-2022.pdf"
+        }
+      ]
     }
   ]
 }
