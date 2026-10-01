@@ -8,17 +8,41 @@
     "name": "Türkiye",
     "slug": "turkiye"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    27.272647,
+    38.433562300000006
+  ],
+  "sourceIds": [
+    "osm-selection-pinarbasi-2020-38626201"
+  ],
   "defaultLayoutId": "pinarbasi",
   "layouts": [
     {
       "id": "pinarbasi",
       "name": "Pinarbasi",
       "referenceId": "Turkey/Pinarbasi",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/pinarbasi.geojson",
+      "description": "Draft configuration: Historical circuit retains the western rounded return and inner central hairpin, excluding the later western extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1966.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-pinarbasi-2020-38626201",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/38626201",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T16:36:18.286Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-pinarbasi",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/38626201",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T16:36:18.286Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

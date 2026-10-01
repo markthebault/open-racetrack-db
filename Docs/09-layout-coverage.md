@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 773
-- unmappedLayouts: 234
+- draftMapped: 777
+- unmappedLayouts: 230
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -309,7 +309,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | France | Le Mans Bugatti Circuit | 4 | 4 | 4 |  |  |
 | France | Lessay | 1 | 1 | 1 |  |  |
 | France | Circuit de Nevers Magny-Cours | 2 | 2 | 2 |  |  |
-| France | Monaco | 1 | 1 | 0 | Monaco |  |
+| France | Monaco | 1 | 1 | 1 |  |  |
 | France | Pau Ville | 1 | 1 | 1 |  |  |
 | France | Circuit Paul Ricard | 8 | 8 | 8 |  |  |
 | France | Pôle Mécanique Alès-Cévennes | 4 | 3 | 1 | Ales; Ales1 Rally Stage | main |
@@ -544,7 +544,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Portugal | Macao RX | 1 | 1 | 0 | Macao RX |  |
 | Portugal | Montalegre | 1 | 1 | 0 | Montalegre |  |
 | Portugal | Sever do Vouga | 1 | 1 | 1 |  |  |
-| Portugal | Vila Real | 1 | 1 | 0 | Vila Real |  |
+| Portugal | Vila Real | 1 | 1 | 1 |  |  |
 | Qatar | Lusail International Circuit | 2 | 1 | 1 |  | main |
 | Romania | Motor Park România | 2 | 1 | 1 |  | main |
 | Romania | Transilvania Motor Ring | 1 | 1 | 1 |  |  |
@@ -597,7 +597,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Türkiye | Istanbul Park | 1 | 1 | 1 |  |  |
 | Türkiye | Izmir Park | 1 | 1 | 1 |  |  |
 | Türkiye | Korfez Circuit | 1 | 1 | 1 |  |  |
-| Türkiye | Pinarbasi | 1 | 1 | 0 | Pinarbasi |  |
+| Türkiye | Pinarbasi | 1 | 1 | 1 |  |  |
 | Taiwan | Lihpao G2 | 2 | 2 | 2 |  |  |
 | Taiwan | Lihpao Wind | 1 | 1 | 0 | Lihpao Wind |  |
 | Taiwan | Penbay | 5 | 5 | 3 | Penbay Combo; Penbay National |  |
@@ -638,7 +638,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Davis Kart Circuit | 1 | 1 | 1 |  |  |
 | United States | Daytona International Speedway | 2 | 1 | 1 |  | main |
 | United States | Detroit City Airport | 1 | 1 | 0 | Detroit City Airport |  |
-| United States | Detroit Street Circuit | 1 | 1 | 0 | Detroit Street Circuit |  |
+| United States | Detroit Street Circuit | 1 | 1 | 1 |  |  |
 | United States | Dixon Kart Circuit | 1 | 1 | 0 | Dixon Kart Circuit |  |
 | United States | Dominion Raceway | 1 | 1 | 1 |  |  |
 | United States | Dover Motor Speedway | 1 | 0 | 0 |  | main |
@@ -841,7 +841,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | France/Geoparc Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Kerlabo RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Loheac Rallycross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Monaco |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/ADAC Schlusselfeld |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Estering Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Gross Doelln |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -876,7 +875,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Portugal/Lousada RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Macao RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Montalegre |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Portugal/Vila Real |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Moscow Raceway | 168247376; 171408790 | 2 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -910,7 +908,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Taiwan/Penbay FIA International Drag |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay National |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Turkey/Pinarbasi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Arab Emirates/Dubai Autodrome Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Arab Emirates/Yas Marina Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Arab Emirates/Yas Marina South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -976,7 +973,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Charlotte Motor Speedway ROVAL | 116107372; 402168714; 402168718; 585912895; 1432059704 | 2 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Detroit Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Dixon Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Eagles Canyon Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Infield Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1305,7 +1301,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Maison Blanche 2 | fr-le-mans-bugatti | maison-blanche-2 | draft-mapped |
 | France | Mas du Clos | fr-circuit-du-mas-du-clos-198415032 | mas-du-clos | draft-mapped |
 | France | Mirecourt Circuit | fr-circuit-de-mirecourt-1150785576 | mirecourt-circuit | draft-mapped |
-| France | Monaco | fr-monaco-11457009 |  | missing-layout |
+| France | Monaco | fr-monaco-11457009 | monaco | draft-mapped |
 | France | Nogaro | fr-circuit-paul-armagnac-95798633 | main | draft-mapped |
 | France | Pau Arnos | fr-circuit-pau-arnos-61498515 | main | draft-mapped |
 | France | Pau Ville | fr-pau-ville-7f7fc4ac | pau-ville | draft-mapped |
@@ -1507,7 +1503,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Portugal | Montalegre | pt-montalegre-b7bbb3e7 |  | missing-layout |
 | Portugal | Portimao | pt-algarve-international-circuit-39218663 | main | draft-mapped |
 | Portugal | Sever do Vouga | pt-sever-do-vouga-6461caa5 | sever-do-vouga | draft-mapped |
-| Portugal | Vila Real | pt-vila-real-e43faa99 |  | missing-layout |
+| Portugal | Vila Real | pt-vila-real-e43faa99 | vila-real | draft-mapped |
 | Qatar | Losail | qa-lusail-international-circuit-152483595 | losail | draft-mapped |
 | Romania | Motorpark Romania | ro-motor-park-romania-333031200 | motorpark-romania | draft-mapped |
 | Romania | Transilvania Motor Ring | ro-transilvania-motor-ring-488429454 | main | draft-mapped |
@@ -1628,7 +1624,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Turkey | Istanbul Park | tr-istanbul-park-179048507 | main | draft-mapped |
 | Turkey | Izmir Park | tr-izmir-park-8a7dd2b1 | izmir-park | draft-mapped |
 | Turkey | Korfez Circuit | tr-korfez-circuit-188cf4c9 | korfez-circuit | draft-mapped |
-| Turkey | Pinarbasi | tr-pinarbasi-a1cd89d9 |  | missing-layout |
+| Turkey | Pinarbasi | tr-pinarbasi-a1cd89d9 | pinarbasi | draft-mapped |
 | Ukraine | Chayka | ua-chayka-41647961 | chayka | draft-mapped |
 | United Arab Emirates | Dubai Autodrome Club Circuit | ae-dubai-autodrome-87272771 | dubai-autodrome-club-circuit | draft-mapped |
 | United Arab Emirates | Dubai Autodrome Combo | ae-dubai-autodrome-87272771 |  | missing-layout |
@@ -1816,7 +1812,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Davis Kart Circuit | us-davis-kart-circuit-c37d544b | davis-kart-circuit | draft-mapped |
 | United States | Daytona 24 Hour | us-daytona-international-speedway-11371365 | daytona-24-hour | draft-mapped |
 | United States | Detroit City Airport | us-detroit-city-airport-f3ab2023 |  | missing-layout |
-| United States | Detroit Street Circuit | us-detroit-street-circuit-54f7fe14 |  | missing-layout |
+| United States | Detroit Street Circuit | us-detroit-street-circuit-54f7fe14 | detroit-street-circuit | draft-mapped |
 | United States | Dixon Kart Circuit | us-dixon-kart-circuit-30c5083d |  | missing-layout |
 | United States | Dominion Raceway | us-dominion-raceway-089a1544 | dominion-raceway | draft-mapped |
 | United States | Driveway Austin - Elevation Course | us-driveway-austin-elevation-course-e8d7a8bf | driveway-austin-elevation-course | draft-mapped |

@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 32,
-    "course-distance-discrepancy": 73,
-    "independent-geometry-missing": 71,
+    "course-distance-discrepancy": 72,
+    "independent-geometry-missing": 68,
     "ambiguous-source-branches": 35,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 14,
@@ -787,15 +787,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "France/Monaco",
-      "trackId": "fr-monaco-11457009",
-      "layoutId": "monaco",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "Germany/ADAC Schlusselfeld",
       "trackId": "de-adac-schlusselfeld-1d190ba0",
       "layoutId": "adac-schlusselfeld",
@@ -1540,15 +1531,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "Portugal/Vila Real",
-      "trackId": "pt-vila-real-e43faa99",
-      "layoutId": "vila-real",
-      "sourcePath": "sources/europe/pt/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "Russia/Moscow Raceway",
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-raceway",
@@ -2070,20 +2052,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Turkey/Pinarbasi",
-      "trackId": "tr-pinarbasi-a1cd89d9",
-      "layoutId": "pinarbasi",
-      "sourcePath": "sources/europe/tr/osm.json",
-      "sourceWayIds": [
-        793938284,
-        793938285
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 2087.9,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United Arab Emirates/Dubai Autodrome Combo",
@@ -3000,15 +2968,6 @@
       "referenceId": "United States/Detroit City Airport",
       "trackId": "us-detroit-city-airport-f3ab2023",
       "layoutId": "detroit-city-airport",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/Detroit Street Circuit",
-      "trackId": "us-detroit-street-circuit-54f7fe14",
-      "layoutId": "detroit-street-circuit",
       "sourcePath": "sources/world/us/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",

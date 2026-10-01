@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **773 of 1,007 entries**. This recovery adds 316 associations: 274 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 220 traces across 40 countries. 222 explicit configuration choices, including two reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **777 of 1,007 entries**. This recovery adds 320 associations: 278 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 224 traces across 40 countries. 226 explicit configuration choices, including two reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry remains independent OSM data. Published event and operator documents identify specific configurations; they do not supply coordinates. Source snapshots are sanitized and hash-pinned, and every route recipe references exact source ways, versions and node indices. Private timing positions help identify a course and remain outside public downloads.
 
@@ -11,19 +11,19 @@ The following source limitations remain after the complete search of the pinned 
 | Remaining cause | Entries |
 | --- | ---: |
 | Ambiguous source branches | 35 |
-| Unresolved course-distance discrepancy | 73 |
-| Independent geometry absent near the timing position | 71 |
+| Unresolved course-distance discrepancy | 72 |
+| Independent geometry absent near the timing position | 68 |
 | Aggregate configuration needs identification | 32 |
 | Open-course route or endpoint evidence needed | 14 |
 | Source connectivity incomplete | 7 |
 | Bounded search incomplete | 2 |
-| **Total** | **234** |
+| **Total** | **230** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Twenty-four names have no normalized name match in the 1,007-record timing XML; three have country-folder aliases and five sit outside country folders. Some unmatched names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 234 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Twenty-four names have no normalized name match in the 1,007-record timing XML; three have country-folder aliases and five sit outside country folders. Some unmatched names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 230 registered timing-entry trace gaps.
 
 ## Reproduce the research
 

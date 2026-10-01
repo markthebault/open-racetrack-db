@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 773,
-    "unmappedLayouts": 234,
+    "draftMapped": 777,
+    "unmappedLayouts": 230,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -4342,11 +4342,14 @@
       "name": "Monaco",
       "timingMode": "shared",
       "trackId": "fr-monaco-11457009",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "monaco"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -7512,11 +7515,14 @@
       "name": "Vila Real",
       "timingMode": "shared",
       "trackId": "pt-vila-real-e43faa99",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "vila-real"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9401,14 +9407,14 @@
       "name": "Pinarbasi",
       "timingMode": "shared",
       "trackId": "tr-pinarbasi-a1cd89d9",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "pinarbasi"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "tr-izmir-park-8a7dd2b1"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -12287,11 +12293,14 @@
       "name": "Detroit Street Circuit",
       "timingMode": "shared",
       "trackId": "us-detroit-street-circuit-54f7fe14",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "detroit-street-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -19963,15 +19972,13 @@
       "name": "Monaco",
       "country": "France",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Monaco"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "fr-pau-ville-7f7fc4ac",
@@ -23296,15 +23303,13 @@
       "name": "Vila Real",
       "country": "Portugal",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Vila Real"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "qa-lusail-international-circuit-152483595",
@@ -24046,15 +24051,13 @@
       "name": "Pinarbasi",
       "country": "Türkiye",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Pinarbasi"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "tw-lihpao-g2-66f08127",
@@ -24635,15 +24638,13 @@
       "name": "Detroit Street Circuit",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Detroit Street Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-dixon-kart-circuit-30c5083d",
@@ -27062,13 +27063,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "France/Monaco",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Germany/ADAC Schlusselfeld",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27322,13 +27316,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Portugal/Vila Real",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Russia/Moscow Raceway",
       "matchingNamedWayIds": [
         168247376,
@@ -27557,13 +27544,6 @@
     },
     {
       "recordId": "Thailand/Bangsaen Street Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Turkey/Pinarbasi",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -28044,13 +28024,6 @@
     },
     {
       "recordId": "United States/Detroit City Airport",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Detroit Street Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
