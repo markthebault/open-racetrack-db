@@ -89,7 +89,7 @@ Racelogic defines the expected entries. A GPS candidate proposes a venue associa
 | Brazil | Autódromo Mega Space | 1 | 0 | 0 |  | main |
 | Brazil | Autódromo Nelson Piquet | 1 | 1 | 0 | Autodromo Int Nelson Piquet | main |
 | Brazil | Autódromo Plan Speed Park | 1 | 0 | 0 |  | main |
-| Brazil | Autódromo Velo Città | 2 | 1 | 1 |  | main |
+| Brazil | Autódromo Velo Città | 1 | 1 | 1 |  |  |
 | Brazil | Circuito Paladino | 1 | 0 | 0 |  | main |
 | Brazil | Race Park Maringá | 1 | 0 | 0 |  | main |
 | Brazil | Velopark | 1 | 1 | 0 | Nova Santa Rita | main |
@@ -255,7 +255,7 @@ Racelogic defines the expected entries. A GPS candidate proposes a venue associa
 | Italy | Autodromo Valle dei Templi | 1 | 1 | 1 |  |  |
 | Italy | Circuito di Pomposa | 1 | 0 | 0 |  | main |
 | Italy | Cremona Circuit | 1 | 1 | 0 | Cremona | main |
-| Italy | Fiorano Circuit | 2 | 1 | 1 |  | main |
+| Italy | Fiorano Circuit | 1 | 1 | 1 |  |  |
 | Italy | Franciacorta Circuit | 1 | 1 | 0 | Franciacorta | main |
 | Italy | Autodromo Enzo e Dino Ferrari | 2 | 2 | 2 |  |  |
 | Italy | Misano World Circuit | 2 | 1 | 1 |  |  |
@@ -394,7 +394,7 @@ Racelogic defines the expected entries. A GPS candidate proposes a venue associa
 | United States | Pittsburgh International Race Complex | 1 | 3 | 0 | Pittsburgh Int Race Complex Full; Pittsburgh Int Race Complex North; Pittsburgh Int Race Complex South | main |
 | United States | Pocono Raceway | 1 | 2 | 0 | Pocono - 2.5 Mile Road Course; Pocono - Outer | main |
 | United States | Polecat Driving Academy | 1 | 1 | 1 |  |  |
-| United States | Portland International Raceway | 2 | 1 | 1 |  | main |
+| United States | Portland International Raceway | 1 | 1 | 1 |  |  |
 | United States | Putnam County Speedway | 1 | 0 | 0 |  | main |
 | United States | Putnam Park Road Course | 1 | 1 | 0 | Putnam Park | main |
 | United States | Qlispé Raceway Park | 1 | 1 | 0 | Spokane County Raceway | main |
@@ -1476,7 +1476,7 @@ Includes missing venues, ambiguous associations and out-of-scope records, so non
 | Brazil | Nova Santa Rita | br-velopark-94748799 |  | missing-layout |
 | Brazil | Santa Cruz do Sul | br-autodromo-internacional-de-santa-cruz-do-sul-281440036 |  | missing-layout |
 | Brazil | Taruma |  |  | missing-venue |
-| Brazil | Velo Citta | br-autodromo-velo-citta-478876097 | velo-citta | draft-mapped |
+| Brazil | Velo Citta | br-autodromo-velo-citta-478876097 | main | draft-mapped |
 | Bulgaria | Drakon |  |  | missing-venue |
 | Bulgaria | Pautalia |  |  | missing-venue |
 | Canada | Area 27 | ca-area-27-526010213 |  | missing-layout |
@@ -1702,7 +1702,7 @@ Includes missing venues, ambiguous associations and out-of-scope records, so non
 | Italy | Balocco Alfa Romeo |  |  | missing-venue |
 | Italy | Castelletto | it-motodromo-castelletto-di-branduzzo-209135489 |  | missing-layout |
 | Italy | Cremona | it-cremona-circuit-259583123 |  | missing-layout |
-| Italy | Fiorano | it-fiorano-circuit-35073932 | fiorano | draft-mapped |
+| Italy | Fiorano | it-fiorano-circuit-35073932 | main | draft-mapped |
 | Italy | Franciacorta | it-franciacorta-circuit-83179212 |  | missing-layout |
 | Italy | Imola | it-imola | variante-bassa | draft-mapped |
 | Italy | Imola - without chicane | it-imola | grand-prix | draft-mapped |
@@ -2261,7 +2261,7 @@ Includes missing venues, ambiguous associations and out-of-scope records, so non
 | United States | Pocono - Outer | us-pocono-raceway-109767460 |  | missing-layout |
 | United States | Podium Full |  |  | missing-venue |
 | United States | Polecat Driving Academy | us-polecat-driving-academy-rl | main | draft-mapped |
-| United States | Portland International Raceway | us-portland-international-raceway-5510199 | portland-international-raceway | draft-mapped |
+| United States | Portland International Raceway | us-portland-international-raceway-5510199 | main | draft-mapped |
 | United States | Pueblo Motorsports Park |  |  | missing-venue |
 | United States | Putnam Park | us-putnam-park-road-course-669531024 |  | missing-layout |
 | United States | Reno Fernley A |  |  | missing-venue |

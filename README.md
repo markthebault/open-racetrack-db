@@ -8,7 +8,7 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 ## Worldwide preview
 
-The preview contains **411 venues and 436 draft traces across 54 countries**, extending beyond Europe to permanent car and motorcycle circuits worldwide. Browse by country, search a venue, switch available layouts, and download an attributed GeoJSON trace. The [worldwide coverage report](Docs/08-worldwide-coverage.md) records the worldwide acquisition stage and source gaps.
+The preview contains **411 venues and 433 draft traces across 54 countries**, extending beyond Europe to permanent car and motorcycle circuits worldwide. Browse by country, search a venue, switch available layouts, and download an attributed GeoJSON trace. The [worldwide coverage report](Docs/08-worldwide-coverage.md) records the worldwide acquisition stage and source gaps.
 
 **Coverage remains incomplete.** Draft source-cycle selections do not establish every venue, named layout, travel direction, or operating status. The viewer's worldwide coverage panel covers all 250 configured countries and territories and distinguishes fetched extracts from unavailable areas and missing acquisitions. Karting and motocross are excluded.
 

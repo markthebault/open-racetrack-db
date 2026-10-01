@@ -19,6 +19,8 @@ test('every reference is accounted for and mapped layouts exist without public G
  assert.equal(report.records.length,1007);assert.equal(new Set(report.records.map(r=>r.id)).size,1007);assert.equal(report.venues.length,index.tracks.length);
  assert.equal(Object.entries(report.summary).filter(([k])=>!['referenceRecords','venuesChecked'].includes(k)).reduce((s,[,v])=>s+v,0),1007);
  for(const r of report.records){assert.deepEqual(Object.keys(r).filter(k=>/^(point|gates|coordinates|length|bounds|min|max)$/i.test(k)),[]);if(r.trackId){const entry=index.tracks.find((t:any)=>t.id===r.trackId);assert.ok(entry);const track=JSON.parse(readFileSync(`data/${entry.file}`,'utf8'));for(const id of r.layoutIds)assert.ok(track.layouts.some((l:any)=>l.id===id));}}
+ for(const venue of report.venues)if(venue.expectedRecordCount&&venue.actualLayoutCount!==venue.expectedRecordCount)assert.equal(venue.status,'gap');
+ for(const id of ['br-autodromo-velo-citta-478876097','it-fiorano-circuit-35073932','us-portland-international-raceway-5510199'])assert.equal(report.venues.find(v=>v.trackId===id)?.actualLayoutCount,1);
  const nurb=report.records.filter(r=>r.trackId==='de-nurburgring');assert.equal(nurb.length,9);assert.ok(nurb.every(r=>r.status==='draft-mapped'));assert.equal(new Set(nurb.flatMap(r=>r.layoutIds)).size,9);
  const gp=JSON.parse(readFileSync('data/germany/nurburgring/layouts/grand-prix.geojson','utf8'));assert.ok(gp.metadata.lengthM>5000&&gp.metadata.lengthM<5300);
  const sprint=JSON.parse(readFileSync('data/germany/nurburgring/layouts/sprintstrecke.geojson','utf8'));assert.ok(sprint.metadata.lengthM>3500&&sprint.metadata.lengthM<3700);

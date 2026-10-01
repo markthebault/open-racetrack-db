@@ -27,12 +27,13 @@ for(const entry of index.tracks){
   const candidates=candidateLoops(named,400,500);if(candidates.truncated||candidates.loops.length!==1)continue;
   const loop=candidates.loops[0],trace=assemble(named,loop.segments,true);if(nearestEdge(record.gates[0].point,trace).displacementM>30)continue;
   const same=existing.find(e=>identity(e.trace)===identity(trace));
+  const replace= !same&&expected.length===1&&track.layouts.length===1?existing[0]:undefined;
   let id=same?.layout.id;
   const note='Draft identification from a uniquely connected OSM course with a matching layout name. Private Racelogic start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.';
-  if(!id){id=slug(record.name);if(track.layouts.some((l:any)=>l.id===id))throw new Error(`${entry.id}: layout ID collision ${id}`);
+  if(!id){id=replace?.layout.id??slug(record.name);if(!replace&&track.layouts.some((l:any)=>l.id===id))throw new Error(`${entry.id}: layout ID collision ${id}`);
    const recipe={schemaVersion:1,trackId:entry.id,layoutId:id,sourceId:manifest.sourceId,snapshotSha256:manifest.snapshotSha256,closed:true,timingMode:'shared',geometryStatus:'draft',reviewedAt:null,notes:[note,...(loop.directionKnown?[]:['Travel direction is not established by all selected OSM ways.'])],segments:loop.segments,gates:[]};
    await write(`sources/${entry.id}/layouts/${id}.json`,recipe);
-   track.layouts.push({id,name:record.name,file:`layouts/${id}.geojson`,description:note});added++;
+   if(replace){replace.layout.name=record.name;replace.layout.description=note;associated++;}else{track.layouts.push({id,name:record.name,file:`layouts/${id}.geojson`,description:note});added++;}
   }else{same!.layout.name=record.name;same!.layout.description=note;associated++;}
   associations[`${entry.id}/${id}`]={recordId:record.id,name:record.name,evidence:'Unique closed course from OSM raceway ways with matching normalized layout name; private timing proximity <=30 m. Draft association.'};
  }
