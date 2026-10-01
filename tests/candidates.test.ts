@@ -10,6 +10,12 @@ test('course discovery retains source versions and honors reverse one-way travel
 test('coincident coordinates do not connect separate source node identities',()=>{
  const other={...loop,id:2,nodes:[20,21,22,20]};assert.equal(components([loop,other]).length,2);
 });
+test('a repeated junction within one source way exposes both joined loops',()=>{
+ const joined:Way={id:9,version:2,nodes:[1,2,3,2,4,1],geometry:[{lon:0,lat:0},{lon:.01,lat:0},{lon:.015,lat:.01},{lon:.01,lat:0},{lon:0,lat:.01},{lon:0,lat:0}],tags:{oneway:'yes'}};
+ const found=candidateLoops([joined]);assert.equal(found.truncated,false);assert.equal(found.loops.length,2);
+ assert.ok(found.loops.some(l=>l.segments.length===1&&l.segments[0].fromIndex===1&&l.segments[0].toIndex===3));
+ assert.ok(found.loops.some(l=>l.segments.length===2&&l.segments[0].toIndex===1&&l.segments[1].fromIndex===3));
+});
 test('duplicate ways do not exhaust discovery or hide a distinct branch',()=>{
  const copies=Array.from({length:10},(_,i)=>({...loop,id:i+1}));
  const branch:Way={id:20,version:1,nodes:[11,13,10],geometry:[{lon:.01,lat:0},{lon:0,lat:.01},{lon:0,lat:0}],tags:{oneway:'yes'}};

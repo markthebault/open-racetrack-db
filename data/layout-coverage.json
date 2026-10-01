@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 889,
-    "unmappedLayouts": 118,
+    "draftMapped": 892,
+    "unmappedLayouts": 115,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -4023,14 +4023,14 @@
       "name": "Geoparc Long",
       "timingMode": "shared",
       "trackId": "fr-geoparc-391622752",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "geoparc-long"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "fr-geoparc-391622752"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -4039,14 +4039,14 @@
       "name": "Geoparc Short",
       "timingMode": "shared",
       "trackId": "fr-geoparc-391622752",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "geoparc-short"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "fr-geoparc-391622752"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -11907,11 +11907,14 @@
       "name": "Bunny Loop",
       "timingMode": "shared",
       "trackId": "us-bunny-loop-3cb5f608",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bunny-loop"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -20000,17 +20003,20 @@
       "trackId": "fr-geoparc-391622752",
       "name": "Géoparc",
       "country": "France",
-      "actualLayoutCount": 3,
-      "actualTraceCount": 1,
+      "actualLayoutCount": 9,
+      "actualTraceCount": 9,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Geoparc Long",
-        "Geoparc Short"
-      ],
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
-        "main"
+        "main",
+        "geoparc-outer-long",
+        "geoparc-outer-short",
+        "geoparc-crossed-infield",
+        "geoparc-direct-infield",
+        "geoparc-central-curved",
+        "geoparc-curved-short"
       ],
       "status": "gap"
     },
@@ -24458,15 +24464,13 @@
       "name": "Bunny Loop",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bunny Loop"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-bushnell-motorsports-park-16aaa9aa",
@@ -26910,20 +26914,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "France/Geoparc Long",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "France/Geoparc Short",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Germany/Porsche Leipzig A",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27011,7 +27001,7 @@
         834156808,
         834156809
       ],
-      "namedCourseCandidates": 6,
+      "namedCourseCandidates": 7,
       "enumerationTruncated": false,
       "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
     },
@@ -27400,13 +27390,6 @@
     },
     {
       "recordId": "United States/Belle Isle GP",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Bunny Loop",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

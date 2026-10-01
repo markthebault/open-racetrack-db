@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 889
-- unmappedLayouts: 118
+- draftMapped: 892
+- unmappedLayouts: 115
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -303,7 +303,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | France | Circuit Paul Armagnac | 1 | 1 | 1 |  |  |
 | France | Circuits de l’Ouest Parisien | 2 | 1 | 1 |  | main |
 | France | Circuits de Vendée | 2 | 1 | 1 |  | main |
-| France | Géoparc | 3 | 2 | 0 | Geoparc Long; Geoparc Short | main |
+| France | Géoparc | 9 | 2 | 2 |  | main; geoparc-outer-long; geoparc-outer-short; geoparc-crossed-infield; geoparc-direct-infield; geoparc-central-curved; geoparc-curved-short |
 | France | Grand Sambuc | 1 | 1 | 1 |  |  |
 | France | Kerlabo RX | 1 | 1 | 1 |  |  |
 | France | Le Mans Bugatti Circuit | 4 | 4 | 4 |  |  |
@@ -621,7 +621,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Bondurant Driving School | 1 | 1 | 1 |  |  |
 | United States | Brainerd International Raceway | 3 | 2 | 2 |  | main |
 | United States | Bristol Motor Speedway | 1 | 0 | 0 |  | main |
-| United States | Bunny Loop | 1 | 1 | 0 | Bunny Loop |  |
+| United States | Bunny Loop | 1 | 1 | 1 |  |  |
 | United States | Bushnell Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Buttonwillow | 4 | 4 | 4 |  |  |
 | United States | Buttonwillow Kart Circuit | 1 | 1 | 1 |  |  |
@@ -816,8 +816,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Ales1 Rally Stage |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Geoparc Long |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Geoparc Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -829,7 +827,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 6 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
+| New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 7 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Poland/Slomczyn RallyCross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Poland/Tor Jastrzab |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -883,7 +881,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Arlington Street Circuit Practice |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Belle Isle |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Belle Isle GP |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Bunny Loop |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Infield Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1167,8 +1164,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Ecuyers | fr-circuit-des-ecuyers-164152809 | ecuyers | draft-mapped |
 | France | Fay de Bretagne | fr-circuit-automobile-de-loire-atlantique-205747014 | main | draft-mapped |
 | France | Folembray | fr-circuit-de-folembray-113756422 | main | draft-mapped |
-| France | Geoparc Long | fr-geoparc-391622752 |  | missing-layout |
-| France | Geoparc Short | fr-geoparc-391622752 |  | missing-layout |
+| France | Geoparc Long | fr-geoparc-391622752 | geoparc-long | draft-mapped |
+| France | Geoparc Short | fr-geoparc-391622752 | geoparc-short | draft-mapped |
 | France | Grand Sambuc | fr-grand-sambuc-0f3e4f66 | grand-sambuc | draft-mapped |
 | France | Issoire Circuit | fr-ceerta-circuit-d-issoire-86413454 | main | draft-mapped |
 | France | Kerlabo RX | fr-kerlabo-rx-aad6ff1a | kerlabo-rx | draft-mapped |
@@ -1666,7 +1663,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Brainerd Competition Road | us-brainerd-international-raceway-137243010 | brainerd-competition-road | draft-mapped |
 | United States | Brainerd Main | us-brainerd-international-raceway-137243010 | brainerd-main | draft-mapped |
 | United States | Briggs & Stratton Motorplex | us-road-america-110527567 | briggs-stratton-motorplex | draft-mapped |
-| United States | Bunny Loop | us-bunny-loop-3cb5f608 |  | missing-layout |
+| United States | Bunny Loop | us-bunny-loop-3cb5f608 | bunny-loop | draft-mapped |
 | United States | Bushnell Motorsports Park | us-bushnell-motorsports-park-16aaa9aa | bushnell-motorsports-park | draft-mapped |
 | United States | Buttonwillow | us-buttonwillow-500521b7 | buttonwillow | draft-mapped |
 | United States | Buttonwillow 25a | us-buttonwillow-500521b7 | buttonwillow-25a | draft-mapped |

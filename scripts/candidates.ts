@@ -21,9 +21,9 @@ export function components(ways:Way[]){
 
 type Edge=Segment&{a:number;b:number;lengthM:number};
 export function candidateLoops(ways:Way[],limit=400,minimumLengthM=1000){
- const owners=new Map<number,Set<number>>();for(const w of ways)for(const node of w.nodes){const set=owners.get(node)??new Set();set.add(w.id);owners.set(node,set);}
+ const occurrences=new Map<number,number>();for(const w of ways)for(const node of w.nodes)occurrences.set(node,(occurrences.get(node)??0)+1);
  const adjacency=new Map<number,Edge[]>(),sourcePaths=new Set<string>();
- for(const w of ways){const indices=w.nodes.map((n,i)=>i===0||i===w.nodes.length-1||owners.get(n)!.size>1?i:-1).filter(i=>i>=0);
+ for(const w of ways){const indices=w.nodes.map((n,i)=>i===0||i===w.nodes.length-1||occurrences.get(n)!>1?i:-1).filter(i=>i>=0);
   for(let j=1;j<indices.length;j++){const a=indices[j-1],b=indices[j],coordinates=w.geometry.slice(a,b+1).map(p=>[p.lon,p.lat] as Position),size=length(coordinates),direction=w.tags?.oneway;
    for(const [fromIndex,toIndex] of direction==='yes'?[[a,b]]:direction==='-1'?[[b,a]]:[[a,b],[b,a]]){
     // Overlapping source ways can describe the same directed node path. Keep one

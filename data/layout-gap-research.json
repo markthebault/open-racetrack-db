@@ -4,10 +4,10 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 5,
-    "course-distance-discrepancy": 35,
+    "course-distance-discrepancy": 34,
     "independent-geometry-missing": 47,
-    "ambiguous-source-branches": 16,
-    "source-connectivity-incomplete": 7,
+    "ambiguous-source-branches": 15,
+    "source-connectivity-incomplete": 6,
     "open-course-evidence-required": 8
   },
   "records": [
@@ -431,50 +431,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "France/Geoparc Long",
-      "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-long",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        391622752,
-        391622753,
-        391622754,
-        391622755,
-        391622756,
-        391622757,
-        690484234,
-        690484237,
-        690484238,
-        690484240
-      ],
-      "candidateCount": 62,
-      "closestSourceLengthM": 2463,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "France/Geoparc Short",
-      "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-short",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        391622752,
-        391622753,
-        391622754,
-        391622755,
-        391622756,
-        391622757,
-        690484234,
-        690484237,
-        690484238,
-        690484240
-      ],
-      "candidateCount": 62,
-      "closestSourceLengthM": 1653.9,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "Germany/Porsche Leipzig A",
@@ -1515,29 +1471,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/Bunny Loop",
-      "trackId": "us-bunny-loop-3cb5f608",
-      "layoutId": "bunny-loop",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        19118770,
-        19273090,
-        38311896,
-        38311897,
-        265587720,
-        266430880,
-        372451463,
-        529575354,
-        1056904076,
-        1056935027,
-        1064479752,
-        1064479753
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
     },
     {
       "referenceId": "United States/Charlotte Motor Speedway Short",

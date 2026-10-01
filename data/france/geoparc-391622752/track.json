@@ -14,7 +14,10 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-391622752"
+    "osm-network-391622752",
+    "osm-components-391622752",
+    "osm-network-geoparc-long",
+    "osm-network-geoparc-short"
   ],
   "defaultLayoutId": "geoparc-long",
   "layouts": [
@@ -28,15 +31,51 @@
       "id": "geoparc-long",
       "name": "Geoparc Long",
       "referenceId": "France/Geoparc Long",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/geoparc-long.geojson",
+      "description": "Combined mapped configurations: Long outer configuration, Short outer configuration, Infield crossing configuration, Infield direct configuration, Central curved configuration, Curved short configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "geoparc-short",
       "name": "Geoparc Short",
       "referenceId": "France/Geoparc Short",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/geoparc-short.geojson",
+      "description": "Combined mapped configurations: Curved short configuration, Infield crossing configuration, Infield direct configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "geoparc-outer-long",
+      "name": "Long outer configuration",
+      "file": "layouts/geoparc-outer-long.geojson",
+      "description": "The complete outer main-course perimeter shown in the operator plan, retaining the northern extension and southern return. The western paddock link, eastern pit access and interior variants are excluded."
+    },
+    {
+      "id": "geoparc-outer-short",
+      "name": "Short outer configuration",
+      "file": "layouts/geoparc-outer-short.geojson",
+      "description": "The outer perimeter closes through the direct central northern connection shown among the operator modular variants; the northern extension is excluded. This is a branch description, with lap direction remaining draft."
+    },
+    {
+      "id": "geoparc-crossed-infield",
+      "name": "Infield crossing configuration",
+      "file": "layouts/geoparc-crossed-infield.geojson",
+      "description": "The southern infield circuit retains its independently mapped grade-separated diagonal crossing, shown as the karting configuration within the operator main-course plan. The parallel eastern access loop is excluded."
+    },
+    {
+      "id": "geoparc-direct-infield",
+      "name": "Infield direct configuration",
+      "file": "layouts/geoparc-direct-infield.geojson",
+      "description": "The alternative southern infield circuit uses the direct western connector, upper infield arc and lower infield return shown in the operator configuration plan. No paddock or parallel pit access is included."
+    },
+    {
+      "id": "geoparc-central-curved",
+      "name": "Central curved configuration",
+      "file": "layouts/geoparc-central-curved.geojson",
+      "description": "The operator modular plan retains the central curved return, connecting the western middle-course branch to the eastern main straight. Exact repeated source-node joins close this course; the western short-course connector remains a separate variant."
+    },
+    {
+      "id": "geoparc-curved-short",
+      "name": "Curved short configuration",
+      "file": "layouts/geoparc-curved-short.geojson",
+      "description": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded."
     }
   ],
   "sources": [
@@ -57,6 +96,105 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-network-geoparc-long",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/391622752",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T23:31:05.001Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-geoparc-long",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T23:31:05.001Z",
+      "evidenceNote": "The Long entry is a configuration network with the far northern extension, central direct and curved returns, western modular connector and southern infield crossing variants. These branches are identified by the operator modular-course and karting plan. The parallel eastern access loop is excluded. This is not a single lap. The independent mapped branch distance differs from the catalogue scalar; fine historical alignment remains draft. The independent unique branch distance is 2971.6 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "osm-network-geoparc-short",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/391622753",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T23:31:05.004Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-geoparc-short",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T23:31:05.004Z",
+      "evidenceNote": "The Short entry is the southern configuration network: the curved central return and western modular connector close the short main course, with the southern infield crossing variants also represented. The far northern extension, its direct triangular return and parallel eastern access loop are excluded. The operator modular-course and karting plan identifies those branches. This is not a single lap; fine historical alignment remains draft. The independent unique branch distance is 1689.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "osm-components-391622752",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/391622752",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-geoparc-outer-long",
+      "type": "reference",
+      "title": "Long outer configuration identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "The complete outer main-course perimeter shown in the operator plan, retaining the northern extension and southern return. The western paddock link, eastern pit access and interior variants are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-geoparc-outer-short",
+      "type": "reference",
+      "title": "Short outer configuration identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "The outer perimeter closes through the direct central northern connection shown among the operator modular variants; the northern extension is excluded. This is a branch description, with lap direction remaining draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-geoparc-crossed-infield",
+      "type": "reference",
+      "title": "Infield crossing configuration identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "The southern infield circuit retains its independently mapped grade-separated diagonal crossing, shown as the karting configuration within the operator main-course plan. The parallel eastern access loop is excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-geoparc-direct-infield",
+      "type": "reference",
+      "title": "Infield direct configuration identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "The alternative southern infield circuit uses the direct western connector, upper infield arc and lower infield return shown in the operator configuration plan. No paddock or parallel pit access is included. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-geoparc-central-curved",
+      "type": "reference",
+      "title": "Central curved configuration identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "The operator modular plan retains the central curved return, connecting the western middle-course branch to the eastern main straight. Exact repeated source-node joins close this course; the western short-course connector remains a separate variant. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-geoparc-curved-short",
+      "type": "reference",
+      "title": "Curved short configuration identification",
+      "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded. Identification only; no diagram coordinates copied."
     }
   ]
 }
