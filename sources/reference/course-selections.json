@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montju\u00efc",
+      "referenceId": "Spain/Circuit de Montjuïc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -18872,6 +18872,275 @@
       ],
       "expectedLengthM": 5210.6,
       "maximumDistanceDifferenceM": 25
+    },
+    {
+      "referenceId": "Portugal/KIP",
+      "sourcePath": "sources/europe/pt/osm.json",
+      "sourceWayIds": [
+        128947431,
+        128947452,
+        128947466,
+        360618173,
+        360618174,
+        360618175,
+        360618176,
+        1126939026,
+        1126939027,
+        1126939028,
+        1126939029
+      ],
+      "closed": true,
+      "evidence": "The operator Main Track plan identifies the full 14-corner circuit, retaining the western S bend and both northern and eastern hairpins. The independent course uses raceway ways 360618173-176 and 128947452; the angular southern access alternative is excluded. Its unchanged source-node length is 1264.8 m, close to the operator 1270 m. The catalogue scalar is 2480 m and is kept separate; the discrepancy does not justify stretching coordinates.",
+      "identificationUrl": "https://www.kip.pt/en/facilities/kart-track",
+      "segments": [
+        {
+          "wayId": 360618173,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 3
+        },
+        {
+          "wayId": 360618174,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 50
+        },
+        {
+          "wayId": 360618176,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 17
+        },
+        {
+          "wayId": 128947452,
+          "wayVersion": 8,
+          "fromIndex": 0,
+          "toIndex": 16
+        },
+        {
+          "wayId": 360618175,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 19
+        }
+      ],
+      "expectedLengthM": 1264.8,
+      "maximumDistanceDifferenceM": 1226
+    },
+    {
+      "referenceId": "Portugal/Kartodromo Fatima",
+      "sourcePath": "sources/europe/pt/osm.json",
+      "sourceWayIds": [
+        170000330,
+        170000743,
+        170000769,
+        360214185
+      ],
+      "closed": true,
+      "evidence": "The operator park plan identifies the full course through the northeastern dogleg and the complete southwestern hairpin, excluding the two shorter bypasses and the northern training loop. The exact independent source-node route measures 1092.9 m. The catalogue scalar of 2041 m is retained separately; neither the course geometry nor its measured length is adjusted to it. Historical alignment remains a draft.",
+      "identificationUrl": "https://funpark.pt/",
+      "segments": [
+        {
+          "wayId": 170000330,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 35
+        },
+        {
+          "wayId": 170000743,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 16
+        },
+        {
+          "wayId": 170000330,
+          "wayVersion": 5,
+          "fromIndex": 40,
+          "toIndex": 75
+        },
+        {
+          "wayId": 170000769,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 8
+        },
+        {
+          "wayId": 170000330,
+          "wayVersion": 5,
+          "fromIndex": 80,
+          "toIndex": 107
+        }
+      ],
+      "expectedLengthM": 1092.9,
+      "maximumDistanceDifferenceM": 959
+    },
+    {
+      "referenceId": "Bulgaria/Drakon",
+      "sourcePath": "sources/course-networks/drakon-2024-independent-raceways/osm.json",
+      "sourceWayIds": [
+        169361659
+      ],
+      "closed": true,
+      "evidence": "The operator Time Attack circuit plan identifies the earlier Kaloyanovo layout with the northern rectangular return, long diagonal straight and southern parallel hairpin. The 2024 independent closed raceway matches this branch sequence and measures 1991.8 m, close to the 1998 m catalogue scalar. The 2026 mapped extension measures about 2.89 km and is not substituted for this earlier configuration. Pit and service routes are excluded.",
+      "identificationUrl": "https://www.dracon.drakon.bg/map",
+      "segments": [
+        {
+          "wayId": 169361659,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 51
+        }
+      ],
+      "expectedLengthM": 1991.8,
+      "maximumDistanceDifferenceM": 17
+    },
+    {
+      "referenceId": "Spain/Andalucia Layout 1 5k",
+      "sourcePath": "sources/europe/es/osm.json",
+      "sourceWayIds": [
+        29362442,
+        551653081,
+        551653083,
+        1286526266,
+        1286526267,
+        1286526268,
+        1286526269,
+        1286526270,
+        1286526271,
+        1286526272,
+        1286526273,
+        1286526274,
+        1286526275,
+        1286526276,
+        1424571081,
+        1424571082
+      ],
+      "closed": true,
+      "evidence": "The catalogue configuration retains the northern hook, full eastern long straight and southern shortcut, excluding the inner southern hairpin and the pit/access connections to the adjacent Almeria circuit. The operator configuration plan independently identifies these physical branches; its contemporary red 5 km route bypasses the northern hook and is not substituted for this earlier configuration. The exact public source-node route measures 4721.9 m against the catalogue scalar of 4754 m. Historical alignment remains a draft.",
+      "identificationUrl": "https://andaluciacircuit.com/es/el-circuito/",
+      "segments": [
+        {
+          "wayId": 1286526266,
+          "wayVersion": 2,
+          "fromIndex": 134,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526275,
+          "wayVersion": 2,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526269,
+          "wayVersion": 2,
+          "fromIndex": 22,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1424571082,
+          "wayVersion": 1,
+          "fromIndex": 1,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526273,
+          "wayVersion": 2,
+          "fromIndex": 5,
+          "toIndex": 0
+        },
+        {
+          "wayId": 551653081,
+          "wayVersion": 8,
+          "fromIndex": 76,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526267,
+          "wayVersion": 2,
+          "fromIndex": 6,
+          "toIndex": 0
+        }
+      ],
+      "expectedLengthM": 4721.9,
+      "maximumDistanceDifferenceM": 43
+    },
+    {
+      "referenceId": "Spain/Andalucia Layout 2 4k",
+      "sourcePath": "sources/europe/es/osm.json",
+      "sourceWayIds": [
+        29362442,
+        551653081,
+        551653083,
+        1286526266,
+        1286526267,
+        1286526268,
+        1286526269,
+        1286526270,
+        1286526271,
+        1286526272,
+        1286526273,
+        1286526274,
+        1286526275,
+        1286526276,
+        1424571081,
+        1424571082
+      ],
+      "closed": true,
+      "evidence": "The operator blue 4 km configuration identifies the northern hook, eastern diagonal return and southern shortcut, excluding the full eastern long straight, inner southern hairpin and pit/access alternatives. These branch choices match the catalogue configuration. The independently mapped source-node route measures 3683.7 m against the catalogue scalar of 3714 m; source coordinates and distances are unchanged.",
+      "identificationUrl": "https://andaluciacircuit.com/es/el-circuito/",
+      "segments": [
+        {
+          "wayId": 1286526266,
+          "wayVersion": 2,
+          "fromIndex": 134,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526275,
+          "wayVersion": 2,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526276,
+          "wayVersion": 2,
+          "fromIndex": 11,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526272,
+          "wayVersion": 2,
+          "fromIndex": 51,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1424571082,
+          "wayVersion": 1,
+          "fromIndex": 1,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526273,
+          "wayVersion": 2,
+          "fromIndex": 5,
+          "toIndex": 0
+        },
+        {
+          "wayId": 551653081,
+          "wayVersion": 8,
+          "fromIndex": 76,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1286526267,
+          "wayVersion": 2,
+          "fromIndex": 6,
+          "toIndex": 0
+        }
+      ],
+      "expectedLengthM": 3683.7,
+      "maximumDistanceDifferenceM": 41
     }
   ]
 }

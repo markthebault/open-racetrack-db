@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **851 of 1,007 entries**. This recovery adds 394 associations: 352 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 298 traces across 44 countries. 271 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 31 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **859 of 1,007 entries**. This recovery adds 402 associations: 360 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 306 traces across 45 countries. 276 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 34 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry remains independent OSM data. Published event and operator documents identify specific configurations; they do not supply coordinates. Source snapshots are sanitized and hash-pinned, and every route recipe references exact source ways, versions and node indices. Private timing positions help identify a course and remain outside public downloads.
 
@@ -10,20 +10,20 @@ The following source limitations remain after the complete search of the pinned 
 
 | Remaining cause | Entries |
 | --- | ---: |
-| Ambiguous source branches | 29 |
-| Unresolved course-distance discrepancy | 52 |
+| Ambiguous source branches | 27 |
+| Unresolved course-distance discrepancy | 46 |
 | Independent geometry absent near the timing position | 55 |
 | Aggregate configuration needs identification | 5 |
 | Open-course route or endpoint evidence needed | 8 |
 | Source connectivity incomplete | 7 |
 | Bounded search incomplete | 0 |
-| **Total** | **156** |
+| **Total** | **148** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 156 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 148 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -34,3 +34,5 @@ The gap search reads the supplied timing XML, checks the independent country sna
 The Moscow general entry includes separately selectable Grand Prix 1, Grand Prix 2, Grand Prix 5, FIM, Sprint 1 and Supersprint configurations identified from the operator highlighted plans. Their exact independent node routes retain the measured distances and exclude parallel pit routes. Highlands, Inde and Reno Fernley aggregate entries now group existing component recipes that were registered under other venue entries. Parent snapshot hashes and branch choices are preserved; duplicate paths are removed from the networks. These aggregates remain draft configuration networks.
 
 Estering now has operator-identified Standard and Joker laps, plus an aggregate network. Knysna, St-Ursanne and Virginia City use independently mapped open road courses with separate endpoints. Their selection notes preserve course-distance discrepancies and distinguish timing extents from current event descriptions.
+
+KIP and Fatima now use independently identified full-course routes, with catalogue distance discrepancies preserved. Drakon uses its pinned 2024 course rather than the later extension. Montalegre and Lousada general entries group their historical Standard and Joker laps from consistent 2020 source snapshots. Andalucia retains the two catalogue branch choices rather than substituting the contemporary northern bypass. Apex I groups the operator-identified southern straight and chicane with the full northern spiral; the separate inner Fast shortcut is excluded. Fourteen targeted browser checks verify these additions and downloads.

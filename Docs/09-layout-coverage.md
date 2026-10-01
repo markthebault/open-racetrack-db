@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 851
-- unmappedLayouts: 156
+- draftMapped: 859
+- unmappedLayouts: 148
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -106,7 +106,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Belgium | Mettet | 1 | 1 | 1 |  |  |
 | Belgium | Circuit de Spa-Francorchamps | 1 | 1 | 1 |  |  |
 | Belgium | Circuit Zolder | 1 | 1 | 1 |  |  |
-| Bulgaria | Drakon | 1 | 1 | 0 | Drakon |  |
+| Bulgaria | Drakon | 1 | 1 | 1 |  |  |
 | Bulgaria | Pautalia | 1 | 1 | 1 |  |  |
 | Bahrain | Bahrain International Circuit | 4 | 3 | 3 |  | main |
 | Brazil | Autódromo Fazenda Capuava | 2 | 1 | 1 |  | main |
@@ -232,7 +232,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Spain | Circuit Mallorca | 1 | 1 | 1 |  |  |
 | Spain | Circuito A Pastoriza | 1 | 1 | 1 |  |  |
 | Spain | Circuito Ascari | 1 | 1 | 1 |  |  |
-| Spain | Circuito Costa de Almería | 5 | 4 | 2 | Andalucia Layout 1 5k; Andalucia Layout 2 4k | main |
+| Spain | Circuito Costa de Almería | 5 | 4 | 4 |  | main |
 | Spain | Circuito de Albacete | 2 | 1 | 1 |  | main |
 | Spain | Circuito de Cartagena | 2 | 1 | 1 |  | main |
 | Spain | Circuito de Guadix | 1 | 1 | 1 |  |  |
@@ -538,11 +538,11 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Portugal | Circuito do Sol | 2 | 1 | 1 |  | main |
 | Portugal | Circuito Vasco Sameiro | 1 | 1 | 1 |  |  |
 | Portugal | Fafe | 1 | 1 | 1 |  |  |
-| Portugal | Kartodromo Fatima | 1 | 1 | 0 | Kartodromo Fatima |  |
-| Portugal | KIP | 1 | 1 | 0 | KIP |  |
-| Portugal | Lousada RX | 1 | 1 | 0 | Lousada RX |  |
+| Portugal | Kartodromo Fatima | 1 | 1 | 1 |  |  |
+| Portugal | KIP | 1 | 1 | 1 |  |  |
+| Portugal | Lousada RX | 3 | 1 | 1 |  | lousada-standard-2019; lousada-joker-2019 |
 | Portugal | Macao RX | 1 | 1 | 0 | Macao RX |  |
-| Portugal | Montalegre | 1 | 1 | 0 | Montalegre |  |
+| Portugal | Montalegre | 3 | 1 | 1 |  | montalegre-standard-2018; montalegre-joker-2018 |
 | Portugal | Sever do Vouga | 1 | 1 | 1 |  |  |
 | Portugal | Vila Real | 1 | 1 | 1 |  |  |
 | Qatar | Lusail International Circuit | 2 | 1 | 1 |  | main |
@@ -606,7 +606,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Ukraine | Chayka | 1 | 1 | 1 |  |  |
 | United States | Albany-Saratoga Speedway | 1 | 0 | 0 |  | main |
 | United States | AMR Motorplex Kart Circuit | 1 | 1 | 1 |  |  |
-| United States | Apex Motor | 3 | 3 | 0 | Apex Motor Club Apex I; Apex Motor Club Apex II; Apex Motor Club Apex III |  |
+| United States | Apex Motor | 5 | 3 | 1 | Apex Motor Club Apex II; Apex Motor Club Apex III | apex-i-straight; apex-i-chicane |
 | United States | Arizona Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Arlington Street Circuit | 1 | 1 | 0 | Arlington Street Circuit |  |
 | United States | Arlington Street Circuit Practice | 1 | 1 | 0 | Arlington Street Circuit Practice |  |
@@ -806,7 +806,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Brazil/Kartodromo Granja Viana |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Bulgaria/Drakon |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Goodwood Kartways | 77095786; 1111888556; 1111888557 | 3 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Canada/ICAR Mirabel LONG chicane |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -847,16 +846,10 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Poland/Tor Jastrzab |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Bombarral |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Bombarral B2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Portugal/Kartodromo Fatima |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Portugal/KIP |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Portugal/Lousada RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Macao RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Portugal/Montalegre |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Spain/Andalucia Layout 1 5k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Spain/Andalucia Layout 2 4k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Navarra Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -901,7 +894,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Shelsley Walsh Hillclimb | 306501331; 661290385; 661290386 | 1 | A named OSM route candidate exists, but venue association, timing proximity or travel convention did not pass the automatic checks. Inspect before adding. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Silverstone RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Apex Motor Club Apex I |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex II |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1084,7 +1076,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Brazil | Santa Cruz do Sul | br-autodromo-internacional-de-santa-cruz-do-sul-281440036 | main | draft-mapped |
 | Brazil | Taruma | br-taruma-e7e74731 | taruma | draft-mapped |
 | Brazil | Velo Citta | br-autodromo-velo-citta-478876097 | main | draft-mapped |
-| Bulgaria | Drakon | bg-drakon-1ef88ce3 |  | missing-layout |
+| Bulgaria | Drakon | bg-drakon-1ef88ce3 | drakon | draft-mapped |
 | Bulgaria | Pautalia | bg-pautalia-f5a0fa61 | pautalia | draft-mapped |
 | Canada | Area 27 | ca-area-27-526010213 | area-27 | draft-mapped |
 | Canada | Area 27 Short | ca-area-27-526010213 | area-27-short | draft-mapped |
@@ -1422,11 +1414,11 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Portugal | Estoril | pt-autodromo-do-estoril-38160756 | estoril | draft-mapped |
 | Portugal | Estoril No Chicane | pt-autodromo-do-estoril-38160756 | estoril-no-chicane | draft-mapped |
 | Portugal | Fafe | pt-fafe-reference | main | draft-mapped |
-| Portugal | Kartodromo Fatima | pt-kartodromo-fatima-7bc8e0dd |  | missing-layout |
-| Portugal | KIP | pt-kip-a57c9224 |  | missing-layout |
-| Portugal | Lousada RX | pt-lousada-rx-d17ce73b |  | missing-layout |
+| Portugal | Kartodromo Fatima | pt-kartodromo-fatima-7bc8e0dd | kartodromo-fatima | draft-mapped |
+| Portugal | KIP | pt-kip-a57c9224 | kip | draft-mapped |
+| Portugal | Lousada RX | pt-lousada-rx-d17ce73b | lousada-rx | draft-mapped |
 | Portugal | Macao RX | pt-macao-rx-2348fa2a |  | missing-layout |
-| Portugal | Montalegre | pt-montalegre-b7bbb3e7 |  | missing-layout |
+| Portugal | Montalegre | pt-montalegre-b7bbb3e7 | montalegre | draft-mapped |
 | Portugal | Portimao | pt-algarve-international-circuit-39218663 | main | draft-mapped |
 | Portugal | Sever do Vouga | pt-sever-do-vouga-6461caa5 | sever-do-vouga | draft-mapped |
 | Portugal | Vila Real | pt-vila-real-e43faa99 | vila-real | draft-mapped |
@@ -1477,8 +1469,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Spain | Albacete Old | es-circuito-de-albacete-42783924 | albacete-old | draft-mapped |
 | Spain | Alcarras | es-alcarras-b9a87582 | alcarras | draft-mapped |
 | Spain | Almeria | es-circuito-costa-de-almeria-29362442 | almeria | draft-mapped |
-| Spain | Andalucia Layout 1 5k | es-circuito-costa-de-almeria-29362442 |  | missing-layout |
-| Spain | Andalucia Layout 2 4k | es-circuito-costa-de-almeria-29362442 |  | missing-layout |
+| Spain | Andalucia Layout 1 5k | es-circuito-costa-de-almeria-29362442 | andalucia-layout-1-5k | draft-mapped |
+| Spain | Andalucia Layout 2 4k | es-circuito-costa-de-almeria-29362442 | andalucia-layout-2-4k | draft-mapped |
 | Spain | Andalucia Layout 3 2.2k | es-circuito-costa-de-almeria-29362442 | andalucia-layout-3-2-2k | draft-mapped |
 | Spain | Ascari | es-circuito-ascari-169907092 | main | draft-mapped |
 | Spain | Calafat | es-circuit-de-calafat-119486523 | main | draft-mapped |
@@ -1684,7 +1676,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Silverstone RX | gb-silverstone-circuit-3571477 |  | missing-layout |
 | United Kingdom | Silverstone Combo | gb-silverstone-circuit-3571477 | silverstone-combo | draft-mapped |
 | United States | AMR Motorplex Kart Circuit | us-amr-motorplex-kart-circuit-reference | main | draft-mapped |
-| United States | Apex Motor Club Apex I | us-apex-motor-b7ddcfd3 |  | missing-layout |
+| United States | Apex Motor Club Apex I | us-apex-motor-b7ddcfd3 | apex-motor-club-apex-i | draft-mapped |
 | United States | Apex Motor Club Apex II | us-apex-motor-b7ddcfd3 |  | missing-layout |
 | United States | Apex Motor Club Apex III | us-apex-motor-b7ddcfd3 |  | missing-layout |
 | United States | Arizona Motorsports Park | us-arizona-motorsports-park-9f848c55 | arizona-motorsports-park | draft-mapped |

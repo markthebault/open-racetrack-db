@@ -8,16 +8,22 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -112.1259926,
+    33.0818923
+  ],
+  "sourceIds": [
+    "osm-components-780085487",
+    "osm-network-apex-motor-club-apex-i"
+  ],
   "defaultLayoutId": "apex-motor-club-apex-i",
   "layouts": [
     {
       "id": "apex-motor-club-apex-i",
       "name": "Apex Motor Club Apex I",
       "referenceId": "United States/Apex Motor Club Apex I",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/apex-motor-club-apex-i.geojson",
+      "description": "Combined mapped configurations: Apex I Southern Straight, Apex I Southern Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "apex-motor-club-apex-ii",
@@ -32,7 +38,65 @@
       "referenceId": "United States/Apex Motor Club Apex III",
       "file": null,
       "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "apex-i-straight",
+      "name": "Apex I Southern Straight",
+      "file": "layouts/apex-i-straight.geojson",
+      "description": "The operator Track One plan identifies the full northern spiral and the southern straight. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft."
+    },
+    {
+      "id": "apex-i-chicane",
+      "name": "Apex I Southern Chicane",
+      "file": "layouts/apex-i-chicane.geojson",
+      "description": "The operator Track One plan identifies the full northern spiral and the parallel southern chicane, independently named AMC Chicane in OSM. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-780085487",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/780085487",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-apex-i-straight",
+      "type": "reference",
+      "title": "Apex I Southern Straight identification",
+      "url": "https://apexmotorclub.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The operator Track One plan identifies the full northern spiral and the southern straight. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-apex-i-chicane",
+      "type": "reference",
+      "title": "Apex I Southern Chicane identification",
+      "url": "https://apexmotorclub.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The operator Track One plan identifies the full northern spiral and the parallel southern chicane, independently named AMC Chicane in OSM. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-apex-motor-club-apex-i",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/780085487",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T21:05:43.873Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-apex-motor-club-apex-i",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://apexmotorclub.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T21:05:43.873Z",
+      "evidenceNote": "The operator Track One plan identifies both the southern straight and its parallel chicane while retaining the complete northern spiral. The catalogue general configuration contains both southern branches. The network groups these two independently mapped choices, excluding the separate AMC Fast inner shortcut absent from the published plan. Shared source edges count once and no diagram coordinates are copied. The independent unique branch distance is 3794 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

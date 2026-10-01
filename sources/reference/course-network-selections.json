@@ -585,6 +585,75 @@
           "url": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf"
         }
       ]
+    },
+    {
+      "referenceId": "Portugal/Montalegre",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "montalegre-standard-2018",
+        "montalegre-joker-2018"
+      ],
+      "expectedLengthM": 1201.5,
+      "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-0",
+      "evidence": "The general catalogue diagram identifies the pre-2022 standard course and its outer turn-one Joker branch. The FIA 2018 plan identifies both choices independently; the 2020 source keeps their exact route nodes. The network combines the two historical laps and counts common edges once. Neither current configurations nor paddock access are asserted. The independent unique branch distance is 1201.5 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "montalegre-standard-2018",
+          "name": "Montalegre Standard Course 2018",
+          "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-0"
+        },
+        {
+          "layoutId": "montalegre-joker-2018",
+          "name": "Montalegre Joker Lap 2018",
+          "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-0"
+        }
+      ]
+    },
+    {
+      "referenceId": "Portugal/Lousada RX",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "lousada-standard-2019",
+        "lousada-joker-2019"
+      ],
+      "expectedLengthM": 1147.1,
+      "identificationUrl": "https://portal.fpak.pt/pub/doc/280/106993",
+      "evidence": "The catalogue general diagram includes the standard inner return and its longer parallel alternative. The organizer 2019 briefing identifies the rallycross course and Joker use before redevelopment. The network groups the two independently mapped 2020 lap choices and excludes the bridge-crossing rally super-special, access lanes and venue perimeter polygon. Shared edges count once; later source versions are not substituted. The independent unique branch distance is 1147.1 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "lousada-standard-2019",
+          "name": "Lousada Standard Course 2019",
+          "url": "https://portal.fpak.pt/pub/doc/280/106993"
+        },
+        {
+          "layoutId": "lousada-joker-2019",
+          "name": "Lousada Joker Lap 2019",
+          "url": "https://portal.fpak.pt/pub/doc/280/106993"
+        }
+      ]
+    },
+    {
+      "referenceId": "United States/Apex Motor Club Apex I",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "apex-i-straight",
+        "apex-i-chicane"
+      ],
+      "expectedLengthM": 3794,
+      "identificationUrl": "https://apexmotorclub.com/track/",
+      "evidence": "The operator Track One plan identifies both the southern straight and its parallel chicane while retaining the complete northern spiral. The catalogue general configuration contains both southern branches. The network groups these two independently mapped choices, excluding the separate AMC Fast inner shortcut absent from the published plan. Shared source edges count once and no diagram coordinates are copied. The independent unique branch distance is 3794 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "apex-i-straight",
+          "name": "Apex I Southern Straight",
+          "url": "https://apexmotorclub.com/track/"
+        },
+        {
+          "layoutId": "apex-i-chicane",
+          "name": "Apex I Southern Chicane",
+          "url": "https://apexmotorclub.com/track/"
+        }
+      ]
     }
   ]
 }

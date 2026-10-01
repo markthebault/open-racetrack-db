@@ -4,9 +4,9 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 5,
-    "course-distance-discrepancy": 52,
+    "course-distance-discrepancy": 46,
     "independent-geometry-missing": 55,
-    "ambiguous-source-branches": 29,
+    "ambiguous-source-branches": 27,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 8
   },
@@ -264,20 +264,6 @@
       "closestSourceLengthM": 1016.1,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Bulgaria/Drakon",
-      "trackId": "bg-drakon-1ef88ce3",
-      "layoutId": "drakon",
-      "sourcePath": "sources/europe/bg/osm.json",
-      "sourceWayIds": [
-        169361659,
-        785304607
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 2885.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Canada/Cameron Speedway Kart Circuit",
@@ -1125,65 +1111,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "Portugal/Kartodromo Fatima",
-      "trackId": "pt-kartodromo-fatima-7bc8e0dd",
-      "layoutId": "kartodromo-fatima",
-      "sourcePath": "sources/europe/pt/osm.json",
-      "sourceWayIds": [
-        170000330,
-        170000743,
-        170000769,
-        360214185
-      ],
-      "candidateCount": 6,
-      "closestSourceLengthM": 1092.9,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Portugal/KIP",
-      "trackId": "pt-kip-a57c9224",
-      "layoutId": "kip",
-      "sourcePath": "sources/europe/pt/osm.json",
-      "sourceWayIds": [
-        128947431,
-        128947452,
-        128947466,
-        360618173,
-        360618174,
-        360618175,
-        360618176,
-        1126939026,
-        1126939027,
-        1126939028,
-        1126939029
-      ],
-      "candidateCount": 29,
-      "closestSourceLengthM": 1404,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Portugal/Lousada RX",
-      "trackId": "pt-lousada-rx-d17ce73b",
-      "layoutId": "lousada-rx",
-      "sourcePath": "sources/europe/pt/osm.json",
-      "sourceWayIds": [
-        130099387,
-        234422533,
-        234422535,
-        1454260479,
-        1454260480,
-        1454260481,
-        1454260482,
-        1454260491
-      ],
-      "candidateCount": 3,
-      "closestSourceLengthM": 1076.1,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "Portugal/Macao RX",
       "trackId": "pt-macao-rx-2348fa2a",
       "layoutId": "macao-rx",
@@ -1194,25 +1121,6 @@
       ],
       "candidateCount": 2,
       "closestSourceLengthM": 784.2,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Portugal/Montalegre",
-      "trackId": "pt-montalegre-b7bbb3e7",
-      "layoutId": "montalegre",
-      "sourcePath": "sources/europe/pt/osm.json",
-      "sourceWayIds": [
-        532046955,
-        532046956,
-        532046957,
-        532046958,
-        1096210263,
-        1096210264,
-        1096210265
-      ],
-      "candidateCount": 4,
-      "closestSourceLengthM": 1136.5,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
@@ -1242,62 +1150,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Spain/Andalucia Layout 1 5k",
-      "trackId": "es-circuito-costa-de-almeria-29362442",
-      "layoutId": "andalucia-layout-1-5k",
-      "sourcePath": "sources/europe/es/osm.json",
-      "sourceWayIds": [
-        29362442,
-        551653081,
-        551653083,
-        1286526266,
-        1286526267,
-        1286526268,
-        1286526269,
-        1286526270,
-        1286526271,
-        1286526272,
-        1286526273,
-        1286526274,
-        1286526275,
-        1286526276,
-        1424571081,
-        1424571082
-      ],
-      "candidateCount": 14,
-      "closestSourceLengthM": 4776.8,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Spain/Andalucia Layout 2 4k",
-      "trackId": "es-circuito-costa-de-almeria-29362442",
-      "layoutId": "andalucia-layout-2-4k",
-      "sourcePath": "sources/europe/es/osm.json",
-      "sourceWayIds": [
-        29362442,
-        551653081,
-        551653083,
-        1286526266,
-        1286526267,
-        1286526268,
-        1286526269,
-        1286526270,
-        1286526271,
-        1286526272,
-        1286526273,
-        1286526274,
-        1286526275,
-        1286526276,
-        1424571081,
-        1424571082
-      ],
-      "candidateCount": 14,
-      "closestSourceLengthM": 3738.6,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "Spain/Circuit Ricardo Tormo School",
@@ -1927,25 +1779,6 @@
       ],
       "candidateCount": 12,
       "closestSourceLengthM": 1278.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United States/Apex Motor Club Apex I",
-      "trackId": "us-apex-motor-b7ddcfd3",
-      "layoutId": "apex-motor-club-apex-i",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        780085487,
-        1368371116,
-        1368371117,
-        1368371118,
-        1368371119,
-        1368371120,
-        1368371121
-      ],
-      "candidateCount": 4,
-      "closestSourceLengthM": 3676.8,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },

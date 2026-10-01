@@ -8,17 +8,81 @@
     "name": "Portugal",
     "slug": "portugal"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -7.75732935,
+    41.845723
+  ],
+  "sourceIds": [
+    "osm-components-532046955",
+    "osm-network-montalegre"
+  ],
   "defaultLayoutId": "montalegre",
   "layouts": [
     {
       "id": "montalegre",
       "name": "Montalegre",
       "referenceId": "Portugal/Montalegre",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/montalegre.geojson",
+      "description": "Combined mapped configurations: Montalegre Standard Course 2018, Montalegre Joker Lap 2018. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "montalegre-standard-2018",
+      "name": "Montalegre Standard Course 2018",
+      "file": "layouts/montalegre-standard-2018.geojson",
+      "description": "The FIA 2018 circuit plan identifies the inner turn-one return and the complete western gravel loop for the standard circuit. The 2020 public source preserves this configuration with exact nodes, measuring 1046.1 m rather than the published 1010 m. The separate outer Joker branch is excluded from this lap. Historical road-centreline alignment remains draft."
+    },
+    {
+      "id": "montalegre-joker-2018",
+      "name": "Montalegre Joker Lap 2018",
+      "file": "layouts/montalegre-joker-2018.geojson",
+      "description": "The FIA 2018 circuit plan identifies the longer outer turn-one return as the Joker. The independent 2020 source retains that loop in way 532046958 version 1, giving a 1151.1 m closed lap. The later 2022 Joker relocation is not substituted for this historical configuration."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-532046955",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/532046955",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:54:14.491Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-montalegre-standard-2018",
+      "type": "reference",
+      "title": "Montalegre Standard Course 2018 identification",
+      "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-0",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:54:14.491Z",
+      "evidenceNote": "The FIA 2018 circuit plan identifies the inner turn-one return and the complete western gravel loop for the standard circuit. The 2020 public source preserves this configuration with exact nodes, measuring 1046.1 m rather than the published 1010 m. The separate outer Joker branch is excluded from this lap. Historical road-centreline alignment remains draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-montalegre-joker-2018",
+      "type": "reference",
+      "title": "Montalegre Joker Lap 2018 identification",
+      "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-0",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:54:14.491Z",
+      "evidenceNote": "The FIA 2018 circuit plan identifies the longer outer turn-one return as the Joker. The independent 2020 source retains that loop in way 532046958 version 1, giving a 1151.1 m closed lap. The later 2022 Joker relocation is not substituted for this historical configuration. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-montalegre",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/532046955",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:59:06.145Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-montalegre",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-0",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:59:06.145Z",
+      "evidenceNote": "The general catalogue diagram identifies the pre-2022 standard course and its outer turn-one Joker branch. The FIA 2018 plan identifies both choices independently; the 2020 source keeps their exact route nodes. The network combines the two historical laps and counts common edges once. Neither current configurations nor paddock access are asserted. The independent unique branch distance is 1201.5 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }
