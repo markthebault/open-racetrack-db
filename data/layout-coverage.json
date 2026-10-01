@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 838,
-    "unmappedLayouts": 169,
+    "draftMapped": 840,
+    "unmappedLayouts": 167,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11055,11 +11055,14 @@
       "name": "Rissington Kart Circuit",
       "timingMode": "shared",
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "rissington-kart-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -11681,11 +11684,14 @@
       "name": "Badger Kart Club",
       "timingMode": "shared",
       "trackId": "us-badger-kart-8181738f",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "badger-kart-club"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -21025,15 +21031,16 @@
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
       "name": "Rissington Kart Circuit",
       "country": "United Kingdom",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Rissington Kart Circuit"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "rissington-inner",
+        "rissington-gearbox"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -24270,15 +24277,17 @@
       "trackId": "us-badger-kart-8181738f",
       "name": "Badger Kart",
       "country": "United States",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 4,
+      "actualTraceCount": 4,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Badger Kart Club"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "badger-classic",
+        "badger-national",
+        "badger-bus-stop"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -27485,13 +27494,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Kingdom/Rissington Kart Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Rushmore Arena",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27560,13 +27562,6 @@
     },
     {
       "recordId": "United States/Arlington Street Circuit Practice",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Badger Kart Club",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

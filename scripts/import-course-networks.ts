@@ -4,6 +4,7 @@ import {readTimingArchive} from './reference-timing';
 import {readNetworkSelection} from './network-selection';
 import {assemble} from './route';
 import {nearestEdge} from '../src/geo';
+import {validateNetworkIdentity} from './network-identity';
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];
 if(!args.includes('--archive')||!archive)throw new Error('Use --archive /absolute/path/to/archive.zip');
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),save=async(p:string,v:unknown)=>writeFile(p,JSON.stringify(v,null,2)+'\n');
@@ -11,7 +12,8 @@ const records=readTimingArchive(archive).records,registry=await read('sources/re
 const selections=(await read('sources/reference/course-network-selections.json')).records;
 for(const selection of selections){
  const registration=registry.records.find((r:any)=>r.referenceId===selection.referenceId),record=records.find(r=>r.id===selection.referenceId);
- if(!registration||!record||!/combo/i.test(record.name))throw new Error('Network must identify a registered aggregate configuration');
+ if(!registration||!record)throw new Error('Network must identify a registered aggregate configuration');
+ validateNetworkIdentity(record.name,selection);
  const entry=index.tracks.find((e:any)=>e.id===registration.trackId),trackPath=`data/${entry.file}`,track=await read(trackPath),layout=track.layouts.find((l:any)=>l.id===registration.layoutId);
  if(selection.layoutIds.includes(layout.id))throw new Error('Network cannot include itself');
  if(selection.layoutIds.some((id:string)=>!track.layouts.some((l:any)=>l.id===id&&l.file)))throw new Error('Missing network component');

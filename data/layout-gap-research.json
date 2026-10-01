@@ -4,7 +4,7 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 9,
-    "course-distance-discrepancy": 57,
+    "course-distance-discrepancy": 55,
     "independent-geometry-missing": 56,
     "ambiguous-source-branches": 29,
     "source-connectivity-incomplete": 7,
@@ -1951,22 +1951,6 @@
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
     },
     {
-      "referenceId": "United Kingdom/Rissington Kart Circuit",
-      "trackId": "gb-rissington-kart-circuit-12acd2fe",
-      "layoutId": "rissington-kart-circuit",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        1209543886,
-        1209543887,
-        1209543888,
-        1209543889
-      ],
-      "candidateCount": 5,
-      "closestSourceLengthM": 983.7,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "United Kingdom/Rushmore Arena",
       "trackId": "gb-rushmore-arena-886deba1",
       "layoutId": "rushmore-arena",
@@ -2100,22 +2084,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/Badger Kart Club",
-      "trackId": "us-badger-kart-8181738f",
-      "layoutId": "badger-kart-club",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        1109037601,
-        1109037602,
-        1109037603,
-        1109037604
-      ],
-      "candidateCount": 5,
-      "closestSourceLengthM": 939.7,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United States/Belle Isle",

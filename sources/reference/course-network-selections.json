@@ -258,6 +258,58 @@
       "expectedLengthM": 6310,
       "evidence": "Aggregate includes the identified GP timing variants, historic GP, National and International branches. The separate Stowe infield circuit is excluded. Component identity and historical corner alignment remain draft.",
       "identificationUrl": "https://www.silverstone.co.uk/track-and-testing/testing"
+    },
+    {
+      "referenceId": "United Kingdom/Rissington Kart Circuit",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "rissington-inner",
+        "rissington-gearbox"
+      ],
+      "expectedLengthM": 1300.5,
+      "evidence": "The general venue configuration represents both the club Inner Circuit and Gearbox Circuit branches. Separate published club plans identify the inner loop, eastern dog-leg and outer gearbox return. Each named route is independently mapped and selectable; their union is displayed as a network rather than one lap. The unique mapped branch length is 1300.5 m and is not stretched to the catalogue distance of 1258 m.",
+      "identificationUrl": "https://rissingtonkartclub.co.uk/",
+      "configurationEvidence": [
+        {
+          "layoutId": "rissington-inner",
+          "name": "Inner Circuit",
+          "url": "https://rissingtonkartclub.co.uk/wp-content/uploads/2021/03/Rissington-Track-Guide-Inner-2021.jpg"
+        },
+        {
+          "layoutId": "rissington-gearbox",
+          "name": "Gearbox Circuit",
+          "url": "https://rissingtonkartclub.co.uk/wp-content/uploads/2021/03/Rissington-Track-Guide-Gearbox-2021.jpg"
+        }
+      ]
+    },
+    {
+      "referenceId": "United States/Badger Kart Club",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "badger-classic",
+        "badger-national",
+        "badger-bus-stop"
+      ],
+      "expectedLengthM": 1125.8,
+      "identificationUrl": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf",
+      "evidence": "The general venue entry includes the club named Classic, National and Bus-Stop configurations. The three published route diagrams identify the inner esses, complete National southern hairpin and eastern Bus-Stop. Their independently mapped branch union is displayed as a network, not a lap; the unlisted diagonal shortcut and outer shortcut bypassing the esses are excluded. The unique branch distance of 1125.8 m is preserved separately from the catalogue 1186 m.",
+      "configurationEvidence": [
+        {
+          "layoutId": "badger-classic",
+          "name": "Classic Track",
+          "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf"
+        },
+        {
+          "layoutId": "badger-national",
+          "name": "National Track",
+          "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf"
+        },
+        {
+          "layoutId": "badger-bus-stop",
+          "name": "Bus-Stop Track",
+          "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf"
+        }
+      ]
     }
   ]
 }

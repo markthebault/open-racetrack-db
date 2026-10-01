@@ -8,17 +8,96 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -88.5029816,
+    43.0117449
+  ],
+  "sourceIds": [
+    "osm-components-1109037601",
+    "osm-network-badger-kart-club"
+  ],
   "defaultLayoutId": "badger-kart-club",
   "layouts": [
     {
       "id": "badger-kart-club",
       "name": "Badger Kart Club",
       "referenceId": "United States/Badger Kart Club",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/badger-kart-club.geojson",
+      "description": "Combined mapped configurations: Badger Classic Track, Badger National Track, Badger Bus-Stop Track. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "badger-classic",
+      "name": "Badger Classic Track",
+      "file": "layouts/badger-classic.geojson",
+      "description": "The club published Classic diagram identifies the full inner esses, plain eastern return and short southern return; it excludes the National southern extension and the eastern Bus-Stop."
+    },
+    {
+      "id": "badger-national",
+      "name": "Badger National Track",
+      "file": "layouts/badger-national.geojson",
+      "description": "The club published National diagram identifies the full inner esses, plain eastern return and complete southern hairpin extension; the diagonal southern shortcut is excluded."
+    },
+    {
+      "id": "badger-bus-stop",
+      "name": "Badger Bus-Stop Track",
+      "file": "layouts/badger-bus-stop.geojson",
+      "description": "The club published Bus-Stop diagram identifies the full inner esses, eastern Bus-Stop and short southern return; it excludes the National extension and its diagonal shortcut."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-1109037601",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/1109037601",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-badger-classic",
+      "type": "reference",
+      "title": "Badger Classic Track identification",
+      "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The club published Classic diagram identifies the full inner esses, plain eastern return and short southern return; it excludes the National southern extension and the eastern Bus-Stop. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-badger-national",
+      "type": "reference",
+      "title": "Badger National Track identification",
+      "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The club published National diagram identifies the full inner esses, plain eastern return and complete southern hairpin extension; the diagonal southern shortcut is excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-badger-bus-stop",
+      "type": "reference",
+      "title": "Badger Bus-Stop Track identification",
+      "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The club published Bus-Stop diagram identifies the full inner esses, eastern Bus-Stop and short southern return; it excludes the National extension and its diagonal shortcut. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-badger-kart-club",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/1109037601",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:03:07.265Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-badger-kart-club",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://badgerkartclub.com/wp-content/uploads/2026/03/2026-BKC-Schedule.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:03:07.265Z",
+      "evidenceNote": "The general venue entry includes the club named Classic, National and Bus-Stop configurations. The three published route diagrams identify the inner esses, complete National southern hairpin and eastern Bus-Stop. Their independently mapped branch union is displayed as a network, not a lap; the unlisted diagonal shortcut and outer shortcut bypassing the esses are excluded. The unique branch distance of 1125.8 m is preserved separately from the catalogue 1186 m. Identification only; no image coordinates copied."
+    }
+  ]
 }

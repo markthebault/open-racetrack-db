@@ -8,17 +8,81 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -1.6842169500000002,
+    51.8660244
+  ],
+  "sourceIds": [
+    "osm-components-1209543886",
+    "osm-network-rissington-kart-circuit"
+  ],
   "defaultLayoutId": "rissington-kart-circuit",
   "layouts": [
     {
       "id": "rissington-kart-circuit",
       "name": "Rissington Kart Circuit",
       "referenceId": "United Kingdom/Rissington Kart Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/rissington-kart-circuit.geojson",
+      "description": "Combined mapped configurations: Rissington Inner Circuit, Rissington Gearbox Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "rissington-inner",
+      "name": "Rissington Inner Circuit",
+      "file": "layouts/rissington-inner.geojson",
+      "description": "The club Inner Circuit plan identifies the full northern hairpin, inner southern loop and eastern dog-leg. The independently mapped centreline measures 983.7 m, compared with the club rounded distance of 970 m. The outer gearbox shortcut and pit roads are excluded."
+    },
+    {
+      "id": "rissington-gearbox",
+      "name": "Rissington Gearbox Circuit",
+      "file": "layouts/rissington-gearbox.geojson",
+      "description": "The club Gearbox Circuit plan identifies the full northern hairpin and long outer southern return, bypassing the inner loop and eastern dog-leg. The pinned source loop measures 868.2 m, while the published plan states 970 m. This discrepancy remains recorded; coordinates are not adjusted."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-1209543886",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/1209543886",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-rissington-inner",
+      "type": "reference",
+      "title": "Rissington Inner Circuit identification",
+      "url": "https://rissingtonkartclub.co.uk/wp-content/uploads/2021/03/Rissington-Track-Guide-Inner-2021.jpg",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "The club Inner Circuit plan identifies the full northern hairpin, inner southern loop and eastern dog-leg. The independently mapped centreline measures 983.7 m, compared with the club rounded distance of 970 m. The outer gearbox shortcut and pit roads are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-rissington-gearbox",
+      "type": "reference",
+      "title": "Rissington Gearbox Circuit identification",
+      "url": "https://rissingtonkartclub.co.uk/wp-content/uploads/2021/03/Rissington-Track-Guide-Gearbox-2021.jpg",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "The club Gearbox Circuit plan identifies the full northern hairpin and long outer southern return, bypassing the inner loop and eastern dog-leg. The pinned source loop measures 868.2 m, while the published plan states 970 m. This discrepancy remains recorded; coordinates are not adjusted. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-rissington-kart-circuit",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/1209543886",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T19:53:51.544Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-rissington-kart-circuit",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://rissingtonkartclub.co.uk/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T19:53:51.544Z",
+      "evidenceNote": "The general venue configuration represents both the club Inner Circuit and Gearbox Circuit branches. Separate published club plans identify the inner loop, eastern dog-leg and outer gearbox return. Each named route is independently mapped and selectable; their union is displayed as a network rather than one lap. The unique mapped branch length is 1300.5 m and is not stretched to the catalogue distance of 1258 m. Identification only; no image coordinates copied."
+    }
+  ]
 }

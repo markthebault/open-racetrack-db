@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 838
-- unmappedLayouts: 169
+- draftMapped: 840
+- unmappedLayouts: 167
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -381,7 +381,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Prestwold Hall | 1 | 1 | 1 |  |  |
 | United Kingdom | ProDrive | 1 | 1 | 0 | ProDrive |  |
 | United Kingdom | RAF Woodbridge | 1 | 1 | 0 | RAF Woodbridge |  |
-| United Kingdom | Rissington Kart Circuit | 1 | 1 | 0 | Rissington Kart Circuit |  |
+| United Kingdom | Rissington Kart Circuit | 3 | 1 | 1 |  | rissington-inner; rissington-gearbox |
 | United Kingdom | Rockingham | 3 | 3 | 3 |  |  |
 | United Kingdom | Rockingham Int Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Rockingham Int Supersport Circuit | 1 | 1 | 1 |  |  |
@@ -613,7 +613,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Arroyo Seco Raceway | 1 | 0 | 0 |  | main |
 | United States | Atlanta Motorsports Park | 2 | 1 | 1 |  | main |
 | United States | Autobahn Country Club | 4 | 3 | 3 |  | main |
-| United States | Badger Kart | 1 | 1 | 0 | Badger Kart Club |  |
+| United States | Badger Kart | 4 | 1 | 1 |  | badger-classic; badger-national; badger-bus-stop |
 | United States | Barber Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Barber Motorsports Park SRO Pract. | 1 | 1 | 1 |  |  |
 | United States | Belle Isle | 2 | 2 | 0 | Belle Isle; Belle Isle GP |  |
@@ -903,7 +903,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United Kingdom/ProDrive |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Rissington Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Rushmore Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Shelsley Walsh Hillclimb | 306501331; 661290385; 661290386 | 1 | A named OSM route candidate exists, but venue association, timing proximity or travel convention did not pass the automatic checks. Inspect before adding. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -914,7 +913,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit Practice |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Badger Kart Club |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Belle Isle |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Belle Isle GP |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Briggs & Stratton Motorplex |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1666,7 +1664,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Prestwold Hall | gb-prestwold-hall-reference | main | draft-mapped |
 | United Kingdom | ProDrive | gb-prodrive-bf598a18 |  | missing-layout |
 | United Kingdom | RAF Woodbridge | gb-raf-woodbridge-02bc9a03 |  | missing-layout |
-| United Kingdom | Rissington Kart Circuit | gb-rissington-kart-circuit-12acd2fe |  | missing-layout |
+| United Kingdom | Rissington Kart Circuit | gb-rissington-kart-circuit-12acd2fe | rissington-kart-circuit | draft-mapped |
 | United Kingdom | Rockingham Combo | gb-rockingham-bdd27703 | rockingham-combo | draft-mapped |
 | United Kingdom | Rockingham Int Circuit Short | gb-rockingham-int-circuit-fb42d36b | rockingham-int-circuit-short | draft-mapped |
 | United Kingdom | Rockingham Int Supersport Circuit | gb-rockingham-int-supersport-circuit-f4b0384c | rockingham-int-supersport-circuit | draft-mapped |
@@ -1707,7 +1705,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Autobahn Country Club | us-autobahn-country-club-42852101 | autobahn-country-club | draft-mapped |
 | United States | Autobahn Country Club North | us-autobahn-country-club-42852101 | autobahn-country-club-north | draft-mapped |
 | United States | Autobahn Country Club South | us-autobahn-country-club-42852101 | autobahn-country-club-south | draft-mapped |
-| United States | Badger Kart Club | us-badger-kart-8181738f |  | missing-layout |
+| United States | Badger Kart Club | us-badger-kart-8181738f | badger-kart-club | draft-mapped |
 | United States | Barber Motorsports Park | us-barber-motorsports-park-de1b88e1 | barber-motorsports-park | draft-mapped |
 | United States | Barber Motorsports Park SRO Pract. | us-barber-motorsports-park-sro-pract-4bcdadc1 | barber-motorsports-park-sro-pract | draft-mapped |
 | United States | Belle Isle | us-belle-isle-c12938f2 |  | missing-layout |
