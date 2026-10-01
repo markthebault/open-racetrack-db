@@ -13,7 +13,8 @@
     24.47090205
   ],
   "sourceIds": [
-    "osm-relation-11378665"
+    "osm-relation-11378665",
+    "osm-network-168477013"
   ],
   "defaultLayoutId": "yas-marina-combo",
   "layouts": [
@@ -35,8 +36,8 @@
       "id": "yas-marina-gp-corkscrew",
       "name": "Yas Marina GP Corkscrew",
       "referenceId": "United Arab Emirates/Yas Marina GP Corkscrew",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/yas-marina-gp-corkscrew.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4776.8 m. Difference from the supplied layout distance 31.8 m. Course configuration still requires visual review."
     },
     {
       "id": "yas-marina-north",
@@ -83,6 +84,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-10-01T12:01:16.142Z",
       "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
+    },
+    {
+      "id": "osm-network-168477013",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/168477013",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:59.057Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

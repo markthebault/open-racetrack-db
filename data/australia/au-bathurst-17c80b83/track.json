@@ -8,17 +8,32 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    149.55393555,
+    -33.4486917
+  ],
+  "sourceIds": [
+    "osm-circuit-6942508"
+  ],
   "defaultLayoutId": "bathurst",
   "layouts": [
     {
       "id": "bathurst",
       "name": "Bathurst",
       "referenceId": "Australia/Bathurst",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bathurst.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 6942508. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-6942508",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Mount Panorama Circuit",
+      "url": "https://www.openstreetmap.org/relation/6942508",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.339Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

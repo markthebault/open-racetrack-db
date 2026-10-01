@@ -13,7 +13,8 @@
     43.36229715562913
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-10625003"
   ],
   "defaultLayoutId": "new-hampshire-motor-speedway",
   "layouts": [
@@ -34,8 +35,8 @@
       "id": "new-hampshire-motor-spdwy-chicane",
       "name": "New Hampshire Motor Spdwy Chicane",
       "referenceId": "United States/New Hampshire Motor Spdwy Chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/new-hampshire-motor-spdwy-chicane.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 10625003. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -47,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-10625003",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: New Hampshire Motor Speedway Road Course",
+      "url": "https://www.openstreetmap.org/relation/10625003",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.506Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

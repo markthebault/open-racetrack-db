@@ -8,8 +8,13 @@
     "name": "Germany",
     "slug": "germany"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    13.92221435,
+    51.532881700000004
+  ],
+  "sourceIds": [
+    "osm-network-31323174"
+  ],
   "defaultLayoutId": "lausitzring-2-mile",
   "layouts": [
     {
@@ -30,8 +35,8 @@
       "id": "lausitzring-gp-3-2km",
       "name": "Lausitzring GP 3.2km",
       "referenceId": "Germany/Lausitzring GP 3.2km",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lausitzring-gp-3-2km.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3095.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
     },
     {
       "id": "lausitzring-gp-3-4km",
@@ -69,5 +74,15 @@
       "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-network-31323174",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/31323174",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.611Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
 }

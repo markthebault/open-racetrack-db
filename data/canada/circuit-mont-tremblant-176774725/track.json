@@ -13,7 +13,8 @@
     46.189852551914846
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-17620722"
   ],
   "defaultLayoutId": "mont-tremblant",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "mont-tremblant",
       "name": "Mont Tremblant",
       "referenceId": "Canada/Mont Tremblant",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/mont-tremblant.geojson",
+      "description": "The operator identifies the full 4.26 km configuration and separately describes the north loop. The catalogue distance and independent source distance are closest to the full course; no north-loop geometry is substituted. Draft configuration selected from the independently named circuit relation 17620722. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:02.766Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-17620722",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Circuit Mont-Tremblant Full Course",
+      "url": "https://www.openstreetmap.org/relation/17620722",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:47:04.117Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "course-identity-17620722",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://www.pistemonttremblant.com/en/infos/caracteristique-techniques-circuit/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:47:04.117Z",
+      "evidenceNote": "The operator identifies the full 4.26 km configuration and separately describes the north loop. The catalogue distance and independent source distance are closest to the full course; no north-loop geometry is substituted. Identification only; no coordinates are copied."
     }
   ]
 }

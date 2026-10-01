@@ -13,7 +13,8 @@
     41.980877792079205
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-4872348"
   ],
   "defaultLayoutId": "thompson-spdwy-1-5-mile-road-course",
   "layouts": [
@@ -34,8 +35,8 @@
       "id": "thompson-spdwy-1-7-mile-road-course",
       "name": "Thompson Spdwy 1.7 Mile Road Course",
       "referenceId": "United States/Thompson Spdwy 1.7 Mile Road Course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thompson-spdwy-1-7-mile-road-course.geojson",
+      "description": "The operator identifies the restored 1.7 mile road course. The separately named OSM road-course relation distinguishes it from the short configuration; measured distance discrepancies remain draft. Draft configuration selected from the independently named circuit relation 4872348. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -47,6 +48,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-4872348",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Thompson Speedway Road Course",
+      "url": "https://www.openstreetmap.org/relation/4872348",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:46:29.225Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "course-identity-4872348",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://www.thompsonspeedway.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:46:29.225Z",
+      "evidenceNote": "The operator identifies the restored 1.7 mile road course. The separately named OSM road-course relation distinguishes it from the short configuration; measured distance discrepancies remain draft. Identification only; no coordinates are copied."
     }
   ]
 }

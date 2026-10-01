@@ -13,7 +13,8 @@
     39.794857077150525
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-20573734"
   ],
   "defaultLayoutId": "ims-sro-practice",
   "layouts": [
@@ -27,15 +28,15 @@
       "id": "ims-sro-practice",
       "name": "IMS SRO Practice",
       "referenceId": "United States/IMS SRO Practice",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ims-sro-practice.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 20573734. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "indianapolis-motor-speedway-indy",
       "name": "Indianapolis Motor Speedway - Indy",
       "referenceId": "United States/Indianapolis Motor Speedway - Indy",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/indianapolis-motor-speedway-indy.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 20573734. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "indianapolis-scca",
@@ -54,6 +55,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-20573734",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Indianapolis RC 2026",
+      "url": "https://www.openstreetmap.org/relation/20573734",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.485Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

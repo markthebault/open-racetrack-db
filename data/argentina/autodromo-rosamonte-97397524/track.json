@@ -15,7 +15,8 @@
     -27.438673537588652
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-3510494"
   ],
   "defaultLayoutId": "autodromo-rosamonte",
   "layouts": [
@@ -29,8 +30,8 @@
       "id": "autodromo-rosamonte",
       "name": "Autodromo Rosamonte",
       "referenceId": "Argentina/Autodromo Rosamonte",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-rosamonte.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 3510494. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -42,6 +43,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-3510494",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Circuito Principal Autódromo Rosamonte",
+      "url": "https://www.openstreetmap.org/relation/3510494",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.308Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

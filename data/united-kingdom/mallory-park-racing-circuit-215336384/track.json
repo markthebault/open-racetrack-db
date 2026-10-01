@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-215336384"
+    "osm-network-215336384",
+    "osm-circuit-11249426"
   ],
   "defaultLayoutId": "mallory-park",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "mallory-park",
       "name": "Mallory Park",
       "referenceId": "United Kingdom/Mallory Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/mallory-park.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 11249426. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "mallory-park-combo",
@@ -64,6 +65,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-circuit-11249426",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Mallory Park",
+      "url": "https://www.openstreetmap.org/relation/11249426",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.445Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

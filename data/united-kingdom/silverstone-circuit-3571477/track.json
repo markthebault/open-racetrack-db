@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-relation-51160",
-    "osm-network-3571477"
+    "osm-network-3571477",
+    "osm-circuit-51160"
   ],
   "defaultLayoutId": "silverstone-gp-wing-sf",
   "layouts": [
@@ -50,8 +51,8 @@
       "id": "silverstone-gp-historic",
       "name": "Silverstone GP Historic",
       "referenceId": "United Kingdom/Silverstone GP Historic",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/silverstone-gp-historic.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 51160. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "silverstone-national",
@@ -109,6 +110,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-circuit-51160",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Silverstone Grand Prix",
+      "url": "https://www.openstreetmap.org/relation/51160",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.462Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

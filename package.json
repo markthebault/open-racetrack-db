@@ -33,7 +33,13 @@
     "recover:layouts": "tsx scripts/reference-recovery.ts",
     "catalogue:complete": "tsx scripts/complete-catalogue.ts",
     "import:relations": "tsx scripts/import-circuit-relations.ts",
-    "recover:variants": "tsx scripts/recover-course-variants.ts"
+    "recover:variants": "tsx scripts/recover-course-variants.ts",
+    "discover:circuits": "node scripts/discover-circuit-relations.mjs",
+    "research:circuits": "tsx scripts/research-circuit-courses.ts",
+    "recover:circuits": "tsx scripts/recover-relation-courses.ts",
+    "import:roads": "tsx scripts/import-road-courses.ts",
+    "research:gaps": "tsx scripts/research-layout-gaps.ts",
+    "audit:archive": "tsx scripts/audit-archive-inventory.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

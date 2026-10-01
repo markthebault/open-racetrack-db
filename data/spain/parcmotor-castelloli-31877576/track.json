@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "parc-motor-castelloli",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "parc-motor-castelloli",
       "name": "Parc Motor Castelloli",
-      "referenceId": "Spain/Parc Motor Castelloli",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Parcmotor Castellolí. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4125.6 m; supplied distance 4159 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "Spain/Parc Motor Castelloli"
     }
   ],
   "sources": [

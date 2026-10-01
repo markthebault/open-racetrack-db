@@ -13,7 +13,8 @@
     36.178829652105236
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-127683895"
   ],
   "defaultLayoutId": "charleston-peak-full",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "charleston-peak-full",
       "name": "Charleston Peak Full",
       "referenceId": "United States/Charleston Peak Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/charleston-peak-full.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5205.8 m. Difference from the supplied layout distance 27.2 m. Course configuration still requires visual review."
     },
     {
       "id": "charleston-peak-north",
@@ -41,15 +42,15 @@
       "id": "charleston-peak-short",
       "name": "Charleston Peak Short",
       "referenceId": "United States/Charleston Peak Short",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/charleston-peak-short.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3458.3 m. Difference from the supplied layout distance 19.7 m. Course configuration still requires visual review."
     },
     {
       "id": "charleston-peak-south",
       "name": "Charleston Peak South",
       "referenceId": "United States/Charleston Peak South",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/charleston-peak-south.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4238.5 m. Difference from the supplied layout distance 16.5 m. Course configuration still requires visual review."
     },
     {
       "id": "spring-mountain-raceway",
@@ -69,8 +70,8 @@
       "id": "spring-mtn-raceway-east-b",
       "name": "Spring Mtn Raceway East B",
       "referenceId": "United States/Spring Mtn Raceway East B",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/spring-mtn-raceway-east-b.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2469.1 m. Difference from the supplied layout distance 7.1 m. Course configuration still requires visual review."
     },
     {
       "id": "spring-mtn-raceway-lauda-b",
@@ -90,36 +91,36 @@
       "id": "spring-mtn-raceway-moss-b",
       "name": "Spring Mtn Raceway Moss B",
       "referenceId": "United States/Spring Mtn Raceway Moss B",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/spring-mtn-raceway-moss-b.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3863.7 m. Difference from the supplied layout distance 0.7 m. Course configuration still requires visual review."
     },
     {
       "id": "spring-mtn-raceway-moss-c",
       "name": "Spring Mtn Raceway Moss C",
       "referenceId": "United States/Spring Mtn Raceway Moss C",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/spring-mtn-raceway-moss-c.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3805.6 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review."
     },
     {
       "id": "spring-mtn-raceway-villeneuve-a",
       "name": "Spring Mtn Raceway Villeneuve A",
       "referenceId": "United States/Spring Mtn Raceway Villeneuve A",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/spring-mtn-raceway-villeneuve-a.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3502.8 m. Difference from the supplied layout distance 2.8 m. Course configuration still requires visual review."
     },
     {
       "id": "spring-mtn-raceway-villeneuve-b",
       "name": "Spring Mtn Raceway Villeneuve B",
       "referenceId": "United States/Spring Mtn Raceway Villeneuve B",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/spring-mtn-raceway-villeneuve-b.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3822.7 m. Difference from the supplied layout distance 1.7 m. Course configuration still requires visual review."
     },
     {
       "id": "spring-mtn-raceway-west",
       "name": "Spring Mtn Raceway West",
       "referenceId": "United States/Spring Mtn Raceway West",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/spring-mtn-raceway-west.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2415.4 m. Difference from the supplied layout distance 14.4 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -131,6 +132,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-127683895",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/127683895",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

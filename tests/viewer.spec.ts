@@ -91,3 +91,20 @@ test('Nürburgring offers nine reference entries and GP differs from Sprint',asy
  await page.locator('#layout').selectOption('nordschleife-btg');await expect(page.locator('#message')).toHaveText('Layout ready');
  await expect(page.locator('#selection')).toContainText('Public data is the supporting Nordschleife loop');
 });
+
+test('Paul Ricard has eight traces with distinct full, short and training configurations',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ await page.goto('/?track=fr-paul-ricard&layout=paul-ricard-le-castellet');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#layout option')).toHaveCount(8);
+ const get=async(id:string)=>{await page.locator('#layout').selectOption(id);await expect(page.locator('#message')).toHaveText('Layout ready');return (await request.get((await page.locator('#download').getAttribute('href'))!)).json();};
+ const gp=await get('main'),short=await get('paul-ricard-short'),straight=await get('paul-ricard-short-without-chicane'),school=await get('paul-ricard-piste-gt'),training=await get('paul-ricard-gtdrive');
+ expect(gp.metadata.lengthM-short.metadata.lengthM).toBeGreaterThan(1900);expect(short.metadata.lengthM-straight.metadata.lengthM).toBeGreaterThan(70);expect(short.metadata.lengthM-straight.metadata.lengthM).toBeLessThan(100);
+ expect(school.metadata.lengthM).toBeGreaterThan(1750);expect(school.metadata.lengthM).toBeLessThan(1850);expect(training.metadata.lengthM).toBeLessThan(1650);expect(training.features[0].geometry.coordinates).not.toEqual(school.features[0].geometry.coordinates);
+});
+
+test('Pikes Peak is an open hillclimb rather than an artificially closed loop',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ await page.goto('/?track=us-pikes-peak-hillclimb-ab97c20e&layout=pikes-peak-hillclimb');await expect(page.locator('#message')).toHaveText('Layout ready');
+ const data=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json(),trace=data.features[0].geometry.coordinates;
+ expect(data.metadata.closed).toBe(false);expect(data.metadata.timingMode).toBe('separate');expect(data.metadata.lengthM).toBeGreaterThan(19000);expect(trace[0]).not.toEqual(trace.at(-1));
+});

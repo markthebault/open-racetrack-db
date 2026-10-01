@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "roebling-road",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "roebling-road",
       "name": "Roebling Road",
-      "referenceId": "United States/Roebling Road",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Roebling Road Raceway. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3243.4 m; supplied distance 3187 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "United States/Roebling Road"
     }
   ],
   "sources": [

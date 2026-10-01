@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "portimao",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "portimao",
       "name": "Portimao",
-      "referenceId": "Portugal/Portimao",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Algarve International Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4681.6 m; supplied distance 4658 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "Portugal/Portimao"
     }
   ],
   "sources": [

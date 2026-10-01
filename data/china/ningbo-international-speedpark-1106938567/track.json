@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "ningbo-international-circuit",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "ningbo-international-circuit",
       "name": "Ningbo International Circuit",
-      "referenceId": "China/Ningbo International Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Ningbo International Speedpark. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3968.1 m; supplied distance 4016 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "China/Ningbo International Circuit"
     }
   ],
   "sources": [

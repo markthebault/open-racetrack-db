@@ -33,14 +33,14 @@ export function candidateLoops(ways:Way[],limit=400,minimumLengthM=1000){
  const loops:{segments:Segment[];lengthM:number;directionKnown:boolean}[]=[],keys=new Set<string>();let steps=0,truncated=false;
  function walk(start:number,node:number,path:Edge[],seen:Set<number>,size:number){
   if(++steps>150000||loops.length>=limit){truncated=true;return;}
-  for(const e of adjacency.get(node)??[]){if(e.b<start||size+e.lengthM>30000)continue;
+  for(const e of adjacency.get(node)??[]){if(e.b<start||size+e.lengthM>100000)continue;
    const previous=path.at(-1);if(previous?.wayId===e.wayId&&previous.fromIndex===e.toIndex&&previous.toIndex===e.fromIndex)continue;
    if(e.b===start){const route=[...path,e];if(size+e.lengthM<minimumLengthM)continue;
     // Remove reverse duplicates while preserving the pinned direction chosen for the recipe.
     const tokens=route.map(e=>`${e.wayId}:${Math.min(e.fromIndex,e.toIndex)}:${Math.max(e.fromIndex,e.toIndex)}`).sort();const key=tokens.join('|');if(keys.has(key))continue;keys.add(key);
     const segments:Segment[]=[];for(const edge of route){const {wayId,wayVersion,fromIndex,toIndex}=edge,previous=segments.at(-1);if(previous?.wayId===wayId&&previous.toIndex===fromIndex&&(previous.toIndex-previous.fromIndex)*(toIndex-fromIndex)>0)previous.toIndex=toIndex;else segments.push({wayId,wayVersion,fromIndex,toIndex});}
     const coords=assemble(ways,segments,true);loops.push({segments,lengthM:length(coords),directionKnown:route.every(e=>['yes','-1'].includes(ways.find(w=>w.id===e.wayId)!.tags?.oneway??''))});
-   }else if(!seen.has(e.b)&&path.length<200)walk(start,e.b,[...path,e],new Set([...seen,e.b]),size+e.lengthM);
+   }else if(!seen.has(e.b)){if(path.length>=2000){truncated=true;return;}walk(start,e.b,[...path,e],new Set([...seen,e.b]),size+e.lengthM);}
   }
  }
  for(const node of [...adjacency.keys()].sort((a,b)=>a-b)){walk(node,node,[],new Set([node]),0);if(truncated)break;}

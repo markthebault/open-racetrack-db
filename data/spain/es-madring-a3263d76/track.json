@@ -8,17 +8,32 @@
     "name": "Spain",
     "slug": "spain"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -3.61862365,
+    40.4724662
+  ],
+  "sourceIds": [
+    "osm-circuit-18813472"
+  ],
   "defaultLayoutId": "madring",
   "layouts": [
     {
       "id": "madring",
       "name": "Madring",
       "referenceId": "Spain/Madring",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/madring.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 18813472. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-18813472",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: MadRing",
+      "url": "https://www.openstreetmap.org/relation/18813472",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.431Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

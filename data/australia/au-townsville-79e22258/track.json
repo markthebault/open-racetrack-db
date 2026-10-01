@@ -8,17 +8,41 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    146.8091383,
+    -19.2718998
+  ],
+  "sourceIds": [
+    "osm-circuit-4123129"
+  ],
   "defaultLayoutId": "townsville",
   "layouts": [
     {
       "id": "townsville",
       "name": "Townsville",
       "referenceId": "Australia/Townsville",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/townsville.geojson",
+      "description": "The championship identifies the Townsville venue as the Reid Park street course. Its independently named route is the complete parkland street configuration. Draft configuration selected from the independently named circuit relation 4123129. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-4123129",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Ried Park V8 Track",
+      "url": "https://www.openstreetmap.org/relation/4123129",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:46:28.616Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "course-identity-4123129",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://www.supercars.com/circuit/reid-park-street-circuit",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:46:28.616Z",
+      "evidenceNote": "The championship identifies the Townsville venue as the Reid Park street course. Its independently named route is the complete parkland street configuration. Identification only; no coordinates are copied."
+    }
+  ]
 }

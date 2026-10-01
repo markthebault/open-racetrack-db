@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "calafat",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "calafat",
       "name": "Calafat",
-      "referenceId": "Spain/Calafat",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuit de Calafat. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3342.9 m; supplied distance 3254 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "Spain/Calafat"
     }
   ],
   "sources": [

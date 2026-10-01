@@ -8,17 +8,32 @@
     "name": "Singapore",
     "slug": "singapore"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    103.85795544999999,
+    1.2907050500000001
+  ],
+  "sourceIds": [
+    "osm-circuit-421263"
+  ],
   "defaultLayoutId": "singapore-gp",
   "layouts": [
     {
       "id": "singapore-gp",
       "name": "Singapore GP",
       "referenceId": "Singapore/Singapore GP",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/singapore-gp.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 421263. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-421263",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Marina Bay Street Circuit",
+      "url": "https://www.openstreetmap.org/relation/421263",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.418Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

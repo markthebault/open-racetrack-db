@@ -14,3 +14,9 @@ for(const r of report.records)if(r.trackId)assert.ok(index.tracks.some((t:any)=>
 console.log(`Validated every public venue and ${report.records.length} reference layout records.`);
 
 const catalogue=await read('sources/reference/catalogue.json');assert.equal(catalogue.records.length,report.records.length);assert.equal(new Set(catalogue.records.map((r:any)=>r.referenceId)).size,report.records.length);for(const r of catalogue.records){const e=index.tracks.find((t:any)=>t.id===r.trackId);assert.ok(e);const t=await read(`data/${e.file}`),layout=t.layouts.find((l:any)=>l.id===r.layoutId);assert.equal(layout?.referenceId,r.referenceId);assert.equal(layout?.name,r.name);assert.equal(layout.file!==null,r.geometryAvailable);}
+
+const research=await read('data/layout-gap-research.json');assert.equal(research.schemaVersion,1);assert.equal(research.xmlSha256,report.xmlSha256);
+const expectedGaps=catalogue.records.filter((r:any)=>!r.geometryAvailable).map((r:any)=>r.referenceId).sort();
+assert.deepEqual(research.records.map((r:any)=>r.referenceId).sort(),expectedGaps);assert.equal(new Set(research.records.map((r:any)=>r.referenceId)).size,research.records.length);
+const reasons:Record<string,number>={};for(const row of research.records){const registration=catalogue.records.find((r:any)=>r.referenceId===row.referenceId);assert.equal(row.trackId,registration.trackId);assert.equal(row.layoutId,registration.layoutId);assert.ok(row.nextStep);assert.deepEqual(Object.keys(row).filter(k=>/^(point|gates|coordinates|lat|lon|latitude|longitude|bounds)$/i.test(k)),[]);reasons[row.reason]=(reasons[row.reason]??0)+1;}
+assert.deepEqual(research.summary,reasons);console.log(`Validated source limitations for all ${research.records.length} remaining geometry gaps.`);

@@ -10,13 +10,13 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 The viewer contains **763 venues across 74 countries**, with every one of the **1,007 supplied layout entries** registered. Search a venue, select a layout, and download an attributed GeoJSON trace when geometry is available.
 
-**457 supplied entries have draft course traces; 550 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap.
+**553 supplied entries have draft course traces; 454 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) explain which source limitations still need work.
 
 Course coordinates come from pinned OpenStreetMap data and explicit route recipes. All traces remain drafts. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
 
 The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files, track pictures or boundaries. Private timing stays outside the public database, downloads and build.
 
-Nürburgring now has nine catalogue entries, with distinct GP and Sprint traces. Separate-gate entries use a supporting independent loop in public downloads; local timing trims the private preview. Independently reusable open-course endpoints remain missing.
+Nürburgring has nine catalogue entries, with distinct GP and Sprint traces. All eight Paul Ricard entries have draft traces, including the two short-course chicane variants and separate training circuit. Independently mapped open courses include Pikes Peak, Osnabrück, Harewood, Gurston Down and Aintree Sprint. Some separate-gate entries still use a supporting public loop; the local timing overlay trims the preview.
 
 ## Run locally
 
@@ -63,13 +63,19 @@ The supplied catalogue defines the expected layout names and timing conventions.
 To repeat catalogue registration, independent course matching and coverage checks:
 
 ```sh
+npm run audit:archive -- --archive /absolute/path/to/tracks.zip
 npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
 npm run generate:data
 npm run recover:variants -- --archive /absolute/path/to/tracks.zip
+npm run discover:circuits
+npm run research:circuits -- --archive /absolute/path/to/tracks.zip
+npm run recover:circuits -- --archive /absolute/path/to/tracks.zip
+npm run import:roads -- --archive /absolute/path/to/tracks.zip
 npm run generate:data
 npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
 npm run audit:layouts -- --archive /absolute/path/to/tracks.zip
 npm run import:timing -- --archive /absolute/path/to/tracks.zip
+npm run research:gaps -- --archive /absolute/path/to/tracks.zip
 ```
 
-Country extracts must already be available for course matching. Only unique, connected source cycles that pass conservative timing and distance checks become draft hypotheses. Ambiguous graphs, missing ways, street courses and open routes remain in the gap list. No trace is synthesized to make the counts match.
+Country extracts must already be available for course matching. Named circuit relations add public-road geometry that raceway-only extracts omit. [Documented course identities](sources/reference/course-identifications.json) record independent operator evidence for specific distance discrepancies. [Remaining source limitations](data/layout-gap-research.json) distinguish absent geometry, disconnected ways, ambiguous branches and unresolved distances. Only unique, connected source cycles that pass conservative timing and distance checks become draft hypotheses. Ambiguous graphs, missing ways, street courses and open routes remain in the gap list. No trace is synthesized to make the counts match. The [archive filename audit](sources/reference/archive-inventory.json) also flags 24 names absent from the timing XML for alias or configuration reconciliation; filename matches do not prove route equivalence.

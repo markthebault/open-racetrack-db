@@ -13,7 +13,8 @@
     28.348105343455508
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-2532569"
   ],
   "defaultLayoutId": "buddh-international-circuit",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "buddh-international-circuit",
       "name": "Buddh International Circuit",
       "referenceId": "India/Buddh International Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/buddh-international-circuit.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 2532569. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -40,6 +41,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:19:52.703Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-2532569",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: 2532569",
+      "url": "https://www.openstreetmap.org/relation/2532569",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.391Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

@@ -8,17 +8,32 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    152.0342291,
+    -28.2605075
+  ],
+  "sourceIds": [
+    "osm-network-677545751"
+  ],
   "defaultLayoutId": "morgan-park-e-circuit",
   "layouts": [
     {
       "id": "morgan-park-e-circuit",
       "name": "Morgan Park E Circuit",
       "referenceId": "Australia/Morgan Park E Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/morgan-park-e-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2123.5 m. Difference from the supplied layout distance 2.5 m. Course configuration still requires visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-network-677545751",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/677545751",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.558Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
 }

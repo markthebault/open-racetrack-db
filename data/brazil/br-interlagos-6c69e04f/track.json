@@ -8,17 +8,32 @@
     "name": "Brazil",
     "slug": "brazil"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -46.6973328,
+    -23.701717199999997
+  ],
+  "sourceIds": [
+    "osm-circuit-6781071"
+  ],
   "defaultLayoutId": "interlagos",
   "layouts": [
     {
       "id": "interlagos",
       "name": "Interlagos",
       "referenceId": "Brazil/Interlagos",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/interlagos.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 6781071. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-6781071",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Autódromo José Carlos Pace",
+      "url": "https://www.openstreetmap.org/relation/6781071",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.356Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

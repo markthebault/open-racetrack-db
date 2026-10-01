@@ -8,17 +8,32 @@
     "name": "China",
     "slug": "china"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    113.5534668,
+    22.19719755
+  ],
+  "sourceIds": [
+    "osm-circuit-8877949"
+  ],
   "defaultLayoutId": "macau-grand-prix",
   "layouts": [
     {
       "id": "macau-grand-prix",
       "name": "Macau Grand Prix",
       "referenceId": "China/Macau Grand Prix",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/macau-grand-prix.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 8877949. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-8877949",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Circuito da Guia",
+      "url": "https://www.openstreetmap.org/relation/8877949",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.366Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

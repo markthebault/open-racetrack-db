@@ -13,7 +13,8 @@
     55.51343548947371
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-open-network-38672231"
   ],
   "defaultLayoutId": "kames-motorsport-circuit",
   "layouts": [
@@ -34,8 +35,8 @@
       "id": "kames-motorsport-circuit-reverse",
       "name": "Kames Motorsport Circuit Reverse",
       "referenceId": "United Kingdom/Kames Motorsport Circuit Reverse",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/kames-motorsport-circuit-reverse.geojson",
+      "description": "Draft open course. The venue operator identifies Kames Motorsport Complex as its sprint facility. The reverse timing convention selects one distinct 966 metre connected path, close to the supplied 974 metre distance. Configuration remains draft. Approximate planar OSM trace distance 966 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
     }
   ],
   "sources": [
@@ -47,6 +48,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-open-network-38672231",
+      "type": "osm",
+      "title": "OpenStreetMap independent open-course network",
+      "url": "https://www.openstreetmap.org/way/38672231",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact pinned independent source-node coordinates. Private timing positions identify nearby existing endpoint nodes, with no private coordinate interpolation."
+    },
+    {
+      "id": "open-course-identity-38672231",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://webcollect.org.uk/eacc",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:41:34.901Z",
+      "evidenceNote": "The venue operator identifies Kames Motorsport Complex as its sprint facility. The reverse timing convention selects one distinct 966 metre connected path, close to the supplied 974 metre distance. Configuration remains draft. Identification only; no coordinates copied."
     }
   ]
 }

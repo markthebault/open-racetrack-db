@@ -23,3 +23,8 @@ test('short permanent circuits can be selected with a scope-specific threshold',
  const short={...loop,geometry:loop.geometry.map(p=>({lon:p.lon/5,lat:p.lat/5}))};
  assert.equal(candidateLoops([short]).loops.length,0);assert.equal(candidateLoops([short],400,500).loops.length,1);
 });
+
+test('long road circuits are not silently excluded by a 30 km ceiling',()=>{
+ const long={...loop,geometry:loop.geometry.map(p=>({lon:p.lon*20,lat:p.lat*20}))};
+ const found=candidateLoops([long]);assert.equal(found.truncated,false);assert.equal(found.loops.length,1);assert.ok(found.loops[0].lengthM>30000);
+});
