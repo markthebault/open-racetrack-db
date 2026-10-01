@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "us-the-firm-rl",
+  "name": "the FIRM",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -82.05824104999999,
+    29.84679235
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "the FIRM",
+      "file": "layouts/main.geojson",
+      "description": "Draft course identified by matching the expected Racelogic name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap named raceway",
+      "url": "https://www.openstreetmap.org/way/1086011032",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. Racelogic supplies the expected layout name and private timing GPS only."
+    }
+  ]
+}

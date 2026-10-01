@@ -8,7 +8,7 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 ## Worldwide preview
 
-The preview contains **401 venues and 410 draft traces across 52 countries**, extending beyond Europe to permanent car and motorcycle circuits worldwide. Browse by country, search a venue, switch available layouts, and download an attributed GeoJSON trace. The [worldwide coverage report](Docs/08-worldwide-coverage.md) records the current totals and source gaps.
+The preview contains **411 venues and 436 draft traces across 54 countries**, extending beyond Europe to permanent car and motorcycle circuits worldwide. Browse by country, search a venue, switch available layouts, and download an attributed GeoJSON trace. The [worldwide coverage report](Docs/08-worldwide-coverage.md) records the worldwide acquisition stage and source gaps.
 
 **Coverage remains incomplete.** Draft source-cycle selections do not establish every venue, named layout, travel direction, or operating status. The viewer's worldwide coverage panel covers all 250 configured countries and territories and distinguishes fetched extracts from unavailable areas and missing acquisitions. Karting and motocross are excluded.
 
@@ -53,3 +53,22 @@ On the Mac Mini, the current preview is available to connected Tailscale devices
 ## Data and code licenses
 
 Original application code is MIT licensed. OSM-derived database content is attributed to OpenStreetMap contributors and distributed under ODbL 1.0. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
+
+## Layout completeness
+
+Racelogic is the reference for expected layout names and timing conventions. The [complete comparison](Docs/09-racelogic-layout-gaps.md) accounts for all 1,007 supplied timing records and every public venue. It separates missing route associations, missing venues, scope exclusions and provisional matches. Each venue also shows its comparison in the viewer. Matching counts does not establish that the correct course geometry has been reviewed.
+
+The current follow-up adds Nürburgring's nine named records, corrects its GP/Sprint route mix-up, adds independently named OSM courses and identifies ten further venue drafts. Separate-gate Nürburgring entries use a public supporting loop and trim the private preview using local timing GPS; public open endpoints remain an evidence gap.
+
+To repeat the comparison and conservative reconciliation locally:
+
+```sh
+npm run audit:layouts -- --archive /absolute/path/to/racelogic-tracks-db.zip
+npm run reconcile:layouts -- --archive /absolute/path/to/racelogic-tracks-db.zip
+npm run reconcile:venues -- --archive /absolute/path/to/racelogic-tracks-db.zip
+npm run generate:data
+npm run audit:layouts -- --archive /absolute/path/to/racelogic-tracks-db.zip
+npm run import:timing -- --archive /absolute/path/to/racelogic-tracks-db.zip
+```
+
+Only the timing XML is read. Names enter the public comparison; GPS remains in the ignored private overlay. Conservative reconciliation accepts a uniquely connected named OSM raceway with nearby private timing evidence. Ambiguous configurations stay in the gap list.

@@ -9,20 +9,14 @@
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Draft preview follows the OSM ways tagged Nürburgring Sprintstrecke and closes at the mapped timing-node way.",
-    "The official full Grand Prix configuration is 5.148 km. This mapped loop is about 3.61 km; its relation to the full configuration needs route research."
+    "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only.",
+    "Full GP route includes the arena and Müllenbach loop. This replaces the incorrectly labelled Sprint preview."
   ],
   "segments": [
     {
-      "wayId": 1149161210,
-      "wayVersion": 3,
-      "fromIndex": 0,
-      "toIndex": 45
-    },
-    {
       "wayId": 1149161208,
       "wayVersion": 5,
-      "fromIndex": 0,
+      "fromIndex": 5,
       "toIndex": 80
     },
     {
@@ -38,10 +32,76 @@
       "toIndex": 3
     },
     {
-      "wayId": 1149161209,
-      "wayVersion": 2,
+      "wayId": 1079809244,
+      "wayVersion": 6,
       "fromIndex": 0,
-      "toIndex": 20
+      "toIndex": 1
+    },
+    {
+      "wayId": 820679447,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 17
+    },
+    {
+      "wayId": 820679448,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 1
+    },
+    {
+      "wayId": 820679446,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 21
+    },
+    {
+      "wayId": 1113009623,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 6
+    },
+    {
+      "wayId": 820679445,
+      "wayVersion": 6,
+      "fromIndex": 0,
+      "toIndex": 12
+    },
+    {
+      "wayId": 820330155,
+      "wayVersion": 6,
+      "fromIndex": 0,
+      "toIndex": 36
+    },
+    {
+      "wayId": 820330154,
+      "wayVersion": 6,
+      "fromIndex": 0,
+      "toIndex": 3
+    },
+    {
+      "wayId": 1113009624,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 1
+    },
+    {
+      "wayId": 820330153,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 27
+    },
+    {
+      "wayId": 820330152,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 1
+    },
+    {
+      "wayId": 1079809245,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 1
     },
     {
       "wayId": 1443047845,
@@ -66,6 +126,18 @@
       "wayVersion": 1,
       "fromIndex": 0,
       "toIndex": 21
+    },
+    {
+      "wayId": 1149161210,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 45
+    },
+    {
+      "wayId": 1149161208,
+      "wayVersion": 5,
+      "fromIndex": 0,
+      "toIndex": 5
     }
   ],
   "gates": []

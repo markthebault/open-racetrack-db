@@ -78,3 +78,15 @@ test('OSM venue names render as literal tooltip text',async({page})=>{
  await page.locator('.leaflet-overlay-pane .leaflet-interactive').first().dispatchEvent('mouseover');
  await expect(page.locator('.leaflet-tooltip')).toHaveText('Marker <strong>untrusted</strong>');await expect(page.locator('.leaflet-tooltip strong')).toHaveCount(0);
 });
+
+test('Nürburgring offers nine reference entries and GP differs from Sprint',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ await page.goto('/?track=de-nurburgring&layout=grand-prix');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#layout option')).toHaveCount(9);
+ const gp=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json();
+ await page.locator('#layout').selectOption('sprintstrecke');await expect(page.locator('#message')).toHaveText('Layout ready');
+ const sprint=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json();expect(gp.metadata.lengthM-sprint.metadata.lengthM).toBeGreaterThan(1400);
+ await page.locator('.layout-gaps summary').click();await expect(page.locator('.layout-gaps li')).toHaveCount(9);
+ await page.locator('#layout').selectOption('nordschleife-btg');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#selection')).toContainText('Public data is the supporting Nordschleife loop');
+});

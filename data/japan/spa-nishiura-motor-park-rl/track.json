@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "jp-spa-nishiura-motor-park-rl",
+  "name": "Spa Nishiura Motor Park",
+  "aliases": [],
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "slug": "japan"
+  },
+  "location": [
+    137.186242,
+    34.77450685
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Spa Nishiura Motor Park",
+      "file": "layouts/main.geojson",
+      "description": "Draft course identified by matching the expected Racelogic name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap named raceway",
+      "url": "https://www.openstreetmap.org/way/241883447",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. Racelogic supplies the expected layout name and private timing GPS only."
+    }
+  ]
+}

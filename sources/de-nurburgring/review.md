@@ -24,3 +24,11 @@ Recipe: sources/de-nurburgring/layouts/nordschleife.json
 Geometry: draft. Timing: local preview reference only; public timing is missing.
 
 Review date: 2026-09-30. Reviewer: Codex preview implementation.
+
+## Layout reconciliation, 2026-10-01
+
+Nine Racelogic timing names now have distinct selectable records. The GP route includes the arena and Müllenbach loop; Sprint remains separate. NLS follows the short GP connection with the arena; 24Hr and GP without MB Arena follow the OSM 24-hour arena bypass. Way 31010602 explicitly carries an estimated-connection note, so those routes remain draft. All joins use identical source nodes. No Racelogic boundaries or nominal lengths select these routes.
+
+BTG and Industry Pool reuse a supporting public Nordschleife loop and trim the private preview at separate timing projections. Lap Record is a timing convention on that loop. Independently reusable public endpoints remain missing. Recipe files, rather than the earlier two-layout notes above, describe the current routes.
+
+Configuration identity references: [operator GP information](https://www.nuerburgring.de/info/nuerburgring/race-tracks/grand-prix-track?locale=en), [2025 24-hour regulations](https://24h-information.de/formulare/5588/24h_race_regulations_2025.en.pdf), and [operator NLS/short-link description](https://www.nuerburgring.de/en?locale=de), checked 2026-10-01. These support route configuration descriptions only; coordinates remain exclusively OSM.

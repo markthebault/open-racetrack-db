@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "pa-autodromo-panama-rl",
+  "name": "Autodromo Panama",
+  "aliases": [],
+  "country": {
+    "code": "PA",
+    "name": "Panama",
+    "slug": "panama"
+  },
+  "location": [
+    -79.8598747,
+    8.703667450000001
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Autodromo Panama",
+      "file": "layouts/main.geojson",
+      "description": "Draft course identified by matching the expected Racelogic name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap named raceway",
+      "url": "https://www.openstreetmap.org/way/1264998312",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:37:46.722Z",
+      "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. Racelogic supplies the expected layout name and private timing GPS only."
+    }
+  ]
+}

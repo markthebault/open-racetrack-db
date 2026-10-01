@@ -16,7 +16,7 @@
     "lint": "eslint .",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "build": "npm run validate:data && npm run validate:europe && npm run validate:world && npm run generate:data -- --check && npm run typecheck && vite build && tsx scripts/copy-data.ts",
+    "build": "npm run validate:data && npm run validate:europe && npm run validate:world && npm run generate:data -- --check && npm run validate:layouts && npm run typecheck && vite build && tsx scripts/copy-data.ts",
     "preview": "vite preview --host 0.0.0.0",
     "serve": "node scripts/serve.mjs",
     "discover:europe": "tsx scripts/discover-europe.ts",
@@ -25,7 +25,11 @@
     "discover:world": "tsx scripts/discover-world.ts",
     "expand:world": "tsx scripts/expand-europe.ts --world",
     "validate:world": "tsx scripts/validate-europe.ts --world",
-    "preview:install": "node scripts/install-preview.mjs"
+    "preview:install": "node scripts/install-preview.mjs",
+    "audit:layouts": "tsx scripts/audit-layouts.ts",
+    "reconcile:layouts": "tsx scripts/reconcile-layouts.ts",
+    "reconcile:venues": "tsx scripts/reconcile-reference-venues.ts",
+    "validate:layouts": "tsx scripts/validate-layout-coverage.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

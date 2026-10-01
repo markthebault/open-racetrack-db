@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "zw-breedon-everard-raceway-rl",
+  "name": "Breedon Everard Raceway",
+  "aliases": [],
+  "country": {
+    "code": "ZW",
+    "name": "Zimbabwe",
+    "slug": "zimbabwe"
+  },
+  "location": [
+    28.57047055,
+    -20.104709149999998
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Breedon Everard Raceway",
+      "file": "layouts/main.geojson",
+      "description": "Draft course identified by matching the expected Racelogic name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap named raceway",
+      "url": "https://www.openstreetmap.org/way/338163706",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:41:48.539Z",
+      "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. Racelogic supplies the expected layout name and private timing GPS only."
+    }
+  ]
+}

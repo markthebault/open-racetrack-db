@@ -18,19 +18,61 @@
     "venue-reference",
     "venue-layout-reference"
   ],
-  "defaultLayoutId": "grand-prix",
+  "defaultLayoutId": "nordschleife",
   "layouts": [
     {
       "id": "grand-prix",
-      "name": "Grand Prix, Sprint configuration preview",
+      "name": "Nurburgring GP",
       "file": "layouts/grand-prix.geojson",
-      "description": "Draft preview follows the OSM ways tagged Nürburgring Sprintstrecke and closes at the mapped timing-node way. The official full Grand Prix configuration is 5.148 km. This mapped loop is about 3.61 km; its relation to the full configuration needs route research."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only. Full GP route includes the arena and Müllenbach loop. This replaces the incorrectly labelled Sprint preview."
+    },
+    {
+      "id": "gp-without-mb-arena",
+      "name": "Nurburgring GP without MB Arena",
+      "file": "layouts/gp-without-mb-arena.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review."
+    },
+    {
+      "id": "sprintstrecke",
+      "name": "Nurburgring Sprintstrecke",
+      "file": "layouts/sprintstrecke.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only."
+    },
+    {
+      "id": "24hr",
+      "name": "Nurburgring 24Hr",
+      "file": "layouts/24hr.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review."
+    },
+    {
+      "id": "nls",
+      "name": "Nurburgring NLS Circuit",
+      "file": "layouts/nls.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only."
     },
     {
       "id": "nordschleife",
-      "name": "Nordschleife full circuit",
+      "name": "Nurburgring Nordschleife",
       "file": "layouts/nordschleife.geojson",
-      "description": "Draft loop assembled along connected OSM raceway ways, retaining mapped one-way directions. The trace measures about 20.73 km against the operator reference of 20.832 km. Visual review and exact route closure review are still required."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only."
+    },
+    {
+      "id": "nordschleife-btg",
+      "name": "Nurburgring BTG",
+      "file": "layouts/nordschleife-btg.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing."
+    },
+    {
+      "id": "industry-pool",
+      "name": "Nurburgring Industry Pool",
+      "file": "layouts/industry-pool.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing."
+    },
+    {
+      "id": "lap-record",
+      "name": "Nurburgring Lap Record",
+      "file": "layouts/lap-record.geojson",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. Racelogic supplies the expected layout name and private timing reference only. Timing variant of the Nordschleife, using a distinct private start/finish convention."
     }
   ],
   "sources": [
