@@ -3,14 +3,15 @@ import {createHash} from 'node:crypto';
 import {setTimeout as delay} from 'node:timers/promises';
 const args=process.argv.slice(2),value=key=>args[args.indexOf(key)+1];
 const slug=value('--slug'),box=value('--bbox'),date=args.includes('--date')?value('--date'):null;
-if(!args.includes('--slug')||!args.includes('--bbox')||!slug||!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw new Error('Use --slug circuit-date --bbox south,west,north,east [--date YYYY-MM-DDT00:00:00Z]');
+if(!args.includes('--slug')||!args.includes('--bbox')||!slug||!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw new Error('Use --slug circuit-date --bbox south,west,north,east [--date YYYY-MM-DDT00:00:00Z] [--airfields]');
 const bbox=box.split(',').map(Number);
 if(bbox.length!==4||bbox.some(v=>!Number.isFinite(v))||bbox[0]>=bbox[2]||bbox[1]>=bbox[3]||bbox[0]<-90||bbox[2]>90||bbox[1]<-180||bbox[3]>180||(bbox[2]-bbox[0])*(bbox[3]-bbox[1])>.04)throw new Error('Invalid or excessive venue bounds');
 if(date&&!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(date))throw new Error('Invalid historical date');
-const racewaysOnly=args.includes('--raceways-only'),directory=`sources/course-networks/${slug}`,sha=bytes=>createHash('sha256').update(bytes).digest('hex');
-try{const bytes=await readFile(`${directory}/osm.json`),manifest=JSON.parse(await readFile(`${directory}/import.json`,'utf8'));if(sha(bytes)!==manifest.snapshotSha256||JSON.stringify(bbox)!==JSON.stringify(manifest.bbox)||date!==manifest.historicalDate||racewaysOnly!==(manifest.racewaysOnly??false))throw new Error('Pinned source differs from request');console.log(slug,'using pinned snapshot');process.exit(0);}catch(error){if(error.code!=='ENOENT')throw error;}
+const racewaysOnly=args.includes('--raceways-only'),airfields=args.includes('--airfields'),directory=`sources/course-networks/${slug}`,sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+if(racewaysOnly&&airfields)throw new Error('Airfield source research requires the full road network');
+try{const bytes=await readFile(`${directory}/osm.json`),manifest=JSON.parse(await readFile(`${directory}/import.json`,'utf8'));if(sha(bytes)!==manifest.snapshotSha256||JSON.stringify(bbox)!==JSON.stringify(manifest.bbox)||date!==manifest.historicalDate||racewaysOnly!==(manifest.racewaysOnly??false)||airfields!==(manifest.airfields??false))throw new Error('Pinned source differs from request');console.log(slug,'using pinned snapshot');process.exit(0);}catch(error){if(error.code!=='ENOENT')throw error;}
 const endpoint=process.env.OVERPASS_ENDPOINT??'https://overpass-api.de/api/interpreter';
-const query=`[out:json][timeout:90][maxsize:33554432]${date?`[date:"${date}"]`:''};(way["highway"${racewaysOnly?'="raceway"':''}](${box});way["disused:highway"="raceway"](${box}););out meta geom;`;
+const query=`[out:json][timeout:90][maxsize:33554432]${date?`[date:"${date}"]`:''};(way["highway"${racewaysOnly?'="raceway"':''}](${box});way["disused:highway"="raceway"](${box});${airfields?`way["aeroway"~"^(runway|taxiway)$"]["area"!="yes"](${box});`:''});out meta geom;`;
 let raw;
 for(let attempt=0;attempt<3;attempt++){
  const response=await globalThis.fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','User-Agent':'OpenRacetrackDB independent historical circuit research'},body:new globalThis.URLSearchParams({data:query}),signal:globalThis.AbortSignal.timeout(120000)});
@@ -21,5 +22,5 @@ const keep=['type','id','version','timestamp','tags','nodes','geometry'];
 const elements=raw.elements.map(e=>Object.fromEntries(keep.filter(k=>e[k]!==undefined).map(k=>[k,e[k]])));
 const bytes=JSON.stringify({attribution:'© OpenStreetMap contributors',osmBaseTimestamp:raw.osm3s.timestamp_osm_base,historicalDate:date,elements},null,2)+'\n';
 await mkdir(directory,{recursive:true});await writeFile(`${directory}/osm.json`,bytes);await writeFile(`${directory}/query.overpass`,query+'\n');
-await writeFile(`${directory}/import.json`,JSON.stringify({schemaVersion:1,endpoint,fetchedAt:new Date().toISOString(),historicalDate:date,racewaysOnly,bbox,snapshotSha256:sha(bytes),elementCount:elements.length},null,2)+'\n');
+await writeFile(`${directory}/import.json`,JSON.stringify({schemaVersion:1,endpoint,fetchedAt:new Date().toISOString(),historicalDate:date,racewaysOnly,...(airfields?{airfields:true}:{}),bbox,snapshotSha256:sha(bytes),elementCount:elements.length},null,2)+'\n');
 console.log(slug,elements.length,'independent ways');

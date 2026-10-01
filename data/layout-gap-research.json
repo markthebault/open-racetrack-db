@@ -5,8 +5,8 @@
   "summary": {
     "configuration-evidence-required": 13,
     "course-distance-discrepancy": 66,
-    "independent-geometry-missing": 68,
-    "ambiguous-source-branches": 35,
+    "independent-geometry-missing": 61,
+    "ambiguous-source-branches": 34,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 11
   },
@@ -252,15 +252,6 @@
       "referenceId": "Brazil/Circuito Panamericano",
       "trackId": "br-circuito-panamericano-9693925d",
       "layoutId": "circuito-panamericano",
-      "sourcePath": "sources/world/br/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Brazil/Haras Tuiuti",
-      "trackId": "br-haras-tuiuti-4cd9359e",
-      "layoutId": "haras-tuiuti",
       "sourcePath": "sources/world/br/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
@@ -1156,27 +1147,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "Poland/Silesia Ring",
-      "trackId": "pl-silesia-ring-631651845",
-      "layoutId": "silesia-ring",
-      "sourcePath": "sources/europe/pl/osm.json",
-      "sourceWayIds": [
-        631651845,
-        631651846,
-        631651847,
-        631651848,
-        631651852,
-        631651853,
-        954645902,
-        954645903,
-        1560989173
-      ],
-      "candidateCount": 13,
-      "closestSourceLengthM": 2681.5,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
       "referenceId": "Poland/Slomczyn RallyCross",
       "trackId": "pl-slomczyn-rallycross-e94ac261",
       "layoutId": "slomczyn-rallycross",
@@ -1616,15 +1586,6 @@
       "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
     },
     {
-      "referenceId": "Spain/Idiada Dry Handling Circuit",
-      "trackId": "es-idiada-dry-handling-circuit-affa5c70",
-      "layoutId": "idiada-dry-handling-circuit",
-      "sourcePath": "sources/europe/es/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "Spain/Idiada Wet Handling Circuit",
       "trackId": "es-idiada-wet-handling-circuit-2f0fde0d",
       "layoutId": "idiada-wet-handling-circuit",
@@ -1926,15 +1887,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United Kingdom/Bicester Heritage",
-      "trackId": "gb-bicester-heritage-091776aa",
-      "layoutId": "bicester-heritage",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "United Kingdom/Boyndie Kart Circuit",
       "trackId": "gb-boyndie-kart-circuit-a57fdbb4",
       "layoutId": "boyndie-kart-circuit",
@@ -1967,15 +1919,6 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United Kingdom/Bruntingthorpe Full",
-      "trackId": "gb-bruntingthorpe-b2f151a7",
-      "layoutId": "bruntingthorpe-full",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "United Kingdom/Bucks_Estate_Circuit",
@@ -2162,15 +2105,6 @@
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
     },
     {
-      "referenceId": "United Kingdom/Keevil Airfeild",
-      "trackId": "gb-keevil-airfeild-29b3402d",
-      "layoutId": "keevil-airfeild",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "United Kingdom/Larkhall Kart Circuit",
       "trackId": "gb-larkhall-kart-circuit-2b78a780",
       "layoutId": "larkhall-kart-circuit",
@@ -2220,24 +2154,6 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United Kingdom/Millbrook Handling Circuit",
-      "trackId": "gb-millbrook-handling-circuit-2df7aae5",
-      "layoutId": "millbrook-handling-circuit",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/Millbrook High Speed Circuit",
-      "trackId": "gb-millbrook-high-speed-circuit-cefbea72",
-      "layoutId": "millbrook-high-speed-circuit",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "United Kingdom/Millbrook Hill Route Full",

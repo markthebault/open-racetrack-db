@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.53353395,
+    52.045321900000005
+  ],
+  "sourceIds": [
+    "osm-selection-millbrook-handling-circuit-independent-roads-88566330"
+  ],
   "defaultLayoutId": "millbrook-high-speed-circuit",
   "layouts": [
     {
       "id": "millbrook-high-speed-circuit",
       "name": "Millbrook High Speed Circuit",
       "referenceId": "United Kingdom/Millbrook High Speed Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/millbrook-high-speed-circuit.geojson",
+      "description": "Draft configuration: The independently named High Speed Bowl is the single full circular source cycle. Facility access and adjacent test roads are excluded. Source distance 3215.6 m versus the catalogue distance of 3223 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3215.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-millbrook-handling-circuit-independent-roads-88566330",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/88566330",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:04:32.481Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-millbrook-high-speed-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/88566330",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:04:32.481Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-631651845"
+    "osm-selection-631651845",
+    "osm-selection-silesia-ring-roads-631651845"
   ],
   "defaultLayoutId": "silesia-ring",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "silesia-ring",
       "name": "Silesia Ring",
       "referenceId": "Poland/Silesia Ring",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/silesia-ring.geojson",
+      "description": "Draft configuration: The catalogue configuration retains the northwestern perimeter, the northern S bend, southeastern hairpin and the inner southern return. The actual connecting service way is present in the independently acquired venue snapshot. The route is measured at 2677.4 m versus the catalogue distance of 2686 m; the longer southwestern extension and short-cut branches are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2677.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "silesia-ring-long",
@@ -65,6 +66,24 @@
       "url": "https://www.openstreetmap.org/way/631651845",
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:11:19.702Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-selection-silesia-ring-roads-631651845",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/631651845",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:57:49.631Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-silesia-ring",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/631651845",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:57:49.631Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]

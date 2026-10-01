@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 807
-- unmappedLayouts: 200
+- draftMapped: 815
+- unmappedLayouts: 192
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -127,7 +127,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Brazil | Circuito dos Cristais Oval | 3 | 3 | 3 |  |  |
 | Brazil | Circuito Paladino | 1 | 0 | 0 |  | main |
 | Brazil | Circuito Panamericano | 1 | 1 | 0 | Circuito Panamericano |  |
-| Brazil | Haras Tuiuti | 1 | 1 | 0 | Haras Tuiuti |  |
+| Brazil | Haras Tuiuti | 1 | 1 | 1 |  |  |
 | Brazil | Interlagos | 1 | 1 | 1 |  |  |
 | Brazil | Kartodromo Granja Viana | 1 | 1 | 0 | Kartodromo Granja Viana |  |
 | Brazil | Race Park Maringá | 1 | 0 | 0 |  | main |
@@ -243,7 +243,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Spain | Circuito Kotarr | 1 | 1 | 1 |  |  |
 | Spain | Circuito Maspalomas | 1 | 1 | 1 |  |  |
 | Spain | Circuito Monteblanco | 2 | 2 | 2 |  |  |
-| Spain | Idiada Dry Handling Circuit | 1 | 1 | 0 | Idiada Dry Handling Circuit |  |
+| Spain | Idiada Dry Handling Circuit | 1 | 1 | 1 |  |  |
 | Spain | Idiada Wet Handling Circuit | 1 | 1 | 0 | Idiada Wet Handling Circuit |  |
 | Spain | Circuito de Jerez | 2 | 1 | 1 |  | motorcycle |
 | Spain | Madring | 1 | 1 | 1 |  |  |
@@ -320,12 +320,12 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Anglesey Circuit | 6 | 5 | 5 |  | main |
 | United Kingdom | Bayford Meadows | 1 | 1 | 1 |  |  |
 | United Kingdom | Bedford Autodrome | 6 | 6 | 5 | Bedford Autodrome GT |  |
-| United Kingdom | Bicester Heritage | 1 | 1 | 0 | Bicester Heritage |  |
+| United Kingdom | Bicester Heritage | 1 | 1 | 1 |  |  |
 | United Kingdom | Bishopscourt Racing Circuit | 1 | 0 | 0 |  | main |
 | United Kingdom | Blyton Park Driving Centre | 3 | 2 | 2 |  | main |
 | United Kingdom | Boyndie Kart Circuit | 1 | 1 | 0 | Boyndie Kart Circuit |  |
 | United Kingdom | Brands Hatch Circuit | 3 | 2 | 2 |  | main |
-| United Kingdom | Bruntingthorpe | 3 | 3 | 0 | Bruntingthorpe; Bruntingthorpe Combo; Bruntingthorpe Full |  |
+| United Kingdom | Bruntingthorpe | 3 | 3 | 1 | Bruntingthorpe; Bruntingthorpe Combo |  |
 | United Kingdom | Buckmore Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Bucks_Estate_Circuit | 1 | 1 | 0 | Bucks_Estate_Circuit |  |
 | United Kingdom | Bucks_Estate_Combo | 1 | 1 | 0 | Bucks_Estate_Combo |  |
@@ -358,7 +358,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Hethel (With Chicane) | 1 | 1 | 1 |  |  |
 | United Kingdom | Ingliston | 1 | 1 | 0 | Ingliston |  |
 | United Kingdom | Kames Motorsport Circuit | 3 | 2 | 1 | Kames Motorsport Circuit | main |
-| United Kingdom | Keevil Airfeild | 1 | 1 | 0 | Keevil Airfeild |  |
+| United Kingdom | Keevil Airfeild | 1 | 1 | 1 |  |  |
 | United Kingdom | Kimbolton kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Kirkistown | 1 | 1 | 1 |  |  |
 | United Kingdom | Knockhill Racing Circuit | 1 | 1 | 1 |  |  |
@@ -370,8 +370,8 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Lydden Hill Infield | 1 | 1 | 0 | Lydden Hill Infield |  |
 | United Kingdom | M-Sport Proving Ground | 1 | 1 | 0 | M-Sport Proving Ground |  |
 | United Kingdom | Mallory Park Racing Circuit | 4 | 3 | 2 | Mallory Park Combo | main |
-| United Kingdom | Millbrook Handling Circuit | 1 | 1 | 0 | Millbrook Handling Circuit |  |
-| United Kingdom | Millbrook High Speed Circuit | 1 | 1 | 0 | Millbrook High Speed Circuit |  |
+| United Kingdom | Millbrook Handling Circuit | 1 | 1 | 1 |  |  |
+| United Kingdom | Millbrook High Speed Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Millbrook Hill Route | 1 | 1 | 0 | Millbrook Hill Route Full |  |
 | United Kingdom | Nutts Corner | 1 | 1 | 0 | Nutts Corner |  |
 | United Kingdom | Oulton Park Circuit | 5 | 4 | 4 |  | main |
@@ -525,7 +525,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Peru | Autódromo La Chutana | 2 | 1 | 1 |  | main |
 | Philippines | Batangas Racing Circuit | 3 | 2 | 2 |  | main |
 | Philippines | Clark International Speedway | 2 | 1 | 1 |  | main |
-| Poland | Silesia Ring | 3 | 2 | 1 | Silesia Ring | main |
+| Poland | Silesia Ring | 3 | 2 | 2 |  | main |
 | Poland | Slomczyn RallyCross | 1 | 1 | 0 | Slomczyn RallyCross |  |
 | Poland | Tor Jastrzab | 1 | 1 | 0 | Tor Jastrzab |  |
 | Poland | Tor Lodz | 1 | 1 | 1 |  |  |
@@ -807,7 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Brazil/Circuito Panamericano |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Brazil/Haras Tuiuti |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Brazil/Kartodromo Granja Viana |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Bulgaria/Drakon |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -853,7 +852,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | New Zealand/Highlands Motorsports Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 6 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
-| Poland/Silesia Ring | 631651845; 631651846; 631651847; 631651848; 631651852; 631651853 | 8 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Poland/Slomczyn RallyCross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Poland/Tor Jastrzab |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Bombarral |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -875,7 +873,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Spain/Andalucia Layout 2 4k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit de Montjuïc |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Spain/Idiada Dry Handling Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Idiada Wet Handling Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Navarra Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -895,11 +892,9 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Arab Emirates/Yas Marina Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Arab Emirates/Yas Marina South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bedford Autodrome GT |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bicester Heritage |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Boyndie Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bruntingthorpe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bruntingthorpe Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bruntingthorpe Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -915,12 +910,9 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Goodwood Festival of Speed |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Keevil Airfeild |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Larkhall Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Mallory Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Millbrook Handling Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Millbrook High Speed Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Millbrook Hill Route Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/M-Sport Proving Ground |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
@@ -1121,7 +1113,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Brazil | Curitiba | br-autodromo-internacional-de-curitiba-32346628 | curitiba | draft-mapped |
 | Brazil | Goiania | br-autodromo-internacional-ayrton-senna-288004307 | goiania | draft-mapped |
 | Brazil | Guapore | br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914 | guapore | draft-mapped |
-| Brazil | Haras Tuiuti | br-haras-tuiuti-4cd9359e |  | missing-layout |
+| Brazil | Haras Tuiuti | br-haras-tuiuti-4cd9359e | haras-tuiuti | draft-mapped |
 | Brazil | Interlagos | br-interlagos-6c69e04f | interlagos | draft-mapped |
 | Brazil | Kartodromo Granja Viana | br-kartodromo-granja-viana-a8cd9fca |  | missing-layout |
 | Brazil | Nova Santa Rita | br-velopark-94748799 | nova-santa-rita | draft-mapped |
@@ -1454,7 +1446,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Philippines | Batangas Racing Circuit B | ph-batangas-racing-circuit-113961777 | batangas-racing-circuit-b | draft-mapped |
 | Philippines | Clark International Raceway | ph-clark-international-speedway-73948830 | clark-international-raceway | draft-mapped |
 | Poland | Poznan | pl-tor-poznan-172188975 | main | draft-mapped |
-| Poland | Silesia Ring | pl-silesia-ring-631651845 |  | missing-layout |
+| Poland | Silesia Ring | pl-silesia-ring-631651845 | silesia-ring | draft-mapped |
 | Poland | Silesia Ring Long | pl-silesia-ring-631651845 | silesia-ring-long | draft-mapped |
 | Poland | Slomczyn RallyCross | pl-slomczyn-rallycross-e94ac261 |  | missing-layout |
 | Poland | Tor Jastrzab | pl-tor-jastrzab-220208f2 |  | missing-layout |
@@ -1537,7 +1529,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Spain | Circuito de Sevilla | es-circuito-de-sevilla-1265898391 | main | draft-mapped |
 | Spain | Circuito Kotarr | es-circuito-kotarr-b46397b8 | circuito-kotarr | draft-mapped |
 | Spain | Guadix | es-circuito-de-guadix-223050330 | main | draft-mapped |
-| Spain | Idiada Dry Handling Circuit | es-idiada-dry-handling-circuit-affa5c70 |  | missing-layout |
+| Spain | Idiada Dry Handling Circuit | es-idiada-dry-handling-circuit-affa5c70 | idiada-dry-handling-circuit | draft-mapped |
 | Spain | Idiada Wet Handling Circuit | es-idiada-wet-handling-circuit-2f0fde0d |  | missing-layout |
 | Spain | Jarama | es-circuito-del-jarama-15732824 | main | draft-mapped |
 | Spain | Jerez | es-jerez | grand-prix | draft-mapped |
@@ -1625,7 +1617,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Bedford Autodrome South | gb-bedford-autodrome-27782784 | bedford-autodrome-south | draft-mapped |
 | United Kingdom | Bedford Autodrome SouthWest | gb-bedford-autodrome-27782784 | bedford-autodrome-southwest | draft-mapped |
 | United Kingdom | Bedford Autodrome West | gb-bedford-autodrome-27782784 | main | draft-mapped |
-| United Kingdom | Bicester Heritage | gb-bicester-heritage-091776aa |  | missing-layout |
+| United Kingdom | Bicester Heritage | gb-bicester-heritage-091776aa | bicester-heritage | draft-mapped |
 | United Kingdom | Blyton Park Inner | gb-blyton-park-driving-centre-129241665 | blyton-park-inner | draft-mapped |
 | United Kingdom | Blyton Park Outer | gb-blyton-park-driving-centre-129241665 | blyton-park-outer | draft-mapped |
 | United Kingdom | Boyndie Kart Circuit | gb-boyndie-kart-circuit-a57fdbb4 |  | missing-layout |
@@ -1633,7 +1625,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Brands Hatch Indy | gb-brands-hatch-circuit-4906929 | brands-hatch-indy | draft-mapped |
 | United Kingdom | Bruntingthorpe | gb-bruntingthorpe-b2f151a7 |  | missing-layout |
 | United Kingdom | Bruntingthorpe Combo | gb-bruntingthorpe-b2f151a7 |  | missing-layout |
-| United Kingdom | Bruntingthorpe Full | gb-bruntingthorpe-b2f151a7 |  | missing-layout |
+| United Kingdom | Bruntingthorpe Full | gb-bruntingthorpe-b2f151a7 | bruntingthorpe-full | draft-mapped |
 | United Kingdom | Buckmore Park | gb-buckmore-park-95fca565 | buckmore-park | draft-mapped |
 | United Kingdom | Bucks_Estate_Circuit | gb-bucks-estate-circuit-b5f6a72b |  | missing-layout |
 | United Kingdom | Bucks_Estate_Combo | gb-bucks-estate-combo-9cbbe60a |  | missing-layout |
@@ -1668,7 +1660,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Ingliston | gb-ingliston-41840d79 |  | missing-layout |
 | United Kingdom | Kames Motorsport Circuit | gb-kames-motorsport-circuit-38672231 |  | missing-layout |
 | United Kingdom | Kames Motorsport Circuit Reverse | gb-kames-motorsport-circuit-38672231 | kames-motorsport-circuit-reverse | draft-mapped |
-| United Kingdom | Keevil Airfeild | gb-keevil-airfeild-29b3402d |  | missing-layout |
+| United Kingdom | Keevil Airfeild | gb-keevil-airfeild-29b3402d | keevil-airfeild | draft-mapped |
 | United Kingdom | Kimbolton kart Circuit | gb-kimbolton-kart-circuit-0a2425c0 | kimbolton-kart-circuit | draft-mapped |
 | United Kingdom | Kirkistown | gb-kirkistown-bbc9d1a6 | kirkistown | draft-mapped |
 | United Kingdom | Knockhill | gb-knockhill-racing-circuit-170005848 | main | draft-mapped |
@@ -1681,8 +1673,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Mallory Park | gb-mallory-park-racing-circuit-215336384 | mallory-park | draft-mapped |
 | United Kingdom | Mallory Park Combo | gb-mallory-park-racing-circuit-215336384 |  | missing-layout |
 | United Kingdom | Mallory Park Oval Circuit | gb-mallory-park-racing-circuit-215336384 | mallory-park-oval-circuit | draft-mapped |
-| United Kingdom | Millbrook Handling Circuit | gb-millbrook-handling-circuit-2df7aae5 |  | missing-layout |
-| United Kingdom | Millbrook High Speed Circuit | gb-millbrook-high-speed-circuit-cefbea72 |  | missing-layout |
+| United Kingdom | Millbrook Handling Circuit | gb-millbrook-handling-circuit-2df7aae5 | millbrook-handling-circuit | draft-mapped |
+| United Kingdom | Millbrook High Speed Circuit | gb-millbrook-high-speed-circuit-cefbea72 | millbrook-high-speed-circuit | draft-mapped |
 | United Kingdom | Millbrook Hill Route Full | gb-millbrook-hill-route-372dafdf |  | missing-layout |
 | United Kingdom | M-Sport Proving Ground | gb-m-sport-proving-ground-fe7c7315 |  | missing-layout |
 | United Kingdom | Nutts Corner | gb-nutts-corner-6fa16d73 |  | missing-layout |

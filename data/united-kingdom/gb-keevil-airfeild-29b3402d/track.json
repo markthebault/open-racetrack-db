@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -2.1115789,
+    51.312986699999996
+  ],
+  "sourceIds": [
+    "osm-selection-keevil-airfeild-independent-roads-31280745"
+  ],
   "defaultLayoutId": "keevil-airfeild",
   "layouts": [
     {
       "id": "keevil-airfeild",
       "name": "Keevil Airfeild",
       "referenceId": "United Kingdom/Keevil Airfeild",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/keevil-airfeild.geojson",
+      "description": "Draft configuration: The identified airfield perimeter follows the western rectangular taxiway, northern eastbound return, broad northeastern turn and southeast-to-southwest perimeter. Interior runway shortcuts are excluded. Exact mapped runway/taxiway and road nodes measure 4772.6 m against the catalogue distance of 4795 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4772.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-keevil-airfeild-independent-roads-31280745",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/31280745",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:03:04.240Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-keevil-airfeild",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/87605874",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:03:04.240Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

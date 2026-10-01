@@ -8,8 +8,13 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -1.1306718500000001,
+    52.490884050000005
+  ],
+  "sourceIds": [
+    "osm-selection-bruntingthorpe-independent-roads-4727841"
+  ],
   "defaultLayoutId": "bruntingthorpe",
   "layouts": [
     {
@@ -30,9 +35,28 @@
       "id": "bruntingthorpe-full",
       "name": "Bruntingthorpe Full",
       "referenceId": "United Kingdom/Bruntingthorpe Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bruntingthorpe-full.geojson",
+      "description": "Draft configuration: The full airfield circuit follows the long northern runway leg and southern perimeter with the central projecting return. Independently mapped runway and taxiway centrelines form an exact source cycle of 6691.8 m. The local council describes the proving-ground circuit as 6.5 km, while the supplied historical catalogue declares 7069 m. This draft retains the independently mapped course, documents that discrepancy and excludes the intermediate runway shortcut; historical alignment remains provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6691.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-bruntingthorpe-independent-roads-4727841",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/4727841",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:03:02.304Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-bruntingthorpe-full",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.gilmortonparishcouncil.gov.uk/uploads/27_5ad0963814cbc510074616.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:03:02.304Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }
