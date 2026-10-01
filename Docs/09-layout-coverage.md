@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 892
-- unmappedLayouts: 115
+- draftMapped: 893
+- unmappedLayouts: 114
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -735,7 +735,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Reno Fernley G2 | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley H | 1 | 1 | 0 | Reno Fernley H |  |
 | United States | Richmond Raceway Complex | 1 | 0 | 0 |  | main |
-| United States | Road America | 5 | 4 | 3 | Road America Short | main |
+| United States | Road America | 5 | 4 | 4 |  | main |
 | United States | Road Atlanta | 5 | 4 | 4 |  | main |
 | United States | Rockingham Speedway Infield Course | 2 | 1 | 1 |  | main |
 | United States | Roebling Road Raceway | 1 | 1 | 1 |  |  |
@@ -898,7 +898,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Road America Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Sonoma Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Thermal Club Twin Palms Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1843,7 +1842,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Reno Fernley H | us-reno-fernley-h-c926ace0 |  | missing-layout |
 | United States | Ridge Motorsport Park | us-the-ridge-motorsports-park-182180341 | ridge-motorsport-park | draft-mapped |
 | United States | Road America | us-road-america-110527567 | road-america | draft-mapped |
-| United States | Road America Short | us-road-america-110527567 |  | missing-layout |
+| United States | Road America Short | us-road-america-110527567 | road-america-short | draft-mapped |
 | United States | Road America SRO Practice | us-road-america-110527567 | road-america-sro-practice | draft-mapped |
 | United States | Road Atlanta | us-road-atlanta-9292566 | road-atlanta | draft-mapped |
 | United States | Road Atlanta Combo | us-road-atlanta-9292566 | road-atlanta-combo | draft-mapped |

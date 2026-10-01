@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montjuïc",
+      "referenceId": "Spain/Circuit de Montju\u00efc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -22393,6 +22393,204 @@
       ],
       "expectedLengthM": 3423.3,
       "maximumDistanceDifferenceM": 60
+    },
+    {
+      "referenceId": "United States/Road America Short",
+      "sourcePath": "sources/course-networks/road-america-short-current-independent-roads/osm.json",
+      "sourceWayIds": [
+        21587309,
+        110527551,
+        110527555,
+        110527562,
+        110527567,
+        122090239,
+        122090240,
+        122090243,
+        122090246,
+        122090248,
+        122090251,
+        122090252,
+        122090258,
+        122090260,
+        122090261,
+        122090263,
+        122090265,
+        122090267,
+        122090268,
+        122090270,
+        122090272,
+        122090275,
+        122090276,
+        122090279,
+        122090282,
+        122090284,
+        122090286,
+        122090289,
+        122090291,
+        122090295,
+        122090296,
+        122090297,
+        122090298,
+        122090299,
+        122124930,
+        122124931,
+        122124932,
+        122200537,
+        122200538,
+        562635502,
+        562635790,
+        562635791,
+        562636093,
+        1200626821,
+        1200626822,
+        1200626829,
+        1200626833,
+        1200638882,
+        1200638883,
+        1200638885,
+        1200638886,
+        1200638933,
+        1200638934,
+        1200638935,
+        1200638936,
+        1200638937,
+        1200638943,
+        1200638944,
+        1200638945,
+        1200638946,
+        1200638948,
+        1310973902,
+        1312457821,
+        1312457822,
+        1312457826,
+        1312457827,
+        1312457828,
+        1312457829,
+        1312457833,
+        1312457835,
+        1312457845,
+        1312457846,
+        1312457847,
+        1312457856,
+        1312457857,
+        1448537166,
+        1553756752
+      ],
+      "closed": true,
+      "evidence": "The historical school short course retains turns 5 through 13, Carousel, Kink, Canada Corner and Thunder Valley, closing through the independently mapped internal return before turn 14. The operator fan map identifies the named corners and internal return; the supplied layout identity selects this historical short-course connection. The main front straight and turns 1 through 4 are excluded. Source direction follows the published main-course arrows; historical barrier placement remains draft. The measured 3498.6 m route is unscaled.",
+      "identificationUrl": "https://www.roadamerica.com/sites/main/files/file-attachments/2022-road-america-map.pdf",
+      "segments": [
+        {
+          "wayId": 122090298,
+          "wayVersion": 4,
+          "fromIndex": 5,
+          "toIndex": 9
+        },
+        {
+          "wayId": 110527567,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 122090265,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 9
+        },
+        {
+          "wayId": 122090279,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 122090248,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 8
+        },
+        {
+          "wayId": 122090267,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 122090239,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 9
+        },
+        {
+          "wayId": 122090291,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 122090276,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 20
+        },
+        {
+          "wayId": 122090286,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 14
+        },
+        {
+          "wayId": 122090295,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 4
+        },
+        {
+          "wayId": 122090252,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 122090243,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 28
+        },
+        {
+          "wayId": 122090251,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 9
+        },
+        {
+          "wayId": 122090282,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 10
+        },
+        {
+          "wayId": 122090297,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 12
+        },
+        {
+          "wayId": 122090270,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 122200537,
+          "wayVersion": 6,
+          "fromIndex": 14,
+          "toIndex": 0
+        }
+      ],
+      "expectedLengthM": 3498.6,
+      "maximumDistanceDifferenceM": 100
     }
   ]
 }

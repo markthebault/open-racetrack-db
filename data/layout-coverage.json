@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 892,
-    "unmappedLayouts": 115,
+    "draftMapped": 893,
+    "unmappedLayouts": 114,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -14790,14 +14790,14 @@
       "name": "Road America Short",
       "timingMode": "shared",
       "trackId": "us-road-america-110527567",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "road-america-short"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-road-america-110527567"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -26067,13 +26067,11 @@
       "name": "Road America",
       "country": "United States",
       "actualLayoutCount": 5,
-      "actualTraceCount": 4,
+      "actualTraceCount": 5,
       "expectedRecordCount": 4,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 3,
-      "missingRecordNames": [
-        "Road America Short"
-      ],
+      "mappedRecordCount": 4,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -27509,13 +27507,6 @@
     },
     {
       "recordId": "United States/Reno Fernley H",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Road America Short",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
