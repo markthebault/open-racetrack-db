@@ -58,8 +58,8 @@ for(const selection of selections){
   manifest={schemaVersion:1,trackId:track.id,sourceId,snapshotSha256:hash,fetchedAt,endpoint:url,bbox:bounds(trace)};
   await writeFile(`${root}/review.md`,`# ${track.name}\n\nCourse configurations use explicitly identified branches from an independent circuit relation. Coordinates and joins remain exact source nodes. Travel direction and historical alignment require review.\n`);
  }
- manifest.snapshots=(manifest.snapshots??[]).filter((s:any)=>s.file!==file);
- manifest.snapshots.push({file,sha256:hash,sourceId,url,retrievedAt:fetchedAt});
+ manifest.snapshots??=[];const snapshotIndex=manifest.snapshots.findIndex((s:any)=>s.file===file),snapshotEntry={file,sha256:hash,sourceId,url,retrievedAt:fetchedAt};
+ if(snapshotIndex<0)manifest.snapshots.push(snapshotEntry);else manifest.snapshots[snapshotIndex]=snapshotEntry;
  await save(`${root}/import.json`,manifest);
  const note=`Draft configuration: ${selection.evidence} Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance ${measured.toFixed(1)} m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.`;
  if(!track.sourceIds.includes(sourceId))track.sourceIds.push(sourceId);

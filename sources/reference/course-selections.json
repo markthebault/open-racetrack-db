@@ -15249,6 +15249,307 @@
       "maximumDistanceDifferenceM": 0,
       "evidence": "The aggregate catalogue picture identifies the outside road course only, with its full northern and southern extensions. The operator distinguishes this 2.4-mile outside course from the separate superspeedway and inside road course. Those other facilities are excluded. This diagram contains one independently mapped cycle, so it remains a regular route rather than a network with duplicate paths.",
       "identificationUrl": "https://www.lvms.com/tracks/road-course/"
+    },
+    {
+      "referenceId": "France/Circuit De Fontenay Le Comte",
+      "sourcePath": "sources/europe/fr/osm.json",
+      "sourceWayIds": [
+        662836845,
+        662836850,
+        662836853,
+        662836856,
+        979762052,
+        988598511,
+        988598512
+      ],
+      "closed": true,
+      "evidence": "Full configuration keeps the triangular eastern return and continuous western bends, excluding the rounded extension and short internal loop. Its branches match the catalogue configuration picture. The circuit operator information identifies a 2.346 km circuit, consistent with the independent 2,338.4 m course; the catalogue scalar 2,491 m uses a different extent. The historical branch choice remains a draft.",
+      "identificationUrl": "https://www.sportracingcar.com/circuits/fontenay-le-comte/",
+      "segments": [
+        {
+          "wayId": 662836845,
+          "wayVersion": 4,
+          "fromIndex": 36,
+          "toIndex": 0
+        },
+        {
+          "wayId": 662836845,
+          "wayVersion": 4,
+          "fromIndex": 68,
+          "toIndex": 36
+        }
+      ],
+      "expectedLengthM": 2338.4,
+      "maximumDistanceDifferenceM": 165
+    },
+    {
+      "referenceId": "France/Circuit Maurice Forget",
+      "sourcePath": "sources/europe/fr/osm.json",
+      "sourceWayIds": [
+        786576875,
+        786576878,
+        787142995,
+        787142996,
+        787142997,
+        787142998,
+        787142999
+      ],
+      "closed": true,
+      "evidence": "Full rallycross perimeter retains the long upper branch and western sweeping return. The independently published circuit description states 1,135 m, consistent with this 1,136.0 m source route. The catalogue scalar 2,249 m differs substantially; its pictured circuit identifies the same venue perimeter. The source is not repeated or stretched to match that number. Normal and alternative-lap classification still needs review.",
+      "identificationUrl": "https://www.circuitmauriceforget.fr/",
+      "segments": [
+        {
+          "wayId": 787142999,
+          "wayVersion": 2,
+          "fromIndex": 18,
+          "toIndex": 0
+        },
+        {
+          "wayId": 787142997,
+          "wayVersion": 2,
+          "fromIndex": 22,
+          "toIndex": 0
+        },
+        {
+          "wayId": 787142996,
+          "wayVersion": 2,
+          "fromIndex": 19,
+          "toIndex": 0
+        },
+        {
+          "wayId": 787142995,
+          "wayVersion": 2,
+          "fromIndex": 17,
+          "toIndex": 0
+        },
+        {
+          "wayId": 786576875,
+          "wayVersion": 5,
+          "fromIndex": 4,
+          "toIndex": 2
+        },
+        {
+          "wayId": 787142999,
+          "wayVersion": 2,
+          "fromIndex": 68,
+          "toIndex": 18
+        }
+      ],
+      "expectedLengthM": 1136,
+      "maximumDistanceDifferenceM": 1125
+    },
+    {
+      "referenceId": "France/Loheac Rallycross",
+      "sourcePath": "sources/europe/fr/osm.json",
+      "sourceWayIds": [
+        787615501,
+        787615502,
+        787615503,
+        787615504,
+        787615505,
+        787615506,
+        787615507
+      ],
+      "closed": true,
+      "evidence": "Rallycross main course uses the full northern straight and broad eastern return, excluding the shorter northern alternative. The event regulations identify a 1,088 m main lap and 1,070 m alternative lap; the independently mapped longer branch measures 1,079.2 m. The catalogue scalar 1,409 m differs. Course branches agree with the configuration picture; all coordinates remain exact source nodes.",
+      "identificationUrl": "https://www.rallycrossfrance.com/wp-content/uploads/2024/07/Visa-FFSA-511-Rallycross-de-Lohe%CC%81ac-et-Rallycross-Le%CC%81gend-Show.pdf",
+      "segments": [
+        {
+          "wayId": 787615501,
+          "wayVersion": 2,
+          "fromIndex": 18,
+          "toIndex": 2
+        },
+        {
+          "wayId": 787615505,
+          "wayVersion": 1,
+          "fromIndex": 25,
+          "toIndex": 0
+        },
+        {
+          "wayId": 787615506,
+          "wayVersion": 3,
+          "fromIndex": 37,
+          "toIndex": 0
+        },
+        {
+          "wayId": 787615504,
+          "wayVersion": 2,
+          "fromIndex": 21,
+          "toIndex": 0
+        },
+        {
+          "wayId": 787615503,
+          "wayVersion": 1,
+          "fromIndex": 13,
+          "toIndex": 0
+        }
+      ],
+      "expectedLengthM": 1079.2,
+      "maximumDistanceDifferenceM": 345
+    },
+    {
+      "referenceId": "France/Kerlabo RX",
+      "sourcePath": "sources/europe/fr/osm.json",
+      "sourceWayIds": [
+        786983440,
+        786983441,
+        1051153933,
+        1051153934,
+        1051153935,
+        1051153936,
+        1051153937
+      ],
+      "closed": true,
+      "evidence": "Full rallycross perimeter uses the longer mapped northern branch and southern loop identified in the catalogue picture. Event regulations describe laps of 986 m and 978 m, consistent with the independently mapped 974.4 m draft rather than the catalogue scalar 1,440 m. Normal and joker branch classification remains provisional; no detour or repeated lap is added to reach the catalogue distance.",
+      "identificationUrl": "https://rallycrossfrance.com/wp-content/uploads/2025/04/Visa-FFSA-325-Rallycross-de-Kerlabo.pdf",
+      "segments": [
+        {
+          "wayId": 1051153933,
+          "wayVersion": 2,
+          "fromIndex": 10,
+          "toIndex": 2
+        },
+        {
+          "wayId": 786983440,
+          "wayVersion": 3,
+          "fromIndex": 62,
+          "toIndex": 0
+        },
+        {
+          "wayId": 1051153935,
+          "wayVersion": 1,
+          "fromIndex": 33,
+          "toIndex": 0
+        }
+      ],
+      "expectedLengthM": 974.4,
+      "maximumDistanceDifferenceM": 480
+    },
+    {
+      "referenceId": "Sweden/Holjes Motorclub",
+      "sourcePath": "sources/europe/se/osm.json",
+      "sourceWayIds": [
+        599300791,
+        599300792,
+        599300793,
+        599300794,
+        599300795,
+        599300796,
+        599300798,
+        599300799,
+        599300800,
+        599300802,
+        599300806,
+        599300808,
+        599300811,
+        599300815,
+        599300817
+      ],
+      "closed": true,
+      "evidence": "Full main rallycross circuit follows the northern long bend and southern projecting hairpin, excluding the upper alternative branch. The event operator identifies a 1,210 m course; the independent 1,202.5 m source loop agrees with that main-lap convention. The catalogue scalar 1,397 m differs and is not used to alter source coordinates. The pictured venue perimeter and timing position agree.",
+      "identificationUrl": "https://finnskogamk.se/banan.html",
+      "segments": [
+        {
+          "wayId": 599300791,
+          "wayVersion": 1,
+          "fromIndex": 2,
+          "toIndex": 14
+        },
+        {
+          "wayId": 599300793,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 3
+        },
+        {
+          "wayId": 599300794,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 4
+        },
+        {
+          "wayId": 599300795,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 8
+        },
+        {
+          "wayId": 599300796,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 27
+        },
+        {
+          "wayId": 599300798,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 5
+        },
+        {
+          "wayId": 599300799,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 599300800,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 3
+        },
+        {
+          "wayId": 599300802,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 16
+        },
+        {
+          "wayId": 599300806,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ],
+      "expectedLengthM": 1202.5,
+      "maximumDistanceDifferenceM": 210
+    },
+    {
+      "referenceId": "Sweden/Sturup Raceway",
+      "sourcePath": "sources/europe/se/osm.json",
+      "sourceWayIds": [
+        42957249,
+        328534416,
+        328534420,
+        677374234,
+        677374235,
+        677374236
+      ],
+      "closed": true,
+      "evidence": "Full road circuit retains the northern perimeter, western inner hairpin and southern return, excluding the rectangular southern detour. These branches match the historical catalogue configuration picture. The operator records a 2,087 m configuration from 2005; this coarser independent mapped draft measures 1,993.3 m against the catalogue 2,102 m. That distance difference is retained for historical alignment review, not corrected by stretching coordinates.",
+      "identificationUrl": "https://sturupraceway.com/historik/",
+      "segments": [
+        {
+          "wayId": 42957249,
+          "wayVersion": 10,
+          "fromIndex": 35,
+          "toIndex": 91
+        },
+        {
+          "wayId": 42957249,
+          "wayVersion": 10,
+          "fromIndex": 0,
+          "toIndex": 22
+        },
+        {
+          "wayId": 328534416,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 16
+        }
+      ],
+      "expectedLengthM": 1993.3,
+      "maximumDistanceDifferenceM": 125
     }
   ]
 }

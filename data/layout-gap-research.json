@@ -4,7 +4,7 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 13,
-    "course-distance-discrepancy": 72,
+    "course-distance-discrepancy": 66,
     "independent-geometry-missing": 68,
     "ambiguous-source-branches": 35,
     "source-connectivity-incomplete": 7,
@@ -625,25 +625,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "France/Circuit De Fontenay Le Comte",
-      "trackId": "fr-circuits-de-vendee-662836845",
-      "layoutId": "circuit-de-fontenay-le-comte",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        662836845,
-        662836850,
-        662836853,
-        662836856,
-        979762052,
-        988598511,
-        988598512
-      ],
-      "candidateCount": 9,
-      "closestSourceLengthM": 2449.2,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "France/Circuit des Remparts",
       "trackId": "fr-circuit-des-remparts-1c159f88",
       "layoutId": "circuit-des-remparts",
@@ -651,25 +632,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "France/Circuit Maurice Forget",
-      "trackId": "fr-circuit-maurice-forget-30d9b95a",
-      "layoutId": "circuit-maurice-forget",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        786576875,
-        786576878,
-        787142995,
-        787142996,
-        787142997,
-        787142998,
-        787142999
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 1136,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "France/Geoparc Long",
@@ -714,44 +676,6 @@
       "closestSourceLengthM": 1653.9,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "France/Kerlabo RX",
-      "trackId": "fr-kerlabo-rx-aad6ff1a",
-      "layoutId": "kerlabo-rx",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        786983440,
-        786983441,
-        1051153933,
-        1051153934,
-        1051153935,
-        1051153936,
-        1051153937
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 974.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "France/Loheac Rallycross",
-      "trackId": "fr-circuit-du-manoir-de-l-automobile-203158898",
-      "layoutId": "loheac-rallycross",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        787615501,
-        787615502,
-        787615503,
-        787615504,
-        787615505,
-        787615506,
-        787615507
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 1079.2,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Germany/ADAC Schlusselfeld",
@@ -1791,33 +1715,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "Sweden/Holjes Motorclub",
-      "trackId": "se-holjes-motorclub-3144cff3",
-      "layoutId": "holjes-motorclub",
-      "sourcePath": "sources/europe/se/osm.json",
-      "sourceWayIds": [
-        599300791,
-        599300792,
-        599300793,
-        599300794,
-        599300795,
-        599300796,
-        599300798,
-        599300799,
-        599300800,
-        599300802,
-        599300806,
-        599300808,
-        599300811,
-        599300815,
-        599300817
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 1227,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "Sweden/Ljungbyhed Park",
       "trackId": "se-ljungbyhed-park-5c89b42d",
       "layoutId": "ljungbyhed-park",
@@ -1834,24 +1731,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Sweden/Sturup Raceway",
-      "trackId": "se-sturup-raceway-42957249",
-      "layoutId": "sturup-raceway",
-      "sourcePath": "sources/europe/se/osm.json",
-      "sourceWayIds": [
-        42957249,
-        328534416,
-        328534420,
-        677374234,
-        677374235,
-        677374236
-      ],
-      "candidateCount": 10,
-      "closestSourceLengthM": 2008.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Switzerland/St Ursanne",

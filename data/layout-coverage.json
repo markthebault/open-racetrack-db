@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 801,
-    "unmappedLayouts": 206,
+    "draftMapped": 807,
+    "unmappedLayouts": 200,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -3743,14 +3743,14 @@
       "name": "Circuit De Fontenay Le Comte",
       "timingMode": "shared",
       "trackId": "fr-circuits-de-vendee-662836845",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "circuit-de-fontenay-le-comte"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "fr-circuits-de-vendee-662836845"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -3884,11 +3884,14 @@
       "name": "Circuit Maurice Forget",
       "timingMode": "shared",
       "trackId": "fr-circuit-maurice-forget-30d9b95a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "circuit-maurice-forget"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -4057,11 +4060,14 @@
       "name": "Kerlabo RX",
       "timingMode": "shared",
       "trackId": "fr-kerlabo-rx-aad6ff1a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "kerlabo-rx"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -4230,14 +4236,14 @@
       "name": "Loheac Rallycross",
       "timingMode": "shared",
       "trackId": "fr-circuit-du-manoir-de-l-automobile-203158898",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "loheac-rallycross"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "fr-circuit-du-manoir-de-l-automobile-203158898"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -8910,11 +8916,14 @@
       "name": "Holjes Motorclub",
       "timingMode": "shared",
       "trackId": "se-holjes-motorclub-3144cff3",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "holjes-motorclub"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9045,14 +9054,14 @@
       "name": "Sturup Raceway",
       "timingMode": "shared",
       "trackId": "se-sturup-raceway-42957249",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "sturup-raceway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "se-sturup-raceway-42957249"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -19767,13 +19776,11 @@
       "name": "Circuit du Manoir de l'Automobile",
       "country": "France",
       "actualLayoutCount": 3,
-      "actualTraceCount": 2,
+      "actualTraceCount": 3,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Loheac Rallycross"
-      ],
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -19814,15 +19821,13 @@
       "name": "Circuit Maurice Forget",
       "country": "France",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Circuit Maurice Forget"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "fr-circuit-pau-arnos-61498515",
@@ -19870,13 +19875,11 @@
       "name": "Circuits de Vendée",
       "country": "France",
       "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualTraceCount": 2,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Circuit De Fontenay Le Comte"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -19918,15 +19921,13 @@
       "name": "Kerlabo RX",
       "country": "France",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Kerlabo RX"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "fr-le-mans-bugatti",
@@ -23659,15 +23660,13 @@
       "name": "Holjes Motorclub",
       "country": "Sweden",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Holjes Motorclub"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "se-karlskoga-motorstadion-290177249",
@@ -23801,13 +23800,11 @@
       "name": "Sturup Raceway",
       "country": "Sweden",
       "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualTraceCount": 2,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Sturup Raceway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26952,21 +26949,7 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "France/Circuit De Fontenay Le Comte",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "France/Circuit des Remparts",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "France/Circuit Maurice Forget",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -26981,20 +26964,6 @@
     },
     {
       "recordId": "France/Geoparc Short",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "France/Kerlabo RX",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "France/Loheac Rallycross",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -27369,13 +27338,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Sweden/Holjes Motorclub",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Sweden/Ljungbyhed Park",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27384,13 +27346,6 @@
     },
     {
       "recordId": "Sweden/Ljungbyhed Park Alt SF",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Sturup Raceway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

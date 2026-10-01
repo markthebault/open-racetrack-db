@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 801
-- unmappedLayouts: 206
+- draftMapped: 807
+- unmappedLayouts: 200
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -295,17 +295,17 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | France | Circuit Dijon-Prenois | 1 | 1 | 1 |  |  |
 | France | Circuit du Bourbonnais | 1 | 0 | 0 |  | main |
 | France | Circuit du Laquais | 3 | 2 | 2 |  | main |
-| France | Circuit du Manoir de l'Automobile | 3 | 2 | 1 | Loheac Rallycross | main |
+| France | Circuit du Manoir de l'Automobile | 3 | 2 | 2 |  | main |
 | France | Circuit du Mas du Clos | 2 | 1 | 1 |  | main |
 | France | Circuit LFG | 2 | 1 | 1 |  | main |
-| France | Circuit Maurice Forget | 1 | 1 | 0 | Circuit Maurice Forget |  |
+| France | Circuit Maurice Forget | 1 | 1 | 1 |  |  |
 | France | Circuit Pau-Arnos | 1 | 1 | 1 |  |  |
 | France | Circuit Paul Armagnac | 1 | 1 | 1 |  |  |
 | France | Circuits de l’Ouest Parisien | 2 | 1 | 1 |  | main |
-| France | Circuits de Vendée | 2 | 1 | 0 | Circuit De Fontenay Le Comte | main |
+| France | Circuits de Vendée | 2 | 1 | 1 |  | main |
 | France | Géoparc | 3 | 2 | 0 | Geoparc Long; Geoparc Short | main |
 | France | Grand Sambuc | 1 | 1 | 1 |  |  |
-| France | Kerlabo RX | 1 | 1 | 0 | Kerlabo RX |  |
+| France | Kerlabo RX | 1 | 1 | 1 |  |  |
 | France | Le Mans Bugatti Circuit | 4 | 4 | 4 |  |  |
 | France | Lessay | 1 | 1 | 1 |  |  |
 | France | Circuit de Nevers Magny-Cours | 2 | 2 | 2 |  |  |
@@ -570,7 +570,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Sweden | Drive Centre Arena | 1 | 1 | 0 | Drive Centre Arena |  |
 | Sweden | Falkenbergs Motorbana | 1 | 1 | 1 |  |  |
 | Sweden | Gotland Ring | 5 | 4 | 1 | Gotland Ring 4.1; Gotland Ring 6.0; Gotland Ring 7.3 | main |
-| Sweden | Holjes Motorclub | 1 | 1 | 0 | Holjes Motorclub |  |
+| Sweden | Holjes Motorclub | 1 | 1 | 1 |  |  |
 | Sweden | Karlskoga Motorstadion | 2 | 1 | 0 | Gellerason GP 2019 | main |
 | Sweden | Kinnekulle Ring | 1 | 1 | 1 |  |  |
 | Sweden | Ljungbyhed Park | 1 | 1 | 0 | Ljungbyhed Park |  |
@@ -580,7 +580,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Sweden | Molanda Raceway | 1 | 1 | 1 |  |  |
 | Sweden | Ostersunds Kart | 1 | 1 | 1 |  |  |
 | Sweden | Ring Knutstorp | 1 | 1 | 1 |  |  |
-| Sweden | Sturup Raceway | 2 | 1 | 0 | Sturup Raceway | main |
+| Sweden | Sturup Raceway | 2 | 1 | 1 |  | main |
 | Sweden | Sviestad Chicane | 1 | 1 | 1 |  |  |
 | Sweden | Sviestad | 1 | 1 | 1 |  |  |
 | Singapore | Singapore | 1 | 1 | 1 |  |  |
@@ -830,13 +830,9 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Ales |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Ales1 Rally Stage |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Circuit De Fontenay Le Comte |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Circuit Maurice Forget |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Long |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Kerlabo RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Loheac Rallycross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/ADAC Schlusselfeld |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Estering Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Gross Doelln |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -887,10 +883,8 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Sweden/Gotland Ring 4.1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 6.0 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 7.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Holjes Motorclub |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Ljungbyhed Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Ljungbyhed Park Alt SF |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Sturup Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Switzerland/St Ursanne |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1239,7 +1233,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Chenviers | fr-circuit-de-chenevieres-215200884 | main | draft-mapped |
 | France | Circuit d'Albi | fr-circuit-d-albi-95802415 | main | draft-mapped |
 | France | Circuit de Clastres | fr-pole-mecanique-de-la-clef-des-champs-157894439 | circuit-de-clastres | draft-mapped |
-| France | Circuit De Fontenay Le Comte | fr-circuits-de-vendee-662836845 |  | missing-layout |
+| France | Circuit De Fontenay Le Comte | fr-circuits-de-vendee-662836845 | circuit-de-fontenay-le-comte | draft-mapped |
 | France | Circuit de Haute Saintonge | fr-circuit-de-haute-saintonge-9602dd5e | circuit-de-haute-saintonge | draft-mapped |
 | France | Circuit de La Chatre | fr-circuit-de-la-chatre-e59d051b | circuit-de-la-chatre | draft-mapped |
 | France | Circuit de Lurcy Levis | fr-circuit-de-lurcy-levis-171049670 | circuit-de-lurcy-levis | draft-mapped |
@@ -1248,7 +1242,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Circuit de Mornay Grand | fr-circuit-de-mornay-169416978 | circuit-de-mornay-grand | draft-mapped |
 | France | Circuit de Mornay Long | fr-circuit-de-mornay-169416978 | circuit-de-mornay-long | draft-mapped |
 | France | Circuit des Remparts | fr-circuit-des-remparts-1c159f88 |  | missing-layout |
-| France | Circuit Maurice Forget | fr-circuit-maurice-forget-30d9b95a |  | missing-layout |
+| France | Circuit Maurice Forget | fr-circuit-maurice-forget-30d9b95a | circuit-maurice-forget | draft-mapped |
 | France | Croix-en-Ternois | fr-circuit-de-croix-en-ternois-59322352 | croix-en-ternois | draft-mapped |
 | France | Dijon | fr-circuit-dijon-prenois-29699123 | main | draft-mapped |
 | France | Dreux | fr-circuits-de-l-ouest-parisien-297738878 | dreux | draft-mapped |
@@ -1259,7 +1253,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Geoparc Short | fr-geoparc-391622752 |  | missing-layout |
 | France | Grand Sambuc | fr-grand-sambuc-0f3e4f66 | grand-sambuc | draft-mapped |
 | France | Issoire Circuit | fr-ceerta-circuit-d-issoire-86413454 | main | draft-mapped |
-| France | Kerlabo RX | fr-kerlabo-rx-aad6ff1a |  | missing-layout |
+| France | Kerlabo RX | fr-kerlabo-rx-aad6ff1a | kerlabo-rx | draft-mapped |
 | France | LaFerteGaucher | fr-circuit-lfg-179304369 | lafertegaucher | draft-mapped |
 | France | Laquais Grande Piste | fr-circuit-du-laquais-99564907 | laquais-grande-piste | draft-mapped |
 | France | Laquais Petite Piste | fr-circuit-du-laquais-99564907 | laquais-petite-piste | draft-mapped |
@@ -1270,7 +1264,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Ledenon Club | fr-circuit-de-ledenon-43165485 | ledenon-club | draft-mapped |
 | France | Lessay | fr-lessay-cb1c18d5 | lessay | draft-mapped |
 | France | Loheac | fr-circuit-du-manoir-de-l-automobile-203158898 | loheac | draft-mapped |
-| France | Loheac Rallycross | fr-circuit-du-manoir-de-l-automobile-203158898 |  | missing-layout |
+| France | Loheac Rallycross | fr-circuit-du-manoir-de-l-automobile-203158898 | loheac-rallycross | draft-mapped |
 | France | Magny Cours | fr-magny-cours | grand-prix | draft-mapped |
 | France | Magny Cours Club | fr-magny-cours | magny-cours-club | draft-mapped |
 | France | Maison Blanche 1 | fr-le-mans-bugatti | maison-blanche-1 | draft-mapped |
@@ -1568,7 +1562,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Sweden | Gotland Ring 4.1 | se-gotland-ring-311644846 |  | missing-layout |
 | Sweden | Gotland Ring 6.0 | se-gotland-ring-311644846 |  | missing-layout |
 | Sweden | Gotland Ring 7.3 | se-gotland-ring-311644846 |  | missing-layout |
-| Sweden | Holjes Motorclub | se-holjes-motorclub-3144cff3 |  | missing-layout |
+| Sweden | Holjes Motorclub | se-holjes-motorclub-3144cff3 | holjes-motorclub | draft-mapped |
 | Sweden | Kinnekulle | se-kinnekulle-ring-24783023 | main | draft-mapped |
 | Sweden | Ljungbyhed Park | se-ljungbyhed-park-5c89b42d |  | missing-layout |
 | Sweden | Ljungbyhed Park Alt SF | se-ljungbyhed-park-alt-sf-0fa7ded7 |  | missing-layout |
@@ -1577,7 +1571,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Sweden | Molanda Raceway | se-molanda-raceway-4eb5965c | molanda-raceway | draft-mapped |
 | Sweden | Ostersunds Kart Track | se-ostersunds-kart-6e528c2c | ostersunds-kart-track | draft-mapped |
 | Sweden | Ring Knutstorp | se-ring-knutstorp-229220546 | main | draft-mapped |
-| Sweden | Sturup Raceway | se-sturup-raceway-42957249 |  | missing-layout |
+| Sweden | Sturup Raceway | se-sturup-raceway-42957249 | sturup-raceway | draft-mapped |
 | Sweden | Sviestad | se-sviestad-f8832c27 | sviestad | draft-mapped |
 | Sweden | Sviestad Chicane | se-sviestad-chicane-b5fb133a | sviestad-chicane | draft-mapped |
 | Switzerland | St Ursanne | ch-st-ursanne-a8b987de |  | missing-layout |
