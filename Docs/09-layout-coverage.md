@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 843
-- unmappedLayouts: 164
+- draftMapped: 847
+- unmappedLayouts: 160
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -512,7 +512,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | New Zealand | Highlands Motorsports Park_A | 1 | 1 | 1 |  |  |
 | New Zealand | Highlands Motorsports Park_B | 1 | 1 | 1 |  |  |
 | New Zealand | Highlands Motorsports Park_C | 1 | 1 | 1 |  |  |
-| New Zealand | Highlands Motorsports Park | 1 | 1 | 0 | Highlands Motorsports Park Combo |  |
+| New Zealand | Highlands Motorsports Park | 5 | 1 | 1 |  | highlands-motorsports-park-a; highlands-motorsports-park-b; highlands-motorsports-park-c; highlands-motorsports-park-full |
 | New Zealand | Highlands Motorsports Park_Full | 1 | 1 | 1 |  |  |
 | New Zealand | Leadfoot Hillclimb | 1 | 1 | 0 | Leadfoot Hillclimb |  |
 | New Zealand | Manfeild: Circuit Chris Amon | 2 | 1 | 1 |  | main |
@@ -557,7 +557,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Russia | Kartdrom GBU Talisman | 1 | 1 | 1 |  |  |
 | Russia | Kazan Autocross Ring | 1 | 1 | 1 |  |  |
 | Russia | автодром KAZANRING | 1 | 1 | 1 |  |  |
-| Russia | Moscow Raceway | 2 | 1 | 0 | Moscow Raceway | main |
+| Russia | Moscow Raceway | 8 | 1 | 1 |  | main; moscow-gp2; moscow-gp1; moscow-fim; moscow-sprint1; moscow-gp5; moscow-supersprint |
 | Russia | Красное кольцо | 1 | 0 | 0 |  | main |
 | Russia | АДМ Мячково | 3 | 2 | 2 |  | main |
 | Russia | Нижегородское кольцо | 4 | 3 | 3 |  | main |
@@ -663,7 +663,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | High Plains Raceway | 2 | 1 | 1 |  | main |
 | United States | High Plains Speedway | 1 | 0 | 0 |  | main |
 | United States | Homestead-Miami Speedway | 5 | 4 | 4 |  | main |
-| United States | Inde Motorsports | 1 | 1 | 0 | Inde Motorsports Combo |  |
+| United States | Inde Motorsports | 9 | 1 | 1 |  | inde-motorsports-ranch-full; inde-motorsports-ranch-full-north-2; inde-motorsports-ranch-full-north-3; inde-motorsports-ranch-full-north-4; inde-motorsports-ranch-north; inde-motorsports-ranch-north-2; inde-motorsports-ranch-north-4; inde-motorsports-ranch-south |
 | United States | Inde Motorsports Ranch | 8 | 8 | 8 |  |  |
 | United States | Indianapolis Motor Speedway | 4 | 3 | 3 |  | main |
 | United States | Indianapolis Speedrome | 1 | 1 | 1 |  |  |
@@ -723,7 +723,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Putnam County Speedway | 1 | 0 | 0 |  | main |
 | United States | Putnam Park Road Course | 2 | 1 | 1 |  | main |
 | United States | Qlispé Raceway Park | 2 | 1 | 1 |  | main |
-| United States | Reno Fernley | 1 | 1 | 0 | Reno Fernley Combo |  |
+| United States | Reno Fernley | 9 | 1 | 1 |  | reno-fernley-a; reno-fernley-a2; reno-fernley-b; reno-fernley-c; reno-fernley-d; reno-fernley-f; reno-fernley-g; reno-fernley-g2 |
 | United States | Reno Fernley A | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley A2 | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley B | 1 | 1 | 1 |  |  |
@@ -842,7 +842,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| New Zealand/Highlands Motorsports Park Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 6 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Poland/Slomczyn RallyCross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -854,7 +853,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Portugal/Lousada RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Macao RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Portugal/Montalegre |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Russia/Moscow Raceway | 168247376; 171408790 | 2 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Africa/Knysna Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -931,7 +929,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Motorsports Porsche 2mile |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Inde Motorsports Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Michelin Laurens Proving Grounds |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -939,7 +936,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/New York Safety Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Pocono - 2.5 Mile Road Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Reno Fernley Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Road America Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1393,7 +1389,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | New Zealand | Hampton Downs Club | nz-hampton-downs-international-circuit-352414652 | hampton-downs-club | draft-mapped |
 | New Zealand | Hampton Downs International | nz-hampton-downs-international-circuit-352414652 | hampton-downs-international | draft-mapped |
 | New Zealand | Hampton Downs National | nz-hampton-downs-international-circuit-352414652 | main | draft-mapped |
-| New Zealand | Highlands Motorsports Park Combo | nz-highlands-motorsports-park-c98a7d90 |  | missing-layout |
+| New Zealand | Highlands Motorsports Park Combo | nz-highlands-motorsports-park-c98a7d90 | highlands-motorsports-park-combo | draft-mapped |
 | New Zealand | Highlands Motorsports Park_A | nz-highlands-motorsports-park-a-d92df93e | highlands-motorsports-park-a | draft-mapped |
 | New Zealand | Highlands Motorsports Park_B | nz-highlands-motorsports-park-b-1fe943d1 | highlands-motorsports-park-b | draft-mapped |
 | New Zealand | Highlands Motorsports Park_C | nz-highlands-motorsports-park-c-b1a21bf0 | highlands-motorsports-park-c | draft-mapped |
@@ -1448,7 +1444,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Russia | Kazan Autocross Ring | ru-kazan-autocross-ring-96a39645 | kazan-autocross-ring | draft-mapped |
 | Russia | Kazan Ring | ru-kazanring-152579094 | main | draft-mapped |
 | Russia | Miachkovo | ru-osm-49185165 | miachkovo | draft-mapped |
-| Russia | Moscow Raceway | ru-moscow-raceway-168247376 |  | missing-layout |
+| Russia | Moscow Raceway | ru-moscow-raceway-168247376 | moscow-raceway | draft-mapped |
 | Russia | N-Ring A | ru-osm-74887032 | n-ring-a | draft-mapped |
 | Russia | N-Ring B | ru-osm-74887032 | n-ring-b | draft-mapped |
 | Russia | N-Ring C | ru-osm-74887032 | n-ring-c | draft-mapped |
@@ -1787,7 +1783,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Homestead Oval Course | us-homestead-miami-speedway-108159182 | homestead-oval-course | draft-mapped |
 | United States | Homestead Road Course | us-homestead-miami-speedway-108159182 | homestead-road-course | draft-mapped |
 | United States | IMS SRO Practice | us-indianapolis-motor-speedway-51308226 | ims-sro-practice | draft-mapped |
-| United States | Inde Motorsports Combo | us-inde-motorsports-b9c30311 |  | missing-layout |
+| United States | Inde Motorsports Combo | us-inde-motorsports-b9c30311 | inde-motorsports-combo | draft-mapped |
 | United States | Inde Motorsports Ranch Full | us-inde-motorsports-ranch-8dbe7597 | inde-motorsports-ranch-full | draft-mapped |
 | United States | Inde Motorsports Ranch Full North 2 | us-inde-motorsports-ranch-8dbe7597 | inde-motorsports-ranch-full-north-2 | draft-mapped |
 | United States | Inde Motorsports Ranch Full North 3 | us-inde-motorsports-ranch-8dbe7597 | inde-motorsports-ranch-full-north-3 | draft-mapped |
@@ -1883,7 +1879,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Reno Fernley A2 | us-reno-fernley-a2-ee03ab77 | reno-fernley-a2 | draft-mapped |
 | United States | Reno Fernley B | us-reno-fernley-b-a1497233 | reno-fernley-b | draft-mapped |
 | United States | Reno Fernley C | us-reno-fernley-c-0e7035d4 | reno-fernley-c | draft-mapped |
-| United States | Reno Fernley Combo | us-reno-fernley-57a16580 |  | missing-layout |
+| United States | Reno Fernley Combo | us-reno-fernley-57a16580 | reno-fernley-combo | draft-mapped |
 | United States | Reno Fernley D | us-reno-fernley-d-e723a41c | reno-fernley-d | draft-mapped |
 | United States | Reno Fernley E | us-reno-fernley-e-11ca028a |  | missing-layout |
 | United States | Reno Fernley F | us-reno-fernley-f-411d3126 | reno-fernley-f | draft-mapped |

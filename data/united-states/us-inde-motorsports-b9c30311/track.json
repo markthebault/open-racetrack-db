@@ -8,17 +8,171 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -110.00769565,
+    32.227900500000004
+  ],
+  "sourceIds": [
+    "osm-components-322172251",
+    "osm-network-inde-motorsports-combo"
+  ],
   "defaultLayoutId": "inde-motorsports-combo",
   "layouts": [
     {
       "id": "inde-motorsports-combo",
       "name": "Inde Motorsports Combo",
       "referenceId": "United States/Inde Motorsports Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/inde-motorsports-combo.geojson",
+      "description": "Combined mapped configurations: Inde Motorsports Ranch Full, Inde Motorsports Ranch Full North 2, Inde Motorsports Ranch Full North 3, Inde Motorsports Ranch Full North 4, Inde Motorsports Ranch North, Inde Motorsports Ranch North 2, Inde Motorsports Ranch North 4, Inde Motorsports Ranch South. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "inde-motorsports-ranch-full",
+      "name": "Inde Motorsports Ranch Full",
+      "file": "layouts/inde-motorsports-ranch-full.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-full-north-2",
+      "name": "Inde Motorsports Ranch Full North 2",
+      "file": "layouts/inde-motorsports-ranch-full-north-2.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full-north-2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-full-north-3",
+      "name": "Inde Motorsports Ranch Full North 3",
+      "file": "layouts/inde-motorsports-ranch-full-north-3.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full-north-3 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-full-north-4",
+      "name": "Inde Motorsports Ranch Full North 4",
+      "file": "layouts/inde-motorsports-ranch-full-north-4.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full-north-4 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-north",
+      "name": "Inde Motorsports Ranch North",
+      "file": "layouts/inde-motorsports-ranch-north.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-north without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-north-2",
+      "name": "Inde Motorsports Ranch North 2",
+      "file": "layouts/inde-motorsports-ranch-north-2.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-north-2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-north-4",
+      "name": "Inde Motorsports Ranch North 4",
+      "file": "layouts/inde-motorsports-ranch-north-4.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-north-4 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "inde-motorsports-ranch-south",
+      "name": "Inde Motorsports Ranch South",
+      "file": "layouts/inde-motorsports-ranch-south.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-south without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-322172251",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/322172251",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-full",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch Full identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-full-north-2",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch Full North 2 identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full-north-2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-full-north-3",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch Full North 3 identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full-north-3 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-full-north-4",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch Full North 4 identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-full-north-4 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-north",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch North identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-north without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-north-2",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch North 2 identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-north-2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-north-4",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch North 4 identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-north-4 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-inde-motorsports-ranch-south",
+      "type": "reference",
+      "title": "Inde Motorsports Ranch South identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.149Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-inde-motorsports-ranch-8dbe7597/inde-motorsports-ranch-south without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-inde-motorsports-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/322172251",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:27:05.635Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-inde-motorsports-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://indemotorsports.com/the-ranch/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:27:05.635Z",
+      "evidenceNote": "The aggregate entry groups the 8 existing independently mapped draft configurations for this venue. These configurations were previously registered under other venue entries; their exact source recipes and parent snapshot hashes are preserved. Shared edges count once and separate paths remain separate. This is a configuration network, not one lap, and does not claim current operator certification. The independent unique branch distance is 4585.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

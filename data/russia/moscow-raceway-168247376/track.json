@@ -13,7 +13,9 @@
     55.99733942568309
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-components-168247376",
+    "osm-network-moscow-raceway"
   ],
   "defaultLayoutId": "moscow-raceway",
   "layouts": [
@@ -27,8 +29,44 @@
       "id": "moscow-raceway",
       "name": "Moscow Raceway",
       "referenceId": "Russia/Moscow Raceway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/moscow-raceway.geojson",
+      "description": "Combined mapped configurations: Moscow Raceway Grand Prix 2, Moscow Raceway Grand Prix 1, Moscow Raceway FIM, Moscow Raceway Sprint 1, Moscow Raceway Grand Prix 5, Moscow Raceway Supersprint. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "moscow-gp2",
+      "name": "Moscow Raceway Grand Prix 2",
+      "file": "layouts/moscow-gp2.geojson",
+      "description": "The operator Grand Prix 2 highlighted configuration identifies the full western course and Mercedes Arena with both back-straight chicanes. The pinned independent source route measures 4099.2 m; the operator states 4070 m. Parallel pit and service routes are excluded."
+    },
+    {
+      "id": "moscow-gp1",
+      "name": "Moscow Raceway Grand Prix 1",
+      "file": "layouts/moscow-gp1.geojson",
+      "description": "The operator Grand Prix 1 highlighted configuration identifies the full western course and Mercedes Arena with the plain back straight. The pinned independent source route measures 3984 m; the operator states 3955 m. Parallel pit and service routes are excluded."
+    },
+    {
+      "id": "moscow-fim",
+      "name": "Moscow Raceway FIM",
+      "file": "layouts/moscow-fim.geojson",
+      "description": "The operator FIM highlighted configuration identifies the western bend bypass and plain back straight, retaining Mercedes Arena. The pinned independent source route measures 3955.9 m; the operator states 3932 m. Parallel pit and service routes are excluded."
+    },
+    {
+      "id": "moscow-sprint1",
+      "name": "Moscow Raceway Sprint 1",
+      "file": "layouts/moscow-sprint1.geojson",
+      "description": "The operator Sprint 1 highlighted configuration identifies the eastern Mercedes Arena course, both back-straight chicanes and the complete Sprint connector. The pinned independent source route measures 2695.3 m; the operator states 2664 m. Parallel pit and service routes are excluded."
+    },
+    {
+      "id": "moscow-gp5",
+      "name": "Moscow Raceway Grand Prix 5",
+      "file": "layouts/moscow-gp5.geojson",
+      "description": "The operator Grand Prix 5 highlighted configuration identifies the full western course with the Mercedes Arena bypass and plain back straight. The pinned independent source route measures 3549.1 m; the operator states 3554 m. Parallel pit and service routes are excluded."
+    },
+    {
+      "id": "moscow-supersprint",
+      "name": "Moscow Raceway Supersprint",
+      "file": "layouts/moscow-supersprint.geojson",
+      "description": "The operator Supersprint highlighted configuration identifies the western circuit closed by the short Supersprint return, retaining the full western bend. The pinned independent source route measures 1345.2 m; the operator states 1357 m. Parallel pit and service routes are excluded."
     }
   ],
   "sources": [
@@ -40,6 +78,87 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:21:42.508Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-components-168247376",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/168247376",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-moscow-gp2",
+      "type": "reference",
+      "title": "Moscow Raceway Grand Prix 2 identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "The operator Grand Prix 2 highlighted configuration identifies the full western course and Mercedes Arena with both back-straight chicanes. The pinned independent source route measures 4099.2 m; the operator states 4070 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-moscow-gp1",
+      "type": "reference",
+      "title": "Moscow Raceway Grand Prix 1 identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "The operator Grand Prix 1 highlighted configuration identifies the full western course and Mercedes Arena with the plain back straight. The pinned independent source route measures 3984 m; the operator states 3955 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-moscow-fim",
+      "type": "reference",
+      "title": "Moscow Raceway FIM identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "The operator FIM highlighted configuration identifies the western bend bypass and plain back straight, retaining Mercedes Arena. The pinned independent source route measures 3955.9 m; the operator states 3932 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-moscow-sprint1",
+      "type": "reference",
+      "title": "Moscow Raceway Sprint 1 identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "The operator Sprint 1 highlighted configuration identifies the eastern Mercedes Arena course, both back-straight chicanes and the complete Sprint connector. The pinned independent source route measures 2695.3 m; the operator states 2664 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-moscow-gp5",
+      "type": "reference",
+      "title": "Moscow Raceway Grand Prix 5 identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "The operator Grand Prix 5 highlighted configuration identifies the full western course with the Mercedes Arena bypass and plain back straight. The pinned independent source route measures 3549.1 m; the operator states 3554 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-moscow-supersprint",
+      "type": "reference",
+      "title": "Moscow Raceway Supersprint identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "The operator Supersprint highlighted configuration identifies the western circuit closed by the short Supersprint return, retaining the full western bend. The pinned independent source route measures 1345.2 m; the operator states 1357 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-moscow-raceway",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/168247376",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:23:22.417Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-moscow-raceway",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://moscowraceway.ru/map",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:23:22.417Z",
+      "evidenceNote": "The general venue entry displays a network of six independently identified operator configurations: Grand Prix 1, Grand Prix 2, Grand Prix 5, FIM, Sprint 1 and Supersprint. Published highlighted plans identify each component; these include the full and bypassed Mercedes Arena, western bend bypass, back-straight chicanes, Sprint connector and Supersprint closure. Each component is separately selectable. The network is a set of configurations, not a single timed lap. Parallel pit routes and unverified later fork additions are excluded. The independent unique branch distance is 4853.8 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }

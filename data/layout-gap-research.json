@@ -3,8 +3,8 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 9,
-    "course-distance-discrepancy": 53,
+    "configuration-evidence-required": 6,
+    "course-distance-discrepancy": 52,
     "independent-geometry-missing": 55,
     "ambiguous-source-branches": 29,
     "source-connectivity-incomplete": 7,
@@ -984,14 +984,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "New Zealand/Highlands Motorsports Park Combo",
-      "trackId": "nz-highlands-motorsports-park-c98a7d90",
-      "layoutId": "highlands-motorsports-park-combo",
-      "sourcePath": "sources/world/nz/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "New Zealand/Leadfoot Hillclimb",
       "trackId": "nz-leadfoot-hillclimb-f16d38f6",
       "layoutId": "leadfoot-hillclimb",
@@ -1229,26 +1221,6 @@
       ],
       "candidateCount": 4,
       "closestSourceLengthM": 1136.5,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Russia/Moscow Raceway",
-      "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-raceway",
-      "sourcePath": "sources/europe/ru/osm.json",
-      "sourceWayIds": [
-        168247376,
-        168247379,
-        171389432,
-        171389437,
-        171389442,
-        171408790,
-        502674407,
-        502674408
-      ],
-      "candidateCount": 84,
-      "closestSourceLengthM": 4099.2,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
@@ -2371,14 +2343,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United States/Inde Motorsports Combo",
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "United States/LVMS Super Speedway",
       "trackId": "us-las-vegas-motor-speedway-27545411",
       "layoutId": "lvms-super-speedway",
@@ -2495,14 +2459,6 @@
       "closestSourceLengthM": 4081.7,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "United States/Reno Fernley Combo",
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United States/Reno Fernley E",

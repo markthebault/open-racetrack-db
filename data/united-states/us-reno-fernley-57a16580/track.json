@@ -8,17 +8,171 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -119.2449192,
+    39.54055345
+  ],
+  "sourceIds": [
+    "osm-components-28824428",
+    "osm-network-reno-fernley-combo"
+  ],
   "defaultLayoutId": "reno-fernley-combo",
   "layouts": [
     {
       "id": "reno-fernley-combo",
       "name": "Reno Fernley Combo",
       "referenceId": "United States/Reno Fernley Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/reno-fernley-combo.geojson",
+      "description": "Combined mapped configurations: Reno Fernley A, Reno Fernley A2, Reno Fernley B, Reno Fernley C, Reno Fernley D, Reno Fernley F, Reno Fernley G, Reno Fernley G2. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "reno-fernley-a",
+      "name": "Reno Fernley A",
+      "file": "layouts/reno-fernley-a.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-a-a14b2d9b/reno-fernley-a without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-a2",
+      "name": "Reno Fernley A2",
+      "file": "layouts/reno-fernley-a2.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-a2-ee03ab77/reno-fernley-a2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-b",
+      "name": "Reno Fernley B",
+      "file": "layouts/reno-fernley-b.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-b-a1497233/reno-fernley-b without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-c",
+      "name": "Reno Fernley C",
+      "file": "layouts/reno-fernley-c.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-c-0e7035d4/reno-fernley-c without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-d",
+      "name": "Reno Fernley D",
+      "file": "layouts/reno-fernley-d.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-d-e723a41c/reno-fernley-d without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-f",
+      "name": "Reno Fernley F",
+      "file": "layouts/reno-fernley-f.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-f-411d3126/reno-fernley-f without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-g",
+      "name": "Reno Fernley G",
+      "file": "layouts/reno-fernley-g.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-g-77c6a7ab/reno-fernley-g without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "reno-fernley-g2",
+      "name": "Reno Fernley G2",
+      "file": "layouts/reno-fernley-g2.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from us-reno-fernley-g2-86d82a7d/reno-fernley-g2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-28824428",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-reno-fernley-a",
+      "type": "reference",
+      "title": "Reno Fernley A identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-a-a14b2d9b/reno-fernley-a without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-a2",
+      "type": "reference",
+      "title": "Reno Fernley A2 identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-a2-ee03ab77/reno-fernley-a2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-b",
+      "type": "reference",
+      "title": "Reno Fernley B identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-b-a1497233/reno-fernley-b without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-c",
+      "type": "reference",
+      "title": "Reno Fernley C identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-c-0e7035d4/reno-fernley-c without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-d",
+      "type": "reference",
+      "title": "Reno Fernley D identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-d-e723a41c/reno-fernley-d without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-f",
+      "type": "reference",
+      "title": "Reno Fernley F identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-f-411d3126/reno-fernley-f without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-g",
+      "type": "reference",
+      "title": "Reno Fernley G identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-g-77c6a7ab/reno-fernley-g without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-reno-fernley-g2",
+      "type": "reference",
+      "title": "Reno Fernley G2 identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.154Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from us-reno-fernley-g2-86d82a7d/reno-fernley-g2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-reno-fernley-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:27:05.644Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-reno-fernley-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:27:05.644Z",
+      "evidenceNote": "The aggregate entry groups the 8 existing independently mapped draft configurations for this venue. These configurations were previously registered under other venue entries; their exact source recipes and parent snapshot hashes are preserved. Shared edges count once and separate paths remain separate. This is a configuration network, not one lap, and does not claim current operator certification. The independent unique branch distance is 7017.6 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

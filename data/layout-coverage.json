@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 843,
-    "unmappedLayouts": 164,
+    "draftMapped": 847,
+    "unmappedLayouts": 160,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6862,17 +6862,14 @@
       "name": "Highlands Motorsports Park Combo",
       "timingMode": "shared",
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "highlands-motorsports-park-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "nz-highlands-motorsports-park-a-d92df93e",
-        "nz-highlands-motorsports-park-b-1fe943d1",
-        "nz-highlands-motorsports-park-c-b1a21bf0",
-        "nz-highlands-motorsports-park-full-2952eb45"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -7712,14 +7709,14 @@
       "name": "Moscow Raceway",
       "timingMode": "shared",
       "trackId": "ru-moscow-raceway-168247376",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "moscow-raceway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "ru-moscow-raceway-168247376"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -13027,14 +13024,14 @@
       "name": "Inde Motorsports Combo",
       "timingMode": "shared",
       "trackId": "us-inde-motorsports-b9c30311",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "inde-motorsports-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-inde-motorsports-ranch-8dbe7597"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -14555,21 +14552,14 @@
       "name": "Reno Fernley Combo",
       "timingMode": "shared",
       "trackId": "us-reno-fernley-57a16580",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "reno-fernley-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-reno-fernley-a-a14b2d9b",
-        "us-reno-fernley-a2-ee03ab77",
-        "us-reno-fernley-b-a1497233",
-        "us-reno-fernley-c-0e7035d4",
-        "us-reno-fernley-d-e723a41c",
-        "us-reno-fernley-f-411d3126",
-        "us-reno-fernley-g-77c6a7ab",
-        "us-reno-fernley-g2-86d82a7d"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -14601,6 +14591,7 @@
         "Identify the venue and explicit connected route recipe from independent geometry."
       ],
       "candidateTrackIds": [
+        "us-reno-fernley-57a16580",
         "us-reno-fernley-a-a14b2d9b",
         "us-reno-fernley-a2-ee03ab77",
         "us-reno-fernley-b-a1497233",
@@ -14672,6 +14663,7 @@
         "Identify the venue and explicit connected route recipe from independent geometry."
       ],
       "candidateTrackIds": [
+        "us-reno-fernley-57a16580",
         "us-reno-fernley-a-a14b2d9b",
         "us-reno-fernley-a2-ee03ab77",
         "us-reno-fernley-b-a1497233",
@@ -22857,15 +22849,18 @@
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
       "name": "Highlands Motorsports Park",
       "country": "New Zealand",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 5,
+      "actualTraceCount": 5,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Highlands Motorsports Park Combo"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "highlands-motorsports-park-a",
+        "highlands-motorsports-park-b",
+        "highlands-motorsports-park-c",
+        "highlands-motorsports-park-full"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -23492,16 +23487,20 @@
       "trackId": "ru-moscow-raceway-168247376",
       "name": "Moscow Raceway",
       "country": "Russia",
-      "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualLayoutCount": 8,
+      "actualTraceCount": 8,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Moscow Raceway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
-        "main"
+        "main",
+        "moscow-gp2",
+        "moscow-gp1",
+        "moscow-fim",
+        "moscow-sprint1",
+        "moscow-gp5",
+        "moscow-supersprint"
       ],
       "status": "gap"
     },
@@ -24997,15 +24996,22 @@
       "trackId": "us-inde-motorsports-b9c30311",
       "name": "Inde Motorsports",
       "country": "United States",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 9,
+      "actualTraceCount": 9,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Inde Motorsports Combo"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "inde-motorsports-ranch-full",
+        "inde-motorsports-ranch-full-north-2",
+        "inde-motorsports-ranch-full-north-3",
+        "inde-motorsports-ranch-full-north-4",
+        "inde-motorsports-ranch-north",
+        "inde-motorsports-ranch-north-2",
+        "inde-motorsports-ranch-north-4",
+        "inde-motorsports-ranch-south"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -25842,15 +25848,22 @@
       "trackId": "us-reno-fernley-57a16580",
       "name": "Reno Fernley",
       "country": "United States",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 9,
+      "actualTraceCount": 9,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Reno Fernley Combo"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "reno-fernley-a",
+        "reno-fernley-a2",
+        "reno-fernley-b",
+        "reno-fernley-c",
+        "reno-fernley-d",
+        "reno-fernley-f",
+        "reno-fernley-g",
+        "reno-fernley-g2"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -27051,13 +27064,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "New Zealand/Highlands Motorsports Park Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "New Zealand/Leadfoot Hillclimb",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27141,16 +27147,6 @@
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Russia/Moscow Raceway",
-      "matchingNamedWayIds": [
-        168247376,
-        171408790
-      ],
-      "namedCourseCandidates": 2,
-      "enumerationTruncated": false,
-      "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
     },
     {
       "recordId": "Russia/Ramenskoe",
@@ -27710,13 +27706,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/Inde Motorsports Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/LVMS Super Speedway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27760,13 +27749,6 @@
     },
     {
       "recordId": "United States/Pocono - 2.5 Mile Road Course",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Reno Fernley Combo",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
