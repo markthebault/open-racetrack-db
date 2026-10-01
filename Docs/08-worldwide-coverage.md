@@ -22,7 +22,7 @@ There are 3579 pending source groups or named facilities, and 5384 eligible sour
 
 Circuit of The Americas has a named OSM facility but no selected eligible closed trace in this extraction. Branching and incomplete source traces affect other large venues too. Existing European gaps, including Brno, Navarra, the full Nürburgring GP course and Bridge to Gantry, remain open. See [the European report](07-european-coverage.md) and the downloadable `data/world-coverage.json` inventory. Complete worldwide venue or layout coverage is not claimed.
 
-Racelogic is read only for start/finish GPS and layout names, never CIR geometry, map images or boundaries. The optional private overlay associates a single start/finish record within 20 m of a new source trace and labels it proximity-only. Its original GPS center is preserved, with estimated 25 m display endpoints. The match does not verify a named layout, direction or redistribution rights. No private timing enters public GeoJSON, builds, screenshots or the PR.
+reference is read only for start/finish GPS and layout names, never CIR geometry, map images or boundaries. The optional private overlay associates a single start/finish record within 20 m of a new source trace and labels it proximity-only. Its original GPS center is preserved, with estimated 25 m display endpoints. The match does not verify a named layout, direction or redistribution rights. No private timing enters public GeoJSON, builds, screenshots or the PR.
 
 ## Viewer and persistent preview
 

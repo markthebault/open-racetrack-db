@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "si-raceland-reference",
+  "name": "Raceland",
+  "aliases": [],
+  "country": {
+    "code": "SI",
+    "name": "Slovenia",
+    "slug": "slovenia"
+  },
+  "location": [
+    15.53517825,
+    45.93085235
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Raceland",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Slovenia/Raceland"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/61909801",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:14:07.703Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

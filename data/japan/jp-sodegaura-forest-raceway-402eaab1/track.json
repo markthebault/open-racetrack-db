@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "jp-sodegaura-forest-raceway-402eaab1",
+  "name": "Sodegaura Forest Raceway",
+  "aliases": [],
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "slug": "japan"
+  },
+  "location": [
+    140.08901375,
+    35.3941875
+  ],
+  "sourceIds": [
+    "osm-network-186868755"
+  ],
+  "defaultLayoutId": "sodegaura-forest-raceway",
+  "layouts": [
+    {
+      "id": "sodegaura-forest-raceway",
+      "name": "Sodegaura Forest Raceway",
+      "referenceId": "Japan/Sodegaura Forest Raceway",
+      "file": "layouts/sodegaura-forest-raceway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2421.6 m. Difference from the supplied layout distance 17.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-186868755",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/186868755",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

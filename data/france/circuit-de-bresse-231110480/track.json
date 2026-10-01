@@ -13,15 +13,23 @@
     46.55269488604653
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-231110480"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "bresse",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "bresse",
+      "name": "Bresse",
+      "referenceId": "France/Bresse",
+      "file": "layouts/bresse.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2878.5 m. Difference from the supplied layout distance 7.5 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +41,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-231110480",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/231110480",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

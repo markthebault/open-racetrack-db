@@ -15,13 +15,27 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "nola-motorsports-park",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "nola-motorsports-park",
+      "name": "Nola Motorsports Park",
+      "referenceId": "United States/Nola Motorsports Park",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "nola-motorsports-park-course-a",
+      "name": "Nola Motorsports Park Course A",
+      "referenceId": "United States/Nola Motorsports Park Course A",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "pl-tor-lodz-107c708e",
+  "name": "Tor Lodz",
+  "aliases": [],
+  "country": {
+    "code": "PL",
+    "name": "Poland",
+    "slug": "poland"
+  },
+  "location": [
+    19.53283905,
+    51.8769646
+  ],
+  "sourceIds": [
+    "osm-network-445463674"
+  ],
+  "defaultLayoutId": "tor-lodz",
+  "layouts": [
+    {
+      "id": "tor-lodz",
+      "name": "Tor Lodz",
+      "referenceId": "Poland/Tor Lodz",
+      "file": "layouts/tor-lodz.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1292.8 m. Difference from the supplied layout distance 3.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-445463674",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/445463674",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:11:19.763Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

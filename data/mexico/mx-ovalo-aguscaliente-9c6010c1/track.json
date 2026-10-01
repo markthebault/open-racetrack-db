@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mx-ovalo-aguscaliente-9c6010c1",
+  "name": "Ovalo Aguscaliente",
+  "aliases": [],
+  "country": {
+    "code": "MX",
+    "name": "Mexico",
+    "slug": "mexico"
+  },
+  "location": [
+    -102.32744199999999,
+    21.723053649999997
+  ],
+  "sourceIds": [
+    "osm-network-184905703"
+  ],
+  "defaultLayoutId": "ovalo-aguscaliente",
+  "layouts": [
+    {
+      "id": "ovalo-aguscaliente",
+      "name": "Ovalo Aguscaliente",
+      "referenceId": "Mexico/Ovalo Aguscaliente",
+      "file": "layouts/ovalo-aguscaliente.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1342.6 m. Difference from the supplied layout distance 19.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-184905703",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/184905703",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:22.379Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

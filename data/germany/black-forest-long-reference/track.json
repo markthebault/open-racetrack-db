@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "de-black-forest-long-reference",
+  "name": "Black Forest Long",
+  "aliases": [],
+  "country": {
+    "code": "DE",
+    "name": "Germany",
+    "slug": "germany"
+  },
+  "location": [
+    8.727113899999999,
+    47.912331949999995
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Black Forest Long",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Germany/Black Forest Long"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/640496290",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.611Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

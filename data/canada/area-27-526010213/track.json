@@ -13,15 +13,30 @@
     49.16457529274611
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-526010213"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "area-27",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "area-27",
+      "name": "Area 27",
+      "referenceId": "Canada/Area 27",
+      "file": "layouts/area-27.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4814.1 m. Difference from the supplied layout distance 10.9 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "area-27-short",
+      "name": "Area 27 Short",
+      "referenceId": "Canada/Area 27 Short",
+      "file": "layouts/area-27-short.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2386.1 m. Difference from the supplied layout distance 4.9 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:02.766Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-526010213",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/526010213",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

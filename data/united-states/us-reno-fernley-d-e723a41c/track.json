@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-reno-fernley-d-e723a41c",
+  "name": "Reno Fernley D",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -119.2449149,
+    39.54055345
+  ],
+  "sourceIds": [
+    "osm-network-28824428"
+  ],
+  "defaultLayoutId": "reno-fernley-d",
+  "layouts": [
+    {
+      "id": "reno-fernley-d",
+      "name": "Reno Fernley D",
+      "referenceId": "United States/Reno Fernley D",
+      "file": "layouts/reno-fernley-d.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4174.2 m. Difference from the supplied layout distance 6.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-28824428",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/28824428",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

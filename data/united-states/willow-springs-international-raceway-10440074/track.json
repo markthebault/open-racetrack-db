@@ -13,15 +13,32 @@
     34.87302290382169
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-10412884",
+    "osm-network-31654751"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Willow Springs",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "United States/Willow Springs"
+    },
+    {
+      "id": "streets-of-willow-springs",
+      "name": "Streets of Willow Springs",
+      "referenceId": "United States/Streets of Willow Springs",
+      "file": "layouts/streets-of-willow-springs.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2551.7 m. Difference from the supplied layout distance 0.7 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "willow-springs-horse-thief-mile",
+      "name": "Willow Springs Horse Thief Mile",
+      "referenceId": "United States/Willow Springs Horse Thief Mile",
+      "file": "layouts/willow-springs-horse-thief-mile.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1633.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +50,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-10412884",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/10412884",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-network-31654751",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/31654751",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

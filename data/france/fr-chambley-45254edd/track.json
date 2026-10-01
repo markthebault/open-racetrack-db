@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-chambley-45254edd",
+  "name": "Chambley",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    5.88958505,
+    49.027688100000006
+  ],
+  "sourceIds": [
+    "osm-network-166933722"
+  ],
+  "defaultLayoutId": "chambley",
+  "layouts": [
+    {
+      "id": "chambley",
+      "name": "Chambley",
+      "referenceId": "France/Chambley",
+      "file": "layouts/chambley.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3180.1 m. Difference from the supplied layout distance 0.1 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-166933722",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/166933722",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "fi-kotkan-circuit-reference",
+  "name": "Kotkan Circuit",
+  "aliases": [],
+  "country": {
+    "code": "FI",
+    "name": "Finland",
+    "slug": "finland"
+  },
+  "location": [
+    26.89739325,
+    60.579011550000004
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Kotkan Circuit",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Finland/Kotkan Circuit"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/373836109",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:10:03.186Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

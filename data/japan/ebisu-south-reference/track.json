@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "jp-ebisu-south-reference",
+  "name": "Ebisu South",
+  "aliases": [],
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "slug": "japan"
+  },
+  "location": [
+    140.37097315,
+    37.6426119
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Ebisu South",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Japan/Ebisu South"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/119769647",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

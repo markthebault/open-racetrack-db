@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "az-baku-5c505b5d",
+  "name": "Baku",
+  "aliases": [],
+  "country": {
+    "code": "AZ",
+    "name": "Azerbaijan",
+    "slug": "azerbaijan"
+  },
+  "location": [
+    49.8430486,
+    40.36933225
+  ],
+  "sourceIds": [
+    "osm-relation-11266687"
+  ],
+  "defaultLayoutId": "baku",
+  "layouts": [
+    {
+      "id": "baku",
+      "name": "Baku",
+      "referenceId": "Azerbaijan/Baku",
+      "file": "layouts/baku.geojson",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-relation-11266687",
+      "type": "osm",
+      "title": "OpenStreetMap named circuit relation",
+      "url": "https://www.openstreetmap.org/relation/11266687",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T12:01:15.639Z",
+      "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
+    }
+  ]
+}

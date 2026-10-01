@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "kr-taebaek-racing-park-reference",
+  "name": "TaeBaek Racing Park",
+  "aliases": [],
+  "country": {
+    "code": "KR",
+    "name": "South Korea",
+    "slug": "south-korea"
+  },
+  "location": [
+    129.0175554,
+    37.0835661
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "TaeBaek Racing Park",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "South Korea/TaeBaek Racing Park"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/240211101",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:38.772Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

@@ -61,7 +61,7 @@ Start with Salzburgring.
 
 Completion criteria:
 
-- The trace is reproducible without the network or Racelogic files.
+- The trace is reproducible without the network or reference files.
 - Pit/training/area candidates are excluded with a review note.
 - Broken source connectivity stops generation instead of drawing an invented join.
 - Gate generation works with a synthetic verified point; the real record accurately reports available evidence.
@@ -184,7 +184,7 @@ Document this exact sequence in the implementation's contributor guide:
 9. Update the catalogue through generation and run checks.
 10. Submit the metadata, recipes, public evidence, generated layouts, and review notes together.
 
-Expand one venue at a time. A global discovery crawler, full Racelogic inventory importer, and unattended layout inference are separate future work.
+Expand one venue at a time. A global discovery crawler, full reference inventory importer, and unattended layout inference are separate future work.
 
 ## 11. Required implementation deliverables
 

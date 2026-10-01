@@ -24,6 +24,6 @@ for(const candidate of coverage.candidates){
 const bootstrap=await json(`sources/${region}/bootstrap.json`);assert.equal(new Set(bootstrap.map((t:any)=>t.id)).size,bootstrap.length);
 for(const track of bootstrap){
  assert.ok(index.tracks.some((t:any)=>t.id===track.id));
- if(worldwide){const recipe=await json(`sources/${track.id}/layouts/main.json`),snapshot=await json(`sources/${track.id}/osm.json`);for(const segment of recipe.segments){const way=snapshot.elements.find((e:any)=>e.type==='way'&&e.id===segment.wayId);assert.ok(way);assert.equal(exclusion(way),undefined,`${track.id}: selected excluded source way ${way.id}`);}}
+ if(worldwide){const recipe=await json(`sources/${track.id}/layouts/main.json`),snapshot=await json(`sources/${track.id}/${recipe.snapshotFile??'osm.json'}`);for(const segment of recipe.segments){const way=snapshot.elements.find((e:any)=>e.type==='way'&&e.id===segment.wayId);assert.ok(way);assert.equal(exclusion(way),undefined,`${track.id}: selected excluded source way ${way.id}`);}}
 }
 console.log(`Validated ${coverage.countries.length} country acquisition records and the ${region} inventory.`);

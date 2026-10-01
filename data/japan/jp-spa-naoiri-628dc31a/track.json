@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "jp-spa-naoiri-628dc31a",
+  "name": "Spa Naoiri",
+  "aliases": [],
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "slug": "japan"
+  },
+  "location": [
+    131.40884115,
+    33.10209665
+  ],
+  "sourceIds": [
+    "osm-network-115695828"
+  ],
+  "defaultLayoutId": "spa-naoiri",
+  "layouts": [
+    {
+      "id": "spa-naoiri",
+      "name": "Spa Naoiri",
+      "referenceId": "Japan/Spa Naoiri",
+      "file": "layouts/spa-naoiri.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1426.1 m. Difference from the supplied layout distance 10.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-115695828",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/115695828",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

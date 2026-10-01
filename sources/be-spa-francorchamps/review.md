@@ -6,7 +6,7 @@ Snapshot retrieved 2026-09-30T16:23:42.820Z. SHA-256: `20d9fb8967ebc04bbb2a668ac
 
 [OSM attribution and license](https://www.openstreetmap.org/copyright). [FIA venue reference](https://www.fia.com/sites/default/files/circuits_fia20251201.pdf), naming only.
 
-No Racelogic boundary, CIR, or track-map data is read. Private start/finish XML references are served separately by the local preview and excluded from public GeoJSON. Each route uses exact source node connectivity; no gaps are filled by proximity.
+No reference boundary, CIR, or track-map data is read. Private start/finish XML references are served separately by the local preview and excluded from public GeoJSON. Each route uses exact source node connectivity; no gaps are filled by proximity.
 
 ## Grand Prix
 

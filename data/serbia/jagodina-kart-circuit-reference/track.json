@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "rs-jagodina-kart-circuit-reference",
+  "name": "Jagodina Kart Circuit",
+  "aliases": [],
+  "country": {
+    "code": "RS",
+    "name": "Serbia",
+    "slug": "serbia"
+  },
+  "location": [
+    21.29292545,
+    43.960268
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Jagodina Kart Circuit",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Serbia/Jagodina Kart Circuit"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/845420990",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:14:15.248Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

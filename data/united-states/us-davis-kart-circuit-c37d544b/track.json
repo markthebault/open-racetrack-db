@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-davis-kart-circuit-c37d544b",
+  "name": "Davis Kart Circuit",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -121.7330568,
+    38.5757672
+  ],
+  "sourceIds": [
+    "osm-network-25787624"
+  ],
+  "defaultLayoutId": "davis-kart-circuit",
+  "layouts": [
+    {
+      "id": "davis-kart-circuit",
+      "name": "Davis Kart Circuit",
+      "referenceId": "United States/Davis Kart Circuit",
+      "file": "layouts/davis-kart-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 700.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-25787624",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/25787624",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

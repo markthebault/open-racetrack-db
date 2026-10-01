@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-circuit-de-haute-saintonge-9602dd5e",
+  "name": "Circuit de Haute Saintonge",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    -0.09245395000000001,
+    45.2408858
+  ],
+  "sourceIds": [
+    "osm-network-54412766"
+  ],
+  "defaultLayoutId": "circuit-de-haute-saintonge",
+  "layouts": [
+    {
+      "id": "circuit-de-haute-saintonge",
+      "name": "Circuit de Haute Saintonge",
+      "referenceId": "France/Circuit de Haute Saintonge",
+      "file": "layouts/circuit-de-haute-saintonge.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2207.1 m. Difference from the supplied layout distance 10.1 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-54412766",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/54412766",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

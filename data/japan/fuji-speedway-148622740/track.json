@@ -19,9 +19,17 @@
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "FujiSpeedWay",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "Japan/FujiSpeedWay"
+    },
+    {
+      "id": "fuji-driftcourse",
+      "name": "Fuji Driftcourse",
+      "referenceId": "Japan/Fuji Driftcourse",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

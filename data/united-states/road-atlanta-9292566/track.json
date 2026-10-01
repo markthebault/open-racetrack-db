@@ -15,13 +15,41 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "road-atlanta",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "road-atlanta",
+      "name": "Road Atlanta",
+      "referenceId": "United States/Road Atlanta",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "road-atlanta-combo",
+      "name": "Road Atlanta Combo",
+      "referenceId": "United States/Road Atlanta Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "road-atlanta-short",
+      "name": "Road Atlanta Short",
+      "referenceId": "United States/Road Atlanta Short",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "road-atlanta-sro-practice",
+      "name": "Road Atlanta SRO Practice",
+      "referenceId": "United States/Road Atlanta SRO Practice",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-polecat-driving-academy-rl",
+  "name": "Polecat Driving Academy",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -86.47418139999999,
+    35.300853399999994
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Polecat Driving Academy",
+      "file": "layouts/main.geojson",
+      "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
+      "referenceId": "United States/Polecat Driving Academy"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap named raceway",
+      "url": "https://www.openstreetmap.org/way/910651794",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. reference supplies the expected layout name and private timing GPS only."
+    }
+  ]
+}

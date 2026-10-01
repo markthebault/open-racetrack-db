@@ -13,15 +13,37 @@
     32.522431927922085
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-537040271"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "motorsport-ranch-1-3-mile-course",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "motorsport-ranch-1-3-mile-course",
+      "name": "Motorsport Ranch 1.3 mile course",
+      "referenceId": "United States/Motorsport Ranch 1.3 mile course",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "motorsport-ranch-1-7-mile-course",
+      "name": "Motorsport Ranch 1.7 mile course",
+      "referenceId": "United States/Motorsport Ranch 1.7 mile course",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "motorsport-ranch-3-1-mile-course",
+      "name": "Motorsport Ranch 3.1 mile course",
+      "referenceId": "United States/Motorsport Ranch 3.1 mile course",
+      "file": "layouts/motorsport-ranch-3-1-mile-course.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4912.6 m. Difference from the supplied layout distance 12.4 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +55,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-537040271",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/537040271",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

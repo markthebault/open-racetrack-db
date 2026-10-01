@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mz-autodromo-atcm-4afea620",
+  "name": "Autodromo ATCM",
+  "aliases": [],
+  "country": {
+    "code": "MZ",
+    "name": "Mozambique",
+    "slug": "mozambique"
+  },
+  "location": [
+    32.622154550000005,
+    -25.9395802
+  ],
+  "sourceIds": [
+    "osm-network-202755507"
+  ],
+  "defaultLayoutId": "autodromo-atcm",
+  "layouts": [
+    {
+      "id": "autodromo-atcm",
+      "name": "Autodromo ATCM",
+      "referenceId": "Mozambique/Autodromo ATCM",
+      "file": "layouts/autodromo-atcm.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3717.2 m. Difference from the supplied layout distance 2.8 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-202755507",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/202755507",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:36:38.220Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

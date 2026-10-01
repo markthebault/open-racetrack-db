@@ -14,15 +14,65 @@
     37.00323845322999
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-326452603"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "ncm-corvette-race-loop",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "ncm-corvette-race-loop",
+      "name": "NCM Corvette Race Loop",
+      "referenceId": "United States/NCM Corvette Race Loop",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "ncm-full",
+      "name": "NCM Full",
+      "referenceId": "United States/NCM Full",
+      "file": "layouts/ncm-full.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5003.9 m. Difference from the supplied layout distance 10.1 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "ncm-grand-full",
+      "name": "NCM Grand Full",
+      "referenceId": "United States/NCM Grand Full",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "ncm-grand-straight",
+      "name": "NCM Grand Straight",
+      "referenceId": "United States/NCM Grand Straight",
+      "file": "layouts/ncm-grand-straight.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4808.2 m. Difference from the supplied layout distance 3.8 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "ncm-r-t-course",
+      "name": "NCM R&T Course",
+      "referenceId": "United States/NCM R&T Course",
+      "file": "layouts/ncm-r-t-course.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4745.6 m. Difference from the supplied layout distance 3.4 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "ncm-short-east",
+      "name": "NCM Short East",
+      "referenceId": "United States/NCM Short East",
+      "file": "layouts/ncm-short-east.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1779.8 m. Difference from the supplied layout distance 15.8 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "ncm-west",
+      "name": "NCM West",
+      "referenceId": "United States/NCM West",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -43,6 +93,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:33:23.000Z",
       "evidenceNote": "The operator reference supports venue identity. It does not verify this source-cycle selection and supplies no public coordinates."
+    },
+    {
+      "id": "osm-network-326452603",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/326452603",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

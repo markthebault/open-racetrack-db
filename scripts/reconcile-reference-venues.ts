@@ -1,0 +1,32 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {readTimingArchive} from './reference-timing';
+import {worldCountries} from './world-countries';
+import {normalizeLayoutName} from './layout-matching';
+import {candidateLoops,exclusion} from './candidates';
+import {assemble,type Way} from './route';
+import {bounds,nearestEdge,type Position} from '../src/geo';
+const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];if(!args.includes('--archive')||!archive)throw new Error('Use --archive /absolute/path/to/archive.zip');
+const {records}=readTimingArchive(archive),read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),save=async(p:string,v:unknown)=>writeFile(p,JSON.stringify(v,null,2)+'\n');
+const audit=await read('data/layout-coverage.json'),matches=await read('sources/reference/layout-matches.json');let count=0;
+for(const reference of audit.records.filter((r:any)=>r.status==='missing-venue')){
+ const record=records.find(r=>r.id===reference.id)!;if(record.gates.length!==1)continue;
+ const aliases:Record<string,string>={'United States':'US','South Korea':'KR','Vietnam':'VN','Russia':'RU','Taiwan':'TW','Czech Republic':'CZ','Turkey':'TR','United Kingdom':'GB','Isle Of Man':'IM','Canary Islands':'ES'};
+ const country=worldCountries.find(c=>c.code===aliases[record.country]||c.name===record.country);if(!country)continue;
+ let region='',raw:any,manifest:any;for(const candidate of ['europe','world']){try{raw=await read(`sources/${candidate}/${country.code.toLowerCase()}/osm.json`);manifest=await read(`sources/${candidate}/${country.code.toLowerCase()}/import.json`);const sourceBytes=await readFile(`sources/${candidate}/${country.code.toLowerCase()}/osm.json`,'utf8');if(createHash('sha256').update(sourceBytes).digest('hex')!==manifest.snapshotSha256)throw new Error('Parent OSM snapshot hash mismatch');region=candidate;break;}catch(e){if((e as NodeJS.ErrnoException).code!=='ENOENT')throw e;}}if(!region)continue;
+ const named=raw.elements.filter((e:any)=>e.type==='way'&&e.tags?.highway==='raceway'&&!exclusion(e)&&[e.tags.name,e.tags['name:en']].some(n=>n&&normalizeLayoutName(n)===normalizeLayoutName(record.name))) as Way[];
+ if(!named.length)continue;const candidates=candidateLoops(named,400,500);if(candidates.truncated||candidates.loops.length!==1)continue;
+ const loop=candidates.loops[0],trace=assemble(named,loop.segments,true);if(nearestEdge(record.gates[0].point,trace).displacementM>30)continue;
+ const slug=record.name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''),id=`${country.code.toLowerCase()}-${slug}-rl`,sourceDir=`sources/${id}`,folder=`data/${country.slug}/${slug}-rl`;
+ await mkdir(`${sourceDir}/layouts`,{recursive:true});await mkdir(`${folder}/layouts`,{recursive:true});
+ const snapshot=JSON.stringify({attribution:raw.attribution,osmBaseTimestamp:raw.osmBaseTimestamp,elements:named},null,2)+'\n',hash=createHash('sha256').update(snapshot).digest('hex');
+ await writeFile(`${sourceDir}/osm.json`,snapshot);await writeFile(`${sourceDir}/query.overpass`,await readFile(`sources/${region}/${country.code.toLowerCase()}/query.overpass`,'utf8'));
+ await save(`${sourceDir}/import.json`,{schemaVersion:1,trackId:id,sourceId:'osm-snapshot',endpoint:manifest.endpoint,bbox:bounds(trace),fetchedAt:manifest.fetchedAt,osmBaseTimestamp:raw.osmBaseTimestamp,snapshotFile:'osm.json',snapshotSha256:hash,queryFile:'query.overpass',parentSnapshot:`${region}/${country.code.toLowerCase()}/osm.json`,parentSnapshotSha256:manifest.snapshotSha256,selectionWayIds:named.map(w=>w.id)});
+ const note='Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.';
+ await save(`${sourceDir}/layouts/main.json`,{schemaVersion:1,trackId:id,layoutId:'main',sourceId:'osm-snapshot',snapshotSha256:hash,closed:true,timingMode:'shared',geometryStatus:'draft',reviewedAt:null,notes:[note,...(loop.directionKnown?[]:['OSM does not establish travel direction for all selected ways.'])],segments:loop.segments,gates:[]});
+ const box=bounds(trace),location:Position=[(box[0]+box[2])/2,(box[1]+box[3])/2];
+ await save(`${folder}/track.json`,{schemaVersion:1,id,name:record.name,aliases:[],country,location,sourceIds:['osm-snapshot'],defaultLayoutId:'main',layouts:[{id:'main',name:record.name,file:'layouts/main.geojson',description:note}],sources:[{id:'osm-snapshot',type:'osm',title:'OpenStreetMap named raceway',url:`https://www.openstreetmap.org/way/${named[0].id}`,license:'ODbL-1.0',retrievedAt:manifest.fetchedAt,evidenceNote:'Coordinates exclusively from pinned raceway way geometry. reference supplies the expected layout name and private timing GPS only.'}]});
+ await writeFile(`${sourceDir}/review.md`,`# ${record.name}\n\n${note}\n\nParent snapshot: ${region}/${country.code.toLowerCase()}/osm.json. SHA-256: ${manifest.snapshotSha256}. Only raceway ways matching the layout name were considered. No facility polygon, CIR or reference boundary geometry was read. Public timing remains missing.\n`);
+ matches[`${id}/main`]={recordId:record.id,name:record.name,evidence:'Unique named OSM raceway cycle with private timing proximity <=30 m. Draft association.'};count++;
+}
+await save('sources/reference/layout-matches.json',matches);console.log(`Added ${count} independently sourced venue drafts.`);

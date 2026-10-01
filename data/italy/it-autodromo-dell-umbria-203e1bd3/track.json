@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "it-autodromo-dell-umbria-203e1bd3",
+  "name": "Autodromo dell'Umbria",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    12.23968725,
+    43.1305033
+  ],
+  "sourceIds": [
+    "osm-network-77501826"
+  ],
+  "defaultLayoutId": "autodromo-dell-umbria",
+  "layouts": [
+    {
+      "id": "autodromo-dell-umbria",
+      "name": "Autodromo dell'Umbria",
+      "referenceId": "Italy/Autodromo dell'Umbria",
+      "file": "layouts/autodromo-dell-umbria.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2475.2 m. Difference from the supplied layout distance 17.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-77501826",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/77501826",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:18.140Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

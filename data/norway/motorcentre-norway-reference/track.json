@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "no-motorcentre-norway-reference",
+  "name": "Motorcentre Norway",
+  "aliases": [],
+  "country": {
+    "code": "NO",
+    "name": "Norway",
+    "slug": "norway"
+  },
+  "location": [
+    6.3927273499999995,
+    58.346646899999996
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Motorcentre Norway",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Norway/Motorcentre Norway"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/1171313769",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:09:06.682Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

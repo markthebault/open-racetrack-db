@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-hethel-with-chicane-13a43e31",
+  "name": "Hethel (With Chicane)",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    1.1811497,
+    52.56308885
+  ],
+  "sourceIds": [
+    "osm-network-149466058"
+  ],
+  "defaultLayoutId": "hethel-with-chicane",
+  "layouts": [
+    {
+      "id": "hethel-with-chicane",
+      "name": "Hethel (With Chicane)",
+      "referenceId": "United Kingdom/Hethel (With Chicane)",
+      "file": "layouts/hethel-with-chicane.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3548.1 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-149466058",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/149466058",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

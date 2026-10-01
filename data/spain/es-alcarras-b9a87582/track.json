@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "es-alcarras-b9a87582",
+  "name": "Alcarras",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    0.40122415,
+    41.6196922
+  ],
+  "sourceIds": [
+    "osm-network-194653541"
+  ],
+  "defaultLayoutId": "alcarras",
+  "layouts": [
+    {
+      "id": "alcarras",
+      "name": "Alcarras",
+      "referenceId": "Spain/Alcarras",
+      "file": "layouts/alcarras.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3739.8 m. Difference from the supplied layout distance 5.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-194653541",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/194653541",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.980Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

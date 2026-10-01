@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "br-circuito-dos-cristais-oval-reference",
+  "name": "Circuito dos Cristais Oval",
+  "aliases": [],
+  "country": {
+    "code": "BR",
+    "name": "Brazil",
+    "slug": "brazil"
+  },
+  "location": [
+    -44.41151075,
+    -18.8066666
+  ],
+  "sourceIds": [
+    "osm-snapshot",
+    "osm-network-583743501"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Circuito dos Cristais Oval",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Brazil/Circuito dos Cristais Oval"
+    },
+    {
+      "id": "circuito-dos-cristais-full",
+      "name": "Circuito dos Cristais Full",
+      "referenceId": "Brazil/Circuito dos Cristais Full",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "circuito-dos-cristais-stock-car",
+      "name": "Circuito dos Cristais Stock Car",
+      "referenceId": "Brazil/Circuito dos Cristais Stock Car",
+      "file": "layouts/circuito-dos-cristais-stock-car.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3304.5 m. Difference from the supplied layout distance 17.5 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/834923789",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:38.302Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    },
+    {
+      "id": "osm-network-583743501",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/583743501",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:38.302Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

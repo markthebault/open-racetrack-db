@@ -13,15 +13,51 @@
     40.579945010909114
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-343796175"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "miller-motorsports-park-combo",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "miller-motorsports-park-combo",
+      "name": "Miller Motorsports Park Combo",
+      "referenceId": "United States/Miller Motorsports Park Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "miller-motorsports-park-east",
+      "name": "Miller Motorsports Park East",
+      "referenceId": "United States/Miller Motorsports Park East",
+      "file": "layouts/miller-motorsports-park-east.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3585.1 m. Difference from the supplied layout distance 6.9 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "miller-motorsports-park-full",
+      "name": "Miller Motorsports Park Full",
+      "referenceId": "United States/Miller Motorsports Park Full",
+      "file": "layouts/miller-motorsports-park-full.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 7203.9 m. Difference from the supplied layout distance 29.9 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "miller-motorsports-park-outer",
+      "name": "Miller Motorsports Park Outer",
+      "referenceId": "United States/Miller Motorsports Park Outer",
+      "file": "layouts/miller-motorsports-park-outer.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4893.4 m. Difference from the supplied layout distance 15.4 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "miller-motorsports-park-west",
+      "name": "Miller Motorsports Park West",
+      "referenceId": "United States/Miller Motorsports Park West",
+      "file": "layouts/miller-motorsports-park-west.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3539.9 m. Difference from the supplied layout distance 9.9 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +69,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-343796175",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/343796175",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

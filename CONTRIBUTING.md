@@ -5,7 +5,7 @@
 3. Identify layouts and travel direction from independent evidence. Exclude pit, karting, service and area ways. Missing direction or layout evidence must remain explicit.
 4. Write metadata in `data/<country>/<venue>/track.json` and one recipe in `sources/<id>/layouts/<layout>.json`. Recipes pin ordered, inclusive way slices. Joins require shared source node IDs; never close gaps by proximity.
 5. Add a source review with public source links, exact recipe paths, direction, excluded branches, lengths, review date and outstanding questions. Reference-only sources support identification; their coordinates cannot enter the database.
-6. Add independently reusable timing evidence or leave public gates missing. Racelogic can supply private timing references and layout names only. Never read its track boundaries or publish its GPS records as reusable data.
+6. Add independently reusable timing evidence or leave public gates missing. The supplied archive provides layout names, scalar course distances and private timing GPS. Never read its track boundaries or publish its GPS records as reusable data.
 7. Run `npm run generate:data`, `npm run validate:data`, `npm run lint`, `npm test`, `npm run build`, and browser checks. Inspect each changed route and gate on the map. Keep geometry draft until its intended layout is confirmed.
 8. Submit metadata, sanitized snapshots, recipes, review notes and generated data together. Catalogue entries are generated, never maintained separately.
 
@@ -24,3 +24,11 @@ Run `npm run discover:world` for the remaining ISO countries and territories, in
 Run `npm run expand:world` and `npm run generate:data` offline. European recipes remain available and the worldwide inventory combines their source records with the new extracts. Explicit multilingual karting and pit-lane names are excluded. World candidates can be as short as 500 m to retain small car circuits and paved ovals. Unknown identities, complex branches, course associations and unmapped geometry remain pending. Repeated venue names are allowed at distinct locations.
 
 `npm run validate:world` checks country snapshot hashes and catalogue references. Reference websites support identity only; validators reject their use as coordinate sources. A source-cycle selection and a nearby private start/finish point cannot establish a reviewed named layout. See [worldwide coverage](Docs/08-worldwide-coverage.md).
+
+## Completing the layout catalogue
+
+The layout catalogue includes all supplied categories. The older country-discovery stage excludes karting and motocross when acquiring general road-circuit candidates; that filter does not remove expected catalogue entries.
+
+Use the registration and recovery commands in the README for the complete catalogue. New courses must use independent source-node coordinates. Keep ambiguous layouts registered with `file: null` and a reason. A route selected by timing position and declared length is a draft hypothesis, not reviewed evidence of a named configuration.
+
+Alternate OSM snapshots must be registered with their SHA-256 and source ID in the venue import manifest. Do not replace a source snapshot without preserving the versions required by existing recipes.

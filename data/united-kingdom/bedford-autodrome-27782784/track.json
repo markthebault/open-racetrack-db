@@ -19,9 +19,45 @@
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Bedford Autodrome West",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "United Kingdom/Bedford Autodrome West"
+    },
+    {
+      "id": "bedford-autodrome-east",
+      "name": "Bedford Autodrome East",
+      "file": "layouts/bedford-autodrome-east.geojson",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "United Kingdom/Bedford Autodrome East"
+    },
+    {
+      "id": "bedford-autodrome-north",
+      "name": "Bedford Autodrome North",
+      "file": "layouts/bedford-autodrome-north.geojson",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "United Kingdom/Bedford Autodrome North"
+    },
+    {
+      "id": "bedford-autodrome-south",
+      "name": "Bedford Autodrome South",
+      "file": "layouts/bedford-autodrome-south.geojson",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "United Kingdom/Bedford Autodrome South"
+    },
+    {
+      "id": "bedford-autodrome-gt",
+      "name": "Bedford Autodrome GT",
+      "referenceId": "United Kingdom/Bedford Autodrome GT",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "bedford-autodrome-southwest",
+      "name": "Bedford Autodrome SouthWest",
+      "referenceId": "United Kingdom/Bedford Autodrome SouthWest",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

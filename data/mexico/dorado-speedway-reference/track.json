@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mx-dorado-speedway-reference",
+  "name": "Dorado Speedway",
+  "aliases": [],
+  "country": {
+    "code": "MX",
+    "name": "Mexico",
+    "slug": "mexico"
+  },
+  "location": [
+    -105.9503113,
+    28.82298135
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Dorado Speedway",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Mexico/Dorado Speedway"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/348712982",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:22.379Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

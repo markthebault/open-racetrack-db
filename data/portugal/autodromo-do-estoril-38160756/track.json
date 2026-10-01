@@ -13,15 +13,30 @@
     38.75136013367553
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-38160756"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "estoril",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "estoril",
+      "name": "Estoril",
+      "referenceId": "Portugal/Estoril",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "estoril-no-chicane",
+      "name": "Estoril No Chicane",
+      "referenceId": "Portugal/Estoril No Chicane",
+      "file": "layouts/estoril-no-chicane.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4165 m. Difference from the supplied layout distance 6.0 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:08:22.293Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-38160756",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/38160756",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:22.293Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

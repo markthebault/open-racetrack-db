@@ -12,7 +12,7 @@ Use these source categories:
 | Independent contributed survey | Coordinates with documented contributor rights and compatible permission |
 | Track operator data with explicit permission | Coordinates within the permission's scope |
 | Official circuit website or public event documentation | Factual layout identification; map tracing only with suitable rights |
-| Racelogic local database | Optional private discrepancy check; no public coordinate import without permission |
+| reference local database | Optional private discrepancy check; no public coordinate import without permission |
 | TUM racetrack database | Background research only for this pilot |
 
 OSM publishes its data under ODbL. The planned database license is ODbL 1.0. Keep original application code under MIT. The code license does not replace source-data obligations. See [OSM copyright](https://www.openstreetmap.org/copyright) and the [ODbL license](https://opendatacommons.org/licenses/odbl/1-0/).
@@ -21,9 +21,9 @@ During implementation, add a clear license map, a full code-license file, a data
 
 The public review record MUST identify the evidence used for a rights decision. Validation can check that evidence exists; it cannot prove a contributor owns rights.
 
-## 2. Racelogic boundary
+## 2. reference boundary
 
-The local database is at `/Users/mth-solvd/persospace/racelogic-tracks-db`. This is a local research path, not an application dependency. Public availability of a download has not established redistribution rights for this project.
+The local database is at `/Users/mth-solvd/persospace/reference-tracks-db`. This is a local research path, not an application dependency. Public availability of a download has not established redistribution rights for this project.
 
 The earlier suggestion to copy only start/finish coordinates is not the default implementation policy. A small coordinate subset still requires a reuse basis. Use independently sourced timing positions unless the maintainer obtains permission that covers extraction and public redistribution.
 
@@ -35,9 +35,9 @@ For an optional local comparison:
 4. Use disagreement to create a research question.
 5. Resolve any correction through an independent reusable source before changing public geometry.
 
-A visual match is not proof of permission or correctness. Do not snap, warp, average, or interpolate public geometry using Racelogic geometry. Do not move a public gate to match a proprietary point.
+A visual match is not proof of permission or correctness. Do not snap, warp, average, or interpolate public geometry using reference geometry. Do not move a public gate to match a proprietary point.
 
-Prior inspection suggests many `.cir` files contain both track edges. Their total polyline length can be about twice a lap. Do not use this length as an automatic reference length. File columns also vary. Building a general Racelogic parser or comparison dashboard is outside v1.
+Prior inspection suggests many `.cir` files contain both track edges. Their total polyline length can be about twice a lap. Do not use this length as an automatic reference length. File columns also vary. Building a general reference parser or comparison dashboard is outside v1.
 
 A later coverage exercise can use the local catalogue to identify candidate venues. Re-establish their identity and layouts independently. Review permission before publishing a bulk extracted catalogue. Keep local coverage lists private until that review is complete.
 
@@ -195,7 +195,7 @@ Source-only changes trigger a fresh geometry review. A metadata spelling correct
 
 The public build contains only files allowed by its explicit asset-copy list. Check the built file list before declaring completion.
 
-It MUST exclude local filesystem paths embedded in data, Racelogic files, prior prototype GeoJSON, private comparison outputs, unpublished permission material, and test fixtures. Public source records use public URLs.
+It MUST exclude local filesystem paths embedded in data, reference files, prior prototype GeoJSON, private comparison outputs, unpublished permission material, and test fixtures. Public source records use public URLs.
 
 Add `.local/` and temporary import staging to `.gitignore` during implementation. Keep actual private comparison material outside the repository where possible. An ignored file must still be excluded from the build by construction.
 

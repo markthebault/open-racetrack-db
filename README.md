@@ -8,13 +8,15 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 ## Worldwide preview
 
-The preview contains **401 venues and 410 draft traces across 52 countries**, extending beyond Europe to permanent car and motorcycle circuits worldwide. Browse by country, search a venue, switch available layouts, and download an attributed GeoJSON trace. The [worldwide coverage report](Docs/08-worldwide-coverage.md) records the current totals and source gaps.
+The viewer contains **763 venues across 74 countries**, with every one of the **1,007 supplied layout entries** registered. Search a venue, select a layout, and download an attributed GeoJSON trace when geometry is available.
 
-**Coverage remains incomplete.** Draft source-cycle selections do not establish every venue, named layout, travel direction, or operating status. The viewer's worldwide coverage panel covers all 250 configured countries and territories and distinguishes fetched extracts from unavailable areas and missing acquisitions. Karting and motocross are excluded.
+**457 supplied entries have draft course traces; 550 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap.
 
-Track traces come only from pinned OpenStreetMap source data and explicit route recipes. Every route is currently marked **draft**. The local preview displays start/finish GPS references from the maintainer's Racelogic archive, with estimated 25 m display lines. The importer reads only the start/finish XML, never CIR files, map pictures, or track boundaries. Private timing stays outside the reusable database, downloads, and production build.
+Course coordinates come from pinned OpenStreetMap data and explicit route recipes. All traces remain drafts. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
 
-The original pilot still has unresolved data: Nürburgring's GP preview follows the mapped Sprint configuration, Anneau's nominal layout lengths need confirmation, and Nordschleife Bridge to Gantry is absent. The catalogue expansion does not mark these pilot requirements complete. See [the implementation report](Docs/06-european-preview-status.md) and [contributor workflow](CONTRIBUTING.md).
+The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files, track pictures or boundaries. Private timing stays outside the public database, downloads and build.
+
+Nürburgring now has nine catalogue entries, with distinct GP and Sprint traces. Separate-gate entries use a supporting independent loop in public downloads; local timing trims the private preview. Independently reusable open-course endpoints remain missing.
 
 ## Run locally
 
@@ -53,3 +55,21 @@ On the Mac Mini, the current preview is available to connected Tailscale devices
 ## Data and code licenses
 
 Original application code is MIT licensed. OSM-derived database content is attributed to OpenStreetMap contributors and distributed under ODbL 1.0. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
+
+## Layout completeness
+
+The supplied catalogue defines the expected layout names and timing conventions. [Every entry](sources/reference/catalogue.json) points to exactly one venue and layout, including entries whose geometry is unavailable. The [coverage report](Docs/09-layout-coverage.md) counts catalogue entries and actual traces separately.
+
+To repeat catalogue registration, independent course matching and coverage checks:
+
+```sh
+npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
+npm run generate:data
+npm run recover:variants -- --archive /absolute/path/to/tracks.zip
+npm run generate:data
+npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
+npm run audit:layouts -- --archive /absolute/path/to/tracks.zip
+npm run import:timing -- --archive /absolute/path/to/tracks.zip
+```
+
+Country extracts must already be available for course matching. Only unique, connected source cycles that pass conservative timing and distance checks become draft hypotheses. Ambiguous graphs, missing ways, street courses and open routes remain in the gap list. No trace is synthesized to make the counts match.

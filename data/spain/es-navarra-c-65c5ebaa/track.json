@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "es-navarra-c-65c5ebaa",
+  "name": "Navarra C",
+  "aliases": [],
+  "country": {
+    "code": "ES",
+    "name": "Spain",
+    "slug": "spain"
+  },
+  "location": [
+    -2.1654069,
+    42.56008995
+  ],
+  "sourceIds": [
+    "osm-network-103746067"
+  ],
+  "defaultLayoutId": "navarra-c",
+  "layouts": [
+    {
+      "id": "navarra-c",
+      "name": "Navarra C",
+      "referenceId": "Spain/Navarra C",
+      "file": "layouts/navarra-c.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1324 m. Difference from the supplied layout distance 13.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-103746067",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/103746067",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.980Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

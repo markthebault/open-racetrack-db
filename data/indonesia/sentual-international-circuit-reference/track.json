@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "id-sentual-international-circuit-reference",
+  "name": "Sentual International Circuit",
+  "aliases": [],
+  "country": {
+    "code": "ID",
+    "name": "Indonesia",
+    "slug": "indonesia"
+  },
+  "location": [
+    106.8577594,
+    -6.53456325
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Sentual International Circuit",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Indonesia/Sentual International Circuit"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/1303392425",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:42.731Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

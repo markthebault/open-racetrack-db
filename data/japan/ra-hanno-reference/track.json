@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "jp-ra-hanno-reference",
+  "name": "RA Hanno",
+  "aliases": [],
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "slug": "japan"
+  },
+  "location": [
+    139.2067372,
+    35.8535096
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "RA Hanno",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Japan/RA Hanno"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/482959450",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

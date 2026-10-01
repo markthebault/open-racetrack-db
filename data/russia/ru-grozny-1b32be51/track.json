@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "ru-grozny-1b32be51",
+  "name": "Grozny",
+  "aliases": [],
+  "country": {
+    "code": "RU",
+    "name": "Russia",
+    "slug": "russia"
+  },
+  "location": [
+    45.65762325,
+    43.30590815
+  ],
+  "sourceIds": [
+    "osm-network-444649662"
+  ],
+  "defaultLayoutId": "grozny",
+  "layouts": [
+    {
+      "id": "grozny",
+      "name": "Grozny",
+      "referenceId": "Russia/Grozny",
+      "file": "layouts/grozny.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3069.5 m. Difference from the supplied layout distance 18.5 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-444649662",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/444649662",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:21:42.508Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

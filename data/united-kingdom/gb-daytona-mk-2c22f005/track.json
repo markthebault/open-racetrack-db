@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-daytona-mk-2c22f005",
+  "name": "Daytona MK",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -0.7832542,
+    52.03979685
+  ],
+  "sourceIds": [
+    "osm-network-160481719"
+  ],
+  "defaultLayoutId": "daytona-mk",
+  "layouts": [
+    {
+      "id": "daytona-mk",
+      "name": "Daytona MK",
+      "referenceId": "United Kingdom/Daytona MK",
+      "file": "layouts/daytona-mk.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1120.2 m. Difference from the supplied layout distance 3.8 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-160481719",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/160481719",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

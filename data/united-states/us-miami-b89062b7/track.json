@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "us-miami-b89062b7",
+  "name": "Miami",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -80.2372742,
+    25.95790485
+  ],
+  "sourceIds": [
+    "osm-network-1017340351"
+  ],
+  "defaultLayoutId": "miami-gp",
+  "layouts": [
+    {
+      "id": "miami-gp",
+      "name": "Miami GP",
+      "referenceId": "United States/Miami GP",
+      "file": "layouts/miami-gp.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5409.8 m. Difference from the supplied layout distance 4.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "miami-international-autodrome",
+      "name": "Miami International Autodrome",
+      "referenceId": "United States/Miami International Autodrome",
+      "file": "layouts/miami-international-autodrome.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5409.8 m. Difference from the supplied layout distance 6.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-1017340351",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/1017340351",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-driveway-austin-elevation-course-e8d7a8bf",
+  "name": "Driveway Austin - Elevation Course",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -97.65230745,
+    30.26427455
+  ],
+  "sourceIds": [
+    "osm-network-116663958"
+  ],
+  "defaultLayoutId": "driveway-austin-elevation-course",
+  "layouts": [
+    {
+      "id": "driveway-austin-elevation-course",
+      "name": "Driveway Austin - Elevation Course",
+      "referenceId": "United States/Driveway Austin - Elevation Course",
+      "file": "layouts/driveway-austin-elevation-course.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1542.9 m. Difference from the supplied layout distance 12.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-116663958",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/116663958",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

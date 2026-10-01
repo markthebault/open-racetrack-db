@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-rockingham-int-supersport-circuit-f4b0384c",
+  "name": "Rockingham Int Supersport Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -0.65740165,
+    52.51533345
+  ],
+  "sourceIds": [
+    "osm-network-97744375"
+  ],
+  "defaultLayoutId": "rockingham-int-supersport-circuit",
+  "layouts": [
+    {
+      "id": "rockingham-int-supersport-circuit",
+      "name": "Rockingham Int Supersport Circuit",
+      "referenceId": "United Kingdom/Rockingham Int Supersport Circuit",
+      "file": "layouts/rockingham-int-supersport-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3113.7 m. Difference from the supplied layout distance 6.3 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-97744375",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/97744375",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

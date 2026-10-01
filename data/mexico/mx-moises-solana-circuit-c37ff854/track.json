@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mx-moises-solana-circuit-c37ff854",
+  "name": "Moises Solana Circuit",
+  "aliases": [],
+  "country": {
+    "code": "MX",
+    "name": "Mexico",
+    "slug": "mexico"
+  },
+  "location": [
+    -98.68702769999999,
+    20.049960249999998
+  ],
+  "sourceIds": [
+    "osm-network-677361289"
+  ],
+  "defaultLayoutId": "moises-solana-circuit",
+  "layouts": [
+    {
+      "id": "moises-solana-circuit",
+      "name": "Moises Solana Circuit",
+      "referenceId": "Mexico/Moises Solana Circuit",
+      "file": "layouts/moises-solana-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1679 m. Difference from the supplied layout distance 2.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-677361289",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/677361289",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:22.379Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

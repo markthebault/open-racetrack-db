@@ -13,5 +13,21 @@
   "osmBaseTimestamp": "2026-09-30T16:39:50Z",
   "snapshotFile": "osm.json",
   "snapshotSha256": "cd105c44d9e6637e7f77b2079dae63055c3e5c6021b884399fbac79752b607ea",
-  "queryFile": "query.overpass"
+  "queryFile": "query.overpass",
+  "snapshots": [
+    {
+      "file": "relation-2126739.json",
+      "sha256": "d1da35e8496dd16a1d5b864087ae627401185be7cdfb3b609c6674f5064efd2f",
+      "sourceId": "osm-relation-2126739",
+      "url": "https://api.openstreetmap.org/api/0.6/relation/2126739/full.json",
+      "retrievedAt": "2026-10-01T11:51:50.455Z"
+    },
+    {
+      "file": "course-network-2313153.json",
+      "sha256": "ed7212f0af1d59daca4fc70ca4df06edb3840230f1ae248e6e20cc95bc63bf85",
+      "sourceId": "osm-network-2313153",
+      "parentSnapshot": "europe/fr/osm.json",
+      "parentSnapshotSha256": "c742be442237305de2042e3d2f89291cddd746c931f10b28fcb3294a7e99068e"
+    }
+  ]
 }

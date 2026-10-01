@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "in-aruani-grid-2c12305d",
+  "name": "Aruani Grid",
+  "aliases": [],
+  "country": {
+    "code": "IN",
+    "name": "India",
+    "slug": "india"
+  },
+  "location": [
+    77.74267575,
+    12.8767984
+  ],
+  "sourceIds": [
+    "osm-network-956134919"
+  ],
+  "defaultLayoutId": "aruani-grid",
+  "layouts": [
+    {
+      "id": "aruani-grid",
+      "name": "Aruani Grid",
+      "referenceId": "India/Aruani Grid",
+      "file": "layouts/aruani-grid.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 923 m. Difference from the supplied layout distance 7.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-956134919",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/956134919",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:52.703Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

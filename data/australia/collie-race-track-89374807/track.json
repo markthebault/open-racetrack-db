@@ -13,15 +13,30 @@
     -33.43185405833333
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-89374807"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "collie-motorplex",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "collie-motorplex",
+      "name": "Collie Motorplex",
+      "referenceId": "Australia/Collie Motorplex",
+      "file": "layouts/collie-motorplex.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1626.9 m. Difference from the supplied layout distance 6.1 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "collie-motorplex-long",
+      "name": "Collie Motorplex Long",
+      "referenceId": "Australia/Collie Motorplex Long",
+      "file": "layouts/collie-motorplex-long.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2568.5 m. Difference from the supplied layout distance 3.5 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-89374807",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/89374807",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.558Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

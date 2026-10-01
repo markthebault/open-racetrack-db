@@ -13,15 +13,51 @@
     -27.68984736363637
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-26175772"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "queensland-raceway-club-circuit",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "queensland-raceway-club-circuit",
+      "name": "Queensland Raceway Club Circuit",
+      "referenceId": "Australia/Queensland Raceway Club Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "queensland-raceway-combo-circuit",
+      "name": "Queensland Raceway Combo Circuit",
+      "referenceId": "Australia/Queensland Raceway Combo Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "queensland-raceway-national-circuit",
+      "name": "Queensland Raceway National Circuit",
+      "referenceId": "Australia/Queensland Raceway National Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "queensland-raceway-sportsman",
+      "name": "Queensland Raceway Sportsman",
+      "referenceId": "Australia/Queensland Raceway Sportsman",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "queensland-raceway-sprint-circuit",
+      "name": "Queensland Raceway Sprint Circuit",
+      "referenceId": "Australia/Queensland Raceway Sprint Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +69,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-26175772",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/26175772",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.558Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

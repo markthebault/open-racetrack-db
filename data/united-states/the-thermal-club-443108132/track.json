@@ -13,15 +13,65 @@
     33.60391435320391
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-443108132"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "thermal-club-desert",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "thermal-club-desert",
+      "name": "Thermal Club Desert",
+      "referenceId": "United States/Thermal Club Desert",
+      "file": "layouts/thermal-club-desert.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2172.4 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "thermal-club-full-track",
+      "name": "Thermal Club Full Track",
+      "referenceId": "United States/Thermal Club Full Track",
+      "file": "layouts/thermal-club-full-track.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 7236.5 m. Difference from the supplied layout distance 4.5 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "thermal-club-north-desert",
+      "name": "Thermal Club North + Desert",
+      "referenceId": "United States/Thermal Club North + Desert",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "thermal-club-north-palm",
+      "name": "Thermal Club North Palm",
+      "referenceId": "United States/Thermal Club North Palm",
+      "file": "layouts/thermal-club-north-palm.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1953.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "thermal-club-south-palm",
+      "name": "Thermal Club South Palm",
+      "referenceId": "United States/Thermal Club South Palm",
+      "file": "layouts/thermal-club-south-palm.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2874.4 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "thermal-club-twin-palms",
+      "name": "Thermal Club Twin Palms",
+      "referenceId": "United States/Thermal Club Twin Palms",
+      "file": "layouts/thermal-club-twin-palms.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4983.2 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "thermal-club-twin-palms-short",
+      "name": "Thermal Club Twin Palms Short",
+      "referenceId": "United States/Thermal Club Twin Palms Short",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +83,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-443108132",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/443108132",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "jp-okegawa-sports-land-bb479ec3",
+  "name": "Okegawa Sports Land",
+  "aliases": [],
+  "country": {
+    "code": "JP",
+    "name": "Japan",
+    "slug": "japan"
+  },
+  "location": [
+    139.52549775,
+    35.973352899999995
+  ],
+  "sourceIds": [
+    "osm-network-113398197"
+  ],
+  "defaultLayoutId": "okegawa-sports-land",
+  "layouts": [
+    {
+      "id": "okegawa-sports-land",
+      "name": "Okegawa Sports Land",
+      "referenceId": "Japan/Okegawa Sports Land",
+      "file": "layouts/okegawa-sports-land.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 729 m. Difference from the supplied layout distance 4.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-113398197",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/113398197",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

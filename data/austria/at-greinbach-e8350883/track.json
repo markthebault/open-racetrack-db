@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "at-greinbach-e8350883",
+  "name": "Greinbach",
+  "aliases": [],
+  "country": {
+    "code": "AT",
+    "name": "Austria",
+    "slug": "austria"
+  },
+  "location": [
+    15.9809877,
+    47.3185188
+  ],
+  "sourceIds": [
+    "osm-network-98283480"
+  ],
+  "defaultLayoutId": "greinbach",
+  "layouts": [
+    {
+      "id": "greinbach",
+      "name": "Greinbach",
+      "referenceId": "Austria/Greinbach",
+      "file": "layouts/greinbach.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 913.4 m. Difference from the supplied layout distance 12.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-98283480",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/98283480",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:55.749Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -13,15 +13,30 @@
     51.357674383243214
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-4906929"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "brands-hatch-gp",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "brands-hatch-gp",
+      "name": "Brands Hatch GP",
+      "referenceId": "United Kingdom/Brands Hatch GP",
+      "file": "layouts/brands-hatch-gp.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3895.2 m. Difference from the supplied layout distance 2.8 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "brands-hatch-indy",
+      "name": "Brands Hatch Indy",
+      "referenceId": "United Kingdom/Brands Hatch Indy",
+      "file": "layouts/brands-hatch-indy.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1926.8 m. Difference from the supplied layout distance 3.2 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-4906929",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/4906929",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

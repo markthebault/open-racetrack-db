@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "ca-sanair-super-speedway-reference",
+  "name": "Sanair Super Speedway",
+  "aliases": [],
+  "country": {
+    "code": "CA",
+    "name": "Canada",
+    "slug": "canada"
+  },
+  "location": [
+    -72.87522820000001,
+    45.53029935
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Sanair Super Speedway",
+      "file": "layouts/main.geojson",
+      "description": "Unique course from independently named source ways. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Canada/Sanair Super Speedway"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/952684225",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Unique course from independently named source ways."
+    }
+  ]
+}

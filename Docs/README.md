@@ -48,7 +48,7 @@ Include venue browsing, layout selection, trace display, start/finish display, s
 
 Exclude racing lines, lap timing, telemetry, sectors, speed simulation, autonomous driving, track widths, elevation profiles, corner databases, pit lane display, accounts, online editing, and a server database. A drawn timing line supports map display. It does not certify a lap-timing system.
 
-Do not import the existing Racelogic traces or timing coordinates into public data without documented reuse permission. Use independently reusable sources for the initial public dataset. The full rule and permitted local comparison process are in document 03.
+Do not import the existing reference traces or timing coordinates into public data without documented reuse permission. Use independently reusable sources for the initial public dataset. The full rule and permitted local comparison process are in document 03.
 
 ## Completion has two separate results
 

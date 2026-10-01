@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-lvms-exotics-racing-dd5324f3",
+  "name": "LVMS Exotics Racing",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -115.01832279999999,
+    36.2822942
+  ],
+  "sourceIds": [
+    "osm-network-486868842"
+  ],
+  "defaultLayoutId": "lvms-exotics-racing",
+  "layouts": [
+    {
+      "id": "lvms-exotics-racing",
+      "name": "LVMS Exotics Racing",
+      "referenceId": "United States/LVMS Exotics Racing",
+      "file": "layouts/lvms-exotics-racing.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1825.8 m. Difference from the supplied layout distance 2.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-486868842",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/486868842",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

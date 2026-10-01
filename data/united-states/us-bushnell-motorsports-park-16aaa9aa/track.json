@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-bushnell-motorsports-park-16aaa9aa",
+  "name": "Bushnell Motorsports Park",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -82.14925475000001,
+    28.67266185
+  ],
+  "sourceIds": [
+    "osm-network-1410074352"
+  ],
+  "defaultLayoutId": "bushnell-motorsports-park",
+  "layouts": [
+    {
+      "id": "bushnell-motorsports-park",
+      "name": "Bushnell Motorsports Park",
+      "referenceId": "United States/Bushnell Motorsports Park",
+      "file": "layouts/bushnell-motorsports-park.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1088 m. Difference from the supplied layout distance 7.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-1410074352",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/1410074352",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

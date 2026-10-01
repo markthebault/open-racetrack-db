@@ -15,13 +15,34 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "motorland-aragon",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "motorland-aragon",
+      "name": "Motorland Aragon",
+      "referenceId": "Spain/Motorland Aragon",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "motorland-aragon-with-chicane",
+      "name": "Motorland Aragon with Chicane",
+      "referenceId": "Spain/Motorland Aragon with Chicane",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "motorland-aragongp",
+      "name": "Motorland AragonGP",
+      "referenceId": "Spain/Motorland AragonGP",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

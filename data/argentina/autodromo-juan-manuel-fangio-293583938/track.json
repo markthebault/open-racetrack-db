@@ -13,15 +13,65 @@
     -32.90264487990431
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-293583938"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "circuito-de-rosario-combo",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "circuito-de-rosario-combo",
+      "name": "Circuito De Rosario Combo",
+      "referenceId": "Argentina/Circuito De Rosario Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "rosario-alt-extended-circuit",
+      "name": "Rosario Alt Extended Circuit",
+      "referenceId": "Argentina/Rosario Alt Extended Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "rosario-alt-turismo-carretera",
+      "name": "Rosario Alt Turismo Carretera",
+      "referenceId": "Argentina/Rosario Alt Turismo Carretera",
+      "file": "layouts/rosario-alt-turismo-carretera.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3876.8 m. Difference from the supplied layout distance 6.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "rosario-extended-circuit",
+      "name": "Rosario Extended Circuit",
+      "referenceId": "Argentina/Rosario Extended Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "rosario-intermediate-circuit",
+      "name": "Rosario Intermediate Circuit",
+      "referenceId": "Argentina/Rosario Intermediate Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "rosario-short-circuit",
+      "name": "Rosario Short Circuit",
+      "referenceId": "Argentina/Rosario Short Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "rosario-turismo-carretera",
+      "name": "Rosario Turismo Carretera",
+      "referenceId": "Argentina/Rosario Turismo Carretera",
+      "file": "layouts/rosario-turismo-carretera.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3876.8 m. Difference from the supplied layout distance 1.8 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +83,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-293583938",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/293583938",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.542Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

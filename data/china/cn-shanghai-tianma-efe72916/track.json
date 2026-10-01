@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cn-shanghai-tianma-efe72916",
+  "name": "Shanghai Tianma",
+  "aliases": [],
+  "country": {
+    "code": "CN",
+    "name": "China",
+    "slug": "china"
+  },
+  "location": [
+    121.1151691,
+    31.07760505
+  ],
+  "sourceIds": [
+    "osm-network-339288321"
+  ],
+  "defaultLayoutId": "shanghai-tianma",
+  "layouts": [
+    {
+      "id": "shanghai-tianma",
+      "name": "Shanghai Tianma",
+      "referenceId": "China/Shanghai Tianma",
+      "file": "layouts/shanghai-tianma.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2035.6 m. Difference from the supplied layout distance 13.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-339288321",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/339288321",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:31.696Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

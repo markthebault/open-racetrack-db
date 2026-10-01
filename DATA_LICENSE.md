@@ -4,4 +4,4 @@ The public track catalogue and OSM-derived trace data are made available under t
 
 Credit OpenStreetMap contributors when using the database. The source snapshots and each venue's `review.md` identify the OSM material used to generate its traces. The OSM-derived data remain separate from the MIT-licensed application code in [LICENSE](LICENSE).
 
-The Racelogic archive is not part of the public database or production build. Its start/finish GPS positions are used only in the local tailnet preview, as described in [README.md](README.md), and do not appear in the downloadable GeoJSON.
+The reference archive is not part of the public database or production build. Its start/finish GPS positions are used only in the local tailnet preview, as described in [README.md](README.md), and do not appear in the downloadable GeoJSON.

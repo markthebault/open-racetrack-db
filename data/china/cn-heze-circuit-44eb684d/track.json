@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cn-heze-circuit-44eb684d",
+  "name": "Heze Circuit",
+  "aliases": [],
+  "country": {
+    "code": "CN",
+    "name": "China",
+    "slug": "china"
+  },
+  "location": [
+    115.5781007,
+    35.1197644
+  ],
+  "sourceIds": [
+    "osm-network-812813017"
+  ],
+  "defaultLayoutId": "heze-circuit",
+  "layouts": [
+    {
+      "id": "heze-circuit",
+      "name": "Heze Circuit",
+      "referenceId": "China/Heze Circuit",
+      "file": "layouts/heze-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2912.5 m. Difference from the supplied layout distance 13.5 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-812813017",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/812813017",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:31.696Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

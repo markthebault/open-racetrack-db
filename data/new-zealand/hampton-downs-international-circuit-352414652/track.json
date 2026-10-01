@@ -13,15 +13,31 @@
     -37.35392112738092
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-352414652"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Hampton Downs National",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "New Zealand/Hampton Downs National"
+    },
+    {
+      "id": "hampton-downs-club",
+      "name": "Hampton Downs Club",
+      "file": "layouts/hampton-downs-club.geojson",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "New Zealand/Hampton Downs Club"
+    },
+    {
+      "id": "hampton-downs-international",
+      "name": "Hampton Downs International",
+      "referenceId": "New Zealand/Hampton Downs International",
+      "file": "layouts/hampton-downs-international.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3837.9 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +49,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:17:47.114Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-352414652",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/352414652",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:17:47.114Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

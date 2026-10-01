@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "za-phakisa-freeway-79bc85ad",
+  "name": "Phakisa Freeway",
+  "aliases": [],
+  "country": {
+    "code": "ZA",
+    "name": "South Africa",
+    "slug": "south-africa"
+  },
+  "location": [
+    26.714362899999998,
+    -27.9043932
+  ],
+  "sourceIds": [
+    "osm-network-677349494"
+  ],
+  "defaultLayoutId": "phakisa-freeway",
+  "layouts": [
+    {
+      "id": "phakisa-freeway",
+      "name": "Phakisa Freeway",
+      "referenceId": "South Africa/Phakisa Freeway",
+      "file": "layouts/phakisa-freeway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4256.9 m. Difference from the supplied layout distance 12.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-677349494",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/677349494",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:25:05.976Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

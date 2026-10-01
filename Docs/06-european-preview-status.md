@@ -26,7 +26,7 @@ All trace coordinates come from sanitized, pinned OSM snapshots. Each layout has
 
 All geometry remains **draft**, pending independent layout confirmation. OSM one-way order is retained on the additional venues except Valencia, whose selected counterclockwise order is provisional because direction tags are absent. Measured lengths describe the OSM trace, not a surveyed circuit length. Magny-Cours measures 4.46 km against the FIA nominal 4.411 km and retains an explicit note.
 
-The private preview has 27 local start/finish references from the Racelogic timing XML. Each lies within 3.8 m of its selected trace. The original GPS centers are retained; generated 25 m endpoints are marked estimated. The archive is never used for track boundaries, CIR geometry or track maps. Public GeoJSON contains traces only and reports timing missing. Private timing is served separately and excluded from `dist/`.
+The private preview has 27 local start/finish references from the reference timing XML. Each lies within 3.8 m of its selected trace. The original GPS centers are retained; generated 25 m endpoints are marked estimated. The archive is never used for track boundaries, CIR geometry or track maps. Public GeoJSON contains traces only and reports timing missing. Private timing is served separately and excluded from `dist/`.
 
 ## Validation
 
