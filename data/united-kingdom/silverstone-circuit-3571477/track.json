@@ -18,7 +18,8 @@
     "osm-network-3571477",
     "osm-circuit-51160",
     "osm-selection-169851260",
-    "osm-selection-3571477"
+    "osm-selection-3571477",
+    "osm-network-silverstone-combo"
   ],
   "defaultLayoutId": "silverstone-gp-wing-sf",
   "layouts": [
@@ -81,8 +82,8 @@
       "id": "silverstone-combo",
       "name": "Silverstone Combo",
       "referenceId": "United Kingdom/Silverstone Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/silverstone-combo.geojson",
+      "description": "Combined mapped configurations: Silverstone GP Wing SF, Silverstone GP Old SF, Silverstone GP Historic, Silverstone National, Silverstone International. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     }
   ],
   "sources": [
@@ -157,6 +158,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:00:20.961Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-silverstone-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/3571477",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:55:57.160Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-silverstone-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.silverstone.co.uk/track-and-testing/testing",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:55:57.160Z",
+      "evidenceNote": "Aggregate includes the identified GP timing variants, historic GP, National and International branches. The separate Stowe infield circuit is excluded. Component identity and historical corner alignment remain draft. Identification only; no image coordinates copied."
     }
   ]
 }

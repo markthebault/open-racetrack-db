@@ -8,24 +8,57 @@
     "name": "Serbia",
     "slug": "serbia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    19.9579934,
+    44.83785185
+  ],
+  "sourceIds": [
+    "osm-selection-232052574"
+  ],
   "defaultLayoutId": "navak-driving-academy-gp",
   "layouts": [
     {
       "id": "navak-driving-academy-gp",
       "name": "NAVAK Driving Academy GP",
       "referenceId": "Serbia/NAVAK Driving Academy GP",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/navak-driving-academy-gp.geojson",
+      "description": "Draft configuration: The independently mapped full course uses the complete north loop, inner return, long south straight and southeast outer hairpin; training cutoffs are excluded. Operator configuration photographs corroborate these major branch choices. Source bend detail remains provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3888.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "navak-driving-academy-north-circuit",
       "name": "NAVAK Driving Academy North Circuit",
       "referenceId": "Serbia/NAVAK Driving Academy North Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/navak-driving-academy-north-circuit.geojson",
+      "description": "Draft configuration: The independently mapped north course uses the complete northern loop and serpentine return; southern training roads are excluded. Operator configuration photographs corroborate these major branch choices. Source bend detail remains provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1769.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-232052574",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/232052574",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:14:15.247Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-navak-driving-academy-gp",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://navak.rs/en/navak-centre/racetrack-configuration/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:14:15.247Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-navak-driving-academy-north-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://navak.rs/en/navak-centre/racetrack-configuration/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:14:15.247Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

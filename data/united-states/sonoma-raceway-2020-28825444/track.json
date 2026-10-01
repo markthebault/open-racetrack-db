@@ -15,7 +15,8 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-28825444",
-    "osm-selection-28825444"
+    "osm-selection-28825444",
+    "osm-network-sonoma-raceway-combo"
   ],
   "defaultLayoutId": "sonoma-raceway",
   "layouts": [
@@ -36,8 +37,8 @@
       "id": "sonoma-raceway-combo",
       "name": "Sonoma Raceway Combo",
       "referenceId": "United States/Sonoma Raceway Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway-combo.geojson",
+      "description": "Combined mapped configurations: Sonoma Raceway, Sonoma Raceway Stock Car. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "sonoma-raceway-indy",
@@ -147,6 +148,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-sonoma-raceway-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/116036857",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:50:58.898Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-sonoma-raceway-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.sonomaraceway.com/media/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:50:58.898Z",
+      "evidenceNote": "Aggregate includes the full road course and stock-car shortcut. Extra Turn 7A, short-course and eastern chicane branches are excluded. Identification only; no image coordinates copied."
     }
   ]
 }

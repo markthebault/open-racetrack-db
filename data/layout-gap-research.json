@@ -3,10 +3,10 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 13,
+    "configuration-evidence-required": 9,
     "course-distance-discrepancy": 66,
-    "independent-geometry-missing": 61,
-    "ambiguous-source-branches": 34,
+    "independent-geometry-missing": 59,
+    "ambiguous-source-branches": 31,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 11
   },
@@ -1398,93 +1398,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "Serbia/NAVAK Driving Academy GP",
-      "trackId": "rs-navak-driving-academy-b6ae1335",
-      "layoutId": "navak-driving-academy-gp",
-      "sourcePath": "sources/europe/rs/osm.json",
-      "sourceWayIds": [
-        232052574,
-        232052576,
-        232052578,
-        232052583,
-        232052584,
-        232052585,
-        232052586,
-        232052587,
-        269851888,
-        1166159979,
-        1166159980,
-        1166159981,
-        1166159982,
-        1166159983,
-        1166159984,
-        1392290360,
-        1392290361
-      ],
-      "candidateCount": 44,
-      "closestSourceLengthM": 3895.6,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Serbia/NAVAK Driving Academy North Circuit",
-      "trackId": "rs-navak-driving-academy-b6ae1335",
-      "layoutId": "navak-driving-academy-north-circuit",
-      "sourcePath": "sources/europe/rs/osm.json",
-      "sourceWayIds": [
-        232052574,
-        232052576,
-        232052578,
-        232052583,
-        232052584,
-        232052585,
-        232052586,
-        232052587,
-        269851888,
-        1166159979,
-        1166159980,
-        1166159981,
-        1166159982,
-        1166159983,
-        1166159984,
-        1392290360,
-        1392290361
-      ],
-      "candidateCount": 44,
-      "closestSourceLengthM": 1769.1,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Serbia/NAVAK Driving Academy Old",
-      "trackId": "rs-navak-driving-academy-old-817978d9",
-      "layoutId": "navak-driving-academy-old",
-      "sourcePath": "sources/europe/rs/osm.json",
-      "sourceWayIds": [
-        232052574,
-        232052576,
-        232052578,
-        232052583,
-        232052584,
-        232052585,
-        232052586,
-        232052587,
-        269851888,
-        1166159979,
-        1166159980,
-        1166159981,
-        1166159982,
-        1166159983,
-        1166159984,
-        1392290360,
-        1392290361
-      ],
-      "candidateCount": 150,
-      "closestSourceLengthM": 2830.8,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
       "referenceId": "South Africa/Knysna Hill Climb",
       "trackId": "za-knysna-hill-climb-0b642392",
       "layoutId": "knysna-hill-climb",
@@ -1558,15 +1471,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "Spain/Circuit de Montju\u00efc",
-      "trackId": "es-circuit-de-montjuic-fa635654",
-      "layoutId": "circuit-de-montjuic",
-      "sourcePath": "sources/europe/es/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "Spain/Circuit Ricardo Tormo School",
       "trackId": "es-valencia",
       "layoutId": "circuit-ricardo-tormo-school",
@@ -1584,15 +1488,6 @@
       "candidateCount": 0,
       "reason": "source-connectivity-incomplete",
       "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
-    },
-    {
-      "referenceId": "Spain/Idiada Wet Handling Circuit",
-      "trackId": "es-idiada-wet-handling-circuit-2f0fde0d",
-      "layoutId": "idiada-wet-handling-circuit",
-      "sourcePath": "sources/europe/es/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "Spain/Navarra Combo",
@@ -2148,14 +2043,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United Kingdom/Mallory Park Combo",
-      "trackId": "gb-mallory-park-racing-circuit-215336384",
-      "layoutId": "mallory-park-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "United Kingdom/Millbrook Hill Route Full",
       "trackId": "gb-millbrook-hill-route-372dafdf",
       "layoutId": "millbrook-hill-route-full",
@@ -2248,14 +2135,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United Kingdom/Rockingham Combo",
-      "trackId": "gb-rockingham-bdd27703",
-      "layoutId": "rockingham-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "United Kingdom/Rushmore Arena",
       "trackId": "gb-rushmore-arena-886deba1",
       "layoutId": "rushmore-arena",
@@ -2334,14 +2213,6 @@
       "closestSourceLengthM": 1278.4,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United Kingdom/Silverstone Combo",
-      "trackId": "gb-silverstone-circuit-3571477",
-      "layoutId": "silverstone-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United States/Apex Motor Club Apex I",
@@ -3023,14 +2894,6 @@
       "closestSourceLengthM": 1118.7,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "United States/Sonoma Raceway Combo",
-      "trackId": "us-sonoma-raceway-2020-28825444",
-      "layoutId": "sonoma-raceway-combo",
-      "sourcePath": "sources/world/us/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "United States/Spring Mountain Raceway",
