@@ -13,15 +13,31 @@
     31.34004373680557
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-relation-2094941",
+    "osm-network-107371138"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "shanghai-gp",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "shanghai-gp",
+      "name": "Shanghai GP",
+      "file": "layouts/shanghai-gp.geojson",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "referenceId": "China/Shanghai GP"
+    },
+    {
+      "id": "shanghai-ext-turn4",
+      "name": "Shanghai Ext Turn4",
+      "referenceId": "China/Shanghai Ext Turn4",
+      "file": "layouts/shanghai-ext-turn4.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5409.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +49,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:31.696Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-relation-2094941",
+      "type": "osm",
+      "title": "OpenStreetMap named circuit relation",
+      "url": "https://www.openstreetmap.org/relation/2094941",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T11:51:51.118Z",
+      "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
+    },
+    {
+      "id": "osm-network-107371138",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/107371138",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:31.696Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

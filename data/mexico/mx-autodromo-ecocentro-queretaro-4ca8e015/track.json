@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mx-autodromo-ecocentro-queretaro-4ca8e015",
+  "name": "Autodromo EcoCentro Queretaro",
+  "aliases": [],
+  "country": {
+    "code": "MX",
+    "name": "Mexico",
+    "slug": "mexico"
+  },
+  "location": [
+    -100.32919435,
+    20.58545935
+  ],
+  "sourceIds": [
+    "osm-network-320332076"
+  ],
+  "defaultLayoutId": "autodromo-ecocentro-queretaro",
+  "layouts": [
+    {
+      "id": "autodromo-ecocentro-queretaro",
+      "name": "Autodromo EcoCentro Queretaro",
+      "referenceId": "Mexico/Autodromo EcoCentro Queretaro",
+      "file": "layouts/autodromo-ecocentro-queretaro.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2266.7 m. Difference from the supplied layout distance 8.3 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-320332076",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/320332076",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:22.379Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

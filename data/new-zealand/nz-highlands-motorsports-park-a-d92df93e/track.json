@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "nz-highlands-motorsports-park-a-d92df93e",
+  "name": "Highlands Motorsports Park_A",
+  "aliases": [],
+  "country": {
+    "code": "NZ",
+    "name": "New Zealand",
+    "slug": "new-zealand"
+  },
+  "location": [
+    169.170231,
+    -45.05925715
+  ],
+  "sourceIds": [
+    "osm-network-234778728"
+  ],
+  "defaultLayoutId": "highlands-motorsports-park-a",
+  "layouts": [
+    {
+      "id": "highlands-motorsports-park-a",
+      "name": "Highlands Motorsports Park_A",
+      "referenceId": "New Zealand/Highlands Motorsports Park_A",
+      "file": "layouts/highlands-motorsports-park-a.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1128.8 m. Difference from the supplied layout distance 16.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-234778728",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:17:47.114Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

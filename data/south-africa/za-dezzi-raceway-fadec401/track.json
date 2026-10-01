@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "za-dezzi-raceway-fadec401",
+  "name": "Dezzi Raceway",
+  "aliases": [],
+  "country": {
+    "code": "ZA",
+    "name": "South Africa",
+    "slug": "south-africa"
+  },
+  "location": [
+    30.42554075,
+    -30.77124865
+  ],
+  "sourceIds": [
+    "osm-network-1266200143"
+  ],
+  "defaultLayoutId": "dezzi-raceway",
+  "layouts": [
+    {
+      "id": "dezzi-raceway",
+      "name": "Dezzi Raceway",
+      "referenceId": "South Africa/Dezzi Raceway",
+      "file": "layouts/dezzi-raceway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2254.9 m. Difference from the supplied layout distance 21.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-1266200143",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/1266200143",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:25:05.976Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "be-mettet-4f8315c9",
+  "name": "Mettet",
+  "aliases": [],
+  "country": {
+    "code": "BE",
+    "name": "Belgium",
+    "slug": "belgium"
+  },
+  "location": [
+    4.651710250000001,
+    50.300931000000006
+  ],
+  "sourceIds": [
+    "osm-network-178240072"
+  ],
+  "defaultLayoutId": "mettet",
+  "layouts": [
+    {
+      "id": "mettet",
+      "name": "Mettet",
+      "referenceId": "Belgium/Mettet",
+      "file": "layouts/mettet.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2284.5 m. Difference from the supplied layout distance 2.5 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-178240072",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/178240072",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:07:11.431Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

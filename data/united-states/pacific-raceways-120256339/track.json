@@ -15,13 +15,20 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "pacific-raceways-road-course",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "pacific-raceways-road-course",
+      "name": "Pacific Raceways Road Course",
+      "referenceId": "United States/Pacific Raceways Road Course",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

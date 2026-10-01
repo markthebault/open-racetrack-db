@@ -13,15 +13,44 @@
     28.930793454929578
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-807928887"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "kuwait-motor-town-gp",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "kuwait-motor-town-gp",
+      "name": "Kuwait Motor Town GP",
+      "referenceId": "Kuwait/Kuwait Motor Town GP",
+      "file": "layouts/kuwait-motor-town-gp.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5620.9 m. Difference from the supplied layout distance 3.1 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "kuwait-motor-town-gp-chicane",
+      "name": "Kuwait Motor Town GP Chicane",
+      "referenceId": "Kuwait/Kuwait Motor Town GP Chicane",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "kuwait-motor-town-national",
+      "name": "Kuwait Motor Town National",
+      "referenceId": "Kuwait/Kuwait Motor Town National",
+      "file": "layouts/kuwait-motor-town-national.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4555.9 m. Difference from the supplied layout distance 1.1 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "kuwait-motor-town-south",
+      "name": "Kuwait Motor Town South",
+      "referenceId": "Kuwait/Kuwait Motor Town South",
+      "file": "layouts/kuwait-motor-town-south.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2893.3 m. Difference from the supplied layout distance 6.7 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -42,6 +71,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:33:23.000Z",
       "evidenceNote": "The operator reference supports venue identity. It does not verify this source-cycle selection and supplies no public coordinates."
+    },
+    {
+      "id": "osm-network-807928887",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/807928887",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:35:09.915Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

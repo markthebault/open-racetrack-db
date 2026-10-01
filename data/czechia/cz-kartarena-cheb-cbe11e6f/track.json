@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cz-kartarena-cheb-cbe11e6f",
+  "name": "Kartarena Cheb",
+  "aliases": [],
+  "country": {
+    "code": "CZ",
+    "name": "Czechia",
+    "slug": "czechia"
+  },
+  "location": [
+    12.4522188,
+    50.0864459
+  ],
+  "sourceIds": [
+    "osm-network-625574168"
+  ],
+  "defaultLayoutId": "kartarena-cheb",
+  "layouts": [
+    {
+      "id": "kartarena-cheb",
+      "name": "Kartarena Cheb",
+      "referenceId": "Czech Republic/Kartarena Cheb",
+      "file": "layouts/kartarena-cheb.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1213.6 m. Difference from the supplied layout distance 0.6 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-625574168",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/625574168",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:11:32.823Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

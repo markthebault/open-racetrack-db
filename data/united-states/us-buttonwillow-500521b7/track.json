@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "us-buttonwillow-500521b7",
+  "name": "Buttonwillow",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -119.54503095000001,
+    35.491462
+  ],
+  "sourceIds": [
+    "osm-network-34350797"
+  ],
+  "defaultLayoutId": "buttonwillow",
+  "layouts": [
+    {
+      "id": "buttonwillow",
+      "name": "Buttonwillow",
+      "referenceId": "United States/Buttonwillow",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "buttonwillow-25a",
+      "name": "Buttonwillow 25a",
+      "referenceId": "United States/Buttonwillow 25a",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "buttonwillow-west-no-phil-hill",
+      "name": "Buttonwillow West no Phil Hill",
+      "referenceId": "United States/Buttonwillow West no Phil Hill",
+      "file": "layouts/buttonwillow-west-no-phil-hill.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2629.9 m. Difference from the supplied layout distance 20.9 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "buttonwillow-west-with-phil-hill",
+      "name": "Buttonwillow West with Phil Hill",
+      "referenceId": "United States/Buttonwillow West with Phil Hill",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-34350797",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/34350797",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

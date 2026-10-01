@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "se-ostersunds-kart-6e528c2c",
+  "name": "Ostersunds Kart",
+  "aliases": [],
+  "country": {
+    "code": "SE",
+    "name": "Sweden",
+    "slug": "sweden"
+  },
+  "location": [
+    14.7960002,
+    63.201599349999995
+  ],
+  "sourceIds": [
+    "osm-network-218050989"
+  ],
+  "defaultLayoutId": "ostersunds-kart-track",
+  "layouts": [
+    {
+      "id": "ostersunds-kart-track",
+      "name": "Ostersunds Kart Track",
+      "referenceId": "Sweden/Ostersunds Kart Track",
+      "file": "layouts/ostersunds-kart-track.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1022.6 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-218050989",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/218050989",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:47.313Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

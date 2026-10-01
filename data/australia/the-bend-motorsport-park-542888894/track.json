@@ -13,15 +13,58 @@
     -35.30675890809444
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-542888894"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "tailem-bend-east",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "tailem-bend-east",
+      "name": "Tailem Bend East",
+      "referenceId": "Australia/Tailem Bend East",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "tailem-bend-gt",
+      "name": "Tailem Bend GT",
+      "referenceId": "Australia/Tailem Bend GT",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "tailem-bend-international",
+      "name": "Tailem Bend International",
+      "referenceId": "Australia/Tailem Bend International",
+      "file": "layouts/tailem-bend-international.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4943.6 m. Difference from the supplied layout distance 12.4 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "tailem-bend-south",
+      "name": "Tailem Bend South",
+      "referenceId": "Australia/Tailem Bend South",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "tailem-bend-west",
+      "name": "Tailem Bend West",
+      "referenceId": "Australia/Tailem Bend West",
+      "file": "layouts/tailem-bend-west.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3404 m. Difference from the supplied layout distance 15.0 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "tailem-bend-west-plus",
+      "name": "Tailem Bend West Plus",
+      "referenceId": "Australia/Tailem Bend West Plus",
+      "file": "layouts/tailem-bend-west-plus.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3659 m. Difference from the supplied layout distance 17.0 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +76,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-542888894",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/542888894",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.558Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

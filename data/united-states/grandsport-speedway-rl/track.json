@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-grandsport-speedway-rl",
+  "name": "GrandSport Speedway",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -95.04631420000001,
+    29.3250232
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "GrandSport Speedway",
+      "file": "layouts/main.geojson",
+      "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
+      "referenceId": "United States/GrandSport Speedway"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap named raceway",
+      "url": "https://www.openstreetmap.org/way/1228140594",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. reference supplies the expected layout name and private timing GPS only."
+    }
+  ]
+}

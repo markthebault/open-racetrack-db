@@ -15,13 +15,27 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "castle-combe",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "castle-combe",
+      "name": "Castle Combe",
+      "file": "layouts/castle-combe.geojson",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "United Kingdom/Castle Combe"
+    },
+    {
+      "id": "castle-combe-western-sprint",
+      "name": "Castle Combe Western Sprint",
+      "referenceId": "United Kingdom/Castle Combe Western Sprint",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

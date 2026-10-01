@@ -15,13 +15,34 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "korea-int-circuit-national",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "korea-int-circuit-national",
+      "name": "Korea Int Circuit National",
+      "referenceId": "South Korea/Korea Int Circuit National",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "korea-international-circuit",
+      "name": "Korea International Circuit",
+      "referenceId": "South Korea/Korea International Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "korea-international-short-circuit",
+      "name": "Korea International Short Circuit",
+      "referenceId": "South Korea/Korea International Short Circuit",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

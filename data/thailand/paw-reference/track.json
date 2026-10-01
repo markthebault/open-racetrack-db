@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "th-paw-reference",
+  "name": "Paw",
+  "aliases": [],
+  "country": {
+    "code": "TH",
+    "name": "Thailand",
+    "slug": "thailand"
+  },
+  "location": [
+    101.4258244,
+    14.589728650000001
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Paw",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Thailand/Paw"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/677374237",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:54.670Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

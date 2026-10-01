@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "ru-kartdrom-gbu-talisman-reference",
+  "name": "Kartdrom GBU Talisman",
+  "aliases": [],
+  "country": {
+    "code": "RU",
+    "name": "Russia",
+    "slug": "russia"
+  },
+  "location": [
+    37.25383565,
+    55.97224315
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Kartdrom GBU Talisman",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Russia/Kartdrom GBU Talisman"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/61720563",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:21:42.508Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

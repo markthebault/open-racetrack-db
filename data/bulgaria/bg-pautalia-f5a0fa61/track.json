@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "bg-pautalia-f5a0fa61",
+  "name": "Pautalia",
+  "aliases": [],
+  "country": {
+    "code": "BG",
+    "name": "Bulgaria",
+    "slug": "bulgaria"
+  },
+  "location": [
+    22.67256255,
+    42.26710224999999
+  ],
+  "sourceIds": [
+    "osm-network-859079073"
+  ],
+  "defaultLayoutId": "pautalia",
+  "layouts": [
+    {
+      "id": "pautalia",
+      "name": "Pautalia",
+      "referenceId": "Bulgaria/Pautalia",
+      "file": "layouts/pautalia.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 999.2 m. Difference from the supplied layout distance 20.8 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-859079073",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/859079073",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:13:04.474Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -13,15 +13,37 @@
     53.25713406044775
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-87185988"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "mondello-park-international",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "mondello-park-international",
+      "name": "Mondello Park International",
+      "referenceId": "Ireland/Mondello Park International",
+      "file": "layouts/mondello-park-international.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3521.5 m. Difference from the supplied layout distance 3.5 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "mondello-park-national",
+      "name": "Mondello Park National",
+      "referenceId": "Ireland/Mondello Park National",
+      "file": "layouts/mondello-park-national.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1860.3 m. Difference from the supplied layout distance 0.3 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "mondello-park-short-loop",
+      "name": "Mondello Park Short Loop",
+      "referenceId": "Ireland/Mondello Park Short Loop",
+      "file": "layouts/mondello-park-short-loop.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1542.2 m. Difference from the supplied layout distance 2.8 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +55,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:08:35.016Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-87185988",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/87185988",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:35.016Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

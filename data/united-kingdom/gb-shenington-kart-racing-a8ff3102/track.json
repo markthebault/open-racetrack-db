@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-shenington-kart-racing-a8ff3102",
+  "name": "Shenington Kart Racing",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -1.4755462000000001,
+    52.08182935
+  ],
+  "sourceIds": [
+    "osm-network-96878929"
+  ],
+  "defaultLayoutId": "shenington-kart-racing-club",
+  "layouts": [
+    {
+      "id": "shenington-kart-racing-club",
+      "name": "Shenington Kart Racing Club",
+      "referenceId": "United Kingdom/Shenington Kart Racing Club",
+      "file": "layouts/shenington-kart-racing-club.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1209.1 m. Difference from the supplied layout distance 2.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-96878929",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/96878929",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-motor-enclave-reference",
+  "name": "Motor Enclave",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -82.3341991,
+    28.0128203
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Motor Enclave",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "United States/Motor Enclave"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/1359872219",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

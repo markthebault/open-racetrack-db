@@ -13,15 +13,23 @@
     36.53282953285713
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-28213373"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "motegi",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "motegi",
+      "name": "Motegi",
+      "referenceId": "Japan/Motegi",
+      "file": "layouts/motegi.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4811.8 m. Difference from the supplied layout distance 11.2 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +41,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:13.081Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-28213373",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/28213373",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.081Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cn-fugang-3292d1c6",
+  "name": "Fugang",
+  "aliases": [],
+  "country": {
+    "code": "CN",
+    "name": "China",
+    "slug": "china"
+  },
+  "location": [
+    114.1752412,
+    23.0217622
+  ],
+  "sourceIds": [
+    "osm-network-889091919"
+  ],
+  "defaultLayoutId": "fugang",
+  "layouts": [
+    {
+      "id": "fugang",
+      "name": "Fugang",
+      "referenceId": "China/Fugang",
+      "file": "layouts/fugang.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1174.7 m. Difference from the supplied layout distance 12.3 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-889091919",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/889091919",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:31.696Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

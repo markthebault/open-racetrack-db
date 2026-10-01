@@ -15,13 +15,27 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "vallelunga-full",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "vallelunga-full",
+      "name": "Vallelunga Full",
+      "referenceId": "Italy/Vallelunga Full",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "vallelunga-outer",
+      "name": "Vallelunga Outer",
+      "referenceId": "Italy/Vallelunga Outer",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

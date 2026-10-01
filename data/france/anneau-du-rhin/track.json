@@ -16,21 +16,31 @@
   "sourceIds": [
     "osm-snapshot",
     "venue-reference",
-    "venue-layout-reference"
+    "venue-layout-reference",
+    "osm-network-40816550"
   ],
   "defaultLayoutId": "3-7-km",
   "layouts": [
     {
       "id": "3-0-km",
-      "name": "3.0 km course",
+      "name": "Anneau Du Rhin - 3.0 km",
       "file": "layouts/3-0-km.geojson",
-      "description": "Draft route uses the OSM Biltzheim connector to replace the shorter 835 m arc of the closed alternative loop. The OSM trace measures about 2.80 km, below the nominal 3.0 km name. Confirm the exact historical layout before review."
+      "description": "Draft route uses the OSM Biltzheim connector to replace the shorter 835 m arc of the closed alternative loop. The OSM trace measures about 2.80 km, below the nominal 3.0 km name. Confirm the exact historical layout before review.",
+      "referenceId": "France/Anneau Du Rhin - 3.0 km"
     },
     {
       "id": "3-7-km",
-      "name": "3.7 km course",
+      "name": "Anneau Du Rhin - 3.7 km",
       "file": "layouts/3-7-km.geojson",
-      "description": "Draft route follows OSM way 40816550, tagged as the Alternative circuit. The trace measures about 3.47 km against the nominal 3.7 km label. Visual review is still required."
+      "description": "Draft route follows OSM way 40816550, tagged as the Alternative circuit. The trace measures about 3.47 km against the nominal 3.7 km label. Visual review is still required.",
+      "referenceId": "France/Anneau Du Rhin - 3.7 km"
+    },
+    {
+      "id": "anneau-du-rhin-c",
+      "name": "Anneau Du Rhin_C",
+      "referenceId": "France/Anneau Du Rhin_C",
+      "file": "layouts/anneau-du-rhin-c.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1871.9 m. Difference from the supplied layout distance 1.1 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -60,6 +70,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:10:24Z",
       "evidenceNote": "Supports the stated course configuration only. No public coordinates are traced from this page."
+    },
+    {
+      "id": "osm-network-40816550",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/40816550",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

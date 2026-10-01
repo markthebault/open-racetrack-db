@@ -13,15 +13,37 @@
     2.7607780591160225
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-23410503"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "sepang",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "sepang",
+      "name": "Sepang",
+      "referenceId": "Malaysia/Sepang",
+      "file": "layouts/sepang.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5546.2 m. Difference from the supplied layout distance 3.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "sepang-combo",
+      "name": "Sepang Combo",
+      "referenceId": "Malaysia/Sepang Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "sepang-north-loop",
+      "name": "Sepang North Loop",
+      "referenceId": "Malaysia/Sepang North Loop",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +55,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:44.724Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-23410503",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/23410503",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:44.724Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

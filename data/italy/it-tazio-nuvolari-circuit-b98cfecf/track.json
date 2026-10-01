@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "it-tazio-nuvolari-circuit-b98cfecf",
+  "name": "Tazio Nuvolari Circuit",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    8.990307300000001,
+    45.0714483
+  ],
+  "sourceIds": [
+    "osm-network-323362235"
+  ],
+  "defaultLayoutId": "tazio-nuvolari-circuit",
+  "layouts": [
+    {
+      "id": "tazio-nuvolari-circuit",
+      "name": "Tazio Nuvolari Circuit",
+      "referenceId": "Italy/Tazio Nuvolari Circuit",
+      "file": "layouts/tazio-nuvolari-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2837.2 m. Difference from the supplied layout distance 23.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "tazio-nuvolari-circuit-5260",
+      "name": "Tazio Nuvolari Circuit 5260",
+      "referenceId": "Italy/Tazio Nuvolari Circuit 5260",
+      "file": "layouts/tazio-nuvolari-circuit-5260.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5293.9 m. Difference from the supplied layout distance 30.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-323362235",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/323362235",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:18.140Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

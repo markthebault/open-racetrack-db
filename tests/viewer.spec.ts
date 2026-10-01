@@ -2,8 +2,8 @@ import {test,expect} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import {indexSchema,validateTrack} from '../schemas/data';
 
-test('every catalogue layout opens, draws a trace and offers reusable data',async({page,request})=>{
- const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+test('every catalogue entry opens and only mapped layouts offer traces and downloads',async({page,request})=>{
+ test.setTimeout(600000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
  // The course viewer must work when background tiles are unavailable.
  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
  const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
@@ -12,9 +12,10 @@ test('every catalogue layout opens, draws a trace and offers reusable data',asyn
   const track=validateTrack(JSON.parse(await readFile(`data/${entry.file}`,'utf8')));
   await page.locator(`#venues button[data-track-id="${entry.id}"]`).click();
   await expect(page.locator('#selection h2')).toHaveText(track.name);
-  await expect(page.locator('#message')).toHaveText('Layout ready');
+  await expect(page.locator('#message')).toHaveText(/Layout ready|Trace unavailable/);
   for(const layout of track.layouts){
    await page.locator('#layout').selectOption(layout.id);
+   if(layout.file===null){await expect(page.locator('#message')).toHaveText('Trace unavailable');await expect(page.locator('#download')).toHaveCount(0);await expect(page.locator('.leaflet-overlay-pane path[stroke="#ffb347"]')).toHaveCount(0);continue;}
    await expect(page.locator('#message')).toHaveText('Layout ready');
    await expect(page.locator('#selection h2')).toHaveText(track.name);
    await expect(page.locator('#selection .error')).toHaveCount(0);
@@ -77,4 +78,16 @@ test('OSM venue names render as literal tooltip text',async({page})=>{
  await page.goto('/');await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
  await page.locator('.leaflet-overlay-pane .leaflet-interactive').first().dispatchEvent('mouseover');
  await expect(page.locator('.leaflet-tooltip')).toHaveText('Marker <strong>untrusted</strong>');await expect(page.locator('.leaflet-tooltip strong')).toHaveCount(0);
+});
+
+test('Nürburgring offers nine reference entries and GP differs from Sprint',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ await page.goto('/?track=de-nurburgring&layout=grand-prix');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#layout option')).toHaveCount(9);
+ const gp=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json();
+ await page.locator('#layout').selectOption('sprintstrecke');await expect(page.locator('#message')).toHaveText('Layout ready');
+ const sprint=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json();expect(gp.metadata.lengthM-sprint.metadata.lengthM).toBeGreaterThan(1400);
+ await page.locator('.layout-gaps summary').click();await expect(page.locator('.layout-gaps li')).toHaveCount(9);
+ await page.locator('#layout').selectOption('nordschleife-btg');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#selection')).toContainText('Public data is the supporting Nordschleife loop');
 });

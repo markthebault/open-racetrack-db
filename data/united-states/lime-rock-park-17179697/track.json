@@ -15,13 +15,20 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "lime-rock",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "lime-rock",
+      "name": "Lime Rock",
+      "referenceId": "United States/Lime Rock",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

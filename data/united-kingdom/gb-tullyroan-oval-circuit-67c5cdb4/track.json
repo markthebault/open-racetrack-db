@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-tullyroan-oval-circuit-67c5cdb4",
+  "name": "Tullyroan Oval Circuit",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    -6.61884815,
+    54.45376485
+  ],
+  "sourceIds": [
+    "osm-network-623888333"
+  ],
+  "defaultLayoutId": "tullyroan-oval-circuit",
+  "layouts": [
+    {
+      "id": "tullyroan-oval-circuit",
+      "name": "Tullyroan Oval Circuit",
+      "referenceId": "United Kingdom/Tullyroan Oval Circuit",
+      "file": "layouts/tullyroan-oval-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 375.3 m. Difference from the supplied layout distance 5.7 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-623888333",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/623888333",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

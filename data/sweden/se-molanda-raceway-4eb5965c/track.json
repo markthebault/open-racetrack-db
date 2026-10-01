@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "se-molanda-raceway-4eb5965c",
+  "name": "Molanda Raceway",
+  "aliases": [],
+  "country": {
+    "code": "SE",
+    "name": "Sweden",
+    "slug": "sweden"
+  },
+  "location": [
+    13.425226949999999,
+    63.3261228
+  ],
+  "sourceIds": [
+    "osm-network-227685107"
+  ],
+  "defaultLayoutId": "molanda-raceway",
+  "layouts": [
+    {
+      "id": "molanda-raceway",
+      "name": "Molanda Raceway",
+      "referenceId": "Sweden/Molanda Raceway",
+      "file": "layouts/molanda-raceway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1276 m. Difference from the supplied layout distance 7.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-227685107",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/227685107",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:47.313Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

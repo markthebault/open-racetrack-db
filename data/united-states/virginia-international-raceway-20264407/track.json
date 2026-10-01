@@ -13,15 +13,58 @@
     36.561980093502854
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-20264407"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "virginia-int-raceway-full",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "virginia-int-raceway-full",
+      "name": "Virginia Int Raceway Full",
+      "referenceId": "United States/Virginia Int Raceway Full",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "virginia-int-raceway-grand",
+      "name": "Virginia Int Raceway Grand",
+      "referenceId": "United States/Virginia Int Raceway Grand",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "virginia-int-raceway-grand-east",
+      "name": "Virginia Int Raceway Grand East",
+      "referenceId": "United States/Virginia Int Raceway Grand East",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "virginia-int-raceway-north",
+      "name": "Virginia Int Raceway North",
+      "referenceId": "United States/Virginia Int Raceway North",
+      "file": "layouts/virginia-int-raceway-north.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3668 m. Difference from the supplied layout distance 1.0 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "virginia-int-raceway-scca",
+      "name": "Virginia Int Raceway SCCA",
+      "referenceId": "United States/Virginia Int Raceway SCCA",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "virginia-int-raceway-south",
+      "name": "Virginia Int Raceway South",
+      "referenceId": "United States/Virginia Int Raceway South",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +76,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-20264407",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/20264407",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

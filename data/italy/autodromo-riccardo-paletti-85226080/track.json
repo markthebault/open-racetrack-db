@@ -15,13 +15,27 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "varano-de-melegari",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "varano-de-melegari",
+      "name": "Varano de Melegari",
+      "referenceId": "Italy/Varano de Melegari",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "varano-de-melegari-short",
+      "name": "Varano de Melegari Short",
+      "referenceId": "Italy/Varano de Melegari Short",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-midamerica-motorplex-a85e50bc",
+  "name": "MidAmerica Motorplex",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -95.81831375,
+    41.0259251
+  ],
+  "sourceIds": [
+    "osm-network-42851984"
+  ],
+  "defaultLayoutId": "midamerica-motorplex",
+  "layouts": [
+    {
+      "id": "midamerica-motorplex",
+      "name": "MidAmerica Motorplex",
+      "referenceId": "United States/MidAmerica Motorplex",
+      "file": "layouts/midamerica-motorplex.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3572.2 m. Difference from the supplied layout distance 4.8 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-42851984",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/42851984",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -13,15 +13,23 @@
     29.184655431818157
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-relation-5254136"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "daytona-24-hour",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "daytona-24-hour",
+      "name": "Daytona 24 Hour",
+      "referenceId": "United States/Daytona 24 Hour",
+      "file": "layouts/daytona-24-hour.geojson",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     }
   ],
   "sources": [
@@ -33,6 +41,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-relation-5254136",
+      "type": "osm",
+      "title": "OpenStreetMap named circuit relation",
+      "url": "https://www.openstreetmap.org/relation/5254136",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T12:24:45.160Z",
+      "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
     }
   ]
 }

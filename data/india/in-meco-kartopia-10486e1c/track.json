@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "in-meco-kartopia-10486e1c",
+  "name": "Meco Kartopia",
+  "aliases": [],
+  "country": {
+    "code": "IN",
+    "name": "India",
+    "slug": "india"
+  },
+  "location": [
+    77.67210885,
+    13.116246
+  ],
+  "sourceIds": [
+    "osm-network-778827200"
+  ],
+  "defaultLayoutId": "meco-kartopia",
+  "layouts": [
+    {
+      "id": "meco-kartopia",
+      "name": "Meco Kartopia",
+      "referenceId": "India/Meco Kartopia",
+      "file": "layouts/meco-kartopia.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1165.2 m. Difference from the supplied layout distance 12.8 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-778827200",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/778827200",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:19:52.703Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

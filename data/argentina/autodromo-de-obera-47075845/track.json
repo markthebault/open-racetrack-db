@@ -15,13 +15,34 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "autodromo-ciudad-de-obera-no-1",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "autodromo-ciudad-de-obera-no-1",
+      "name": "Autodromo Ciudad De Obera No.1",
+      "referenceId": "Argentina/Autodromo Ciudad De Obera No.1",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "autodromo-ciudad-de-obera-no-2",
+      "name": "Autodromo Ciudad De Obera No.2",
+      "referenceId": "Argentina/Autodromo Ciudad De Obera No.2",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "autodromo-ciudad-de-obera-no-3",
+      "name": "Autodromo Ciudad De Obera No.3",
+      "referenceId": "Argentina/Autodromo Ciudad De Obera No.3",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

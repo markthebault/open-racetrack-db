@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "fr-rkc-karting-paris-308ba4b8",
+  "name": "RKC Karting Paris",
+  "aliases": [],
+  "country": {
+    "code": "FR",
+    "name": "France",
+    "slug": "france"
+  },
+  "location": [
+    2.03698185,
+    49.1038133
+  ],
+  "sourceIds": [
+    "osm-network-39759516"
+  ],
+  "defaultLayoutId": "rkc-karting-paris",
+  "layouts": [
+    {
+      "id": "rkc-karting-paris",
+      "name": "RKC Karting Paris",
+      "referenceId": "France/RKC Karting Paris",
+      "file": "layouts/rkc-karting-paris.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1128.8 m. Difference from the supplied layout distance 3.8 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-39759516",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/39759516",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

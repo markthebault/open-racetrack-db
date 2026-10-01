@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "ae-yas-marina-e2656e19",
+  "name": "Yas Marina",
+  "aliases": [],
+  "country": {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "slug": "united-arab-emirates"
+  },
+  "location": [
+    54.605543499999996,
+    24.47090205
+  ],
+  "sourceIds": [
+    "osm-relation-11378665"
+  ],
+  "defaultLayoutId": "yas-marina-combo",
+  "layouts": [
+    {
+      "id": "yas-marina-combo",
+      "name": "Yas Marina Combo",
+      "referenceId": "United Arab Emirates/Yas Marina Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "yas-marina-gp",
+      "name": "Yas Marina GP",
+      "referenceId": "United Arab Emirates/Yas Marina GP",
+      "file": "layouts/yas-marina-gp.geojson",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+    },
+    {
+      "id": "yas-marina-gp-corkscrew",
+      "name": "Yas Marina GP Corkscrew",
+      "referenceId": "United Arab Emirates/Yas Marina GP Corkscrew",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "yas-marina-north",
+      "name": "Yas Marina North",
+      "referenceId": "United Arab Emirates/Yas Marina North",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "yas-marina-north-chicane",
+      "name": "Yas Marina North Chicane",
+      "referenceId": "United Arab Emirates/Yas Marina North Chicane",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "yas-marina-north-corkscrew",
+      "name": "Yas Marina North Corkscrew",
+      "referenceId": "United Arab Emirates/Yas Marina North Corkscrew",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "yas-marina-north-handling",
+      "name": "Yas Marina North Handling",
+      "referenceId": "United Arab Emirates/Yas Marina North Handling",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "yas-marina-south",
+      "name": "Yas Marina South",
+      "referenceId": "United Arab Emirates/Yas Marina South",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-relation-11378665",
+      "type": "osm",
+      "title": "OpenStreetMap named circuit relation",
+      "url": "https://www.openstreetmap.org/relation/11378665",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T12:01:16.142Z",
+      "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
+    }
+  ]
+}

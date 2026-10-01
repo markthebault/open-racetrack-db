@@ -13,15 +13,44 @@
     -38.66460907947369
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-90114324"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "taupo-motorsport-park-combo",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "taupo-motorsport-park-combo",
+      "name": "Taupo Motorsport Park Combo",
+      "referenceId": "New Zealand/Taupo Motorsport Park Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "taupo-motorsport-park-track-1",
+      "name": "Taupo Motorsport Park Track 1",
+      "referenceId": "New Zealand/Taupo Motorsport Park Track 1",
+      "file": "layouts/taupo-motorsport-park-track-1.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3410.3 m. Difference from the supplied layout distance 3.7 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "taupo-motorsport-park-track-2",
+      "name": "Taupo Motorsport Park Track 2",
+      "referenceId": "New Zealand/Taupo Motorsport Park Track 2",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "taupo-motorsport-park-track-4",
+      "name": "Taupo Motorsport Park Track 4",
+      "referenceId": "New Zealand/Taupo Motorsport Park Track 4",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +62,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:17:47.114Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-90114324",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/90114324",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:17:47.114Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

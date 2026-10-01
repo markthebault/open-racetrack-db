@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "pt-fafe-reference",
+  "name": "Fafe",
+  "aliases": [],
+  "country": {
+    "code": "PT",
+    "name": "Portugal",
+    "slug": "portugal"
+  },
+  "location": [
+    -8.21373905,
+    41.424675050000005
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Fafe",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "Portugal/Fafe"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/232189595",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:22.293Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

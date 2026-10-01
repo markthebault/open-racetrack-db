@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cn-beijing-goldenport-motor-park-reference",
+  "name": "Beijing Goldenport Motor Park",
+  "aliases": [],
+  "country": {
+    "code": "CN",
+    "name": "China",
+    "slug": "china"
+  },
+  "location": [
+    116.56027335,
+    40.01545295
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Beijing Goldenport Motor Park",
+      "file": "layouts/main.geojson",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "China/Beijing Goldenport Motor Park"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/233220841",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:31.696Z",
+      "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    }
+  ]
+}

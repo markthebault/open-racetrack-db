@@ -13,15 +13,44 @@
     37.089512253020075
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-29362442"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "almeria",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "almeria",
+      "name": "Almeria",
+      "referenceId": "Spain/Almeria",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "andalucia-layout-1-5k",
+      "name": "Andalucia Layout 1 5k",
+      "referenceId": "Spain/Andalucia Layout 1 5k",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "andalucia-layout-2-4k",
+      "name": "Andalucia Layout 2 4k",
+      "referenceId": "Spain/Andalucia Layout 2 4k",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "andalucia-layout-3-2-2k",
+      "name": "Andalucia Layout 3 2.2k",
+      "referenceId": "Spain/Andalucia Layout 3 2.2k",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +62,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:38.980Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-29362442",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/29362442",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.980Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

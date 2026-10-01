@@ -13,15 +13,23 @@
     49.12675142459015
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-190876520"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "mission-raceway-park-road-course",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "mission-raceway-park-road-course",
+      "name": "Mission Raceway Park Road Course",
+      "referenceId": "Canada/Mission Raceway Park Road Course",
+      "file": "layouts/mission-raceway-park-road-course.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2202.9 m. Difference from the supplied layout distance 0.1 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +41,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:02.766Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-190876520",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/190876520",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

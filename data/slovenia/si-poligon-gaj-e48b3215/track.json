@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "si-poligon-gaj-e48b3215",
+  "name": "Poligon Gaj",
+  "aliases": [],
+  "country": {
+    "code": "SI",
+    "name": "Slovenia",
+    "slug": "slovenia"
+  },
+  "location": [
+    15.4980195,
+    45.8894728
+  ],
+  "sourceIds": [
+    "osm-network-227223409"
+  ],
+  "defaultLayoutId": "poligon-gaj",
+  "layouts": [
+    {
+      "id": "poligon-gaj",
+      "name": "Poligon Gaj",
+      "referenceId": "Slovenia/Poligon Gaj",
+      "file": "layouts/poligon-gaj.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1887.6 m. Difference from the supplied layout distance 5.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-227223409",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/227223409",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:14:07.703Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

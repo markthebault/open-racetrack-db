@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "gb-ellough-park-reference",
+  "name": "Ellough Park",
+  "aliases": [],
+  "country": {
+    "code": "GB",
+    "name": "United Kingdom",
+    "slug": "united-kingdom"
+  },
+  "location": [
+    1.6007849,
+    52.43433075
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Ellough Park",
+      "file": "layouts/main.geojson",
+      "description": "Unique course from independently named source ways. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "referenceId": "United Kingdom/Ellough Park"
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course geometry",
+      "url": "https://www.openstreetmap.org/way/130420761",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Unique course from independently named source ways."
+    }
+  ]
+}

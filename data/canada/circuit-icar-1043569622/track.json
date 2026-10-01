@@ -15,13 +15,34 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "icar-mirabel",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "icar-mirabel",
+      "name": "ICAR Mirabel",
+      "referenceId": "Canada/ICAR Mirabel",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "icar-mirabel-long",
+      "name": "ICAR Mirabel LONG",
+      "referenceId": "Canada/ICAR Mirabel LONG",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "icar-mirabel-long-chicane",
+      "name": "ICAR Mirabel LONG chicane",
+      "referenceId": "Canada/ICAR Mirabel LONG chicane",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

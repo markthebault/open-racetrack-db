@@ -130,7 +130,7 @@ Do not treat Nordschleife full, a record-lap convention, and BTG as interchangea
 
 ## 7. Existing prototype boundary
 
-Earlier local HTML explorers are useful for visual expectations: amber route, selectable layouts, map fitting, and visible gates. Their embedded geometry and gate coordinates were derived from Racelogic.
+Earlier local HTML explorers are useful for visual expectations: amber route, selectable layouts, map fitting, and visible gates. Their embedded geometry and gate coordinates were derived from reference.
 
 Reuse product observations only. Build new public data from the source process in document 03. The previous prototype files are not public source inputs and must not enter this repository's data or build.
 

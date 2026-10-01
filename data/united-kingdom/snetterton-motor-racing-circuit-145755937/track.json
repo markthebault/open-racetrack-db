@@ -13,15 +13,44 @@
     52.46485780740742
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-145755937"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "snetterton-combo",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "snetterton-combo",
+      "name": "Snetterton Combo",
+      "referenceId": "United Kingdom/Snetterton Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "snetterton100",
+      "name": "Snetterton100",
+      "referenceId": "United Kingdom/Snetterton100",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "snetterton200",
+      "name": "Snetterton200",
+      "referenceId": "United Kingdom/Snetterton200",
+      "file": "layouts/snetterton200.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3193.6 m. Difference from the supplied layout distance 5.4 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "snetterton300",
+      "name": "Snetterton300",
+      "referenceId": "United Kingdom/Snetterton300",
+      "file": "layouts/snetterton300.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4789.1 m. Difference from the supplied layout distance 2.1 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +62,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-145755937",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/145755937",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

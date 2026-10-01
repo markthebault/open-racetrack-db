@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "tw-penbay-3b334d4e",
+  "name": "Penbay",
+  "aliases": [],
+  "country": {
+    "code": "TW",
+    "name": "Taiwan",
+    "slug": "taiwan"
+  },
+  "location": [
+    120.4824989,
+    22.45294475
+  ],
+  "sourceIds": [
+    "osm-network-645849365"
+  ],
+  "defaultLayoutId": "penbay-combo",
+  "layouts": [
+    {
+      "id": "penbay-combo",
+      "name": "Penbay Combo",
+      "referenceId": "Taiwan/Penbay Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "penbay-international-circuit",
+      "name": "Penbay International Circuit",
+      "referenceId": "Taiwan/Penbay International Circuit",
+      "file": "layouts/penbay-international-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3520.1 m. Difference from the supplied layout distance 6.9 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "penbay-national",
+      "name": "Penbay National",
+      "referenceId": "Taiwan/Penbay National",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "penbay-north-oval",
+      "name": "Penbay North Oval",
+      "referenceId": "Taiwan/Penbay North Oval",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "penbay-south-oval",
+      "name": "Penbay South Oval",
+      "referenceId": "Taiwan/Penbay South Oval",
+      "file": "layouts/penbay-south-oval.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 435.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-645849365",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/645849365",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:40:56.726Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

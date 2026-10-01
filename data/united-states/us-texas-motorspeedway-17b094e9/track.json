@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-texas-motorspeedway-17b094e9",
+  "name": "Texas Motorspeedway",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -97.281468,
+    33.0366085
+  ],
+  "sourceIds": [
+    "osm-network-104503520"
+  ],
+  "defaultLayoutId": "texas-motorspeedway",
+  "layouts": [
+    {
+      "id": "texas-motorspeedway",
+      "name": "Texas Motorspeedway",
+      "referenceId": "United States/Texas Motorspeedway",
+      "file": "layouts/texas-motorspeedway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2382.5 m. Difference from the supplied layout distance 8.5 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-104503520",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/104503520",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

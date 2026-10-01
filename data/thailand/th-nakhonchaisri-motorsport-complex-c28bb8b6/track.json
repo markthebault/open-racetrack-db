@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "th-nakhonchaisri-motorsport-complex-c28bb8b6",
+  "name": "Nakhonchaisri Motorsport Complex",
+  "aliases": [],
+  "country": {
+    "code": "TH",
+    "name": "Thailand",
+    "slug": "thailand"
+  },
+  "location": [
+    100.167551,
+    13.911498250000001
+  ],
+  "sourceIds": [
+    "osm-network-152598337"
+  ],
+  "defaultLayoutId": "nakhonchaisri-motorsport-complex",
+  "layouts": [
+    {
+      "id": "nakhonchaisri-motorsport-complex",
+      "name": "Nakhonchaisri Motorsport Complex",
+      "referenceId": "Thailand/Nakhonchaisri Motorsport Complex",
+      "file": "layouts/nakhonchaisri-motorsport-complex.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2456.3 m. Difference from the supplied layout distance 8.7 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-152598337",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/152598337",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:54.670Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

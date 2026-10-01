@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "tw-lihpao-g2-66f08127",
+  "name": "Lihpao G2",
+  "aliases": [],
+  "country": {
+    "code": "TW",
+    "name": "Taiwan",
+    "slug": "taiwan"
+  },
+  "location": [
+    120.6855947,
+    24.319079
+  ],
+  "sourceIds": [
+    "osm-network-779852386"
+  ],
+  "defaultLayoutId": "lihpao-g2",
+  "layouts": [
+    {
+      "id": "lihpao-g2",
+      "name": "Lihpao G2",
+      "referenceId": "Taiwan/Lihpao G2",
+      "file": "layouts/lihpao-g2.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3560.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "lihpao-g2-track-day",
+      "name": "Lihpao G2 Track Day",
+      "referenceId": "Taiwan/Lihpao G2 Track Day",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-779852386",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/779852386",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:40:56.726Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

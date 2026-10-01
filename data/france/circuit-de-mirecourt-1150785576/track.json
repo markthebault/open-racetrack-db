@@ -13,15 +13,30 @@
     48.32009955714288
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-1150785576"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "circuit-de-mirecourt-juvaincourt",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "circuit-de-mirecourt-juvaincourt",
+      "name": "Circuit de Mirecourt - Juvaincourt",
+      "referenceId": "France/Circuit de Mirecourt - Juvaincourt",
+      "file": "layouts/circuit-de-mirecourt-juvaincourt.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3739.4 m. Difference from the supplied layout distance 9.6 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "mirecourt-circuit",
+      "name": "Mirecourt Circuit",
+      "referenceId": "France/Mirecourt Circuit",
+      "file": "layouts/mirecourt-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3739.4 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-1150785576",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/1150785576",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

@@ -13,15 +13,37 @@
     33.36355568901736
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-1538039260"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "g2-motorsports-park-3-1-mile",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "g2-motorsports-park-3-1-mile",
+      "name": "G2 Motorsports Park 3.1 mile",
+      "referenceId": "United States/G2 Motorsports Park 3.1 mile",
+      "file": "layouts/g2-motorsports-park-3-1-mile.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4772.2 m. Difference from the supplied layout distance 8.8 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "g2-motorsports-park-combined",
+      "name": "G2 Motorsports Park Combined",
+      "referenceId": "United States/G2 Motorsports Park Combined",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "g2-motorsports-park-west",
+      "name": "G2 Motorsports Park West",
+      "referenceId": "United States/G2 Motorsports Park West",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +55,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-1538039260",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/1538039260",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

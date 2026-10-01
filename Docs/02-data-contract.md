@@ -69,8 +69,8 @@ All fields are required unless the table marks them optional. Reject unknown fie
 | `aliases` | string array | Search names; may be empty |
 | `country` | object | `code`: upper-case ISO alpha-2; `name`: English name; `slug`: folder name |
 | `locality` | string | Optional; independently sourced |
-| `location` | number pair | `[longitude, latitude]`; venue map marker |
-| `sourceIds` | string array | Nonempty; sources for venue identity and location |
+| `location` | number pair or null | Independently sourced `[longitude, latitude]`; null when no public location is established |
+| `sourceIds` | string array | Sources for venue identity and location; may be empty for entries without geometry |
 | `defaultLayoutId` | string | References one of this venue's layouts |
 | `layouts` | object array | Nonempty; each entry defined below |
 | `sources` | object array | Source records defined below |
@@ -168,7 +168,7 @@ Rules:
 - Closed traces have at least three distinct positions plus an exact repeat of the first position at the end.
 - No adjacent duplicate positions. The closing repeat is allowed.
 - Connections come from the route recipe, not a visual nearest-neighbor guess.
-- Preserve the mapped shape. Do not average Racelogic edges or GPS racing paths into it.
+- Preserve the mapped shape. Do not average reference edges or GPS racing paths into it.
 - A crossing in the map does not necessarily mean an intersection. Bridges can cross in 2D.
 - The first position of a closed trace is an implementation choice. It has no timing meaning.
 
@@ -248,7 +248,8 @@ This illustration contains a synthetic closed trace and no timing line. It is no
 
 - `id`, `name`, `aliases`, `country`, optional `locality`, and `location`, copied from metadata.
 - `file`, the relative path to the venue's `track.json`.
-- `layoutCount`, calculated from the layout list.
+- `layoutCount`, calculated from the complete layout list.
+- `traceCount`, counting layouts with an actual GeoJSON file.
 
 The viewer applies display sorting itself. The index contains no traces and no duplicated layout metadata. Do not add a build-time timestamp that changes on every run.
 
@@ -288,3 +289,11 @@ The normal validator allows valid draft data with reusable sources. A `--pilot-r
 ## 10. Data evolution
 
 Keep v1 additive where possible. Add new venues and layouts without code changes. A format change requires a specification update and schema-version decision. Historical track configurations and a general migration framework are outside this pilot.
+
+## Registered entries without geometry
+
+A layout can have `file: null` with a `missingGeometryReason`. It remains selectable, but the viewer clears the previous trace and provides no GeoJSON download. `referenceId` identifies its expected catalogue entry. Layout IDs and reference IDs must be unique within each venue.
+
+A venue containing only unavailable layouts can have `location: null` and empty source lists. Any venue with a trace requires an independent location and source records. Missing geometry does not satisfy route coverage.
+
+Recipes may select a pinned alternate snapshot using `snapshotFile`. The snapshot filename, SHA-256 and source ID must also appear in the venue's import manifest. Each recipe uses the exact source versions in its selected snapshot.

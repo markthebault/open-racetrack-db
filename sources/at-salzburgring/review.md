@@ -1,6 +1,6 @@
 # Salzburgring source review
 
-This is a first visual-preview draft. It uses only the pinned OpenStreetMap ways listed by its recipes for public course geometry. No Racelogic track trace, map image, or track boundary is used. Racelogic start/finish GPS is loaded separately from ignored .local/timing.json for this tailnet-only preview.
+This is a first visual-preview draft. It uses only the pinned OpenStreetMap ways listed by its recipes for public course geometry. No reference track trace, map image, or track boundary is used. reference start/finish GPS is loaded separately from ignored .local/timing.json for this tailnet-only preview.
 
 Source snapshot: sources/at-salzburgring/osm.json
 Import manifest: sources/at-salzburgring/import.json

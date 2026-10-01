@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "us-buttonwillow-the-circuit-f0c1757b",
+  "name": "Buttonwillow The Circuit",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -119.55700955,
+    35.4957172
+  ],
+  "sourceIds": [
+    "osm-network-1449267265"
+  ],
+  "defaultLayoutId": "buttonwillow-the-circuit",
+  "layouts": [
+    {
+      "id": "buttonwillow-the-circuit",
+      "name": "Buttonwillow The Circuit",
+      "referenceId": "United States/Buttonwillow The Circuit",
+      "file": "layouts/buttonwillow-the-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4151.8 m. Difference from the supplied layout distance 10.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-1449267265",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/1449267265",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

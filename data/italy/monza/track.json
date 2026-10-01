@@ -14,15 +14,31 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "venue-reference"
+    "venue-reference",
+    "osm-network-19842206"
   ],
   "defaultLayoutId": "grand-prix",
   "layouts": [
     {
       "id": "grand-prix",
-      "name": "Grand Prix",
+      "name": "Monza",
       "file": "layouts/grand-prix.geojson",
-      "description": "Main road course through Variante del Rettifilo, Variante della Roggia, both Lesmo corners, Variante Ascari and Curva Alboreto. The historic banked oval, Junior loop and chicane bypasses are excluded."
+      "description": "Main road course through Variante del Rettifilo, Variante della Roggia, both Lesmo corners, Variante Ascari and Curva Alboreto. The historic banked oval, Junior loop and chicane bypasses are excluded.",
+      "referenceId": "Italy/Monza"
+    },
+    {
+      "id": "monza-combo",
+      "name": "Monza Combo",
+      "referenceId": "Italy/Monza Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "monza-without-chicane",
+      "name": "Monza without Chicane",
+      "referenceId": "Italy/Monza without Chicane",
+      "file": "layouts/monza-without-chicane.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5751.3 m. Difference from the supplied layout distance 26.3 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -43,6 +59,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:36:36.836Z",
       "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    },
+    {
+      "id": "osm-network-19842206",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/19842206",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:18.140Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

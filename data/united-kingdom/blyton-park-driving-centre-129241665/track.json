@@ -13,15 +13,30 @@
     53.45772598602151
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-129241665"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "blyton-park-inner",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "blyton-park-inner",
+      "name": "Blyton Park Inner",
+      "referenceId": "United Kingdom/Blyton Park Inner",
+      "file": "layouts/blyton-park-inner.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2241.5 m. Difference from the supplied layout distance 17.5 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "blyton-park-outer",
+      "name": "Blyton Park Outer",
+      "referenceId": "United Kingdom/Blyton Park Outer",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-129241665",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/129241665",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

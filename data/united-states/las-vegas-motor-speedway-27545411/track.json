@@ -13,15 +13,60 @@
     36.272299828571434
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-125207287",
+    "osm-network-51319172"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Las Vegas Motor Speedway",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "referenceId": "United States/Las Vegas Motor Speedway"
+    },
+    {
+      "id": "lvms-combo",
+      "name": "LVMS Combo",
+      "referenceId": "United States/LVMS Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "lvms-infield-road-course",
+      "name": "LVMS Infield Road Course",
+      "referenceId": "United States/LVMS Infield Road Course",
+      "file": "layouts/lvms-infield-road-course.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1745 m. Difference from the supplied layout distance 10.0 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "lvms-outfield-road-course",
+      "name": "LVMS Outfield Road Course",
+      "referenceId": "United States/LVMS Outfield Road Course",
+      "file": "layouts/lvms-outfield-road-course.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3896.2 m. Difference from the supplied layout distance 11.2 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "lvms-outfield-road-course-chicane",
+      "name": "LVMS Outfield Road Course Chicane",
+      "referenceId": "United States/LVMS Outfield Road Course Chicane",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "lvms-super-speedway",
+      "name": "LVMS Super Speedway",
+      "referenceId": "United States/LVMS Super Speedway",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "lvms-super-speedway-infield",
+      "name": "LVMS Super Speedway Infield",
+      "referenceId": "United States/LVMS Super Speedway Infield",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +78,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-125207287",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/125207287",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-network-51319172",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/51319172",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

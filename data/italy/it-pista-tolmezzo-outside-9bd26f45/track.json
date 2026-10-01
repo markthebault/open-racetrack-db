@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "it-pista-tolmezzo-outside-9bd26f45",
+  "name": "Pista Tolmezzo Outside",
+  "aliases": [],
+  "country": {
+    "code": "IT",
+    "name": "Italy",
+    "slug": "italy"
+  },
+  "location": [
+    13.00819535,
+    46.394810199999995
+  ],
+  "sourceIds": [
+    "osm-network-372871291"
+  ],
+  "defaultLayoutId": "pista-tolmezzo-outside",
+  "layouts": [
+    {
+      "id": "pista-tolmezzo-outside",
+      "name": "Pista Tolmezzo Outside",
+      "referenceId": "Italy/Pista Tolmezzo Outside",
+      "file": "layouts/pista-tolmezzo-outside.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 699 m. Difference from the supplied layout distance 8.0 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-372871291",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/372871291",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:18.140Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

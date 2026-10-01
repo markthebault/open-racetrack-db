@@ -13,15 +13,44 @@
     43.79879430125523
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-110527567"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "briggs-stratton-motorplex",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "briggs-stratton-motorplex",
+      "name": "Briggs & Stratton Motorplex",
+      "referenceId": "United States/Briggs & Stratton Motorplex",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "road-america",
+      "name": "Road America",
+      "referenceId": "United States/Road America",
+      "file": "layouts/road-america.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 6437.9 m. Difference from the supplied layout distance 4.1 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "road-america-short",
+      "name": "Road America Short",
+      "referenceId": "United States/Road America Short",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "road-america-sro-practice",
+      "name": "Road America SRO Practice",
+      "referenceId": "United States/Road America SRO Practice",
+      "file": "layouts/road-america-sro-practice.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 6437.9 m. Difference from the supplied layout distance 4.1 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +62,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-110527567",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/110527567",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

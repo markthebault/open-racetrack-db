@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "au-dean-will-race-477e117a",
+  "name": "Dean Will Race",
+  "aliases": [],
+  "country": {
+    "code": "AU",
+    "name": "Australia",
+    "slug": "australia"
+  },
+  "location": [
+    151.23529765,
+    -33.26656935
+  ],
+  "sourceIds": [
+    "osm-network-461244538"
+  ],
+  "defaultLayoutId": "dean-will-race-track",
+  "layouts": [
+    {
+      "id": "dean-will-race-track",
+      "name": "Dean Will Race Track",
+      "referenceId": "Australia/Dean Will Race Track",
+      "file": "layouts/dean-will-race-track.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4888.4 m. Difference from the supplied layout distance 19.6 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-461244538",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/461244538",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.558Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "za-midvaal-raceway-1e3d539e",
+  "name": "Midvaal Raceway",
+  "aliases": [],
+  "country": {
+    "code": "ZA",
+    "name": "South Africa",
+    "slug": "south-africa"
+  },
+  "location": [
+    28.0595127,
+    -26.612728099999998
+  ],
+  "sourceIds": [
+    "osm-network-202139562"
+  ],
+  "defaultLayoutId": "midvaal-raceway",
+  "layouts": [
+    {
+      "id": "midvaal-raceway",
+      "name": "Midvaal Raceway",
+      "referenceId": "South Africa/Midvaal Raceway",
+      "file": "layouts/midvaal-raceway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2431.9 m. Difference from the supplied layout distance 9.1 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-202139562",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/202139562",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:25:05.976Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

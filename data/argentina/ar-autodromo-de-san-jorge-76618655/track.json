@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "ar-autodromo-de-san-jorge-76618655",
+  "name": "Autodromo de San Jorge",
+  "aliases": [],
+  "country": {
+    "code": "AR",
+    "name": "Argentina",
+    "slug": "argentina"
+  },
+  "location": [
+    -61.87006565,
+    -31.911508650000002
+  ],
+  "sourceIds": [
+    "osm-network-215341966"
+  ],
+  "defaultLayoutId": "autodromo-de-san-jorge",
+  "layouts": [
+    {
+      "id": "autodromo-de-san-jorge",
+      "name": "Autodromo de San Jorge",
+      "referenceId": "Argentina/Autodromo de San Jorge",
+      "file": "layouts/autodromo-de-san-jorge.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3164.8 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-215341966",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/215341966",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.542Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

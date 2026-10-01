@@ -13,15 +13,30 @@
     46.416130920754725
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-137243010"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "brainerd-competition-road",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "brainerd-competition-road",
+      "name": "Brainerd Competition Road",
+      "referenceId": "United States/Brainerd Competition Road",
+      "file": "layouts/brainerd-competition-road.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3892 m. Difference from the supplied layout distance 8.0 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "brainerd-main",
+      "name": "Brainerd Main",
+      "referenceId": "United States/Brainerd Main",
+      "file": "layouts/brainerd-main.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4804.1 m. Difference from the supplied layout distance 22.9 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -42,6 +57,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:33:23.000Z",
       "evidenceNote": "The operator reference supports venue identity. It does not verify this source-cycle selection and supplies no public coordinates."
+    },
+    {
+      "id": "osm-network-137243010",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/137243010",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

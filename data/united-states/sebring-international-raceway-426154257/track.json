@@ -13,15 +13,58 @@
     27.452896733500015
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-426154257"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "sebring",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "sebring",
+      "name": "Sebring",
+      "referenceId": "United States/Sebring",
+      "file": "layouts/sebring.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5865.7 m. Difference from the supplied layout distance 7.3 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "sebring-combo",
+      "name": "Sebring Combo",
+      "referenceId": "United States/Sebring Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "sebring-johnson-club",
+      "name": "Sebring Johnson Club",
+      "referenceId": "United States/Sebring Johnson Club",
+      "file": "layouts/sebring-johnson-club.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2688.2 m. Difference from the supplied layout distance 4.8 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "sebring-johnson-club-alt-sf",
+      "name": "Sebring Johnson Club Alt SF",
+      "referenceId": "United States/Sebring Johnson Club Alt SF",
+      "file": "layouts/sebring-johnson-club-alt-sf.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2688.2 m. Difference from the supplied layout distance 4.8 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "sebring-school-circuit",
+      "name": "Sebring School Circuit",
+      "referenceId": "United States/Sebring School Circuit",
+      "file": "layouts/sebring-school-circuit.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3100.5 m. Difference from the supplied layout distance 16.5 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "sebring-sro-practice",
+      "name": "Sebring SRO Practice",
+      "referenceId": "United States/Sebring SRO Practice",
+      "file": "layouts/sebring-sro-practice.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5865.7 m. Difference from the supplied layout distance 7.3 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +76,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-426154257",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/426154257",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

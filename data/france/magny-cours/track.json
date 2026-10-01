@@ -20,9 +20,17 @@
   "layouts": [
     {
       "id": "grand-prix",
-      "name": "Grand Prix",
+      "name": "Magny Cours",
       "file": "layouts/grand-prix.geojson",
-      "description": "Complete closed main-course way 63951656. Separate Club circuit ways and pit lanes are excluded. Its approximate OSM length is 4.46 km; the FIA nominal length is 4.411 km, so geometry remains a draft."
+      "description": "Complete closed main-course way 63951656. Separate Club circuit ways and pit lanes are excluded. Its approximate OSM length is 4.46 km; the FIA nominal length is 4.411 km, so geometry remains a draft.",
+      "referenceId": "France/Magny Cours"
+    },
+    {
+      "id": "magny-cours-club",
+      "name": "Magny Cours Club",
+      "referenceId": "France/Magny Cours Club",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [

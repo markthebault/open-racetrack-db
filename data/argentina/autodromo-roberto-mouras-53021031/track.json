@@ -13,15 +13,30 @@
     -34.97772085284552
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-53021031"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "autodromo-roberto-jose-mouras",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "autodromo-roberto-jose-mouras",
+      "name": "Autodromo Roberto Jose Mouras",
+      "referenceId": "Argentina/Autodromo Roberto Jose Mouras",
+      "file": "layouts/autodromo-roberto-jose-mouras.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4100 m. Difference from the supplied layout distance 16.0 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "roberto-jose-mouras-2-chicanes",
+      "name": "Roberto Jose Mouras 2 Chicanes",
+      "referenceId": "Argentina/Roberto Jose Mouras 2 Chicanes",
+      "file": "layouts/roberto-jose-mouras-2-chicanes.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4218.7 m. Difference from the supplied layout distance 11.3 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-53021031",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/53021031",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.542Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "br-autodromo-internacional-de-cascavel-d67f0e09",
+  "name": "Autodromo Internacional de Cascavel",
+  "aliases": [],
+  "country": {
+    "code": "BR",
+    "name": "Brazil",
+    "slug": "brazil"
+  },
+  "location": [
+    -53.38502695,
+    -24.982503549999997
+  ],
+  "sourceIds": [
+    "osm-network-146619775"
+  ],
+  "defaultLayoutId": "autodromo-internacional-de-cascavel",
+  "layouts": [
+    {
+      "id": "autodromo-internacional-de-cascavel",
+      "name": "Autodromo Internacional de Cascavel",
+      "referenceId": "Brazil/Autodromo Internacional de Cascavel",
+      "file": "layouts/autodromo-internacional-de-cascavel.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3030.6 m. Difference from the supplied layout distance 4.4 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-146619775",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/146619775",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:38.302Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

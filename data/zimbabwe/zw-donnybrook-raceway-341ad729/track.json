@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "zw-donnybrook-raceway-341ad729",
+  "name": "Donnybrook Raceway",
+  "aliases": [],
+  "country": {
+    "code": "ZW",
+    "name": "Zimbabwe",
+    "slug": "zimbabwe"
+  },
+  "location": [
+    31.1822639,
+    -17.8265479
+  ],
+  "sourceIds": [
+    "osm-network-214613152"
+  ],
+  "defaultLayoutId": "donnybrook-raceway",
+  "layouts": [
+    {
+      "id": "donnybrook-raceway",
+      "name": "Donnybrook Raceway",
+      "referenceId": "Zimbabwe/Donnybrook Raceway",
+      "file": "layouts/donnybrook-raceway.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2767.7 m. Difference from the supplied layout distance 7.3 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-214613152",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/214613152",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:41:48.539Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

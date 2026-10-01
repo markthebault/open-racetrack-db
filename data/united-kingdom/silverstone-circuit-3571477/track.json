@@ -13,15 +13,73 @@
     52.07182327316606
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-relation-51160",
+    "osm-network-3571477"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "silverstone-gp-wing-sf",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "silverstone-gp-wing-sf",
+      "name": "Silverstone GP Wing SF",
+      "file": "layouts/silverstone-gp-wing-sf.geojson",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "referenceId": "United Kingdom/Silverstone GP Wing SF"
+    },
+    {
+      "id": "silverstone-gp-old-sf",
+      "name": "Silverstone GP Old SF",
+      "file": "layouts/silverstone-gp-old-sf.geojson",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "referenceId": "United Kingdom/Silverstone GP Old SF"
+    },
+    {
+      "id": "silverstone-stowe",
+      "name": "Silverstone Stowe",
+      "referenceId": "United Kingdom/Silverstone Stowe",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "silverstone-gp-historic",
+      "name": "Silverstone GP Historic",
+      "referenceId": "United Kingdom/Silverstone GP Historic",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "silverstone-national",
+      "name": "Silverstone National",
+      "referenceId": "United Kingdom/Silverstone National",
+      "file": "layouts/silverstone-national.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2635.1 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "silverstone-international",
+      "name": "Silverstone International",
+      "referenceId": "United Kingdom/Silverstone International",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "silverstone-rx",
+      "name": "Silverstone RX",
+      "referenceId": "United Kingdom/Silverstone RX",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "silverstone-combo",
+      "name": "Silverstone Combo",
+      "referenceId": "United Kingdom/Silverstone Combo",
+      "file": null,
+      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
   "sources": [
@@ -33,6 +91,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-relation-51160",
+      "type": "osm",
+      "title": "OpenStreetMap named circuit relation",
+      "url": "https://www.openstreetmap.org/relation/51160",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T11:51:50.582Z",
+      "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
+    },
+    {
+      "id": "osm-network-3571477",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/3571477",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }

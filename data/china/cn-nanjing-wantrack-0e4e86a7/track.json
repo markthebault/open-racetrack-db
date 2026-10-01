@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cn-nanjing-wantrack-0e4e86a7",
+  "name": "Nanjing Wantrack",
+  "aliases": [],
+  "country": {
+    "code": "CN",
+    "name": "China",
+    "slug": "china"
+  },
+  "location": [
+    119.03424495,
+    31.6711831
+  ],
+  "sourceIds": [
+    "osm-network-844912773"
+  ],
+  "defaultLayoutId": "nanjing-wantrack",
+  "layouts": [
+    {
+      "id": "nanjing-wantrack",
+      "name": "Nanjing Wantrack",
+      "referenceId": "China/Nanjing Wantrack",
+      "file": "layouts/nanjing-wantrack.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2017.9 m. Difference from the supplied layout distance 0.9 m. Course configuration still requires visual review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-network-844912773",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/844912773",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:31.696Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    }
+  ]
+}

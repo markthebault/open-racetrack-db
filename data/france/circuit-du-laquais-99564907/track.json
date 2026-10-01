@@ -13,15 +13,30 @@
     45.469842838095225
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-network-99564907"
   ],
-  "defaultLayoutId": "main",
+  "defaultLayoutId": "laquais-grande-piste",
   "layouts": [
     {
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
       "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    },
+    {
+      "id": "laquais-grande-piste",
+      "name": "Laquais Grande Piste",
+      "referenceId": "France/Laquais Grande Piste",
+      "file": "layouts/laquais-grande-piste.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3021.7 m. Difference from the supplied layout distance 9.7 m. Course configuration still requires visual review."
+    },
+    {
+      "id": "laquais-petite-piste",
+      "name": "Laquais Petite Piste",
+      "referenceId": "France/Laquais Petite Piste",
+      "file": "layouts/laquais-petite-piste.geojson",
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2426.5 m. Difference from the supplied layout distance 4.5 m. Course configuration still requires visual review."
     }
   ],
   "sources": [
@@ -33,6 +48,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-network-99564907",
+      "type": "osm",
+      "title": "OpenStreetMap connected course network",
+      "url": "https://www.openstreetmap.org/way/99564907",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.587Z",
+      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
     }
   ]
 }
