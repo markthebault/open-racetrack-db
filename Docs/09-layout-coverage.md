@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 847
-- unmappedLayouts: 160
+- draftMapped: 851
+- unmappedLayouts: 156
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -164,7 +164,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Trois Rivieres | 1 | 1 | 0 | Trois Rivieres |  |
 | Canada | Vancouver Island Motorsport Circuit | 1 | 1 | 1 |  |  |
 | Canada | Western Speedway | 1 | 1 | 0 | Western Speedway |  |
-| Switzerland | St Ursanne | 1 | 1 | 0 | St Ursanne |  |
+| Switzerland | St Ursanne | 1 | 1 | 1 |  |  |
 | Chile | Autodromo de Codegua | 1 | 1 | 1 |  |  |
 | Chile | Autódromo Gustavo Felo Rivera | 1 | 0 | 0 |  | main |
 | Chile | Autódromo Interlomas | 1 | 1 | 1 |  |  |
@@ -205,7 +205,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Germany | Black Forest Long | 1 | 1 | 1 |  |  |
 | Germany | Black Forest Short | 1 | 1 | 1 |  |  |
 | Germany | Circuit Meppen | 1 | 1 | 1 |  |  |
-| Germany | Estering | 1 | 1 | 0 | Estering Combo |  |
+| Germany | Estering | 3 | 1 | 1 |  | estering-standard; estering-joker |
 | Germany | Gross Doelln | 1 | 1 | 0 | Gross Doelln |  |
 | Germany | Harzring | 1 | 1 | 1 |  |  |
 | Germany | Hockenheimring | 3 | 3 | 3 |  |  |
@@ -759,7 +759,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Thompson Speedway | 3 | 2 | 2 |  | main |
 | United States | Thunderhill Raceway Park | 6 | 5 | 5 |  | main |
 | United States | Utah Motorsports Campus | 6 | 5 | 5 |  | main |
-| United States | VA City Hill Climb | 1 | 1 | 0 | VA City Hill Climb |  |
+| United States | VA City Hill Climb | 1 | 1 | 1 |  |  |
 | United States | Virginia International Raceway | 7 | 6 | 6 |  | main |
 | United States | Waterford Hills | 2 | 1 | 1 |  | main |
 | United States | Watkins Glen International | 3 | 2 | 2 |  | main |
@@ -771,7 +771,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | South Africa | Aldo Scribante Race Circuit | 1 | 1 | 1 |  |  |
 | South Africa | Dezzi Raceway | 1 | 1 | 1 |  |  |
 | South Africa | Killarney Raceway | 1 | 1 | 1 |  |  |
-| South Africa | Knysna Hill Climb | 1 | 1 | 0 | Knysna Hill Climb |  |
+| South Africa | Knysna Hill Climb | 1 | 1 | 1 |  |  |
 | South Africa | Kyalami | 1 | 1 | 1 |  |  |
 | South Africa | Midvaal Raceway | 1 | 1 | 1 |  |  |
 | South Africa | Phakisa Freeway | 1 | 1 | 1 |  |  |
@@ -828,7 +828,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Long |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Germany/Estering Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Gross Doelln |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -855,7 +854,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Portugal/Montalegre |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| South Africa/Knysna Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Andalucia Layout 1 5k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Andalucia Layout 2 4k |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -868,7 +866,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Sweden/Gotland Ring 7.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Ljungbyhed Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Ljungbyhed Park Alt SF |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Switzerland/St Ursanne |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay Drag Strip |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -946,7 +943,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Spring Mtn Raceway Lauda C |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Thermal Club Twin Palms Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/VA City Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Vietnam/Hanoi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
@@ -1256,7 +1252,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Germany | Bilster Berg Westschleife | de-test-und-prasentationsstrecke-bilster-berg-180270505 | bilster-berg-westschleife | draft-mapped |
 | Germany | Black Forest Long | de-black-forest-long-reference | main | draft-mapped |
 | Germany | Black Forest Short | de-black-forest-short-reference | main | draft-mapped |
-| Germany | Estering Combo | de-estering-f9d6a5de |  | missing-layout |
+| Germany | Estering Combo | de-estering-f9d6a5de | estering-combo | draft-mapped |
 | Germany | Gross Doelln | de-gross-doelln-8c6a694d |  | missing-layout |
 | Germany | Harzring | de-harzring-reference | main | draft-mapped |
 | Germany | Hockenheim GP | de-hockenheimring | grand-prix | draft-mapped |
@@ -1465,7 +1461,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | South Africa | Dezzi Raceway | za-dezzi-raceway-fadec401 | dezzi-raceway | draft-mapped |
 | South Africa | East london GP Circuit | za-prince-george-circuit-677195345 | east-london-gp-circuit | draft-mapped |
 | South Africa | Killarney | za-killarney-raceway-42125321 | main | draft-mapped |
-| South Africa | Knysna Hill Climb | za-knysna-hill-climb-0b642392 |  | missing-layout |
+| South Africa | Knysna Hill Climb | za-knysna-hill-climb-0b642392 | knysna-hill-climb | draft-mapped |
 | South Africa | Kyalami | za-kyalami-532871442 | main | draft-mapped |
 | South Africa | Midvaal Raceway | za-midvaal-raceway-1e3d539e | midvaal-raceway | draft-mapped |
 | South Africa | Phakisa Freeway | za-phakisa-freeway-79bc85ad | phakisa-freeway | draft-mapped |
@@ -1534,7 +1530,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Sweden | Sturup Raceway | se-sturup-raceway-42957249 | sturup-raceway | draft-mapped |
 | Sweden | Sviestad | se-sviestad-f8832c27 | sviestad | draft-mapped |
 | Sweden | Sviestad Chicane | se-sviestad-chicane-b5fb133a | sviestad-chicane | draft-mapped |
-| Switzerland | St Ursanne | ch-st-ursanne-a8b987de |  | missing-layout |
+| Switzerland | St Ursanne | ch-st-ursanne-a8b987de | st-ursanne | draft-mapped |
 | Taiwan | Lihpao G2 | tw-lihpao-g2-66f08127 | lihpao-g2 | draft-mapped |
 | Taiwan | Lihpao G2 Track Day | tw-lihpao-g2-66f08127 | lihpao-g2-track-day | draft-mapped |
 | Taiwan | Lihpao Wind | tw-lihpao-wind-39d57a25 |  | missing-layout |
@@ -1947,7 +1943,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Thunderhill Raceway Park no Turn 5 | us-thunderhill-raceway-park-28825115 | thunderhill-raceway-park-no-turn-5 | draft-mapped |
 | United States | Thunderhill Raceway Park Turn 5 | us-thunderhill-raceway-park-28825115 | thunderhill-raceway-park-turn-5 | draft-mapped |
 | United States | Thunderhill Raceway Park West | us-thunderhill-raceway-park-28825115 | thunderhill-raceway-park-west | draft-mapped |
-| United States | VA City Hill Climb | us-va-city-hill-climb-8d49ea09 |  | missing-layout |
+| United States | VA City Hill Climb | us-va-city-hill-climb-8d49ea09 | va-city-hill-climb | draft-mapped |
 | United States | Virginia Int Raceway Full | us-virginia-international-raceway-20264407 | virginia-int-raceway-full | draft-mapped |
 | United States | Virginia Int Raceway Grand | us-virginia-international-raceway-20264407 | virginia-int-raceway-grand | draft-mapped |
 | United States | Virginia Int Raceway Grand East | us-virginia-international-raceway-20264407 | virginia-int-raceway-grand-east | draft-mapped |

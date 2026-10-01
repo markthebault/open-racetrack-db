@@ -562,6 +562,29 @@
           "url": "https://www.openstreetmap.org/way/28824428"
         }
       ]
+    },
+    {
+      "referenceId": "Germany/Estering Combo",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "estering-standard",
+        "estering-joker"
+      ],
+      "expectedLengthM": 1062.7,
+      "identificationUrl": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
+      "evidence": "The aggregate configuration combines the independently identified Standard and Joker laps from the operator general circuit plan. The Joker branch is independently named in the source. Shared raceway edges count once, and the two closed component paths remain separate. The paddock start lane and venue perimeter polygon are excluded. The independent unique branch distance is 1062.7 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "estering-standard",
+          "name": "Estering Standard Course",
+          "url": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf"
+        },
+        {
+          "layoutId": "estering-joker",
+          "name": "Estering Joker Lap",
+          "url": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf"
+        }
+      ]
     }
   ]
 }

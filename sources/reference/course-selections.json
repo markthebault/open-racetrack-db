@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montjuïc",
+      "referenceId": "Spain/Circuit de Montju\u00efc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -18721,6 +18721,157 @@
       ],
       "expectedLengthM": 3258.4,
       "maximumDistanceDifferenceM": 100
+    },
+    {
+      "referenceId": "South Africa/Knysna Hill Climb",
+      "sourcePath": "sources/course-networks/knysna-hill-climb-independent-roads/osm.json",
+      "sourceWayIds": [
+        514493167
+      ],
+      "closed": false,
+      "evidence": "The event operator identifies the open Simola hillclimb on Old Cape Road. The independently named road provides a unique continuous source-node slice between nodes near both catalogue timing positions. The mapped planar route measures 1876 m, close to the published 1.9 km event; the catalogue scalar is 2196 m. The route is open, without a return-road closure.",
+      "identificationUrl": "https://www.speedfestival.co.za/contact-us/",
+      "segments": [
+        {
+          "wayId": 514493167,
+          "wayVersion": 7,
+          "fromIndex": 28,
+          "toIndex": 87
+        }
+      ],
+      "expectedLengthM": 1876,
+      "maximumDistanceDifferenceM": 330
+    },
+    {
+      "referenceId": "United States/VA City Hill Climb",
+      "sourcePath": "sources/course-networks/va-city-hill-climb-independent-roads/osm.json",
+      "sourceWayIds": [
+        256794449,
+        194237144,
+        14369797
+      ],
+      "closed": false,
+      "evidence": "The operator identifies the climb on Nevada Highway 341, independently mapped as Occidental Grade with ref SR 341. The selected continuous source-node route follows the catalogue timing extent and measures 7247.3 m. The operator advertises a longer 5.2 mile event; this draft does not assert the current event endpoints. Neither a return road nor an artificial closure is included.",
+      "identificationUrl": "https://www.virginiacityhillclimb.com/",
+      "segments": [
+        {
+          "wayId": 256794449,
+          "wayVersion": 11,
+          "fromIndex": 11,
+          "toIndex": 44
+        },
+        {
+          "wayId": 194237144,
+          "wayVersion": 12,
+          "fromIndex": 0,
+          "toIndex": 297
+        },
+        {
+          "wayId": 14369797,
+          "wayVersion": 16,
+          "fromIndex": 0,
+          "toIndex": 7
+        }
+      ],
+      "expectedLengthM": 7247.3,
+      "maximumDistanceDifferenceM": 131
+    },
+    {
+      "referenceId": "Switzerland/St Ursanne",
+      "sourcePath": "sources/course-networks/st-ursanne-independent-roads/osm.json",
+      "sourceWayIds": [
+        57687664,
+        833047253,
+        24393602,
+        180717277,
+        24393587,
+        180717278,
+        245436641,
+        37436533,
+        24632245,
+        24632246,
+        833047252,
+        57687666
+      ],
+      "closed": false,
+      "evidence": "The operator and municipal closure notice identify Route des Rangiers / road 249 from St-Ursanne through Grippons towards Les Rangiers. The selected independent road chain follows the main Grippons roundabout using its forward source-node order and the legal approach and exit lanes, excluding the residential bypass. Both catalogue timing positions agree with existing source endpoints. The road-centreline draft measures 5210.6 m; published race distance is 5180 m and the catalogue scalar is 5199 m. Race-day temporary barriers and exact historical alignment remain provisional.",
+      "identificationUrl": "https://closdudoubs.ch/wp-content/uploads/2025/08/20250808_SIN_Inforoute_St-Ursanne_CourseDeCoteInternationale.pdf",
+      "segments": [
+        {
+          "wayId": 57687664,
+          "wayVersion": 20,
+          "fromIndex": 27,
+          "toIndex": 57
+        },
+        {
+          "wayId": 833047253,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 3
+        },
+        {
+          "wayId": 24393602,
+          "wayVersion": 19,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 180717277,
+          "wayVersion": 8,
+          "fromIndex": 0,
+          "toIndex": 3
+        },
+        {
+          "wayId": 24393587,
+          "wayVersion": 14,
+          "fromIndex": 3,
+          "toIndex": 18
+        },
+        {
+          "wayId": 180717278,
+          "wayVersion": 9,
+          "fromIndex": 0,
+          "toIndex": 2
+        },
+        {
+          "wayId": 245436641,
+          "wayVersion": 10,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 37436533,
+          "wayVersion": 17,
+          "fromIndex": 25,
+          "toIndex": 0
+        },
+        {
+          "wayId": 24632245,
+          "wayVersion": 13,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 24632246,
+          "wayVersion": 10,
+          "fromIndex": 14,
+          "toIndex": 0
+        },
+        {
+          "wayId": 833047252,
+          "wayVersion": 1,
+          "fromIndex": 1,
+          "toIndex": 0
+        },
+        {
+          "wayId": 57687666,
+          "wayVersion": 22,
+          "fromIndex": 445,
+          "toIndex": 8
+        }
+      ],
+      "expectedLengthM": 5210.6,
+      "maximumDistanceDifferenceM": 25
     }
   ]
 }

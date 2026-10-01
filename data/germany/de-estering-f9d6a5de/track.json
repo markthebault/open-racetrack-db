@@ -8,17 +8,81 @@
     "name": "Germany",
     "slug": "germany"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    9.6918201,
+    53.44835515
+  ],
+  "sourceIds": [
+    "osm-components-267094190",
+    "osm-network-estering-combo"
+  ],
   "defaultLayoutId": "estering-combo",
   "layouts": [
     {
       "id": "estering-combo",
       "name": "Estering Combo",
       "referenceId": "Germany/Estering Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/estering-combo.geojson",
+      "description": "Combined mapped configurations: Estering Standard Course, Estering Joker Lap. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "estering-standard",
+      "name": "Estering Standard Course",
+      "file": "layouts/estering-standard.geojson",
+      "description": "The operator general circuit plan identifies the outer northern course through the right-angle return before the finish. This follows the closed independent main raceway; the source lap measures 928.7 m. Paddock access and the sports-centre perimeter polygon are excluded."
+    },
+    {
+      "id": "estering-joker",
+      "name": "Estering Joker Lap",
+      "file": "layouts/estering-joker.geojson",
+      "description": "The operator plan names the Joker branch inside the northern final complex. Independently named OSM Joker way 282853377 reconnects exact source nodes to the main raceway. The source lap measures 905.4 m; no paddock or venue perimeter edges are included."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-267094190",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/267094190",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-estering-standard",
+      "type": "reference",
+      "title": "Estering Standard Course identification",
+      "url": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "The operator general circuit plan identifies the outer northern course through the right-angle return before the finish. This follows the closed independent main raceway; the source lap measures 928.7 m. Paddock access and the sports-centre perimeter polygon are excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-estering-joker",
+      "type": "reference",
+      "title": "Estering Joker Lap identification",
+      "url": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "The operator plan names the Joker branch inside the northern final complex. Independently named OSM Joker way 282853377 reconnects exact source nodes to the main raceway. The source lap measures 905.4 m; no paddock or venue perimeter edges are included. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-estering-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/267094190",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:29:56.233Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-estering-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:29:56.233Z",
+      "evidenceNote": "The aggregate configuration combines the independently identified Standard and Joker laps from the operator general circuit plan. The Joker branch is independently named in the source. Shared raceway edges count once, and the two closed component paths remain separate. The paddock start lane and venue perimeter polygon are excluded. The independent unique branch distance is 1062.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

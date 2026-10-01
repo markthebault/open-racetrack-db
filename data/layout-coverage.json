@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 847,
-    "unmappedLayouts": 160,
+    "draftMapped": 851,
+    "unmappedLayouts": 156,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -4760,11 +4760,15 @@
       "name": "Estering Combo",
       "timingMode": "separate",
       "trackId": "de-estering-f9d6a5de",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "estering-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -8039,11 +8043,15 @@
       "name": "Knysna Hill Climb",
       "timingMode": "separate",
       "trackId": "za-knysna-hill-climb-0b642392",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "knysna-hill-climb"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -9132,11 +9140,15 @@
       "name": "St Ursanne",
       "timingMode": "separate",
       "trackId": "ch-st-ursanne-a8b987de",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "st-ursanne"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -15650,11 +15662,15 @@
       "name": "VA City Hill Climb",
       "timingMode": "separate",
       "trackId": "us-va-city-hill-climb-8d49ea09",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "va-city-hill-climb"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -17990,15 +18006,13 @@
       "name": "St Ursanne",
       "country": "Switzerland",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "St Ursanne"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "cl-autodromo-de-codegua-9d2429bd",
@@ -18561,15 +18575,16 @@
       "trackId": "de-estering-f9d6a5de",
       "name": "Estering",
       "country": "Germany",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Estering Combo"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "estering-standard",
+        "estering-joker"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -26373,15 +26388,13 @@
       "name": "VA City Hill Climb",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "VA City Hill Climb"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-virginia-international-raceway-20264407",
@@ -26548,15 +26561,13 @@
       "name": "Knysna Hill Climb",
       "country": "South Africa",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Knysna Hill Climb"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "za-kyalami-532871442",
@@ -26966,13 +26977,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Germany/Estering Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Germany/Gross Doelln",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27163,13 +27167,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "South Africa/Knysna Hill Climb",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "South Korea/Ansan",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27248,13 +27245,6 @@
     },
     {
       "recordId": "Sweden/Ljungbyhed Park Alt SF",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Switzerland/St Ursanne",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -27819,13 +27809,6 @@
     },
     {
       "recordId": "United States/Thermal Club Twin Palms Short",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/VA City Hill Climb",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
