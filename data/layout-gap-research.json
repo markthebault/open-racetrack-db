@@ -4,9 +4,9 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 9,
-    "course-distance-discrepancy": 66,
+    "course-distance-discrepancy": 60,
     "independent-geometry-missing": 59,
-    "ambiguous-source-branches": 31,
+    "ambiguous-source-branches": 29,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 11
   },
@@ -482,21 +482,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "Czech Republic/Autodrom Sosnova",
-      "trackId": "cz-autodrom-sosnova-30857652",
-      "layoutId": "autodrom-sosnova",
-      "sourcePath": "sources/europe/cz/osm.json",
-      "sourceWayIds": [
-        30857652,
-        30857653,
-        318068134
-      ],
-      "candidateCount": 26,
-      "closestSourceLengthM": 1083.4,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
       "referenceId": "Dominican Republic/Speedway Park",
       "trackId": "do-speedway-park-87fad81e",
       "layoutId": "speedway-park",
@@ -919,54 +904,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "Italy/Vallelunga Outer",
-      "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
-      "layoutId": "vallelunga-outer",
-      "sourcePath": "sources/europe/it/osm.json",
-      "sourceWayIds": [
-        48683097,
-        48683098,
-        48683099,
-        284142304,
-        624366372,
-        624366374,
-        624366375,
-        624366376,
-        624366377,
-        624366378,
-        624366379,
-        624366380,
-        624366382,
-        624366422,
-        1079800413,
-        1499656394,
-        1499656395,
-        1499656396,
-        1499656397,
-        1499656398,
-        1499656399,
-        1499656400,
-        1499656401,
-        1499656402,
-        1499656403,
-        1499656404,
-        1499656405,
-        1499656406,
-        1499656407,
-        1499656408,
-        1499656409,
-        1499656410,
-        1499848268,
-        1499848269,
-        1499937317,
-        1499937318
-      ],
-      "candidateCount": 201,
-      "closestSourceLengthM": 4085.9,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "Japan/Sendai Highland",
       "trackId": "jp-sendai-highland-fc283d24",
       "layoutId": "sendai-highland",
@@ -974,26 +911,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Kuwait/Kuwait Motor Town GP Chicane",
-      "trackId": "kw-kuwait-motor-town-807928887",
-      "layoutId": "kuwait-motor-town-gp-chicane",
-      "sourcePath": "sources/world/kw/osm.json",
-      "sourceWayIds": [
-        807928887,
-        807928897,
-        807928911,
-        807928912,
-        807928913,
-        807928914,
-        807928915,
-        807928916
-      ],
-      "candidateCount": 24,
-      "closestSourceLengthM": 5695.2,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "Latvia/Bikernieki RallyCross Track",
@@ -1782,23 +1699,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United Kingdom/Boyndie Kart Circuit",
-      "trackId": "gb-boyndie-kart-circuit-a57fdbb4",
-      "layoutId": "boyndie-kart-circuit",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        628275131,
-        628275132,
-        628275133,
-        628275134,
-        1265282628
-      ],
-      "candidateCount": 9,
-      "closestSourceLengthM": 839.2,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "United Kingdom/Bruntingthorpe",
       "trackId": "gb-bruntingthorpe-b2f151a7",
       "layoutId": "bruntingthorpe",
@@ -1901,30 +1801,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United Kingdom/Dunsfold Top Gear",
-      "trackId": "gb-dunsfold-top-gear-06a07bad",
-      "layoutId": "dunsfold-top-gear",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        22740179,
-        68045731,
-        68045732,
-        68045735,
-        68045737,
-        68045740,
-        68045744,
-        68045745,
-        68045748,
-        68045749,
-        68045751,
-        68920300
-      ],
-      "candidateCount": 5,
-      "closestSourceLengthM": 2359.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "United Kingdom/Dunsfold without Runway",
       "trackId": "gb-dunsfold-without-runway-93b45f42",
       "layoutId": "dunsfold-without-runway",
@@ -1998,23 +1874,6 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "open-course-evidence-required",
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
-      "referenceId": "United Kingdom/Larkhall Kart Circuit",
-      "trackId": "gb-larkhall-kart-circuit-2b78a780",
-      "layoutId": "larkhall-kart-circuit",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        105025364,
-        1151250495,
-        1151250496,
-        1151250497,
-        1151250498
-      ],
-      "candidateCount": 10,
-      "closestSourceLengthM": 872.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United Kingdom/Lydden Hill Infield",
@@ -2495,20 +2354,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United States/Eagles Canyon Raceway",
-      "trackId": "us-eagles-canyon-raceway-1557375600",
-      "layoutId": "eagles-canyon-raceway",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        1557375600,
-        1557375603
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 4285.8,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "United States/Fontana Raceway Infield Course",
       "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
       "layoutId": "fontana-raceway-infield-course",
@@ -2639,36 +2484,6 @@
       "sourcePath": "sources/world/us/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United States/Lime Rock",
-      "trackId": "us-lime-rock-park-17179697",
-      "layoutId": "lime-rock",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        17179697,
-        293189359,
-        293189360,
-        293189362,
-        293189363,
-        293189364,
-        293189368,
-        293189369,
-        293189371,
-        293189372,
-        293189374,
-        293189385,
-        293189386,
-        293189389,
-        341048663,
-        355462939,
-        432403007,
-        743768644
-      ],
-      "candidateCount": 4,
-      "closestSourceLengthM": 2411.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United States/Long Beach Street Circuit",

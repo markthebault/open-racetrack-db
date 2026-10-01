@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
-  "policy": "Member names are layout metadata only. A name match proposes an alias, not geometric or timing equivalence. Legacy names absent from the timing XML require reconciliation before registering an additional configuration. No course-data sections or archive geometry are imported.",
+  "policy": "Member names are layout metadata only. Reviewed aliases require identical whole-file fingerprints and a selected canonical timing identity; fingerprints do not infer timing equivalence. Other name matches propose aliases, not geometric or timing equivalence. Legacy names absent from the timing XML require reconciliation before registering an additional configuration. No course-data sections are parsed and no archive geometry is imported.",
   "timingRecordCount": 1007,
   "courseFileNameCount": 1041,
   "summary": {
     "name-match-country-inferred": 5,
     "name-match": 1009,
-    "unresolved-file-name": 24,
-    "country-alias": 3
+    "unresolved-file-name": 18,
+    "country-alias": 3,
+    "reviewed-file-alias": 6
   },
   "records": [
     {
@@ -3382,8 +3383,12 @@
     {
       "country": "Germany",
       "name": "Nordschleife Lap Record",
-      "referenceIds": [],
-      "status": "unresolved-file-name"
+      "referenceIds": [
+        "Germany/Nurburgring Lap Record"
+      ],
+      "status": "reviewed-file-alias",
+      "canonicalName": "Nurburgring Lap Record",
+      "evidence": "The alternate filename and the selected canonical member have identical complete-file bytes. This reconciles the name only; timing equivalence is not inferred from course data."
     },
     {
       "country": "Germany",
@@ -3674,8 +3679,12 @@
     {
       "country": "Argentina",
       "name": "Centenario Circuit",
-      "referenceIds": [],
-      "status": "unresolved-file-name"
+      "referenceIds": [
+        "Argentina/Autodromo Centenario"
+      ],
+      "status": "reviewed-file-alias",
+      "canonicalName": "Autodromo Centenario",
+      "evidence": "The alternate filename and the selected canonical member have identical complete-file bytes. This reconciles the name only; timing equivalence is not inferred from course data."
     },
     {
       "country": "Argentina",
@@ -3750,8 +3759,12 @@
     {
       "country": "Argentina",
       "name": "Oscar and Juan Circuit No. 12 (Chicane)",
-      "referenceIds": [],
-      "status": "unresolved-file-name"
+      "referenceIds": [
+        "Argentina/Oscar and Juan No. 12 (Chicane)"
+      ],
+      "status": "reviewed-file-alias",
+      "canonicalName": "Oscar and Juan No. 12 (Chicane)",
+      "evidence": "The alternate filename and the selected canonical member have identical complete-file bytes. This reconciles the name only; timing equivalence is not inferred from course data."
     },
     {
       "country": "Argentina",
@@ -3804,8 +3817,12 @@
     {
       "country": "Argentina",
       "name": "Oscar and Juan Circuit No. 12 (With Chicane)",
-      "referenceIds": [],
-      "status": "unresolved-file-name"
+      "referenceIds": [
+        "Argentina/Oscar and Juan No. 12 (Chicane)"
+      ],
+      "status": "reviewed-file-alias",
+      "canonicalName": "Oscar and Juan No. 12 (Chicane)",
+      "evidence": "The alternate filename and the selected canonical member have identical complete-file bytes. This reconciles the name only; timing equivalence is not inferred from course data."
     },
     {
       "country": "Argentina",
@@ -3890,8 +3907,12 @@
     {
       "country": "Argentina",
       "name": "Rosario Intermedidate Circuit",
-      "referenceIds": [],
-      "status": "unresolved-file-name"
+      "referenceIds": [
+        "Argentina/Rosario Intermediate Circuit"
+      ],
+      "status": "reviewed-file-alias",
+      "canonicalName": "Rosario Intermediate Circuit",
+      "evidence": "The alternate filename and the selected canonical member have identical complete-file bytes. This reconciles the name only; timing equivalence is not inferred from course data."
     },
     {
       "country": "Argentina",
@@ -7080,8 +7101,12 @@
     {
       "country": "Singapore",
       "name": "Singapore GP 2023",
-      "referenceIds": [],
-      "status": "unresolved-file-name"
+      "referenceIds": [
+        "Singapore/Singapore GP"
+      ],
+      "status": "reviewed-file-alias",
+      "canonicalName": "Singapore GP",
+      "evidence": "The alternate filename and the selected canonical member have identical complete-file bytes. This reconciles the name only; timing equivalence is not inferred from course data."
     },
     {
       "country": "Singapore",

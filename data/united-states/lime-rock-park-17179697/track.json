@@ -13,7 +13,8 @@
     41.92719276625
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-17179697"
   ],
   "defaultLayoutId": "lime-rock",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "lime-rock",
       "name": "Lime Rock",
       "referenceId": "United States/Lime Rock",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lime-rock.geojson",
+      "description": "Draft configuration: Classic route follows Big Bend, Lefthander, Righthander, Paul Newman Straight, the original Climbing Turn, West Bend, Diving Turn and Sam Posey Straight. Optional South and West chicane branches are excluded, as shown by the operator classic-course map. The independently mapped length 2371.7 m is retained despite the supplied scalar-distance discrepancy. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2371.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-17179697",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/17179697",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-lime-rock",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://limerock.com/wp-content/uploads/2022/09/TrackMap-classiclayout_PLNstraight.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

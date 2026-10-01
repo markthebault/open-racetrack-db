@@ -13,7 +13,8 @@
     33.36880563487178
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-1557375600"
   ],
   "defaultLayoutId": "eagles-canyon-raceway",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "eagles-canyon-raceway",
       "name": "Eagles Canyon Raceway",
       "referenceId": "United States/Eagles Canyon Raceway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/eagles-canyon-raceway.geojson",
+      "description": "Draft configuration: Full Italian Canyon course follows all fifteen numbered turns in the operator course map, including both western bends, the central inner loop, southern hairpin and long southeastern return. The Italian Canyon 2.7-mile configuration excludes the shorter mapped connector. The independent source length 4285.8 m is preserved, with the catalogue/operator distance discrepancy documented and no coordinate adjustment. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4285.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-1557375600",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/1557375600",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-eagles-canyon-raceway",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://eaglescanyon.com/wp-content/uploads/2026/04/2.0-Italian-Canyon-passing-zones.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }
