@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 832
-- unmappedLayouts: 175
+- draftMapped: 838
+- unmappedLayouts: 169
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -57,7 +57,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Argentina | Circuito San Juan Villicum | 1 | 1 | 1 |  |  |
 | Argentina | Los Golondrinas | 1 | 0 | 0 |  | main |
 | Argentina | Mar del plata | 1 | 1 | 1 |  |  |
-| Argentina | Protrero de los Funes | 1 | 1 | 0 | Protrero de los Funes |  |
+| Argentina | Protrero de los Funes | 1 | 1 | 1 |  |  |
 | Austria | Fuglau | 1 | 1 | 0 | Fuglau |  |
 | Austria | Greinbach | 1 | 1 | 1 |  |  |
 | Austria | Red Bull Ring | 1 | 1 | 1 |  |  |
@@ -126,7 +126,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Brazil | Autódromo Velo Città | 1 | 1 | 1 |  |  |
 | Brazil | Circuito dos Cristais Oval | 3 | 3 | 3 |  |  |
 | Brazil | Circuito Paladino | 1 | 0 | 0 |  | main |
-| Brazil | Circuito Panamericano | 1 | 1 | 0 | Circuito Panamericano |  |
+| Brazil | Circuito Panamericano | 1 | 1 | 1 |  |  |
 | Brazil | Haras Tuiuti | 1 | 1 | 1 |  |  |
 | Brazil | Interlagos | 1 | 1 | 1 |  |  |
 | Brazil | Kartodromo Granja Viana | 1 | 1 | 0 | Kartodromo Granja Viana |  |
@@ -201,7 +201,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Czechia | Autodrom Vysoké Mýto | 1 | 0 | 0 |  | main |
 | Czechia | Brno | 1 | 1 | 1 |  |  |
 | Czechia | Kartarena Cheb | 1 | 1 | 1 |  |  |
-| Germany | ADAC Schlusselfeld | 1 | 1 | 0 | ADAC Schlusselfeld |  |
+| Germany | ADAC Schlusselfeld | 1 | 1 | 1 |  |  |
 | Germany | Black Forest Long | 1 | 1 | 1 |  |  |
 | Germany | Black Forest Short | 1 | 1 | 1 |  |  |
 | Germany | Circuit Meppen | 1 | 1 | 1 |  |  |
@@ -694,7 +694,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Mount Lawn Speedway | 1 | 1 | 1 |  |  |
 | United States | Music City | 1 | 1 | 0 | Music City Grand Prix |  |
 | United States | Nashville Superspeedway | 1 | 1 | 1 |  |  |
-| United States | NCM Motorsports Park | 8 | 7 | 6 | NCM West | main |
+| United States | NCM Motorsports Park | 8 | 7 | 7 |  | main |
 | United States | Nelson Ledges Road Course | 2 | 1 | 1 |  | main |
 | United States | New Hampshire Motor Speedway | 3 | 2 | 2 |  | main |
 | United States | New Jersey Lightning | 1 | 1 | 1 |  |  |
@@ -745,8 +745,8 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Sonoma Raceway 2020 | 8 | 7 | 7 |  | main |
 | United States | Spring Mountain Motorsports Ranch | 15 | 14 | 9 | Charleston Peak North; Spring Mountain Raceway; Spring Mtn Raceway East A; Spring Mtn Raceway Lauda B; Spring Mtn Raceway Lauda C | main |
 | United States | St Petersburg Street Circuit | 1 | 1 | 1 |  |  |
-| United States | Summit Point Jefferson | 1 | 1 | 0 | Summit Point Jefferson |  |
-| United States | Summit Point Motorsports Park | 2 | 1 | 0 | Summit Point Shenandoah | main |
+| United States | Summit Point Jefferson | 1 | 1 | 1 |  |  |
+| United States | Summit Point Motorsports Park | 2 | 1 | 1 |  | main |
 | United States | Summit Point Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Talladega Grand Prix Raceway | 2 | 1 | 1 |  | main |
 | United States | Talladega Superspeedway | 1 | 1 | 1 |  |  |
@@ -791,7 +791,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Argentina/Autodromo de Concordia Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Autodromo de La Pampa |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Argentina/Protrero de los Funes |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Rosario Alt Extended Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Rosario Extended Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Rosario Intermediate Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -806,7 +805,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Brazil/Circuito Panamericano |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Brazil/Kartodromo Granja Viana |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Bulgaria/Drakon |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -831,7 +829,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Long |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Geoparc Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Germany/ADAC Schlusselfeld |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Estering Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Gross Doelln |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -944,7 +941,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Michelin Laurens Proving Grounds |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/NCM West |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/New York Safety Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Pocono - 2.5 Mile Road Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -957,8 +953,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Spring Mtn Raceway East A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Spring Mtn Raceway Lauda B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Spring Mtn Raceway Lauda C |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Summit Point Jefferson |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Summit Point Shenandoah |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Thermal Club Twin Palms Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/VA City Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1010,7 +1004,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Argentina | Oscar and Juan Circuit No. 9-S | ar-autodromo-oscar-y-juan-galvez-48743061 | oscar-and-juan-circuit-no-9-s | draft-mapped |
 | Argentina | Oscar and Juan No. 12 (Chicane) | ar-autodromo-oscar-y-juan-galvez-48743061 | oscar-and-juan-no-12-chicane | draft-mapped |
 | Argentina | Oscar and Juan No. 15 (Chicane) | ar-autodromo-oscar-y-juan-galvez-48743061 | oscar-and-juan-no-15-chicane | draft-mapped |
-| Argentina | Protrero de los Funes | ar-protrero-de-los-funes-dd64b455 |  | missing-layout |
+| Argentina | Protrero de los Funes | ar-protrero-de-los-funes-dd64b455 | protrero-de-los-funes | draft-mapped |
 | Argentina | Roberto Jose Mouras 2 Chicanes | ar-autodromo-roberto-mouras-53021031 | roberto-jose-mouras-2-chicanes | draft-mapped |
 | Argentina | Rosario Alt Extended Circuit | ar-autodromo-juan-manuel-fangio-293583938 |  | missing-layout |
 | Argentina | Rosario Alt Turismo Carretera | ar-autodromo-juan-manuel-fangio-293583938 | rosario-alt-turismo-carretera | draft-mapped |
@@ -1092,7 +1086,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Brazil | Circuito dos Cristais Full | br-circuito-dos-cristais-oval-reference | circuito-dos-cristais-full | draft-mapped |
 | Brazil | Circuito dos Cristais Oval | br-circuito-dos-cristais-oval-reference | main | draft-mapped |
 | Brazil | Circuito dos Cristais Stock Car | br-circuito-dos-cristais-oval-reference | circuito-dos-cristais-stock-car | draft-mapped |
-| Brazil | Circuito Panamericano | br-circuito-panamericano-9693925d |  | missing-layout |
+| Brazil | Circuito Panamericano | br-circuito-panamericano-9693925d | circuito-panamericano | draft-mapped |
 | Brazil | Curitiba | br-autodromo-internacional-de-curitiba-32346628 | curitiba | draft-mapped |
 | Brazil | Goiania | br-autodromo-internacional-ayrton-senna-288004307 | goiania | draft-mapped |
 | Brazil | Guapore | br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914 | guapore | draft-mapped |
@@ -1263,7 +1257,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Val de Vienne Motorcycle | fr-circuit-de-vitesse-du-vigeant-37918062 | val-de-vienne-motorcycle | draft-mapped |
 | France | Verze | fr-verze-reference | main | draft-mapped |
 | Georgia | Rustavi International Motodrom | ge-rustavi-international-motorpark-167355166 | main | draft-mapped |
-| Germany | ADAC Schlusselfeld | de-adac-schlusselfeld-1d190ba0 |  | missing-layout |
+| Germany | ADAC Schlusselfeld | de-adac-schlusselfeld-1d190ba0 | adac-schlusselfeld | draft-mapped |
 | Germany | Bilster Berg Gesamtstrecke | de-test-und-prasentationsstrecke-bilster-berg-180270505 | bilster-berg-gesamtstrecke | draft-mapped |
 | Germany | Bilster Berg Gesamtstrecke Chicane | de-test-und-prasentationsstrecke-bilster-berg-180270505 | bilster-berg-gesamtstrecke-chicane | draft-mapped |
 | Germany | Bilster Berg Ostschleife | de-test-und-prasentationsstrecke-bilster-berg-180270505 | bilster-berg-ostschleife | draft-mapped |
@@ -1859,7 +1853,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | NCM Grand Straight | us-ncm-motorsports-park-326452603 | ncm-grand-straight | draft-mapped |
 | United States | NCM R&T Course | us-ncm-motorsports-park-326452603 | ncm-r-t-course | draft-mapped |
 | United States | NCM Short East | us-ncm-motorsports-park-326452603 | ncm-short-east | draft-mapped |
-| United States | NCM West | us-ncm-motorsports-park-326452603 |  | missing-layout |
+| United States | NCM West | us-ncm-motorsports-park-326452603 | ncm-west | draft-mapped |
 | United States | Nelson Ledges | us-nelson-ledges-road-course-19215302 | nelson-ledges | draft-mapped |
 | United States | New Hampshire Motor Spdwy Chicane | us-new-hampshire-motor-speedway-60096117 | new-hampshire-motor-spdwy-chicane | draft-mapped |
 | United States | New Hampshire Motor Speedway | us-new-hampshire-motor-speedway-60096117 | new-hampshire-motor-speedway | draft-mapped |
@@ -1939,9 +1933,9 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Spring Mtn Raceway West | us-spring-mountain-motorsports-ranch-127683895 | spring-mtn-raceway-west | draft-mapped |
 | United States | St Petersburg Street Circuit | us-st-petersburg-street-circuit-9c3399c3 | st-petersburg-street-circuit | draft-mapped |
 | United States | Streets of Willow Springs | us-willow-springs-international-raceway-10440074 | streets-of-willow-springs | draft-mapped |
-| United States | Summit Point Jefferson | us-summit-point-jefferson-001540e4 |  | missing-layout |
+| United States | Summit Point Jefferson | us-summit-point-jefferson-001540e4 | summit-point-jefferson | draft-mapped |
 | United States | Summit Point Motorsports Park | us-summit-point-motorsports-park-2c6ffeaf | summit-point-motorsports-park | draft-mapped |
-| United States | Summit Point Shenandoah | us-summit-point-motorsports-park-220556257 |  | missing-layout |
+| United States | Summit Point Shenandoah | us-summit-point-motorsports-park-220556257 | summit-point-shenandoah | draft-mapped |
 | United States | Talladega Gran Prix | us-talladega-grand-prix-raceway-1061184414 | talladega-gran-prix | draft-mapped |
 | United States | Talladega Superspeedway | us-talladega-superspeedway-reference | main | draft-mapped |
 | United States | Texas Motorspeedway | us-texas-motorspeedway-17b094e9 | texas-motorspeedway | draft-mapped |

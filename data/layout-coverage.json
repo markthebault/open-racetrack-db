@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 832,
-    "unmappedLayouts": 175,
+    "draftMapped": 838,
+    "unmappedLayouts": 169,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -659,11 +659,14 @@
       "name": "Protrero de los Funes",
       "timingMode": "shared",
       "trackId": "ar-protrero-de-los-funes-dd64b455",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "protrero-de-los-funes"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -1947,11 +1950,14 @@
       "name": "Circuito Panamericano",
       "timingMode": "shared",
       "trackId": "br-circuito-panamericano-9693925d",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "circuito-panamericano"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -4623,11 +4629,14 @@
       "name": "ADAC Schlusselfeld",
       "timingMode": "shared",
       "trackId": "de-adac-schlusselfeld-1d190ba0",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "adac-schlusselfeld"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -13973,14 +13982,14 @@
       "name": "NCM West",
       "timingMode": "shared",
       "trackId": "us-ncm-motorsports-park-326452603",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ncm-west"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-ncm-motorsports-park-326452603"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -15269,14 +15278,14 @@
       "name": "Summit Point Jefferson",
       "timingMode": "shared",
       "trackId": "us-summit-point-jefferson-001540e4",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "summit-point-jefferson"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-summit-point-motorsports-park-2c6ffeaf"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -15301,14 +15310,14 @@
       "name": "Summit Point Shenandoah",
       "timingMode": "shared",
       "trackId": "us-summit-point-motorsports-park-220556257",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "summit-point-shenandoah"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-summit-point-motorsports-park-220556257"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -16453,15 +16462,13 @@
       "name": "Protrero de los Funes",
       "country": "Argentina",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Protrero de los Funes"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "at-fuglau-69fd1d4f",
@@ -17421,15 +17428,13 @@
       "name": "Circuito Panamericano",
       "country": "Brazil",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Circuito Panamericano"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "br-haras-tuiuti-4cd9359e",
@@ -18497,15 +18502,13 @@
       "name": "ADAC Schlusselfeld",
       "country": "Germany",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "ADAC Schlusselfeld"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "de-black-forest-long-reference",
@@ -25412,13 +25415,11 @@
       "name": "NCM Motorsports Park",
       "country": "United States",
       "actualLayoutCount": 8,
-      "actualTraceCount": 7,
+      "actualTraceCount": 8,
       "expectedRecordCount": 7,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 6,
-      "missingRecordNames": [
-        "NCM West"
-      ],
+      "mappedRecordCount": 7,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26140,28 +26141,24 @@
       "name": "Summit Point Jefferson",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Summit Point Jefferson"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-summit-point-motorsports-park-220556257",
       "name": "Summit Point Motorsports Park",
       "country": "United States",
       "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualTraceCount": 2,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Summit Point Shenandoah"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26674,13 +26671,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Argentina/Protrero de los Funes",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Argentina/Rosario Alt Extended Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -26773,13 +26763,6 @@
     },
     {
       "recordId": "Austria/Fuglau",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Brazil/Circuito Panamericano",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -26952,13 +26935,6 @@
     },
     {
       "recordId": "France/Geoparc Short",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Germany/ADAC Schlusselfeld",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -27785,13 +27761,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/NCM West",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/New York Safety Track",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27870,20 +27839,6 @@
     },
     {
       "recordId": "United States/Spring Mtn Raceway Lauda C",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Summit Point Jefferson",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Summit Point Shenandoah",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

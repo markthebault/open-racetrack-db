@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 9,
-    "course-distance-discrepancy": 60,
-    "independent-geometry-missing": 59,
+    "course-distance-discrepancy": 57,
+    "independent-geometry-missing": 56,
     "ambiguous-source-branches": 29,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 11
@@ -46,15 +46,6 @@
       "sourcePath": "sources/world/ar/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "Argentina/Protrero de los Funes",
-      "trackId": "ar-protrero-de-los-funes-dd64b455",
-      "layoutId": "protrero-de-los-funes",
-      "sourcePath": "sources/world/ar/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "Argentina/Rosario Alt Extended Circuit",
@@ -247,15 +238,6 @@
       "closestSourceLengthM": 1420.8,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Brazil/Circuito Panamericano",
-      "trackId": "br-circuito-panamericano-9693925d",
-      "layoutId": "circuito-panamericano",
-      "sourcePath": "sources/world/br/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "Brazil/Kartodromo Granja Viana",
@@ -652,15 +634,6 @@
       "closestSourceLengthM": 1653.9,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Germany/ADAC Schlusselfeld",
-      "trackId": "de-adac-schlusselfeld-1d190ba0",
-      "layoutId": "adac-schlusselfeld",
-      "sourcePath": "sources/europe/de/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "Germany/Estering Combo",
@@ -2559,25 +2532,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United States/NCM West",
-      "trackId": "us-ncm-motorsports-park-326452603",
-      "layoutId": "ncm-west",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        326452603,
-        326452604,
-        326452607,
-        326452608,
-        326452609,
-        326452610,
-        333233170
-      ],
-      "candidateCount": 96,
-      "closestSourceLengthM": 3431.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "United States/New York Safety Track",
       "trackId": "us-new-york-safety-7dd4ad33",
       "layoutId": "new-york-safety-track",
@@ -2869,41 +2823,6 @@
       "closestSourceLengthM": 4125.5,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "United States/Summit Point Jefferson",
-      "trackId": "us-summit-point-jefferson-001540e4",
-      "layoutId": "summit-point-jefferson",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        220540194,
-        954901941,
-        954901942,
-        954901943
-      ],
-      "candidateCount": 3,
-      "closestSourceLengthM": 2526.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United States/Summit Point Shenandoah",
-      "trackId": "us-summit-point-motorsports-park-220556257",
-      "layoutId": "summit-point-shenandoah",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        220556257,
-        220659116,
-        220659117,
-        220659119,
-        220659121,
-        220659122,
-        572443697
-      ],
-      "candidateCount": 48,
-      "closestSourceLengthM": 3394.5,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United States/Texas World Speedway",

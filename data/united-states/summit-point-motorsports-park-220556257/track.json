@@ -13,7 +13,8 @@
     39.240887929677406
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-summit-point-shenandoah-source-roads-15559999"
   ],
   "defaultLayoutId": "summit-point-shenandoah",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "summit-point-shenandoah",
       "name": "Summit Point Shenandoah",
       "referenceId": "United States/Summit Point Shenandoah",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/summit-point-shenandoah.geojson",
+      "description": "Draft configuration: The complete independently mapped main Shenandoah loop follows the long outer return, both terminal hairpins and the inner Karussell section identified by the operator full-configuration plan. The two optional crossover connectors and unrelated service or training roads are excluded. The actual source centreline is 3379.8 m; the operator describes the full course as 2.2 miles, while the catalogue scalar is 3794 m. These differences are recorded without scaling or warping coordinates. Alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3379.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-summit-point-shenandoah-source-roads-15559999",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/15559999",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:57:16.986Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-summit-point-shenandoah",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://summitpointmp.com/track-information/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:57:16.986Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }
