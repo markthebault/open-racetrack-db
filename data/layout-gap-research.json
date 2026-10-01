@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 5,
-    "course-distance-discrepancy": 41,
-    "independent-geometry-missing": 52,
+    "course-distance-discrepancy": 35,
+    "independent-geometry-missing": 50,
     "ambiguous-source-branches": 16,
     "source-connectivity-incomplete": 7,
     "open-course-evidence-required": 8
@@ -46,79 +46,6 @@
       "sourcePath": "sources/world/ar/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "Argentina/Rosario Alt Extended Circuit",
-      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
-      "layoutId": "rosario-alt-extended-circuit",
-      "sourcePath": "sources/world/ar/osm.json",
-      "sourceWayIds": [
-        293583938,
-        681663025,
-        685520888,
-        687340565
-      ],
-      "candidateCount": 8,
-      "closestSourceLengthM": 3057.8,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Argentina/Rosario Extended Circuit",
-      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
-      "layoutId": "rosario-extended-circuit",
-      "sourcePath": "sources/world/ar/osm.json",
-      "sourceWayIds": [
-        293583938,
-        681663025,
-        685520888,
-        687340565
-      ],
-      "candidateCount": 8,
-      "closestSourceLengthM": 3057.8,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Argentina/Rosario Intermediate Circuit",
-      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
-      "layoutId": "rosario-intermediate-circuit",
-      "sourcePath": "sources/world/ar/osm.json",
-      "sourceWayIds": [
-        293583938,
-        681663025,
-        685520888,
-        687340565
-      ],
-      "candidateCount": 8,
-      "closestSourceLengthM": 2948.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Argentina/Rosario Short Circuit",
-      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
-      "layoutId": "rosario-short-circuit",
-      "sourcePath": "sources/world/ar/osm.json",
-      "sourceWayIds": [
-        293583938,
-        681663025,
-        685520888,
-        687340565
-      ],
-      "candidateCount": 8,
-      "closestSourceLengthM": 2948.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Australia/Homebush",
-      "trackId": "au-homebush-b362de2c",
-      "layoutId": "homebush",
-      "sourcePath": "sources/world/au/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "Australia/MC Motorsport Main Track",
@@ -472,27 +399,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "France/Ales",
-      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutId": "ales",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        196899321,
-        196899326,
-        196899365,
-        196899380,
-        196899382,
-        196899384,
-        719926361,
-        719926362,
-        1118569358
-      ],
-      "candidateCount": 143,
-      "closestSourceLengthM": 2789,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
       "referenceId": "France/Ales1 Rally Stage",
       "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
       "layoutId": "ales1-rally-stage",
@@ -769,15 +675,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "Japan/Sendai Highland",
-      "trackId": "jp-sendai-highland-fc283d24",
-      "layoutId": "sendai-highland",
-      "sourcePath": "sources/world/jp/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "Latvia/Bikernieki RallyCross Track",
       "trackId": "lv-bikernieki-rallycross-5981ece5",
       "layoutId": "bikernieki-rallycross-track",
@@ -968,20 +865,6 @@
       "closestSourceLengthM": 1715.1,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Portugal/Macao RX",
-      "trackId": "pt-macao-rx-2348fa2a",
-      "layoutId": "macao-rx",
-      "sourcePath": "sources/europe/pt/osm.json",
-      "sourceWayIds": [
-        1160212456,
-        1160212457
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 784.2,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Russia/Ramenskoe",

@@ -730,6 +730,64 @@
           "url": "https://www.springmountainmotorsports.com/track-rentals-group-events/track-rentals/west/"
         }
       ]
+    },
+    {
+      "referenceId": "France/Ales",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "ales-technical",
+        "ales-north-loop",
+        "ales-south-loop",
+        "ales-central-bypass"
+      ],
+      "expectedLengthM": 2889.9,
+      "identificationUrl": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf",
+      "evidence": "The general entry shows a branch network: the northern outer Parabolica, both central loop closures, the direct central connection and the southern infield hairpin. The four independently identified component routes cover those branches. The inner Parabolica shortcut, southern hairpin bypass and parallel pit access are excluded because they are absent from the supplied branch identity. The independent unique branch distance is 2889.9 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "ales-technical",
+          "name": "Technical circuit",
+          "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf"
+        },
+        {
+          "layoutId": "ales-north-loop",
+          "name": "North loop",
+          "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf"
+        },
+        {
+          "layoutId": "ales-south-loop",
+          "name": "South loop",
+          "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf"
+        },
+        {
+          "layoutId": "ales-central-bypass",
+          "name": "Central bypass configuration",
+          "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf"
+        }
+      ]
+    },
+    {
+      "referenceId": "Portugal/Macao RX",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "macao-standard",
+        "macao-joker"
+      ],
+      "expectedLengthM": 971.4,
+      "identificationUrl": "https://portal.fpak.pt/pub/doc/1303/182098",
+      "evidence": "The general rallycross entry includes the standard southern return and alternate joker connection shown in the federation plan, page 7. Exact independently mapped course nodes form both closed laps. The public sport tag is inaccurate: the primary federation document identifies the facility as rallycross. No pit or paddock access is included. The independent unique branch distance is 971.4 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "macao-standard",
+          "name": "Standard lap",
+          "url": "https://portal.fpak.pt/pub/doc/1303/182098"
+        },
+        {
+          "layoutId": "macao-joker",
+          "name": "Joker lap",
+          "url": "https://portal.fpak.pt/pub/doc/1303/182098"
+        }
+      ]
     }
   ]
 }

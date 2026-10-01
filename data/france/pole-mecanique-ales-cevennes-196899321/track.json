@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-196899321"
+    "osm-selection-196899321",
+    "osm-components-196899321",
+    "osm-network-ales"
   ],
   "defaultLayoutId": "ales",
   "layouts": [
@@ -28,8 +30,8 @@
       "id": "ales",
       "name": "Ales",
       "referenceId": "France/Ales",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ales.geojson",
+      "description": "Combined mapped configurations: Technical circuit, North loop, South loop, Central bypass configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "ales-rapide",
@@ -44,6 +46,30 @@
       "referenceId": "France/Ales1 Rally Stage",
       "file": null,
       "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "id": "ales-technical",
+      "name": "Technical circuit",
+      "file": "layouts/ales-technical.geojson",
+      "description": "Full northern Parabolica, central return and southern infield hairpin shown in the operator plan; pit and access branches excluded."
+    },
+    {
+      "id": "ales-north-loop",
+      "name": "North loop",
+      "file": "layouts/ales-north-loop.geojson",
+      "description": "Northern Parabolica loop closes using the eastern mid-course return shown in the operator plan."
+    },
+    {
+      "id": "ales-south-loop",
+      "name": "South loop",
+      "file": "layouts/ales-south-loop.geojson",
+      "description": "Southern infield hairpin and western main straight close through the mid-course northern return shown in the operator plan."
+    },
+    {
+      "id": "ales-central-bypass",
+      "name": "Central bypass configuration",
+      "file": "layouts/ales-central-bypass.geojson",
+      "description": "Full northern Parabolica and southern infield hairpin use the direct central eastern connection shown in the operator plan. This branch-description label identifies the mapped route; direction remains draft."
     }
   ],
   "sources": [
@@ -73,6 +99,69 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:06:20.403Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-components-196899321",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/196899321",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-ales-technical",
+      "type": "reference",
+      "title": "Technical circuit identification",
+      "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Full northern Parabolica, central return and southern infield hairpin shown in the operator plan; pit and access branches excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ales-north-loop",
+      "type": "reference",
+      "title": "North loop identification",
+      "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Northern Parabolica loop closes using the eastern mid-course return shown in the operator plan. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ales-south-loop",
+      "type": "reference",
+      "title": "South loop identification",
+      "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Southern infield hairpin and western main straight close through the mid-course northern return shown in the operator plan. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ales-central-bypass",
+      "type": "reference",
+      "title": "Central bypass configuration identification",
+      "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Full northern Parabolica and southern infield hairpin use the direct central eastern connection shown in the operator plan. This branch-description label identifies the mapped route; direction remains draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-ales",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/196899321",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T22:22:35.518Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-ales",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.pole-mecanique.fr/wp-content/uploads/2019/07/Piste-Vitesse-P%C3%B4le-M%C3%A9canique-Al%C3%A8s-C%C3%A9vennes.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:22:35.518Z",
+      "evidenceNote": "The general entry shows a branch network: the northern outer Parabolica, both central loop closures, the direct central connection and the southern infield hairpin. The four independently identified component routes cover those branches. The inner Parabolica shortcut, southern hairpin bypass and parallel pit access are excluded because they are absent from the supplied branch identity. The independent unique branch distance is 2889.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }

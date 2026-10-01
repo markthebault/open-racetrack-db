@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **878 of 1,007 entries**. This recovery adds 421 associations: 379 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 325 traces across 46 countries. 293 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 36 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **886 of 1,007 entries**. This recovery adds 429 associations: 387 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 333 traces across 46 countries. 299 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 38 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry remains independent OSM data. Published event and operator documents identify specific configurations; they do not supply coordinates. Source snapshots are sanitized and hash-pinned, and every route recipe references exact source ways, versions and node indices. Private timing positions help identify a course and remain outside public downloads.
 
@@ -11,19 +11,19 @@ The following source limitations remain after the complete search of the pinned 
 | Remaining cause | Entries |
 | --- | ---: |
 | Ambiguous source branches | 16 |
-| Unresolved course-distance discrepancy | 41 |
-| Independent geometry absent near the timing position | 52 |
+| Unresolved course-distance discrepancy | 35 |
+| Independent geometry absent near the timing position | 50 |
 | Aggregate configuration needs identification | 5 |
 | Open-course route or endpoint evidence needed | 8 |
 | Source connectivity incomplete | 7 |
 | Bounded search incomplete | 0 |
-| **Total** | **129** |
+| **Total** | **121** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 129 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 121 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -42,3 +42,7 @@ Goodwood Kartways now groups the operator Standard Long and Long with Chicane ro
 Charleston Peak North and Spring Mountain East A, Lauda B and Lauda C follow the operator highlighted plans. The general Spring Mountain entry groups its published West and North/South variants as separate paths. Groß Dölln follows the organizer A+B+C plan. Gelleråsen uses the earlier full main course, excluding pit access and later kart extensions. Pocono follows the operator North/South Option 1; its independent course distance is retained separately. Seven targeted browser checks passed for the first individual course additions in this batch.
 
 The two Bombarral entries now follow independently mapped 1B and 2B configurations identified by the operator and federation plans. The Motorplex trace retains both southern hairpins and the northern dogleg, excluding unpaved and staging alternatives. Toronto follows the event road sequence. Bedford GT retains the operator-identified outer branches; its 5255.1 m public mapped distance differs materially from the 5906 m timing scalar and advertised 6.11 km, and remains explicitly provisional. Five browser checks verify rendered closed lines and downloadable routes for this batch.
+
+Alès now groups the technical course, independent north and south loops and direct central connection shown in the operator plan. The general entry excludes the inner northern shortcut, southern bypass and pit roads because they are absent from its branch identity. Mação groups independently mapped standard and joker laps identified from the federation plan. Rosario retains older extended and intermediate branches from the 2020 public snapshot, while its short course uses the 2013 main straight before a later pit-entry detour. Both extended names remain separately selectable; their small recorded difference is unrepresented and remains an alignment-review limitation. Sendai Highland uses its full 2013 public course, excluding pit access and drag-strip alternatives. Thirteen targeted browser checks passed for the 885-entry batch.
+
+Homebush follows the full operator street sequence through Olympic Boulevard, Herb Elliot Avenue, Park Street and Murray Rose Avenue, excluding similar-length shortcuts. Temporary barrier and carriageway alignment remain draft. Fourteen browser checks passed for the 886-entry batch.
