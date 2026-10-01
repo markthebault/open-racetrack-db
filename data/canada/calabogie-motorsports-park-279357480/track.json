@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ca-calabogie-motorsports-park-279357480",
+  "name": "Calabogie Motorsports Park",
+  "aliases": [],
+  "country": {
+    "code": "CA",
+    "name": "Canada",
+    "slug": "canada"
+  },
+  "location": [
+    -76.67205131898736,
+    45.304179185443026
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/279358040",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

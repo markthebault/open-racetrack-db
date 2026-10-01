@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "th-bira-circuit-107684749",
+  "name": "Bira Circuit",
+  "aliases": [],
+  "country": {
+    "code": "TH",
+    "name": "Thailand",
+    "slug": "thailand"
+  },
+  "location": [
+    101.00954254931504,
+    12.920496447945204
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/107684749",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:54.670Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

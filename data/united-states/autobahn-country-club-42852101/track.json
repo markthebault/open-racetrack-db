@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "us-autobahn-country-club-42852101",
+  "name": "Autobahn Country Club",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -88.1271333482014,
+    41.45501859496404
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/135130550",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "venue-reference-1",
+      "type": "reference",
+      "title": "Venue operator identity reference",
+      "url": "https://autobahncc.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:33:23.000Z",
+      "evidenceNote": "The operator reference supports venue identity. It does not verify this source-cycle selection and supplies no public coordinates."
+    }
+  ]
+}

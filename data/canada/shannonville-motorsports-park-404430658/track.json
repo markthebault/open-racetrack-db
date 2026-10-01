@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ca-shannonville-motorsports-park-404430658",
+  "name": "Shannonville Motorsports Park",
+  "aliases": [],
+  "country": {
+    "code": "CA",
+    "name": "Canada",
+    "slug": "canada"
+  },
+  "location": [
+    -77.16223968028167,
+    44.226595930985894
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/837343253",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

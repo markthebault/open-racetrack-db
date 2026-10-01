@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "qa-lusail-international-circuit-152483595",
+  "name": "Lusail International Circuit",
+  "aliases": [
+    "حلبة لوسيل الدولية"
+  ],
+  "country": {
+    "code": "QA",
+    "name": "Qatar",
+    "slug": "qatar"
+  },
+  "location": [
+    51.45399494064744,
+    25.491625403237414
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/152483594",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:21:32.601Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

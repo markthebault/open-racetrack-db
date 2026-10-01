@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ca-sanair-international-speedway-100566836",
+  "name": "Sanair International Speedway",
+  "aliases": [],
+  "country": {
+    "code": "CA",
+    "name": "Canada",
+    "slug": "canada"
+  },
+  "location": [
+    -72.88110190847458,
+    45.53117037118645
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/100566836",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.766Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

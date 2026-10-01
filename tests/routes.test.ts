@@ -23,3 +23,9 @@ test('misaligned private timing is omitted while the trace remains usable',()=>{
  const trace:Position[]=[[7,48],[7.01,48]];
  const gate=localGate([7.005,48.01],trace);assert.equal(gate.coordinates,null);assert.ok(gate.anchor.displacementM>100);
 });
+
+test('reference sources cannot supply coordinates even with a permissive license label',async()=>{
+ const {validateTrack,validateLayout}=await import('../schemas/data');
+ const track=validateTrack({schemaVersion:1,id:'fixture',name:'Fixture',aliases:[],country:{code:'US',name:'United States',slug:'united-states'},location:[0,0],sourceIds:['reference'],defaultLayoutId:'main',layouts:[{id:'main',name:'Fixture',file:'layouts/main.geojson'}],sources:[{id:'reference',type:'reference',title:'Identity only',url:'https://example.org/',license:'ODbL-1.0',retrievedAt:'2026-09-30T00:00:00Z',evidenceNote:'Identity-only reference'}]});
+ assert.throws(()=>validateLayout({type:'FeatureCollection',bbox:[0,0,0.01,0.01],metadata:{schemaVersion:1,trackId:'fixture',layoutId:'main',license:'ODbL-1.0',attribution:'Fixture',closed:true,geometryStatus:'draft',timingStatus:'missing',timingMode:'shared',lengthM:1,reviewedAt:null,notes:[]},features:[{type:'Feature',id:'trace',properties:{role:'trace',sourceIds:['reference']},geometry:{type:'LineString',coordinates:[[0,0],[0.01,0],[0.01,0.01],[0,0]]}}]},track,'main'),/reference-only/);
+});

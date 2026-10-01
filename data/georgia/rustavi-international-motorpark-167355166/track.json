@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "ge-rustavi-international-motorpark-167355166",
+  "name": "Rustavi International Motorpark",
+  "aliases": [
+    "რუსთავის საერთაშორისო მოტოდრომი"
+  ],
+  "country": {
+    "code": "GE",
+    "name": "Georgia",
+    "slug": "georgia"
+  },
+  "location": [
+    44.94893765480772,
+    41.571482203846145
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/relation/18166769",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:33:44.638Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

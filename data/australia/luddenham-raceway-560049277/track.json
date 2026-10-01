@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "au-luddenham-raceway-560049277",
+  "name": "Luddenham Raceway",
+  "aliases": [],
+  "country": {
+    "code": "AU",
+    "name": "Australia",
+    "slug": "australia"
+  },
+  "location": [
+    150.7176277241072,
+    -33.857678659821424
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/560047170",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:55.558Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

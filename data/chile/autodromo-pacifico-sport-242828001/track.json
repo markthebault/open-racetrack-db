@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cl-autodromo-pacifico-sport-242828001",
+  "name": "Autodromo Pacífico Sport",
+  "aliases": [],
+  "country": {
+    "code": "CL",
+    "name": "Chile",
+    "slug": "chile"
+  },
+  "location": [
+    -71.56049367789473,
+    -33.664759071578935
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/242828001",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:43.163Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

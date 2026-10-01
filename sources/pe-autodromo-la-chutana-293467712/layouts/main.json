@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "trackId": "pe-autodromo-la-chutana-293467712",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "ae22aa2f104e7bf57f440276dd63ddb6a8d53dde176c0d45ed7d66c9ff4a54c0",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 293467712,
+      "wayVersion": 7,
+      "fromIndex": 0,
+      "toIndex": 48
+    },
+    {
+      "wayId": 466171043,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 1
+    },
+    {
+      "wayId": 1318894834,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 9
+    },
+    {
+      "wayId": 466171043,
+      "wayVersion": 4,
+      "fromIndex": 2,
+      "toIndex": 30
+    }
+  ],
+  "gates": []
+}

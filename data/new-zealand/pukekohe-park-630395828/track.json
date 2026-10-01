@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "nz-pukekohe-park-630395828",
+  "name": "Pukekohe Park",
+  "aliases": [],
+  "country": {
+    "code": "NZ",
+    "name": "New Zealand",
+    "slug": "new-zealand"
+  },
+  "location": [
+    174.91986219333347,
+    -37.21636630833334
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/808201246",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:17:47.114Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

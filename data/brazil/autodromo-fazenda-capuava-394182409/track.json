@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "br-autodromo-fazenda-capuava-394182409",
+  "name": "Autódromo Fazenda Capuava",
+  "aliases": [],
+  "country": {
+    "code": "BR",
+    "name": "Brazil",
+    "slug": "brazil"
+  },
+  "location": [
+    -47.10027249670329,
+    -23.062990362637365
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/394182411",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:38.302Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import {execFileSync} from 'node:child_process';
 import {XMLParser} from 'fast-xml-parser';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {nearestEdge,type Position} from '../src/geo';
-import {europeanCountries} from './europe-countries';
+import {worldCountries} from './world-countries';
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];
 if(!archive||args.indexOf('--archive')<0)throw new Error('Use --archive /absolute/path/to/racelogic-tracks-db.zip');
 // Read only the timing XML. No CIR files, track edges, or track map files are opened.
@@ -45,9 +45,9 @@ for(const [id,name] of Object.entries(mapping)){const c=circuits.find((c:any)=>c
 const catalogue=JSON.parse(await readFile('data/index.json','utf8'));
 const names:Record<string,string>={CZ:'Czech Republic',TR:'Turkey',GB:'United Kingdom'};
 for(const entry of catalogue.tracks){
- const country=europeanCountries.find(c=>c.code===entry.country.code);if(!country)continue;
- const privateCountry=countries.find((c:any)=>c.name===(names[country.code]??country.name));if(!privateCountry)continue;
- const records=Array.isArray(privateCountry.circuits.circuit)?privateCountry.circuits.circuit:[privateCountry.circuits.circuit];
+ const country=worldCountries.find(c=>c.code===entry.country.code);if(!country)continue;
+ const acceptedNames=[names[country.code]??country.name,...(country.code==='ES'?['Canary Islands']:[])];
+ const records=countries.filter((c:any)=>acceptedNames.includes(c.name)).flatMap((c:any)=>Array.isArray(c.circuits.circuit)?c.circuits.circuit:[c.circuits.circuit]);if(!records.length)continue;
  const track=JSON.parse(await readFile(`data/${entry.file}`,'utf8'));
  for(const layout of track.layouts){const key=`${track.id}/${layout.id}`;if(out[key])continue;
   const data=JSON.parse(await readFile(`data/${entry.file.replace(/track.json$/,'')}${layout.file}`,'utf8')),trace=data.features[0].geometry.coordinates;

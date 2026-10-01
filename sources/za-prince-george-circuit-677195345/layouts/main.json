@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "trackId": "za-prince-george-circuit-677195345",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "b1f7c88db5458ce6bc4b6aad276e4f8f8fd99ea2b4a1d2b2db79dbd38c50dfd0",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 677195345,
+      "wayVersion": 2,
+      "fromIndex": 0,
+      "toIndex": 9
+    },
+    {
+      "wayId": 776766332,
+      "wayVersion": 5,
+      "fromIndex": 23,
+      "toIndex": 16
+    },
+    {
+      "wayId": 677195346,
+      "wayVersion": 2,
+      "fromIndex": 32,
+      "toIndex": 0
+    },
+    {
+      "wayId": 776766332,
+      "wayVersion": 5,
+      "fromIndex": 32,
+      "toIndex": 25
+    }
+  ],
+  "gates": []
+}

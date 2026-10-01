@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "us-monticello-motor-club-235166661",
+  "name": "Monticello Motor Club",
+  "aliases": [],
+  "country": {
+    "code": "US",
+    "name": "United States",
+    "slug": "united-states"
+  },
+  "location": [
+    -74.6991668060001,
+    41.62310941280002
+  ],
+  "sourceIds": [
+    "osm-snapshot"
+  ],
+  "defaultLayoutId": "main",
+  "layouts": [
+    {
+      "id": "main",
+      "name": "Connected course candidate",
+      "file": "layouts/main.geojson",
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+    }
+  ],
+  "sources": [
+    {
+      "id": "osm-snapshot",
+      "type": "osm",
+      "title": "OpenStreetMap course and venue identity",
+      "url": "https://www.openstreetmap.org/way/1306245981",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:41.023Z",
+      "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "venue-reference-1",
+      "type": "reference",
+      "title": "Venue operator identity reference",
+      "url": "https://www.monticellomotorclub.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:33:23.000Z",
+      "evidenceNote": "The operator reference supports venue identity. It does not verify this source-cycle selection and supplies no public coordinates."
+    }
+  ]
+}

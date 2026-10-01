@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "trackId": "us-heartland-park-raceway-137283766",
+  "layoutId": "main",
+  "sourceId": "osm-snapshot",
+  "snapshotSha256": "5187719c870de2b5d025e2152c7b35643ea0f0bb8772f1d7162345b0da479e48",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no Racelogic boundaries are read.",
+    "Some source ways lack one-way direction tags. Travel direction is provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 137283768,
+      "wayVersion": 4,
+      "fromIndex": 11,
+      "toIndex": 48
+    },
+    {
+      "wayId": 429678518,
+      "wayVersion": 1,
+      "fromIndex": 4,
+      "toIndex": 3
+    },
+    {
+      "wayId": 137283766,
+      "wayVersion": 2,
+      "fromIndex": 2,
+      "toIndex": 1
+    },
+    {
+      "wayId": 137283768,
+      "wayVersion": 4,
+      "fromIndex": 49,
+      "toIndex": 66
+    },
+    {
+      "wayId": 198119368,
+      "wayVersion": 2,
+      "fromIndex": 1,
+      "toIndex": 0
+    },
+    {
+      "wayId": 137283768,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 11
+    }
+  ],
+  "gates": []
+}
