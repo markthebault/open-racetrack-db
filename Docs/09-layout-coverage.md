@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 924
-- unmappedLayouts: 83
+- draftMapped: 929
+- unmappedLayouts: 78
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -88,7 +88,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Australia | Morgan Park K | 1 | 1 | 1 |  |  |
 | Australia | Newcastle Street Circuit | 1 | 1 | 0 | Newcastle Street Circuit |  |
 | Australia | Norwell Motorplex | 1 | 0 | 0 |  | main |
-| Australia | One Raceway | 2 | 1 | 0 | One Raceway Goulburn | main |
+| Australia | One Raceway | 2 | 1 | 1 |  | main |
 | Australia | Oran Park Raceway | 1 | 1 | 0 | Oran Park Raceway |  |
 | Australia | Phillip Island Grand Prix Circuit | 1 | 1 | 1 |  |  |
 | Australia | Queensland Raceway | 6 | 5 | 5 |  | main |
@@ -325,7 +325,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Blyton Park Driving Centre | 3 | 2 | 2 |  | main |
 | United Kingdom | Boyndie Kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Brands Hatch Circuit | 3 | 2 | 2 |  | main |
-| United Kingdom | Bruntingthorpe | 3 | 3 | 1 | Bruntingthorpe; Bruntingthorpe Combo |  |
+| United Kingdom | Bruntingthorpe | 3 | 3 | 3 |  |  |
 | United Kingdom | Buckmore Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Bucks_Estate_Circuit | 1 | 1 | 0 | Bucks_Estate_Circuit |  |
 | United Kingdom | Bucks_Estate_Combo | 1 | 1 | 0 | Bucks_Estate_Combo |  |
@@ -340,9 +340,9 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Daytona Sandown Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Donington Park | 3 | 2 | 2 |  | main |
 | United Kingdom | Driftland | 1 | 1 | 0 | Driftland |  |
-| United Kingdom | Dunsfold | 1 | 1 | 0 | Dunsfold |  |
+| United Kingdom | Dunsfold | 3 | 1 | 1 |  | airfield-perimeter-2020; main-runway-2020 |
 | United Kingdom | Dunsfold Top Gear | 1 | 1 | 1 |  |  |
-| United Kingdom | Dunsfold without Runway | 1 | 1 | 0 | Dunsfold without Runway |  |
+| United Kingdom | Dunsfold without Runway | 1 | 1 | 1 |  |  |
 | United Kingdom | East Fortune Circuit | 1 | 0 | 0 |  | main |
 | United Kingdom | Ellough Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Elvington | 1 | 1 | 0 | Elvington |  |
@@ -793,7 +793,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/One Raceway Goulburn |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Oran Park Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -834,16 +833,12 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Taiwan/Penbay FIA International Drag |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay National |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bruntingthorpe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bruntingthorpe Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Carver Barracks |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Castle Combe Western Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Driftland |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Dunsfold |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Dunsfold without Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Gaydon Emissions Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -952,7 +947,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Morgan Park E Circuit | au-morgan-park-e-circuit-bbb73dbb | morgan-park-e-circuit | draft-mapped |
 | Australia | Morgan Park K | au-morgan-park-k-47e89419 | morgan-park-k | draft-mapped |
 | Australia | Newcastle Street Circuit | au-newcastle-street-circuit-5ba8d445 |  | missing-layout |
-| Australia | One Raceway Goulburn | au-one-raceway-243608030 |  | missing-layout |
+| Australia | One Raceway Goulburn | au-one-raceway-243608030 | one-raceway-goulburn | draft-mapped |
 | Australia | Oran Park Raceway | au-oran-park-raceway-692abacd |  | missing-layout |
 | Australia | Philip Island | au-phillip-island-grand-prix-circuit-43598473 | main | draft-mapped |
 | Australia | Queensland Raceway Club Circuit | au-queensland-raceway-26175772 | queensland-raceway-club-circuit | draft-mapped |
@@ -1514,8 +1509,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Boyndie Kart Circuit | gb-boyndie-kart-circuit-a57fdbb4 | boyndie-kart-circuit | draft-mapped |
 | United Kingdom | Brands Hatch GP | gb-brands-hatch-circuit-4906929 | brands-hatch-gp | draft-mapped |
 | United Kingdom | Brands Hatch Indy | gb-brands-hatch-circuit-4906929 | brands-hatch-indy | draft-mapped |
-| United Kingdom | Bruntingthorpe | gb-bruntingthorpe-b2f151a7 |  | missing-layout |
-| United Kingdom | Bruntingthorpe Combo | gb-bruntingthorpe-b2f151a7 |  | missing-layout |
+| United Kingdom | Bruntingthorpe | gb-bruntingthorpe-b2f151a7 | bruntingthorpe | draft-mapped |
+| United Kingdom | Bruntingthorpe Combo | gb-bruntingthorpe-b2f151a7 | bruntingthorpe-combo | draft-mapped |
 | United Kingdom | Bruntingthorpe Full | gb-bruntingthorpe-b2f151a7 | bruntingthorpe-full | draft-mapped |
 | United Kingdom | Buckmore Park | gb-buckmore-park-95fca565 | buckmore-park | draft-mapped |
 | United Kingdom | Bucks_Estate_Circuit | gb-bucks-estate-circuit-b5f6a72b |  | missing-layout |
@@ -1533,9 +1528,9 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Donington GP | gb-donington-park-27131003 | donington-gp | draft-mapped |
 | United Kingdom | Donington National | gb-donington-park-27131003 | donington-national | draft-mapped |
 | United Kingdom | Driftland | gb-driftland-37d6ee3f |  | missing-layout |
-| United Kingdom | Dunsfold | gb-dunsfold-ea05c91c |  | missing-layout |
+| United Kingdom | Dunsfold | gb-dunsfold-ea05c91c | dunsfold | draft-mapped |
 | United Kingdom | Dunsfold Top Gear | gb-dunsfold-top-gear-06a07bad | dunsfold-top-gear | draft-mapped |
-| United Kingdom | Dunsfold without Runway | gb-dunsfold-without-runway-93b45f42 |  | missing-layout |
+| United Kingdom | Dunsfold without Runway | gb-dunsfold-without-runway-93b45f42 | dunsfold-without-runway | draft-mapped |
 | United Kingdom | Ellough Park | gb-ellough-park-reference | main | draft-mapped |
 | United Kingdom | Elvington | gb-elvington-a019c302 |  | missing-layout |
 | United Kingdom | Fen End Emissions | gb-fen-end-emissions-c3cfcf7b | fen-end-emissions | draft-mapped |

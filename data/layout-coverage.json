@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 924,
-    "unmappedLayouts": 83,
+    "draftMapped": 929,
+    "unmappedLayouts": 78,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -1197,14 +1197,14 @@
       "name": "One Raceway Goulburn",
       "timingMode": "shared",
       "trackId": "au-one-raceway-243608030",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "one-raceway-goulburn"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "au-one-raceway-243608030"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10124,11 +10124,14 @@
       "name": "Bruntingthorpe",
       "timingMode": "shared",
       "trackId": "gb-bruntingthorpe-b2f151a7",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bruntingthorpe"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10137,11 +10140,14 @@
       "name": "Bruntingthorpe Combo",
       "timingMode": "shared",
       "trackId": "gb-bruntingthorpe-b2f151a7",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bruntingthorpe-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10408,14 +10414,14 @@
       "name": "Dunsfold",
       "timingMode": "shared",
       "trackId": "gb-dunsfold-ea05c91c",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "dunsfold"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "gb-dunsfold-top-gear-06a07bad"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10440,14 +10446,14 @@
       "name": "Dunsfold without Runway",
       "timingMode": "shared",
       "trackId": "gb-dunsfold-without-runway-93b45f42",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "dunsfold-without-runway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "gb-dunsfold-top-gear-06a07bad"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17053,13 +17059,11 @@
       "name": "One Raceway",
       "country": "Australia",
       "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualTraceCount": 2,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "One Raceway Goulburn"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -20391,16 +20395,13 @@
       "name": "Bruntingthorpe",
       "country": "United Kingdom",
       "actualLayoutCount": 3,
-      "actualTraceCount": 1,
+      "actualTraceCount": 3,
       "expectedRecordCount": 3,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Bruntingthorpe",
-        "Bruntingthorpe Combo"
-      ],
+      "mappedRecordCount": 3,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-buckmore-park-95fca565",
@@ -20604,15 +20605,16 @@
       "trackId": "gb-dunsfold-ea05c91c",
       "name": "Dunsfold",
       "country": "United Kingdom",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Dunsfold"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "airfield-perimeter-2020",
+        "main-runway-2020"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -20633,15 +20635,13 @@
       "name": "Dunsfold without Runway",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Dunsfold without Runway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-east-fortune-circuit-87245436",
@@ -26801,13 +26801,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Australia/One Raceway Goulburn",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Australia/Oran Park Raceway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27088,20 +27081,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Kingdom/Bruntingthorpe",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Bruntingthorpe Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Bucks_Estate_Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27138,20 +27117,6 @@
     },
     {
       "recordId": "United Kingdom/Driftland",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Dunsfold",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Dunsfold without Runway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

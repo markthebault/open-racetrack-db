@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "trackId": "gb-bruntingthorpe-b2f151a7",
+  "layoutId": "bruntingthorpe-combo",
+  "sourceId": "osm-network-bruntingthorpe-combo",
+  "snapshotFile": "network-bruntingthorpe-combo.json",
+  "snapshotSha256": "499b1a49b2530c4315cd29645a83ada7567a8b4dabbf2f778793ea2791e9b143",
+  "geometryStatus": "draft",
+  "timingMode": "shared",
+  "reviewedAt": null,
+  "notes": [],
+  "gates": [],
+  "paths": [
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 4727841,
+          "wayVersion": 5,
+          "fromIndex": 5,
+          "toIndex": 3
+        },
+        {
+          "wayId": 330562838,
+          "wayVersion": 1,
+          "fromIndex": 6,
+          "toIndex": 0
+        },
+        {
+          "wayId": 95211743,
+          "wayVersion": 4,
+          "fromIndex": 7,
+          "toIndex": 29
+        }
+      ]
+    },
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 95211743,
+          "wayVersion": 4,
+          "fromIndex": 18,
+          "toIndex": 29
+        },
+        {
+          "wayId": 4727841,
+          "wayVersion": 5,
+          "fromIndex": 5,
+          "toIndex": 1
+        },
+        {
+          "wayId": 95211743,
+          "wayVersion": 4,
+          "fromIndex": 0,
+          "toIndex": 18
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "layoutId": "bruntingthorpe",
+      "snapshotFile": "selected-bruntingthorpe-independent-roads-4727841.json",
+      "snapshotSha256": "d52d248b37823f4afd7f5f66367e282c4ee732c6f7393726da12390518ea08a5"
+    },
+    {
+      "layoutId": "bruntingthorpe-full",
+      "snapshotFile": "selected-bruntingthorpe-independent-roads-4727841.json",
+      "snapshotSha256": "d52d248b37823f4afd7f5f66367e282c4ee732c6f7393726da12390518ea08a5"
+    }
+  ]
+}

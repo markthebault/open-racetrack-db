@@ -8,17 +8,81 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.5357957,
+    51.11539125
+  ],
+  "sourceIds": [
+    "osm-components-22740179",
+    "osm-network-dunsfold"
+  ],
   "defaultLayoutId": "dunsfold",
   "layouts": [
     {
       "id": "dunsfold",
       "name": "Dunsfold",
       "referenceId": "United Kingdom/Dunsfold",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/dunsfold.geojson",
+      "description": "Combined mapped configurations: Airfield perimeter 2020, Main runway 2020. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "airfield-perimeter-2020",
+      "name": "Airfield perimeter 2020",
+      "file": "layouts/airfield-perimeter-2020.geojson",
+      "description": "Complete historical perimeter road retains the rounded Western end, Northern straight, Eastern outer straight and Southern inward bend. The developer identifies this peri-track as a five-kilometre loop. Exact pinned 2020 source nodes exclude the Top Gear inner loops and business-park access roads."
+    },
+    {
+      "id": "main-runway-2020",
+      "name": "Main runway 2020",
+      "file": "layouts/main-runway-2020.geojson",
+      "description": "Historical paved main runway centerline retains its two independently mapped endpoints. The operator identifies asphalt runway 07/25. These are physical runway ends, not verified event timing gates or takeoff-distance endpoints. No connection to the surrounding perimeter is invented."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-22740179",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/22740179",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:51:16.675Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-airfield-perimeter-2020",
+      "type": "reference",
+      "title": "Airfield perimeter 2020 identification",
+      "url": "https://www.dunsfoldparkmasterplan.com/masterplan/the-evolving-masterplan/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:51:16.675Z",
+      "evidenceNote": "Complete historical perimeter road retains the rounded Western end, Northern straight, Eastern outer straight and Southern inward bend. The developer identifies this peri-track as a five-kilometre loop. Exact pinned 2020 source nodes exclude the Top Gear inner loops and business-park access roads. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-main-runway-2020",
+      "type": "reference",
+      "title": "Main runway 2020 identification",
+      "url": "https://www.dunsfoldpark.com/?catid=0&id=10",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:51:16.675Z",
+      "evidenceNote": "Historical paved main runway centerline retains its two independently mapped endpoints. The operator identifies asphalt runway 07/25. These are physical runway ends, not verified event timing gates or takeoff-distance endpoints. No connection to the surrounding perimeter is invented. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-dunsfold",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/22740179",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:54:02.729Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-dunsfold",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.dunsfoldparkmasterplan.com/masterplan/the-evolving-masterplan/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:54:02.729Z",
+      "evidenceNote": "The general airfield entry retains its historical perimeter and diagonal paved runway as distinct paths from a consistent 2020 independent snapshot. The 4816 m catalogue scalar differs from the combined physical branch distance and is not treated as a network lap length. Runway usable flight distance, temporary driving-event routes, direction and fine historical alignment remain draft. The independent unique branch distance is 6493.1 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

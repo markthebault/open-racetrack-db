@@ -1075,6 +1075,52 @@
           "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info"
         }
       ]
+    },
+    {
+      "referenceId": "United Kingdom/Dunsfold",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "airfield-perimeter-2020",
+        "main-runway-2020"
+      ],
+      "expectedLengthM": 6493.1,
+      "identificationUrl": "https://www.dunsfoldparkmasterplan.com/masterplan/the-evolving-masterplan/",
+      "evidence": "The general airfield entry retains its historical perimeter and diagonal paved runway as distinct paths from a consistent 2020 independent snapshot. The 4816 m catalogue scalar differs from the combined physical branch distance and is not treated as a network lap length. Runway usable flight distance, temporary driving-event routes, direction and fine historical alignment remain draft. The independent unique branch distance is 6493.1 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "airfield-perimeter-2020",
+          "name": "Airfield perimeter 2020",
+          "url": "https://www.dunsfoldparkmasterplan.com/masterplan/the-evolving-masterplan/"
+        },
+        {
+          "layoutId": "main-runway-2020",
+          "name": "Main runway 2020",
+          "url": "https://www.dunsfoldpark.com/?catid=0&id=10"
+        }
+      ]
+    },
+    {
+      "referenceId": "United Kingdom/Bruntingthorpe Combo",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "bruntingthorpe",
+        "bruntingthorpe-full"
+      ],
+      "expectedLengthM": 7042.3,
+      "identificationUrl": "https://www.gilmortonparishcouncil.gov.uk/uploads/27_5ad0963814cbc510074616.pdf",
+      "evidence": "The combined airfield entry preserves the independently mapped shorter runway loop and full proving-ground course as separate component paths. Both recipes pin consistent way versions from the same source snapshot. Shared edges count once, no new connector is drawn and no unique network distance is presented as a single race lap. The council identifies the proving-ground circuit and long runway. Short-course historical timing extent and temporary cone cuts remain unverified. The independent unique branch distance is 7042.3 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "bruntingthorpe",
+          "name": "Shorter mapped airfield loop",
+          "url": "https://www.gilmortonparishcouncil.gov.uk/uploads/27_5ad0963814cbc510074616.pdf"
+        },
+        {
+          "layoutId": "bruntingthorpe-full",
+          "name": "Full mapped proving-ground circuit",
+          "url": "https://www.gilmortonparishcouncil.gov.uk/uploads/27_5ad0963814cbc510074616.pdf"
+        }
+      ]
     }
   ]
 }

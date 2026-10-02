@@ -3,9 +3,9 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 4,
-    "course-distance-discrepancy": 27,
-    "independent-geometry-missing": 39,
+    "configuration-evidence-required": 3,
+    "course-distance-discrepancy": 24,
+    "independent-geometry-missing": 38,
     "ambiguous-source-branches": 7,
     "source-connectivity-incomplete": 2,
     "open-course-evidence-required": 4
@@ -64,20 +64,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Australia/One Raceway Goulburn",
-      "trackId": "au-one-raceway-243608030",
-      "layoutId": "one-raceway-goulburn",
-      "sourcePath": "sources/world/au/osm.json",
-      "sourceWayIds": [
-        243608030,
-        243608031
-      ],
-      "candidateCount": 2,
-      "closestSourceLengthM": 2201,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Australia/Oran Park Raceway",
@@ -775,23 +761,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United Kingdom/Bruntingthorpe",
-      "trackId": "gb-bruntingthorpe-b2f151a7",
-      "layoutId": "bruntingthorpe",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/Bruntingthorpe Combo",
-      "trackId": "gb-bruntingthorpe-b2f151a7",
-      "layoutId": "bruntingthorpe-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
       "referenceId": "United Kingdom/Bucks_Estate_Circuit",
       "trackId": "gb-bucks-estate-circuit-b5f6a72b",
       "layoutId": "bucks-estate-circuit",
@@ -851,54 +820,6 @@
       "closestSourceLengthM": 736.6,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "United Kingdom/Dunsfold",
-      "trackId": "gb-dunsfold-ea05c91c",
-      "layoutId": "dunsfold",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        22740179,
-        68045731,
-        68045732,
-        68045735,
-        68045737,
-        68045740,
-        68045744,
-        68045745,
-        68045748,
-        68045749,
-        68045751,
-        68920300
-      ],
-      "candidateCount": 5,
-      "closestSourceLengthM": 2359.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United Kingdom/Dunsfold without Runway",
-      "trackId": "gb-dunsfold-without-runway-93b45f42",
-      "layoutId": "dunsfold-without-runway",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        22740179,
-        68045731,
-        68045732,
-        68045735,
-        68045737,
-        68045740,
-        68045744,
-        68045745,
-        68045748,
-        68045749,
-        68045751,
-        68920300
-      ],
-      "candidateCount": 5,
-      "closestSourceLengthM": 2359.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United Kingdom/Elvington",

@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **924 of 1,007 entries**. This recovery adds 467 associations: 425 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 371 traces across 49 countries. 318 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 45 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **929 of 1,007 entries**. This recovery adds 472 associations: 430 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 376 traces across 49 countries. 321 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 47 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -11,19 +11,19 @@ The following source limitations remain after the complete search of the pinned 
 | Remaining cause | Entries |
 | --- | ---: |
 | Ambiguous source branches | 7 |
-| Unresolved course-distance discrepancy | 27 |
-| Independent geometry absent near the timing position | 39 |
-| Aggregate configuration needs identification | 4 |
+| Unresolved course-distance discrepancy | 24 |
+| Independent geometry absent near the timing position | 38 |
+| Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 4 |
 | Source connectivity incomplete | 2 |
 | Bounded search incomplete | 0 |
-| **Total** | **83** |
+| **Total** | **78** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 83 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 78 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -94,3 +94,5 @@ NOLA now retains its independently mapped 2014 North long course and Western con
 Devens now exposes the identified open airfield branch network and nine independently mapped component paths. The Western runway ends at its intersection with the Eastern runway; the Northern taxiway loop and training connections retain their real mapped ends. The organizer identifies the disused runways as an autocross site. This trace describes physical branches, while temporary cone-defined event routes remain unverified. Its 3,582.9 m branch distance is not a lap distance.
 
 G2 West now follows a 3064.5 m centerline digitized from independently georeferenced 2022 public-domain NAIP imagery. The operator identifies the separate Western course. The image shows its graded construction alignment before paving, so the trace remains a historical construction draft with finished pavement unverified. The full combined course remains separately selectable. Three targeted browser checks verify the distinct courses and their downloads.
+
+Dunsfold now retains its independently mapped perimeter loop and a historical perimeter-plus-runway network from a consistent 2020 snapshot. The physical runway keeps its real open ends, and the network does not invent joins. The separate perimeter-only entry uses the complete current mapped loop. One Raceway retains the independently mapped historical Wakefield Park main circuit, with its 2018 organizer plan and the subsequent 2024 redevelopment distinguished explicitly. Bruntingthorpe now exposes its shorter mapped runway loop and a combined network with the full proving-ground circuit. Historical lap extent, temporary cone cuts and scalar-distance differences remain draft. Seven focused browser checks verify the additions and downloadable open or closed geometry.

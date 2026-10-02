@@ -13,7 +13,8 @@
     52.490884050000005
   ],
   "sourceIds": [
-    "osm-selection-bruntingthorpe-independent-roads-4727841"
+    "osm-selection-bruntingthorpe-independent-roads-4727841",
+    "osm-network-bruntingthorpe-combo"
   ],
   "defaultLayoutId": "bruntingthorpe",
   "layouts": [
@@ -21,15 +22,15 @@
       "id": "bruntingthorpe",
       "name": "Bruntingthorpe",
       "referenceId": "United Kingdom/Bruntingthorpe",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bruntingthorpe.geojson",
+      "description": "Draft configuration: Independently mapped shorter airfield loop follows the Northeastern runway turnaround, the intermediate Southern taxiway return and the Western rounded turn. This physical course excludes the full Northern proving-ground perimeter and extra runway crossings. Exact source nodes measure 3714.5 m against the historical catalogue scalar of 2944 m; they are retained without scaling. The council identifies the airfield as a vehicle proving ground with flexible runway and circuit use. Temporary cone cuts, lap extent, direction and historical alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3714.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "bruntingthorpe-combo",
       "name": "Bruntingthorpe Combo",
       "referenceId": "United Kingdom/Bruntingthorpe Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bruntingthorpe-combo.geojson",
+      "description": "Combined mapped configurations: Bruntingthorpe, Bruntingthorpe Full. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "bruntingthorpe-full",
@@ -57,6 +58,33 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:03:02.304Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-bruntingthorpe",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.gilmortonparishcouncil.gov.uk/uploads/27_5ad0963814cbc510074616.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:03:02.304Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-bruntingthorpe-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/4727841",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:54:34.162Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-bruntingthorpe-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.gilmortonparishcouncil.gov.uk/uploads/27_5ad0963814cbc510074616.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:54:34.162Z",
+      "evidenceNote": "The combined airfield entry preserves the independently mapped shorter runway loop and full proving-ground course as separate component paths. Both recipes pin consistent way versions from the same source snapshot. Shared edges count once, no new connector is drawn and no unique network distance is presented as a single race lap. The council identifies the proving-ground circuit and long runway. Short-course historical timing extent and temporary cone cuts remain unverified. The independent unique branch distance is 7042.3 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }
