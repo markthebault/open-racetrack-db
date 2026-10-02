@@ -10,7 +10,7 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 The viewer contains **763 venues across 74 countries**, with every one of the **1,007 supplied layout entries** registered. Search a venue, select a layout, and download an attributed GeoJSON trace when geometry is available.
 
-**907 supplied entries have draft course traces; 100 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) explain which source limitations still need work.
+**908 supplied entries have draft course traces; 99 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) explain which source limitations still need work.
 
 Course coordinates come from pinned OpenStreetMap data or independently digitized reusable government aerial imagery. Explicit recipes preserve each source and its attribution. All traces remain drafts. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
 

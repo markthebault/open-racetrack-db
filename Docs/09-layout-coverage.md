@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 907
-- unmappedLayouts: 100
+- draftMapped: 908
+- unmappedLayouts: 99
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -681,7 +681,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Martinsville Speedway | 1 | 0 | 0 |  | main |
 | United States | Miami | 2 | 2 | 2 |  |  |
 | United States | Miami Concours | 1 | 1 | 1 |  |  |
-| United States | Michelin Laurens Proving Grounds | 1 | 1 | 0 | Michelin Laurens Proving Grounds |  |
+| United States | Michelin Laurens Proving Grounds | 1 | 1 | 1 |  |  |
 | United States | Michigan International Speedway | 4 | 3 | 3 |  | main |
 | United States | Mid-Ohio Sports Car Course | 3 | 2 | 2 |  | main |
 | United States | MidAmerica Motorplex | 1 | 1 | 1 |  |  |
@@ -882,7 +882,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Michelin Laurens Proving Grounds |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1752,7 +1751,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Miami Concours Club Outer Loop | us-miami-concours-18a8e76d | miami-concours-club-outer-loop | draft-mapped |
 | United States | Miami GP | us-miami-b89062b7 | miami-gp | draft-mapped |
 | United States | Miami International Autodrome | us-miami-b89062b7 | miami-international-autodrome | draft-mapped |
-| United States | Michelin Laurens Proving Grounds | us-michelin-laurens-proving-grounds-bdeb232d |  | missing-layout |
+| United States | Michelin Laurens Proving Grounds | us-michelin-laurens-proving-grounds-bdeb232d | michelin-laurens-proving-grounds | draft-mapped |
 | United States | Michigan Int Speedway Infield Long | us-michigan-international-speedway-205025102 | michigan-int-speedway-infield-long | draft-mapped |
 | United States | Michigan Int Speedway Infield Short | us-michigan-international-speedway-205025102 | michigan-int-speedway-infield-short | draft-mapped |
 | United States | Michigan Int Speedway Oval | us-michigan-international-speedway-205025102 | michigan-int-speedway-oval | draft-mapped |
