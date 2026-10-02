@@ -1,0 +1,66 @@
+{
+  "sourceUrl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/Q/RK/2026/6/S2C_50QRK_20260618_0_L2A/TCI.tif",
+  "retrievedAt": "2026-10-02T11:49:29.236552Z",
+  "width": 1000,
+  "height": 1000,
+  "extent": {
+    "xmin": 13410659.055865668,
+    "ymin": 2564707.076802045,
+    "xmax": 13412885.445681531,
+    "ymax": 2566933.4666179083,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "ec61307cdadef14600b01092a794b488a672cd119656c009c99ec5ac8e8b40b0",
+  "nativeSha256": "26ba874b7666baef5b96dfa0232c37c8f738e354d747df68fb68155599e7611f",
+  "nativeProjection": "EPSG:32650",
+  "nativeTransform": [
+    10.0,
+    0.0,
+    857130.0,
+    0.0,
+    -10.0,
+    2487960.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "nativeWidth": 217,
+  "nativeHeight": 200,
+  "groundResolutionM": 10,
+  "resampling": "nearest",
+  "captureDate": "2026-06-18T02:41:37.820000Z",
+  "stacItemId": "S2C_50QRK_20260618_0_L2A",
+  "schemaVersion": 1,
+  "nativeFile": "sentinel-penbay-current-independent-roads-native.tif",
+  "stacItemFile": "sentinel-penbay-current-independent-roads-item.json",
+  "reuseEvidenceUrl": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+  "license": "LicenseRef-Copernicus-Sentinel",
+  "attribution": "Contains modified Copernicus Sentinel data 2026; independent centerline digitization by OpenRacetrackDB; \u00a9 OpenStreetMap contributors, ODbL-1.0",
+  "independentAlignmentSource": {
+    "sourcePath": "sources/course-networks/penbay-current-independent-roads/osm.json",
+    "snapshotSha256": "d121fc40d440067e01063034bd3f5a5d99076667a8f728fdef36afa6592a5ef7",
+    "waySegments": [
+      {
+        "wayId": 645849365,
+        "wayVersion": 3,
+        "fromIndex": 106,
+        "toIndex": 55
+      },
+      {
+        "wayId": 645849366,
+        "wayVersion": 1,
+        "fromIndex": 4,
+        "toIndex": 0
+      },
+      {
+        "wayId": 645849365,
+        "wayVersion": 3,
+        "fromIndex": 1,
+        "toIndex": 0
+      }
+    ],
+    "license": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "evidence": "Exact public course vertices are converted to the pinned raster. A roughly ten-metre missing junction between the western U-return and middle hairpin is independently located on continuous grey pavement in the 2026 satellite image. Only that junction uses the independent public-image anchor [582,474]; native resolution is 10 m."
+  }
+}

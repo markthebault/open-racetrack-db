@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 963,
-    "unmappedLayouts": 44,
+    "draftMapped": 965,
+    "unmappedLayouts": 42,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -9332,16 +9332,14 @@
       "name": "Penbay Combo",
       "timingMode": "shared",
       "trackId": "tw-penbay-3b334d4e",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "penbay-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "tw-penbay-3b334d4e",
-        "tw-penbay-drag-strip-a015d5c3",
-        "tw-penbay-fia-6ece852f"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9398,11 +9396,14 @@
       "name": "Penbay National",
       "timingMode": "shared",
       "trackId": "tw-penbay-3b334d4e",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "penbay-national"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "tw-penbay-3b334d4e",
@@ -24267,16 +24268,13 @@
       "name": "Penbay",
       "country": "Taiwan",
       "actualLayoutCount": 5,
-      "actualTraceCount": 3,
+      "actualTraceCount": 5,
       "expectedRecordCount": 5,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 3,
-      "missingRecordNames": [
-        "Penbay Combo",
-        "Penbay National"
-      ],
+      "mappedRecordCount": 5,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "tw-penbay-drag-strip-a015d5c3",
@@ -26925,20 +26923,6 @@
     },
     {
       "recordId": "Taiwan/Lihpao Wind",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Taiwan/Penbay Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Taiwan/Penbay National",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
