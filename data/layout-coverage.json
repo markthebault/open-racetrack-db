@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 916,
-    "unmappedLayouts": 91,
+    "draftMapped": 919,
+    "unmappedLayouts": 88,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11839,11 +11839,14 @@
       "name": "Belle Isle",
       "timingMode": "shared",
       "trackId": "us-belle-isle-c12938f2",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "belle-isle"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -11857,6 +11860,9 @@
       "association": "catalogue",
       "remainingWork": [
         "Identify the venue and explicit connected route recipe from independent geometry."
+      ],
+      "candidateTrackIds": [
+        "us-belle-isle-c12938f2"
       ]
     },
     {
@@ -13985,11 +13991,14 @@
       "name": "Music City Grand Prix",
       "timingMode": "shared",
       "trackId": "us-music-city-55a2fadf",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "music-city-grand-prix"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -14703,11 +14712,14 @@
       "name": "Reno Fernley E",
       "timingMode": "shared",
       "trackId": "us-reno-fernley-e-11ca028a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "reno-fernley-e"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-reno-fernley-57a16580",
@@ -24428,12 +24440,11 @@
       "name": "Belle Isle",
       "country": "United States",
       "actualLayoutCount": 2,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
+      "mappedRecordCount": 1,
       "missingRecordNames": [
-        "Belle Isle",
         "Belle Isle GP"
       ],
       "unassociatedLayoutIds": [],
@@ -25497,15 +25508,13 @@
       "name": "Music City",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Music City Grand Prix"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-nashville-superspeedway-185563917",
@@ -26017,15 +26026,13 @@
       "name": "Reno Fernley E",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Reno Fernley E"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-reno-fernley-f-411d3126",
@@ -27268,13 +27275,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/Belle Isle",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/Belle Isle GP",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27366,21 +27366,7 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/Music City Grand Prix",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/Nola Motorsports Park",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Reno Fernley E",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

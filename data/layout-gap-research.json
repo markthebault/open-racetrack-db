@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 4,
-    "course-distance-discrepancy": 30,
-    "independent-geometry-missing": 43,
+    "course-distance-discrepancy": 29,
+    "independent-geometry-missing": 41,
     "ambiguous-source-branches": 7,
     "source-connectivity-incomplete": 3,
     "open-course-evidence-required": 4
@@ -1115,15 +1115,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United States/Belle Isle",
-      "trackId": "us-belle-isle-c12938f2",
-      "layoutId": "belle-isle",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "United States/Belle Isle GP",
       "trackId": "us-belle-isle-c12938f2",
       "layoutId": "belle-isle-gp",
@@ -1314,15 +1305,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "United States/Music City Grand Prix",
-      "trackId": "us-music-city-55a2fadf",
-      "layoutId": "music-city-grand-prix",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "United States/Nola Motorsports Park",
       "trackId": "us-nola-motorsports-park-298904844",
       "layoutId": "nola-motorsports-park",
@@ -1337,28 +1319,6 @@
       ],
       "candidateCount": 16,
       "closestSourceLengthM": 4442.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United States/Reno Fernley E",
-      "trackId": "us-reno-fernley-e-11ca028a",
-      "layoutId": "reno-fernley-e",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        28824428,
-        28824448,
-        28824470,
-        28824480,
-        28824608,
-        28824617,
-        28824621,
-        28824628,
-        28824634,
-        28824636
-      ],
-      "candidateCount": 126,
-      "closestSourceLengthM": 2891.3,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },

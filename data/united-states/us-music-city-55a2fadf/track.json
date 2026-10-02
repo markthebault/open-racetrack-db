@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -86.7688495,
+    36.163268349999996
+  ],
+  "sourceIds": [
+    "osm-selection-music-city-2022-independent-relation-19458102"
+  ],
   "defaultLayoutId": "music-city-grand-prix",
   "layouts": [
     {
       "id": "music-city-grand-prix",
       "name": "Music City Grand Prix",
       "referenceId": "United States/Music City Grand Prix",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/music-city-grand-prix.geojson",
+      "description": "Draft configuration: The series 2021 course construction description and 2022 track details identify the complete 11-turn Nashville street circuit, retaining both opposite bridge carriageways, the stadium-side quadrilateral and Southwestern three-corner return. The pinned historical circuit relation supplies a complete independently joined 3466.5 m route through its exact street and raceway members. Pit roles and current stadium redevelopment are excluded. The 3378 m catalogue scalar and 2.17-mile operator description remain separate; temporary barriers, carriageway centerline placement and historical fine corner alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3466.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-music-city-2022-independent-relation-19458102",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/19458102",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T03:59:04.808Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-music-city-grand-prix",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.indycar.com/news/2021/07/07-30-nashville-circuittour",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T03:59:04.808Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

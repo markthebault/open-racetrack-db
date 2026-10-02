@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 916
-- unmappedLayouts: 91
+- draftMapped: 919
+- unmappedLayouts: 88
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -616,7 +616,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Badger Kart | 4 | 1 | 1 |  | badger-classic; badger-national; badger-bus-stop |
 | United States | Barber Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Barber Motorsports Park SRO Pract. | 1 | 1 | 1 |  |  |
-| United States | Belle Isle | 2 | 2 | 0 | Belle Isle; Belle Isle GP |  |
+| United States | Belle Isle | 2 | 2 | 1 | Belle Isle GP |  |
 | United States | Blackhawk Farms Raceway | 1 | 1 | 1 |  |  |
 | United States | Bondurant Driving School | 1 | 1 | 1 |  |  |
 | United States | Brainerd International Raceway | 3 | 2 | 2 |  | main |
@@ -692,7 +692,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Motor Speedway Resort Houston | 1 | 1 | 1 |  |  |
 | United States | Motorsport Ranch | 4 | 3 | 3 |  | main |
 | United States | Mount Lawn Speedway | 1 | 1 | 1 |  |  |
-| United States | Music City | 1 | 1 | 0 | Music City Grand Prix |  |
+| United States | Music City | 1 | 1 | 1 |  |  |
 | United States | Nashville Superspeedway | 1 | 1 | 1 |  |  |
 | United States | NCM Motorsports Park | 8 | 7 | 7 |  | main |
 | United States | Nelson Ledges Road Course | 2 | 1 | 1 |  | main |
@@ -729,7 +729,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Reno Fernley B | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley C | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley D | 1 | 1 | 1 |  |  |
-| United States | Reno Fernley E | 1 | 1 | 0 | Reno Fernley E |  |
+| United States | Reno Fernley E | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley F | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley G | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley G2 | 1 | 1 | 1 |  |  |
@@ -861,7 +861,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit Practice |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Belle Isle |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Belle Isle GP |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -875,9 +874,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
@@ -1632,7 +1629,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Badger Kart Club | us-badger-kart-8181738f | badger-kart-club | draft-mapped |
 | United States | Barber Motorsports Park | us-barber-motorsports-park-de1b88e1 | barber-motorsports-park | draft-mapped |
 | United States | Barber Motorsports Park SRO Pract. | us-barber-motorsports-park-sro-pract-4bcdadc1 | barber-motorsports-park-sro-pract | draft-mapped |
-| United States | Belle Isle | us-belle-isle-c12938f2 |  | missing-layout |
+| United States | Belle Isle | us-belle-isle-c12938f2 | belle-isle | draft-mapped |
 | United States | Belle Isle GP | us-belle-isle-c12938f2 |  | missing-layout |
 | United States | Blackhawk Farms | us-blackhawk-farms-raceway-343329151 | main | draft-mapped |
 | United States | Bondurant Driving School | us-bondurant-driving-school-ac53816b | bondurant-driving-school | draft-mapped |
@@ -1767,7 +1764,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Motorsport Ranch 3.1 mile course | us-motorsport-ranch-537040271 | motorsport-ranch-3-1-mile-course | draft-mapped |
 | United States | Motorsports Ranch Houston | us-motor-speedway-resort-houston-399731848 | main | draft-mapped |
 | United States | Mount Lawn Speedway | us-mount-lawn-speedway-reference | main | draft-mapped |
-| United States | Music City Grand Prix | us-music-city-55a2fadf |  | missing-layout |
+| United States | Music City Grand Prix | us-music-city-55a2fadf | music-city-grand-prix | draft-mapped |
 | United States | Nashville Super Speedway | us-nashville-superspeedway-185563917 | main | draft-mapped |
 | United States | NCM Corvette Race Loop | us-ncm-motorsports-park-326452603 | ncm-corvette-race-loop | draft-mapped |
 | United States | NCM Full | us-ncm-motorsports-park-326452603 | ncm-full | draft-mapped |
@@ -1812,7 +1809,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Reno Fernley C | us-reno-fernley-c-0e7035d4 | reno-fernley-c | draft-mapped |
 | United States | Reno Fernley Combo | us-reno-fernley-57a16580 | reno-fernley-combo | draft-mapped |
 | United States | Reno Fernley D | us-reno-fernley-d-e723a41c | reno-fernley-d | draft-mapped |
-| United States | Reno Fernley E | us-reno-fernley-e-11ca028a |  | missing-layout |
+| United States | Reno Fernley E | us-reno-fernley-e-11ca028a | reno-fernley-e | draft-mapped |
 | United States | Reno Fernley F | us-reno-fernley-f-411d3126 | reno-fernley-f | draft-mapped |
 | United States | Reno Fernley G | us-reno-fernley-g-77c6a7ab | reno-fernley-g | draft-mapped |
 | United States | Reno Fernley G2 | us-reno-fernley-g2-86d82a7d | reno-fernley-g2 | draft-mapped |

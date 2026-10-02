@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **916 of 1,007 entries**. This recovery adds 459 associations: 417 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 363 traces across 49 countries. 314 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 43 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **919 of 1,007 entries**. This recovery adds 462 associations: 420 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 366 traces across 49 countries. 316 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 43 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -11,19 +11,19 @@ The following source limitations remain after the complete search of the pinned 
 | Remaining cause | Entries |
 | --- | ---: |
 | Ambiguous source branches | 7 |
-| Unresolved course-distance discrepancy | 30 |
-| Independent geometry absent near the timing position | 43 |
+| Unresolved course-distance discrepancy | 29 |
+| Independent geometry absent near the timing position | 41 |
 | Aggregate configuration needs identification | 4 |
 | Open-course route or endpoint evidence needed | 4 |
 | Source connectivity incomplete | 3 |
 | Bounded search incomplete | 0 |
-| **Total** | **91** |
+| **Total** | **88** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 91 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 88 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -84,3 +84,5 @@ Shelsley Walsh now retains its independently mapped Southern timing approach and
 Navarra now retains its pre-2024 main, Western and Eastern courses from a consistent pinned 2023 snapshot. The general entry groups their independent paths, excluding pit access and the small central chicane. Operator redevelopment announcements distinguish these historical routes from the existing 2024 Grand Prix trace. Five targeted browser checks verify all four additions and the separate modern course. All nine browser tests also passed across the complete 912-entry catalogue before this addition.
 
 Yas Marina now exposes seven separately selectable historical components and their combined network from a consistent pinned 2019 snapshot. The South entry retains the independent Southern course rather than the Northern lookalike of similar length. The existing contemporary traces remain separately selectable. The general branch distance is 6706.1 m, with no invented connectors; historical corner and timing-extent differences remain draft. Reno-Fernley H now retains the Northern terminal loop, upper Western return, central small hairpin and Southern internal chicane before the Southwestern terminal return. Its independently digitized 2022 public-domain NAIP centerline measures 4132.9 m against the 3891 m catalogue scalar; the 300 m allowance preserves this difference without changing coordinates. The large Western back sector, central U and pit lanes are excluded. Ten targeted browser checks verify these additions, rendered lines and downloads.
+
+Reno-Fernley E now retains the Western narrow return, upper short loop, middle S, Southern link and complete Eastern middle straight. Its 2767.1 m centerline is independently digitized from pinned 2022 public-domain NAIP imagery, excluding the Northern and Southwestern terminal loops. Belle Isle follows its independently mapped 3765.4 m complete historical raceway. Nashville follows the complete 3466.5 m historical circuit relation, including both bridge carriageways, the stadium-side quadrilateral and Southwestern return. Its main streets include relation members with backward roles; pit members are excluded. Independent distances, temporary barriers and historical alignment remain draft. Three targeted browser checks verify these traces and downloads.
