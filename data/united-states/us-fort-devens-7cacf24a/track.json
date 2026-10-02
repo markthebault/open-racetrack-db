@@ -8,17 +8,186 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -71.60747749999999,
+    42.573130750000004
+  ],
+  "sourceIds": [
+    "osm-components-902194774",
+    "osm-network-fort-devens"
+  ],
   "defaultLayoutId": "fort-devens",
   "layouts": [
     {
       "id": "fort-devens",
       "name": "Fort Devens",
       "referenceId": "United States/Fort Devens",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/fort-devens.geojson",
+      "description": "Combined mapped configurations: Western runway to intersection, Eastern runway, Northern taxiway loop branches, Middle taxiway connection, Northern training connection, Northern diagonal training strip, Northern vertical training strip, Eastern training connection, Northern short return. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "mapped-branch-1",
+      "name": "Western runway to intersection",
+      "file": "layouts/mapped-branch-1.geojson",
+      "description": "Western runway to intersection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-2",
+      "name": "Eastern runway",
+      "file": "layouts/mapped-branch-2.geojson",
+      "description": "Eastern runway follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-3",
+      "name": "Northern taxiway loop branches",
+      "file": "layouts/mapped-branch-3.geojson",
+      "description": "Northern taxiway loop branches follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-4",
+      "name": "Middle taxiway connection",
+      "file": "layouts/mapped-branch-4.geojson",
+      "description": "Middle taxiway connection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-5",
+      "name": "Northern training connection",
+      "file": "layouts/mapped-branch-5.geojson",
+      "description": "Northern training connection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-6",
+      "name": "Northern diagonal training strip",
+      "file": "layouts/mapped-branch-6.geojson",
+      "description": "Northern diagonal training strip follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-7",
+      "name": "Northern vertical training strip",
+      "file": "layouts/mapped-branch-7.geojson",
+      "description": "Northern vertical training strip follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-8",
+      "name": "Eastern training connection",
+      "file": "layouts/mapped-branch-8.geojson",
+      "description": "Eastern training connection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
+    },
+    {
+      "id": "mapped-branch-9",
+      "name": "Northern short return",
+      "file": "layouts/mapped-branch-9.geojson",
+      "description": "Northern short return follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-902194774",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/902194774",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-mapped-branch-1",
+      "type": "reference",
+      "title": "Western runway to intersection identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Western runway to intersection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-2",
+      "type": "reference",
+      "title": "Eastern runway identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Eastern runway follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-3",
+      "type": "reference",
+      "title": "Northern taxiway loop branches identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Northern taxiway loop branches follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-4",
+      "type": "reference",
+      "title": "Middle taxiway connection identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Middle taxiway connection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-5",
+      "type": "reference",
+      "title": "Northern training connection identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Northern training connection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-6",
+      "type": "reference",
+      "title": "Northern diagonal training strip identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Northern diagonal training strip follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-7",
+      "type": "reference",
+      "title": "Northern vertical training strip identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Northern vertical training strip follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-8",
+      "type": "reference",
+      "title": "Eastern training connection identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Eastern training connection follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-mapped-branch-9",
+      "type": "reference",
+      "title": "Northern short return identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:08:15.843Z",
+      "evidenceNote": "Northern short return follows the independently mapped open airfield centerline, inspected over public-domain USGS imagery. The organizer identifies this airfield as an autocross venue. This branch has no fixed event lap or independently verified endpoint timing. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-fort-devens",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/902194774",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:16:07.750Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-fort-devens",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://ncr-pca.org/index.php/club-activities/autocross/devens-map-a-info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:16:07.750Z",
+      "evidenceNote": "The catalogue footprint represents open airfield branches used at the Devens autocross venue. The independently mapped Western runway stops at its junction with the Eastern runway; the Eastern runway, Northern taxiway loop, middle connection and Northern training branches retain their mapped open ends. The organizer identifies the disused runways as the autocross site. This is the physical branch network, not a fixed cone-defined race lap. Historical limits and temporary event course alignment remain draft. The unlisted East-West runway, Southeastern runway extension and unrelated Northern access spur are excluded. The independent unique branch distance is 3582.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

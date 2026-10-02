@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 922
-- unmappedLayouts: 85
+- draftMapped: 923
+- unmappedLayouts: 84
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -648,7 +648,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Flatrock Racetrack | 2 | 1 | 1 |  | main |
 | United States | Fontana Raceway Infield Course | 1 | 1 | 0 | Fontana Raceway Infield Course |  |
 | United States | Fontana Raceway Road Course | 1 | 1 | 1 |  |  |
-| United States | Fort Devens | 1 | 1 | 0 | Fort Devens |  |
+| United States | Fort Devens | 10 | 1 | 1 |  | mapped-branch-1; mapped-branch-2; mapped-branch-3; mapped-branch-4; mapped-branch-5; mapped-branch-6; mapped-branch-7; mapped-branch-8; mapped-branch-9 |
 | United States | G2 Motorsports Park | 4 | 3 | 2 | G2 Motorsports Park West | main |
 | United States | GingerMan Raceway | 1 | 1 | 1 |  |  |
 | United States | GingerMan T10b | 1 | 1 | 1 |  |  |
@@ -865,7 +865,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Infield Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Fort Devens |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/G2 Motorsports Park West |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Porsche 2mile |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1677,7 +1676,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Flatrock Motorclub Club Course | us-flatrock-racetrack-1213613922 | flatrock-motorclub-club-course | draft-mapped |
 | United States | Fontana Raceway Infield Course | us-fontana-raceway-infield-course-d6cf6f7f |  | missing-layout |
 | United States | Fontana Raceway Road Course | us-fontana-raceway-road-course-33a99dd4 | fontana-raceway-road-course | draft-mapped |
-| United States | Fort Devens | us-fort-devens-7cacf24a |  | missing-layout |
+| United States | Fort Devens | us-fort-devens-7cacf24a | fort-devens | draft-mapped |
 | United States | G2 Motorsports Park 3.1 mile | us-g2-motorsports-park-1538039260 | g2-motorsports-park-3-1-mile | draft-mapped |
 | United States | G2 Motorsports Park Combined | us-g2-motorsports-park-1538039260 | g2-motorsports-park-combined | draft-mapped |
 | United States | G2 Motorsports Park West | us-g2-motorsports-park-1538039260 |  | missing-layout |

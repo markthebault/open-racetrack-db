@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 922,
-    "unmappedLayouts": 85,
+    "draftMapped": 923,
+    "unmappedLayouts": 84,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -12656,11 +12656,14 @@
       "name": "Fort Devens",
       "timingMode": "shared",
       "trackId": "us-fort-devens-7cacf24a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "fort-devens"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -24892,15 +24895,23 @@
       "trackId": "us-fort-devens-7cacf24a",
       "name": "Fort Devens",
       "country": "United States",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 10,
+      "actualTraceCount": 10,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Fort Devens"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "mapped-branch-1",
+        "mapped-branch-2",
+        "mapped-branch-3",
+        "mapped-branch-4",
+        "mapped-branch-5",
+        "mapped-branch-6",
+        "mapped-branch-7",
+        "mapped-branch-8",
+        "mapped-branch-9"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -27302,13 +27313,6 @@
     },
     {
       "recordId": "United States/Fontana Raceway Infield Course",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Fort Devens",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
