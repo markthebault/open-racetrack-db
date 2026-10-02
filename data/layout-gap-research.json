@@ -7,7 +7,6 @@
     "independent-geometry-missing": 17,
     "course-distance-discrepancy": 6,
     "ambiguous-source-branches": 2,
-    "source-connectivity-incomplete": 1,
     "open-course-evidence-required": 2
   },
   "records": [
@@ -175,21 +174,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Mexico/San Luis Potosi",
-      "trackId": "mx-autodromo-tangamanga-226300277",
-      "layoutId": "san-luis-potosi",
-      "sourcePath": "sources/world/mx/osm.json",
-      "sourceWayIds": [
-        226300277,
-        450149360,
-        450149828,
-        677361283
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
     },
     {
       "referenceId": "Morocco/Moulay El Hassan",

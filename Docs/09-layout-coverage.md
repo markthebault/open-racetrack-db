@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 978
-- unmappedLayouts: 29
+- draftMapped: 979
+- unmappedLayouts: 28
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -492,7 +492,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Mexico | Autódromo Miguel E. Abed | 1 | 1 | 1 |  |  |
 | Mexico | Autódromo Monterrey | 1 | 0 | 0 |  | main |
 | Mexico | Autodromo Potosino | 1 | 0 | 0 |  | main |
-| Mexico | Autodromo Tangamanga | 2 | 1 | 0 | San Luis Potosi | main |
+| Mexico | Autodromo Tangamanga | 2 | 1 | 1 |  | main |
 | Mexico | Centro Dinámico Pegaso | 1 | 0 | 0 |  | main |
 | Mexico | Ciudad Deportiva Magdalena Mixhuca | 2 | 1 | 1 |  | main |
 | Mexico | Dorado Speedway | 1 | 1 | 1 |  |  |
@@ -798,7 +798,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1250,7 +1249,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Mexico | Dorado Speedway | mx-dorado-speedway-reference | main | draft-mapped |
 | Mexico | Moises Solana Circuit | mx-moises-solana-circuit-c37ff854 | moises-solana-circuit | draft-mapped |
 | Mexico | Ovalo Aguscaliente | mx-ovalo-aguscaliente-9c6010c1 | ovalo-aguscaliente | draft-mapped |
-| Mexico | San Luis Potosi | mx-autodromo-tangamanga-226300277 |  | missing-layout |
+| Mexico | San Luis Potosi | mx-autodromo-tangamanga-226300277 | san-luis-potosi | draft-mapped |
 | Morocco | Moulay El Hassan | ma-moulay-el-hassan-0e8884bb |  | missing-layout |
 | Mozambique | Autodromo ATCM | mz-autodromo-atcm-4afea620 | autodromo-atcm | draft-mapped |
 | Netherlands | Assen | nl-assen | main | draft-mapped |

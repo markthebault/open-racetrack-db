@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 978,
-    "unmappedLayouts": 29,
+    "draftMapped": 979,
+    "unmappedLayouts": 28,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6819,14 +6819,14 @@
       "name": "San Luis Potosi",
       "timingMode": "shared",
       "trackId": "mx-autodromo-tangamanga-226300277",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "san-luis-potosi"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "mx-autodromo-tangamanga-226300277"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -22784,13 +22784,11 @@
       "name": "Autodromo Tangamanga",
       "country": "Mexico",
       "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualTraceCount": 2,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "San Luis Potosi"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26883,13 +26881,6 @@
     },
     {
       "recordId": "Lithuania/Palanga Street Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Mexico/San Luis Potosi",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

@@ -13,7 +13,8 @@
     22.18316199130435
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-san-luis-potosi-current-independent-roads-226300267"
   ],
   "defaultLayoutId": "san-luis-potosi",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "san-luis-potosi",
       "name": "San Luis Potosi",
       "referenceId": "Mexico/San Luis Potosi",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/san-luis-potosi.geojson",
+      "description": "Draft configuration: The full Tangamanga II course retains both western and northern returns, the long main straight and the eastern roundabout. The federation describes a 2350 m circuit and a grid extending to the roundabout. The roundabout is independently mapped as an unclassified road, so raceway-only country extraction omitted the connected eastern return. Exact current raceway and roundabout nodes give 2345.0 m against the supplied 2337 m. The northern shortcut, western bypass, pit-side detour, roundabout service spokes and separate karting course are excluded. Travel direction and historical event furniture remain provisional; no coordinates or joins are invented to match the diagram or distance. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2345.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:22.379Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-san-luis-potosi-current-independent-roads-226300267",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/226300267",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T03:11:42.823Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-san-luis-potosi",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.femadac.org.mx/2horas/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T03:11:42.823Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }
