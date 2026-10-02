@@ -22640,6 +22640,163 @@
       ],
       "expectedLengthM": 1197.8,
       "maximumDistanceDifferenceM": 100
+    },
+    {
+      "referenceId": "France/Ales1 Rally Stage",
+      "sourcePath": "sources/europe/fr/osm.json",
+      "sourceWayIds": [
+        196899319,
+        196899338,
+        196899351,
+        196899355,
+        196899358,
+        196899373,
+        196899386,
+        196899388,
+        196899393,
+        1122287635,
+        1122287636,
+        1122287637,
+        1122287638
+      ],
+      "closed": true,
+      "evidence": "Historical outer rally loop retains both long-side winding branches and outer terminal turns. The operator 2015 modular rally plan identifies these outer branches; the supplied configuration selects the outer loop without infield shortcuts. Current source/aerial conditions differ at the southern alignment, which is retained only as a historical draft rather than replaced with the shorter contemporary paved turnaround. The 1823.9 m independent source route remains unscaled; terminal-turn details and historical surface condition remain provisional.",
+      "identificationUrl": "https://www.pole-mecanique.fr/wp-content/uploads/2016/11/circuit-rallye-asphalte-plan-pole-mecanique-2015.pdf",
+      "segments": [
+        {
+          "wayId": 196899338,
+          "wayVersion": 6,
+          "fromIndex": 16,
+          "toIndex": 0
+        },
+        {
+          "wayId": 196899355,
+          "wayVersion": 5,
+          "fromIndex": 4,
+          "toIndex": 0
+        },
+        {
+          "wayId": 196899338,
+          "wayVersion": 6,
+          "fromIndex": 252,
+          "toIndex": 254
+        },
+        {
+          "wayId": 196899373,
+          "wayVersion": 4,
+          "fromIndex": 40,
+          "toIndex": 22
+        },
+        {
+          "wayId": 196899393,
+          "wayVersion": 6,
+          "fromIndex": 0,
+          "toIndex": 23
+        },
+        {
+          "wayId": 196899358,
+          "wayVersion": 5,
+          "fromIndex": 26,
+          "toIndex": 0
+        },
+        {
+          "wayId": 196899393,
+          "wayVersion": 6,
+          "fromIndex": 85,
+          "toIndex": 38
+        },
+        {
+          "wayId": 1122287635,
+          "wayVersion": 2,
+          "fromIndex": 9,
+          "toIndex": 0
+        },
+        {
+          "wayId": 196899386,
+          "wayVersion": 5,
+          "fromIndex": 10,
+          "toIndex": 3
+        },
+        {
+          "wayId": 1122287636,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 5
+        },
+        {
+          "wayId": 196899338,
+          "wayVersion": 6,
+          "fromIndex": 90,
+          "toIndex": 16
+        }
+      ],
+      "expectedLengthM": 1823.9,
+      "maximumDistanceDifferenceM": 30
+    },
+    {
+      "referenceId": "Canada/Western Speedway",
+      "sourcePath": "sources/course-networks/western-speedway-2020-independent-roads/osm.json",
+      "sourceWayIds": [
+        83580359,
+        135586537,
+        135586538,
+        135586539,
+        135586543,
+        135586544
+      ],
+      "closed": true,
+      "evidence": "The independently mapped 2020 main paved oval retains both rounded ends and excludes nearby recreation and motocross courses. Its 531.0 m source centerline matches the catalogue oval identity and remains unscaled against the 538 m timing scalar. The racing team identifies the former Western Speedway venue and its final 2022 event; its advertised 4/10-mile distance differs from this mapped centerline. Historical pavement alignment remains draft.",
+      "identificationUrl": "https://npp-racing.com/racing-into-the-sunset/",
+      "segments": [
+        {
+          "wayId": 83580359,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 20
+        }
+      ],
+      "expectedLengthM": 531,
+      "maximumDistanceDifferenceM": 30
+    },
+    {
+      "referenceId": "China/Chengdu Circuit",
+      "sourcePath": "sources/course-networks/chengdu-circuit-2017-independent-roads/osm.json",
+      "sourceWayIds": [
+        297693489
+      ],
+      "closed": true,
+      "evidence": "The independently mapped 2017 full circuit retains the long northern straight, eastern acute return and both western and southern lobes. The FIA historical circuit list identifies Chengdu International at 3.36 km. Its 3338.2 m source route matches the catalogue branch identity and remains unscaled against the 3348 m timing scalar. It represents the former full circuit rather than newer Chengdu venues; historical alignment remains draft.",
+      "identificationUrl": "https://www.fia.com/sites/default/files/tableaulicencescircuit_0.pdf",
+      "segments": [
+        {
+          "wayId": 297693489,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 81
+        }
+      ],
+      "expectedLengthM": 3338.2,
+      "maximumDistanceDifferenceM": 30
+    },
+    {
+      "referenceId": "Vietnam/Hanoi",
+      "sourcePath": "sources/course-networks/hanoi-2020-independent-roads/osm.json",
+      "sourceWayIds": [
+        761985295
+      ],
+      "closed": true,
+      "evidence": "The independently mapped July 2020 full Hanoi Street Circuit retains both northern sweeping sections, the long eastern straight and southern hairpin, excluding the separate pit lane. Formula 1 documents completion of the 23-turn hybrid circuit in February 2020 and its 5.613 km configuration. The 5618.6 m source route matches the catalogue branch identity and remains unscaled against its 5622 m timing scalar. This is a historical built-course draft; the identification reference announcing a planned race does not establish that the race occurred. Temporary barrier and carriageway alignment remain provisional.",
+      "identificationUrl": "https://www.formula1.com/en/latest/article/new-hanoi-circuit-completed-ahead-of-inaugural-vietnam-grand-prix.1kytGemBG4YxqFSyuAcf8N",
+      "segments": [
+        {
+          "wayId": 761985295,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 107
+        }
+      ],
+      "expectedLengthM": 5618.6,
+      "maximumDistanceDifferenceM": 30
     }
   ]
 }

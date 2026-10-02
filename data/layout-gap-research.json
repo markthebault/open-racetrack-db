@@ -5,9 +5,9 @@
   "summary": {
     "configuration-evidence-required": 5,
     "course-distance-discrepancy": 33,
-    "independent-geometry-missing": 46,
-    "ambiguous-source-branches": 14,
-    "source-connectivity-incomplete": 6,
+    "independent-geometry-missing": 44,
+    "ambiguous-source-branches": 13,
+    "source-connectivity-incomplete": 5,
     "open-course-evidence-required": 8
   },
   "records": [
@@ -258,24 +258,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "Canada/Western Speedway",
-      "trackId": "ca-western-speedway-bd427733",
-      "layoutId": "western-speedway",
-      "sourcePath": "sources/world/ca/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "China/Chengdu Circuit",
-      "trackId": "cn-chengdu-circuit-a182ef23",
-      "layoutId": "chengdu-circuit",
-      "sourcePath": "sources/world/cn/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "China/Huangtupo",
       "trackId": "cn-huangtupo-5cab1bd3",
       "layoutId": "huangtupo",
@@ -395,31 +377,6 @@
       ],
       "candidateCount": 44,
       "closestSourceLengthM": 2225.2,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "France/Ales1 Rally Stage",
-      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutId": "ales1-rally-stage",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [
-        196899319,
-        196899338,
-        196899351,
-        196899355,
-        196899358,
-        196899373,
-        196899386,
-        196899388,
-        196899393,
-        1122287635,
-        1122287636,
-        1122287637,
-        1122287638
-      ],
-      "candidateCount": 60,
-      "closestSourceLengthM": 1822.5,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
@@ -1753,18 +1710,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Vietnam/Hanoi",
-      "trackId": "vn-hanoi-442f2f18",
-      "layoutId": "hanoi",
-      "sourcePath": "sources/world/vn/osm.json",
-      "sourceWayIds": [
-        761985295
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
     }
   ]
 }

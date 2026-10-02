@@ -16,7 +16,8 @@
     "osm-snapshot",
     "osm-selection-196899321",
     "osm-components-196899321",
-    "osm-network-ales"
+    "osm-network-ales",
+    "osm-selection-196899319"
   ],
   "defaultLayoutId": "ales",
   "layouts": [
@@ -44,8 +45,8 @@
       "id": "ales1-rally-stage",
       "name": "Ales1 Rally Stage",
       "referenceId": "France/Ales1 Rally Stage",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ales1-rally-stage.geojson",
+      "description": "Draft configuration: Historical outer rally loop retains both long-side winding branches and outer terminal turns. The operator 2015 modular rally plan identifies these outer branches; the supplied configuration selects the outer loop without infield shortcuts. Current source/aerial conditions differ at the southern alignment, which is retained only as a historical draft rather than replaced with the shorter contemporary paved turnaround. The 1823.9 m independent source route remains unscaled; terminal-turn details and historical surface condition remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1823.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "ales-technical",
@@ -162,6 +163,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T22:22:35.518Z",
       "evidenceNote": "The general entry shows a branch network: the northern outer Parabolica, both central loop closures, the direct central connection and the southern infield hairpin. The four independently identified component routes cover those branches. The inner Parabolica shortcut, southern hairpin bypass and parallel pit access are excluded because they are absent from the supplied branch identity. The independent unique branch distance is 2889.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "osm-selection-196899319",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/196899319",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-ales1-rally-stage",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.pole-mecanique.fr/wp-content/uploads/2016/11/circuit-rallye-asphalte-plan-pole-mecanique-2015.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:20.403Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

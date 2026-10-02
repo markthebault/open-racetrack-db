@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 895
-- unmappedLayouts: 112
+- draftMapped: 899
+- unmappedLayouts: 108
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -163,7 +163,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Toronto Motorsports Park | 4 | 3 | 3 |  | main |
 | Canada | Trois Rivieres | 1 | 1 | 0 | Trois Rivieres |  |
 | Canada | Vancouver Island Motorsport Circuit | 1 | 1 | 1 |  |  |
-| Canada | Western Speedway | 1 | 1 | 0 | Western Speedway |  |
+| Canada | Western Speedway | 1 | 1 | 1 |  |  |
 | Switzerland | St Ursanne | 1 | 1 | 1 |  |  |
 | Chile | Autodromo de Codegua | 1 | 1 | 1 |  |  |
 | Chile | Autódromo Gustavo Felo Rivera | 1 | 0 | 0 |  | main |
@@ -173,7 +173,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Chile | Autodromo Pacífico Sport | 2 | 1 | 1 |  | main |
 | Chile | Huachalalume | 3 | 2 | 2 |  | main |
 | China | Beijing Goldenport Motor Park | 1 | 1 | 1 |  |  |
-| China | Chengdu Circuit | 1 | 1 | 0 | Chengdu Circuit |  |
+| China | Chengdu Circuit | 1 | 1 | 1 |  |  |
 | China | Fugang | 1 | 1 | 1 |  |  |
 | China | Guangdong International Circuit | 1 | 0 | 0 |  | main |
 | China | GuangDong International Circuit | 1 | 1 | 1 |  |  |
@@ -312,7 +312,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | France | Monaco | 1 | 1 | 1 |  |  |
 | France | Pau Ville | 1 | 1 | 1 |  |  |
 | France | Circuit Paul Ricard | 8 | 8 | 8 |  |  |
-| France | Pôle Mécanique Alès-Cévennes | 8 | 3 | 2 | Ales1 Rally Stage | main; ales-technical; ales-north-loop; ales-south-loop; ales-central-bypass |
+| France | Pôle Mécanique Alès-Cévennes | 8 | 3 | 3 |  | main; ales-technical; ales-north-loop; ales-south-loop; ales-central-bypass |
 | France | Pôle Mécanique de la Clef des Champs | 2 | 1 | 1 |  | main |
 | France | RKC Karting Paris | 1 | 1 | 1 |  |  |
 | France | Verze | 1 | 1 | 1 |  |  |
@@ -767,7 +767,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Willow Springs International Raceway | 3 | 3 | 3 |  |  |
 | United States | World Wide Technology Raceway Road Course | 6 | 5 | 1 | Gateway Motorsports Park; Gateway Motorsports Porsche 2mile; Gateway Road 1; Gateway Road 2 | main |
 | Venezuela | Autódromo Internacional Simón Bolívar | 1 | 0 | 0 |  | main |
-| Vietnam | Hanoi | 1 | 1 | 0 | Hanoi |  |
+| Vietnam | Hanoi | 1 | 1 | 1 |  |  |
 | South Africa | Aldo Scribante Race Circuit | 1 | 1 | 1 |  |  |
 | South Africa | Dezzi Raceway | 1 | 1 | 1 |  |  |
 | South Africa | Killarney Raceway | 1 | 1 | 1 |  |  |
@@ -804,8 +804,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Canada/ICAR Mirabel LONG chicane |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Trois Rivieres |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/Western Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| China/Chengdu Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -814,7 +812,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Dominican Republic/Speedway Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Ales1 Rally Stage |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -899,7 +896,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Vietnam/Hanoi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
 
@@ -1071,7 +1067,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Toronto Motorsports Park West | ca-toronto-motorsports-park-440159413 | toronto-motorsports-park-west | draft-mapped |
 | Canada | Trois Rivieres | ca-trois-rivieres-7cef196a |  | missing-layout |
 | Canada | Vancouver Island Motorsport Circuit | ca-vancouver-island-motorsport-circuit-a0cce5d8 | vancouver-island-motorsport-circuit | draft-mapped |
-| Canada | Western Speedway | ca-western-speedway-bd427733 |  | missing-layout |
+| Canada | Western Speedway | ca-western-speedway-bd427733 | western-speedway | draft-mapped |
 | Canary Islands | Circuito Maspalomas | es-circuito-maspalomas-179221809 | main | draft-mapped |
 | Chile | Autodromo de Codegua | cl-autodromo-de-codegua-9d2429bd | autodromo-de-codegua | draft-mapped |
 | Chile | Huachalalume Chica | cl-huachalalume-505109409 | huachalalume-chica | draft-mapped |
@@ -1079,7 +1075,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Chile | Interlomas | cl-autodromo-interlomas-99007540 | main | draft-mapped |
 | Chile | Leydaring | cl-autodromo-pacifico-sport-242828001 | leydaring | draft-mapped |
 | China | Beijing Goldenport Motor Park | cn-beijing-goldenport-motor-park-reference | main | draft-mapped |
-| China | Chengdu Circuit | cn-chengdu-circuit-a182ef23 |  | missing-layout |
+| China | Chengdu Circuit | cn-chengdu-circuit-a182ef23 | chengdu-circuit | draft-mapped |
 | China | Fugang | cn-fugang-3292d1c6 | fugang | draft-mapped |
 | China | GIC | cn-guangdong-international-circuit-437444789 | main | draft-mapped |
 | China | Heze Circuit | cn-heze-circuit-44eb684d | heze-circuit | draft-mapped |
@@ -1134,7 +1130,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Abbeville | fr-abbeville-9c68d1a7 |  | missing-layout |
 | France | Ales | fr-pole-mecanique-ales-cevennes-196899321 | ales | draft-mapped |
 | France | Ales Rapide | fr-pole-mecanique-ales-cevennes-196899321 | ales-rapide | draft-mapped |
-| France | Ales1 Rally Stage | fr-pole-mecanique-ales-cevennes-196899321 |  | missing-layout |
+| France | Ales1 Rally Stage | fr-pole-mecanique-ales-cevennes-196899321 | ales1-rally-stage | draft-mapped |
 | France | Anneau Du Rhin - 3.0 km | fr-anneau-du-rhin | 3-0-km | draft-mapped |
 | France | Anneau Du Rhin - 3.7 km | fr-anneau-du-rhin | 3-7-km | draft-mapped |
 | France | Anneau Du Rhin_C | fr-anneau-du-rhin | anneau-du-rhin-c | draft-mapped |
@@ -1911,6 +1907,6 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Watkins Glen Short | us-watkins-glen-international-20163576 | watkins-glen-short | draft-mapped |
 | United States | Willow Springs | us-willow-springs-international-raceway-10440074 | main | draft-mapped |
 | United States | Willow Springs Horse Thief Mile | us-willow-springs-international-raceway-10440074 | willow-springs-horse-thief-mile | draft-mapped |
-| Vietnam | Hanoi | vn-hanoi-442f2f18 |  | missing-layout |
+| Vietnam | Hanoi | vn-hanoi-442f2f18 | hanoi | draft-mapped |
 | Zimbabwe | Breedon Everard Raceway | zw-breedon-everard-raceway-rl | main | draft-mapped |
 | Zimbabwe | Donnybrook Raceway | zw-donnybrook-raceway-341ad729 | donnybrook-raceway | draft-mapped |

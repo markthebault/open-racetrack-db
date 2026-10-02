@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 895,
-    "unmappedLayouts": 112,
+    "draftMapped": 899,
+    "unmappedLayouts": 108,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2616,11 +2616,14 @@
       "name": "Western Speedway",
       "timingMode": "shared",
       "trackId": "ca-western-speedway-bd427733",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "western-speedway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -2741,11 +2744,14 @@
       "name": "Chengdu Circuit",
       "timingMode": "shared",
       "trackId": "cn-chengdu-circuit-a182ef23",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "chengdu-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -3594,14 +3600,14 @@
       "name": "Ales1 Rally Stage",
       "timingMode": "shared",
       "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ales1-rally-stage"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "fr-pole-mecanique-ales-cevennes-196899321"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -15927,11 +15933,14 @@
       "name": "Hanoi",
       "timingMode": "shared",
       "trackId": "vn-hanoi-442f2f18",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "hanoi"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -18052,15 +18061,13 @@
       "name": "Western Speedway",
       "country": "Canada",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Western Speedway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ch-st-ursanne-a8b987de",
@@ -18194,15 +18201,13 @@
       "name": "Chengdu Circuit",
       "country": "China",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Chengdu Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "cn-fugang-3292d1c6",
@@ -20135,13 +20140,11 @@
       "name": "Pôle Mécanique Alès-Cévennes",
       "country": "France",
       "actualLayoutCount": 8,
-      "actualTraceCount": 7,
+      "actualTraceCount": 8,
       "expectedRecordCount": 3,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 2,
-      "missingRecordNames": [
-        "Ales1 Rally Stage"
-      ],
+      "mappedRecordCount": 3,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main",
         "ales-technical",
@@ -26532,15 +26535,13 @@
       "name": "Hanoi",
       "country": "Vietnam",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Hanoi"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "za-aldo-scribante-race-circuit-5088490",
@@ -26830,20 +26831,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Canada/Western Speedway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "China/Chengdu Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "China/Huangtupo",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -26894,13 +26881,6 @@
     },
     {
       "recordId": "France/Abbeville",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "France/Ales1 Rally Stage",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -27516,13 +27496,6 @@
     },
     {
       "recordId": "United States/Texas World Speedway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Vietnam/Hanoi",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
