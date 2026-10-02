@@ -154,6 +154,26 @@ test('Woodbridge publishes an unchanged supporting runway without asserting publ
  expect(data.metadata.closed).toBe(false);expect(data.metadata.lengthM).toBe(3160.8);expect(data.metadata.timingStatus).toBe('missing');
 });
 
+test('Bikernieki retains the historical short eastern triangle and complete finish straight',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ await page.route('**/local/timing.json',route=>route.fulfill({status:404}));
+ await page.goto('/?track=lv-bikernieki-rallycross-5981ece5&layout=bikernieki-rallycross-track');
+ await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#selection')).toContainText('short southeastern triangle');
+ await expect(page.locator('#selection')).toContainText('different event laps');
+ const data=await(await request.get((await page.locator('#download').getAttribute('href'))!)).json();
+ const trace=data.features[0].geometry.coordinates as number[][];
+ expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);
+ expect(trace[0]).toEqual(trace.at(-1));
+ expect(data.metadata.lengthM).toBeGreaterThan(1300);expect(data.metadata.lengthM).toBeLessThan(1400);
+ // The later long triangle reaches 56.9633152 and is a different branch.
+ expect(Math.min(...trace.map(p=>p[1]))).toBeGreaterThan(56.9639);
+ expect(trace).toContainEqual([24.2298754,56.9640144]);
+ expect(data.metadata.attribution).toContain('Latvian Geospatial Information Agency');
+ expect(data.metadata.attribution).toContain('OpenStreetMap contributors');
+ expect(data.metadata.geometryStatus).toBe('draft');expect(data.metadata.timingStatus).toBe('missing');
+});
+
 test('Queensland aggregate preserves its four configurations and switches back to a driving route',async({page,request})=>{
  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
  const index=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));

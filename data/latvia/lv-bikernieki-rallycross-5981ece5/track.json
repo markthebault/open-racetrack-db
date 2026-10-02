@@ -8,17 +8,41 @@
     "name": "Latvia",
     "slug": "latvia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    24.2271545,
+    56.96549295
+  ],
+  "sourceIds": [
+    "public-bikernieki-historical-rallycross-course"
+  ],
   "defaultLayoutId": "bikernieki-rallycross-track",
   "layouts": [
     {
       "id": "bikernieki-rallycross-track",
       "name": "Bikernieki RallyCross Track",
       "referenceId": "Latvia/Bikernieki RallyCross Track",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bikernieki-rallycross-track.geojson",
+      "description": "Historical rallycross configuration with the northwestern S, long western hairpin, eastern inward step, short southeastern triangle and complete parallel finish straight. Catalogue branch facts identify the configuration; the FIA 2018 standard and joker plans describe different event laps and are not substituted. Exact 2017 public road nodes retain the mapped historical branches, including the short eastern connector before its January 2018 remapping. Only the missing upper eastern step and its connection onto the main straight are independently digitized from the licensed LGIA cycle-six orthophoto. The pinned aerial shows paved connections throughout this added section and corroborates the short southeastern connector. Public nodes are projected unchanged into the aerial grid; interpolation subdivides their existing straight edges only. Both source attributions are retained. Event barriers, exact historical-year correspondence and corner placement remain draft. No supplied diagram pixels, course positions, timing location or nominal distance define a vertex. The 1,355.7 m draft is 42.7 m longer than the supplied 1,313 m scalar; the discrepancy is unresolved and the route is not scaled. Independently digitized aerial centerline: 1355.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "public-bikernieki-historical-rallycross-course",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://www.lgia.gov.lv/lv/aerofotografesanas-6-cikls-2016-2018-g",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T02:34:07.027045Z",
+      "evidenceNote": "Reuse evidence: https://www.lgia.gov.lv/sites/lgia/files/document/Atverto%20datu%20licence%20CC%20BY_0.pdf. Pinned raster hash b87547072a3a4039954f60421c1102bfcecfb29cb6ce574fcadc2880a38b0525; reproducible pixel-to-coordinate conversion. Historical rallycross configuration with the northwestern S, long western hairpin, eastern inward step, short southeastern triangle and complete parallel finish straight. Catalogue branch facts identify the configuration; the FIA 2018 standard and joker plans describe different event laps and are not substituted. Exact 2017 public road nodes retain the mapped historical branches, including the short eastern connector before its January 2018 remapping. Only the missing upper eastern step and its connection onto the main straight are independently digitized from the licensed LGIA cycle-six orthophoto. The pinned aerial shows paved connections throughout this added section and corroborates the short southeastern connector. Public nodes are projected unchanged into the aerial grid; interpolation subdivides their existing straight edges only. Both source attributions are retained. Event barriers, exact historical-year correspondence and corner placement remain draft. No supplied diagram pixels, course positions, timing location or nominal distance define a vertex. The 1,355.7 m draft is 42.7 m longer than the supplied 1,313 m scalar; the discrepancy is unresolved and the route is not scaled."
+    },
+    {
+      "id": "imagery-identity-bikernieki-rallycross-track",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-7",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:34:07.027045Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

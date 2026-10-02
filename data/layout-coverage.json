@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 989,
-    "unmappedLayouts": 18,
+    "draftMapped": 990,
+    "unmappedLayouts": 17,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6629,11 +6629,14 @@
       "name": "Bikernieki RallyCross Track",
       "timingMode": "shared",
       "trackId": "lv-bikernieki-rallycross-5981ece5",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bikernieki-rallycross-track"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "lv-bikernieki-race-d29432c4"
@@ -22695,15 +22698,13 @@
       "name": "Bikernieki RallyCross",
       "country": "Latvia",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bikernieki RallyCross Track"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ma-moulay-el-hassan-0e8884bb",
@@ -26839,13 +26840,6 @@
     },
     {
       "recordId": "Italy/Adria International Raceway Full",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Latvia/Bikernieki RallyCross Track",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

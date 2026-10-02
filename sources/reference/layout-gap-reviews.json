@@ -53,24 +53,6 @@
       "publicExplanation": "The full layout uses the 2021 extension. Public road mapping shows the older circuit, and the available satellite image does not resolve every tight turn in the extension."
     },
     {
-      "referenceId": "Latvia/Bikernieki RallyCross Track",
-      "trackId": "lv-bikernieki-rallycross-5981ece5",
-      "layoutId": "bikernieki-rallycross-track",
-      "sourcePath": "sources/europe/lv/osm.json",
-      "expectedReason": "ambiguous-source-branches",
-      "nextStep": "Confirm the historical eastern dogleg and return using event-date route evidence. The 2017 and current public networks offer connected loops, but none yet matches the complete route identity. The public 2016 imagery predates completion and the 2022 Riga survey has no venue coverage.",
-      "research": {
-        "reviewedAt": "2026-10-02",
-        "evidenceUrls": [
-          "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-7",
-          "https://www.rallycross.lv/en/show-news/255/track-map-trases-karte",
-          "https://georiga.eu/atvertie-dati/lidar-punktu-makonis/"
-        ],
-        "geometryRecovered": false
-      },
-      "publicExplanation": "Several rallycross branches are mapped, but their eastern return differs from this historical layout. The exact connector still needs to be identified."
-    },
-    {
       "referenceId": "Lithuania/Palanga Street Circuit",
       "trackId": "lt-palanga-street-circuit-a9c06d36",
       "layoutId": "palanga-street-circuit",
@@ -127,12 +109,13 @@
       "layoutId": "elvington",
       "sourcePath": "sources/europe/gb/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Identify the northeastern connector independently. The public 2020 one-metre airfield survey shows a pavement gap; do not draw an unsupported line across the grass.",
+      "nextStep": "Identify the northeastern connector independently. The public 2020 one-metre survey shows a pavement gap, and the 2012 aerial tile footprints miss the connector. Do not infer coverage from the larger download grid square or draw an unsupported line across grass.",
       "research": {
         "reviewedAt": "2026-10-02",
         "evidenceUrls": [
           "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6045",
-          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6545"
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6545",
+          "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography"
         ],
         "geometryRecovered": false
       },

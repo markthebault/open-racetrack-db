@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-02",
+  "queryUrl": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+464900%2C+%22ymin%22%3A+447350%2C+%22xmax%22%3A+467950%2C+%22ymax%22%3A+448750%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+27700%7D%7D&geometryType=esriGeometryEnvelope&inSR=27700&outSR=27700&spatialRel=esriSpatialRelIntersects&outFields=filename%2Cyear%2Cresolution%2Ctype%2Cos_ref_5k&returnGeometry=true",
+  "responseSha256": "737e73b9c3c26f2c8ada811255b1d0aec77c464eb36b3db0935f58d50ad41d38",
+  "licence": "OGL-3.0",
+  "licenceEvidenceUrl": "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography",
+  "coordinateSystem": "EPSG:27700",
+  "searchExtent": "{\"xmin\": 464900, \"ymin\": 447350, \"xmax\": 467950, \"ymax\": 448750, \"spatialReference\": {\"wkid\": 27700}}",
+  "tiles": [
+    {
+      "metadata": {
+        "filename": "Ortho_IRRGB_P00045624_20120927_20120927_50cm_res.ecw",
+        "year": 2012,
+        "resolution": 0.5,
+        "type": "IRRGB",
+        "os_ref_5k": "SE5540"
+      },
+      "extent": {
+        "xmin": 460000,
+        "xmax": 465000,
+        "ymin": 445000,
+        "ymax": 450000
+      }
+    },
+    {
+      "metadata": {
+        "filename": "Ortho_IRRGB_P00045636_20120927_20120927_1m_res.ecw",
+        "year": 2012,
+        "resolution": 1,
+        "type": "IRRGB",
+        "os_ref_5k": "SE5540"
+      },
+      "extent": {
+        "xmin": 460000,
+        "xmax": 465000,
+        "ymin": 445000,
+        "ymax": 450000
+      }
+    },
+    {
+      "metadata": {
+        "filename": "Ortho_IRRGB_P00047987_20121130_20121130_25cm_res.ecw",
+        "year": 2012,
+        "resolution": 0.25,
+        "type": "IRRGB",
+        "os_ref_5k": "SE6545"
+      },
+      "extent": {
+        "xmin": 467000,
+        "xmax": 468000,
+        "ymin": 447000,
+        "ymax": 448000
+      }
+    }
+  ],
+  "geometryRecovered": false,
+  "finding": "The 2012 half-metre and one-metre footprints cover only the far western runway end. The quarter-metre footprint lies south of the northeastern runway and taxiway. None establishes the missing connector. IR denotes incident-response imagery, not infrared bands."
+}
