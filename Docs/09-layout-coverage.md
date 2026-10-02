@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 967
-- unmappedLayouts: 40
+- draftMapped: 968
+- unmappedLayouts: 39
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -264,7 +264,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Finland | Motopark Raceway | 1 | 1 | 1 |  |  |
 | Finland | Pesämäen Moottoriurheilukeskus | 1 | 0 | 0 |  | main |
 | Finland | Premier Park | 1 | 0 | 0 |  | main |
-| Finland | Seinajoki | 1 | 1 | 0 | Seinajoki |  |
+| Finland | Seinajoki | 1 | 1 | 1 |  |  |
 | Finland | Vantaa Circuit | 2 | 1 | 1 |  | main |
 | France | Abbeville | 1 | 1 | 1 |  |  |
 | France | Anneau du Rhin | 3 | 3 | 3 |  |  |
@@ -795,7 +795,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1057,7 +1056,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Finland | Kotkan Circuit | fi-kotkan-circuit-reference | main | draft-mapped |
 | Finland | Kymi Ring | fi-kymi-ring-9063fb95 | kymi-ring | draft-mapped |
 | Finland | Motopark | fi-motopark-raceway-231524300 | main | draft-mapped |
-| Finland | Seinajoki | fi-seinajoki-238ed6cf |  | missing-layout |
+| Finland | Seinajoki | fi-seinajoki-238ed6cf | seinajoki | draft-mapped |
 | Finland | Vantaa Kart Circuit | fi-vantaa-circuit-1054317833 | vantaa-kart-circuit | draft-mapped |
 | France | Abbeville | fr-abbeville-9c68d1a7 | abbeville | draft-mapped |
 | France | Ales | fr-pole-mecanique-ales-cevennes-196899321 | ales | draft-mapped |

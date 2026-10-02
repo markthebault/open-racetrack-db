@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **967 of 1,007 entries**. This recovery adds 510 associations: 468 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 414 traces across 49 countries. 327 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 59 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **968 of 1,007 entries**. This recovery adds 511 associations: 469 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 415 traces across 49 countries. 328 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 59 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 7 |
-| Independent geometry absent near the timing position | 25 |
+| Independent geometry absent near the timing position | 24 |
 | Aggregate configuration needs identification | 2 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 1 |
 | Bounded search incomplete | 0 |
-| **Total** | **40** |
+| **Total** | **39** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 40 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 39 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -150,3 +150,5 @@ Penbay National is recovered from exact public OSM course nodes and a roughly te
 Concordia Combo retains the full northern extension and historical southern short course as separate exact public-node paths. The primary championship schedule confirms that long and short courses were raced independently. The added historical short-course selection measures 3,049.0 m against the 2017 schedule’s 3,120 m; the difference and event-year corner placement remain explicit draft limitations. Parallel western returns and the small southern connector are excluded.
 
 Oran Park’s demolished Grand Prix figure-eight course is recovered from the independently georeferenced NSW Historical Imagery 2005 mosaic. The dataset-specific Creative Commons declaration, provider attribution, original 49 tile requests and hashes, exact tile grid and rectified mosaic are pinned. Its 2,628.1 m course is close to the supplied 2,652 m and the circuit owner’s historical 2.6 km description. The provider targets +/-20 m horizontal accuracy for 95 percent of the source map sheet. The supplied marker remains about 40 m from the unchanged trace; a bounded, documented closed-course georeferencing allowance accounts for that source uncertainty. Neither source coordinates nor timing coordinates are shifted. Open-course checks and the default 30 m proximity limit stay strict. Regression tests reject undocumented, excessive and open-course allowances; all 57 unit tests, lint and type checking pass. The northern standalone oval, pits and dirt circuit are excluded.
+
+Seinäjoki retains its historical Kapernaumi street route through Runkotie, Tehtaantie, the short Tuottajantie return, Hallitie, Jalostajantie and Lastitie. The two western indentations distinguish it from the longer southern street loop. All coordinates and joins remain exact public road nodes. The 1,918.2 m draft differs from the supplied 1,864 m by 54.2 m; the organizer’s later 2022 regulations describe a different approximately 2,100 m event course with company-yard sections. Temporary chicanes and historical travel direction remain unverified. The focused browser/download check verifies closure and attribution.
