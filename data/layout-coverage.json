@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 912,
-    "unmappedLayouts": 95,
+    "draftMapped": 913,
+    "unmappedLayouts": 94,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -8838,17 +8838,14 @@
       "name": "Navarra Combo",
       "timingMode": "shared",
       "trackId": "es-navarra-f7a7574d",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "navarra-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "es-navarra-a-600eba2b",
-        "es-navarra-b-5f4c8584",
-        "es-navarra-c-65c5ebaa",
-        "es-navarra-f7a7574d"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -19323,15 +19320,17 @@
       "trackId": "es-navarra-f7a7574d",
       "name": "Navarra",
       "country": "Spain",
-      "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualLayoutCount": 5,
+      "actualTraceCount": 5,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Navarra Combo"
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "navarra-historical-main",
+        "navarra-historical-western",
+        "navarra-historical-eastern"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -26971,13 +26970,6 @@
     },
     {
       "recordId": "Spain/Circuit Ricardo Tormo School",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Spain/Navarra Combo",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

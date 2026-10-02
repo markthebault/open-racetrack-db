@@ -3,7 +3,7 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 5,
+    "configuration-evidence-required": 4,
     "course-distance-discrepancy": 30,
     "independent-geometry-missing": 43,
     "ambiguous-source-branches": 8,
@@ -619,14 +619,6 @@
       "candidateCount": 0,
       "reason": "source-connectivity-incomplete",
       "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
-    },
-    {
-      "referenceId": "Spain/Navarra Combo",
-      "trackId": "es-navarra-f7a7574d",
-      "layoutId": "navarra-combo",
-      "sourcePath": "sources/europe/es/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
     },
     {
       "referenceId": "Sweden/Drive Centre Arena",

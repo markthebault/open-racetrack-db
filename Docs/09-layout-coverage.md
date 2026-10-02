@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 912
-- unmappedLayouts: 95
+- draftMapped: 913
+- unmappedLayouts: 94
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -252,7 +252,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Spain | Navarra A | 1 | 1 | 1 |  |  |
 | Spain | Navarra B | 1 | 1 | 1 |  |  |
 | Spain | Navarra C | 1 | 1 | 1 |  |  |
-| Spain | Navarra | 2 | 2 | 1 | Navarra Combo |  |
+| Spain | Navarra | 5 | 2 | 2 |  | navarra-historical-main; navarra-historical-western; navarra-historical-eastern |
 | Spain | Parcmotor Castellolí | 1 | 1 | 1 |  |  |
 | Spain | Circuit Ricardo Tormo | 3 | 3 | 2 | Circuit Ricardo Tormo School |  |
 | Finland | Ahveniston moottorirata | 1 | 1 | 1 |  |  |
@@ -822,7 +822,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Spain/Navarra Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 4.1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Gotland Ring 6.0 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1445,7 +1444,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Spain | Navarra A | es-navarra-a-600eba2b | navarra-a | draft-mapped |
 | Spain | Navarra B | es-navarra-b-5f4c8584 | navarra-b | draft-mapped |
 | Spain | Navarra C | es-navarra-c-65c5ebaa | navarra-c | draft-mapped |
-| Spain | Navarra Combo | es-navarra-f7a7574d |  | missing-layout |
+| Spain | Navarra Combo | es-navarra-f7a7574d | navarra-combo | draft-mapped |
 | Spain | Navarra GP 2024 | es-navarra-f7a7574d | navarra-gp-2024 | draft-mapped |
 | Spain | Parc Motor Castelloli | es-parcmotor-castelloli-31877576 | main | draft-mapped |
 | Spain | RennarenaMallorca | es-circuit-mallorca-59850344 | main | draft-mapped |
