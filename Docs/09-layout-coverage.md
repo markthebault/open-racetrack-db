@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 958
-- unmappedLayouts: 49
+- draftMapped: 959
+- unmappedLayouts: 48
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -475,7 +475,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Japan | Tokachi Speedway Clubman | 1 | 1 | 1 |  |  |
 | Japan | Tokachi Speedway | 1 | 1 | 1 |  |  |
 | Japan | TSタカタサーキット | 1 | 0 | 0 |  | main |
-| South Korea | Ansan | 1 | 1 | 0 | Ansan |  |
+| South Korea | Ansan | 1 | 1 | 1 |  |  |
 | South Korea | Everland Speedway | 1 | 1 | 1 |  |  |
 | South Korea | Inje Speedium | 1 | 1 | 1 |  |  |
 | South Korea | Korea International Circuit | 4 | 3 | 3 |  | main |
@@ -807,7 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1360,7 +1359,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | South Africa | Phakisa Freeway | za-phakisa-freeway-79bc85ad | phakisa-freeway | draft-mapped |
 | South Africa | Red Star Raceway | za-red-star-raceway-rl | main | draft-mapped |
 | South Africa | Zwartkops | za-zwartkops-raceway-14047742 | main | draft-mapped |
-| South Korea | Ansan | kr-ansan-0cee918e |  | missing-layout |
+| South Korea | Ansan | kr-ansan-0cee918e | ansan | draft-mapped |
 | South Korea | Everland Speedway | kr-everland-speedway-6b81a616 | everland-speedway | draft-mapped |
 | South Korea | Inje Speedium | kr-inje-speedium-651693293 | main | draft-mapped |
 | South Korea | Korea Int Circuit National | kr-korea-international-circuit-234764328 | korea-int-circuit-national | draft-mapped |

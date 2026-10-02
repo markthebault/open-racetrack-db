@@ -8,17 +8,41 @@
     "name": "South Korea",
     "slug": "south-korea"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    126.8313154,
+    37.282517999999996
+  ],
+  "sourceIds": [
+    "usgs-landsat-2014-ansan"
+  ],
   "defaultLayoutId": "ansan",
   "layouts": [
     {
       "id": "ansan",
       "name": "Ansan",
       "referenceId": "South Korea/Ansan",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ansan.geojson",
+      "description": "The Incheon Institute government research report identifies the Sadong block 90 Ansan racing course, its 2.871 km design and approximately 700 m main straight, and describes the unfinished 2005 construction and later partial dismantling. The complete surviving pavement footprint, including the western main straight, northern chicane, eastern loop and inner triangular return, is independently digitized from the October 5, 2014 Landsat 8 panchromatic scene. The neighboring river roads, southern roundabout, parking roads and pit lane are excluded. The 15 m native ground resolution, exact UTM transform, source DN clip, rendering stretch, scene identity and hashes are pinned. Nearest-neighbor rendering does not add resolution. The independently digitized surviving course measures approximately 3.540 km, which conflicts with both the supplied 2.868 km scalar and the report design length. This discrepancy is retained as a review issue; the geometry is not scaled or shortened to fit a distance. This is a historical pavement draft. Temporary barriers, fine chicane alignment and direction remain unverified. No vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 3540.2 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-landsat-2014-ansan",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://storage.googleapis.com/gcp-public-data-landsat/LC08/01/116/034/LC08_L1TP_116034_20141005_20170418_01_T1/LC08_L1TP_116034_20141005_20170418_01_T1_B8.TIF",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T11:02:39.973255Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/faqs/are-there-any-restrictions-use-or-redistribution-landsat-data. Pinned raster hash d19ac28a859fb02dcb1226df2ed13f818733bfb86fe0492097293d003740af10; reproducible pixel-to-coordinate conversion. The Incheon Institute government research report identifies the Sadong block 90 Ansan racing course, its 2.871 km design and approximately 700 m main straight, and describes the unfinished 2005 construction and later partial dismantling. The complete surviving pavement footprint, including the western main straight, northern chicane, eastern loop and inner triangular return, is independently digitized from the October 5, 2014 Landsat 8 panchromatic scene. The neighboring river roads, southern roundabout, parking roads and pit lane are excluded. The 15 m native ground resolution, exact UTM transform, source DN clip, rendering stretch, scene identity and hashes are pinned. Nearest-neighbor rendering does not add resolution. The independently digitized surviving course measures approximately 3.540 km, which conflicts with both the supplied 2.868 km scalar and the report design length. This discrepancy is retained as a review issue; the geometry is not scaled or shortened to fit a distance. This is a historical pavement draft. Temporary barriers, fine chicane alignment and direction remain unverified. No vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-ansan",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.ii.re.kr/storage/report/BB0000007527.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:02:39.973255Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 958,
-    "unmappedLayouts": 49,
+    "draftMapped": 959,
+    "unmappedLayouts": 48,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -8246,11 +8246,14 @@
       "name": "Ansan",
       "timingMode": "shared",
       "trackId": "kr-ansan-0cee918e",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ansan"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -22524,15 +22527,13 @@
       "name": "Ansan",
       "country": "South Korea",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Ansan"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "kr-everland-speedway-6b81a616",
@@ -26932,13 +26933,6 @@
     },
     {
       "recordId": "Morocco/Moulay El Hassan",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "South Korea/Ansan",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

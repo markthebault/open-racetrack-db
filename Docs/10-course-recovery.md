@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **958 of 1,007 entries**. This recovery adds 501 associations: 459 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 405 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 57 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **959 of 1,007 entries**. This recovery adds 502 associations: 460 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 406 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 57 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 11 |
-| Independent geometry absent near the timing position | 28 |
+| Independent geometry absent near the timing position | 27 |
 | Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 2 |
 | Bounded search incomplete | 0 |
-| **Total** | **49** |
+| **Total** | **48** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 49 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 48 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -136,3 +136,5 @@ Both Ljungbyhed timing variants retain the same independently digitized racing c
 Trois-Rivières now retains the full road-racing course through Avenue Gilles-Villeneuve, the pool return, the western Boulevard du Carmel carriageway, Rue de Calonne, Rue Papineau and the Ryan hairpin. Independently georeferenced 2019 Quebec orthophotography is pinned under CC BY 4.0. The organizer programme identifies the course; the oval, rallycross route and pit lane are excluded. The 2,374.1 m centerline retains its difference from the supplied 2,437 m scalar without scaling. The focused browser check verifies the rendered route, closed download and attribution.
 
 Samara-Ring now retains the complete historical winter-racing oval. Independently georeferenced public-domain Landsat 8 imagery from June 15, 2013 shows the footprint before redevelopment; the municipal race report identifies the venue. The 1,473.8 m trace preserves its difference from the supplied 1,512 m scalar. Native resolution is 15 m, and snow barriers, direction and fine alignment remain unverified. The original UTM raster clip, transform, scene identity, display stretch and hashes are pinned. Source checks, build and the focused browser/download check pass.
+
+Ansan now displays a historical surviving-pavement draft from pinned October 2014 public-domain Landsat 8 imagery. The Incheon Institute report identifies the unfinished course and subsequent partial dismantling. Native resolution is 15 m. The 3,540.2 m digitized footprint conflicts with the supplied 2,868 m scalar and the report design length, and this remains an explicit review issue. Geometry is not scaled or shortened. The neighboring river roads, southern roundabout and pit lane are excluded. Source checks, build and the focused browser/download check pass.
