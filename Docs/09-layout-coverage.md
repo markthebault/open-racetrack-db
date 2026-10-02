@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 966
-- unmappedLayouts: 41
+- draftMapped: 967
+- unmappedLayouts: 40
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -89,7 +89,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Australia | Newcastle Street Circuit | 1 | 1 | 0 | Newcastle Street Circuit |  |
 | Australia | Norwell Motorplex | 1 | 0 | 0 |  | main |
 | Australia | One Raceway | 2 | 1 | 1 |  | main |
-| Australia | Oran Park Raceway | 1 | 1 | 0 | Oran Park Raceway |  |
+| Australia | Oran Park Raceway | 1 | 1 | 1 |  |  |
 | Australia | Phillip Island Grand Prix Circuit | 1 | 1 | 1 |  |  |
 | Australia | Queensland Raceway | 6 | 5 | 5 |  | main |
 | Australia | Sandown International Raceway | 1 | 1 | 1 |  |  |
@@ -791,7 +791,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/Oran Park Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -911,7 +910,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Morgan Park K | au-morgan-park-k-47e89419 | morgan-park-k | draft-mapped |
 | Australia | Newcastle Street Circuit | au-newcastle-street-circuit-5ba8d445 |  | missing-layout |
 | Australia | One Raceway Goulburn | au-one-raceway-243608030 | one-raceway-goulburn | draft-mapped |
-| Australia | Oran Park Raceway | au-oran-park-raceway-692abacd |  | missing-layout |
+| Australia | Oran Park Raceway | au-oran-park-raceway-692abacd | oran-park-raceway | draft-mapped |
 | Australia | Philip Island | au-phillip-island-grand-prix-circuit-43598473 | main | draft-mapped |
 | Australia | Queensland Raceway Club Circuit | au-queensland-raceway-26175772 | queensland-raceway-club-circuit | draft-mapped |
 | Australia | Queensland Raceway Combo Circuit | au-queensland-raceway-26175772 | queensland-raceway-combo-circuit | draft-mapped |

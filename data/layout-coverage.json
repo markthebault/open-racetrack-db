@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 966,
-    "unmappedLayouts": 41,
+    "draftMapped": 967,
+    "unmappedLayouts": 40,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -1213,11 +1213,14 @@
       "name": "Oran Park Raceway",
       "timingMode": "shared",
       "trackId": "au-oran-park-raceway-692abacd",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "oran-park-raceway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17149,15 +17152,13 @@
       "name": "Oran Park Raceway",
       "country": "Australia",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Oran Park Raceway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "au-phillip-island-grand-prix-circuit-43598473",
@@ -26817,13 +26818,6 @@
     },
     {
       "recordId": "Australia/Newcastle Street Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Australia/Oran Park Raceway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

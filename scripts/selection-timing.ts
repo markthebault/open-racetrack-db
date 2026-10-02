@@ -1,6 +1,10 @@
 import {distance, equal, nearestEdge, type Position} from '../src/geo';
 import type {TimingRecord} from './reference-timing';
 
+export type GeoreferencingAccuracy = {
+ horizontalM:number; confidencePercent:95; evidenceUrl:string; evidenceNote:string;
+};
+
 export function validateNetworkTiming(record:TimingRecord,paths:Position[][]){
  if(paths.length<2||paths.some(p=>p.length<2))throw new Error('Network requires multiple nonempty paths');
  if(record.gates.some(g=>Math.min(...paths.map(p=>nearestEdge(g.point,p).displacementM))>30))throw new Error('Network fails timing-location check');
@@ -11,11 +15,19 @@ export function validateNetworkTiming(record:TimingRecord,paths:Position[][]){
 
 // Open drafts must end at independently mapped nodes near the two timing gates.
 // Being near a gate somewhere along a longer road is insufficient.
-export function validateSelectionTiming(record: TimingRecord, trace: Position[], closed: boolean, endpointToleranceM = 30, openSharedTimingEvidence?: string) {
+export function validateSelectionTiming(record: TimingRecord, trace: Position[], closed: boolean, endpointToleranceM = 30, openSharedTimingEvidence?: string, georeferencingAccuracy?:GeoreferencingAccuracy) {
  if (!Number.isFinite(endpointToleranceM) || endpointToleranceM < 0 || endpointToleranceM > 50) throw new Error('Invalid documented endpoint tolerance');
  if (trace.length < 2) throw new Error('Selected course has no route');
  if (openSharedTimingEvidence !== undefined && (closed || !openSharedTimingEvidence.trim() || record.gates.length !== 1 || record.gates[0].role !== 'start_finish')) throw new Error('Open shared timing requires an open course, one supplied marker and identification evidence');
- if (record.gates.some(g => nearestEdge(g.point, trace).displacementM > 30)) throw new Error('Selected course fails timing-location check');
+ // Historical orthophotos can resolve pavement clearly while their absolute
+ // positions remain less accurate. Preserve the source coordinates and marker;
+ // account only for a bounded, independently documented provider uncertainty.
+ if(georeferencingAccuracy){
+  const a=georeferencingAccuracy;
+  if(!closed||!Number.isFinite(a.horizontalM)||a.horizontalM<=0||a.horizontalM>20||a.confidencePercent!==95||!a.evidenceNote.trim()||!/^https?:\/\//.test(a.evidenceUrl))throw new Error('Invalid documented closed-course georeferencing accuracy');
+ }
+ const proximityM=30+(georeferencingAccuracy?.horizontalM??0);
+ if (record.gates.some(g => nearestEdge(g.point, trace).displacementM > proximityM)) throw new Error('Selected course fails timing-location check');
  if (closed) {
   if (record.gates.length !== 1 || record.gates[0].role !== 'start_finish' || !equal(trace[0], trace.at(-1)!)) throw new Error('Closed course requires shared timing');
   return 'shared' as const;

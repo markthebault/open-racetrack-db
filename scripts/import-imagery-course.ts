@@ -17,7 +17,7 @@ if(sha(image)!==source.imagerySha256)throw new Error('Imagery image hash mismatc
 validateImageryRaster(source,image);
 const paths=imageryPaths(source),trace=paths[0],isNetwork='paths'in source,measured=isNetwork?networkLength(paths):length(trace),record=readTimingArchive(archive).records.find(r=>r.id===referenceId);
 if(!record)throw new Error('Catalogue timing record is absent');
-const timingMode=isNetwork?validateNetworkTiming(record,paths):validateSelectionTiming(record,trace,source.closed);
+const timingMode=isNetwork?validateNetworkTiming(record,paths):validateSelectionTiming(record,trace,source.closed,30,undefined,source.georeferencingAccuracy);
 if(!record.nominalLengthM||Math.abs(measured-record.nominalLengthM)>allowance)throw new Error(`Imagery course distance ${measured} m exceeds documented allowance`);
 const index=await read('data/index.json'),entry=index.tracks.find((t:any)=>t.id===registration.trackId),trackPath=`data/${entry.file}`,track=await read(trackPath),layout=track.layouts.find((l:any)=>l.id===registration.layoutId),hash=sha(bytes),retrievedAt=(await stat(file)).mtime.toISOString();
 let manifest:any;try{manifest=await read(`${root}/import.json`);}catch(error){if((error as NodeJS.ErrnoException).code!=='ENOENT')throw error;manifest={schemaVersion:1,trackId:track.id,sourceId:source.sourceId,snapshotFile:basename(file),snapshotSha256:hash,fetchedAt:retrievedAt,endpoint:source.sourceUrl,bbox:bounds(paths.flat())};}

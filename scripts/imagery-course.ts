@@ -12,7 +12,9 @@ const imagerySourceFields=z.strictObject({
  extent:z.strictObject({xmin:z.number().finite(),ymin:z.number().finite(),xmax:z.number().finite(),ymax:z.number().finite(),spatialReference:z.literal(3857)}),
  identificationUrl:z.url(),evidence:z.string().min(1)
 });
-const imageryRouteSchema=imagerySourceFields.extend({pixels:z.array(pixel).min(3),closed:z.boolean()});
+const imageryRouteSchema=imagerySourceFields.extend({pixels:z.array(pixel).min(3),closed:z.boolean(),georeferencingAccuracy:z.strictObject({
+ horizontalM:z.number().finite().positive().max(20),confidencePercent:z.literal(95),evidenceUrl:z.url(),evidenceNote:z.string().trim().min(1)
+}).optional()});
 const imageryNetworkSchema=imagerySourceFields.extend({
  geometryKind:z.literal('network'),closed:z.literal(false),
  paths:z.array(z.strictObject({name:z.string().trim().min(1),pixels:z.array(pixel).min(2),closed:z.boolean(),identificationUrl:z.url(),evidence:z.string().trim().min(1)})).min(2)

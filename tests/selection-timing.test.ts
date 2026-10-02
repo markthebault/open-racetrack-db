@@ -53,3 +53,17 @@ test('network timing checks each real path and rejects a gate on the gap between
  assert.throws(()=>validateNetworkTiming({...shared,gates:[{role:'finish',point:paths[1][0]}]},paths),/complete shared or separate/);
  assert.throws(()=>validateNetworkTiming(shared,[paths[0]]),/multiple nonempty/);
 });
+
+test('documented historical georeferencing uncertainty preserves strict roles and open endpoints',()=>{
+ const loop:Position[]=[[0,50],[.01,50],[.01,50.005],[0,50.005],[0,50]];
+ const shared:TimingRecord={...open,gates:[{role:'start_finish',point:[.005,49.99964]}]};
+ const accuracy={horizontalM:20,confidencePercent:95 as const,evidenceUrl:'https://example.test/provider-metadata',evidenceNote:'Provider targets 20 m horizontal accuracy at 95 percent confidence.'};
+ assert.throws(()=>validateSelectionTiming(shared,loop,true),/location/);
+ assert.equal(validateSelectionTiming(shared,loop,true,30,undefined,accuracy),'shared');
+ assert.throws(()=>validateSelectionTiming({...shared,gates:[{role:'start_finish',point:[.005,49.9995]}]},loop,true,30,undefined,accuracy),/location/);
+ assert.throws(()=>validateSelectionTiming(shared,loop,true,30,undefined,{...accuracy,horizontalM:21}),/georeferencing/);
+ assert.throws(()=>validateSelectionTiming(shared,loop,true,30,undefined,{...accuracy,evidenceNote:' '}),/georeferencing/);
+ assert.throws(()=>validateSelectionTiming(shared,loop,true,30,undefined,{...accuracy,horizontalM:NaN}),/georeferencing/);
+ assert.throws(()=>validateSelectionTiming(open,trace,false,30,undefined,accuracy),/closed-course/);
+ assert.throws(()=>validateSelectionTiming({...shared,gates:[{role:'start',point:shared.gates[0].point}]},loop,true,30,undefined,accuracy),/shared timing/);
+});
