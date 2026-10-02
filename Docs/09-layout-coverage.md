@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 986
-- unmappedLayouts: 21
+- draftMapped: 987
+- unmappedLayouts: 20
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -373,7 +373,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Millbrook Handling Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Millbrook High Speed Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Millbrook Hill Route | 1 | 1 | 1 |  |  |
-| United Kingdom | Nutts Corner | 1 | 1 | 0 | Nutts Corner |  |
+| United Kingdom | Nutts Corner | 1 | 1 | 1 |  |  |
 | United Kingdom | Oulton Park Circuit | 5 | 4 | 4 |  | main |
 | United Kingdom | Pembrey Circuit | 3 | 2 | 2 |  | main |
 | United Kingdom | PFI | 1 | 1 | 1 |  |  |
@@ -800,7 +800,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit Reverse |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex II |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1506,7 +1505,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Millbrook High Speed Circuit | gb-millbrook-high-speed-circuit-cefbea72 | millbrook-high-speed-circuit | draft-mapped |
 | United Kingdom | Millbrook Hill Route Full | gb-millbrook-hill-route-372dafdf | millbrook-hill-route-full | draft-mapped |
 | United Kingdom | M-Sport Proving Ground | gb-m-sport-proving-ground-fe7c7315 | m-sport-proving-ground | draft-mapped |
-| United Kingdom | Nutts Corner | gb-nutts-corner-6fa16d73 |  | missing-layout |
+| United Kingdom | Nutts Corner | gb-nutts-corner-6fa16d73 | nutts-corner | draft-mapped |
 | United Kingdom | Oulton Park Combo | gb-oulton-park-circuit-21831735 | oulton-park-combo | draft-mapped |
 | United Kingdom | Oulton Park Fosters Circuit | gb-oulton-park-circuit-21831735 | oulton-park-fosters-circuit | draft-mapped |
 | United Kingdom | Oulton Park International | gb-oulton-park-circuit-21831735 | oulton-park-international | draft-mapped |

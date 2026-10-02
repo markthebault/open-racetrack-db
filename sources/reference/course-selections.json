@@ -24864,6 +24864,73 @@
       "maximumDistanceDifferenceM": 5,
       "identificationUrl": "https://www.ingliston.co.uk/two-supercars-drift-experience/",
       "evidence": "Ingliston South Track boomerang course, retaining the tiny western hairpin, parallel southern straights and northeast return. The operator identifies the southern original course plus the newer closing section. Exact independently mapped road nodes join ways 244885451, 244885450, 31822865, 31822847 and 244885452. The outer road through the Grandstand arena, the more easterly service-road grid and the optional later southern chicane are excluded. Native one-metre Scottish Government Phase 4 LiDAR intensity (2017-2019, OGL v3) independently confirms the selected paved route. The small-course identity matches the listed layout; no supplied course coordinates or diagram pixels enter the geometry."
+    },
+    {
+      "referenceId": "United Kingdom/Nutts Corner",
+      "sourcePath": "sources/course-networks/nutts-corner-2018-independent-roads/osm.json",
+      "sourceWayIds": [
+        38075744,
+        38075745,
+        38075748,
+        38075749,
+        407744070,
+        407744071
+      ],
+      "segments": [
+        {
+          "wayId": 38075744,
+          "wayVersion": 3,
+          "fromIndex": 10,
+          "toIndex": 21
+        },
+        {
+          "wayId": 407744070,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 38075749,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 6
+        },
+        {
+          "wayId": 407744071,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 13
+        },
+        {
+          "wayId": 38075744,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 38075748,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 13
+        },
+        {
+          "wayId": 38075744,
+          "wayVersion": 3,
+          "fromIndex": 3,
+          "toIndex": 5
+        },
+        {
+          "wayId": 38075745,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 13
+        }
+      ],
+      "closed": true,
+      "expectedLengthM": 840.9,
+      "maximumDistanceDifferenceM": 99,
+      "identificationUrl": "https://www.supercarexperience.co.uk/track/northern-ireland/nutts-corner/",
+      "evidence": "Historical Dundrod Road main course with the northern dip chicane, inward western notch, eastern straight and short southern return. The independently mapped 2018 raceway branches form an exact closed node-connected circuit; the allowed shared timing point is 0.6 m from this route. The eastern inner hairpin, full southern extension and the longer southwestern alternate loop are excluded because they change the listed course identity. A small access spur is not included in the closed racing lap. The source measures 840.9 m, 98.1 m shorter than the catalogue scalar of 939 m; this unresolved distance difference is retained and no coordinates or extra branches are added to force agreement. The primary experience operator identifies the seven-corner car layout at this venue; the archive layout facts support the historical branch choice, not coordinates. This is a historical draft centerline, not a validated 939 m timing lap."
     }
   ]
 }

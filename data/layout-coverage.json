@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 986,
-    "unmappedLayouts": 21,
+    "draftMapped": 987,
+    "unmappedLayouts": 20,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11079,11 +11079,14 @@
       "name": "Nutts Corner",
       "timingMode": "shared",
       "trackId": "gb-nutts-corner-6fa16d73",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "nutts-corner"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -21153,15 +21156,13 @@
       "name": "Nutts Corner",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Nutts Corner"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-oulton-park-circuit-21831735",
@@ -26902,28 +26903,6 @@
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Nutts Corner",
-      "matchingNamedWayIds": [
-        38075744,
-        38075745,
-        38075747,
-        38075748,
-        38075749,
-        210233254,
-        210233255,
-        210233256,
-        210233257,
-        210233258,
-        210233259,
-        210233260,
-        407744070,
-        407744071
-      ],
-      "namedCourseCandidates": 400,
-      "enumerationTruncated": true,
-      "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
     },
     {
       "recordId": "United Kingdom/RAF Woodbridge",
