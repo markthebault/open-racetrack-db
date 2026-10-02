@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 980,
-    "unmappedLayouts": 27,
+    "draftMapped": 981,
+    "unmappedLayouts": 26,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11967,14 +11967,14 @@
       "name": "Belle Isle GP",
       "timingMode": "shared",
       "trackId": "us-belle-isle-c12938f2",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "belle-isle-gp"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-belle-isle-c12938f2"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -24513,15 +24513,13 @@
       "name": "Belle Isle",
       "country": "United States",
       "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualTraceCount": 2,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Belle Isle GP"
-      ],
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-blackhawk-farms-raceway-343329151",
@@ -26995,13 +26993,6 @@
     },
     {
       "recordId": "United States/Arlington Street Circuit Practice",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Belle Isle GP",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

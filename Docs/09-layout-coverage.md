@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 980
-- unmappedLayouts: 27
+- draftMapped: 981
+- unmappedLayouts: 26
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -616,7 +616,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Badger Kart | 4 | 1 | 1 |  | badger-classic; badger-national; badger-bus-stop |
 | United States | Barber Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Barber Motorsports Park SRO Pract. | 1 | 1 | 1 |  |  |
-| United States | Belle Isle | 2 | 2 | 1 | Belle Isle GP |  |
+| United States | Belle Isle | 2 | 2 | 2 |  |  |
 | United States | Blackhawk Farms Raceway | 1 | 1 | 1 |  |  |
 | United States | Bondurant Driving School | 1 | 1 | 1 |  |  |
 | United States | Brainerd International Raceway | 3 | 2 | 2 |  | main |
@@ -812,7 +812,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit Practice |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Belle Isle GP |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
@@ -1569,7 +1568,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Barber Motorsports Park | us-barber-motorsports-park-de1b88e1 | barber-motorsports-park | draft-mapped |
 | United States | Barber Motorsports Park SRO Pract. | us-barber-motorsports-park-sro-pract-4bcdadc1 | barber-motorsports-park-sro-pract | draft-mapped |
 | United States | Belle Isle | us-belle-isle-c12938f2 | belle-isle | draft-mapped |
-| United States | Belle Isle GP | us-belle-isle-c12938f2 |  | missing-layout |
+| United States | Belle Isle GP | us-belle-isle-c12938f2 | belle-isle-gp | draft-mapped |
 | United States | Blackhawk Farms | us-blackhawk-farms-raceway-343329151 | main | draft-mapped |
 | United States | Bondurant Driving School | us-bondurant-driving-school-ac53816b | bondurant-driving-school | draft-mapped |
 | United States | Brainerd Competition Road | us-brainerd-international-raceway-137243010 | brainerd-competition-road | draft-mapped |

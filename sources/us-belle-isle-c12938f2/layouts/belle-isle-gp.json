@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "trackId": "us-belle-isle-c12938f2",
+  "layoutId": "belle-isle-gp",
+  "sourceId": "osm-network-belle-isle-gp",
+  "snapshotFile": "network-belle-isle-gp.json",
+  "snapshotSha256": "05b463943adb3795c864345544b2175e8e67d6cb41a9485688e87ef5d81d3c99",
+  "geometryStatus": "draft",
+  "timingMode": "shared",
+  "reviewedAt": null,
+  "notes": [
+    "The supplied GP entry identifies the extended Belle Isle course together with the historical Picnic Way alternative across its northeastern section. The series documents the former shorter course and 2013 northeastern extension. The full course retains its exact pinned 2022 public raceway nodes. The 477.3 m alternative retains exact 2018 Picnic Way and Loiter Way road nodes, ending at the first mapped point entering the extended course corridor. Later Loiter Way points overlap the full course and are excluded. Independent snapshot endpoints lie 0.35 m and 1.72 m from the full course; these source offsets remain open and no connecting line or forced closure is invented. The displayed 4,242.7 m source branch network differs from the supplied 4,276 m by 33.3 m. This configuration set is not a single lap. Historical barrier alignment and travel direction remain draft."
+  ],
+  "gates": [],
+  "paths": [
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 988444802,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 184
+        }
+      ]
+    },
+    {
+      "closed": false,
+      "segments": [
+        {
+          "wayId": 55904054,
+          "wayVersion": 5,
+          "fromIndex": 22,
+          "toIndex": 0
+        },
+        {
+          "wayId": 8769003,
+          "wayVersion": 10,
+          "fromIndex": 16,
+          "toIndex": 19
+        }
+      ]
+    }
+  ]
+}

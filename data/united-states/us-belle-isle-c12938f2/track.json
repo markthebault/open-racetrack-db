@@ -13,7 +13,8 @@
     42.33619065
   ],
   "sourceIds": [
-    "osm-selection-belle-isle-2022-independent-roads-988444802"
+    "osm-selection-belle-isle-2022-independent-roads-988444802",
+    "osm-network-belle-isle-gp"
   ],
   "defaultLayoutId": "belle-isle",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "belle-isle-gp",
       "name": "Belle Isle GP",
       "referenceId": "United States/Belle Isle GP",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/belle-isle-gp.geojson",
+      "description": "The supplied GP entry identifies the extended Belle Isle course together with the historical Picnic Way alternative across its northeastern section. The series documents the former shorter course and 2013 northeastern extension. The full course retains its exact pinned 2022 public raceway nodes. The 477.3 m alternative retains exact 2018 Picnic Way and Loiter Way road nodes, ending at the first mapped point entering the extended course corridor. Later Loiter Way points overlap the full course and are excluded. Independent snapshot endpoints lie 0.35 m and 1.72 m from the full course; these source offsets remain open and no connecting line or forced closure is invented. The displayed 4,242.7 m source branch network differs from the supplied 4,276 m by 33.3 m. This configuration set is not a single lap. Historical barrier alignment and travel direction remain draft."
     }
   ],
   "sources": [
@@ -50,6 +51,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T03:50:32.094Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-belle-isle-gp",
+      "type": "osm",
+      "title": "Pinned extended course and historical alternative",
+      "url": "https://www.openstreetmap.org/way/55904054",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T00:00:00Z",
+      "evidenceNote": "The supplied GP entry identifies the extended Belle Isle course together with the historical Picnic Way alternative across its northeastern section. The series documents the former shorter course and 2013 northeastern extension. The full course retains its exact pinned 2022 public raceway nodes. The 477.3 m alternative retains exact 2018 Picnic Way and Loiter Way road nodes, ending at the first mapped point entering the extended course corridor. Later Loiter Way points overlap the full course and are excluded. Independent snapshot endpoints lie 0.35 m and 1.72 m from the full course; these source offsets remain open and no connecting line or forced closure is invented. The displayed 4,242.7 m source branch network differs from the supplied 4,276 m by 33.3 m. This configuration set is not a single lap. Historical barrier alignment and travel direction remain draft."
+    },
+    {
+      "id": "network-identity-belle-isle-gp",
+      "type": "reference",
+      "title": "Historical and extended course identification",
+      "url": "https://www.indycar.com/News/2013/05/5-30-Taking-a-lap-of-Belle-Isle",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T00:00:00Z",
+      "evidenceNote": "The series identifies the 2013 extension and former shorter course. Course diagrams identify branches only; no diagram coordinates are traced or copied."
     }
   ]
 }
