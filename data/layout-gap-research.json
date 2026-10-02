@@ -4,11 +4,11 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 5,
-    "course-distance-discrepancy": 31,
+    "course-distance-discrepancy": 30,
     "independent-geometry-missing": 43,
     "ambiguous-source-branches": 8,
     "source-connectivity-incomplete": 5,
-    "open-course-evidence-required": 7
+    "open-course-evidence-required": 6
   },
   "records": [
     {
@@ -573,34 +573,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "New Zealand/Leadfoot Hillclimb",
-      "trackId": "nz-leadfoot-hillclimb-f16d38f6",
-      "layoutId": "leadfoot-hillclimb",
-      "sourcePath": "sources/world/nz/osm.json",
-      "reason": "open-course-evidence-required",
-      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
-      "referenceId": "New Zealand/Ruapuna",
-      "trackId": "nz-ruapuna-e0b8962a",
-      "layoutId": "ruapuna",
-      "sourcePath": "sources/world/nz/osm.json",
-      "sourceWayIds": [
-        33795438,
-        33795441,
-        33795448,
-        33795504,
-        33795523,
-        834156808,
-        834156809,
-        1494157810
-      ],
-      "candidateCount": 107,
-      "closestSourceLengthM": 3282.1,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Russia/Ramenskoe",

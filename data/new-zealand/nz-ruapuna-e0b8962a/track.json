@@ -8,17 +8,126 @@
     "name": "New Zealand",
     "slug": "new-zealand"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    172.4797137,
+    -43.530819
+  ],
+  "sourceIds": [
+    "osm-components-33795438",
+    "osm-network-ruapuna"
+  ],
   "defaultLayoutId": "ruapuna",
   "layouts": [
     {
       "id": "ruapuna",
       "name": "Ruapuna",
       "referenceId": "New Zealand/Ruapuna",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ruapuna.geojson",
+      "description": "Combined mapped configurations: Grand Prix, Grand Prix with dipper, Outer course with dipper, Outer course, Eastern course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "ruapuna-grand-prix",
+      "name": "Grand Prix",
+      "file": "layouts/ruapuna-grand-prix.geojson",
+      "description": "The federation circuit map identifies the full Grand Prix branch sequence, including the Western technical return and central Northern U. Its independent 3282.1 m measured distance differs from the published 3.33 km. Fine corner alignment and direction remain draft."
+    },
+    {
+      "id": "ruapuna-grand-prix-dipper",
+      "name": "Grand Prix with dipper",
+      "file": "layouts/ruapuna-grand-prix-dipper.geojson",
+      "description": "The operator test-day rules explicitly distinguish the motorcycle Grand Prix with dipper. This route retains the Southern central dipper and every Grand Prix branch. Independent measured length is 3387.5 m; alignment remains draft."
+    },
+    {
+      "id": "ruapuna-outer-dipper",
+      "name": "Outer course with dipper",
+      "file": "layouts/ruapuna-outer-dipper.geojson",
+      "description": "A draft component of the operator multi-configuration facility: the complete Western outer return, central shortcut and Eastern loop with the Southern dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2287.8 m."
+    },
+    {
+      "id": "ruapuna-outer-course",
+      "name": "Outer course",
+      "file": "layouts/ruapuna-outer-course.geojson",
+      "description": "A draft component retaining the complete Western outer return, central shortcut and Eastern loop, without the dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2182.4 m."
+    },
+    {
+      "id": "ruapuna-eastern-course",
+      "name": "Eastern course",
+      "file": "layouts/ruapuna-eastern-course.geojson",
+      "description": "A draft short Eastern course using the mapped Northern central return, shared straight and terminal Eastern bend. The source is tagged raceway and its same-node joins are preserved. Branch names are descriptive, not homologation labels; independently measured length is 1180.2 m."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-33795438",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/33795438",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T02:13:13.375Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-ruapuna-grand-prix",
+      "type": "reference",
+      "title": "Grand Prix identification",
+      "url": "https://motorsport.org.nz/wp-content/uploads/CRO004e_Ruapuna_CRO_Map.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:13:13.375Z",
+      "evidenceNote": "The federation circuit map identifies the full Grand Prix branch sequence, including the Western technical return and central Northern U. Its independent 3282.1 m measured distance differs from the published 3.33 km. Fine corner alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ruapuna-grand-prix-dipper",
+      "type": "reference",
+      "title": "Grand Prix with dipper identification",
+      "url": "https://www.canterburycarclub.co.nz/wp-content/uploads/2025/03/Test-Day-Regulations.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:13:13.375Z",
+      "evidenceNote": "The operator test-day rules explicitly distinguish the motorcycle Grand Prix with dipper. This route retains the Southern central dipper and every Grand Prix branch. Independent measured length is 3387.5 m; alignment remains draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ruapuna-outer-dipper",
+      "type": "reference",
+      "title": "Outer course with dipper identification",
+      "url": "https://www.ruapuna.co.nz/wp-content/uploads/2024/12/CCC_Strategic_Plan.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:13:13.375Z",
+      "evidenceNote": "A draft component of the operator multi-configuration facility: the complete Western outer return, central shortcut and Eastern loop with the Southern dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2287.8 m. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ruapuna-outer-course",
+      "type": "reference",
+      "title": "Outer course identification",
+      "url": "https://www.ruapuna.co.nz/wp-content/uploads/2024/12/CCC_Strategic_Plan.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:13:13.375Z",
+      "evidenceNote": "A draft component retaining the complete Western outer return, central shortcut and Eastern loop, without the dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2182.4 m. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-ruapuna-eastern-course",
+      "type": "reference",
+      "title": "Eastern course identification",
+      "url": "https://www.ruapuna.co.nz/wp-content/uploads/2024/12/CCC_Strategic_Plan.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:13:13.375Z",
+      "evidenceNote": "A draft short Eastern course using the mapped Northern central return, shared straight and terminal Eastern bend. The source is tagged raceway and its same-node joins are preserved. Branch names are descriptive, not homologation labels; independently measured length is 1180.2 m. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-ruapuna",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/33795438",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T02:30:14.394Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-ruapuna",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://motorsport.org.nz/wp-content/uploads/CRO004e_Ruapuna_CRO_Map.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T02:30:14.394Z",
+      "evidenceNote": "This general entry represents the combined Grand Prix, dipper, Western outer and short Eastern course branches. The federation 3.33 km map establishes Grand Prix identity and the operator test rules establish the dipper variant. The operator identifies six configurations at the facility. Branch geometry comes only from one pinned independent snapshot; no comparison-image vertices are copied. Northern pit-access roads, the adjacent dirt speedway and the new 2026 duplicate course way are excluded. Descriptive component names and historical alignments remain provisional. The independent unique branch distance is 3731.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 908,
-    "unmappedLayouts": 99,
+    "draftMapped": 910,
+    "unmappedLayouts": 97,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6988,11 +6988,15 @@
       "name": "Leadfoot Hillclimb",
       "timingMode": "separate",
       "trackId": "nz-leadfoot-hillclimb-f16d38f6",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "leadfoot-hillclimb"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -7033,11 +7037,14 @@
       "name": "Ruapuna",
       "timingMode": "shared",
       "trackId": "nz-ruapuna-e0b8962a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ruapuna"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -22968,15 +22975,13 @@
       "name": "Leadfoot Hillclimb",
       "country": "New Zealand",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Leadfoot Hillclimb"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "nz-manfeild-circuit-chris-amon-348055800",
@@ -23010,15 +23015,19 @@
       "trackId": "nz-ruapuna-e0b8962a",
       "name": "Ruapuna",
       "country": "New Zealand",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 6,
+      "actualTraceCount": 6,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Ruapuna"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "ruapuna-grand-prix",
+        "ruapuna-grand-prix-dipper",
+        "ruapuna-outer-dipper",
+        "ruapuna-outer-course",
+        "ruapuna-eastern-course"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -26934,28 +26943,6 @@
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "New Zealand/Leadfoot Hillclimb",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "New Zealand/Ruapuna",
-      "matchingNamedWayIds": [
-        33795438,
-        33795441,
-        33795448,
-        33795504,
-        33795523,
-        834156808,
-        834156809
-      ],
-      "namedCourseCandidates": 7,
-      "enumerationTruncated": false,
-      "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
     },
     {
       "recordId": "Russia/Ramenskoe",

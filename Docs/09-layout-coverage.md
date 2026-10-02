@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 908
-- unmappedLayouts: 99
+- draftMapped: 910
+- unmappedLayouts: 97
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -514,10 +514,10 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | New Zealand | Highlands Motorsports Park_C | 1 | 1 | 1 |  |  |
 | New Zealand | Highlands Motorsports Park | 5 | 1 | 1 |  | highlands-motorsports-park-a; highlands-motorsports-park-b; highlands-motorsports-park-c; highlands-motorsports-park-full |
 | New Zealand | Highlands Motorsports Park_Full | 1 | 1 | 1 |  |  |
-| New Zealand | Leadfoot Hillclimb | 1 | 1 | 0 | Leadfoot Hillclimb |  |
+| New Zealand | Leadfoot Hillclimb | 1 | 1 | 1 |  |  |
 | New Zealand | Manfeild: Circuit Chris Amon | 2 | 1 | 1 |  | main |
 | New Zealand | Pukekohe Park | 1 | 1 | 1 |  |  |
-| New Zealand | Ruapuna | 1 | 1 | 0 | Ruapuna |  |
+| New Zealand | Ruapuna | 6 | 1 | 1 |  | ruapuna-grand-prix; ruapuna-grand-prix-dipper; ruapuna-outer-dipper; ruapuna-outer-course; ruapuna-eastern-course |
 | New Zealand | Taupo International Motorsport Park | 5 | 4 | 4 |  | main |
 | New Zealand | Teretonga Park | 2 | 1 | 1 |  | main |
 | New Zealand | Timaru International Motor Raceway | 1 | 1 | 1 |  |  |
@@ -818,8 +818,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 7 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1333,10 +1331,10 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | New Zealand | Highlands Motorsports Park_B | nz-highlands-motorsports-park-b-1fe943d1 | highlands-motorsports-park-b | draft-mapped |
 | New Zealand | Highlands Motorsports Park_C | nz-highlands-motorsports-park-c-b1a21bf0 | highlands-motorsports-park-c | draft-mapped |
 | New Zealand | Highlands Motorsports Park_Full | nz-highlands-motorsports-park-full-2952eb45 | highlands-motorsports-park-full | draft-mapped |
-| New Zealand | Leadfoot Hillclimb | nz-leadfoot-hillclimb-f16d38f6 |  | missing-layout |
+| New Zealand | Leadfoot Hillclimb | nz-leadfoot-hillclimb-f16d38f6 | leadfoot-hillclimb | draft-mapped |
 | New Zealand | Manfeild | nz-manfeild-circuit-chris-amon-348055800 | manfeild | draft-mapped |
 | New Zealand | Pukekohe Park Raceway | nz-pukekohe-park-630395828 | main | draft-mapped |
-| New Zealand | Ruapuna | nz-ruapuna-e0b8962a |  | missing-layout |
+| New Zealand | Ruapuna | nz-ruapuna-e0b8962a | ruapuna | draft-mapped |
 | New Zealand | Taupo Motorsport Park Combo | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-combo | draft-mapped |
 | New Zealand | Taupo Motorsport Park Track 1 | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-track-1 | draft-mapped |
 | New Zealand | Taupo Motorsport Park Track 2 | nz-taupo-international-motorsport-park-90114324 | taupo-motorsport-park-track-2 | draft-mapped |
