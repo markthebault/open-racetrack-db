@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 953
-- unmappedLayouts: 54
+- draftMapped: 954
+- unmappedLayouts: 53
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -446,7 +446,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Italy | Pista Tolmezzo | 1 | 1 | 1 |  |  |
 | Italy | Pista Tolmezzo Outside | 1 | 1 | 1 |  |  |
 | Italy | Tazio Nuvolari Circuit | 2 | 2 | 2 |  |  |
-| Italy | Vallelunga Circuit "Piero Taruffi" | 3 | 2 | 1 | Vallelunga Full | main |
+| Italy | Vallelunga Circuit "Piero Taruffi" | 5 | 2 | 2 |  | main; historical-international-car; historical-international-junction-chicanes |
 | Japan | Autopolis | 1 | 1 | 1 |  |  |
 | Japan | CENTRAL CIRCUIT | 1 | 1 | 1 |  |  |
 | Japan | Ebisu Circuit | 1 | 1 | 1 |  |  |
@@ -803,7 +803,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Italy/Vallelunga Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1225,7 +1224,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Italy | Pista Tolmezzo Outside | it-pista-tolmezzo-outside-9bd26f45 | pista-tolmezzo-outside | draft-mapped |
 | Italy | Tazio Nuvolari Circuit | it-tazio-nuvolari-circuit-b98cfecf | tazio-nuvolari-circuit | draft-mapped |
 | Italy | Tazio Nuvolari Circuit 5260 | it-tazio-nuvolari-circuit-b98cfecf | tazio-nuvolari-circuit-5260 | draft-mapped |
-| Italy | Vallelunga Full | it-vallelunga-circuit-piero-taruffi-48683097 |  | missing-layout |
+| Italy | Vallelunga Full | it-vallelunga-circuit-piero-taruffi-48683097 | vallelunga-full | draft-mapped |
 | Italy | Vallelunga Outer | it-vallelunga-circuit-piero-taruffi-48683097 | vallelunga-outer | draft-mapped |
 | Italy | Varano de Melegari | it-autodromo-riccardo-paletti-85226080 | varano-de-melegari | draft-mapped |
 | Italy | Varano de Melegari Short | it-autodromo-riccardo-paletti-85226080 | varano-de-melegari-short | draft-mapped |

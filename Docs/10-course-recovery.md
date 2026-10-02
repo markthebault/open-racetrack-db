@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **953 of 1,007 entries**. This recovery adds 496 associations: 454 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 400 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 56 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **954 of 1,007 entries**. This recovery adds 497 associations: 455 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 401 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 57 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -11,19 +11,19 @@ The following source limitations remain after the complete search of the pinned 
 | Remaining cause | Entries |
 | --- | ---: |
 | Ambiguous source branches | 2 |
-| Unresolved course-distance discrepancy | 12 |
+| Unresolved course-distance discrepancy | 11 |
 | Independent geometry absent near the timing position | 32 |
 | Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 2 |
 | Bounded search incomplete | 0 |
-| **Total** | **54** |
+| **Total** | **53** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 54 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 53 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -128,3 +128,5 @@ Fuglau now retains the full eastern course and both organizer-documented western
 Gotland’s Southern Loop, combined crossover course and complete Grand Prix course now use independently georeferenced 2025 Sentinel imagery for the southern pavement and course connectors. The northern branches retain public OSM coordinates and exact configuration choices. The operator’s course plan identifies all four supplied lengths. Source rasters preserve the native 10 m ground resolution, STAC identity, UTM transform, hashes and nearest-neighbor reprojection. Fine alignment remains draft.
 
 Ramenskoe now retains the historical hippodrome winter-motorsport oval. The venue operator documents its car-racing history and the municipal report identifies a 1,600 m ice course. Independent 2025 Sentinel imagery supplies the permanent oval footprint; temporary winter racing-line placement remains unverified. Its 1,538.7 m draft is not scaled to the supplied distance.
+
+Vallelunga Full now preserves direct and western junction-chicane international configurations as separate paths. Exact 2018 OSM nodes give 4,081.6 m and 4,118.6 m courses, confirmed against independently georeferenced 2020 Lazio orthophotography. Their unique branch length is 4,321.7 m. Pit lane 48683141, shortened northern routes and the separate training center are excluded. The supplied 2,500 m scalar conflicts with the operator’s 4,085/4,110 m international circuits and remains explicit; geometry is not scaled.

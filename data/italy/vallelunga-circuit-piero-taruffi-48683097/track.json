@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-vallelunga-outer-source-roads-48683097"
+    "osm-selection-vallelunga-outer-source-roads-48683097",
+    "osm-components-48682966",
+    "osm-network-vallelunga-full"
   ],
   "defaultLayoutId": "vallelunga-full",
   "layouts": [
@@ -28,8 +30,8 @@
       "id": "vallelunga-full",
       "name": "Vallelunga Full",
       "referenceId": "Italy/Vallelunga Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/vallelunga-full.geojson",
+      "description": "Combined mapped configurations: Historical international course, direct junctions, Historical international course, junction chicanes. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "vallelunga-outer",
@@ -37,6 +39,18 @@
       "referenceId": "Italy/Vallelunga Outer",
       "file": "layouts/vallelunga-outer.geojson",
       "description": "Draft configuration: International outer circuit follows the long northern bend, northeastern extension, inner central hairpin and full southern loop. The named operator course is 4085 m and the pinned independent route is 4085.9 m. Pit lanes, small western junction detours and shortened northern branches are excluded. Historical alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4085.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+    },
+    {
+      "id": "historical-international-car",
+      "name": "Historical international course, direct junctions",
+      "file": "layouts/historical-international-car.geojson",
+      "description": "International car configuration retains the complete northern course, northeastern extension, central hairpin and southern main straight. Exact 2018 public coordinates give 4,081.6 m; the operator identifies a 4,085 m car circuit. Western junction chicanes, pit-lane way 48683141, club closing alternatives and the separate training center are excluded. The 2020 licensed regional orthophoto confirms the paved course."
+    },
+    {
+      "id": "historical-international-junction-chicanes",
+      "name": "Historical international course, junction chicanes",
+      "file": "layouts/historical-international-junction-chicanes.geojson",
+      "description": "International configuration retains both separately mapped western junction chicanes on ways 48682967 and 48682968/187046503. The operator documents a distinct motorcycle international circuit, 4,110 m; these historical public-node branches measure 4,118.6 m. The 2020 regional orthophoto independently confirms both paved triangular alternatives. Pit-lane way 48683141, club closing alternatives and training-center roads are excluded. Historical direction and detailed alignment remain draft."
     }
   ],
   "sources": [
@@ -66,6 +80,60 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:58:50.007Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-components-48682966",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/48682966",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T03:15:07.539Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-historical-international-car",
+      "type": "reference",
+      "title": "Historical international course, direct junctions identification",
+      "url": "https://motorsport.vallelunga.it/dati-tecnici/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T03:15:07.539Z",
+      "evidenceNote": "International car configuration retains the complete northern course, northeastern extension, central hairpin and southern main straight. Exact 2018 public coordinates give 4,081.6 m; the operator identifies a 4,085 m car circuit. Western junction chicanes, pit-lane way 48683141, club closing alternatives and the separate training center are excluded. The 2020 licensed regional orthophoto confirms the paved course. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-historical-international-junction-chicanes",
+      "type": "reference",
+      "title": "Historical international course, junction chicanes identification",
+      "url": "https://motorsport.vallelunga.it/dati-tecnici/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T03:15:07.539Z",
+      "evidenceNote": "International configuration retains both separately mapped western junction chicanes on ways 48682967 and 48682968/187046503. The operator documents a distinct motorcycle international circuit, 4,110 m; these historical public-node branches measure 4,118.6 m. The 2020 regional orthophoto independently confirms both paved triangular alternatives. Pit-lane way 48683141, club closing alternatives and training-center roads are excluded. Historical direction and detailed alignment remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-vallelunga-full",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/48682966",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T09:32:49.721Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-vallelunga-full",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://motorsport.vallelunga.it/dati-tecnici/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T09:32:49.721Z",
+      "evidenceNote": "The supplied Full diagram retains the full international course with both western junction triangles. The operator identifies separate car and motorcycle international configurations; the independently georeferenced 2020 Lazio orthophoto confirms both paved chicane alternatives. Retain the direct and chicane courses as separate paths; exclude pit-lane way 48683141, shortened northern routes, training and access roads. The supplied 2,500 m scalar conflicts with this configuration set and with the documented 4,085/4,110 m international circuits; preserve the measured branch length without scaling or replacing it with a single 2.5 km candidate. The independent unique branch distance is 4321.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "lazio-imagery-vallelunga-2020",
+      "type": "imagery",
+      "title": "Independent regional orthophotography for branch identification",
+      "url": "https://geoportale.regione.lazio.it/geoserver/ows",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T09:28:32.438025Z",
+      "evidenceNote": "Pinned AGEA 2020 raster confirms pavement of the main course and both historical western junction chicanes. Regione Lazio, AGEA 2020 orthoimagery, CC BY 4.0; centerline independently digitized and changed by OpenRacetrackDB. Reuse evidence: https://geoportale.regione.lazio.it/faq/servizi-wms-wfs-wcs-come-accedere-da-remoto-ai-livelli-del-geoportale/. Public trace coordinates remain exact 2018 OSM nodes; no image or private diagram coordinates are copied."
     }
   ]
 }

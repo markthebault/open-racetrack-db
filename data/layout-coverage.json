@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 953,
-    "unmappedLayouts": 54,
+    "draftMapped": 954,
+    "unmappedLayouts": 53,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6010,14 +6010,14 @@
       "name": "Vallelunga Full",
       "timingMode": "shared",
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "vallelunga-full"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "it-vallelunga-circuit-piero-taruffi-48683097"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -22114,16 +22114,16 @@
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
       "name": "Vallelunga Circuit \"Piero Taruffi\"",
       "country": "Italy",
-      "actualLayoutCount": 3,
-      "actualTraceCount": 2,
+      "actualLayoutCount": 5,
+      "actualTraceCount": 5,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Vallelunga Full"
-      ],
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
-        "main"
+        "main",
+        "historical-international-car",
+        "historical-international-junction-chicanes"
       ],
       "status": "gap"
     },
@@ -26900,13 +26900,6 @@
     },
     {
       "recordId": "Italy/Adria International Raceway Full",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Italy/Vallelunga Full",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

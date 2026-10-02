@@ -1346,6 +1346,29 @@
           "url": "https://www.fastrackriders.com/pages/track-maps"
         }
       ]
+    },
+    {
+      "referenceId": "Italy/Vallelunga Full",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "historical-international-car",
+        "historical-international-junction-chicanes"
+      ],
+      "expectedLengthM": 4321.7,
+      "identificationUrl": "https://motorsport.vallelunga.it/dati-tecnici/",
+      "evidence": "The supplied Full diagram retains the full international course with both western junction triangles. The operator identifies separate car and motorcycle international configurations; the independently georeferenced 2020 Lazio orthophoto confirms both paved chicane alternatives. Retain the direct and chicane courses as separate paths; exclude pit-lane way 48683141, shortened northern routes, training and access roads. The supplied 2,500 m scalar conflicts with this configuration set and with the documented 4,085/4,110 m international circuits; preserve the measured branch length without scaling or replacing it with a single 2.5 km candidate. The independent unique branch distance is 4321.7 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "historical-international-car",
+          "name": "Historical international course, direct junctions",
+          "url": "https://motorsport.vallelunga.it/dati-tecnici/"
+        },
+        {
+          "layoutId": "historical-international-junction-chicanes",
+          "name": "Historical international course, junction chicanes",
+          "url": "https://motorsport.vallelunga.it/dati-tecnici/"
+        }
+      ]
     }
   ]
 }
