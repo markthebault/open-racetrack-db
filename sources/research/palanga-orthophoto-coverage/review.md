@@ -1,0 +1,7 @@
+# Palanga public imagery coverage review
+
+The recent ORT10LT ArcGIS export resolves the divided road and median considerably more clearly than the earlier INSPIRE preview. [The published 2022–2025 dataset](https://data.gov.lt/datasets/3723/?resource_version=3194) specifies CC BY 4.0. Attribution: National Land Service of Lithuania and geoportal.lt. The service's public flight-year lookup identifies this part of the road as captured on **9 May 2023**. The exact server-returned Web Mercator extent, acquisition URL, export fingerprint, lossless crop and crop fingerprint are preserved.
+
+The road median opening alongside the service station is visible. It does not establish the temporary southern race turnaround farther along the divided road. The [organizer's 2025 participant plan, page 3](https://racing.lt/media/1006km_2025_documents/2025-info-for-participants-v18.05.2025.pdf) identifies the event road sequence and temporary turns; its diagram is used for identification only, with no coordinates traced or georeferenced. The permanent public-road loop is excluded because its turnaround is too far north. No line is drawn across the grassy median to close the requested race course. Event-date survey or independent licensed GPS evidence is still needed.
+
+This source is a coverage review, not an imported course. The newer 2024–2026 service returned blank images over the review area; those responses are excluded. The older 2021–2023 service's explicit restrictions are not treated as permission to derive course coordinates.
