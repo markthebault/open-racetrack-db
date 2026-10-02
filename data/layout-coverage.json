@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 985,
-    "unmappedLayouts": 22,
+    "draftMapped": 986,
+    "unmappedLayouts": 21,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -10758,11 +10758,14 @@
       "name": "Ingliston",
       "timingMode": "shared",
       "trackId": "gb-ingliston-41840d79",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ingliston"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -20917,15 +20920,13 @@
       "name": "Ingliston",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Ingliston"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-kames-motorsport-circuit-38672231",
@@ -26876,13 +26877,6 @@
     },
     {
       "recordId": "United Kingdom/Elvington",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Ingliston",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

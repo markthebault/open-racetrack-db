@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **985 of 1,007 entries**. This recovery adds 528 associations: 486 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 432 traces across 52 countries. 335 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **986 of 1,007 entries**. This recovery adds 529 associations: 487 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 433 traces across 52 countries. 336 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 4 |
-| Independent geometry absent near the timing position | 12 |
+| Independent geometry absent near the timing position | 11 |
 | Aggregate configuration needs identification | 1 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 0 |
 | Bounded search incomplete | 0 |
-| **Total** | **22** |
+| **Total** | **21** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 22 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 21 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -189,3 +189,5 @@ MC Motorsport now has a 1,524.9 m main-course draft from pinned January 2026 Cop
 ProDrive now retains the historical northern Fen End triangle, including its southern chicane, from the independent 2013 OSM snapshot. The complete 55-node closed public course measures 2,329.2 m, 5.2 m longer than the supplied scalar. The separate southern handling loop is excluded. The [circuit designer](https://www.apexcircuitdesign.com/experience/jlr-proving-ground) confirms the 2015–2017 realignment; the longer current mapping is not substituted for the historical layout. Exact source nodes and closure are retained, with no diagram tracing or distance adjustment. Geometry and historical travel direction remain draft.
 
 Igora Drive now has named Grand Prix and National traces instead of one unnamed connected-course candidate. Exact public nodes produce the operator-identified 2022 extended route at 5,183.1 m and the short route at 4,093.4 m; the respective published distances are 5,183 m and 4,086 m. The northern crossover previously selected by the candidate is excluded, and the extended route uses exact shared source nodes at both ends of the southern addition. Both traces remain draft and have no supplied timing record. The generic archive filename remains unreconciled because it does not identify a particular configuration.
+
+Ingliston now has the 1,062.7 m South Track boomerang, closing through exact shared OSM nodes. The [operator](https://www.ingliston.co.uk/two-supercars-drift-experience/) identifies the southern original circuit and newer closing section. Independently registered one-metre Scottish Government LiDAR intensity confirms the tiny western hairpin, parallel southern roads and northeast return. The arena loop, eastern service-road grid and optional later chicane are excluded. The 1.7 m scalar difference does not cause any coordinate adjustment. Input hashes, licensed raster crop and selected node ranges retain the evidence; travel direction and event restrictions remain draft.

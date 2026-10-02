@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 985
-- unmappedLayouts: 22
+- draftMapped: 986
+- unmappedLayouts: 21
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -356,7 +356,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Gurston Down Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Harewood Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Hethel (With Chicane) | 1 | 1 | 1 |  |  |
-| United Kingdom | Ingliston | 1 | 1 | 0 | Ingliston |  |
+| United Kingdom | Ingliston | 1 | 1 | 1 |  |  |
 | United Kingdom | Kames Motorsport Circuit | 3 | 2 | 0 | Kames Motorsport Circuit; Kames Motorsport Circuit Reverse | main |
 | United Kingdom | Keevil Airfeild | 1 | 1 | 1 |  |  |
 | United Kingdom | Kimbolton kart Circuit | 1 | 1 | 1 |  |  |
@@ -797,7 +797,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit Reverse |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1487,7 +1486,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Gurston Down Hillclimb | gb-gurston-down-hillclimb-ade02267 | gurston-down-hillclimb | draft-mapped |
 | United Kingdom | Harewood Hillclimb | gb-harewood-hillclimb-f1871afb | harewood-hillclimb | draft-mapped |
 | United Kingdom | Hethel (With Chicane) | gb-hethel-with-chicane-13a43e31 | hethel-with-chicane | draft-mapped |
-| United Kingdom | Ingliston | gb-ingliston-41840d79 |  | missing-layout |
+| United Kingdom | Ingliston | gb-ingliston-41840d79 | ingliston | draft-mapped |
 | United Kingdom | Kames Motorsport Circuit | gb-kames-motorsport-circuit-38672231 |  | missing-layout |
 | United Kingdom | Kames Motorsport Circuit Reverse | gb-kames-motorsport-circuit-38672231 |  | missing-layout |
 | United Kingdom | Keevil Airfeild | gb-keevil-airfeild-29b3402d | keevil-airfeild | draft-mapped |
