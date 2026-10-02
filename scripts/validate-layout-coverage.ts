@@ -9,6 +9,8 @@ import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
 import type {LayoutCoverage} from '../src/layout-coverage';
+import {archiveLayoutReviewsSchema,verifyArchiveLayoutReview} from './archive-layout-reviews';
+import {validateTrack,validateLayout} from '../schemas/data';
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8'));
 const report:LayoutCoverage=await read('data/layout-coverage.json'),index=await read('data/index.json');
 assert.equal(report.schemaVersion,1);assert.match(report.xmlSha256,/^[a-f0-9]{64}$/);
@@ -77,3 +79,12 @@ for(const selection of imagery.records){
  assert.ok(track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
 }
 console.log(`Validated ${imagery.records.length} independently digitized imagery courses, raster hashes and georeferencing.`);
+
+const archiveReviews=archiveLayoutReviewsSchema.parse(await read('sources/reference/archive-layout-reconciliation.json'));
+for(const review of archiveReviews.records){
+ const entry=index.tracks.find((t:any)=>t.id===review.trackId);assert.ok(entry);
+ const track=validateTrack(await read(`data/${entry.file}`)),selected=track.layouts.find(l=>l.id===review.layoutId);assert.ok(selected?.file);
+ const layout=validateLayout(await read(`data/${dirname(entry.file)}/${selected.file}`),track,review.layoutId);
+ verifyArchiveLayoutReview(review,track,layout);
+}
+console.log(`Validated ${archiveReviews.records.length} reviewed archive layout associations without inferring timing equivalence.`);

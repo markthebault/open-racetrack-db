@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
-  "policy": "Member names are layout metadata only. Reviewed aliases require identical whole-file fingerprints and a selected canonical timing identity; fingerprints do not infer timing equivalence. Other name matches propose aliases, not geometric or timing equivalence. Legacy names absent from the timing XML require reconciliation before registering an additional configuration. No course-data sections are parsed and no archive geometry is imported.",
+  "policy": "Member names are layout metadata only. Reviewed aliases require identical whole-file fingerprints and a selected canonical timing identity; fingerprints do not infer timing equivalence. Reviewed layout associations instead require a pinned identity diagram, independent configuration evidence and unchanged reusable trace geometry; they do not establish a timing identity. Other name matches propose aliases, not geometric or timing equivalence. Legacy names absent from the timing XML require reconciliation before registering an additional configuration. No course-data sections are parsed and no archive geometry is imported.",
   "timingRecordCount": 1007,
   "courseFileNameCount": 1041,
   "summary": {
     "name-match-country-inferred": 5,
     "name-match": 1009,
-    "unresolved-file-name": 18,
+    "unresolved-file-name": 17,
     "country-alias": 3,
+    "reviewed-layout-association": 1,
     "reviewed-file-alias": 6
   },
   "records": [
@@ -3074,7 +3075,12 @@
       "country": "United Kingdom",
       "name": "Bedford GT New 1511",
       "referenceIds": [],
-      "status": "unresolved-file-name"
+      "status": "reviewed-layout-association",
+      "trackId": "gb-bedford-autodrome-27782784",
+      "layoutId": "bedford-autodrome-gt",
+      "evidence": "The supplied diagram identifies the GT branch sequence: complete western course, northern triangle, central S connector and direct eastern outer return. The operator GT plan independently identifies those same branches, and the pinned public-node and licensed one-metre survey recipe supplies their geometry. This associates the legacy filename with the existing draft GT route only. It does not establish identical timing, historical corner radii or identical course-file contents. No archive diagram is georeferenced or digitized and no course-data values are parsed.",
+      "identificationUrl": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "timingAssociation": "not-established"
     },
     {
       "country": "United Kingdom",
