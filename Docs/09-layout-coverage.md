@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 965
-- unmappedLayouts: 42
+- draftMapped: 966
+- unmappedLayouts: 41
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -23,7 +23,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Arab Emirates | Yas Marina South2 | 1 | 1 | 1 |  |  |
 | Argentina | Autodromo Asociacion Volantes Mar y Valle | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Ciudad de Concepción del Uruguay | 7 | 6 | 6 |  | main |
-| Argentina | Autódromo Ciudad de Concordia | 3 | 2 | 1 | Autodromo de Concordia Combo | main |
+| Argentina | Autódromo Ciudad de Concordia | 4 | 2 | 2 |  | main; historical-short-course |
 | Argentina | Autódromo Ciudad de Nueve de Julio | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Ciudad de Paraná | 2 | 1 | 1 |  | main |
 | Argentina | Autódromo Ciudad de Rafaela | 3 | 2 | 2 |  | main |
@@ -788,7 +788,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 
 | Reference record | Named OSM ways | Closed candidates | Remaining work |
 | --- | --- | ---: | --- |
-| Argentina/Autodromo de Concordia Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -842,7 +841,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Argentina | Autodromo Ciudad De Obera No.2 | ar-autodromo-de-obera-47075845 | autodromo-ciudad-de-obera-no-2 | draft-mapped |
 | Argentina | Autodromo Ciudad De Obera No.3 | ar-autodromo-de-obera-47075845 | autodromo-ciudad-de-obera-no-3 | draft-mapped |
 | Argentina | Autodromo de Concordia | ar-autodromo-ciudad-de-concordia-261993714 | autodromo-de-concordia | draft-mapped |
-| Argentina | Autodromo de Concordia Combo | ar-autodromo-ciudad-de-concordia-261993714 |  | missing-layout |
+| Argentina | Autodromo de Concordia Combo | ar-autodromo-ciudad-de-concordia-261993714 | autodromo-de-concordia-combo | draft-mapped |
 | Argentina | Autodromo de La Pampa | ar-autodromo-provincia-de-la-pampa-261477881 | autodromo-de-la-pampa | draft-mapped |
 | Argentina | Autodromo de Parana | ar-autodromo-ciudad-de-parana-256068024 | autodromo-de-parana | draft-mapped |
 | Argentina | Autodromo de Rafaela | ar-autodromo-ciudad-de-rafaela-191641339 | autodromo-de-rafaela | draft-mapped |

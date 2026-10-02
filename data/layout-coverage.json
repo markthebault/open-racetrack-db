@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 965,
-    "unmappedLayouts": 42,
+    "draftMapped": 966,
+    "unmappedLayouts": 41,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -99,14 +99,14 @@
       "name": "Autodromo de Concordia Combo",
       "timingMode": "shared",
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "autodromo-de-concordia-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "ar-autodromo-ciudad-de-concordia-261993714"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -16209,16 +16209,15 @@
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
       "name": "Autódromo Ciudad de Concordia",
       "country": "Argentina",
-      "actualLayoutCount": 3,
-      "actualTraceCount": 2,
+      "actualLayoutCount": 4,
+      "actualTraceCount": 4,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Autodromo de Concordia Combo"
-      ],
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
-        "main"
+        "main",
+        "historical-short-course"
       ],
       "status": "gap"
     },
@@ -26802,13 +26801,6 @@
     }
   ],
   "routeResearch": [
-    {
-      "recordId": "Argentina/Autodromo de Concordia Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
     {
       "recordId": "Argentina/Circuito De Rosario Combo",
       "matchingNamedWayIds": [],

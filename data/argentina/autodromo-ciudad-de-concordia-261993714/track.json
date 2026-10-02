@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-261993714"
+    "osm-network-261993714",
+    "historical-short-course-identity",
+    "osm-network-autodromo-de-concordia-combo"
   ],
   "defaultLayoutId": "autodromo-de-concordia",
   "layouts": [
@@ -35,8 +37,14 @@
       "id": "autodromo-de-concordia-combo",
       "name": "Autodromo de Concordia Combo",
       "referenceId": "Argentina/Autodromo de Concordia Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-de-concordia-combo.geojson",
+      "description": "Combined mapped configurations: Autodromo de Concordia, Historical short course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "historical-short-course",
+      "name": "Historical short course",
+      "file": "layouts/historical-short-course.geojson",
+      "description": "Historical short-course draft retains the complete southern S and eastern short closing bend from exact OSM way 261993714 version 8. The northern extension and alternate parallel western return are excluded. The championship organizer confirms a separately raced Circuito Chico in its 2017 event schedule. The independent source measures 3,049.0 m, versus the published 3,120 m short-course distance; exact event-year corner placement and direction remain unverified. No points are fitted or extended to meet that distance."
     }
   ],
   "sources": [
@@ -57,6 +65,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "historical-short-course-identity",
+      "type": "reference",
+      "title": "Championship organizer: long and short courses",
+      "url": "https://tc2000.com.ar/archivos/kit-concordia-tc2000-2017.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T12:20:00.000Z",
+      "evidenceNote": "2017 official activity schedule separately lists the 4,700 m course and 3,120 m Circuito Chico. Identity only; no diagram coordinates copied. The exact public short-course trace has a 71 m scalar difference and remains draft."
+    },
+    {
+      "id": "osm-network-autodromo-de-concordia-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/261993714",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T12:11:44.866Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-autodromo-de-concordia-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://tc2000.com.ar/archivos/kit-concordia-tc2000-2017.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T12:11:44.866Z",
+      "evidenceNote": "Configuration set retains the full northern extension, southern S and separate eastern short-course closing bend. The championship organizer confirms independently raced long and short courses. Both paths retain exact OSM way 261993714 version 8; the northern extension retains exact way 544373728 version 2. The additional parallel western return, pit approach and tiny southern connector are excluded because they are absent from the supplied configuration identity. The short route measures 3,049.0 m against the 2017 published 3,120 m; historical-year corner placement remains draft. Shared mapped edges count once; the 4,876.9 m branch network is not one lap. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
+  "layoutId": "autodromo-de-concordia-combo",
+  "sourceId": "osm-network-autodromo-de-concordia-combo",
+  "snapshotFile": "network-autodromo-de-concordia-combo.json",
+  "snapshotSha256": "af4e536081b4e85f18fb43e10a191c44277e7f486857d977937ec080dde9bae8",
+  "geometryStatus": "draft",
+  "timingMode": "shared",
+  "reviewedAt": null,
+  "notes": [],
+  "gates": [],
+  "paths": [
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 261993714,
+          "wayVersion": 8,
+          "fromIndex": 0,
+          "toIndex": 2
+        },
+        {
+          "wayId": 544373728,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 27
+        },
+        {
+          "wayId": 261993714,
+          "wayVersion": 8,
+          "fromIndex": 12,
+          "toIndex": 74
+        }
+      ]
+    },
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 261993714,
+          "wayVersion": 8,
+          "fromIndex": 0,
+          "toIndex": 74
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "layoutId": "autodromo-de-concordia",
+      "snapshotFile": "course-network-261993714.json",
+      "snapshotSha256": "4ba41e6ad7634b6e1764707d910c90db60e2e37b02edfa57a39adafc7878338e"
+    },
+    {
+      "layoutId": "historical-short-course",
+      "snapshotFile": "course-network-261993714.json",
+      "snapshotSha256": "4ba41e6ad7634b6e1764707d910c90db60e2e37b02edfa57a39adafc7878338e"
+    }
+  ]
+}

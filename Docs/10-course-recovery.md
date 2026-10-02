@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **965 of 1,007 entries**. This recovery adds 508 associations: 466 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 412 traces across 49 countries. 327 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 58 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **966 of 1,007 entries**. This recovery adds 509 associations: 467 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 413 traces across 49 countries. 327 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 59 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -13,17 +13,17 @@ The following source limitations remain after the complete search of the pinned 
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 7 |
 | Independent geometry absent near the timing position | 26 |
-| Aggregate configuration needs identification | 3 |
+| Aggregate configuration needs identification | 2 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 1 |
 | Bounded search incomplete | 0 |
-| **Total** | **42** |
+| **Total** | **41** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 42 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 41 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -146,3 +146,5 @@ Strawberry Creek Raceway now retains its complete western main straight, norther
 Both missing Bend configurations now retain exact public course nodes from a complete surrounding-road snapshot. South uses closing road 1327036502 and measures 1,831.3 m. East uses northern link 1091735177 and southern link 1091735178, excluding the longer International junction spurs, and measures 3,907.7 m. These links are mapped as service roads and were absent from the racing-line-only source. The operator identifies both independently usable configurations; its East participant map resolves the two junction choices. Pinned September 22, 2026 Copernicus imagery confirms the visible pavement, with its original 10 m resolution and reuse attribution retained. Source nodes, indices, versions and joins are unchanged. Both focused browser checks verify separate closed traces and downloads.
 
 Penbay National is recovered from exact public OSM course nodes and a roughly ten-metre western closing junction independently visible in pinned June 2026 Copernicus Sentinel imagery. Native imagery resolution is 10 m and junction precision remains draft. Penbay Combo is an explicit three-component configuration network: the International course plus the northern and southern ovals. Shared edges count once, producing 3,864.0 m of mapped branches; the separate National U-return, paddock and eastern karting site are excluded. Both entries have passed private timing-proximity checks without exporting timing GPS.
+
+Concordia Combo retains the full northern extension and historical southern short course as separate exact public-node paths. The primary championship schedule confirms that long and short courses were raced independently. The added historical short-course selection measures 3,049.0 m against the 2017 schedule’s 3,120 m; the difference and event-year corner placement remain explicit draft limitations. Parallel western returns and the small southern connector are excluded.
