@@ -5,7 +5,7 @@
   "summary": {
     "configuration-evidence-required": 1,
     "independent-geometry-missing": 17,
-    "course-distance-discrepancy": 6,
+    "course-distance-discrepancy": 5,
     "ambiguous-source-branches": 2,
     "open-course-evidence-required": 2
   },
@@ -53,20 +53,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "China/V1 Auto World 4.3",
-      "trackId": "cn-v1-auto-world-0a184784",
-      "layoutId": "v1-auto-world-4-3",
-      "sourcePath": "sources/world/cn/osm.json",
-      "sourceWayIds": [
-        890500956,
-        890500960
-      ],
-      "candidateCount": 3,
-      "closestSourceLengthM": 2378.1,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "China/Xiamen International Circuit",

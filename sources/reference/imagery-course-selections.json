@@ -371,6 +371,16 @@
       "maximumDistanceDifferenceM": 250,
       "identificationUrl": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
       "evidence": "The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft."
+    },
+    {
+      "referenceId": "China/V1 Auto World 4.3",
+      "sourcePath": "sources/cn-v1-auto-world-0a184784/imagery-course-v1-auto-world-4-3.json",
+      "snapshotSha256": "b885477fec42d6be7f6ff04eb9e57a27d81b8dabda5d4b95aeee4716d073f8ae",
+      "imagerySha256": "492f3bc0c7229faaf230e9a294317098523c89f079d8e23c1cb0785061390ca3",
+      "expectedLengthM": 4278.5,
+      "maximumDistanceDifferenceM": 25,
+      "identificationUrl": "https://www.v1aw.com.cn/circuit/",
+      "evidence": "The venue operator identifies its 4.29 km international course with the permanent northern circuit, full western street return, small inner U return and long southeastern divided-road extension. The operator plan and independently published 2023 full-course event map identify these branches only. Exact pinned public OSM raceway and street nodes supply the mapped parts; licensed September 2026 satellite imagery locates the three missing course connections and the complete western hairpin. The short permanent-course return, intermediate western street U-turn, pit lane and surrounding civilian junction alternatives are excluded. The independent draft measures 4,278.5 m against the supplied 4,287 m scalar. Temporary race barriers, lane selection and historical street changes remain unverified. No points are moved to match either distance. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
     }
   ]
 }

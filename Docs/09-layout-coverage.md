@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 979
-- unmappedLayouts: 28
+- draftMapped: 980
+- unmappedLayouts: 27
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -189,7 +189,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | China | Shanghai International Circuit | 3 | 2 | 2 |  | main |
 | China | Shanghai Tianma | 1 | 1 | 1 |  |  |
 | China | Shougang GT Circuit | 1 | 1 | 1 |  |  |
-| China | V1 Auto World | 1 | 1 | 0 | V1 Auto World 4.3 |  |
+| China | V1 Auto World | 1 | 1 | 1 |  |  |
 | China | Xiamen | 1 | 1 | 0 | Xiamen International Circuit |  |
 | China | Zhuhai International Circuit | 1 | 1 | 1 |  |  |
 | China | Zhuzhou International Circuit | 1 | 1 | 1 |  |  |
@@ -793,7 +793,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1008,7 +1007,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | China | Shanghai GP | cn-shanghai-international-circuit-107371138 | shanghai-gp | draft-mapped |
 | China | Shanghai Tianma | cn-shanghai-tianma-efe72916 | shanghai-tianma | draft-mapped |
 | China | Shougang GT Circuit | cn-shougang-gt-circuit-e74fefe3 | shougang-gt-circuit | draft-mapped |
-| China | V1 Auto World 4.3 | cn-v1-auto-world-0a184784 |  | missing-layout |
+| China | V1 Auto World 4.3 | cn-v1-auto-world-0a184784 | v1-auto-world-4-3 | draft-mapped |
 | China | Xiamen International Circuit | cn-xiamen-9d5cdb21 |  | missing-layout |
 | China | Zhejiang | cn-osm-953311514 | zhejiang | draft-mapped |
 | China | Zhejiang East | cn-osm-953311514 | zhejiang-east | draft-mapped |
