@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **933 of 1,007 entries**. This recovery adds 476 associations: 434 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 380 traces across 49 countries. 323 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 47 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **935 of 1,007 entries**. This recovery adds 478 associations: 436 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 382 traces across 49 countries. 323 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 49 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -11,19 +11,19 @@ The following source limitations remain after the complete search of the pinned 
 | Remaining cause | Entries |
 | --- | ---: |
 | Ambiguous source branches | 4 |
-| Unresolved course-distance discrepancy | 24 |
+| Unresolved course-distance discrepancy | 22 |
 | Independent geometry absent near the timing position | 38 |
 | Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 2 |
 | Bounded search incomplete | 0 |
-| **Total** | **74** |
+| **Total** | **72** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 74 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 72 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -102,3 +102,5 @@ Abbeville now retains its complete independently mapped historical main course, 
 Castle Combe Western Sprint now follows the organizer-documented pit-exit start, complete first lap and finish at Westway on the second lap. The 5360.4 m open route retains exact independent source joins and repeated course sections; the catalogue scalar is 3006 m and the organizer describes 3.3 miles. Its initial mapped pit section is 188.9 m. A source guard permits only an explicitly documented initial approach of at most 250 m on open routes and rejects closed-course, later, reversed or oversized pit detours. All 52 unit tests, lint and type-checking pass. The focused browser check verifies an open download with the complete lap retained.
 
 Leipzig A and B retain three and four independently digitized branch paths from licensed GeoSN 2012 orthophotos. The short-course perimeter, inner S section, southern alternatives and northern extension remain separate paths. The manufacturer identifies separately usable and combined circuits. The 2713.9 m and 4547.9 m unique branch distances describe configuration networks, not catalogue lap distances; later dynamic-course construction and present-day alignment are unverified. Raster hashes, original extent, WMS request, acquisition-year metadata and reuse attribution are pinned.
+
+The two supplied LVMS Super Speedway entries retain the independently mapped tri-oval and Inside Road Course as two separate closed component paths. The operator identifies both physical circuits. The 4221.9 m unique branch distance describes this configuration set; the entries do not establish one exact timed lap. Pit access and temporary links are excluded.

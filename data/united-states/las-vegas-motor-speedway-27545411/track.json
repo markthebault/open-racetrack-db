@@ -16,7 +16,9 @@
     "osm-snapshot",
     "osm-network-125207287",
     "osm-network-51319172",
-    "osm-selection-51319172"
+    "osm-selection-51319172",
+    "osm-network-lvms-super-speedway",
+    "osm-network-lvms-super-speedway-infield"
   ],
   "defaultLayoutId": "main",
   "layouts": [
@@ -59,15 +61,15 @@
       "id": "lvms-super-speedway",
       "name": "LVMS Super Speedway",
       "referenceId": "United States/LVMS Super Speedway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-super-speedway.geojson",
+      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "lvms-super-speedway-infield",
       "name": "LVMS Super Speedway Infield",
       "referenceId": "United States/LVMS Super Speedway Infield",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-super-speedway-infield.geojson",
+      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     }
   ],
   "sources": [
@@ -124,6 +126,42 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-lvms-super-speedway",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/27545411",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T06:43:28.473Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-lvms-super-speedway",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.lvms.com/tracks/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T06:43:28.473Z",
+      "evidenceNote": "The comparison shape depicts the superspeedway and its interior road course. The operator identifies the 1.5-mile tri-oval and separate 1.1-mile Inside Road Course at this site. Preserve both independently mapped closed course paths as a configuration network. Pit access and unspecified temporary links are excluded; the supplied entry does not establish an exact timed lap through this whole set. The independent unique branch distance is 4221.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "osm-network-lvms-super-speedway-infield",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/27545411",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T06:43:28.477Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-lvms-super-speedway-infield",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.lvms.com/tracks/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T06:43:28.477Z",
+      "evidenceNote": "This comparison shape also depicts the superspeedway and interior road course. The operator identifies the independently usable tri-oval and inside road course. Keep the two physical courses as a configuration network with this entry's separate timing association. Pit access, temporary links and the exact historical timed branch sequence remain unverified. The independent unique branch distance is 4221.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }

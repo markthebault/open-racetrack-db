@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 933
-- unmappedLayouts: 74
+- draftMapped: 935
+- unmappedLayouts: 72
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -672,7 +672,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Kansas Speedway Road Course | 1 | 0 | 0 |  | main |
 | United States | Kentucky Speedway | 1 | 1 | 1 |  |  |
 | United States | Las Vegas | 1 | 1 | 1 |  |  |
-| United States | Las Vegas Motor Speedway | 7 | 7 | 5 | LVMS Super Speedway; LVMS Super Speedway Infield |  |
+| United States | Las Vegas Motor Speedway | 7 | 7 | 7 |  |  |
 | United States | Lil' Texas Motor Speedway Track | 1 | 0 | 0 |  | main |
 | United States | Lime Rock Park | 2 | 1 | 1 |  | main |
 | United States | Long Beach Street Circuit | 1 | 1 | 1 |  |  |
@@ -860,8 +860,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Motorsports Porsche 2mile |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
 
@@ -1720,8 +1718,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | LVMS Infield Road Course | us-las-vegas-motor-speedway-27545411 | lvms-infield-road-course | draft-mapped |
 | United States | LVMS Outfield Road Course | us-las-vegas-motor-speedway-27545411 | lvms-outfield-road-course | draft-mapped |
 | United States | LVMS Outfield Road Course Chicane | us-las-vegas-motor-speedway-27545411 | lvms-outfield-road-course-chicane | draft-mapped |
-| United States | LVMS Super Speedway | us-las-vegas-motor-speedway-27545411 |  | missing-layout |
-| United States | LVMS Super Speedway Infield | us-las-vegas-motor-speedway-27545411 |  | missing-layout |
+| United States | LVMS Super Speedway | us-las-vegas-motor-speedway-27545411 | lvms-super-speedway | draft-mapped |
+| United States | LVMS Super Speedway Infield | us-las-vegas-motor-speedway-27545411 | lvms-super-speedway-infield | draft-mapped |
 | United States | M1 Concourse | us-m1-concourse-reference | main | draft-mapped |
 | United States | Miami Concours Club Outer Loop | us-miami-concours-18a8e76d | miami-concours-club-outer-loop | draft-mapped |
 | United States | Miami GP | us-miami-b89062b7 | miami-gp | draft-mapped |

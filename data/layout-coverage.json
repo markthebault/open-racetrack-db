@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 933,
-    "unmappedLayouts": 74,
+    "draftMapped": 935,
+    "unmappedLayouts": 72,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -13539,14 +13539,14 @@
       "name": "LVMS Super Speedway",
       "timingMode": "shared",
       "trackId": "us-las-vegas-motor-speedway-27545411",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "lvms-super-speedway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-las-vegas-motor-speedway-27545411"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -13555,14 +13555,14 @@
       "name": "LVMS Super Speedway Infield",
       "timingMode": "shared",
       "trackId": "us-las-vegas-motor-speedway-27545411",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "lvms-super-speedway-infield"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-las-vegas-motor-speedway-27545411"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -25250,16 +25250,13 @@
       "name": "Las Vegas Motor Speedway",
       "country": "United States",
       "actualLayoutCount": 7,
-      "actualTraceCount": 5,
+      "actualTraceCount": 7,
       "expectedRecordCount": 7,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 5,
-      "missingRecordNames": [
-        "LVMS Super Speedway",
-        "LVMS Super Speedway Infield"
-      ],
+      "mappedRecordCount": 7,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-lil-texas-motor-speedway-track-161240440",
@@ -27281,20 +27278,6 @@
     },
     {
       "recordId": "United States/Gateway Road 2",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/LVMS Super Speedway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/LVMS Super Speedway Infield",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
