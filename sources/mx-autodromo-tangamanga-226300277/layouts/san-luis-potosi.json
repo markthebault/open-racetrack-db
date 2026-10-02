@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "trackId": "mx-autodromo-tangamanga-226300277",
+  "layoutId": "san-luis-potosi",
+  "sourceId": "osm-selection-san-luis-potosi-current-independent-roads-226300267",
+  "snapshotFile": "selected-san-luis-potosi-current-independent-roads-226300267.json",
+  "snapshotSha256": "aac665908f96ed319eb4bf4f88153cdfcf43537e9f745291191e4df66ff627d9",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft configuration: The full Tangamanga II course retains both western and northern returns, the long main straight and the eastern roundabout. The federation describes a 2350 m circuit and a grid extending to the roundabout. The roundabout is independently mapped as an unclassified road, so raceway-only country extraction omitted the connected eastern return. Exact current raceway and roundabout nodes give 2345.0 m against the supplied 2337 m. The northern shortcut, western bypass, pit-side detour, roundabout service spokes and separate karting course are excluded. Travel direction and historical event furniture remain provisional; no coordinates or joins are invented to match the diagram or distance. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2345.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 226300277,
+      "wayVersion": 7,
+      "fromIndex": 82,
+      "toIndex": 0
+    },
+    {
+      "wayId": 226300267,
+      "wayVersion": 6,
+      "fromIndex": 3,
+      "toIndex": 0
+    },
+    {
+      "wayId": 226300267,
+      "wayVersion": 6,
+      "fromIndex": 29,
+      "toIndex": 8
+    },
+    {
+      "wayId": 226300277,
+      "wayVersion": 7,
+      "fromIndex": 87,
+      "toIndex": 82
+    }
+  ],
+  "gates": []
+}
