@@ -361,6 +361,16 @@
       "maximumDistanceDifferenceM": 225,
       "identificationUrl": "https://wrap.warwick.ac.uk/id/eprint/59476/1/WRAP_thesis_Pan-Ngum_2001.pdf",
       "evidence": "The University of Warwick 2001 research report reproduces the Rover Gaydon Emissions Circuit plan in Figure 3.10, page 68: the southwest hairpin, long former-runway straights, northern bend and bridge-end return. The manufacturer confirms the dedicated four-lane Emissions Circuit. Independent Environment Agency 2018 one-metre LiDAR intensity survey tiles locate the complete surviving pavement and its southwest end, excluding the shorter mid-runway reversal, handling roads, access and other test areas. The independently measured 6,302.9 m differs from the supplied 6,092 m by 210.9 m; neither it nor the historical course plan is fitted to the supplied scalar. All vertices follow the public survey. Native grid mosaic, source member hashes, crop transform, grayscale stretch and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Historical lane selection, fine racing-line placement and later road modifications remain draft. Private timing data does not determine geometry"
+    },
+    {
+      "referenceId": "United Kingdom/Bedford Autodrome GT",
+      "sourcePath": "sources/gb-bedford-autodrome-27782784/imagery-course-bedford-gt.json",
+      "snapshotSha256": "71135cbaef08c5bfcb19401f264dd62916743849958897c7e6079f326ebb4e42",
+      "imagerySha256": "3bd460e99db9b5e578a18ed4822d180e6fc86563aa06e79ec1d543fe85b320e7",
+      "expectedLengthM": 5907.1,
+      "maximumDistanceDifferenceM": 250,
+      "identificationUrl": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "evidence": "The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft."
     }
   ]
 }

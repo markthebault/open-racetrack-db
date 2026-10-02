@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-selection-27782783"
+    "osm-selection-27782783",
+    "public-bedford-gt-course-2020"
   ],
   "defaultLayoutId": "main",
   "layouts": [
@@ -51,7 +52,7 @@
       "name": "Bedford Autodrome GT",
       "referenceId": "United Kingdom/Bedford Autodrome GT",
       "file": "layouts/bedford-autodrome-gt.geojson",
-      "description": "Draft configuration: The operator red GT diagram identifies the full western outer course, northeastern triangle with the eastern serpentine, and smooth southern and central returns. Western pit/access ways and small service bulges are excluded. The public mapped route measures 5255.1 m, materially below the 5906 m catalogue timing scalar and the operator advertised 6.11 km; these distances remain separately recorded and the exact independently mapped route remains a draft needing distance and alignment review. No route coordinates are stretched to reconcile the figures. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5255.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft. Independent public-node and surveyed-connector course: 5907.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "bedford-autodrome-southwest",
@@ -97,6 +98,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:00:20.961Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "public-bedford-gt-course-2020",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/TL0060",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T15:27:14.116780Z",
+      "evidenceNote": "Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Pinned raster hash 3bd460e99db9b5e578a18ed4822d180e6fc86563aa06e79ec1d543fe85b320e7; reproducible pixel-to-coordinate conversion. The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft."
+    },
+    {
+      "id": "imagery-identity-bedford-autodrome-gt",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T15:27:14.116780Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }
