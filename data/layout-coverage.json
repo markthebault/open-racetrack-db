@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 976,
-    "unmappedLayouts": 31,
+    "draftMapped": 977,
+    "unmappedLayouts": 30,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11027,11 +11027,14 @@
       "name": "Millbrook Hill Route Full",
       "timingMode": "shared",
       "trackId": "gb-millbrook-hill-route-372dafdf",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "millbrook-hill-route-full"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -21126,15 +21129,13 @@
       "name": "Millbrook Hill Route",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Millbrook Hill Route Full"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-nutts-corner-6fa16d73",
@@ -26944,13 +26945,6 @@
     },
     {
       "recordId": "United Kingdom/Lydden Hill Infield",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Millbrook Hill Route Full",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
