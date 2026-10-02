@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 3,
-    "course-distance-discrepancy": 21,
     "independent-geometry-missing": 36,
+    "course-distance-discrepancy": 20,
     "ambiguous-source-branches": 4,
     "source-connectivity-incomplete": 2,
     "open-course-evidence-required": 3
@@ -18,26 +18,6 @@
       "sourcePath": "sources/world/ar/osm.json",
       "reason": "configuration-evidence-required",
       "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "Argentina/Autodromo de La Pampa",
-      "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
-      "layoutId": "autodromo-de-la-pampa",
-      "sourcePath": "sources/world/ar/osm.json",
-      "sourceWayIds": [
-        261477881,
-        261477882,
-        261477883,
-        261477884,
-        413414046,
-        1536357670,
-        1536357671,
-        1536357672
-      ],
-      "candidateCount": 16,
-      "closestSourceLengthM": 4197.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Argentina/Circuito De Rosario Combo",

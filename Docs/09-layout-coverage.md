@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 938
-- unmappedLayouts: 69
+- draftMapped: 939
+- unmappedLayouts: 68
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -49,7 +49,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Argentina | Autódromo Oscar y Juan Gálvez | 16 | 15 | 15 |  | main |
 | Argentina | Autódromo Parque Ciudad de Río Cuarto | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Parque Provincia del Neuquén | 1 | 1 | 1 |  |  |
-| Argentina | Autódromo Provincia de La Pampa | 2 | 1 | 0 | Autodromo de La Pampa | main |
+| Argentina | Autódromo Provincia de La Pampa | 4 | 1 | 1 |  | main; full-course-chicanes; northern-short-course |
 | Argentina | Autódromo Roberto Mouras | 3 | 2 | 2 |  | main |
 | Argentina | Autódromo Rosamonte | 2 | 1 | 1 |  | main |
 | Argentina | Autódromo Rosendo Hernández | 2 | 1 | 1 |  | main |
@@ -789,7 +789,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Reference record | Named OSM ways | Closed candidates | Remaining work |
 | --- | --- | ---: | --- |
 | Argentina/Autodromo de Concordia Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Argentina/Autodromo de La Pampa |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -870,7 +869,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Argentina | Autodromo Ciudad De Obera No.3 | ar-autodromo-de-obera-47075845 | autodromo-ciudad-de-obera-no-3 | draft-mapped |
 | Argentina | Autodromo de Concordia | ar-autodromo-ciudad-de-concordia-261993714 | autodromo-de-concordia | draft-mapped |
 | Argentina | Autodromo de Concordia Combo | ar-autodromo-ciudad-de-concordia-261993714 |  | missing-layout |
-| Argentina | Autodromo de La Pampa | ar-autodromo-provincia-de-la-pampa-261477881 |  | missing-layout |
+| Argentina | Autodromo de La Pampa | ar-autodromo-provincia-de-la-pampa-261477881 | autodromo-de-la-pampa | draft-mapped |
 | Argentina | Autodromo de Parana | ar-autodromo-ciudad-de-parana-256068024 | autodromo-de-parana | draft-mapped |
 | Argentina | Autodromo de Rafaela | ar-autodromo-ciudad-de-rafaela-191641339 | autodromo-de-rafaela | draft-mapped |
 | Argentina | Autodromo de Rafaela Bascolo | ar-autodromo-ciudad-de-rafaela-191641339 | autodromo-de-rafaela-bascolo | draft-mapped |

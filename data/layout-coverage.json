@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 938,
-    "unmappedLayouts": 69,
+    "draftMapped": 939,
+    "unmappedLayouts": 68,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -115,14 +115,14 @@
       "name": "Autodromo de La Pampa",
       "timingMode": "shared",
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "autodromo-de-la-pampa"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "ar-autodromo-provincia-de-la-pampa-261477881"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -16538,16 +16538,16 @@
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
       "name": "Autódromo Provincia de La Pampa",
       "country": "Argentina",
-      "actualLayoutCount": 2,
-      "actualTraceCount": 1,
+      "actualLayoutCount": 4,
+      "actualTraceCount": 4,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Autodromo de La Pampa"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
-        "main"
+        "main",
+        "full-course-chicanes",
+        "northern-short-course"
       ],
       "status": "gap"
     },
@@ -26777,13 +26777,6 @@
   "routeResearch": [
     {
       "recordId": "Argentina/Autodromo de Concordia Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Argentina/Autodromo de La Pampa",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

@@ -14,7 +14,9 @@
     -36.72681865602097
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-components-261477881",
+    "osm-network-autodromo-de-la-pampa"
   ],
   "defaultLayoutId": "autodromo-de-la-pampa",
   "layouts": [
@@ -28,8 +30,20 @@
       "id": "autodromo-de-la-pampa",
       "name": "Autodromo de La Pampa",
       "referenceId": "Argentina/Autodromo de La Pampa",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-de-la-pampa.geojson",
+      "description": "Combined mapped configurations: Full course with both chicanes, Northern short-course return. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "full-course-chicanes",
+      "name": "Full course with both chicanes",
+      "file": "layouts/full-course-chicanes.geojson",
+      "description": "The operator identifies its full circuit, zonal alternatives and two chicanes, with 5222 m total asphalt. Its published aerial views identify the northern loop and northern short-course return. This exact independent public-node route retains the full northern loop and both small straight chicanes. The separately mapped Sector Boxes pit route is excluded. Configuration identity, timing choice and direction remain draft."
+    },
+    {
+      "id": "northern-short-course",
+      "name": "Northern short-course return",
+      "file": "layouts/northern-short-course.geojson",
+      "description": "This exact independent public-node course uses the northern short-course return and bypasses the two straight chicanes. The operator identifies zonal alternatives and its aerial photograph independently confirms the paved northern shortcut. Descriptive naming does not assert an official layout name. The pit route is excluded."
     }
   ],
   "sources": [
@@ -41,6 +55,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-components-261477881",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/261477881",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-full-course-chicanes",
+      "type": "reference",
+      "title": "Full course with both chicanes identification",
+      "url": "https://autodromolapampa.com.ar/circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "The operator identifies its full circuit, zonal alternatives and two chicanes, with 5222 m total asphalt. Its published aerial views identify the northern loop and northern short-course return. This exact independent public-node route retains the full northern loop and both small straight chicanes. The separately mapped Sector Boxes pit route is excluded. Configuration identity, timing choice and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-northern-short-course",
+      "type": "reference",
+      "title": "Northern short-course return identification",
+      "url": "https://autodromolapampa.com.ar/circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "This exact independent public-node course uses the northern short-course return and bypasses the two straight chicanes. The operator identifies zonal alternatives and its aerial photograph independently confirms the paved northern shortcut. Descriptive naming does not assert an official layout name. The pit route is excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-autodromo-de-la-pampa",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/261477881",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T07:30:30.519Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-autodromo-de-la-pampa",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://autodromolapampa.com.ar/circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T07:30:30.519Z",
+      "evidenceNote": "The supplied general-entry shape includes the full northern loop, its short-course return and straight alternatives. The operator identifies the general circuit, zonal alternatives and both chicanes, totaling 5222 m of asphalt. These independently mapped complementary courses preserve that physical configuration set, with the Sector Boxes pit route excluded. Its unique-edge distance is not a timed lap; no coordinates are scaled to the catalogue scalar, and exact historical branch and timing choice remains draft. The independent unique branch distance is 5240.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }
