@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 984
-- unmappedLayouts: 23
+- draftMapped: 985
+- unmappedLayouts: 22
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -80,7 +80,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Australia | Mallala Motor Sport Park | 2 | 1 | 1 |  | main |
 | Australia | Manton Park | 1 | 1 | 1 |  |  |
 | Australia | Marulan Pheasant Wood | 1 | 1 | 1 |  |  |
-| Australia | MC Motorsport Main | 1 | 1 | 0 | MC Motorsport Main Track |  |
+| Australia | MC Motorsport Main | 1 | 1 | 1 |  |  |
 | Australia | Morgan Park A Circuit | 1 | 1 | 1 |  |  |
 | Australia | Morgan Park B Circuit | 1 | 1 | 1 |  |  |
 | Australia | Morgan Park D Circuit | 1 | 1 | 1 |  |  |
@@ -789,7 +789,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Reference record | Named OSM ways | Closed candidates | Remaining work |
 | --- | --- | ---: | --- |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -885,7 +884,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Mallala | au-mallala-motor-sport-park-182649697 | mallala | draft-mapped |
 | Australia | Manton Park | au-manton-park-a26c7eb7 | manton-park | draft-mapped |
 | Australia | Marulan Pheasant Wood | au-marulan-pheasant-wood-dcdb4abd | marulan-pheasant-wood | draft-mapped |
-| Australia | MC Motorsport Main Track | au-mc-motorsport-main-30e6ba8a |  | missing-layout |
+| Australia | MC Motorsport Main Track | au-mc-motorsport-main-30e6ba8a | mc-motorsport-main-track | draft-mapped |
 | Australia | Morgan Park A Circuit | au-morgan-park-a-circuit-8f0a18f2 | morgan-park-a-circuit | draft-mapped |
 | Australia | Morgan Park B Circuit | au-morgan-park-b-circuit-346f4b2d | morgan-park-b-circuit | draft-mapped |
 | Australia | Morgan Park D Circuit | au-morgan-park-d-circuit-37e3f667 | morgan-park-d-circuit | draft-mapped |

@@ -8,17 +8,50 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    115.9855168,
+    -31.947745750000003
+  ],
+  "sourceIds": [
+    "sentinel-public-gps-supported-main"
+  ],
   "defaultLayoutId": "mc-motorsport-main-track",
   "layouts": [
     {
       "id": "mc-motorsport-main-track",
       "name": "MC Motorsport Main Track",
       "referenceId": "Australia/MC Motorsport Main Track",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/mc-motorsport-main-track.geojson",
+      "description": "The historical main training circuit retains the narrow northern teardrop, central western return and inner hairpin, long parallel southwestern legs and southern U-turn. Independent anonymous public OSM GPS spatial samples corroborate the main-course pavement location in the January 5, 2026 Sentinel-2 raster and distinguish it from the unrelated northern training pad and larger western skidpan branches. The unordered points are not reconstructed as a driving trip. The earlier rejected outlines selected the wrong western and northern pavement; those outlines remain excluded. Native 10 m imagery and unverified GPS accuracy leave fine corner radii and historical alignment draft. All pixel vertices come from this independently georeferenced public raster; no supplied diagram is digitized or georeferenced. The 2016 organizer sprint uses additional skidpan branches and is not substituted for the supplied main-track configuration. Public GPS mapping points support course-branch identification only; no GPS coordinates are imported or redistributed. Identification inspection metadata: public-gps-identification-review.json, SHA-256 78fdf59abeeb70cd6cfad19487c0be4a0f8f65cb01cd797d870b50546341bc40. Geometry is independently digitized from the licensed georeferenced raster, not from the GPS samples. Independently digitized aerial centerline: 1524.9 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "public-gps-course-identification",
+      "type": "reference",
+      "title": "Public mapping course identification",
+      "url": "https://api.openstreetmap.org/api/0.6/trackpoints?bbox=115.979,-31.954,115.992,-31.943&page=0",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T18:46:21.371445Z",
+      "evidenceNote": "Legacy and current GPS uploads have date-dependent CC-BY-SA and ODbL terms, while these anonymous sample dates are unavailable. GPS coordinates are not imported or redistributed. The public spatial overlay supplies course-branch identification only; geometry is separately digitized from the independently georeferenced licensed Copernicus raster. The unordered samples are never interpreted as an ordered trip, lap or timing trace. Inspection metadata hash 78fdf59abeeb70cd6cfad19487c0be4a0f8f65cb01cd797d870b50546341bc40. Rights evidence: https://osmfoundation.org/wiki/Licensing_Working_Group/Minutes/2024-10-07."
+    },
+    {
+      "id": "sentinel-public-gps-supported-main",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/H/MK/2026/1/S2B_50HMK_20260105_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T10:15:08.155859Z",
+      "evidenceNote": "Reuse evidence: https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data. Pinned raster hash 10f799278e1620a9ca4020c69b53011144f022d3de890331de61f4e383154cfc; reproducible pixel-to-coordinate conversion. The historical main training circuit retains the narrow northern teardrop, central western return and inner hairpin, long parallel southwestern legs and southern U-turn. Independent anonymous public OSM GPS spatial samples corroborate the main-course pavement location in the January 5, 2026 Sentinel-2 raster and distinguish it from the unrelated northern training pad and larger western skidpan branches. The unordered points are not reconstructed as a driving trip. The earlier rejected outlines selected the wrong western and northern pavement; those outlines remain excluded. Native 10 m imagery and unverified GPS accuracy leave fine corner radii and historical alignment draft. All pixel vertices come from this independently georeferenced public raster; no supplied diagram is digitized or georeferenced. The 2016 organizer sprint uses additional skidpan branches and is not substituted for the supplied main-track configuration. Public GPS mapping points support course-branch identification only; no GPS coordinates are imported or redistributed. Identification inspection metadata: public-gps-identification-review.json, SHA-256 78fdf59abeeb70cd6cfad19487c0be4a0f8f65cb01cd797d870b50546341bc40. Geometry is independently digitized from the licensed georeferenced raster, not from the GPS samples."
+    },
+    {
+      "id": "imagery-identity-mc-motorsport-main-track",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.driverrisk.com.au/wp-content/uploads/2025/01/14.-DRM-Level-1-Performance-Driver-Training-Course.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T10:15:08.155859Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

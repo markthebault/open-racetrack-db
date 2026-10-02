@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 984,
-    "unmappedLayouts": 23,
+    "draftMapped": 985,
+    "unmappedLayouts": 22,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -1091,11 +1091,14 @@
       "name": "MC Motorsport Main Track",
       "timingMode": "shared",
       "trackId": "au-mc-motorsport-main-30e6ba8a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "mc-motorsport-main-track"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17072,15 +17075,13 @@
       "name": "MC Motorsport Main",
       "country": "Australia",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "MC Motorsport Main Track"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "au-morgan-park-a-circuit-8f0a18f2",
@@ -26819,13 +26820,6 @@
   "routeResearch": [
     {
       "recordId": "Argentina/Circuito De Rosario Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Australia/MC Motorsport Main Track",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
