@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 957,
-    "unmappedLayouts": 50,
+    "draftMapped": 958,
+    "unmappedLayouts": 49,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -7893,11 +7893,14 @@
       "name": "Samara-Ring",
       "timingMode": "shared",
       "trackId": "ru-samara-ring-83652cc4",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "samara-ring"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -23748,15 +23751,13 @@
       "name": "Samara-Ring",
       "country": "Russia",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Samara-Ring"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ru-smolensk-ring-136054940",
@@ -26931,13 +26932,6 @@
     },
     {
       "recordId": "Morocco/Moulay El Hassan",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Russia/Samara-Ring",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

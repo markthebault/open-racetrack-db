@@ -8,17 +8,41 @@
     "name": "Russia",
     "slug": "russia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    50.0082927,
+    53.49644575
+  ],
+  "sourceIds": [
+    "usgs-landsat-2013-samara"
+  ],
   "defaultLayoutId": "samara-ring",
   "layouts": [
     {
       "id": "samara-ring",
       "name": "Samara-Ring",
       "referenceId": "Russia/Samara-Ring",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/samara-ring.geojson",
+      "description": "The municipal newspaper reports the February 2013 Russian winter-track championship at Samara-Ring in Kurumoch. The complete oval footprint is independently digitized from the June 15, 2013 Landsat 8 panchromatic scene, before subsequent site redevelopment. Field roads, access roads and the oval infield are excluded. The 15 m native ground resolution, exact UTM transform, source DN clip, rendering stretch, scene identity and hashes are pinned. Nearest-neighbor rendering does not add resolution. The oval centerline is a historical draft; winter snow barriers, precise racing-line placement and direction remain unverified. No vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1473.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-landsat-2013-samara",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://storage.googleapis.com/gcp-public-data-landsat/LC08/01/169/023/LC08_L1TP_169023_20130615_20170503_01_T1/LC08_L1TP_169023_20130615_20170503_01_T1_B8.TIF",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T10:53:31.072325Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/faqs/are-there-any-restrictions-use-or-redistribution-landsat-data. Pinned raster hash afd16776f6b9117b01521278d8a11a11bb32e6c27823a367a6ce5b3dabd1df86; reproducible pixel-to-coordinate conversion. The municipal newspaper reports the February 2013 Russian winter-track championship at Samara-Ring in Kurumoch. The complete oval footprint is independently digitized from the June 15, 2013 Landsat 8 panchromatic scene, before subsequent site redevelopment. Field roads, access roads and the oval infield are excluded. The 15 m native ground resolution, exact UTM transform, source DN clip, rendering stretch, scene identity and hashes are pinned. Nearest-neighbor rendering does not add resolution. The oval centerline is a historical draft; winter snow barriers, precise racing-line placement and direction remain unverified. No vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-samara-ring",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://sgpress.ru/allfiles/45433.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T10:53:31.072325Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

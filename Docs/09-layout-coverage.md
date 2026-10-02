@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 957
-- unmappedLayouts: 50
+- draftMapped: 958
+- unmappedLayouts: 49
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -562,7 +562,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Russia | АДМ Мячково | 3 | 2 | 2 |  | main |
 | Russia | Нижегородское кольцо | 4 | 3 | 3 |  | main |
 | Russia | Ramenskoe | 1 | 1 | 1 |  |  |
-| Russia | Samara-Ring | 1 | 1 | 0 | Samara-Ring |  |
+| Russia | Samara-Ring | 1 | 1 | 1 |  |  |
 | Russia | Smolensk Ring | 2 | 1 | 1 |  | main |
 | Russia | Sochi Autodrom | 2 | 1 | 1 |  | main |
 | Saudi Arabia | Jeddah | 1 | 1 | 1 |  |  |
@@ -807,7 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1339,7 +1338,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Russia | N-Ring B | ru-osm-74887032 | n-ring-b | draft-mapped |
 | Russia | N-Ring C | ru-osm-74887032 | n-ring-c | draft-mapped |
 | Russia | Ramenskoe | ru-ramenskoe-860ae810 | ramenskoe | draft-mapped |
-| Russia | Samara-Ring | ru-samara-ring-83652cc4 |  | missing-layout |
+| Russia | Samara-Ring | ru-samara-ring-83652cc4 | samara-ring | draft-mapped |
 | Russia | Smolensk | ru-smolensk-ring-136054940 | smolensk | draft-mapped |
 | Russia | Sochi racetrack | ru-sochi-autodrom-306234479 | sochi-racetrack | draft-mapped |
 | Saudi Arabia | Jeddah | sa-jeddah-b73d7f3a | jeddah | draft-mapped |
