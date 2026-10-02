@@ -24130,6 +24130,42 @@
       ],
       "expectedLengthM": 3714.5,
       "maximumDistanceDifferenceM": 810
+    },
+    {
+      "referenceId": "France/Abbeville",
+      "sourcePath": "sources/course-networks/abbeville-2015-independent-roads/osm.json",
+      "sourceWayIds": [
+        111596447,
+        111596448,
+        111596449,
+        111596450,
+        111596684
+      ],
+      "closed": true,
+      "evidence": "Historical main course retains the Northern paired hairpins, Western diagonal return, Eastern rounded turn and short Southern chicane from a pinned 2015 independent snapshot. The independently georeferenced public IGN aerial confirms these physical branches. The operator identifies the main road course and distinguishes the separate safety track. Pit access and the Southern auxiliary track are excluded. Exact mapped distance is 1976.0 m versus the 2224 m catalogue scalar and current operator 2.4 km description; historical lap extent, direction and fine alignment remain draft without scaling or substituting pit detours.",
+      "identificationUrl": "https://stadiumautomobile.fr/",
+      "segments": [
+        {
+          "wayId": 111596449,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 38
+        },
+        {
+          "wayId": 111596684,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 17
+        },
+        {
+          "wayId": 111596449,
+          "wayVersion": 2,
+          "fromIndex": 40,
+          "toIndex": 110
+        }
+      ],
+      "expectedLengthM": 1976,
+      "maximumDistanceDifferenceM": 270
     }
   ]
 }

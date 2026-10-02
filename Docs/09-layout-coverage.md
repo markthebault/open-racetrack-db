@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 929
-- unmappedLayouts: 78
+- draftMapped: 930
+- unmappedLayouts: 77
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -266,7 +266,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Finland | Premier Park | 1 | 0 | 0 |  | main |
 | Finland | Seinajoki | 1 | 1 | 0 | Seinajoki |  |
 | Finland | Vantaa Circuit | 2 | 1 | 1 |  | main |
-| France | Abbeville | 1 | 1 | 0 | Abbeville |  |
+| France | Abbeville | 1 | 1 | 1 |  |  |
 | France | Anneau du Rhin | 3 | 3 | 3 |  |  |
 | France | Autodrome de Linas-Montlhéry | 1 | 0 | 0 |  | main |
 | France | Autodrome du Var | 2 | 1 | 1 |  | main |
@@ -807,7 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Cyprus/Achna Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Cyprus/Achna Speedway Full Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1097,7 +1096,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Finland | Motopark | fi-motopark-raceway-231524300 | main | draft-mapped |
 | Finland | Seinajoki | fi-seinajoki-238ed6cf |  | missing-layout |
 | Finland | Vantaa Kart Circuit | fi-vantaa-circuit-1054317833 | vantaa-kart-circuit | draft-mapped |
-| France | Abbeville | fr-abbeville-9c68d1a7 |  | missing-layout |
+| France | Abbeville | fr-abbeville-9c68d1a7 | abbeville | draft-mapped |
 | France | Ales | fr-pole-mecanique-ales-cevennes-196899321 | ales | draft-mapped |
 | France | Ales Rapide | fr-pole-mecanique-ales-cevennes-196899321 | ales-rapide | draft-mapped |
 | France | Ales1 Rally Stage | fr-pole-mecanique-ales-cevennes-196899321 | ales1-rally-stage | draft-mapped |
