@@ -8,17 +8,41 @@
     "name": "Taiwan",
     "slug": "taiwan"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    120.48109035,
+    22.4530824
+  ],
+  "sourceIds": [
+    "osm-selection-645849365"
+  ],
   "defaultLayoutId": "penbay-drag-strip",
   "layouts": [
     {
       "id": "penbay-drag-strip",
       "name": "Penbay Drag Strip",
       "referenceId": "Taiwan/Penbay Drag Strip",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/penbay-drag-strip.geojson",
+      "description": "Draft configuration: The supplied layout identifies a straight rather than a closed circuit. The race organizer describes a 700 m drag straight including start and deceleration distance. Exact independent public nodes retain the northern straight extension and western main straight, with no return loop or invented endpoint. The 727.2 m mapped extent includes the full available straight and is not asserted to be a homologated timed distance. Only one shared timing marker is supplied; a separate timed finish and direction remain unverified. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 727.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-645849365",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/645849365",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:40:56.753Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-penbay-drag-strip",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://taiwansuperbikeseries.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:40:56.753Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

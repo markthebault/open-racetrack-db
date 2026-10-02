@@ -37,7 +37,7 @@ for(const selection of selections){
  validateSelectionSource(ways,selection);
  if(Math.abs(measured-selection.expectedLengthM)>.15)throw new Error('Selected independent trace changed');
  if(selection.endpointToleranceM!==undefined&&(!selection.endpointEvidence?.trim()||selection.closed))throw new Error('Endpoint allowance requires an open course and documented source limitation');
- const timingMode=validateSelectionTiming(record,trace,selection.closed,selection.endpointToleranceM);
+ const timingMode=validateSelectionTiming(record,trace,selection.closed,selection.endpointToleranceM,selection.openSharedTimingEvidence);
  if(record.nominalLengthM&&Math.abs(measured-record.nominalLengthM)>selection.maximumDistanceDifferenceM)throw new Error('Selected course exceeds documented distance allowance');
  const identity=selection.relationId??Math.min(...selection.sourceWayIds);
  const url=selection.relationId?`https://www.openstreetmap.org/relation/${selection.relationId}`:`https://www.openstreetmap.org/way/${identity}`;

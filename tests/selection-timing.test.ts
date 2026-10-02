@@ -20,6 +20,18 @@ test('course closure and timing roles must agree',()=>{
  assert.throws(()=>validateSelectionTiming(shared,trace,true),/shared timing/);
 });
 
+test('identified open courses can retain one supplied shared marker without inventing a finish',()=>{
+ const shared:TimingRecord={...open,gates:[{role:'start_finish',point:trace[1]}]};
+ const evidence='The independently mapped straight has open ends; no separate finish marker is supplied.';
+ assert.equal(validateSelectionTiming(shared,trace,false,30,evidence),'shared');
+ assert.throws(()=>validateSelectionTiming(shared,trace,false),/separate timing/);
+ assert.throws(()=>validateSelectionTiming(shared,trace,false,30,' '),/identification evidence/);
+ assert.throws(()=>validateSelectionTiming(shared,[...trace,trace[0]],true,30,evidence),/open course/);
+ assert.throws(()=>validateSelectionTiming(shared,[...trace,trace[0]],false,30,evidence),/distinct endpoints/);
+ assert.throws(()=>validateSelectionTiming(open,trace,false,30,evidence),/one supplied marker/);
+ assert.throws(()=>validateSelectionTiming({...shared,gates:[{role:'start_finish',point:[.1,50]}]},trace,false,30,evidence),/location/);
+});
+
 test('documented sparse endpoint allowance keeps the route-neighborhood check strict',()=>{
  const sparse:Position[]=[trace[0],trace[1],[.01055,50]];
  assert.throws(()=>validateSelectionTiming(open,sparse,false),/endpoints/);

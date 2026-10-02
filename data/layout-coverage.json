@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 941,
-    "unmappedLayouts": 66,
+    "draftMapped": 943,
+    "unmappedLayouts": 64,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -9303,7 +9303,9 @@
         "Identify the venue and explicit connected route recipe from independent geometry."
       ],
       "candidateTrackIds": [
-        "tw-penbay-3b334d4e"
+        "tw-penbay-3b334d4e",
+        "tw-penbay-drag-strip-a015d5c3",
+        "tw-penbay-fia-6ece852f"
       ]
     },
     {
@@ -9312,14 +9314,14 @@
       "name": "Penbay Drag Strip",
       "timingMode": "shared",
       "trackId": "tw-penbay-drag-strip-a015d5c3",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "penbay-drag-strip"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "tw-penbay-3b334d4e"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9328,14 +9330,14 @@
       "name": "Penbay FIA International Drag",
       "timingMode": "shared",
       "trackId": "tw-penbay-fia-6ece852f",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "penbay-fia-international-drag"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "tw-penbay-3b334d4e"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9367,7 +9369,9 @@
         "Identify the venue and explicit connected route recipe from independent geometry."
       ],
       "candidateTrackIds": [
-        "tw-penbay-3b334d4e"
+        "tw-penbay-3b334d4e",
+        "tw-penbay-drag-strip-a015d5c3",
+        "tw-penbay-fia-6ece852f"
       ]
     },
     {
@@ -24256,30 +24260,26 @@
       "name": "Penbay Drag Strip",
       "country": "Taiwan",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Penbay Drag Strip"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "tw-penbay-fia-6ece852f",
       "name": "Penbay FIA",
       "country": "Taiwan",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Penbay FIA International Drag"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ua-chayka-41647961",
@@ -27017,20 +27017,6 @@
     },
     {
       "recordId": "Taiwan/Penbay Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Taiwan/Penbay Drag Strip",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Taiwan/Penbay FIA International Drag",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

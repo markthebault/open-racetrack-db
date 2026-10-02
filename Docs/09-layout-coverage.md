@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 941
-- unmappedLayouts: 66
+- draftMapped: 943
+- unmappedLayouts: 64
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -601,8 +601,8 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Taiwan | Lihpao G2 | 2 | 2 | 2 |  |  |
 | Taiwan | Lihpao Wind | 1 | 1 | 0 | Lihpao Wind |  |
 | Taiwan | Penbay | 5 | 5 | 3 | Penbay Combo; Penbay National |  |
-| Taiwan | Penbay Drag Strip | 1 | 1 | 0 | Penbay Drag Strip |  |
-| Taiwan | Penbay FIA | 1 | 1 | 0 | Penbay FIA International Drag |  |
+| Taiwan | Penbay Drag Strip | 1 | 1 | 1 |  |  |
+| Taiwan | Penbay FIA | 1 | 1 | 1 |  |  |
 | Ukraine | Chayka | 1 | 1 | 1 |  |  |
 | United States | Albany-Saratoga Speedway | 1 | 0 | 0 |  | main |
 | United States | AMR Motorplex Kart Circuit | 1 | 1 | 1 |  |  |
@@ -822,8 +822,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Sweden/Ljungbyhed Park Alt SF |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Taiwan/Penbay Drag Strip |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Taiwan/Penbay FIA International Drag |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay National |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1445,8 +1443,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Taiwan | Lihpao G2 Track Day | tw-lihpao-g2-66f08127 | lihpao-g2-track-day | draft-mapped |
 | Taiwan | Lihpao Wind | tw-lihpao-wind-39d57a25 |  | missing-layout |
 | Taiwan | Penbay Combo | tw-penbay-3b334d4e |  | missing-layout |
-| Taiwan | Penbay Drag Strip | tw-penbay-drag-strip-a015d5c3 |  | missing-layout |
-| Taiwan | Penbay FIA International Drag | tw-penbay-fia-6ece852f |  | missing-layout |
+| Taiwan | Penbay Drag Strip | tw-penbay-drag-strip-a015d5c3 | penbay-drag-strip | draft-mapped |
+| Taiwan | Penbay FIA International Drag | tw-penbay-fia-6ece852f | penbay-fia-international-drag | draft-mapped |
 | Taiwan | Penbay International Circuit | tw-penbay-3b334d4e | penbay-international-circuit | draft-mapped |
 | Taiwan | Penbay National | tw-penbay-3b334d4e |  | missing-layout |
 | Taiwan | Penbay North Oval | tw-penbay-3b334d4e | penbay-north-oval | draft-mapped |
