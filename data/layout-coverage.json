@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 960,
-    "unmappedLayouts": 47,
+    "draftMapped": 961,
+    "unmappedLayouts": 46,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2519,11 +2519,14 @@
       "name": "Strawberry Creek Raceway",
       "timingMode": "shared",
       "trackId": "ca-strawberry-creek-raceway-2f57a75c",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "strawberry-creek-raceway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -18134,15 +18137,13 @@
       "name": "Strawberry Creek Raceway",
       "country": "Canada",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Strawberry Creek Raceway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ca-toronto-indy-7d40d4e5",
@@ -26857,13 +26858,6 @@
     },
     {
       "recordId": "Australia/Tailem Bend South",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Canada/Strawberry Creek Raceway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

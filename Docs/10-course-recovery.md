@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **960 of 1,007 entries**. This recovery adds 503 associations: 461 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 407 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 57 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **961 of 1,007 entries**. This recovery adds 504 associations: 462 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 408 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 57 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 11 |
-| Independent geometry absent near the timing position | 27 |
+| Independent geometry absent near the timing position | 26 |
 | Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 1 |
 | Bounded search incomplete | 0 |
-| **Total** | **47** |
+| **Total** | **46** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 47 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 46 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -140,3 +140,5 @@ Samara-Ring now retains the complete historical winter-racing oval. Independentl
 Ansan now displays a historical surviving-pavement draft from pinned October 2014 public-domain Landsat 8 imagery. The Incheon Institute report identifies the unfinished course and subsequent partial dismantling. Native resolution is 15 m. The 3,540.2 m digitized footprint conflicts with the supplied 2,868 m scalar and the report design length, and this remains an explicit review issue. Geometry is not scaled or shortened. The neighboring river roads, southern roundabout and pit lane are excluded. Source checks, build and the focused browser/download check pass.
 
 Ricardo Tormo School now retains its separate inner northern hairpin, diagonal return, southern training straight and narrow western connector. Exact public course nodes preserve the existing branches; licensed Spanish national PNOA orthophotography resolves the missing connector. The 1,213.8 m course remains draft. The original image request, extent, hashes, OSM versions and selected indices are pinned, with both provider attributions preserved. The exterior Grand Prix course, National shortcut, pit lane, training skidpad and karting area are excluded. The focused browser/download check verifies the separate closed trace.
+
+Strawberry Creek Raceway now retains its complete western main straight, northern technical sweep, eastern hooked hairpin and southern returns. The owner interview and circuit-organized lapping description identify the complete course. Pinned July 22, 2026 Copernicus Sentinel imagery supplies the independently georeferenced 3,764.7 m draft; native ground resolution is 10 m. Its difference from the supplied 3,819 m remains explicit. Access, paddock and short connecting roads are excluded. The original UTM clip, transform, STAC identity, hashes and provider attribution reproduce the trace. The focused browser/download check verifies closure and attribution.

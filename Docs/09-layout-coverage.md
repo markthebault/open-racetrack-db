@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 960
-- unmappedLayouts: 47
+- draftMapped: 961
+- unmappedLayouts: 46
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -158,7 +158,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Sanair Super Speedway | 1 | 1 | 1 |  |  |
 | Canada | Saratoga Speedway | 1 | 0 | 0 |  | main |
 | Canada | Shannonville Motorsports Park | 5 | 4 | 4 |  | main |
-| Canada | Strawberry Creek Raceway | 1 | 1 | 0 | Strawberry Creek Raceway |  |
+| Canada | Strawberry Creek Raceway | 1 | 1 | 1 |  |  |
 | Canada | Toronto Indy | 1 | 1 | 1 |  |  |
 | Canada | Toronto Motorsports Park | 4 | 3 | 3 |  | main |
 | Canada | Trois Rivieres | 1 | 1 | 1 |  |  |
@@ -796,7 +796,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -999,7 +998,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Shannonville Long | ca-shannonville-motorsports-park-404430658 | shannonville-long | draft-mapped |
 | Canada | Shannonville Nelson | ca-shannonville-motorsports-park-404430658 | shannonville-nelson | draft-mapped |
 | Canada | Shannonville Pro | ca-shannonville-motorsports-park-404430658 | shannonville-pro | draft-mapped |
-| Canada | Strawberry Creek Raceway | ca-strawberry-creek-raceway-2f57a75c |  | missing-layout |
+| Canada | Strawberry Creek Raceway | ca-strawberry-creek-raceway-2f57a75c | strawberry-creek-raceway | draft-mapped |
 | Canada | Toronto Indy | ca-toronto-indy-7d40d4e5 | toronto-indy | draft-mapped |
 | Canada | Toronto Motorsports Park Full Course | ca-toronto-motorsports-park-440159413 | toronto-motorsports-park-full-course | draft-mapped |
 | Canada | Toronto Motorsports Park North | ca-toronto-motorsports-park-440159413 | toronto-motorsports-park-north | draft-mapped |
