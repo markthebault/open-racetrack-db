@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 935,
-    "unmappedLayouts": 72,
+    "draftMapped": 938,
+    "unmappedLayouts": 69,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -3106,11 +3106,14 @@
       "name": "Achna Speedway",
       "timingMode": "shared",
       "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "achna-speedway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -3119,11 +3122,14 @@
       "name": "Achna Speedway Full Runway",
       "timingMode": "shared",
       "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "achna-speedway-full-runway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10962,11 +10968,14 @@
       "name": "M-Sport Proving Ground",
       "timingMode": "shared",
       "trackId": "gb-m-sport-proving-ground-fe7c7315",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "m-sport-proving-ground"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -18584,16 +18593,17 @@
       "trackId": "cy-achna-speedway-ab0bcabd",
       "name": "Achna Speedway",
       "country": "Cyprus",
-      "actualLayoutCount": 2,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 5,
+      "actualTraceCount": 5,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Achna Speedway",
-        "Achna Speedway Full Runway"
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "achna-main-course",
+        "achna-inner-alternative",
+        "achna-full-straight"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -20988,15 +20998,16 @@
       "trackId": "gb-m-sport-proving-ground-fe7c7315",
       "name": "M-Sport Proving Ground",
       "country": "United Kingdom",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "M-Sport Proving Ground"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "msport-long-variant",
+        "msport-inner-variant"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -26877,20 +26888,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Cyprus/Achna Speedway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Cyprus/Achna Speedway Full Runway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Finland/Seinajoki",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27130,13 +27127,6 @@
     },
     {
       "recordId": "United Kingdom/Millbrook Hill Route Full",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/M-Sport Proving Ground",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

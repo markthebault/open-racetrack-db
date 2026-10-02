@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 935
-- unmappedLayouts: 72
+- draftMapped: 938
+- unmappedLayouts: 69
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -195,7 +195,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | China | Zhuzhou International Circuit | 1 | 1 | 1 |  |  |
 | Colombia | Pits (Autódromo de Tocancipá) | 2 | 1 | 1 |  | main |
 | Costa Rica | Parque Viva | 1 | 1 | 1 |  |  |
-| Cyprus | Achna Speedway | 2 | 2 | 0 | Achna Speedway; Achna Speedway Full Runway |  |
+| Cyprus | Achna Speedway | 5 | 2 | 2 |  | achna-main-course; achna-inner-alternative; achna-full-straight |
 | Czechia | Autodrom Most | 1 | 1 | 1 |  |  |
 | Czechia | Autodrom Sosnová | 2 | 1 | 1 |  | main |
 | Czechia | Autodrom Vysoké Mýto | 1 | 0 | 0 |  | main |
@@ -368,7 +368,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Lydd Karting Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Lydden Hill | 1 | 1 | 1 |  |  |
 | United Kingdom | Lydden Hill Infield | 1 | 1 | 0 | Lydden Hill Infield |  |
-| United Kingdom | M-Sport Proving Ground | 1 | 1 | 0 | M-Sport Proving Ground |  |
+| United Kingdom | M-Sport Proving Ground | 3 | 1 | 1 |  | msport-long-variant; msport-inner-variant |
 | United Kingdom | Mallory Park Racing Circuit | 4 | 3 | 3 |  | main |
 | United Kingdom | Millbrook Handling Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Millbrook High Speed Circuit | 1 | 1 | 1 |  |  |
@@ -804,8 +804,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Cyprus/Achna Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Cyprus/Achna Speedway Full Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Vallelunga Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -841,7 +839,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Millbrook Hill Route Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/M-Sport Proving Ground |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United Kingdom/ProDrive |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1062,8 +1059,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Colombia | Tocancipa | co-pits-autodromo-de-tocancipa-60009149 | tocancipa | draft-mapped |
 | Costa Rica | Parque Viva | cr-parque-viva-a2145eb2 | parque-viva | draft-mapped |
 | Croatia | Rijeka Grobnik | hr-automotodrom-grobnik-92343850 | main | draft-mapped |
-| Cyprus | Achna Speedway | cy-achna-speedway-ab0bcabd |  | missing-layout |
-| Cyprus | Achna Speedway Full Runway | cy-achna-speedway-ab0bcabd |  | missing-layout |
+| Cyprus | Achna Speedway | cy-achna-speedway-ab0bcabd | achna-speedway | draft-mapped |
+| Cyprus | Achna Speedway Full Runway | cy-achna-speedway-ab0bcabd | achna-speedway-full-runway | draft-mapped |
 | Czech Republic | Autodrom Most | cz-autodrom-most-60905520 | main | draft-mapped |
 | Czech Republic | Autodrom Sosnova | cz-autodrom-sosnova-30857652 | autodrom-sosnova | draft-mapped |
 | Czech Republic | Brno | cz-brno-8554280d | brno | draft-mapped |
@@ -1556,7 +1553,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Millbrook Handling Circuit | gb-millbrook-handling-circuit-2df7aae5 | millbrook-handling-circuit | draft-mapped |
 | United Kingdom | Millbrook High Speed Circuit | gb-millbrook-high-speed-circuit-cefbea72 | millbrook-high-speed-circuit | draft-mapped |
 | United Kingdom | Millbrook Hill Route Full | gb-millbrook-hill-route-372dafdf |  | missing-layout |
-| United Kingdom | M-Sport Proving Ground | gb-m-sport-proving-ground-fe7c7315 |  | missing-layout |
+| United Kingdom | M-Sport Proving Ground | gb-m-sport-proving-ground-fe7c7315 | m-sport-proving-ground | draft-mapped |
 | United Kingdom | Nutts Corner | gb-nutts-corner-6fa16d73 |  | missing-layout |
 | United Kingdom | Oulton Park Combo | gb-oulton-park-circuit-21831735 | oulton-park-combo | draft-mapped |
 | United Kingdom | Oulton Park Fosters Circuit | gb-oulton-park-circuit-21831735 | oulton-park-fosters-circuit | draft-mapped |

@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 3,
-    "course-distance-discrepancy": 22,
-    "independent-geometry-missing": 38,
+    "course-distance-discrepancy": 21,
+    "independent-geometry-missing": 36,
     "ambiguous-source-branches": 4,
     "source-connectivity-incomplete": 2,
     "open-course-evidence-required": 3
@@ -214,24 +214,6 @@
       "trackId": "cn-xiamen-9d5cdb21",
       "layoutId": "xiamen-international-circuit",
       "sourcePath": "sources/world/cn/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Cyprus/Achna Speedway",
-      "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutId": "achna-speedway",
-      "sourcePath": "sources/europe/cy/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Cyprus/Achna Speedway Full Runway",
-      "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutId": "achna-speedway-full-runway",
-      "sourcePath": "sources/europe/cy/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
@@ -746,26 +728,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/M-Sport Proving Ground",
-      "trackId": "gb-m-sport-proving-ground-fe7c7315",
-      "layoutId": "m-sport-proving-ground",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        716453717,
-        716453718,
-        716453719,
-        716453720,
-        716453721,
-        716453722,
-        716453723,
-        1201560854
-      ],
-      "candidateCount": 48,
-      "closestSourceLengthM": 2508,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United Kingdom/Nutts Corner",

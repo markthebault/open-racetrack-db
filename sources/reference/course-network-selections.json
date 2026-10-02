@@ -1167,6 +1167,81 @@
           "url": "https://www.lvms.com/tracks/road-courses/"
         }
       ]
+    },
+    {
+      "referenceId": "Cyprus/Achna Speedway",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "achna-main-course",
+        "achna-inner-alternative"
+      ],
+      "expectedLengthM": 2344.9,
+      "identificationUrl": "https://www.achnaspeedway.com/facilities",
+      "evidence": "The comparison shape and operator's published course plan identify the main closed circuit and inner hairpin alternative. Retain these exact independent source paths as the selectable configuration set, excluding the straight's southern extension. Shared physical edges count once, and the configuration is not asserted to be one timed lap. The independent unique branch distance is 2344.9 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "achna-main-course",
+          "name": "Main course",
+          "url": "https://www.achnaspeedway.com/facilities"
+        },
+        {
+          "layoutId": "achna-inner-alternative",
+          "name": "Inner alternative",
+          "url": "https://www.achnaspeedway.com/facilities"
+        }
+      ]
+    },
+    {
+      "referenceId": "Cyprus/Achna Speedway Full Runway",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "achna-main-course",
+        "achna-inner-alternative",
+        "achna-full-straight"
+      ],
+      "expectedLengthM": 2768.5,
+      "identificationUrl": "https://www.achnaspeedway.com/facilities",
+      "evidence": "The supplied full-straight configuration adds the cross-course straight's real southern open extension to the same main course and inner alternative. The operator plan independently identifies this physical straight. Preserve its actual open end, separately from the two other paths. This unique branch length is not an exact timed lap or a measured drag distance; current alignment and timing extent remain draft. The independent unique branch distance is 2768.5 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "achna-main-course",
+          "name": "Main course",
+          "url": "https://www.achnaspeedway.com/facilities"
+        },
+        {
+          "layoutId": "achna-inner-alternative",
+          "name": "Inner alternative",
+          "url": "https://www.achnaspeedway.com/facilities"
+        },
+        {
+          "layoutId": "achna-full-straight",
+          "name": "Full cross-course straight",
+          "url": "https://www.achnaspeedway.com/facilities"
+        }
+      ]
+    },
+    {
+      "referenceId": "United Kingdom/M-Sport Proving Ground",
+      "representation": "configuration-set",
+      "layoutIds": [
+        "msport-long-variant",
+        "msport-inner-variant"
+      ],
+      "expectedLengthM": 3082,
+      "identificationUrl": "https://www.ms-ec.co.uk/our-spaces-evaluation-ground",
+      "evidence": "The supplied proving-ground shape depicts the northern circle and triangle and multiple southern alternatives. The operator identifies the 2.5 km proving ground, eighteen anti-clockwise configurations and a steady-state circle; its aerial photograph independently confirms the northern circle, triangle and southern course alternatives. These two complementary exact source-node cycles retain every independently mapped closed-course branch in that footprint. Preserve their physical configuration set, shared edges and real junctions; do not interpret its unique branch distance as a timed lap or adjust coordinates to the catalogue scalar. Descriptive component names do not assert official layout names, and exact historical timed branch choice remains unverified. The independent unique branch distance is 3082 m; no coordinates are adjusted to a catalogue scalar distance.",
+      "configurationEvidence": [
+        {
+          "layoutId": "msport-long-variant",
+          "name": "Long course variant",
+          "url": "https://www.ms-ec.co.uk/our-spaces-evaluation-ground"
+        },
+        {
+          "layoutId": "msport-inner-variant",
+          "name": "Inner course variant",
+          "url": "https://www.ms-ec.co.uk/our-spaces-evaluation-ground"
+        }
+      ]
     }
   ]
 }
