@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **943 of 1,007 entries**. This recovery adds 486 associations: 444 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 390 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 55 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **944 of 1,007 entries**. This recovery adds 487 associations: 445 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 391 traces across 49 countries. 325 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 56 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 18 |
-| Independent geometry absent near the timing position | 36 |
+| Independent geometry absent near the timing position | 35 |
 | Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 2 |
 | Bounded search incomplete | 0 |
-| **Total** | **64** |
+| **Total** | **63** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 64 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 63 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -116,3 +116,5 @@ Cameron retains three complementary exact public-node paths covering its histori
 Driftland retains complementary independently mapped inner-S and cross-course paths covering its physical configuration set. The operator identifies configurable courses usable in both directions. The neighboring Lochgelly oval is excluded, source nodes remain unchanged, and the 990 m unique-edge distance is not presented as one timed lap. Three focused browser checks verify its network and component downloads.
 
 Both Penbay drag entries retain the same independently mapped 727.2 m open straight, including its northern extension. The organizer identifies a 700 m drag straight including deceleration distance. These supplied entries have only one shared timing marker. A documented open-course exception preserves that marker without inventing a separate finish or asserting that mapped endpoints are timing endpoints. All 54 unit tests, lint and type-checking pass, including rejection of undocumented, closed, reversed-role and off-route marker cases. Two focused browser checks verify open ends and downloads without public timing data.
+
+Fontana’s supplied infield entry retains three complementary independent public-node circuits covering its western hooked return and S, northern rectangular alternatives and eastern inner hairpin. Public-domain 2022 orthophotography confirms the branches; the outer oval, pit lane, dragway, paddock access and oval transition are excluded. The 4001.3 m unique-edge distance represents the configuration set rather than a timed lap. Four focused browser checks verify its network and component downloads.

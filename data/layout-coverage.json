@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 943,
-    "unmappedLayouts": 64,
+    "draftMapped": 944,
+    "unmappedLayouts": 63,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -12659,14 +12659,14 @@
       "name": "Fontana Raceway Infield Course",
       "timingMode": "shared",
       "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "fontana-raceway-infield-course"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "us-fontana-raceway-road-course-33a99dd4"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -24892,15 +24892,17 @@
       "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
       "name": "Fontana Raceway Infield Course",
       "country": "United States",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 4,
+      "actualTraceCount": 4,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Fontana Raceway Infield Course"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "infield-western-hook",
+        "infield-inner-hairpin",
+        "infield-northern-return"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -27207,13 +27209,6 @@
     },
     {
       "recordId": "United States/Detroit City Airport",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Fontana Raceway Infield Course",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
