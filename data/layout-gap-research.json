@@ -4,9 +4,9 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 5,
-    "course-distance-discrepancy": 33,
+    "course-distance-discrepancy": 32,
     "independent-geometry-missing": 44,
-    "ambiguous-source-branches": 13,
+    "ambiguous-source-branches": 11,
     "source-connectivity-incomplete": 5,
     "open-course-evidence-required": 8
   },
@@ -158,32 +158,6 @@
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
-      "referenceId": "Brazil/Kartodromo Granja Viana",
-      "trackId": "br-kartodromo-granja-viana-a8cd9fca",
-      "layoutId": "kartodromo-granja-viana",
-      "sourcePath": "sources/world/br/osm.json",
-      "sourceWayIds": [
-        262416827,
-        262416828,
-        262416829,
-        262416830,
-        427919315,
-        747377531,
-        747377897,
-        747378112,
-        747379250,
-        747379647,
-        747379844,
-        747380186,
-        747381176,
-        747382900
-      ],
-      "candidateCount": 318,
-      "closestSourceLengthM": 1016.1,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
       "referenceId": "Canada/Cameron Speedway Kart Circuit",
       "trackId": "ca-cameron-speedway-kart-circuit-f7997f0a",
       "layoutId": "cameron-speedway-kart-circuit",
@@ -207,37 +181,6 @@
       "closestSourceLengthM": 1013.6,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "Canada/ICAR Mirabel LONG chicane",
-      "trackId": "ca-circuit-icar-1043569622",
-      "layoutId": "icar-mirabel-long-chicane",
-      "sourcePath": "sources/world/ca/osm.json",
-      "sourceWayIds": [
-        1043569622,
-        1043569624,
-        1043569625,
-        1067436973,
-        1067436974,
-        1067436975,
-        1067436976,
-        1067436977,
-        1067436978,
-        1067436979,
-        1067436980,
-        1067436988,
-        1067439961,
-        1096374448,
-        1096374449,
-        1096374450,
-        1043569626,
-        1043569627,
-        1043569628
-      ],
-      "candidateCount": 7,
-      "closestSourceLengthM": 3330.7,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Canada/Strawberry Creek Raceway",
@@ -306,32 +249,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Dominican Republic/Speedway Park",
-      "trackId": "do-speedway-park-87fad81e",
-      "layoutId": "speedway-park",
-      "sourcePath": "sources/world/do/osm.json",
-      "sourceWayIds": [
-        250861343,
-        250861344,
-        250861345,
-        250861346,
-        250861347,
-        250861348,
-        250861350,
-        251826258,
-        1028509577,
-        1028509578,
-        1028509579,
-        1028509582,
-        1028509587,
-        1028509589
-      ],
-      "candidateCount": 64,
-      "closestSourceLengthM": 3127.5,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "Finland/Seinajoki",

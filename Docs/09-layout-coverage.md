@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 899
-- unmappedLayouts: 108
+- draftMapped: 902
+- unmappedLayouts: 105
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -129,7 +129,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Brazil | Circuito Panamericano | 1 | 1 | 1 |  |  |
 | Brazil | Haras Tuiuti | 1 | 1 | 1 |  |  |
 | Brazil | Interlagos | 1 | 1 | 1 |  |  |
-| Brazil | Kartodromo Granja Viana | 1 | 1 | 0 | Kartodromo Granja Viana |  |
+| Brazil | Kartodromo Granja Viana | 1 | 1 | 1 |  |  |
 | Brazil | Race Park Maringá | 1 | 0 | 0 |  | main |
 | Brazil | Taruma | 1 | 1 | 1 |  |  |
 | Brazil | Velopark | 2 | 1 | 1 |  | main |
@@ -144,7 +144,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Canadian Tire Motorsport Park | 2 | 2 | 2 |  |  |
 | Canada | Canadian Tire Motorsports Park DDT | 3 | 1 | 1 |  | ddt-two-kinks; ddt-one-kink |
 | Canada | Cayuga Motor Speedway | 1 | 0 | 0 |  | main |
-| Canada | Circuit ICAR | 4 | 3 | 2 | ICAR Mirabel LONG chicane | main |
+| Canada | Circuit ICAR | 4 | 3 | 3 |  | main |
 | Canada | Circuit Mont-Tremblant | 2 | 1 | 1 |  | main |
 | Canada | Circuit Riverside Speedway Ste-Croix | 1 | 0 | 0 |  | main |
 | Canada | Delaware Speedway | 1 | 0 | 0 |  | main |
@@ -222,7 +222,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Denmark | Jyllandsringen | 4 | 3 | 3 |  | main |
 | Denmark | Padborg Park | 1 | 1 | 1 |  |  |
 | Denmark | Ring Djursland | 1 | 1 | 1 |  |  |
-| Dominican Republic | Speedway Park | 1 | 1 | 0 | Speedway Park |  |
+| Dominican Republic | Speedway Park | 1 | 1 | 1 |  |  |
 | Estonia | Porsche Ring | 5 | 4 | 4 |  | main |
 | Spain | Alcarras | 1 | 1 | 1 |  |  |
 | Spain | Circuit de Barcelona-Catalunya | 2 | 2 | 2 |  |  |
@@ -799,9 +799,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Brazil/Kartodromo Granja Viana |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/ICAR Mirabel LONG chicane |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Trois Rivieres |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -809,7 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Cyprus/Achna Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Cyprus/Achna Speedway Full Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Dominican Republic/Speedway Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1031,7 +1028,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Brazil | Guapore | br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914 | guapore | draft-mapped |
 | Brazil | Haras Tuiuti | br-haras-tuiuti-4cd9359e | haras-tuiuti | draft-mapped |
 | Brazil | Interlagos | br-interlagos-6c69e04f | interlagos | draft-mapped |
-| Brazil | Kartodromo Granja Viana | br-kartodromo-granja-viana-a8cd9fca |  | missing-layout |
+| Brazil | Kartodromo Granja Viana | br-kartodromo-granja-viana-a8cd9fca | kartodromo-granja-viana | draft-mapped |
 | Brazil | Nova Santa Rita | br-velopark-94748799 | nova-santa-rita | draft-mapped |
 | Brazil | Santa Cruz do Sul | br-autodromo-internacional-de-santa-cruz-do-sul-281440036 | main | draft-mapped |
 | Brazil | Taruma | br-taruma-e7e74731 | taruma | draft-mapped |
@@ -1049,7 +1046,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Goodwood Kartways | ca-goodwood-kartways-6e03d980 | goodwood-kartways | draft-mapped |
 | Canada | ICAR Mirabel | ca-circuit-icar-1043569622 | icar-mirabel | draft-mapped |
 | Canada | ICAR Mirabel LONG | ca-circuit-icar-1043569622 | icar-mirabel-long | draft-mapped |
-| Canada | ICAR Mirabel LONG chicane | ca-circuit-icar-1043569622 |  | missing-layout |
+| Canada | ICAR Mirabel LONG chicane | ca-circuit-icar-1043569622 | icar-mirabel-long-chicane | draft-mapped |
 | Canada | Mission Raceway Park Road Course | ca-mission-raceway-190876520 | mission-raceway-park-road-course | draft-mapped |
 | Canada | Mont Tremblant | ca-circuit-mont-tremblant-176774725 | mont-tremblant | draft-mapped |
 | Canada | Mosport Kartways | ca-canadian-tire-motorsport-park-37059242 | mosport-kartways | draft-mapped |
@@ -1110,7 +1107,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Denmark | Padborg Park | dk-padborg-park-95222745 | main | draft-mapped |
 | Denmark | Ring Djursland | dk-ring-djursland-170767760 | main | draft-mapped |
 | Denmark | Saellandsringen | dk-fdm-sj-llandsringen-29293789 | saellandsringen | draft-mapped |
-| Dominican Republic | Speedway Park | do-speedway-park-87fad81e |  | missing-layout |
+| Dominican Republic | Speedway Park | do-speedway-park-87fad81e | speedway-park | draft-mapped |
 | El Salvador | Autodromo el Jabali | sv-pista-el-jabali-37713353 | main | draft-mapped |
 | Estonia | Sauga Circuit Audruring | ee-porsche-ring-45482078 | sauga-circuit-audruring | draft-mapped |
 | Estonia | Sauga Circuit Combo | ee-porsche-ring-45482078 | sauga-circuit-combo | draft-mapped |

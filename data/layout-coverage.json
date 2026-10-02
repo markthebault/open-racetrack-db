@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 899,
-    "unmappedLayouts": 108,
+    "draftMapped": 902,
+    "unmappedLayouts": 105,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2052,11 +2052,14 @@
       "name": "Kartodromo Granja Viana",
       "timingMode": "shared",
       "trackId": "br-kartodromo-granja-viana-a8cd9fca",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "kartodromo-granja-viana"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -2334,14 +2337,14 @@
       "name": "ICAR Mirabel LONG chicane",
       "timingMode": "shared",
       "trackId": "ca-circuit-icar-1043569622",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "icar-mirabel-long-chicane"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "ca-circuit-icar-1043569622"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -3289,11 +3292,14 @@
       "name": "Speedway Park",
       "timingMode": "shared",
       "trackId": "do-speedway-park-87fad81e",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "speedway-park"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17561,15 +17567,13 @@
       "name": "Kartodromo Granja Viana",
       "country": "Brazil",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Kartodromo Granja Viana"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "br-race-park-maringa-187793914",
@@ -17783,13 +17787,11 @@
       "name": "Circuit ICAR",
       "country": "Canada",
       "actualLayoutCount": 4,
-      "actualTraceCount": 3,
+      "actualTraceCount": 4,
       "expectedRecordCount": 3,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 2,
-      "missingRecordNames": [
-        "ICAR Mirabel LONG chicane"
-      ],
+      "mappedRecordCount": 3,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -18878,15 +18880,13 @@
       "name": "Speedway Park",
       "country": "Dominican Republic",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Speedway Park"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ee-porsche-ring-45482078",
@@ -26796,21 +26796,7 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Brazil/Kartodromo Granja Viana",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Canada/Cameron Speedway Kart Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Canada/ICAR Mirabel LONG chicane",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
@@ -26860,13 +26846,6 @@
     },
     {
       "recordId": "Cyprus/Achna Speedway Full Runway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Dominican Republic/Speedway Park",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
