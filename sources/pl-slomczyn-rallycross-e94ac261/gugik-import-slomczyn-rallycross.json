@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "sourceUrl": "https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WCS/StandardResolution",
+  "query": [
+    [
+      "SERVICE",
+      "WCS"
+    ],
+    [
+      "VERSION",
+      "2.0.1"
+    ],
+    [
+      "REQUEST",
+      "GetCoverage"
+    ],
+    [
+      "COVERAGEID",
+      "Orthoimagery_StandardResolution"
+    ],
+    [
+      "FORMAT",
+      "image/tiff"
+    ],
+    [
+      "SUBSET",
+      "x(632422.5441658233,632710.6603067762)"
+    ],
+    [
+      "SUBSET",
+      "y(447407.73571159784,447778.64710792806)"
+    ],
+    [
+      "SCALESIZE",
+      "x(1800),y(1800)"
+    ]
+  ],
+  "retrievedAt": "2026-10-02T01:16:57.265783Z",
+  "reuseEvidenceUrl": "https://www.geoportal.gov.pl/pl/dane/ortofotomapa-orto/",
+  "originalRasterSha256": "e29827fcfeaf4f65b098723e92e55b5f1f0eaf0225765c77dbf5aeb97c53e1b9",
+  "originalCrs": "EPSG:2180",
+  "originalBounds": [
+    632422.5441658233,
+    447407.73571159784,
+    632710.6603067763,
+    447778.64710792806
+  ],
+  "originalWidth": 1800,
+  "originalHeight": 1800,
+  "width": 1800,
+  "height": 1800,
+  "extent": {
+    "xmin": 2329287.0520965112,
+    "ymin": 6777944.101290353,
+    "xmax": 2329768.731533174,
+    "ymax": 6778557.669338607,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "883dc49248b049436146388942ff1b7cd574c9c91e71f21c01e870bd87433c7a",
+  "license": "LicenseRef-GUGiK-open-data",
+  "attribution": "GUGiK, Geoportal.gov.pl: freely reusable state orthoimagery; centerline digitization by OpenRacetrackDB",
+  "imageryFile": "gugik-slomczyn-rallycross.png",
+  "reprojection": {
+    "sourceCrs": "EPSG:2180",
+    "targetCrs": "EPSG:3857",
+    "targetWidth": 1800,
+    "targetHeight": 1800,
+    "extentDensifyPoints": 41,
+    "resampling": "bilinear",
+    "tool": "rasterio",
+    "version": "1.5.2"
+  }
+}

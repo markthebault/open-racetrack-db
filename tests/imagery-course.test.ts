@@ -35,3 +35,11 @@ test('raster dimensions must match the recorded georeferencing',()=>{
  assert.throws(()=>validateImageryRaster({...source,width:101},bytes),/dimensions/);
  assert.throws(()=>validateImageryRaster(source,Buffer.alloc(40)),/PNG raster/);
 });
+
+test('government orthoimagery retains its reuse terms and attribution',()=>{
+ const government={...source,license:'LicenseRef-GUGiK-open-data' as const,attribution:'GUGiK orthoimagery'};
+ const registered={...track,sources:[{...track.sources[0],license:government.license}]};
+ const layout=buildImageryCourse(recipe,government,registered);
+ assert.equal(layout.metadata.attribution,government.attribution);
+ assert.throws(()=>buildImageryCourse(recipe,government,track),/rights/);
+});

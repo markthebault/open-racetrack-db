@@ -1,8 +1,8 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **902 of 1,007 entries**. This recovery adds 445 associations: 403 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 349 traces across 49 countries. 308 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 40 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **905 of 1,007 entries**. This recovery adds 448 associations: 406 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 352 traces across 49 countries. 310 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 40 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
-Course geometry comes from independent OSM data or public-domain georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
+Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
 The route search now covers road circuits longer than 30 km and focuses complex graphs around timing and course-distance checks. A step or depth limit marks a search incomplete. It cannot establish uniqueness. Named circuit relations add street roads that the country raceway extracts omit. Open-course imports retain separate endpoints and never create closing connectors.
 
@@ -10,20 +10,20 @@ The following source limitations remain after the complete search of the pinned 
 
 | Remaining cause | Entries |
 | --- | ---: |
-| Ambiguous source branches | 11 |
+| Ambiguous source branches | 10 |
 | Unresolved course-distance discrepancy | 32 |
-| Independent geometry absent near the timing position | 44 |
+| Independent geometry absent near the timing position | 43 |
 | Aggregate configuration needs identification | 5 |
-| Open-course route or endpoint evidence needed | 8 |
+| Open-course route or endpoint evidence needed | 7 |
 | Source connectivity incomplete | 5 |
 | Bounded search incomplete | 0 |
-| **Total** | **105** |
+| **Total** | **102** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 105 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 102 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -66,3 +66,7 @@ Alès Rally Stage retains the historical outer loop identified in the operator 2
 Western Speedway, Chengdu and Hanoi now use complete independently mapped historical courses from 2020, 2017 and 2020 respectively. The traces exclude adjacent courses and pit routes, preserve source coordinates and retain their measured distances. Identification references establish the venues and configurations; historical surface and street-barrier alignment remain draft.
 
 Granja Viana retains the outer northern return and full inner S sequence, excluding the southern chicane and central shortcuts. ICAR Long Chicane retains the full course with both northern branches and the southern chicane, excluding short-course bypasses. Speedway Park retains the northeastern bulb and full southern hairpin and outer return. Their independently measured distances remain unscaled, with corner and historical-alignment limitations documented.
+
+Angoulême now follows the organizer-identified historic street loop, including the mapped Carnot and cathedral connections. Fintray follows its open two-hairpin course with separate source endpoints near both timing positions, excluding the eastern farm-yard detour. Both independent distances remain unscaled, and their two browser checks pass.
+
+Słomczyn Rallycross retains the northern and western gravel arc, central asphalt hairpin and southern outer gravel return shown in the operator plan. Its 1255.1 m centerline is digitized from reusable GUGiK government orthoimagery, excluding the karting loops and asphalt-only alternatives. The source stores georeferencing, pixel vertices, image hash and provider reuse evidence. The original EPSG:2180 export bounds and reprojection parameters are retained. A targeted browser check verifies the trace, measured distance, download and GUGiK attribution. All 44 unit tests and lint pass, including a source-rights regression check.

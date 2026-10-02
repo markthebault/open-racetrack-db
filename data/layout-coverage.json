@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 902,
-    "unmappedLayouts": 105,
+    "draftMapped": 905,
+    "unmappedLayouts": 102,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -3910,11 +3910,14 @@
       "name": "Circuit des Remparts",
       "timingMode": "shared",
       "trackId": "fr-circuit-des-remparts-1c159f88",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "circuit-des-remparts"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -7328,11 +7331,14 @@
       "name": "Slomczyn RallyCross",
       "timingMode": "shared",
       "trackId": "pl-slomczyn-rallycross-e94ac261",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "slomczyn-rallycross"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10487,11 +10493,15 @@
       "name": "Fintray Hill Climb",
       "timingMode": "separate",
       "trackId": "gb-fintray-hill-climb-d6798bfc",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "fintray-hill-climb"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -19843,15 +19853,13 @@
       "name": "Circuit des Remparts",
       "country": "France",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Circuit des Remparts"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "fr-circuit-dijon-prenois-29699123",
@@ -20640,15 +20648,13 @@
       "name": "Fintray Hill Climb",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Fintray Hill Climb"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-fulbeck-kart-circuit-15a721dc",
@@ -23129,15 +23135,13 @@
       "name": "Slomczyn RallyCross",
       "country": "Poland",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Slomczyn RallyCross"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "pl-tor-jastrzab-220208f2",
@@ -26866,13 +26870,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "France/Circuit des Remparts",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Germany/Porsche Leipzig A",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -26963,13 +26960,6 @@
       "namedCourseCandidates": 7,
       "enumerationTruncated": false,
       "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
-    },
-    {
-      "recordId": "Poland/Slomczyn RallyCross",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
       "recordId": "Poland/Tor Jastrzab",
@@ -27183,13 +27173,6 @@
     },
     {
       "recordId": "United Kingdom/Elvington",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Fintray Hill Climb",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

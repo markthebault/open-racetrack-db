@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 902
-- unmappedLayouts: 105
+- draftMapped: 905
+- unmappedLayouts: 102
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -291,7 +291,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | France | Circuit de Mornay | 4 | 3 | 3 |  | main |
 | France | Circuit de vitesse du Vigeant | 3 | 2 | 2 |  | main |
 | France | Circuit des Écuyers | 2 | 1 | 1 |  | main |
-| France | Circuit des Remparts | 1 | 1 | 0 | Circuit des Remparts |  |
+| France | Circuit des Remparts | 1 | 1 | 1 |  |  |
 | France | Circuit Dijon-Prenois | 1 | 1 | 1 |  |  |
 | France | Circuit du Bourbonnais | 1 | 0 | 0 |  | main |
 | France | Circuit du Laquais | 3 | 2 | 2 |  | main |
@@ -347,7 +347,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Ellough Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Elvington | 1 | 1 | 0 | Elvington |  |
 | United Kingdom | Fen End Emissions | 1 | 1 | 1 |  |  |
-| United Kingdom | Fintray Hill Climb | 1 | 1 | 0 | Fintray Hill Climb |  |
+| United Kingdom | Fintray Hill Climb | 1 | 1 | 1 |  |  |
 | United Kingdom | Fulbeck Kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Gaydon Emissions Circuit | 1 | 1 | 0 | Gaydon Emissions Circuit |  |
 | United Kingdom | Glan-Y-Gors Kart Circuit | 1 | 1 | 1 |  |  |
@@ -526,7 +526,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Philippines | Batangas Racing Circuit | 3 | 2 | 2 |  | main |
 | Philippines | Clark International Speedway | 2 | 1 | 1 |  | main |
 | Poland | Silesia Ring | 3 | 2 | 2 |  | main |
-| Poland | Slomczyn RallyCross | 1 | 1 | 0 | Slomczyn RallyCross |  |
+| Poland | Slomczyn RallyCross | 1 | 1 | 1 |  |  |
 | Poland | Tor Jastrzab | 1 | 1 | 0 | Tor Jastrzab |  |
 | Poland | Tor Lodz | 1 | 1 | 1 |  |  |
 | Poland | Tor Modlin | 1 | 0 | 0 |  | main |
@@ -809,7 +809,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Cyprus/Achna Speedway Full Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | France/Abbeville |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| France/Circuit des Remparts |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -822,7 +821,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 7 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
-| Poland/Slomczyn RallyCross |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Poland/Tor Jastrzab |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -854,7 +852,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Dunsfold |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Dunsfold without Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Fintray Hill Climb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Gaydon Emissions Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Goodwood Festival of Speed |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1146,7 +1143,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | France | Circuit de Monray School | fr-circuit-de-mornay-169416978 | circuit-de-monray-school | draft-mapped |
 | France | Circuit de Mornay Grand | fr-circuit-de-mornay-169416978 | circuit-de-mornay-grand | draft-mapped |
 | France | Circuit de Mornay Long | fr-circuit-de-mornay-169416978 | circuit-de-mornay-long | draft-mapped |
-| France | Circuit des Remparts | fr-circuit-des-remparts-1c159f88 |  | missing-layout |
+| France | Circuit des Remparts | fr-circuit-des-remparts-1c159f88 | circuit-des-remparts | draft-mapped |
 | France | Circuit Maurice Forget | fr-circuit-maurice-forget-30d9b95a | circuit-maurice-forget | draft-mapped |
 | France | Croix-en-Ternois | fr-circuit-de-croix-en-ternois-59322352 | croix-en-ternois | draft-mapped |
 | France | Dijon | fr-circuit-dijon-prenois-29699123 | main | draft-mapped |
@@ -1361,7 +1358,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Poland | Poznan | pl-tor-poznan-172188975 | main | draft-mapped |
 | Poland | Silesia Ring | pl-silesia-ring-631651845 | silesia-ring | draft-mapped |
 | Poland | Silesia Ring Long | pl-silesia-ring-631651845 | silesia-ring-long | draft-mapped |
-| Poland | Slomczyn RallyCross | pl-slomczyn-rallycross-e94ac261 |  | missing-layout |
+| Poland | Slomczyn RallyCross | pl-slomczyn-rallycross-e94ac261 | slomczyn-rallycross | draft-mapped |
 | Poland | Tor Jastrzab | pl-tor-jastrzab-220208f2 |  | missing-layout |
 | Poland | Tor Lodz | pl-tor-lodz-107c708e | tor-lodz | draft-mapped |
 | Portugal | Bombarral | pt-bombarral-423b0d2b | bombarral | draft-mapped |
@@ -1561,7 +1558,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Ellough Park | gb-ellough-park-reference | main | draft-mapped |
 | United Kingdom | Elvington | gb-elvington-a019c302 |  | missing-layout |
 | United Kingdom | Fen End Emissions | gb-fen-end-emissions-c3cfcf7b | fen-end-emissions | draft-mapped |
-| United Kingdom | Fintray Hill Climb | gb-fintray-hill-climb-d6798bfc |  | missing-layout |
+| United Kingdom | Fintray Hill Climb | gb-fintray-hill-climb-d6798bfc | fintray-hill-climb | draft-mapped |
 | United Kingdom | Fulbeck Kart Circuit | gb-fulbeck-kart-circuit-15a721dc | fulbeck-kart-circuit | draft-mapped |
 | United Kingdom | Gaydon Emissions Circuit | gb-gaydon-emissions-circuit-cfe097eb |  | missing-layout |
 | United Kingdom | Glan-Y-Gors Kart Circuit | gb-glan-y-gors-kart-circuit-c97af463 | glan-y-gors-kart-circuit | draft-mapped |

@@ -5,10 +5,10 @@
   "summary": {
     "configuration-evidence-required": 5,
     "course-distance-discrepancy": 32,
-    "independent-geometry-missing": 44,
-    "ambiguous-source-branches": 11,
+    "independent-geometry-missing": 43,
+    "ambiguous-source-branches": 10,
     "source-connectivity-incomplete": 5,
-    "open-course-evidence-required": 8
+    "open-course-evidence-required": 7
   },
   "records": [
     {
@@ -296,15 +296,6 @@
       "closestSourceLengthM": 2225.2,
       "reason": "ambiguous-source-branches",
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
-      "referenceId": "France/Circuit des Remparts",
-      "trackId": "fr-circuit-des-remparts-1c159f88",
-      "layoutId": "circuit-des-remparts",
-      "sourcePath": "sources/europe/fr/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "Germany/Porsche Leipzig A",
@@ -646,25 +637,6 @@
       "closestSourceLengthM": 3282.1,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Poland/Slomczyn RallyCross",
-      "trackId": "pl-slomczyn-rallycross-e94ac261",
-      "layoutId": "slomczyn-rallycross",
-      "sourcePath": "sources/europe/pl/osm.json",
-      "sourceWayIds": [
-        609596377,
-        609596398,
-        609596399,
-        609596400,
-        609596401,
-        609596402,
-        609596403
-      ],
-      "candidateCount": 96,
-      "closestSourceLengthM": 1229.8,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "Poland/Tor Jastrzab",
@@ -1098,14 +1070,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/Fintray Hill Climb",
-      "trackId": "gb-fintray-hill-climb-d6798bfc",
-      "layoutId": "fintray-hill-climb",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "open-course-evidence-required",
-      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
     },
     {
       "referenceId": "United Kingdom/Gaydon Emissions Circuit",

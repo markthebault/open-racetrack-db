@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montjuïc",
+      "referenceId": "Spain/Circuit de Montju\u00efc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -22997,6 +22997,210 @@
       ],
       "expectedLengthM": 3142.5,
       "maximumDistanceDifferenceM": 35
+    },
+    {
+      "referenceId": "France/Circuit des Remparts",
+      "sourcePath": "sources/course-networks/circuit-des-remparts-independent-roads/osm.json",
+      "sourceWayIds": [
+        24832436,
+        24967342,
+        26583638,
+        30844094,
+        30972471,
+        31016949,
+        128634359,
+        128636815,
+        310343291,
+        486403664,
+        486403666,
+        500441704,
+        956160497,
+        1330893485
+      ],
+      "closed": true,
+      "evidence": "Reviewed the organizer\u2019s 2024 historic-course plan: Rempart Desaix and Avenue des Mar\u00e9chaux lead through the Th\u00e9\u00e2tre/Carnot turn, Rue Louis Desbrandes, Rue Waldeck Rousseau, the full Marronnier return on Rue du Colonel Driant, Rue de Verdun and the Cath\u00e9drale turn. Retains the pinned unnamed street connection at the southern Carnot turn and the short Avenue du Pr\u00e9sident Wilson connection at the cathedral; excludes the internal Driant shortcut and the unrelated Rempart du Midi. All vertices and joins use exact independent road-map nodes. The 1303.4 m public-road centerline differs from the 1271 m timing distance; temporary race barriers, hairpin placement and the mapped underpass junction remain provisional.",
+      "identificationUrl": "https://www.circuitdesremparts.com/wp-content/uploads/2024/07/Guide-Pratique-2024.pdf",
+      "segments": [
+        {
+          "wayId": 24832436,
+          "wayVersion": 19,
+          "fromIndex": 0,
+          "toIndex": 1
+        },
+        {
+          "wayId": 486403666,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 8
+        },
+        {
+          "wayId": 30972471,
+          "wayVersion": 15,
+          "fromIndex": 0,
+          "toIndex": 5
+        },
+        {
+          "wayId": 1330893485,
+          "wayVersion": 1,
+          "fromIndex": 1,
+          "toIndex": 0
+        },
+        {
+          "wayId": 30844094,
+          "wayVersion": 12,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 128636815,
+          "wayVersion": 12,
+          "fromIndex": 8,
+          "toIndex": 18
+        },
+        {
+          "wayId": 31016949,
+          "wayVersion": 13,
+          "fromIndex": 0,
+          "toIndex": 6
+        },
+        {
+          "wayId": 128634359,
+          "wayVersion": 10,
+          "fromIndex": 8,
+          "toIndex": 0
+        },
+        {
+          "wayId": 310343291,
+          "wayVersion": 13,
+          "fromIndex": 1,
+          "toIndex": 0
+        },
+        {
+          "wayId": 500441704,
+          "wayVersion": 8,
+          "fromIndex": 5,
+          "toIndex": 0
+        },
+        {
+          "wayId": 486403664,
+          "wayVersion": 8,
+          "fromIndex": 7,
+          "toIndex": 0
+        },
+        {
+          "wayId": 26583638,
+          "wayVersion": 20,
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ],
+      "expectedLengthM": 1303.4,
+      "maximumDistanceDifferenceM": 45
+    },
+    {
+      "referenceId": "United Kingdom/Fintray Hill Climb",
+      "sourcePath": "sources/course-networks/fintray-hill-climb-independent-roads/osm.json",
+      "sourceWayIds": [
+        6801155,
+        6801791,
+        6806687,
+        6807103,
+        6807787,
+        6807840,
+        6807906,
+        6807954,
+        6808200,
+        33420717,
+        33512286,
+        33512289,
+        33512587,
+        33513191,
+        44016292,
+        79236192,
+        79236194,
+        79236197,
+        133104715,
+        233431937,
+        295809195,
+        295811105,
+        349640020,
+        461598142,
+        461598523,
+        461598524,
+        461598525,
+        599981579,
+        599981584,
+        599981585,
+        706992943,
+        708351148,
+        723758093,
+        723811042,
+        723811043,
+        724032402,
+        724282018,
+        728955867,
+        728959551,
+        728960796,
+        729048404,
+        742100640,
+        742386871,
+        742403196,
+        763923626,
+        778001948,
+        808884116,
+        809172453,
+        824176293,
+        828352696,
+        828352697,
+        828352698,
+        843758491,
+        844056715,
+        844921644,
+        895858570,
+        895858571,
+        905100290,
+        906919884,
+        909177701,
+        919072904,
+        931066754,
+        931066775,
+        954342675,
+        1001163171,
+        1010736972,
+        1090951714,
+        1090951715,
+        1090951716,
+        1090951717,
+        1151993267,
+        1151993268,
+        1151993269,
+        1172943225,
+        1172943226,
+        1185474398,
+        1185474399,
+        1214134132,
+        1241709498,
+        1241709499
+      ],
+      "closed": false,
+      "evidence": "The Grampian Automobile Club identifies the Fintray House hillclimb and describes a 725-yard (663 m) timed course. The selected independently mapped road retains the lower curved approach, the main eastern hairpin and the short western hairpin before the northern finish straight. The eastern farm-yard detour is excluded. Both source endpoints agree with the separate timing positions. This 644.9 m source-node selection differs from the 737 m catalogue scalar and the published timed distance; approach/run-on extent, sparse hairpin detail and historical alignment remain provisional. No vertices are moved to match those distances.",
+      "identificationUrl": "https://grampianautomobileclub.org.uk/wp-content/uploads/2026/03/GAC-Supplementary-Regs2026-V1.pdf",
+      "segments": [
+        {
+          "wayId": 295809195,
+          "wayVersion": 4,
+          "fromIndex": 24,
+          "toIndex": 9
+        },
+        {
+          "wayId": 295811105,
+          "wayVersion": 5,
+          "fromIndex": 0,
+          "toIndex": 4
+        }
+      ],
+      "expectedLengthM": 644.9,
+      "maximumDistanceDifferenceM": 105
     }
   ]
 }
