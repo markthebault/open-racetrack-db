@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 977
-- unmappedLayouts: 30
+- draftMapped: 978
+- unmappedLayouts: 29
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -588,7 +588,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Slovenia | Raceland | 1 | 1 | 1 |  |  |
 | Slovakia | Slovakia Ring | 2 | 1 | 1 |  | main |
 | El Salvador | Pista El Jabalí | 1 | 1 | 1 |  |  |
-| Thailand | Bangsaen Street Circuit | 1 | 1 | 0 | Bangsaen Street Circuit |  |
+| Thailand | Bangsaen Street Circuit | 1 | 1 | 1 |  |  |
 | Thailand | Bira Circuit | 1 | 1 | 1 |  |  |
 | Thailand | Chang | 1 | 1 | 1 |  |  |
 | Thailand | Kaeng Krachan Circuit | 1 | 1 | 1 |  |  |
@@ -802,7 +802,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1415,7 +1414,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Taiwan | Penbay National | tw-penbay-3b334d4e | penbay-national | draft-mapped |
 | Taiwan | Penbay North Oval | tw-penbay-3b334d4e | penbay-north-oval | draft-mapped |
 | Taiwan | Penbay South Oval | tw-penbay-3b334d4e | penbay-south-oval | draft-mapped |
-| Thailand | Bangsaen Street Circuit | th-bangsaen-street-circuit-2551e057 |  | missing-layout |
+| Thailand | Bangsaen Street Circuit | th-bangsaen-street-circuit-2551e057 | bangsaen-street-circuit | draft-mapped |
 | Thailand | Bira International Circuit | th-bira-circuit-107684749 | main | draft-mapped |
 | Thailand | Chang | th-chang-3eab3d40 | chang | draft-mapped |
 | Thailand | Kaeng Krachan Circuit | th-kaeng-krachan-circuit-469691616 | main | draft-mapped |

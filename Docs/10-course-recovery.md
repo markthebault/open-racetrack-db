@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **977 of 1,007 entries**. This recovery adds 520 associations: 478 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 424 traces across 49 countries. 332 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **978 of 1,007 entries**. This recovery adds 521 associations: 479 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 425 traces across 50 countries. 333 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 6 |
-| Independent geometry absent near the timing position | 18 |
+| Independent geometry absent near the timing position | 17 |
 | Aggregate configuration needs identification | 1 |
 | Open-course route or endpoint evidence needed | 2 |
 | Source connectivity incomplete | 1 |
 | Bounded search incomplete | 0 |
-| **Total** | **30** |
+| **Total** | **29** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 30 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 29 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -166,3 +166,4 @@ The Bucks Estate entries are road-test configurations on Buckingham industrial-e
 Rushmoor Arena retains the historical simple paved triangle, rather than the club’s current figure-eight sprint. Exact public Arena Lane and eastern-service-road nodes give 1,305.3 m, 23.7 m below the supplied length. Pinned 2020 Environment Agency one-metre LiDAR intensity imagery confirms all three paved sides. The club’s regulations identify the venue and its later configuration. The southern Castle Road approach, Claycart Road and paddock are excluded. Historical direction and temporary event markers remain draft.
 
 Millbrook Full Hill Route retains the independently identified three-return course as one connected 3,589.8 m draft lap. The manufacturer course plan and operator brochure distinguish the hill route from facility access, the handling circuit and the bowl. Current OSM source nodes locate each join; public 2020–2021 one-metre survey intensity confirms the pavement. Northern access and the eastern inner bypass are excluded. The 2.2 m difference from the supplied 3,592 m remains unchanged. The advertised 6.5 km hill-route facility extent describes a different measure. The focused browser check verifies the closed route and downloaded geometry.
+Bangsaen uses the southern return on Soi Bangsaen–Ang Sila 1 identified by the municipal 2012 event map. Exact independent road nodes give a connected 3,779.8 m lap against the supplied 3,761 m. The long southern beach excursion, northern headland loop and residential shortcuts are excluded. The organizer lists 3,740 m for its later event configuration. Current roundabout arcs and the northern road junction remain street-centreline drafts where temporary race barriers may differ. The focused browser check verifies the closed downloaded course.

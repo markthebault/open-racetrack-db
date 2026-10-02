@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 977,
-    "unmappedLayouts": 30,
+    "draftMapped": 978,
+    "unmappedLayouts": 29,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -9458,11 +9458,14 @@
       "name": "Bangsaen Street Circuit",
       "timingMode": "shared",
       "trackId": "th-bangsaen-street-circuit-2551e057",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bangsaen-street-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -24123,15 +24126,13 @@
       "name": "Bangsaen Street Circuit",
       "country": "Thailand",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bangsaen Street Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "th-bira-circuit-107684749",
@@ -26910,13 +26911,6 @@
     },
     {
       "recordId": "Taiwan/Lihpao Wind",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Thailand/Bangsaen Street Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

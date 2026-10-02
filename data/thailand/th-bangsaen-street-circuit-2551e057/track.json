@@ -8,17 +8,41 @@
     "name": "Thailand",
     "slug": "thailand"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    100.90281205,
+    13.306972649999999
+  ],
+  "sourceIds": [
+    "osm-selection-bangsaen-street-current-independent-roads-154842378"
+  ],
   "defaultLayoutId": "bangsaen-street-circuit",
   "layouts": [
     {
       "id": "bangsaen-street-circuit",
       "name": "Bangsaen Street Circuit",
       "referenceId": "Thailand/Bangsaen Street Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bangsaen-street-circuit.geojson",
+      "description": "Draft configuration: The municipal 2012 event map identifies the Laem Thaen coastal bulb, the southern return on Soi Bangsaen–Ang Sila 1, the Ang Sila straight and the short northern switchback. The route excludes the longer southern beach-road excursion, the northern headland loop and inner residential shortcuts. Exact current public road nodes give 3779.8 m compared with the supplied 3761 m; the organizer separately describes 3740 m. Current roundabout arcs and the northern road junction may differ from temporary race barriers, so the trace remains a street-centreline draft rather than a surveyed event racing line. The municipal map supports configuration identity only; no imagery coordinates are traced. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3779.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-bangsaen-street-current-independent-roads-154842378",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/154842378",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T14:36:40.663Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-bangsaen-street-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.saensukcity.go.th/tourist-guide",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T14:36:40.663Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }
