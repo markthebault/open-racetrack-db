@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 913,
-    "unmappedLayouts": 94,
+    "draftMapped": 916,
+    "unmappedLayouts": 91,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -9659,15 +9659,14 @@
       "name": "Yas Marina Combo",
       "timingMode": "shared",
       "trackId": "ae-yas-marina-e2656e19",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "yas-marina-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "ae-yas-marina-e2656e19",
-        "ae-yas-marina-south2-0b195e11"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9772,15 +9771,14 @@
       "name": "Yas Marina South",
       "timingMode": "shared",
       "trackId": "ae-yas-marina-e2656e19",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "yas-marina-south"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "ae-yas-marina-south2-0b195e11",
-        "ae-yas-marina-e2656e19"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -14777,11 +14775,14 @@
       "name": "Reno Fernley H",
       "timingMode": "shared",
       "trackId": "us-reno-fernley-h-c926ace0",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "reno-fernley-h"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-reno-fernley-57a16580",
@@ -16033,16 +16034,21 @@
       "trackId": "ae-yas-marina-e2656e19",
       "name": "Yas Marina",
       "country": "United Arab Emirates",
-      "actualLayoutCount": 8,
-      "actualTraceCount": 6,
+      "actualLayoutCount": 15,
+      "actualTraceCount": 15,
       "expectedRecordCount": 8,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 6,
-      "missingRecordNames": [
-        "Yas Marina Combo",
-        "Yas Marina South"
+      "mappedRecordCount": 8,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "yas-historical-grand-prix",
+        "yas-historical-grand-prix-corkscrew",
+        "yas-historical-north",
+        "yas-historical-north-chicane",
+        "yas-historical-north-corkscrew",
+        "yas-historical-handling",
+        "yas-historical-south"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -26065,15 +26071,13 @@
       "name": "Reno Fernley H",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Reno Fernley H"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-richmond-raceway-complex-452377296",
@@ -27060,20 +27064,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Arab Emirates/Yas Marina Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Arab Emirates/Yas Marina South",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Bruntingthorpe",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27391,13 +27381,6 @@
     },
     {
       "recordId": "United States/Reno Fernley E",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Reno Fernley H",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

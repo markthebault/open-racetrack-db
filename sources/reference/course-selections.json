@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montju\u00efc",
+      "referenceId": "Spain/Circuit de Montjuïc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -23018,7 +23018,7 @@
         1330893485
       ],
       "closed": true,
-      "evidence": "Reviewed the organizer\u2019s 2024 historic-course plan: Rempart Desaix and Avenue des Mar\u00e9chaux lead through the Th\u00e9\u00e2tre/Carnot turn, Rue Louis Desbrandes, Rue Waldeck Rousseau, the full Marronnier return on Rue du Colonel Driant, Rue de Verdun and the Cath\u00e9drale turn. Retains the pinned unnamed street connection at the southern Carnot turn and the short Avenue du Pr\u00e9sident Wilson connection at the cathedral; excludes the internal Driant shortcut and the unrelated Rempart du Midi. All vertices and joins use exact independent road-map nodes. The 1303.4 m public-road centerline differs from the 1271 m timing distance; temporary race barriers, hairpin placement and the mapped underpass junction remain provisional.",
+      "evidence": "Reviewed the organizer’s 2024 historic-course plan: Rempart Desaix and Avenue des Maréchaux lead through the Théâtre/Carnot turn, Rue Louis Desbrandes, Rue Waldeck Rousseau, the full Marronnier return on Rue du Colonel Driant, Rue de Verdun and the Cathédrale turn. Retains the pinned unnamed street connection at the southern Carnot turn and the short Avenue du Président Wilson connection at the cathedral; excludes the internal Driant shortcut and the unrelated Rempart du Midi. All vertices and joins use exact independent road-map nodes. The 1303.4 m public-road centerline differs from the 1271 m timing distance; temporary race barriers, hairpin placement and the mapped underpass junction remain provisional.",
       "identificationUrl": "https://www.circuitdesremparts.com/wp-content/uploads/2024/07/Guide-Pratique-2024.pdf",
       "segments": [
         {
@@ -23529,6 +23529,55 @@
       "maximumDistanceDifferenceM": 160,
       "endpointToleranceM": 40,
       "endpointEvidence": "The nearest independent vertex on the sparsely mapped upper straight lies 38.5 m from the finish along the same road; perpendicular displacement is under 2 m. Preserve that endpoint uncertainty without adding interpolated vertices. All other course timing-neighborhood checks retain the 30 m bound."
+    },
+    {
+      "referenceId": "United Arab Emirates/Yas Marina South",
+      "sourcePath": "sources/course-networks/yas-marina-2019-independent-roads/osm.json",
+      "sourceWayIds": [
+        168477013,
+        168479614,
+        176695253,
+        176695254,
+        176695255,
+        188337195,
+        188337196,
+        188337197,
+        188471238,
+        188861937,
+        188861940,
+        188861944,
+        188861946,
+        244292102,
+        244292104,
+        244292105,
+        244294666,
+        380408350
+      ],
+      "closed": true,
+      "evidence": "The operator historical brochure identifies the Southern course through the South and Marina sectors and hotel turns, returning via the independent short connection. The pinned 2019 public-node route retains the long Western curve, two Southern direction changes, Eastern hotel notch and short Northern connection, excluding both pit lanes and North/Corkscrew alternatives. The 2694.4 m independent length differs from the 2583 m timing scalar and 2.35 km operator description; fine historical corner alignment and short-connection mapping remain draft, without scaling the route.",
+      "identificationUrl": "https://static.myconnect.ae/-/media/yasconnect/project/ymc/venuehire/yas-marina-circuit-overview.pdf",
+      "segments": [
+        {
+          "wayId": 168477013,
+          "wayVersion": 16,
+          "fromIndex": 112,
+          "toIndex": 14
+        },
+        {
+          "wayId": 188337197,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 168477013,
+          "wayVersion": 16,
+          "fromIndex": 120,
+          "toIndex": 112
+        }
+      ],
+      "expectedLengthM": 2694.4,
+      "maximumDistanceDifferenceM": 120
     }
   ]
 }

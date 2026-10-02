@@ -6,8 +6,8 @@
     "configuration-evidence-required": 4,
     "course-distance-discrepancy": 30,
     "independent-geometry-missing": 43,
-    "ambiguous-source-branches": 8,
-    "source-connectivity-incomplete": 5,
+    "ambiguous-source-branches": 7,
+    "source-connectivity-incomplete": 3,
     "open-course-evidence-required": 4
   },
   "records": [
@@ -775,66 +775,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United Arab Emirates/Yas Marina Combo",
-      "trackId": "ae-yas-marina-e2656e19",
-      "layoutId": "yas-marina-combo",
-      "sourcePath": "sources/world/ae/osm.json",
-      "sourceWayIds": [
-        168477013,
-        188337195,
-        188337196,
-        188337197,
-        188861937,
-        188861944,
-        188861946,
-        244294666,
-        380408350,
-        1011722701,
-        1083519983,
-        1083519984,
-        1083519985,
-        1083519986,
-        1083519987,
-        1255169703,
-        1255169704,
-        1469184731,
-        1469184732
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
-    },
-    {
-      "referenceId": "United Arab Emirates/Yas Marina South",
-      "trackId": "ae-yas-marina-e2656e19",
-      "layoutId": "yas-marina-south",
-      "sourcePath": "sources/world/ae/osm.json",
-      "sourceWayIds": [
-        168477013,
-        188337195,
-        188337196,
-        188337197,
-        188861937,
-        188861944,
-        188861946,
-        244294666,
-        380408350,
-        1011722701,
-        1083519983,
-        1083519984,
-        1083519985,
-        1083519986,
-        1083519987,
-        1255169703,
-        1255169704,
-        1469184731,
-        1469184732
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
-    },
-    {
       "referenceId": "United Kingdom/Bruntingthorpe",
       "trackId": "gb-bruntingthorpe-b2f151a7",
       "layoutId": "bruntingthorpe",
@@ -1421,28 +1361,6 @@
       "closestSourceLengthM": 2891.3,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United States/Reno Fernley H",
-      "trackId": "us-reno-fernley-h-c926ace0",
-      "layoutId": "reno-fernley-h",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        28824428,
-        28824448,
-        28824470,
-        28824480,
-        28824608,
-        28824617,
-        28824621,
-        28824628,
-        28824634,
-        28824636
-      ],
-      "candidateCount": 129,
-      "closestSourceLengthM": 3882.6,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "United States/Texas World Speedway",

@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -119.24489415,
+    39.54056785
+  ],
+  "sourceIds": [
+    "usgs-naip-2022-reno-fernley-focused"
+  ],
   "defaultLayoutId": "reno-fernley-h",
   "layouts": [
     {
       "id": "reno-fernley-h",
       "name": "Reno Fernley H",
       "referenceId": "United States/Reno Fernley H",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/reno-fernley-h.geojson",
+      "description": "The historical Configuration H uses the Northern full terminal loop, Western upper S return, central small hairpin and Eastern middle straight, with the Southern internal chicane before the Southwestern terminal return. The 2006 organizer report identifies Configuration H, avoiding the rough old back sector. The original operator course plan identifies the alternate internal branches: https://www.kstreetstudio.com/files/tinyvette/renofernley/RF-TrackMap.pdf . Centerline pixels are independently inspected on public-domain 2022 NAIP imagery; no comparison-diagram pixels or coordinates supply geometry. The larger Western back sector, large central U and pit/staging lanes are excluded. Fine historical barrier, surface and Southern chicane alignment remain draft; the independent measured length is unscaled. Independently digitized aerial centerline: 4132.9 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-naip-2022-reno-fernley-focused",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T01:56:27.443Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash eb2752ce6f70e17df56e73f1e94a66633340d5469aa8fdf6f9f08b4020d371c5; reproducible pixel-to-coordinate conversion. The historical Configuration H uses the Northern full terminal loop, Western upper S return, central small hairpin and Eastern middle straight, with the Southern internal chicane before the Southwestern terminal return. The 2006 organizer report identifies Configuration H, avoiding the rough old back sector. The original operator course plan identifies the alternate internal branches: https://www.kstreetstudio.com/files/tinyvette/renofernley/RF-TrackMap.pdf . Centerline pixels are independently inspected on public-domain 2022 NAIP imagery; no comparison-diagram pixels or coordinates supply geometry. The larger Western back sector, large central U and pit/staging lanes are excluded. Fine historical barrier, surface and Southern chicane alignment remain draft; the independent measured length is unscaled."
+    },
+    {
+      "id": "imagery-identity-reno-fernley-h",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.250superkarts.com/2006USSC-WestRace2Results.htm",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T01:56:27.443Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

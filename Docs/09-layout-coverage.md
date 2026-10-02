@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 913
-- unmappedLayouts: 94
+- draftMapped: 916
+- unmappedLayouts: 91
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -19,7 +19,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Country | Venue | Catalogue layouts | Reference records | Explicitly mapped | Missing layout names | Unassociated public layout IDs |
 | --- | --- | ---: | ---: | ---: | --- | --- |
 | United Arab Emirates | Dubai Autodrome | 7 | 6 | 6 |  | main |
-| United Arab Emirates | Yas Marina | 8 | 8 | 6 | Yas Marina Combo; Yas Marina South |  |
+| United Arab Emirates | Yas Marina | 15 | 8 | 8 |  | yas-historical-grand-prix; yas-historical-grand-prix-corkscrew; yas-historical-north; yas-historical-north-chicane; yas-historical-north-corkscrew; yas-historical-handling; yas-historical-south |
 | United Arab Emirates | Yas Marina South2 | 1 | 1 | 1 |  |  |
 | Argentina | Autodromo Asociacion Volantes Mar y Valle | 1 | 0 | 0 |  | main |
 | Argentina | Autódromo Ciudad de Concepción del Uruguay | 7 | 6 | 6 |  | main |
@@ -733,7 +733,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Reno Fernley F | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley G | 1 | 1 | 1 |  |  |
 | United States | Reno Fernley G2 | 1 | 1 | 1 |  |  |
-| United States | Reno Fernley H | 1 | 1 | 0 | Reno Fernley H |  |
+| United States | Reno Fernley H | 1 | 1 | 1 |  |  |
 | United States | Richmond Raceway Complex | 1 | 0 | 0 |  | main |
 | United States | Road America | 5 | 4 | 4 |  | main |
 | United States | Road Atlanta | 5 | 4 | 4 |  | main |
@@ -834,8 +834,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Taiwan/Penbay FIA International Drag |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay National |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Arab Emirates/Yas Marina Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Arab Emirates/Yas Marina South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bruntingthorpe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bruntingthorpe Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -880,7 +878,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Music City Grand Prix |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
@@ -1496,14 +1493,14 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Arab Emirates | Dubai Autodrome Hill | ae-dubai-autodrome-87272771 | dubai-autodrome-hill | draft-mapped |
 | United Arab Emirates | Dubai Autodrome International | ae-dubai-autodrome-87272771 | dubai-autodrome-international | draft-mapped |
 | United Arab Emirates | Dubai Autodrome National | ae-dubai-autodrome-87272771 | dubai-autodrome-national | draft-mapped |
-| United Arab Emirates | Yas Marina Combo | ae-yas-marina-e2656e19 |  | missing-layout |
+| United Arab Emirates | Yas Marina Combo | ae-yas-marina-e2656e19 | yas-marina-combo | draft-mapped |
 | United Arab Emirates | Yas Marina GP | ae-yas-marina-e2656e19 | yas-marina-gp | draft-mapped |
 | United Arab Emirates | Yas Marina GP Corkscrew | ae-yas-marina-e2656e19 | yas-marina-gp-corkscrew | draft-mapped |
 | United Arab Emirates | Yas Marina North | ae-yas-marina-e2656e19 | yas-marina-north | draft-mapped |
 | United Arab Emirates | Yas Marina North Chicane | ae-yas-marina-e2656e19 | yas-marina-north-chicane | draft-mapped |
 | United Arab Emirates | Yas Marina North Corkscrew | ae-yas-marina-e2656e19 | yas-marina-north-corkscrew | draft-mapped |
 | United Arab Emirates | Yas Marina North Handling | ae-yas-marina-e2656e19 | yas-marina-north-handling | draft-mapped |
-| United Arab Emirates | Yas Marina South | ae-yas-marina-e2656e19 |  | missing-layout |
+| United Arab Emirates | Yas Marina South | ae-yas-marina-e2656e19 | yas-marina-south | draft-mapped |
 | United Arab Emirates | Yas Marina South2 | ae-yas-marina-south2-0b195e11 | yas-marina-south2 | draft-mapped |
 | United Kingdom | Aintree | gb-aintree-motor-racing-circuit-121110221 | aintree | draft-mapped |
 | United Kingdom | Aintree Sprint | gb-aintree-motor-racing-circuit-121110221 | aintree-sprint | draft-mapped |
@@ -1819,7 +1816,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Reno Fernley F | us-reno-fernley-f-411d3126 | reno-fernley-f | draft-mapped |
 | United States | Reno Fernley G | us-reno-fernley-g-77c6a7ab | reno-fernley-g | draft-mapped |
 | United States | Reno Fernley G2 | us-reno-fernley-g2-86d82a7d | reno-fernley-g2 | draft-mapped |
-| United States | Reno Fernley H | us-reno-fernley-h-c926ace0 |  | missing-layout |
+| United States | Reno Fernley H | us-reno-fernley-h-c926ace0 | reno-fernley-h | draft-mapped |
 | United States | Ridge Motorsport Park | us-the-ridge-motorsports-park-182180341 | ridge-motorsport-park | draft-mapped |
 | United States | Road America | us-road-america-110527567 | road-america | draft-mapped |
 | United States | Road America Short | us-road-america-110527567 | road-america-short | draft-mapped |
