@@ -4,6 +4,7 @@ import {readTimingArchive} from './reference-timing';
 import {assemble,type Way} from './route';
 import {bounds,length} from '../src/geo';
 import {validateSelectionTiming} from './selection-timing';
+import {validateSelectionSource} from './selection-source';
 
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];
 if(!args.includes('--archive')||!archive)throw new Error('Use --archive /absolute/path/to/archive.zip');
@@ -33,10 +34,7 @@ for(const selection of selections){
   const node=nodes.get(n);if(!node)throw new Error('Missing independent source node');return {lon:node.lon,lat:node.lat};
  })}));
  const trace=assemble(ways,selection.segments,selection.closed),measured=length(trace);
- if(selection.segments.some((s:any)=>{
-  const tags=ways.find(w=>w.id===s.wayId)!.tags??{};
-  return tags.area==='yes'||/^pit[_ -]?lane$/i.test(tags.service??'')||/^pit[_ -]?lane$/i.test(tags.raceway??'')||/^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(tags.name??'');
- }))throw new Error('Selected course includes an area or pit/service lane');
+ validateSelectionSource(ways,selection);
  if(Math.abs(measured-selection.expectedLengthM)>.15)throw new Error('Selected independent trace changed');
  if(selection.endpointToleranceM!==undefined&&(!selection.endpointEvidence?.trim()||selection.closed))throw new Error('Endpoint allowance requires an open course and documented source limitation');
  const timingMode=validateSelectionTiming(record,trace,selection.closed,selection.endpointToleranceM);

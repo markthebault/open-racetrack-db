@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 930
-- unmappedLayouts: 77
+- draftMapped: 931
+- unmappedLayouts: 76
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -332,7 +332,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Bucks_Estate_Sprint | 1 | 1 | 0 | Bucks_Estate_Sprint |  |
 | United Kingdom | Cadwell Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Carver Barracks | 1 | 1 | 0 | Carver Barracks |  |
-| United Kingdom | Castle Combe Circuit | 3 | 2 | 1 | Castle Combe Western Sprint | main |
+| United Kingdom | Castle Combe Circuit | 3 | 2 | 2 |  | main |
 | United Kingdom | Clay Pigeon Raceway | 1 | 1 | 1 |  |  |
 | United Kingdom | Croft Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Curborough | 1 | 1 | 1 |  |  |
@@ -836,7 +836,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Bucks_Estate_Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Carver Barracks |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Castle Combe Western Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Driftland |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Gaydon Emissions Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1518,7 +1517,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Cadwell Park | gb-cadwell-park-117987847 | main | draft-mapped |
 | United Kingdom | Carver Barracks | gb-carver-barracks-615ac11d |  | missing-layout |
 | United Kingdom | Castle Combe | gb-castle-combe-circuit-35406015 | castle-combe | draft-mapped |
-| United Kingdom | Castle Combe Western Sprint | gb-castle-combe-circuit-35406015 |  | missing-layout |
+| United Kingdom | Castle Combe Western Sprint | gb-castle-combe-circuit-35406015 | castle-combe-western-sprint | draft-mapped |
 | United Kingdom | Clay Pigeon Raceway | gb-clay-pigeon-raceway-reference | main | draft-mapped |
 | United Kingdom | Croft | gb-croft-circuit-25805724 | main | draft-mapped |
 | United Kingdom | Curborough | gb-curborough-68a60e27 | curborough | draft-mapped |

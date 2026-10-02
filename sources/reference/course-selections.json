@@ -24166,6 +24166,108 @@
       ],
       "expectedLengthM": 1976,
       "maximumDistanceDifferenceM": 270
+    },
+    {
+      "referenceId": "United Kingdom/Castle Combe Western Sprint",
+      "sourcePath": "sources/course-networks/castle-combe-current-independent-course-roads/osm.json",
+      "sourceWayIds": [
+        36853045,
+        1549322881,
+        1549322880,
+        166852440,
+        1549322879,
+        1549322878,
+        1549322809
+      ],
+      "closed": false,
+      "evidence": "The organizer's 2025 regulations explicitly start the Great Western Sprint at the pit lane exit and finish at Westway on the second lap, over one and three-quarter laps. The independent route retains the 188.9 m initial mapped pit-exit section and complete circuit before returning to the mapped finish. Every join and repeated lap section uses exact pinned source nodes. The 5360.4 m timed route differs from the catalogue scalar of 3006 m; the organizer describes 3.3 miles. Fine timing extent and historical lap count remain draft, without scaling or replacing the sprint with a closed venue loop.",
+      "identificationUrl": "https://my.bristolmc.org.uk/Events/Calendar/View?id=146",
+      "segments": [
+        {
+          "wayId": 36853045,
+          "wayVersion": 11,
+          "fromIndex": 22,
+          "toIndex": 31
+        },
+        {
+          "wayId": 1549322881,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 19
+        },
+        {
+          "wayId": 1549322880,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 9
+        },
+        {
+          "wayId": 166852440,
+          "wayVersion": 13,
+          "fromIndex": 0,
+          "toIndex": 20
+        },
+        {
+          "wayId": 1549322879,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 11
+        },
+        {
+          "wayId": 1549322878,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 6
+        },
+        {
+          "wayId": 1549322809,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 17
+        },
+        {
+          "wayId": 1549322881,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 19
+        },
+        {
+          "wayId": 1549322880,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 9
+        },
+        {
+          "wayId": 166852440,
+          "wayVersion": 13,
+          "fromIndex": 0,
+          "toIndex": 20
+        },
+        {
+          "wayId": 1549322879,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 11
+        },
+        {
+          "wayId": 1549322878,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 2
+        }
+      ],
+      "expectedLengthM": 5360.4,
+      "maximumDistanceDifferenceM": 2400,
+      "startApproach": {
+        "segment": {
+          "wayId": 36853045,
+          "wayVersion": 11,
+          "fromIndex": 22,
+          "toIndex": 31
+        },
+        "identificationUrl": "https://my.bristolmc.org.uk/Events/Calendar/View?id=146",
+        "evidence": "The organizer's GWS 2025 supplementary regulations state that the sprint starts at the pit lane exit. Only the first 188.9 m source section is used as a launch approach. Later pit-lane detours are excluded."
+      }
     }
   ]
 }

@@ -13,7 +13,8 @@
     51.48950391325301
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-castle-combe-current-independent-course-roads-36853045"
   ],
   "defaultLayoutId": "castle-combe",
   "layouts": [
@@ -34,8 +35,8 @@
       "id": "castle-combe-western-sprint",
       "name": "Castle Combe Western Sprint",
       "referenceId": "United Kingdom/Castle Combe Western Sprint",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/castle-combe-western-sprint.geojson",
+      "description": "Draft configuration: The organizer's 2025 regulations explicitly start the Great Western Sprint at the pit lane exit and finish at Westway on the second lap, over one and three-quarter laps. The independent route retains the 188.9 m initial mapped pit-exit section and complete circuit before returning to the mapped finish. Every join and repeated lap section uses exact pinned source nodes. The 5360.4 m timed route differs from the catalogue scalar of 3006 m; the organizer describes 3.3 miles. Fine timing extent and historical lap count remain draft, without scaling or replacing the sprint with a closed venue loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5360.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -47,6 +48,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-castle-combe-current-independent-course-roads-36853045",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/36853045",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T06:05:52.879Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-castle-combe-western-sprint",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://my.bristolmc.org.uk/Events/Calendar/View?id=146",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T06:05:52.879Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

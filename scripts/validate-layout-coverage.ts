@@ -1,6 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {assemble} from './route';
+import {validateSelectionSource} from './selection-source';
 import {length} from '../src/geo';
 import {readNetworkSelection} from './network-selection';
 import {buildCourseNetwork} from './course-network';
@@ -39,11 +40,7 @@ for(const selection of selections.records){
  const snapshot=await read(`sources/${registration.trackId}/${recipe.snapshotFile}`);
  const trace=assemble(snapshot.elements,recipe.segments,recipe.closed);
  assert.ok(Math.abs(length(trace)-selection.expectedLengthM)<.15);
- for(const segment of recipe.segments){
-  const tags=snapshot.elements.find((w:any)=>w.id===segment.wayId).tags??{};
-  assert.notEqual(tags.area,'yes');assert.ok(!/^pit[_ -]?lane$/i.test(tags.service??''));assert.ok(!/^pit[_ -]?lane$/i.test(tags.raceway??''));
-  assert.ok(!/^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(tags.name??''));
- }
+ validateSelectionSource(snapshot.elements,selection);
  const entry=index.tracks.find((t:any)=>t.id===registration.trackId),track=await read(`data/${entry.file}`);
  assert.ok(track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
 }
