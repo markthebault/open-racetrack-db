@@ -13,8 +13,8 @@ The following source limitations remain after the complete search of the pinned 
 | Ambiguous source branches | 1 |
 | Unresolved course-distance discrepancy | 4 |
 | Independent geometry absent near the timing position | 11 |
-| Aggregate configuration needs identification | 1 |
-| Open-course route or endpoint evidence needed | 3 |
+| Aggregate configuration needs identification | 0 |
+| Open-course route or endpoint evidence needed | 4 |
 | Source connectivity incomplete | 0 |
 | Bounded search incomplete | 0 |
 | **Total** | **20** |
@@ -193,3 +193,5 @@ Igora Drive now has named Grand Prix and National traces instead of one unnamed 
 Ingliston now has the 1,062.7 m South Track boomerang, closing through exact shared OSM nodes. The [operator](https://www.ingliston.co.uk/two-supercars-drift-experience/) identifies the southern original circuit and newer closing section. Independently registered one-metre Scottish Government LiDAR intensity confirms the tiny western hairpin, parallel southern roads and northeast return. The arena loop, eastern service-road grid and optional later chicane are excluded. The 1.7 m scalar difference does not cause any coordinate adjustment. Input hashes, licensed raster crop and selected node ranges retain the evidence; travel direction and event restrictions remain draft.
 
 Nutts Corner historical main course follows exact independently mapped 2018 raceway nodes through its northern dip chicane and western notch. Its measured 840.9 m is 98.1 m below the catalogue scalar; the draft description retains that difference and excludes the eastern inner hairpin and longer southern alternatives. This is course geometry, not a validated 939 m timed lap.
+
+Follow-up research preserves the separate start and finish interpretation for Rosario Combo even though its catalogue distance is absent. Its current northern open-road candidate omits historical notches and is excluded. Adria's [regional coverage review](../sources/research/adria-regional-coverage/review.md) records a 2008 survey and no racetrack road vectors; these cannot supply the 2021 extension. Lihpao Wind still needs its small western connector without the Thunder loop. Historical Huangtupo and Charlotte Short inspections remain source limitations, not recovered layouts.

@@ -3,11 +3,10 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 1,
+    "open-course-evidence-required": 4,
     "independent-geometry-missing": 11,
     "course-distance-discrepancy": 4,
-    "ambiguous-source-branches": 1,
-    "open-course-evidence-required": 3
+    "ambiguous-source-branches": 1
   },
   "records": [
     {
@@ -15,8 +14,15 @@
       "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
       "layoutId": "circuito-de-rosario-combo",
       "sourcePath": "sources/world/ar/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
+      "reason": "open-course-evidence-required",
+      "nextStep": "Identify the historical northern open course between its separate timing endpoints, including the northern notch and inner hairpin; the connected 2,279.7 m current public-road candidate omits those features. Do not substitute a full southern combined loop.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.openstreetmap.org/way/681663025"
+        ],
+        "geometryRecovered": false
+      }
     },
     {
       "referenceId": "China/Huangtupo",
@@ -25,7 +31,14 @@
       "sourcePath": "sources/world/cn/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
+      "nextStep": "Find reusable fine historical imagery or a licensed course survey. The June 2019 native 10 m image does not resolve the old compact course, and the inspected nearby public GPS samples follow a civilian road rather than the circuit.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A"
+        ],
+        "geometryRecovered": false
+      }
     },
     {
       "referenceId": "China/Xiamen International Circuit",
@@ -50,7 +63,15 @@
       "candidateCount": 3,
       "closestSourceLengthM": 2714.3,
       "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
+      "nextStep": "Independently recover the 2021 inner extension and tight switchbacks. Regional road vectors omit course roads, and the local geotopographic survey dates to 2008. Clear November 2021 native 10 m imagery locates the new pavement but does not resolve every tight connector.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://idt2.regione.veneto.it/geoportal/catalog/search/resource/details.page?uuid=r_veneto%3Ac01070240012_ElementoStradale",
+          "https://game.raceroom.com/it/store/tracks/all/adria-international-raceway-2021"
+        ],
+        "geometryRecovered": false
+      }
     },
     {
       "referenceId": "Latvia/Bikernieki RallyCross Track",
@@ -154,7 +175,15 @@
       "candidateCount": 1,
       "closestSourceLengthM": 3560.8,
       "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
+      "nextStep": "Recover the small western closing connector independently; the available full-course way includes the separate Thunder branch. Nearby public GPS samples remain on civilian roads. Fine NLSC public display imagery has not established permission for derivative course coordinates.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.openstreetmap.org/way/779852386",
+          "https://maps.nlsc.gov.tw/pro/use_clause.jsp"
+        ],
+        "geometryRecovered": false
+      }
     },
     {
       "referenceId": "United Kingdom/Elvington",
@@ -291,7 +320,15 @@
       "candidateCount": 28,
       "closestSourceLengthM": 2365.1,
       "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
+      "nextStep": "Identify the historical frontstretch short road-course branch order. Independently georeferenced 2014 one-metre and 2022 0.6-metre NAIP images show the pavement, but the quarter-mile oval and later simulator short course do not establish the requested layout.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.charlottemotorspeedway.com/fans/track-history/track-history-669197.html",
+          "https://www.charlottemotorspeedway.com/documents/corporate-events.pdf"
+        ],
+        "geometryRecovered": false
+      }
     },
     {
       "referenceId": "United States/Detroit City Airport",

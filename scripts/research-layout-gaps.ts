@@ -1,5 +1,6 @@
 import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
 import {readTimingArchive} from './reference-timing';import {worldCountries} from './world-countries';
+import {timingResearchRequirement} from './timing-research';
 import {components,candidateLoops} from './candidates';import {anchoredCourses} from './anchored-courses';import {assemble,type Way} from './route';import {bounds,nearestEdge,type Position} from '../src/geo';
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];if(!args.includes('--archive')||!archive)throw new Error('Use --archive /absolute/path/to/archive.zip');
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),registry=await read('sources/reference/catalogue.json'),{records,xmlSha256}=readTimingArchive(archive);
@@ -13,8 +14,9 @@ for(const countryName of new Set(records.map(r=>r.country))){
  const cached=new Map<number,ReturnType<typeof candidateLoops>>();
  for(const record of records.filter(r=>r.country===countryName&&!registry.records.find((x:any)=>x.referenceId===r.id).geometryAvailable)){
   const registration=registry.records.find((x:any)=>x.referenceId===record.id),row:any={referenceId:record.id,trackId:registration.trackId,layoutId:registration.layoutId,sourcePath:sourcePath||null};rows.push(row);
-  if(!record.nominalLengthM){row.reason='configuration-evidence-required';row.nextStep='Identify what the aggregate catalogue entry represents and independently source its constituent configurations.';continue;}
-  if(record.gates.length===2){row.reason='open-course-evidence-required';row.nextStep='Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop.';continue;}
+  const timingRequirement=timingResearchRequirement(record);
+  if(timingRequirement){Object.assign(row,timingRequirement);continue;}
+  if(!record.nominalLengthM)throw new Error('Course-distance research requires a nominal distance');
   const p=record.gates[0].point,nearby=groups.map((g,i)=>({g,i})).filter(({g})=>p[0]>=g.box[0]-.005&&p[0]<=g.box[2]+.005&&p[1]>=g.box[1]-.005&&p[1]<=g.box[3]+.005&&g.ways.some(w=>nearestEdge(p,w.geometry.map(p=>[p.lon,p.lat] as Position)).displacementM<=30));
   row.sourceWayIds=[...new Set(nearby.flatMap(({g})=>g.ways.map(w=>w.id)))];
   if(!nearby.length){row.reason='independent-geometry-missing';row.nextStep='Acquire an independently licensed course trace or complete missing public-road mapping.';continue;}
