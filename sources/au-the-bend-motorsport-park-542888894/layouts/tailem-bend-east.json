@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "trackId": "au-the-bend-motorsport-park-542888894",
+  "layoutId": "tailem-bend-east",
+  "sourceId": "osm-selection-the-bend-current-all-course-roads-542888894",
+  "snapshotFile": "selected-the-bend-current-all-course-roads-542888894.json",
+  "snapshotSha256": "3154da8721f8dd9603a002d8a0a144a51da420daffeb19e44e899350f0f3af3f",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft configuration: The operator 2021 East participant map identifies the 3.93 km, 22-corner circuit with its own straight and two closing junctions. The complete public-road snapshot supplies the northern link 1091735177 and southern link 1091735178, both mapped as private service roads. These exact nodes join the northern circuit to the middle straight and that straight to the inner southern course, avoiding the two longer International-route junction spurs. The full northern loop, eastern outer curves, southern front straight, inner southern hairpin and shorter southern return remain. Independent September 22, 2026 Sentinel imagery confirms the separate paved links. The main West course, pit lane, paddock and both longer International junction spurs are excluded. The independently measured 3,907.7 m differs from the supplied and published 3,930 m without scaling. Historical alignment and travel direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3907.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 542888895,
+      "wayVersion": 9,
+      "fromIndex": 54,
+      "toIndex": 251
+    },
+    {
+      "wayId": 1092252219,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 25
+    },
+    {
+      "wayId": 542888895,
+      "wayVersion": 9,
+      "fromIndex": 286,
+      "toIndex": 345
+    },
+    {
+      "wayId": 1091735178,
+      "wayVersion": 3,
+      "fromIndex": 7,
+      "toIndex": 0
+    },
+    {
+      "wayId": 542888894,
+      "wayVersion": 4,
+      "fromIndex": 36,
+      "toIndex": 10
+    },
+    {
+      "wayId": 1091735177,
+      "wayVersion": 3,
+      "fromIndex": 6,
+      "toIndex": 0
+    }
+  ],
+  "gates": []
+}

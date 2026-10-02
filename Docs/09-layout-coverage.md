@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 961
-- unmappedLayouts: 46
+- draftMapped: 963
+- unmappedLayouts: 44
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -96,7 +96,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Australia | Surfer's Paradise | 1 | 1 | 0 | Surfer's Paradise |  |
 | Australia | Sydney Motorsport Park | 5 | 4 | 4 |  | main |
 | Australia | Symmons Plains Raceway | 1 | 1 | 1 |  |  |
-| Australia | The Bend Motorsport Park | 7 | 6 | 4 | Tailem Bend East; Tailem Bend South | main |
+| Australia | The Bend Motorsport Park | 7 | 6 | 6 |  | main |
 | Australia | Townsville | 1 | 1 | 1 |  |  |
 | Australia | Wanneroo Raceway | 1 | 1 | 1 |  |  |
 | Australia | Winton Motor Raceway | 2 | 2 | 2 |  |  |
@@ -794,8 +794,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Oran Park Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -930,10 +928,10 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Sydney Motorsports Park - North | au-sydney-motorsport-park-5204646 | sydney-motorsports-park-north | draft-mapped |
 | Australia | Sydney Motorsports Park - South | au-sydney-motorsport-park-5204646 | sydney-motorsports-park-south | draft-mapped |
 | Australia | Symmons Plains | au-symmons-plains-raceway-141008363 | main | draft-mapped |
-| Australia | Tailem Bend East | au-the-bend-motorsport-park-542888894 |  | missing-layout |
+| Australia | Tailem Bend East | au-the-bend-motorsport-park-542888894 | tailem-bend-east | draft-mapped |
 | Australia | Tailem Bend GT | au-the-bend-motorsport-park-542888894 | tailem-bend-gt | draft-mapped |
 | Australia | Tailem Bend International | au-the-bend-motorsport-park-542888894 | tailem-bend-international | draft-mapped |
-| Australia | Tailem Bend South | au-the-bend-motorsport-park-542888894 |  | missing-layout |
+| Australia | Tailem Bend South | au-the-bend-motorsport-park-542888894 | tailem-bend-south | draft-mapped |
 | Australia | Tailem Bend West | au-the-bend-motorsport-park-542888894 | tailem-bend-west | draft-mapped |
 | Australia | Tailem Bend West Plus | au-the-bend-motorsport-park-542888894 | tailem-bend-west-plus | draft-mapped |
 | Australia | Townsville | au-townsville-79e22258 | townsville | draft-mapped |

@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 961,
-    "unmappedLayouts": 46,
+    "draftMapped": 963,
+    "unmappedLayouts": 44,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -1431,14 +1431,14 @@
       "name": "Tailem Bend East",
       "timingMode": "shared",
       "trackId": "au-the-bend-motorsport-park-542888894",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "tailem-bend-east"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "au-the-bend-motorsport-park-542888894"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -1479,14 +1479,14 @@
       "name": "Tailem Bend South",
       "timingMode": "shared",
       "trackId": "au-the-bend-motorsport-park-542888894",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "tailem-bend-south"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "au-the-bend-motorsport-park-542888894"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17248,14 +17248,11 @@
       "name": "The Bend Motorsport Park",
       "country": "Australia",
       "actualLayoutCount": 7,
-      "actualTraceCount": 5,
+      "actualTraceCount": 7,
       "expectedRecordCount": 6,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 4,
-      "missingRecordNames": [
-        "Tailem Bend East",
-        "Tailem Bend South"
-      ],
+      "mappedRecordCount": 6,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26844,20 +26841,6 @@
     },
     {
       "recordId": "Australia/Surfer's Paradise",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Australia/Tailem Bend East",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Australia/Tailem Bend South",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

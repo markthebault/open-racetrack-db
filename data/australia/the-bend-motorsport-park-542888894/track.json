@@ -15,7 +15,10 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-542888894",
-    "osm-selection-542888894"
+    "osm-selection-542888894",
+    "osm-selection-the-bend-current-all-course-roads-542888897",
+    "osm-selection-the-bend-current-all-course-roads-542888894",
+    "sentinel-the-bend-2026-pavement-review"
   ],
   "defaultLayoutId": "tailem-bend-east",
   "layouts": [
@@ -29,8 +32,8 @@
       "id": "tailem-bend-east",
       "name": "Tailem Bend East",
       "referenceId": "Australia/Tailem Bend East",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/tailem-bend-east.geojson",
+      "description": "Draft configuration: The operator 2021 East participant map identifies the 3.93 km, 22-corner circuit with its own straight and two closing junctions. The complete public-road snapshot supplies the northern link 1091735177 and southern link 1091735178, both mapped as private service roads. These exact nodes join the northern circuit to the middle straight and that straight to the inner southern course, avoiding the two longer International-route junction spurs. The full northern loop, eastern outer curves, southern front straight, inner southern hairpin and shorter southern return remain. Independent September 22, 2026 Sentinel imagery confirms the separate paved links. The main West course, pit lane, paddock and both longer International junction spurs are excluded. The independently measured 3,907.7 m differs from the supplied and published 3,930 m without scaling. Historical alignment and travel direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3907.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "tailem-bend-gt",
@@ -50,8 +53,8 @@
       "id": "tailem-bend-south",
       "name": "Tailem Bend South",
       "referenceId": "Australia/Tailem Bend South",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/tailem-bend-south.geojson",
+      "description": "Draft configuration: The operator identifies independently usable North and South West loops. The historical hire brochure lists the 1.81 km West South Loop. This selection retains the southern main pit straight, its southwestern and southeastern corners, the western infield return and the short northern closing connector. The complete public-road query includes way 1327036502, mapped as a service road, whose exact nodes join racing way 542888897 at indices 69 and 6. Independent September 22, 2026 Sentinel imagery confirms the paved connector and the separate short southern footprint. The northern West loop, northern pit detour, kart course, pit lane and neighboring access roads are excluded. The 1,831.3 m measured distance differs from the supplied 1,837 m and the historical published 1.81 km without scaling. Configuration identity and fine alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1831.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "tailem-bend-west",
@@ -104,6 +107,51 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:16:55.544Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-selection-the-bend-current-all-course-roads-542888897",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/542888897",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T11:39:02.534Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-tailem-bend-south",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thebend.com.au/motor-racing-circuit",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:39:02.534Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-selection-the-bend-current-all-course-roads-542888894",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/542888894",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T11:39:02.534Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-tailem-bend-east",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.thebend.com.au/_files/ugd/ec040b_99b95c12a876498abf18ff8b973bd567.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:39:02.534Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "sentinel-the-bend-2026-pavement-review",
+      "type": "imagery",
+      "title": "Independent course pavement confirmation",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/54/H/UG/2026/9/S2B_54HUG_20260922_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T11:32:13.460583Z",
+      "evidenceNote": "Independent pavement confirmation only. Course vertices remain exact source OSM nodes. The South closing road 1327036502 and East links 1091735177 and 1091735178 are independently visible. This image supplies no private course geometry. Native ground resolution is 10 m; image, native UTM clip, STAC identity, exact transform and hashes are pinned. Contains modified Copernicus Sentinel data 2026. Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice"
     }
   ]
 }

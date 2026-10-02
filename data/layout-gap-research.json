@@ -5,7 +5,7 @@
   "summary": {
     "configuration-evidence-required": 3,
     "independent-geometry-missing": 26,
-    "course-distance-discrepancy": 11,
+    "course-distance-discrepancy": 9,
     "ambiguous-source-branches": 2,
     "source-connectivity-incomplete": 1,
     "open-course-evidence-required": 3
@@ -62,46 +62,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Australia/Tailem Bend East",
-      "trackId": "au-the-bend-motorsport-park-542888894",
-      "layoutId": "tailem-bend-east",
-      "sourcePath": "sources/world/au/osm.json",
-      "sourceWayIds": [
-        542888894,
-        542888895,
-        542888897,
-        845760682,
-        1091735176,
-        1092252218,
-        1092252219,
-        1378241558
-      ],
-      "candidateCount": 4,
-      "closestSourceLengthM": 7750.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "Australia/Tailem Bend South",
-      "trackId": "au-the-bend-motorsport-park-542888894",
-      "layoutId": "tailem-bend-south",
-      "sourcePath": "sources/world/au/osm.json",
-      "sourceWayIds": [
-        542888894,
-        542888895,
-        542888897,
-        845760682,
-        1091735176,
-        1092252218,
-        1092252219,
-        1378241558
-      ],
-      "candidateCount": 8,
-      "closestSourceLengthM": 3404,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "China/Huangtupo",
