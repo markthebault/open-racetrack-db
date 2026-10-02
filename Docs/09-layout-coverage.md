@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 959
-- unmappedLayouts: 48
+- draftMapped: 960
+- unmappedLayouts: 47
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -254,7 +254,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Spain | Navarra C | 1 | 1 | 1 |  |  |
 | Spain | Navarra | 5 | 2 | 2 |  | navarra-historical-main; navarra-historical-western; navarra-historical-eastern |
 | Spain | Parcmotor Castellolí | 1 | 1 | 1 |  |  |
-| Spain | Circuit Ricardo Tormo | 3 | 3 | 2 | Circuit Ricardo Tormo School |  |
+| Spain | Circuit Ricardo Tormo | 3 | 3 | 3 |  |  |
 | Finland | Ahveniston moottorirata | 1 | 1 | 1 |  |  |
 | Finland | Alastaro Circuit | 3 | 2 | 2 |  | main |
 | Finland | Botniaring | 2 | 2 | 2 |  |  |
@@ -807,7 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1378,7 +1377,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Spain | Catalunya GP | es-barcelona-catalunya | grand-prix | draft-mapped |
 | Spain | Circuit de Montjuïc | es-circuit-de-montjuic-fa635654 | circuit-de-montjuic | draft-mapped |
 | Spain | Circuit Ricardo Tormo National | es-valencia | circuit-ricardo-tormo-national | draft-mapped |
-| Spain | Circuit Ricardo Tormo School | es-valencia |  | missing-layout |
+| Spain | Circuit Ricardo Tormo School | es-valencia | circuit-ricardo-tormo-school | draft-mapped |
 | Spain | Circuit Ricardo Tormo Valencia | es-valencia | grand-prix | draft-mapped |
 | Spain | Circuito A Pastoriza | es-circuito-a-pastoriza-reference | main | draft-mapped |
 | Spain | Circuito de Cartagena | es-circuito-de-cartagena-23170458 | circuito-de-cartagena | draft-mapped |

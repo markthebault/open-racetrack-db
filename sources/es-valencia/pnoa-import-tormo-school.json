@@ -1,0 +1,57 @@
+{
+  "sourceUrl": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=FALSE&CRS=EPSG%3A3857&BBOX=-71801.07156166146%2C4790202.382976988%2C-68572.80632865653%2C4793430.648209993&WIDTH=2000&HEIGHT=2000",
+  "retrievedAt": "2026-10-02T11:11:34.442689Z",
+  "width": 2000,
+  "height": 2000,
+  "extent": {
+    "xmin": -71801.07156166146,
+    "ymin": 4790202.382976988,
+    "xmax": -68572.80632865653,
+    "ymax": 4793430.648209993,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "8ba633a46982a2482b0cd678abe1dc3507be0f3cd20ced881459c198e4c0892c",
+  "exportRequest": {
+    "SERVICE": "WMS",
+    "VERSION": "1.3.0",
+    "REQUEST": "GetMap",
+    "LAYERS": "OI.OrthoimageCoverage",
+    "STYLES": "",
+    "FORMAT": "image/png",
+    "TRANSPARENT": "FALSE",
+    "CRS": "EPSG:3857",
+    "BBOX": "-71801.07156166146,4790202.382976988,-68572.80632865653,4793430.648209993",
+    "WIDTH": "2000",
+    "HEIGHT": "2000"
+  },
+  "license": "CC-BY-4.0",
+  "reuseEvidenceUrl": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+  "attribution": "Obra derivada de PNOA MA, IGN y Sistema Cartogr\u00e1fico Nacional, CC-BY 4.0 scne.es; course digitization by OpenRacetrackDB",
+  "independentAlignmentSource": {
+    "sourcePath": "sources/es-valencia/osm.json",
+    "snapshotSha256": "6f52790b1769bdea113fcacf0e4df610d8ec1ce3b56348c0f4b9f5f070a3e425",
+    "waySegments": [
+      {
+        "wayId": 51765218,
+        "wayVersion": 7,
+        "fromIndex": 21,
+        "toIndex": 0
+      },
+      {
+        "wayId": 1007068425,
+        "wayVersion": 3,
+        "fromIndex": 18,
+        "toIndex": 0
+      },
+      {
+        "wayId": 51765219,
+        "wayVersion": 15,
+        "fromIndex": 72,
+        "toIndex": 69
+      }
+    ],
+    "license": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "evidence": "Exact public course coordinates are converted to raster pixel centers. Only the missing western connector is independently digitized from the licensed PNOA orthophoto."
+  }
+}

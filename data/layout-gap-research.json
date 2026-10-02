@@ -7,7 +7,7 @@
     "independent-geometry-missing": 27,
     "course-distance-discrepancy": 11,
     "ambiguous-source-branches": 2,
-    "source-connectivity-incomplete": 2,
+    "source-connectivity-incomplete": 1,
     "open-course-evidence-required": 3
   },
   "records": [
@@ -283,25 +283,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Spain/Circuit Ricardo Tormo School",
-      "trackId": "es-valencia",
-      "layoutId": "circuit-ricardo-tormo-school",
-      "sourcePath": "sources/europe/es/osm.json",
-      "sourceWayIds": [
-        51765216,
-        51765218,
-        51765219,
-        1007068425,
-        1336518434,
-        1336518435,
-        1336518436,
-        1336518438
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
     },
     {
       "referenceId": "Sweden/Drive Centre Arena",

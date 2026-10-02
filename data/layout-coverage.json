@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 959,
-    "unmappedLayouts": 48,
+    "draftMapped": 960,
+    "unmappedLayouts": 47,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -8550,11 +8550,14 @@
       "name": "Circuit Ricardo Tormo School",
       "timingMode": "shared",
       "trackId": "es-valencia",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "circuit-ricardo-tormo-school"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "es-valencia"
@@ -19454,15 +19457,13 @@
       "name": "Circuit Ricardo Tormo",
       "country": "Spain",
       "actualLayoutCount": 3,
-      "actualTraceCount": 2,
+      "actualTraceCount": 3,
       "expectedRecordCount": 3,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 2,
-      "missingRecordNames": [
-        "Circuit Ricardo Tormo School"
-      ],
+      "mappedRecordCount": 3,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "fi-ahveniston-moottorirata-20303307",
@@ -26933,13 +26934,6 @@
     },
     {
       "recordId": "Morocco/Moulay El Hassan",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Spain/Circuit Ricardo Tormo School",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
