@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 968
-- unmappedLayouts: 39
+- draftMapped: 969
+- unmappedLayouts: 38
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -487,7 +487,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Latvia | Bikernieki Race | 1 | 1 | 1 |  |  |
 | Latvia | Bikernieki RallyCross | 1 | 1 | 0 | Bikernieki RallyCross Track |  |
 | Morocco | Moulay El Hassan | 1 | 1 | 0 | Moulay El Hassan |  |
-| Mexico | Autodromo Bosques del Angel | 1 | 1 | 0 | Autodromo Bosques del Angel |  |
+| Mexico | Autodromo Bosques del Angel | 1 | 1 | 1 |  |  |
 | Mexico | Autodromo EcoCentro Queretaro | 1 | 1 | 1 |  |  |
 | Mexico | Autódromo Miguel E. Abed | 1 | 1 | 1 |  |  |
 | Mexico | Autódromo Monterrey | 1 | 0 | 0 |  | main |
@@ -798,7 +798,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1253,7 +1252,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Malaysia | Sepang | my-sepang-international-circuit-23410503 | sepang | draft-mapped |
 | Malaysia | Sepang Combo | my-sepang-international-circuit-23410503 | sepang-combo | draft-mapped |
 | Malaysia | Sepang North Loop | my-sepang-international-circuit-23410503 | sepang-north-loop | draft-mapped |
-| Mexico | Autodromo Bosques del Angel | mx-autodromo-bosques-del-angel-f23feef9 |  | missing-layout |
+| Mexico | Autodromo Bosques del Angel | mx-autodromo-bosques-del-angel-f23feef9 | autodromo-bosques-del-angel | draft-mapped |
 | Mexico | Autodromo EcoCentro Queretaro | mx-autodromo-ecocentro-queretaro-4ca8e015 | autodromo-ecocentro-queretaro | draft-mapped |
 | Mexico | Autodromo Hermanos Rodriguez | mx-ciudad-deportiva-magdalena-mixhuca-605367312 | autodromo-hermanos-rodriguez | draft-mapped |
 | Mexico | Autodromo Miguel E Abed | mx-autodromo-miguel-e-abed-230507595 | main | draft-mapped |

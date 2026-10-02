@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 968,
-    "unmappedLayouts": 39,
+    "draftMapped": 969,
+    "unmappedLayouts": 38,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6707,11 +6707,14 @@
       "name": "Autodromo Bosques del Angel",
       "timingMode": "shared",
       "trackId": "mx-autodromo-bosques-del-angel-f23feef9",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "autodromo-bosques-del-angel"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -22696,15 +22699,13 @@
       "name": "Autodromo Bosques del Angel",
       "country": "Mexico",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Autodromo Bosques del Angel"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "mx-autodromo-ecocentro-queretaro-4ca8e015",
@@ -26868,13 +26869,6 @@
     },
     {
       "recordId": "Lithuania/Palanga Street Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Mexico/Autodromo Bosques del Angel",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
