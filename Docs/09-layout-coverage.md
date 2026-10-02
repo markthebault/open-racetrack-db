@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 972
-- unmappedLayouts: 35
+- draftMapped: 976
+- unmappedLayouts: 31
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -327,9 +327,9 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Brands Hatch Circuit | 3 | 2 | 2 |  | main |
 | United Kingdom | Bruntingthorpe | 3 | 3 | 3 |  |  |
 | United Kingdom | Buckmore Park | 1 | 1 | 1 |  |  |
-| United Kingdom | Bucks_Estate_Circuit | 1 | 1 | 0 | Bucks_Estate_Circuit |  |
-| United Kingdom | Bucks_Estate_Combo | 1 | 1 | 0 | Bucks_Estate_Combo |  |
-| United Kingdom | Bucks_Estate_Sprint | 1 | 1 | 0 | Bucks_Estate_Sprint |  |
+| United Kingdom | Bucks_Estate_Circuit | 1 | 1 | 1 |  |  |
+| United Kingdom | Bucks_Estate_Combo | 3 | 1 | 1 |  | industrial-estate-full; lenborough-return |
+| United Kingdom | Bucks_Estate_Sprint | 1 | 1 | 1 |  |  |
 | United Kingdom | Cadwell Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Carver Barracks | 1 | 1 | 1 |  |  |
 | United Kingdom | Castle Combe Circuit | 3 | 2 | 2 |  | main |
@@ -387,7 +387,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Rockingham Int Supersport Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Rockingham Int SuperSport | 1 | 1 | 1 |  |  |
 | United Kingdom | Rowrah Kart Circuit | 1 | 1 | 1 |  |  |
-| United Kingdom | Rushmore Arena | 1 | 1 | 0 | Rushmore Arena |  |
+| United Kingdom | Rushmore Arena | 1 | 1 | 1 |  |  |
 | United Kingdom | Rye House Kart Raceway | 1 | 1 | 1 |  |  |
 | United Kingdom | Shelsley Walsh Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Shenington Kart Racing | 1 | 1 | 1 |  |  |
@@ -803,9 +803,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Thailand/Bangsaen Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bucks_Estate_Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bucks_Estate_Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -814,7 +811,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United Kingdom/ProDrive |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Rushmore Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex II |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1470,9 +1466,9 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Bruntingthorpe Combo | gb-bruntingthorpe-b2f151a7 | bruntingthorpe-combo | draft-mapped |
 | United Kingdom | Bruntingthorpe Full | gb-bruntingthorpe-b2f151a7 | bruntingthorpe-full | draft-mapped |
 | United Kingdom | Buckmore Park | gb-buckmore-park-95fca565 | buckmore-park | draft-mapped |
-| United Kingdom | Bucks_Estate_Circuit | gb-bucks-estate-circuit-b5f6a72b |  | missing-layout |
-| United Kingdom | Bucks_Estate_Combo | gb-bucks-estate-combo-9cbbe60a |  | missing-layout |
-| United Kingdom | Bucks_Estate_Sprint | gb-bucks-estate-sprint-45ee8814 |  | missing-layout |
+| United Kingdom | Bucks_Estate_Circuit | gb-bucks-estate-circuit-b5f6a72b | bucks-estate-circuit | draft-mapped |
+| United Kingdom | Bucks_Estate_Combo | gb-bucks-estate-combo-9cbbe60a | bucks-estate-combo | draft-mapped |
+| United Kingdom | Bucks_Estate_Sprint | gb-bucks-estate-sprint-45ee8814 | bucks-estate-sprint | draft-mapped |
 | United Kingdom | Cadwell Park | gb-cadwell-park-117987847 | main | draft-mapped |
 | United Kingdom | Carver Barracks | gb-carver-barracks-615ac11d | carver-barracks | draft-mapped |
 | United Kingdom | Castle Combe | gb-castle-combe-circuit-35406015 | castle-combe | draft-mapped |
@@ -1540,7 +1536,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Rockingham International Circuit | gb-rockingham-bdd27703 | rockingham-international-circuit | draft-mapped |
 | United Kingdom | Rockingham National Circuit | gb-rockingham-bdd27703 | rockingham-national-circuit | draft-mapped |
 | United Kingdom | Rowrah Kart Circuit | gb-rowrah-kart-circuit-100f6eed | rowrah-kart-circuit | draft-mapped |
-| United Kingdom | Rushmore Arena | gb-rushmore-arena-886deba1 |  | missing-layout |
+| United Kingdom | Rushmore Arena | gb-rushmore-arena-886deba1 | rushmore-arena | draft-mapped |
 | United Kingdom | Rye House Kart Raceway | gb-rye-house-kart-raceway-3e1eaf80 | rye-house-kart-raceway | draft-mapped |
 | United Kingdom | Shelsley Walsh Hillclimb | gb-shelsley-walsh-hillclimb-aaa3a45c | shelsley-walsh-hillclimb | draft-mapped |
 | United Kingdom | Shenington Kart Racing Club | gb-shenington-kart-racing-a8ff3102 | shenington-kart-racing-club | draft-mapped |

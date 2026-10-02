@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "trackId": "gb-bucks-estate-sprint-45ee8814",
+  "layoutId": "bucks-estate-sprint",
+  "sourceId": "osm-selection-bucks-estate-current-independent-roads-100543143",
+  "snapshotFile": "selected-bucks-estate-current-independent-roads-100543143.json",
+  "snapshotSha256": "216ea2c2776f3b699e4afed62f047779d96d9ccdc71f62b63df235ec5fcc939d",
+  "closed": false,
+  "timingMode": "separate",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft configuration: The supplied Sprint configuration identifies the curved Osier Way section on the western side of Buckingham industrial estate, separately from the closed estate circuit. The council independently identifies Osier Way and the estate road network. Exact public OSM nodes 7051869904 through 1162286788 retain the curve in the supplied start-to-finish direction; they are approximately 10 m and 21 m from the two supplied timing markers. The independently mapped 281.4 m section conflicts with the supplied 450 m scalar by 168.6 m. No vertex is shifted or stretched to resolve that conflict. Complete historical timed distance, exact end-line placement and lane selection remain unverified draft limitations. The northern access road and Top Angel return are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 281.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 100543143,
+      "wayVersion": 7,
+      "fromIndex": 11,
+      "toIndex": 3
+    }
+  ],
+  "gates": []
+}

@@ -8,17 +8,50 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.78023685,
+    51.259754900000004
+  ],
+  "sourceIds": [
+    "osm-selection-rushmore-arena-independent-roads-69713123"
+  ],
   "defaultLayoutId": "rushmore-arena",
   "layouts": [
     {
       "id": "rushmore-arena",
       "name": "Rushmore Arena",
       "referenceId": "United Kingdom/Rushmore Arena",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/rushmore-arena.geojson",
+      "description": "Draft configuration: The club identifies Rushmoor Arena as its sprint venue. The supplied historical configuration identifies the simple northern-straight, eastern diagonal and western Arena Lane triangle, rather than the club\u2019s 2026 figure-eight sprint. Exact public OSM road nodes from Arena Lane 69713123 and eastern service road 371693606 form the independently mapped 1,305.3 m closed triangle. Pinned Environment Agency 2020 one-metre LiDAR intensity imagery confirms all three connected paved sides. The current figure-eight, southern Castle Road approach, Claycart Road, start spur, paddock and field-edge paths are excluded. The 23.7 m difference from the supplied 1,329 m remains explicit; private diagram coordinates are not used. Historical travel direction, temporary course markers and exact racing-line placement remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1305.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-rushmore-arena-independent-roads-69713123",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/69713123",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:28:00.774Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-rushmore-arena",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://fdmc.org.uk/wp-content/uploads/2026/03/Dimanche-Sprint-regs-2026.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:28:00.774Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "ea-rushmoor-intensity-2020",
+      "type": "imagery",
+      "title": "Environment Agency independently georeferenced LiDAR intensity survey",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SU8550",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T13:31:41.255258Z",
+      "evidenceNote": "Licensed public survey independently confirms the selected paved triangle; course coordinates remain exact OSM nodes. Original grid, native member hashes and reprojection metadata are pinned. Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme"
+    }
+  ]
 }

@@ -1,0 +1,78 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    -0.9910687,
+    51.986019,
+    -0.9877299,
+    51.9873472
+  ],
+  "metadata": {
+    "schemaVersion": 1,
+    "trackId": "gb-bucks-estate-sprint-45ee8814",
+    "layoutId": "bucks-estate-sprint",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "closed": false,
+    "geometryStatus": "draft",
+    "timingStatus": "missing",
+    "timingMode": "separate",
+    "lengthM": 281.4,
+    "reviewedAt": null,
+    "notes": [
+      "Draft configuration: The supplied Sprint configuration identifies the curved Osier Way section on the western side of Buckingham industrial estate, separately from the closed estate circuit. The council independently identifies Osier Way and the estate road network. Exact public OSM nodes 7051869904 through 1162286788 retain the curve in the supplied start-to-finish direction; they are approximately 10 m and 21 m from the two supplied timing markers. The independently mapped 281.4 m section conflicts with the supplied 450 m scalar by 168.6 m. No vertex is shifted or stretched to resolve that conflict. Complete historical timed distance, exact end-line placement and lane selection remain unverified draft limitations. The northern access road and Top Angel return are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 281.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "trace",
+      "properties": {
+        "role": "trace",
+        "sourceIds": [
+          "osm-selection-bucks-estate-current-independent-roads-100543143"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.9910687,
+            51.9873472
+          ],
+          [
+            -0.9910418,
+            51.987313
+          ],
+          [
+            -0.9907663,
+            51.9870447
+          ],
+          [
+            -0.9904429,
+            51.9868194
+          ],
+          [
+            -0.9903884,
+            51.9867883
+          ],
+          [
+            -0.9902832,
+            51.9867341
+          ],
+          [
+            -0.9899207,
+            51.9865476
+          ],
+          [
+            -0.9894531,
+            51.9863859
+          ],
+          [
+            -0.9877299,
+            51.986019
+          ]
+        ]
+      }
+    }
+  ]
+}

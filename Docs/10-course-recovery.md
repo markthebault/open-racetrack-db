@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **972 of 1,007 entries**. This recovery adds 515 associations: 473 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 419 traces across 49 countries. 328 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 59 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **976 of 1,007 entries**. This recovery adds 519 associations: 477 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 423 traces across 49 countries. 331 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 6 |
-| Independent geometry absent near the timing position | 21 |
-| Aggregate configuration needs identification | 2 |
-| Open-course route or endpoint evidence needed | 3 |
+| Independent geometry absent near the timing position | 19 |
+| Aggregate configuration needs identification | 1 |
+| Open-course route or endpoint evidence needed | 2 |
 | Source connectivity incomplete | 1 |
 | Bounded search incomplete | 0 |
-| **Total** | **35** |
+| **Total** | **31** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 35 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 31 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -160,3 +160,7 @@ Silverstone RX preserves the standard lap and a separately represented start-gri
 Carver Barracks retains the short Debden circuit across the east–west runway, eastern main runway, southern perimeter and curved western return. Independent 2018 one-metre Environment Agency LiDAR intensity tiles supply its 2,205.7 m trace, with original survey grid, tile hashes and Open Government Licence attribution pinned. The 41.3 m supplied-distance difference remains explicit; the northern airfield loop, base access and temporary cones are excluded.
 
 Gaydon’s Emissions Circuit retains its complete southwestern hairpin, former-runway straights and northern bend. Figure 3.10 of the University of Warwick’s 2001 research report identifies the course; independent 2018 Environment Agency LiDAR intensity imagery locates the complete surviving pavement. Its 6,302.9 m draft keeps the 210.9 m difference from the supplied distance. The shorter mid-runway reversal and handling roads are excluded. Exact grid mosaic, native raster hashes, grayscale conversion and Open Government Licence attribution are pinned.
+
+The Bucks Estate entries are road-test configurations on Buckingham industrial-estate roads. Exact public nodes retain the full Osier Way–A421–Great Slade–Middle Slade–Top Angel circuit (1,694.2 m), its separate Lenborough Road return (1,061.0 m), and their 2,140.5 m unique-edge Combo. Council planning material identifies the road network. The 281.4 m open sprint follows exact Osier Way nodes near both supplied timing markers and explicitly conflicts with the listed 450 m. Neither endpoints nor vertices are moved or scaled. Historical lane choices, the Lenborough Road footway classification and timed-distance disagreement remain draft review issues; these entries do not assert a licensed racing venue.
+
+Rushmoor Arena retains the historical simple paved triangle, rather than the club’s current figure-eight sprint. Exact public Arena Lane and eastern-service-road nodes give 1,305.3 m, 23.7 m below the supplied length. Pinned 2020 Environment Agency one-metre LiDAR intensity imagery confirms all three paved sides. The club’s regulations identify the venue and its later configuration. The southern Castle Road approach, Claycart Road and paddock are excluded. Historical direction and temporary event markers remain draft.

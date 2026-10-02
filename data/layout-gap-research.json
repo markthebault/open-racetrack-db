@@ -3,12 +3,12 @@
   "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
-    "configuration-evidence-required": 2,
-    "independent-geometry-missing": 21,
+    "configuration-evidence-required": 1,
+    "independent-geometry-missing": 19,
     "course-distance-discrepancy": 6,
     "ambiguous-source-branches": 2,
     "source-connectivity-incomplete": 1,
-    "open-course-evidence-required": 3
+    "open-course-evidence-required": 2
   },
   "records": [
     {
@@ -232,31 +232,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United Kingdom/Bucks_Estate_Circuit",
-      "trackId": "gb-bucks-estate-circuit-b5f6a72b",
-      "layoutId": "bucks-estate-circuit",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/Bucks_Estate_Combo",
-      "trackId": "gb-bucks-estate-combo-9cbbe60a",
-      "layoutId": "bucks-estate-combo",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "configuration-evidence-required",
-      "nextStep": "Identify what the aggregate catalogue entry represents and independently source its constituent configurations."
-    },
-    {
-      "referenceId": "United Kingdom/Bucks_Estate_Sprint",
-      "trackId": "gb-bucks-estate-sprint-45ee8814",
-      "layoutId": "bucks-estate-sprint",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "reason": "open-course-evidence-required",
-      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
       "referenceId": "United Kingdom/Elvington",
       "trackId": "gb-elvington-a019c302",
       "layoutId": "elvington",
@@ -363,15 +338,6 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "open-course-evidence-required",
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
-    },
-    {
-      "referenceId": "United Kingdom/Rushmore Arena",
-      "trackId": "gb-rushmore-arena-886deba1",
-      "layoutId": "rushmore-arena",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
       "referenceId": "United Kingdom/Thorsway MX",

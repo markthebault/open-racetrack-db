@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 972,
-    "unmappedLayouts": 35,
+    "draftMapped": 976,
+    "unmappedLayouts": 31,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -10256,11 +10256,14 @@
       "name": "Bucks_Estate_Circuit",
       "timingMode": "shared",
       "trackId": "gb-bucks-estate-circuit-b5f6a72b",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bucks-estate-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10269,11 +10272,14 @@
       "name": "Bucks_Estate_Combo",
       "timingMode": "shared",
       "trackId": "gb-bucks-estate-combo-9cbbe60a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bucks-estate-combo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10282,11 +10288,15 @@
       "name": "Bucks_Estate_Sprint",
       "timingMode": "separate",
       "trackId": "gb-bucks-estate-sprint-45ee8814",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "bucks-estate-sprint"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -11361,11 +11371,14 @@
       "name": "Rushmore Arena",
       "timingMode": "shared",
       "trackId": "gb-rushmore-arena-886deba1",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "rushmore-arena"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -20498,29 +20511,28 @@
       "name": "Bucks_Estate_Circuit",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bucks_Estate_Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-bucks-estate-combo-9cbbe60a",
       "name": "Bucks_Estate_Combo",
       "country": "United Kingdom",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bucks_Estate_Combo"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "industrial-estate-full",
+        "lenborough-return"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -20528,15 +20540,13 @@
       "name": "Bucks_Estate_Sprint",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Bucks_Estate_Sprint"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-cadwell-park-117987847",
@@ -21326,15 +21336,13 @@
       "name": "Rushmore Arena",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Rushmore Arena"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-rye-house-kart-raceway-3e1eaf80",
@@ -26914,27 +26922,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Kingdom/Bucks_Estate_Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Bucks_Estate_Combo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Bucks_Estate_Sprint",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Elvington",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27000,13 +26987,6 @@
     },
     {
       "recordId": "United Kingdom/RAF Woodbridge",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Rushmore Arena",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
