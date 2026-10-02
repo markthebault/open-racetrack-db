@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 931
-- unmappedLayouts: 76
+- draftMapped: 933
+- unmappedLayouts: 74
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -214,8 +214,8 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Germany | Norisring | 1 | 1 | 1 |  |  |
 | Germany | Nürburgring | 9 | 9 | 9 |  |  |
 | Germany | Osnabruck Hill Climb | 1 | 1 | 1 |  |  |
-| Germany | Porsche Leipzig A | 1 | 1 | 0 | Porsche Leipzig A |  |
-| Germany | Porsche Leipzig B | 1 | 1 | 0 | Porsche Leipzig B |  |
+| Germany | Porsche Leipzig A | 1 | 1 | 1 |  |  |
+| Germany | Porsche Leipzig B | 1 | 1 | 1 |  |  |
 | Germany | Sachsenring | 1 | 1 | 1 |  |  |
 | Germany | Test- und Präsentationsstrecke Bilster Berg | 6 | 5 | 5 |  | main |
 | Denmark | FDM Sjællandsringen | 2 | 1 | 1 |  | main |
@@ -807,8 +807,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Cyprus/Achna Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Cyprus/Achna Speedway Full Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Finland/Seinajoki |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Vallelunga Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1199,8 +1197,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Germany | Nurburgring Nordschleife | de-nurburgring | nordschleife | draft-mapped |
 | Germany | Nurburgring Sprintstrecke | de-nurburgring | sprintstrecke | draft-mapped |
 | Germany | Osnabruck Hill Climb | de-osnabruck-hill-climb-d7c0b8d4 | osnabruck-hill-climb | draft-mapped |
-| Germany | Porsche Leipzig A | de-porsche-leipzig-a-1a7399b8 |  | missing-layout |
-| Germany | Porsche Leipzig B | de-porsche-leipzig-b-65f38c3a |  | missing-layout |
+| Germany | Porsche Leipzig A | de-porsche-leipzig-a-1a7399b8 | porsche-leipzig-a | draft-mapped |
+| Germany | Porsche Leipzig B | de-porsche-leipzig-b-65f38c3a | porsche-leipzig-b | draft-mapped |
 | Germany | Sachsenring | de-sachsenring-31321783 | main | draft-mapped |
 | Greece | Aiginio | gr-aiginio-a0bafb43 | aiginio | draft-mapped |
 | Greece | Megara | gr-athens-circuit-megara-70043231 | megara | draft-mapped |

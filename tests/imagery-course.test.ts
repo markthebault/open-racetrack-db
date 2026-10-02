@@ -55,6 +55,15 @@ test('OGL imagery preserves provider attribution and rejects mismatched reuse re
  assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/unrelated'}]}),/rights/);
 });
 
+test('German government imagery preserves attribution, change notice and source-specific reuse registration',()=>{
+ const government={...source,license:'DL-DE-BY-2.0' as const,attribution:'GeoSN, dl-de/by-2-0; centerline independently digitized and changed.'};
+ const registered={...track,sources:[{...track.sources[0],license:government.license}]};
+ const layout=buildImageryCourse(recipe,government,registered);
+ assert.equal(layout.metadata.attribution,government.attribution);
+ assert.throws(()=>buildImageryCourse(recipe,government,track),/rights/);
+ assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/other-dataset'}]}),/rights/);
+});
+
 const networkSource=(paths:{name:string;pixels:[number,number][];closed:boolean}[])=>({
  ...Object.fromEntries(Object.entries(source).filter(([key])=>key!=='pixels')),
  geometryKind:'network',closed:false,

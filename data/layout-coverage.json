@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 931,
-    "unmappedLayouts": 76,
+    "draftMapped": 933,
+    "unmappedLayouts": 74,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -5229,11 +5229,14 @@
       "name": "Porsche Leipzig A",
       "timingMode": "shared",
       "trackId": "de-porsche-leipzig-a-1a7399b8",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "porsche-leipzig-a"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -5242,11 +5245,14 @@
       "name": "Porsche Leipzig B",
       "timingMode": "shared",
       "trackId": "de-porsche-leipzig-b-65f38c3a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "porsche-leipzig-b"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -18838,30 +18844,26 @@
       "name": "Porsche Leipzig A",
       "country": "Germany",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Porsche Leipzig A"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "de-porsche-leipzig-b-65f38c3a",
       "name": "Porsche Leipzig B",
       "country": "Germany",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Porsche Leipzig B"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "de-sachsenring-31321783",
@@ -26893,20 +26895,6 @@
     },
     {
       "recordId": "Finland/Seinajoki",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Germany/Porsche Leipzig A",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Germany/Porsche Leipzig B",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
