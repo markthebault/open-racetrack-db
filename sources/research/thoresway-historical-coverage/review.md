@@ -1,0 +1,5 @@
+# Thoresway historical surface review
+
+The pinned Environment Agency 2019 one-metre intensity grid independently locates the course surface before the later rebuild. Attribution: Environment Agency; contains public sector information licensed under the Open Government Licence v3.0. The acquisition record preserves the native registered raster fingerprint, projected transform, export fingerprint, lossless crop, exact crop extent and contrast stretch. Coordinates are not obtained from a diagram or timing overlay.
+
+[Click Howell Photography's venue page](https://www.clickhowell.co.uk/thoresway) links the photographer's [2 April 2017 practice footage](https://www.youtube.com/watch?v=1ixjGdRUfMk). That footage is used for historical course identification only; it is not redistributed or georeferenced. The old course includes central parallel sections and several visible alternative connections. A trial outline that joins the wrong central branches does not establish a single lap and is excluded. The 2021-onward rebuild cannot be substituted for the older catalogue configuration. Historical branch-order evidence is still required before importing a course trace.

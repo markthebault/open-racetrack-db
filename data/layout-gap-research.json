@@ -214,15 +214,9 @@
       "referenceId": "United Kingdom/Kames Motorsport Circuit Reverse",
       "trackId": "gb-kames-motorsport-circuit-38672231",
       "layoutId": "kames-motorsport-circuit-reverse",
-      "sourcePath": "sources/course-networks/kames-2018-independent-track-lines/osm.json",
-      "sourceWayIds": [
-        38672231,
-        38672234,
-        38672235,
-        38672240
-      ],
+      "sourcePath": "sources/europe/gb/osm.json",
       "reason": "open-course-evidence-required",
-      "nextStep": "Identify the historical timed-run sequence using the club track plan and dated event evidence. The withdrawn southwestern-extension selection is invalid. Do not choose a route because its scalar length is close."
+      "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
     },
     {
       "referenceId": "United Kingdom/Lydden Hill Infield",
@@ -265,7 +259,16 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
+      "nextStep": "Identify the historical main-course branch order in the public 2019 one-metre intensity grid and 2017 practice footage. The central parallel sections and alternatives must not be joined into an unsupported single lap; the later rebuild is not a substitute.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/TF1095",
+          "https://www.clickhowell.co.uk/thoresway",
+          "https://www.youtube.com/watch?v=1ixjGdRUfMk"
+        ],
+        "geometryRecovered": false
+      }
     },
     {
       "referenceId": "United States/Apex Motor Club Apex II",

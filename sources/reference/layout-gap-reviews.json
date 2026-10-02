@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
+  "policy": "Independent source reviews annotate unresolved catalogue entries. They do not add geometry or override generated classifications. Reviews must be checked again when an entry identity or source classification changes.",
+  "records": [
+    {
+      "referenceId": "Argentina/Circuito De Rosario Combo",
+      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
+      "layoutId": "circuito-de-rosario-combo",
+      "sourcePath": "sources/world/ar/osm.json",
+      "expectedReason": "open-course-evidence-required",
+      "nextStep": "Identify the historical northern open course between its separate timing endpoints, including the northern notch and inner hairpin; the connected 2,279.7 m current public-road candidate omits those features. Do not substitute a full southern combined loop.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.openstreetmap.org/way/681663025"
+        ],
+        "geometryRecovered": false
+      }
+    },
+    {
+      "referenceId": "China/Huangtupo",
+      "trackId": "cn-huangtupo-5cab1bd3",
+      "layoutId": "huangtupo",
+      "sourcePath": "sources/world/cn/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Find reusable fine historical imagery or a licensed course survey. The June 2019 native 10 m image does not resolve the old compact course, and the inspected nearby public GPS samples follow a civilian road rather than the circuit.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A"
+        ],
+        "geometryRecovered": false
+      }
+    },
+    {
+      "referenceId": "Italy/Adria International Raceway Full",
+      "trackId": "it-adria-international-raceway-1092277630",
+      "layoutId": "adria-international-raceway-full",
+      "sourcePath": "sources/europe/it/osm.json",
+      "expectedReason": "course-distance-discrepancy",
+      "nextStep": "Independently recover the 2021 inner extension and tight switchbacks. Regional road vectors omit course roads, and the local geotopographic survey dates to 2008. Clear November 2021 native 10 m imagery locates the new pavement but does not resolve every tight connector.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://idt2.regione.veneto.it/geoportal/catalog/search/resource/details.page?uuid=r_veneto%3Ac01070240012_ElementoStradale",
+          "https://game.raceroom.com/it/store/tracks/all/adria-international-raceway-2021"
+        ],
+        "geometryRecovered": false
+      }
+    },
+    {
+      "referenceId": "Lithuania/Palanga Street Circuit",
+      "trackId": "lt-palanga-street-circuit-a9c06d36",
+      "layoutId": "palanga-street-circuit",
+      "sourcePath": "sources/europe/lt/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Recover the event southern turnaround and temporary chicanes from a licensed event-date survey or GPS recording. Fine public May 2023 imagery resolves the permanent median opening but cannot establish the race turnaround farther south; the civilian road loop remains excluded.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://data.gov.lt/datasets/3723/?resource_version=3194",
+          "https://racing.lt/media/1006km_2025_documents/2025-info-for-participants-v18.05.2025.pdf"
+        ],
+        "geometryRecovered": false
+      }
+    },
+    {
+      "referenceId": "Taiwan/Lihpao Wind",
+      "trackId": "tw-lihpao-wind-39d57a25",
+      "layoutId": "lihpao-wind",
+      "sourcePath": "sources/world/tw/osm.json",
+      "expectedReason": "course-distance-discrepancy",
+      "nextStep": "Recover the small western closing connector independently; the available full-course way includes the separate Thunder branch. Nearby public GPS samples remain on civilian roads. Fine NLSC public display imagery has not established permission for derivative course coordinates.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.openstreetmap.org/way/779852386",
+          "https://maps.nlsc.gov.tw/pro/use_clause.jsp"
+        ],
+        "geometryRecovered": false
+      }
+    },
+    {
+      "referenceId": "United Kingdom/Thorsway MX",
+      "trackId": "gb-thorsway-mx-ad3657ee",
+      "layoutId": "thorsway-mx",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Identify the historical main-course branch order in the public 2019 one-metre intensity grid and 2017 practice footage. The central parallel sections and alternatives must not be joined into an unsupported single lap; the later rebuild is not a substitute.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/TF1095",
+          "https://www.clickhowell.co.uk/thoresway",
+          "https://www.youtube.com/watch?v=1ixjGdRUfMk"
+        ],
+        "geometryRecovered": false
+      }
+    },
+    {
+      "referenceId": "United States/Charlotte Motor Speedway Short",
+      "trackId": "us-charlotte-motor-speedway-116034341",
+      "layoutId": "charlotte-motor-speedway-short",
+      "sourcePath": "sources/world/us/osm.json",
+      "expectedReason": "course-distance-discrepancy",
+      "nextStep": "Identify the historical frontstretch short road-course branch order. Independently georeferenced 2014 one-metre and 2022 0.6-metre NAIP images show the pavement, but the quarter-mile oval and later simulator short course do not establish the requested layout.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.charlottemotorspeedway.com/fans/track-history/track-history-669197.html",
+          "https://www.charlottemotorspeedway.com/documents/corporate-events.pdf"
+        ],
+        "geometryRecovered": false
+      }
+    }
+  ]
+}

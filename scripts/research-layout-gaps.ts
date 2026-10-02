@@ -1,6 +1,7 @@
 import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
 import {readTimingArchive} from './reference-timing';import {worldCountries} from './world-countries';
 import {timingResearchRequirement} from './timing-research';
+import {applyGapReviews} from './gap-reviews';
 import {components,candidateLoops} from './candidates';import {anchoredCourses} from './anchored-courses';import {assemble,type Way} from './route';import {bounds,nearestEdge,type Position} from '../src/geo';
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];if(!args.includes('--archive')||!archive)throw new Error('Use --archive /absolute/path/to/archive.zip');
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),registry=await read('sources/reference/catalogue.json'),{records,xmlSha256}=readTimingArchive(archive);
@@ -32,7 +33,7 @@ for(const countryName of new Set(records.map(r=>r.country))){
  }
  console.log(`${country.code}: remaining routes classified`);
 }
-const currentRegistry=await read('sources/reference/catalogue.json'),pendingRows=rows.filter(row=>!currentRegistry.records.find((r:any)=>r.referenceId===row.referenceId).geometryAvailable);
+const currentRegistry=await read('sources/reference/catalogue.json'),pendingRows=applyGapReviews(rows.filter(row=>!currentRegistry.records.find((r:any)=>r.referenceId===row.referenceId).geometryAvailable),await read('sources/reference/layout-gap-reviews.json'),xmlSha256);
 const counts:Record<string,number>={};for(const row of pendingRows)counts[row.reason]=(counts[row.reason]??0)+1;
 await writeFile('data/layout-gap-research.json',JSON.stringify({schemaVersion:1,xmlSha256,policy:'These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.',summary:counts,records:pendingRows},null,2)+'\n');
 await writeFile('.local/course-gap-proposals.json',JSON.stringify(proposals,null,2)+'\n');console.log(counts);
