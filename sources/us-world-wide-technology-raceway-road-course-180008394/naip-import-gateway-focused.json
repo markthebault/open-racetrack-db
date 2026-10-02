@@ -1,0 +1,41 @@
+{
+  "sourceUrl": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+  "retrievedAt": "2026-10-02T08:16:26.448Z",
+  "width": 1800,
+  "height": 1800,
+  "extent": {
+    "xmin": -10034577.60543029,
+    "ymin": 4671123.746000684,
+    "xmax": -10033204.314347468,
+    "ymax": 4672497.037083506,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    }
+  },
+  "imagerySha256": "6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6",
+  "sourceRasters": [
+    {
+      "OBJECTID": 54406,
+      "Name": "m_3809023_se_15_060_20190923",
+      "State": "IL",
+      "Year": 2019,
+      "acquisition_date": 1569196800000,
+      "agency": "USDA",
+      "resolution_value": 0.6,
+      "resolution_units": "METER",
+      "download_url": "https://earthexplorer.usgs.gov/download/options/naip/2894132"
+    }
+  ],
+  "schemaVersion": 1,
+  "independentAlignmentSource": {
+    "file": "sources/course-networks/gateway-road-course-2018-independent-roads/osm.json",
+    "sha256": "76cf45e7ea9978e1c5de0b3f232c5c30780bb7f9277ba9bceebeaeea871987fd",
+    "wayIds": [
+      180008394,
+      180008696
+    ],
+    "license": "ODbL-1.0",
+    "note": "Historical public-node alignment seeded aerial branch review. The northern join follows visible public-domain paving; no private course coordinates were used."
+  }
+}

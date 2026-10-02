@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-180008394"
+    "osm-network-180008394",
+    "usgs-naip-2019-gateway-focused"
   ],
   "defaultLayoutId": "gateway-motorsports-park",
   "layouts": [
@@ -49,8 +50,8 @@
       "id": "gateway-road-1",
       "name": "Gateway Road 1",
       "referenceId": "United States/Gateway Road 1",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gateway-road-1.geojson",
+      "description": "The supplied Road 1 configuration retains the original smooth southern return, northern inner hairpin and oval-front-straight return. The operator distinguishes its 1.6-mile course from the later 2.0-mile extension. This draft follows the original paved route visible in the pinned public-domain 2019 NAIP image; independent historical public-node alignment aided branch identification. The newer southern extension, kart course, dragway and pit road are excluded. Coordinates come from independent public georeferencing, without fitting the supplied diagram or scalar. Historical direction and fine corner alignment remain draft. Independently digitized aerial centerline: 2602.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "gateway-road-2",
@@ -78,6 +79,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-2019-gateway-focused",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6; reproducible pixel-to-coordinate conversion. The supplied Road 1 configuration retains the original smooth southern return, northern inner hairpin and oval-front-straight return. The operator distinguishes its 1.6-mile course from the later 2.0-mile extension. This draft follows the original paved route visible in the pinned public-domain 2019 NAIP image; independent historical public-node alignment aided branch identification. The newer southern extension, kart course, dragway and pit road are excluded. Coordinates come from independent public georeferencing, without fitting the supplied diagram or scalar. Historical direction and fine corner alignment remain draft."
+    },
+    {
+      "id": "imagery-identity-gateway-road-1",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

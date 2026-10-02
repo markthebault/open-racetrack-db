@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 944
-- unmappedLayouts: 63
+- draftMapped: 945
+- unmappedLayouts: 62
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -765,7 +765,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Watkins Glen International | 3 | 2 | 2 |  | main |
 | United States | WeatherTech Raceway Laguna Seca | 1 | 1 | 1 |  |  |
 | United States | Willow Springs International Raceway | 3 | 3 | 3 |  |  |
-| United States | World Wide Technology Raceway Road Course | 6 | 5 | 1 | Gateway Motorsports Park; Gateway Motorsports Porsche 2mile; Gateway Road 1; Gateway Road 2 | main |
+| United States | World Wide Technology Raceway Road Course | 6 | 5 | 2 | Gateway Motorsports Park; Gateway Motorsports Porsche 2mile; Gateway Road 2 | main |
 | Venezuela | Autódromo Internacional Simón Bolívar | 1 | 0 | 0 |  | main |
 | Vietnam | Hanoi | 1 | 1 | 1 |  |  |
 | South Africa | Aldo Scribante Race Circuit | 1 | 1 | 1 |  |  |
@@ -849,7 +849,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Porsche 2mile |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Gateway Road 1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
@@ -1662,7 +1661,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Gateway Motorsports Park | us-world-wide-technology-raceway-road-course-180008394 |  | missing-layout |
 | United States | Gateway Motorsports Porsche 2mile | us-world-wide-technology-raceway-road-course-180008394 |  | missing-layout |
 | United States | Gateway Oval | us-world-wide-technology-raceway-road-course-180008394 | gateway-oval | draft-mapped |
-| United States | Gateway Road 1 | us-world-wide-technology-raceway-road-course-180008394 |  | missing-layout |
+| United States | Gateway Road 1 | us-world-wide-technology-raceway-road-course-180008394 | gateway-road-1 | draft-mapped |
 | United States | Gateway Road 2 | us-world-wide-technology-raceway-road-course-180008394 |  | missing-layout |
 | United States | GingerMan Raceway | us-gingerman-raceway-72c836ae | gingerman-raceway | draft-mapped |
 | United States | GingerMan T10b | us-gingerman-t10b-71f68c72 | gingerman-t10b | draft-mapped |
