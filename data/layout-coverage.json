@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 905,
-    "unmappedLayouts": 102,
+    "draftMapped": 907,
+    "unmappedLayouts": 100,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -5652,11 +5652,14 @@
       "name": "Balocco Alfa Romeo",
       "timingMode": "shared",
       "trackId": "it-balocco-alfa-romeo-89d7992f",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "balocco-alfa-romeo"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -7347,11 +7350,14 @@
       "name": "Tor Jastrzab",
       "timingMode": "shared",
       "trackId": "pl-tor-jastrzab-220208f2",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "tor-jastrzab"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -21800,15 +21806,13 @@
       "name": "Balocco Alfa Romeo",
       "country": "Italy",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Balocco Alfa Romeo"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "it-circuito-di-pomposa-1220349243",
@@ -23148,15 +23152,13 @@
       "name": "Tor Jastrzab",
       "country": "Poland",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Tor Jastrzab"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "pl-tor-lodz-107c708e",
@@ -26891,13 +26893,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Italy/Balocco Alfa Romeo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Italy/Vallelunga Full",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -26960,13 +26955,6 @@
       "namedCourseCandidates": 7,
       "enumerationTruncated": false,
       "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
-    },
-    {
-      "recordId": "Poland/Tor Jastrzab",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
       "recordId": "Russia/Ramenskoe",

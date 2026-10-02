@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 905
-- unmappedLayouts: 102
+- draftMapped: 907
+- unmappedLayouts: 100
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -430,7 +430,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Italy | Autodromo Lombardore | 1 | 1 | 1 |  |  |
 | Italy | Autodromo Riccardo Paletti | 3 | 2 | 2 |  | main |
 | Italy | Autodromo Valle dei Templi | 1 | 1 | 1 |  |  |
-| Italy | Balocco Alfa Romeo | 1 | 1 | 0 | Balocco Alfa Romeo |  |
+| Italy | Balocco Alfa Romeo | 1 | 1 | 1 |  |  |
 | Italy | Circuito di Pomposa | 1 | 0 | 0 |  | main |
 | Italy | Cremona Circuit | 1 | 1 | 1 |  |  |
 | Italy | Fiorano Circuit | 1 | 1 | 1 |  |  |
@@ -527,7 +527,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Philippines | Clark International Speedway | 2 | 1 | 1 |  | main |
 | Poland | Silesia Ring | 3 | 2 | 2 |  | main |
 | Poland | Slomczyn RallyCross | 1 | 1 | 1 |  |  |
-| Poland | Tor Jastrzab | 1 | 1 | 0 | Tor Jastrzab |  |
+| Poland | Tor Jastrzab | 1 | 1 | 1 |  |  |
 | Poland | Tor Lodz | 1 | 1 | 1 |  |  |
 | Poland | Tor Modlin | 1 | 0 | 0 |  | main |
 | Poland | Tor Poznań | 1 | 1 | 1 |  |  |
@@ -812,7 +812,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Germany/Porsche Leipzig A |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Germany/Porsche Leipzig B |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Italy/Balocco Alfa Romeo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Vallelunga Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Latvia/Bikernieki RallyCross Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -821,7 +820,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Leadfoot Hillclimb |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | New Zealand/Ruapuna | 33795438; 33795441; 33795448; 33795504; 33795523; 834156808; 834156809 | 7 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
-| Poland/Tor Jastrzab |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1252,7 +1250,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Italy | Adria International Raceway Full | it-adria-international-raceway-1092277630 |  | missing-layout |
 | Italy | Autodromo dell'Umbria | it-autodromo-dell-umbria-203e1bd3 | autodromo-dell-umbria | draft-mapped |
 | Italy | Autodromo Valle dei Templi | it-autodromo-valle-dei-templi-60744683 | main | draft-mapped |
-| Italy | Balocco Alfa Romeo | it-balocco-alfa-romeo-89d7992f |  | missing-layout |
+| Italy | Balocco Alfa Romeo | it-balocco-alfa-romeo-89d7992f | balocco-alfa-romeo | draft-mapped |
 | Italy | Castelletto | it-motodromo-castelletto-di-branduzzo-209135489 | main | draft-mapped |
 | Italy | Cremona | it-cremona-circuit-259583123 | main | draft-mapped |
 | Italy | Fiorano | it-fiorano-circuit-35073932 | main | draft-mapped |
@@ -1359,7 +1357,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Poland | Silesia Ring | pl-silesia-ring-631651845 | silesia-ring | draft-mapped |
 | Poland | Silesia Ring Long | pl-silesia-ring-631651845 | silesia-ring-long | draft-mapped |
 | Poland | Slomczyn RallyCross | pl-slomczyn-rallycross-e94ac261 | slomczyn-rallycross | draft-mapped |
-| Poland | Tor Jastrzab | pl-tor-jastrzab-220208f2 |  | missing-layout |
+| Poland | Tor Jastrzab | pl-tor-jastrzab-220208f2 | tor-jastrzab | draft-mapped |
 | Poland | Tor Lodz | pl-tor-lodz-107c708e | tor-lodz | draft-mapped |
 | Portugal | Bombarral | pt-bombarral-423b0d2b | bombarral | draft-mapped |
 | Portugal | Bombarral B2 | pt-bombarral-b2-9936078e | bombarral-b2 | draft-mapped |
