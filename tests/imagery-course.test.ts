@@ -64,6 +64,16 @@ test('German government imagery preserves attribution, change notice and source-
  assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/other-dataset'}]}),/rights/);
 });
 
+test('Sentinel imagery retains its modified-data attribution and distinct source-specific reuse registration',()=>{
+ const satellite={...source,license:'LicenseRef-Copernicus-Sentinel' as const,attribution:'Contains modified Copernicus Sentinel data 2025; independent centerline digitization.'};
+ const registered={...track,sources:[{...track.sources[0],license:satellite.license}]};
+ const layout=buildImageryCourse(recipe,satellite,registered);
+ assert.equal(layout.metadata.attribution,satellite.attribution);
+ assert.throws(()=>buildImageryCourse(recipe,satellite,track),/rights/);
+ assert.throws(()=>buildImageryCourse(recipe,satellite,{...registered,sources:[{...registered.sources[0],license:'CC-BY-4.0'}]}),/rights/);
+ assert.throws(()=>buildImageryCourse(recipe,satellite,{...registered,sources:[{...registered.sources[0],url:'https://example.org/other-imagery'}]}),/rights/);
+});
+
 test('CC BY government imagery retains provider attribution and requires matching source rights',()=>{
  const government={...source,license:'CC-BY-4.0' as const,attribution:'Datenquelle: basemap.at (https://basemap.at/), CC BY 4.0; independent centerline digitization.'};
  const registered={...track,sources:[{...track.sources[0],license:government.license}]};

@@ -1,0 +1,50 @@
+{
+  "sourceUrl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/34/V/CK/2025/5/S2C_34VCK_20250529_0_L2A/TCI.tif",
+  "retrievedAt": "2026-10-02T09:12:48.183524Z",
+  "width": 1000,
+  "height": 1000,
+  "extent": {
+    "xmin": 2093384.2347820788,
+    "ymin": 7930362.124829413,
+    "xmax": 2099239.631894658,
+    "ymax": 7936217.5219419915,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "33c6e7c2cdc20920108ad97f71c6ad453e136160a076b76bcfd6d3b9fcd124db",
+  "nativeSha256": "ac97d374f15f6e63a4c23d7db915b9620c682f8b5cfaf349f5d51c3b9a6ed31e",
+  "nativeProjection": "EPSG:32634",
+  "nativeTransform": [
+    10.0,
+    0.0,
+    369980.0,
+    0.0,
+    -10.0,
+    6414330.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "nativeWidth": 254,
+  "nativeHeight": 326,
+  "groundResolutionM": 10,
+  "resampling": "nearest",
+  "captureDate": "2025-05-29T10:04:54.775000Z",
+  "stacItemId": "S2C_34VCK_20250529_0_L2A",
+  "schemaVersion": 1,
+  "nativeFile": "sentinel-gotland-ring-7-3-current-independent-roads-native.tif",
+  "stacItemFile": "sentinel-gotland-ring-7-3-current-independent-roads-item.json",
+  "reuseEvidenceUrl": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+  "license": "LicenseRef-Copernicus-Sentinel",
+  "attribution": "Contains modified Copernicus Sentinel data 2025; independent centerline digitization by OpenRacetrackDB; \u00a9 OpenStreetMap contributors, ODbL-1.0",
+  "independentAlignmentSource": {
+    "sourcePath": "sources/course-networks/gotland-ring-7-3-current-independent-roads/osm.json",
+    "snapshotSha256": "bce50d24f8f29976eff7b4b9a8922224431f3dba77425ef89872890590b47149",
+    "wayIds": [
+      311644846,
+      677371667
+    ],
+    "license": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "evidence": "Northern centerline vertices are exact public source coordinates converted to raster pixel centers. Southern pavement and the two missing course connectors are independently digitized from the pinned satellite image."
+  }
+}

@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 949,
-    "unmappedLayouts": 58,
+    "draftMapped": 953,
+    "unmappedLayouts": 54,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -7874,11 +7874,14 @@
       "name": "Ramenskoe",
       "timingMode": "shared",
       "trackId": "ru-ramenskoe-860ae810",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ramenskoe"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9000,11 +9003,14 @@
       "name": "Gotland Ring 4.1",
       "timingMode": "shared",
       "trackId": "se-gotland-ring-311644846",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gotland-ring-4-1"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "se-gotland-ring-311644846"
@@ -9016,11 +9022,14 @@
       "name": "Gotland Ring 6.0",
       "timingMode": "shared",
       "trackId": "se-gotland-ring-311644846",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gotland-ring-6-0"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "se-gotland-ring-311644846"
@@ -9032,11 +9041,14 @@
       "name": "Gotland Ring 7.3",
       "timingMode": "shared",
       "trackId": "se-gotland-ring-311644846",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gotland-ring-7-3"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "se-gotland-ring-311644846"
@@ -23716,15 +23728,13 @@
       "name": "Ramenskoe",
       "country": "Russia",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Ramenskoe"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ru-samara-ring-83652cc4",
@@ -23832,15 +23842,11 @@
       "name": "Gotland Ring",
       "country": "Sweden",
       "actualLayoutCount": 5,
-      "actualTraceCount": 2,
+      "actualTraceCount": 5,
       "expectedRecordCount": 4,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Gotland Ring 4.1",
-        "Gotland Ring 6.0",
-        "Gotland Ring 7.3"
-      ],
+      "mappedRecordCount": 4,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26942,13 +26948,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "Russia/Ramenskoe",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "Russia/Samara-Ring",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -26971,27 +26970,6 @@
     },
     {
       "recordId": "Sweden/Drive Centre Arena",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Gotland Ring 4.1",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Gotland Ring 6.0",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Gotland Ring 7.3",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

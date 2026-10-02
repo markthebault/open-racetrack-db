@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 949
-- unmappedLayouts: 58
+- draftMapped: 953
+- unmappedLayouts: 54
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -561,7 +561,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Russia | Красное кольцо | 1 | 0 | 0 |  | main |
 | Russia | АДМ Мячково | 3 | 2 | 2 |  | main |
 | Russia | Нижегородское кольцо | 4 | 3 | 3 |  | main |
-| Russia | Ramenskoe | 1 | 1 | 0 | Ramenskoe |  |
+| Russia | Ramenskoe | 1 | 1 | 1 |  |  |
 | Russia | Samara-Ring | 1 | 1 | 0 | Samara-Ring |  |
 | Russia | Smolensk Ring | 2 | 1 | 1 |  | main |
 | Russia | Sochi Autodrom | 2 | 1 | 1 |  | main |
@@ -569,7 +569,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Sweden | Anderstorp Raceway | 2 | 1 | 1 |  | main |
 | Sweden | Drive Centre Arena | 1 | 1 | 0 | Drive Centre Arena |  |
 | Sweden | Falkenbergs Motorbana | 1 | 1 | 1 |  |  |
-| Sweden | Gotland Ring | 5 | 4 | 1 | Gotland Ring 4.1; Gotland Ring 6.0; Gotland Ring 7.3 | main |
+| Sweden | Gotland Ring | 5 | 4 | 4 |  | main |
 | Sweden | Holjes Motorclub | 1 | 1 | 1 |  |  |
 | Sweden | Karlskoga Motorstadion | 2 | 1 | 1 |  | main |
 | Sweden | Kinnekulle Ring | 1 | 1 | 1 |  |  |
@@ -809,14 +809,10 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Mexico/Autodromo Bosques del Angel |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Mexico/San Luis Potosi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Morocco/Moulay El Hassan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Russia/Ramenskoe |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Russia/Samara-Ring |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Gotland Ring 4.1 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Gotland Ring 6.0 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Gotland Ring 7.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Ljungbyhed Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Ljungbyhed Park Alt SF |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1346,7 +1342,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Russia | N-Ring A | ru-osm-74887032 | n-ring-a | draft-mapped |
 | Russia | N-Ring B | ru-osm-74887032 | n-ring-b | draft-mapped |
 | Russia | N-Ring C | ru-osm-74887032 | n-ring-c | draft-mapped |
-| Russia | Ramenskoe | ru-ramenskoe-860ae810 |  | missing-layout |
+| Russia | Ramenskoe | ru-ramenskoe-860ae810 | ramenskoe | draft-mapped |
 | Russia | Samara-Ring | ru-samara-ring-83652cc4 |  | missing-layout |
 | Russia | Smolensk | ru-smolensk-ring-136054940 | smolensk | draft-mapped |
 | Russia | Sochi racetrack | ru-sochi-autodrom-306234479 | sochi-racetrack | draft-mapped |
@@ -1417,9 +1413,9 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Sweden | Falkenberg Raceway | se-falkenbergs-motorbana-343515644 | main | draft-mapped |
 | Sweden | Gellerason GP 2019 | se-karlskoga-motorstadion-290177249 | gellerason-gp-2019 | draft-mapped |
 | Sweden | Gotland Ring 3.1 | se-gotland-ring-311644846 | gotland-ring-3-1 | draft-mapped |
-| Sweden | Gotland Ring 4.1 | se-gotland-ring-311644846 |  | missing-layout |
-| Sweden | Gotland Ring 6.0 | se-gotland-ring-311644846 |  | missing-layout |
-| Sweden | Gotland Ring 7.3 | se-gotland-ring-311644846 |  | missing-layout |
+| Sweden | Gotland Ring 4.1 | se-gotland-ring-311644846 | gotland-ring-4-1 | draft-mapped |
+| Sweden | Gotland Ring 6.0 | se-gotland-ring-311644846 | gotland-ring-6-0 | draft-mapped |
+| Sweden | Gotland Ring 7.3 | se-gotland-ring-311644846 | gotland-ring-7-3 | draft-mapped |
 | Sweden | Holjes Motorclub | se-holjes-motorclub-3144cff3 | holjes-motorclub | draft-mapped |
 | Sweden | Kinnekulle | se-kinnekulle-ring-24783023 | main | draft-mapped |
 | Sweden | Ljungbyhed Park | se-ljungbyhed-park-5c89b42d |  | missing-layout |

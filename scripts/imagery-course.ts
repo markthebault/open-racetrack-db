@@ -5,7 +5,7 @@ import {validateLayout,type Track} from '../schemas/data';
 const pixel=z.tuple([z.number().finite().nonnegative(),z.number().finite().nonnegative()]);
 const imagerySourceFields=z.strictObject({
  schemaVersion:z.literal(1),sourceKind:z.literal('georeferenced-imagery'),
- sourceId:z.string().min(1),attribution:z.string().min(1),license:z.enum(['public-domain','Etalab-2.0','LicenseRef-GUGiK-open-data','OGL-3.0','DL-DE-BY-2.0','CC-BY-4.0']),
+ sourceId:z.string().min(1),attribution:z.string().min(1),license:z.enum(['public-domain','Etalab-2.0','LicenseRef-GUGiK-open-data','OGL-3.0','DL-DE-BY-2.0','CC-BY-4.0','LicenseRef-Copernicus-Sentinel']),
  imageryFile:z.string().regex(/^[a-z0-9][a-z0-9-]*\.png$/),imagerySha256:z.string().regex(/^[a-f0-9]{64}$/),
  sourceUrl:z.url(),reuseEvidenceUrl:z.url(),retrievedAt:z.iso.datetime(),
  width:z.number().int().positive(),height:z.number().int().positive(),

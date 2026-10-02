@@ -4,8 +4,8 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 3,
-    "independent-geometry-missing": 35,
-    "course-distance-discrepancy": 13,
+    "independent-geometry-missing": 32,
+    "course-distance-discrepancy": 12,
     "ambiguous-source-branches": 2,
     "source-connectivity-incomplete": 2,
     "open-course-evidence-required": 3
@@ -342,15 +342,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "Russia/Ramenskoe",
-      "trackId": "ru-ramenskoe-860ae810",
-      "layoutId": "ramenskoe",
-      "sourcePath": "sources/europe/ru/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
       "referenceId": "Russia/Samara-Ring",
       "trackId": "ru-samara-ring-83652cc4",
       "layoutId": "samara-ring",
@@ -395,39 +386,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Sweden/Gotland Ring 4.1",
-      "trackId": "se-gotland-ring-311644846",
-      "layoutId": "gotland-ring-4-1",
-      "sourcePath": "sources/europe/se/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Sweden/Gotland Ring 6.0",
-      "trackId": "se-gotland-ring-311644846",
-      "layoutId": "gotland-ring-6-0",
-      "sourcePath": "sources/europe/se/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "Sweden/Gotland Ring 7.3",
-      "trackId": "se-gotland-ring-311644846",
-      "layoutId": "gotland-ring-7-3",
-      "sourcePath": "sources/europe/se/osm.json",
-      "sourceWayIds": [
-        311644846,
-        677371666,
-        677371667
-      ],
-      "candidateCount": 5,
-      "closestSourceLengthM": 3052.6,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Sweden/Ljungbyhed Park",
