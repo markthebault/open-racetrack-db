@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 921
-- unmappedLayouts: 86
+- draftMapped: 922
+- unmappedLayouts: 85
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -701,7 +701,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | New Jersey Raceway Park | 1 | 1 | 1 |  |  |
 | United States | New Jersey Thunderbolt | 1 | 1 | 1 |  |  |
 | United States | New York Safety | 1 | 1 | 1 |  |  |
-| United States | NOLA Motorsports Park | 3 | 2 | 1 | Nola Motorsports Park | main |
+| United States | NOLA Motorsports Park | 5 | 2 | 2 |  | main; north-long-course-2014; north-western-connecting-branches-2014 |
 | United States | Norway Speedway | 1 | 1 | 1 |  |  |
 | United States | Norway Speedway Dirt | 1 | 1 | 1 |  |  |
 | United States | Oregon Raceway Park | 2 | 1 | 1 |  | main |
@@ -873,7 +873,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Gateway Road 2 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
 
@@ -1778,7 +1777,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | New Jersey Raceway Park | us-new-jersey-raceway-park-a3427ce5 | new-jersey-raceway-park | draft-mapped |
 | United States | New Jersey Thunderbolt | us-new-jersey-thunderbolt-08305c9a | new-jersey-thunderbolt | draft-mapped |
 | United States | New York Safety Track | us-new-york-safety-7dd4ad33 | new-york-safety-track | draft-mapped |
-| United States | Nola Motorsports Park | us-nola-motorsports-park-298904844 |  | missing-layout |
+| United States | Nola Motorsports Park | us-nola-motorsports-park-298904844 | nola-motorsports-park | draft-mapped |
 | United States | Nola Motorsports Park Course A | us-nola-motorsports-park-298904844 | nola-motorsports-park-course-a | draft-mapped |
 | United States | Norway Speedway | us-norway-speedway-28bd57a2 | norway-speedway | draft-mapped |
 | United States | Norway Speedway Dirt Track | us-norway-speedway-dirt-9c2cf7b0 | norway-speedway-dirt-track | draft-mapped |

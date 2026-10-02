@@ -1,6 +1,14 @@
 import {distance, equal, nearestEdge, type Position} from '../src/geo';
 import type {TimingRecord} from './reference-timing';
 
+export function validateNetworkTiming(record:TimingRecord,paths:Position[][]){
+ if(paths.length<2||paths.some(p=>p.length<2))throw new Error('Network requires multiple nonempty paths');
+ if(record.gates.some(g=>Math.min(...paths.map(p=>nearestEdge(g.point,p).displacementM))>30))throw new Error('Network fails timing-location check');
+ if(record.gates.length===1&&record.gates[0].role==='start_finish')return 'shared' as const;
+ if(record.gates.length===2&&record.gates.some(g=>g.role==='start')&&record.gates.some(g=>g.role==='finish'))return 'separate' as const;
+ throw new Error('Network requires complete shared or separate timing roles');
+}
+
 // Open drafts must end at independently mapped nodes near the two timing gates.
 // Being near a gate somewhere along a longer road is insufficient.
 export function validateSelectionTiming(record: TimingRecord, trace: Position[], closed: boolean, endpointToleranceM = 30) {

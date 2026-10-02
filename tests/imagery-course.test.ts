@@ -1,7 +1,8 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {imageryCoordinates,buildImageryCourse,validateImageryRaster,type ImageryCourse} from '../scripts/imagery-course';
+import {imageryCoordinates,imageryPaths,buildImageryCourse,validateImageryRaster,type ImageryCourse} from '../scripts/imagery-course';
 import {validateTrack} from '../schemas/data';
+import {networkLength} from '../src/geo';
 
 const source:ImageryCourse={schemaVersion:1,sourceKind:'georeferenced-imagery',sourceId:'usgs-fixture',attribution:'USGS fixture',license:'public-domain',imageryFile:'fixture.png',imagerySha256:'a'.repeat(64),sourceUrl:'https://www.usgs.gov/',reuseEvidenceUrl:'https://www.usgs.gov/data-policy',retrievedAt:'2026-10-02T00:00:00Z',width:100,height:100,extent:{xmin:0,ymin:0,xmax:100,ymax:100,spatialReference:3857},pixels:[[0,0],[50,0],[50,50],[0,0]],closed:true,identificationUrl:'https://example.org/',evidence:'Fixture centerline.'};
 const track=validateTrack({schemaVersion:1,id:'fixture',name:'Fixture',aliases:[],country:{code:'US',name:'United States',slug:'united-states'},location:[0,0],sourceIds:['usgs-fixture'],defaultLayoutId:'main',layouts:[{id:'main',name:'Main',file:'layouts/main.geojson'}],sources:[{id:source.sourceId,type:'imagery',title:'USGS',url:source.sourceUrl,license:source.license,retrievedAt:source.retrievedAt,evidenceNote:'Public-domain source.'}]});
@@ -52,4 +53,33 @@ test('OGL imagery preserves provider attribution and rejects mismatched reuse re
  assert.deepEqual(layout.features[0].properties.sourceIds,[government.sourceId]);
  assert.throws(()=>buildImageryCourse(recipe,government,track),/rights/);
  assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/unrelated'}]}),/rights/);
+});
+
+const networkSource=(paths:{name:string;pixels:[number,number][];closed:boolean}[])=>({
+ ...Object.fromEntries(Object.entries(source).filter(([key])=>key!=='pixels')),
+ geometryKind:'network',closed:false,
+ paths:paths.map(p=>({...p,identificationUrl:'https://example.org/configurations',evidence:'Independently identified paved connection.'}))
+});
+const networkRecipe={...recipe,schemaVersion:2,geometryKind:'network',closed:false};
+
+test('disconnected imagery branches remain separate paths without a fabricated connecting line',()=>{
+ const input=networkSource([{name:'Western course',pixels:[[0,0],[10,0]],closed:false},{name:'Eastern course',pixels:[[90,90],[90,95]],closed:false}]);
+ const paths=imageryPaths(input),layout=buildImageryCourse(networkRecipe,input,track);
+ assert.equal(layout.metadata.geometryKind,'network');assert.equal(layout.metadata.schemaVersion,2);assert.equal(layout.metadata.closed,false);
+ assert.equal(layout.features[0].geometry.type,'MultiLineString');assert.deepEqual(layout.features[0].geometry.coordinates,paths);
+ assert.equal(layout.metadata.lengthM,networkLength(paths));assert.ok(layout.metadata.lengthM<16);
+ assert.throws(()=>imageryCoordinates(input),/cannot be flattened/);
+ assert.throws(()=>buildImageryCourse(recipe,input,track),/mismatch/);
+});
+
+test('imagery networks count reversed shared edges once and reject duplicate or unidentified components',()=>{
+ const first={name:'Main',pixels:[[0,0],[10,0],[20,0]] as [number,number][],closed:false};
+ const second={name:'Alternate',pixels:[[10,0],[0,0],[0,10]] as [number,number][],closed:false};
+ const input=networkSource([first,second]),layout=buildImageryCourse(networkRecipe,input,track);
+ assert.ok(Math.abs(layout.metadata.lengthM-30)<.1);
+ assert.throws(()=>imageryPaths(networkSource([first,{...first,name:'Reverse',pixels:[...first.pixels].reverse()}])),/duplicate paths/);
+ assert.throws(()=>imageryPaths(networkSource([first,{...second,name:'Main'}])),/distinct component names/);
+ assert.throws(()=>imageryPaths(networkSource([first,{...second,name:''}])));
+ assert.throws(()=>imageryPaths(networkSource([first,{...second,closed:true}])),/closure mismatch/);
+ assert.throws(()=>imageryPaths({...input,pixels:source.pixels}));
 });

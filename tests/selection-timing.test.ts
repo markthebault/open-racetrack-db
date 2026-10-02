@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {validateSelectionTiming} from '../scripts/selection-timing';
+import {validateSelectionTiming,validateNetworkTiming} from '../scripts/selection-timing';
 import type {TimingRecord} from '../scripts/reference-timing';
 import type {Position} from '../src/geo';
 
@@ -29,4 +29,15 @@ test('documented sparse endpoint allowance keeps the route-neighborhood check st
  const away:TimingRecord={...open,gates:[open.gates[0],{role:'finish',point:[.01055,50.00035]}]};
  assert.throws(()=>validateSelectionTiming(away,sparse,false,50),/location/);
  assert.throws(()=>validateSelectionTiming(open,[...trace,[.011,50]],false,50),/endpoints/);
+});
+
+test('network timing checks each real path and rejects a gate on the gap between them',()=>{
+ const paths:Position[][]=[[[0,50],[.001,50]],[[.01,50],[.011,50]]];
+ const shared:TimingRecord={...open,gates:[{role:'start_finish',point:[.0105,50]}]};
+ assert.equal(validateNetworkTiming(shared,paths),'shared');
+ assert.equal(validateNetworkTiming({...open,gates:[{role:'start',point:paths[0][0]},{role:'finish',point:paths[1][1]}]},paths),'separate');
+ assert.throws(()=>validateNetworkTiming({...shared,gates:[{role:'start_finish',point:[.005,50]}]},paths),/location/);
+ assert.throws(()=>validateNetworkTiming({...shared,gates:[]},paths),/complete shared or separate/);
+ assert.throws(()=>validateNetworkTiming({...shared,gates:[{role:'finish',point:paths[1][0]}]},paths),/complete shared or separate/);
+ assert.throws(()=>validateNetworkTiming(shared,[paths[0]]),/multiple nonempty/);
 });
