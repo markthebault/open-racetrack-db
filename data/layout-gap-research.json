@@ -5,7 +5,7 @@
   "summary": {
     "configuration-evidence-required": 2,
     "independent-geometry-missing": 23,
-    "course-distance-discrepancy": 7,
+    "course-distance-discrepancy": 6,
     "ambiguous-source-branches": 2,
     "source-connectivity-incomplete": 1,
     "open-course-evidence-required": 3
@@ -399,29 +399,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/Silverstone RX",
-      "trackId": "gb-silverstone-circuit-3571477",
-      "layoutId": "silverstone-rx",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        169851260,
-        227310197,
-        227339144,
-        227339145,
-        227339146,
-        259160214,
-        259160215,
-        259160216,
-        259160217,
-        259160218,
-        259160219
-      ],
-      "candidateCount": 12,
-      "closestSourceLengthM": 1278.4,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United States/Apex Motor Club Apex II",

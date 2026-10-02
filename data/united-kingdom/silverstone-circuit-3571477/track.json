@@ -19,7 +19,9 @@
     "osm-circuit-51160",
     "osm-selection-169851260",
     "osm-selection-3571477",
-    "osm-network-silverstone-combo"
+    "osm-network-silverstone-combo",
+    "ea-silverstone-rx-intensity-2019",
+    "ea-silverstone-rx-standard-2019"
   ],
   "defaultLayoutId": "silverstone-gp-wing-sf",
   "layouts": [
@@ -75,8 +77,8 @@
       "id": "silverstone-rx",
       "name": "Silverstone RX",
       "referenceId": "United Kingdom/Silverstone RX",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/silverstone-rx.geojson",
+      "description": "The FIA 2018 event plan identifies the ten-turn Standard rallycross circuit and its separate start-grid approach. The pinned Environment Agency January–March 2019 National LIDAR Programme 1 m intensity raster independently locates the asphalt junction, both gravel hairpins and intervening bends. This is reflected laser intensity, not color aerial photography. The long northeastern Stowe loop, southwestern Stowe loop, kart courses, pits and the separate Joker bend are excluded. The closed Standard route measures independently of the approach. The supplied general configuration also depicts a start-grid stem, so the two connected sections are retained as separate paths rather than closing the stem into a fictitious lap. The approach follows the independently visible shared asphalt grid; its endpoint is provisional and is not asserted to be a timing endpoint. Native survey grid, crop transform, grayscale stretch, nearest-neighbor reprojection and source hashes are pinned. Neither nominal distance nor private timing positions determine any course vertex. Historical correspondence, grid extent and exact racing-line alignment remain draft. Independently digitized aerial branch network: 1238.1 m. Shared edges count once; this configuration set is not a single lap, and no line joins separate paths. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "silverstone-combo",
@@ -84,6 +86,12 @@
       "referenceId": "United Kingdom/Silverstone Combo",
       "file": "layouts/silverstone-combo.geojson",
       "description": "Combined mapped configurations: Silverstone GP Wing SF, Silverstone GP Old SF, Silverstone GP Historic, Silverstone National, Silverstone International. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "rallycross-standard",
+      "name": "Rallycross Standard",
+      "description": "The FIA identifies the 972 m Standard rallycross lap, including the shorter western S and both gravel hairpins. Independent 2019 Environment Agency 1 m LiDAR intensity locates its 981.1 m draft centerline. The start-grid approach, Joker bend, other Stowe branches and pits are excluded. Native georeferencing and resolution remain unchanged; no coordinates are fitted to nominal distance or private timing positions. Fine racing-line placement and historical alignment remain draft.",
+      "file": "layouts/rallycross-standard.geojson"
     }
   ],
   "sources": [
@@ -176,6 +184,33 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:55:57.160Z",
       "evidenceNote": "Aggregate includes the identified GP timing variants, historic GP, National and International branches. The separate Stowe infield circuit is excluded. Component identity and historical corner alignment remain draft. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "ea-silverstone-rx-intensity-2019",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SP6540",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T13:28:16.440420Z",
+      "evidenceNote": "Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Pinned raster hash aee35c7ca2e4c2d95847ae479336d0f77f4ce68fa8eae241d1f6ad9473374a30; reproducible pixel-to-coordinate conversion. The FIA 2018 event plan identifies the ten-turn Standard rallycross circuit and its separate start-grid approach. The pinned Environment Agency January–March 2019 National LIDAR Programme 1 m intensity raster independently locates the asphalt junction, both gravel hairpins and intervening bends. This is reflected laser intensity, not color aerial photography. The long northeastern Stowe loop, southwestern Stowe loop, kart courses, pits and the separate Joker bend are excluded. The closed Standard route measures independently of the approach. The supplied general configuration also depicts a start-grid stem, so the two connected sections are retained as separate paths rather than closing the stem into a fictitious lap. The approach follows the independently visible shared asphalt grid; its endpoint is provisional and is not asserted to be a timing endpoint. Native survey grid, crop transform, grayscale stretch, nearest-neighbor reprojection and source hashes are pinned. Neither nominal distance nor private timing positions determine any course vertex. Historical correspondence, grid extent and exact racing-line alignment remain draft."
+    },
+    {
+      "id": "imagery-identity-silverstone-rx",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-2",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T13:28:16.440420Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "ea-silverstone-rx-standard-2019",
+      "type": "imagery",
+      "title": "Environment Agency georeferenced LiDAR intensity survey",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SP6540",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T13:28:16.440420Z",
+      "evidenceNote": "Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. The FIA identifies the 972 m Standard rallycross lap, including the shorter western S and both gravel hairpins. Independent 2019 Environment Agency 1 m LiDAR intensity locates its 981.1 m draft centerline. The start-grid approach, Joker bend, other Stowe branches and pits are excluded. Native georeferencing and resolution remain unchanged; no coordinates are fitted to nominal distance or private timing positions. Fine racing-line placement and historical alignment remain draft."
     }
   ]
 }

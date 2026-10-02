@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 969,
-    "unmappedLayouts": 38,
+    "draftMapped": 970,
+    "unmappedLayouts": 37,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11670,11 +11670,14 @@
       "name": "Silverstone RX",
       "timingMode": "shared",
       "trackId": "gb-silverstone-circuit-3571477",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "silverstone-rx"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "gb-silverstone-circuit-3571477"
@@ -21374,16 +21377,15 @@
       "trackId": "gb-silverstone-circuit-3571477",
       "name": "Silverstone Circuit",
       "country": "United Kingdom",
-      "actualLayoutCount": 9,
-      "actualTraceCount": 8,
+      "actualLayoutCount": 10,
+      "actualTraceCount": 10,
       "expectedRecordCount": 8,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 7,
-      "missingRecordNames": [
-        "Silverstone RX"
-      ],
+      "mappedRecordCount": 8,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
-        "main"
+        "main",
+        "rallycross-standard"
       ],
       "status": "gap"
     },
@@ -27024,13 +27026,6 @@
     },
     {
       "recordId": "United Kingdom/Thorsway MX",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Silverstone RX",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

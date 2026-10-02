@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 969
-- unmappedLayouts: 38
+- draftMapped: 970
+- unmappedLayouts: 37
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -391,7 +391,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Rye House Kart Raceway | 1 | 1 | 1 |  |  |
 | United Kingdom | Shelsley Walsh Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Shenington Kart Racing | 1 | 1 | 1 |  |  |
-| United Kingdom | Silverstone Circuit | 9 | 8 | 7 | Silverstone RX | main |
+| United Kingdom | Silverstone Circuit | 10 | 8 | 8 |  | main; rallycross-standard |
 | United Kingdom | Snetterton Motor Racing Circuit | 5 | 4 | 4 |  | main |
 | United Kingdom | Thorsway MX | 1 | 1 | 0 | Thorsway MX |  |
 | United Kingdom | Three Sisters | 4 | 1 | 1 |  | three-sisters-full; three-sisters-perimeter; three-sisters-club |
@@ -818,7 +818,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Rushmore Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Silverstone RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex II |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1563,7 +1562,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Silverstone GP Historic | gb-silverstone-circuit-3571477 | silverstone-gp-historic | draft-mapped |
 | United Kingdom | Silverstone National | gb-silverstone-circuit-3571477 | silverstone-national | draft-mapped |
 | United Kingdom | Silverstone International | gb-silverstone-circuit-3571477 | silverstone-international | draft-mapped |
-| United Kingdom | Silverstone RX | gb-silverstone-circuit-3571477 |  | missing-layout |
+| United Kingdom | Silverstone RX | gb-silverstone-circuit-3571477 | silverstone-rx | draft-mapped |
 | United Kingdom | Silverstone Combo | gb-silverstone-circuit-3571477 | silverstone-combo | draft-mapped |
 | United States | AMR Motorplex Kart Circuit | us-amr-motorplex-kart-circuit-reference | main | draft-mapped |
 | United States | Apex Motor Club Apex I | us-apex-motor-b7ddcfd3 | apex-motor-club-apex-i | draft-mapped |
