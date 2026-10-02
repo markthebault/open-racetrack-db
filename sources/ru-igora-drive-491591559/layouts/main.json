@@ -2,39 +2,21 @@
   "schemaVersion": 1,
   "trackId": "ru-igora-drive-491591559",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "d888f93c9173d703941514d8b490b40eb5d96cb5b3aaa9cb19da4e59b5ed9c46",
+  "sourceId": "osm-identified-main-courses",
+  "snapshotFile": "identified-national-and-grand-prix.json",
+  "snapshotSha256": "5e5b6857e1ae4f23a5cc841e1331b632122c719348ac0ea234db6bdb889f3c3e",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read."
+    "Operator-identified 2022 extended main course: the complete northern sector and southern extension replace the earlier unnamed candidate and its northern shortcut. Main way 491591561 indices 139 and 160 join extension 1314505677 by exact shared node IDs; the old southern return between these nodes is excluded. Northern crossover 729149906, short infield bypasses, karting, rallycross, motocross, drifting and pits are excluded. Geometry remains draft, and exact racing-line placement requires review. Start/finish GPS is unavailable for these configurations and is not inferred from their filename or circuit drawings."
   ],
   "segments": [
     {
       "wayId": 491591561,
       "wayVersion": 12,
-      "fromIndex": 10,
-      "toIndex": 51
-    },
-    {
-      "wayId": 729149906,
-      "wayVersion": 5,
       "fromIndex": 0,
-      "toIndex": 10
-    },
-    {
-      "wayId": 491591560,
-      "wayVersion": 8,
-      "fromIndex": 10,
-      "toIndex": 11
-    },
-    {
-      "wayId": 491591561,
-      "wayVersion": 12,
-      "fromIndex": 62,
       "toIndex": 139
     },
     {
@@ -48,12 +30,6 @@
       "wayVersion": 12,
       "fromIndex": 160,
       "toIndex": 165
-    },
-    {
-      "wayId": 491591561,
-      "wayVersion": 12,
-      "fromIndex": 0,
-      "toIndex": 10
     }
   ],
   "gates": []

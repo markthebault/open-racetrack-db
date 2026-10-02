@@ -553,7 +553,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Serbia | NAVAK Driving Academy Old | 1 | 1 | 1 |  |  |
 | Russia | Autodrome St Petersburg | 1 | 1 | 1 |  |  |
 | Russia | Grozny | 1 | 1 | 1 |  |  |
-| Russia | Igora Drive | 1 | 0 | 0 |  | main |
+| Russia | Igora Drive | 2 | 0 | 0 |  | main; national |
 | Russia | Kartdrom GBU Talisman | 1 | 1 | 1 |  |  |
 | Russia | Kazan Autocross Ring | 1 | 1 | 1 |  |  |
 | Russia | автодром KAZANRING | 1 | 1 | 1 |  |  |
