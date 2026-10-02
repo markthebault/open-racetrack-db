@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 939
-- unmappedLayouts: 68
+- draftMapped: 940
+- unmappedLayouts: 67
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -140,7 +140,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Autodrome Montmagny Speedway | 1 | 0 | 0 |  | main |
 | Canada | Autodrome St-Felicien | 1 | 0 | 0 |  | main |
 | Canada | Calabogie Motorsports Park | 2 | 1 | 1 |  | main |
-| Canada | Cameron Speedway Kart Circuit | 1 | 1 | 0 | Cameron Speedway Kart Circuit |  |
+| Canada | Cameron Speedway Kart Circuit | 4 | 1 | 1 |  | historical-southern-course-a; historical-southern-course-b; historical-southern-course-c |
 | Canada | Canadian Tire Motorsport Park | 2 | 2 | 2 |  |  |
 | Canada | Canadian Tire Motorsports Park DDT | 3 | 1 | 1 |  | ddt-two-kinks; ddt-one-kink |
 | Canada | Cayuga Motor Speedway | 1 | 0 | 0 |  | main |
@@ -797,7 +797,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/Cameron Speedway Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Trois Rivieres |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1001,7 +1000,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Area 27 | ca-area-27-526010213 | area-27 | draft-mapped |
 | Canada | Area 27 Short | ca-area-27-526010213 | area-27-short | draft-mapped |
 | Canada | Calabogie | ca-calabogie-motorsports-park-279357480 | calabogie | draft-mapped |
-| Canada | Cameron Speedway Kart Circuit | ca-cameron-speedway-kart-circuit-f7997f0a |  | missing-layout |
+| Canada | Cameron Speedway Kart Circuit | ca-cameron-speedway-kart-circuit-f7997f0a | cameron-speedway-kart-circuit | draft-mapped |
 | Canada | Canadian Tire Motorsports Park | ca-canadian-tire-motorsport-park-37059242 | main | draft-mapped |
 | Canada | Canadian Tire Motorsports Park DDT | ca-canadian-tire-motorsports-park-ddt-78298a58 | canadian-tire-motorsports-park-ddt | draft-mapped |
 | Canada | Castrol Raceway | ca-rad-torque-raceway-486902392 | main | draft-mapped |

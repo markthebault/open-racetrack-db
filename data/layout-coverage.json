@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 939,
-    "unmappedLayouts": 68,
+    "draftMapped": 940,
+    "unmappedLayouts": 67,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2212,11 +2212,14 @@
       "name": "Cameron Speedway Kart Circuit",
       "timingMode": "shared",
       "trackId": "ca-cameron-speedway-kart-circuit-f7997f0a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "cameron-speedway-kart-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -17814,15 +17817,17 @@
       "trackId": "ca-cameron-speedway-kart-circuit-f7997f0a",
       "name": "Cameron Speedway Kart Circuit",
       "country": "Canada",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 4,
+      "actualTraceCount": 4,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Cameron Speedway Kart Circuit"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "historical-southern-course-a",
+        "historical-southern-course-b",
+        "historical-southern-course-c"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -26833,13 +26838,6 @@
     },
     {
       "recordId": "Austria/Fuglau",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Canada/Cameron Speedway Kart Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
