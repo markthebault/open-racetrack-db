@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montju\u00efc",
+      "referenceId": "Spain/Circuit de Montjuïc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -22590,6 +22590,55 @@
         }
       ],
       "expectedLengthM": 3498.6,
+      "maximumDistanceDifferenceM": 100
+    },
+    {
+      "referenceId": "United States/Sonoma Kart Circuit",
+      "sourcePath": "sources/world/us/osm.json",
+      "sourceWayIds": [
+        230287123,
+        230287127,
+        230287129,
+        230287131,
+        230287133,
+        230287139
+      ],
+      "closed": true,
+      "evidence": "Full northern hairpin, middle return and southern chicane course at the operator karting center. The catalogue branch identity excludes the middle diagonal shortcut, separate northern extension and paddock/skid-pad access. Exact independent nodes retain the 1197.8 m route against the 1103 m catalogue scalar; distance, historical alignment and direction remain draft.",
+      "identificationUrl": "https://www.sonomaraceway.com/experiences/karting-center/",
+      "segments": [
+        {
+          "wayId": 230287123,
+          "wayVersion": 1,
+          "fromIndex": 35,
+          "toIndex": 20
+        },
+        {
+          "wayId": 230287129,
+          "wayVersion": 1,
+          "fromIndex": 27,
+          "toIndex": 3
+        },
+        {
+          "wayId": 230287133,
+          "wayVersion": 1,
+          "fromIndex": 13,
+          "toIndex": 0
+        },
+        {
+          "wayId": 230287123,
+          "wayVersion": 1,
+          "fromIndex": 19,
+          "toIndex": 0
+        },
+        {
+          "wayId": 230287123,
+          "wayVersion": 1,
+          "fromIndex": 47,
+          "toIndex": 35
+        }
+      ],
+      "expectedLengthM": 1197.8,
       "maximumDistanceDifferenceM": 100
     }
   ]

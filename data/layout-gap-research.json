@@ -4,9 +4,9 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 5,
-    "course-distance-discrepancy": 34,
+    "course-distance-discrepancy": 33,
     "independent-geometry-missing": 46,
-    "ambiguous-source-branches": 15,
+    "ambiguous-source-branches": 14,
     "source-connectivity-incomplete": 6,
     "open-course-evidence-required": 8
   },
@@ -1746,24 +1746,6 @@
       "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
-      "referenceId": "United States/Sonoma Kart Circuit",
-      "trackId": "us-sonoma-kart-circuit-f0967033",
-      "layoutId": "sonoma-kart-circuit",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        230287123,
-        230287127,
-        230287129,
-        230287131,
-        230287133,
-        230287139
-      ],
-      "candidateCount": 49,
-      "closestSourceLengthM": 1118.7,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
-    },
-    {
       "referenceId": "United States/Texas World Speedway",
       "trackId": "us-texas-world-speedway-e743bb9c",
       "layoutId": "texas-world-speedway",
@@ -1771,24 +1753,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/Thermal Club Twin Palms Short",
-      "trackId": "us-the-thermal-club-443108132",
-      "layoutId": "thermal-club-twin-palms-short",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        443108132,
-        733192730,
-        733192731,
-        733192732,
-        1114976123,
-        1114976124
-      ],
-      "candidateCount": 6,
-      "closestSourceLengthM": 3328,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "Vietnam/Hanoi",

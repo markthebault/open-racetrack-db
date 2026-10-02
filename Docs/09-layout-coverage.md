@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 893
-- unmappedLayouts: 114
+- draftMapped: 895
+- unmappedLayouts: 112
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -741,7 +741,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Roebling Road Raceway | 1 | 1 | 1 |  |  |
 | United States | Sandia Motor Speedway | 1 | 1 | 1 |  |  |
 | United States | Sebring International Raceway | 7 | 6 | 6 |  | main |
-| United States | Sonoma Kart Circuit | 1 | 1 | 0 | Sonoma Kart Circuit |  |
+| United States | Sonoma Kart Circuit | 1 | 1 | 1 |  |  |
 | United States | Sonoma Raceway 2020 | 8 | 7 | 7 |  | main |
 | United States | Spring Mountain Motorsports Ranch | 15 | 14 | 14 |  | main |
 | United States | St Petersburg Street Circuit | 1 | 1 | 1 |  |  |
@@ -755,7 +755,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Texas World Speedway | 1 | 1 | 0 | Texas World Speedway |  |
 | United States | the FIRM | 1 | 1 | 1 |  |  |
 | United States | The Ridge Motorsports Park | 2 | 1 | 1 |  | main |
-| United States | The Thermal Club | 8 | 7 | 6 | Thermal Club Twin Palms Short | main |
+| United States | The Thermal Club | 8 | 7 | 7 |  | main |
 | United States | Thompson Speedway | 3 | 2 | 2 |  | main |
 | United States | Thunderhill Raceway Park | 6 | 5 | 5 |  | main |
 | United States | Utah Motorsports Campus | 6 | 5 | 5 |  | main |
@@ -898,9 +898,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley E |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Reno Fernley H |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Sonoma Kart Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Thermal Club Twin Palms Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Vietnam/Hanoi |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
@@ -1857,7 +1855,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Sebring Johnson Club Alt SF | us-sebring-international-raceway-426154257 | sebring-johnson-club-alt-sf | draft-mapped |
 | United States | Sebring School Circuit | us-sebring-international-raceway-426154257 | sebring-school-circuit | draft-mapped |
 | United States | Sebring SRO Practice | us-sebring-international-raceway-426154257 | sebring-sro-practice | draft-mapped |
-| United States | Sonoma Kart Circuit | us-sonoma-kart-circuit-f0967033 |  | missing-layout |
+| United States | Sonoma Kart Circuit | us-sonoma-kart-circuit-f0967033 | sonoma-kart-circuit | draft-mapped |
 | United States | Sonoma Raceway | us-sonoma-raceway-2020-28825444 | sonoma-raceway | draft-mapped |
 | United States | Sonoma Raceway Combo | us-sonoma-raceway-2020-28825444 | sonoma-raceway-combo | draft-mapped |
 | United States | Sonoma Raceway Indy | us-sonoma-raceway-2020-28825444 | sonoma-raceway-indy | draft-mapped |
@@ -1893,7 +1891,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Thermal Club North Palm | us-the-thermal-club-443108132 | thermal-club-north-palm | draft-mapped |
 | United States | Thermal Club South Palm | us-the-thermal-club-443108132 | thermal-club-south-palm | draft-mapped |
 | United States | Thermal Club Twin Palms | us-the-thermal-club-443108132 | thermal-club-twin-palms | draft-mapped |
-| United States | Thermal Club Twin Palms Short | us-the-thermal-club-443108132 |  | missing-layout |
+| United States | Thermal Club Twin Palms Short | us-the-thermal-club-443108132 | thermal-club-twin-palms-short | draft-mapped |
 | United States | Thompson Spdwy 1.5 Mile Road Course | us-thompson-speedway-151397704 | thompson-spdwy-1-5-mile-road-course | draft-mapped |
 | United States | Thompson Spdwy 1.7 Mile Road Course | us-thompson-speedway-151397704 | thompson-spdwy-1-7-mile-road-course | draft-mapped |
 | United States | Thunderhill Raceway Park - 5mile | us-thunderhill-raceway-park-28825115 | thunderhill-raceway-park-5mile | draft-mapped |

@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **893 of 1,007 entries**. This recovery adds 436 associations: 394 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 340 traces across 46 countries. 300 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 40 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **895 of 1,007 entries**. This recovery adds 438 associations: 396 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 342 traces across 46 countries. 301 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 40 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or public-domain georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -10,20 +10,20 @@ The following source limitations remain after the complete search of the pinned 
 
 | Remaining cause | Entries |
 | --- | ---: |
-| Ambiguous source branches | 15 |
-| Unresolved course-distance discrepancy | 34 |
+| Ambiguous source branches | 14 |
+| Unresolved course-distance discrepancy | 33 |
 | Independent geometry absent near the timing position | 46 |
 | Aggregate configuration needs identification | 5 |
 | Open-course route or endpoint evidence needed | 8 |
 | Source connectivity incomplete | 6 |
 | Bounded search incomplete | 0 |
-| **Total** | **114** |
+| **Total** | **112** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 114 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 112 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -58,3 +58,5 @@ Géoparc Long and Short now retain the independently mapped curved central retur
 Bunny Loop now follows the narrow two-straight TRC Ohio test loop from pinned public-domain 2023 NAIP imagery. Both turnarounds are retained; the large high-speed oval and adjacent handling roads are excluded. The 2260.2 m centerline is unscaled, with turnaround alignment and direction still draft.
 
 Road America Short follows the independently mapped back-half course through Turns 5–13 and its internal return before Turn 14. The operator fan map identifies the corners and return road. Its 3498.6 m distance remains unscaled against the 3450 m catalogue scalar; historical barriers and service-road alignment remain draft. A targeted browser check passed.
+
+Sonoma Kart retains the full northern hairpin, middle return and southern chicane, excluding the diagonal shortcut and separate northern extension. Its 1197.8 m independently mapped draft differs from the 1103 m catalogue scalar. Thermal Twin Palms Short combines the middle Desert course with the South Palm outer loop, excluding the northern extension and southern inner technical loop. Its 3904.7 m centerline comes from pinned public-domain 2022 NAIP imagery. Both targeted browser checks passed.

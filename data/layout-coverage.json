@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 893,
-    "unmappedLayouts": 114,
+    "draftMapped": 895,
+    "unmappedLayouts": 112,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -15030,11 +15030,14 @@
       "name": "Sonoma Kart Circuit",
       "timingMode": "shared",
       "trackId": "us-sonoma-kart-circuit-f0967033",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "sonoma-kart-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -15600,11 +15603,14 @@
       "name": "Thermal Club Twin Palms Short",
       "timingMode": "shared",
       "trackId": "us-the-thermal-club-443108132",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "thermal-club-twin-palms-short"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-the-thermal-club-443108132"
@@ -26153,15 +26159,13 @@
       "name": "Sonoma Kart Circuit",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Sonoma Kart Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-sonoma-raceway-2020-28825444",
@@ -26349,13 +26353,11 @@
       "name": "The Thermal Club",
       "country": "United States",
       "actualLayoutCount": 8,
-      "actualTraceCount": 7,
+      "actualTraceCount": 8,
       "expectedRecordCount": 7,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 6,
-      "missingRecordNames": [
-        "Thermal Club Twin Palms Short"
-      ],
+      "mappedRecordCount": 7,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -27513,21 +27515,7 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/Sonoma Kart Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/Texas World Speedway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Thermal Club Twin Palms Short",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
