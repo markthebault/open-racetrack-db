@@ -1,0 +1,3 @@
+# Newcastle Street Circuit
+
+The centerline is independently digitized from pinned georeferenced imagery under CC-BY-4.0. Attribution: © OpenStreetMap contributors, ODbL-1.0. © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW), CC BY 4.0. For current information go to spatial.nsw.gov.au. Modified independent course digitization by OpenRacetrackDB.. Reuse evidence: https://portal.spatial.nsw.gov.au/portal/home/item.html?id=ca93748ebe5a46f1ae5451f35b3d0b9d. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.
