@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 981,
-    "unmappedLayouts": 26,
+    "draftMapped": 980,
+    "unmappedLayouts": 27,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -10775,15 +10775,14 @@
       "name": "Kames Motorsport Circuit Reverse",
       "timingMode": "separate",
       "trackId": "gb-kames-motorsport-circuit-38672231",
-      "layoutIds": [
-        "kames-motorsport-circuit-reverse"
-      ],
-      "status": "draft-mapped",
+      "layoutIds": [],
+      "status": "missing-layout",
       "association": "catalogue",
       "remainingWork": [
-        "Review the named course geometry and travel convention.",
-        "Public timing still needs independently reusable evidence.",
-        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
+        "Identify the venue and explicit connected route recipe from independent geometry."
+      ],
+      "candidateTrackIds": [
+        "gb-kames-motorsport-circuit-38672231"
       ]
     },
     {
@@ -20927,12 +20926,13 @@
       "name": "Kames Motorsport Circuit",
       "country": "United Kingdom",
       "actualLayoutCount": 3,
-      "actualTraceCount": 2,
+      "actualTraceCount": 1,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
+      "mappedRecordCount": 0,
       "missingRecordNames": [
-        "Kames Motorsport Circuit"
+        "Kames Motorsport Circuit",
+        "Kames Motorsport Circuit Reverse"
       ],
       "unassociatedLayoutIds": [
         "main"
@@ -26915,6 +26915,13 @@
     },
     {
       "recordId": "United Kingdom/Kames Motorsport Circuit",
+      "matchingNamedWayIds": [],
+      "namedCourseCandidates": 0,
+      "enumerationTruncated": false,
+      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
+    },
+    {
+      "recordId": "United Kingdom/Kames Motorsport Circuit Reverse",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

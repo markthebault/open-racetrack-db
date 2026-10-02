@@ -35,8 +35,9 @@
       "id": "kames-motorsport-circuit-reverse",
       "name": "Kames Motorsport Circuit Reverse",
       "referenceId": "United Kingdom/Kames Motorsport Circuit Reverse",
-      "file": "layouts/kames-motorsport-circuit-reverse.geojson",
-      "description": "Draft open course. The venue operator identifies Kames Motorsport Complex as its sprint facility. The reverse timing convention selects one distinct 966 metre connected path, close to the supplied 974 metre distance. Configuration remains draft. Approximate planar OSM trace distance 966 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
+      "description": "",
+      "missingGeometryReason": "The previous draft selected a southwestern extension outside this historical configuration. Public historical course nodes are available, but the supplied open timed-run sequence and distance remain unresolved.",
+      "file": null
     }
   ],
   "sources": [
@@ -65,7 +66,16 @@
       "url": "https://webcollect.org.uk/eacc",
       "license": "reference-only",
       "retrievedAt": "2026-10-01T14:41:34.901Z",
-      "evidenceNote": "The venue operator identifies Kames Motorsport Complex as its sprint facility. The reverse timing convention selects one distinct 966 metre connected path, close to the supplied 974 metre distance. Configuration remains draft. Identification only; no coordinates copied."
+      "evidenceNote": "The venue operator identifies Kames Motorsport Complex as its sprint facility. The earlier southwestern-extension configuration was withdrawn after comparison with the club historical track plan. Identification only; no coordinates copied."
+    },
+    {
+      "id": "kames-historical-identity-review",
+      "type": "reference",
+      "title": "Club historical track plan and sprint configuration",
+      "url": "http://www.eastayrshirecc.co.uk/documents/Kames_Track_Plan.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T00:00:00Z",
+      "evidenceNote": "The club plan distinguishes the original sprint circuit from unused rally roads. It does not identify a 974 m run or authorize the later southwestern extension. No diagram coordinates are traced or copied."
     }
   ]
 }

@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 981
-- unmappedLayouts: 26
+- draftMapped: 980
+- unmappedLayouts: 27
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -357,7 +357,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Harewood Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Hethel (With Chicane) | 1 | 1 | 1 |  |  |
 | United Kingdom | Ingliston | 1 | 1 | 0 | Ingliston |  |
-| United Kingdom | Kames Motorsport Circuit | 3 | 2 | 1 | Kames Motorsport Circuit | main |
+| United Kingdom | Kames Motorsport Circuit | 3 | 2 | 0 | Kames Motorsport Circuit; Kames Motorsport Circuit Reverse | main |
 | United Kingdom | Keevil Airfeild | 1 | 1 | 1 |  |  |
 | United Kingdom | Kimbolton kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Kirkistown | 1 | 1 | 1 |  |  |
@@ -803,6 +803,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
+| United Kingdom/Kames Motorsport Circuit Reverse |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Nutts Corner | 38075744; 38075745; 38075747; 38075748; 38075749; 210233254; 210233255; 210233256; 210233257; 210233258; 210233259; 210233260; 407744070; 407744071 | 400 | Named source ways do not identify a unique connected course. An explicit route recipe is required. |
 | United Kingdom/ProDrive |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1493,7 +1494,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Hethel (With Chicane) | gb-hethel-with-chicane-13a43e31 | hethel-with-chicane | draft-mapped |
 | United Kingdom | Ingliston | gb-ingliston-41840d79 |  | missing-layout |
 | United Kingdom | Kames Motorsport Circuit | gb-kames-motorsport-circuit-38672231 |  | missing-layout |
-| United Kingdom | Kames Motorsport Circuit Reverse | gb-kames-motorsport-circuit-38672231 | kames-motorsport-circuit-reverse | draft-mapped |
+| United Kingdom | Kames Motorsport Circuit Reverse | gb-kames-motorsport-circuit-38672231 |  | missing-layout |
 | United Kingdom | Keevil Airfeild | gb-keevil-airfeild-29b3402d | keevil-airfeild | draft-mapped |
 | United Kingdom | Kimbolton kart Circuit | gb-kimbolton-kart-circuit-0a2425c0 | kimbolton-kart-circuit | draft-mapped |
 | United Kingdom | Kirkistown | gb-kirkistown-bbc9d1a6 | kirkistown | draft-mapped |

@@ -7,7 +7,7 @@
     "independent-geometry-missing": 16,
     "course-distance-discrepancy": 5,
     "ambiguous-source-branches": 2,
-    "open-course-evidence-required": 2
+    "open-course-evidence-required": 3
   },
   "records": [
     {
@@ -217,6 +217,20 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "reason": "open-course-evidence-required",
       "nextStep": "Identify the independent open route and its source-node endpoints; do not substitute a closed venue loop."
+    },
+    {
+      "referenceId": "United Kingdom/Kames Motorsport Circuit Reverse",
+      "trackId": "gb-kames-motorsport-circuit-38672231",
+      "layoutId": "kames-motorsport-circuit-reverse",
+      "sourcePath": "sources/course-networks/kames-2018-independent-track-lines/osm.json",
+      "sourceWayIds": [
+        38672231,
+        38672234,
+        38672235,
+        38672240
+      ],
+      "reason": "open-course-evidence-required",
+      "nextStep": "Identify the historical timed-run sequence using the club track plan and dated event evidence. The withdrawn southwestern-extension selection is invalid. Do not choose a route because its scalar length is close."
     },
     {
       "referenceId": "United Kingdom/Lydden Hill Infield",
