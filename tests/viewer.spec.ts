@@ -140,6 +140,20 @@ test('Pikes Peak is an open hillclimb rather than an artificially closed loop',a
  expect(data.metadata.closed).toBe(false);expect(data.metadata.timingMode).toBe('separate');expect(data.metadata.lengthM).toBeGreaterThan(19000);expect(trace[0]).not.toEqual(trace.at(-1));
 });
 
+test('Woodbridge publishes an unchanged supporting runway without asserting public timing endpoints',async({page,request})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ await page.route('**/local/timing.json',route=>route.fulfill({status:404}));
+ await page.goto('/?track=gb-raf-woodbridge-02bc9a03&layout=raf-woodbridge');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('#selection')).toContainText('full supporting runway centerline');
+ await expect(page.locator('#selection')).toContainText('not verified timing gates');
+ await expect(page.locator('#selection')).toContainText('no 5,658 m timed route is claimed');
+ const data=await(await request.get((await page.locator('#download').getAttribute('href'))!)).json();
+ const source=JSON.parse(await readFile('sources/course-networks/raf-woodbridge-current-independent-airfield-roads/osm.json','utf8')).elements.find((w:{id:number})=>w.id===23552564);
+ expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);
+ expect(data.features[0].geometry.coordinates).toEqual(source.geometry.map((p:{lon:number;lat:number})=>[p.lon,p.lat]));
+ expect(data.metadata.closed).toBe(false);expect(data.metadata.lengthM).toBe(3160.8);expect(data.metadata.timingStatus).toBe('missing');
+});
+
 test('Queensland aggregate preserves its four configurations and switches back to a driving route',async({page,request})=>{
  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
  const index=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));

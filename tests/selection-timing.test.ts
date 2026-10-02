@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {validateSelectionTiming,validateNetworkTiming} from '../scripts/selection-timing';
+import {validateSelectionTiming,validateNetworkTiming,validateSupportingRunwayTiming} from '../scripts/selection-timing';
 import type {TimingRecord} from '../scripts/reference-timing';
 import type {Position} from '../src/geo';
 
@@ -11,6 +11,18 @@ test('open timing accepts exact source endpoints and rejects reversed or extende
  assert.throws(()=>validateSelectionTiming(open,[...trace].reverse(),false),/endpoints/);
  assert.throws(()=>validateSelectionTiming(open,[[-.001,50],...trace],false),/endpoints/);
  assert.throws(()=>validateSelectionTiming(open,[...trace,trace[0]],false),/distinct endpoints/);
+});
+
+test('supporting runway timing preserves proximity and order without pretending physical ends are timing gates',()=>{
+ const full:Position[]=[[-.005,50],...trace,[.015,50]];
+ const evidence='The full independent runway is supporting geometry; public timed endpoints are absent.';
+ assert.throws(()=>validateSelectionTiming(open,full,false),/endpoints/);
+ assert.equal(validateSupportingRunwayTiming(open,full,evidence),'separate');
+ assert.throws(()=>validateSupportingRunwayTiming(open,[...full].reverse(),evidence),/reverses/);
+ assert.throws(()=>validateSupportingRunwayTiming(open,full,' '),/identification evidence/);
+ assert.throws(()=>validateSupportingRunwayTiming({...open,gates:[open.gates[0]]},full,evidence),/separate timing/);
+ assert.throws(()=>validateSupportingRunwayTiming({...open,gates:[open.gates[0],{role:'finish',point:[.01,50.0005]}]},full,evidence),/location/);
+ assert.throws(()=>validateSupportingRunwayTiming(open,[...full,full[0]],evidence),/separate timing/);
 });
 test('course closure and timing roles must agree',()=>{
  const shared: TimingRecord = {...open,gates:[{role:'start_finish',point:trace[1]}]};

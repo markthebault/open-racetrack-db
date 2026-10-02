@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    1.40528145,
+    52.08977135
+  ],
+  "sourceIds": [
+    "osm-selection-raf-woodbridge-current-independent-airfield-roads-23552564"
+  ],
   "defaultLayoutId": "raf-woodbridge",
   "layouts": [
     {
       "id": "raf-woodbridge",
       "name": "RAF Woodbridge",
       "referenceId": "United Kingdom/RAF Woodbridge",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/raf-woodbridge.geojson",
+      "description": "Draft configuration: The independent venue description identifies the wide, open runway used for driving experiences. The supplied layout diagram identifies the straight runway rather than a taxiway circuit. Exact nodes from the complete publicly mapped runway way are retained; taxiways, invented turnarounds and parallel offset lanes are excluded. The 3,160.8 m physical runway trace differs by 2,497.2 m from the catalogue scalar. That discrepancy is unresolved and no 5,658 m timed route is claimed. Public data is the full supporting runway centerline, not an independently verified start-to-finish run. Its mapped endpoints are the runway ends, not verified timing gates. The private preview alone trims the displayed line at the local start and finish projections; no private coordinates are published. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3160.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-raf-woodbridge-current-independent-airfield-roads-23552564",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/23552564",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:58:07.642Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-raf-woodbridge",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.trackdays.co.uk/driving-experience/woodbridge/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:58:07.642Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

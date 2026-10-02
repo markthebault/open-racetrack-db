@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import {readTimingArchive} from './reference-timing';
 import {assemble,type Way} from './route';
 import {bounds,length} from '../src/geo';
-import {validateSelectionTiming} from './selection-timing';
+import {validateSelectionTiming,validateSupportingRunwayTiming} from './selection-timing';
 import {validateSelectionSource} from './selection-source';
 
 const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];
@@ -37,7 +37,7 @@ for(const selection of selections){
  validateSelectionSource(ways,selection);
  if(Math.abs(measured-selection.expectedLengthM)>.15)throw new Error('Selected independent trace changed');
  if(selection.endpointToleranceM!==undefined&&(!selection.endpointEvidence?.trim()||selection.closed))throw new Error('Endpoint allowance requires an open course and documented source limitation');
- const timingMode=validateSelectionTiming(record,trace,selection.closed,selection.endpointToleranceM,selection.openSharedTimingEvidence);
+ const timingMode=selection.supportingRunwayEvidence!==undefined?validateSupportingRunwayTiming(record,trace,selection.supportingRunwayEvidence):validateSelectionTiming(record,trace,selection.closed,selection.endpointToleranceM,selection.openSharedTimingEvidence);
  if(record.nominalLengthM&&Math.abs(measured-record.nominalLengthM)>selection.maximumDistanceDifferenceM)throw new Error('Selected course exceeds documented distance allowance');
  const identity=selection.relationId??Math.min(...selection.sourceWayIds);
  const url=selection.relationId?`https://www.openstreetmap.org/relation/${selection.relationId}`:`https://www.openstreetmap.org/way/${identity}`;
@@ -60,7 +60,7 @@ for(const selection of selections){
  manifest.snapshots??=[];const snapshotIndex=manifest.snapshots.findIndex((s:any)=>s.file===file),snapshotEntry={file,sha256:hash,sourceId,url,retrievedAt:fetchedAt};
  if(snapshotIndex<0)manifest.snapshots.push(snapshotEntry);else manifest.snapshots[snapshotIndex]=snapshotEntry;
  await save(`${root}/import.json`,manifest);
- const note=`Draft configuration: ${selection.evidence} Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance ${measured.toFixed(1)} m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.`;
+ const note=`Draft configuration: ${selection.evidence} ${selection.supportingRunwayEvidence?selection.supportingRunwayEvidence+' ':''}Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance ${measured.toFixed(1)} m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.`;
  if(!track.sourceIds.includes(sourceId))track.sourceIds.push(sourceId);
  track.sources=track.sources.filter((s:any)=>!/^selection-identity-[0-9]+$/.test(s.id));
  for(const source of [{id:sourceId,type:'osm',title:'OpenStreetMap explicitly selected circuit branches',url,license:'ODbL-1.0',retrievedAt:fetchedAt,evidenceNote:'Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest.'},{id:`selection-identity-${layout.id}`,type:'reference',title:'Configuration identification reference',url:selection.identificationUrl,license:'reference-only',retrievedAt:fetchedAt,evidenceNote:'Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied.'}]){

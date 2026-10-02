@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 988,
-    "unmappedLayouts": 19,
+    "draftMapped": 989,
+    "unmappedLayouts": 18,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11259,11 +11259,15 @@
       "name": "RAF Woodbridge",
       "timingMode": "separate",
       "trackId": "gb-raf-woodbridge-02bc9a03",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "raf-woodbridge"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -21252,15 +21256,13 @@
       "name": "RAF Woodbridge",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "RAF Woodbridge"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
@@ -26893,13 +26895,6 @@
     },
     {
       "recordId": "United Kingdom/Lydden Hill Infield",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/RAF Woodbridge",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

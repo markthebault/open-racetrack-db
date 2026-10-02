@@ -42,6 +42,8 @@ for(const selection of selections.records){
  assert.deepEqual(recipe.segments,selection.segments);assert.equal(recipe.closed,selection.closed);
  const snapshot=await read(`sources/${registration.trackId}/${recipe.snapshotFile}`);
  const trace=assemble(snapshot.elements,recipe.segments,recipe.closed);
+ validateSelectionSource(snapshot.elements,selection);
+ if(selection.supportingRunwayEvidence!==undefined){assert.equal(selection.closed,false);assert.ok(selection.supportingRunwayEvidence.trim());assert.ok(recipe.notes.some((note:string)=>note.includes(selection.supportingRunwayEvidence)));}
  assert.ok(Math.abs(length(trace)-selection.expectedLengthM)<.15);
  validateSelectionSource(snapshot.elements,selection);
  const entry=index.tracks.find((t:any)=>t.id===registration.trackId),track=await read(`data/${entry.file}`);

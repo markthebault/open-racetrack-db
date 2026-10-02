@@ -1,14 +1,20 @@
-import {length} from '../src/geo';
+import {length,nearestEdge,type Position} from '../src/geo';
 import {slice, type Segment, type Way} from './route';
 
 type StartApproach = {segment:Segment; identificationUrl:string; evidence:string};
-type Selection = {closed:boolean; segments:Segment[]; identificationUrl:string; startApproach?:StartApproach};
+type Selection = {closed:boolean; segments:Segment[]; identificationUrl:string; startApproach?:StartApproach;supportingRunwayEvidence?:string};
 
 const pit = (way:Way) => /^pit[_ -]?lane$/i.test(way.tags?.service??'') || /^pit[_ -]?lane$/i.test(way.tags?.raceway??'') || /^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(way.tags?.name??'');
 
 // Some sprints start at a pit exit. Permit only the documented initial section,
 // never a pit detour chosen to make a closed course's distance match.
 export function validateSelectionSource(ways:Way[], selection:Selection) {
+ if(selection.supportingRunwayEvidence!==undefined){
+  const segment=selection.segments[0],way=ways.find(w=>w.id===segment?.wayId);
+  if(selection.closed||!selection.supportingRunwayEvidence.trim()||selection.startApproach||selection.segments.length!==1||!way||way.tags?.aeroway!=='runway'||!((segment.fromIndex===0&&segment.toIndex===way.nodes.length-1)||(segment.toIndex===0&&segment.fromIndex===way.nodes.length-1)))throw new Error('Supporting runway requires one complete independent runway centerline and identification evidence');
+  const trace=slice(way,segment).map(p=>p.point),axis:Position[]=[trace[0],trace.at(-1)!];
+  if(trace.some(p=>nearestEdge(p,axis).displacementM>10))throw new Error('Supporting runway centerline is not straight');
+ }
  const approach=selection.startApproach;
  if(approach) {
   const first=selection.segments[0], way=ways.find(w=>w.id===first?.wayId);

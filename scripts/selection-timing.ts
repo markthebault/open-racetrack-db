@@ -5,6 +5,17 @@ export type GeoreferencingAccuracy = {
  horizontalM:number; confidencePercent:95; evidenceUrl:string; evidenceNote:string;
 };
 
+// This checks an independently identified full runway, not the extent of a timed
+// run. Source validation separately requires the complete, unchanged runway way.
+export function validateSupportingRunwayTiming(record:TimingRecord,trace:Position[],evidence:string){
+ const start=record.gates.find(g=>g.role==='start'),finish=record.gates.find(g=>g.role==='finish');
+ if(!evidence.trim()||trace.length<2||equal(trace[0],trace.at(-1)!)||record.gates.length!==2||!start||!finish)throw new Error('Supporting runway requires separate timing and identification evidence');
+ const a=nearestEdge(start.point,trace),b=nearestEdge(finish.point,trace);
+ if(a.displacementM>30||b.displacementM>30)throw new Error('Supporting runway fails timing-location check');
+ if(a.index+a.t>=b.index+b.t)throw new Error('Supporting runway reverses the timed direction');
+ return 'separate' as const;
+}
+
 export function validateNetworkTiming(record:TimingRecord,paths:Position[][]){
  if(paths.length<2||paths.some(p=>p.length<2))throw new Error('Network requires multiple nonempty paths');
  if(record.gates.some(g=>Math.min(...paths.map(p=>nearestEdge(g.point,p).displacementM))>30))throw new Error('Network fails timing-location check');
