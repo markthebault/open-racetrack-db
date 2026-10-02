@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 970,
-    "unmappedLayouts": 37,
+    "draftMapped": 972,
+    "unmappedLayouts": 35,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -10311,11 +10311,14 @@
       "name": "Carver Barracks",
       "timingMode": "shared",
       "trackId": "gb-carver-barracks-615ac11d",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "carver-barracks"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -10612,11 +10615,14 @@
       "name": "Gaydon Emissions Circuit",
       "timingMode": "shared",
       "trackId": "gb-gaydon-emissions-circuit-cfe097eb",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gaydon-emissions-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -20550,15 +20556,13 @@
       "name": "Carver Barracks",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Carver Barracks"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-castle-combe-circuit-35406015",
@@ -20800,15 +20804,13 @@
       "name": "Gaydon Emissions Circuit",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Gaydon Emissions Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-glan-y-gors-kart-circuit-c97af463",
@@ -26933,21 +26935,7 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Kingdom/Carver Barracks",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Elvington",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Gaydon Emissions Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

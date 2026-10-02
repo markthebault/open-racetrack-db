@@ -341,6 +341,26 @@
       "maximumDistanceDifferenceM": 60,
       "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-2",
       "evidence": "The FIA 2018 event plan identifies the ten-turn Standard rallycross circuit and its separate start-grid approach. The pinned Environment Agency January–March 2019 National LIDAR Programme 1 m intensity raster independently locates the asphalt junction, both gravel hairpins and intervening bends. This is reflected laser intensity, not color aerial photography. The long northeastern Stowe loop, southwestern Stowe loop, kart courses, pits and the separate Joker bend are excluded. The closed Standard route measures independently of the approach. The supplied general configuration also depicts a start-grid stem, so the two connected sections are retained as separate paths rather than closing the stem into a fictitious lap. The approach follows the independently visible shared asphalt grid; its endpoint is provisional and is not asserted to be a timing endpoint. Native survey grid, crop transform, grayscale stretch, nearest-neighbor reprojection and source hashes are pinned. Neither nominal distance nor private timing positions determine any course vertex. Historical correspondence, grid extent and exact racing-line alignment remain draft."
+    },
+    {
+      "referenceId": "United Kingdom/Carver Barracks",
+      "sourcePath": "sources/gb-carver-barracks-615ac11d/imagery-course-carver-barracks.json",
+      "snapshotSha256": "a12915c7b3bbd3742c56a69acbcdca166039a35c7ad0fafc5956a2c6eeee02f7",
+      "imagerySha256": "b0c891bb71464facccd110cd3fab66a67433e71f29583cb8a2ccdedb10425d7e",
+      "expectedLengthM": 2205.7,
+      "maximumDistanceDifferenceM": 50,
+      "identificationUrl": "https://www.everymanracing.co.uk/venues/carver-barracks/",
+      "evidence": "The venue operator identifies the approximately 1.5-mile runway circuit at former RAF Debden. The supplied configuration identifies the short northern cross-runway, eastern main runway, southern perimeter return and curved western perimeter. Independent Environment Agency 2018 one-metre LiDAR intensity imagery locates those permanent surfaces. The northern airfield hairpin, long westward runway, base access and temporary cone chicanes are excluded. The independently measured 2,205.7 m differs from the supplied 2,247 m; it is not scaled. Exact survey grids, member names, source hashes, crop transform and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Racing-line placement, temporary event furniture and historical correspondence remain draft. Private timing data does not determine geometry."
+    },
+    {
+      "referenceId": "United Kingdom/Gaydon Emissions Circuit",
+      "sourcePath": "sources/gb-gaydon-emissions-circuit-cfe097eb/imagery-course-gaydon-emissions-circuit.json",
+      "snapshotSha256": "e3145187b9cf691565bebabd772239e4f6f219b8e0d2ac9983f750e05e8fdba6",
+      "imagerySha256": "9e445deee9ea2a1fda4f1df6c7686a7a4e597db43dc7d799cb8e163a94cc897b",
+      "expectedLengthM": 6302.9,
+      "maximumDistanceDifferenceM": 225,
+      "identificationUrl": "https://wrap.warwick.ac.uk/id/eprint/59476/1/WRAP_thesis_Pan-Ngum_2001.pdf",
+      "evidence": "The University of Warwick 2001 research report reproduces the Rover Gaydon Emissions Circuit plan in Figure 3.10, page 68: the southwest hairpin, long former-runway straights, northern bend and bridge-end return. The manufacturer confirms the dedicated four-lane Emissions Circuit. Independent Environment Agency 2018 one-metre LiDAR intensity survey tiles locate the complete surviving pavement and its southwest end, excluding the shorter mid-runway reversal, handling roads, access and other test areas. The independently measured 6,302.9 m differs from the supplied 6,092 m by 210.9 m; neither it nor the historical course plan is fitted to the supplied scalar. All vertices follow the public survey. Native grid mosaic, source member hashes, crop transform, grayscale stretch and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Historical lane selection, fine racing-line placement and later road modifications remain draft. Private timing data does not determine geometry"
     }
   ]
 }

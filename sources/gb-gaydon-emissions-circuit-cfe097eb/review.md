@@ -1,0 +1,3 @@
+# Gaydon Emissions Circuit
+
+The centerline is independently digitized from pinned georeferenced imagery under OGL-3.0. Attribution: © Environment Agency copyright and/or database right 2022. All rights reserved. Contains public sector information licensed under the Open Government Licence v3.0; independent centerline digitization by OpenRacetrackDB.. Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.

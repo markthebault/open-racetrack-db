@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **970 of 1,007 entries**. This recovery adds 513 associations: 471 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 417 traces across 49 countries. 328 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 59 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **972 of 1,007 entries**. This recovery adds 515 associations: 473 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 419 traces across 49 countries. 328 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 59 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 6 |
-| Independent geometry absent near the timing position | 23 |
+| Independent geometry absent near the timing position | 21 |
 | Aggregate configuration needs identification | 2 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 1 |
 | Bounded search incomplete | 0 |
-| **Total** | **37** |
+| **Total** | **35** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 37 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 35 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -156,3 +156,7 @@ Seinäjoki retains its historical Kapernaumi street route through Runkotie, Teht
 Bosques del Ángel retains its complete diagonal straight, western return and northern technical bends from pinned January 5, 2026 Copernicus imagery. The original native 10 m raster, UTM transform, STAC identity, hashes and provider attribution are preserved. The independently measured 1,112.2 m differs from the supplied 1,122 m without scaling. The Mexican national statistics institute confirms the wooded Singuilucan venue. Access roads and paddock are excluded; fine corner precision remains draft. The focused browser/download check verifies closure and attribution.
 
 Silverstone RX preserves the standard lap and a separately represented start-grid approach from the Environment Agency’s 2019, one-metre LiDAR intensity survey under the Open Government Licence. The 981.1 m lap follows independently visible asphalt and gravel; the combined paths measure 1,238.1 m against the supplied 1,190 m. The original EPSG:27700 raster clip, exact grid transform, image conversion and attribution are pinned. This is reflected laser intensity imagery, not colour photography. The initial extent of the start-grid approach remains provisional; neither a timed endpoint nor a joker route is asserted. The standard lap is separately selectable.
+
+Carver Barracks retains the short Debden circuit across the east–west runway, eastern main runway, southern perimeter and curved western return. Independent 2018 one-metre Environment Agency LiDAR intensity tiles supply its 2,205.7 m trace, with original survey grid, tile hashes and Open Government Licence attribution pinned. The 41.3 m supplied-distance difference remains explicit; the northern airfield loop, base access and temporary cones are excluded.
+
+Gaydon’s Emissions Circuit retains its complete southwestern hairpin, former-runway straights and northern bend. Figure 3.10 of the University of Warwick’s 2001 research report identifies the course; independent 2018 Environment Agency LiDAR intensity imagery locates the complete surviving pavement. Its 6,302.9 m draft keeps the 210.9 m difference from the supplied distance. The shorter mid-runway reversal and handling roads are excluded. Exact grid mosaic, native raster hashes, grayscale conversion and Open Government Licence attribution are pinned.

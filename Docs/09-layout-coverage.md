@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 970
-- unmappedLayouts: 37
+- draftMapped: 972
+- unmappedLayouts: 35
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -331,7 +331,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Bucks_Estate_Combo | 1 | 1 | 0 | Bucks_Estate_Combo |  |
 | United Kingdom | Bucks_Estate_Sprint | 1 | 1 | 0 | Bucks_Estate_Sprint |  |
 | United Kingdom | Cadwell Park | 1 | 1 | 1 |  |  |
-| United Kingdom | Carver Barracks | 1 | 1 | 0 | Carver Barracks |  |
+| United Kingdom | Carver Barracks | 1 | 1 | 1 |  |  |
 | United Kingdom | Castle Combe Circuit | 3 | 2 | 2 |  | main |
 | United Kingdom | Clay Pigeon Raceway | 1 | 1 | 1 |  |  |
 | United Kingdom | Croft Circuit | 1 | 1 | 1 |  |  |
@@ -349,7 +349,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Fen End Emissions | 1 | 1 | 1 |  |  |
 | United Kingdom | Fintray Hill Climb | 1 | 1 | 1 |  |  |
 | United Kingdom | Fulbeck Kart Circuit | 1 | 1 | 1 |  |  |
-| United Kingdom | Gaydon Emissions Circuit | 1 | 1 | 0 | Gaydon Emissions Circuit |  |
+| United Kingdom | Gaydon Emissions Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Glan-Y-Gors Kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Goodwood Festival of Speed | 1 | 1 | 1 |  |  |
 | United Kingdom | Goodwood Motor Circuit | 1 | 1 | 1 |  |  |
@@ -806,9 +806,7 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Bucks_Estate_Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Carver Barracks |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Gaydon Emissions Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1476,7 +1474,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Bucks_Estate_Combo | gb-bucks-estate-combo-9cbbe60a |  | missing-layout |
 | United Kingdom | Bucks_Estate_Sprint | gb-bucks-estate-sprint-45ee8814 |  | missing-layout |
 | United Kingdom | Cadwell Park | gb-cadwell-park-117987847 | main | draft-mapped |
-| United Kingdom | Carver Barracks | gb-carver-barracks-615ac11d |  | missing-layout |
+| United Kingdom | Carver Barracks | gb-carver-barracks-615ac11d | carver-barracks | draft-mapped |
 | United Kingdom | Castle Combe | gb-castle-combe-circuit-35406015 | castle-combe | draft-mapped |
 | United Kingdom | Castle Combe Western Sprint | gb-castle-combe-circuit-35406015 | castle-combe-western-sprint | draft-mapped |
 | United Kingdom | Clay Pigeon Raceway | gb-clay-pigeon-raceway-reference | main | draft-mapped |
@@ -1495,7 +1493,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Fen End Emissions | gb-fen-end-emissions-c3cfcf7b | fen-end-emissions | draft-mapped |
 | United Kingdom | Fintray Hill Climb | gb-fintray-hill-climb-d6798bfc | fintray-hill-climb | draft-mapped |
 | United Kingdom | Fulbeck Kart Circuit | gb-fulbeck-kart-circuit-15a721dc | fulbeck-kart-circuit | draft-mapped |
-| United Kingdom | Gaydon Emissions Circuit | gb-gaydon-emissions-circuit-cfe097eb |  | missing-layout |
+| United Kingdom | Gaydon Emissions Circuit | gb-gaydon-emissions-circuit-cfe097eb | gaydon-emissions-circuit | draft-mapped |
 | United Kingdom | Glan-Y-Gors Kart Circuit | gb-glan-y-gors-kart-circuit-c97af463 | glan-y-gors-kart-circuit | draft-mapped |
 | United Kingdom | Goodwood | gb-goodwood-motor-circuit-171558326 | main | draft-mapped |
 | United Kingdom | Goodwood Festival of Speed | gb-goodwood-festival-of-speed-6e11ee2d | goodwood-festival-of-speed | draft-mapped |

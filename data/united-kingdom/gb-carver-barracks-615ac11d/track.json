@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    0.27277365,
+    51.9886815
+  ],
+  "sourceIds": [
+    "ea-carver-barracks-intensity-2018"
+  ],
   "defaultLayoutId": "carver-barracks",
   "layouts": [
     {
       "id": "carver-barracks",
       "name": "Carver Barracks",
       "referenceId": "United Kingdom/Carver Barracks",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/carver-barracks.geojson",
+      "description": "The venue operator identifies the approximately 1.5-mile runway circuit at former RAF Debden. The supplied configuration identifies the short northern cross-runway, eastern main runway, southern perimeter return and curved western perimeter. Independent Environment Agency 2018 one-metre LiDAR intensity imagery locates those permanent surfaces. The northern airfield hairpin, long westward runway, base access and temporary cone chicanes are excluded. The independently measured 2,205.7 m differs from the supplied 2,247 m; it is not scaled. Exact survey grids, member names, source hashes, crop transform and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Racing-line placement, temporary event furniture and historical correspondence remain draft. Private timing data does not determine geometry. Independently digitized aerial centerline: 2205.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "ea-carver-barracks-intensity-2018",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2018/1/TL5530",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T13:31:40.290850Z",
+      "evidenceNote": "Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Pinned raster hash b0c891bb71464facccd110cd3fab66a67433e71f29583cb8a2ccdedb10425d7e; reproducible pixel-to-coordinate conversion. The venue operator identifies the approximately 1.5-mile runway circuit at former RAF Debden. The supplied configuration identifies the short northern cross-runway, eastern main runway, southern perimeter return and curved western perimeter. Independent Environment Agency 2018 one-metre LiDAR intensity imagery locates those permanent surfaces. The northern airfield hairpin, long westward runway, base access and temporary cone chicanes are excluded. The independently measured 2,205.7 m differs from the supplied 2,247 m; it is not scaled. Exact survey grids, member names, source hashes, crop transform and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Racing-line placement, temporary event furniture and historical correspondence remain draft. Private timing data does not determine geometry."
+    },
+    {
+      "id": "imagery-identity-carver-barracks",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.everymanracing.co.uk/venues/carver-barracks/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T13:31:40.290850Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }
