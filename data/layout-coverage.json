@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 990,
-    "unmappedLayouts": 17,
+    "draftMapped": 991,
+    "unmappedLayouts": 16,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -5652,11 +5652,14 @@
       "name": "Adria International Raceway Full",
       "timingMode": "shared",
       "trackId": "it-adria-international-raceway-1092277630",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "adria-international-raceway-full"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "it-adria-international-raceway-1092277630"
@@ -21803,13 +21806,11 @@
       "name": "Adria International Raceway",
       "country": "Italy",
       "actualLayoutCount": 3,
-      "actualTraceCount": 2,
+      "actualTraceCount": 3,
       "expectedRecordCount": 2,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
-      "missingRecordNames": [
-        "Adria International Raceway Full"
-      ],
+      "mappedRecordCount": 2,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -26833,13 +26834,6 @@
     },
     {
       "recordId": "China/Huangtupo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Italy/Adria International Raceway Full",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

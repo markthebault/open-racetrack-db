@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "sourceUrl": "https://environment.data.gov.uk/tiles/collections/survey/lidar_point_cloud/2008/NaN/SE6545",
+  "licence": "OGL-3.0",
+  "licenceEvidenceUrl": "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud",
+  "archiveBytes": 19318759,
+  "archiveSha256": "cc216b32fb22ea0876aac02dabe8aef3513754b16228b49529b10d257ec053d2",
+  "coordinateSystem": "EPSG:27700",
+  "inspection": "Public LAS headers only. No course geometry or private course positions are read.",
+  "tiles": [
+    {
+      "member": "SE6648_P_5593_20080128_20080304.laz",
+      "pointCount": 88765,
+      "minimumEasting": 466000.0,
+      "maximumEasting": 466160.31,
+      "minimumNorthing": 448455.52,
+      "maximumNorthing": 449000.0,
+      "intensityAvailable": true
+    },
+    {
+      "member": "SE6547_P_5593_20080128_20080304.laz",
+      "pointCount": 808201,
+      "minimumEasting": 465000.0,
+      "maximumEasting": 465450.74,
+      "minimumNorthing": 447246.31,
+      "maximumNorthing": 448000.0,
+      "intensityAvailable": true
+    },
+    {
+      "member": "SE6548_P_5593_20080128_20080304.laz",
+      "pointCount": 4014134,
+      "minimumEasting": 465000.0,
+      "maximumEasting": 466000.0,
+      "minimumNorthing": 448000.0,
+      "maximumNorthing": 449000.0,
+      "intensityAvailable": true
+    },
+    {
+      "member": "SE6549_P_5593_20080128_20080304.laz",
+      "pointCount": 4365565,
+      "minimumEasting": 465000.0,
+      "maximumEasting": 466000.0,
+      "minimumNorthing": 449000.0,
+      "maximumNorthing": 450000.0,
+      "intensityAvailable": true
+    }
+  ],
+  "geometryRecovered": false,
+  "finding": "The archive contains four point-cloud tiles. Its easternmost point is E466160.31. The missing northeastern runway and taxiway section lies in the E467000 to E468000 column, outside this survey coverage."
+}

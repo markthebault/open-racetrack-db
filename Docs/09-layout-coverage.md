@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 990
-- unmappedLayouts: 17
+- draftMapped: 991
+- unmappedLayouts: 16
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -420,7 +420,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | India | Chennai | 1 | 1 | 1 |  |  |
 | India | Kari Motor Speedway | 1 | 0 | 0 |  | main |
 | India | Meco Kartopia | 1 | 1 | 1 |  |  |
-| Italy | Adria International Raceway | 3 | 2 | 1 | Adria International Raceway Full | main |
+| Italy | Adria International Raceway | 3 | 2 | 2 |  | main |
 | Italy | Autodromo Calabria Corse | 1 | 0 | 0 |  | main |
 | Italy | Autodromo Concordia | 1 | 0 | 0 |  | main |
 | Italy | Autodromo dell'Umbria | 1 | 1 | 1 |  |  |
@@ -790,7 +790,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | --- | --- | ---: | --- |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1164,7 +1163,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Isle Of Man | TT Course | im-tt-course-92e7b8f5 | tt-course | draft-mapped |
 | Israel | Arad Circuit | il-arad-circuit-e5b28a92 | arad-circuit | draft-mapped |
 | Italy | Adria | it-adria-international-raceway-1092277630 | adria | draft-mapped |
-| Italy | Adria International Raceway Full | it-adria-international-raceway-1092277630 |  | missing-layout |
+| Italy | Adria International Raceway Full | it-adria-international-raceway-1092277630 | adria-international-raceway-full | draft-mapped |
 | Italy | Autodromo dell'Umbria | it-autodromo-dell-umbria-203e1bd3 | autodromo-dell-umbria | draft-mapped |
 | Italy | Autodromo Valle dei Templi | it-autodromo-valle-dei-templi-60744683 | main | draft-mapped |
 | Italy | Balocco Alfa Romeo | it-balocco-alfa-romeo-89d7992f | balocco-alfa-romeo | draft-mapped |

@@ -5,7 +5,7 @@
   "summary": {
     "open-course-evidence-required": 3,
     "independent-geometry-missing": 10,
-    "course-distance-discrepancy": 4
+    "course-distance-discrepancy": 3
   },
   "records": [
     {
@@ -37,31 +37,6 @@
         "reviewedAt": "2026-10-02",
         "evidenceUrls": [
           "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A"
-        ],
-        "geometryRecovered": false
-      }
-    },
-    {
-      "referenceId": "Italy/Adria International Raceway Full",
-      "trackId": "it-adria-international-raceway-1092277630",
-      "layoutId": "adria-international-raceway-full",
-      "sourcePath": "sources/europe/it/osm.json",
-      "sourceWayIds": [
-        1092277630,
-        1092277631,
-        1092277632,
-        1092277633
-      ],
-      "candidateCount": 3,
-      "closestSourceLengthM": 2714.3,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Independently recover the 2021 inner extension and tight switchbacks. Regional road vectors omit course roads, and the local geotopographic survey dates to 2008. Clear November 2021 native 10 m imagery locates the new pavement but does not resolve every tight connector.",
-      "publicExplanation": "The full layout uses the 2021 extension. Public road mapping shows the older circuit, and the available satellite image does not resolve every tight turn in the extension.",
-      "research": {
-        "reviewedAt": "2026-10-02",
-        "evidenceUrls": [
-          "https://idt2.regione.veneto.it/geoportal/catalog/search/resource/details.page?uuid=r_veneto%3Ac01070240012_ElementoStradale",
-          "https://game.raceroom.com/it/store/tracks/all/adria-international-raceway-2021"
         ],
         "geometryRecovered": false
       }
@@ -131,14 +106,15 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Identify the northeastern connector independently. The public 2020 one-metre survey shows a pavement gap, and the 2012 aerial tile footprints miss the connector. Do not infer coverage from the larger download grid square or draw an unsupported line across grass.",
+      "nextStep": "Identify the northeastern connector independently. The public 2020 one-metre survey shows a pavement gap, and the 2008 point-cloud and 2012 aerial tile footprints miss the connector. Do not infer coverage from the larger download grid square or draw an unsupported line across grass.",
       "publicExplanation": "The available survey shows the airfield pavement, but a gap in the northeastern course has no independently identified connector.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6045",
           "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6545",
-          "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography"
+          "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography",
+          "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud"
         ],
         "geometryRecovered": false
       }
