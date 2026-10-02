@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 948,
-    "unmappedLayouts": 59,
+    "draftMapped": 949,
+    "unmappedLayouts": 58,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -1591,11 +1591,14 @@
       "name": "Fuglau",
       "timingMode": "shared",
       "trackId": "at-fuglau-69fd1d4f",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "fuglau"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -16692,15 +16695,13 @@
       "name": "Fuglau",
       "country": "Austria",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Fuglau"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "at-greinbach-e8350883",
@@ -26844,13 +26845,6 @@
     },
     {
       "recordId": "Australia/Tailem Bend South",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Austria/Fuglau",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

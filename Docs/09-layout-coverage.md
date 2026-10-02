@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 948
-- unmappedLayouts: 59
+- draftMapped: 949
+- unmappedLayouts: 58
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -58,7 +58,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Argentina | Los Golondrinas | 1 | 0 | 0 |  | main |
 | Argentina | Mar del plata | 1 | 1 | 1 |  |  |
 | Argentina | Protrero de los Funes | 1 | 1 | 1 |  |  |
-| Austria | Fuglau | 1 | 1 | 0 | Fuglau |  |
+| Austria | Fuglau | 1 | 1 | 1 |  |  |
 | Austria | Greinbach | 1 | 1 | 1 |  |  |
 | Austria | Red Bull Ring | 1 | 1 | 1 |  |  |
 | Austria | Salzburgring | 1 | 1 | 1 |  |  |
@@ -796,7 +796,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Austria/Fuglau |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Trois Rivieres |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -953,7 +952,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Winton | au-winton-motor-raceway-60238255 | main | draft-mapped |
 | Australia | Winton Short | au-winton-motor-raceway-60238255 | winton-short | draft-mapped |
 | Australia | Wodonga Tafe | au-wodonga-tafe-reference | main | draft-mapped |
-| Austria | Fuglau | at-fuglau-69fd1d4f |  | missing-layout |
+| Austria | Fuglau | at-fuglau-69fd1d4f | fuglau | draft-mapped |
 | Austria | Greinbach | at-greinbach-e8350883 | greinbach | draft-mapped |
 | Austria | RedBullRing | at-red-bull-ring-84416610 | main | draft-mapped |
 | Austria | Salzburgring | at-salzburgring | grand-prix | draft-mapped |

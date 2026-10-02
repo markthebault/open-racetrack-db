@@ -64,6 +64,15 @@ test('German government imagery preserves attribution, change notice and source-
  assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/other-dataset'}]}),/rights/);
 });
 
+test('CC BY government imagery retains provider attribution and requires matching source rights',()=>{
+ const government={...source,license:'CC-BY-4.0' as const,attribution:'Datenquelle: basemap.at (https://basemap.at/), CC BY 4.0; independent centerline digitization.'};
+ const registered={...track,sources:[{...track.sources[0],license:government.license}]};
+ const layout=buildImageryCourse(recipe,government,registered);
+ assert.equal(layout.metadata.attribution,government.attribution);
+ assert.throws(()=>buildImageryCourse(recipe,government,track),/rights/);
+ assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/other-imagery'}]}),/rights/);
+});
+
 const networkSource=(paths:{name:string;pixels:[number,number][];closed:boolean}[])=>({
  ...Object.fromEntries(Object.entries(source).filter(([key])=>key!=='pixels')),
  geometryKind:'network',closed:false,
