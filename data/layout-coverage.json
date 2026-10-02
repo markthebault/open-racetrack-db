@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 983,
-    "unmappedLayouts": 24,
+    "draftMapped": 984,
+    "unmappedLayouts": 23,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11231,14 +11231,14 @@
       "name": "ProDrive",
       "timingMode": "shared",
       "trackId": "gb-prodrive-bf598a18",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "prodrive"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
-      ],
-      "candidateTrackIds": [
-        "gb-fen-end-emissions-c3cfcf7b"
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -21235,15 +21235,13 @@
       "name": "ProDrive",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "ProDrive"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-raf-woodbridge-02bc9a03",
@@ -26937,13 +26935,6 @@
       "namedCourseCandidates": 400,
       "enumerationTruncated": true,
       "reason": "Named source ways do not identify a unique connected course. An explicit route recipe is required."
-    },
-    {
-      "recordId": "United Kingdom/ProDrive",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
       "recordId": "United Kingdom/RAF Woodbridge",
