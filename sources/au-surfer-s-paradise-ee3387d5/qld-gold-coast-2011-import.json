@@ -1,0 +1,43 @@
+{
+  "sourceUrl": "https://spatial-img.information.qld.gov.au/arcgis/rest/services/TimeSeries/AerialOrtho_AllUsers/ImageServer/exportImage?f=json&bbox=17078970.235976413%2C-3248406.454450384%2C17080194.750375137%2C-3245948.2755622296&bboxSR=3857&imageSR=3857&size=2200%2C4000&format=png&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B4192%5D%2C+%22ascending%22%3A+true%7D&adjustAspectRatio=false",
+  "serviceUrl": "https://spatial-img.information.qld.gov.au/arcgis/rest/services/TimeSeries/AerialOrtho_AllUsers/ImageServer",
+  "reuseEvidenceUrl": "https://www.data.qld.gov.au/dataset/queensland-imagery-aerial-ortho-public-time-series-service-json",
+  "license": "CC-BY-4.0",
+  "imagerySha256": "7f40374368d3f26970636bb9671ea146f7b2f9c8f9ea630fba7e36325287f3ba",
+  "retrievedAt": "2026-10-02T17:01:19.435106Z",
+  "width": 2200,
+  "height": 4000,
+  "extent": {
+    "xmin": 17078970.235976413,
+    "ymin": -3248406.454450384,
+    "xmax": 17080194.750375137,
+    "ymax": -3245948.2755622296,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    }
+  },
+  "objectId": 4192,
+  "projectName": "Gold_Coast_2011_10cm_SISP_Urban_Oct_Dec",
+  "groundResolutionM": 0.1,
+  "exportResolutionMercatorM": 0.5565974539653822,
+  "resampling": "nearest",
+  "cropPixels": [
+    160,
+    1000,
+    1480,
+    3320
+  ],
+  "croppedFile": "qld-gold-coast-2011-independent-aerial.png",
+  "croppedSha256": "4cae41f843d10605a3fd0a703496f762c1244d1c0f469d1990b42e76a03b89a4",
+  "croppedExtent": {
+    "xmin": 17079059.291569047,
+    "xmax": 17079794.00020828,
+    "ymax": -3246562.820284268,
+    "ymin": -3247988.5640393975,
+    "spatialReference": 3857
+  },
+  "croppedWidth": 1320,
+  "croppedHeight": 2320,
+  "cropProcessing": "Lossless pixel crop with no resize; exact source extent converted to crop extent."
+}

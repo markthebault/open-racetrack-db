@@ -1,0 +1,3 @@
+# Surfer's Paradise
+
+The centerline is independently digitized from pinned georeferenced imagery under CC-BY-4.0. Attribution: Includes material © State of Queensland, Department of Natural Resources and Mines, Manufacturing and Regional and Rural Development. Queensland public aerial imagery, CC BY 4.0.. Reuse evidence: https://www.data.qld.gov.au/dataset/queensland-imagery-aerial-ortho-public-time-series-service-json. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.

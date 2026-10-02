@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 981
-- unmappedLayouts: 26
+- draftMapped: 982
+- unmappedLayouts: 25
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -93,7 +93,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Australia | Phillip Island Grand Prix Circuit | 1 | 1 | 1 |  |  |
 | Australia | Queensland Raceway | 6 | 5 | 5 |  | main |
 | Australia | Sandown International Raceway | 1 | 1 | 1 |  |  |
-| Australia | Surfer's Paradise | 1 | 1 | 0 | Surfer's Paradise |  |
+| Australia | Surfer's Paradise | 1 | 1 | 1 |  |  |
 | Australia | Sydney Motorsport Park | 5 | 4 | 4 |  | main |
 | Australia | Symmons Plains Raceway | 1 | 1 | 1 |  |  |
 | Australia | The Bend Motorsport Park | 7 | 6 | 6 |  | main |
@@ -791,7 +791,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/MC Motorsport Main Track |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Newcastle Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Australia/Surfer's Paradise |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Italy/Adria International Raceway Full |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -904,7 +903,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Australia | Queensland Raceway Sportsman | au-queensland-raceway-26175772 | queensland-raceway-sportsman | draft-mapped |
 | Australia | Queensland Raceway Sprint Circuit | au-queensland-raceway-26175772 | queensland-raceway-sprint-circuit | draft-mapped |
 | Australia | Sandown Raceway | au-sandown-international-raceway-25927060 | main | draft-mapped |
-| Australia | Surfer's Paradise | au-surfer-s-paradise-ee3387d5 |  | missing-layout |
+| Australia | Surfer's Paradise | au-surfer-s-paradise-ee3387d5 | surfer-s-paradise | draft-mapped |
 | Australia | Sydney Motorsports Park - GP | au-sydney-motorsport-park-5204646 | sydney-motorsports-park-gp | draft-mapped |
 | Australia | Sydney Motorsports Park - Long | au-sydney-motorsport-park-5204646 | sydney-motorsports-park-long | draft-mapped |
 | Australia | Sydney Motorsports Park - North | au-sydney-motorsport-park-5204646 | sydney-motorsports-park-north | draft-mapped |

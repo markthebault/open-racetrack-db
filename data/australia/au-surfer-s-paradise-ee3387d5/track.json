@@ -8,17 +8,41 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    153.42704750000001,
+    -27.98654735
+  ],
+  "sourceIds": [
+    "qld-gold-coast-2011-independent-aerial"
+  ],
   "defaultLayoutId": "surfer-s-paradise",
   "layouts": [
     {
       "id": "surfer-s-paradise",
       "name": "Surfer's Paradise",
       "referenceId": "Australia/Surfer's Paradise",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/surfer-s-paradise.geojson",
+      "description": "The championship organizer identifies the 2010-onward short street circuit through the Gold Coast Highway, southern Surfers Paradise Boulevard traffic island, Main Beach Parade, Pacific Street, Breaker Street and Tedder Avenue. The full underlying road centerline is independently digitized from the State of Queensland public time-series aerial survey, project Gold_Coast_2011_10cm_SISP_Urban_Oct_Dec, locked raster 4192, captured November 2011 to January 2012 before the later tram reconstruction. The official 2011 event map corroborates the southern island return and northern Tedder hairpin; the Higman Street shortcut and former longer Indy course are excluded. Temporary event barriers and chicanes are not resolved in the off-event aerial survey: this draft follows the identified street pavement and does not claim exact event corner geometry. The pinned export has approximately 0.5 m ground pixel spacing, despite finer native survey resolution. The dataset catalogue explicitly licenses this public imagery service under CC BY 4.0. All pixel vertices come from that survey; no operator diagram coordinates, private course coordinates, timing location or nominal distance define any vertex. Independently digitized aerial centerline: 2911.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "qld-gold-coast-2011-independent-aerial",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://spatial-img.information.qld.gov.au/arcgis/rest/services/TimeSeries/AerialOrtho_AllUsers/ImageServer/exportImage?f=json&bbox=17078970.235976413%2C-3248406.454450384%2C17080194.750375137%2C-3245948.2755622296&bboxSR=3857&imageSR=3857&size=2200%2C4000&format=png&interpolation=RSP_NearestNeighbor&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicLockRaster%22%2C+%22lockRasterIds%22%3A+%5B4192%5D%2C+%22ascending%22%3A+true%7D&adjustAspectRatio=false",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T17:01:19.435106Z",
+      "evidenceNote": "Reuse evidence: https://www.data.qld.gov.au/dataset/queensland-imagery-aerial-ortho-public-time-series-service-json. Pinned raster hash 4cae41f843d10605a3fd0a703496f762c1244d1c0f469d1990b42e76a03b89a4; reproducible pixel-to-coordinate conversion. The championship organizer identifies the 2010-onward short street circuit through the Gold Coast Highway, southern Surfers Paradise Boulevard traffic island, Main Beach Parade, Pacific Street, Breaker Street and Tedder Avenue. The full underlying road centerline is independently digitized from the State of Queensland public time-series aerial survey, project Gold_Coast_2011_10cm_SISP_Urban_Oct_Dec, locked raster 4192, captured November 2011 to January 2012 before the later tram reconstruction. The official 2011 event map corroborates the southern island return and northern Tedder hairpin; the Higman Street shortcut and former longer Indy course are excluded. Temporary event barriers and chicanes are not resolved in the off-event aerial survey: this draft follows the identified street pavement and does not claim exact event corner geometry. The pinned export has approximately 0.5 m ground pixel spacing, despite finer native survey resolution. The dataset catalogue explicitly licenses this public imagery service under CC BY 4.0. All pixel vertices come from that survey; no operator diagram coordinates, private course coordinates, timing location or nominal distance define any vertex."
+    },
+    {
+      "id": "imagery-identity-surfer-s-paradise",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.supercars.com/circuit/surfers-paradise-street-circuit",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T17:01:19.435106Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **981 of 1,007 entries**. This recovery adds 524 associations: 482 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 428 traces across 52 countries. 334 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **982 of 1,007 entries**. This recovery adds 525 associations: 483 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 429 traces across 52 countries. 334 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 60 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -12,18 +12,18 @@ The following source limitations remain after the complete search of the pinned 
 | --- | ---: |
 | Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 5 |
-| Independent geometry absent near the timing position | 15 |
+| Independent geometry absent near the timing position | 14 |
 | Aggregate configuration needs identification | 1 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 0 |
 | Bounded search incomplete | 0 |
-| **Total** | **26** |
+| **Total** | **25** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 26 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 25 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -179,3 +179,5 @@ Belle Isle GP retains the full course and its historical northeastern Picnic Way
 The Kames reverse draft was withdrawn after the club historical plan showed that it included a later southwestern extension. Matching the supplied scalar distance did not establish the course identity. The old public course nodes and superseded recipe remain available for audit; both named timed-run configurations require route and endpoint evidence.
 
 Moulay El Hassan now retains the full car-course road loop and permanent outer branch, distinct from the paddock karting circuit. Its 3,047.9 m draft uses exact connected 2020 public nodes and preserves the 64.9 m supplied-distance difference. FIA identification, temporary barrier limits and the excluded inner shortcut remain explicit. A focused browser check verifies its closed trace, download and OSM attribution.
+
+Surfers Paradise retains the complete 2010-onward underlying street route from pinned Queensland 2011 public aerial imagery under CC BY 4.0. The 2,911.7 m draft includes the southern Surfers Paradise Boulevard island return and northern Tedder Avenue hairpin, excluding the Higman Street shortcut. It remains 54.3 m shorter than the supplied scalar. Temporary event chicanes and barrier placement are unresolved in this off-event survey and remain explicit limitations. The dataset catalogue, locked raster identity, native tile-independent export extent, lossless crop, pixel vertices and hashes reproduce the geometry.
