@@ -1,6 +1,37 @@
 import {test,expect} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
 import {indexSchema,validateTrack} from '../schemas/data';
+import {layoutGapResearchSchema} from '../src/layout-gap-research';
+
+test('every missing layout explains its specific source gap without offering a trace',async({page})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ const report=layoutGapResearchSchema.parse(JSON.parse(await readFile('data/layout-gap-research.json','utf8')));
+ for(const review of report.records){
+  expect(review.publicExplanation).toBeTruthy();expect(review.research).toBeTruthy();
+  await page.goto(`/?track=${review.trackId}&layout=${review.layoutId}`);
+  await expect(page.locator('#message')).toHaveText('Trace unavailable');
+  await expect(page.locator('#selection')).toContainText(review.publicExplanation!);
+  await expect(page.locator('#download')).toHaveCount(0);
+  await expect(page.locator('.leaflet-overlay-pane path[stroke="#ffb347"]')).toHaveCount(0);
+  await page.locator('.gap-research summary').click();
+  expect(await page.locator('.gap-research a').evaluateAll(links=>links.map(link=>(link as HTMLAnchorElement).href))).toEqual(review.research!.evidenceUrls);
+ }
+ await page.goto('/?track=fr-paul-ricard&layout=main');await expect(page.locator('#message')).toHaveText('Layout ready');
+ await expect(page.locator('.gap-research')).toHaveCount(0);await expect(page.locator('#download')).toHaveCount(1);
+});
+
+test('a missing or invalid optional research report leaves the catalogue usable',async({page})=>{
+ await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
+ const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
+ const report=layoutGapResearchSchema.parse(JSON.parse(await readFile('data/layout-gap-research.json','utf8')));const gap=report.records[0];
+ const track=validateTrack(JSON.parse(await readFile(`data/${catalogue.tracks.find(t=>t.id===gap.trackId)!.file}`,'utf8')));
+ for(const invalid of [false,true]){
+  await page.route('**/data/layout-gap-research.json',route=>invalid?route.fulfill({json:{schemaVersion:1,records:[{...gap,research:{...gap.research,evidenceUrls:['javascript:alert(1)']}}]}}):route.fulfill({status:404}));
+  await page.goto(`/?track=${gap.trackId}&layout=${gap.layoutId}`);await expect(page.locator('#message')).toHaveText('Trace unavailable');
+  await expect(page.locator('#selection')).toContainText(track.layouts.find(l=>l.id===gap.layoutId)!.missingGeometryReason!);
+  await expect(page.locator('.gap-research')).toHaveCount(0);await page.unroute('**/data/layout-gap-research.json');
+ }
+});
 
 test('every catalogue entry opens and only mapped layouts offer traces and downloads',async({page,request})=>{
  test.setTimeout(600000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
