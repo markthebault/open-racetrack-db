@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 919,
-    "unmappedLayouts": 88,
+    "draftMapped": 921,
+    "unmappedLayouts": 86,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -12629,6 +12629,9 @@
       "association": "catalogue",
       "remainingWork": [
         "Identify the venue and explicit connected route recipe from independent geometry."
+      ],
+      "candidateTrackIds": [
+        "us-fontana-raceway-road-course-33a99dd4"
       ]
     },
     {
@@ -12637,11 +12640,14 @@
       "name": "Fontana Raceway Road Course",
       "timingMode": "shared",
       "trackId": "us-fontana-raceway-road-course-33a99dd4",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "fontana-raceway-road-course"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -15534,11 +15540,14 @@
       "name": "Texas World Speedway",
       "timingMode": "shared",
       "trackId": "us-texas-world-speedway-e743bb9c",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "texas-world-speedway"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -24871,15 +24880,13 @@
       "name": "Fontana Raceway Road Course",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Fontana Raceway Road Course"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
@@ -26343,15 +26350,13 @@
       "name": "Texas World Speedway",
       "country": "United States",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Texas World Speedway"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "us-the-firm-rl",
@@ -27303,13 +27308,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United States/Fontana Raceway Road Course",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United States/Fort Devens",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27367,13 +27365,6 @@
     },
     {
       "recordId": "United States/Nola Motorsports Park",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Texas World Speedway",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

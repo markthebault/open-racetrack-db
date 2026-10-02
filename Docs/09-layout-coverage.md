@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 919
-- unmappedLayouts: 88
+- draftMapped: 921
+- unmappedLayouts: 86
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -647,7 +647,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Eagles Canyon Raceway | 2 | 1 | 1 |  | main |
 | United States | Flatrock Racetrack | 2 | 1 | 1 |  | main |
 | United States | Fontana Raceway Infield Course | 1 | 1 | 0 | Fontana Raceway Infield Course |  |
-| United States | Fontana Raceway Road Course | 1 | 1 | 0 | Fontana Raceway Road Course |  |
+| United States | Fontana Raceway Road Course | 1 | 1 | 1 |  |  |
 | United States | Fort Devens | 1 | 1 | 0 | Fort Devens |  |
 | United States | G2 Motorsports Park | 4 | 3 | 2 | G2 Motorsports Park West | main |
 | United States | GingerMan Raceway | 1 | 1 | 1 |  |  |
@@ -752,7 +752,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United States | Talladega Superspeedway | 1 | 1 | 1 |  |  |
 | United States | Texas Motorspeedway | 1 | 1 | 1 |  |  |
 | United States | Texas Motorspeedway Road Course | 1 | 1 | 1 |  |  |
-| United States | Texas World Speedway | 1 | 1 | 0 | Texas World Speedway |  |
+| United States | Texas World Speedway | 1 | 1 | 1 |  |  |
 | United States | the FIRM | 1 | 1 | 1 |  |  |
 | United States | The Ridge Motorsports Park | 2 | 1 | 1 |  | main |
 | United States | The Thermal Club | 8 | 7 | 7 |  | main |
@@ -865,7 +865,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Detroit City Airport |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fontana Raceway Infield Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Fontana Raceway Road Course |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Fort Devens |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/G2 Motorsports Park West |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Gateway Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -875,7 +874,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United States/LVMS Super Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/LVMS Super Speedway Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Nola Motorsports Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Texas World Speedway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 
 ## Complete reference inventory
 
@@ -1679,7 +1677,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Eagles Canyon Raceway | us-eagles-canyon-raceway-1557375600 | eagles-canyon-raceway | draft-mapped |
 | United States | Flatrock Motorclub Club Course | us-flatrock-racetrack-1213613922 | flatrock-motorclub-club-course | draft-mapped |
 | United States | Fontana Raceway Infield Course | us-fontana-raceway-infield-course-d6cf6f7f |  | missing-layout |
-| United States | Fontana Raceway Road Course | us-fontana-raceway-road-course-33a99dd4 |  | missing-layout |
+| United States | Fontana Raceway Road Course | us-fontana-raceway-road-course-33a99dd4 | fontana-raceway-road-course | draft-mapped |
 | United States | Fort Devens | us-fort-devens-7cacf24a |  | missing-layout |
 | United States | G2 Motorsports Park 3.1 mile | us-g2-motorsports-park-1538039260 | g2-motorsports-park-3-1-mile | draft-mapped |
 | United States | G2 Motorsports Park Combined | us-g2-motorsports-park-1538039260 | g2-motorsports-park-combined | draft-mapped |
@@ -1859,7 +1857,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | Talladega Superspeedway | us-talladega-superspeedway-reference | main | draft-mapped |
 | United States | Texas Motorspeedway | us-texas-motorspeedway-17b094e9 | texas-motorspeedway | draft-mapped |
 | United States | Texas Motorspeedway Road Course | us-texas-motorspeedway-road-course-258054eb | texas-motorspeedway-road-course | draft-mapped |
-| United States | Texas World Speedway | us-texas-world-speedway-e743bb9c |  | missing-layout |
+| United States | Texas World Speedway | us-texas-world-speedway-e743bb9c | texas-world-speedway | draft-mapped |
 | United States | the FIRM | us-the-firm-rl | main | draft-mapped |
 | United States | Thermal Club Desert | us-the-thermal-club-443108132 | thermal-club-desert | draft-mapped |
 | United States | Thermal Club Full Track | us-the-thermal-club-443108132 | thermal-club-full-track | draft-mapped |

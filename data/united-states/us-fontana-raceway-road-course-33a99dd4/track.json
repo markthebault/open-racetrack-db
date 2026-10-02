@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -117.4999512,
+    34.0888679
+  ],
+  "sourceIds": [
+    "osm-selection-fontana-raceway-infield-course-2018-independent-roads-7002869"
+  ],
   "defaultLayoutId": "fontana-raceway-road-course",
   "layouts": [
     {
       "id": "fontana-raceway-road-course",
       "name": "Fontana Raceway Road Course",
       "referenceId": "United States/Fontana Raceway Road Course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/fontana-raceway-road-course.geojson",
+      "description": "Draft configuration: The organizer identifies the historical 2.8-mile auto competition ROVAL. The pinned 2018 independent source retains the complete oval return, Northern rectangular infield hairpin, Eastern inner hairpin, Western infield S and short Southern diagonal chicane. The extra rectangular zigzag through the Northern paddock is excluded. Public-domain 2022 aerial imagery confirms these paved connections independently. The 4544.8 m trace remains unscaled against the 4509 m catalogue distance, with historical temporary barrier alignment and fine corner detail kept draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4544.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-fontana-raceway-infield-course-2018-independent-roads-7002869",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/7002869",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T22:27:41.201Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-fontana-raceway-road-course",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.speedventures.com/events/Detail.aspx?id=892",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:27:41.201Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -5,9 +5,9 @@
   "summary": {
     "configuration-evidence-required": 4,
     "course-distance-discrepancy": 29,
-    "independent-geometry-missing": 41,
+    "independent-geometry-missing": 40,
     "ambiguous-source-branches": 7,
-    "source-connectivity-incomplete": 3,
+    "source-connectivity-incomplete": 2,
     "open-course-evidence-required": 4
   },
   "records": [
@@ -1169,18 +1169,6 @@
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     },
     {
-      "referenceId": "United States/Fontana Raceway Road Course",
-      "trackId": "us-fontana-raceway-road-course-33a99dd4",
-      "layoutId": "fontana-raceway-road-course",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        355478205
-      ],
-      "candidateCount": 0,
-      "reason": "source-connectivity-incomplete",
-      "nextStep": "Find the missing independently mapped connectors or independently licensed trace; never bridge nearby coordinates."
-    },
-    {
       "referenceId": "United States/Fort Devens",
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "fort-devens",
@@ -1321,15 +1309,6 @@
       "closestSourceLengthM": 4442.4,
       "reason": "course-distance-discrepancy",
       "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
-    },
-    {
-      "referenceId": "United States/Texas World Speedway",
-      "trackId": "us-texas-world-speedway-e743bb9c",
-      "layoutId": "texas-world-speedway",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [],
-      "reason": "independent-geometry-missing",
-      "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
     }
   ]
 }
