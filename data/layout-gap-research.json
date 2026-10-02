@@ -6,7 +6,7 @@
     "configuration-evidence-required": 3,
     "independent-geometry-missing": 36,
     "course-distance-discrepancy": 20,
-    "ambiguous-source-branches": 3,
+    "ambiguous-source-branches": 2,
     "source-connectivity-incomplete": 2,
     "open-course-evidence-required": 3
   },
@@ -594,25 +594,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United Kingdom/Driftland",
-      "trackId": "gb-driftland-37d6ee3f",
-      "layoutId": "driftland",
-      "sourcePath": "sources/europe/gb/osm.json",
-      "sourceWayIds": [
-        530624043,
-        530624048,
-        530624051,
-        530624058,
-        1006792954,
-        1006792955,
-        1006792956
-      ],
-      "candidateCount": 58,
-      "closestSourceLengthM": 736.6,
-      "reason": "ambiguous-source-branches",
-      "nextStep": "Identify the exact branch sequence using independent layout documents, not just course distance."
     },
     {
       "referenceId": "United Kingdom/Elvington",

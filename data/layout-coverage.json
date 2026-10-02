@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 940,
-    "unmappedLayouts": 67,
+    "draftMapped": 941,
+    "unmappedLayouts": 66,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -10420,11 +10420,14 @@
       "name": "Driftland",
       "timingMode": "shared",
       "trackId": "gb-driftland-37d6ee3f",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "driftland"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -20607,15 +20610,16 @@
       "trackId": "gb-driftland-37d6ee3f",
       "name": "Driftland",
       "country": "United Kingdom",
-      "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualLayoutCount": 3,
+      "actualTraceCount": 3,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Driftland"
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
+      "unassociatedLayoutIds": [
+        "driftland-inner-course",
+        "driftland-cross-course"
       ],
-      "unassociatedLayoutIds": [],
       "status": "gap"
     },
     {
@@ -27069,13 +27073,6 @@
     },
     {
       "recordId": "United Kingdom/Carver Barracks",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Driftland",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

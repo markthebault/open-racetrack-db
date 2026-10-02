@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 940
-- unmappedLayouts: 67
+- draftMapped: 941
+- unmappedLayouts: 66
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -339,7 +339,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Daytona MK | 1 | 1 | 1 |  |  |
 | United Kingdom | Daytona Sandown Park | 1 | 1 | 1 |  |  |
 | United Kingdom | Donington Park | 3 | 2 | 2 |  | main |
-| United Kingdom | Driftland | 1 | 1 | 0 | Driftland |  |
+| United Kingdom | Driftland | 3 | 1 | 1 |  | driftland-inner-course; driftland-cross-course |
 | United Kingdom | Dunsfold | 3 | 1 | 1 |  | airfield-perimeter-2020; main-runway-2020 |
 | United Kingdom | Dunsfold Top Gear | 1 | 1 | 1 |  |  |
 | United Kingdom | Dunsfold without Runway | 1 | 1 | 1 |  |  |
@@ -830,7 +830,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Bucks_Estate_Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Bucks_Estate_Sprint |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Carver Barracks |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Driftland |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Gaydon Emissions Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1516,7 +1515,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Daytona Sandown Park | gb-daytona-sandown-park-76f92956 | daytona-sandown-park | draft-mapped |
 | United Kingdom | Donington GP | gb-donington-park-27131003 | donington-gp | draft-mapped |
 | United Kingdom | Donington National | gb-donington-park-27131003 | donington-national | draft-mapped |
-| United Kingdom | Driftland | gb-driftland-37d6ee3f |  | missing-layout |
+| United Kingdom | Driftland | gb-driftland-37d6ee3f | driftland | draft-mapped |
 | United Kingdom | Dunsfold | gb-dunsfold-ea05c91c | dunsfold | draft-mapped |
 | United Kingdom | Dunsfold Top Gear | gb-dunsfold-top-gear-06a07bad | dunsfold-top-gear | draft-mapped |
 | United Kingdom | Dunsfold without Runway | gb-dunsfold-without-runway-93b45f42 | dunsfold-without-runway | draft-mapped |

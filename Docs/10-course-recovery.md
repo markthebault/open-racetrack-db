@@ -1,6 +1,6 @@
 # Independent course recovery
 
-The catalogue now has draft traces for **940 of 1,007 entries**. This recovery adds 483 associations: 441 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 387 traces across 49 countries. 323 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 54 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
+The catalogue now has draft traces for **941 of 1,007 entries**. This recovery adds 484 associations: 442 newly generated course traces and 42 associations to existing venue-level traces. The latter remove redundant empty entries rather than duplicate their coordinates. All eight Paul Ricard catalogue entries have traces. The manual review adds 388 traces across 49 countries. 323 explicit configuration choices, including four reassessed existing traces, are recorded in the [selection manifest](../sources/reference/course-selections.json). A further 55 aggregate configurations are recorded in the [network selection manifest](../sources/reference/course-network-selections.json). Their independently identified branches remain separate paths, and shared edges count once. Layout diagrams identify branch choices only; no image coordinates are extracted or copied.
 
 Course geometry comes from independent OSM data or reusable government georeferenced aerial imagery. Published event and operator documents identify specific configurations; they do not supply coordinates. OSM snapshots are sanitized and hash-pinned, with exact source ways, versions and node indices. Imagery recipes preserve the source raster, export extent, pixel vertices and both hashes. Private timing positions help identify a course and remain outside public downloads.
 
@@ -10,20 +10,20 @@ The following source limitations remain after the complete search of the pinned 
 
 | Remaining cause | Entries |
 | --- | ---: |
-| Ambiguous source branches | 3 |
+| Ambiguous source branches | 2 |
 | Unresolved course-distance discrepancy | 20 |
 | Independent geometry absent near the timing position | 36 |
 | Aggregate configuration needs identification | 3 |
 | Open-course route or endpoint evidence needed | 3 |
 | Source connectivity incomplete | 2 |
 | Bounded search incomplete | 0 |
-| **Total** | **67** |
+| **Total** | **66** |
 
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
 
-The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 67 registered timing-entry trace gaps.
+The [separate filename inventory](../sources/reference/archive-inventory.json) checks all 1,041 course-file names without importing their geometry. Six alternate filenames are now reconciled by the [reviewed alias manifest](../sources/reference/archive-name-reconciliation.json): a selected canonical name and identical complete-file fingerprints are required. No course-data sections are parsed. Eighteen names remain without a reconciled match in the 1,007-record timing XML; three other entries have country-folder aliases and five sit outside country folders. Some remaining names may be legacy aliases, while others may represent additional configurations. Filename similarity alone cannot prove their timing or geometry equivalence. They remain an additional inventory reconciliation task, beyond the 66 registered timing-entry trace gaps.
 
 ## Reproduce the research
 
@@ -112,3 +112,5 @@ M-Sport now retains two complementary exact public-node courses covering its nor
 La Pampa now retains complementary independently mapped full and northern short courses, including both straight chicanes. The operator identifies 5222 m of total asphalt across its general course and zonal alternatives; the 5240.7 m public-node branch network remains unscaled. Shared edges count once and the separately mapped Sector Boxes pit route is excluded. The supplied general entry represents this physical configuration set, with its exact historical timed choice still draft.
 
 Cameron retains three complementary exact public-node paths covering its historical southern course. Independently georeferenced Ontario 2020 orthophotography confirms the footprint before its later rebuild; the adjacent northern course, linking stem and pit approach are excluded. The 1132.8 m unique-edge network represents physical alternatives rather than one timed lap. Four focused browser checks verify the network and individual downloads.
+
+Driftland retains complementary independently mapped inner-S and cross-course paths covering its physical configuration set. The operator identifies configurable courses usable in both directions. The neighboring Lochgelly oval is excluded, source nodes remain unchanged, and the 990 m unique-edge distance is not presented as one timed lap. Three focused browser checks verify its network and component downloads.

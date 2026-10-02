@@ -8,17 +8,81 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -3.27877765,
+    56.1278842
+  ],
+  "sourceIds": [
+    "osm-components-530624043",
+    "osm-network-driftland"
+  ],
   "defaultLayoutId": "driftland",
   "layouts": [
     {
       "id": "driftland",
       "name": "Driftland",
       "referenceId": "United Kingdom/Driftland",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/driftland.geojson",
+      "description": "Combined mapped configurations: Inner S course, Cross-course alternative. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "driftland-inner-course",
+      "name": "Inner S course",
+      "file": "layouts/driftland-inner-course.geojson",
+      "description": "The operator identifies multiple configurable courses suitable for clockwise and counter-clockwise use. The supplied configuration image depicts the western oval and shortcut, the inner S and the eastern perimeter. Exact pinned public nodes preserve all independently mapped branches of that physical footprint, excluding the neighboring Lochgelly oval. This descriptive course name does not claim an official configuration name; the exact historical timed branch choice remains draft. This complementary circuit retains the inner S."
+    },
+    {
+      "id": "driftland-cross-course",
+      "name": "Cross-course alternative",
+      "file": "layouts/driftland-cross-course.geojson",
+      "description": "The operator identifies multiple configurable courses suitable for clockwise and counter-clockwise use. The supplied configuration image depicts the western oval and shortcut, the inner S and the eastern perimeter. Exact pinned public nodes preserve all independently mapped branches of that physical footprint, excluding the neighboring Lochgelly oval. This descriptive course name does not claim an official configuration name; the exact historical timed branch choice remains draft. This complementary circuit retains the cross-course return."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-530624043",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/530624043",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-driftland-inner-course",
+      "type": "reference",
+      "title": "Inner S course identification",
+      "url": "https://www.driftlanduk.com/?P=track_layout",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "The operator identifies multiple configurable courses suitable for clockwise and counter-clockwise use. The supplied configuration image depicts the western oval and shortcut, the inner S and the eastern perimeter. Exact pinned public nodes preserve all independently mapped branches of that physical footprint, excluding the neighboring Lochgelly oval. This descriptive course name does not claim an official configuration name; the exact historical timed branch choice remains draft. This complementary circuit retains the inner S. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-driftland-cross-course",
+      "type": "reference",
+      "title": "Cross-course alternative identification",
+      "url": "https://www.driftlanduk.com/?P=track_layout",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "The operator identifies multiple configurable courses suitable for clockwise and counter-clockwise use. The supplied configuration image depicts the western oval and shortcut, the inner S and the eastern perimeter. Exact pinned public nodes preserve all independently mapped branches of that physical footprint, excluding the neighboring Lochgelly oval. This descriptive course name does not claim an official configuration name; the exact historical timed branch choice remains draft. This complementary circuit retains the cross-course return. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-driftland",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/530624043",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T07:49:17.085Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-driftland",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.driftlanduk.com/?P=track_layout",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T07:49:17.085Z",
+      "evidenceNote": "The operator identifies multiple configurable courses suitable for clockwise and counter-clockwise use. The supplied configuration image depicts the western oval and shortcut, the inner S and the eastern perimeter. Exact pinned public nodes preserve all independently mapped branches of that physical footprint, excluding the neighboring Lochgelly oval. This descriptive course name does not claim an official configuration name; the exact historical timed branch choice remains draft. The branch network represents physical configurations, not one scalar timed lap. The independent unique branch distance is 990 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }
