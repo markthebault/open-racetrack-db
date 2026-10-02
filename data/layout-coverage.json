@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 954,
-    "unmappedLayouts": 53,
+    "draftMapped": 956,
+    "unmappedLayouts": 51,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -9092,11 +9092,14 @@
       "name": "Ljungbyhed Park",
       "timingMode": "shared",
       "trackId": "se-ljungbyhed-park-5c89b42d",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ljungbyhed-park"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -9105,11 +9108,14 @@
       "name": "Ljungbyhed Park Alt SF",
       "timingMode": "shared",
       "trackId": "se-ljungbyhed-park-alt-sf-0fa7ded7",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "ljungbyhed-park-alt-sf"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -23898,30 +23904,26 @@
       "name": "Ljungbyhed Park",
       "country": "Sweden",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Ljungbyhed Park"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "se-ljungbyhed-park-alt-sf-0fa7ded7",
       "name": "Ljungbyhed Park Alt SF",
       "country": "Sweden",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Ljungbyhed Park Alt SF"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "se-mantorp-park-42957116",
@@ -26963,20 +26965,6 @@
     },
     {
       "recordId": "Sweden/Drive Centre Arena",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Ljungbyhed Park",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Ljungbyhed Park Alt SF",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

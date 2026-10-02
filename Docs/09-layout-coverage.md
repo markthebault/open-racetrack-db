@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 954
-- unmappedLayouts: 53
+- draftMapped: 956
+- unmappedLayouts: 51
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -573,8 +573,8 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Sweden | Holjes Motorclub | 1 | 1 | 1 |  |  |
 | Sweden | Karlskoga Motorstadion | 2 | 1 | 1 |  | main |
 | Sweden | Kinnekulle Ring | 1 | 1 | 1 |  |  |
-| Sweden | Ljungbyhed Park | 1 | 1 | 0 | Ljungbyhed Park |  |
-| Sweden | Ljungbyhed Park Alt SF | 1 | 1 | 0 | Ljungbyhed Park Alt SF |  |
+| Sweden | Ljungbyhed Park | 1 | 1 | 1 |  |  |
+| Sweden | Ljungbyhed Park Alt SF | 1 | 1 | 1 |  |  |
 | Sweden | Mantorp Park | 2 | 1 | 1 |  | main |
 | Sweden | Mittsverigebanan | 1 | 1 | 1 |  |  |
 | Sweden | Molanda Raceway | 1 | 1 | 1 |  |  |
@@ -812,8 +812,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | South Korea/Ansan |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Spain/Circuit Ricardo Tormo School |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Ljungbyhed Park |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Ljungbyhed Park Alt SF |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Lihpao Wind |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Taiwan/Penbay National |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1417,8 +1415,8 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Sweden | Gotland Ring 7.3 | se-gotland-ring-311644846 | gotland-ring-7-3 | draft-mapped |
 | Sweden | Holjes Motorclub | se-holjes-motorclub-3144cff3 | holjes-motorclub | draft-mapped |
 | Sweden | Kinnekulle | se-kinnekulle-ring-24783023 | main | draft-mapped |
-| Sweden | Ljungbyhed Park | se-ljungbyhed-park-5c89b42d |  | missing-layout |
-| Sweden | Ljungbyhed Park Alt SF | se-ljungbyhed-park-alt-sf-0fa7ded7 |  | missing-layout |
+| Sweden | Ljungbyhed Park | se-ljungbyhed-park-5c89b42d | ljungbyhed-park | draft-mapped |
+| Sweden | Ljungbyhed Park Alt SF | se-ljungbyhed-park-alt-sf-0fa7ded7 | ljungbyhed-park-alt-sf | draft-mapped |
 | Sweden | Mantorp | se-mantorp-park-42957116 | mantorp | draft-mapped |
 | Sweden | Mittsverigebanan | se-mittsverigebanan-61bbca06 | mittsverigebanan | draft-mapped |
 | Sweden | Molanda Raceway | se-molanda-raceway-4eb5965c | molanda-raceway | draft-mapped |
