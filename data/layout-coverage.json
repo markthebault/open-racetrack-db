@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 956,
-    "unmappedLayouts": 51,
+    "draftMapped": 957,
+    "unmappedLayouts": 50,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -2596,11 +2596,14 @@
       "name": "Trois Rivieres",
       "timingMode": "shared",
       "trackId": "ca-trois-rivieres-7cef196a",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "trois-rivieres"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -18165,15 +18168,13 @@
       "name": "Trois Rivieres",
       "country": "Canada",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Trois Rivieres"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "ca-vancouver-island-motorsport-circuit-a0cce5d8",
@@ -26860,13 +26861,6 @@
     },
     {
       "recordId": "Canada/Strawberry Creek Raceway",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Canada/Trois Rivieres",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

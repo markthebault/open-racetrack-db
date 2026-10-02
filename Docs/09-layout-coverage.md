@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 956
-- unmappedLayouts: 51
+- draftMapped: 957
+- unmappedLayouts: 50
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -161,7 +161,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Canada | Strawberry Creek Raceway | 1 | 1 | 0 | Strawberry Creek Raceway |  |
 | Canada | Toronto Indy | 1 | 1 | 1 |  |  |
 | Canada | Toronto Motorsports Park | 4 | 3 | 3 |  | main |
-| Canada | Trois Rivieres | 1 | 1 | 0 | Trois Rivieres |  |
+| Canada | Trois Rivieres | 1 | 1 | 1 |  |  |
 | Canada | Vancouver Island Motorsport Circuit | 1 | 1 | 1 |  |  |
 | Canada | Western Speedway | 1 | 1 | 1 |  |  |
 | Switzerland | St Ursanne | 1 | 1 | 1 |  |  |
@@ -797,7 +797,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Australia/Tailem Bend East |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Australia/Tailem Bend South |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Canada/Strawberry Creek Raceway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Canada/Trois Rivieres |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/V1 Auto World 4.3 |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Xiamen International Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1008,7 +1007,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Canada | Toronto Motorsports Park Full Course | ca-toronto-motorsports-park-440159413 | toronto-motorsports-park-full-course | draft-mapped |
 | Canada | Toronto Motorsports Park North | ca-toronto-motorsports-park-440159413 | toronto-motorsports-park-north | draft-mapped |
 | Canada | Toronto Motorsports Park West | ca-toronto-motorsports-park-440159413 | toronto-motorsports-park-west | draft-mapped |
-| Canada | Trois Rivieres | ca-trois-rivieres-7cef196a |  | missing-layout |
+| Canada | Trois Rivieres | ca-trois-rivieres-7cef196a | trois-rivieres | draft-mapped |
 | Canada | Vancouver Island Motorsport Circuit | ca-vancouver-island-motorsport-circuit-a0cce5d8 | vancouver-island-motorsport-circuit | draft-mapped |
 | Canada | Western Speedway | ca-western-speedway-bd427733 | western-speedway | draft-mapped |
 | Canary Islands | Circuito Maspalomas | es-circuito-maspalomas-179221809 | main | draft-mapped |
