@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 945,
-    "unmappedLayouts": 62,
+    "draftMapped": 948,
+    "unmappedLayouts": 59,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -12758,11 +12758,14 @@
       "name": "Gateway Motorsports Park",
       "timingMode": "shared",
       "trackId": "us-world-wide-technology-raceway-road-course-180008394",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gateway-motorsports-park"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-world-wide-technology-raceway-road-course-180008394"
@@ -12774,11 +12777,14 @@
       "name": "Gateway Motorsports Porsche 2mile",
       "timingMode": "shared",
       "trackId": "us-world-wide-technology-raceway-road-course-180008394",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gateway-motorsports-porsche-2mile"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-world-wide-technology-raceway-road-course-180008394"
@@ -12825,11 +12831,14 @@
       "name": "Gateway Road 2",
       "timingMode": "shared",
       "trackId": "us-world-wide-technology-raceway-road-course-180008394",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "gateway-road-2"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-world-wide-technology-raceway-road-course-180008394"
@@ -26571,15 +26580,11 @@
       "name": "World Wide Technology Raceway Road Course",
       "country": "United States",
       "actualLayoutCount": 6,
-      "actualTraceCount": 3,
+      "actualTraceCount": 6,
       "expectedRecordCount": 5,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 2,
-      "missingRecordNames": [
-        "Gateway Motorsports Park",
-        "Gateway Motorsports Porsche 2mile",
-        "Gateway Road 2"
-      ],
+      "mappedRecordCount": 5,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -27211,27 +27216,6 @@
     },
     {
       "recordId": "United States/Detroit City Airport",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Gateway Motorsports Park",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Gateway Motorsports Porsche 2mile",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Gateway Road 2",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
