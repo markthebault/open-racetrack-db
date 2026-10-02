@@ -4,7 +4,7 @@
   "policy": "These are source limitations and unresolved route associations, not completed layouts. No private timing coordinates or archive geometry are included.",
   "summary": {
     "configuration-evidence-required": 4,
-    "course-distance-discrepancy": 28,
+    "course-distance-discrepancy": 27,
     "independent-geometry-missing": 39,
     "ambiguous-source-branches": 7,
     "source-connectivity-incomplete": 2,
@@ -1167,19 +1167,6 @@
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
       "nextStep": "Acquire an independently licensed course trace or complete missing public-road mapping."
-    },
-    {
-      "referenceId": "United States/G2 Motorsports Park West",
-      "trackId": "us-g2-motorsports-park-1538039260",
-      "layoutId": "g2-motorsports-park-west",
-      "sourcePath": "sources/world/us/osm.json",
-      "sourceWayIds": [
-        1538039260
-      ],
-      "candidateCount": 1,
-      "closestSourceLengthM": 4772.2,
-      "reason": "course-distance-discrepancy",
-      "nextStep": "Use independent layout documents to identify the intended route and explain the distance discrepancy."
     },
     {
       "referenceId": "United States/Gateway Motorsports Park",

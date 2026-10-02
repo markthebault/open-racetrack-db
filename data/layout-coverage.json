@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 923,
-    "unmappedLayouts": 84,
+    "draftMapped": 924,
+    "unmappedLayouts": 83,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -12704,11 +12704,14 @@
       "name": "G2 Motorsports Park West",
       "timingMode": "shared",
       "trackId": "us-g2-motorsports-park-1538039260",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "g2-motorsports-park-west"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-g2-motorsports-park-1538039260"
@@ -24919,13 +24922,11 @@
       "name": "G2 Motorsports Park",
       "country": "United States",
       "actualLayoutCount": 4,
-      "actualTraceCount": 3,
+      "actualTraceCount": 4,
       "expectedRecordCount": 3,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 2,
-      "missingRecordNames": [
-        "G2 Motorsports Park West"
-      ],
+      "mappedRecordCount": 3,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [
         "main"
       ],
@@ -27313,13 +27314,6 @@
     },
     {
       "recordId": "United States/Fontana Raceway Infield Course",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/G2 Motorsports Park West",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
