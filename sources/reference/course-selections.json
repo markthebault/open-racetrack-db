@@ -16922,7 +16922,7 @@
       "maximumDistanceDifferenceM": 16
     },
     {
-      "referenceId": "Spain/Circuit de Montjuïc",
+      "referenceId": "Spain/Circuit de Montju\u00efc",
       "sourcePath": "sources/course-networks/circuit-de-montjuic-independent-roads/osm.json",
       "sourceWayIds": [
         4750715,
@@ -23018,7 +23018,7 @@
         1330893485
       ],
       "closed": true,
-      "evidence": "Reviewed the organizer’s 2024 historic-course plan: Rempart Desaix and Avenue des Maréchaux lead through the Théâtre/Carnot turn, Rue Louis Desbrandes, Rue Waldeck Rousseau, the full Marronnier return on Rue du Colonel Driant, Rue de Verdun and the Cathédrale turn. Retains the pinned unnamed street connection at the southern Carnot turn and the short Avenue du Président Wilson connection at the cathedral; excludes the internal Driant shortcut and the unrelated Rempart du Midi. All vertices and joins use exact independent road-map nodes. The 1303.4 m public-road centerline differs from the 1271 m timing distance; temporary race barriers, hairpin placement and the mapped underpass junction remain provisional.",
+      "evidence": "Reviewed the organizer\u2019s 2024 historic-course plan: Rempart Desaix and Avenue des Mar\u00e9chaux lead through the Th\u00e9\u00e2tre/Carnot turn, Rue Louis Desbrandes, Rue Waldeck Rousseau, the full Marronnier return on Rue du Colonel Driant, Rue de Verdun and the Cath\u00e9drale turn. Retains the pinned unnamed street connection at the southern Carnot turn and the short Avenue du Pr\u00e9sident Wilson connection at the cathedral; excludes the internal Driant shortcut and the unrelated Rempart du Midi. All vertices and joins use exact independent road-map nodes. The 1303.4 m public-road centerline differs from the 1271 m timing distance; temporary race barriers, hairpin placement and the mapped underpass junction remain provisional.",
       "identificationUrl": "https://www.circuitdesremparts.com/wp-content/uploads/2024/07/Guide-Pratique-2024.pdf",
       "segments": [
         {
@@ -23465,6 +23465,70 @@
       ],
       "expectedLengthM": 1130.7,
       "maximumDistanceDifferenceM": 185
+    },
+    {
+      "referenceId": "United Kingdom/Shelsley Walsh Hillclimb",
+      "sourcePath": "sources/course-networks/shelsley-walsh-roads/osm.json",
+      "sourceWayIds": [
+        23499817,
+        246730045,
+        306501324,
+        306501326,
+        306501331,
+        616597732,
+        616597733,
+        616597735,
+        616597736,
+        616597737,
+        616597738,
+        616597739,
+        616597740,
+        616597741,
+        616597742,
+        618776755,
+        656267478,
+        661290377,
+        661290378,
+        661290379,
+        661290381,
+        661290383,
+        661290384,
+        661290385,
+        661290386,
+        661290387,
+        720168461,
+        881866073,
+        945014869,
+        945014870,
+        1066055853
+      ],
+      "closed": false,
+      "evidence": "The open mapped hillclimb retains the Southern start approach and its small lower return, the Kennel bend, main climb and upper Esses. The operator identifies the hill and corner sequence; all route coordinates remain unchanged independent road nodes. The gate-to-gate source route measures 1017.1 m against the 1163 m catalogue scalar. The sparsely mapped upper straight has no existing node within 30 m of the finish: the nearest endpoint is 38.5 m away along the same road, whose perpendicular timing displacement is below 2 m. A documented 40 m endpoint allowance preserves that draft uncertainty without adding a fabricated vertex or extending to nearby footpaths. Timing extent and approach alignment remain provisional.",
+      "identificationUrl": "https://www.shelsleywalsh.com/info",
+      "segments": [
+        {
+          "wayId": 1066055853,
+          "wayVersion": 1,
+          "fromIndex": 2,
+          "toIndex": 5
+        },
+        {
+          "wayId": 661290386,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 5
+        },
+        {
+          "wayId": 306501331,
+          "wayVersion": 3,
+          "fromIndex": 0,
+          "toIndex": 29
+        }
+      ],
+      "expectedLengthM": 1017.1,
+      "maximumDistanceDifferenceM": 160,
+      "endpointToleranceM": 40,
+      "endpointEvidence": "The nearest independent vertex on the sparsely mapped upper straight lies 38.5 m from the finish along the same road; perpendicular displacement is under 2 m. Preserve that endpoint uncertainty without adding interpolated vertices. All other course timing-neighborhood checks retain the 30 m bound."
     }
   ]
 }

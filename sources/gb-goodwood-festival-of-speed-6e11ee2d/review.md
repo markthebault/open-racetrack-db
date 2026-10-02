@@ -1,0 +1,3 @@
+# Goodwood Festival of Speed
+
+The centerline is independently digitized from pinned georeferenced imagery under OGL-3.0. Attribution: © Environment Agency copyright and/or database right 2022. All rights reserved. Open Government Licence v3.0; centerline digitization by OpenRacetrackDB. Reuse evidence: https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.

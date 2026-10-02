@@ -1,0 +1,3508 @@
+{
+  "sourceUrl": "https://environment.data.gov.uk/tiles/collections/survey/vertical_aerial_photography_tiles_rgbn/2014/0.2/SU8510",
+  "retrievedAt": "2026-10-02T02:46:34.906771Z",
+  "width": 1800,
+  "height": 2200,
+  "extent": {
+    "xmin": -83601.80249550135,
+    "ymin": 6596782.378714098,
+    "xmax": -80599.9376305231,
+    "ymax": 6601172.907577634,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "0d3123064371254a4166aecf5f642ffdd89ee12790da1b2e07c704d6b8e7302c",
+  "sourceRasters": [
+    {
+      "fileName": "Ortho_RGBN_P00067369_20140305_20140305_20cm_res.ecw",
+      "sha256": "b7a6477de0d2b36d5a119046637c82c2566a7c98ccd903fb9d8464fa02c480f2",
+      "nativeMetadata": {
+        "description": "/south/Ortho_RGBN_P00067369_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/south/Ortho_RGBN_P00067369_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          488000.0,
+          0.2,
+          0.0,
+          109000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            488000.0,
+            109000.0
+          ],
+          "lowerLeft": [
+            488000.0,
+            108000.0
+          ],
+          "lowerRight": [
+            489000.0,
+            108000.0
+          ],
+          "upperRight": [
+            489000.0,
+            109000.0
+          ],
+          "center": [
+            488500.0,
+            108500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7506714,
+                50.8738099
+              ],
+              [
+                -0.7509117,
+                50.8648196
+              ],
+              [
+                -0.7367056,
+                50.8646667
+              ],
+              [
+                -0.7364626,
+                50.873657
+              ],
+              [
+                -0.7506714,
+                50.8738099
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            488000.0,
+            0.0,
+            -0.2,
+            109000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067311_20140305_20140305_20cm_res.ecw",
+      "sha256": "bd8c4fa2f381f0a64baaa51799d8b0df9b7bc1f5a223ad65e6f346941322a89b",
+      "nativeMetadata": {
+        "description": "/south/Ortho_RGBN_P00067311_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/south/Ortho_RGBN_P00067311_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          489000.0,
+          0.2,
+          0.0,
+          109000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            489000.0,
+            109000.0
+          ],
+          "lowerLeft": [
+            489000.0,
+            108000.0
+          ],
+          "lowerRight": [
+            490000.0,
+            108000.0
+          ],
+          "upperRight": [
+            490000.0,
+            109000.0
+          ],
+          "center": [
+            489500.0,
+            108500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7364626,
+                50.873657
+              ],
+              [
+                -0.7367056,
+                50.8646667
+              ],
+              [
+                -0.7224997,
+                50.8645121
+              ],
+              [
+                -0.7222539,
+                50.8735023
+              ],
+              [
+                -0.7364626,
+                50.873657
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            489000.0,
+            0.0,
+            -0.2,
+            109000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067375_20140305_20140305_20cm_res.ecw",
+      "sha256": "0dc739b9510fd7a7ee360e8f5e54fed0becba3f701087359d0743995ae20054a",
+      "nativeMetadata": {
+        "description": "/north/Ortho_RGBN_P00067375_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/north/Ortho_RGBN_P00067375_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          489000.0,
+          0.2,
+          0.0,
+          111000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            489000.0,
+            111000.0
+          ],
+          "lowerLeft": [
+            489000.0,
+            110000.0
+          ],
+          "lowerRight": [
+            490000.0,
+            110000.0
+          ],
+          "upperRight": [
+            490000.0,
+            111000.0
+          ],
+          "center": [
+            489500.0,
+            110500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7359762,
+                50.8916374
+              ],
+              [
+                -0.7362195,
+                50.8826472
+              ],
+              [
+                -0.7220081,
+                50.8824925
+              ],
+              [
+                -0.7217621,
+                50.8914827
+              ],
+              [
+                -0.7359762,
+                50.8916374
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            489000.0,
+            0.0,
+            -0.2,
+            111000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067362_20140305_20140305_20cm_res.ecw",
+      "sha256": "f33d8769f23505f899b40e896de67f6bae075974b50cf3195762d3def9a50768",
+      "nativeMetadata": {
+        "description": "/south/Ortho_RGBN_P00067362_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/south/Ortho_RGBN_P00067362_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          489000.0,
+          0.2,
+          0.0,
+          108000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            489000.0,
+            108000.0
+          ],
+          "lowerLeft": [
+            489000.0,
+            107000.0
+          ],
+          "lowerRight": [
+            490000.0,
+            107000.0
+          ],
+          "upperRight": [
+            490000.0,
+            108000.0
+          ],
+          "center": [
+            489500.0,
+            107500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7367056,
+                50.8646667
+              ],
+              [
+                -0.7369485,
+                50.8556765
+              ],
+              [
+                -0.7227453,
+                50.8555219
+              ],
+              [
+                -0.7224997,
+                50.8645121
+              ],
+              [
+                -0.7367056,
+                50.8646667
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            489000.0,
+            0.0,
+            -0.2,
+            108000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067326_20140305_20140305_20cm_res.ecw",
+      "sha256": "07b4b5bda90ba40986339bb7d86fc1b1337a6061590744fd2f3ed4d17aabaad6",
+      "nativeMetadata": {
+        "description": "/south/Ortho_RGBN_P00067326_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/south/Ortho_RGBN_P00067326_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          489000.0,
+          0.2,
+          0.0,
+          110000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            489000.0,
+            110000.0
+          ],
+          "lowerLeft": [
+            489000.0,
+            109000.0
+          ],
+          "lowerRight": [
+            490000.0,
+            109000.0
+          ],
+          "upperRight": [
+            490000.0,
+            110000.0
+          ],
+          "center": [
+            489500.0,
+            109500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7362195,
+                50.8826472
+              ],
+              [
+                -0.7364626,
+                50.873657
+              ],
+              [
+                -0.7222539,
+                50.8735023
+              ],
+              [
+                -0.7220081,
+                50.8824925
+              ],
+              [
+                -0.7362195,
+                50.8826472
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            489000.0,
+            0.0,
+            -0.2,
+            110000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067334_20140305_20140305_20cm_res.ecw",
+      "sha256": "541a7eaeb4858a118e42455e645ed5b8b8815669bc4695925b6d72a08178a938",
+      "nativeMetadata": {
+        "description": "/south/Ortho_RGBN_P00067334_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/south/Ortho_RGBN_P00067334_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          488000.0,
+          0.2,
+          0.0,
+          110000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            488000.0,
+            110000.0
+          ],
+          "lowerLeft": [
+            488000.0,
+            109000.0
+          ],
+          "lowerRight": [
+            489000.0,
+            109000.0
+          ],
+          "upperRight": [
+            489000.0,
+            110000.0
+          ],
+          "center": [
+            488500.0,
+            109500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.750431,
+                50.8828002
+              ],
+              [
+                -0.7506714,
+                50.8738099
+              ],
+              [
+                -0.7364626,
+                50.873657
+              ],
+              [
+                -0.7362195,
+                50.8826472
+              ],
+              [
+                -0.750431,
+                50.8828002
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            488000.0,
+            0.0,
+            -0.2,
+            110000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067389_20140305_20140305_20cm_res.ecw",
+      "sha256": "bbf4583b173d5cc89254c3650f56a543a7616d100daf2b2fdf960f1b80d4b210",
+      "nativeMetadata": {
+        "description": "/south/Ortho_RGBN_P00067389_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/south/Ortho_RGBN_P00067389_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          488000.0,
+          0.2,
+          0.0,
+          108000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            488000.0,
+            108000.0
+          ],
+          "lowerLeft": [
+            488000.0,
+            107000.0
+          ],
+          "lowerRight": [
+            489000.0,
+            107000.0
+          ],
+          "upperRight": [
+            489000.0,
+            108000.0
+          ],
+          "center": [
+            488500.0,
+            107500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7509117,
+                50.8648196
+              ],
+              [
+                -0.7511518,
+                50.8558293
+              ],
+              [
+                -0.7369485,
+                50.8556765
+              ],
+              [
+                -0.7367056,
+                50.8646667
+              ],
+              [
+                -0.7509117,
+                50.8648196
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            488000.0,
+            0.0,
+            -0.2,
+            108000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fileName": "Ortho_RGBN_P00067287_20140305_20140305_20cm_res.ecw",
+      "sha256": "163d235114bef2a7f32cf8ca5a90f8c9bdb5e64b0e1688e4f2585ef4e3b849d4",
+      "nativeMetadata": {
+        "description": "/north/Ortho_RGBN_P00067287_20140305_20140305_20cm_res.ecw",
+        "driverShortName": "ECW",
+        "driverLongName": "ERDAS Compressed Wavelets (SDK 5.5)",
+        "files": [
+          "/north/Ortho_RGBN_P00067287_20140305_20140305_20cm_res.ecw"
+        ],
+        "size": [
+          5000,
+          5000
+        ],
+        "coordinateSystem": {
+          "wkt": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "dataAxisToSRSAxisMapping": [
+            1,
+            2
+          ]
+        },
+        "geoTransform": [
+          488000.0,
+          0.2,
+          0.0,
+          111000.0,
+          0.0,
+          -0.2
+        ],
+        "metadata": {
+          "": {
+            "COMPRESSION_RATE_TARGET": "4",
+            "COLORSPACE": "MULTIBAND",
+            "VERSION": "2"
+          }
+        },
+        "cornerCoordinates": {
+          "upperLeft": [
+            488000.0,
+            111000.0
+          ],
+          "lowerLeft": [
+            488000.0,
+            110000.0
+          ],
+          "lowerRight": [
+            489000.0,
+            110000.0
+          ],
+          "upperRight": [
+            489000.0,
+            111000.0
+          ],
+          "center": [
+            488500.0,
+            110500.0
+          ]
+        },
+        "wgs84Extent": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -0.7501905,
+                50.8917905
+              ],
+              [
+                -0.750431,
+                50.8828002
+              ],
+              [
+                -0.7362195,
+                50.8826472
+              ],
+              [
+                -0.7359762,
+                50.8916374
+              ],
+              [
+                -0.7501905,
+                50.8917905
+              ]
+            ]
+          ]
+        },
+        "bands": [
+          {
+            "band": 1,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #0",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 2,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #1",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 3,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #2",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          },
+          {
+            "band": 4,
+            "block": [
+              256,
+              256
+            ],
+            "type": "Byte",
+            "colorInterpretation": "Undefined",
+            "description": "Band #3",
+            "overviews": [
+              {
+                "size": [
+                  2500,
+                  2500
+                ]
+              },
+              {
+                "size": [
+                  1250,
+                  1250
+                ]
+              },
+              {
+                "size": [
+                  625,
+                  625
+                ]
+              },
+              {
+                "size": [
+                  312,
+                  312
+                ]
+              },
+              {
+                "size": [
+                  156,
+                  156
+                ]
+              }
+            ],
+            "metadata": {}
+          }
+        ],
+        "stac": {
+          "proj:shape": [
+            5000,
+            5000
+          ],
+          "proj:wkt2": "PROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]",
+          "proj:epsg": 27700,
+          "proj:projjson": {
+            "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+            "type": "ProjectedCRS",
+            "name": "OSGB36 / British National Grid",
+            "base_crs": {
+              "type": "GeographicCRS",
+              "name": "OSGB36",
+              "datum": {
+                "type": "GeodeticReferenceFrame",
+                "name": "Ordnance Survey of Great Britain 1936",
+                "ellipsoid": {
+                  "name": "Airy 1830",
+                  "semi_major_axis": 6377563.396,
+                  "inverse_flattening": 299.3249646
+                }
+              },
+              "coordinate_system": {
+                "subtype": "ellipsoidal",
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "abbreviation": "Lat",
+                    "direction": "north",
+                    "unit": "degree"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "abbreviation": "Lon",
+                    "direction": "east",
+                    "unit": "degree"
+                  }
+                ]
+              },
+              "id": {
+                "authority": "EPSG",
+                "code": 4277
+              }
+            },
+            "conversion": {
+              "name": "British National Grid",
+              "method": {
+                "name": "Transverse Mercator",
+                "id": {
+                  "authority": "EPSG",
+                  "code": 9807
+                }
+              },
+              "parameters": [
+                {
+                  "name": "Latitude of natural origin",
+                  "value": 49,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8801
+                  }
+                },
+                {
+                  "name": "Longitude of natural origin",
+                  "value": -2,
+                  "unit": "degree",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8802
+                  }
+                },
+                {
+                  "name": "Scale factor at natural origin",
+                  "value": 0.9996012717,
+                  "unit": "unity",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8805
+                  }
+                },
+                {
+                  "name": "False easting",
+                  "value": 400000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8806
+                  }
+                },
+                {
+                  "name": "False northing",
+                  "value": -100000,
+                  "unit": "metre",
+                  "id": {
+                    "authority": "EPSG",
+                    "code": 8807
+                  }
+                }
+              ]
+            },
+            "coordinate_system": {
+              "subtype": "Cartesian",
+              "axis": [
+                {
+                  "name": "Easting",
+                  "abbreviation": "E",
+                  "direction": "east",
+                  "unit": "metre"
+                },
+                {
+                  "name": "Northing",
+                  "abbreviation": "N",
+                  "direction": "north",
+                  "unit": "metre"
+                }
+              ]
+            },
+            "scope": "Engineering survey, topographic mapping.",
+            "area": "United Kingdom (UK) - offshore to boundary of UKCS within 49\u00b045'N to 61\u00b0N and 9\u00b0W to 2\u00b0E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.",
+            "bbox": {
+              "south_latitude": 49.75,
+              "west_longitude": -9.01,
+              "north_latitude": 61.01,
+              "east_longitude": 2.01
+            },
+            "id": {
+              "authority": "EPSG",
+              "code": 27700
+            }
+          },
+          "proj:transform": [
+            0.2,
+            0.0,
+            488000.0,
+            0.0,
+            -0.2,
+            111000.0
+          ],
+          "raster:bands": [
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            },
+            {
+              "data_type": "uint8"
+            }
+          ],
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "Band #0"
+            },
+            {
+              "name": "b2",
+              "description": "Band #1"
+            },
+            {
+              "name": "b3",
+              "description": "Band #2"
+            },
+            {
+              "name": "b4",
+              "description": "Band #3"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "reprojection": {
+    "originalBounds": [
+      488000,
+      107600,
+      489850,
+      110400
+    ],
+    "targetBounds": [
+      -83601.80249550135,
+      6596782.378714098,
+      -80599.9376305231,
+      6601172.907577634
+    ],
+    "targetWidth": 1800,
+    "targetHeight": 2200,
+    "resampling": "bilinear",
+    "originalCrs": 27700,
+    "targetCrs": 3857,
+    "containerDigest": "sha256:f096a400b1ec9a656f878de29ed9932541b5d24086d8ebf11a8a75c52097bb5d"
+  }
+}

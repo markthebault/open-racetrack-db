@@ -32,6 +32,7 @@ const selections=await read('sources/reference/course-selections.json');
 assert.equal(selections.schemaVersion,1);
 assert.equal(new Set(selections.records.map((s:any)=>s.referenceId)).size,selections.records.length);
 for(const selection of selections.records){
+ if(selection.endpointToleranceM!==undefined){assert.equal(selection.closed,false);assert.ok(Number.isFinite(selection.endpointToleranceM)&&selection.endpointToleranceM>=0&&selection.endpointToleranceM<=50);assert.ok(selection.endpointEvidence?.trim());}
  const registration=catalogue.records.find((r:any)=>r.referenceId===selection.referenceId);assert.ok(registration?.geometryAvailable);
  const recipe=await read(`sources/${registration.trackId}/layouts/${registration.layoutId}.json`);
  assert.deepEqual(recipe.segments,selection.segments);assert.equal(recipe.closed,selection.closed);

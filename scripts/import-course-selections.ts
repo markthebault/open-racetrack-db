@@ -38,7 +38,8 @@ for(const selection of selections){
   return tags.area==='yes'||/^pit[_ -]?lane$/i.test(tags.service??'')||/^pit[_ -]?lane$/i.test(tags.raceway??'')||/^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(tags.name??'');
  }))throw new Error('Selected course includes an area or pit/service lane');
  if(Math.abs(measured-selection.expectedLengthM)>.15)throw new Error('Selected independent trace changed');
- const timingMode=validateSelectionTiming(record,trace,selection.closed);
+ if(selection.endpointToleranceM!==undefined&&(!selection.endpointEvidence?.trim()||selection.closed))throw new Error('Endpoint allowance requires an open course and documented source limitation');
+ const timingMode=validateSelectionTiming(record,trace,selection.closed,selection.endpointToleranceM);
  if(record.nominalLengthM&&Math.abs(measured-record.nominalLengthM)>selection.maximumDistanceDifferenceM)throw new Error('Selected course exceeds documented distance allowance');
  const identity=selection.relationId??Math.min(...selection.sourceWayIds);
  const url=selection.relationId?`https://www.openstreetmap.org/relation/${selection.relationId}`:`https://www.openstreetmap.org/way/${identity}`;

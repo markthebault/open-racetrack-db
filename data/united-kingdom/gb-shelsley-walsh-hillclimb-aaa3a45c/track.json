@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -2.41210805,
+    52.26223105
+  ],
+  "sourceIds": [
+    "osm-selection-shelsley-walsh-roads-23499817"
+  ],
   "defaultLayoutId": "shelsley-walsh-hillclimb",
   "layouts": [
     {
       "id": "shelsley-walsh-hillclimb",
       "name": "Shelsley Walsh Hillclimb",
       "referenceId": "United Kingdom/Shelsley Walsh Hillclimb",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/shelsley-walsh-hillclimb.geojson",
+      "description": "Draft configuration: The open mapped hillclimb retains the Southern start approach and its small lower return, the Kennel bend, main climb and upper Esses. The operator identifies the hill and corner sequence; all route coordinates remain unchanged independent road nodes. The gate-to-gate source route measures 1017.1 m against the 1163 m catalogue scalar. The sparsely mapped upper straight has no existing node within 30 m of the finish: the nearest endpoint is 38.5 m away along the same road, whose perpendicular timing displacement is below 2 m. A documented 40 m endpoint allowance preserves that draft uncertainty without adding a fabricated vertex or extending to nearby footpaths. Timing extent and approach alignment remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1017.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-shelsley-walsh-roads-23499817",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/23499817",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:00:38.255Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-shelsley-walsh-hillclimb",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.shelsleywalsh.com/info",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:00:38.255Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 910
-- unmappedLayouts: 97
+- draftMapped: 912
+- unmappedLayouts: 95
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -351,7 +351,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Fulbeck Kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Gaydon Emissions Circuit | 1 | 1 | 0 | Gaydon Emissions Circuit |  |
 | United Kingdom | Glan-Y-Gors Kart Circuit | 1 | 1 | 1 |  |  |
-| United Kingdom | Goodwood Festival of Speed | 1 | 1 | 0 | Goodwood Festival of Speed |  |
+| United Kingdom | Goodwood Festival of Speed | 1 | 1 | 1 |  |  |
 | United Kingdom | Goodwood Motor Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Gurston Down Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Harewood Hillclimb | 1 | 1 | 1 |  |  |
@@ -389,7 +389,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | United Kingdom | Rowrah Kart Circuit | 1 | 1 | 1 |  |  |
 | United Kingdom | Rushmore Arena | 1 | 1 | 0 | Rushmore Arena |  |
 | United Kingdom | Rye House Kart Raceway | 1 | 1 | 1 |  |  |
-| United Kingdom | Shelsley Walsh Hillclimb | 1 | 1 | 0 | Shelsley Walsh Hillclimb |  |
+| United Kingdom | Shelsley Walsh Hillclimb | 1 | 1 | 1 |  |  |
 | United Kingdom | Shenington Kart Racing | 1 | 1 | 1 |  |  |
 | United Kingdom | Silverstone Circuit | 9 | 8 | 7 | Silverstone RX | main |
 | United Kingdom | Snetterton Motor Racing Circuit | 5 | 4 | 4 |  | main |
@@ -849,7 +849,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Dunsfold without Runway |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Gaydon Emissions Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Goodwood Festival of Speed |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Ingliston |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -859,7 +858,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/ProDrive |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/RAF Woodbridge |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Rushmore Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United Kingdom/Shelsley Walsh Hillclimb | 306501331; 661290385; 661290386 | 1 | A named OSM route candidate exists, but venue association, timing proximity or travel convention did not pass the automatic checks. Inspect before adding. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Silverstone RX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Apex Motor Club Apex II |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1558,7 +1556,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Gaydon Emissions Circuit | gb-gaydon-emissions-circuit-cfe097eb |  | missing-layout |
 | United Kingdom | Glan-Y-Gors Kart Circuit | gb-glan-y-gors-kart-circuit-c97af463 | glan-y-gors-kart-circuit | draft-mapped |
 | United Kingdom | Goodwood | gb-goodwood-motor-circuit-171558326 | main | draft-mapped |
-| United Kingdom | Goodwood Festival of Speed | gb-goodwood-festival-of-speed-6e11ee2d |  | missing-layout |
+| United Kingdom | Goodwood Festival of Speed | gb-goodwood-festival-of-speed-6e11ee2d | goodwood-festival-of-speed | draft-mapped |
 | United Kingdom | Gurston Down Hillclimb | gb-gurston-down-hillclimb-ade02267 | gurston-down-hillclimb | draft-mapped |
 | United Kingdom | Harewood Hillclimb | gb-harewood-hillclimb-f1871afb | harewood-hillclimb | draft-mapped |
 | United Kingdom | Hethel (With Chicane) | gb-hethel-with-chicane-13a43e31 | hethel-with-chicane | draft-mapped |
@@ -1604,7 +1602,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United Kingdom | Rowrah Kart Circuit | gb-rowrah-kart-circuit-100f6eed | rowrah-kart-circuit | draft-mapped |
 | United Kingdom | Rushmore Arena | gb-rushmore-arena-886deba1 |  | missing-layout |
 | United Kingdom | Rye House Kart Raceway | gb-rye-house-kart-raceway-3e1eaf80 | rye-house-kart-raceway | draft-mapped |
-| United Kingdom | Shelsley Walsh Hillclimb | gb-shelsley-walsh-hillclimb-aaa3a45c |  | missing-layout |
+| United Kingdom | Shelsley Walsh Hillclimb | gb-shelsley-walsh-hillclimb-aaa3a45c | shelsley-walsh-hillclimb | draft-mapped |
 | United Kingdom | Shenington Kart Racing Club | gb-shenington-kart-racing-a8ff3102 | shenington-kart-racing-club | draft-mapped |
 | United Kingdom | Silverstone Stowe | gb-silverstone-circuit-3571477 | silverstone-stowe | draft-mapped |
 | United Kingdom | Snetterton Combo | gb-snetterton-motor-racing-circuit-145755937 | snetterton-combo | draft-mapped |

@@ -43,3 +43,13 @@ test('government orthoimagery retains its reuse terms and attribution',()=>{
  assert.equal(layout.metadata.attribution,government.attribution);
  assert.throws(()=>buildImageryCourse(recipe,government,track),/rights/);
 });
+
+test('OGL imagery preserves provider attribution and rejects mismatched reuse registration',()=>{
+ const government={...source,license:'OGL-3.0' as const,attribution:'Environment Agency, Open Government Licence v3.0'};
+ const registered={...track,sources:[{...track.sources[0],license:government.license}]};
+ const layout=buildImageryCourse(recipe,government,registered);
+ assert.equal(layout.metadata.attribution,government.attribution);
+ assert.deepEqual(layout.features[0].properties.sourceIds,[government.sourceId]);
+ assert.throws(()=>buildImageryCourse(recipe,government,track),/rights/);
+ assert.throws(()=>buildImageryCourse(recipe,government,{...registered,sources:[{...registered.sources[0],url:'https://example.org/unrelated'}]}),/rights/);
+});

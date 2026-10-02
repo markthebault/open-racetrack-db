@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 910,
-    "unmappedLayouts": 97,
+    "draftMapped": 912,
+    "unmappedLayouts": 95,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -10584,11 +10584,15 @@
       "name": "Goodwood Festival of Speed",
       "timingMode": "separate",
       "trackId": "gb-goodwood-festival-of-speed-6e11ee2d",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "goodwood-festival-of-speed"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -11304,11 +11308,15 @@
       "name": "Shelsley Walsh Hillclimb",
       "timingMode": "separate",
       "trackId": "gb-shelsley-walsh-hillclimb-aaa3a45c",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "shelsley-walsh-hillclimb"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence.",
+        "Review independently mapped open endpoints and their agreement with the timing convention; some entries can still use a supporting loop."
       ]
     },
     {
@@ -20718,15 +20726,13 @@
       "name": "Goodwood Festival of Speed",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Goodwood Festival of Speed"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-goodwood-motor-circuit-171558326",
@@ -21243,15 +21249,13 @@
       "name": "Shelsley Walsh Hillclimb",
       "country": "United Kingdom",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Shelsley Walsh Hillclimb"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "gb-shenington-kart-racing-a8ff3102",
@@ -27162,13 +27166,6 @@
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
     },
     {
-      "recordId": "United Kingdom/Goodwood Festival of Speed",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
       "recordId": "United Kingdom/Ingliston",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
@@ -27245,17 +27242,6 @@
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
       "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United Kingdom/Shelsley Walsh Hillclimb",
-      "matchingNamedWayIds": [
-        306501331,
-        661290385,
-        661290386
-      ],
-      "namedCourseCandidates": 1,
-      "enumerationTruncated": false,
-      "reason": "A named OSM route candidate exists, but venue association, timing proximity or travel convention did not pass the automatic checks. Inspect before adding."
     },
     {
       "recordId": "United Kingdom/Thorsway MX",

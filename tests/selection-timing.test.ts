@@ -19,3 +19,14 @@ test('course closure and timing roles must agree',()=>{
  assert.throws(()=>validateSelectionTiming(open,[...trace,trace[0]],true),/shared timing/);
  assert.throws(()=>validateSelectionTiming(shared,trace,true),/shared timing/);
 });
+
+test('documented sparse endpoint allowance keeps the route-neighborhood check strict',()=>{
+ const sparse:Position[]=[trace[0],trace[1],[.01055,50]];
+ assert.throws(()=>validateSelectionTiming(open,sparse,false),/endpoints/);
+ assert.equal(validateSelectionTiming(open,sparse,false,40),'separate');
+ assert.throws(()=>validateSelectionTiming(open,sparse,false,51),/Invalid documented/);
+ assert.throws(()=>validateSelectionTiming(open,sparse,false,NaN),/Invalid documented/);
+ const away:TimingRecord={...open,gates:[open.gates[0],{role:'finish',point:[.01055,50.00035]}]};
+ assert.throws(()=>validateSelectionTiming(away,sparse,false,50),/location/);
+ assert.throws(()=>validateSelectionTiming(open,[...trace,[.011,50]],false,50),/endpoints/);
+});
