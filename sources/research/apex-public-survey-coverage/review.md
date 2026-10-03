@@ -1,6 +1,6 @@
 # Apex public survey coverage
 
-Reviewed 3 October 2026. Neither missing configuration is counted as recovered.
+Reviewed 3 October 2026. The later multi-acquisition review recovers northern Track Two as a coarse draft. The combined configuration remains unresolved.
 
 The public road snapshot currently supplies the southern circuit. It does not map the complete northern circuit. The operator identifies [Track Two and the combined Track Three](https://apexmotorclub.com/track/). Its rounded advertised lengths alone do not establish a different historical configuration from the supplied entries. The earlier gap explanation asserted that difference without enough evidence and has been corrected.
 
@@ -14,7 +14,7 @@ The search point here comes from pixel 350, 500 of the independently georeferenc
 
 The LiDAR publication date is 31 March 2022. These dates describe the coverage returned by the public indexes on the review date, not every possible local survey. The [paving contractor's project account](https://theasphaltpro.com/articles/echelon-paving-apex-motorsports-track/) dates construction to August 2024 through February 2025. Those indexed captures therefore predate the northern asphalt expansion.
 
-The independently available September 2026 Sentinel image shows the northern course at native 10 m resolution. A course review has begun, but that image does not yet establish the complete western join and the combined-course connection clearly enough to register either trace. Fine corner radii and the small northern chicane also need review. No candidate is adjusted to a nominal distance or closed across an unresolved gap.
+The subsequent [northern-course review](../../us-apex-motor-b7ddcfd3/review.md) compares independently available June and September 2026 Sentinel bands. Contrast review and the team-linked February 2026 onboard establish the paved western return. Northern Track Two now has a coarse draft trace. Native resolution remains 10 m; contrast changes add no spatial detail. Both combined-course joins still need branch confirmation. No candidate is adjusted to a nominal distance or closed across an unresolved gap.
 
 The county's fine 2025 aerial service is a separate source. An empty copyright field or a technical `AllowCopy` setting does not establish its redistribution terms; those settings are not a reuse declaration. No county image coordinates are imported by this review.
 

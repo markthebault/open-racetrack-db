@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 991,
-    "unmappedLayouts": 16,
+    "draftMapped": 992,
+    "unmappedLayouts": 15,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -11795,11 +11795,14 @@
       "name": "Apex Motor Club Apex II",
       "timingMode": "shared",
       "trackId": "us-apex-motor-b7ddcfd3",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "apex-motor-club-apex-ii"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "us-apex-motor-b7ddcfd3"
@@ -24373,12 +24376,11 @@
       "name": "Apex Motor",
       "country": "United States",
       "actualLayoutCount": 5,
-      "actualTraceCount": 3,
+      "actualTraceCount": 4,
       "expectedRecordCount": 3,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 1,
+      "mappedRecordCount": 2,
       "missingRecordNames": [
-        "Apex Motor Club Apex II",
         "Apex Motor Club Apex III"
       ],
       "unassociatedLayoutIds": [
@@ -26890,13 +26892,6 @@
     },
     {
       "recordId": "United Kingdom/Thorsway MX",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "United States/Apex Motor Club Apex II",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,

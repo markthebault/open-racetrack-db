@@ -183,32 +183,12 @@
       "publicExplanation": "The historical course has several parallel branches. The public survey and practice footage do not yet establish a complete lap through those branches."
     },
     {
-      "referenceId": "United States/Apex Motor Club Apex II",
-      "trackId": "us-apex-motor-b7ddcfd3",
-      "layoutId": "apex-motor-club-apex-ii",
-      "sourcePath": "sources/world/us/osm.json",
-      "expectedReason": "independent-geometry-missing",
-      "nextStep": "Complete the independently sourced northern-course trace review. Current road mapping covers the southern circuit. The public NAIP acquisition is from September 2023 and indexed LiDAR from 2020–2021, before the 2024–2025 northern expansion. Native 10 m September 2026 imagery shows northern pavement but leaves the western join and fine bends unresolved; rounded advertised distances alone do not prove a different historical configuration.",
-      "research": {
-        "reviewedAt": "2026-10-03",
-        "evidenceUrls": [
-          "https://apexmotorclub.com/track/",
-          "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
-          "https://index.nationalmap.gov/arcgis/rest/services/3DEPElevationIndex/MapServer/24",
-          "https://theasphaltpro.com/articles/echelon-paving-apex-motorsports-track/",
-          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SUB_20260925_0_L2A"
-        ],
-        "geometryRecovered": false
-      },
-      "publicExplanation": "Public road mapping covers the southern circuit. Newer satellite imagery shows the northern course, but its western join and fine bends still need confirmation before a complete trace can be published."
-    },
-    {
       "referenceId": "United States/Apex Motor Club Apex III",
       "trackId": "us-apex-motor-b7ddcfd3",
       "layoutId": "apex-motor-club-apex-iii",
       "sourcePath": "sources/world/us/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Complete the northern-course and combined-connection review from independently reusable geometry. The operator identifies a linked combined course. Indexed NAIP imagery and LiDAR predate its northern expansion; native 10 m September 2026 imagery does not yet establish both joins clearly enough. A different historical configuration must not be assumed from rounded course lengths.",
+      "nextStep": "Establish both combined-course joins from independently reusable source geometry. The northern Track Two now has a coarse public-imagery trace, confirmed by the team-linked February 2026 onboard lap. The operator identifies a combined course, but its currently published combined graphic duplicates the southern circuit and does not establish the joining branches. Native 10 m June and September imagery supplies pavement context; both joins still require branch identification. Rounded lengths do not establish a historical variant.",
       "research": {
         "reviewedAt": "2026-10-03",
         "evidenceUrls": [
@@ -216,11 +196,14 @@
           "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
           "https://index.nationalmap.gov/arcgis/rest/services/3DEPElevationIndex/MapServer/24",
           "https://theasphaltpro.com/articles/echelon-paving-apex-motorsports-track/",
-          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SUB_20260925_0_L2A"
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SUB_20260925_0_L2A",
+          "https://mgrracing.com/season-schedule/",
+          "https://www.youtube.com/watch?v=i-9BpzGI2yA",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SUB_20260918_0_L2A"
         ],
         "geometryRecovered": false
       },
-      "publicExplanation": "This layout links the northern and southern circuits. The northern trace and the connections between circuits still need confirmation from reusable source geometry."
+      "publicExplanation": "The northern circuit now has a draft trace. The two connections joining it to the southern circuit still need confirmation for this combined layout."
     },
     {
       "referenceId": "United States/Arlington Street Circuit",
