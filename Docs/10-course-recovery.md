@@ -27,6 +27,22 @@ The following source limitations remain after the complete search of the pinned 
 | Bounded search incomplete | 0 |
 | **Total** | **11** |
 
+The remaining supplied entries and the evidence needed to finish them are:
+
+| Entry | Evidence still needed |
+| --- | --- |
+| Rosario Combo | Historical northern branch sequence between its separate timing endpoints. |
+| Huangtupo | Complete compact course geometry and independently verified historical venue identity. |
+| Elvington | Independently observed connection at the northern return pavement-end gap. |
+| Kames forward and reverse (2 entries) | Historical timed-run sequence, including any repeated sections between separate gates. |
+| Lydden Hill Infield | Historical northeastern arm and inner shortcut configuration. |
+| Thorsway MX | Complete old-course lap through the central parallel branches. |
+| Arlington race and practice (2 entries) | Reusable geometry for temporary turns and confirmation of the practice timing convention. |
+| Charlotte Short | Historical frontstretch short-course branch order. |
+| Detroit City Airport | Event-date apron chicanes for the requested configuration. |
+
+An independently recorded GPX or survey can resolve a case when its date, configuration and permission to redistribute are established. A clear operator plan can identify branches, but coordinate tracing still needs a reusable source. The [public GPS search review](../sources/research/public-gps-gap-search/review.md) pins 25 bounded query responses covering these eleven entries. It distinguishes timestamps from course identity and excludes geographically sorted anonymous points as route evidence. Eight bounded queries reached an empty page; the six inspected Arlington pages leave that query incomplete.
+
 No new conservative, uniquely distinguished cycle remains unregistered in these country extracts. That does not prove there is no suitable geometry elsewhere. Independent circuit documents, licensed GPS surveys or more complete public mapping are needed to resolve the remaining cases. “Draft trace” means a route hypothesis requiring review; it does not certify every branch or historical configuration.
 
 ## Archive filename reconciliation
@@ -208,7 +224,7 @@ Palanga's [fine public orthophoto review](../sources/research/palanga-orthophoto
 
 Reviewed evidence now lives in the [pinned gap-review manifest](../sources/reference/layout-gap-reviews.json). Rerunning the search preserves its findings without changing the generated reason or marking geometry recovered. A changed catalogue hash, venue/layout identity, source path or failure category requires reassessment. Reviews for entries that acquire traces are left out of the remaining-work report. The [Thoresway surface review](../sources/research/thoresway-historical-coverage/review.md) records licensed 2019 LiDAR, historical public road context and first-hand 2014, 2017 and 2020 footage, with the unresolved central branch order retained.
 
-The further [Arlington band review](../sources/research/arlington-public-course-evidence/review.md) pins eight native RGB/NIR windows from March and September 2026. The [Huangtupo band review](../sources/research/huangtupo-historical-bands/review.md) pins eight from October 2018 and June 2019. Both preserve exact source grids and every inspection pixel; improved contrast does not resolve their remaining course links. These remain research packages, with no registered course recipe. The [Charlotte Short review](../sources/research/charlotte-short-identity/review.md) excludes the organizer's historical 0.7-mile infield plan and retains the temporary 2012 frontstretch rallycross configuration as an unverified identity lead.
+The further [Arlington band review](../sources/research/arlington-public-course-evidence/review.md) pins eight native RGB/NIR windows from March and September 2026. The [Huangtupo band review](../sources/research/huangtupo-historical-bands/review.md) pins sixteen from February and July 2017, October 2018 and June 2019. Both preserve exact source grids and every inspection pixel; improved contrast does not resolve their remaining course links. These remain research packages, with no registered course recipe. The [Charlotte Short review](../sources/research/charlotte-short-identity/review.md) excludes the organizer's historical 0.7-mile infield plan and retains the temporary 2012 frontstretch rallycross configuration as an unverified identity lead.
 
 Xiamen now has a full-course draft from registered September 2026 Copernicus imagery. A narrower public GPS inspection identifies the southern notch and central hairpin, while all sample coordinates remain outside the published data. The 1,723.3 m raster trace retains its 4.3 m supplied-scalar difference and 96.7 m difference from the 2022 organizer's 1,820 m. Native 10 m pixels leave fine S bends and corner radii provisional. The [source review](../sources/cn-xiamen-9d5cdb21/review.md), acquisition metadata, lossless raster crop, pixel recipe and hashes reproduce the draft; the focused browser check verifies its closed geometry, attribution, limitations and download.
 
@@ -216,7 +232,7 @@ All remaining unresolved XML entries now have individual source reviews and shor
 
 RAF Woodbridge now has the complete independently mapped straight runway as a supporting draft. Exact nodes remain unchanged, with no invented return lane or eastern turnaround. The public trace is 3,160.8 m and is not claimed to reproduce the 5,658 m catalogue scalar or independently verified timing endpoints. The private preview alone shows the section between the local timing projections. Supporting-runway imports require one complete straight runway way, explicit identity evidence, separate markers, strict proximity and consistent order. Ordinary open courses keep their endpoint checks. This corrects the earlier gap explanation, which incorrectly sought an eastern turnaround.
 
-Elvington’s [historical coverage review](../sources/research/elvington-historical-coverage/review.md) checks the actual Environment Agency aerial tile footprints rather than the larger download grid labels. The 2012 quarter-metre tile lies south of the missing northeastern connector; the half-metre and one-metre tiles cover only the far western runway end. None resolves the pavement gap. A similarly named public recording is from Elvington village in Kent, not the Yorkshire airfield. The layout remains unresolved.
+Elvington’s [historical coverage review](../sources/research/elvington-historical-coverage/review.md) checks the actual Environment Agency aerial tile footprints rather than the larger download grid labels. The actual 2012 aerial footprints and 2008 point-cloud file bounds do not cover the northern return pavement-end join. The corrected shared review window is pinned; the earlier E467000 to E468000 location description is withdrawn. A similarly named public recording is from Elvington village in Kent, not the Yorkshire airfield. The layout remains unresolved.
 
 Bikernieki Rallycross now retains its historical eastern triangle, upper inward step and parallel finish straight. The current standard and joker loops miss the supplied timing position and are excluded. Exact 2017 public road nodes retain the short triangle; licensed LGIA cycle-six orthophotography resolves the missing upper paved step. The 1355.7 m draft remains 42.7 m longer than the catalogue scalar. Source hashes, branch indices, image georeferencing and connector pixels reproduce the trace. Later eastern extensions, event barriers and exact historical-year correspondence remain outside this draft.
 
