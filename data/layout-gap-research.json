@@ -52,15 +52,16 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Identify the northeastern connector independently. The public 2020 one-metre survey shows a pavement gap, and the 2008 point-cloud and 2012 aerial tile footprints miss the connector. Do not infer coverage from the larger download grid square or draw an unsupported line across grass.",
-      "publicExplanation": "The available survey shows the airfield pavement, but a gap in the northeastern course has no independently identified connector.",
+      "nextStep": "Identify the northeastern connector independently. The public 2020 survey shows a pavement gap; actual 2008 point-cloud, 2012 aerial and newly checked November 2024 point-cloud footprints miss the join. All 12 newer LAS headers and hashes are pinned in the public coverage review. Do not infer course coverage from the larger download-grid tile or draw an unsupported connector across grass.",
+      "publicExplanation": "Available imagery shows a pavement gap at the course join. The actual files in the newer 2024 survey also miss that join; an independently identified connector is still needed.",
       "research": {
         "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6045",
           "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6545",
           "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography",
-          "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud"
+          "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud",
+          "https://environment.data.gov.uk/tiles/collections/survey/lidar_point_cloud/2024/NaN/SE6545"
         ],
         "geometryRecovered": false
       }
