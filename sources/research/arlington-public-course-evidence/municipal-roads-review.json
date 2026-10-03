@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "sourceUrl": "https://gis2.arlingtontx.gov/agsext2/rest/services/OpenData/OD_Transportation/MapServer/1/query?f=geojson&where=1%3D1&geometry=-97.10%2C32.738%2C-97.075%2C32.753&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&outFields=OBJECTID%2Cfullname%2CLifecycleStatus%2COwnership%2Clast_edited_date&returnGeometry=true&orderByFields=OBJECTID",
+  "sourcePage": "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
+  "sourceItemMetadataUrl": "https://www.arcgis.com/sharing/rest/content/items/861ae9583db64b57b76f40125b56ce51?f=json",
+  "datasetTitle": "Roads",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenseEvidence": "The public ArcGIS item explicitly states Creative Commons Attribution 4.0 International License.",
+  "attribution": "City of Arlington, Roads, retrieved 3 October 2026.",
+  "file": "municipal-road-centerlines.geojson",
+  "sha256": "aa84c9823bca5a2985eb2dde22dcaab225ed3e869eb0a1f8f6c2d9d13ae56e0b",
+  "featureCount": 136,
+  "boundsWgs84": [
+    -97.1,
+    32.738,
+    -97.075,
+    32.753
+  ],
+  "retainedFields": [
+    "OBJECTID",
+    "fullname",
+    "LifecycleStatus",
+    "Ownership",
+    "last_edited_date"
+  ],
+  "query": {
+    "f": "geojson",
+    "where": "1=1",
+    "geometry": "-97.10,32.738,-97.075,32.753",
+    "geometryType": "esriGeometryEnvelope",
+    "inSR": "4326",
+    "spatialRel": "esriSpatialRelIntersects",
+    "outSR": "4326",
+    "outFields": "OBJECTID,fullname,LifecycleStatus,Ownership,last_edited_date",
+    "returnGeometry": "true",
+    "orderByFields": "OBJECTID"
+  },
+  "streetReviews": [
+    {
+      "name": "N COLLINS ST",
+      "segmentCount": 13,
+      "editedDates": [
+        "2021-06-29"
+      ]
+    },
+    {
+      "name": "E RANDOL MILL RD",
+      "segmentCount": 15,
+      "editedDates": [
+        "2021-06-29"
+      ]
+    },
+    {
+      "name": "STADIUM DR",
+      "segmentCount": 8,
+      "editedDates": [
+        "2021-06-29",
+        "2023-07-06"
+      ]
+    },
+    {
+      "name": "COWBOYS WAY",
+      "segmentCount": 2,
+      "editedDates": [
+        "2021-06-29"
+      ]
+    },
+    {
+      "name": "AT&T WAY",
+      "segmentCount": 6,
+      "editedDates": [
+        "2021-06-29"
+      ]
+    },
+    {
+      "name": "NOLAN RYAN EWY",
+      "segmentCount": 3,
+      "editedDates": [
+        "2021-06-29",
+        "2023-07-06"
+      ]
+    }
+  ],
+  "geometryRecovered": false,
+  "finding": "Licensed centerlines cover the surrounding streets but not the stadium horseshoe and temporary racing connectors. No selected street segment has an edit date after the announced 2025 construction. The private catalogue entries are not assigned this incomplete civilian-road network."
+}

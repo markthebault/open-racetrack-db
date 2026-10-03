@@ -219,16 +219,19 @@
       "layoutId": "arlington-street-circuit",
       "sourcePath": "sources/world/us/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Identify and survey the requested configuration, including its temporary junctions. The 2022 public aerial image predates construction and the official 2026 course differs from the catalogue route.",
+      "nextStep": "Confirm the requested branch sequence and obtain reusable fine evidence for the stadium horseshoe and temporary racing connectors. The licensed municipal centerlines omit those sections. Native 10 m imagery captured on the 2026 practice day is too coarse to resolve them; the 100.4 m event-distance discrepancy alone does not establish a different layout.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://www.indycar.com/Schedule/2026/Arlington",
-          "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington"
+          "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington",
+          "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A",
+          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1"
         ],
         "geometryRecovered": false
       },
-      "publicExplanation": "The catalogue layout differs from the circuit used for the 2026 event. Public road geometry alone does not establish its temporary turns."
+      "publicExplanation": "The surrounding streets are mapped, but the stadium horseshoe and temporary connectors are missing from reusable geometry. The event-day satellite image is too coarse to resolve them."
     },
     {
       "referenceId": "United States/Arlington Street Circuit Practice",
@@ -236,16 +239,19 @@
       "layoutId": "arlington-street-circuit-practice",
       "sourcePath": "sources/world/us/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Identify the independent practice-course configuration and obtain its temporary junction geometry. The later race map and pre-event aerial image cannot supply this separate layout.",
+      "nextStep": "Confirm the timing-line convention for this catalogue entry and recover the missing temporary connectors. The official 2026 practice report identifies main and alternate start/finish lines on one event course. That does not establish this catalogue route; the licensed municipal road snapshot and native event-date imagery still cannot supply its complete geometry.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://www.indycar.com/Schedule/2026/Arlington",
-          "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington"
+          "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington",
+          "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A",
+          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1"
         ],
         "geometryRecovered": false
       },
-      "publicExplanation": "The practice configuration needs its own route evidence. Neither the 2026 race circuit nor the surrounding public roads establish this layout."
+      "publicExplanation": "The official practice map labels an alternate start/finish line. This catalogue timing convention still needs confirmation, and reusable geometry for the temporary turns remains incomplete."
     },
     {
       "referenceId": "United States/Charlotte Motor Speedway Short",
