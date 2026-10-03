@@ -61,16 +61,17 @@
       "layoutId": "drive-centre-arena",
       "sourcePath": "sources/europe/se/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Identify the southern temporary turnaround and runway travel sequence with event-date GPS or survey evidence. The inspected public recording covers the northern arena rather than the complete course.",
+      "nextStep": "Identify the southern turnaround and runway travel sequence with event-date GPS or survey evidence. An expanded search includes the southern runway end; the identified 2013 recording is a snowmobile trip that predates the racing circuit, and unidentified samples do not establish a race lap.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://minkarta.lantmateriet.se/",
+          "https://www.drivecenter.se/arenan/",
           "https://www.openstreetmap.org/user/Svanis/traces/1416855"
         ],
         "geometryRecovered": false
       },
-      "publicExplanation": "The course uses the airfield and temporary turns. Public aerial imagery shows the runway, but the southern turnaround and travel sequence remain unresolved."
+      "publicExplanation": "The course uses airfield pavement and temporary turns. The identified public recording is an older snowmobile trip; it does not establish the racing course or its southern turnaround."
     },
     {
       "referenceId": "Taiwan/Lihpao Wind",
@@ -187,16 +188,19 @@
       "layoutId": "apex-motor-club-apex-ii",
       "sourcePath": "sources/world/us/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Find independently reusable historical configuration geometry. The operator documents the later built Track Two; the current public network and 2025 image do not establish the requested earlier configuration.",
+      "nextStep": "Complete the independently sourced northern-course trace review. Current road mapping covers the southern circuit. The public NAIP acquisition is from September 2023 and indexed LiDAR from 2020–2021, before the 2024–2025 northern expansion. Native 10 m September 2026 imagery shows northern pavement but leaves the western join and fine bends unresolved; rounded advertised distances alone do not prove a different historical configuration.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://apexmotorclub.com/track/",
-          "https://www.openstreetmap.org/way/1368371116"
+          "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+          "https://index.nationalmap.gov/arcgis/rest/services/3DEPElevationIndex/MapServer/24",
+          "https://theasphaltpro.com/articles/echelon-paving-apex-motorsports-track/",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SUB_20260925_0_L2A"
         ],
         "geometryRecovered": false
       },
-      "publicExplanation": "The catalogue configuration differs from the later built Track Two layout. A reusable trace of the requested historical configuration is still needed."
+      "publicExplanation": "Public road mapping covers the southern circuit. Newer satellite imagery shows the northern course, but its western join and fine bends still need confirmation before a complete trace can be published."
     },
     {
       "referenceId": "United States/Apex Motor Club Apex III",
@@ -204,16 +208,19 @@
       "layoutId": "apex-motor-club-apex-iii",
       "sourcePath": "sources/world/us/osm.json",
       "expectedReason": "independent-geometry-missing",
-      "nextStep": "Find independently reusable historical combined-course geometry. Do not substitute the later built combined circuit for the catalogue configuration.",
+      "nextStep": "Complete the northern-course and combined-connection review from independently reusable geometry. The operator identifies a linked combined course. Indexed NAIP imagery and LiDAR predate its northern expansion; native 10 m September 2026 imagery does not yet establish both joins clearly enough. A different historical configuration must not be assumed from rounded course lengths.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://apexmotorclub.com/track/",
-          "https://www.openstreetmap.org/way/1368371116"
+          "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+          "https://index.nationalmap.gov/arcgis/rest/services/3DEPElevationIndex/MapServer/24",
+          "https://theasphaltpro.com/articles/echelon-paving-apex-motorsports-track/",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SUB_20260925_0_L2A"
         ],
         "geometryRecovered": false
       },
-      "publicExplanation": "The catalogue configuration differs from the later built combined circuit. A reusable trace of the requested historical configuration is still needed."
+      "publicExplanation": "This layout links the northern and southern circuits. The northern trace and the connections between circuits still need confirmation from reusable source geometry."
     },
     {
       "referenceId": "United States/Arlington Street Circuit",

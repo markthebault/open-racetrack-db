@@ -1,0 +1,124 @@
+{
+  "service": "https://index.nationalmap.gov/arcgis/rest/services/3DEPElevationIndex/MapServer/24",
+  "query": {
+    "f": "json",
+    "where": "1=1",
+    "geometry": "-112.13006331159762,33.08508686702581",
+    "geometryType": "esriGeometryPoint",
+    "inSR": 4326,
+    "spatialRel": "esriSpatialRelIntersects",
+    "outFields": "workunit,project,collect_start,collect_end,ql,horiz_crs,vert_crs,lpc_pub_date,lpc_link,metadata_link",
+    "returnGeometry": "false"
+  },
+  "retrievedAt": "2026-10-03T01:41:13.987368+00:00",
+  "publicSearchPointOrigin": {
+    "sourceUrl": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/UB/2026/9/S2C_12SUB_20260925_0_L2A/TCI.tif",
+    "imagerySha256": "80cb64df4ea9bf61e0a8f3871c61c296714f15c03028788232bb159c83757a12",
+    "pixel": [
+      350,
+      500
+    ],
+    "width": 1000,
+    "height": 1000,
+    "extent": {
+      "xmin": -12483934.859726867,
+      "ymin": 3904218.6307128565,
+      "xmax": -12479160.796211055,
+      "ymax": 3908992.6942286687,
+      "spatialReference": 3857
+    }
+  },
+  "response": {
+    "displayFieldName": "workunit",
+    "fieldAliases": {
+      "workunit": "workunit",
+      "project": "project",
+      "collect_start": "collect_start",
+      "collect_end": "collect_end",
+      "ql": "ql",
+      "horiz_crs": "horiz_crs",
+      "vert_crs": "vert_crs",
+      "lpc_pub_date": "lpc_pub_date",
+      "lpc_link": "lpc_link",
+      "metadata_link": "metadata_link"
+    },
+    "fields": [
+      {
+        "name": "workunit",
+        "type": "esriFieldTypeString",
+        "alias": "workunit",
+        "length": 255
+      },
+      {
+        "name": "project",
+        "type": "esriFieldTypeString",
+        "alias": "project",
+        "length": 255
+      },
+      {
+        "name": "collect_start",
+        "type": "esriFieldTypeDate",
+        "alias": "collect_start",
+        "length": 8
+      },
+      {
+        "name": "collect_end",
+        "type": "esriFieldTypeDate",
+        "alias": "collect_end",
+        "length": 8
+      },
+      {
+        "name": "ql",
+        "type": "esriFieldTypeString",
+        "alias": "ql",
+        "length": 255
+      },
+      {
+        "name": "horiz_crs",
+        "type": "esriFieldTypeString",
+        "alias": "horiz_crs",
+        "length": 255
+      },
+      {
+        "name": "vert_crs",
+        "type": "esriFieldTypeString",
+        "alias": "vert_crs",
+        "length": 255
+      },
+      {
+        "name": "lpc_pub_date",
+        "type": "esriFieldTypeDate",
+        "alias": "lpc_pub_date",
+        "length": 8
+      },
+      {
+        "name": "lpc_link",
+        "type": "esriFieldTypeString",
+        "alias": "lpc_link",
+        "length": 255
+      },
+      {
+        "name": "metadata_link",
+        "type": "esriFieldTypeString",
+        "alias": "metadata_link",
+        "length": 255
+      }
+    ],
+    "features": [
+      {
+        "attributes": {
+          "workunit": "AZ_MaricopaPinal_1_2020",
+          "project": "AZ_MaricopaPinal_2020_B20",
+          "collect_start": 1601596800000,
+          "collect_end": 1639785600000,
+          "ql": "QL 1",
+          "horiz_crs": "6341",
+          "vert_crs": "5703",
+          "lpc_pub_date": 1648684800000,
+          "lpc_link": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_MaricopaPinal_2020_B20/AZ_MaricopaPinal_1_2020",
+          "metadata_link": "https://prd-tnm.s3.amazonaws.com/index.html?prefix=StagedProducts/Elevation/metadata/AZ_MaricopaPinal_2020_B20/AZ_MaricopaPinal_1_2020"
+        }
+      }
+    ]
+  }
+}
