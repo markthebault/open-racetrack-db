@@ -52,6 +52,14 @@ On macOS, `npm run preview:install` copies the build and optional private timing
 
 On the Mac Mini, the current preview is available to connected Tailscale devices at [marks-mac-mini.baboon-trench.ts.net:8445](https://marks-mac-mini.baboon-trench.ts.net:8445/). Tailscale Serve proxies to the local production preview on port 5190.
 
+For phone access by IP, connect Tailscale on the phone and open [100.73.197.112:5190](http://100.73.197.112:5190/). The most recently added trace is [Palanga](http://100.73.197.112:5190/?track=lt-palanga-street-circuit-a9c06d36&layout=palanga-street-circuit). [Paul Ricard](http://100.73.197.112:5190/?track=fr-paul-ricard) has eight selectable layouts with draft traces.
+
+The IP endpoint uses a persistent TCP forwarder to the same localhost server. To configure it on another machine, run this command and use that machine's `tailscale ip -4` address:
+
+```sh
+tailscale serve --bg --tcp=5190 tcp://127.0.0.1:5190
+```
+
 ## Data and code licenses
 
 Original application code is MIT licensed. Database content is distributed under ODbL 1.0. OSM-derived courses credit OpenStreetMap contributors; independently digitized NAIP courses credit USGS, USDA and The National Map. The original NAIP imagery is public domain. Polish aerial courses credit GUGiK and Geoportal.gov.pl, whose orthoimagery is freely reusable; the source-specific identifier `LicenseRef-GUGiK-open-data` links to the provider’s reuse statement. Saxon historical aerial courses credit GeoSN under [Datenlizenz Deutschland Namensnennung 2.0](https://www.govdata.de/dl-de/by-2-0), with independently digitized centerlines marked as changed. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
