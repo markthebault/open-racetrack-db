@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 994
-- unmappedLayouts: 13
+- draftMapped: 995
+- unmappedLayouts: 12
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -567,7 +567,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Russia | Sochi Autodrom | 2 | 1 | 1 |  | main |
 | Saudi Arabia | Jeddah | 1 | 1 | 1 |  |  |
 | Sweden | Anderstorp Raceway | 2 | 1 | 1 |  | main |
-| Sweden | Drive Centre Arena | 1 | 1 | 0 | Drive Centre Arena |  |
+| Sweden | Drive Centre Arena | 1 | 1 | 1 |  |  |
 | Sweden | Falkenbergs Motorbana | 1 | 1 | 1 |  |  |
 | Sweden | Gotland Ring | 5 | 4 | 4 |  | main |
 | Sweden | Holjes Motorclub | 1 | 1 | 1 |  |  |
@@ -791,7 +791,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Sweden/Drive Centre Arena |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit Reverse |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1368,7 +1367,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Spain | Parc Motor Castelloli | es-parcmotor-castelloli-31877576 | main | draft-mapped |
 | Spain | RennarenaMallorca | es-circuit-mallorca-59850344 | main | draft-mapped |
 | Sweden | Anderstorp Raceway | se-anderstorp-raceway-167798646 | anderstorp-raceway | draft-mapped |
-| Sweden | Drive Centre Arena | se-drive-centre-arena-09bd002c |  | missing-layout |
+| Sweden | Drive Centre Arena | se-drive-centre-arena-09bd002c | drive-centre-arena | draft-mapped |
 | Sweden | Falkenberg Raceway | se-falkenbergs-motorbana-343515644 | main | draft-mapped |
 | Sweden | Gellerason GP 2019 | se-karlskoga-motorstadion-290177249 | gellerason-gp-2019 | draft-mapped |
 | Sweden | Gotland Ring 3.1 | se-gotland-ring-311644846 | gotland-ring-3-1 | draft-mapped |

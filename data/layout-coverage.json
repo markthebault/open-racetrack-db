@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 994,
-    "unmappedLayouts": 13,
+    "draftMapped": 995,
+    "unmappedLayouts": 12,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -8990,11 +8990,14 @@
       "name": "Drive Centre Arena",
       "timingMode": "shared",
       "trackId": "se-drive-centre-arena-09bd002c",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "drive-centre-arena"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -23859,15 +23862,13 @@
       "name": "Drive Centre Arena",
       "country": "Sweden",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Drive Centre Arena"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "se-falkenbergs-motorbana-343515644",
@@ -26845,13 +26846,6 @@
     },
     {
       "recordId": "Lithuania/Palanga Street Circuit",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Sweden/Drive Centre Arena",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
