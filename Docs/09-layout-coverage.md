@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 992
-- unmappedLayouts: 15
+- draftMapped: 993
+- unmappedLayouts: 14
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -606,7 +606,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Ukraine | Chayka | 1 | 1 | 1 |  |  |
 | United States | Albany-Saratoga Speedway | 1 | 0 | 0 |  | main |
 | United States | AMR Motorplex Kart Circuit | 1 | 1 | 1 |  |  |
-| United States | Apex Motor | 5 | 3 | 2 | Apex Motor Club Apex III | apex-i-straight; apex-i-chicane |
+| United States | Apex Motor | 5 | 3 | 3 |  | apex-i-straight; apex-i-chicane |
 | United States | Arizona Motorsports Park | 1 | 1 | 1 |  |  |
 | United States | Arlington Street Circuit | 1 | 1 | 0 | Arlington Street Circuit |  |
 | United States | Arlington Street Circuit Practice | 1 | 1 | 0 | Arlington Street Circuit Practice |  |
@@ -798,7 +798,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | United Kingdom/Kames Motorsport Circuit Reverse |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Lydden Hill Infield |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Thorsway MX |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| United States/Apex Motor Club Apex III |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Arlington Street Circuit Practice |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United States/Charlotte Motor Speedway Short |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1545,7 +1544,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | United States | AMR Motorplex Kart Circuit | us-amr-motorplex-kart-circuit-reference | main | draft-mapped |
 | United States | Apex Motor Club Apex I | us-apex-motor-b7ddcfd3 | apex-motor-club-apex-i | draft-mapped |
 | United States | Apex Motor Club Apex II | us-apex-motor-b7ddcfd3 | apex-motor-club-apex-ii | draft-mapped |
-| United States | Apex Motor Club Apex III | us-apex-motor-b7ddcfd3 |  | missing-layout |
+| United States | Apex Motor Club Apex III | us-apex-motor-b7ddcfd3 | apex-motor-club-apex-iii | draft-mapped |
 | United States | Arizona Motorsports Park | us-arizona-motorsports-park-9f848c55 | arizona-motorsports-park | draft-mapped |
 | United States | Arlington Street Circuit | us-arlington-street-circuit-be2e2ad4 |  | missing-layout |
 | United States | Arlington Street Circuit Practice | us-arlington-street-circuit-practice-98e0e109 |  | missing-layout |

@@ -61,7 +61,8 @@ for name in ('red', 'green', 'blue'):
 result = np.stack(colors, axis=-1)
 image = ROOT.parent / 'sentinel-september-2026.png'
 assert np.array_equal(result, np.asarray(Image.open(image)))
-course = json.loads((ROOT.parent / 'imagery-course-apex-ii.json').read_text())
-assert hashlib.sha256(image.read_bytes()).hexdigest() == course['imagerySha256']
-assert course['extent'] == extent
+for name in ('imagery-course-apex-ii.json', 'imagery-course-apex-iii.json'):
+    course = json.loads((ROOT.parent / name).read_text())
+    assert hashlib.sha256(image.read_bytes()).hexdigest() == course['imagerySha256']
+    assert course['extent'] == extent
 print('September RGB raster pixels and course image hash verified')
