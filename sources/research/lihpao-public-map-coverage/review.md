@@ -1,6 +1,6 @@
 # Lihpao public map coverage
 
-The Wind course needs a short western closing connector. The public full-course way includes the separate Thunder branch; its connected shape cannot stand in for the shorter course.
+The Wind course requires a short western closing connector. A later [native satellite review](../../tw-lihpao-wind-39d57a25/review.md) now supplies a coarse draft. The public full-course way includes the separate Thunder branch; its connected shape cannot stand in for the shorter course.
 
 Two additional open sources were checked on 3 October 2026. Neither supplies the missing connector, so neither adds a mapped layout.
 

@@ -8,17 +8,41 @@
     "name": "Taiwan",
     "slug": "taiwan"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    120.6863149,
+    24.3191621
+  ],
+  "sourceIds": [
+    "sentinel-lihpao-wind-2026"
+  ],
   "defaultLayoutId": "lihpao-wind",
   "layouts": [
     {
       "id": "lihpao-wind",
       "name": "Lihpao Wind",
       "referenceId": "Taiwan/Lihpao Wind",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lihpao-wind.geojson",
+      "description": "The operator separates the 2 km Wind circuit from the 600 m Thunder hairpin and the 1.1 km Fire sector. Its Wind identification retains the long main straight, short northeastern closing turn, long northern straight, western rounded return and short western closing connector. The full southwest Thunder hairpin, southeastern Fire loops and pit route are excluded. The operator zone graphic and oblique aerial photograph identify branches only; neither is georeferenced, digitized or redistributed. All coordinates are independently selected from pinned native 21 September 2026 public Sentinel bands. The 3 June red, green, blue and near-infrared bands corroborate the paved western return and short connector. The partial public course way 1323087236 independently corroborates that connector corridor but does not supply this recipe's coordinates. Native 10 m samples use nearest-neighbor reprojection and contrast stretching with no added spatial detail. Fine corner radii, the narrow connector centerline, travel direction and historical equivalence remain draft. The source trace is not scaled to an advertised or supplied distance. No supplied diagram pixels or private course coordinates are imported. Intermediate vertices along the two long straights retain the same observed lines and add no corner detail. Independently digitized aerial centerline: 2024.4 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "sentinel-lihpao-wind-2026",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/R/RN/2026/9/S2B_50RRN_20260921_0_L2A/B04.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-03T02:56:53.292794Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash 670edd4929e20037a910827f7632507c8df3ad31e985be9610bb198fb77b931f; reproducible pixel-to-coordinate conversion. The operator separates the 2 km Wind circuit from the 600 m Thunder hairpin and the 1.1 km Fire sector. Its Wind identification retains the long main straight, short northeastern closing turn, long northern straight, western rounded return and short western closing connector. The full southwest Thunder hairpin, southeastern Fire loops and pit route are excluded. The operator zone graphic and oblique aerial photograph identify branches only; neither is georeferenced, digitized or redistributed. All coordinates are independently selected from pinned native 21 September 2026 public Sentinel bands. The 3 June red, green, blue and near-infrared bands corroborate the paved western return and short connector. The partial public course way 1323087236 independently corroborates that connector corridor but does not supply this recipe's coordinates. Native 10 m samples use nearest-neighbor reprojection and contrast stretching with no added spatial detail. Fine corner radii, the narrow connector centerline, travel direction and historical equivalence remain draft. The source trace is not scaled to an advertised or supplied distance. No supplied diagram pixels or private course coordinates are imported. Intermediate vertices along the two long straights retain the same observed lines and add no corner detail."
+    },
+    {
+      "id": "imagery-identity-lihpao-wind",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.lihpaoracing.com.tw/tw/gokart/infomation",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-03T02:56:53.292794Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

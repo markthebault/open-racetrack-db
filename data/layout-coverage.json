@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 993,
-    "unmappedLayouts": 14,
+    "draftMapped": 994,
+    "unmappedLayouts": 13,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -9349,11 +9349,14 @@
       "name": "Lihpao Wind",
       "timingMode": "shared",
       "trackId": "tw-lihpao-wind-39d57a25",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "lihpao-wind"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ],
       "candidateTrackIds": [
         "tw-lihpao-g2-66f08127"
@@ -24284,15 +24287,13 @@
       "name": "Lihpao Wind",
       "country": "Taiwan",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Lihpao Wind"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "tw-penbay-3b334d4e",
@@ -26851,13 +26852,6 @@
     },
     {
       "recordId": "Sweden/Drive Centre Arena",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Taiwan/Lihpao Wind",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
