@@ -13,8 +13,10 @@ const save=async(p:string,x:unknown)=>writeFile(p,JSON.stringify(x,null,2)+'\n')
 const {records}=readTimingArchive(archive),registry=await read('sources/reference/catalogue.json');
 const index=await read('data/index.json'),matches=await read('sources/reference/layout-matches.json');
 const selections=(await read('sources/reference/course-selections.json')).records;
+const referenceIndex=args.indexOf('--reference'),referenceId=referenceIndex<0?undefined:args[referenceIndex+1];
+if(referenceIndex>=0&&(!referenceId||referenceId.startsWith('--')||!selections.some((s:any)=>s.referenceId===referenceId)))throw new Error('Use --reference with a registered course selection');
 let added=0;
-for(const selection of selections){
+for(const selection of selections.filter((s:any)=>referenceId===undefined||s.referenceId===referenceId)){
  const registration=registry.records.find((r:any)=>r.referenceId===selection.referenceId);
  const record=records.find(r=>r.id===selection.referenceId);
  if(!registration||!record)throw new Error('Selected configuration is not registered');

@@ -4,8 +4,8 @@ Reference: supplied reference timing XML, SHA-256 `756c2a11338116cda1f0bddc6ccdb
 
 - referenceRecords: 1007
 - venuesChecked: 763
-- draftMapped: 995
-- unmappedLayouts: 12
+- draftMapped: 996
+- unmappedLayouts: 11
 - missingVenues: 0
 - ambiguousVenues: 0
 - outOfScope: 0
@@ -483,7 +483,7 @@ The supplied catalogue defines the expected entries. A GPS candidate proposes a 
 | Kuwait | Kuwait Motor Town | 5 | 4 | 4 |  | main |
 | Kazakhstan | Sokol International Racetrack | 1 | 1 | 1 |  |  |
 | Lithuania | Nemuno žiedas | 1 | 0 | 0 |  | main |
-| Lithuania | Palanga Street Circuit | 1 | 1 | 0 | Palanga Street Circuit |  |
+| Lithuania | Palanga Street Circuit | 1 | 1 | 1 |  |  |
 | Latvia | Bikernieki Race | 1 | 1 | 1 |  |  |
 | Latvia | Bikernieki RallyCross | 1 | 1 | 1 |  |  |
 | Morocco | Moulay El Hassan | 1 | 1 | 1 |  |  |
@@ -790,7 +790,6 @@ Every unmapped record was checked against named raceway ways in the saved countr
 | --- | --- | ---: | --- |
 | Argentina/Circuito De Rosario Combo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | China/Huangtupo |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
-| Lithuania/Palanga Street Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Elvington |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
 | United Kingdom/Kames Motorsport Circuit Reverse |  | 0 | No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required. |
@@ -1221,7 +1220,7 @@ Every supplied entry is registered. Entries without a mapped course remain expli
 | Kuwait | Kuwait Motor Town South | kw-kuwait-motor-town-807928887 | kuwait-motor-town-south | draft-mapped |
 | Latvia | Bikernieki Race Track | lv-bikernieki-race-d29432c4 | bikernieki-race-track | draft-mapped |
 | Latvia | Bikernieki RallyCross Track | lv-bikernieki-rallycross-5981ece5 | bikernieki-rallycross-track | draft-mapped |
-| Lithuania | Palanga Street Circuit | lt-palanga-street-circuit-a9c06d36 |  | missing-layout |
+| Lithuania | Palanga Street Circuit | lt-palanga-street-circuit-a9c06d36 | palanga-street-circuit | draft-mapped |
 | Malaysia | Litar Johor | my-johor-circuit-263456140 | litar-johor | draft-mapped |
 | Malaysia | Sepang | my-sepang-international-circuit-23410503 | sepang | draft-mapped |
 | Malaysia | Sepang Combo | my-sepang-international-circuit-23410503 | sepang-combo | draft-mapped |

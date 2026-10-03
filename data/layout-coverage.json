@@ -6,8 +6,8 @@
   "summary": {
     "referenceRecords": 1007,
     "venuesChecked": 763,
-    "draftMapped": 995,
-    "unmappedLayouts": 12,
+    "draftMapped": 996,
+    "unmappedLayouts": 11,
     "missingVenues": 0,
     "ambiguousVenues": 0,
     "outOfScope": 0
@@ -6651,11 +6651,14 @@
       "name": "Palanga Street Circuit",
       "timingMode": "shared",
       "trackId": "lt-palanga-street-circuit-a9c06d36",
-      "layoutIds": [],
-      "status": "missing-layout",
+      "layoutIds": [
+        "palanga-street-circuit"
+      ],
+      "status": "draft-mapped",
       "association": "catalogue",
       "remainingWork": [
-        "Identify the venue and explicit connected route recipe from independent geometry."
+        "Review the named course geometry and travel convention.",
+        "Public timing still needs independently reusable evidence."
       ]
     },
     {
@@ -22683,15 +22686,13 @@
       "name": "Palanga Street Circuit",
       "country": "Lithuania",
       "actualLayoutCount": 1,
-      "actualTraceCount": 0,
+      "actualTraceCount": 1,
       "expectedRecordCount": 1,
       "minimumAdditionalLayoutCount": 0,
-      "mappedRecordCount": 0,
-      "missingRecordNames": [
-        "Palanga Street Circuit"
-      ],
+      "mappedRecordCount": 1,
+      "missingRecordNames": [],
       "unassociatedLayoutIds": [],
-      "status": "gap"
+      "status": "draft-count-parity"
     },
     {
       "trackId": "lv-bikernieki-race-d29432c4",
@@ -26839,13 +26840,6 @@
     },
     {
       "recordId": "China/Huangtupo",
-      "matchingNamedWayIds": [],
-      "namedCourseCandidates": 0,
-      "enumerationTruncated": false,
-      "reason": "No independently named OSM raceway matches this configuration in the saved country extract. Route identification or additional source geometry is required."
-    },
-    {
-      "recordId": "Lithuania/Palanga Street Circuit",
       "matchingNamedWayIds": [],
       "namedCourseCandidates": 0,
       "enumerationTruncated": false,
