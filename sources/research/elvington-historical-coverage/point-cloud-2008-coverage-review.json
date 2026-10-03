@@ -47,5 +47,19 @@
     }
   ],
   "geometryRecovered": false,
-  "finding": "The archive contains four point-cloud tiles. Its easternmost point is E466160.31. The missing northeastern runway and taxiway section lies in the E467000 to E468000 column, outside this survey coverage."
+  "finding": "The four actual tile bounds do not intersect the northern return pavement-end review window. The easternmost partial tile begins at N448455.52, north of this window; the other three end at E466000 or farther west. The former E467000 to E468000 description referred to a different part of the airfield and is withdrawn. No point coordinates are inspected or course geometry recovered.",
+  "reviewWindow": {
+    "projection": "EPSG:27700",
+    "bbox": [
+      466061.27590668947,
+      447895.0126704164,
+      466243.80294673797,
+      448057.4267731006
+    ],
+    "usage": "Coverage rectangle around the pavement-end gap visible in the independently licensed 2020 intensity grid. It is not a digitized course or a timing position.",
+    "identificationSourceUrls": [
+      "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6045",
+      "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6545"
+    ]
+  }
 }
