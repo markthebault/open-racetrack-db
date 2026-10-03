@@ -8,17 +8,32 @@
     "name": "China",
     "slug": "china"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    119.50183865,
+    40.0138703
+  ],
+  "sourceIds": [
+    "osm-circuit-17857789"
+  ],
   "defaultLayoutId": "shougang-gt-circuit",
   "layouts": [
     {
       "id": "shougang-gt-circuit",
       "name": "Shougang GT Circuit",
       "referenceId": "China/Shougang GT Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/shougang-gt-circuit.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 17857789. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-17857789",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: 首钢钢铁赛道",
+      "url": "https://www.openstreetmap.org/relation/17857789",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.374Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

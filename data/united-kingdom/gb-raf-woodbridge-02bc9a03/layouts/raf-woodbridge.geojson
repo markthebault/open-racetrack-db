@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "bbox": [
+    1.3824214,
+    52.087599,
+    1.4281415,
+    52.0919437
+  ],
+  "metadata": {
+    "schemaVersion": 1,
+    "trackId": "gb-raf-woodbridge-02bc9a03",
+    "layoutId": "raf-woodbridge",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "closed": false,
+    "geometryStatus": "draft",
+    "timingStatus": "missing",
+    "timingMode": "separate",
+    "lengthM": 3160.8,
+    "reviewedAt": null,
+    "notes": [
+      "Draft configuration: The independent venue description identifies the wide, open runway used for driving experiences. The supplied layout diagram identifies the straight runway rather than a taxiway circuit. Exact nodes from the complete publicly mapped runway way are retained; taxiways, invented turnarounds and parallel offset lanes are excluded. The 3,160.8 m physical runway trace differs by 2,497.2 m from the catalogue scalar. That discrepancy is unresolved and no 5,658 m timed route is claimed. Public data is the full supporting runway centerline, not an independently verified start-to-finish run. Its mapped endpoints are the runway ends, not verified timing gates. The private preview alone trims the displayed line at the local start and finish projections; no private coordinates are published. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3160.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "trace",
+      "properties": {
+        "role": "trace",
+        "sourceIds": [
+          "osm-selection-raf-woodbridge-current-independent-airfield-roads-23552564"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1.3824214,
+            52.087599
+          ],
+          [
+            1.3857863,
+            52.0879187
+          ],
+          [
+            1.3989813,
+            52.0891727
+          ],
+          [
+            1.4029109,
+            52.0895461
+          ],
+          [
+            1.4125725,
+            52.0904643
+          ],
+          [
+            1.4251233,
+            52.0916569
+          ],
+          [
+            1.4281415,
+            52.0919437
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -13,7 +13,8 @@
     48.75798963369567
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-la-ferte-2020-179304369"
   ],
   "defaultLayoutId": "lafertegaucher",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "lafertegaucher",
       "name": "LaFerteGaucher",
       "referenceId": "France/LaFerteGaucher",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lafertegaucher.geojson",
+      "description": "Draft configuration: Combined course joins both northern and southern circuits, retaining both internal hairpins and excluding short-course connectors. The coarse historical source measures 3321.7 m; the operator lists 3.6 km. Coordinates remain unchanged. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3321.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-la-ferte-2020-179304369",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/179304369",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T16:33:32.105Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-lafertegaucher",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.circuitslfg.fr/les-pistes-des-circuitslfg/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T16:33:32.105Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

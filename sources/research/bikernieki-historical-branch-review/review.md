@@ -1,0 +1,5 @@
+# Bikernieki historical configuration review
+
+Current standard and joker candidates miss the supplied timing position by at least 48.7 m. They are excluded. Public edit history records eastern connector changes in January and May 2018. The independent 2017 snapshot retains a short southeastern triangle that lies on pavement in the licensed LGIA cycle-six aerial. That aerial also resolves the upper paved step missing from the 2017 graph.
+
+The historical configured draft combines those exact public road nodes with the independently digitized upper step. Reference diagrams identify branches only. FIA and construction-plan references describe distinct standard and joker event laps, without proving equivalence to this historical configuration. Every coordinate comes from the public nodes or licensed aerial; no private course positions or diagram pixels are used. The 1355.7 m source distance retains its 42.7 m catalogue difference. Exact event barriers and tile flight date remain unresolved.

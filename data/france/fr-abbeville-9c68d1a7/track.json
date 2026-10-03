@@ -8,17 +8,41 @@
     "name": "France",
     "slug": "france"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    1.83262735,
+    50.1349307
+  ],
+  "sourceIds": [
+    "osm-selection-abbeville-2015-independent-roads-111596447"
+  ],
   "defaultLayoutId": "abbeville",
   "layouts": [
     {
       "id": "abbeville",
       "name": "Abbeville",
       "referenceId": "France/Abbeville",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/abbeville.geojson",
+      "description": "Draft configuration: Historical main course retains the Northern paired hairpins, Western diagonal return, Eastern rounded turn and short Southern chicane from a pinned 2015 independent snapshot. The independently georeferenced public IGN aerial confirms these physical branches. The operator identifies the main road course and distinguishes the separate safety track. Pit access and the Southern auxiliary track are excluded. Exact mapped distance is 1976.0 m versus the 2224 m catalogue scalar and current operator 2.4 km description; historical lap extent, direction and fine alignment remain draft without scaling or substituting pit detours. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1976.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-abbeville-2015-independent-roads-111596447",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/111596447",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T00:28:24.148Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-abbeville",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://stadiumautomobile.fr/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T00:28:24.148Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

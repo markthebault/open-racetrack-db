@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "venue-reference"
+    "venue-reference",
+    "osm-selection-51765216",
+    "ign-pnoa-tormo-school"
   ],
   "defaultLayoutId": "grand-prix",
   "layouts": [
@@ -29,15 +31,15 @@
       "id": "circuit-ricardo-tormo-national",
       "name": "Circuit Ricardo Tormo National",
       "referenceId": "Spain/Circuit Ricardo Tormo National",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/circuit-ricardo-tormo-national.geojson",
+      "description": "Draft configuration: National shortcut omitting the western long infield hairpin; retains the pointed eastern turn and small western notch. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3136.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "circuit-ricardo-tormo-school",
       "name": "Circuit Ricardo Tormo School",
       "referenceId": "Spain/Circuit Ricardo Tormo School",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/circuit-ricardo-tormo-school.geojson",
+      "description": "The regional tourism authority identifies an independently usable 1,300 m inner School course and a separate 3,100 m exterior course. The School selection retains the inner northern hairpin, diagonal return, southern training straight and narrow western connector. Exact public OSM course nodes on ways 51765218, 1007068425 and 51765219 retain the inner northern hairpin and southern training return. The missing western connector is independently digitized from the Spanish national PNOA MA orthophoto WMS. The independent OSM snapshot hash and selected way indices, image bytes, exact Web Mercator extent and request are pinned. The image acquisition year is not asserted. The Grand Prix exterior, National shortcut, pits, southeastern training skidpad and northeastern karting area are excluded. Fine alignment, travel direction and historical changes remain draft. No vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1213.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
   "sources": [
@@ -58,6 +60,42 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:42:40.530Z",
       "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    },
+    {
+      "id": "osm-selection-51765216",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/51765216",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-circuit-ricardo-tormo-national",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.circuitricardotormo.com/circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "ign-pnoa-tormo-school",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=FALSE&CRS=EPSG%3A3857&BBOX=-71801.07156166146%2C4790202.382976988%2C-68572.80632865653%2C4793430.648209993&WIDTH=2000&HEIGHT=2000",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T11:11:34.442689Z",
+      "evidenceNote": "Reuse evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf. Pinned raster hash 8ba633a46982a2482b0cd678abe1dc3507be0f3cd20ced881459c198e4c0892c; reproducible pixel-to-coordinate conversion. The regional tourism authority identifies an independently usable 1,300 m inner School course and a separate 3,100 m exterior course. The School selection retains the inner northern hairpin, diagonal return, southern training straight and narrow western connector. Exact public OSM course nodes on ways 51765218, 1007068425 and 51765219 retain the inner northern hairpin and southern training return. The missing western connector is independently digitized from the Spanish national PNOA MA orthophoto WMS. The independent OSM snapshot hash and selected way indices, image bytes, exact Web Mercator extent and request are pinned. The image acquisition year is not asserted. The Grand Prix exterior, National shortcut, pits, southeastern training skidpad and northeastern karting area are excluded. Fine alignment, travel direction and historical changes remain draft. No vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-circuit-ricardo-tormo-school",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.comunitatvalenciana.com/es/valencia/cheste/parques-de-ocio/circuit-ricardo-tormo",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:11:34.442689Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

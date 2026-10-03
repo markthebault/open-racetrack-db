@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "referenceId": "Latvia/Bikernieki RallyCross Track",
+  "geometrySource": "sources/lv-bikernieki-rallycross-5981ece5/historical-course-imagery.json",
+  "selectedSegments": [
+    {
+      "segments": [
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 89,
+          "toIndex": 88
+        },
+        {
+          "wayId": 93229455,
+          "wayVersion": 2,
+          "fromIndex": 3,
+          "toIndex": 0
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 87,
+          "toIndex": 86
+        },
+        {
+          "wayId": 93229460,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 4
+        },
+        {
+          "wayId": 93229449,
+          "wayVersion": 6,
+          "fromIndex": 5,
+          "toIndex": 7
+        },
+        {
+          "wayId": 93229444,
+          "wayVersion": 3,
+          "fromIndex": 2,
+          "toIndex": 0
+        },
+        {
+          "wayId": 93229449,
+          "wayVersion": 6,
+          "fromIndex": 153,
+          "toIndex": 150
+        },
+        {
+          "wayId": 523849729,
+          "wayVersion": 2,
+          "fromIndex": 20,
+          "toIndex": 0
+        },
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 55,
+          "toIndex": 54
+        }
+      ]
+    }
+  ],
+  "identificationUrls": [
+    "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-7",
+    "https://commons.wikimedia.org/wiki/File:Bi%C4%B7ernieki_RX_track_(30129165930)_(2).jpg",
+    "https://commons.wikimedia.org/wiki/File:Bi%C4%B7ernieki_RX_track_(30339849021).jpg"
+  ],
+  "selection": "Historical eastern triangle and parallel finish straight, with independently digitized upper paved step",
+  "excluded": "Current standard and joker event routes, which miss the supplied marker by at least 48.7 m, and the later long southeastern triangle",
+  "limitations": [
+    "The draft length is 1355.7 m, with an unresolved 42.7 m catalogue discrepancy.",
+    "Exact event barrier placement and tile flight date are not asserted.",
+    "FIA and construction-plan references distinguish different event routes; they do not establish equivalence with this historical configured course."
+  ],
+  "identityOnly": "Reference diagrams identify branches only. Public OSM nodes and the licensed independently georeferenced aerial supply every coordinate."
+}

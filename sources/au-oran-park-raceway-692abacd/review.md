@@ -1,0 +1,3 @@
+# Oran Park Raceway
+
+The centerline is independently digitized from pinned georeferenced imagery under CC-BY-4.0. Attribution: © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au. Modified independent course digitization by OpenRacetrackDB.. Reuse evidence: https://portal.spatial.nsw.gov.au/portal/home/item.html?id=b66129447b0347908f045016f9965bce. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.

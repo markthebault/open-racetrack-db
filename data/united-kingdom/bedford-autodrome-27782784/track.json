@@ -13,7 +13,9 @@
     52.233627035802435
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-27782783",
+    "public-bedford-gt-course-2020"
   ],
   "defaultLayoutId": "main",
   "layouts": [
@@ -49,15 +51,15 @@
       "id": "bedford-autodrome-gt",
       "name": "Bedford Autodrome GT",
       "referenceId": "United Kingdom/Bedford Autodrome GT",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bedford-autodrome-gt.geojson",
+      "description": "The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft. Independent public-node and surveyed-connector course: 5907.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "bedford-autodrome-southwest",
       "name": "Bedford Autodrome SouthWest",
       "referenceId": "United Kingdom/Bedford Autodrome SouthWest",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bedford-autodrome-southwest.geojson",
+      "description": "Draft configuration: Southwestern configuration includes the western bends, central hairpin and direct northeastern turnaround; excludes the extended eastern loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4603.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -69,6 +71,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-27782783",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/27782783",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-bedford-autodrome-southwest",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-bedford-autodrome-gt",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "public-bedford-gt-course-2020",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/TL0060",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T15:27:14.116780Z",
+      "evidenceNote": "Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Pinned raster hash 3bd460e99db9b5e578a18ed4822d180e6fc86563aa06e79ec1d543fe85b320e7; reproducible pixel-to-coordinate conversion. The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft."
+    },
+    {
+      "id": "imagery-identity-bedford-autodrome-gt",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T15:27:14.116780Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

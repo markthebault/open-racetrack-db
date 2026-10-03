@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "trackId": "gb-rushmore-arena-886deba1",
+  "layoutId": "rushmore-arena",
+  "sourceId": "osm-selection-rushmore-arena-independent-roads-69713123",
+  "snapshotFile": "selected-rushmore-arena-independent-roads-69713123.json",
+  "snapshotSha256": "13a3ce0ed729f63bddb0a019482fe10dd803c49ac40bb1238290fab6d7880a37",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft configuration: The club identifies Rushmoor Arena as its sprint venue. The supplied historical configuration identifies the simple northern-straight, eastern diagonal and western Arena Lane triangle, rather than the club’s 2026 figure-eight sprint. Exact public OSM road nodes from Arena Lane 69713123 and eastern service road 371693606 form the independently mapped 1,305.3 m closed triangle. Pinned Environment Agency 2020 one-metre LiDAR intensity imagery confirms all three connected paved sides. The current figure-eight, southern Castle Road approach, Claycart Road, start spur, paddock and field-edge paths are excluded. The 23.7 m difference from the supplied 1,329 m remains explicit; private diagram coordinates are not used. Historical travel direction, temporary course markers and exact racing-line placement remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1305.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 69713123,
+      "wayVersion": 6,
+      "fromIndex": 2,
+      "toIndex": 25
+    },
+    {
+      "wayId": 371693606,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 16
+    }
+  ],
+  "gates": []
+}

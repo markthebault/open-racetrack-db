@@ -8,17 +8,41 @@
     "name": "Mexico",
     "slug": "mexico"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -98.47606569999999,
+    20.020204999999997
+  ],
+  "sourceIds": [
+    "copernicus-sentinel-autodromo-bosques-del-angel-current-independent-roads"
+  ],
   "defaultLayoutId": "autodromo-bosques-del-angel",
   "layouts": [
     {
       "id": "autodromo-bosques-del-angel",
       "name": "Autodromo Bosques del Angel",
       "referenceId": "Mexico/Autodromo Bosques del Angel",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-bosques-del-angel.geojson",
+      "description": "The complete independently visible course retains the long diagonal southern straight, rounded western return, northern raised loop, middle depression and eastern hairpin. The Mexican national statistics institute identifies this wooded Singuilucan circuit. Original January 5, 2026 Copernicus imagery independently locates the full pavement; northern access, paddock and neighboring roads are excluded. Native 10 m pixels limit the small bends and road-center precision. No nominal lap length or timing position defines any vertex. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1112.2 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "copernicus-sentinel-autodromo-bosques-del-angel-current-independent-roads",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/14/Q/NH/2026/1/S2B_14QNH_20260105_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T12:59:27.152564Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash ce37bf65309baee7e25bd3f2b7e02ecde2d0e99b26970d7d32b978d7bab7f3a6; reproducible pixel-to-coordinate conversion. The complete independently visible course retains the long diagonal southern straight, rounded western return, northern raised loop, middle depression and eastern hairpin. The Mexican national statistics institute identifies this wooded Singuilucan circuit. Original January 5, 2026 Copernicus imagery independently locates the full pavement; northern access, paddock and neighboring roads are excluded. Native 10 m pixels limit the small bends and road-center precision. No nominal lap length or timing position defines any vertex. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-autodromo-bosques-del-angel",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.inegi.org.mx/contenidos/app/mexicocifras/datos_geograficos/13/13057.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T12:59:27.152564Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

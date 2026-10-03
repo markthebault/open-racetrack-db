@@ -8,17 +8,41 @@
     "name": "Spain",
     "slug": "spain"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -3.58167805,
+    41.79066265
+  ],
+  "sourceIds": [
+    "osm-selection-169981548"
+  ],
   "defaultLayoutId": "circuito-kotarr",
   "layouts": [
     {
       "id": "circuito-kotarr",
       "name": "Circuito Kotarr",
       "referenceId": "Spain/Circuito Kotarr",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/circuito-kotarr.geojson",
+      "description": "Draft configuration: Both elongated northeastern and southwestern loops, central diagonal chicane and squared western shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1772.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-169981548",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/169981548",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-circuito-kotarr",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/169981548",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

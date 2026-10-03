@@ -8,17 +8,41 @@
     "name": "Sweden",
     "slug": "sweden"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    15.72102765,
+    58.393481699999995
+  ],
+  "sourceIds": [
+    "osm-selection-33691667"
+  ],
   "defaultLayoutId": "sviestad",
   "layouts": [
     {
       "id": "sviestad",
       "name": "Sviestad",
       "referenceId": "Sweden/Sviestad",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sviestad.geojson",
+      "description": "Draft configuration: Full circuit with northwestern corner notch, northern inner bend and rounded southeastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2093.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-33691667",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/33691667",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:47.251Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-sviestad",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/33691667",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:08:47.251Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

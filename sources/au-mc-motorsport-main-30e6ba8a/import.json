@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "trackId": "au-mc-motorsport-main-30e6ba8a",
+  "sourceId": "sentinel-public-gps-supported-main",
+  "snapshotFile": "main-course-imagery.json",
+  "snapshotSha256": "97cc7c841edf50ac2f511d0f902d62d5b1e63b0a5f5551518cb10d53f878ba0a",
+  "fetchedAt": "2026-10-02T18:52:06.596Z",
+  "endpoint": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/H/MK/2026/1/S2B_50HMK_20260105_0_L2A/TCI.tif",
+  "bbox": [
+    115.9840868,
+    -31.9500792,
+    115.9869468,
+    -31.9454123
+  ],
+  "snapshots": [
+    {
+      "file": "public-gps-identification-review.json",
+      "sha256": "78fdf59abeeb70cd6cfad19487c0be4a0f8f65cb01cd797d870b50546341bc40",
+      "sourceId": "public-gps-course-identification",
+      "url": "https://api.openstreetmap.org/api/0.6/trackpoints?bbox=115.979,-31.954,115.992,-31.943&page=0",
+      "retrievedAt": "2026-10-02T18:46:21.371445Z"
+    },
+    {
+      "file": "main-course-imagery.json",
+      "sha256": "97cc7c841edf50ac2f511d0f902d62d5b1e63b0a5f5551518cb10d53f878ba0a",
+      "sourceId": "sentinel-public-gps-supported-main",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/H/MK/2026/1/S2B_50HMK_20260105_0_L2A/TCI.tif",
+      "retrievedAt": "2026-10-02T18:52:06.596Z"
+    }
+  ]
+}

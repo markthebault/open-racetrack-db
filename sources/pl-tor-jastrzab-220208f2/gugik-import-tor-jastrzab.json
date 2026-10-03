@@ -1,0 +1,73 @@
+{
+  "sourceUrl": "https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WCS/StandardResolution",
+  "query": [
+    [
+      "SERVICE",
+      "WCS"
+    ],
+    [
+      "VERSION",
+      "2.0.1"
+    ],
+    [
+      "REQUEST",
+      "GetCoverage"
+    ],
+    [
+      "COVERAGEID",
+      "Orthoimagery_StandardResolution"
+    ],
+    [
+      "FORMAT",
+      "image/tiff"
+    ],
+    [
+      "SUBSET",
+      "x(634585.2989416627,635106.6744728532)"
+    ],
+    [
+      "SUBSET",
+      "y(378927.33815405145,379358.77902397607)"
+    ],
+    [
+      "SCALESIZE",
+      "x(1800),y(1800)"
+    ]
+  ],
+  "retrievedAt": "2026-10-02T01:31:21.431470Z",
+  "reuseEvidenceUrl": "https://www.geoportal.gov.pl/pl/dane/ortofotomapa-orto/",
+  "originalRasterSha256": "688710248852768dbdc0c03f1766ab57fd053d64bbd4ea559da7f097a3a3e1d4",
+  "originalCrs": "EPSG:2180",
+  "originalBounds": [
+    634585.2989416627,
+    378927.3381540514,
+    635106.6744728532,
+    379358.77902397607
+  ],
+  "originalWidth": 1800,
+  "originalHeight": 1800,
+  "width": 1800,
+  "height": 1800,
+  "extent": {
+    "xmin": 2329861.8280233243,
+    "ymin": 6667592.603481651,
+    "xmax": 2330711.5630923966,
+    "ymax": 6668304.539922218,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "edd8c0d34f68b331238f586cdd339c6048d99a0df8dfe0a1a5f59296e5b81da4",
+  "license": "LicenseRef-GUGiK-open-data",
+  "attribution": "GUGiK, Geoportal.gov.pl: freely reusable state orthoimagery; centerline digitization by OpenRacetrackDB",
+  "schemaVersion": 1,
+  "imageryFile": "gugik-tor-jastrzab.png",
+  "reprojection": {
+    "sourceCrs": "EPSG:2180",
+    "targetCrs": "EPSG:3857",
+    "targetWidth": 1800,
+    "targetHeight": 1800,
+    "extentDensifyPoints": 41,
+    "resampling": "bilinear",
+    "tool": "rasterio",
+    "version": "1.5.2"
+  }
+}

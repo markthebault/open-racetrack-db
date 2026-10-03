@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-137283766"
+    "osm-network-137283766",
+    "osm-selection-137283766",
+    "osm-network-heartland-park-of-topeka-combo"
   ],
   "defaultLayoutId": "heartland-motorsport-park",
   "layouts": [
@@ -28,8 +30,8 @@
       "id": "heartland-motorsport-park",
       "name": "Heartland Motorsport Park",
       "referenceId": "United States/Heartland Motorsport Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/heartland-motorsport-park.geojson",
+      "description": "Draft configuration: Full northern S bend and southern inner hairpin, with direct western return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3925.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "heartland-park-of-topeka-a",
@@ -49,22 +51,22 @@
       "id": "heartland-park-of-topeka-c",
       "name": "Heartland Park of Topeka C",
       "referenceId": "United States/Heartland Park of Topeka C",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/heartland-park-of-topeka-c.geojson",
+      "description": "Draft configuration: Northern S bend and direct southern diagonal connector, omitting the extra southeast hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3467.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "heartland-park-of-topeka-combo",
       "name": "Heartland Park of Topeka Combo",
       "referenceId": "United States/Heartland Park of Topeka Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/heartland-park-of-topeka-combo.geojson",
+      "description": "Combined mapped configurations: Heartland Motorsport Park, Heartland Park of Topeka A, Heartland Park of Topeka B, Heartland Park of Topeka C, Heartland Park of Topeka D. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "heartland-park-of-topeka-d",
       "name": "Heartland Park of Topeka D",
       "referenceId": "United States/Heartland Park of Topeka D",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/heartland-park-of-topeka-d.geojson",
+      "description": "Draft configuration: Northern S bend and southeast hairpin, with the extended western shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3967.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -85,6 +87,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-137283766",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/137283766",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-heartland-motorsport-park",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/137283766",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-heartland-park-of-topeka-c",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/137283766",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-heartland-park-of-topeka-d",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/137283766",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-heartland-park-of-topeka-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/137283766",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.947Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-heartland-park-of-topeka-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/137283766",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.947Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Heartland Motorsport Park, Heartland Park of Topeka A, Heartland Park of Topeka B, Heartland Park of Topeka C, Heartland Park of Topeka D. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

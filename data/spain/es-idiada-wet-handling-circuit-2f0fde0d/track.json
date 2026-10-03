@@ -8,17 +8,41 @@
     "name": "Spain",
     "slug": "spain"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    1.5332611,
+    41.264034550000005
+  ],
+  "sourceIds": [
+    "osm-selection-idiada-dry-handling-circuit-independent-roads-327155039"
+  ],
   "defaultLayoutId": "idiada-wet-handling-circuit",
   "layouts": [
     {
       "id": "idiada-wet-handling-circuit",
       "name": "Idiada Wet Handling Circuit",
       "referenceId": "Spain/Idiada Wet Handling Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/idiada-wet-handling-circuit.geojson",
+      "description": "Draft configuration: The independently named Wet handling track forms one complete source cycle retaining the northern lobe, westward series of bends and southern return. The operator specifies 1517.5 m for the main circuit, close to the catalogue distance of 1519 m. The mapped OSM trace measures 1562.2 m and has a coarser southern return; the 2020 independent snapshot shows the same main alignment. This is a provisional draft, with the source distance preserved and historical bend detail still requiring review. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1562.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-idiada-dry-handling-circuit-independent-roads-327155039",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/327155039",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:07:34.158Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-idiada-wet-handling-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.applusidiada.com/global/en/what-we-do/service-sheet/test-tracks?selectedtrack=12",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:07:34.158Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-116034341"
+    "osm-network-116034341",
+    "osm-selection-116034341",
+    "osm-selection-charlotte-motor-speedway-roval-2020-independent-raceways-116034341"
   ],
   "defaultLayoutId": "charlotte-motor-speedway-full",
   "layouts": [
@@ -28,8 +30,8 @@
       "id": "charlotte-motor-speedway-full",
       "name": "Charlotte Motor Speedway Full",
       "referenceId": "United States/Charlotte Motor Speedway Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/charlotte-motor-speedway-full.geojson",
+      "description": "Draft configuration: The operator identifies the complete 1.5-mile superspeedway oval. The catalogue Full configuration follows the whole outer oval; its depicted parallel pit access is excluded from the driving course. The independently mapped oval uses neither the frontstretch nor backstretch ROVAL chicane and excludes the infield road course. Its exact source-node distance is 2365.1 m against the catalogue scalar of 2322 m; centreline and advertised race distances remain separate. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2365.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "charlotte-motor-speedway-infield",
@@ -42,8 +44,8 @@
       "id": "charlotte-motor-speedway-roval",
       "name": "Charlotte Motor Speedway ROVAL",
       "referenceId": "United States/Charlotte Motor Speedway ROVAL",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/charlotte-motor-speedway-roval.geojson",
+      "description": "Draft configuration: Operator September 2018 event course plan identifies the earlier infield horseshoe and both frontstretch and backstretch chicanes. Exact nodes from the consistent 2020 independent snapshot retain those earlier branches; the later expanded backstretch and 2024 infield extension are excluded. The source frontstretch and backstretch ways are separately named and retain their pinned versions. This is a draft earlier course centreline, with coarse corner alignment and catalogue distance retained separately; travel direction and historical timing correspondence remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3600.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "charlotte-motor-speedway-short",
@@ -71,6 +73,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-116034341",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/116034341",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-charlotte-motor-speedway-full",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.charlottemotorspeedway.com/fans/track-facts/speedway-facts.html",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-selection-charlotte-motor-speedway-roval-2020-independent-raceways-116034341",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/116034341",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T21:22:31.590Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-charlotte-motor-speedway-roval",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.charlottemotorspeedway.com/documents/infield_map-roval-final.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T21:22:31.590Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

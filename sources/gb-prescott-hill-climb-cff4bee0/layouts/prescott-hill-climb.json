@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "trackId": "gb-prescott-hill-climb-cff4bee0",
+  "layoutId": "prescott-hill-climb",
+  "sourceId": "osm-selection-300949282",
+  "snapshotFile": "selected-network-300949282.json",
+  "snapshotSha256": "6494fffd8fa8799087514bc48158134850ff0fce71b6d1e37ac917c75d5887c2",
+  "closed": false,
+  "timingMode": "separate",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft configuration: Open long hillclimb retains the central hairpin and full climbing branch, excluding the shorter bypass and return spur. The operator describes a 1,127-yard course (about 1,030.6 m), consistent with the independent 1,033.1 m timed source path. The catalogue scalar 1,222 m differs; geometry is neither extended nor scaled. Separate endpoint nodes agree with private timing gates. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1033.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 300949282,
+      "wayVersion": 2,
+      "fromIndex": 35,
+      "toIndex": 1
+    },
+    {
+      "wayId": 300949284,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 35
+    }
+  ],
+  "gates": []
+}

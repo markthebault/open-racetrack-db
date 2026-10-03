@@ -8,17 +8,41 @@
     "name": "Brazil",
     "slug": "brazil"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -47.4142079,
+    -23.1600269
+  ],
+  "sourceIds": [
+    "osm-selection-panamericano-independent-roads-670251897"
+  ],
   "defaultLayoutId": "circuito-panamericano",
   "layouts": [
     {
       "id": "circuito-panamericano",
       "name": "Circuito Panamericano",
       "referenceId": "Brazil/Circuito Panamericano",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/circuito-panamericano.geojson",
+      "description": "Draft configuration: Dry Handling course follows the full long northern straight, eastern hairpin, two interior returns and southern chicane in the documented eleven-turn 3400 m operator circuit. The independent source tags its test-course segments as service roads; their connected full route is 3387.9 m. Wet-handling, skid-pad, noise-testing, access-road and triangular detour branches are excluded. All joins retain real source nodes, and direction remains draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3387.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-panamericano-independent-roads-670251897",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/670251897",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T19:25:49.311Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-circuito-panamericano",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.circuitopanamericano.com.br/pt/pistas/dryhandling/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T19:25:49.311Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.9893993000000001,
+    51.9866831
+  ],
+  "sourceIds": [
+    "osm-selection-bucks-estate-current-independent-roads-100543143"
+  ],
   "defaultLayoutId": "bucks-estate-sprint",
   "layouts": [
     {
       "id": "bucks-estate-sprint",
       "name": "Bucks_Estate_Sprint",
       "referenceId": "United Kingdom/Bucks_Estate_Sprint",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bucks-estate-sprint.geojson",
+      "description": "Draft configuration: The supplied Sprint configuration identifies the curved Osier Way section on the western side of Buckingham industrial estate, separately from the closed estate circuit. The council independently identifies Osier Way and the estate road network. Exact public OSM nodes 7051869904 through 1162286788 retain the curve in the supplied start-to-finish direction; they are approximately 10 m and 21 m from the two supplied timing markers. The independently mapped 281.4 m section conflicts with the supplied 450 m scalar by 168.6 m. No vertex is shifted or stretched to resolve that conflict. Complete historical timed distance, exact end-line placement and lane selection remain unverified draft limitations. The northern access road and Top Angel return are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 281.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-bucks-estate-current-independent-roads-100543143",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/100543143",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-bucks-estate-sprint",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.buckingham-tc.gov.uk/wp-content/uploads/2022/11/Planning-Committee-Agenda-6-Jun-2022.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

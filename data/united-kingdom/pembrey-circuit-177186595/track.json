@@ -13,7 +13,9 @@
     51.70499676279069
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-21180155",
+    "osm-circuit-21180156"
   ],
   "defaultLayoutId": "pembrey",
   "layouts": [
@@ -27,15 +29,15 @@
       "id": "pembrey",
       "name": "Pembrey",
       "referenceId": "United Kingdom/Pembrey",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/pembrey.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 21180155. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "pembrey-clubman",
       "name": "Pembrey Clubman",
       "referenceId": "United Kingdom/Pembrey Clubman",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/pembrey-clubman.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 21180156. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -47,6 +49,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-21180155",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Pembrey National Circuit",
+      "url": "https://www.openstreetmap.org/relation/21180155",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.451Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "osm-circuit-21180156",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Pembrey Clubmans Circuit",
+      "url": "https://www.openstreetmap.org/relation/21180156",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.455Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

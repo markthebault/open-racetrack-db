@@ -8,17 +8,81 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -3.40247305,
+    54.6838179
+  ],
+  "sourceIds": [
+    "osm-components-716453717",
+    "osm-network-m-sport-proving-ground"
+  ],
   "defaultLayoutId": "m-sport-proving-ground",
   "layouts": [
     {
       "id": "m-sport-proving-ground",
       "name": "M-Sport Proving Ground",
       "referenceId": "United Kingdom/M-Sport Proving Ground",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/m-sport-proving-ground.geojson",
+      "description": "Combined mapped configurations: M-Sport long variant, M-Sport inner variant. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "msport-long-variant",
+      "name": "M-Sport long variant",
+      "file": "layouts/msport-long-variant.geojson",
+      "description": "The operator identifies the adaptable 2.5 km proving ground. This exact independently mapped source-node course retains the long southern section and a northern round-return variant. Combined with the complementary inner variant it preserves the actual northern circle, northern triangle and southern alternatives shown in the supplied configuration shape. The descriptive variant name is not an official timed-layout designation; historical alignment and direction remain draft."
+    },
+    {
+      "id": "msport-inner-variant",
+      "name": "M-Sport inner variant",
+      "file": "layouts/msport-inner-variant.geojson",
+      "description": "The operator identifies a configurable private proving ground. This exact independent source-node route retains complementary northern and southern inner connections. Its real shared junctions and source way versions are preserved. It complements the long variant to represent the supplied branch configuration without implying that the entire branch set is a single lap."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-716453717",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/716453717",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-msport-long-variant",
+      "type": "reference",
+      "title": "M-Sport long variant identification",
+      "url": "https://www.ms-ec.co.uk/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "The operator identifies the adaptable 2.5 km proving ground. This exact independently mapped source-node course retains the long southern section and a northern round-return variant. Combined with the complementary inner variant it preserves the actual northern circle, northern triangle and southern alternatives shown in the supplied configuration shape. The descriptive variant name is not an official timed-layout designation; historical alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-msport-inner-variant",
+      "type": "reference",
+      "title": "M-Sport inner variant identification",
+      "url": "https://www.ms-ec.co.uk/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "The operator identifies a configurable private proving ground. This exact independent source-node route retains complementary northern and southern inner connections. Its real shared junctions and source way versions are preserved. It complements the long variant to represent the supplied branch configuration without implying that the entire branch set is a single lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-m-sport-proving-ground",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/716453717",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T07:10:23.707Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-m-sport-proving-ground",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.ms-ec.co.uk/our-spaces-evaluation-ground",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T07:10:23.707Z",
+      "evidenceNote": "The supplied proving-ground shape depicts the northern circle and triangle and multiple southern alternatives. The operator identifies the 2.5 km proving ground, eighteen anti-clockwise configurations and a steady-state circle; its aerial photograph independently confirms the northern circle, triangle and southern course alternatives. These two complementary exact source-node cycles retain every independently mapped closed-course branch in that footprint. Preserve their physical configuration set, shared edges and real junctions; do not interpret its unique branch distance as a timed lap or adjust coordinates to the catalogue scalar. Descriptive component names do not assert official layout names, and exact historical timed branch choice remains unverified. The independent unique branch distance is 3082 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

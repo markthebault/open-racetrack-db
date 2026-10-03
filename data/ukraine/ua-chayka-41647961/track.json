@@ -8,17 +8,41 @@
     "name": "Ukraine",
     "slug": "ukraine"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    30.29262465,
+    50.43667605
+  ],
+  "sourceIds": [
+    "osm-selection-118719177"
+  ],
   "defaultLayoutId": "chayka",
   "layouts": [
     {
       "id": "chayka",
       "name": "Chayka",
       "referenceId": "Ukraine/Chayka",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/chayka.geojson",
+      "description": "Draft configuration: Full course with direct northern turn and both western inner hairpins; excludes the extra northern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2900.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-118719177",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/118719177",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:22:34.724Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-chayka",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/118719177",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:22:34.724Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

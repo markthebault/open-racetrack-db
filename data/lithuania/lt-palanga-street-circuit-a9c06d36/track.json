@@ -8,17 +8,41 @@
     "name": "Lithuania",
     "slug": "lithuania"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    21.1082369,
+    55.90652965
+  ],
+  "sourceIds": [
+    "osm-selection-palanga-street-current-independent-roads-35031050"
+  ],
   "defaultLayoutId": "palanga-street-circuit",
   "layouts": [
     {
       "id": "palanga-street-circuit",
       "name": "Palanga Street Circuit",
       "referenceId": "Lithuania/Palanga Street Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/palanga-street-circuit.geojson",
+      "description": "Draft configuration: The 19 July 2014 Promaksa/EPIC Media onboard identifies the post-reconstruction branch sequence: northwest loop, southbound A13, paved median-end turnaround beside the service station, northbound A13, outer northeast approach and westbound A11. The organizer 2014 results identify the event as 2,682 m, distinct from the earlier 2,994 m course. Only exact independent public road nodes supply coordinates, with every join sharing a node identity. The southeastern civilian loop and eastern A11 turnaround in the earlier local candidate are excluded. This supporting road-course draft measures 2,727.1 m, 65.1 m longer than the supplied 2,662 m scalar and 45.1 m longer than the organizer description. The discrepancies remain explicit, with no coordinates fitted to either length. Temporary chicanes, precise barrier turns and event lane positions are not independently mapped. The northeast approach is reversed relative to ordinary traffic; municipal 2014 closure evidence establishes that the event uses closed public roads. Civilian one-way tags remain unchanged. Licensed May 2023 imagery corroborates physical pavement only. Operator diagrams and video identify branches only; they are not traced, georeferenced or redistributed. This is a draft physical course, not a certified race-day lap. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2727.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-palanga-street-current-independent-roads-35031050",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/35031050",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T12:53:48.532Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-palanga-street-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.youtube.com/watch?v=VF2tTIVQ5Rg",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T12:53:48.532Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

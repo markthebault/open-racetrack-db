@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-235166661"
+    "osm-network-235166661",
+    "osm-selection-235166661",
+    "osm-network-monticello-motor-club-combo"
   ],
   "defaultLayoutId": "monticello-motor-club-combo",
   "layouts": [
@@ -28,15 +30,15 @@
       "id": "monticello-motor-club-combo",
       "name": "Monticello Motor Club Combo",
       "referenceId": "United States/Monticello Motor Club Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/monticello-motor-club-combo.geojson",
+      "description": "Combined mapped configurations: Monticello Motor Club Full, Monticello Motor Club Mushroom, Monticello Motor Club North, Monticello Motor Club South. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "monticello-motor-club-full",
       "name": "Monticello Motor Club Full",
       "referenceId": "United States/Monticello Motor Club Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/monticello-motor-club-full.geojson",
+      "description": "Draft configuration: Full north and south circuits with direct western straight and diagonal connecting section. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5492.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "monticello-motor-club-mushroom",
@@ -49,15 +51,15 @@
       "id": "monticello-motor-club-north",
       "name": "Monticello Motor Club North",
       "referenceId": "United States/Monticello Motor Club North",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/monticello-motor-club-north.geojson",
+      "description": "Draft configuration: Northern course with short western shoulder and both hooked southern returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2922.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "monticello-motor-club-south",
       "name": "Monticello Motor Club South",
       "referenceId": "United States/Monticello Motor Club South",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/monticello-motor-club-south.geojson",
+      "description": "Draft configuration: Southern course with direct western straight, central hairpin and eastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2560.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -87,6 +89,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-235166661",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/235166661",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-monticello-motor-club-full",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/235166661",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-monticello-motor-club-north",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/235166661",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-monticello-motor-club-south",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/235166661",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-monticello-motor-club-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/235166661",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T17:29:04.957Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-monticello-motor-club-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/235166661",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T17:29:04.957Z",
+      "evidenceNote": "Aggregate configuration shows the combined mapped branches of Monticello Motor Club Full, Monticello Motor Club Mushroom, Monticello Motor Club North, Monticello Motor Club South. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
     }
   ]
 }

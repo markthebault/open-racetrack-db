@@ -13,7 +13,8 @@
     -33.04771438392858
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-2579523"
   ],
   "defaultLayoutId": "east-london-gp-circuit",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "east-london-gp-circuit",
       "name": "East london GP Circuit",
       "referenceId": "South Africa/East london GP Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/east-london-gp-circuit.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 2579523. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -40,6 +41,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:25:05.976Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-2579523",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Prince George Circuit",
+      "url": "https://www.openstreetmap.org/relation/2579523",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.425Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
     }
   ]
 }

@@ -8,17 +8,41 @@
     "name": "Spain",
     "slug": "spain"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    2.1519883,
+    41.3689611
+  ],
+  "sourceIds": [
+    "osm-selection-circuit-de-montjuic-independent-roads-4750715"
+  ],
   "defaultLayoutId": "circuit-de-montjuic",
   "layouts": [
     {
       "id": "circuit-de-montjuic",
       "name": "Circuit de Montjuïc",
       "referenceId": "Spain/Circuit de Montjuïc",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/circuit-de-montjuic.geojson",
+      "description": "Draft configuration: The former street course follows the Estadi straight, Rosaleda and Santa Madrona bends, Guardia Urbana, Rius i Taulet and the former Marques de Comillas corridor. Current source roads provide a draft of the historical course, with modern junction alignment explicitly provisional; the internal Montanyans shortcut is excluded. Independent historical mapping corroborates the street sequence. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3788.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-circuit-de-montjuic-independent-roads-4750715",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/4750715",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:26:58.586Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-circuit-de-montjuic",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.fundaciobarcelonaolimpica.es/wp-content/uploads/sites/3/2024/12/Barcelona_PacoGodia_i_elmotor_web_72dpi_baja.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:26:58.586Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

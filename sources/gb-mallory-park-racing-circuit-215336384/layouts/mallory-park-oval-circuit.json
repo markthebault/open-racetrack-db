@@ -2,51 +2,33 @@
   "schemaVersion": 1,
   "trackId": "gb-mallory-park-racing-circuit-215336384",
   "layoutId": "mallory-park-oval-circuit",
-  "sourceId": "osm-network-215336384",
-  "snapshotFile": "course-network-215336384.json",
-  "snapshotSha256": "eab0f43be71b2f067219be71ef9bf3c1768e752b3f28fbce491ef96b808e0a75",
+  "sourceId": "osm-selection-215336384",
+  "snapshotFile": "selected-network-215336384.json",
+  "snapshotSha256": "d5aa609e0e39b2b2cc8b6b32272ceb5208f1a4bcbeec593c075d68c3381bcfae",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1604.3 m. Difference from the supplied layout distance 4.7 m. Course configuration still requires visual review."
+    "Draft configuration: Plain oval retains Gerards Bend and the north oval shortcut, without Edwinas, Stapletons, Charlies or Bus Stop chicanes. This corrects the earlier distance-based hypothesis that followed added chicanes. The operator identifies a 1-mile oval; the independent source line measures 1551.7 m. The distance discrepancy is documented and no coordinates are altered. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1551.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
   ],
   "segments": [
     {
-      "wayId": 215336806,
-      "wayVersion": 5,
-      "fromIndex": 0,
-      "toIndex": 9
-    },
-    {
-      "wayId": 215337164,
-      "wayVersion": 4,
-      "fromIndex": 0,
-      "toIndex": 14
-    },
-    {
       "wayId": 215336384,
       "wayVersion": 8,
-      "fromIndex": 38,
+      "fromIndex": 0,
       "toIndex": 45
     },
     {
       "wayId": 215336415,
       "wayVersion": 7,
       "fromIndex": 0,
-      "toIndex": 3
-    },
-    {
-      "wayId": 215336791,
-      "wayVersion": 4,
-      "fromIndex": 0,
-      "toIndex": 16
+      "toIndex": 4
     },
     {
       "wayId": 215336476,
       "wayVersion": 6,
-      "fromIndex": 2,
+      "fromIndex": 0,
       "toIndex": 15
     },
     {
@@ -60,12 +42,6 @@
       "wayVersion": 9,
       "fromIndex": 1,
       "toIndex": 6
-    },
-    {
-      "wayId": 215336384,
-      "wayVersion": 8,
-      "fromIndex": 0,
-      "toIndex": 25
     }
   ],
   "gates": []

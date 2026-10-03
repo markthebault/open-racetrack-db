@@ -12,7 +12,7 @@ const aliases:Record<string,string>={'Czech Republic':'CZ','Turkey':'TR','United
 const code=(name:string)=>aliases[name]??worldCountries.find(c=>c.name.toLowerCase()===name.toLowerCase())?.code;
 const slug=(name:string)=>name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 // Historical courses and every reference category are eligible; service lanes and area representations are not traces.
-export function eligible(w:Way){const t=w.tags??{},name=[t.name,t['name:en'],t.description].filter(Boolean).join(' ');return t.area!=='yes'&&(t.highway==='raceway'||t['disused:highway']==='raceway')&&t.service!=='pit_lane'&&t.raceway!=='pit_lane'&&!/pit[ _-]?(lane|road|entry|exit)|boxengasse|boxenausfahrt|sortie stands|^paddock$/i.test(name);}
+export function eligible(w:Way){const t=w.tags??{},name=[t.name,t['name:en'],t.description].filter(Boolean).join(' ');return t.area!=='yes'&&(t.highway==='raceway'||t['disused:highway']==='raceway')&&!/^pit[_ -]?lane$/i.test(t.service??'')&&!/^pit[_ -]?lane$/i.test(t.raceway??'')&&!/pit[ _-]?(lane|road|entry|exit)|boxengasse|boxenausfahrt|sortie stands|^paddock$/i.test(name);}
 const index=await read('data/index.json'),matches:Record<string,{recordId:string;name:string;evidence:string}>=await read('sources/reference/layout-matches.json');
 const mapped=new Set(Object.values(matches).map(m=>m.recordId));
 // This acquisition helper predates registered entries without geometry. Refuse an unsafe mutation.

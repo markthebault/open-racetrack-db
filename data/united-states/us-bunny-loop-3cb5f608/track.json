@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -83.53099080000001,
+    40.29825595
+  ],
+  "sourceIds": [
+    "usgs-naip-2023-bunny-loop"
+  ],
   "defaultLayoutId": "bunny-loop",
   "layouts": [
     {
       "id": "bunny-loop",
       "name": "Bunny Loop",
       "referenceId": "United States/Bunny Loop",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bunny-loop.geojson",
+      "description": "The narrow two-straight test loop east of the TRC Ohio high-speed oval is independently digitized from public-domain 2023 aerial imagery. The operator identifies the Ohio proving-ground site and its testing facilities; the catalogue name and timing location identify this specific loop. The small southern turnaround and northern crossing return are retained; the large high-speed oval and adjacent handling roads are excluded. Turnaround alignment and direction remain draft. Independently digitized aerial centerline: 2260.2 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-naip-2023-bunny-loop",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-01T23:03:11.491Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 9164c4ee0a701d329ecd6ffde79506a6e3826351f4260113c4733f89cf682f9a; reproducible pixel-to-coordinate conversion. The narrow two-straight test loop east of the TRC Ohio high-speed oval is independently digitized from public-domain 2023 aerial imagery. The operator identifies the Ohio proving-ground site and its testing facilities; the catalogue name and timing location identify this specific loop. The small southern turnaround and northern crossing return are retained; the large high-speed oval and adjacent handling roads are excluded. Turnaround alignment and direction remain draft."
+    },
+    {
+      "id": "imagery-identity-bunny-loop",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.trcpg.com/tour/ohio",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T23:03:11.491Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

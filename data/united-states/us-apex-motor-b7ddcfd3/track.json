@@ -8,31 +8,133 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -112.1259926,
+    33.0818923
+  ],
+  "sourceIds": [
+    "osm-components-780085487",
+    "osm-network-apex-motor-club-apex-i",
+    "sentinel-apex-2026-northern",
+    "sentinel-apex-2026-combined"
+  ],
   "defaultLayoutId": "apex-motor-club-apex-i",
   "layouts": [
     {
       "id": "apex-motor-club-apex-i",
       "name": "Apex Motor Club Apex I",
       "referenceId": "United States/Apex Motor Club Apex I",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/apex-motor-club-apex-i.geojson",
+      "description": "Combined mapped configurations: Apex I Southern Straight, Apex I Southern Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "apex-motor-club-apex-ii",
       "name": "Apex Motor Club Apex II",
       "referenceId": "United States/Apex Motor Club Apex II",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/apex-motor-club-apex-ii.geojson",
+      "description": "The northern Track Two follows the long northeastern straight, eastern hairpin, small upper chicane, outer northern loop, inner western U and paved southwestern return. The team identifies Track Two and links a complete February 2026 onboard lap. The operator independently identifies the northern circuit at https://apexmotorclub.com/track/. Coordinates come only from the independently georeferenced 18 September 2026 public Sentinel bands. The 5 June 2026 bands corroborate the western paved U and return diagonal; the separate lower drainage line and southern-course branches are excluded. The previously rejected candidate followed those unrelated branches and is not reused. Native 10 m samples are reprojected with nearest-neighbor resampling and contrast stretched without adding spatial detail. Intermediate straight vertices preserve the same observed corridor. The measured length is not adjusted to an advertised or supplied distance. Fine corner alignment, direction and historical equivalence remain draft; this is a coarse supporting course trace, not a surveyed racing line. No supplied diagram coordinates or private course boundary data are imported. Independently digitized aerial centerline: 4080.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "apex-motor-club-apex-iii",
       "name": "Apex Motor Club Apex III",
       "referenceId": "United States/Apex Motor Club Apex III",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/apex-motor-club-apex-iii.geojson",
+      "description": "The operator separately publishes a combined-circuit map in its public media catalogue. It identifies a northern-straight exit curving south along the western side of the paddock and a western connecting branch between the northern return diagonal and the southern inner U. That map supplies branch identity only and is not georeferenced, digitized or redistributed. The track-page combined graphic duplicates the southern circuit and remains excluded. All coordinates are independently digitized from the pinned September 2026 Copernicus raster, with June native red, green, blue and near-infrared bands corroborating both connectors. The route retains the northern outer loop and inner western U, upper chicane, northeastern hairpin, eastern paddock-side connection, southern eastern return, long southern straight, western southern hairpin and complete inner spiral. It omits the standalone northern middle S and standalone southern outer northern cap, as identified by the combined-course map. The existing independent southern public road snapshot corroborates pavement identity; no source vertices are moved to a supplied timing point or nominal distance. Native resolution is 10 m. Fine corner radii, centerline placement, direction and historical equivalence remain draft. The independent measured distance is preserved. This is a coarse supporting course trace, not a certified timed lap. No supplied boundary coordinates or diagram pixels supply geometry. Independently digitized aerial centerline: 7011.3 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
+    },
+    {
+      "id": "apex-i-straight",
+      "name": "Apex I Southern Straight",
+      "file": "layouts/apex-i-straight.geojson",
+      "description": "The operator Track One plan identifies the full northern spiral and the southern straight. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft."
+    },
+    {
+      "id": "apex-i-chicane",
+      "name": "Apex I Southern Chicane",
+      "file": "layouts/apex-i-chicane.geojson",
+      "description": "The operator Track One plan identifies the full northern spiral and the parallel southern chicane, independently named AMC Chicane in OSM. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-780085487",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/780085487",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-apex-i-straight",
+      "type": "reference",
+      "title": "Apex I Southern Straight identification",
+      "url": "https://apexmotorclub.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The operator Track One plan identifies the full northern spiral and the southern straight. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-apex-i-chicane",
+      "type": "reference",
+      "title": "Apex I Southern Chicane identification",
+      "url": "https://apexmotorclub.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "The operator Track One plan identifies the full northern spiral and the parallel southern chicane, independently named AMC Chicane in OSM. The independent public source-node course is unchanged; the AMC Fast inner shortcut is excluded. Alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-apex-motor-club-apex-i",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/780085487",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T21:05:43.873Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-apex-motor-club-apex-i",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://apexmotorclub.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T21:05:43.873Z",
+      "evidenceNote": "The operator Track One plan identifies both the southern straight and its parallel chicane while retaining the complete northern spiral. The catalogue general configuration contains both southern branches. The network groups these two independently mapped choices, excluding the separate AMC Fast inner shortcut absent from the published plan. Shared source edges count once and no diagram coordinates are copied. The independent unique branch distance is 3794 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "sentinel-apex-2026-northern",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/UB/2026/9/S2C_12SUB_20260918_0_L2A/B04.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-03T02:15:23.450633Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash 4d74d7404dfb305cc2f28f9024aa60042a7730f349fd95584da26018ccfcb54e; reproducible pixel-to-coordinate conversion. The northern Track Two follows the long northeastern straight, eastern hairpin, small upper chicane, outer northern loop, inner western U and paved southwestern return. The team identifies Track Two and links a complete February 2026 onboard lap. The operator independently identifies the northern circuit at https://apexmotorclub.com/track/. Coordinates come only from the independently georeferenced 18 September 2026 public Sentinel bands. The 5 June 2026 bands corroborate the western paved U and return diagonal; the separate lower drainage line and southern-course branches are excluded. The previously rejected candidate followed those unrelated branches and is not reused. Native 10 m samples are reprojected with nearest-neighbor resampling and contrast stretched without adding spatial detail. Intermediate straight vertices preserve the same observed corridor. The measured length is not adjusted to an advertised or supplied distance. Fine corner alignment, direction and historical equivalence remain draft; this is a coarse supporting course trace, not a surveyed racing line. No supplied diagram coordinates or private course boundary data are imported."
+    },
+    {
+      "id": "imagery-identity-apex-motor-club-apex-ii",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://mgrracing.com/season-schedule/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-03T02:15:23.450633Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "sentinel-apex-2026-combined",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/UB/2026/9/S2C_12SUB_20260918_0_L2A/B04.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-03T02:36:15.724018Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash 4d74d7404dfb305cc2f28f9024aa60042a7730f349fd95584da26018ccfcb54e; reproducible pixel-to-coordinate conversion. The operator separately publishes a combined-circuit map in its public media catalogue. It identifies a northern-straight exit curving south along the western side of the paddock and a western connecting branch between the northern return diagonal and the southern inner U. That map supplies branch identity only and is not georeferenced, digitized or redistributed. The track-page combined graphic duplicates the southern circuit and remains excluded. All coordinates are independently digitized from the pinned September 2026 Copernicus raster, with June native red, green, blue and near-infrared bands corroborating both connectors. The route retains the northern outer loop and inner western U, upper chicane, northeastern hairpin, eastern paddock-side connection, southern eastern return, long southern straight, western southern hairpin and complete inner spiral. It omits the standalone northern middle S and standalone southern outer northern cap, as identified by the combined-course map. The existing independent southern public road snapshot corroborates pavement identity; no source vertices are moved to a supplied timing point or nominal distance. Native resolution is 10 m. Fine corner radii, centerline placement, direction and historical equivalence remain draft. The independent measured distance is preserved. This is a coarse supporting course trace, not a certified timed lap. No supplied boundary coordinates or diagram pixels supply geometry."
+    },
+    {
+      "id": "imagery-identity-apex-motor-club-apex-iii",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://apexmotorclub.com/wp-content/uploads/2025/12/combined-circuit-scaled.png",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-03T02:36:15.724018Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

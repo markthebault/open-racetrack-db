@@ -8,17 +8,41 @@
     "name": "Russia",
     "slug": "russia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    38.2418206,
+    55.55425905
+  ],
+  "sourceIds": [
+    "copernicus-sentinel-ramenskoe-current-independent-roads"
+  ],
   "defaultLayoutId": "ramenskoe",
   "layouts": [
     {
       "id": "ramenskoe",
       "name": "Ramenskoe",
       "referenceId": "Russia/Ramenskoe",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ramenskoe.geojson",
+      "description": "Historical winter motorsport oval on the Ramenskoe hippodrome. The hippodrome operator documents annual winter car races from 1997 to 2011. The municipal report identifies the 1,600 m ice oval and 16 m width. Independent 2025 satellite imagery supplies the permanent oval footprint; temporary snow/ice racing-line alignment is unverified and remains a draft. The unrelated northern sports track and inner field are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1538.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "copernicus-sentinel-ramenskoe-current-independent-roads",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/U/DB/2025/9/S2C_37UDB_20250922_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T09:12:49.397384Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash 81763badf84ea16666ca15532baf9913bed2f9dac9ba3f87e1e26e137ac282d3; reproducible pixel-to-coordinate conversion. Historical winter motorsport oval on the Ramenskoe hippodrome. The hippodrome operator documents annual winter car races from 1997 to 2011. The municipal report identifies the 1,600 m ice oval and 16 m width. Independent 2025 satellite imagery supplies the permanent oval footprint; temporary snow/ice racing-line alignment is unverified and remains a draft. The unrelated northern sports track and inner field are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-ramenskoe",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://cmh.ru/45",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T09:12:49.397384Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

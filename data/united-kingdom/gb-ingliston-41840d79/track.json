@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -3.3717162,
+    55.939267799999996
+  ],
+  "sourceIds": [
+    "osm-selection-ingliston-current-independent-roads-31822847"
+  ],
   "defaultLayoutId": "ingliston",
   "layouts": [
     {
       "id": "ingliston",
       "name": "Ingliston",
       "referenceId": "United Kingdom/Ingliston",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ingliston.geojson",
+      "description": "Draft configuration: Ingliston South Track boomerang course, retaining the tiny western hairpin, parallel southern straights and northeast return. The operator identifies the southern original course plus the newer closing section. Exact independently mapped road nodes join ways 244885451, 244885450, 31822865, 31822847 and 244885452. The outer road through the Grandstand arena, the more easterly service-road grid and the optional later southern chicane are excluded. Native one-metre Scottish Government Phase 4 LiDAR intensity (2017-2019, OGL v3) independently confirms the selected paved route. The small-course identity matches the listed layout; no supplied course coordinates or diagram pixels enter the geometry. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1062.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-ingliston-current-independent-roads-31822847",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/31822847",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T03:11:59.229Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-ingliston",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.ingliston.co.uk/two-supercars-drift-experience/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T03:11:59.229Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

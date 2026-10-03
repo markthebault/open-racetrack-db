@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "provider": "Latvian Geospatial Information Agency",
+  "dataset": "Orthophoto cycle 6, 2016-2018",
+  "license": "CC-BY-4.0",
+  "sourceRaster": {
+    "rasterUrl": "https://s3.storage.pub.lvdc.gov.lv/lgia-opendata/ortofoto_rgb_v6/4311/4311-33_4.tif",
+    "tfwUrl": "https://s3.storage.pub.lvdc.gov.lv/lgia-opendata/ortofoto_rgb_v6/4311/4311-33_4.tfw",
+    "transform": [
+      0.25,
+      0.0,
+      0.0,
+      -0.25,
+      512500.125,
+      314999.875
+    ],
+    "reprojection": {
+      "sourceCrs": "EPSG:3059",
+      "targetCrs": "EPSG:3857",
+      "rasterioVersion": "1.5.2",
+      "resampling": "bilinear",
+      "extentDensifyPoints": 41
+    }
+  },
+  "render": {
+    "width": 1800,
+    "height": 1400,
+    "extent": {
+      "xmin": 2695935.4280314995,
+      "ymin": 7752457.857676925,
+      "xmax": 2697716.539884192,
+      "ymax": 7753785.179701412,
+      "spatialReference": 3857
+    },
+    "imagerySha256": "b87547072a3a4039954f60421c1102bfcecfb29cb6ce574fcadc2880a38b0525",
+    "retrievedAt": "2026-10-02T02:34:07.027045Z"
+  },
+  "effectiveGroundPixelSpacingM": 0.539,
+  "independentRoadSource": "sources/course-networks/bikernieki-rallycross-2017-course-roads/osm.json",
+  "independentRoadSha256": "8293a13319458d2fa4a439b778d76e40e0c9e5cb0678ffe6f23170c84a2f154a",
+  "publicRoadParts": [
+    {
+      "segments": [
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 89,
+          "toIndex": 88
+        },
+        {
+          "wayId": 93229455,
+          "wayVersion": 2,
+          "fromIndex": 3,
+          "toIndex": 0
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 87,
+          "toIndex": 86
+        },
+        {
+          "wayId": 93229460,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 4
+        },
+        {
+          "wayId": 93229449,
+          "wayVersion": 6,
+          "fromIndex": 5,
+          "toIndex": 7
+        },
+        {
+          "wayId": 93229444,
+          "wayVersion": 3,
+          "fromIndex": 2,
+          "toIndex": 0
+        },
+        {
+          "wayId": 93229449,
+          "wayVersion": 6,
+          "fromIndex": 153,
+          "toIndex": 150
+        },
+        {
+          "wayId": 523849729,
+          "wayVersion": 2,
+          "fromIndex": 20,
+          "toIndex": 0
+        },
+        {
+          "wayId": 25507796,
+          "wayVersion": 16,
+          "fromIndex": 55,
+          "toIndex": 54
+        }
+      ]
+    }
+  ],
+  "connectorPixels": [
+    [
+      1111.5174999994972,
+      717.4074342612313
+    ],
+    [
+      1108,
+      724
+    ],
+    [
+      1114,
+      734
+    ],
+    [
+      1134,
+      734
+    ],
+    [
+      1151,
+      737
+    ],
+    [
+      1163,
+      744
+    ],
+    [
+      1171,
+      756
+    ],
+    [
+      1188,
+      789
+    ],
+    [
+      1215.051249999721,
+      815.9666091320439
+    ]
+  ],
+  "sourceCoordinatesPolicy": "Exact independent 2017 OSM nodes are projected unchanged. Only the connected upper paved step is digitized from the independent aerial. No supplied course geometry or diagram pixels are used.",
+  "limitations": [
+    "The aerial is cycle-six capture during construction; an exact tile flight date is not asserted.",
+    "The course is a historical configured draft, not the current FIA standard or joker lap.",
+    "The historical short eastern connector remains unscaled and the later longer southern extension is excluded."
+  ],
+  "requestedGeographicBounds": [
+    24.218,
+    56.9625,
+    24.234,
+    56.969
+  ]
+}

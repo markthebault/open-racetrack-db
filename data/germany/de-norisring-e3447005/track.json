@@ -8,17 +8,41 @@
     "name": "Germany",
     "slug": "germany"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    11.12624365,
+    49.431215449999996
+  ],
+  "sourceIds": [
+    "osm-circuit-1889538"
+  ],
   "defaultLayoutId": "norisring",
   "layouts": [
     {
       "id": "norisring",
       "name": "Norisring",
       "referenceId": "Germany/Norisring",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/norisring.geojson",
+      "description": "Event results identify the single 2.3 km Norisring street course. The independent named source course is shorter; the discrepancy is retained for review. Draft configuration selected from the independently named circuit relation 1889538. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-1889538",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Norisring",
+      "url": "https://www.openstreetmap.org/relation/1889538",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:46:25.959Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "course-identity-1889538",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://norisring.de/wp-content/uploads/2020/03/2009_F3ES_race2.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:46:25.959Z",
+      "evidenceNote": "Event results identify the single 2.3 km Norisring street course. The independent named source course is shorter; the discrepancy is retained for review. Identification only; no coordinates are copied."
+    }
+  ]
 }

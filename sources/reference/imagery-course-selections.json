@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "policy": "Course coordinates are independently digitized from licensed georeferenced aerial imagery. Pinned raster and source hashes reproduce each draft centerline. Timing GPS remains private.",
+  "records": [
+    {
+      "referenceId": "United States/New York Safety Track",
+      "sourcePath": "sources/us-new-york-safety-7dd4ad33/imagery-course.json",
+      "snapshotSha256": "371bb54c88a170b430d6778ffc07d7e3e0b8d6a45eb31bd1e0e7d4a0e330490a",
+      "imagerySha256": "c01e5b10dd53edfffcca0ce283068c6cf4f7246b6c4838d3c409a62f05099298",
+      "expectedLengthM": 3141.9,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://nyst.com/",
+      "evidence": "The full paved circuit follows the main straight, northern hairpin, upper switchback and southern wooded technical section visible in the independent 2019 aerial image. Pit-entry and paddock driveways are excluded. The operator identifies one full circuit with 18 turns; its advertised 2.2-mile length is approximate and is not used to scale the geometry."
+    },
+    {
+      "referenceId": "United States/Dixon Kart Circuit",
+      "sourcePath": "sources/us-dixon-kart-circuit-30c5083d/imagery-course-dixon-kart-circuit.json",
+      "snapshotSha256": "4c6b7c396873645d366a86d0a89e7fff8cdd96075287048fdb733f2c2ebe9c66",
+      "imagerySha256": "07dbd408acd56aa46a9ccb66ef310371dbe8adbb437ea96dff8368be5fb98718",
+      "expectedLengthM": 645.9,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://www.worldkarting.com/tracks/",
+      "evidence": "The association lists Kinsmen Kart Club at Dixon. The independently visible paved full circuit retains the northeastern bulb, central hairpin and two western hairpins. The small diagonal infield connector, pit access and neighboring dirt speedway are excluded. Fine corner alignment and driving direction remain draft."
+    },
+    {
+      "referenceId": "United States/Buttonwillow Kart Circuit",
+      "sourcePath": "sources/us-buttonwillow-kart-circuit-ff072e84/imagery-course-buttonwillow-kart-circuit.json",
+      "snapshotSha256": "605a3bf8b863d571bf201b24978f26894287a5b1cc5b1bd872b1c8cca1789146",
+      "imagerySha256": "623e741244915ab858429bee266d8175eb5751fbce7d919ee1356b0f6da22e36",
+      "expectedLengthM": 1025,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://buttonwillowraceway.com/wp-content/uploads/2024/11/brp-kart-map-kart-01.pdf",
+      "evidence": "The operator's Kart #1 course uses both west and east kart loops: Long Beach, The Glen, Zolder, Daytona, Imola, Monza, the Mulsanne Straight and Monte Carlo triangular return via Spa. The independently visible paved centerline retains those branches and excludes the oval shortcut, hot pits and surrounding main road circuit. Operator route dimensions identify a full course of roughly 952 m; mapping is not scaled to that distance."
+    },
+    {
+      "referenceId": "United States/Bunny Loop",
+      "sourcePath": "sources/us-bunny-loop-3cb5f608/imagery-course-bunny-loop.json",
+      "snapshotSha256": "501c981915c4f2c49cd27ebc250d753ac5274cd9ef6af8a0c03741403af20bf3",
+      "imagerySha256": "9164c4ee0a701d329ecd6ffde79506a6e3826351f4260113c4733f89cf682f9a",
+      "expectedLengthM": 2260.2,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://www.trcpg.com/tour/ohio",
+      "evidence": "The narrow two-straight test loop east of the TRC Ohio high-speed oval is independently digitized from public-domain 2023 aerial imagery. The operator identifies the Ohio proving-ground site and its testing facilities; the catalogue name and timing location identify this specific loop. The small southern turnaround and northern crossing return are retained; the large high-speed oval and adjacent handling roads are excluded. Turnaround alignment and direction remain draft."
+    },
+    {
+      "referenceId": "United States/Thermal Club Twin Palms Short",
+      "sourcePath": "sources/us-the-thermal-club-443108132/imagery-course-thermal-club-twin-palms-short.json",
+      "snapshotSha256": "3d10a613f47008bc23186be2c25291e15d0f830b1eeff40f02ab5d3cfc12c470",
+      "imagerySha256": "9ac40479f4dd864e642ef4e4ad04dbc32cc40de1141a7bacae57ff1938599137",
+      "expectedLengthM": 3904.7,
+      "maximumDistanceDifferenceM": 150,
+      "identificationUrl": "https://www.thermal.cc/track/",
+      "evidence": "Twin Palms Short retains the middle Desert course with its northern undulations and eastern roundabout return, joined to the South Palm outer course. It excludes the North Palm extension, the South Palm inner technical loop, karting roads and pit access. Independently read public-domain 2022 NAIP pavement centers identify the full short branch sequence; route distance is unscaled and historical barriers and direction remain draft. The 2022 aerial centerline differs from the 3999 m catalogue scalar; the geometry is not scaled to match it."
+    },
+    {
+      "referenceId": "Poland/Slomczyn RallyCross",
+      "sourcePath": "sources/pl-slomczyn-rallycross-e94ac261/imagery-course-slomczyn-rallycross.json",
+      "snapshotSha256": "38ca4897d6e34c3595f836d951c0e96a62f3970cefb038c1a56c2accfcf42365",
+      "imagerySha256": "883dc49248b049436146388942ff1b7cd574c9c91e71f21c01e870bd87433c7a",
+      "expectedLengthM": 1255.1,
+      "maximumDistanceDifferenceM": 40,
+      "identificationUrl": "https://autodromslomczyn.pl/plan-obiektu/",
+      "evidence": "The operator’s Rallycross configuration retains the northern and western gravel arc, the long central asphalt hairpin and the southern outer gravel return. The inner karting loops, the asphalt-only outer course and pit lane are excluded. The route is manually digitized on the independently georeferenced GUGiK orthoimage. Surface transitions, temporary barriers, fine corner alignment and historical configuration remain provisional. No diagram coordinates or comparison-course GPS are used."
+    },
+    {
+      "referenceId": "Poland/Tor Jastrzab",
+      "sourcePath": "sources/pl-tor-jastrzab-220208f2/imagery-course-tor-jastrzab.json",
+      "snapshotSha256": "d43e8414a94f1ea2c052e82744a9e8575bcd3f019ca4e8b8b442917ba3f6ebe7",
+      "imagerySha256": "edd8c0d34f68b331238f586cdd339c6048d99a0df8dfe0a1a5f59296e5b81da4",
+      "expectedLengthM": 1741,
+      "maximumDistanceDifferenceM": 45,
+      "identificationUrl": "https://torjastrzab.pl/nasz-obiekt-tor/",
+      "evidence": "The operator identifies the Autodrom Jastrzab training and motorsport complex. This configuration uses both Northern hairpins, the long Western return and its small infield hairpin, the central triangular-island return and Eastern S bends. The Southern connection crosses the paved training apron and bypasses the separate Southern skid circle. The route is independently digitized from freely reusable GUGiK government orthoimagery because the public map omits the Northern return and several source ways contain angular shortcuts. All pixel anchors are picked on visible pavement in the government raster; neither catalogue picture vertices nor timing GPS set course coordinates. The independently measured 1741.0 m versus the catalogue 1715 m is retained, with a 45 m allowance for provisional centerline and historical temporary-cone alignment. Direction, temporary barriers and corner alignment remain draft."
+    },
+    {
+      "referenceId": "United States/Michelin Laurens Proving Grounds",
+      "sourcePath": "sources/us-michelin-laurens-proving-grounds-bdeb232d/imagery-course-michelin-laurens-proving-grounds.json",
+      "snapshotSha256": "04ae1f804b40bea8959cd3ba29fe517a7442133cdd8568426d8eb2e3fc7bfce0",
+      "imagerySha256": "5043b724a1e45834c880e07699ed10d7d84248e5def93d3d6728e98d2895c6cc",
+      "expectedLengthM": 663.6,
+      "maximumDistanceDifferenceM": 45,
+      "identificationUrl": "https://michelinpg.com/track-3-wet-road-course/",
+      "evidence": "The operator identifies Track 3 as the wet handling course with a 0.45-mile short configuration. This catalogue branch retains the Northern turn-in, middle S, rounded Southern return and Eastern hairpin of that short wet loop. The surrounding dry handling road and outer wet-loop extension are excluded. The centerline is manually digitized only on visible pavement in pinned public-domain 2023 USGS/USDA NAIP imagery. The independent 663.6 m measured route remains unscaled against the 698 m catalogue scalar and the approximate advertised 0.45-mile length; a 45 m catalogue allowance retains historical corner and surface-path differences as a draft limitation. No catalogue image vertices or timing positions determine these coordinates."
+    },
+    {
+      "referenceId": "United Kingdom/Goodwood Festival of Speed",
+      "sourcePath": "sources/gb-goodwood-festival-of-speed-6e11ee2d/imagery-course-goodwood-festival-of-speed.json",
+      "snapshotSha256": "8ff7a5c38eab25d81d2eac1d03e533c872a3f8ee603b5680214f969f7907a328",
+      "imagerySha256": "0d3123064371254a4166aecf5f642ffdd89ee12790da1b2e07c704d6b8e7302c",
+      "expectedLengthM": 1679.8,
+      "maximumDistanceDifferenceM": 1150,
+      "identificationUrl": "https://www.goodwood.com/motorsport/festival-of-speed/explore/hillclimb/",
+      "evidence": "The open hillclimb follows the paved Western first corner past Goodwood House, the Northeast straight, Molecomb left turn and Northern wooded return. The operator course plan identifies this sequence; unrelated Eastern estate roads and grass paths are excluded. Centerline vertices are independently inspected on 2014 Environment Agency georeferenced imagery; the wooded Northern section is corroborated by pinned public road mapping. Tree cover, historic timing extent and fine corner alignment remain draft. The timing catalogue scalar is 2806 m while the operator describes a 1.16-mile hillclimb; the independent timed route is not scaled to either figure. Identification plan: https://www.goodwood.com/globalassets/pdfs/motorsport/fos/fos-3dmap-nocf-2025.pdf . The independent gate-to-gate route measures 1679.8 m, 1126.2 m shorter than the catalogue scalar and approximately 187 m shorter than the operator description. This unresolved historical timing-extent discrepancy is retained with an explicit 1150 m allowance, rather than adding unrelated roads or extending the route beyond its timing endpoints."
+    },
+    {
+      "referenceId": "United States/Reno Fernley H",
+      "sourcePath": "sources/us-reno-fernley-h-c926ace0/imagery-course-reno-fernley-focused.json",
+      "snapshotSha256": "77c2f54a7073176b6c1840a8f56b42bee53bc748b1deef51eeff443824a97dd2",
+      "imagerySha256": "eb2752ce6f70e17df56e73f1e94a66633340d5469aa8fdf6f9f08b4020d371c5",
+      "expectedLengthM": 4132.9,
+      "maximumDistanceDifferenceM": 300,
+      "identificationUrl": "https://www.250superkarts.com/2006USSC-WestRace2Results.htm",
+      "evidence": "The historical Configuration H uses the Northern full terminal loop, Western upper S return, central small hairpin and Eastern middle straight, with the Southern internal chicane before the Southwestern terminal return. The 2006 organizer report identifies Configuration H, avoiding the rough old back sector. The original operator course plan identifies the alternate internal branches: https://www.kstreetstudio.com/files/tinyvette/renofernley/RF-TrackMap.pdf . Centerline pixels are independently inspected on public-domain 2022 NAIP imagery; no comparison-diagram pixels or coordinates supply geometry. The larger Western back sector, large central U and pit/staging lanes are excluded. Fine historical barrier, surface and Southern chicane alignment remain draft; the independent measured length is unscaled."
+    },
+    {
+      "referenceId": "United States/Reno Fernley E",
+      "sourcePath": "sources/us-reno-fernley-e-11ca028a/imagery-course-reno-fernley-focused.json",
+      "snapshotSha256": "7a6174c970646effc7319283c7a130fa7cd05e3e4155cd3544369ed0ebf0e527",
+      "imagerySha256": "eb2752ce6f70e17df56e73f1e94a66633340d5469aa8fdf6f9f08b4020d371c5",
+      "expectedLengthM": 2767.1,
+      "maximumDistanceDifferenceM": 200,
+      "identificationUrl": "https://www.kstreetstudio.com/files/tinyvette/renofernley/RF-TrackMap.pdf",
+      "evidence": "The identified historical E course retains the Western long narrow return, upper Western short loop, inner middle S, Southern linking bend and complete Eastern middle straight. The original operator roadcourse plan establishes the old-sector and alternate Southern connections. The Northeastern full loop, upper Northern S and Southwestern terminal loop are excluded. All course pixels are independently inspected pavement centerline anchors on public-domain 2022 NAIP imagery; comparison diagrams supply branch identity only. Fine corner, old timing extent, degraded pavement and temporary barrier alignment remain draft, without scaling to the catalogue distance."
+    },
+    {
+      "referenceId": "United States/G2 Motorsports Park West",
+      "sourcePath": "sources/us-g2-motorsports-park-1538039260/imagery-course-g2-west-focused.json",
+      "snapshotSha256": "bae867c9d4a7a0cd06cc7b4b4f88bca95c43cbfd9b6ec110a1222b0f5d0ac087",
+      "imagerySha256": "76d617a75caa7f15f8ec4c1c3f3abc074f11cc53e3d54c7ed5de7f44cc35a8ca",
+      "expectedLengthM": 3064.5,
+      "maximumDistanceDifferenceM": 150,
+      "identificationUrl": "https://g2motorsportspark.com/track/",
+      "evidence": "The operator identifies the 1.9-mile Western course. Its published plan includes the Western Northern turnaround, central diagonal and inner Southern hairpin, Northern carousel, short Northeastern return and Eastern closing straight. These branches follow the independently inspected graded road alignment in public-domain July 2022 NAIP imagery. The operator construction history dates this period before final paving. The trace is a historical construction-alignment draft; finished pavement centerline, temporary barriers and fine corner alignment are unverified. It excludes the separate Eastern circuit, paddock and access roads. No operator or comparison diagram pixels supply course coordinates, and no coordinates are scaled to a nominal distance."
+    },
+    {
+      "referenceId": "Germany/Porsche Leipzig A",
+      "sourcePath": "sources/de-porsche-leipzig-a-1a7399b8/imagery-course-leipzig-a.json",
+      "snapshotSha256": "62835441927ae6c3caea2ad7780e08ecaa1a4fa8aa758a3da823d74356fd1cd0",
+      "imagerySha256": "9e48ff442b657dc9c62236c9b61d346a55929f046746135f3f710c7a39688b96",
+      "expectedLengthM": 2713.9,
+      "maximumDistanceDifferenceM": 700,
+      "identificationUrl": "https://www.porsche-leipzig.com/en/tracks/porsche-dynamic-circuit",
+      "evidence": "GeoSN historical orthophoto capture year 2012 identifies paved centerlines independently. The manufacturer identifies separately usable 3.7 km and 2.2 km courses and configurable training sections. The comparison shapes show alternatives, so named branch paths preserve each configuration set rather than asserting one timed lap. Later dynamic-course additions are excluded. Historical direction, lap choice and present-day corner alignment remain unverified."
+    },
+    {
+      "referenceId": "Germany/Porsche Leipzig B",
+      "sourcePath": "sources/de-porsche-leipzig-b-65f38c3a/imagery-course-leipzig-b.json",
+      "snapshotSha256": "da65857faaea6bfb4a78fcfe7488262b6f64315f6a3f828a76ab5013cfcec9ec",
+      "imagerySha256": "9e48ff442b657dc9c62236c9b61d346a55929f046746135f3f710c7a39688b96",
+      "expectedLengthM": 4547.9,
+      "maximumDistanceDifferenceM": 1000,
+      "identificationUrl": "https://www.porsche-leipzig.com/en/tracks/porsche-dynamic-circuit",
+      "evidence": "GeoSN historical orthophoto capture year 2012 identifies paved centerlines independently. The manufacturer identifies separately usable 3.7 km and 2.2 km courses and configurable training sections. The comparison shapes show alternatives, so named branch paths preserve each configuration set rather than asserting one timed lap. Later dynamic-course additions are excluded. Historical direction, lap choice and present-day corner alignment remain unverified."
+    },
+    {
+      "referenceId": "United States/Gateway Road 1",
+      "sourcePath": "sources/us-world-wide-technology-raceway-road-course-180008394/imagery-course-gateway-focused.json",
+      "snapshotSha256": "a9b0c747d675aa7366cfdb8dd22101a1b97a3789bc4d4aab7f0f814f9f0b66ba",
+      "imagerySha256": "6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6",
+      "expectedLengthM": 2602.8,
+      "maximumDistanceDifferenceM": 150,
+      "identificationUrl": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "evidence": "The supplied Road 1 configuration retains the original smooth southern return, northern inner hairpin and oval-front-straight return. The operator distinguishes its 1.6-mile course from the later 2.0-mile extension. This draft follows the original paved route visible in the pinned public-domain 2019 NAIP image; independent historical public-node alignment aided branch identification. The newer southern extension, kart course, dragway and pit road are excluded. Coordinates come from independent public georeferencing, without fitting the supplied diagram or scalar. Historical direction and fine corner alignment remain draft."
+    },
+    {
+      "referenceId": "United States/Gateway Motorsports Park",
+      "sourcePath": "sources/us-world-wide-technology-raceway-road-course-180008394/imagery-course-gateway-original-network.json",
+      "snapshotSha256": "1e80e013297a06edf0b1785cbcae9fe64cc3ebd52a099765bccdb127182df91e",
+      "imagerySha256": "6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6",
+      "expectedLengthM": 3447.5,
+      "maximumDistanceDifferenceM": 250,
+      "identificationUrl": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "evidence": "The supplied general configuration displays the oval together with the original infield course. The operator distinguishes both physical circuits. This independently georeferenced historical configuration set excludes the later road extension, karting, dragway and pit access. Its unique-edge distance is not a timed lap. Source direction and fine centerline alignment remain draft."
+    },
+    {
+      "referenceId": "United States/Gateway Road 2",
+      "sourcePath": "sources/us-world-wide-technology-raceway-road-course-180008394/imagery-course-gateway-extended-return.json",
+      "snapshotSha256": "416e072eeb03bee9ac903557711bbd0203fed2ddcd26fba32511d5b2d3dd7d59",
+      "imagerySha256": "6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6",
+      "expectedLengthM": 3117.8,
+      "maximumDistanceDifferenceM": 200,
+      "identificationUrl": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "evidence": "The longer supplied configuration retains the original northern infield course, middle eastward connector, outer southern oval arc, inner southern extension and original infield southern return. These physical branches are independently visible in pinned public-domain 2019 NAIP imagery. The operator identifies the enlarged road-course facility; the temporary paddock rectangle in the general operator plan is excluded because it is absent from this supplied configuration. Historical branch choice, direction and fine centerline alignment remain draft. Coordinates are not fitted to a private diagram or scalar distance."
+    },
+    {
+      "referenceId": "United States/Gateway Motorsports Porsche 2mile",
+      "sourcePath": "sources/us-world-wide-technology-raceway-road-course-180008394/imagery-course-gateway-extended-return.json",
+      "snapshotSha256": "416e072eeb03bee9ac903557711bbd0203fed2ddcd26fba32511d5b2d3dd7d59",
+      "imagerySha256": "6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6",
+      "expectedLengthM": 3117.8,
+      "maximumDistanceDifferenceM": 200,
+      "identificationUrl": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "evidence": "The longer supplied configuration retains the original northern infield course, middle eastward connector, outer southern oval arc, inner southern extension and original infield southern return. These physical branches are independently visible in pinned public-domain 2019 NAIP imagery. The operator identifies the enlarged road-course facility; the temporary paddock rectangle in the general operator plan is excluded because it is absent from this supplied configuration. Historical branch choice, direction and fine centerline alignment remain draft. Coordinates are not fitted to a private diagram or scalar distance."
+    },
+    {
+      "referenceId": "Austria/Fuglau",
+      "sourcePath": "sources/at-fuglau-69fd1d4f/imagery-course-basemap-fuglau.json",
+      "snapshotSha256": "c8b9dec73051b9c90c864294a79b9eaf760b54b38551b323d4dc04615d16fbf5",
+      "imagerySha256": "8aefe5d2f17de0b2cc2363055fb8ff9e6724cce236bde2a9cf8157c6f463a4b8",
+      "expectedLengthM": 1337,
+      "maximumDistanceDifferenceM": 150,
+      "identificationUrl": "https://www.freies-fahren.at/content/freies-fahren-in-der-mjp-arena-fuglau/",
+      "evidence": "The supplied configuration retains the full eastern course and both western returns. The organizer explicitly identifies its morning inner-return and afternoon outer-return configurations. These paved paths are independently digitized from the 2024 basemap.at orthophoto. The northern gravel spur, central shortcut, eastern inner loop and paddock access are excluded. This network measures unique branches rather than one timed lap; historical direction and fine alignment remain draft."
+    },
+    {
+      "referenceId": "Sweden/Gotland Ring 4.1",
+      "sourcePath": "sources/se-gotland-ring-311644846/imagery-course-gotland-ring-4-1.json",
+      "snapshotSha256": "027ecc6453416f362046d2a1f158d78845de38ae9ec3fd907b3191575858a5ae",
+      "imagerySha256": "33c6e7c2cdc20920108ad97f71c6ad453e136160a076b76bcfd6d3b9fcd124db",
+      "expectedLengthM": 4075.3,
+      "maximumDistanceDifferenceM": 30,
+      "identificationUrl": "https://gotlandring.com/wp-content/uploads/2021/04/Gotland-Ring-Karta_april-2021_jpeg.jpg",
+      "evidence": "Southern loop with its western outer bend, inner return and full eastern straight. The operator identifies the 4.1 km Southern Loop; the full course plan separates paddock, karting and energy-road access, all excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Sweden/Gotland Ring 6.0",
+      "sourcePath": "sources/se-gotland-ring-311644846/imagery-course-gotland-ring-6-0.json",
+      "snapshotSha256": "53237ecef5e350c56f4cec4084375f7e33199b37bc156ee05a9e78d0618e45d3",
+      "imagerySha256": "33c6e7c2cdc20920108ad97f71c6ad453e136160a076b76bcfd6d3b9fcd124db",
+      "expectedLengthM": 5977.2,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://gotlandring.com/wp-content/uploads/2021/04/Gotland-Ring-Karta_april-2021_jpeg.jpg",
+      "evidence": "Combined course uses the Southern Loop and the eastern Northern Loop through the mapped northern crossover, bypassing the northern western technical section. The operator explicitly lists a 6.0 km alternative. Independent public course ways fix the northern branch choice; the full circuit plan identifies the two connecting course roads. Paddock, pit and karting branches are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Sweden/Gotland Ring 7.3",
+      "sourcePath": "sources/se-gotland-ring-311644846/imagery-course-gotland-ring-7-3.json",
+      "snapshotSha256": "a0699289bb5ea98fe5f5afb2ee952d0e11869ee5e44e569d77bd317ffdbb08b7",
+      "imagerySha256": "33c6e7c2cdc20920108ad97f71c6ad453e136160a076b76bcfd6d3b9fcd124db",
+      "expectedLengthM": 7303.6,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://gotlandring.com/wp-content/uploads/2021/04/Gotland-Ring-Karta_april-2021_jpeg.jpg",
+      "evidence": "Full Grand Prix configuration uses the Southern Loop and the complete northern western and eastern technical sections. The operator identifies its full 7.3 km configuration and connecting course roads. Paddock, pit, karting and the northern short-loop closing straight are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Russia/Ramenskoe",
+      "sourcePath": "sources/ru-ramenskoe-860ae810/imagery-course-ramenskoe.json",
+      "snapshotSha256": "28586fcef70678ea95824daa73104fe9c00e44ff59dc205d0171d3cbb601d0bb",
+      "imagerySha256": "81763badf84ea16666ca15532baf9913bed2f9dac9ba3f87e1e26e137ac282d3",
+      "expectedLengthM": 1538.7,
+      "maximumDistanceDifferenceM": 80,
+      "identificationUrl": "https://cmh.ru/45",
+      "evidence": "Historical winter motorsport oval on the Ramenskoe hippodrome. The hippodrome operator documents annual winter car races from 1997 to 2011. The municipal report identifies the 1,600 m ice oval and 16 m width. Independent 2025 satellite imagery supplies the permanent oval footprint; temporary snow/ice racing-line alignment is unverified and remains a draft. The unrelated northern sports track and inner field are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Sweden/Ljungbyhed Park",
+      "sourcePath": "sources/se-ljungbyhed-park-5c89b42d/imagery-course-ljungbyhed-park.json",
+      "snapshotSha256": "1f243e6997b9bbd3ceccd8968ddd46e2fd51b79d8da45b5f1ed95877fd888984",
+      "imagerySha256": "2ef3b340c1eacf563f8b09ef4bad9be2d0a773581274d5a42fa55c4b9084a61a",
+      "expectedLengthM": 2007.6,
+      "maximumDistanceDifferenceM": 60,
+      "identificationUrl": "https://www.ljungbyhedsmotorbana.se/s/Forarmote-Drivers-Club-Time-Attack-2025-1.pdf",
+      "evidence": "The operator driver briefing identifies the western rectangular turn, main straight, eastern first turn and southern infield return of the racing course. The apron perimeter, runway, pit lane and driver-training loop are excluded. The two catalogue entries retain the same course with different private start/finish lines. Course pavement centers are independently digitized from the public Min karta orthophoto viewer. The native Swedish-grid image tiles, exact request extents and hashes are pinned before Web Mercator reprojection. Capture year is not asserted. No vertices are fitted to private diagrams, timing positions or nominal distance. Fine alignment and historical direction remain draft."
+    },
+    {
+      "referenceId": "Sweden/Ljungbyhed Park Alt SF",
+      "sourcePath": "sources/se-ljungbyhed-park-alt-sf-0fa7ded7/imagery-course-ljungbyhed-park-alt-sf.json",
+      "snapshotSha256": "1f243e6997b9bbd3ceccd8968ddd46e2fd51b79d8da45b5f1ed95877fd888984",
+      "imagerySha256": "2ef3b340c1eacf563f8b09ef4bad9be2d0a773581274d5a42fa55c4b9084a61a",
+      "expectedLengthM": 2007.6,
+      "maximumDistanceDifferenceM": 60,
+      "identificationUrl": "https://www.ljungbyhedsmotorbana.se/s/Forarmote-Drivers-Club-Time-Attack-2025-1.pdf",
+      "evidence": "The operator driver briefing identifies the western rectangular turn, main straight, eastern first turn and southern infield return of the racing course. The apron perimeter, runway, pit lane and driver-training loop are excluded. The two catalogue entries retain the same course with different private start/finish lines. Course pavement centers are independently digitized from the public Min karta orthophoto viewer. The native Swedish-grid image tiles, exact request extents and hashes are pinned before Web Mercator reprojection. Capture year is not asserted. No vertices are fitted to private diagrams, timing positions or nominal distance. Fine alignment and historical direction remain draft."
+    },
+    {
+      "referenceId": "Canada/Trois Rivieres",
+      "sourcePath": "sources/ca-trois-rivieres-7cef196a/imagery-course-trois-rivieres.json",
+      "snapshotSha256": "b0cbf233875c29a25c4adfd22490d29aee36618f6eca29ac55e35756d9167f02",
+      "imagerySha256": "3a0267a5f77e9d73658ecc00a6d41da748775ef6d43bdb87cb33fea9d88f8c58",
+      "expectedLengthM": 2374.1,
+      "maximumDistanceDifferenceM": 80,
+      "identificationUrl": "https://gp3r.com/wp-content/uploads/2026/08/GP3R_2026-1-a-32_BLEU-sans-marques-1.pdf",
+      "evidence": "The organizer 2026 programme, pages 8 and 9, identifies the full road racing route: Avenue Gilles-Villeneuve, pool return, Boulevard du Carmel, Rue de Calonne and Rue Papineau with the Ryan hairpin. Pavement and painted race curbs are independently digitized from the licensed 2019 Quebec orthophoto. The oval, rallycross course, parking roads and pit lane are excluded. Historical road alignment and the western carriageway of Boulevard du Carmel are retained; current street widening is not substituted. The independently measured centerline is approximately 2.374 km versus the supplied 2.437 km nominal value; the difference is retained rather than scaling the course. The source image has 20 cm native resolution but this bounded WMS render samples approximately 0.78 m on the ground. Fine corner alignment and direction remain draft. No vertices are fitted to private diagrams, timing coordinates or nominal length."
+    },
+    {
+      "referenceId": "Russia/Samara-Ring",
+      "sourcePath": "sources/ru-samara-ring-83652cc4/imagery-course-samara-ring.json",
+      "snapshotSha256": "e8921379d37e261ed54d58d6634c98365a106835e97030a87d9a9567bbeb7184",
+      "imagerySha256": "afd16776f6b9117b01521278d8a11a11bb32e6c27823a367a6ce5b3dabd1df86",
+      "expectedLengthM": 1473.8,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://sgpress.ru/allfiles/45433.pdf",
+      "evidence": "The municipal newspaper reports the February 2013 Russian winter-track championship at Samara-Ring in Kurumoch. The complete oval footprint is independently digitized from the June 15, 2013 Landsat 8 panchromatic scene, before subsequent site redevelopment. Field roads, access roads and the oval infield are excluded. The 15 m native ground resolution, exact UTM transform, source DN clip, rendering stretch, scene identity and hashes are pinned. Nearest-neighbor rendering does not add resolution. The oval centerline is a historical draft; winter snow barriers, precise racing-line placement and direction remain unverified. No vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "South Korea/Ansan",
+      "sourcePath": "sources/kr-ansan-0cee918e/imagery-course-ansan.json",
+      "snapshotSha256": "310a288308cf4e9426d8bb53f274d7eb76fe8d109a717e6b40cfba2ef43a64d0",
+      "imagerySha256": "d19ac28a859fb02dcb1226df2ed13f818733bfb86fe0492097293d003740af10",
+      "expectedLengthM": 3540.2,
+      "maximumDistanceDifferenceM": 700,
+      "identificationUrl": "https://www.ii.re.kr/storage/report/BB0000007527.pdf",
+      "evidence": "The Incheon Institute government research report identifies the Sadong block 90 Ansan racing course, its 2.871 km design and approximately 700 m main straight, and describes the unfinished 2005 construction and later partial dismantling. The complete surviving pavement footprint, including the western main straight, northern chicane, eastern loop and inner triangular return, is independently digitized from the October 5, 2014 Landsat 8 panchromatic scene. The neighboring river roads, southern roundabout, parking roads and pit lane are excluded. The 15 m native ground resolution, exact UTM transform, source DN clip, rendering stretch, scene identity and hashes are pinned. Nearest-neighbor rendering does not add resolution. The independently digitized surviving course measures approximately 3.540 km, which conflicts with both the supplied 2.868 km scalar and the report design length. This discrepancy is retained as a review issue; the geometry is not scaled or shortened to fit a distance. This is a historical pavement draft. Temporary barriers, fine chicane alignment and direction remain unverified. No vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Spain/Circuit Ricardo Tormo School",
+      "sourcePath": "sources/es-valencia/imagery-course-tormo-school.json",
+      "snapshotSha256": "c9d199af0be561b5dddad5ce38c0f7f905f9343ddfc5e2fc99b13f731085fd6b",
+      "imagerySha256": "8ba633a46982a2482b0cd678abe1dc3507be0f3cd20ced881459c198e4c0892c",
+      "expectedLengthM": 1213.8,
+      "maximumDistanceDifferenceM": 80,
+      "identificationUrl": "https://www.comunitatvalenciana.com/es/valencia/cheste/parques-de-ocio/circuit-ricardo-tormo",
+      "evidence": "The regional tourism authority identifies an independently usable 1,300 m inner School course and a separate 3,100 m exterior course. The School selection retains the inner northern hairpin, diagonal return, southern training straight and narrow western connector. Exact public OSM course nodes on ways 51765218, 1007068425 and 51765219 retain the inner northern hairpin and southern training return. The missing western connector is independently digitized from the Spanish national PNOA MA orthophoto WMS. The independent OSM snapshot hash and selected way indices, image bytes, exact Web Mercator extent and request are pinned. The image acquisition year is not asserted. The Grand Prix exterior, National shortcut, pits, southeastern training skidpad and northeastern karting area are excluded. Fine alignment, travel direction and historical changes remain draft. No vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Canada/Strawberry Creek Raceway",
+      "sourcePath": "sources/ca-strawberry-creek-raceway-2f57a75c/imagery-course-strawberry-creek-raceway.json",
+      "snapshotSha256": "f183a0a38813f10c745b4d58fd031588ff2f7bad7de9bb0797d140e3ee4fad29",
+      "imagerySha256": "c71857ba29dcbcea1cd4411428a37bb6563c9a28f6514d810043c52bef546699",
+      "expectedLengthM": 3764.7,
+      "maximumDistanceDifferenceM": 80,
+      "identificationUrl": "https://ppihc.org/behind-the-wheel-jay-esterer/",
+      "evidence": "The venue owner describes his complete paved four-kilometre road circuit in the Pikes Peak organizer interview. The circuit operator confirms 22 corners, three ravines and monthly lapping. The complete western main straight, northern technical sweep, eastern hooked hairpin and southern returns are independently visible on the pinned July 22, 2026 satellite raster. The northwestern access road, paddock loop, internal short connector and neighboring fields are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Taiwan/Penbay National",
+      "sourcePath": "sources/tw-penbay-3b334d4e/imagery-course-penbay-national.json",
+      "snapshotSha256": "7b9c50382ec72d41052cfb837f7c5c7afa53ac5641d55689e6e57289a3ff13a7",
+      "imagerySha256": "ec61307cdadef14600b01092a794b488a672cd119656c009c99ec5ac8e8b40b0",
+      "expectedLengthM": 1964.5,
+      "maximumDistanceDifferenceM": 80,
+      "identificationUrl": "https://www.dbnsa.gov.tw/zh-tw/attraction/AttractionPage?a=193",
+      "evidence": "The National course retains the full northern outer loop, western main straight and middle eastern hairpin, closing through the short western U-return. The public all-roads snapshot supplies every course section except the short junction from way 645849365 index 55 to way 645849366 index 4. That junction is independently digitized from continuous pavement in the pinned June 18, 2026 image. The southern outer loop, southern oval, northern shortcut and separate eastern karting circuit are excluded. Junction precision is limited to native 10 m imagery; operating direction and final corner placement require review. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Australia/Oran Park Raceway",
+      "sourcePath": "sources/au-oran-park-raceway-692abacd/imagery-course-oran-park-raceway.json",
+      "snapshotSha256": "782f11b7f505bbac93950872416b725aaaca1df30cd9ad5a8aaff300a658a6e3",
+      "imagerySha256": "2552c6949500ff7d335f9a763e6b04c5057e930a7e2c61501d57dc9b30424ab5",
+      "expectedLengthM": 2628.1,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://oranpark.com.au/oran-park-raceway/",
+      "evidence": "The former circuit owner and championship organizer identify the 2.6 km Grand Prix course and its over-under northern loop, before closure for housing in 2010. The full western technical return, southern main straight, eastern sweep and two-level northern crossing are independently digitized from the original-grid NSW Historical Imagery 2005 tiles. The northern standalone oval, internal short connectors, pits, southern dirt course and neighboring fields are excluded. Dataset-specific metadata declares Creative Commons reuse and identifies Spatial Services aerial capture; the linked copyright policy specifies CC BY 4.0 attribution. The exact 49 tile requests, hashes, Web Mercator origin and extent are pinned. Historical rectification targets +/-20 m for 95 percent of the 100k map sheet; detailed pavement pixels do not imply equivalent GPS accuracy. The figure-eight crossing is traversed twice as distinct sections of one course, with no turn or invented junction at the crossing. Corner placement, racing direction and historical-year correspondence remain draft; no vertices are fitted to private diagrams, timing locations or nominal distance. The supplied timing marker is roughly 40 m from the unchanged draft trace. Closed-course timing-proximity validation accounts for the provider-documented 20 m rectification uncertainty; neither geometry nor marker is shifted and timing remains unverified."
+    },
+    {
+      "referenceId": "Mexico/Autodromo Bosques del Angel",
+      "sourcePath": "sources/mx-autodromo-bosques-del-angel-f23feef9/imagery-course-autodromo-bosques-del-angel.json",
+      "snapshotSha256": "3a76580793cd1b95d9dbcaf31be91f73a7bbe90828f75238bd374ef927f1a680",
+      "imagerySha256": "ce37bf65309baee7e25bd3f2b7e02ecde2d0e99b26970d7d32b978d7bab7f3a6",
+      "expectedLengthM": 1112.2,
+      "maximumDistanceDifferenceM": 30,
+      "identificationUrl": "https://www.inegi.org.mx/contenidos/app/mexicocifras/datos_geograficos/13/13057.pdf",
+      "evidence": "The complete independently visible course retains the long diagonal southern straight, rounded western return, northern raised loop, middle depression and eastern hairpin. The Mexican national statistics institute identifies this wooded Singuilucan circuit. Original January 5, 2026 Copernicus imagery independently locates the full pavement; northern access, paddock and neighboring roads are excluded. Native 10 m pixels limit the small bends and road-center precision. No nominal lap length or timing position defines any vertex. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "United Kingdom/Silverstone RX",
+      "sourcePath": "sources/gb-silverstone-circuit-3571477/imagery-course-silverstone-rx.json",
+      "snapshotSha256": "ca008e7638f9665ecafc301cb430508fc7da5b09319bcc6d67f55e69c0e23407",
+      "imagerySha256": "aee35c7ca2e4c2d95847ae479336d0f77f4ce68fa8eae241d1f6ad9473374a30",
+      "expectedLengthM": 1238.1,
+      "maximumDistanceDifferenceM": 60,
+      "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-2",
+      "evidence": "The FIA 2018 event plan identifies the ten-turn Standard rallycross circuit and its separate start-grid approach. The pinned Environment Agency January–March 2019 National LIDAR Programme 1 m intensity raster independently locates the asphalt junction, both gravel hairpins and intervening bends. This is reflected laser intensity, not color aerial photography. The long northeastern Stowe loop, southwestern Stowe loop, kart courses, pits and the separate Joker bend are excluded. The closed Standard route measures independently of the approach. The supplied general configuration also depicts a start-grid stem, so the two connected sections are retained as separate paths rather than closing the stem into a fictitious lap. The approach follows the independently visible shared asphalt grid; its endpoint is provisional and is not asserted to be a timing endpoint. Native survey grid, crop transform, grayscale stretch, nearest-neighbor reprojection and source hashes are pinned. Neither nominal distance nor private timing positions determine any course vertex. Historical correspondence, grid extent and exact racing-line alignment remain draft."
+    },
+    {
+      "referenceId": "United Kingdom/Carver Barracks",
+      "sourcePath": "sources/gb-carver-barracks-615ac11d/imagery-course-carver-barracks.json",
+      "snapshotSha256": "a12915c7b3bbd3742c56a69acbcdca166039a35c7ad0fafc5956a2c6eeee02f7",
+      "imagerySha256": "b0c891bb71464facccd110cd3fab66a67433e71f29583cb8a2ccdedb10425d7e",
+      "expectedLengthM": 2205.7,
+      "maximumDistanceDifferenceM": 50,
+      "identificationUrl": "https://www.everymanracing.co.uk/venues/carver-barracks/",
+      "evidence": "The venue operator identifies the approximately 1.5-mile runway circuit at former RAF Debden. The supplied configuration identifies the short northern cross-runway, eastern main runway, southern perimeter return and curved western perimeter. Independent Environment Agency 2018 one-metre LiDAR intensity imagery locates those permanent surfaces. The northern airfield hairpin, long westward runway, base access and temporary cone chicanes are excluded. The independently measured 2,205.7 m differs from the supplied 2,247 m; it is not scaled. Exact survey grids, member names, source hashes, crop transform and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Racing-line placement, temporary event furniture and historical correspondence remain draft. Private timing data does not determine geometry."
+    },
+    {
+      "referenceId": "United Kingdom/Gaydon Emissions Circuit",
+      "sourcePath": "sources/gb-gaydon-emissions-circuit-cfe097eb/imagery-course-gaydon-emissions-circuit.json",
+      "snapshotSha256": "e3145187b9cf691565bebabd772239e4f6f219b8e0d2ac9983f750e05e8fdba6",
+      "imagerySha256": "9e445deee9ea2a1fda4f1df6c7686a7a4e597db43dc7d799cb8e163a94cc897b",
+      "expectedLengthM": 6302.9,
+      "maximumDistanceDifferenceM": 225,
+      "identificationUrl": "https://wrap.warwick.ac.uk/id/eprint/59476/1/WRAP_thesis_Pan-Ngum_2001.pdf",
+      "evidence": "The University of Warwick 2001 research report reproduces the Rover Gaydon Emissions Circuit plan in Figure 3.10, page 68: the southwest hairpin, long former-runway straights, northern bend and bridge-end return. The manufacturer confirms the dedicated four-lane Emissions Circuit. Independent Environment Agency 2018 one-metre LiDAR intensity survey tiles locate the complete surviving pavement and its southwest end, excluding the shorter mid-runway reversal, handling roads, access and other test areas. The independently measured 6,302.9 m differs from the supplied 6,092 m by 210.9 m; neither it nor the historical course plan is fitted to the supplied scalar. All vertices follow the public survey. Native grid mosaic, source member hashes, crop transform, grayscale stretch and nearest-neighbor reprojection are pinned. This is reflected laser intensity, not colour photography. Historical lane selection, fine racing-line placement and later road modifications remain draft. Private timing data does not determine geometry"
+    },
+    {
+      "referenceId": "United Kingdom/Bedford Autodrome GT",
+      "sourcePath": "sources/gb-bedford-autodrome-27782784/imagery-course-bedford-gt.json",
+      "snapshotSha256": "71135cbaef08c5bfcb19401f264dd62916743849958897c7e6079f326ebb4e42",
+      "imagerySha256": "3bd460e99db9b5e578a18ed4822d180e6fc86563aa06e79ec1d543fe85b320e7",
+      "expectedLengthM": 5907.1,
+      "maximumDistanceDifferenceM": 250,
+      "identificationUrl": "https://www.bedfordautodrome.co.uk/about/circuit-layouts",
+      "evidence": "The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft."
+    },
+    {
+      "referenceId": "China/V1 Auto World 4.3",
+      "sourcePath": "sources/cn-v1-auto-world-0a184784/imagery-course-v1-auto-world-4-3.json",
+      "snapshotSha256": "b885477fec42d6be7f6ff04eb9e57a27d81b8dabda5d4b95aeee4716d073f8ae",
+      "imagerySha256": "492f3bc0c7229faaf230e9a294317098523c89f079d8e23c1cb0785061390ca3",
+      "expectedLengthM": 4278.5,
+      "maximumDistanceDifferenceM": 25,
+      "identificationUrl": "https://www.v1aw.com.cn/circuit/",
+      "evidence": "The venue operator identifies its 4.29 km international course with the permanent northern circuit, full western street return, small inner U return and long southeastern divided-road extension. The operator plan and independently published 2023 full-course event map identify these branches only. Exact pinned public OSM raceway and street nodes supply the mapped parts; licensed September 2026 satellite imagery locates the three missing course connections and the complete western hairpin. The short permanent-course return, intermediate western street U-turn, pit lane and surrounding civilian junction alternatives are excluded. The independent draft measures 4,278.5 m against the supplied 4,287 m scalar. Temporary race barriers, lane selection and historical street changes remain unverified. No points are moved to match either distance. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "referenceId": "Australia/Surfer's Paradise",
+      "sourcePath": "sources/au-surfer-s-paradise-ee3387d5/imagery-course-surfers-paradise.json",
+      "snapshotSha256": "99fca3b790adb6489fd7325a90c12cae34efcecfb2ec88a6024cac46dc49707c",
+      "imagerySha256": "4cae41f843d10605a3fd0a703496f762c1244d1c0f469d1990b42e76a03b89a4",
+      "expectedLengthM": 2911.7,
+      "maximumDistanceDifferenceM": 60,
+      "identificationUrl": "https://www.supercars.com/circuit/surfers-paradise-street-circuit",
+      "evidence": "The championship organizer identifies the 2010-onward short street circuit through the Gold Coast Highway, southern Surfers Paradise Boulevard traffic island, Main Beach Parade, Pacific Street, Breaker Street and Tedder Avenue. The full underlying road centerline is independently digitized from the State of Queensland public time-series aerial survey, project Gold_Coast_2011_10cm_SISP_Urban_Oct_Dec, locked raster 4192, captured November 2011 to January 2012 before the later tram reconstruction. The official 2011 event map corroborates the southern island return and northern Tedder hairpin; the Higman Street shortcut and former longer Indy course are excluded. Temporary event barriers and chicanes are not resolved in the off-event aerial survey: this draft follows the identified street pavement and does not claim exact event corner geometry. The pinned export has approximately 0.5 m ground pixel spacing, despite finer native survey resolution. The dataset catalogue explicitly licenses this public imagery service under CC BY 4.0. All pixel vertices come from that survey; no operator diagram coordinates, private course coordinates, timing location or nominal distance define any vertex."
+    },
+    {
+      "referenceId": "Australia/Newcastle Street Circuit",
+      "sourcePath": "sources/au-newcastle-street-circuit-5ba8d445/imagery-course-newcastle-street-circuit.json",
+      "snapshotSha256": "cea847eb93f325440fc42de84c2a460535c950c9a4efe1647609a99a63cbb116",
+      "imagerySha256": "ea9e20a4546052661e841cacc596685de69af9988287d5edb1ec8ee47b9f4150",
+      "expectedLengthM": 2650.6,
+      "maximumDistanceDifferenceM": 35,
+      "identificationUrl": "https://www.supercars.com/news/what-you-need-to-know-coates-hire-newcastle-500",
+      "evidence": "The championship organizer and the NSW event-access map identify the full Newcastle street circuit through Wharf Road, Watt Street, Shortland Esplanade, Zaara Street, Scott Street, Parnell Place, Nobbys Road, the retained Camp Shortland strip, the southern Horseshoe Beach parking-aisle return and Horseshoe Road. The municipal Camp Shortland report identifies the central strip as the race-road section, later used for play and exercise. Exact 2020 public OSM nodes retain the named streets, park strip and southern parking return. They are projected without adjustment into the pinned licensed NSW GDA94 aerial grid. Only the missing connection through the paved Nobbys car park is independently digitized from the aerial survey. The original tile requests, hashes, service-specific Creative Commons metadata, exact Web Mercator grid and lossless crop are pinned. The complete road course excludes the northern dead-end parking excursion and the eastern park footpath loop. The organizer documents a temporary hairpin alteration in 2019; this underlying pavement trace does not assert exact event barrier radii or historical-year correspondence. The car-park sweeper and temporary chicane placement remain draft. Export pixels have roughly 0.5 m ground spacing, and native survey or GPS accuracy is not inferred from this. No private course coordinates, diagram coordinates, timing location or nominal distance define any vertex."
+    },
+    {
+      "referenceId": "Australia/MC Motorsport Main Track",
+      "sourcePath": "sources/au-mc-motorsport-main-30e6ba8a/main-course-imagery.json",
+      "snapshotSha256": "97cc7c841edf50ac2f511d0f902d62d5b1e63b0a5f5551518cb10d53f878ba0a",
+      "imagerySha256": "10f799278e1620a9ca4020c69b53011144f022d3de890331de61f4e383154cfc",
+      "expectedLengthM": 1524.9,
+      "maximumDistanceDifferenceM": 30,
+      "identificationUrl": "https://www.driverrisk.com.au/wp-content/uploads/2025/01/14.-DRM-Level-1-Performance-Driver-Training-Course.pdf",
+      "evidence": "The historical main training circuit retains the narrow northern teardrop, central western return and inner hairpin, long parallel southwestern legs and southern U-turn. Independent anonymous public OSM GPS spatial samples corroborate the main-course pavement location in the January 5, 2026 Sentinel-2 raster and distinguish it from the unrelated northern training pad and larger western skidpan branches. The unordered points are not reconstructed as a driving trip. The earlier rejected outlines selected the wrong western and northern pavement; those outlines remain excluded. Native 10 m imagery and unverified GPS accuracy leave fine corner radii and historical alignment draft. All pixel vertices come from this independently georeferenced public raster; no supplied diagram is digitized or georeferenced. The 2016 organizer sprint uses additional skidpan branches and is not substituted for the supplied main-track configuration. Public GPS mapping points support course-branch identification only; no GPS coordinates are imported or redistributed. Identification inspection metadata: public-gps-identification-review.json, SHA-256 78fdf59abeeb70cd6cfad19487c0be4a0f8f65cb01cd797d870b50546341bc40. Geometry is independently digitized from the licensed georeferenced raster, not from the GPS samples."
+    },
+    {
+      "referenceId": "China/Xiamen International Circuit",
+      "sourcePath": "sources/cn-xiamen-9d5cdb21/full-course-imagery.json",
+      "snapshotSha256": "d22544873f93028b2db5b60b63f91f97c82d160e880f0d10ab5e4170eb0e65cc",
+      "imagerySha256": "dd4510f6f2bffddf4753d9910145a3bb49d24d05f0f8d04499db2dbd97d21810",
+      "expectedLengthM": 1723.3,
+      "maximumDistanceDifferenceM": 5,
+      "identificationUrl": "https://media.smart.com/en-INT/260673-first-ever-smart-performance-day-grand-opening-at-xiamen-international-circuit/",
+      "evidence": "The full underlying course retains the long northwest main straight, northeast return, complete southern notched branch and central hairpin, excluding the pit apron and parking maneuvering. Spatial inspection of 4,246 anonymous public GPS samples corroborates those course branches in the registered September 19, 2026 Copernicus raster; unordered points are not treated as a recorded trip or copied into the geometry. Every vertex is manually inspected on the licensed public raster pavement. The independently measured 1,723.3 m draft retains its 4.3 m difference from the supplied scalar and 96.7 m difference from the November 2022 organizer's published 1,820 m. The organizer describes 11 corners, while later circuit descriptions count 13; corner counting is not treated as route proof. Native 10 m imagery leaves fine S bends, corner radii, travel direction and historical-year correspondence provisional. No course position is taken from a supplied diagram, fitted to a distance or digitized from a GPS overlay."
+    },
+    {
+      "referenceId": "Latvia/Bikernieki RallyCross Track",
+      "sourcePath": "sources/lv-bikernieki-rallycross-5981ece5/historical-course-imagery.json",
+      "snapshotSha256": "dbd473d5368da42a8e949527fa48f9fe1e8d6e145801e6279269030ab3ced8de",
+      "imagerySha256": "b87547072a3a4039954f60421c1102bfcecfb29cb6ce574fcadc2880a38b0525",
+      "expectedLengthM": 1355.7,
+      "maximumDistanceDifferenceM": 50,
+      "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-7",
+      "evidence": "Historical rallycross configuration with the northwestern S, long western hairpin, eastern inward step, short southeastern triangle and complete parallel finish straight. Catalogue branch facts identify the configuration; the FIA 2018 standard and joker plans describe different event laps and are not substituted. Exact 2017 public road nodes retain the mapped historical branches, including the short eastern connector before its January 2018 remapping. Only the missing upper eastern step and its connection onto the main straight are independently digitized from the licensed LGIA cycle-six orthophoto. The pinned aerial shows paved connections throughout this added section and corroborates the short southeastern connector. Public nodes are projected unchanged into the aerial grid; interpolation subdivides their existing straight edges only. Both source attributions are retained. Event barriers, exact historical-year correspondence and corner placement remain draft. No supplied diagram pixels, course positions, timing location or nominal distance define a vertex. The 1,355.7 m draft is 42.7 m longer than the supplied 1,313 m scalar; the discrepancy is unresolved and the route is not scaled."
+    },
+    {
+      "referenceId": "Italy/Adria International Raceway Full",
+      "sourcePath": "sources/it-adria-international-raceway-1092277630/full-course-imagery.json",
+      "snapshotSha256": "c104743a6c83f5224678b6761703cdb8dd2e69c6f9533b87df0e0dba88413d63",
+      "imagerySha256": "bd00d0ed126eae11995efb8ad7a1ee54c111ab4c23058cfbded008bab671c69a",
+      "expectedLengthM": 3728.4,
+      "maximumDistanceDifferenceM": 30,
+      "identificationUrl": "https://game.raceroom.com/store/tracks/all/adria-international-raceway-2021",
+      "evidence": "The 2021 full course retains the northern first hairpin, long southern middle return, small northern hairpin, inner southern hairpin, middle northern hairpin, complete western back straight, southern switchbacks, southeastern loop and outer return to the main straight. The pit lane and outer-course shortcut are excluded. Course branch order is checked against the independently authored 2021 course plan and the simulator developer course identity. All geometry vertices are independently placed on the public AGEA 2024 orthophoto cached raster. Public tile bytes, hashes, unmodified Web Mercator grid and license evidence are retained. The source has native 20 cm pixels; the selected level-18 cache has approximately 42 cm ground pixel spacing at this latitude. Pixel size is not asserted as positional accuracy. Fine lane alignment and historical-year correspondence remain draft. No supplied course image, position, timing location or nominal distance defines a vertex. The independently measured draft is 3,728.4 m, 23.6 m shorter than the supplied 3,752 m scalar; the discrepancy remains unresolved and the geometry is not scaled."
+    },
+    {
+      "referenceId": "United States/Apex Motor Club Apex II",
+      "sourcePath": "sources/us-apex-motor-b7ddcfd3/imagery-course-apex-ii.json",
+      "snapshotSha256": "e30154bd001600ce4cffc4985eef1aafeb4bb43d8f220ce3a1f08b7ad0f5802f",
+      "imagerySha256": "4d74d7404dfb305cc2f28f9024aa60042a7730f349fd95584da26018ccfcb54e",
+      "expectedLengthM": 4080.7,
+      "maximumDistanceDifferenceM": 200,
+      "identificationUrl": "https://mgrracing.com/season-schedule/",
+      "evidence": "The northern Track Two follows the long northeastern straight, eastern hairpin, small upper chicane, outer northern loop, inner western U and paved southwestern return. The team identifies Track Two and links a complete February 2026 onboard lap. The operator independently identifies the northern circuit at https://apexmotorclub.com/track/. Coordinates come only from the independently georeferenced 18 September 2026 public Sentinel bands. The 5 June 2026 bands corroborate the western paved U and return diagonal; the separate lower drainage line and southern-course branches are excluded. The previously rejected candidate followed those unrelated branches and is not reused. Native 10 m samples are reprojected with nearest-neighbor resampling and contrast stretched without adding spatial detail. Intermediate straight vertices preserve the same observed corridor. The measured length is not adjusted to an advertised or supplied distance. Fine corner alignment, direction and historical equivalence remain draft; this is a coarse supporting course trace, not a surveyed racing line. No supplied diagram coordinates or private course boundary data are imported."
+    },
+    {
+      "referenceId": "United States/Apex Motor Club Apex III",
+      "sourcePath": "sources/us-apex-motor-b7ddcfd3/imagery-course-apex-iii.json",
+      "snapshotSha256": "c078857f17c003d9e2765244b2e65a85f94ecb7270a78eb52929b167e0ff3998",
+      "imagerySha256": "4d74d7404dfb305cc2f28f9024aa60042a7730f349fd95584da26018ccfcb54e",
+      "expectedLengthM": 7011.3,
+      "maximumDistanceDifferenceM": 250,
+      "identificationUrl": "https://apexmotorclub.com/wp-content/uploads/2025/12/combined-circuit-scaled.png",
+      "evidence": "The operator separately publishes a combined-circuit map in its public media catalogue. It identifies a northern-straight exit curving south along the western side of the paddock and a western connecting branch between the northern return diagonal and the southern inner U. That map supplies branch identity only and is not georeferenced, digitized or redistributed. The track-page combined graphic duplicates the southern circuit and remains excluded. All coordinates are independently digitized from the pinned September 2026 Copernicus raster, with June native red, green, blue and near-infrared bands corroborating both connectors. The route retains the northern outer loop and inner western U, upper chicane, northeastern hairpin, eastern paddock-side connection, southern eastern return, long southern straight, western southern hairpin and complete inner spiral. It omits the standalone northern middle S and standalone southern outer northern cap, as identified by the combined-course map. The existing independent southern public road snapshot corroborates pavement identity; no source vertices are moved to a supplied timing point or nominal distance. Native resolution is 10 m. Fine corner radii, centerline placement, direction and historical equivalence remain draft. The independent measured distance is preserved. This is a coarse supporting course trace, not a certified timed lap. No supplied boundary coordinates or diagram pixels supply geometry."
+    },
+    {
+      "referenceId": "Taiwan/Lihpao Wind",
+      "sourcePath": "sources/tw-lihpao-wind-39d57a25/imagery-course-wind.json",
+      "snapshotSha256": "e297e4fa99cb0659ff2538b3a3bd01a37ba9964c17cf7f27c8f7ac9ecb06f631",
+      "imagerySha256": "670edd4929e20037a910827f7632507c8df3ad31e985be9610bb198fb77b931f",
+      "expectedLengthM": 2024.4,
+      "maximumDistanceDifferenceM": 100,
+      "identificationUrl": "https://www.lihpaoracing.com.tw/tw/gokart/infomation",
+      "evidence": "The operator separates the 2 km Wind circuit from the 600 m Thunder hairpin and the 1.1 km Fire sector. Its Wind identification retains the long main straight, short northeastern closing turn, long northern straight, western rounded return and short western closing connector. The full southwest Thunder hairpin, southeastern Fire loops and pit route are excluded. The operator zone graphic and oblique aerial photograph identify branches only; neither is georeferenced, digitized or redistributed. All coordinates are independently selected from pinned native 21 September 2026 public Sentinel bands. The 3 June red, green, blue and near-infrared bands corroborate the paved western return and short connector. The partial public course way 1323087236 independently corroborates that connector corridor but does not supply this recipe's coordinates. Native 10 m samples use nearest-neighbor reprojection and contrast stretching with no added spatial detail. Fine corner radii, the narrow connector centerline, travel direction and historical equivalence remain draft. The source trace is not scaled to an advertised or supplied distance. No supplied diagram pixels or private course coordinates are imported. Intermediate vertices along the two long straights retain the same observed lines and add no corner detail."
+    },
+    {
+      "referenceId": "Sweden/Drive Centre Arena",
+      "sourcePath": "sources/se-drive-centre-arena-09bd002c/imagery-course-drive-centre-arena.json",
+      "snapshotSha256": "f297fc05025476607c93f4c769591af8877c765871f39897692c71eb5e173c5a",
+      "imagerySha256": "f589c87ea3018cbe7823f4ac80e99c1ece39ebcc18b2bd50eadfd864764916fe",
+      "expectedLengthM": 4415.4,
+      "maximumDistanceDifferenceM": 200,
+      "identificationUrl": "https://www.drivecenter.se/trackdays/",
+      "evidence": "The operator long/short course description and the official STCC 2020 course guide identify the long airfield layout: inner eastern S bends, northern diagonal runway, outer eastern return, southern S connector, runway turnaround and western bulb. Course coordinates come only from licensed Min karta aerial pixels. The public runway paint identifies a physical turnaround. The imagery capture year is unknown. This 4,415.4 m supporting physical-course draft differs from the supplied 4,269 m scalar by 146.4 m and from the operator 4,235 m description by 180.4 m; the discrepancy is retained and historical correspondence and temporary cone positions are unverified. The 200 m import allowance records these discrepancies without moving coordinates or changing timing validators. This is not a certified event lap. Operator plans and video are identification only and are not georeferenced, traced or redistributed."
+    }
+  ]
+}

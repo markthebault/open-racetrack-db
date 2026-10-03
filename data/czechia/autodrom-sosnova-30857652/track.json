@@ -13,7 +13,8 @@
     50.659293385333335
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-30857652"
   ],
   "defaultLayoutId": "autodrom-sosnova",
   "layouts": [
@@ -27,8 +28,8 @@
       "id": "autodrom-sosnova",
       "name": "Autodrom Sosnova",
       "referenceId": "Czech Republic/Autodrom Sosnova",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodrom-sosnova.geojson",
+      "description": "Draft configuration: Earlier asphalt configuration follows the straight northern side, inner northeastern loop and full southern and southwestern bends. Northern zigzag alternatives and the eastern inner-loop shortcut are excluded. Independent source length 1063.8 m is preserved against the documented 1075 m configuration; this does not claim the later enlarged circuit. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1063.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -40,6 +41,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:11:32.823Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-30857652",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/30857652",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:11:32.787Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-autodrom-sosnova",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.ondrejvostatek.cz/zavody/reference-trati-v-cr",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:11:32.787Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

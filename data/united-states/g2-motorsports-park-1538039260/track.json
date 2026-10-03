@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-1538039260"
+    "osm-network-1538039260",
+    "osm-selection-g2-motorsports-park-west-independent-course-roads-1538039260",
+    "usgs-naip-2022-g2-west-focused"
   ],
   "defaultLayoutId": "g2-motorsports-park-3-1-mile",
   "layouts": [
@@ -35,15 +37,15 @@
       "id": "g2-motorsports-park-combined",
       "name": "G2 Motorsports Park Combined",
       "referenceId": "United States/G2 Motorsports Park Combined",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/g2-motorsports-park-combined.geojson",
+      "description": "Draft configuration: The operator Combined course plan identifies the complete western technical circuit, the large eastern circuit and their northern connection. The independently mapped full closed raceway follows these branches and excludes the facility access and paddock roads. Its unchanged public source-node length is 4772.2 m against the catalogue scalar of 4877 m. The source centreline remains a draft and does not certify fine chicane alignment or the advertised race distance. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4772.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "g2-motorsports-park-west",
       "name": "G2 Motorsports Park West",
       "referenceId": "United States/G2 Motorsports Park West",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/g2-motorsports-park-west.geojson",
+      "description": "The operator identifies the 1.9-mile Western course. Its published plan includes the Western Northern turnaround, central diagonal and inner Southern hairpin, Northern carousel, short Northeastern return and Eastern closing straight. These branches follow the independently inspected graded road alignment in public-domain July 2022 NAIP imagery. The operator construction history dates this period before final paving. The trace is a historical construction-alignment draft; finished pavement centerline, temporary barriers and fine corner alignment are unverified. It excludes the separate Eastern circuit, paddock and access roads. No operator or comparison diagram pixels supply course coordinates, and no coordinates are scaled to a nominal distance. Independently digitized aerial centerline: 3064.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
   "sources": [
@@ -64,6 +66,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-g2-motorsports-park-west-independent-course-roads-1538039260",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/1538039260",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:50:20.603Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-g2-motorsports-park-combined",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://g2motorsportspark.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:50:20.603Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-2022-g2-west-focused",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T05:31:39.761Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 76d617a75caa7f15f8ec4c1c3f3abc074f11cc53e3d54c7ed5de7f44cc35a8ca; reproducible pixel-to-coordinate conversion. The operator identifies the 1.9-mile Western course. Its published plan includes the Western Northern turnaround, central diagonal and inner Southern hairpin, Northern carousel, short Northeastern return and Eastern closing straight. These branches follow the independently inspected graded road alignment in public-domain July 2022 NAIP imagery. The operator construction history dates this period before final paving. The trace is a historical construction-alignment draft; finished pavement centerline, temporary barriers and fine corner alignment are unverified. It excludes the separate Eastern circuit, paddock and access roads. No operator or comparison diagram pixels supply course coordinates, and no coordinates are scaled to a nominal distance."
+    },
+    {
+      "id": "imagery-identity-g2-motorsports-park-west",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://g2motorsportspark.com/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:31:39.761Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

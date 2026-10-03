@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "xmlSha256": "756c2a11338116cda1f0bddc6ccdb366d6b91fbcd70c2990e34b177361561faa",
+  "policy": "Independent source reviews annotate unresolved catalogue entries. They do not add geometry or override generated classifications. Reviews must be checked again when an entry identity or source classification changes.",
+  "records": [
+    {
+      "referenceId": "Argentina/Circuito De Rosario Combo",
+      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
+      "layoutId": "circuito-de-rosario-combo",
+      "sourcePath": "sources/world/ar/osm.json",
+      "expectedReason": "open-course-evidence-required",
+      "nextStep": "Establish the historical northern open Combo branch sequence between its separate timing endpoints. Fine municipal 2013 and 2022 aerial photographs now resolve earlier and later pavement, but the configuration plans do not identify that exact route. The connected 2,279.7 m public-road candidate remains incomplete; do not substitute the full southern combined circuit.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://www.openstreetmap.org/way/681663025",
+          "https://infomapa.rosario.gov.ar/emapa/mapa.htm",
+          "https://apat.org.ar/circuitos/tecnica/rosario",
+          "https://www.racingcircuits.info/south-america/argentina/rosario.html"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "Fine historical aerial photographs show several course configurations. The exact northern route between this layout's separate start and finish points is still unresolved; the available road candidate is incomplete."
+    },
+    {
+      "referenceId": "China/Huangtupo",
+      "trackId": "cn-huangtupo-5cab1bd3",
+      "layoutId": "huangtupo",
+      "sourcePath": "sources/world/cn/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Find reusable fine historical imagery or a licensed course survey and verify the operator identity. Native winter and summer 2017, October 2018 and June 2019 RGB/NIR samples reveal the western loop, but do not establish the complete route across the larger paved area. Nearby public GPS samples remain outside the circuit.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_50RKU_20181005_2_L2A",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20170227_0_L2A",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20170724_0_L2A"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "Historical colour and near-infrared imagery reveal part of the western loop, but the compact bends and route across the larger paved area still need finer evidence."
+    },
+    {
+      "referenceId": "United Kingdom/Elvington",
+      "trackId": "gb-elvington-a019c302",
+      "layoutId": "elvington",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Identify the northern return pavement-end join independently. The public 2020 survey shows a pavement gap; actual 2008 point-cloud, 2012 aerial and newly checked November 2024 point-cloud footprints miss the join. All 12 newer LAS headers and hashes are pinned in the public coverage review. Do not infer course coverage from the larger download-grid tile or draw an unsupported connector across grass.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6045",
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SE6545",
+          "https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography",
+          "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud",
+          "https://environment.data.gov.uk/tiles/collections/survey/lidar_point_cloud/2024/NaN/SE6545"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "Available imagery shows a pavement gap at the course join. The actual files in the newer 2024 survey also miss that join; an independently identified connector is still needed."
+    },
+    {
+      "referenceId": "United Kingdom/Kames Motorsport Circuit",
+      "trackId": "gb-kames-motorsport-circuit-38672231",
+      "layoutId": "kames-motorsport-circuit",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "expectedReason": "open-course-evidence-required",
+      "nextStep": "Establish the original timed-run branch order and any repeated road sections between the separate gates. The 2013 public network and operator plan show both race and rally roads; their combined length does not establish a driving sequence.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "http://www.eastayrshirecc.co.uk/documents/Kames_Track_Plan.pdf",
+          "https://www.openstreetmap.org/way/38672231/history",
+          "https://www.openstreetmap.org/way/38672236/history"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "This timed run has separate start and finish points. The historical road branches are mapped, but the exact run sequence remains unresolved."
+    },
+    {
+      "referenceId": "United Kingdom/Kames Motorsport Circuit Reverse",
+      "trackId": "gb-kames-motorsport-circuit-38672231",
+      "layoutId": "kames-motorsport-circuit-reverse",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "expectedReason": "open-course-evidence-required",
+      "nextStep": "Establish the original reverse timed-run branch order between its separate gates. The later southwestern extension is excluded; current multi-lap sprint regulations do not establish this historical configuration.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "http://www.eastayrshirecc.co.uk/documents/Kames_Track_Plan.pdf",
+          "https://www.openstreetmap.org/way/38672231/history",
+          "https://www.openstreetmap.org/way/38672236/history"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "This reverse timed run has separate start and finish points. Reversing a venue loop does not establish the historical run sequence."
+    },
+    {
+      "referenceId": "United Kingdom/Lydden Hill Infield",
+      "trackId": "gb-lydden-hill-infield-8b6d41b9",
+      "layoutId": "lydden-hill-infield",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "expectedReason": "course-distance-discrepancy",
+      "nextStep": "Confirm the northeastern arm and inner oval shortcut using historical operator configuration evidence. The surveyed surface and connected public alternatives do not yet establish this route; near-matching distance alone is insufficient.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2018/1/TR2045",
+          "https://www.openstreetmap.org/way/234347787"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "The historical infield layout uses a different combination of branches from the mapped race and rallycross circuits. Its northeastern arm and inner shortcut still need to be confirmed."
+    },
+    {
+      "referenceId": "United Kingdom/Thorsway MX",
+      "trackId": "gb-thorsway-mx-ad3657ee",
+      "layoutId": "thorsway-mx",
+      "sourcePath": "sources/europe/gb/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Resolve the historical main-course branch sequence in the public 2019 one-metre survey. First-hand 2014, 2017 and 2020 recordings show further old-course sections but have not established the exact lap through the central alternatives. Exclude the later rebuild and the wooded enduro detour.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/TF1095",
+          "https://www.clickhowell.co.uk/thoresway",
+          "https://www.youtube.com/watch?v=1ixjGdRUfMk",
+          "https://www.youtube.com/watch?v=GMFFkqJQrHM",
+          "https://www.youtube.com/watch?v=LX5rIjr7bVM",
+          "https://www.youtube.com/watch?v=eve4veKEYBo"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "The historical course has several parallel branches. The public survey and practice footage do not yet establish a complete lap through those branches."
+    },
+    {
+      "referenceId": "United States/Arlington Street Circuit",
+      "trackId": "us-arlington-street-circuit-be2e2ad4",
+      "layoutId": "arlington-street-circuit",
+      "sourcePath": "sources/world/us/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Confirm the requested branch sequence and obtain reusable fine evidence for the stadium horseshoe and temporary racing connectors. The licensed municipal centerlines omit those sections. Native 10 m imagery captured on the 2026 practice day is too coarse to resolve them; the 100.4 m event-distance discrepancy alone does not establish a different layout. Additional pinned March and September RGB/NIR bands leave the small links unresolved. The separate Texas and NCTCOG high-resolution commercial services do not establish open reuse rights.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://www.indycar.com/Schedule/2026/Arlington",
+          "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington",
+          "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A",
+          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260922_1_L2A"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "The surrounding streets are mapped, but the stadium horseshoe and temporary connectors are missing from reusable geometry. The event-day satellite image is too coarse to resolve them."
+    },
+    {
+      "referenceId": "United States/Arlington Street Circuit Practice",
+      "trackId": "us-arlington-street-circuit-practice-98e0e109",
+      "layoutId": "arlington-street-circuit-practice",
+      "sourcePath": "sources/world/us/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Confirm the timing-line convention for this catalogue entry and recover the missing temporary connectors. The official 2026 practice report identifies main and alternate start/finish lines on one event course. That does not establish this catalogue route; the licensed municipal road snapshot and native event-date imagery still cannot supply its complete geometry. Additional pinned March and September RGB/NIR bands leave the small links unresolved. The separate Texas and NCTCOG high-resolution commercial services do not establish open reuse rights.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://www.indycar.com/Schedule/2026/Arlington",
+          "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington",
+          "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A",
+          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260922_1_L2A"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "The official practice map labels an alternate start/finish line. This catalogue timing convention still needs confirmation, and reusable geometry for the temporary turns remains incomplete."
+    },
+    {
+      "referenceId": "United States/Charlotte Motor Speedway Short",
+      "trackId": "us-charlotte-motor-speedway-116034341",
+      "layoutId": "charlotte-motor-speedway-short",
+      "sourcePath": "sources/world/us/osm.json",
+      "expectedReason": "course-distance-discrepancy",
+      "nextStep": "Identify the historical frontstretch short road-course branch order. Independently georeferenced 2014 one-metre and 2022 0.6-metre NAIP images show the pavement, but the quarter-mile oval and later simulator short course do not establish the requested layout. The historical organizer's 0.7-mile plan identifies a different infield course. The 2012 frontstretch rallycross event remains an identity lead, not a verified association. The inspected official 2012 Ken Block onboard confirms a temporary frontstretch/pit course, but not the requested Short branch order; frames are not a coordinate source.",
+      "research": {
+        "reviewedAt": "2026-10-03",
+        "evidenceUrls": [
+          "https://www.charlottemotorspeedway.com/fans/track-history/track-history-669197.html",
+          "https://www.charlottemotorspeedway.com/documents/corporate-events.pdf",
+          "https://www.secondstrike.com/Events/Spring2004/Main.html",
+          "https://www.secondstrike.com/Newsletter/SecondStrike_V3N3.pdf",
+          "https://makitaassemblytools.com/company/press-releases/2012/makita-and-brian-deegan-set-for-2012-global-rallycross-championship",
+          "https://www.youtube.com/watch?v=3xZYHbc1KYU"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "Aerial imagery shows the frontstretch pavement and several branches, but the historical short-course sequence still needs to be identified."
+    },
+    {
+      "referenceId": "United States/Detroit City Airport",
+      "trackId": "us-detroit-city-airport-f3ab2023",
+      "layoutId": "detroit-city-airport",
+      "sourcePath": "sources/world/us/osm.json",
+      "expectedReason": "independent-geometry-missing",
+      "nextStep": "Recover event-date geometry for the temporary apron chicanes. The publicly downloadable 2017 airport recording covers a smaller southern apron loop and is not the requested course; off-event 2022 aerial imagery does not establish barrier placement.",
+      "research": {
+        "reviewedAt": "2026-10-02",
+        "evidenceUrls": [
+          "https://www.openstreetmap.org/user/rmiucic/traces/2553001",
+          "https://www.openstreetmap.org/traces/2553001/data"
+        ],
+        "geometryRecovered": false
+      },
+      "publicExplanation": "This course uses temporary turns on the airport apron. The public GPS recording checked here follows a different, smaller apron loop."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Elvington historical imagery coverage
+
+The public runway determines the search area. The pinned Environment Agency catalogue request returns three 2012 aerial tile footprints: half-metre and one-metre imagery over the far western end, and quarter-metre imagery south of the northeastern runway and taxiway. The catalogue groups downloads by larger grid squares; that label does not establish complete imagery coverage of a square. Native ECW tile metadata from the quarter-metre download confirms its extent. None of these tiles establishes the unresolved northern return join. No layout geometry is registered.
+
+The [Environment Agency dataset](https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography) declares the Open Government Licence and explains that the IR prefix denotes incident-response photography. It does not mean infrared. Attribution: Environment Agency. The existing 2020 one-metre LiDAR review remains the evidence for the pavement gap.
+
+A similarly named public GPS recording refers to Elvington village in Kent, not this Yorkshire airfield. Neither that recording nor nearby unrelated road trips supplies a course trace. No private course positions or diagram pixels are copied into this review.
+
+The older 2008 point-cloud download was also checked. None of its four actual LAS header extents intersects the northern return's pavement-end review window: E466061.28–466243.80, N447895.01–448057.43 in EPSG:27700. The easternmost partial tile starts at N448455.52, north of that window, and the remaining tiles end at E466000 or farther west. The previous E467000 to E468000 location description referred to a different part of the airfield and is withdrawn. The intensity channel is present, but the survey does not cover this join. Exact headers, archive hash and the shared review rectangle are pinned. No inferred connection across the unobserved area is registered.

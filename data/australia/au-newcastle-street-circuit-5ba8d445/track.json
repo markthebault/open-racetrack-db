@@ -8,17 +8,41 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    151.78745214999998,
+    -32.926464499999994
+  ],
+  "sourceIds": [
+    "public-newcastle-independent-course"
+  ],
   "defaultLayoutId": "newcastle-street-circuit",
   "layouts": [
     {
       "id": "newcastle-street-circuit",
       "name": "Newcastle Street Circuit",
       "referenceId": "Australia/Newcastle Street Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/newcastle-street-circuit.geojson",
+      "description": "The championship organizer and the NSW event-access map identify the full Newcastle street circuit through Wharf Road, Watt Street, Shortland Esplanade, Zaara Street, Scott Street, Parnell Place, Nobbys Road, the retained Camp Shortland strip, the southern Horseshoe Beach parking-aisle return and Horseshoe Road. The municipal Camp Shortland report identifies the central strip as the race-road section, later used for play and exercise. Exact 2020 public OSM nodes retain the named streets, park strip and southern parking return. They are projected without adjustment into the pinned licensed NSW GDA94 aerial grid. Only the missing connection through the paved Nobbys car park is independently digitized from the aerial survey. The original tile requests, hashes, service-specific Creative Commons metadata, exact Web Mercator grid and lossless crop are pinned. The complete road course excludes the northern dead-end parking excursion and the eastern park footpath loop. The organizer documents a temporary hairpin alteration in 2019; this underlying pavement trace does not assert exact event barrier radii or historical-year correspondence. The car-park sweeper and temporary chicane placement remain draft. Export pixels have roughly 0.5 m ground spacing, and native survey or GPS accuracy is not inferred from this. No private course coordinates, diagram coordinates, timing location or nominal distance define any vertex. Independently digitized aerial centerline: 2650.6 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "public-newcastle-independent-course",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T17:45:13.615819Z",
+      "evidenceNote": "Reuse evidence: https://portal.spatial.nsw.gov.au/portal/home/item.html?id=ca93748ebe5a46f1ae5451f35b3d0b9d. Pinned raster hash ea9e20a4546052661e841cacc596685de69af9988287d5edb1ec8ee47b9f4150; reproducible pixel-to-coordinate conversion. The championship organizer and the NSW event-access map identify the full Newcastle street circuit through Wharf Road, Watt Street, Shortland Esplanade, Zaara Street, Scott Street, Parnell Place, Nobbys Road, the retained Camp Shortland strip, the southern Horseshoe Beach parking-aisle return and Horseshoe Road. The municipal Camp Shortland report identifies the central strip as the race-road section, later used for play and exercise. Exact 2020 public OSM nodes retain the named streets, park strip and southern parking return. They are projected without adjustment into the pinned licensed NSW GDA94 aerial grid. Only the missing connection through the paved Nobbys car park is independently digitized from the aerial survey. The original tile requests, hashes, service-specific Creative Commons metadata, exact Web Mercator grid and lossless crop are pinned. The complete road course excludes the northern dead-end parking excursion and the eastern park footpath loop. The organizer documents a temporary hairpin alteration in 2019; this underlying pavement trace does not assert exact event barrier radii or historical-year correspondence. The car-park sweeper and temporary chicane placement remain draft. Export pixels have roughly 0.5 m ground spacing, and native survey or GPS accuracy is not inferred from this. No private course coordinates, diagram coordinates, timing location or nominal distance define any vertex."
+    },
+    {
+      "id": "imagery-identity-newcastle-street-circuit",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.supercars.com/news/what-you-need-to-know-coates-hire-newcastle-500",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T17:45:13.615819Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

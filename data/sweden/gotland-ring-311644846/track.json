@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-311644846"
+    "osm-network-311644846",
+    "copernicus-sentinel-gotland-ring-7-3-current-independent-roads"
   ],
   "defaultLayoutId": "gotland-ring-3-1",
   "layouts": [
@@ -35,22 +36,22 @@
       "id": "gotland-ring-4-1",
       "name": "Gotland Ring 4.1",
       "referenceId": "Sweden/Gotland Ring 4.1",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gotland-ring-4-1.geojson",
+      "description": "Southern loop with its western outer bend, inner return and full eastern straight. The operator identifies the 4.1 km Southern Loop; the full course plan separates paddock, karting and energy-road access, all excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 4075.3 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "gotland-ring-6-0",
       "name": "Gotland Ring 6.0",
       "referenceId": "Sweden/Gotland Ring 6.0",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gotland-ring-6-0.geojson",
+      "description": "Combined course uses the Southern Loop and the eastern Northern Loop through the mapped northern crossover, bypassing the northern western technical section. The operator explicitly lists a 6.0 km alternative. Independent public course ways fix the northern branch choice; the full circuit plan identifies the two connecting course roads. Paddock, pit and karting branches are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 5977.2 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "gotland-ring-7-3",
       "name": "Gotland Ring 7.3",
       "referenceId": "Sweden/Gotland Ring 7.3",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gotland-ring-7-3.geojson",
+      "description": "Full Grand Prix configuration uses the Southern Loop and the complete northern western and eastern technical sections. The operator identifies its full 7.3 km configuration and connecting course roads. Paddock, pit, karting and the northern short-loop closing straight are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 7303.6 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
   "sources": [
@@ -71,6 +72,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:08:47.313Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "imagery-identity-gotland-ring-4-1",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://gotlandring.com/wp-content/uploads/2021/04/Gotland-Ring-Karta_april-2021_jpeg.jpg",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T09:12:48.183524Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "imagery-identity-gotland-ring-6-0",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://gotlandring.com/wp-content/uploads/2021/04/Gotland-Ring-Karta_april-2021_jpeg.jpg",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T09:12:48.183524Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "copernicus-sentinel-gotland-ring-7-3-current-independent-roads",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/34/V/CK/2025/5/S2C_34VCK_20250529_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T09:12:48.183524Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash 33c6e7c2cdc20920108ad97f71c6ad453e136160a076b76bcfd6d3b9fcd124db; reproducible pixel-to-coordinate conversion. Full Grand Prix configuration uses the Southern Loop and the complete northern western and eastern technical sections. The operator identifies its full 7.3 km configuration and connecting course roads. Paddock, pit, karting and the northern short-loop closing straight are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-gotland-ring-7-3",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://gotlandring.com/wp-content/uploads/2021/04/Gotland-Ring-Karta_april-2021_jpeg.jpg",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T09:12:48.183524Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

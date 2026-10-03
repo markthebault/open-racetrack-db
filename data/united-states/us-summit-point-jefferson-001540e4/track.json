@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -77.97535744999999,
+    39.23275285
+  ],
+  "sourceIds": [
+    "osm-selection-summit-point-jefferson-source-roads-15559999"
+  ],
   "defaultLayoutId": "summit-point-jefferson",
   "layouts": [
     {
       "id": "summit-point-jefferson",
       "name": "Summit Point Jefferson",
       "referenceId": "United States/Summit Point Jefferson",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/summit-point-jefferson.geojson",
+      "description": "Draft configuration: The current operator Jefferson plan identifies the complete outer extension and the central inner return, followed by the esses and the long northern hairpin. The pinned independent route follows those branches, including the short connectors classified as service roads around the western half of the training circle; it does not traverse the full skid-pad circle or the straight access cut-through. The 2015 club plan depicts an earlier central return, so it is not substituted for this current branch association. The source length is 2640.1 m compared with the catalogue scalar of 2689 m. Alignment date and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2640.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-summit-point-jefferson-source-roads-15559999",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/15559999",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:58:45.567Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-summit-point-jefferson",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://summitpointmp.com/track-information/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:58:45.567Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

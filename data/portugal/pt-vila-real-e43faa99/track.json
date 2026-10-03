@@ -8,17 +8,41 @@
     "name": "Portugal",
     "slug": "portugal"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -7.72417585,
+    41.3009763
+  ],
+  "sourceIds": [
+    "osm-selection-18281191"
+  ],
   "defaultLayoutId": "vila-real",
   "layouts": [
     {
       "id": "vila-real",
       "name": "Vila Real",
       "referenceId": "Portugal/Vila Real",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/vila-real.geojson",
+      "description": "Draft configuration: Complete named street circuit follows the northern hairpin and southern return through the city. The independent relation measures 4753.7 m; source coordinates remain unchanged despite the catalogue distance discrepancy. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4753.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-18281191",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/relation/18281191",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:47:05.209Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-vila-real",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.cavr.pt/wp-content/uploads/2015/07/racing_weekend_vila_real_v1mmb2_-_aprovado.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:47:05.209Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

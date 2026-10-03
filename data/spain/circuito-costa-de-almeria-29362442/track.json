@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-29362442"
+    "osm-network-29362442",
+    "osm-selection-29362442"
   ],
   "defaultLayoutId": "almeria",
   "layouts": [
@@ -28,29 +29,29 @@
       "id": "almeria",
       "name": "Almeria",
       "referenceId": "Spain/Almeria",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/almeria.geojson",
+      "description": "Draft configuration: Full eastern circuit with two northern lobes, inner return bends and pointed eastern last corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4017.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "andalucia-layout-1-5k",
       "name": "Andalucia Layout 1 5k",
       "referenceId": "Spain/Andalucia Layout 1 5k",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/andalucia-layout-1-5k.geojson",
+      "description": "Draft configuration: The catalogue configuration retains the northern hook, full eastern long straight and southern shortcut, excluding the inner southern hairpin and the pit/access connections to the adjacent Almeria circuit. The operator configuration plan independently identifies these physical branches; its contemporary red 5 km route bypasses the northern hook and is not substituted for this earlier configuration. The exact public source-node route measures 4721.9 m against the catalogue scalar of 4754 m. Historical alignment remains a draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4721.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "andalucia-layout-2-4k",
       "name": "Andalucia Layout 2 4k",
       "referenceId": "Spain/Andalucia Layout 2 4k",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/andalucia-layout-2-4k.geojson",
+      "description": "Draft configuration: The operator blue 4 km configuration identifies the northern hook, eastern diagonal return and southern shortcut, excluding the full eastern long straight, inner southern hairpin and pit/access alternatives. These branch choices match the catalogue configuration. The independently mapped source-node route measures 3683.7 m against the catalogue scalar of 3714 m; source coordinates and distances are unchanged. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3683.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "andalucia-layout-3-2-2k",
       "name": "Andalucia Layout 3 2.2k",
       "referenceId": "Spain/Andalucia Layout 3 2.2k",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/andalucia-layout-3-2-2k.geojson",
+      "description": "Draft configuration: Short southwestern loop, western elongated hairpin and compact eastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2344.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -71,6 +72,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:38.980Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-29362442",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/29362442",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-almeria",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/29362442",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-andalucia-layout-3-2-2k",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/29362442",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-andalucia-layout-1-5k",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://andaluciacircuit.com/es/el-circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-andalucia-layout-2-4k",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://andaluciacircuit.com/es/el-circuito/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:38.835Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

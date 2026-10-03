@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-121110221"
+    "osm-network-121110221",
+    "osm-open-network-121110221"
   ],
   "defaultLayoutId": "aintree",
   "layouts": [
@@ -35,8 +36,8 @@
       "id": "aintree-sprint",
       "name": "Aintree Sprint",
       "referenceId": "United Kingdom/Aintree Sprint",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/aintree-sprint.geojson",
+      "description": "Draft open course. Operator identifies the Aintree sprint on the Club Circuit. The connected open route is the only path close to the supplied sprint distance between the timing endpoints. Approximate planar OSM trace distance 1762.3 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
     }
   ],
   "sources": [
@@ -57,6 +58,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-open-network-121110221",
+      "type": "osm",
+      "title": "OpenStreetMap independent open-course network",
+      "url": "https://www.openstreetmap.org/way/121110221",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact pinned independent source-node coordinates. Private timing positions identify nearby existing endpoint nodes, with no private coordinate interpolation."
+    },
+    {
+      "id": "open-course-identity-121110221",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://www.liverpoolmotorclub.com/aintree-sprints/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:41:34.792Z",
+      "evidenceNote": "Operator identifies the Aintree sprint on the Club Circuit. The connected open route is the only path close to the supplied sprint distance between the timing endpoints. Identification only; no coordinates copied."
     }
   ]
 }

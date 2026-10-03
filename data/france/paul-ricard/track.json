@@ -36,43 +36,43 @@
       "id": "paul-ricard-1c-v2-blancpain",
       "name": "Paul Ricard 1C-V2 Blancpain",
       "referenceId": "France/Paul Ricard 1C-V2 Blancpain",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/paul-ricard-1c-v2-blancpain.geojson",
+      "description": "The supplied label is retained. Independent championship briefings identify the GT/Blancpain course as the full Mistral-straight 1A-V2 configuration. This trace follows that documented course rather than inferring a chicane from the catalogue label. Historical naming and measured-length differences still require review."
     },
     {
       "id": "paul-ricard-gtdrive",
       "name": "Paul Ricard GtDrive",
       "referenceId": "France/Paul Ricard GtDrive",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/paul-ricard-gtdrive.geojson",
+      "description": "The independently named Driving Center course is identified by its complete connected OSM route and operator evidence. The current mapped route is approximately 1.56 km; the supplied 1.497 km course distance differs, so historical configuration and travel direction remain draft. No route is shortened to force the stated length."
     },
     {
       "id": "paul-ricard-le-castellet",
       "name": "Paul Ricard Le Castellet",
       "referenceId": "France/Paul Ricard Le Castellet",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/paul-ricard-le-castellet.geojson",
+      "description": "The Le Castellet entry uses the independently documented full Grand Prix configuration with the Mistral chicane. Coordinates reuse the pinned full-course OSM recipe; the separate catalogue name and private timing convention are retained. Configuration remains draft."
     },
     {
       "id": "paul-ricard-piste-gt",
       "name": "Paul Ricard Piste GT",
       "referenceId": "France/Paul Ricard Piste GT",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/paul-ricard-piste-gt.geojson",
+      "description": "Draft western school-course association. The circuit operator identifies a separate 1.8 km school configuration. The pinned 1804.2 m connected route uses the Hôtel and Sainte-Baume corners and the short connection between the Mistral and western return section. The supplied course distance is 1786 m. Contemporary driving-school offers also call a longer 2.0 km configuration Piste GT, so the historical name and exact configuration remain provisional. All geometry is unchanged independent OSM data."
     },
     {
       "id": "paul-ricard-short",
       "name": "Paul Ricard Short",
       "referenceId": "France/Paul Ricard Short",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/paul-ricard-short.geojson",
+      "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The full Chicane Nord is included. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3848.4 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance."
     },
     {
       "id": "paul-ricard-short-without-chicane",
       "name": "Paul Ricard Short_without chicane",
       "referenceId": "France/Paul Ricard Short_without chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/paul-ricard-short-without-chicane.geojson",
+      "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The Mistral straight bypasses Chicane Nord. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3766.6 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance."
     }
   ],
   "sources": [
@@ -93,6 +93,51 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:43:02.799Z",
       "evidenceNote": "Supports named circuit sections and venue identification. Reference only; no coordinates are copied or traced. Chicane and straight variants use exact OSM ways."
+    },
+    {
+      "id": "course-reference-paul-ricard-le-castellet",
+      "type": "reference",
+      "title": "Independent championship course identification",
+      "url": "https://www.fia.com/sites/default/files/2022_fia_formula_2_championship_-_round_9_preview.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:02:09.040Z",
+      "evidenceNote": "The Le Castellet entry uses the independently documented full Grand Prix configuration with the Mistral chicane. Coordinates reuse the pinned full-course OSM recipe; the separate catalogue name and private timing convention are retained. Configuration remains draft. This document supports identification only; no coordinates are copied."
+    },
+    {
+      "id": "course-reference-paul-ricard-1c-v2-blancpain",
+      "type": "reference",
+      "title": "Independent championship course identification",
+      "url": "https://www.gt-world-challenge-europe.com/documents/notice/5055/Team%2BManagers%27%2BBriefing%2BPaul%2BRicard%2B27%3A05%3A21.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:02:09.042Z",
+      "evidenceNote": "The supplied label is retained. Independent championship briefings identify the GT/Blancpain course as the full Mistral-straight 1A-V2 configuration. This trace follows that documented course rather than inferring a chicane from the catalogue label. Historical naming and measured-length differences still require review. This document supports identification only; no coordinates are copied."
+    },
+    {
+      "id": "driving-center-reference",
+      "type": "reference",
+      "title": "Driving Center operator course description",
+      "url": "https://oreca-experiences.com/fr/driving-center",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:02:09.044Z",
+      "evidenceNote": "Operator identifies the separate training circuit at Paul Ricard. Coordinates exclusively use independently named OSM ways."
+    },
+    {
+      "id": "short-course-identification",
+      "type": "reference",
+      "title": "Paul Ricard historical short-course identification",
+      "url": "https://www.racingcircuits.info/europe/france/paul-ricard.html",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:13:55.576Z",
+      "evidenceNote": "Short-course diagrams support branch identification only. All geometry remains exact pinned OSM coordinates; no diagram is copied or traced."
+    },
+    {
+      "id": "school-course-identification",
+      "type": "reference",
+      "title": "Circuit operator school-course identification",
+      "url": "https://www.circuitpaulricard.com/fr/circuit/pistes-et-infrastructures",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:16:02.884Z",
+      "evidenceNote": "Operator identifies the western 1.8 km school circuit. Supports layout identity only; no coordinates are copied."
     }
   ]
 }

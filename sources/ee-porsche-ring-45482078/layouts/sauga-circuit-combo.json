@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "trackId": "ee-porsche-ring-45482078",
+  "layoutId": "sauga-circuit-combo",
+  "sourceId": "osm-network-sauga-circuit-combo",
+  "snapshotFile": "network-sauga-circuit-combo.json",
+  "snapshotSha256": "c50fb95253795c35b8f260307fcd7dcb4ac570fd088fd02a049bf1f479c8def7",
+  "geometryStatus": "draft",
+  "timingMode": "shared",
+  "reviewedAt": null,
+  "notes": [],
+  "gates": [],
+  "paths": [
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 45482078,
+          "wayVersion": 11,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 45482078,
+          "wayVersion": 11,
+          "fromIndex": 67,
+          "toIndex": 10
+        }
+      ]
+    },
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 45482078,
+          "wayVersion": 11,
+          "fromIndex": 10,
+          "toIndex": 0
+        },
+        {
+          "wayId": 45482078,
+          "wayVersion": 11,
+          "fromIndex": 67,
+          "toIndex": 56
+        },
+        {
+          "wayId": 45482081,
+          "wayVersion": 6,
+          "fromIndex": 0,
+          "toIndex": 7
+        },
+        {
+          "wayId": 45482078,
+          "wayVersion": 11,
+          "fromIndex": 29,
+          "toIndex": 10
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "layoutId": "sauga-circuit-long",
+      "snapshotFile": "selected-network-45482078.json",
+      "snapshotSha256": "8cc9a82f366241c232100111244e05ec28fdfd81d4c8d6d3d34b54c0b7cf0a15"
+    },
+    {
+      "layoutId": "sauga-circuit-short",
+      "snapshotFile": "selected-network-45482078.json",
+      "snapshotSha256": "8cc9a82f366241c232100111244e05ec28fdfd81d4c8d6d3d34b54c0b7cf0a15"
+    }
+  ]
+}

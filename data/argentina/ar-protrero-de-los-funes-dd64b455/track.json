@@ -8,17 +8,41 @@
     "name": "Argentina",
     "slug": "argentina"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -66.2337637,
+    -33.22809805
+  ],
+  "sourceIds": [
+    "osm-selection-potrero-independent-roads-127599567"
+  ],
   "defaultLayoutId": "protrero-de-los-funes",
   "layouts": [
     {
       "id": "protrero-de-los-funes",
       "name": "Protrero de los Funes",
       "referenceId": "Argentina/Protrero de los Funes",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/protrero-de-los-funes.geojson",
+      "description": "Draft configuration: The lake circuit follows the complete independently named Avenida Circuito del Lago, including its southern bends and the bridge section. Argentina tourism identifies this public-road circuit and access avenue; government documentation describes the 6.270 km historical course. The actual pinned road loop is 6172.4 m and remains unadjusted. Race-day barriers, chicane alignment and travel direction remain provisional; unrelated residential and service-road detours are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6172.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-potrero-independent-roads-127599567",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/127599567",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T19:25:47.270Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-protrero-de-los-funes",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.argentina.travel/actividades/circuito-callejero-de-potrero-de-los-funes",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T19:25:47.270Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

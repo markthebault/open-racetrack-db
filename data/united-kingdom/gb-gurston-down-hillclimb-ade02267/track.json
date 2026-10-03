@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -1.9676976499999999,
+    51.03370785
+  ],
+  "sourceIds": [
+    "osm-open-network-581020630"
+  ],
   "defaultLayoutId": "gurston-down-hillclimb",
   "layouts": [
     {
       "id": "gurston-down-hillclimb",
       "name": "Gurston Down Hillclimb",
       "referenceId": "United Kingdom/Gurston Down Hillclimb",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gurston-down-hillclimb.geojson",
+      "description": "Draft open course. Official event results identify the 967 metre hillclimb. The single independently named source path measures approximately 961.5 metres; the supplied 1029 metre scalar differs. Approximate planar OSM trace distance 961.5 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-open-network-581020630",
+      "type": "osm",
+      "title": "OpenStreetMap independent open-course network",
+      "url": "https://www.openstreetmap.org/way/581020630",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact pinned independent source-node coordinates. Private timing positions identify nearby existing endpoint nodes, with no private coordinate interpolation."
+    },
+    {
+      "id": "open-course-identity-581020630",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://gurstondown.org/wp-content/uploads/2024/01/26th-August-2023.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:41:34.847Z",
+      "evidenceNote": "Official event results identify the 967 metre hillclimb. The single independently named source path measures approximately 961.5 metres; the supplied 1029 metre scalar differs. Identification only; no coordinates copied."
+    }
+  ]
 }

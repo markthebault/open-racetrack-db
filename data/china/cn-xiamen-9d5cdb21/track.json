@@ -8,17 +8,41 @@
     "name": "China",
     "slug": "china"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    118.3152223,
+    24.6535877
+  ],
+  "sourceIds": [
+    "xiamen-sentinel-2026-course"
+  ],
   "defaultLayoutId": "xiamen-international-circuit",
   "layouts": [
     {
       "id": "xiamen-international-circuit",
       "name": "Xiamen International Circuit",
       "referenceId": "China/Xiamen International Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/xiamen-international-circuit.geojson",
+      "description": "The full underlying course retains the long northwest main straight, northeast return, complete southern notched branch and central hairpin, excluding the pit apron and parking maneuvering. Spatial inspection of 4,246 anonymous public GPS samples corroborates those course branches in the registered September 19, 2026 Copernicus raster; unordered points are not treated as a recorded trip or copied into the geometry. Every vertex is manually inspected on the licensed public raster pavement. The independently measured 1,723.3 m draft retains its 4.3 m difference from the supplied scalar and 96.7 m difference from the November 2022 organizer's published 1,820 m. The organizer describes 11 corners, while later circuit descriptions count 13; corner counting is not treated as route proof. Native 10 m imagery leaves fine S bends, corner radii, travel direction and historical-year correspondence provisional. No course position is taken from a supplied diagram, fitted to a distance or digitized from a GPS overlay. Independently digitized aerial centerline: 1723.3 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "xiamen-sentinel-2026-course",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/R/PN/2026/9/S2C_50RPN_20260919_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T11:34:27.390877Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash dd4510f6f2bffddf4753d9910145a3bb49d24d05f0f8d04499db2dbd97d21810; reproducible pixel-to-coordinate conversion. The full underlying course retains the long northwest main straight, northeast return, complete southern notched branch and central hairpin, excluding the pit apron and parking maneuvering. Spatial inspection of 4,246 anonymous public GPS samples corroborates those course branches in the registered September 19, 2026 Copernicus raster; unordered points are not treated as a recorded trip or copied into the geometry. Every vertex is manually inspected on the licensed public raster pavement. The independently measured 1,723.3 m draft retains its 4.3 m difference from the supplied scalar and 96.7 m difference from the November 2022 organizer's published 1,820 m. The organizer describes 11 corners, while later circuit descriptions count 13; corner counting is not treated as route proof. Native 10 m imagery leaves fine S bends, corner radii, travel direction and historical-year correspondence provisional. No course position is taken from a supplied diagram, fitted to a distance or digitized from a GPS overlay."
+    },
+    {
+      "id": "imagery-identity-xiamen-international-circuit",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://media.smart.com/en-INT/260673-first-ever-smart-performance-day-grand-opening-at-xiamen-international-circuit/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:34:27.390877Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

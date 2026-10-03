@@ -8,17 +8,41 @@
     "name": "Sweden",
     "slug": "sweden"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    20.759776549999998,
+    65.11171999999999
+  ],
+  "sourceIds": [
+    "lantmateriet-min-karta-drive-centre"
+  ],
   "defaultLayoutId": "drive-centre-arena",
   "layouts": [
     {
       "id": "drive-centre-arena",
       "name": "Drive Centre Arena",
       "referenceId": "Sweden/Drive Centre Arena",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/drive-centre-arena.geojson",
+      "description": "The operator long/short course description and the official STCC 2020 course guide identify the long airfield layout: inner eastern S bends, northern diagonal runway, outer eastern return, southern S connector, runway turnaround and western bulb. Course coordinates come only from licensed Min karta aerial pixels. The public runway paint identifies a physical turnaround. The imagery capture year is unknown. This 4,415.4 m supporting physical-course draft differs from the supplied 4,269 m scalar by 146.4 m and from the operator 4,235 m description by 180.4 m; the discrepancy is retained and historical correspondence and temporary cone positions are unverified. The 200 m import allowance records these discrepancies without moving coordinates or changing timing validators. This is not a certified event lap. Operator plans and video are identification only and are not georeferenced, traced or redistributed. Independently digitized aerial centerline: 4415.4 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "lantmateriet-min-karta-drive-centre",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://minkarta.lantmateriet.se/plats/3006/v1.0/?e=770000&n=7233600&z=13&mapprofile=flygbild",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-03T04:13:59.020777Z",
+      "evidenceNote": "Reuse evidence: https://www.lantmateriet.se/minkarta. Pinned raster hash f589c87ea3018cbe7823f4ac80e99c1ece39ebcc18b2bd50eadfd864764916fe; reproducible pixel-to-coordinate conversion. The operator long/short course description and the official STCC 2020 course guide identify the long airfield layout: inner eastern S bends, northern diagonal runway, outer eastern return, southern S connector, runway turnaround and western bulb. Course coordinates come only from licensed Min karta aerial pixels. The public runway paint identifies a physical turnaround. The imagery capture year is unknown. This 4,415.4 m supporting physical-course draft differs from the supplied 4,269 m scalar by 146.4 m and from the operator 4,235 m description by 180.4 m; the discrepancy is retained and historical correspondence and temporary cone positions are unverified. The 200 m import allowance records these discrepancies without moving coordinates or changing timing validators. This is not a certified event lap. Operator plans and video are identification only and are not georeferenced, traced or redistributed."
+    },
+    {
+      "id": "imagery-identity-drive-centre-arena",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.drivecenter.se/trackdays/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-03T04:13:59.020777Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

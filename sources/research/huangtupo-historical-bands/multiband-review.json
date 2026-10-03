@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "geometryRecovered": false,
+  "attribution": "Contains modified Copernicus Sentinel data 2017, 2018 and 2019.",
+  "license": "Copernicus Sentinel Data Legal Notice",
+  "reuseEvidenceUrl": "https://dataspace.copernicus.eu/terms-and-conditions",
+  "nativeResolutionM": 10,
+  "inspectionExtent": {
+    "xmin": 12693009.426555768,
+    "ymin": 3559426.065119667,
+    "xmax": 12697658.19673413,
+    "ymax": 3564074.835298028,
+    "spatialReference": 3857
+  },
+  "inspectionSize": [
+    1000,
+    1000
+  ],
+  "stretchPixels": [
+    420,
+    440,
+    560,
+    580
+  ],
+  "percentiles": [
+    2,
+    98
+  ],
+  "resampling": "nearest",
+  "acquisitions": [
+    {
+      "manifestFile": "2017-02-27-manifest.json",
+      "rasters": [
+        {
+          "file": "2017-02-27-rgb.png",
+          "kind": "rgb",
+          "sha256": "748c01d52fe7f36f6b0506d0fe3f72f35caa0dbc46249b1c0e5b26de9e10540c"
+        },
+        {
+          "file": "2017-02-27-nir.png",
+          "kind": "nir",
+          "sha256": "568b8803fb0dd6b4f0874b009b561efdce5319ffe976c39785ff3a3f83958f6c"
+        }
+      ],
+      "stacItemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20170227_0_L2A"
+    },
+    {
+      "manifestFile": "2017-07-24-manifest.json",
+      "rasters": [
+        {
+          "file": "2017-07-24-rgb.png",
+          "kind": "rgb",
+          "sha256": "9033bdfb5844894f5cf95c0d855deb02d3b86a0cecfc5b785c4d43647dbeb8d2"
+        },
+        {
+          "file": "2017-07-24-nir.png",
+          "kind": "nir",
+          "sha256": "419149b78bfffb1a2cf73c6857e3e31e3d2c576c8141ed7fde42796e1829ab90"
+        }
+      ],
+      "stacItemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20170724_0_L2A"
+    },
+    {
+      "manifestFile": "2018-10-05-manifest.json",
+      "rasters": [
+        {
+          "file": "2018-10-05-rgb.png",
+          "kind": "rgb",
+          "sha256": "ba4389feb7978352e9266d0c8e03618569aa975eee4b47fc3e8dc1ba0cf8ba35"
+        },
+        {
+          "file": "2018-10-05-nir.png",
+          "kind": "nir",
+          "sha256": "d00b73e4c63d513307af2dbe19bbe14f86711d5542902a710c04779b3264ef56"
+        }
+      ],
+      "stacItemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_50RKU_20181005_2_L2A"
+    },
+    {
+      "manifestFile": "2019-06-04-manifest.json",
+      "rasters": [
+        {
+          "file": "2019-06-04-rgb.png",
+          "kind": "rgb",
+          "sha256": "d7d30946a79a80a050baf79fb8270c38cfd2c7dac75ced11279c4f003a8c957f"
+        },
+        {
+          "file": "2019-06-04-nir.png",
+          "kind": "nir",
+          "sha256": "326655bd6225888c66f064737bc9c422739bbcaa930da3a871d8fcb299719970"
+        }
+      ],
+      "stacItemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A"
+    }
+  ],
+  "finding": "Winter and summer 2017 captures corroborate the western loop before the later observations. None of the four dates establishes the complete route across the larger paved area or every narrow connection. No centerline pixels are registered."
+}

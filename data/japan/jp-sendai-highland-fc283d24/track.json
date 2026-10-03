@@ -8,17 +8,41 @@
     "name": "Japan",
     "slug": "japan"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    140.6244875,
+    38.286944
+  ],
+  "sourceIds": [
+    "osm-selection-sendai-highland-2013-independent-roads-108786001"
+  ],
   "defaultLayoutId": "sendai-highland",
   "layouts": [
     {
       "id": "sendai-highland",
       "name": "Sendai Highland",
       "referenceId": "Japan/Sendai Highland",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sendai-highland.geojson",
+      "description": "Draft configuration: Full historical circuit uses the northern start-straight loop, western main straight and complete three-part southern infield from the pinned 2013 independent map. The series historical results identify the full Hi-land Race Way as 4.02960 km; the supplied entry is 4059 m and the unchanged public route measures 4005.3 m. Parallel pit lanes, drag strip and service roads are excluded. Historical alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4005.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-sendai-highland-2013-independent-roads-108786001",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/108786001",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T22:26:52.945Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-sendai-highland",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://supergt.net/wp-content/archive/classic/supergt.net/jgtc/ex/gtc_cham/1996/cha96_3/cha3race.htm",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:26:52.945Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

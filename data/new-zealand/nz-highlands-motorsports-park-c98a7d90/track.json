@@ -8,17 +8,111 @@
     "name": "New Zealand",
     "slug": "new-zealand"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    169.17038565000001,
+    -45.0567178
+  ],
+  "sourceIds": [
+    "osm-components-234778728",
+    "osm-network-highlands-motorsports-park-combo"
+  ],
   "defaultLayoutId": "highlands-motorsports-park-combo",
   "layouts": [
     {
       "id": "highlands-motorsports-park-combo",
       "name": "Highlands Motorsports Park Combo",
       "referenceId": "New Zealand/Highlands Motorsports Park Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/highlands-motorsports-park-combo.geojson",
+      "description": "Combined mapped configurations: Highlands Motorsports Park_A, Highlands Motorsports Park_B, Highlands Motorsports Park_C, Highlands Motorsports Park_Full. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "highlands-motorsports-park-a",
+      "name": "Highlands Motorsports Park_A",
+      "file": "layouts/highlands-motorsports-park-a.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-a-d92df93e/highlands-motorsports-park-a without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "highlands-motorsports-park-b",
+      "name": "Highlands Motorsports Park_B",
+      "file": "layouts/highlands-motorsports-park-b.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-b-1fe943d1/highlands-motorsports-park-b without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "highlands-motorsports-park-c",
+      "name": "Highlands Motorsports Park_C",
+      "file": "layouts/highlands-motorsports-park-c.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-c-b1a21bf0/highlands-motorsports-park-c without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
+    },
+    {
+      "id": "highlands-motorsports-park-full",
+      "name": "Highlands Motorsports Park_Full",
+      "file": "layouts/highlands-motorsports-park-full.geojson",
+      "description": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-full-2952eb45/highlands-motorsports-park-full without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-234778728",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:26:30.150Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-highlands-motorsports-park-a",
+      "type": "reference",
+      "title": "Highlands Motorsports Park_A identification",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.150Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-a-d92df93e/highlands-motorsports-park-a without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-highlands-motorsports-park-b",
+      "type": "reference",
+      "title": "Highlands Motorsports Park_B identification",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.150Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-b-1fe943d1/highlands-motorsports-park-b without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-highlands-motorsports-park-c",
+      "type": "reference",
+      "title": "Highlands Motorsports Park_C identification",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.150Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-c-b1a21bf0/highlands-motorsports-park-c without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-highlands-motorsports-park-full",
+      "type": "reference",
+      "title": "Highlands Motorsports Park_Full identification",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:26:30.150Z",
+      "evidenceNote": "This component reuses the existing pinned independent course recipe from nz-highlands-motorsports-park-full-2952eb45/highlands-motorsports-park-full without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-highlands-motorsports-park-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:27:05.637Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-highlands-motorsports-park-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/234778728",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:27:05.637Z",
+      "evidenceNote": "The aggregate entry groups the 4 existing independently mapped draft configurations for this venue. These configurations were previously registered under other venue entries; their exact source recipes and parent snapshot hashes are preserved. Shared edges count once and separate paths remain separate. This is a configuration network, not one lap, and does not claim current operator certification. The independent unique branch distance is 4464.2 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

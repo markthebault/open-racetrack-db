@@ -15,7 +15,10 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-network-125207287",
-    "osm-network-51319172"
+    "osm-network-51319172",
+    "osm-selection-51319172",
+    "osm-network-lvms-super-speedway",
+    "osm-network-lvms-super-speedway-infield"
   ],
   "defaultLayoutId": "main",
   "layouts": [
@@ -30,8 +33,8 @@
       "id": "lvms-combo",
       "name": "LVMS Combo",
       "referenceId": "United States/LVMS Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-combo.geojson",
+      "description": "Draft configuration: The aggregate catalogue picture identifies the outside road course only, with its full northern and southern extensions. The operator distinguishes this 2.4-mile outside course from the separate superspeedway and inside road course. Those other facilities are excluded. This diagram contains one independently mapped cycle, so it remains a regular route rather than a network with duplicate paths. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3896.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lvms-infield-road-course",
@@ -51,22 +54,22 @@
       "id": "lvms-outfield-road-course-chicane",
       "name": "LVMS Outfield Road Course Chicane",
       "referenceId": "United States/LVMS Outfield Road Course Chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-outfield-road-course-chicane.geojson",
+      "description": "Draft configuration: Outfield road course including the northern connector chicane and southern angled return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3896.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "lvms-super-speedway",
       "name": "LVMS Super Speedway",
       "referenceId": "United States/LVMS Super Speedway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-super-speedway.geojson",
+      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "lvms-super-speedway-infield",
       "name": "LVMS Super Speedway Infield",
       "referenceId": "United States/LVMS Super Speedway Infield",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lvms-super-speedway-infield.geojson",
+      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     }
   ],
   "sources": [
@@ -96,6 +99,69 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-51319172",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/51319172",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-lvms-outfield-road-course-chicane",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/51319172",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-lvms-combo",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.lvms.com/tracks/road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-lvms-super-speedway",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/27545411",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T06:43:28.473Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-lvms-super-speedway",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.lvms.com/tracks/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T06:43:28.473Z",
+      "evidenceNote": "The comparison shape depicts the superspeedway and its interior road course. The operator identifies the 1.5-mile tri-oval and separate 1.1-mile Inside Road Course at this site. Preserve both independently mapped closed course paths as a configuration network. Pit access and unspecified temporary links are excluded; the supplied entry does not establish an exact timed lap through this whole set. The independent unique branch distance is 4221.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "osm-network-lvms-super-speedway-infield",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/27545411",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T06:43:28.477Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-lvms-super-speedway-infield",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.lvms.com/tracks/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T06:43:28.477Z",
+      "evidenceNote": "This comparison shape also depicts the superspeedway and interior road course. The operator identifies the independently usable tri-oval and inside road course. Keep the two physical courses as a configuration network with this entry's separate timing association. Pit access, temporary links and the exact historical timed branch sequence remain unverified. The independent unique branch distance is 4221.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }

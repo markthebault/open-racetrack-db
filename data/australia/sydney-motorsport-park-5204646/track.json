@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-5204646"
+    "osm-network-5204646",
+    "osm-circuit-6175592",
+    "osm-circuit-6175594"
   ],
   "defaultLayoutId": "sydney-motorsports-park-gp",
   "layouts": [
@@ -35,8 +37,8 @@
       "id": "sydney-motorsports-park-long",
       "name": "Sydney Motorsports Park - Long",
       "referenceId": "Australia/Sydney Motorsports Park - Long",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sydney-motorsports-park-long.geojson",
+      "description": "The operator identifies the extended 4.5 km configuration as Brabham. It is distinct from Gardner, Druitt and Amaroo. Draft configuration selected from the independently named circuit relation 6175592. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "sydney-motorsports-park-north",
@@ -49,8 +51,8 @@
       "id": "sydney-motorsports-park-south",
       "name": "Sydney Motorsports Park - South",
       "referenceId": "Australia/Sydney Motorsports Park - South",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sydney-motorsports-park-south.geojson",
+      "description": "The operator identifies the 1.8 km South configuration as Amaroo. It is distinct from the full Brabham course. Draft configuration selected from the independently named circuit relation 6175594. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
   "sources": [
@@ -71,6 +73,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-circuit-6175592",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Brabham Circuit",
+      "url": "https://www.openstreetmap.org/relation/6175592",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:46:31.390Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "course-identity-6175592",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://www.sydneymotorsportpark.com.au/pages/circuits",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:46:31.390Z",
+      "evidenceNote": "The operator identifies the extended 4.5 km configuration as Brabham. It is distinct from Gardner, Druitt and Amaroo. Identification only; no coordinates are copied."
+    },
+    {
+      "id": "osm-circuit-6175594",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Amaroo Circuit",
+      "url": "https://www.openstreetmap.org/relation/6175594",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:46:31.588Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "course-identity-6175594",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://www.sydneymotorsportpark.com.au/pages/circuits",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:46:31.588Z",
+      "evidenceNote": "The operator identifies the 1.8 km South configuration as Amaroo. It is distinct from the full Brabham course. Identification only; no coordinates are copied."
     }
   ]
 }

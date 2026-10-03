@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-28825444"
+    "osm-network-28825444",
+    "osm-selection-28825444",
+    "osm-network-sonoma-raceway-combo"
   ],
   "defaultLayoutId": "sonoma-raceway",
   "layouts": [
@@ -28,22 +30,22 @@
       "id": "sonoma-raceway",
       "name": "Sonoma Raceway",
       "referenceId": "United States/Sonoma Raceway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway.geojson",
+      "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-combo",
       "name": "Sonoma Raceway Combo",
       "referenceId": "United States/Sonoma Raceway Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway-combo.geojson",
+      "description": "Combined mapped configurations: Sonoma Raceway, Sonoma Raceway Stock Car. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "sonoma-raceway-indy",
       "name": "Sonoma Raceway Indy",
       "referenceId": "United States/Sonoma Raceway Indy",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway-indy.geojson",
+      "description": "Draft configuration: Full road course with rounded Turn 7 return and eastern chicane connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4069.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-short",
@@ -56,22 +58,22 @@
       "id": "sonoma-raceway-sro-practice",
       "name": "Sonoma Raceway SRO Practice",
       "referenceId": "United States/Sonoma Raceway SRO Practice",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway-sro-practice.geojson",
+      "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-stock-car",
       "name": "Sonoma Raceway Stock Car",
       "referenceId": "United States/Sonoma Raceway Stock Car",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway-stock-car.geojson",
+      "description": "Draft configuration: Stock-car shortcut omitting the full western infield loop, with direct eastern return and no extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3181.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-with-7a",
       "name": "Sonoma Raceway with 7A",
       "referenceId": "United States/Sonoma Raceway with 7A",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-raceway-with-7a.geojson",
+      "description": "Draft configuration: Full course using the angled Turn 7A return and direct eastern connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4074.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -92,6 +94,78 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-28825444",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/28825444",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-sonoma-raceway",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/28825444",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-sonoma-raceway-indy",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/28825444",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-sonoma-raceway-sro-practice",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/28825444",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-sonoma-raceway-stock-car",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/28825444",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-sonoma-raceway-with-7a",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/28825444",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-sonoma-raceway-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/116036857",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:50:58.898Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-sonoma-raceway-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.sonomaraceway.com/media/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:50:58.898Z",
+      "evidenceNote": "Aggregate includes the full road course and stock-car shortcut. Extra Turn 7A, short-course and eastern chicane branches are excluded. Identification only; no image coordinates copied."
     }
   ]
 }

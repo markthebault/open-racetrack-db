@@ -8,17 +8,81 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.9872941,
+    51.9877041
+  ],
+  "sourceIds": [
+    "osm-components-8598020",
+    "osm-network-bucks-estate-combo"
+  ],
   "defaultLayoutId": "bucks-estate-combo",
   "layouts": [
     {
       "id": "bucks-estate-combo",
       "name": "Bucks_Estate_Combo",
       "referenceId": "United Kingdom/Bucks_Estate_Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bucks-estate-combo.geojson",
+      "description": "Combined mapped configurations: Industrial estate full, Lenborough Road return. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "industrial-estate-full",
+      "name": "Industrial estate full",
+      "file": "layouts/industrial-estate-full.geojson",
+      "description": "Complete connected road configuration through Osier Way, the southern bypass roundabout, A421, Great Slade, Middle Slade and Top Angel. The council identifies the estate road network; exact public road nodes retain historical alignment and lane-choice limits. This draft is a supplied road-test configuration, not an asserted licensed racing venue."
+    },
+    {
+      "id": "lenborough-return",
+      "name": "Lenborough Road return",
+      "file": "layouts/lenborough-return.geojson",
+      "description": "The supplied Combo configuration identifies the inner Lenborough Road return between the A421 and Osier Way. Exact public OSM nodes retain this historical estate-road alternative as a separate closed course. The council describes Lenborough Road and the estate network; its present footway classification and historic vehicle-use correspondence remain explicit draft limitations. No private diagram coordinates are imported."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-8598020",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/8598020",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-industrial-estate-full",
+      "type": "reference",
+      "title": "Industrial estate full identification",
+      "url": "https://www.buckingham-tc.gov.uk/wp-content/uploads/2022/11/Planning-Committee-Agenda-6-Jun-2022.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "Complete connected road configuration through Osier Way, the southern bypass roundabout, A421, Great Slade, Middle Slade and Top Angel. The council identifies the estate road network; exact public road nodes retain historical alignment and lane-choice limits. This draft is a supplied road-test configuration, not an asserted licensed racing venue. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-lenborough-return",
+      "type": "reference",
+      "title": "Lenborough Road return identification",
+      "url": "https://www.buckingham-tc.gov.uk/wp-content/uploads/2022/11/Planning-Committee-Agenda-6-Jun-2022.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "The supplied Combo configuration identifies the inner Lenborough Road return between the A421 and Osier Way. Exact public OSM nodes retain this historical estate-road alternative as a separate closed course. The council describes Lenborough Road and the estate network; its present footway classification and historic vehicle-use correspondence remain explicit draft limitations. No private diagram coordinates are imported. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-bucks-estate-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/8598020",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T14:04:41.847Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-bucks-estate-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.buckingham-tc.gov.uk/wp-content/uploads/2022/11/Planning-Committee-Agenda-6-Jun-2022.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T14:04:41.847Z",
+      "evidenceNote": "The supplied Combo configuration identifies the full Buckingham industrial-estate road route and the inner Lenborough Road alternative. Both component paths retain exact current public road and footway nodes. The council identifies the estate, Top Angel, Osier Way and Lenborough Road; historic access and lane placement remain draft. Shared edges count once, with no invented join. This is a road-test configuration, not an asserted licensed racing venue. Identification only; no image coordinates copied."
+    }
+  ]
 }

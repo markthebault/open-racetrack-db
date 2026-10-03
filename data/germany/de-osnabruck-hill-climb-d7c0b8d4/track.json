@@ -8,17 +8,41 @@
     "name": "Germany",
     "slug": "germany"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    8.1959041,
+    52.2048433
+  ],
+  "sourceIds": [
+    "osm-road-16137199"
+  ],
   "defaultLayoutId": "osnabruck-hill-climb",
   "layouts": [
     {
       "id": "osnabruck-hill-climb",
       "name": "Osnabruck Hill Climb",
       "referenceId": "Germany/Osnabruck Hill Climb",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/osnabruck-hill-climb.geojson",
+      "description": "Draft open course: The event operator identifies the 2.030 km Uphöfener Berg hillclimb. The independently mapped open route measures approximately 2.023 km and both private timing positions agree with its endpoints. The supplied scalar course distance differs and is not used to stretch the geometry. Coordinates are unchanged independent OSM ways; no artificial closure or endpoint interpolation is added."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-road-16137199",
+      "type": "osm",
+      "title": "OpenStreetMap named road course: Bergrennstrecke Uphöfen",
+      "url": "https://www.openstreetmap.org/relation/16137199",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T14:21:48.148Z",
+      "evidenceNote": "Exact, unbranched road-source chain. Source one-way tags remain unchanged; race-day travel direction is provisional."
+    },
+    {
+      "id": "road-identity-16137199",
+      "type": "reference",
+      "title": "Independent event operator course identification",
+      "url": "https://osnabruecker-bergrennen.de/en/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:21:48.148Z",
+      "evidenceNote": "The event operator identifies the 2.030 km Uphöfener Berg hillclimb. The independently mapped open route measures approximately 2.023 km and both private timing positions agree with its endpoints. The supplied scalar course distance differs and is not used to stretch the geometry. Supports identification only; no coordinates are copied."
+    }
+  ]
 }

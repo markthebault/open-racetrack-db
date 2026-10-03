@@ -13,7 +13,9 @@
     45.04363170989011
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-1092277630",
+    "public-adria-2024-full-course"
   ],
   "defaultLayoutId": "adria",
   "layouts": [
@@ -27,15 +29,15 @@
       "id": "adria",
       "name": "Adria",
       "referenceId": "Italy/Adria",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/adria.geojson",
+      "description": "Draft configuration: Original course with parallel northern hairpins, southern pointed shoulder and southeastern turnaround; excludes the later northern expansion. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2714.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "adria-international-raceway-full",
       "name": "Adria International Raceway Full",
       "referenceId": "Italy/Adria International Raceway Full",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/adria-international-raceway-full.geojson",
+      "description": "The 2021 full course retains the northern first hairpin, long southern middle return, small northern hairpin, inner southern hairpin, middle northern hairpin, complete western back straight, southern switchbacks, southeastern loop and outer return to the main straight. The pit lane and outer-course shortcut are excluded. Course branch order is checked against the independently authored 2021 course plan and the simulator developer course identity. All geometry vertices are independently placed on the public AGEA 2024 orthophoto cached raster. Public tile bytes, hashes, unmodified Web Mercator grid and license evidence are retained. The source has native 20 cm pixels; the selected level-18 cache has approximately 42 cm ground pixel spacing at this latitude. Pixel size is not asserted as positional accuracy. Fine lane alignment and historical-year correspondence remain draft. No supplied course image, position, timing location or nominal distance defines a vertex. The independently measured draft is 3,728.4 m, 23.6 m shorter than the supplied 3,752 m scalar; the discrepancy remains unresolved and the geometry is not scaled. Independently digitized aerial centerline: 3728.4 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
   "sources": [
@@ -47,6 +49,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:18.140Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-1092277630",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/1092277630",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:04:17.972Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-adria",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/1092277630",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:04:17.972Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "public-adria-2024-full-course",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://geoportale.agea.gov.it/image/rest/services/AgEA/Ortofoto_AgEA_2024/ImageServer",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T23:28:25.771Z",
+      "evidenceNote": "Reuse evidence: https://geoportale.agea.gov.it/legal-notes. Pinned raster hash bd00d0ed126eae11995efb8ad7a1ee54c111ab4c23058cfbded008bab671c69a; reproducible pixel-to-coordinate conversion. The 2021 full course retains the northern first hairpin, long southern middle return, small northern hairpin, inner southern hairpin, middle northern hairpin, complete western back straight, southern switchbacks, southeastern loop and outer return to the main straight. The pit lane and outer-course shortcut are excluded. Course branch order is checked against the independently authored 2021 course plan and the simulator developer course identity. All geometry vertices are independently placed on the public AGEA 2024 orthophoto cached raster. Public tile bytes, hashes, unmodified Web Mercator grid and license evidence are retained. The source has native 20 cm pixels; the selected level-18 cache has approximately 42 cm ground pixel spacing at this latitude. Pixel size is not asserted as positional accuracy. Fine lane alignment and historical-year correspondence remain draft. No supplied course image, position, timing location or nominal distance defines a vertex. The independently measured draft is 3,728.4 m, 23.6 m shorter than the supplied 3,752 m scalar; the discrepancy remains unresolved and the geometry is not scaled."
+    },
+    {
+      "id": "imagery-identity-adria-international-raceway-full",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://game.raceroom.com/store/tracks/all/adria-international-raceway-2021",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T23:28:25.771Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

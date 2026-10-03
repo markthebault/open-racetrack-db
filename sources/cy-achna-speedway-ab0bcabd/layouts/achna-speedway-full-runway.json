@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "trackId": "cy-achna-speedway-ab0bcabd",
+  "layoutId": "achna-speedway-full-runway",
+  "sourceId": "osm-network-achna-speedway-full-runway",
+  "snapshotFile": "network-achna-speedway-full-runway.json",
+  "snapshotSha256": "31f390f7c24735ffab3cc4e2a9a798570fcfade4b5588c56456bd8015426d7ec",
+  "geometryStatus": "draft",
+  "timingMode": "shared",
+  "reviewedAt": null,
+  "notes": [],
+  "gates": [],
+  "paths": [
+    {
+      "closed": true,
+      "segments": [
+        {
+          "wayId": 734690065,
+          "wayVersion": 2,
+          "fromIndex": 5,
+          "toIndex": 64
+        }
+      ]
+    },
+    {
+      "closed": false,
+      "segments": [
+        {
+          "wayId": 734690066,
+          "wayVersion": 1,
+          "fromIndex": 0,
+          "toIndex": 16
+        }
+      ]
+    },
+    {
+      "closed": false,
+      "segments": [
+        {
+          "wayId": 734690065,
+          "wayVersion": 2,
+          "fromIndex": 0,
+          "toIndex": 6
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "layoutId": "achna-main-course",
+      "snapshotFile": "components-osm-734690065.json",
+      "snapshotSha256": "93fb0ec4b72f4703e8affb78630dab545232961f7e924c686eef142412928eda"
+    },
+    {
+      "layoutId": "achna-inner-alternative",
+      "snapshotFile": "components-osm-734690065.json",
+      "snapshotSha256": "93fb0ec4b72f4703e8affb78630dab545232961f7e924c686eef142412928eda"
+    },
+    {
+      "layoutId": "achna-full-straight",
+      "snapshotFile": "components-osm-734690065.json",
+      "snapshotSha256": "93fb0ec4b72f4703e8affb78630dab545232961f7e924c686eef142412928eda"
+    }
+  ]
+}

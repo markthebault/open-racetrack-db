@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -82.03983930000001,
+    34.4056885
+  ],
+  "sourceIds": [
+    "usgs-naip-2023-michelin-laurens-proving-grounds"
+  ],
   "defaultLayoutId": "michelin-laurens-proving-grounds",
   "layouts": [
     {
       "id": "michelin-laurens-proving-grounds",
       "name": "Michelin Laurens Proving Grounds",
       "referenceId": "United States/Michelin Laurens Proving Grounds",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/michelin-laurens-proving-grounds.geojson",
+      "description": "The operator identifies Track 3 as the wet handling course with a 0.45-mile short configuration. This catalogue branch retains the Northern turn-in, middle S, rounded Southern return and Eastern hairpin of that short wet loop. The surrounding dry handling road and outer wet-loop extension are excluded. The centerline is manually digitized only on visible pavement in pinned public-domain 2023 USGS/USDA NAIP imagery. The independent 663.6 m measured route remains unscaled against the 698 m catalogue scalar and the approximate advertised 0.45-mile length; a 45 m catalogue allowance retains historical corner and surface-path differences as a draft limitation. No catalogue image vertices or timing positions determine these coordinates. Independently digitized aerial centerline: 663.6 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-naip-2023-michelin-laurens-proving-grounds",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T01:53:38.750Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 5043b724a1e45834c880e07699ed10d7d84248e5def93d3d6728e98d2895c6cc; reproducible pixel-to-coordinate conversion. The operator identifies Track 3 as the wet handling course with a 0.45-mile short configuration. This catalogue branch retains the Northern turn-in, middle S, rounded Southern return and Eastern hairpin of that short wet loop. The surrounding dry handling road and outer wet-loop extension are excluded. The centerline is manually digitized only on visible pavement in pinned public-domain 2023 USGS/USDA NAIP imagery. The independent 663.6 m measured route remains unscaled against the 698 m catalogue scalar and the approximate advertised 0.45-mile length; a 45 m catalogue allowance retains historical corner and surface-path differences as a draft limitation. No catalogue image vertices or timing positions determine these coordinates."
+    },
+    {
+      "id": "imagery-identity-michelin-laurens-proving-grounds",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://michelinpg.com/track-3-wet-road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T01:53:38.750Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

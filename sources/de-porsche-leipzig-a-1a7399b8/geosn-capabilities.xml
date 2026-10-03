@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities xmlns="http://www.opengis.net/wms" xmlns:esri_wms="http://www.esri.com/wms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3.0" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+	<Service>
+		<Name>WMS</Name>
+		<Title>Historische DOP 2012-2014</Title>
+		<Abstract>WMS zur Darstellung der historischen, digitalen Orthophotos der Jahre 2015 bis 2017 in Farbe (RGB), Color-Infrarot (CIR) und Graustufen (PAN). DOP sind in die Ebene entzerrte, georeferenzierte Luftbilder. Dabei erfolgt die Projektion der Luftbilder über ein Digitales Geländemodell (DGM) der Erdoberfläche. Sie besitzen eine Bodenauflösung von 0,20 m. Weitere Informationen zum Dienst erhalten Sie im GeoMIS.Sachsen oder über die Metadatenanzeige welche über folgende URL direkt aufrufbar ist: https://geomis.sachsen.de/geomis-client/?lang=de#/datasets/iso/8c276e3c-88af-462f-8128-6900bc7dd4f8.</Abstract>
+		<KeywordList>
+			<Keyword>Geobasisdaten</Keyword>
+			<Keyword>WMS</Keyword>
+			<Keyword>DOP</Keyword>
+			<Keyword>RGB</Keyword>
+			<Keyword>RGBI</Keyword>
+			<Keyword>color</Keyword>
+			<Keyword>Farbe</Keyword>
+			<Keyword>digitale Orthophotos</Keyword>
+			<Keyword>blattschnittfrei</Keyword>
+			<Keyword>entzerrt</Keyword>
+			<Keyword>Orthofoto</Keyword>
+			<Keyword>Orthophotos</Keyword>
+			<Keyword>aerial photography</Keyword>
+			<Keyword>Luftbild</Keyword>
+			<Keyword>Luftbilder</Keyword>
+			<Keyword>Luftbildkarte</Keyword>
+			<Keyword>Raster</Keyword>
+			<Keyword>Rasterdaten</Keyword>
+			<Keyword>digitale Daten</Keyword>
+			<Keyword>Landesvermessung</Keyword>
+			<Keyword>Vogelperspektive</Keyword>
+			<Keyword>Historische DOP 2012-2014</Keyword>
+			<Keyword>Landesamt für Geobasisinformation Sachsen (GeoSN)</Keyword>
+			<Keyword>GeoBAK 2.0</Keyword>
+			<Keyword>landesweit</Keyword>
+			<Keyword>DE-SN</Keyword>
+			<Keyword>DE</Keyword>
+			<Keyword>SN</Keyword>
+			<Keyword>Sachsen</Keyword>
+			<Keyword>Orthofotografie</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?" xlink:type="simple"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Service Desk GeoSN</ContactPerson>
+				<ContactOrganization>Landesamt für Geobasisinformation Sachsen (GeoSN)</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition>Ansprechpartner</ContactPosition>
+			<ContactAddress>
+				<AddressType>postalisch</AddressType>
+				<Address>Olbrichtplatz 3</Address>
+				<City>Dresden</City>
+				<StateOrProvince>Sachsen</StateOrProvince>
+				<PostCode>01099</PostCode>
+				<Country>Deutschland</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+49 351 8283-8420</ContactVoiceTelephone>
+			<ContactFacsimileTelephone>+49 351 8283-6110</ContactFacsimileTelephone>
+			<ContactElectronicMailAddress>servicedesk@geosn.sachsen.de</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>Der Dienst ist kostenfrei und kann gemäß den Nutzungsbestimmungen von Datenlizenz Deutschland - Namensnennung - Version 2.0 (https://www.govdata.de/dl-de/by-2-0) unter Angabe der Quelle: "Landesamt für Geobasisinformation Sachsen (GeoSN)" oder kurz "GeoSN" genutzt werden.</Fees>
+		<AccessConstraints>none</AccessConstraints>
+		<MaxWidth>4096</MaxWidth>
+		<MaxHeight>4096</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?" xlink:type="simple"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?" xlink:type="simple"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>application/geojson</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?" xlink:type="simple"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+			<esri_wms:GetStyles>
+				<Format>application/vnd.ogc.sld+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?" xlink:type="simple"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</esri_wms:GetStyles>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+		<Layer>
+			<Title>Historische DOP 2012-2014</Title>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:25833</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:25832</CRS>
+			<CRS>EPSG:31469</CRS>
+			<CRS>EPSG:31468</CRS>
+			<CRS>EPSG:31467</CRS>
+			<CRS>EPSG:31466</CRS>
+			<CRS>EPSG:3034</CRS>
+			<CRS>EPSG:3035</CRS>
+			<CRS>EPSG:3044</CRS>
+			<CRS>EPSG:3045</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:3398</CRS>
+			<CRS>EPSG:3399</CRS>
+			<CRS>EPSG:2180</CRS>
+			
+			<CRS>EPSG:102067</CRS>
+			
+			<CRS>EPSG:5514</CRS>
+			<CRS>EPSG:5650</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>11.788898</westBoundLongitude>
+				<eastBoundLongitude>15.057907</eastBoundLongitude>
+				<southBoundLatitude>50.150604</southBoundLatitude>
+				<northBoundLatitude>51.720930</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="EPSG:4326" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+			<BoundingBox CRS="EPSG:25833" maxx="504000.000000" maxy="5730000.000000" minx="278000.000000" miny="5560000.000000"/>
+			<BoundingBox CRS="EPSG:4258" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+			<BoundingBox CRS="EPSG:25832" maxx="932140.303149" maxy="5747385.403360" minx="692816.607235" miny="5559381.288536"/>
+			<BoundingBox CRS="EPSG:31469" maxx="5731703.596270" maxy="5504001.112752" minx="5561654.923742" miny="5277938.241034"/>
+			<BoundingBox CRS="EPSG:31468" maxx="5736129.461429" maxy="4718185.064759" minx="5557034.992008" miny="4485399.630843"/>
+			<BoundingBox CRS="EPSG:31467" maxx="5749093.831018" maxy="3932260.516701" minx="5561036.040164" miny="3692870.196951"/>
+			<BoundingBox CRS="EPSG:31466" maxx="5770643.025243" maxy="3146115.669397" minx="5573674.211666" miny="2900218.102917"/>
+			<BoundingBox CRS="EPSG:3034" maxx="2781558.253466" maxy="4348387.462733" minx="2602990.276271" miny="4119487.403175"/>
+			<BoundingBox CRS="EPSG:3035" maxx="3191058.751193" maxy="4681752.588347" minx="3006005.123574" miny="4444725.572118"/>
+			<BoundingBox CRS="EPSG:3044" maxx="5747385.403360" maxy="932140.303149" minx="5559381.288536" miny="692816.607235"/>
+			<BoundingBox CRS="EPSG:3045" maxx="5730000.000000" maxy="504000.000000" minx="5560000.000000" miny="278000.000000"/>
+			<BoundingBox CRS="EPSG:3857" maxx="1676238.506720" maxy="6749822.467925" minx="1312334.136670" miny="6472398.837270"/>
+			<BoundingBox CRS="EPSG:3398" maxx="4718185.064759" maxy="5736129.461429" minx="4485399.630843" miny="5557034.992008"/>
+			<BoundingBox CRS="EPSG:3399" maxx="5504001.112752" maxy="5731703.596270" minx="5277938.241034" miny="5561654.923742"/>
+			<BoundingBox CRS="EPSG:2180" maxx="448049.902040" maxy="227825.066795" minx="265775.248465" miny="-7404.223867"/>
+			<BoundingBox CRS="EPSG:5514" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+			<BoundingBox CRS="EPSG:102067" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+			<BoundingBox CRS="EPSG:5650" maxx="33504000.000000" maxy="5730000.000000" minx="33278000.000000" miny="5560000.000000"/>
+			<Layer queryable="0">
+				<Name>dop_2012_2014_pan</Name>
+				<Title>DOP 2012-2014 PAN</Title>
+				<Abstract>Historische, digitale Orthophotos der Jahre 2012 bis 2014 in Graustufen.</Abstract>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:25833</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:31469</CRS>
+				<CRS>EPSG:31468</CRS>
+				<CRS>EPSG:31467</CRS>
+				<CRS>EPSG:31466</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3044</CRS>
+				<CRS>EPSG:3045</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:3398</CRS>
+				<CRS>EPSG:3399</CRS>
+				<CRS>EPSG:2180</CRS>
+				
+				<CRS>EPSG:102067</CRS>
+				
+				<CRS>EPSG:5514</CRS>
+				<CRS>EPSG:5650</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>11.788898</westBoundLongitude>
+					<eastBoundLongitude>15.057907</eastBoundLongitude>
+					<southBoundLatitude>50.150604</southBoundLatitude>
+					<northBoundLatitude>51.720930</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4326" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25833" maxx="504000.000000" maxy="5730000.000000" minx="278000.000000" miny="5560000.000000"/>
+				<BoundingBox CRS="EPSG:4258" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25832" maxx="932140.303149" maxy="5747385.403360" minx="692816.607235" miny="5559381.288536"/>
+				<BoundingBox CRS="EPSG:31469" maxx="5731703.596270" maxy="5504001.112752" minx="5561654.923742" miny="5277938.241034"/>
+				<BoundingBox CRS="EPSG:31468" maxx="5736129.461429" maxy="4718185.064759" minx="5557034.992008" miny="4485399.630843"/>
+				<BoundingBox CRS="EPSG:31467" maxx="5749093.831018" maxy="3932260.516701" minx="5561036.040164" miny="3692870.196951"/>
+				<BoundingBox CRS="EPSG:31466" maxx="5770643.025243" maxy="3146115.669397" minx="5573674.211666" miny="2900218.102917"/>
+				<BoundingBox CRS="EPSG:3034" maxx="2781558.253466" maxy="4348387.462733" minx="2602990.276271" miny="4119487.403175"/>
+				<BoundingBox CRS="EPSG:3035" maxx="3191058.751193" maxy="4681752.588347" minx="3006005.123574" miny="4444725.572118"/>
+				<BoundingBox CRS="EPSG:3044" maxx="5747385.403360" maxy="932140.303149" minx="5559381.288536" miny="692816.607235"/>
+				<BoundingBox CRS="EPSG:3045" maxx="5730000.000000" maxy="504000.000000" minx="5560000.000000" miny="278000.000000"/>
+				<BoundingBox CRS="EPSG:3857" maxx="1676238.506720" maxy="6749822.467925" minx="1312334.136670" miny="6472398.837270"/>
+				<BoundingBox CRS="EPSG:3398" maxx="4718185.064759" maxy="5736129.461429" minx="4485399.630843" miny="5557034.992008"/>
+				<BoundingBox CRS="EPSG:3399" maxx="5504001.112752" maxy="5731703.596270" minx="5277938.241034" miny="5561654.923742"/>
+				<BoundingBox CRS="EPSG:2180" maxx="448049.902040" maxy="227825.066795" minx="265775.248465" miny="-7404.223867"/>
+				<BoundingBox CRS="EPSG:5514" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:102067" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:5650" maxx="33504000.000000" maxy="5730000.000000" minx="33278000.000000" miny="5560000.000000"/>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-client/?lang=de#/datasets/iso/8205202c-683d-4d28-b51d-0a96a641968c" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-csw/api?Service=CSW&amp;Request=GetRecordById&amp;Version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=8205202c-683d-4d28-b51d-0a96a641968c" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>DOP 2012-2014 PAN</Title>
+					<LegendURL height="189" width="351">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geoportal.sachsen.de/portal/legenden/geosn/dop/sn_dop_pan.gif" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>4500000</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="0">
+				<Name>dop_2012_2014_cir</Name>
+				<Title>DOP 2012-2014 CIR</Title>
+				<Abstract>Historische, digitale Orthophotos der Jahre 2012 bis 2014 als Color-Infrarot-Bilder (CIR).</Abstract>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:25833</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:31469</CRS>
+				<CRS>EPSG:31468</CRS>
+				<CRS>EPSG:31467</CRS>
+				<CRS>EPSG:31466</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3044</CRS>
+				<CRS>EPSG:3045</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:3398</CRS>
+				<CRS>EPSG:3399</CRS>
+				<CRS>EPSG:2180</CRS>
+				
+				<CRS>EPSG:102067</CRS>
+				
+				<CRS>EPSG:5514</CRS>
+				<CRS>EPSG:5650</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>11.788898</westBoundLongitude>
+					<eastBoundLongitude>15.057907</eastBoundLongitude>
+					<southBoundLatitude>50.150604</southBoundLatitude>
+					<northBoundLatitude>51.720930</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4326" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25833" maxx="504000.000000" maxy="5730000.000000" minx="278000.000000" miny="5560000.000000"/>
+				<BoundingBox CRS="EPSG:4258" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25832" maxx="932140.303149" maxy="5747385.403360" minx="692816.607235" miny="5559381.288536"/>
+				<BoundingBox CRS="EPSG:31469" maxx="5731703.596270" maxy="5504001.112752" minx="5561654.923742" miny="5277938.241034"/>
+				<BoundingBox CRS="EPSG:31468" maxx="5736129.461429" maxy="4718185.064759" minx="5557034.992008" miny="4485399.630843"/>
+				<BoundingBox CRS="EPSG:31467" maxx="5749093.831018" maxy="3932260.516701" minx="5561036.040164" miny="3692870.196951"/>
+				<BoundingBox CRS="EPSG:31466" maxx="5770643.025243" maxy="3146115.669397" minx="5573674.211666" miny="2900218.102917"/>
+				<BoundingBox CRS="EPSG:3034" maxx="2781558.253466" maxy="4348387.462733" minx="2602990.276271" miny="4119487.403175"/>
+				<BoundingBox CRS="EPSG:3035" maxx="3191058.751193" maxy="4681752.588347" minx="3006005.123574" miny="4444725.572118"/>
+				<BoundingBox CRS="EPSG:3044" maxx="5747385.403360" maxy="932140.303149" minx="5559381.288536" miny="692816.607235"/>
+				<BoundingBox CRS="EPSG:3045" maxx="5730000.000000" maxy="504000.000000" minx="5560000.000000" miny="278000.000000"/>
+				<BoundingBox CRS="EPSG:3857" maxx="1676238.506720" maxy="6749822.467925" minx="1312334.136670" miny="6472398.837270"/>
+				<BoundingBox CRS="EPSG:3398" maxx="4718185.064759" maxy="5736129.461429" minx="4485399.630843" miny="5557034.992008"/>
+				<BoundingBox CRS="EPSG:3399" maxx="5504001.112752" maxy="5731703.596270" minx="5277938.241034" miny="5561654.923742"/>
+				<BoundingBox CRS="EPSG:2180" maxx="448049.902040" maxy="227825.066795" minx="265775.248465" miny="-7404.223867"/>
+				<BoundingBox CRS="EPSG:5514" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:102067" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:5650" maxx="33504000.000000" maxy="5730000.000000" minx="33278000.000000" miny="5560000.000000"/>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-client/?lang=de#/datasets/iso/8205202c-683d-4d28-b51d-0a96a641968c" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-csw/api?Service=CSW&amp;Request=GetRecordById&amp;Version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=8205202c-683d-4d28-b51d-0a96a641968c" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>DOP 2012-2014 CIR</Title>
+					<LegendURL height="189" width="351">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geoportal.sachsen.de/portal/legenden/geosn/dop/sn_dop_cir.gif" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>4500000</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="0">
+				<Name>dop_2012_2014_rgb</Name>
+				<Title>DOP 2012-2014 RGB</Title>
+				<Abstract>Historische, digitale Orthophotos der Jahre 2012 bis 2014 in Farbe.</Abstract>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:25833</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:31469</CRS>
+				<CRS>EPSG:31468</CRS>
+				<CRS>EPSG:31467</CRS>
+				<CRS>EPSG:31466</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3044</CRS>
+				<CRS>EPSG:3045</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:3398</CRS>
+				<CRS>EPSG:3399</CRS>
+				<CRS>EPSG:2180</CRS>
+				
+				<CRS>EPSG:102067</CRS>
+				
+				<CRS>EPSG:5514</CRS>
+				<CRS>EPSG:5650</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>11.788898</westBoundLongitude>
+					<eastBoundLongitude>15.057907</eastBoundLongitude>
+					<southBoundLatitude>50.150604</southBoundLatitude>
+					<northBoundLatitude>51.720930</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4326" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25833" maxx="504000.000000" maxy="5730000.000000" minx="278000.000000" miny="5560000.000000"/>
+				<BoundingBox CRS="EPSG:4258" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25832" maxx="932140.303149" maxy="5747385.403360" minx="692816.607235" miny="5559381.288536"/>
+				<BoundingBox CRS="EPSG:31469" maxx="5731703.596270" maxy="5504001.112752" minx="5561654.923742" miny="5277938.241034"/>
+				<BoundingBox CRS="EPSG:31468" maxx="5736129.461429" maxy="4718185.064759" minx="5557034.992008" miny="4485399.630843"/>
+				<BoundingBox CRS="EPSG:31467" maxx="5749093.831018" maxy="3932260.516701" minx="5561036.040164" miny="3692870.196951"/>
+				<BoundingBox CRS="EPSG:31466" maxx="5770643.025243" maxy="3146115.669397" minx="5573674.211666" miny="2900218.102917"/>
+				<BoundingBox CRS="EPSG:3034" maxx="2781558.253466" maxy="4348387.462733" minx="2602990.276271" miny="4119487.403175"/>
+				<BoundingBox CRS="EPSG:3035" maxx="3191058.751193" maxy="4681752.588347" minx="3006005.123574" miny="4444725.572118"/>
+				<BoundingBox CRS="EPSG:3044" maxx="5747385.403360" maxy="932140.303149" minx="5559381.288536" miny="692816.607235"/>
+				<BoundingBox CRS="EPSG:3045" maxx="5730000.000000" maxy="504000.000000" minx="5560000.000000" miny="278000.000000"/>
+				<BoundingBox CRS="EPSG:3857" maxx="1676238.506720" maxy="6749822.467925" minx="1312334.136670" miny="6472398.837270"/>
+				<BoundingBox CRS="EPSG:3398" maxx="4718185.064759" maxy="5736129.461429" minx="4485399.630843" miny="5557034.992008"/>
+				<BoundingBox CRS="EPSG:3399" maxx="5504001.112752" maxy="5731703.596270" minx="5277938.241034" miny="5561654.923742"/>
+				<BoundingBox CRS="EPSG:2180" maxx="448049.902040" maxy="227825.066795" minx="265775.248465" miny="-7404.223867"/>
+				<BoundingBox CRS="EPSG:5514" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:102067" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:5650" maxx="33504000.000000" maxy="5730000.000000" minx="33278000.000000" miny="5560000.000000"/>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-client/?lang=de#/datasets/iso/8205202c-683d-4d28-b51d-0a96a641968c" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-csw/api?Service=CSW&amp;Request=GetRecordById&amp;Version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=8205202c-683d-4d28-b51d-0a96a641968c" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>DOP 2012-2014 RGB</Title>
+					<LegendURL height="189" width="351">
+						<Format>image/gif</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geoportal.sachsen.de/portal/legenden/geosn/dop/sn_dop_rgb.gif" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>4500000</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="0">
+				<Name>dop_2012_2014_info</Name>
+				<Title>DOP 2012-2014 Metadaten</Title>
+				<Abstract>Die Kartenebene zeigt die Ausdehnung der Befliegungsgebiete. Anhand der Beschriftung kann der Zeitraum der Aufnahme ermittelt werden.</Abstract>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:25833</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:25832</CRS>
+				<CRS>EPSG:31469</CRS>
+				<CRS>EPSG:31468</CRS>
+				<CRS>EPSG:31467</CRS>
+				<CRS>EPSG:31466</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3044</CRS>
+				<CRS>EPSG:3045</CRS>
+				<CRS>EPSG:3857</CRS>
+				<CRS>EPSG:3398</CRS>
+				<CRS>EPSG:3399</CRS>
+				<CRS>EPSG:2180</CRS>
+				
+				<CRS>EPSG:102067</CRS>
+				
+				<CRS>EPSG:5514</CRS>
+				<CRS>EPSG:5650</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>11.788898</westBoundLongitude>
+					<eastBoundLongitude>15.057907</eastBoundLongitude>
+					<southBoundLatitude>50.150604</southBoundLatitude>
+					<northBoundLatitude>51.720930</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="EPSG:4326" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25833" maxx="504000.000000" maxy="5730000.000000" minx="278000.000000" miny="5560000.000000"/>
+				<BoundingBox CRS="EPSG:4258" maxx="51.720930" maxy="15.057907" minx="50.150604" miny="11.788898"/>
+				<BoundingBox CRS="EPSG:25832" maxx="932140.303149" maxy="5747385.403360" minx="692816.607235" miny="5559381.288536"/>
+				<BoundingBox CRS="EPSG:31469" maxx="5731703.596270" maxy="5504001.112752" minx="5561654.923742" miny="5277938.241034"/>
+				<BoundingBox CRS="EPSG:31468" maxx="5736129.461429" maxy="4718185.064759" minx="5557034.992008" miny="4485399.630843"/>
+				<BoundingBox CRS="EPSG:31467" maxx="5749093.831018" maxy="3932260.516701" minx="5561036.040164" miny="3692870.196951"/>
+				<BoundingBox CRS="EPSG:31466" maxx="5770643.025243" maxy="3146115.669397" minx="5573674.211666" miny="2900218.102917"/>
+				<BoundingBox CRS="EPSG:3034" maxx="2781558.253466" maxy="4348387.462733" minx="2602990.276271" miny="4119487.403175"/>
+				<BoundingBox CRS="EPSG:3035" maxx="3191058.751193" maxy="4681752.588347" minx="3006005.123574" miny="4444725.572118"/>
+				<BoundingBox CRS="EPSG:3044" maxx="5747385.403360" maxy="932140.303149" minx="5559381.288536" miny="692816.607235"/>
+				<BoundingBox CRS="EPSG:3045" maxx="5730000.000000" maxy="504000.000000" minx="5560000.000000" miny="278000.000000"/>
+				<BoundingBox CRS="EPSG:3857" maxx="1676238.506720" maxy="6749822.467925" minx="1312334.136670" miny="6472398.837270"/>
+				<BoundingBox CRS="EPSG:3398" maxx="4718185.064759" maxy="5736129.461429" minx="4485399.630843" miny="5557034.992008"/>
+				<BoundingBox CRS="EPSG:3399" maxx="5504001.112752" maxy="5731703.596270" minx="5277938.241034" miny="5561654.923742"/>
+				<BoundingBox CRS="EPSG:2180" maxx="448049.902040" maxy="227825.066795" minx="265775.248465" miny="-7404.223867"/>
+				<BoundingBox CRS="EPSG:5514" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:102067" maxx="-674527.834391" maxy="-839945.123657" minx="-920510.782363" miny="-1037538.148052"/>
+				<BoundingBox CRS="EPSG:5650" maxx="33504000.000000" maxy="5730000.000000" minx="33278000.000000" miny="5560000.000000"/>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-client/?lang=de#/datasets/iso/1d088a9c-a3bb-4682-a3cb-10129e2f2be0" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL xmlns:xlink="http://www.w3.org/1999/xlink" type="ISO19115:2003">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="https://geomis.sachsen.de/geomis-csw/api?Service=CSW&amp;Request=GetRecordById&amp;Version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=1d088a9c-a3bb-4682-a3cb-10129e2f2be0" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>DOP 2012-2014 Metadaten</Title>
+					<LegendURL height="96" width="283">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geoportal.sachsen.de/portal/legenden/geosn/dop/DOP_2012.png" xlink:type="simple"/>
+					</LegendURL>
+				</Style>
+				<MaxScaleDenominator>4500000</MaxScaleDenominator>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

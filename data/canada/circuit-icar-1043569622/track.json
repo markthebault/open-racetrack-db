@@ -13,7 +13,8 @@
     45.68194189224138
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-1043569622"
   ],
   "defaultLayoutId": "icar-mirabel",
   "layouts": [
@@ -27,22 +28,22 @@
       "id": "icar-mirabel",
       "name": "ICAR Mirabel",
       "referenceId": "Canada/ICAR Mirabel",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/icar-mirabel.geojson",
+      "description": "Draft configuration: Short western course with northern shoulder and elongated southeastern return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1566.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "icar-mirabel-long",
       "name": "ICAR Mirabel LONG",
       "referenceId": "Canada/ICAR Mirabel LONG",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/icar-mirabel-long.geojson",
+      "description": "Draft configuration: Long course with northern angled corner, eastern inner return and southern elongated loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3330.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "icar-mirabel-long-chicane",
       "name": "ICAR Mirabel LONG chicane",
       "referenceId": "Canada/ICAR Mirabel LONG chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/icar-mirabel-long-chicane.geojson",
+      "description": "Draft configuration: The independently mapped long ICAR route retains the west hairpin, central rounded loop, northern triangular turn and full southern return with chicane. It excludes short-course diagonal and southern bypass alternatives. The operator identifies the full 3.4 km road circuit; NASCAR also distinguishes this historical full course from subsequent short race configurations. Its 3330.7 m exact source route remains unscaled against the 3386 m catalogue scalar. Chicane corner alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3330.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -54,6 +55,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:02.766Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-1043569622",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/1043569622",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-icar-mirabel",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/1043569622",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-icar-mirabel-long",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/1043569622",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-icar-mirabel-long-chicane",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://icarexperience.ca/en/corporate-events/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

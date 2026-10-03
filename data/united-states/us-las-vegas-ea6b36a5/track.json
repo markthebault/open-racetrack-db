@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -115.16663195000001,
+    36.116753
+  ],
+  "sourceIds": [
+    "osm-selection-16696508"
+  ],
   "defaultLayoutId": "las-vegas-gp",
   "layouts": [
     {
       "id": "las-vegas-gp",
       "name": "Las Vegas GP",
       "referenceId": "United States/Las Vegas GP",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/las-vegas-gp.geojson",
+      "description": "Draft configuration: Main named circuit relation follows the Strip, Sands and Harmon course. Alternative relation members and pit lanes are excluded; ordinary-road direction tags do not define race-day direction. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6210.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-16696508",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/relation/16696508",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:46:59.639Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-las-vegas-gp",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.f1lasvegasgp.com/track-layout/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T13:46:59.639Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

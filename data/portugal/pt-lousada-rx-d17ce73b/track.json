@@ -8,17 +8,81 @@
     "name": "Portugal",
     "slug": "portugal"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -8.293897300000001,
+    41.2668695
+  ],
+  "sourceIds": [
+    "osm-components-130099387",
+    "osm-network-lousada-rx"
+  ],
   "defaultLayoutId": "lousada-rx",
   "layouts": [
     {
       "id": "lousada-rx",
       "name": "Lousada RX",
       "referenceId": "Portugal/Lousada RX",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/lousada-rx.geojson",
+      "description": "Combined mapped configurations: Lousada Standard Course 2019, Lousada Joker Lap 2019. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "lousada-standard-2019",
+      "name": "Lousada Standard Course 2019",
+      "file": "layouts/lousada-standard-2019.geojson",
+      "description": "The 2019 organizer briefing and facility plan identify the rallycross course before the 2025 redevelopment. The independent 2020 main raceway 130099387 version 3 supplies the full outer western curve and short inner return, measuring 978.6 m. The separate bridge-crossing super-special loop and venue area polygon are excluded. This historical source-centreline is a draft rather than a certified race distance."
+    },
+    {
+      "id": "lousada-joker-2019",
+      "name": "Lousada Joker Lap 2019",
+      "file": "layouts/lousada-joker-2019.geojson",
+      "description": "The organizer briefing identifies the alternative Joker route before the 2025 redevelopment. Independent branch way 234422535 version 5 gives the longer inner return and reconnects the same main raceway nodes, measuring 1028.3 m. The corresponding branch retains the Joker identity in later OSM mapping, whose changed coordinates are not mixed into the 2020 snapshot. Historical alignment remains draft."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-130099387",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/130099387",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:53:48.800Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-lousada-standard-2019",
+      "type": "reference",
+      "title": "Lousada Standard Course 2019 identification",
+      "url": "https://portal.fpak.pt/pub/doc/280/106993",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:53:48.800Z",
+      "evidenceNote": "The 2019 organizer briefing and facility plan identify the rallycross course before the 2025 redevelopment. The independent 2020 main raceway 130099387 version 3 supplies the full outer western curve and short inner return, measuring 978.6 m. The separate bridge-crossing super-special loop and venue area polygon are excluded. This historical source-centreline is a draft rather than a certified race distance. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-lousada-joker-2019",
+      "type": "reference",
+      "title": "Lousada Joker Lap 2019 identification",
+      "url": "https://portal.fpak.pt/pub/doc/280/106993",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:53:48.800Z",
+      "evidenceNote": "The organizer briefing identifies the alternative Joker route before the 2025 redevelopment. Independent branch way 234422535 version 5 gives the longer inner return and reconnects the same main raceway nodes, measuring 1028.3 m. The corresponding branch retains the Joker identity in later OSM mapping, whose changed coordinates are not mixed into the 2020 snapshot. Historical alignment remains draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-lousada-rx",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/130099387",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T21:00:03.698Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-lousada-rx",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://portal.fpak.pt/pub/doc/280/106993",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T21:00:03.698Z",
+      "evidenceNote": "The catalogue general diagram includes the standard inner return and its longer parallel alternative. The organizer 2019 briefing identifies the rallycross course and Joker use before redevelopment. The network groups the two independently mapped 2020 lap choices and excludes the bridge-crossing rally super-special, access lanes and venue perimeter polygon. Shared edges count once; later source versions are not substituted. The independent unique branch distance is 1147.1 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

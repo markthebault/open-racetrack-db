@@ -13,15 +13,22 @@
     60.51367584153007
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-identified-main-courses"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Grand Prix — 5.183 km",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Operator-identified 2022 extended main course: the complete northern sector and southern extension replace the earlier unnamed candidate and its northern shortcut. Main way 491591561 indices 139 and 160 join extension 1314505677 by exact shared node IDs; the old southern return between these nodes is excluded. Northern crossover 729149906, short infield bypasses, karting, rallycross, motocross, drifting and pits are excluded. Geometry remains draft, and exact racing-line placement requires review. Start/finish GPS is unavailable for these configurations and is not inferred from their filename or circuit drawings."
+    },
+    {
+      "id": "national",
+      "name": "National — 4.086 km",
+      "file": "layouts/national.geojson",
+      "description": "Operator-identified short 4086 m configuration, still used for the September 2026 time-attack event. The complete current main way retains the southern hairpin and uphill chicane; the 2022 extension and northern shortcuts are excluded. The current OSM centerline measures 4093.4 m; the 7.4 m difference remains explicit. This is an independently identified public configuration; a generic archive filename does not establish which configuration it represents. Geometry remains draft, and exact racing-line placement requires review. Start/finish GPS is unavailable for these configurations and is not inferred from their filename or circuit drawings."
     }
   ],
   "sources": [
@@ -33,6 +40,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:21:42.508Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-identified-main-courses",
+      "type": "osm",
+      "title": "OpenStreetMap main course and southern extension",
+      "url": "https://www.openstreetmap.org/way/491591561",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T18:19:42.936Z",
+      "evidenceNote": "Pinned exact current source ways and shared-node branch choices reproduce two operator-identified main courses. Northern infield shortcuts and unrelated facility courses are excluded. Private course coordinates are not used."
+    },
+    {
+      "id": "identified-course-main",
+      "type": "reference",
+      "title": "Operator course configuration identification",
+      "url": "https://drive-igora.ru/news/2022/07/21/otkrytie-novoy-konfiguratsii-shosseyno-koltsevoy-trassy-avtodroma-igora-drayv.html",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T18:19:42.936Z",
+      "evidenceNote": "Supports configuration and nominal length only. No operator diagram coordinates are traced."
+    },
+    {
+      "id": "identified-course-national",
+      "type": "reference",
+      "title": "Operator course configuration identification",
+      "url": "https://drive-igora.ru/news/2026/09/16/iv-etap-igora-drayv-taym-atak-nazovet-imena-chempionov-sezona-2026-goda.html",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T18:19:42.936Z",
+      "evidenceNote": "Supports configuration and nominal length only. No operator diagram coordinates are traced."
     }
   ]
 }

@@ -13,7 +13,8 @@
     -27.49362859304348
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-47075845"
   ],
   "defaultLayoutId": "autodromo-ciudad-de-obera-no-1",
   "layouts": [
@@ -27,22 +28,22 @@
       "id": "autodromo-ciudad-de-obera-no-1",
       "name": "Autodromo Ciudad De Obera No.1",
       "referenceId": "Argentina/Autodromo Ciudad De Obera No.1",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-ciudad-de-obera-no-1.geojson",
+      "description": "Draft configuration: Short configuration retains the tight southern double-back and inner kink. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2698.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "autodromo-ciudad-de-obera-no-2",
       "name": "Autodromo Ciudad De Obera No.2",
       "referenceId": "Argentina/Autodromo Ciudad De Obera No.2",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-ciudad-de-obera-no-2.geojson",
+      "description": "Draft configuration: Extended configuration includes the southwestern parallel straights and outer hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4272.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "autodromo-ciudad-de-obera-no-3",
       "name": "Autodromo Ciudad De Obera No.3",
       "referenceId": "Argentina/Autodromo Ciudad De Obera No.3",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-ciudad-de-obera-no-3.geojson",
+      "description": "Draft configuration: Short configuration uses the southern sweeping bypass rather than the tight double-back; inner kink retained. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2678.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -54,6 +55,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-47075845",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/47075845",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-autodromo-ciudad-de-obera-no-1",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://apat.org.ar/circuitos/tecnica/obera",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-autodromo-ciudad-de-obera-no-2",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://apat.org.ar/circuitos/tecnica/obera",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-autodromo-ciudad-de-obera-no-3",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://apat.org.ar/circuitos/tecnica/obera",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

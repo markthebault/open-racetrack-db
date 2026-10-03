@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -96.21927245,
+    30.5371706
+  ],
+  "sourceIds": [
+    "osm-selection-texas-world-speedway-2015-independent-roads-51872030"
+  ],
   "defaultLayoutId": "texas-world-speedway",
   "layouts": [
     {
       "id": "texas-world-speedway",
       "name": "Texas World Speedway",
       "referenceId": "United States/Texas World Speedway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/texas-world-speedway.geojson",
+      "description": "Draft configuration: The organizer identifies the historical 2.9-mile, 15-turn road course and its final events in 2017. The catalogue configuration identifies the Northern kink, full external technical sector, two Southern returns and inner hairpin. The pinned 2015 independent source retains that complete course rather than the oval-only or short configurations. The 4520.2 m trace remains unscaled against the 4556 m catalogue scalar; historical temporary barriers and fine corner detail remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4520.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-texas-world-speedway-2015-independent-roads-51872030",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/51872030",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T22:26:47.153Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-texas-world-speedway",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://chintrackdays.com/tws.aspx",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:26:47.153Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

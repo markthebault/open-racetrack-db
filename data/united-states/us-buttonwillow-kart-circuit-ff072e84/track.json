@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -119.54332629999999,
+    35.4917102
+  ],
+  "sourceIds": [
+    "usgs-naip-2022-buttonwillow-kart-circuit"
+  ],
   "defaultLayoutId": "buttonwillow-kart-circuit",
   "layouts": [
     {
       "id": "buttonwillow-kart-circuit",
       "name": "Buttonwillow Kart Circuit",
       "referenceId": "United States/Buttonwillow Kart Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/buttonwillow-kart-circuit.geojson",
+      "description": "The operator's Kart #1 course uses both west and east kart loops: Long Beach, The Glen, Zolder, Daytona, Imola, Monza, the Mulsanne Straight and Monte Carlo triangular return via Spa. The independently visible paved centerline retains those branches and excludes the oval shortcut, hot pits and surrounding main road circuit. Operator route dimensions identify a full course of roughly 952 m; mapping is not scaled to that distance. Independently digitized aerial centerline: 1025.0 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-naip-2022-buttonwillow-kart-circuit",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-01T23:02:59.307Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 623e741244915ab858429bee266d8175eb5751fbce7d919ee1356b0f6da22e36; reproducible pixel-to-coordinate conversion. The operator's Kart #1 course uses both west and east kart loops: Long Beach, The Glen, Zolder, Daytona, Imola, Monza, the Mulsanne Straight and Monte Carlo triangular return via Spa. The independently visible paved centerline retains those branches and excludes the oval shortcut, hot pits and surrounding main road circuit. Operator route dimensions identify a full course of roughly 952 m; mapping is not scaled to that distance."
+    },
+    {
+      "id": "imagery-identity-buttonwillow-kart-circuit",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://buttonwillowraceway.com/wp-content/uploads/2024/11/brp-kart-map-kart-01.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T23:02:59.307Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

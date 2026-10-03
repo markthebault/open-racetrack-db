@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-180008394"
+    "osm-network-180008394",
+    "usgs-naip-2019-gateway-focused"
   ],
   "defaultLayoutId": "gateway-motorsports-park",
   "layouts": [
@@ -28,15 +29,15 @@
       "id": "gateway-motorsports-park",
       "name": "Gateway Motorsports Park",
       "referenceId": "United States/Gateway Motorsports Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gateway-motorsports-park.geojson",
+      "description": "The supplied general configuration displays the oval together with the original infield course. The operator distinguishes both physical circuits. This independently georeferenced historical configuration set excludes the later road extension, karting, dragway and pit access. Its unique-edge distance is not a timed lap. Source direction and fine centerline alignment remain draft. Independently digitized aerial branch network: 3447.5 m. Shared edges count once; this configuration set is not a single lap, and no line joins separate paths. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "gateway-motorsports-porsche-2mile",
       "name": "Gateway Motorsports Porsche 2mile",
       "referenceId": "United States/Gateway Motorsports Porsche 2mile",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gateway-motorsports-porsche-2mile.geojson",
+      "description": "The longer supplied configuration retains the original northern infield course, middle eastward connector, outer southern oval arc, inner southern extension and original infield southern return. These physical branches are independently visible in pinned public-domain 2019 NAIP imagery. The operator identifies the enlarged road-course facility; the temporary paddock rectangle in the general operator plan is excluded because it is absent from this supplied configuration. Historical branch choice, direction and fine centerline alignment remain draft. Coordinates are not fitted to a private diagram or scalar distance. Independently digitized aerial centerline: 3117.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "gateway-oval",
@@ -49,15 +50,15 @@
       "id": "gateway-road-1",
       "name": "Gateway Road 1",
       "referenceId": "United States/Gateway Road 1",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gateway-road-1.geojson",
+      "description": "The supplied Road 1 configuration retains the original smooth southern return, northern inner hairpin and oval-front-straight return. The operator distinguishes its 1.6-mile course from the later 2.0-mile extension. This draft follows the original paved route visible in the pinned public-domain 2019 NAIP image; independent historical public-node alignment aided branch identification. The newer southern extension, kart course, dragway and pit road are excluded. Coordinates come from independent public georeferencing, without fitting the supplied diagram or scalar. Historical direction and fine corner alignment remain draft. Independently digitized aerial centerline: 2602.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "gateway-road-2",
       "name": "Gateway Road 2",
       "referenceId": "United States/Gateway Road 2",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/gateway-road-2.geojson",
+      "description": "The longer supplied configuration retains the original northern infield course, middle eastward connector, outer southern oval arc, inner southern extension and original infield southern return. These physical branches are independently visible in pinned public-domain 2019 NAIP imagery. The operator identifies the enlarged road-course facility; the temporary paddock rectangle in the general operator plan is excluded because it is absent from this supplied configuration. Historical branch choice, direction and fine centerline alignment remain draft. Coordinates are not fitted to a private diagram or scalar distance. Independently digitized aerial centerline: 3117.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
   "sources": [
@@ -78,6 +79,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "imagery-identity-gateway-road-1",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "imagery-identity-gateway-motorsports-park",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "imagery-identity-gateway-road-2",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "usgs-naip-2019-gateway-focused",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 6940fb6634a6bd00073ba202ae3659cf7fea5b060f95345a46f6047f36d57ba6; reproducible pixel-to-coordinate conversion. The longer supplied configuration retains the original northern infield course, middle eastward connector, outer southern oval arc, inner southern extension and original infield southern return. These physical branches are independently visible in pinned public-domain 2019 NAIP imagery. The operator identifies the enlarged road-course facility; the temporary paddock rectangle in the general operator plan is excluded because it is absent from this supplied configuration. Historical branch choice, direction and fine centerline alignment remain draft. Coordinates are not fitted to a private diagram or scalar distance."
+    },
+    {
+      "id": "imagery-identity-gateway-motorsports-porsche-2mile",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://wwtraceway.com/world-wide-technology-raceway-announces-enlargement-of-road-course/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T08:16:26.448Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

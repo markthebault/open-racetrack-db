@@ -13,7 +13,10 @@
     22.45294475
   ],
   "sourceIds": [
-    "osm-network-645849365"
+    "osm-network-645849365",
+    "osm-selection-645849365",
+    "copernicus-sentinel-penbay-current-independent-roads",
+    "osm-network-penbay-combo"
   ],
   "defaultLayoutId": "penbay-combo",
   "layouts": [
@@ -21,8 +24,8 @@
       "id": "penbay-combo",
       "name": "Penbay Combo",
       "referenceId": "Taiwan/Penbay Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/penbay-combo.geojson",
+      "description": "Combined mapped configurations: Penbay International Circuit, Penbay North Oval, Penbay South Oval. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "penbay-international-circuit",
@@ -35,15 +38,15 @@
       "id": "penbay-national",
       "name": "Penbay National",
       "referenceId": "Taiwan/Penbay National",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/penbay-national.geojson",
+      "description": "The National course retains the full northern outer loop, western main straight and middle eastern hairpin, closing through the short western U-return. The public all-roads snapshot supplies every course section except the short junction from way 645849365 index 55 to way 645849366 index 4. That junction is independently digitized from continuous pavement in the pinned June 18, 2026 image. The southern outer loop, southern oval, northern shortcut and separate eastern karting circuit are excluded. Junction precision is limited to native 10 m imagery; operating direction and final corner placement require review. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1964.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "penbay-north-oval",
       "name": "Penbay North Oval",
       "referenceId": "Taiwan/Penbay North Oval",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/penbay-north-oval.geojson",
+      "description": "Draft configuration: Separate northern oval with rounded western corner and direct eastern outer return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 948.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "penbay-south-oval",
@@ -62,6 +65,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:40:56.726Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-645849365",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/645849365",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:40:56.753Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-penbay-north-oval",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/645849365",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:40:56.753Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "copernicus-sentinel-penbay-current-independent-roads",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/Q/RK/2026/6/S2C_50QRK_20260618_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T11:49:29.236552Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash ec61307cdadef14600b01092a794b488a672cd119656c009c99ec5ac8e8b40b0; reproducible pixel-to-coordinate conversion. The National course retains the full northern outer loop, western main straight and middle eastern hairpin, closing through the short western U-return. The public all-roads snapshot supplies every course section except the short junction from way 645849365 index 55 to way 645849366 index 4. That junction is independently digitized from continuous pavement in the pinned June 18, 2026 image. The southern outer loop, southern oval, northern shortcut and separate eastern karting circuit are excluded. Junction precision is limited to native 10 m imagery; operating direction and final corner placement require review. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-penbay-national",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.dbnsa.gov.tw/zh-tw/attraction/AttractionPage?a=193",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:49:29.236552Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "osm-network-penbay-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/645849365",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T12:06:05.648Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-penbay-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.dbnsa.gov.tw/zh-tw/attraction/AttractionPage?a=193",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T12:06:05.648Z",
+      "evidenceNote": "Configuration set contains the identified International course, northern oval and southern oval. The supplied aggregate identity includes the northern closing shortcut, full middle hairpin, southern oval and southern crossing branch. These three independently mapped component routes reproduce those branches from exact public course nodes. The western National U-return is a separate configuration and is excluded. The tourism authority identifies the venue as a motor-racing circuit; licensed June 2026 public imagery independently confirms the separate karting site and paddock are excluded. Aggregate branch length 3,864.0 m is not a single-lap distance. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-537040271"
+    "osm-network-537040271",
+    "osm-selection-537040271"
   ],
   "defaultLayoutId": "motorsport-ranch-1-3-mile-course",
   "layouts": [
@@ -28,15 +29,15 @@
       "id": "motorsport-ranch-1-3-mile-course",
       "name": "Motorsport Ranch 1.3 mile course",
       "referenceId": "United States/Motorsport Ranch 1.3 mile course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/motorsport-ranch-1-3-mile-course.geojson",
+      "description": "Draft configuration: Separate western 1.3-mile course with its central elongated hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2145.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "motorsport-ranch-1-7-mile-course",
       "name": "Motorsport Ranch 1.7 mile course",
       "referenceId": "United States/Motorsport Ranch 1.7 mile course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/motorsport-ranch-1-7-mile-course.geojson",
+      "description": "Draft configuration: Separate eastern 1.7-mile course with triangular eastern loop and western linked bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2793.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "motorsport-ranch-3-1-mile-course",
@@ -64,6 +65,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-537040271",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/537040271",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-motorsport-ranch-1-3-mile-course",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/537040271",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-motorsport-ranch-1-7-mile-course",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/537040271",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

@@ -10,13 +10,13 @@ Browse circuits, compare layouts, and download their geographic traces as GeoJSO
 
 The viewer contains **763 venues across 74 countries**, with every one of the **1,007 supplied layout entries** registered. Search a venue, select a layout, and download an attributed GeoJSON trace when geometry is available.
 
-**457 supplied entries have draft course traces; 550 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap.
+**996 supplied entries have draft course traces; 11 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) list the remaining tracks and the evidence needed to finish them.
 
-Course coordinates come from pinned OpenStreetMap data and explicit route recipes. All traces remain drafts. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
+Course coordinates come from pinned OpenStreetMap data or independently digitized reusable government aerial imagery. Explicit recipes preserve each source and its attribution. All traces remain drafts. Woodbridge publishes its full supporting runway; its independently verified timed extent remains unresolved. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
 
-The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files, track pictures or boundaries. Private timing stays outside the public database, downloads and build.
+The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files or course boundaries. A separate manual review uses layout pictures only to identify branch choices; course coordinates come from independent mapping or reusable aerial images. Private timing stays outside the public database, downloads and build.
 
-Nürburgring now has nine catalogue entries, with distinct GP and Sprint traces. Separate-gate entries use a supporting independent loop in public downloads; local timing trims the private preview. Independently reusable open-course endpoints remain missing.
+Nürburgring has nine catalogue entries, with distinct GP and Sprint traces. All eight Paul Ricard entries have draft traces, including the two short-course chicane variants and separate training circuit. Independently mapped open courses include Pikes Peak, Osnabrück, Harewood, Gurston Down and Aintree Sprint. Some separate-gate entries still use a supporting public loop; the local timing overlay trims the preview.
 
 ## Run locally
 
@@ -52,9 +52,17 @@ On macOS, `npm run preview:install` copies the build and optional private timing
 
 On the Mac Mini, the current preview is available to connected Tailscale devices at [marks-mac-mini.baboon-trench.ts.net:8445](https://marks-mac-mini.baboon-trench.ts.net:8445/). Tailscale Serve proxies to the local production preview on port 5190.
 
+For phone access by IP, connect Tailscale on the phone and open [100.73.197.112:5190](http://100.73.197.112:5190/). The most recently added trace is [Palanga](http://100.73.197.112:5190/?track=lt-palanga-street-circuit-a9c06d36&layout=palanga-street-circuit). [Paul Ricard](http://100.73.197.112:5190/?track=fr-paul-ricard) has eight selectable layouts with draft traces.
+
+The IP endpoint uses a persistent TCP forwarder to the same localhost server. To configure it on another machine, run this command and use that machine's `tailscale ip -4` address:
+
+```sh
+tailscale serve --bg --tcp=5190 tcp://127.0.0.1:5190
+```
+
 ## Data and code licenses
 
-Original application code is MIT licensed. OSM-derived database content is attributed to OpenStreetMap contributors and distributed under ODbL 1.0. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
+Original application code is MIT licensed. Database content is distributed under ODbL 1.0. OSM-derived courses credit OpenStreetMap contributors; independently digitized NAIP courses credit USGS, USDA and The National Map. The original NAIP imagery is public domain. Polish aerial courses credit GUGiK and Geoportal.gov.pl, whose orthoimagery is freely reusable; the source-specific identifier `LicenseRef-GUGiK-open-data` links to the provider’s reuse statement. Saxon historical aerial courses credit GeoSN under [Datenlizenz Deutschland Namensnennung 2.0](https://www.govdata.de/dl-de/by-2-0), with independently digitized centerlines marked as changed. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
 
 ## Layout completeness
 
@@ -63,13 +71,30 @@ The supplied catalogue defines the expected layout names and timing conventions.
 To repeat catalogue registration, independent course matching and coverage checks:
 
 ```sh
+npm run audit:archive -- --archive /absolute/path/to/tracks.zip
 npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
 npm run generate:data
 npm run recover:variants -- --archive /absolute/path/to/tracks.zip
+npm run discover:circuits
+npm run research:circuits -- --archive /absolute/path/to/tracks.zip
+npm run recover:circuits -- --archive /absolute/path/to/tracks.zip
+npm run import:roads -- --archive /absolute/path/to/tracks.zip
+npm run import:selections -- --archive /absolute/path/to/tracks.zip
 npm run generate:data
 npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
 npm run audit:layouts -- --archive /absolute/path/to/tracks.zip
 npm run import:timing -- --archive /absolute/path/to/tracks.zip
+npm run research:gaps -- --archive /absolute/path/to/tracks.zip
 ```
 
-Country extracts must already be available for course matching. Only unique, connected source cycles that pass conservative timing and distance checks become draft hypotheses. Ambiguous graphs, missing ways, street courses and open routes remain in the gap list. No trace is synthesized to make the counts match.
+Country extracts must already be available for course matching. Named circuit relations add public-road geometry that raceway-only extracts omit. [Documented course identities](sources/reference/course-identifications.json) record independent operator evidence for specific distance discrepancies. [Remaining source limitations](data/layout-gap-research.json) distinguish absent geometry, disconnected ways, ambiguous branches and unresolved distances. Only unique, connected source cycles that pass conservative timing and distance checks become draft hypotheses. Unresolved branches and missing source sections remain in the gap list. No trace is synthesized to make the counts match. The [archive filename audit](sources/reference/archive-inventory.json) reconciles six reviewed alternate filenames using identical file fingerprints and associates Bedford GT New 1511 with the independently mapped GT configuration after a separate diagram and operator review, and flags 17 remaining names for identity reconciliation. The Bedford association does not establish timing equivalence.
+
+Historical configurations can use independent OSM snapshots from before a circuit changed. Acquire a bounded venue network with `npm run discover:network -- --slug venue-2020 --bbox south,west,north,east --date 2020-01-01T00:00:00Z --raceways-only`. Bounds must come from independent venue evidence. Omit `--raceways-only` when public-road sections are needed. Add `--airfields` to include independently mapped runway and taxiway centrelines for airfield courses; area outlines remain excluded. Use `--track-lines` to research line features tagged as tracks as well as roads, with each course still requiring separate identification. The helper sanitizes and pins the response, respects server retry intervals and reuses its cache. It does not choose a layout.
+
+For an incomplete public-road relation, `npm run discover:relation-network -- --slug venue-neighborhood --relation 12345` acquires independently mapped roads adjoining its open endpoints. The snapshot retains exact source nodes and versions. Acquiring those roads does not establish the course route; branch choices still require review and a continuous source-node recipe.
+
+The [selection manifest](sources/reference/course-selections.json) records reviewed branch choices and distance discrepancies. Its importer checks exact source versions, shared node joins and private timing proximity before generating a draft. Identical overlapping source paths count once during route search; different branches remain separate. Tagged pit lanes cannot become course traces.
+
+![Snetterton configurations displayed together as an independent track network](Docs/assets/network-preview.png)
+
+Aggregate “Combo” configurations and explicitly reviewed configuration sets use schema 2 GeoJSON networks of independently identified course paths. The viewer labels them **Track network** and displays the length of unique mapped branches. It preserves disconnected components without adding joining lines. Regular driving routes retain schema 1. [Network selections](sources/reference/course-network-selections.json) pin their component recipes and require branch-identification review. A general venue entry without an aggregate name additionally requires a public identification reference for every named component; it cannot become a network by default. Regenerate them with `npm run import:networks -- --archive /absolute/path/to/archive.zip` before the regular data generation and coverage audit.

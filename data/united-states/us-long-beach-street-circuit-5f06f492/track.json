@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -118.1907105,
+    33.763830049999996
+  ],
+  "sourceIds": [
+    "osm-selection-long-beach-independent-relation-13352560"
+  ],
   "defaultLayoutId": "long-beach-street-circuit",
   "layouts": [
     {
       "id": "long-beach-street-circuit",
       "name": "Long Beach Street Circuit",
       "referenceId": "United States/Long Beach Street Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/long-beach-street-circuit.geojson",
+      "description": "Draft configuration: The independently named Long Beach circuit relation contains one complete closed source-node cycle. The course follows Shoreline Drive, the Aquarium fountain section, convention-centre return and final hairpin, matching the published 11-turn INDYCAR circuit. The mapped road centreline measures 3258.4 m versus the catalogue 3169 m and operator 1.968 miles; temporary race barriers and exact historical racing alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3258.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-long-beach-independent-relation-13352560",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/13352560",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:07:50.205Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-long-beach-street-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.indycar.com/Schedule/2026/Long-Beach",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:07:50.205Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

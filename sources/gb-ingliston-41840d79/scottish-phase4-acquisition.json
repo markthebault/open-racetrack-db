@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "file": "scottish-phase4-course-review.png",
+  "width": 560,
+  "height": 270,
+  "extent": {
+    "xmin": -375817.99926427804,
+    "xmax": -374819.05582712375,
+    "ymax": 7546587.075218412,
+    "ymin": 7546105.441775499,
+    "spatialReference": 3857
+  },
+  "imagerySha256": "5e8dff4efbe9ed2b6ed384fdcc701832519f39c69a431bbd68ad345e6980ad97",
+  "nativeSha256": "4b7334447b52221ea4827706eeab63ed9298c2d81702745516ddd16c6df3d023",
+  "nativeProjection": "EPSG:27700",
+  "nativeResolutionM": 1,
+  "captureWindow": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "processing": "Mean intensity of first returns on native one-metre BNG grid; global 1st/99th percentile contrast stretch, nodata zero; nearest-neighbour reprojection to EPSG:3857. No timing or reference course coordinates enter raster processing.",
+  "contrastLimits": [
+    447.75,
+    1947.5
+  ],
+  "sources": [
+    {
+      "id": "4a6c07dd-2a3f-40f1-bcea-86619e98ff7d",
+      "url": "https://srsp-open-data.s3.eu-west-2.amazonaws.com/lidar/phase-4/laz/27700/gridded/NT1372_4PPM_LAS_PHASE4.laz",
+      "sha256": "fa96962117036eb5e24ec414fef7e5722d47666bb5edfab0943b2ad694480372",
+      "metadata": {
+        "title": "Scotland Lidar Phase 4 LAS NT1372",
+        "lineage": "",
+        "abstract": "The Scottish Public Sector LiDAR (Phase 4) was initially captured by Fugro for Scottish Power Energy Network (SPEN) from 2017 to 2019 to monitor their overhead power cable network under their Virtual World Asset Management programme. The Scottish Government procured this dataset for public use in 2020. This dataset covers total 17,945 square kilometres (note the dataset does not have full national coverage). This dataset reflects the LAS point cloud data with a density of 4ppm (points per square metre).",
+        "keywords": [
+          {
+            "value": "Orthoimagery",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Elevation",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Society",
+            "vocab": ""
+          }
+        ],
+        "dataFormat": "GeoTIFF",
+        "boundingBox": {
+          "east": -3.378132278935456,
+          "west": -3.394456091113467,
+          "north": 55.94232266304464,
+          "south": 55.93316047582663
+        },
+        "metadataDate": "2020-11-23",
+        "resourceType": "dataset",
+        "topicCategory": "Orthoimagery Elevation",
+        "temporalExtent": {
+          "end": "2019-12-31",
+          "begin": "2017-01-01"
+        },
+        "useConstraints": "Open Government Licence v3",
+        "resourceLocator": "https://remotesensingdata.gov.scot/products?collections=227b2528-0c7b-58f1-9e4e-315a1491969c",
+        "datasetReferenceDate": "2010-12-08",
+        "metadataPointOfContact": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "metadataPointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "spatialReferenceSystem": "EPSG:27700",
+        "responsibleOrganisation": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "pointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "limitationsOnPublicAccess": "No limitations on public access",
+        "additionalInformationSource": "https://data.gov.uk/dataset/89d2e87a-67b2-4704-8a1e-509d851b5cc5/lidar-for-scotland-phase-4-las"
+      }
+    },
+    {
+      "id": "dc121a86-30dd-4064-8d7c-1961b7bc0a37",
+      "url": "https://srsp-open-data.s3.eu-west-2.amazonaws.com/lidar/phase-4/laz/27700/gridded/NT1373_4PPM_LAS_PHASE4.laz",
+      "sha256": "adc49ffb286657fd61e010ea86f56999561468a7bc72f1f173156295b60f141f",
+      "metadata": {
+        "title": "Scotland Lidar Phase 4 LAS NT1373",
+        "lineage": "",
+        "abstract": "The Scottish Public Sector LiDAR (Phase 4) was initially captured by Fugro for Scottish Power Energy Network (SPEN) from 2017 to 2019 to monitor their overhead power cable network under their Virtual World Asset Management programme. The Scottish Government procured this dataset for public use in 2020. This dataset covers total 17,945 square kilometres (note the dataset does not have full national coverage). This dataset reflects the LAS point cloud data with a density of 4ppm (points per square metre).",
+        "keywords": [
+          {
+            "value": "Orthoimagery",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Elevation",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Society",
+            "vocab": ""
+          }
+        ],
+        "dataFormat": "GeoTIFF",
+        "boundingBox": {
+          "east": -3.378451316717212,
+          "west": -3.394779016397409,
+          "north": 55.95130484858154,
+          "south": 55.942142525452944
+        },
+        "metadataDate": "2020-11-23",
+        "resourceType": "dataset",
+        "topicCategory": "Orthoimagery Elevation",
+        "temporalExtent": {
+          "end": "2019-12-31",
+          "begin": "2017-01-01"
+        },
+        "useConstraints": "Open Government Licence v3",
+        "resourceLocator": "https://remotesensingdata.gov.scot/products?collections=227b2528-0c7b-58f1-9e4e-315a1491969c",
+        "datasetReferenceDate": "2010-12-08",
+        "metadataPointOfContact": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "metadataPointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "spatialReferenceSystem": "EPSG:27700",
+        "responsibleOrganisation": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "pointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "limitationsOnPublicAccess": "No limitations on public access",
+        "additionalInformationSource": "https://data.gov.uk/dataset/89d2e87a-67b2-4704-8a1e-509d851b5cc5/lidar-for-scotland-phase-4-las"
+      }
+    },
+    {
+      "id": "d816fbe5-da6a-4702-bac3-8b20e8e63e93",
+      "url": "https://srsp-open-data.s3.eu-west-2.amazonaws.com/lidar/phase-4/laz/27700/gridded/NT1472_4PPM_LAS_PHASE4.laz",
+      "sha256": "5108542ba16c025404fd9f77844d75f1f54084106222fcb08fdf8365427695a2",
+      "metadata": {
+        "title": "Scotland Lidar Phase 4 LAS NT1472",
+        "lineage": "",
+        "abstract": "The Scottish Public Sector LiDAR (Phase 4) was initially captured by Fugro for Scottish Power Energy Network (SPEN) from 2017 to 2019 to monitor their overhead power cable network under their Virtual World Asset Management programme. The Scottish Government procured this dataset for public use in 2020. This dataset covers total 17,945 square kilometres (note the dataset does not have full national coverage). This dataset reflects the LAS point cloud data with a density of 4ppm (points per square metre).",
+        "keywords": [
+          {
+            "value": "Orthoimagery",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Elevation",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Society",
+            "vocab": ""
+          }
+        ],
+        "dataFormat": "GeoTIFF",
+        "boundingBox": {
+          "east": -3.362130891860894,
+          "west": -3.378451316717212,
+          "north": 55.94250072379354,
+          "south": 55.93334055291839
+        },
+        "metadataDate": "2020-11-23",
+        "resourceType": "dataset",
+        "topicCategory": "Orthoimagery Elevation",
+        "temporalExtent": {
+          "end": "2019-12-31",
+          "begin": "2017-01-01"
+        },
+        "useConstraints": "Open Government Licence v3",
+        "resourceLocator": "https://remotesensingdata.gov.scot/products?collections=227b2528-0c7b-58f1-9e4e-315a1491969c",
+        "datasetReferenceDate": "2010-12-08",
+        "metadataPointOfContact": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "metadataPointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "spatialReferenceSystem": "EPSG:27700",
+        "responsibleOrganisation": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "pointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "limitationsOnPublicAccess": "No limitations on public access",
+        "additionalInformationSource": "https://data.gov.uk/dataset/89d2e87a-67b2-4704-8a1e-509d851b5cc5/lidar-for-scotland-phase-4-las"
+      }
+    },
+    {
+      "id": "94d7c6e4-6f23-4db0-adf2-d1bb443b3e21",
+      "url": "https://srsp-open-data.s3.eu-west-2.amazonaws.com/lidar/phase-4/laz/27700/gridded/NT1473_4PPM_LAS_PHASE4.laz",
+      "sha256": "d0ce38a19194b6aa286835f712489a22309ee747d8e8550e1a865b5f9772b127",
+      "metadata": {
+        "title": "Scotland Lidar Phase 4 LAS NT1473",
+        "lineage": "",
+        "abstract": "The Scottish Public Sector LiDAR (Phase 4) was initially captured by Fugro for Scottish Power Energy Network (SPEN) from 2017 to 2019 to monitor their overhead power cable network under their Virtual World Asset Management programme. The Scottish Government procured this dataset for public use in 2020. This dataset covers total 17,945 square kilometres (note the dataset does not have full national coverage). This dataset reflects the LAS point cloud data with a density of 4ppm (points per square metre).",
+        "keywords": [
+          {
+            "value": "Orthoimagery",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Elevation",
+            "vocab": "GEMET - INSPIRE themes, version 1.0"
+          },
+          {
+            "value": "Society",
+            "vocab": ""
+          }
+        ],
+        "dataFormat": "GeoTIFF",
+        "boundingBox": {
+          "east": -3.362446228829449,
+          "west": -3.378770539219341,
+          "north": 55.95148296916166,
+          "south": 55.94232266304464
+        },
+        "metadataDate": "2020-11-23",
+        "resourceType": "dataset",
+        "topicCategory": "Orthoimagery Elevation",
+        "temporalExtent": {
+          "end": "2019-12-31",
+          "begin": "2017-01-01"
+        },
+        "useConstraints": "Open Government Licence v3",
+        "resourceLocator": "https://remotesensingdata.gov.scot/products?collections=227b2528-0c7b-58f1-9e4e-315a1491969c",
+        "datasetReferenceDate": "2010-12-08",
+        "metadataPointOfContact": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "metadataPointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "spatialReferenceSystem": "EPSG:27700",
+        "responsibleOrganisation": {
+          "name": "Scottish Government, Geographic Information Science and Analysis Team (GI-SAT), Directorate for Digital",
+          "role": "pointOfContact",
+          "email": "GI-SAT@gov.scot",
+          "address": {
+            "city": "Edinburgh, Scotland",
+            "country": "United Kingdom",
+            "postalCode": "EH6 6QQ",
+            "deliveryPoint": "Victoria Quay"
+          }
+        },
+        "limitationsOnPublicAccess": "No limitations on public access",
+        "additionalInformationSource": "https://data.gov.uk/dataset/89d2e87a-67b2-4704-8a1e-509d851b5cc5/lidar-for-scotland-phase-4-las"
+      }
+    }
+  ],
+  "license": "OGL-UK-3.0",
+  "attribution": "Contains Scottish Government data licensed under the Open Government Licence v3.0.",
+  "usage": "Independent pavement inspection only; published course coordinates remain exact OSM nodes."
+}

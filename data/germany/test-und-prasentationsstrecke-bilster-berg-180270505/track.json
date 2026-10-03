@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-180270505"
+    "osm-network-180270505",
+    "osm-selection-180270505"
   ],
   "defaultLayoutId": "bilster-berg-gesamtstrecke",
   "layouts": [
@@ -49,8 +50,8 @@
       "id": "bilster-berg-ostschleife-with-chicane",
       "name": "Bilster Berg Ostschleife With Chicane",
       "referenceId": "Germany/Bilster Berg Ostschleife With Chicane",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bilster-berg-ostschleife-with-chicane.geojson",
+      "description": "Draft configuration: Eastern loop including the western connector chicane; excludes the full western loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2572.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "bilster-berg-westschleife",
@@ -78,6 +79,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:55.611Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-180270505",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/180270505",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-bilster-berg-ostschleife-with-chicane",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.bilster-berg.de/die-strecke/rennstrecke/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:06:55.461Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

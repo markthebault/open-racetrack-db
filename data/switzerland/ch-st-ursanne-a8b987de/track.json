@@ -8,17 +8,41 @@
     "name": "Switzerland",
     "slug": "switzerland"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    7.18092055,
+    47.3761851
+  ],
+  "sourceIds": [
+    "osm-selection-st-ursanne-independent-roads-24393587"
+  ],
   "defaultLayoutId": "st-ursanne",
   "layouts": [
     {
       "id": "st-ursanne",
       "name": "St Ursanne",
       "referenceId": "Switzerland/St Ursanne",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/st-ursanne.geojson",
+      "description": "Draft configuration: The operator and municipal closure notice identify Route des Rangiers / road 249 from St-Ursanne through Grippons towards Les Rangiers. The selected independent road chain follows the main Grippons roundabout using its forward source-node order and the legal approach and exit lanes, excluding the residential bypass. Both catalogue timing positions agree with existing source endpoints. The road-centreline draft measures 5210.6 m; published race distance is 5180 m and the catalogue scalar is 5199 m. Race-day temporary barriers and exact historical alignment remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5210.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-st-ursanne-independent-roads-24393587",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/24393587",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T20:31:39.234Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-st-ursanne",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://closdudoubs.ch/wp-content/uploads/2025/08/20250808_SIN_Inforoute_St-Ursanne_CourseDeCoteInternationale.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T20:31:39.234Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

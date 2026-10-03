@@ -14,7 +14,10 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-215336384"
+    "osm-network-215336384",
+    "osm-circuit-11249426",
+    "osm-selection-215336384",
+    "osm-network-mallory-park-combo"
   ],
   "defaultLayoutId": "mallory-park",
   "layouts": [
@@ -28,22 +31,22 @@
       "id": "mallory-park",
       "name": "Mallory Park",
       "referenceId": "United Kingdom/Mallory Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/mallory-park.geojson",
+      "description": "Draft configuration: Road course retains Gerards Bend, the Esses, Shaws Hairpin and Devils Elbow, without Edwinas, Stapletons, Charlies or Bus Stop chicanes. This corrects the previous unreviewed relation association. The operator identifies a 1.35-mile configuration; the independent source line measures 2032.7 m and remains a draft with historical alignment provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2032.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "mallory-park-combo",
       "name": "Mallory Park Combo",
       "referenceId": "United Kingdom/Mallory Park Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/mallory-park-combo.geojson",
+      "description": "Combined mapped configurations: Mallory Park, Mallory Park Oval Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "mallory-park-oval-circuit",
       "name": "Mallory Park Oval Circuit",
       "referenceId": "United Kingdom/Mallory Park Oval Circuit",
       "file": "layouts/mallory-park-oval-circuit.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1604.3 m. Difference from the supplied layout distance 4.7 m. Course configuration still requires visual review."
+      "description": "Draft configuration: Plain oval retains Gerards Bend and the north oval shortcut, without Edwinas, Stapletons, Charlies or Bus Stop chicanes. This corrects the earlier distance-based hypothesis that followed added chicanes. The operator identifies a 1-mile oval; the independent source line measures 1551.7 m. The distance discrepancy is documented and no coordinates are altered. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1551.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -64,6 +67,60 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-circuit-11249426",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Mallory Park",
+      "url": "https://www.openstreetmap.org/relation/11249426",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.445Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "osm-selection-215336384",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/215336384",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-mallory-park",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.malloryparkcircuit.com/wp-content/uploads/2014/03/Mallory-Park-Map.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-mallory-park-oval-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.malloryparkcircuit.com/wp-content/uploads/2014/03/Mallory-Park-Map.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-mallory-park-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/215336384",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:54:43.131Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-mallory-park-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.malloryparkcircuit.com/wp-content/uploads/2014/03/Mallory-Park-Map.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:54:43.131Z",
+      "evidenceNote": "Aggregate includes the plain road course and plain oval shortcut. Edwinas, Stapletons, Charlies, Bus Stop and pit branches are excluded. Both component hypotheses were reassessed against the operator course map and catalogue branch identity. Identification only; no image coordinates copied."
     }
   ]
 }

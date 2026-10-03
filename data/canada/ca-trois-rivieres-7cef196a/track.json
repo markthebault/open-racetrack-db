@@ -8,17 +8,41 @@
     "name": "Canada",
     "slug": "canada"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -72.55944005,
+    46.3476912
+  ],
+  "sourceIds": [
+    "quebec-2019-trois-rivieres-ortho"
+  ],
   "defaultLayoutId": "trois-rivieres",
   "layouts": [
     {
       "id": "trois-rivieres",
       "name": "Trois Rivieres",
       "referenceId": "Canada/Trois Rivieres",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/trois-rivieres.geojson",
+      "description": "The organizer 2026 programme, pages 8 and 9, identifies the full road racing route: Avenue Gilles-Villeneuve, pool return, Boulevard du Carmel, Rue de Calonne and Rue Papineau with the Ryan hairpin. Pavement and painted race curbs are independently digitized from the licensed 2019 Quebec orthophoto. The oval, rallycross course, parking roads and pit lane are excluded. Historical road alignment and the western carriageway of Boulevard du Carmel are retained; current street widening is not substituted. The independently measured centerline is approximately 2.374 km versus the supplied 2.437 km nominal value; the difference is retained rather than scaling the course. The source image has 20 cm native resolution but this bounded WMS render samples approximately 0.78 m on the ground. Fine corner alignment and direction remain draft. No vertices are fitted to private diagrams, timing coordinates or nominal length. Independently digitized aerial centerline: 2374.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "quebec-2019-trois-rivieres-ortho",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://servicesmatriciels.mern.gouv.qc.ca/erdas-iws/ogc/wms/Imagerie_Aeroportee_Forestiere_Historique?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=Inventaire_Ecoforestier_2019_2019_Inv_Ecofor_20cm_RVB&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=FALSE&CRS=EPSG%3A3857&BBOX=-8078248.530097691%2C5835486.621019855%2C-8075990.695858996%2C5837744.455258548&WIDTH=2000&HEIGHT=2000",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T10:32:00.667733Z",
+      "evidenceNote": "Reuse evidence: https://donneesquebec.ca/recherche/dataset/imagerie-orthorectifiee-du-quebec/resource/c55df227-c002-40c2-ad6b-499ab2323626. Pinned raster hash 3a0267a5f77e9d73658ecc00a6d41da748775ef6d43bdb87cb33fea9d88f8c58; reproducible pixel-to-coordinate conversion. The organizer 2026 programme, pages 8 and 9, identifies the full road racing route: Avenue Gilles-Villeneuve, pool return, Boulevard du Carmel, Rue de Calonne and Rue Papineau with the Ryan hairpin. Pavement and painted race curbs are independently digitized from the licensed 2019 Quebec orthophoto. The oval, rallycross course, parking roads and pit lane are excluded. Historical road alignment and the western carriageway of Boulevard du Carmel are retained; current street widening is not substituted. The independently measured centerline is approximately 2.374 km versus the supplied 2.437 km nominal value; the difference is retained rather than scaling the course. The source image has 20 cm native resolution but this bounded WMS render samples approximately 0.78 m on the ground. Fine corner alignment and direction remain draft. No vertices are fitted to private diagrams, timing coordinates or nominal length."
+    },
+    {
+      "id": "imagery-identity-trois-rivieres",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://gp3r.com/wp-content/uploads/2026/08/GP3R_2026-1-a-32_BLEU-sans-marques-1.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T10:32:00.667733Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

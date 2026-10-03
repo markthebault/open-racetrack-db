@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -105.05657769999999,
+    38.87905965
+  ],
+  "sourceIds": [
+    "osm-road-21180239"
+  ],
   "defaultLayoutId": "pikes-peak-hillclimb",
   "layouts": [
     {
       "id": "pikes-peak-hillclimb",
       "name": "Pikes Peak Hillclimb",
       "referenceId": "United States/Pikes Peak Hillclimb",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/pikes-peak-hillclimb.geojson",
+      "description": "Draft open course: The event operator identifies the open Pikes Peak Highway climb from the mile-seven start to the summit. The planar source distance differs from the published event distance and supplied distance; the private timing positions agree with the source endpoints. Coordinates are unchanged independent OSM ways; no artificial closure or endpoint interpolation is added."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-road-21180239",
+      "type": "osm",
+      "title": "OpenStreetMap named road course: Pikes Peak International Hill Climb",
+      "url": "https://www.openstreetmap.org/relation/21180239",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T14:21:48.724Z",
+      "evidenceNote": "Exact, unbranched road-source chain. Source one-way tags remain unchanged; race-day travel direction is provisional."
+    },
+    {
+      "id": "road-identity-21180239",
+      "type": "reference",
+      "title": "Independent event operator course identification",
+      "url": "https://ppihc.org/about/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:21:48.724Z",
+      "evidenceNote": "The event operator identifies the open Pikes Peak Highway climb from the mile-seven start to the summit. The planar source distance differs from the published event distance and supplied distance; the private timing positions agree with the source endpoints. Supports identification only; no coordinates are copied."
+    }
+  ]
 }

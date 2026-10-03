@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {readTimingArchive} from './reference-timing';
 import {components,candidateLoops} from './candidates';
+import {anchoredCourses} from './anchored-courses';
 import {assemble,type Way} from './route';
 import {nearestEdge,bounds,type Position} from '../src/geo';
 import {worldCountries} from './world-countries';
@@ -9,7 +10,7 @@ const args=process.argv.slice(2),archive=args[args.indexOf('--archive')+1];if(!a
 const {records}=readTimingArchive(archive),read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),save=async(p:string,x:unknown)=>writeFile(p,JSON.stringify(x,null,2)+'\n');
 const registry=await read('sources/reference/catalogue.json'),index=await read('data/index.json'),matches=await read('sources/reference/layout-matches.json');
 const aliases:Record<string,string>={'Czech Republic':'CZ','Turkey':'TR','United Kingdom':'GB','Canary Islands':'ES','Isle Of Man':'IM','Russia':'RU','South Korea':'KR','Taiwan':'TW','Vietnam':'VN','United States':'US','United Arab Emirates':'AE'};
-const eligible=(w:Way)=>w.tags?.area!=='yes'&&(w.tags?.highway==='raceway'||w.tags?.['disused:highway']==='raceway')&&w.tags?.service!=='pit_lane'&&w.tags?.raceway!=='pit_lane'&&!/pit[ _-]?(lane|road|entry|exit)|boxengasse|boxenausfahrt|sortie stands/i.test(w.tags?.name??'');
+const eligible=(w:Way)=>w.tags?.area!=='yes'&&(w.tags?.highway==='raceway'||w.tags?.['disused:highway']==='raceway')&&!/^pit[_ -]?lane$/i.test(w.tags?.service??'')&&!/^pit[_ -]?lane$/i.test(w.tags?.raceway??'')&&!/pit[ _-]?(lane|road|entry|exit)|boxengasse|boxenausfahrt|sortie stands/i.test(w.tags?.name??'');
 let added=0;const unresolved:any[]=[];
 for(const name of new Set(records.map(r=>r.country))){
  const country=worldCountries.find(c=>c.code===aliases[name]||c.name.toLowerCase()===name.toLowerCase())!;
@@ -19,12 +20,12 @@ for(const name of new Set(records.map(r=>r.country))){
  for(const r of records.filter(r=>r.country===name&&r.gates.length===1&&r.nominalLengthM)){
   const registered=registry.records.find((x:any)=>x.referenceId===r.id);if(registered.geometryAvailable)continue;const p=r.gates[0].point;
   const nearby=groups.map((g,i)=>({g,i})).filter(({g})=>p[0]>g.box[0]-.005&&p[0]<g.box[2]+.005&&p[1]>g.box[1]-.005&&p[1]<g.box[3]+.005).filter(({g})=>g.ways.some(w=>nearestEdge(p,w.geometry.map(p=>[p.lon,p.lat] as Position)).displacementM<=30));
-  const candidates:any[]=[];
-  for(const {g,i} of nearby){let loops=cache.get(i);if(!loops){loops=candidateLoops(g.ways,400,40);cache.set(i,loops);}if(loops.truncated)continue;
+  const candidates:any[]=[];let incomplete=false;
+  for(const {g,i} of nearby){let loops=cache.get(i);if(!loops){loops=candidateLoops(g.ways,400,40);cache.set(i,loops);}if(loops.truncated){const focused=anchoredCourses(g.ways,p,r.nominalLengthM!);if(focused.truncated){incomplete=true;continue;}for(const loop of focused.candidates)candidates.push({g,loop,delta:Math.abs(loop.lengthM-r.nominalLengthM!)});continue;}
    for(const loop of loops.loops){const delta=Math.abs(loop.lengthM-r.nominalLengthM!);const trace=assemble(g.ways,loop.segments,true);if(nearestEdge(p,trace).displacementM<=30)candidates.push({g,loop,delta,trace});}
   }
   candidates.sort((a,b)=>a.delta-b.delta);
-  if(!candidates.length||candidates[0].delta>Math.max(25,r.nominalLengthM!*.0075)||candidates.length>1&&candidates[1].delta-candidates[0].delta<Math.max(10,r.nominalLengthM!*.0025)){unresolved.push({recordId:r.id,candidates:candidates.length,reason:candidates.length?'Course distance does not distinguish the branches':'No complete source cycle meets timing and nominal-distance checks'});continue;}
+  if(incomplete||!candidates.length||candidates[0].delta>Math.max(25,r.nominalLengthM!*.0075)||candidates.length>1&&candidates[1].delta-candidates[0].delta<Math.max(10,r.nominalLengthM!*.0025)){unresolved.push({recordId:r.id,candidates:candidates.length,reason:incomplete?'Focused course search remains incomplete':candidates.length?'Course distance does not distinguish the branches':'No complete source cycle meets timing and nominal-distance checks'});continue;}
   const {g,loop,delta}=candidates[0],entry=index.tracks.find((e:any)=>e.id===registered.trackId),path=`data/${entry.file}`,track=await read(path),layout=track.layouts.find((l:any)=>l.id===registered.layoutId);if(layout.file!==null)continue;
   const root=`sources/${track.id}`,file=`course-network-${g.ways[0].id}.json`,sourceId=`osm-network-${g.ways[0].id}`,bytes=JSON.stringify({attribution:'© OpenStreetMap contributors',osmBaseTimestamp:raw.osmBaseTimestamp,elements:g.ways},null,2)+'\n',hash=createHash('sha256').update(bytes).digest('hex');
   await mkdir(`${root}/layouts`,{recursive:true});await writeFile(`${root}/${file}`,bytes);

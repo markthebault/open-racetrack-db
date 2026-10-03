@@ -13,7 +13,9 @@
     34.738816766826936
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-234764328",
+    "osm-selection-708763326"
   ],
   "defaultLayoutId": "korea-int-circuit-national",
   "layouts": [
@@ -27,22 +29,22 @@
       "id": "korea-int-circuit-national",
       "name": "Korea Int Circuit National",
       "referenceId": "South Korea/Korea Int Circuit National",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/korea-int-circuit-national.geojson",
+      "description": "Draft configuration: National northern road course with direct southern closing straight, western shoulder and eastern hooked return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3026.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "korea-international-circuit",
       "name": "Korea International Circuit",
       "referenceId": "South Korea/Korea International Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/korea-international-circuit.geojson",
+      "description": "Draft configuration: Full GP course follows the entire closed portion of the independently named YEONGAM F1 Track way, retaining both the northern GP sector and southern permanent sector. The source way includes a short overlapping prefix outside its closed portion; the recipe uses the actual repeated source node as its closure. The operator identifies the same full configuration at 5.615 km; this independent source measures 5,594.4 m against the catalogue 5,666 m. No coordinates are adjusted. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5594.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "korea-international-short-circuit",
       "name": "Korea International Short Circuit",
       "referenceId": "South Korea/Korea International Short Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/korea-international-short-circuit.geojson",
+      "description": "Draft configuration: Northern short course uses the independently named GP Circuit branch and B Course connector, excluding the Permanent Circuit southern loop and overlapping duplicate course way. The catalogue diagram identifies the same northern perimeter and infield return. The operator distinguishes the 3.29 km B Course from the 3.04 km A Course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3306.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -54,6 +56,51 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:38.772Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-234764328",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/234764328",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:38.771Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-korea-int-circuit-national",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/234764328",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:38.771Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-korea-international-short-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.koreacircuit.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:38.771Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-selection-708763326",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/708763326",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:38.771Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-korea-international-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.koreacircuit.com/Tracks",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:38.771Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

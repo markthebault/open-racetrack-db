@@ -1,0 +1,81 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {validateSelectionTiming,validateNetworkTiming,validateSupportingRunwayTiming} from '../scripts/selection-timing';
+import type {TimingRecord} from '../scripts/reference-timing';
+import type {Position} from '../src/geo';
+
+const trace: Position[] = [[0,50],[.005,50],[.01,50]];
+const open: TimingRecord = {id:'test',country:'test',name:'test',gates:[{role:'start',point:trace[0]},{role:'finish',point:trace[2]}]};
+test('open timing accepts exact source endpoints and rejects reversed or extended roads',()=>{
+ assert.equal(validateSelectionTiming(open,trace,false),'separate');
+ assert.throws(()=>validateSelectionTiming(open,[...trace].reverse(),false),/endpoints/);
+ assert.throws(()=>validateSelectionTiming(open,[[-.001,50],...trace],false),/endpoints/);
+ assert.throws(()=>validateSelectionTiming(open,[...trace,trace[0]],false),/distinct endpoints/);
+});
+
+test('supporting runway timing preserves proximity and order without pretending physical ends are timing gates',()=>{
+ const full:Position[]=[[-.005,50],...trace,[.015,50]];
+ const evidence='The full independent runway is supporting geometry; public timed endpoints are absent.';
+ assert.throws(()=>validateSelectionTiming(open,full,false),/endpoints/);
+ assert.equal(validateSupportingRunwayTiming(open,full,evidence),'separate');
+ assert.throws(()=>validateSupportingRunwayTiming(open,[...full].reverse(),evidence),/reverses/);
+ assert.throws(()=>validateSupportingRunwayTiming(open,full,' '),/identification evidence/);
+ assert.throws(()=>validateSupportingRunwayTiming({...open,gates:[open.gates[0]]},full,evidence),/separate timing/);
+ assert.throws(()=>validateSupportingRunwayTiming({...open,gates:[open.gates[0],{role:'finish',point:[.01,50.0005]}]},full,evidence),/location/);
+ assert.throws(()=>validateSupportingRunwayTiming(open,[...full,full[0]],evidence),/separate timing/);
+});
+test('course closure and timing roles must agree',()=>{
+ const shared: TimingRecord = {...open,gates:[{role:'start_finish',point:trace[1]}]};
+ assert.equal(validateSelectionTiming(shared,[...trace,trace[0]],true),'shared');
+ assert.throws(()=>validateSelectionTiming(shared,trace,false),/separate timing/);
+ assert.throws(()=>validateSelectionTiming(open,[...trace,trace[0]],true),/shared timing/);
+ assert.throws(()=>validateSelectionTiming(shared,trace,true),/shared timing/);
+});
+
+test('identified open courses can retain one supplied shared marker without inventing a finish',()=>{
+ const shared:TimingRecord={...open,gates:[{role:'start_finish',point:trace[1]}]};
+ const evidence='The independently mapped straight has open ends; no separate finish marker is supplied.';
+ assert.equal(validateSelectionTiming(shared,trace,false,30,evidence),'shared');
+ assert.throws(()=>validateSelectionTiming(shared,trace,false),/separate timing/);
+ assert.throws(()=>validateSelectionTiming(shared,trace,false,30,' '),/identification evidence/);
+ assert.throws(()=>validateSelectionTiming(shared,[...trace,trace[0]],true,30,evidence),/open course/);
+ assert.throws(()=>validateSelectionTiming(shared,[...trace,trace[0]],false,30,evidence),/distinct endpoints/);
+ assert.throws(()=>validateSelectionTiming(open,trace,false,30,evidence),/one supplied marker/);
+ assert.throws(()=>validateSelectionTiming({...shared,gates:[{role:'start_finish',point:[.1,50]}]},trace,false,30,evidence),/location/);
+});
+
+test('documented sparse endpoint allowance keeps the route-neighborhood check strict',()=>{
+ const sparse:Position[]=[trace[0],trace[1],[.01055,50]];
+ assert.throws(()=>validateSelectionTiming(open,sparse,false),/endpoints/);
+ assert.equal(validateSelectionTiming(open,sparse,false,40),'separate');
+ assert.throws(()=>validateSelectionTiming(open,sparse,false,51),/Invalid documented/);
+ assert.throws(()=>validateSelectionTiming(open,sparse,false,NaN),/Invalid documented/);
+ const away:TimingRecord={...open,gates:[open.gates[0],{role:'finish',point:[.01055,50.00035]}]};
+ assert.throws(()=>validateSelectionTiming(away,sparse,false,50),/location/);
+ assert.throws(()=>validateSelectionTiming(open,[...trace,[.011,50]],false,50),/endpoints/);
+});
+
+test('network timing checks each real path and rejects a gate on the gap between them',()=>{
+ const paths:Position[][]=[[[0,50],[.001,50]],[[.01,50],[.011,50]]];
+ const shared:TimingRecord={...open,gates:[{role:'start_finish',point:[.0105,50]}]};
+ assert.equal(validateNetworkTiming(shared,paths),'shared');
+ assert.equal(validateNetworkTiming({...open,gates:[{role:'start',point:paths[0][0]},{role:'finish',point:paths[1][1]}]},paths),'separate');
+ assert.throws(()=>validateNetworkTiming({...shared,gates:[{role:'start_finish',point:[.005,50]}]},paths),/location/);
+ assert.throws(()=>validateNetworkTiming({...shared,gates:[]},paths),/complete shared or separate/);
+ assert.throws(()=>validateNetworkTiming({...shared,gates:[{role:'finish',point:paths[1][0]}]},paths),/complete shared or separate/);
+ assert.throws(()=>validateNetworkTiming(shared,[paths[0]]),/multiple nonempty/);
+});
+
+test('documented historical georeferencing uncertainty preserves strict roles and open endpoints',()=>{
+ const loop:Position[]=[[0,50],[.01,50],[.01,50.005],[0,50.005],[0,50]];
+ const shared:TimingRecord={...open,gates:[{role:'start_finish',point:[.005,49.99964]}]};
+ const accuracy={horizontalM:20,confidencePercent:95 as const,evidenceUrl:'https://example.test/provider-metadata',evidenceNote:'Provider targets 20 m horizontal accuracy at 95 percent confidence.'};
+ assert.throws(()=>validateSelectionTiming(shared,loop,true),/location/);
+ assert.equal(validateSelectionTiming(shared,loop,true,30,undefined,accuracy),'shared');
+ assert.throws(()=>validateSelectionTiming({...shared,gates:[{role:'start_finish',point:[.005,49.9995]}]},loop,true,30,undefined,accuracy),/location/);
+ assert.throws(()=>validateSelectionTiming(shared,loop,true,30,undefined,{...accuracy,horizontalM:21}),/georeferencing/);
+ assert.throws(()=>validateSelectionTiming(shared,loop,true,30,undefined,{...accuracy,evidenceNote:' '}),/georeferencing/);
+ assert.throws(()=>validateSelectionTiming(shared,loop,true,30,undefined,{...accuracy,horizontalM:NaN}),/georeferencing/);
+ assert.throws(()=>validateSelectionTiming(open,trace,false,30,undefined,accuracy),/closed-course/);
+ assert.throws(()=>validateSelectionTiming({...shared,gates:[{role:'start',point:shared.gates[0].point}]},loop,true,30,undefined,accuracy),/shared timing/);
+});

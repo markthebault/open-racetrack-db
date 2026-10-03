@@ -8,17 +8,32 @@
     "name": "France",
     "slug": "france"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.3632132,
+    43.2944275
+  ],
+  "sourceIds": [
+    "osm-circuit-9954713"
+  ],
   "defaultLayoutId": "pau-ville",
   "layouts": [
     {
       "id": "pau-ville",
       "name": "Pau Ville",
       "referenceId": "France/Pau Ville",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/pau-ville.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 9954713. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-9954713",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Circuit de Pau-Ville",
+      "url": "https://www.openstreetmap.org/relation/9954713",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.379Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "geometryRecovered": false,
+  "attribution": "Contains modified Copernicus Sentinel data 2026.",
+  "license": "Copernicus Sentinel Data Legal Notice",
+  "reuseEvidenceUrl": "https://dataspace.copernicus.eu/terms-and-conditions",
+  "nativeResolutionM": 10,
+  "inspectionExtent": {
+    "xmin": -10809567.833990037,
+    "ymin": 3859446.421062383,
+    "xmax": -10805449.012830686,
+    "ymax": 3863565.2422217345,
+    "spatialReference": 3857
+  },
+  "inspectionSize": [
+    1000,
+    1000
+  ],
+  "stretchPixels": [
+    300,
+    320,
+    730,
+    630
+  ],
+  "percentiles": [
+    2,
+    98
+  ],
+  "resampling": "nearest",
+  "acquisitions": [
+    {
+      "manifestFile": "2026-03-13-manifest.json",
+      "rasters": [
+        {
+          "file": "2026-03-13-rgb.png",
+          "kind": "rgb",
+          "sha256": "631e7c6cd8f9627b9198f049963f44f28b74c5c861c849b914087c166d2f35d9"
+        },
+        {
+          "file": "2026-03-13-nir.png",
+          "kind": "nir",
+          "sha256": "878a097b92a5ddb670267f22b5beeea9666fe50f1f3d7e28646a224c53db7816"
+        }
+      ],
+      "stacItemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A"
+    },
+    {
+      "manifestFile": "2026-09-22-manifest.json",
+      "rasters": [
+        {
+          "file": "2026-09-22-rgb.png",
+          "kind": "rgb",
+          "sha256": "84838b105149308a7d11a0b8263d10ef3405c6b69f587ade5c6ac0401b39e9e4"
+        },
+        {
+          "file": "2026-09-22-nir.png",
+          "kind": "nir",
+          "sha256": "f44114379af6188ed7aa7c691fda38a0679f5b946b7b3d105e6eb00977aadc9d"
+        }
+      ],
+      "stacItemUrl": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260922_1_L2A"
+    }
+  ],
+  "finding": "Event-date and September multiband observations do not establish the small stadium racing connectors. No centerline pixels are registered."
+}

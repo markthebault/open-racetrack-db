@@ -8,17 +8,41 @@
     "name": "Austria",
     "slug": "austria"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    15.54839015,
+    48.6554938
+  ],
+  "sourceIds": [
+    "basemap-at-2024-fuglau"
+  ],
   "defaultLayoutId": "fuglau",
   "layouts": [
     {
       "id": "fuglau",
       "name": "Fuglau",
       "referenceId": "Austria/Fuglau",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/fuglau.geojson",
+      "description": "The supplied configuration retains the full eastern course and both western returns. The organizer explicitly identifies its morning inner-return and afternoon outer-return configurations. These paved paths are independently digitized from the 2024 basemap.at orthophoto. The northern gravel spur, central shortcut, eastern inner loop and paddock access are excluded. This network measures unique branches rather than one timed lap; historical direction and fine alignment remain draft. Independently digitized aerial branch network: 1337.0 m. Shared edges count once; this configuration set is not a single lap, and no line joins separate paths. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "basemap-at-2024-fuglau",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://mapsneu.wien.gv.at/basemapneu/1.0.0/WMTSCapabilities.xml",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T08:51:41.921627Z",
+      "evidenceNote": "Reuse evidence: https://basemap.at/. Pinned raster hash 8aefe5d2f17de0b2cc2363055fb8ff9e6724cce236bde2a9cf8157c6f463a4b8; reproducible pixel-to-coordinate conversion. The supplied configuration retains the full eastern course and both western returns. The organizer explicitly identifies its morning inner-return and afternoon outer-return configurations. These paved paths are independently digitized from the 2024 basemap.at orthophoto. The northern gravel spur, central shortcut, eastern inner loop and paddock access are excluded. This network measures unique branches rather than one timed lap; historical direction and fine alignment remain draft."
+    },
+    {
+      "id": "imagery-identity-fuglau",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.freies-fahren.at/content/freies-fahren-in-der-mjp-arena-fuglau/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T08:51:41.921627Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

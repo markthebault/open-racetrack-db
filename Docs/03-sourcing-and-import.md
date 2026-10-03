@@ -9,6 +9,7 @@ Use these source categories:
 | Source | Permitted role |
 | --- | --- |
 | OSM ways and nodes | Route coordinates, venue location, and timing positions when mapped |
+| Reusable government georeferenced aerial imagery | Independently digitized centerlines with pinned raster, extent, pixel vertices and documented reuse evidence |
 | Independent contributed survey | Coordinates with documented contributor rights and compatible permission |
 | Track operator data with explicit permission | Coordinates within the permission's scope |
 | Official circuit website or public event documentation | Factual layout identification; map tracing only with suitable rights |
@@ -92,6 +93,22 @@ Remove contributor usernames, user IDs, and unrelated metadata. Preserve all tag
 | `queryFile` | `query.overpass` |
 
 Store a separate source record if non-OSM coordinates are used. Keep its original reusable evidence and conversion steps in the venue's `sources/` directory. Do not pretend a survey or permitted source came from OSM.
+
+### Government imagery
+
+For courses absent from public road mapping, NAIP orthoimagery is an independent coordinate source. The [USGS NAIP service](https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer) identifies its imagery as public domain. Preserve the exported raster, its SHA-256, actual export dimensions and EPSG:3857 extent, and available acquisition metadata. Record the [USGS reuse evidence](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip) in the source file.
+
+GUGiK publishes Polish state orthoimagery for free download and unrestricted reuse in its [provider statement](https://www.geoportal.gov.pl/pl/dane/ortofotomapa-orto/). The custom identifier `LicenseRef-GUGiK-open-data` records those terms and retains GUGiK attribution. Use the provider's WCS download service for a reviewed venue. Preserve the original export bounds, projection, output extent and resampling parameters alongside the pinned inspection raster. Every imagery source keeps its own reuse declaration and attribution.
+
+The Environment Agency [vertical aerial photography dataset](https://www.data.gov.uk/dataset/4921f8a1-d47e-458b-873b-2a489b1c8165/vertical-aerial-photography) permits reuse under the Open Government Licence. Record `OGL-3.0`, the provider attribution, original georeferencing and source tile hashes. For ECW exports, preserve the pinned decoder, RGB band selection, target extent and resampling method. Tree-obscured alignment and differences between historical timing extents and current operator distances remain explicit draft limitations.
+
+GeoSN publishes Saxon orthophotos under [Datenlizenz Deutschland Namensnennung 2.0](https://www.govdata.de/dl-de/by-2-0), as documented in its [reuse terms](https://www.geodaten.sachsen.de/rechtsgrundlagen-und-nutzungsbedingungen-4509.html). Record `DL-DE-BY-2.0`, GeoSN attribution, the dataset URL, license link and a notice that centerlines were independently digitized and changed. Preserve the WMS request, capture-year metadata and exact raster georeferencing. Historical images describe historical infrastructure.
+
+Place manually reviewed centerline vertices in raster pixel coordinates. The converter uses pixel centers and the exported extent, then converts Web Mercator to WGS84. Keep vertices close enough to follow corners, inspect the route over its source image, and identify the course from operator documentation. Course coordinates must not be taken from a private comparison image or fitted to its distance. Historic imagery can differ from current infrastructure; retain that limitation and draft status.
+
+An imagery source can describe an aggregate with `geometryKind: "network"`, `closed: false` and two or more named `paths`. Each path records its own pixel vertices, closure flag, identification URL and evidence. The converter preserves these paths as a `MultiLineString` and counts shared edges once. It never joins separate branches or turns the aggregate into a lap. Every timing gate must lie within 30 metres of a real component path. Network recipes use schema 2 and `geometrySource: "imagery"`; ordinary imagery routes retain schema 1.
+
+`npm run import:imagery -- --archive /absolute/path/to/tracks.zip --reference 'Country/Layout name' --source sources/venue/imagery-course.json --distance-tolerance 100` validates the pinned image, source declaration, route closure, timing neighborhood and documented distance allowance before registration. It reads timing metadata only. Generation verifies the source and image hashes offline. Imagery sources have their own `imagery` type and attribution. Their recipes use `geometrySource: "imagery"`; they never masquerade as OSM ways.
 
 Normal generation uses only pinned local source material. It MUST work without network access. A refresh can change OSM way topology; do not silently repair a broken recipe against new data.
 
@@ -200,3 +217,11 @@ It MUST exclude local filesystem paths embedded in data, reference files, prior 
 Add `.local/` and temporary import staging to `.gitignore` during implementation. Keep actual private comparison material outside the repository where possible. An ignored file must still be excluded from the build by construction.
 
 Do not place a private-data test fixture in Git to test that it is excluded. Use a harmless synthetic sentinel for that test.
+
+## Aggregate branch selections
+
+`sources/reference/course-network-selections.json` records reviewed aggregate configurations and the identified component layout IDs. Network recipes use schema 2 with `paths`, each holding an ordered source-segment recipe and its own closure flag. Every component records its original snapshot filename and SHA-256. Acquisition does not merge conflicting versions of a way. Build validation reproduces all component paths, excludes pit lanes and areas, checks the aggregate snapshot and rejects duplicate paths. The network does not imply that its components form one continuous driving route or that all configurations at a venue belong to the aggregate. Select branches against independent identification evidence and the catalogue layout facts before importing.
+
+Open course selections normally require both existing source endpoints within 30 m of their timing positions. A sparse source may document `endpointToleranceM` and `endpointEvidence` in its selection record, bounded at 50 m. This retains an explicit endpoint uncertainty instead of fabricating a source vertex. Every timing position must still lie within 30 m of the route itself. The allowance applies only to the reviewed open selection.
+
+A documented open sprint may begin at a mapped pit exit. The selection must identify the exact initial source segment and the same organizer reference used for course identification. This exception is limited to 250 m, respects mapped travel direction and cannot permit pit sections later in the route or any closed-course detour. Normal source, exact-join and separate timing-endpoint checks still apply.

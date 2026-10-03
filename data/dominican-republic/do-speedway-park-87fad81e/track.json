@@ -8,17 +8,41 @@
     "name": "Dominican Republic",
     "slug": "dominican-republic"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -69.74849745,
+    18.4690946
+  ],
+  "sourceIds": [
+    "osm-selection-250861343"
+  ],
   "defaultLayoutId": "speedway-park",
   "layouts": [
     {
       "id": "speedway-park",
       "name": "Speedway Park",
       "referenceId": "Dominican Republic/Speedway Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/speedway-park.geojson",
+      "description": "Draft configuration: The independently mapped full circuit retains the long western straight, northeastern bulb and complete southern inner hairpin and outer return, excluding the northern cut-through and compact kart branches. These course choices match the supplied Speedway Park configuration. The national federation and event organizer identify Speedway Park as the Las Americas venue. The 3142.5 m exact source route remains unscaled against the catalogue 3127 m scalar. Its full branch configuration is retained rather than substituted with a shorter contemporary advertised variant; historical corner alignment remains draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3142.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-250861343",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/250861343",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:32:18.617Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-speedway-park",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://dominicanrollrace.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:32:18.617Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

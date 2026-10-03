@@ -13,7 +13,8 @@
     35.36887094323144
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-148620277"
   ],
   "defaultLayoutId": "main",
   "layouts": [
@@ -28,8 +29,8 @@
       "id": "fuji-driftcourse",
       "name": "Fuji Driftcourse",
       "referenceId": "Japan/Fuji Driftcourse",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/fuji-driftcourse.geojson",
+      "description": "Draft configuration: Drift loop including the southern inner kink; excludes the straight southern bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 641.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -50,6 +51,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:33:23.000Z",
       "evidenceNote": "The operator reference supports venue identity. It does not verify this source-cycle selection and supplies no public coordinates."
+    },
+    {
+      "id": "osm-selection-148620277",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/148620277",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-fuji-driftcourse",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/148620277",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

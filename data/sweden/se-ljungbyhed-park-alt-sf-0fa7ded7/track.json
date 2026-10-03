@@ -8,17 +8,41 @@
     "name": "Sweden",
     "slug": "sweden"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    13.222094049999999,
+    56.08459295
+  ],
+  "sourceIds": [
+    "lantmateriet-min-karta-ljungbyhed"
+  ],
   "defaultLayoutId": "ljungbyhed-park-alt-sf",
   "layouts": [
     {
       "id": "ljungbyhed-park-alt-sf",
       "name": "Ljungbyhed Park Alt SF",
       "referenceId": "Sweden/Ljungbyhed Park Alt SF",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ljungbyhed-park-alt-sf.geojson",
+      "description": "The operator driver briefing identifies the western rectangular turn, main straight, eastern first turn and southern infield return of the racing course. The apron perimeter, runway, pit lane and driver-training loop are excluded. The two catalogue entries retain the same course with different private start/finish lines. Course pavement centers are independently digitized from the public Min karta orthophoto viewer. The native Swedish-grid image tiles, exact request extents and hashes are pinned before Web Mercator reprojection. Capture year is not asserted. No vertices are fitted to private diagrams, timing positions or nominal distance. Fine alignment and historical direction remain draft. Independently digitized aerial centerline: 2007.6 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "lantmateriet-min-karta-ljungbyhed",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://minkarta.lantmateriet.se/plats/3006/v1.0/?e=389539&n=6216947&z=12&mapprofile=flygbild",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-02T09:58:26.930Z",
+      "evidenceNote": "Reuse evidence: https://www.lantmateriet.se/minkarta. Pinned raster hash 2ef3b340c1eacf563f8b09ef4bad9be2d0a773581274d5a42fa55c4b9084a61a; reproducible pixel-to-coordinate conversion. The operator driver briefing identifies the western rectangular turn, main straight, eastern first turn and southern infield return of the racing course. The apron perimeter, runway, pit lane and driver-training loop are excluded. The two catalogue entries retain the same course with different private start/finish lines. Course pavement centers are independently digitized from the public Min karta orthophoto viewer. The native Swedish-grid image tiles, exact request extents and hashes are pinned before Web Mercator reprojection. Capture year is not asserted. No vertices are fitted to private diagrams, timing positions or nominal distance. Fine alignment and historical direction remain draft."
+    },
+    {
+      "id": "imagery-identity-ljungbyhed-park-alt-sf",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.ljungbyhedsmotorbana.se/s/Forarmote-Drivers-Club-Time-Attack-2025-1.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T09:58:26.930Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

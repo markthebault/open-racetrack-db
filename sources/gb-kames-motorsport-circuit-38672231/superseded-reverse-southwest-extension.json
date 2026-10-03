@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "trackId": "gb-kames-motorsport-circuit-38672231",
+  "layoutId": "kames-motorsport-circuit-reverse",
+  "sourceId": "osm-open-network-38672231",
+  "snapshotFile": "open-course-network-38672231.json",
+  "snapshotSha256": "e5bcac2517c9726b5bddbedf9885aee1801c7a51e382d0f982dc879d38a11450",
+  "closed": false,
+  "timingMode": "separate",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft open course. The venue operator identifies Kames Motorsport Complex as its sprint facility. The reverse timing convention selects one distinct 966 metre connected path, close to the supplied 974 metre distance. Configuration remains draft. Approximate planar OSM trace distance 966 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 38672235,
+      "wayVersion": 2,
+      "fromIndex": 1,
+      "toIndex": 3,
+      "a": 458101143,
+      "b": 458101035,
+      "size": 70.2
+    },
+    {
+      "wayId": 38672231,
+      "wayVersion": 3,
+      "fromIndex": 6,
+      "toIndex": 0,
+      "a": 458101035,
+      "b": 458101117,
+      "size": 195.3
+    },
+    {
+      "wayId": 38672240,
+      "wayVersion": 3,
+      "fromIndex": 37,
+      "toIndex": 34,
+      "a": 458101117,
+      "b": 8493001464,
+      "size": 45.5
+    },
+    {
+      "wayId": 914246210,
+      "wayVersion": 2,
+      "fromIndex": 18,
+      "toIndex": 0,
+      "a": 8493001464,
+      "b": 458101097,
+      "size": 419.2
+    },
+    {
+      "wayId": 38672240,
+      "wayVersion": 3,
+      "fromIndex": 28,
+      "toIndex": 10,
+      "a": 458101097,
+      "b": 458101059,
+      "size": 235.8
+    }
+  ],
+  "gates": [],
+  "supersededReason": "The selected southwestern extension is absent from the historical supplied configuration. The club track plan identifies the old course and unused rally roads separately. Similar scalar distance did not establish configuration identity. The source recipe is retained for audit and removed from active generation."
+}

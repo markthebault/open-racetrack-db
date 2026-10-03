@@ -8,17 +8,41 @@
     "name": "Japan",
     "slug": "japan"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    138.93778435000002,
+    35.374971599999995
+  ],
+  "sourceIds": [
+    "osm-selection-148620323"
+  ],
   "defaultLayoutId": "fuji-short",
   "layouts": [
     {
       "id": "fuji-short",
       "name": "Fuji Short",
       "referenceId": "Japan/Fuji Short",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/fuji-short.geojson",
+      "description": "Draft configuration: Short course using the rounded eastern S bend and direct western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 881.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-148620323",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/148620323",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-fuji-short",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/148620323",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:18:13.076Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

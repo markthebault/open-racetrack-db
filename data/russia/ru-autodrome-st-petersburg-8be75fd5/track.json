@@ -8,17 +8,41 @@
     "name": "Russia",
     "slug": "russia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    30.4580077,
+    59.78425855
+  ],
+  "sourceIds": [
+    "osm-selection-83675991"
+  ],
   "defaultLayoutId": "autodrome-st-petersburg",
   "layouts": [
     {
       "id": "autodrome-st-petersburg",
       "name": "Autodrome St Petersburg",
       "referenceId": "Russia/Autodrome St Petersburg",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodrome-st-petersburg.geojson",
+      "description": "Draft configuration: Full course including the southern rounded turnaround, central kink and northern hooked corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3067.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-83675991",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/83675991",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-autodrome-st-petersburg",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/83675991",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:21:42.431Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -122.4515773,
+    38.15476795
+  ],
+  "sourceIds": [
+    "osm-selection-230287123"
+  ],
   "defaultLayoutId": "sonoma-kart-circuit",
   "layouts": [
     {
       "id": "sonoma-kart-circuit",
       "name": "Sonoma Kart Circuit",
       "referenceId": "United States/Sonoma Kart Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/sonoma-kart-circuit.geojson",
+      "description": "Draft configuration: Full northern hairpin, middle return and southern chicane course at the operator karting center. The catalogue branch identity excludes the middle diagonal shortcut, separate northern extension and paddock/skid-pad access. Exact independent nodes retain the 1197.8 m route against the 1103 m catalogue scalar; distance, historical alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1197.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-230287123",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/230287123",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-sonoma-kart-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.sonomaraceway.com/experiences/karting-center/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

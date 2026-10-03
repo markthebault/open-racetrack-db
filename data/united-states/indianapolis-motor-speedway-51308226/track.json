@@ -13,7 +13,9 @@
     39.794857077150525
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-circuit-20573734",
+    "osm-selection-51308226"
   ],
   "defaultLayoutId": "ims-sro-practice",
   "layouts": [
@@ -27,22 +29,22 @@
       "id": "ims-sro-practice",
       "name": "IMS SRO Practice",
       "referenceId": "United States/IMS SRO Practice",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/ims-sro-practice.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 20573734. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "indianapolis-motor-speedway-indy",
       "name": "Indianapolis Motor Speedway - Indy",
       "referenceId": "United States/Indianapolis Motor Speedway - Indy",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/indianapolis-motor-speedway-indy.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 20573734. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "indianapolis-scca",
       "name": "Indianapolis SCCA",
       "referenceId": "United States/Indianapolis SCCA",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/indianapolis-scca.geojson",
+      "description": "Draft configuration: Road-course northern hooked section, long western straight and southern infield shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4170.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -54,6 +56,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-circuit-20573734",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Indianapolis RC 2026",
+      "url": "https://www.openstreetmap.org/relation/20573734",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.485Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "osm-selection-51308226",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/51308226",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-indianapolis-scca",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/51308226",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

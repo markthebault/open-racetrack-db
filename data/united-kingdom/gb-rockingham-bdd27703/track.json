@@ -8,31 +8,83 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.6583114,
+    52.51533345
+  ],
+  "sourceIds": [
+    "osm-selection-97744375",
+    "osm-network-rockingham-combo"
+  ],
   "defaultLayoutId": "rockingham-combo",
   "layouts": [
     {
       "id": "rockingham-combo",
       "name": "Rockingham Combo",
       "referenceId": "United Kingdom/Rockingham Combo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/rockingham-combo.geojson",
+      "description": "Combined mapped configurations: Rockingham International Circuit, Rockingham National Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "rockingham-international-circuit",
       "name": "Rockingham International Circuit",
       "referenceId": "United Kingdom/Rockingham International Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/rockingham-international-circuit.geojson",
+      "description": "Draft configuration: Historical international course uses the outer oval arc, extended northeastern infield return and southern hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4128.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "rockingham-national-circuit",
       "name": "Rockingham National Circuit",
       "referenceId": "United Kingdom/Rockingham National Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/rockingham-national-circuit.geojson",
+      "description": "Draft configuration: Historical national course excludes the outer oval arc and retains the northern shoulder and rounded northeastern infield loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2754.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-97744375",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/97744375",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-rockingham-international-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/97744375",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-rockingham-national-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/97744375",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-network-rockingham-combo",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/97744375",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:50:58.895Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-rockingham-combo",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.openstreetmap.org/way/238299194",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:50:58.895Z",
+      "evidenceNote": "Aggregate includes the identified historical international and national courses, retaining the outer oval arc and both infield returns. The complete oval is excluded. Identification only; no image coordinates copied."
+    }
+  ]
 }

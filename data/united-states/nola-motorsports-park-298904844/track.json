@@ -13,7 +13,10 @@
     29.88472195877864
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-298904844",
+    "osm-components-298904844",
+    "osm-network-nola-motorsports-park"
   ],
   "defaultLayoutId": "nola-motorsports-park",
   "layouts": [
@@ -27,15 +30,27 @@
       "id": "nola-motorsports-park",
       "name": "Nola Motorsports Park",
       "referenceId": "United States/Nola Motorsports Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/nola-motorsports-park.geojson",
+      "description": "Combined mapped configurations: North long course, 2014, North track with Western connecting branches, 2014. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "nola-motorsports-park-course-a",
       "name": "Nola Motorsports Park Course A",
       "referenceId": "United States/Nola Motorsports Park Course A",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/nola-motorsports-park-course-a.geojson",
+      "description": "Draft configuration: Course A with western inner hairpin and direct northeastern return bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4434.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+    },
+    {
+      "id": "north-long-course-2014",
+      "name": "North long course, 2014",
+      "file": "layouts/north-long-course-2014.geojson",
+      "description": "The AMA Pro operator plan identifies the 2.75-mile North long course with its complete Western outer return and inner hairpin, Northern esses, Eastern terminal turns and long front straight. The complete independently mapped 2014 road loop follows those branches. Historical alignment remains draft."
+    },
+    {
+      "id": "north-western-connecting-branches-2014",
+      "name": "North track with Western connecting branches, 2014",
+      "file": "layouts/north-western-connecting-branches-2014.geojson",
+      "description": "The NOLA operator plan identifies the curved turn-3A shortcut between the Western inner hairpin approach and Northern course. The 2014 independent mapping also records a Western connecting return to the front straight. This mapped branch configuration includes those connections and the Northern course, retains exact independent source nodes, and remains draft because the operator plan does not name this complete combination as a race lap."
     }
   ],
   "sources": [
@@ -47,6 +62,69 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-298904844",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/298904844",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-nola-motorsports-park-course-a",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/298904844",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "osm-components-298904844",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/298904844",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T04:40:10.262Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-north-long-course-2014",
+      "type": "reference",
+      "title": "North long course, 2014 identification",
+      "url": "https://live.amaproracing.com/xml/rr/events/R1233/trackmap.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T04:40:10.262Z",
+      "evidenceNote": "The AMA Pro operator plan identifies the 2.75-mile North long course with its complete Western outer return and inner hairpin, Northern esses, Eastern terminal turns and long front straight. The complete independently mapped 2014 road loop follows those branches. Historical alignment remains draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-north-western-connecting-branches-2014",
+      "type": "reference",
+      "title": "North track with Western connecting branches, 2014 identification",
+      "url": "https://clubregistration.net/club_admin/files/NOLA%20Motorsports%20Park/NOLA_Track_Esses.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T04:40:10.262Z",
+      "evidenceNote": "The NOLA operator plan identifies the curved turn-3A shortcut between the Western inner hairpin approach and Northern course. The 2014 independent mapping also records a Western connecting return to the front straight. This mapped branch configuration includes those connections and the Northern course, retains exact independent source nodes, and remains draft because the operator plan does not name this complete combination as a race lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-nola-motorsports-park",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/298904844",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T05:06:44.564Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-nola-motorsports-park",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://live.amaproracing.com/xml/rr/events/R1233/trackmap.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T05:06:44.564Z",
+      "evidenceNote": "The catalogue course footprint includes the North long course, its Western inner hairpin, the curved turn-3A shortcut and the Western front-straight connection. The reviewed 2014 independent source provides every branch as two complete mapped loops. The operator's NOLA plan identifies the long course and turn-3A shortcut; the extra connecting return follows the independent road mapping. Historical corner alignment and the unnamed branch combination remain draft. The independent unique branch distance is 4888.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     }
   ]
 }

@@ -1,0 +1,3 @@
+# Reno Fernley E
+
+The centerline is independently digitized from pinned georeferenced imagery under public-domain. Attribution: USGS, USDA, The National Map: public-domain NAIP orthoimagery; centerline digitization by OpenRacetrackDB. Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.

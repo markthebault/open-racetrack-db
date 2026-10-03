@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-03",
+  "publicViewerUrl": "https://infomapa.rosario.gov.ar/emapa/mapa.htm",
+  "rasters": [
+    {
+      "file": "municipal-aerial-2013.png",
+      "sourceUrl": "https://infomapa.rosario.gov.ar/wms/planobase?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Fotos2013&STYLES=default&SRS=EPSG%3A22185&BBOX=5430192.208406639%2C6359215.238212517%2C5431138.144154846%2C6360115.149211752&WIDTH=2000&HEIGHT=2000&FORMAT=image%2Fpng&TRANSPARENT=false",
+      "sha256": "746d9629d8b6e4af6656d9df3ed963f7124631bf3c0e68fd90689c589293c9f1",
+      "width": 2000,
+      "height": 2000,
+      "extent": [
+        5430192.208406639,
+        6359215.238212517,
+        5431138.144154846,
+        6360115.149211752
+      ],
+      "spatialReference": "EPSG:22185",
+      "layer": "Fotos2013",
+      "retrievedAt": "2026-10-03T00:05:55.170519+00:00",
+      "captureYear": 2013,
+      "attribution": "Municipalidad de Rosario, Fotos Aéreas 2013",
+      "usage": "Historical pavement and branch inspection only; no course geometry is registered."
+    },
+    {
+      "file": "municipal-aerial-2022.png",
+      "sourceUrl": "https://infomapa.rosario.gov.ar/wms/planobase?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=Img2022&STYLES=default&SRS=EPSG%3A22185&BBOX=5430142.208406639%2C6359165.238212517%2C5431188.144154846%2C6360165.149211752&WIDTH=2600&HEIGHT=2200&FORMAT=image%2Fpng&TRANSPARENT=false",
+      "sha256": "74f6506bcd43547be8bd881644c14507821646449ff7d489a2dddcb98b3a8310",
+      "width": 2600,
+      "height": 2200,
+      "extent": [
+        5430142.208406639,
+        6359165.238212517,
+        5431188.144154846,
+        6360165.149211752
+      ],
+      "spatialReference": "EPSG:22185",
+      "layer": "Img2022",
+      "retrievedAt": "2026-10-03T00:10:42.172082+00:00",
+      "captureYear": 2022,
+      "attribution": "Municipalidad de Rosario, Fotos Aéreas 2022",
+      "usage": "Historical pavement and branch inspection only; no course geometry is registered."
+    }
+  ],
+  "reuseReview": {
+    "datasetMetadataUrl": "https://datosabiertos.rosario.gob.ar/api/1/metastore/schemas/dataset/items/c9f6368b-9bf0-4479-84ec-0d5823b37687",
+    "datasetTitle": "Servicio de Mapa Base (WMS) de la Ciudad de Rosario",
+    "datasetLicenseUrl": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "datasetModifiedAt": "2026-05-29T10:37:35-03:00",
+    "termsUrl": "https://www.rosario.gob.ar/normativa/verArchivo?id=178433&modo=attachment&tipo=pdf",
+    "termsFile": "municipal-digital-terms-2021.pdf",
+    "termsSha256": "96dbdedb33cb4c4f1761ebb3756d7d4d33a11d1a2b88f5a9cc9d6d3c2ced0d32",
+    "termsDate": "2021-08-31",
+    "rasterReuseBasis": "The municipal viewer identifies these layers as municipal aerial photographs. Annex II names InfoMapa among the covered assets and states that the assets contain public-sector information under Open Government Licence v3.0. The WMS dataset declares ODbL 1.0. These are separate declarations; neither is substituted with an assumed CC BY licence.",
+    "excludedLayer": "ImagenesSatelitales2011 is satellite imagery and is not included in this review."
+  },
+  "geometryRecovered": false,
+  "identityEvidenceUrls": [
+    "https://apat.org.ar/circuitos/tecnica/rosario",
+    "https://autodromorosario.com/historia",
+    "https://www.racingcircuits.info/south-america/argentina/rosario.html",
+    "https://www.fia.com/news/world-rx-2015-rallycross-argentina-preview"
+  ],
+  "finding": "The 2013 survey shows the earlier course. The 2022 survey resolves the newer northern shortcut and western inner hairpin. The independently published configuration plans and the November 2017 10 m image do not establish the exact northern open Combo route. The existing connected public-road candidate remains an incomplete route hypothesis."
+}

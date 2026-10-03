@@ -1,0 +1,91 @@
+{
+  "itemId": "S2B_50RRN_20260921_0_L2A",
+  "captureDate": "2026-09-21T02:40:53.209000Z",
+  "nativeBands": {
+    "red": {
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/R/RN/2026/9/S2B_50RRN_20260921_0_L2A/B04.tif",
+      "nativeFile": "20260921-red.tif",
+      "sha256": "bd5fcba8e8474eeadd8f738bfb1284318c84f4769ec495c2fad73348f5f668e5",
+      "transform": [
+        10.0,
+        0.0,
+        873220.0,
+        0.0,
+        -10.0,
+        2695140.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "crs": "EPSG:32650",
+      "width": 178,
+      "height": 125
+    },
+    "green": {
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/R/RN/2026/9/S2B_50RRN_20260921_0_L2A/B03.tif",
+      "nativeFile": "20260921-green.tif",
+      "sha256": "db41dea9ecba750c8b560eb21ead7a9894e9ee16593016939f77f586ee53870e",
+      "transform": [
+        10.0,
+        0.0,
+        873220.0,
+        0.0,
+        -10.0,
+        2695140.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "crs": "EPSG:32650",
+      "width": 178,
+      "height": 125
+    },
+    "blue": {
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/R/RN/2026/9/S2B_50RRN_20260921_0_L2A/B02.tif",
+      "nativeFile": "20260921-blue.tif",
+      "sha256": "51d2ea9f81f92902517f25b22b86d284b1a539525096234b54b31ef5acc8654a",
+      "transform": [
+        10.0,
+        0.0,
+        873220.0,
+        0.0,
+        -10.0,
+        2695140.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "crs": "EPSG:32650",
+      "width": 178,
+      "height": 125
+    },
+    "nir": {
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/R/RN/2026/9/S2B_50RRN_20260921_0_L2A/B08.tif",
+      "nativeFile": "20260921-nir.tif",
+      "sha256": "d3b09ea4be25d0a19a668cf773b4ed0d7c58e195bebb5b8b3d63c965a930e351",
+      "transform": [
+        10.0,
+        0.0,
+        873220.0,
+        0.0,
+        -10.0,
+        2695140.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "crs": "EPSG:32650",
+      "width": 178,
+      "height": 125
+    }
+  },
+  "inspectionExtent": {
+    "xmin": 13433737.40081481,
+    "ymin": 2791416.2237426266,
+    "xmax": 13435580.495359981,
+    "ymax": 2793259.3182877973,
+    "spatialReference": 3857
+  },
+  "resampling": "nearest",
+  "policy": "Independent public bands only; contrast review at native 10 m resolution, no inferred super-resolution."
+}

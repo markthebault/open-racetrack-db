@@ -8,17 +8,41 @@
     "name": "Isle of Man",
     "slug": "isle-of-man"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -4.5046067999999995,
+    54.23937505
+  ],
+  "sourceIds": [
+    "osm-selection-tt-neighborhood-25986145"
+  ],
   "defaultLayoutId": "tt-course",
   "layouts": [
     {
       "id": "tt-course",
       "name": "TT Course",
       "referenceId": "Isle Of Man/TT Course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/tt-course.geojson",
+      "description": "Draft configuration: The official Mountain Course map identifies the full loop through Quarterbridge, Ballacraine, Kirk Michael, Ballaugh, Ramsey, the Mountain Road and the old Governor's Bridge dip. Independent circuit relation 188240 supplies that named road corridor. Its omitted short junction connection to the dip is supplied by the existing public way 38554715 node slice 8 to 6. The short direct junction arcs follow the course corridor rather than detouring around the public-traffic roundabouts. Exact mapped road coordinates are preserved, measuring 60672.4 m against the catalogue scalar of 60583 m. Local junction geometry, temporary race arrangements and historical alignment remain draft rather than a certified racing line. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 60672.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-tt-neighborhood-25986145",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/25986145",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T16:57:03.207Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-tt-course",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.iomttraces.com/visit/spectating/the-mountain-course-spectator-guide/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T16:57:03.207Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

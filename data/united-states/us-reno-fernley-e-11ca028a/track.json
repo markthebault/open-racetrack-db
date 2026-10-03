@@ -8,17 +8,41 @@
     "name": "United States",
     "slug": "united-states"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -119.2465474,
+    39.53894655
+  ],
+  "sourceIds": [
+    "usgs-naip-2022-reno-fernley-focused"
+  ],
   "defaultLayoutId": "reno-fernley-e",
   "layouts": [
     {
       "id": "reno-fernley-e",
       "name": "Reno Fernley E",
       "referenceId": "United States/Reno Fernley E",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/reno-fernley-e.geojson",
+      "description": "The identified historical E course retains the Western long narrow return, upper Western short loop, inner middle S, Southern linking bend and complete Eastern middle straight. The original operator roadcourse plan establishes the old-sector and alternate Southern connections. The Northeastern full loop, upper Northern S and Southwestern terminal loop are excluded. All course pixels are independently inspected pavement centerline anchors on public-domain 2022 NAIP imagery; comparison diagrams supply branch identity only. Fine corner, old timing extent, degraded pavement and temporary barrier alignment remain draft, without scaling to the catalogue distance. Independently digitized aerial centerline: 2767.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "usgs-naip-2022-reno-fernley-focused",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-02T01:56:27.443Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash eb2752ce6f70e17df56e73f1e94a66633340d5469aa8fdf6f9f08b4020d371c5; reproducible pixel-to-coordinate conversion. The identified historical E course retains the Western long narrow return, upper Western short loop, inner middle S, Southern linking bend and complete Eastern middle straight. The original operator roadcourse plan establishes the old-sector and alternate Southern connections. The Northeastern full loop, upper Northern S and Southwestern terminal loop are excluded. All course pixels are independently inspected pavement centerline anchors on public-domain 2022 NAIP imagery; comparison diagrams supply branch identity only. Fine corner, old timing extent, degraded pavement and temporary barrier alignment remain draft, without scaling to the catalogue distance."
+    },
+    {
+      "id": "imagery-identity-reno-fernley-e",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.kstreetstudio.com/files/tinyvette/renofernley/RF-TrackMap.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T01:56:27.443Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

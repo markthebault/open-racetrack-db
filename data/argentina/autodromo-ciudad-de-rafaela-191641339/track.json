@@ -13,7 +13,8 @@
     -31.205650671311467
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-selection-191641339"
   ],
   "defaultLayoutId": "autodromo-de-rafaela",
   "layouts": [
@@ -27,15 +28,15 @@
       "id": "autodromo-de-rafaela",
       "name": "Autodromo de Rafaela",
       "referenceId": "Argentina/Autodromo de Rafaela",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-de-rafaela.geojson",
+      "description": "Draft configuration: Full oval configuration with the three catalogue chicanes; historical chicane placement differs from some current event configurations. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4795.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "autodromo-de-rafaela-bascolo",
       "name": "Autodromo de Rafaela Bascolo",
       "referenceId": "Argentina/Autodromo de Rafaela Bascolo",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/autodromo-de-rafaela-bascolo.geojson",
+      "description": "Draft configuration: Northern half-oval configuration uses the cross-track return and two eastern chicanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3133.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -47,6 +48,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-selection-191641339",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/191641339",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-autodromo-de-rafaela",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://actc.org.ar/upload/material_previo/529/TCP_PILOTOS_material_previo___9_FECHA_TCP_PILOTOS_RAFAELA.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-identity-autodromo-de-rafaela-bascolo",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://actc.org.ar/tcp/noticias/el-tc-pista-en-rafaela_14874",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:16:32.523Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

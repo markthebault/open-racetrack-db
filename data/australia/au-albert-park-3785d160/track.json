@@ -8,17 +8,32 @@
     "name": "Australia",
     "slug": "australia"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    144.9703945,
+    -37.84590695
+  ],
+  "sourceIds": [
+    "osm-circuit-280443"
+  ],
   "defaultLayoutId": "albert-park",
   "layouts": [
     {
       "id": "albert-park",
       "name": "Albert Park",
       "referenceId": "Australia/Albert Park",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/albert-park.geojson",
+      "description": "Draft configuration selected from the independently named circuit relation 280443. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-circuit-280443",
+      "type": "osm",
+      "title": "OpenStreetMap circuit relation: Albert Park Circuit",
+      "url": "https://www.openstreetmap.org/relation/280443",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T13:50:23.330Z",
+      "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    }
+  ]
 }

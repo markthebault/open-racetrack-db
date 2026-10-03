@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-443108132"
+    "osm-network-443108132",
+    "osm-selection-443108132",
+    "usgs-naip-2022-thermal-club-twin-palms-short"
   ],
   "defaultLayoutId": "thermal-club-desert",
   "layouts": [
@@ -42,8 +44,8 @@
       "id": "thermal-club-north-desert",
       "name": "Thermal Club North + Desert",
       "referenceId": "United States/Thermal Club North + Desert",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thermal-club-north-desert.geojson",
+      "description": "Draft configuration: North and Desert circuits connected through the long central straight, including southern linked bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4206.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thermal-club-north-palm",
@@ -70,8 +72,8 @@
       "id": "thermal-club-twin-palms-short",
       "name": "Thermal Club Twin Palms Short",
       "referenceId": "United States/Thermal Club Twin Palms Short",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/thermal-club-twin-palms-short.geojson",
+      "description": "Twin Palms Short retains the middle Desert course with its northern undulations and eastern roundabout return, joined to the South Palm outer course. It excludes the North Palm extension, the South Palm inner technical loop, karting roads and pit access. Independently read public-domain 2022 NAIP pavement centers identify the full short branch sequence; route distance is unscaled and historical barriers and direction remain draft. The 2022 aerial centerline differs from the 3999 m catalogue scalar; the geometry is not scaled to match it. Independently digitized aerial centerline: 3904.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
   "sources": [
@@ -92,6 +94,42 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-443108132",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/443108132",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-thermal-club-north-desert",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/443108132",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:14:40.851Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-2022-thermal-club-twin-palms-short",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "license": "public-domain",
+      "retrievedAt": "2026-10-01T23:50:48.347Z",
+      "evidenceNote": "Reuse evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Pinned raster hash 9ac40479f4dd864e642ef4e4ad04dbc32cc40de1141a7bacae57ff1938599137; reproducible pixel-to-coordinate conversion. Twin Palms Short retains the middle Desert course with its northern undulations and eastern roundabout return, joined to the South Palm outer course. It excludes the North Palm extension, the South Palm inner technical loop, karting roads and pit access. Independently read public-domain 2022 NAIP pavement centers identify the full short branch sequence; route distance is unscaled and historical barriers and direction remain draft. The 2022 aerial centerline differs from the 3999 m catalogue scalar; the geometry is not scaled to match it."
+    },
+    {
+      "id": "imagery-identity-thermal-club-twin-palms-short",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.thermal.cc/track/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T23:50:48.347Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
     }
   ]
 }

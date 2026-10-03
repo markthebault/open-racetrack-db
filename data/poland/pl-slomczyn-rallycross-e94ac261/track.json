@@ -8,17 +8,41 @@
     "name": "Poland",
     "slug": "poland"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    20.926302149999998,
+    51.878685250000004
+  ],
+  "sourceIds": [
+    "gugik-slomczyn-rallycross"
+  ],
   "defaultLayoutId": "slomczyn-rallycross",
   "layouts": [
     {
       "id": "slomczyn-rallycross",
       "name": "Slomczyn RallyCross",
       "referenceId": "Poland/Slomczyn RallyCross",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/slomczyn-rallycross.geojson",
+      "description": "The operator’s Rallycross configuration retains the northern and western gravel arc, the long central asphalt hairpin and the southern outer gravel return. The inner karting loops, the asphalt-only outer course and pit lane are excluded. The route is manually digitized on the independently georeferenced GUGiK orthoimage. Surface transitions, temporary barriers, fine corner alignment and historical configuration remain provisional. No diagram coordinates or comparison-course GPS are used. Independently digitized aerial centerline: 1255.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "gugik-slomczyn-rallycross",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://mapy.geoportal.gov.pl/wss/service/PZGIK/ORTO/WCS/StandardResolution",
+      "license": "LicenseRef-GUGiK-open-data",
+      "retrievedAt": "2026-10-02T01:16:57.265783Z",
+      "evidenceNote": "Reuse evidence: https://www.geoportal.gov.pl/pl/dane/ortofotomapa-orto/. Pinned raster hash 883dc49248b049436146388942ff1b7cd574c9c91e71f21c01e870bd87433c7a; reproducible pixel-to-coordinate conversion. The operator’s Rallycross configuration retains the northern and western gravel arc, the long central asphalt hairpin and the southern outer gravel return. The inner karting loops, the asphalt-only outer course and pit lane are excluded. The route is manually digitized on the independently georeferenced GUGiK orthoimage. Surface transitions, temporary barriers, fine corner alignment and historical configuration remain provisional. No diagram coordinates or comparison-course GPS are used."
+    },
+    {
+      "id": "imagery-identity-slomczyn-rallycross",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://autodromslomczyn.pl/plan-obiektu/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T01:16:57.265783Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

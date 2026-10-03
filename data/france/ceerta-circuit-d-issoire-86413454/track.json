@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "issoire-circuit",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "issoire-circuit",
       "name": "Issoire Circuit",
-      "referenceId": "France/Issoire Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at CEERTA Circuit d'Issoire. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2465.6 m; supplied distance 2466 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "France/Issoire Circuit"
     }
   ],
   "sources": [

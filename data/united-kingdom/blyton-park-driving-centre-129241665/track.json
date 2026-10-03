@@ -14,7 +14,8 @@
   ],
   "sourceIds": [
     "osm-snapshot",
-    "osm-network-129241665"
+    "osm-network-129241665",
+    "osm-selection-129241665"
   ],
   "defaultLayoutId": "blyton-park-inner",
   "layouts": [
@@ -35,8 +36,8 @@
       "id": "blyton-park-outer",
       "name": "Blyton Park Outer",
       "referenceId": "United Kingdom/Blyton Park Outer",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/blyton-park-outer.geojson",
+      "description": "Draft configuration: Outer configuration retains the northern loop and long curved inner return, excluding the western internal crossover. Source distance differs from the supplied scalar distance by 263 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2310.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
   "sources": [
@@ -57,6 +58,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "osm-selection-129241665",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/129241665",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-blyton-park-outer",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/129241665",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:00:20.961Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
     }
   ]
 }

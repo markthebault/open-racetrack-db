@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -1.4898882,
+    53.90593105
+  ],
+  "sourceIds": [
+    "osm-hillclimb"
+  ],
   "defaultLayoutId": "harewood-hillclimb",
   "layouts": [
     {
       "id": "harewood-hillclimb",
       "name": "Harewood Hillclimb",
       "referenceId": "United Kingdom/Harewood Hillclimb",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/harewood-hillclimb.geojson",
+      "description": "Draft open Harewood hillclimb follows the complete independently mapped corner sequence, including Orchard, Farmhouse, Country, Esses, Quarry, Clark, Willow and Chippy. The private start and finish agree with the two source endpoints. The planar source trace measures approximately 1.434 km; the supplied 1.509 km distance differs. No course coordinates are scaled, bridged or closed artificially."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-hillclimb",
+      "type": "osm",
+      "title": "OpenStreetMap independently named Harewood corners",
+      "url": "https://www.openstreetmap.org/way/186889916",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Complete unbranched shared-node hillclimb, exact coordinates and versions from the pinned country source."
+    },
+    {
+      "id": "harewood-course-identity",
+      "type": "reference",
+      "title": "Harewood operator course information",
+      "url": "https://www.harewoodhill.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:35:46.679Z",
+      "evidenceNote": "Event operator supports the identity of the hillclimb and named corner sequence. Identification only; no coordinates copied."
+    }
+  ]
 }

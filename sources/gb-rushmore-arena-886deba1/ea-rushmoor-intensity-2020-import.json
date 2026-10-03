@@ -1,0 +1,69 @@
+{
+  "file": "ea-rushmoor-intensity-2020.png",
+  "width": 1200,
+  "height": 1200,
+  "extent": {
+    "xmin": -88963.84797537627,
+    "ymin": 6665279.850100121,
+    "xmax": -84694.55766213054,
+    "ymax": 6669549.140413367,
+    "spatialReference": 3857
+  },
+  "sourceUrl": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SU8550",
+  "retrievedAt": "2026-10-02T13:31:41.255258Z",
+  "nativeMember": [
+    "Intensity_LZ_SU8045_P_10733_20200128_20200315.tif",
+    "Intensity_LZ_SU8050_P_10734_20200117_20200117.tif",
+    "Intensity_LZ_SU8545_P_10733_20200128_20200315.tif",
+    "Intensity_LZ_SU8550_P_10734_20200117_20200117.tif"
+  ],
+  "groundResolutionM": 1,
+  "nativeFile": "ea-rushmoor-intensity-2020-native.tif",
+  "nativeSha256": "09edc724ca19512f581047a503162320651904fbf6a201260a4c71e5a8177eb3",
+  "nativeProjection": "EPSG:27700",
+  "nativeTransform": [
+    1.0,
+    0.0,
+    483947.42216572195,
+    0.0,
+    -1.0,
+    153266.51052829114,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "nativeWidth": 2556,
+  "nativeHeight": 2711,
+  "imagerySha256": "9c24e5c1234efe88bbee0ccc0149d9354bff7177854014b0bd5c0c2d7b501455",
+  "displayStretch": [
+    40.0,
+    484.0
+  ],
+  "resampling": "nearest",
+  "product": "National LIDAR Programme Intensity last-return grid",
+  "sourceTiles": [
+    {
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SU8045",
+      "member": "Intensity_LZ_SU8045_P_10733_20200128_20200315.tif",
+      "sha256": "ba5a4ba6bf952e03142ab16512d7c9597b6719f880b5051c35cd3dc32a218395"
+    },
+    {
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SU8050",
+      "member": "Intensity_LZ_SU8050_P_10734_20200117_20200117.tif",
+      "sha256": "b4f96b5d500a2b755924a37a7fe8c0f9b9f4d56dba728ce6e10e54922cef21ef"
+    },
+    {
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SU8545",
+      "member": "Intensity_LZ_SU8545_P_10733_20200128_20200315.tif",
+      "sha256": "9e38f674fb1646b2dfacf8b000ef762faf85a46083f09dbdf4053ca084f2ed40"
+    },
+    {
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SU8550",
+      "member": "Intensity_LZ_SU8550_P_10734_20200117_20200117.tif",
+      "sha256": "6d9148ed4a02ee1293abc232c09056e82890fbf4f6dfeb7a8d6619f0fb1b3d96"
+    }
+  ],
+  "license": "OGL-3.0",
+  "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+  "attribution": "\u00a9 Environment Agency copyright and/or database right 2022. All rights reserved. Contains public sector information licensed under the Open Government Licence v3.0."
+}

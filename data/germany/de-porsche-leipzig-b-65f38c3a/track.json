@@ -8,17 +8,41 @@
     "name": "Germany",
     "slug": "germany"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    12.298922950000001,
+    51.405282299999996
+  ],
+  "sourceIds": [
+    "geosn-2012-leipzig-b"
+  ],
   "defaultLayoutId": "porsche-leipzig-b",
   "layouts": [
     {
       "id": "porsche-leipzig-b",
       "name": "Porsche Leipzig B",
       "referenceId": "Germany/Porsche Leipzig B",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/porsche-leipzig-b.geojson",
+      "description": "GeoSN historical orthophoto capture year 2012 identifies paved centerlines independently. The manufacturer identifies separately usable 3.7 km and 2.2 km courses and configurable training sections. The comparison shapes show alternatives, so named branch paths preserve each configuration set rather than asserting one timed lap. Later dynamic-course additions are excluded. Historical direction, lap choice and present-day corner alignment remain unverified. Independently digitized aerial branch network: 4547.9 m. Shared edges count once; this configuration set is not a single lap, and no line joins separate paths. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "geosn-2012-leipzig-b",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest",
+      "license": "DL-DE-BY-2.0",
+      "retrievedAt": "2026-10-02T06:28:19.093396Z",
+      "evidenceNote": "Reuse evidence: https://www.geodaten.sachsen.de/rechtsgrundlagen-und-nutzungsbedingungen-4509.html. Pinned raster hash 9e48ff442b657dc9c62236c9b61d346a55929f046746135f3f710c7a39688b96; reproducible pixel-to-coordinate conversion. GeoSN historical orthophoto capture year 2012 identifies paved centerlines independently. The manufacturer identifies separately usable 3.7 km and 2.2 km courses and configurable training sections. The comparison shapes show alternatives, so named branch paths preserve each configuration set rather than asserting one timed lap. Later dynamic-course additions are excluded. Historical direction, lap choice and present-day corner alignment remain unverified."
+    },
+    {
+      "id": "imagery-identity-porsche-leipzig-b",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.porsche-leipzig.com/en/tracks/porsche-dynamic-circuit",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T06:28:19.093396Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

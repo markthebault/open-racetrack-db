@@ -8,17 +8,41 @@
     "name": "China",
     "slug": "china"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    116.98877329999999,
+    39.38160325
+  ],
+  "sourceIds": [
+    "copernicus-sentinel-v1-auto-world-current-independent-roads"
+  ],
   "defaultLayoutId": "v1-auto-world-4-3",
   "layouts": [
     {
       "id": "v1-auto-world-4-3",
       "name": "V1 Auto World 4.3",
       "referenceId": "China/V1 Auto World 4.3",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/v1-auto-world-4-3.geojson",
+      "description": "The venue operator identifies its 4.29 km international course with the permanent northern circuit, full western street return, small inner U return and long southeastern divided-road extension. The operator plan and independently published 2023 full-course event map identify these branches only. Exact pinned public OSM raceway and street nodes supply the mapped parts; licensed September 2026 satellite imagery locates the three missing course connections and the complete western hairpin. The short permanent-course return, intermediate western street U-turn, pit lane and surrounding civilian junction alternatives are excluded. The independent draft measures 4,278.5 m against the supplied 4,287 m scalar. Temporary race barriers, lane selection and historical street changes remain unverified. No points are moved to match either distance. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 4278.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "copernicus-sentinel-v1-auto-world-current-independent-roads",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/50/S/MJ/2026/9/S2B_50SMJ_20260923_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T15:35:57.279986Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash 492f3bc0c7229faaf230e9a294317098523c89f079d8e23c1cb0785061390ca3; reproducible pixel-to-coordinate conversion. The venue operator identifies its 4.29 km international course with the permanent northern circuit, full western street return, small inner U return and long southeastern divided-road extension. The operator plan and independently published 2023 full-course event map identify these branches only. Exact pinned public OSM raceway and street nodes supply the mapped parts; licensed September 2026 satellite imagery locates the three missing course connections and the complete western hairpin. The short permanent-course return, intermediate western street U-turn, pit lane and surrounding civilian junction alternatives are excluded. The independent draft measures 4,278.5 m against the supplied 4,287 m scalar. Temporary race barriers, lane selection and historical street changes remain unverified. No points are moved to match either distance. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-v1-auto-world-4-3",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://www.v1aw.com.cn/circuit/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T15:35:57.279986Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

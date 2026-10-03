@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "sourceKind": "georeferenced-imagery",
+  "sourceId": "ea-silverstone-rx-intensity-2019",
+  "attribution": "\u00a9 Environment Agency copyright and/or database right 2022. All rights reserved. Contains public sector information licensed under the Open Government Licence v3.0; independent centerline digitization by OpenRacetrackDB.",
+  "license": "OGL-3.0",
+  "imageryFile": "ea-silverstone-rx-intensity-2019.png",
+  "imagerySha256": "aee35c7ca2e4c2d95847ae479336d0f77f4ce68fa8eae241d1f6ad9473374a30",
+  "sourceUrl": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SP6540",
+  "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+  "retrievedAt": "2026-10-02T13:28:16.440420Z",
+  "width": 1200,
+  "height": 1200,
+  "extent": {
+    "xmin": -114325.11704469196,
+    "ymin": 6811372.5930680465,
+    "xmax": -112210.04671961974,
+    "ymax": 6813487.663393119,
+    "spatialReference": 3857
+  },
+  "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-2",
+  "evidence": "The FIA 2018 event plan identifies the ten-turn Standard rallycross circuit and its separate start-grid approach. The pinned Environment Agency January\u2013March 2019 National LIDAR Programme 1 m intensity raster independently locates the asphalt junction, both gravel hairpins and intervening bends. This is reflected laser intensity, not color aerial photography. The long northeastern Stowe loop, southwestern Stowe loop, kart courses, pits and the separate Joker bend are excluded. The closed Standard route measures independently of the approach. The supplied general configuration also depicts a start-grid stem, so the two connected sections are retained as separate paths rather than closing the stem into a fictitious lap. The approach follows the independently visible shared asphalt grid; its endpoint is provisional and is not asserted to be a timing endpoint. Native survey grid, crop transform, grayscale stretch, nearest-neighbor reprojection and source hashes are pinned. Neither nominal distance nor private timing positions determine any course vertex. Historical correspondence, grid extent and exact racing-line alignment remain draft.",
+  "geometryKind": "network",
+  "closed": false,
+  "paths": [
+    {
+      "name": "Standard lap",
+      "pixels": [
+        [
+          708.0,
+          390.0
+        ],
+        [
+          719.0,
+          389.0
+        ],
+        [
+          731.0,
+          394.0
+        ],
+        [
+          739.0,
+          404.0
+        ],
+        [
+          739.0,
+          416.0
+        ],
+        [
+          734.0,
+          436.0
+        ],
+        [
+          728.0,
+          451.0
+        ],
+        [
+          721.0,
+          465.0
+        ],
+        [
+          709.0,
+          478.0
+        ],
+        [
+          693.0,
+          487.0
+        ],
+        [
+          682.0,
+          487.0
+        ],
+        [
+          667.0,
+          481.0
+        ],
+        [
+          651.0,
+          480.0
+        ],
+        [
+          638.0,
+          485.0
+        ],
+        [
+          629.0,
+          494.0
+        ],
+        [
+          625.0,
+          510.0
+        ],
+        [
+          621.0,
+          532.0
+        ],
+        [
+          617.0,
+          555.0
+        ],
+        [
+          613.0,
+          580.0
+        ],
+        [
+          610.0,
+          608.0
+        ],
+        [
+          613.0,
+          632.0
+        ],
+        [
+          622.0,
+          645.0
+        ],
+        [
+          625.0,
+          654.0
+        ],
+        [
+          622.0,
+          661.0
+        ],
+        [
+          613.0,
+          665.0
+        ],
+        [
+          601.0,
+          664.0
+        ],
+        [
+          588.0,
+          659.0
+        ],
+        [
+          575.0,
+          649.0
+        ],
+        [
+          560.0,
+          641.0
+        ],
+        [
+          542.0,
+          636.0
+        ],
+        [
+          521.0,
+          632.0
+        ],
+        [
+          501.0,
+          627.0
+        ],
+        [
+          481.0,
+          620.0
+        ],
+        [
+          470.0,
+          616.0
+        ],
+        [
+          465.0,
+          609.0
+        ],
+        [
+          465.0,
+          602.0
+        ],
+        [
+          471.0,
+          596.0
+        ],
+        [
+          480.0,
+          593.0
+        ],
+        [
+          491.0,
+          593.0
+        ],
+        [
+          506.0,
+          596.0
+        ],
+        [
+          522.0,
+          596.0
+        ],
+        [
+          536.0,
+          590.0
+        ],
+        [
+          548.0,
+          580.0
+        ],
+        [
+          556.0,
+          564.0
+        ],
+        [
+          560.0,
+          545.0
+        ],
+        [
+          565.0,
+          528.0
+        ],
+        [
+          576.0,
+          509.0
+        ],
+        [
+          589.0,
+          490.0
+        ],
+        [
+          603.0,
+          473.0
+        ],
+        [
+          627.0,
+          456.0
+        ],
+        [
+          652.0,
+          441.0
+        ],
+        [
+          665.5,
+          431.0
+        ],
+        [
+          679.0,
+          421.0
+        ],
+        [
+          700.0,
+          403.0
+        ],
+        [
+          708,
+          390
+        ]
+      ],
+      "closed": true,
+      "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-2",
+      "evidence": "The ten-turn FIA Standard course uses the shorter western S return, excluding the separate Joker bend."
+    },
+    {
+      "name": "Start-grid approach",
+      "pixels": [
+        [
+          395.0,
+          586.0
+        ],
+        [
+          417.0,
+          570.0
+        ],
+        [
+          440.0,
+          554.0
+        ],
+        [
+          465.0,
+          540.0
+        ],
+        [
+          490.0,
+          526.0
+        ],
+        [
+          515.0,
+          513.0
+        ],
+        [
+          540.0,
+          500.0
+        ],
+        [
+          565.0,
+          489.0
+        ],
+        [
+          589.0,
+          478.0
+        ],
+        [
+          603,
+          473
+        ]
+      ],
+      "closed": false,
+      "identificationUrl": "https://www.fia.com/events/world-rallycross-championship/season-2018/circuit-information-2",
+      "evidence": "The FIA plan identifies the separate initial approach along shared Stowe asphalt. The independently visible asphalt and grid supply the path, whose initial extent remains provisional; its endpoint is not a timing position."
+    }
+  ]
+}

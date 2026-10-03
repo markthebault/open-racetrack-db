@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "trackId": "au-the-bend-motorsport-park-542888894",
+  "layoutId": "tailem-bend-south",
+  "sourceId": "osm-selection-the-bend-current-all-course-roads-542888897",
+  "snapshotFile": "selected-the-bend-current-all-course-roads-542888897.json",
+  "snapshotSha256": "661ae2edaffbc0ee2698dd0d0022a02398282a22e70b35ac9794001c66b59908",
+  "closed": true,
+  "timingMode": "shared",
+  "geometryStatus": "draft",
+  "reviewedAt": null,
+  "notes": [
+    "Draft configuration: The operator identifies independently usable North and South West loops. The historical hire brochure lists the 1.81 km West South Loop. This selection retains the southern main pit straight, its southwestern and southeastern corners, the western infield return and the short northern closing connector. The complete public-road query includes way 1327036502, mapped as a service road, whose exact nodes join racing way 542888897 at indices 69 and 6. Independent September 22, 2026 Sentinel imagery confirms the paved connector and the separate short southern footprint. The northern West loop, northern pit detour, kart course, pit lane and neighboring access roads are excluded. The 1,831.3 m measured distance differs from the supplied 1,837 m and the historical published 1.81 km without scaling. Configuration identity and fine alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1831.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+  ],
+  "segments": [
+    {
+      "wayId": 1327036502,
+      "wayVersion": 2,
+      "fromIndex": 29,
+      "toIndex": 0
+    },
+    {
+      "wayId": 542888897,
+      "wayVersion": 9,
+      "fromIndex": 69,
+      "toIndex": 6
+    }
+  ],
+  "gates": []
+}

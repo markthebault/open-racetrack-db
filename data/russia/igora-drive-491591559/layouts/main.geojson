@@ -16,11 +16,10 @@
     "geometryStatus": "draft",
     "timingStatus": "missing",
     "timingMode": "shared",
-    "lengthM": 5198.7,
+    "lengthM": 5183.1,
     "reviewedAt": null,
     "notes": [
-      "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-      "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read."
+      "Operator-identified 2022 extended main course: the complete northern sector and southern extension replace the earlier unnamed candidate and its northern shortcut. Main way 491591561 indices 139 and 160 join extension 1314505677 by exact shared node IDs; the old southern return between these nodes is excluded. Northern crossover 729149906, short infield bypasses, karting, rallycross, motocross, drifting and pits are excluded. Geometry remains draft, and exact racing-line placement requires review. Start/finish GPS is unavailable for these configurations and is not inferred from their filename or circuit drawings."
     ]
   },
   "features": [
@@ -30,12 +29,52 @@
       "properties": {
         "role": "trace",
         "sourceIds": [
-          "osm-snapshot"
+          "osm-identified-main-courses"
         ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            30.1973256,
+            60.5156908
+          ],
+          [
+            30.1972827,
+            60.5157608
+          ],
+          [
+            30.1971993,
+            60.5158284
+          ],
+          [
+            30.1971057,
+            60.5158756
+          ],
+          [
+            30.1969635,
+            60.5159034
+          ],
+          [
+            30.1968214,
+            60.5159166
+          ],
+          [
+            30.1966739,
+            60.5159205
+          ],
+          [
+            30.1965424,
+            60.5158968
+          ],
+          [
+            30.1952697,
+            60.5155878
+          ],
+          [
+            30.1940863,
+            60.5153006
+          ],
           [
             30.193657,
             60.5151964
@@ -205,44 +244,44 @@
             60.5186549
           ],
           [
-            30.1943598,
-            60.5185422
+            30.1942151,
+            60.5187786
           ],
           [
-            30.1942323,
-            60.5185207
+            30.1939891,
+            60.5188197
           ],
           [
-            30.1940997,
-            60.5185086
+            30.1938562,
+            60.5188425
           ],
           [
-            30.193965,
-            60.5185063
+            30.1937215,
+            60.5188627
           ],
           [
-            30.193831,
-            60.5185138
+            30.1935854,
+            60.5188804
           ],
           [
-            30.1937008,
-            60.5185309
+            30.193448,
+            60.5188955
           ],
           [
-            30.1935771,
-            60.5185573
+            30.1933095,
+            60.5189079
           ],
           [
-            30.1934626,
-            60.5185924
+            30.1931702,
+            60.5189177
           ],
           [
-            30.1933599,
-            60.5186353
+            30.1930302,
+            60.5189249
           ],
           [
-            30.1930876,
-            60.5187675
+            30.1928897,
+            60.5189294
           ],
           [
             30.1927501,
@@ -727,46 +766,6 @@
           [
             30.1973256,
             60.5156908
-          ],
-          [
-            30.1972827,
-            60.5157608
-          ],
-          [
-            30.1971993,
-            60.5158284
-          ],
-          [
-            30.1971057,
-            60.5158756
-          ],
-          [
-            30.1969635,
-            60.5159034
-          ],
-          [
-            30.1968214,
-            60.5159166
-          ],
-          [
-            30.1966739,
-            60.5159205
-          ],
-          [
-            30.1965424,
-            60.5158968
-          ],
-          [
-            30.1952697,
-            60.5155878
-          ],
-          [
-            30.1940863,
-            60.5153006
-          ],
-          [
-            30.193657,
-            60.5151964
           ]
         ]
       }

@@ -1,0 +1,7 @@
+# Xiamen full-course draft
+
+The manually inspected pavement trace uses September 19, 2026 Copernicus Sentinel data, with native 10 m ground pixels. The [provider notice](https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice) permits modification and redistribution; attribution is “Contains modified Copernicus Sentinel data (2026).” Native raster identity, transform, capture date, nearest-neighbour reprojection, lossless crop, exact crop extent and pixel vertices reproduce the draft. No coordinates are derived from an unregistered diagram.
+
+A bounded independent public GPS inspection identifies the main course rather than pit-apron maneuvers. Its 4,246 anonymous spatial samples remain outside the public data. No ordered trip is reconstructed, and no sample coordinate or averaged GPS curve is imported. Date-dependent rights uncertainty is retained in the inspection record.
+
+The [November 2022 event organizer](https://media.smart.com/en-INT/260673-first-ever-smart-performance-day-grand-opening-at-xiamen-international-circuit/) identifies a 1,820 m course with hairpins and continuous S curves. The raster draft measures 1,723.3 m, retaining both the 96.7 m organizer-distance difference and the 4.3 m supplied-scalar difference. Those lengths do not change the coordinates. The complete southern notch and central hairpin remain included; pit apron, parking and shortcuts are excluded. Fine corner radii, historical alignment, direction and corner counting remain draft. This is course geometry, not a validated timed lap.

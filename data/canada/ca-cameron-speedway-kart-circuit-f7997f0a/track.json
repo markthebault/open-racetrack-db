@@ -8,17 +8,96 @@
     "name": "Canada",
     "slug": "canada"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -79.9051099,
+    43.1698344
+  ],
+  "sourceIds": [
+    "osm-components-270512145",
+    "osm-network-cameron-speedway-kart-circuit"
+  ],
   "defaultLayoutId": "cameron-speedway-kart-circuit",
   "layouts": [
     {
       "id": "cameron-speedway-kart-circuit",
       "name": "Cameron Speedway Kart Circuit",
       "referenceId": "Canada/Cameron Speedway Kart Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/cameron-speedway-kart-circuit.geojson",
+      "description": "Combined mapped configurations: Historical southern course A, Historical southern course B, Historical southern course C. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "historical-southern-course-a",
+      "name": "Historical southern course A",
+      "file": "layouts/historical-southern-course-a.geojson",
+      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This course retains both main inner hairpins and the shorter northeastern return."
+    },
+    {
+      "id": "historical-southern-course-b",
+      "name": "Historical southern course B",
+      "file": "layouts/historical-southern-course-b.geojson",
+      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the northeastern hairpin spur and middle cross-course return."
+    },
+    {
+      "id": "historical-southern-course-c",
+      "name": "Historical southern course C",
+      "file": "layouts/historical-southern-course-c.geojson",
+      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the southern outer bend and the lower connecting alternative."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-270512145",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/270512145",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-historical-southern-course-a",
+      "type": "reference",
+      "title": "Historical southern course A identification",
+      "url": "https://hamiltonkartingcomplex.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This course retains both main inner hairpins and the shorter northeastern return. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-historical-southern-course-b",
+      "type": "reference",
+      "title": "Historical southern course B identification",
+      "url": "https://hamiltonkartingcomplex.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the northeastern hairpin spur and middle cross-course return. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-historical-southern-course-c",
+      "type": "reference",
+      "title": "Historical southern course C identification",
+      "url": "https://hamiltonkartingcomplex.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T21:15:02.761Z",
+      "evidenceNote": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the southern outer bend and the lower connecting alternative. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-cameron-speedway-kart-circuit",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/270512145",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T07:40:13.346Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-cameron-speedway-kart-circuit",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://hamiltonkartingcomplex.com/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T07:40:13.346Z",
+      "evidenceNote": "The supplied entry depicts the historical southern course with both inner hairpins, the northeastern spur and cross-course alternatives. Independent Ontario SWOOP2020 aerial imagery confirms this physical footprint before the later rebuild. Complementary exact public-node cycles preserve all mapped branches of that southern course while excluding the adjacent northern track, linking stem and separate pit approach. The operator identifies this same facility at 2633 Upper James Street. The unique-edge distance of this configuration set is not a timed lap; descriptive component names do not claim official names. Exact historical timed branch choice and direction remain draft. The independent unique branch distance is 1132.8 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

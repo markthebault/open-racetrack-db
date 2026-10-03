@@ -15,20 +15,14 @@
   "sourceIds": [
     "osm-snapshot"
   ],
-  "defaultLayoutId": "pacific-raceways-road-course",
+  "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
-      "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
-    },
-    {
-      "id": "pacific-raceways-road-course",
       "name": "Pacific Raceways Road Course",
-      "referenceId": "United States/Pacific Raceways Road Course",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/main.geojson",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Pacific Raceways. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3622 m; supplied distance 3628 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "referenceId": "United States/Pacific Raceways Road Course"
     }
   ],
   "sources": [

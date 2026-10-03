@@ -8,17 +8,41 @@
     "name": "Finland",
     "slug": "finland"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    22.88683155,
+    62.7803109
+  ],
+  "sourceIds": [
+    "osm-selection-seinajoki-current-independent-roads-54181243"
+  ],
   "defaultLayoutId": "seinajoki",
   "layouts": [
     {
       "id": "seinajoki",
       "name": "Seinajoki",
       "referenceId": "Finland/Seinajoki",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/seinajoki.geojson",
+      "description": "Draft configuration: Historical Kapernaumi street configuration retains Runkotie, the eastern Tehtaantie straight and its southern bend, the short Tuottajantie return, Hallitie, Jalostajantie and Lastitie. The two western indentations identify the supplied historical configuration; the longer southern Jalostajantie loop and industrial-yard detours are excluded. Every segment and junction remains an exact independent public road node. The organizer identifies the street venue and its use of company yards, but its 2022 rules describe an approximately 2100 m event course, whose temporary additions are not asserted here. The 1918.2 m source trace differs from the supplied 1864 m scalar by 54.2 m without scaling. Historical extent, temporary chicanes and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1918.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-seinajoki-current-independent-roads-54181243",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/54181243",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T22:26:56.337Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-seinajoki",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.epua.fi/wp-content/uploads/2022/07/kilpailunsaannot.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:26:56.337Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

@@ -8,24 +8,122 @@
     "name": "Cyprus",
     "slug": "cyprus"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    33.800164550000005,
+    35.0254482
+  ],
+  "sourceIds": [
+    "osm-components-734690065",
+    "osm-network-achna-speedway",
+    "osm-network-achna-speedway-full-runway"
+  ],
   "defaultLayoutId": "achna-speedway",
   "layouts": [
     {
       "id": "achna-speedway",
       "name": "Achna Speedway",
       "referenceId": "Cyprus/Achna Speedway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/achna-speedway.geojson",
+      "description": "Combined mapped configurations: Achna main course, Achna inner alternative. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "achna-speedway-full-runway",
       "name": "Achna Speedway Full Runway",
       "referenceId": "Cyprus/Achna Speedway Full Runway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/achna-speedway-full-runway.geojson",
+      "description": "Combined mapped configurations: Achna main course, Achna inner alternative, Achna full straight. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+    },
+    {
+      "id": "achna-main-course",
+      "name": "Achna main course",
+      "file": "layouts/achna-main-course.geojson",
+      "description": "The operator's published course plan identifies the closed main circuit with the northern and southern hairpins and western return. Exact independent source way 734690065 indices 5 through 64 retain its closed paved course, excluding the straight's southern extension. Public satellite imagery independently confirms these physical course branches. Fine corner alignment and direction remain draft."
+    },
+    {
+      "id": "achna-inner-alternative",
+      "name": "Achna inner alternative",
+      "file": "layouts/achna-inner-alternative.geojson",
+      "description": "The operator course plan identifies the inner hairpin alternative connecting the northern cross-course section to the western return. Exact independent source way 734690066 preserves both real mapped junction endpoints. This connecting branch is not a separately timed lap."
+    },
+    {
+      "id": "achna-full-straight",
+      "name": "Achna full straight",
+      "file": "layouts/achna-full-straight.geojson",
+      "description": "The operator course plan shows the long cross-course straight continuing beyond the closed circuit. Independent source way 734690065 indices 0 through 6 retain the real southern open end and northern hairpin junction. This physical straight is a component of the full-straight configuration, not an invented closed lap or a surveyed timed drag distance."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-components-734690065",
+      "type": "osm",
+      "title": "OpenStreetMap independently identified course configurations",
+      "url": "https://www.openstreetmap.org/way/734690065",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T22:50:07.700Z",
+      "evidenceNote": "Exact pinned way versions and source-node slices. Branch identity comes from the published configuration plans."
+    },
+    {
+      "id": "component-identity-achna-main-course",
+      "type": "reference",
+      "title": "Achna main course identification",
+      "url": "https://www.achnaspeedway.com/facilities",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:50:07.700Z",
+      "evidenceNote": "The operator's published course plan identifies the closed main circuit with the northern and southern hairpins and western return. Exact independent source way 734690065 indices 5 through 64 retain its closed paved course, excluding the straight's southern extension. Public satellite imagery independently confirms these physical course branches. Fine corner alignment and direction remain draft. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-achna-inner-alternative",
+      "type": "reference",
+      "title": "Achna inner alternative identification",
+      "url": "https://www.achnaspeedway.com/facilities",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:50:07.700Z",
+      "evidenceNote": "The operator course plan identifies the inner hairpin alternative connecting the northern cross-course section to the western return. Exact independent source way 734690066 preserves both real mapped junction endpoints. This connecting branch is not a separately timed lap. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "component-identity-achna-full-straight",
+      "type": "reference",
+      "title": "Achna full straight identification",
+      "url": "https://www.achnaspeedway.com/facilities",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T22:50:07.700Z",
+      "evidenceNote": "The operator course plan shows the long cross-course straight continuing beyond the closed circuit. Independent source way 734690065 indices 0 through 6 retain the real southern open end and northern hairpin junction. This physical straight is a component of the full-straight configuration, not an invented closed lap or a surveyed timed drag distance. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "osm-network-achna-speedway",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/734690065",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T07:01:03.186Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-achna-speedway",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.achnaspeedway.com/facilities",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T07:01:03.186Z",
+      "evidenceNote": "The comparison shape and operator's published course plan identify the main closed circuit and inner hairpin alternative. Retain these exact independent source paths as the selectable configuration set, excluding the straight's southern extension. Shared physical edges count once, and the configuration is not asserted to be one timed lap. The independent unique branch distance is 2344.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "osm-network-achna-speedway-full-runway",
+      "type": "osm",
+      "title": "OpenStreetMap identified course network",
+      "url": "https://www.openstreetmap.org/way/734690065",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T07:01:03.189Z",
+      "evidenceNote": "Exact pinned source ways from the component recipes; independent paths have no invented joins."
+    },
+    {
+      "id": "network-identity-achna-speedway-full-runway",
+      "type": "reference",
+      "title": "Aggregate layout identification",
+      "url": "https://www.achnaspeedway.com/facilities",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T07:01:03.189Z",
+      "evidenceNote": "The supplied full-straight configuration adds the cross-course straight's real southern open extension to the same main course and inner alternative. The operator plan independently identifies this physical straight. Preserve its actual open end, separately from the two other paths. This unique branch length is not an exact timed lap or a measured drag distance; current alignment and timing extent remain draft. The independent unique branch distance is 2768.5 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    }
+  ]
 }

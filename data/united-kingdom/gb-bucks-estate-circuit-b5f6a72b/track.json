@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.9872941,
+    51.9877041
+  ],
+  "sourceIds": [
+    "osm-selection-bucks-estate-current-independent-roads-8598020"
+  ],
   "defaultLayoutId": "bucks-estate-circuit",
   "layouts": [
     {
       "id": "bucks-estate-circuit",
       "name": "Bucks_Estate_Circuit",
       "referenceId": "United Kingdom/Bucks_Estate_Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/bucks-estate-circuit.geojson",
+      "description": "Draft configuration: The supplied road-course configuration identifies Osier Way, the southern A421 roundabout return, the bypass to the Great Slade hook, Middle Slade and Top Angel. Council planning material independently identifies the Buckingham industrial estate, Top Angel and Osier Way road network. Exact current public OSM road nodes locate the connected route. The complete independently measured 1,694.2 m retains its 83.2 m difference from the supplied 1,611 m; historical road realignments and lane placement remain draft. The Lenborough Road alternative belongs to the separate Combo selection; estate parking aisles and dead-end access spurs are excluded. No coordinates are moved to the supplied layout image, length or timing data. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1694.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-bucks-estate-current-independent-roads-8598020",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/8598020",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-bucks-estate-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.buckingham-tc.gov.uk/wp-content/uploads/2022/11/Planning-Committee-Agenda-6-Jun-2022.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T13:57:14.866Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

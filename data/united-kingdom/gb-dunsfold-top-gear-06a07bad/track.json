@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.5416638,
+    51.116387599999996
+  ],
+  "sourceIds": [
+    "osm-selection-dunsfold-top-gear-source-roads-22740179"
+  ],
   "defaultLayoutId": "dunsfold-top-gear",
   "layouts": [
     {
       "id": "dunsfold-top-gear",
       "name": "Dunsfold Top Gear",
       "referenceId": "United Kingdom/Dunsfold Top Gear",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/dunsfold-top-gear.geojson",
+      "description": "Draft configuration: Figure-of-eight course follows the independently named Chicago, Hammerhead, Follow-through, Bentley, Bacharach, Gambon, Crooner and Wilson sections. The two loops meet at an actual shared source node; no edge is duplicated and no crossing or connecting coordinate is invented. This preserves the crossing that a simple-cycle search omitted. Source length 2808.1 m remains unadjusted. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2808.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-dunsfold-top-gear-source-roads-22740179",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/22740179",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:57:12.849Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-dunsfold-top-gear",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.topgear.com/car-news/stig-laps/mcmurtry-speirling-has-smashed-top-gears-20-year-lap-record",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:57:12.849Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

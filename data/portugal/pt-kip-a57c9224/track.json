@@ -8,17 +8,41 @@
     "name": "Portugal",
     "slug": "portugal"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -8.82697035,
+    38.57973975
+  ],
+  "sourceIds": [
+    "osm-selection-128947431"
+  ],
   "defaultLayoutId": "kip",
   "layouts": [
     {
       "id": "kip",
       "name": "KIP",
       "referenceId": "Portugal/KIP",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/kip.geojson",
+      "description": "Draft configuration: The operator Main Track plan identifies the full 14-corner circuit, retaining the western S bend and both northern and eastern hairpins. The independent course uses raceway ways 360618173-176 and 128947452; the angular southern access alternative is excluded. Its unchanged source-node length is 1264.8 m, close to the operator 1270 m. The catalogue scalar is 2480 m and is kept separate; the discrepancy does not justify stretching coordinates. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1264.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-128947431",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/128947431",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:08:22.288Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-kip",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.kip.pt/en/facilities/kart-track",
+      "license": "reference-only",
+      "retrievedAt": "2026-09-30T18:08:22.288Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }

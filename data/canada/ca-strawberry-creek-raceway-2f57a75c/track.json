@@ -8,17 +8,41 @@
     "name": "Canada",
     "slug": "canada"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -114.154072,
+    53.34153255
+  ],
+  "sourceIds": [
+    "copernicus-sentinel-strawberry-creek-raceway-current-independent-roads"
+  ],
   "defaultLayoutId": "strawberry-creek-raceway",
   "layouts": [
     {
       "id": "strawberry-creek-raceway",
       "name": "Strawberry Creek Raceway",
       "referenceId": "Canada/Strawberry Creek Raceway",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/strawberry-creek-raceway.geojson",
+      "description": "The venue owner describes his complete paved four-kilometre road circuit in the Pikes Peak organizer interview. The circuit operator confirms 22 corners, three ravines and monthly lapping. The complete western main straight, northern technical sweep, eastern hooked hairpin and southern returns are independently visible on the pinned July 22, 2026 satellite raster. The northwestern access road, paddock loop, internal short connector and neighboring fields are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 3764.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "copernicus-sentinel-strawberry-creek-raceway-current-independent-roads",
+      "type": "imagery",
+      "title": "Independent georeferenced aerial imagery",
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/11/U/PV/2026/7/S2C_11UPV_20260722_0_L2A/TCI.tif",
+      "license": "LicenseRef-Copernicus-Sentinel",
+      "retrievedAt": "2026-10-02T11:26:46.943612Z",
+      "evidenceNote": "Reuse evidence: https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice. Pinned raster hash c71857ba29dcbcea1cd4411428a37bb6563c9a28f6514d810043c52bef546699; reproducible pixel-to-coordinate conversion. The venue owner describes his complete paved four-kilometre road circuit in the Pikes Peak organizer interview. The circuit operator confirms 22 corners, three ravines and monthly lapping. The complete western main straight, northern technical sweep, eastern hooked hairpin and southern returns are independently visible on the pinned July 22, 2026 satellite raster. The northwestern access road, paddock loop, internal short connector and neighboring fields are excluded. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance."
+    },
+    {
+      "id": "imagery-identity-strawberry-creek-raceway",
+      "type": "reference",
+      "title": "Course identification",
+      "url": "https://ppihc.org/behind-the-wheel-jay-esterer/",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T11:26:46.943612Z",
+      "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    }
+  ]
 }

@@ -1,0 +1,3 @@
+# Porsche Leipzig A
+
+The centerline is independently digitized from pinned georeferenced imagery under DL-DE-BY-2.0. Attribution: GeoSN, dl-de/by-2-0 (https://www.govdata.de/dl-de/by-2-0), historical DOP 2012–2014 (https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest); centerlines independently digitized and changed.. Reuse evidence: https://www.geodaten.sachsen.de/rechtsgrundlagen-und-nutzungsbedingungen-4509.html. The source raster, Web Mercator extent, pixel vertices and hashes are preserved. Course identity is checked against operator documentation. Timing positions remain in the private preview overlay. Geometry and direction are draft.

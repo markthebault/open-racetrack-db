@@ -13,7 +13,8 @@
     55.51343548947371
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-open-network-38672231"
   ],
   "defaultLayoutId": "kames-motorsport-circuit",
   "layouts": [
@@ -34,8 +35,9 @@
       "id": "kames-motorsport-circuit-reverse",
       "name": "Kames Motorsport Circuit Reverse",
       "referenceId": "United Kingdom/Kames Motorsport Circuit Reverse",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "description": "",
+      "missingGeometryReason": "The previous draft selected a southwestern extension outside this historical configuration. Public historical course nodes are available, but the supplied open timed-run sequence and distance remain unresolved.",
+      "file": null
     }
   ],
   "sources": [
@@ -47,6 +49,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:00:21.076Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-open-network-38672231",
+      "type": "osm",
+      "title": "OpenStreetMap independent open-course network",
+      "url": "https://www.openstreetmap.org/way/38672231",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-09-30T18:00:21.076Z",
+      "evidenceNote": "Exact pinned independent source-node coordinates. Private timing positions identify nearby existing endpoint nodes, with no private coordinate interpolation."
+    },
+    {
+      "id": "open-course-identity-38672231",
+      "type": "reference",
+      "title": "Independent operator or event course identification",
+      "url": "https://webcollect.org.uk/eacc",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T14:41:34.901Z",
+      "evidenceNote": "The venue operator identifies Kames Motorsport Complex as its sprint facility. The earlier southwestern-extension configuration was withdrawn after comparison with the club historical track plan. Identification only; no coordinates copied."
+    },
+    {
+      "id": "kames-historical-identity-review",
+      "type": "reference",
+      "title": "Club historical track plan and sprint configuration",
+      "url": "http://www.eastayrshirecc.co.uk/documents/Kames_Track_Plan.pdf",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-02T00:00:00Z",
+      "evidenceNote": "The club plan distinguishes the original sprint circuit from unused rally roads. It does not identify a 974 m run or authorize the later southwestern extension. No diagram coordinates are traced or copied."
     }
   ]
 }

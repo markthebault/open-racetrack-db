@@ -8,17 +8,41 @@
     "name": "United Kingdom",
     "slug": "united-kingdom"
   },
-  "location": null,
-  "sourceIds": [],
+  "location": [
+    -0.5350735,
+    52.043460350000004
+  ],
+  "sourceIds": [
+    "osm-selection-millbrook-handling-circuit-independent-roads-88702702"
+  ],
   "defaultLayoutId": "millbrook-handling-circuit",
   "layouts": [
     {
       "id": "millbrook-handling-circuit",
       "name": "Millbrook Handling Circuit",
       "referenceId": "United Kingdom/Millbrook Handling Circuit",
-      "file": null,
-      "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
+      "file": "layouts/millbrook-handling-circuit.geojson",
+      "description": "Draft configuration: The independently named Handling Circuit is a complete source cycle matching the single catalogue perimeter, without facility access roads or hill-route branches. Its measured distance is 1384.8 m versus the catalogue distance of 1389 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1384.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "osm-selection-millbrook-handling-circuit-independent-roads-88702702",
+      "type": "osm",
+      "title": "OpenStreetMap explicitly selected circuit branches",
+      "url": "https://www.openstreetmap.org/way/88702702",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-10-01T18:04:32.481Z",
+      "evidenceNote": "Exact independent source ways and node joins; configuration choices are recorded in the course-selection manifest."
+    },
+    {
+      "id": "selection-identity-millbrook-handling-circuit",
+      "type": "reference",
+      "title": "Configuration identification reference",
+      "url": "https://www.openstreetmap.org/way/88702702",
+      "license": "reference-only",
+      "retrievedAt": "2026-10-01T18:04:32.481Z",
+      "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    }
+  ]
 }
