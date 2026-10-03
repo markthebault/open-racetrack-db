@@ -10,6 +10,10 @@ The [official Practice 1 results page](https://www.indycar.com/results/ntt-indyc
 
 The requested catalogue records retain their supplied 4,494 m scalar distance. The published event distance is about 4,393.6 m, a discrepancy of about 100.4 m. A distance discrepancy alone does not establish a different physical layout. Both entries still require reusable evidence for the missing connectors and confirmation of the requested timing convention. No street loop, interpolated satellite line or official diagram is substituted for that evidence.
 
+A further check pins native red, green, blue and near-infrared bands from **13 March and 22 September 2026** in `multiband-2026/`. Nearest-neighbor reprojection and a documented contrast stretch improve visibility of surface differences without adding spatial detail. The narrow stadium links and event turn sequence still cannot be established from these 10 m samples. The acquisition records preserve each public asset URL, native transform, dimensions, file hash and full inspection raster. No course pixel recipe is registered. The later image is a post-event observation, not evidence of race-day barrier placement.
+
+The [TxGIO image-service listing](https://imagery.geographic.texas.gov/server/rest/services?f=pjson) has no newer freely downloadable Arlington orthoimage in its reviewed StratMap and NAIP services. The separate [Texas Imagery Service](https://geographic.texas.gov/texas-imagery-service.html) explicitly describes its images as restricted licensed material. [NCTCOG's cooperative imagery FAQ](https://nctcog.org/Regional-Data/Spatial-Data-Cooperative-Program-SDCP/Frequently-Asked-Questions) also describes purchased data and a contractor licence. Those services are not used to extract coordinates.
+
 Reproduce the reviewed sources from the repository root:
 
 ```sh
@@ -18,3 +22,11 @@ python3 sources/research/arlington-public-course-evidence/download-native-imager
 ```
 
 The first command uses the project's Playwright dependency and installed Chrome with an anonymous browser. The second requires rasterio, numpy and Pillow. Both refuse changed source content rather than silently replacing the reviewed files. The PNG downloader checks native pixel values, the exact grid, dimensions and encoded-file fingerprint. These are source coverage reviews; neither adds a mapped layout.
+
+Verify the further native-band check, including comparison with the public source windows:
+
+```sh
+python3 sources/research/reproduce-sentinel-review.py --review-dir sources/research/arlington-public-course-evidence/multiband-2026 --online
+```
+
+Omit `--online` for offline verification of the pinned band hashes, georeferencing and every RGB/NIR inspection pixel.

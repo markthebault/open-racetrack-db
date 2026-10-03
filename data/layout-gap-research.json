@@ -34,12 +34,13 @@
       "sourcePath": "sources/world/cn/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Find reusable fine historical imagery or a licensed course survey. The June 2019 native 10 m image does not resolve the old compact course, and the inspected nearby public GPS samples follow a civilian road rather than the circuit.",
-      "publicExplanation": "The available historical satellite image is too coarse to distinguish the bends of this compact course. Nearby public GPS recordings follow a road outside the circuit.",
+      "nextStep": "Find reusable fine historical imagery or a licensed course survey and verify the operator identity. Native October 2018 and June 2019 RGB/NIR samples reveal the western loop, but do not establish the complete route across the larger paved area. Nearby public GPS samples remain outside the circuit.",
+      "publicExplanation": "Historical colour and near-infrared imagery reveal part of the western loop, but the compact bends and route across the larger paved area still need finer evidence.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
-          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A"
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_50RKU_20190604_2_L2A",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_50RKU_20181005_2_L2A"
         ],
         "geometryRecovered": false
       }
@@ -179,14 +180,17 @@
       "sourcePath": "sources/europe/gb/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Identify the historical main-course branch order in the public 2019 one-metre intensity grid and 2017 practice footage. The central parallel sections and alternatives must not be joined into an unsupported single lap; the later rebuild is not a substitute.",
+      "nextStep": "Resolve the historical main-course branch sequence in the public 2019 one-metre survey. First-hand 2014, 2017 and 2020 recordings show further old-course sections but have not established the exact lap through the central alternatives. Exclude the later rebuild and the wooded enduro detour.",
       "publicExplanation": "The historical course has several parallel branches. The public survey and practice footage do not yet establish a complete lap through those branches.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/TF1095",
           "https://www.clickhowell.co.uk/thoresway",
-          "https://www.youtube.com/watch?v=1ixjGdRUfMk"
+          "https://www.youtube.com/watch?v=1ixjGdRUfMk",
+          "https://www.youtube.com/watch?v=GMFFkqJQrHM",
+          "https://www.youtube.com/watch?v=LX5rIjr7bVM",
+          "https://www.youtube.com/watch?v=eve4veKEYBo"
         ],
         "geometryRecovered": false
       }
@@ -198,7 +202,7 @@
       "sourcePath": "sources/world/us/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Confirm the requested branch sequence and obtain reusable fine evidence for the stadium horseshoe and temporary racing connectors. The licensed municipal centerlines omit those sections. Native 10 m imagery captured on the 2026 practice day is too coarse to resolve them; the 100.4 m event-distance discrepancy alone does not establish a different layout.",
+      "nextStep": "Confirm the requested branch sequence and obtain reusable fine evidence for the stadium horseshoe and temporary racing connectors. The licensed municipal centerlines omit those sections. Native 10 m imagery captured on the 2026 practice day is too coarse to resolve them; the 100.4 m event-distance discrepancy alone does not establish a different layout. Additional pinned March and September RGB/NIR bands leave the small links unresolved. The separate Texas and NCTCOG high-resolution commercial services do not establish open reuse rights.",
       "publicExplanation": "The surrounding streets are mapped, but the stadium horseshoe and temporary connectors are missing from reusable geometry. The event-day satellite image is too coarse to resolve them.",
       "research": {
         "reviewedAt": "2026-10-03",
@@ -207,7 +211,8 @@
           "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington",
           "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
           "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A",
-          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1"
+          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260922_1_L2A"
         ],
         "geometryRecovered": false
       }
@@ -219,7 +224,7 @@
       "sourcePath": "sources/world/us/osm.json",
       "sourceWayIds": [],
       "reason": "independent-geometry-missing",
-      "nextStep": "Confirm the timing-line convention for this catalogue entry and recover the missing temporary connectors. The official 2026 practice report identifies main and alternate start/finish lines on one event course. That does not establish this catalogue route; the licensed municipal road snapshot and native event-date imagery still cannot supply its complete geometry.",
+      "nextStep": "Confirm the timing-line convention for this catalogue entry and recover the missing temporary connectors. The official 2026 practice report identifies main and alternate start/finish lines on one event course. That does not establish this catalogue route; the licensed municipal road snapshot and native event-date imagery still cannot supply its complete geometry. Additional pinned March and September RGB/NIR bands leave the small links unresolved. The separate Texas and NCTCOG high-resolution commercial services do not establish open reuse rights.",
       "publicExplanation": "The official practice map labels an alternate start/finish line. This catalogue timing convention still needs confirmation, and reusable geometry for the temporary turns remains incomplete.",
       "research": {
         "reviewedAt": "2026-10-03",
@@ -228,7 +233,8 @@
           "https://www.arlingtontx.gov/News-Articles/2025/September/Paving-the-Way-for-INDYCAR-Grand-Prix-of-Arlington",
           "https://opendata.arlingtontx.gov/datasets/861ae9583db64b57b76f40125b56ce51_1/explore",
           "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260313_0_L2A",
-          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1"
+          "https://www.indycar.com/results/ntt-indycar-series/2026/java-house-grand-prix-of-arlington/practice-1",
+          "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_14SPB_20260922_1_L2A"
         ],
         "geometryRecovered": false
       }
@@ -258,13 +264,16 @@
       "candidateCount": 28,
       "closestSourceLengthM": 2365.1,
       "reason": "course-distance-discrepancy",
-      "nextStep": "Identify the historical frontstretch short road-course branch order. Independently georeferenced 2014 one-metre and 2022 0.6-metre NAIP images show the pavement, but the quarter-mile oval and later simulator short course do not establish the requested layout.",
+      "nextStep": "Identify the historical frontstretch short road-course branch order. Independently georeferenced 2014 one-metre and 2022 0.6-metre NAIP images show the pavement, but the quarter-mile oval and later simulator short course do not establish the requested layout. The historical organizer's 0.7-mile plan identifies a different infield course. The 2012 frontstretch rallycross event remains an identity lead, not a verified association.",
       "publicExplanation": "Aerial imagery shows the frontstretch pavement and several branches, but the historical short-course sequence still needs to be identified.",
       "research": {
-        "reviewedAt": "2026-10-02",
+        "reviewedAt": "2026-10-03",
         "evidenceUrls": [
           "https://www.charlottemotorspeedway.com/fans/track-history/track-history-669197.html",
-          "https://www.charlottemotorspeedway.com/documents/corporate-events.pdf"
+          "https://www.charlottemotorspeedway.com/documents/corporate-events.pdf",
+          "https://www.secondstrike.com/Events/Spring2004/Main.html",
+          "https://www.secondstrike.com/Newsletter/SecondStrike_V3N3.pdf",
+          "https://makitaassemblytools.com/company/press-releases/2012/makita-and-brian-deegan-set-for-2012-global-rallycross-championship"
         ],
         "geometryRecovered": false
       }
