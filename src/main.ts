@@ -2,6 +2,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "@fontsource-variable/manrope";
 import "./style.css";
+import brandMark from "./assets/mthrace-mark.svg";
 import {
   indexSchema,
   validateTrack,
@@ -34,7 +35,7 @@ app.innerHTML = `
   <a class="skip-link" href="#workspace">Skip to track</a>
   <header class="site-header">
     <a class="brand" href="${base}" aria-label="Open Racetrack home">
-      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="m9 8 12 1 9 10-4 11-14 2-6-9 3-15Z" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="m9 8 5 6-2 9 7 3 7-4" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></svg>
+      <img class="brand-mark" src="${brandMark}" alt="" aria-hidden="true">
       <span>Open Racetrack<span class="brand-sub">THE OPEN TRACK ATLAS</span></span>
     </a>
     <span class="header-caption">Explore circuits. Download open track data.</span>
@@ -95,12 +96,7 @@ const get = <T extends HTMLElement>(id: string) =>
 const preferences = readPreferences();
 const saved = new Set(preferences.saved);
 const initialParams = new URLSearchParams(location.search);
-let view: "2d" | "3d" =
-  initialParams.get("view") === "3d"
-    ? "3d"
-    : initialParams.has("track")
-      ? "2d"
-      : (preferences.view ?? "3d");
+let view: "2d" | "3d" = initialParams.get("view") === "3d" ? "3d" : "2d";
 let savedOnly = false,
   drawerOpen = false,
   rotating = false,

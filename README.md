@@ -14,7 +14,7 @@ Search by track or place, filter by country, or choose **Surprise me**. Each tra
 
 The Three.js view follows real terrain heights, with reflective track materials, a translucent glass base and contour lines. Drag to orbit; pinch or scroll to zoom. **Height 1×** uses natural proportions. **Height 3×** exaggerates elevation for visibility and is labelled on the view. The elevation profile and range always use unexaggerated metres. Network branches remain separate. Source coordinate traces and downloads remain two-dimensional and unchanged.
 
-Save favourite tracks in the current browser. The atlas remembers the last track, layout and view when you return. Share links include the selected track, layout, view and height scale. No account is required. The layout supports desktop, tablet and phone, including phone landscape. Keyboard users can press `/` to search and use arrow keys, `+` and `-` inside the 3D view.
+Save favourite tracks in the current browser. The atlas remembers the last track and layout when you return, and opens in 2D by default. Share links include the selected track, layout, view and height scale; an explicit 3D link still opens in 3D. No account is required. The layout supports desktop, tablet and phone, including phone landscape. Keyboard users can press `/` to search and use arrow keys, `+` and `-` inside the 3D view.
 
 ![Open Racetrack on a phone](Docs/assets/atlas-mobile.png)
 

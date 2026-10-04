@@ -6,6 +6,7 @@ import { geometryPaths, type Layout } from "../schemas/data";
 import { planarCourse } from "./track-preview";
 import { plane, type Position } from "./geo";
 import { sampleElevation, type ElevationGrid } from "./elevation";
+import { TerrainDrape } from "./terrain-drape";
 
 function ribbon(points: THREE.Vector3[], width: number, elevation: number) {
   const vertices: number[] = [],
@@ -583,6 +584,7 @@ export class Track3D {
     foundation.position.y = -3.4;
     this.course.add(foundation);
     let floor = 0;
+    let ground: TerrainDrape | undefined;
     if (grid) {
       const surface = terrainSurface(
         grid,
@@ -593,6 +595,7 @@ export class Track3D {
         heightScale,
       );
       floor = surface.floor;
+      ground = new TerrainDrape(surface.geometry);
       this.course.add(
         new THREE.Mesh(
           surface.geometry,
@@ -646,6 +649,17 @@ export class Track3D {
       grid
         ? (sampleElevation(grid, p)! - floor) * scale * heightScale + 0.16
         : 0.05;
+    const roadSurface = (
+      points: THREE.Vector3[],
+      width: number,
+      clearance: number,
+    ) => {
+      const geometry = ribbon(points, width, clearance);
+      if (!ground) return geometry;
+      const draped = ground.drape(geometry, clearance);
+      geometry.dispose();
+      return draped;
+    };
     const mats = [
       new THREE.MeshStandardMaterial({
         color: 0x243136,
@@ -688,7 +702,7 @@ export class Track3D {
       ].entries()) {
         this.course.add(
           new THREE.Mesh(
-            ribbon(points, ribbonWidth, elevation),
+            roadSurface(points, ribbonWidth, elevation),
             mats[i].clone(),
           ),
         );
@@ -707,7 +721,7 @@ export class Track3D {
       }));
     const toLocal = (p: Position) => {
       const metres = (6371008.8 * Math.PI) / 180;
-      return new THREE.Vector3(
+      const point = new THREE.Vector3(
         (p[0] - local.origin[0]) *
           metres *
           Math.cos((local.origin[1] * Math.PI) / 180) *
@@ -715,6 +729,8 @@ export class Track3D {
         altitude(p),
         -(p[1] - local.origin[1]) * metres * scale,
       );
+      point.y = ground?.heightAt(point.x, point.z) ?? point.y;
+      return point;
     };
     for (const gate of [...publicGates, ...gates]) {
       if (
@@ -733,7 +749,7 @@ export class Track3D {
       const color = gate.role === "finish" ? 0xff8383 : 0x78e3bf;
       this.course.add(
         new THREE.Mesh(
-          ribbon(points, 0.65, 0.5),
+          roadSurface(points, 0.65, 0.5),
           new THREE.MeshBasicMaterial({
             color,
             toneMapped: false,

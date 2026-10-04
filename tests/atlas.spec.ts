@@ -238,7 +238,7 @@ test("the 3D course renders, responds to controls, and shares an exact layout wi
 test("saved tracks and the last visited layout survive returning to the atlas", async ({
   page,
 }) => {
-  await page.goto("/?track=de-hockenheimring&layout=short");
+  await page.goto("/?track=de-hockenheimring&layout=short&view=3d");
   await expect(page.locator("#message")).toHaveText("Layout ready");
   await page.locator("#save-track").click();
   await expect(page.locator("#save-track")).toHaveAttribute(
@@ -247,6 +247,8 @@ test("saved tracks and the last visited layout survive returning to the atlas", 
   );
   await page.goto("/");
   await expect(page.locator("#layout")).toHaveValue("short");
+  await expect(page.locator("#view-2d")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#track-3d canvas")).not.toBeVisible();
   await page.locator("#saved-tracks").click();
   await expect(page.locator("#count")).toHaveText("1 track");
   await expect(page.locator("#venues button")).toHaveCount(1);
@@ -323,6 +325,9 @@ for (const viewport of [
   }) => {
     await page.setViewportSize(viewport);
     await page.goto("/");
+    await expect(page.locator("#message")).toHaveText("Layout ready");
+    await expect(page.locator("#view-2d")).toHaveAttribute("aria-pressed", "true");
+    await page.locator("#view-3d").click();
     await expect(page.locator("#track-3d canvas")).toBeVisible();
     await expect(page.locator("#map-name")).toBeInViewport();
     await expect(page.locator("#open-browse")).toBeVisible();

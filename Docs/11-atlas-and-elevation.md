@@ -4,11 +4,13 @@ Implemented 2026-10-04 at the maintainer's request. The viewer remains a static 
 
 ## Interface
 
-The desktop catalogue sits beside the selected circuit. Phones use a search drawer with focus trapping and Escape dismissal. Country and text filters combine without clearing the selected track. Saved tracks, the last selection, view mode and height scale are stored in the current browser; disabled browser storage falls back to the current visit.
+The desktop catalogue sits beside the selected circuit. Phones use a search drawer with focus trapping and Escape dismissal. Country and text filters combine without clearing the selected track. Saved tracks, the last selection and height scale are stored in the current browser; disabled browser storage falls back to the current visit. The atlas opens in 2D unless the URL explicitly selects 3D. The header and favicon use the MTHRace three-slash mark.
 
 Every catalogue thumbnail is generated from its independently mapped default trace. Thumbnail simplification operates in projected metres and preserves separate branches. The 2D map, 3D model and downloads use full source coordinates. Missing layouts keep their source-gap explanation and offer no trace or download.
 
 The Three.js view loads on demand. Reflective physical materials use a locally generated studio environment, clearcoat and a transmissive glass slab. A sampled terrain mesh and contour lines support the course ribbon. Orbit, zoom, reset and optional rotation work with mouse, touch and keyboard. Rendering pauses when hidden and stops when interaction settles. Pixel ratio is capped for phones. WebGL failure and context loss fall back to the 2D map.
+
+The rendered road footprint is split at terrain triangle boundaries and draped onto those same faces with a small display clearance. Long straight segments and wide bends follow the ground across their full width, without terrain protruding through the road. Timing strokes use the same projection. This changes display geometry only; source coordinates, downloads and elevation profiles stay unchanged. Missing terrain faces remain holes.
 
 The height button switches between natural proportions and clearly labelled 3× vertical exaggeration. The elevation profile always reports unexaggerated metres. Share links preserve the selected layout, view mode and height scale. Draft course status, uncertain timing positions and source information remain visible or directly accessible.
 
