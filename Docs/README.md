@@ -4,6 +4,8 @@ Specification version: 0.1
 Date: 2026-09-30  
 Status: ready for implementation; pilot source research is incomplete.
 
+The original pilot specification below records the initial scope. The implemented worldwide viewer and the 2026-10-04 UI and terrain extension are described in the root [README](../README.md) and [11-atlas-and-elevation.md](11-atlas-and-elevation.md). The maintainer explicitly requested the 3D elevation extension; it supersedes the original exclusion of elevation profiles.
+
 ## Purpose
 
 Build a public database of racetracks and a small map viewer. Store the data in static files. Organize it by country, venue, and layout. Show each layout on an OpenStreetMap background with its start and finish lines.

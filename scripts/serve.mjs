@@ -4,7 +4,7 @@ import {resolve,extname,sep} from 'node:path';
 const root=resolve(process.env.RACETRACK_WEB_ROOT??'dist');
 const overlay=process.env.RACETRACK_TIMING_FILE;
 const base=process.env.RACETRACK_BASE_PATH??'/';
-const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.geojson':'application/geo+json','.png':'image/png','.svg':'image/svg+xml'};
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.geojson':'application/geo+json','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2'};
 createServer(async(req,res)=>{
  try{
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

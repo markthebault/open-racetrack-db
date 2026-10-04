@@ -1,10 +1,35 @@
 # Open Racetrack Database
 
-Browse circuits, compare layouts, and download their geographic traces as GeoJSON. Open Racetrack Database is a small static website backed by versioned JSON, with source records for every course. Start and finish lines appear when timing evidence is available.
+Explore real circuits in 2D and 3D, choose a layout, and download its geographic trace as GeoJSON. Open Racetrack is a static atlas backed by versioned JSON, with source records for every course. Start and finish lines appear when timing evidence is available.
 
-![Open Racetrack Database showing Suzuka Circuit in Japan](Docs/assets/world-preview.png)
+![Open Racetrack showing Spa-Francorchamps as a 3D terrain model](Docs/assets/atlas-desktop.png)
 
-*Actual viewer screenshot. Course trace © OpenStreetMap contributors, ODbL 1.0. The screenshot uses public data and includes no private timing overlay.*
+*Actual browser screenshot using public data. Course trace © OpenStreetMap contributors, ODbL 1.0. Terrain: Mapzen Terrain Tiles, USGS/NOAA and Copernicus EU-DEM. No private timing overlay.*
+
+## Explore the atlas
+
+Search by track or place, filter by country, or choose **Surprise me**. Each track has its own outline in the catalogue. The **2D / 3D** switch stays beside the view; layout selection and GeoJSON download stay below it. Track notes and source details open when needed.
+
+The Three.js view follows real terrain heights, with reflective track materials, a translucent glass base and contour lines. Drag to orbit; pinch or scroll to zoom. **Height 1×** uses natural proportions. **Height 3×** exaggerates elevation for visibility and is labelled on the view. The elevation profile and range always use unexaggerated metres. Network branches remain separate. Source coordinate traces and downloads remain two-dimensional and unchanged.
+
+Save favourite tracks in the current browser. The atlas remembers the last track, layout and view when you return. Share links include the selected track, layout, view and height scale. No account is required. The layout supports desktop, tablet and phone, including phone landscape. Keyboard users can press `/` to search and use arrow keys, `+` and `-` inside the 3D view.
+
+![Open Racetrack on a phone](Docs/assets/atlas-mobile.png)
+
+## Terrain elevation
+
+Committed geographic grids provide approximate ground elevation for all **756 mapped venues and 1,377 mapped layouts**. The browser loads a small local JSON file per venue. It does not call an elevation service. The 3D lighting environment and fonts are also local assets. Only the 2D background map needs an external tile provider; course traces remain usable if tiles fail. Devices without WebGL fall back to 2D.
+
+Heights come from [Mapzen Terrain Tiles](https://registry.opendata.aws/terrain-tiles/), a blend of reusable terrain sources. Grid spacing is recorded per venue, usually around 80 m and coarser for very large venues. Spacing is a sampling interval, not a claim of source accuracy. Terrain does not establish track-surface height, bridges, banking, historical grading or surveyed accuracy. Missing elevation data is labelled and falls back to a flat course display.
+
+The [terrain implementation notes](Docs/11-atlas-and-elevation.md) describe sampling, provenance, source rights and verification. To refresh the grids as a maintainer:
+
+```sh
+npm run elevation:fetch
+npm run validate:elevation
+```
+
+The fetch command caches source PNG tiles under ignored `.local/elevation-tiles/`. The public manifest records tile URLs and SHA-256 hashes. Normal builds use the committed grids and require no elevation-network access.
 
 ## Worldwide preview
 
@@ -44,7 +69,7 @@ npm run build
 RACETRACK_TIMING_FILE=.local/timing.json PORT=5190 npm run serve
 ```
 
-Validation commands are `npm run lint`, `npm test`, and `npm run test:e2e` (the latter uses installed Google Chrome and a running preview on port 5190; override with `RACETRACK_TEST_URL`). The build validates data, checks reproducible generation, and type-checks before bundling. Imports are maintainer-only; the viewer never queries Overpass.
+Validation commands are `npm run lint`, `npm test`, and `npm run test:e2e` (the latter uses installed Google Chrome and a running preview on port 5190; override with `RACETRACK_TEST_URL`). Browser checks cover every catalogue entry, responsive controls, WebGL fallback, static elevation, saved tracks, sharing, and automated accessibility. The build validates data and elevation coverage, checks reproducible generation, generates catalogue thumbnails, and type-checks before bundling. Imports are maintainer-only; the viewer never queries Overpass.
 
 The preview server can expose private timing positions when started with `RACETRACK_TIMING_FILE=.local/timing.json`. The timing importer reads only `Start Finish Database/StartFinishDataBase.xml`; it does not open CIR files or track maps. Keep the generated file private. Public build output excludes `.local/`.
 
@@ -61,6 +86,8 @@ tailscale serve --bg --tcp=5190 tcp://127.0.0.1:5190
 ```
 
 ## Data and code licenses
+
+The viewer bundles Three.js under MIT and Manrope under the SIL Open Font License. Their notices are included in `licenses/` and in the static build. Terrain grids retain their provider-specific rights as described in [DATA_LICENSE.md](DATA_LICENSE.md).
 
 Original application code is MIT licensed. Database content is distributed under ODbL 1.0. OSM-derived courses credit OpenStreetMap contributors; independently digitized NAIP courses credit USGS, USDA and The National Map. The original NAIP imagery is public domain. Polish aerial courses credit GUGiK and Geoportal.gov.pl, whose orthoimagery is freely reusable; the source-specific identifier `LicenseRef-GUGiK-open-data` links to the provider’s reuse statement. Saxon historical aerial courses credit GeoSN under [Datenlizenz Deutschland Namensnennung 2.0](https://www.govdata.de/dl-de/by-2-0), with independently digitized centerlines marked as changed. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
 

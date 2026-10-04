@@ -13,7 +13,7 @@ test('every missing layout explains its specific source gap without offering a t
   await expect(page.locator('#selection')).toContainText(review.publicExplanation!);
   await expect(page.locator('#download')).toHaveCount(0);
   await expect(page.locator('.leaflet-overlay-pane path[stroke="#ffb347"]')).toHaveCount(0);
-  await page.locator('.gap-research summary').click();
+  await page.locator('.track-notes > summary').click();await page.locator('.gap-research summary').click();
   expect(await page.locator('.gap-research a').evaluateAll(links=>links.map(link=>(link as HTMLAnchorElement).href))).toEqual(review.research!.evidenceUrls);
  }
  await page.goto('/?track=fr-paul-ricard&layout=main');await expect(page.locator('#message')).toHaveText('Layout ready');
@@ -67,7 +67,7 @@ test('country and name filters combine, and a layout deep link restores selectio
  await expect(page.locator('#layout')).toHaveValue('national');
  const traceBox=await page.locator('.leaflet-overlay-pane path[stroke="#ffb347"]').boundingBox();expect(traceBox!.width).toBeGreaterThan(100);expect(traceBox!.height).toBeGreaterThan(100);
  await page.locator('#country').selectOption('IT');await page.locator('#search').fill('Monza');
- await expect(page.locator('#count')).toHaveText('1 tracks');
+ await expect(page.locator('#count')).toHaveText('1 track');
  await expect(page.locator('#venues .venue-name')).toHaveText('Autodromo Nazionale Monza');
  const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
  await page.locator('#reset').click();await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
@@ -107,6 +107,7 @@ test('OSM venue names render as literal tooltip text',async({page})=>{
  const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));for(const track of catalogue.tracks)track.name='Marker <strong>untrusted</strong>';
  await page.route('**/data/index.json',route=>route.fulfill({json:catalogue}));
  await page.goto('/');await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
+ await page.locator('#world-map').click();
  await page.locator('.leaflet-overlay-pane .leaflet-interactive').first().dispatchEvent('mouseover');
  await expect(page.locator('.leaflet-tooltip')).toHaveText('Marker <strong>untrusted</strong>');await expect(page.locator('.leaflet-tooltip strong')).toHaveCount(0);
 });
@@ -118,7 +119,7 @@ test('Nürburgring offers nine reference entries and GP differs from Sprint',asy
  const gp=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json();
  await page.locator('#layout').selectOption('sprintstrecke');await expect(page.locator('#message')).toHaveText('Layout ready');
  const sprint=await (await request.get((await page.locator('#download').getAttribute('href'))!)).json();expect(gp.metadata.lengthM-sprint.metadata.lengthM).toBeGreaterThan(1400);
- await page.locator('.layout-gaps summary').click();await expect(page.locator('.layout-gaps li')).toHaveCount(9);
+ await page.locator('.track-notes > summary').click();await page.locator('.layout-gaps summary').click();await expect(page.locator('.layout-gaps li')).toHaveCount(9);
  await page.locator('#layout').selectOption('nordschleife-btg');await expect(page.locator('#message')).toHaveText('Layout ready');
  await expect(page.locator('#selection')).toContainText('Public data is the supporting Nordschleife loop');
 });
