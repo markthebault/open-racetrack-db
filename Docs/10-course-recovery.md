@@ -51,7 +51,7 @@ The [separate filename inventory](../sources/reference/archive-inventory.json) c
 
 ## Reproduce the research
 
-Use the commands in the [README](../README.md#layout-completeness). Circuit discovery reuses its pinned snapshot unless `--refresh` is explicitly supplied. Relation research caches full source responses locally. Recovery runs serially before regenerating data, auditing coverage, importing private timing and publishing the preview.
+Use the commands in the [README](../TECHNICAL_GUIDE.md#layout-completeness). Circuit discovery reuses its pinned snapshot unless `--refresh` is explicitly supplied. Relation research caches full source responses locally. Recovery runs serially before regenerating data, auditing coverage, importing private timing and publishing the preview.
 
 The gap search reads the supplied timing XML, checks the independent country snapshot hashes, and outputs names, source references and failure categories. It does not publish timing coordinates, import archive geometry or add synthetic links. The importer can add a named open road course only when the source is a complete unbranched chain and both private timing positions agree with its existing endpoints.
 

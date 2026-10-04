@@ -1,135 +1,28 @@
-# Open Racetrack Database
+# Open Racetrack DB
 
-Explore real circuits in 2D and 3D, choose a layout, and download its geographic trace as GeoJSON. Open Racetrack is a static atlas backed by versioned JSON, with source records for every course. Start and finish lines appear when timing evidence is available.
+Find racetracks around the world. Explore their layouts. Download geographic traces with source and license information.
 
-Open the public atlas at **[racetracks.mthracelab.com](https://racetracks.mthracelab.com/)**.
+[**Open the track atlas**](https://racetracks.mthracelab.com/)
 
-![Open Racetrack showing Spa-Francorchamps as a 3D terrain model](Docs/assets/atlas-desktop.png)
+![Track atlas: a circuit layout over 3D terrain](Docs/assets/atlas-desktop.png)
 
-*Actual browser screenshot using public data. Course trace © OpenStreetMap contributors, ODbL 1.0. Terrain: Mapzen Terrain Tiles, USGS/NOAA and Copernicus EU-DEM. No private timing overlay.*
+*Map data © OpenStreetMap contributors. See [data licenses](DATA_LICENSE.md) for attribution and source terms.*
 
-## Explore the atlas
+## Start here
 
-Search by track or place, filter by country, or choose **Surprise me**. Each track has its own outline in the catalogue. The **2D / 3D** switch stays beside the view; layout selection and GeoJSON download stay below it. Track notes and source details open when needed.
+1. Search for a track or country.
+2. Choose a layout. Switch between the 2D map and 3D terrain view.
+3. Save a favourite in your browser, or download the GeoJSON trace.
 
-The Three.js view follows real terrain heights, with reflective track materials, a translucent glass base and contour lines. Drag to orbit; pinch or scroll to zoom. **Height 1×** uses natural proportions. **Height 3×** exaggerates elevation for visibility and is labelled on the view. The elevation profile and range always use unexaggerated metres. Network branches remain separate. Source coordinate traces and downloads remain two-dimensional and unchanged.
-
-Save favourite tracks in the current browser. The atlas remembers the last track and layout when you return, and opens in 2D by default. Share links include the selected track, layout, view and height scale; an explicit 3D link still opens in 3D. No account is required. The layout supports desktop, tablet and phone, including phone landscape. Keyboard users can press `/` to search and use arrow keys, `+` and `-` inside the 3D view.
-
-![Open Racetrack on a phone](Docs/assets/atlas-mobile.png)
-
-## Terrain elevation
-
-Committed geographic grids provide approximate ground elevation for all **756 mapped venues and 1,377 mapped layouts**. The browser loads a small local JSON file per venue. It does not call an elevation service. The 3D lighting environment and fonts are also local assets. Only the 2D background map needs an external tile provider; course traces remain usable if tiles fail. Devices without WebGL fall back to 2D.
-
-Heights come from [Mapzen Terrain Tiles](https://registry.opendata.aws/terrain-tiles/), a blend of reusable terrain sources. Grid spacing is recorded per venue, usually around 80 m and coarser for very large venues. Spacing is a sampling interval, not a claim of source accuracy. Terrain does not establish track-surface height, bridges, banking, historical grading or surveyed accuracy. Missing elevation data is labelled and falls back to a flat course display.
-
-The [terrain implementation notes](Docs/11-atlas-and-elevation.md) describe sampling, provenance, source rights and verification. To refresh the grids as a maintainer:
-
-```sh
-npm run elevation:fetch
-npm run validate:elevation
-```
-
-The fetch command caches source PNG tiles under ignored `.local/elevation-tiles/`. The public manifest records tile URLs and SHA-256 hashes. Normal builds use the committed grids and require no elevation-network access.
-
-## Worldwide preview
-
-The viewer contains **763 venues across 74 countries**, with every one of the **1,007 supplied layout entries** registered. Search a venue, select a layout, and download an attributed GeoJSON trace when geometry is available.
-
-**996 supplied entries have draft course traces; 11 still need geometry.** The catalogue also retains additional independently mapped course candidates. An unavailable layout clears the map trace and has no download button. The [layout coverage report](Docs/09-layout-coverage.md) lists every entry and remaining geometry gap. The [recovery notes](Docs/10-course-recovery.md) list the remaining tracks and the evidence needed to finish them.
-
-Course coordinates come from pinned OpenStreetMap data or independently digitized reusable government aerial imagery. Explicit recipes preserve each source and its attribution. All traces remain drafts. Woodbridge publishes its full supporting runway; its independently verified timed extent remains unresolved. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
-
-The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files or course boundaries. A separate manual review uses layout pictures only to identify branch choices; course coordinates come from independent mapping or reusable aerial images. Private timing stays outside the public database, downloads and build.
-
-Nürburgring has nine catalogue entries, with distinct GP and Sprint traces. All eight Paul Ricard entries have draft traces, including the two short-course chicane variants and separate training circuit. Independently mapped open courses include Pikes Peak, Osnabrück, Harewood, Gurston Down and Aintree Sprint. Some separate-gate entries still use a supporting public loop; the local timing overlay trims the preview.
-
-## Public hosting
-
-Cloudflare Pages project `open-racetrack-db` builds and publishes GitHub `main` automatically. The build command is `npm run build`, the output directory is `dist`, and the repository root is the build root. Node.js is pinned in `.node-version`. The custom domain is `racetracks.mthracelab.com`; `open-racetrack-db.pages.dev` is the Pages address.
-
-Hosting uses the free Pages tier with static assets only: no Functions, Workers, database or paid service. Committed terrain grids ship with the build. Private timing files and local source caches stay outside the public output. The public atlas displays timing markers only when public course data includes them.
+Coverage varies. Some layouts are drafts or have no trace. Terrain heights are approximate and can be exaggerated in the viewer. They are not a survey of the track surface.
 
 ## Run locally
 
-Use Node.js 24 LTS and npm (Node 26 also works for the current preview):
+Use Node.js 24 and npm. The repository's `.node-version` pins the runtime.
 
 ```sh
 npm ci
-npm run dev -- --host 0.0.0.0
+npm run dev
 ```
 
-Committed data is sufficient to run the viewer. Maintainers can acquire and resume country discovery separately:
-
-```sh
-npm run discover:world
-npm run expand:world
-npm run generate:data
-```
-
-Worldwide discovery sends serial batches of at most 12 countries, separates results by explicit OSM country-area markers, caches sanitized snapshots, and observes Overpass retry delays. `OVERPASS_ENDPOINT` can select another provider. Expansion produces draft candidates from shared OSM node IDs. It does not verify a named layout. Inspect the recipes and source notes before promoting a draft. Worldwide courses below 500 m and routes without a closed source cycle need manual selection.
-
-To build and serve the production preview:
-
-```sh
-npm run build
-RACETRACK_TIMING_FILE=.local/timing.json PORT=5190 npm run serve
-```
-
-Validation commands are `npm run lint`, `npm test`, and `npm run test:e2e` (the latter uses installed Google Chrome and a running preview on port 5190; override with `RACETRACK_TEST_URL`). Browser checks cover every catalogue entry, responsive controls, WebGL fallback, static elevation, saved tracks, sharing, and automated accessibility. The build validates data and elevation coverage, checks reproducible generation, generates catalogue thumbnails, and type-checks before bundling. Imports are maintainer-only; the viewer never queries Overpass.
-
-The preview server can expose private timing positions when started with `RACETRACK_TIMING_FILE=.local/timing.json`. The timing importer reads only `Start Finish Database/StartFinishDataBase.xml`; it does not open CIR files or track maps. Keep the generated file private. Public build output excludes `.local/`.
-
-On macOS, `npm run preview:install` copies the build and optional private timing overlay into the user's Application Support folder and installs a LaunchAgent on localhost port 5190. Run it after rebuilding to update the persistent preview. Reinstall after changing the Node installation. The overlay stays outside the copied public build.
-
-On the Mac Mini, the current preview is available to connected Tailscale devices at [marks-mac-mini.baboon-trench.ts.net:8445](https://marks-mac-mini.baboon-trench.ts.net:8445/). Tailscale Serve proxies to the local production preview on port 5190.
-
-For phone access by IP, connect Tailscale on the phone and open [100.73.197.112:5190](http://100.73.197.112:5190/). The most recently added trace is [Palanga](http://100.73.197.112:5190/?track=lt-palanga-street-circuit-a9c06d36&layout=palanga-street-circuit). [Paul Ricard](http://100.73.197.112:5190/?track=fr-paul-ricard) has eight selectable layouts with draft traces.
-
-The IP endpoint uses a persistent TCP forwarder to the same localhost server. To configure it on another machine, run this command and use that machine's `tailscale ip -4` address:
-
-```sh
-tailscale serve --bg --tcp=5190 tcp://127.0.0.1:5190
-```
-
-## Data and code licenses
-
-The viewer bundles Three.js under MIT and Manrope under the SIL Open Font License. Their notices are included in `licenses/` and in the static build. Terrain grids retain their provider-specific rights as described in [DATA_LICENSE.md](DATA_LICENSE.md).
-
-Original application code is MIT licensed. Database content is distributed under ODbL 1.0. OSM-derived courses credit OpenStreetMap contributors; independently digitized NAIP courses credit USGS, USDA and The National Map. The original NAIP imagery is public domain. Polish aerial courses credit GUGiK and Geoportal.gov.pl, whose orthoimagery is freely reusable; the source-specific identifier `LicenseRef-GUGiK-open-data` links to the provider’s reuse statement. Saxon historical aerial courses credit GeoSN under [Datenlizenz Deutschland Namensnennung 2.0](https://www.govdata.de/dl-de/by-2-0), with independently digitized centerlines marked as changed. Source records document each input and its limits. See [Docs/README.md](Docs/README.md) for the full specification and source rules.
-
-## Layout completeness
-
-The supplied catalogue defines the expected layout names and timing conventions. [Every entry](sources/reference/catalogue.json) points to exactly one venue and layout, including entries whose geometry is unavailable. The [coverage report](Docs/09-layout-coverage.md) counts catalogue entries and actual traces separately.
-
-To repeat catalogue registration, independent course matching and coverage checks:
-
-```sh
-npm run audit:archive -- --archive /absolute/path/to/tracks.zip
-npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
-npm run generate:data
-npm run recover:variants -- --archive /absolute/path/to/tracks.zip
-npm run discover:circuits
-npm run research:circuits -- --archive /absolute/path/to/tracks.zip
-npm run recover:circuits -- --archive /absolute/path/to/tracks.zip
-npm run import:roads -- --archive /absolute/path/to/tracks.zip
-npm run import:selections -- --archive /absolute/path/to/tracks.zip
-npm run generate:data
-npm run catalogue:complete -- --archive /absolute/path/to/tracks.zip
-npm run audit:layouts -- --archive /absolute/path/to/tracks.zip
-npm run import:timing -- --archive /absolute/path/to/tracks.zip
-npm run research:gaps -- --archive /absolute/path/to/tracks.zip
-```
-
-Country extracts must already be available for course matching. Named circuit relations add public-road geometry that raceway-only extracts omit. [Documented course identities](sources/reference/course-identifications.json) record independent operator evidence for specific distance discrepancies. [Remaining source limitations](data/layout-gap-research.json) distinguish absent geometry, disconnected ways, ambiguous branches and unresolved distances. Only unique, connected source cycles that pass conservative timing and distance checks become draft hypotheses. Unresolved branches and missing source sections remain in the gap list. No trace is synthesized to make the counts match. The [archive filename audit](sources/reference/archive-inventory.json) reconciles six reviewed alternate filenames using identical file fingerprints and associates Bedford GT New 1511 with the independently mapped GT configuration after a separate diagram and operator review, and flags 17 remaining names for identity reconciliation. The Bedford association does not establish timing equivalence.
-
-Historical configurations can use independent OSM snapshots from before a circuit changed. Acquire a bounded venue network with `npm run discover:network -- --slug venue-2020 --bbox south,west,north,east --date 2020-01-01T00:00:00Z --raceways-only`. Bounds must come from independent venue evidence. Omit `--raceways-only` when public-road sections are needed. Add `--airfields` to include independently mapped runway and taxiway centrelines for airfield courses; area outlines remain excluded. Use `--track-lines` to research line features tagged as tracks as well as roads, with each course still requiring separate identification. The helper sanitizes and pins the response, respects server retry intervals and reuses its cache. It does not choose a layout.
-
-For an incomplete public-road relation, `npm run discover:relation-network -- --slug venue-neighborhood --relation 12345` acquires independently mapped roads adjoining its open endpoints. The snapshot retains exact source nodes and versions. Acquiring those roads does not establish the course route; branch choices still require review and a continuous source-node recipe.
-
-The [selection manifest](sources/reference/course-selections.json) records reviewed branch choices and distance discrepancies. Its importer checks exact source versions, shared node joins and private timing proximity before generating a draft. Identical overlapping source paths count once during route search; different branches remain separate. Tagged pit lanes cannot become course traces.
-
-![Snetterton configurations displayed together as an independent track network](Docs/assets/network-preview.png)
-
-Aggregate “Combo” configurations and explicitly reviewed configuration sets use schema 2 GeoJSON networks of independently identified course paths. The viewer labels them **Track network** and displays the length of unique mapped branches. It preserves disconnected components without adding joining lines. Regular driving routes retain schema 1. [Network selections](sources/reference/course-network-selections.json) pin their component recipes and require branch-identification review. A general venue entry without an aggregate name additionally requires a public identification reference for every named component; it cannot become a network by default. Regenerate them with `npm run import:networks -- --archive /absolute/path/to/archive.zip` before the regular data generation and coverage audit.
+See the [technical guide](TECHNICAL_GUIDE.md) for imports, coverage audits, data generation, and build checks. The [documentation index](Docs/README.md) describes the data contract and sources. Check [data licenses](DATA_LICENSE.md) before you reuse a trace.
