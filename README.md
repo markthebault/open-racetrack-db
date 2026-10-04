@@ -2,6 +2,8 @@
 
 Explore real circuits in 2D and 3D, choose a layout, and download its geographic trace as GeoJSON. Open Racetrack is a static atlas backed by versioned JSON, with source records for every course. Start and finish lines appear when timing evidence is available.
 
+Open the public atlas at **[racetracks.mthracelab.com](https://racetracks.mthracelab.com/)**.
+
 ![Open Racetrack showing Spa-Francorchamps as a 3D terrain model](Docs/assets/atlas-desktop.png)
 
 *Actual browser screenshot using public data. Course trace © OpenStreetMap contributors, ODbL 1.0. Terrain: Mapzen Terrain Tiles, USGS/NOAA and Copernicus EU-DEM. No private timing overlay.*
@@ -42,6 +44,12 @@ Course coordinates come from pinned OpenStreetMap data or independently digitize
 The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files or course boundaries. A separate manual review uses layout pictures only to identify branch choices; course coordinates come from independent mapping or reusable aerial images. Private timing stays outside the public database, downloads and build.
 
 Nürburgring has nine catalogue entries, with distinct GP and Sprint traces. All eight Paul Ricard entries have draft traces, including the two short-course chicane variants and separate training circuit. Independently mapped open courses include Pikes Peak, Osnabrück, Harewood, Gurston Down and Aintree Sprint. Some separate-gate entries still use a supporting public loop; the local timing overlay trims the preview.
+
+## Public hosting
+
+Cloudflare Pages project `open-racetrack-db` builds and publishes GitHub `main` automatically. The build command is `npm run build`, the output directory is `dist`, and the repository root is the build root. Node.js is pinned in `.node-version`. The custom domain is `racetracks.mthracelab.com`; `open-racetrack-db.pages.dev` is the Pages address.
+
+Hosting uses the free Pages tier with static assets only: no Functions, Workers, database or paid service. Committed terrain grids ship with the build. Private timing files and local source caches stay outside the public output. The public atlas displays timing markers only when public course data includes them.
 
 ## Run locally
 
