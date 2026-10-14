@@ -14,7 +14,9 @@ The rendered road footprint is split at terrain triangle boundaries and draped o
 
 The height button switches between natural proportions and clearly labelled 3× vertical exaggeration. The elevation profile always reports unexaggerated metres. Share links preserve the selected layout, view mode and height scale. Draft course status, uncertain timing positions and source information remain visible or directly accessible.
 
-Known timing lines use contrasting strokes, location markers and labels in 3D. Shared lines read Start / finish; separate lines read Start and Finish. Labels follow the camera and show whether the position is estimated or verified. Line endpoints retain the supplied coordinates, with intermediate terrain samples for the 3D display. Timing positions remain absent when no usable source or private reference is available.
+Layout GPS positions are included in `metadata.timing.start` and `metadata.timing.finish` as `[longitude, latitude]`. The coordinate-only `data/timing.json` input is keyed by track and layout. It contains 996 explicit layout matches; publication omits proximity-only associations and requires matching roles, mapped geometry and a maximum 50 m offset from that layout's trace. Build validation checks these constraints again and rejects orphaned layout keys.
+
+Known timing positions use contrasting ground lines, reflective bases, raised checkered flags and labels in 3D. Shared lines read Start / finish; separate lines read Start and Finish. Labels and flags follow the camera. The exact GPS position anchors each marker; display strokes are derived locally and draped onto the terrain. Public GPS labels contain no additional status or source text. Missing start or finish positions are shown directly in the selection panel. Public layout GPS takes priority over optional private preview overlays. The mapped trace, its length and its elevation profile remain unchanged.
 
 ## Data and sampling
 
@@ -37,5 +39,7 @@ Terrain files retain their [underlying source rights and attribution](https://gi
 `npm run validate:elevation` checks all 756 mapped venue grids against every vertex of all 1,377 mapped layouts. Unit tests check interpolation orientation, bounds, missing samples, branch separation, source-coordinate preservation and finite elevations for Spa and the Pikes Peak climb.
 
 Browser tests exercise actual WebGL rendering and orbiting, natural/exaggerated heights, unchanged measured profiles and GeoJSON, disabled external requests, missing terrain, unsupported WebGL, saved selections, share links, keyboard search, desktop and phone layouts, and WCAG accessibility checks. The catalogue test opens every venue and layout and checks download identity and missing-layout behavior. Public production screenshots are kept in `Docs/assets/atlas-*.png`.
+
+Timing checks cover the coordinate-only publication schema, explicit per-layout coverage, alignment rejection, shared/separate markers, partial and missing positions, camera movement, layout changes and a display stroke at the edge of an elevation grid. Screenshots from the static build are in `Docs/assets/timing-*.png`; set `RACETRACK_CAPTURE_SCREENSHOTS=1` when running the matching browser tests to refresh them.
 
 These checks establish application behavior and terrain coverage. They do not qualify the database as surveyed or verify draft course configurations or timing positions.

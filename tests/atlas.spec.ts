@@ -7,106 +7,70 @@ import { PNG } from "pngjs";
 const fingerprint = (buffer: Buffer) =>
   createHash("sha256").update(buffer).digest("hex");
 
-test("a local timing preview follows terrain while the public download retains the full original course", async ({
+test("public GPS markers render in both views and remain in the downloaded layout", async ({
   page,
   request,
 }) => {
-  const source = JSON.parse(
-    await readFile(
-      "data/belgium/spa-francorchamps/layouts/grand-prix.geojson",
-      "utf8",
-    ),
-  );
-  const points = source.features[0].geometry.coordinates;
-  const timing = {
-    "be-spa-francorchamps/grand-prix": {
-      name: "Test preview",
-      gates: [
-        { role: "start", point: points[Math.floor(points.length * 0.2)] },
-        { role: "finish", point: points[Math.floor(points.length * 0.65)] },
-      ],
-    },
-  };
+  await page.setViewportSize({ width: 1440, height: 960 });
   await page.route("**/local/timing.json", (route) =>
-    route.fulfill({ json: timing }),
+    route.fulfill({ status: 404 }),
   );
-  await page.goto("/?track=be-spa-francorchamps&layout=grand-prix&view=3d");
-  await expect(page.locator("#track-3d canvas")).toBeVisible();
-  await expect(page.locator("#elevation-profile")).toBeVisible();
-  await expect(
-    page.locator('#track-3d .timing-label[data-role="start"] strong'),
-  ).toHaveText("Start");
-  await expect(
-    page.locator('#track-3d .timing-label[data-role="finish"] strong'),
-  ).toHaveText("Finish");
-  await expect(page.locator("#track-3d .timing-label > span")).toHaveText([
-    "Estimated position",
-    "Estimated position",
-  ]);
-  // Check the rendered canvas too: text badges alone cannot prove the lines are drawn.
+  await page.goto("/?track=be-spa-francorchamps&view=3d");
+  await expect(page.locator("#track-3d canvas")).toBeVisible({
+    timeout: 15000,
+  });
+  await expect(page.locator("#track-3d .timing-label strong")).toHaveText(
+    "Start / finish",
+  );
+  await expect(page.locator("#track-3d .timing-label > span")).toHaveCount(0);
+  await expect(page.locator("#timing-availability")).toHaveCount(0);
   const pixels = PNG.sync.read(
     await page.locator("#track-3d canvas").screenshot(),
   );
-  let green = 0,
-    red = 0;
+  let green = 0;
   for (let i = 0; i < pixels.data.length; i += 4) {
     const [r, g, b, a] = pixels.data.subarray(i, i + 4);
     if (a > 100 && g > 170 && g - r > 60 && b - r > 35) green++;
-    if (a > 100 && r > 220 && g < 180 && b > 100 && b > g * 0.95) red++;
   }
   expect(green).toBeGreaterThan(0);
-  expect(red).toBeGreaterThan(0);
-  await page.locator(".track-notes > summary").click();
-  await expect(page.locator(".notes-content")).toContainText(
-    "Preview trace trimmed",
-  );
-  await expect(page.locator(".notes-content")).toContainText(
-    "Local reference timing is excluded",
-  );
-  const file = await page.locator("#download").getAttribute("href");
-  expect(await (await request.get(file!)).json()).toEqual(source);
-  await page.locator("#view-2d").click();
-  await expect(
-    page.getByText("Start · Estimated position", { exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByText("Finish · Estimated position", { exact: true }),
-  ).toBeVisible();
-});
-
-test("shared timing markers stay visible on phones, follow orbiting and clear with the selected course", async ({
-  page,
-}) => {
   const source = JSON.parse(
     await readFile(
       "data/belgium/spa-francorchamps/layouts/grand-prix.geojson",
       "utf8",
     ),
   );
-  const points = source.features[0].geometry.coordinates;
+  const file = await page.locator("#download").getAttribute("href");
+  expect(await (await request.get(file!)).json()).toEqual(source);
+  expect(Object.keys(source.metadata.timing).sort()).toEqual([
+    "finish",
+    "start",
+  ]);
+  if (process.env.RACETRACK_CAPTURE_SCREENSHOTS)
+    await page.screenshot({
+      path: "Docs/assets/timing-desktop.png",
+      fullPage: true,
+    });
+  await page.locator("#view-2d").click();
+  await expect(page.locator(".gate-label")).toHaveText("Start / finish");
+});
+
+test("phone markers follow the camera and clear when a layout has no GPS positions", async ({
+  page,
+}) => {
   await page.route("**/local/timing.json", (route) =>
-    route.fulfill({
-      json: {
-        "be-spa-francorchamps/grand-prix": {
-          name: "Test shared line",
-          gates: [
-            {
-              role: "start_finish",
-              point: points[Math.floor(points.length * 0.25)],
-            },
-          ],
-        },
-      },
-    }),
+    route.fulfill({ status: 404 }),
   );
   await page.setViewportSize({ width: 320, height: 740 });
   await page.goto("/?track=be-spa-francorchamps&view=3d");
   const label = page.locator(
     '#track-3d .timing-label[data-role="start_finish"]',
   );
-  await expect(label.locator("strong")).toHaveText("Start / finish");
-  await expect(label.locator("span")).toHaveText("Estimated position");
   await expect(label).toBeInViewport();
+  if (process.env.RACETRACK_CAPTURE_SCREENSHOTS)
+    await page.screenshot({
+      path: "Docs/assets/timing-phone.png",
+      fullPage: true,
+    });
   const before = await label.boundingBox();
   await page.locator("#track-3d canvas").focus();
   await page.keyboard.press("ArrowRight");
@@ -114,13 +78,63 @@ test("shared timing markers stay visible on phones, follow orbiting and clear wi
     .poll(async () => Math.abs((await label.boundingBox())!.x - before!.x))
     .toBeGreaterThan(1);
   await page.locator("#height-scale").click();
-  await expect(label).toBeVisible();
   await expect(label).toBeInViewport();
-  await page.locator("#open-browse").click();
-  await page.locator("#search").fill("Hockenheim");
-  await page.locator("#venues button").click();
+  await page.goto("/?track=es-jerez&layout=motorcycle&view=3d");
   await expect(page.locator("#message")).toHaveText("Layout ready");
+  await expect(page.locator("#track-3d canvas")).toBeVisible();
   await expect(page.locator("#track-3d .timing-label")).toHaveCount(0);
+  await expect(page.locator("#timing-availability")).toHaveText(
+    "Start position missing · Finish position missing",
+  );
+  if (process.env.RACETRACK_CAPTURE_SCREENSHOTS)
+    await page.screenshot({
+      path: "Docs/assets/timing-missing.png",
+      fullPage: true,
+    });
+});
+
+test("separate start and finish GPS positions have distinct 3D markers and partial data stays explicit", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 960 });
+  const url =
+    "/?track=us-pikes-peak-hillclimb-ab97c20e&layout=pikes-peak-hillclimb&view=3d";
+  await page.goto(url);
+  await expect(page.locator("#track-3d .timing-label strong")).toHaveText([
+    "Start",
+    "Finish",
+  ]);
+  await expect(page.locator("#timing-availability")).toHaveCount(0);
+  if (process.env.RACETRACK_CAPTURE_SCREENSHOTS)
+    await page.screenshot({
+      path: "Docs/assets/timing-separate.png",
+      fullPage: true,
+    });
+  await page.route("**/layouts/pikes-peak-hillclimb.geojson", async (route) => {
+    const data = await (await route.fetch()).json();
+    delete data.metadata.timing.finish;
+    data.metadata.timingStatus = "partial";
+    await route.fulfill({ json: data });
+  });
+  await page.reload();
+  await expect(page.locator("#track-3d .timing-label strong")).toHaveText(
+    "Start",
+  );
+  await expect(page.locator("#timing-availability")).toHaveText(
+    "Finish position missing",
+  );
+  await page.locator("#view-2d").click();
+  await expect(page.locator(".gate-label")).toHaveText("Start");
+});
+
+test("a GPS marker stays visible when its display stroke reaches the elevation grid edge", async ({
+  page,
+}) => {
+  await page.goto("/?track=at-greinbach-e8350883&layout=greinbach&view=3d");
+  await expect(page.locator("#track-3d canvas")).toBeVisible();
+  await expect(page.locator("#track-3d .timing-label strong")).toHaveText(
+    "Start / finish",
+  );
 });
 
 test("losing the graphics context falls back to the usable 2D course", async ({
@@ -247,7 +261,10 @@ test("saved tracks and the last visited layout survive returning to the atlas", 
   );
   await page.goto("/");
   await expect(page.locator("#layout")).toHaveValue("short");
-  await expect(page.locator("#view-2d")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#view-2d")).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
   await expect(page.locator("#track-3d canvas")).not.toBeVisible();
   await page.locator("#saved-tracks").click();
   await expect(page.locator("#count")).toHaveText("1 track");
@@ -326,7 +343,10 @@ for (const viewport of [
     await page.setViewportSize(viewport);
     await page.goto("/");
     await expect(page.locator("#message")).toHaveText("Layout ready");
-    await expect(page.locator("#view-2d")).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#view-2d")).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
     await page.locator("#view-3d").click();
     await expect(page.locator("#track-3d canvas")).toBeVisible();
     await expect(page.locator("#map-name")).toBeInViewport();

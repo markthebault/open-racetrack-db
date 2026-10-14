@@ -141,7 +141,7 @@ test('Pikes Peak is an open hillclimb rather than an artificially closed loop',a
  expect(data.metadata.closed).toBe(false);expect(data.metadata.timingMode).toBe('separate');expect(data.metadata.lengthM).toBeGreaterThan(19000);expect(trace[0]).not.toEqual(trace.at(-1));
 });
 
-test('Woodbridge publishes an unchanged supporting runway without asserting public timing endpoints',async({page,request})=>{
+test('Woodbridge retains the original supporting runway while including layout GPS positions',async({page,request})=>{
  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
  await page.route('**/local/timing.json',route=>route.fulfill({status:404}));
  await page.goto('/?track=gb-raf-woodbridge-02bc9a03&layout=raf-woodbridge');await expect(page.locator('#message')).toHaveText('Layout ready');
@@ -152,7 +152,7 @@ test('Woodbridge publishes an unchanged supporting runway without asserting publ
  const source=JSON.parse(await readFile('sources/course-networks/raf-woodbridge-current-independent-airfield-roads/osm.json','utf8')).elements.find((w:{id:number})=>w.id===23552564);
  expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);
  expect(data.features[0].geometry.coordinates).toEqual(source.geometry.map((p:{lon:number;lat:number})=>[p.lon,p.lat]));
- expect(data.metadata.closed).toBe(false);expect(data.metadata.lengthM).toBe(3160.8);expect(data.metadata.timingStatus).toBe('missing');
+ expect(data.metadata.closed).toBe(false);expect(data.metadata.lengthM).toBe(3160.8);expect(data.metadata.timingStatus).toBe('estimated');expect(data.metadata.timing.start).toHaveLength(2);expect(data.metadata.timing.finish).toHaveLength(2);
 });
 
 test('Bikernieki retains the historical short eastern triangle and complete finish straight',async({page,request})=>{
@@ -172,7 +172,7 @@ test('Bikernieki retains the historical short eastern triangle and complete fini
  expect(trace).toContainEqual([24.2298754,56.9640144]);
  expect(data.metadata.attribution).toContain('Latvian Geospatial Information Agency');
  expect(data.metadata.attribution).toContain('OpenStreetMap contributors');
- expect(data.metadata.geometryStatus).toBe('draft');expect(data.metadata.timingStatus).toBe('missing');
+ expect(data.metadata.geometryStatus).toBe('draft');expect(data.metadata.timingStatus).toBe('estimated');expect(data.metadata.timing.start).toHaveLength(2);expect(data.metadata.timing.finish).toHaveLength(2);
 });
 
 test('Queensland aggregate preserves its four configurations and switches back to a driving route',async({page,request})=>{

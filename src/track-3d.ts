@@ -7,6 +7,24 @@ import { planarCourse } from "./track-preview";
 import { plane, type Position } from "./geo";
 import { sampleElevation, type ElevationGrid } from "./elevation";
 import { TerrainDrape } from "./terrain-drape";
+import { timingMarkers } from "./timing";
+
+function flagTexture(color: number) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 128;
+  canvas.height = 80;
+  const context = canvas.getContext("2d")!;
+  for (let row = 0; row < 4; row++)
+    for (let column = 0; column < 8; column++) {
+      context.fillStyle = (row + column) % 2 ? "#182326" : "#f4f7ef";
+      context.fillRect(column * 16, row * 16, 16, 16);
+    }
+  context.fillStyle = `#${color.toString(16).padStart(6, "0")}`;
+  context.fillRect(0, 64, 128, 16);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  return texture;
+}
 
 function ribbon(points: THREE.Vector3[], width: number, elevation: number) {
   const vertices: number[] = [],
@@ -286,6 +304,7 @@ export class Track3D {
   private resizeObserver: ResizeObserver;
   private labelLayer: HTMLDivElement;
   private gateLabels: { element: HTMLDivElement; anchor: THREE.Vector3 }[] = [];
+  private flags: THREE.Mesh[] = [];
 
   constructor(
     private container: HTMLElement,
@@ -362,6 +381,7 @@ export class Track3D {
     this.frameRequested = false;
     if (!this.active || document.hidden) return;
     this.controls.update(1 / 60);
+    for (const flag of this.flags) flag.quaternion.copy(this.camera.quaternion);
     this.renderer.render(this.scene, this.camera);
     this.positionGateLabels();
     if (this.rotating) this.requestRender();
@@ -521,6 +541,7 @@ export class Track3D {
   clear() {
     this.labelLayer.replaceChildren();
     this.gateLabels = [];
+    this.flags = [];
     this.course.traverse((object) => {
       if (
         object instanceof THREE.Mesh ||
@@ -647,7 +668,8 @@ export class Track3D {
     }
     const altitude = (p: Position) =>
       grid
-        ? (sampleElevation(grid, p)! - floor) * scale * heightScale + 0.16
+        ? ((sampleElevation(grid, p) ?? floor) - floor) * scale * heightScale +
+          0.16
         : 0.05;
     const roadSurface = (
       points: THREE.Vector3[],
@@ -732,9 +754,16 @@ export class Track3D {
       point.y = ground?.heightAt(point.x, point.z) ?? point.y;
       return point;
     };
-    for (const gate of [...publicGates, ...gates]) {
+    const displayGates: {
+      role: string;
+      coordinates: Position[];
+      point?: Position;
+      positionStatus?: string;
+    }[] = [...publicGates, ...timingMarkers(layout), ...gates];
+    for (const gate of displayGates) {
       if (
         grid &&
+        !gate.point &&
         gate.coordinates.some((point) => sampleElevation(grid, point) === null)
       )
         continue;
@@ -757,10 +786,9 @@ export class Track3D {
           }),
         ),
       );
-      const center = toLocal([
-        (first[0] + last[0]) / 2,
-        (first[1] + last[1]) / 2,
-      ]);
+      const center = toLocal(
+        gate.point ?? [(first[0] + last[0]) / 2, (first[1] + last[1]) / 2],
+      );
       center.y += 0.52;
       const ring = new THREE.Mesh(
         new THREE.TorusGeometry(0.6, 0.075, 6, 28),
@@ -769,12 +797,41 @@ export class Track3D {
       ring.rotation.x = -Math.PI / 2;
       ring.position.copy(center);
       this.course.add(ring);
-      const anchor = center.clone().add(new THREE.Vector3(0, 3.4, 0));
-      const stem = new THREE.LineSegments(
-        new THREE.BufferGeometry().setFromPoints([center, anchor]),
-        new THREE.LineBasicMaterial({ color, toneMapped: false }),
+      const pedestal = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.36, 0.48, 0.18, 24),
+        new THREE.MeshPhysicalMaterial({
+          color,
+          metalness: 0.45,
+          roughness: 0.22,
+          clearcoat: 1,
+          emissive: color,
+          emissiveIntensity: 0.12,
+        }),
       );
+      pedestal.position.copy(center);
+      this.course.add(pedestal);
+      const anchor = center.clone().add(new THREE.Vector3(0, 3.4, 0));
+      const stem = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.045, 0.065, 3.4, 8),
+        new THREE.MeshStandardMaterial({
+          color: 0xe7f3ed,
+          metalness: 0.65,
+          roughness: 0.25,
+        }),
+      );
+      stem.position.copy(center).lerp(anchor, 0.5);
       this.course.add(stem);
+      const flag = new THREE.Mesh(
+        new THREE.PlaneGeometry(2.7, 1.7).translate(1.35, -0.65, 0),
+        new THREE.MeshBasicMaterial({
+          map: flagTexture(color),
+          side: THREE.DoubleSide,
+          toneMapped: false,
+        }),
+      );
+      flag.position.copy(anchor);
+      this.flags.push(flag);
+      this.course.add(flag);
       const tip = new THREE.Mesh(
         new THREE.SphereGeometry(0.17, 8, 6),
         new THREE.MeshBasicMaterial({ color, toneMapped: false }),
@@ -791,13 +848,16 @@ export class Track3D {
           : gate.role === "finish"
             ? "Finish"
             : "Start";
-      const status = document.createElement("span");
-      status.textContent =
-        "positionStatus" in gate && gate.positionStatus === "verified"
-          ? "Verified position"
-          : "Estimated position";
-      label.append(name, status);
-      label.title = `${name.textContent}. ${status.textContent}. Display marker at the supplied timing position.`;
+      label.append(name);
+      if (!gate.point) {
+        const status = document.createElement("span");
+        status.textContent =
+          "positionStatus" in gate && gate.positionStatus === "verified"
+            ? "Verified position"
+            : "Estimated position";
+        label.append(status);
+      }
+      label.title = name.textContent;
       this.labelLayer.append(label);
       this.gateLabels.push({ element: label, anchor });
     }

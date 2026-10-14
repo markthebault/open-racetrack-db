@@ -1,6 +1,6 @@
 import {displayGate,nearestEdge,type Position} from './geo';
 
-// Private preview only: keep the GPS position unchanged and derive a display orientation.
+// Keep the GPS position unchanged and derive a display orientation from the course.
 export function localGate(point:Position,trace:Position[],maxDisplacement=100){
  const anchor=nearestEdge(point,trace);
  if(anchor.displacementM>maxDisplacement)return {anchor,coordinates:null};
