@@ -10,6 +10,7 @@
     "dev": "vite --host 0.0.0.0",
     "import:osm": "tsx scripts/import-osm.ts",
     "import:timing": "tsx scripts/import-timing.ts",
+    "publish:timing": "tsx scripts/public-timing.ts",
     "generate:data": "tsx scripts/data.ts generate",
     "validate:data": "tsx scripts/data.ts validate",
     "typecheck": "tsc --noEmit",

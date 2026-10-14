@@ -18,6 +18,12 @@ Save favourite tracks in the current browser. The atlas remembers the last track
 
 ![Open Racetrack on a phone](Docs/assets/atlas-mobile.png)
 
+## Start and finish GPS
+
+996 layouts include GPS positions in `metadata.timing.start` and `metadata.timing.finish`, using `[longitude, latitude]`. The same coordinate-only objects are keyed by `trackId/layoutId` in `data/timing.json`. Shared start/finish positions use identical coordinates for both fields. The viewer shows the markers in 2D and 3D and identifies missing positions for the selected layout.
+
+Normal builds use the committed GPS dataset. To refresh it from a maintainer input, run `npm run publish:timing -- --input /path/to/timing.json`, then `npm run generate:data`. Publication requires an explicit layout identity, matching timing roles, mapped geometry and a maximum 50 m offset from the corresponding trace. Proximity-only associations are omitted. Only coordinates are added to the timing objects; the original course trace stays unchanged. See [the implementation notes](Docs/11-atlas-and-elevation.md).
+
 ## Terrain elevation
 
 Committed geographic grids provide approximate ground elevation for all **756 mapped venues and 1,377 mapped layouts**. The browser loads a small local JSON file per venue. It does not call an elevation service. The 3D lighting environment and fonts are also local assets. Only the 2D background map needs an external tile provider; course traces remain usable if tiles fail. Devices without WebGL fall back to 2D.
@@ -41,7 +47,7 @@ The viewer contains **763 venues across 74 countries**, with every one of the **
 
 Course coordinates come from pinned OpenStreetMap data or independently digitized reusable government aerial imagery. Explicit recipes preserve each source and its attribution. All traces remain drafts. Woodbridge publishes its full supporting runway; its independently verified timed extent remains unresolved. Some configurations are hypotheses selected by timing proximity and declared course distance; they still need visual review. A length match alone does not prove a layout is correct.
 
-The private preview uses local start/finish GPS and estimated display lines. The importer reads layout names, scalar course distances and timing GPS from a single timing XML entry. It never reads CIR files or course boundaries. A separate manual review uses layout pictures only to identify branch choices; course coordinates come from independent mapping or reusable aerial images. Private timing stays outside the public database, downloads and build.
+The optional private preview can load additional timing positions, without changing public downloads. Published layout positions take priority over the optional overlay. Maintainer input files stay outside the public build.
 
 Nürburgring has nine catalogue entries, with distinct GP and Sprint traces. All eight Paul Ricard entries have draft traces, including the two short-course chicane variants and separate training circuit. Independently mapped open courses include Pikes Peak, Osnabrück, Harewood, Gurston Down and Aintree Sprint. Some separate-gate entries still use a supporting public loop; the local timing overlay trims the preview.
 

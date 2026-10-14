@@ -19,6 +19,7 @@ import {
   type LayoutGapResearch,
 } from "./layout-gap-research";
 import { localGate } from "./local-timing";
+import { timingMarkers, timingAvailability } from "./timing";
 import { icon } from "./icons";
 import { readPreferences, writePreferences } from "./preferences";
 import type { Track3D } from "./track-3d";
@@ -564,6 +565,30 @@ function draw(data: Layout, privateGates: typeof currentGates = []) {
       );
     }
   }
+  for (const gate of timingMarkers(data)) {
+    const label =
+      gate.role === "start_finish"
+        ? "Start / finish"
+        : gate.role === "start"
+          ? "Start"
+          : "Finish";
+    const color = gate.role === "finish" ? "#de5b5b" : "#19a28a";
+    L.polyline(
+      gate.coordinates.map((p) => [p[1], p[0]] as L.LatLngTuple),
+      { color, weight: 4 },
+    ).addTo(selectedLayers);
+    L.circleMarker([gate.point[1], gate.point[0]], {
+      radius: 5,
+      color,
+      fillOpacity: 1,
+    })
+      .bindTooltip(element("span", label), {
+        permanent: true,
+        direction: "right",
+        className: "gate-label",
+      })
+      .addTo(selectedLayers);
+  }
   for (const gate of privateGates)
     drawGate(gate.role, gate.coordinates, gate.note, true);
   fitMap();
@@ -728,6 +753,13 @@ function panel(
   const content = element("div", "", "notes-content");
   notes.append(content);
   if (state === "missing") {
+    const missing = element(
+      "p",
+      "Start position missing · Finish position missing",
+      "timing-missing",
+    );
+    missing.id = "timing-availability";
+    root.append(missing);
     const selectedLayout = selected.layouts.find((l) => l.id === requested)!,
       review = gapResearch?.records.find(
         (r) =>
@@ -802,22 +834,36 @@ function panel(
     download.href = `${base}data/${layoutFile}`;
     download.download = `${selected.id}-${requested}.geojson`;
     row.append(download);
+    const available = timingAvailability(m.timing);
+    for (const gate of layout.features.filter(
+      (f) => f.properties.role !== "trace",
+    )) {
+      if (
+        gate.properties.role === "start" ||
+        gate.properties.role === "start_finish"
+      )
+        available.start = true;
+      if (
+        gate.properties.role === "finish" ||
+        gate.properties.role === "start_finish"
+      )
+        available.finish = true;
+    }
+    const missing = [
+      !available.start && "Start position missing",
+      !available.finish && "Finish position missing",
+    ].filter(Boolean);
+    if (missing.length) {
+      const status = element("p", missing.join(" · "), "timing-missing");
+      status.id = "timing-availability";
+      root.append(status);
+    }
     const description = selected.layouts.find(
       (l) => l.id === requested,
     )?.description;
     if (description) content.append(element("p", description, "note"));
     for (const note of m.notes)
       if (note !== description) content.append(element("p", note, "note"));
-    if (!privateNotes.length && m.timingStatus === "missing")
-      content.append(
-        element(
-          "p",
-          m.timingMode === "shared"
-            ? "Start/finish position not yet verified"
-            : "Start and finish positions not yet verified",
-          "note",
-        ),
-      );
     for (const note of privateNotes)
       content.append(element("p", note, "note local-note"));
     for (const gate of layout.features.filter(
@@ -839,14 +885,6 @@ function panel(
           "p",
           "Download contains the reusable source trace. Local reference timing is excluded.",
           "download-note",
-        ),
-      );
-    if (m.timingStatus === "missing")
-      content.prepend(
-        element(
-          "p",
-          "Timing gates have not been verified for this layout.",
-          "note",
         ),
       );
     if (terrain) {
@@ -971,7 +1009,7 @@ async function select(id: string, requested?: string, push = true) {
     const timing = localTiming[`${id}/${layoutId}`],
       notes: string[] = [],
       privateLines: typeof currentGates = [];
-    if (timing) {
+    if (timing && !data.metadata.timing) {
       const paths = geometryPaths(data.features[0].geometry),
         trace = paths[0],
         anchors = new Map<string, ReturnType<typeof localGate>["anchor"]>();

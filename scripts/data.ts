@@ -1,7 +1,8 @@
 import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
-import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout} from '../schemas/data';
+import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout,type Track} from '../schemas/data';
+import {withTiming,timingDatabaseSchema} from './public-timing';
 import {buildCourseNetwork} from './course-network';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
@@ -9,6 +10,8 @@ import {assemble,slice,type Way} from './route';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const outputs=new Map<string,string>();
+const publicTiming=timingDatabaseSchema.parse(await json('data/timing.json')),seenTiming=new Set<string>();
+function enrich(data:Layout,track:Track,id:string){const result=withTiming(data,publicTiming);if(result.metadata.timing)seenTiming.add(`${track.id}/${id}`);return validateLayout(result,track,id);}
 for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.isDirectory()).sort((a,b)=>a.name.localeCompare(b.name))){for(const folder of (await readdir(`data/${country.name}`,{withFileTypes:true})).filter(d=>d.isDirectory())){
  const dir=`data/${country.name}/${folder.name}`,track=validateTrack(await json(`${dir}/track.json`));if(!track.layouts.some(l=>l.file!==null))continue;const manifest=await json(`sources/${track.id}/import.json`),baseFile=manifest.snapshotFile??'osm.json';if(!/^[a-z0-9][a-z0-9-]*\.json$/.test(baseFile))throw new Error('Unsafe base snapshot filename');const snapshot=await readFile(`sources/${track.id}/${baseFile}`,'utf8');
  const hash=createHash('sha256').update(snapshot).digest('hex');if(hash!==manifest.snapshotSha256)throw new Error(`${track.id}: snapshot hash mismatch`);
@@ -22,13 +25,13 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
   const source=imageryCourseSchema.parse(JSON.parse(sourceBytes)),image=await readFile(`sources/${track.id}/${source.imageryFile}`);
   if(createHash('sha256').update(image).digest('hex')!==source.imagerySha256)throw new Error('Imagery raster hash mismatch');
   validateImageryRaster(source,image);
-  const data=buildImageryCourse(recipe,source,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(data,null,2)+'\n');
+  const data=buildImageryCourse(recipe,source,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(enrich(data,track,layout.id),null,2)+'\n');
   if(!generate)validateLayout(await json(path),track,layout.id);
   console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from pinned reusable imagery`);continue;
  }
  const ways=JSON.parse(sourceBytes).elements.filter((e:any)=>e.type==='way') as Way[];
  if(recipe.geometryKind==='network'){
-  const data=buildCourseNetwork(recipe,ways,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(data,null,2)+'\n');
+  const data=buildCourseNetwork(recipe,ways,track),path=`${dir}/${layout.file}`;outputs.set(path,JSON.stringify(enrich(data,track,layout.id),null,2)+'\n');
   if(!generate)validateLayout(await json(path),track,layout.id);
   console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m of independently mapped branches`);continue;
  }
@@ -43,11 +46,12 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
  const timingStatus=!features.length?'missing':recipe.timingMode==='separate'&&features.length===1?'partial':features.every(f=>'positionStatus'in f.properties&&f.properties.positionStatus==='verified')?'verified':'estimated';
  features.unshift({type:'Feature',id:'trace',properties:{role:'trace',sourceIds:[recipe.sourceId]},geometry:{type:'LineString',coordinates}});
  const data=validateLayout({type:'FeatureCollection',bbox:bounds(features.flatMap(f=>geometryPaths(f.geometry).flat())),metadata:{schemaVersion:1,trackId:track.id,layoutId:layout.id,license:'ODbL-1.0',attribution:'© OpenStreetMap contributors',closed:recipe.closed,geometryStatus:recipe.geometryStatus,timingStatus,timingMode:recipe.timingMode,lengthM:length(coordinates),reviewedAt:recipe.reviewedAt,notes:recipe.notes},features},track,layout.id);
- const path=`${dir}/${layout.file}`,bytes=JSON.stringify(data,null,2)+'\n';outputs.set(path,bytes);
+ const path=`${dir}/${layout.file}`,bytes=JSON.stringify(enrich(data,track,layout.id),null,2)+'\n';outputs.set(path,bytes);
  if(!generate)validateLayout(await json(path),track,layout.id);
  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m; ${data.metadata.geometryStatus}, timing ${data.metadata.timingStatus}`);
  }
 }}
+for(const key of Object.keys(publicTiming))if(!seenTiming.has(key))throw new Error(`${key}: timing GPS has no mapped layout`);
 const tracks=[];for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.isDirectory())){for(const folder of (await readdir(`data/${country.name}`,{withFileTypes:true})).filter(d=>d.isDirectory())){const track=validateTrack(await json(`data/${country.name}/${folder.name}/track.json`));const {id,name,aliases,country:countryData,locality,location}=track;tracks.push({id,name,aliases,country:countryData,...(locality?{locality}:{}),location,file:`${country.name}/${folder.name}/track.json`,layoutCount:track.layouts.length,traceCount:track.layouts.filter(l=>l.file!==null).length});}}
 tracks.sort((a,b)=>a.id.localeCompare(b.id));const catalogue=indexSchema.parse({schemaVersion:1,tracks});if(new Set(tracks.map(t=>t.id)).size!==tracks.length)throw new Error('Duplicate venue IDs');outputs.set('data/index.json',JSON.stringify(catalogue,null,2)+'\n');
 if(generate){for(const [path,bytes] of outputs){if(check){if(await readFile(path,'utf8')!==bytes)throw new Error(`${path}: stale generated file; run npm run generate:data`);}else{await mkdir(dirname(path),{recursive:true});await writeFile(path,bytes);}}}else{const existing=indexSchema.parse(await json('data/index.json'));if(JSON.stringify(existing)!==JSON.stringify(catalogue))throw new Error('data/index.json: stale catalogue');for(const [path,bytes] of outputs)if(await readFile(path,'utf8')!==bytes)throw new Error(`${path}: differs from recipe`);}
