@@ -108,6 +108,7 @@ test('OSM venue names render as literal tooltip text',async({page})=>{
  await page.route('**/data/index.json',route=>route.fulfill({json:catalogue}));
  await page.goto('/');await expect(page.locator('#count')).toHaveText(`${catalogue.tracks.length} tracks`);
  await page.locator('#world-map').click();
+ await expect(page.locator('.gate-label')).toHaveCount(0);
  await page.locator('.leaflet-overlay-pane .leaflet-interactive').first().dispatchEvent('mouseover');
  await expect(page.locator('.leaflet-tooltip')).toHaveText('Marker <strong>untrusted</strong>');await expect(page.locator('.leaflet-tooltip strong')).toHaveCount(0);
 });
