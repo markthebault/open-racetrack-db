@@ -14,6 +14,8 @@ Find racetracks around the world. Explore their layouts. Download geographic tra
 2. Choose a layout. Switch between the 2D map and 3D terrain view.
 3. Save a favourite in your browser, or download the GeoJSON trace.
 
+Start and finish markers appear in both views when GPS positions are available for the selected layout. Missing positions are labelled in the track details.
+
 Coverage varies. Some layouts are drafts or have no trace. Terrain heights are approximate and can be exaggerated in the viewer. They are not a survey of the track surface.
 
 ## Run locally
