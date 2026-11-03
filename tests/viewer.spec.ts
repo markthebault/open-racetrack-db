@@ -34,7 +34,7 @@ test('a missing or invalid optional research report leaves the catalogue usable'
 });
 
 test('every catalogue entry opens and only mapped layouts offer traces and downloads',async({page,request})=>{
- test.setTimeout(600000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+ test.setTimeout(2400000);let checkedLayouts=0;const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
  // The course viewer must work when background tiles are unavailable.
  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
  const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
@@ -45,6 +45,7 @@ test('every catalogue entry opens and only mapped layouts offer traces and downl
   await expect(page.locator('#selection h2')).toHaveText(track.name);
   await expect(page.locator('#message')).toHaveText(/Layout ready|Trace unavailable/);
   for(const layout of track.layouts){
+   checkedLayouts++;if(checkedLayouts%100===0)console.log(`Checked ${checkedLayouts} catalogue layouts`);
    await page.locator('#layout').selectOption(layout.id);
    if(layout.file===null){await expect(page.locator('#message')).toHaveText('Trace unavailable');await expect(page.locator('#download')).toHaveCount(0);await expect(page.locator('.leaflet-overlay-pane path[stroke="#ffb347"]')).toHaveCount(0);continue;}
    await expect(page.locator('#message')).toHaveText('Layout ready');
@@ -54,9 +55,10 @@ test('every catalogue entry opens and only mapped layouts offer traces and downl
    const response=await request.get((await page.locator('#download').getAttribute('href'))!);
    expect(response.ok()).toBeTruthy();const data=await response.json();
    expect(data.metadata.trackId).toBe(track.id);expect(data.metadata.layoutId).toBe(layout.id);
-   expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);if(data.metadata.geometryKind==='network'){expect(data.metadata.schemaVersion).toBe(2);expect(data.features[0].geometry.type).toBe('MultiLineString');await expect(page.locator('#selection')).toContainText('Track network');}
+   expect(data.features.filter((f:{properties:{role:string}})=>!['inner','outer'].includes(f.properties.role)).map((f:{id:string})=>f.id)).toEqual(['trace']);if(data.metadata.geometryKind==='network'){expect(data.metadata.schemaVersion).toBe(2);expect(data.features[0].geometry.type).toBe('MultiLineString');await expect(page.locator('#selection')).toContainText('Track network');}
   }
  }
+ expect(checkedLayouts).toBe(1388);console.log(`Checked all ${checkedLayouts} catalogue layouts`);
  expect(errors).toEqual([]);
 });
 
@@ -151,7 +153,7 @@ test('Woodbridge retains the original supporting runway while including layout G
  await expect(page.locator('#selection')).toContainText('no 5,658 m timed route is claimed');
  const data=await(await request.get((await page.locator('#download').getAttribute('href'))!)).json();
  const source=JSON.parse(await readFile('sources/course-networks/raf-woodbridge-current-independent-airfield-roads/osm.json','utf8')).elements.find((w:{id:number})=>w.id===23552564);
- expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);
+ expect(data.features.filter((f:{properties:{role:string}})=>!['inner','outer'].includes(f.properties.role)).map((f:{id:string})=>f.id)).toEqual(['trace']);
  expect(data.features[0].geometry.coordinates).toEqual(source.geometry.map((p:{lon:number;lat:number})=>[p.lon,p.lat]));
  expect(data.metadata.closed).toBe(false);expect(data.metadata.lengthM).toBe(3160.8);expect(data.metadata.timingStatus).toBe('estimated');expect(data.metadata.timing.start).toHaveLength(2);expect(data.metadata.timing.finish).toHaveLength(2);
 });
@@ -165,7 +167,7 @@ test('Bikernieki retains the historical short eastern triangle and complete fini
  await expect(page.locator('#selection')).toContainText('different event laps');
  const data=await(await request.get((await page.locator('#download').getAttribute('href'))!)).json();
  const trace=data.features[0].geometry.coordinates as number[][];
- expect(data.features.map((f:{id:string})=>f.id)).toEqual(['trace']);
+ expect(data.features.filter((f:{properties:{role:string}})=>!['inner','outer'].includes(f.properties.role)).map((f:{id:string})=>f.id)).toEqual(['trace']);
  expect(trace[0]).toEqual(trace.at(-1));
  expect(data.metadata.lengthM).toBeGreaterThan(1300);expect(data.metadata.lengthM).toBeLessThan(1400);
  // The later long triangle reaches 56.9633152 and is a different branch.

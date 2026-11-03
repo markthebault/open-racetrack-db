@@ -4,7 +4,14 @@ The public track catalogue and OSM-derived trace data are made available under t
 
 Credit OpenStreetMap contributors when using the database. The source snapshots and each venue's `review.md` identify the OSM material used to generate its traces. The OSM-derived data remain separate from the MIT-licensed application code in [LICENSE](LICENSE).
 
-The reference archive is not part of the public database or production build. Its start/finish GPS positions are used only in the local tailnet preview, as described in [README.md](README.md), and do not appear in the downloadable GeoJSON.
+Authoring inputs and processing procedures are maintained separately from the public application and database.
+
+## Optional track borders
+
+Some layout GeoJSON files include `inner` and `outer` features. They are separate supplemental data, not OSM-derived route coordinates. Their feature-level `license` value is `LicenseRef-Track-Borders`. This identifier denotes a separate rights scope: this repository makes no additional redistribution or commercial-use license grant for these features. Obtain suitable permission before reusing them beyond the rights you already hold.
+
+When borders are present, `metadata.licenseScope` is `trace-and-timing`: the collection's ODbL declaration and OSM attribution apply to its original trace and applicable timing data, not to the supplemental border features. Borders have no borrowed OSM source IDs. Application code remains MIT. Neither a display option nor inclusion in a GeoJSON download changes the rights attached to a feature.
+
 
 ## Terrain grids
 
