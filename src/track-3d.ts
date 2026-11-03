@@ -2,12 +2,13 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
-import { geometryPaths, type Layout } from "../schemas/data";
+import { geometryPaths, isTimingRole, type Layout } from "../schemas/data";
 import { planarCourse } from "./track-preview";
 import { plane, type Position } from "./geo";
 import { sampleElevation, type ElevationGrid } from "./elevation";
 import { TerrainDrape } from "./terrain-drape";
 import { timingMarkers } from "./timing";
+import type { TrackBorders } from "./track-borders";
 
 function flagTexture(color: number) {
   const canvas = document.createElement("canvas");
@@ -296,6 +297,9 @@ export class Track3D {
   private camera = new THREE.PerspectiveCamera(37, 1, 0.1, 1200);
   private controls: OrbitControls;
   private course = new THREE.Group();
+  private borders = new THREE.Group();
+  private traceHighlights: THREE.Mesh[] = [];
+  private borderProject?: (point: Position) => THREE.Vector3;
   private active = false;
   private rotating = false;
   private frame = 0;
@@ -356,6 +360,7 @@ export class Track3D {
     edge.position.set(-70, 35, -50);
     this.scene.add(edge);
     this.scene.add(this.course);
+    this.scene.add(this.borders);
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(container);
     canvas.addEventListener("keydown", this.keyboard);
@@ -538,7 +543,45 @@ export class Track3D {
     this.requestRender();
   }
 
+  setBorders(data?: TrackBorders) {
+    for (const mesh of this.traceHighlights) mesh.visible = !data;
+    this.container.dataset.traceVisible = String(!data);
+    for (const child of this.borders.children) {
+      const line = child as THREE.Line<THREE.BufferGeometry, THREE.LineBasicMaterial>;
+      line.geometry.dispose();
+      line.material.dispose();
+    }
+    this.borders.clear();
+    if (data && this.borderProject) {
+      for (const feature of data.features) {
+        const paths = feature.geometry.type === "LineString"
+          ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+        for (const path of paths) {
+          const points = path.map(p => {
+            const point = this.borderProject!(p);
+            point.y += 0.48;
+            return point;
+          });
+          const line = new THREE.Line(
+            new THREE.BufferGeometry().setFromPoints(points),
+            new THREE.LineBasicMaterial({
+              color: feature.properties.role === "inner" ? 0xf4775c : 0x42c6df,
+              toneMapped: false,
+              depthTest: false,
+            }),
+          );
+          line.renderOrder = 20;
+          this.borders.add(line);
+        }
+      }
+    }
+    this.container.dataset.borderLines = String(this.borders.children.length);
+    this.requestRender();
+  }
+
   clear() {
+    this.setBorders();
+    this.borderProject = undefined;
     this.labelLayer.replaceChildren();
     this.gateLabels = [];
     this.flags = [];
@@ -559,6 +602,7 @@ export class Track3D {
       }
     });
     this.course.clear();
+    this.traceHighlights = [];
     this.requestRender();
   }
 
@@ -722,17 +766,17 @@ export class Track3D {
         [1.02, 0.2],
         [0.075, 0.215],
       ].entries()) {
-        this.course.add(
-          new THREE.Mesh(
-            roadSurface(points, ribbonWidth, elevation),
-            mats[i].clone(),
-          ),
+        const mesh = new THREE.Mesh(
+          roadSurface(points, ribbonWidth, elevation),
+          mats[i].clone(),
         );
+        this.course.add(mesh);
+        if (i > 0) this.traceHighlights.push(mesh);
       }
     }
     for (const mat of mats) mat.dispose();
     const publicGates = layout.features
-      .filter((f) => f.properties.role !== "trace")
+      .filter((f) => isTimingRole(f.properties.role))
       .map((f) => ({
         role: f.properties.role,
         coordinates: geometryPaths(f.geometry)[0],
@@ -754,6 +798,7 @@ export class Track3D {
       point.y = ground?.heightAt(point.x, point.z) ?? point.y;
       return point;
     };
+    this.borderProject = toLocal;
     const displayGates: {
       role: string;
       coordinates: Position[];

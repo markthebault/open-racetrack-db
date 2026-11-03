@@ -2,6 +2,8 @@
 
 ## 1. Public data policy
 
+This guide describes the source-derived trace pipeline. Optional `inner` and `outer` features are supplemental layout data with a separate feature-level license scope; see [the license map](../DATA_LICENSE.md#optional-track-borders). Their authoring procedures are maintained separately.
+
 Every published coordinate MUST have a documented reuse basis. For the initial database, prefer OSM geometry and timing nodes. Accept independent surveys or explicit permissions when their terms permit the planned database distribution.
 
 Use these source categories:

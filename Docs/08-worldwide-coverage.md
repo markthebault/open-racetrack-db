@@ -26,7 +26,7 @@ reference is read only for start/finish GPS and layout names, never CIR geometry
 
 ## Viewer and persistent preview
 
-The viewer browses the expanded catalogue offline apart from optional map tiles. Worldwide coverage shows acquisition status, published venue counts and pending groups for all 250 identifiers. GeoJSON downloads contain public traces only. Source reviews retain the exact recipe and source links. Deep links, filtering, downloads and mobile controls remain available.
+The viewer browses the expanded catalogue offline apart from optional map tiles. Worldwide coverage shows acquisition status, published venue counts and pending groups for all 250 identifiers. GeoJSON downloads contain the public trace and any available timing and optional border features. Source reviews retain the exact recipe and source links. Deep links, filtering, downloads and mobile controls remain available.
 
 On macOS, `npm run preview:install` copies the built public site and optional separate timing overlay into Application Support and installs `local.open-racetrack.preview`. The LaunchAgent listens on localhost port 5190, restarts after an exit, and survives terminal-session changes. Existing Tailscale Serve routing on port 8445 is retained. Re-run the installer after a build or Node installation change. The optional timing overlay stays outside its public web root.
 

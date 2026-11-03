@@ -8,6 +8,7 @@ import {
   validateTrack,
   validateLayout,
   geometryPaths,
+  isTimingRole,
   type Catalogue,
   type Track,
   type Layout,
@@ -29,6 +30,7 @@ import {
   type ElevationGrid,
 } from "./elevation";
 import { elevationProfile } from "./elevation-profile";
+import { BorderOverlay, type TrackBorders } from "./track-borders";
 
 const base = import.meta.env.BASE_URL;
 const app = document.querySelector<HTMLDivElement>("#app")!;
@@ -39,7 +41,7 @@ app.innerHTML = `
       <img class="brand-mark" src="${brandMark}" alt="" aria-hidden="true">
       <span>Open Racetrack<span class="brand-sub">THE OPEN TRACK ATLAS</span></span>
     </a>
-    <span class="header-caption">Explore circuits. Download open track data.</span>
+    <span class="header-caption">Explore circuits. Download track data.</span>
     <a class="header-link" href="https://github.com/markthebault/open-racetrack-db" target="_blank" rel="noreferrer">Open source ${icon("external")}</a>
   </header>
   <main>
@@ -63,7 +65,7 @@ app.innerHTML = `
       <footer class="sidebar-footer">
         <button id="world-map" class="world-button">${icon("globe")} Explore the world map ${icon("arrow")}</button>
         <div id="coverage"></div>
-        <p>Open data. Open to everyone.<br><a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">Database ODbL 1.0</a><span> · </span><a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">Code MIT</a></p>
+        <p>Open trace data. Open to everyone.<br><a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">Trace data ODbL 1.0</a><span> · </span><a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">Code MIT</a></p>
       </footer>
     </aside>
     <section id="workspace" class="workspace" aria-label="Explore a circuit" tabindex="-1">
@@ -80,6 +82,7 @@ app.innerHTML = `
         <div id="stage-empty" class="stage-empty" hidden>${icon("map")}<strong>No course trace yet.</strong><p>This layout is listed, but its mapped route is still missing.</p></div>
         <div class="view-tools" aria-label="View controls"><button id="rotate-view" class="icon-button" aria-label="Rotate automatically" aria-pressed="false" title="Rotate automatically" hidden>${icon("rotate")}</button><button id="zoom-in" class="icon-button" aria-label="Zoom in" title="Zoom in">${icon("plus")}</button><button id="zoom-out" class="icon-button" aria-label="Zoom out" title="Zoom out">${icon("minus")}</button><button id="fit-view" class="icon-button" aria-label="Reset view" title="Reset view">${icon("fit")}</button></div>
         <button id="height-scale" class="height-scale" aria-pressed="true" title="Switch between natural height and exaggerated elevation" hidden>Height <strong>3×</strong><span>exaggerated</span></button>
+        <div class="border-controls" hidden><button id="border-toggle" aria-pressed="false" disabled><span class="border-check" aria-hidden="true"></span>Inner &amp; outer lines</button><div id="border-legend" hidden><span class="inner-key">Inner</span><span class="outer-key">Outer</span></div></div>
         <div class="stage-footer"><span id="view-hint">Drag to explore · Scroll to zoom</span><span id="model-note"></span></div>
         <div id="course-credit" class="course-credit" hidden></div>
         <div id="tile-notice" class="view-notice" hidden>Background map unavailable. Track traces still work.</div>
@@ -129,6 +132,8 @@ tiles.on("load", () => {
 });
 const markers = L.layerGroup().addTo(map),
   selectedLayers = L.layerGroup().addTo(map);
+const borderLayers = L.layerGroup().addTo(map);
+const traceLayers = L.layerGroup().addTo(map);
 let layoutCoverage: LayoutCoverage | undefined,
   gapResearch: LayoutGapResearch | undefined;
 let catalogue: Catalogue,
@@ -139,6 +144,32 @@ let selectedLayoutId: string | undefined,
   sequence = 0,
   abort: AbortController | undefined;
 let viewer: Track3D | undefined, viewerPromise: Promise<void> | undefined;
+let currentBorders: TrackBorders | undefined;
+const borderOverlay = new BorderOverlay(
+  get<HTMLButtonElement>("border-toggle"),
+  get("border-legend"),
+  (data) => {
+    currentBorders = data;
+    borderLayers.clearLayers();
+    if (data) traceLayers.remove();
+    else traceLayers.addTo(map);
+    if (data) L.geoJSON(data, {
+      style: feature => ({
+        color: feature?.properties.role === "inner" ? "#f4775c" : "#42c6df",
+        weight: 2.5,
+        opacity: 1,
+        className: `track-border border-${feature?.properties.role}`,
+      }),
+      onEachFeature: (feature, layer) => layer.bindTooltip(
+        feature.properties.role === "inner" ? "Inner line" : "Outer line",
+      ),
+    }).addTo(borderLayers);
+    selectedLayers.eachLayer(layer => {
+      if (layer instanceof L.Path) layer.bringToFront();
+    });
+    viewer?.setBorders(data);
+  },
+);
 let terrain: ElevationGrid | undefined;
 let heightScale: 1 | 3 = initialParams.has("track")
   ? initialParams.get("height") === "1"
@@ -469,6 +500,7 @@ async function applyView() {
   if (view !== "3d" || !layout || !viewer || unavailable3D) return;
   viewer.setActive(true);
   viewer.setLayout(layout, currentGates, terrain, heightScale);
+  viewer.setBorders(currentBorders);
   viewer.setRotating(rotating);
 }
 function setView(next: "2d" | "3d") {
@@ -489,9 +521,11 @@ function worldMap(push = true) {
   layout = undefined;
   layoutFile = undefined;
   selectedLayoutId = undefined;
+  borderOverlay.setLayout();
   currentGates = [];
   terrain = undefined;
   selectedLayers.clearLayers();
+  traceLayers.clearLayers();
   viewer?.clear();
   markers.addTo(map);
   view = "2d";
@@ -549,13 +583,15 @@ function drawGate(
 }
 function draw(data: Layout, privateGates: typeof currentGates = []) {
   selectedLayers.clearLayers();
+  traceLayers.clearLayers();
   for (const feature of data.features) {
+    if (feature.properties.role === "inner" || feature.properties.role === "outer") continue;
     const paths = geometryPaths(feature.geometry),
       coords = paths.map((path) => path.map((p) => L.latLng(p[1], p[0])));
     if (feature.properties.role === "trace") {
-      L.polyline(coords, config.outline).addTo(selectedLayers);
-      L.polyline(coords, config.trace).addTo(selectedLayers);
-    } else {
+      L.polyline(coords, { ...config.outline, className: "course-outline" }).addTo(traceLayers);
+      L.polyline(coords, { ...config.trace, className: "course-trace" }).addTo(traceLayers);
+    } else if ("positionStatus" in feature.properties) {
       const props = feature.properties;
       drawGate(
         props.role,
@@ -618,7 +654,7 @@ function sourceLinks(parent: HTMLElement, selected: Track, data?: Layout) {
     ),
     element(
       "p",
-      "Approximate geographic traces, not surveyed centerlines. Database ODbL 1.0.",
+      "Approximate geographic traces, not surveyed centerlines. Trace data ODbL 1.0.",
     ),
   );
   parent.append(details);
@@ -836,7 +872,7 @@ function panel(
     row.append(download);
     const available = timingAvailability(m.timing);
     for (const gate of layout.features.filter(
-      (f) => f.properties.role !== "trace",
+      (f) => isTimingRole(f.properties.role),
     )) {
       if (
         gate.properties.role === "start" ||
@@ -867,7 +903,7 @@ function panel(
     for (const note of privateNotes)
       content.append(element("p", note, "note local-note"));
     for (const gate of layout.features.filter(
-      (f) => f.properties.role !== "trace",
+      (f) => isTimingRole(f.properties.role),
     )) {
       const p = gate.properties;
       if ("positionStatus" in p)
@@ -921,6 +957,8 @@ async function select(id: string, requested?: string, push = true) {
   abort = new AbortController();
   const signal = abort.signal;
   selectedLayers.clearLayers();
+  traceLayers.clearLayers();
+  borderOverlay.setLayout();
   viewer?.clear();
   layout = undefined;
   layoutFile = undefined;
@@ -1065,6 +1103,7 @@ async function select(id: string, requested?: string, push = true) {
     if (elevation?.trackId === id && courseElevation(layout, elevation))
       terrain = elevation;
     draw(layout, privateLines);
+    borderOverlay.setLayout(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
     void applyView();
@@ -1072,6 +1111,7 @@ async function select(id: string, requested?: string, push = true) {
   } catch (error) {
     if (current !== sequence || signal.aborted) return;
     selectedLayers.clearLayers();
+    traceLayers.clearLayers();
     viewer?.clear();
     layout = undefined;
     layoutFile = undefined;
@@ -1191,7 +1231,7 @@ get("surprise").onclick = () => {
     return;
   }
   closeBrowse();
-  void select(candidates[Math.floor(Math.random() * candidates.length)].id);
+  void select(candidates[Math.floor(performance.now()) % candidates.length].id);
 };
 get("save-track").onclick = () => {
   if (!track) return;
