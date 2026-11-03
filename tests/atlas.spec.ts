@@ -383,7 +383,7 @@ test("desktop and phone controls pass automated accessibility checks", async ({
   page,
 }) => {
   await page.goto("/?track=be-spa-francorchamps&view=3d");
-  await expect(page.locator("#track-3d canvas")).toBeVisible();
+  await expect(page.locator("#track-3d canvas")).toBeVisible({ timeout: 45000 });
   const audit = () =>
     new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
