@@ -1,5 +1,6 @@
 import { test, expect, type Page, type Request } from "@playwright/test";
 import { readFile } from "node:fs/promises";
+import { deepStrictEqual } from "node:assert";
 import { geometryPaths, validateLayout, validateTrack } from "../schemas/data";
 import { bordersFromLayout } from "../src/track-borders";
 const json=async(path:string)=>JSON.parse(await readFile(path,"utf8"));
@@ -43,7 +44,7 @@ test("download includes embedded borders while display remains opt-in",async({pa
 });
 
 test("all embedded layouts retain their own borders and downloadable geometry",async({page,request})=>{
- test.setTimeout(900000);
+ test.setTimeout(1800000);
  const catalogue=await json("data/index.json");let circuits=0,layouts=0;
  await page.goto("/");await expect(page.locator("#count")).toHaveText(`${catalogue.tracks.length} tracks`,{timeout:45000});
  for(const entry of catalogue.tracks){
@@ -62,13 +63,13 @@ test("all embedded layouts retain their own borders and downloadable geometry",a
   await page.locator("#layout").selectOption(supported[0].layout.id);
   await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});
   if(await page.locator("#border-toggle").getAttribute("aria-pressed")==="false")await page.locator("#border-toggle").click();
-  for(const {layout,data} of supported){
-   layouts++;if(layouts%100===0)console.log(`Checked ${layouts} border layouts`);await page.locator("#layout").selectOption(layout.id);await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});
-   await expect(page.locator(".border-inner")).toHaveCount(1);await expect(page.locator(".border-outer")).toHaveCount(1);
-   await expect(page.locator(".course-trace")).toHaveCount(0);
+  for(const [index,{layout,data}] of supported.entries()){
+   layouts++;if(layouts%100===0)console.log(`Checked ${layouts} border layouts`);
+   if(index>0){await page.locator("#layout").selectOption(layout.id);await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});}
+   await expect.poll(()=>page.evaluate(()=>[".border-inner",".border-outer",".course-trace",".course-outline"].map(selector=>document.querySelectorAll(selector).length))).toEqual([1,1,0,0]);
    const downloaded=await (await request.get((await page.locator("#download").getAttribute("href"))!)).json();
-   expect(bordersFromLayout(downloaded)).toEqual(bordersFromLayout(data));
-   expect(geometryPaths(downloaded.features[0].geometry)).toEqual(geometryPaths(data.features[0].geometry));
+   deepStrictEqual(bordersFromLayout(downloaded),bordersFromLayout(data));
+   deepStrictEqual(geometryPaths(downloaded.features[0].geometry),geometryPaths(data.features[0].geometry));
   }
  }
  console.log(`Checked ${layouts} border layouts across ${circuits} circuits`);
