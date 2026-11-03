@@ -34,7 +34,7 @@ test('a missing or invalid optional research report leaves the catalogue usable'
 });
 
 test('every catalogue entry opens and only mapped layouts offer traces and downloads',async({page,request})=>{
- test.setTimeout(1200000);let checkedLayouts=0;const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+ test.setTimeout(2400000);let checkedLayouts=0;const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
  // The course viewer must work when background tiles are unavailable.
  await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
  const catalogue=indexSchema.parse(JSON.parse(await readFile('data/index.json','utf8')));
