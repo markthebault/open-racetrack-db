@@ -45,6 +45,7 @@ test("download includes embedded borders while display remains opt-in",async({pa
 test("all embedded layouts retain their own borders and downloadable geometry",async({page,request})=>{
  test.setTimeout(900000);
  const catalogue=await json("data/index.json");let circuits=0,layouts=0;
+ await page.goto("/");await expect(page.locator("#count")).toHaveText(`${catalogue.tracks.length} tracks`,{timeout:45000});
  for(const entry of catalogue.tracks){
   const track=validateTrack(await json(`data/${entry.file}`));
   const supported=[];
@@ -55,10 +56,14 @@ test("all embedded layouts retain their own borders and downloadable geometry",a
    if(bordersFromLayout(data))supported.push({layout,data});
   }
   if(!supported.length)continue;circuits++;
-  await page.goto(`/?track=${track.id}&layout=${supported[0].layout.id}`);
-  await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});await page.locator("#border-toggle").click();
+  await page.locator(`#venues button[data-track-id="${track.id}"]`).click();
+  await expect(page.locator("#selection h2")).toHaveText(track.name);
+  await expect(page.locator("#message")).toHaveText(/Layout ready|Trace unavailable/,{timeout:45000});
+  await page.locator("#layout").selectOption(supported[0].layout.id);
+  await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});
+  if(await page.locator("#border-toggle").getAttribute("aria-pressed")==="false")await page.locator("#border-toggle").click();
   for(const {layout,data} of supported){
-   layouts++;await page.locator("#layout").selectOption(layout.id);await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});
+   layouts++;if(layouts%100===0)console.log(`Checked ${layouts} border layouts`);await page.locator("#layout").selectOption(layout.id);await expect(page.locator("#message")).toHaveText("Layout ready",{timeout:45000});
    await expect(page.locator(".border-inner")).toHaveCount(1);await expect(page.locator(".border-outer")).toHaveCount(1);
    await expect(page.locator(".course-trace")).toHaveCount(0);
    const downloaded=await (await request.get((await page.locator("#download").getAttribute("href"))!)).json();
