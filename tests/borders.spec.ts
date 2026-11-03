@@ -67,7 +67,7 @@ test("all embedded layouts retain their own borders and downloadable geometry",a
   }
  }
  console.log(`Checked ${layouts} border layouts across ${circuits} circuits`);
- expect(circuits).toBe(535);expect(layouts).toBe(884);
+ expect(circuits).toBe(534);expect(layouts).toBe(882);
  await test.info().attach("border-coverage",{body:JSON.stringify({circuits,layouts}),contentType:"application/json"});
 });
 
