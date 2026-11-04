@@ -6,6 +6,8 @@ Status: ready for implementation; pilot source research is incomplete.
 
 The original pilot specification below records the initial scope. The implemented worldwide viewer and the 2026-10-04 UI and terrain extension are described in the root [README](../README.md) and [11-atlas-and-elevation.md](11-atlas-and-elevation.md). The maintainer explicitly requested the 3D elevation extension; it supersedes the original exclusion of elevation profiles.
 
+Track-border options, OSM findings for Spa and Meppen, and example reproduction steps are in [12-osm-track-borders.md](12-osm-track-borders.md).
+
 ## Purpose
 
 Build a public database of racetracks and a small map viewer. Store the data in static files. Organize it by country, venue, and layout. Show each layout on an OpenStreetMap background with its start and finish lines.
