@@ -2,7 +2,7 @@ import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
 import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout,type Track} from '../schemas/data';
-import {existingBorders} from './layout-borders';
+import {existingLayoutExtras,serializeLayout} from './layout-borders';
 import {withTiming,timingDatabaseSchema} from './public-timing';
 import {buildCourseNetwork} from './course-network';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
@@ -12,20 +12,13 @@ const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const outputs=new Map<string,string>();
 const publicTiming=timingDatabaseSchema.parse(await json('data/timing.json')),seenTiming=new Set<string>();
-// Keep the established trace formatting while storing dense optional features compactly.
-function serializeLayout(data:Layout){
- const supplemental=data.features.filter(f=>f.properties.role==='inner'||f.properties.role==='outer');
- if(!supplemental.length)return JSON.stringify(data,null,2)+'\n';
- const primary=data.features.filter(f=>f.properties.role!=='inner'&&f.properties.role!=='outer');
- const text=JSON.stringify({...data,features:primary},null,2),end='\n  ]\n}';
- if(!text.endsWith(end))throw new Error('Unexpected layout serialization');
- return text.slice(0,-end.length)+',\n'+supplemental.map(f=>'    '+JSON.stringify(f)).join(',\n')+end+'\n';
-}
 async function enrich(data:Layout,track:Track,id:string,existingFile:string){
  const result=withTiming(data,publicTiming);
  if(result.metadata.timing)seenTiming.add(`${track.id}/${id}`);
  // Supplemental borders are canonical layout data; their creation is external.
- result.features.push(...await existingBorders(existingFile,generate&&!check));
+ const extras=await existingLayoutExtras(existingFile,generate&&!check);
+ result.features.push(...extras.borders);
+ if(extras.model3d)result.metadata.model3d=extras.model3d;
  if(result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
  result.bbox=bounds(result.features.flatMap(f=>geometryPaths(f.geometry).flat()));
  return validateLayout(result,track,id);
