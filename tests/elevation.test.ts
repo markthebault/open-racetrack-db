@@ -115,11 +115,7 @@ test("elevation profiles keep disconnected branches separate and leave public co
 });
 
 test("pinned terrain gives finite elevations for a circuit and the open Pikes Peak climb", () => {
-  const spaGrid = elevationSchema.parse(
-    JSON.parse(
-      readFileSync("data/elevation/be-spa-francorchamps.json", "utf8"),
-    ),
-  );
+  const spaGrid = elevationSchema.parse(spa.metadata.model3d!.terrain);
   const spaProfile = courseElevation(spa, spaGrid)!;
   assert.ok(spaProfile.min > 300 && spaProfile.max < 550);
   assert.ok(spaProfile.max - spaProfile.min > 80);

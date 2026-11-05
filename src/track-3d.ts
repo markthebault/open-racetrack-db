@@ -9,6 +9,9 @@ import { sampleElevation, type ElevationGrid } from "./elevation";
 import { TerrainDrape } from "./terrain-drape";
 import { timingMarkers } from "./timing";
 import type { TrackBorders } from "./track-borders";
+import { borderRoadGeometry, boundaryCurbGeometry } from "./border-surface";
+import { buildRoad } from "./lap-simulation";
+import { roadStrip } from "./road-geometry";
 
 function flagTexture(color: number) {
   const canvas = document.createElement("canvas");
@@ -547,17 +550,22 @@ export class Track3D {
     for (const mesh of this.traceHighlights) mesh.visible = !data;
     this.container.dataset.traceVisible = String(!data);
     for (const child of this.borders.children) {
-      const line = child as THREE.Line<THREE.BufferGeometry, THREE.LineBasicMaterial>;
+      const line = child as THREE.Line<
+        THREE.BufferGeometry,
+        THREE.LineBasicMaterial
+      >;
       line.geometry.dispose();
       line.material.dispose();
     }
     this.borders.clear();
     if (data && this.borderProject) {
       for (const feature of data.features) {
-        const paths = feature.geometry.type === "LineString"
-          ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+        const paths =
+          feature.geometry.type === "LineString"
+            ? [feature.geometry.coordinates]
+            : feature.geometry.coordinates;
         for (const path of paths) {
-          const points = path.map(p => {
+          const points = path.map((p) => {
             const point = this.borderProject!(p);
             point.y += 0.48;
             return point;
@@ -603,6 +611,9 @@ export class Track3D {
     });
     this.course.clear();
     this.traceHighlights = [];
+    this.container.dataset.layoutKey = "";
+    this.container.dataset.roadTriangles = "0";
+    this.container.dataset.curbSections = "0";
     this.requestRender();
   }
 
@@ -751,6 +762,74 @@ export class Track3D {
         side: THREE.DoubleSide,
       }),
     ];
+    const model = layout.metadata.model3d;
+    if (model) {
+      const project = plane(local.origin);
+      const toBoard = (
+        geometry: THREE.BufferGeometry,
+        origin: Position,
+        lift: number,
+      ) => {
+        const source = plane(origin),
+          positions = geometry.getAttribute("position");
+        for (let i = 0; i < positions.count; i++) {
+          const point = source.from([positions.getX(i), -positions.getZ(i)]),
+            [x, north] = project.to(point);
+          positions.setXYZ(
+            i,
+            x * scale,
+            (positions.getY(i) - floor) * scale * heightScale + 0.16 + lift,
+            -north * scale,
+          );
+        }
+        geometry.computeVertexNormals();
+        return geometry;
+      };
+      const surface = borderRoadGeometry(layout, model.terrain);
+      this.course.add(
+        new THREE.Mesh(
+          toBoard(surface.geometry, surface.origin, 0.035),
+          new THREE.MeshStandardMaterial({
+            color: 0x303638,
+            roughness: 0.9,
+            side: THREE.DoubleSide,
+          }),
+        ),
+      );
+      this.container.dataset.roadTriangles = String(surface.triangles);
+      const addCurb = (geometry: THREE.BufferGeometry, origin: Position) =>
+        this.course.add(
+          new THREE.Mesh(
+            toBoard(geometry, origin, 0.045),
+            new THREE.MeshStandardMaterial({
+              vertexColors: true,
+              roughness: 0.8,
+              side: THREE.DoubleSide,
+            }),
+          ),
+        );
+      if (model.kind === "surface") {
+        const curbs = boundaryCurbGeometry(layout, model);
+        addCurb(curbs.geometry, curbs.origin);
+      } else {
+        const road = buildRoad(layout);
+        for (const curb of model.curbs)
+          addCurb(
+            roadStrip(
+              road,
+              (p) =>
+                curb.side === "left"
+                  ? [p.left, p.left + curb.widthM]
+                  : [-p.right - curb.widthM, -p.right],
+              curb.heightM,
+              [curb.startM, curb.endM],
+              true,
+            ),
+            road.origin,
+          );
+      }
+      this.container.dataset.curbSections = String(model.curbs.length);
+    }
     const geographic = geometryPaths(trace.geometry);
     for (const [pathIndex, path] of local.paths.entries()) {
       const points = path.map(
@@ -766,8 +845,13 @@ export class Track3D {
         [1.02, 0.2],
         [0.075, 0.215],
       ].entries()) {
+        if (model && i !== 1) continue;
         const mesh = new THREE.Mesh(
-          roadSurface(points, ribbonWidth, elevation),
+          roadSurface(
+            points,
+            model ? Math.max(0.018, scale * 0.16) : ribbonWidth,
+            model ? 0.055 : elevation,
+          ),
           mats[i].clone(),
         );
         this.course.add(mesh);
@@ -906,6 +990,7 @@ export class Track3D {
       this.labelLayer.append(label);
       this.gateLabels.push({ element: label, anchor });
     }
+    this.container.dataset.layoutKey = `${layout.metadata.trackId}/${layout.metadata.layoutId}`;
     this.fit();
     this.requestRender();
   }

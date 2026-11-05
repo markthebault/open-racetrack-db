@@ -31,8 +31,10 @@ import {
 } from "./elevation";
 import { elevationProfile } from "./elevation-profile";
 import { BorderOverlay, type TrackBorders } from "./track-borders";
+import { isLapModel } from "../schemas/track-model";
 
 const base = import.meta.env.BASE_URL;
+const maptilerKey = import.meta.env.VITE_MAPTILER_API_KEY?.trim();
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
   <a class="skip-link" href="#workspace">Skip to track</a>
@@ -75,7 +77,8 @@ app.innerHTML = `
         <div id="track-3d" hidden></div>
         <div class="stage-heading"><span id="stage-country" class="stage-eyebrow">THE WORLD OF MOTORSPORT</span><strong id="map-name">Choose your circuit.</strong><span id="stage-layout"></span></div>
         <div class="stage-toolbar">
-          <div class="view-switch" aria-label="View mode"><button id="view-2d" aria-pressed="true">${icon("map")} 2D <span>map</span></button><button id="view-3d" aria-pressed="false">${icon("cube")} 3D <span>circuit</span></button></div>
+          <button id="play-lap" class="lap-launch" hidden>▷ Play lap</button>
+          <div class="view-switch${maptilerKey ? " has-satellite" : ""}" aria-label="View mode"><button id="view-2d" aria-pressed="true">${icon("map")} Map</button><button id="view-satellite" aria-pressed="false" ${maptilerKey ? "" : "hidden"}>Satellite</button><button id="view-3d" aria-pressed="false">${icon("cube")} 3D</button></div>
           <button id="save-track" class="icon-button stage-button" aria-label="Save track" aria-pressed="false" title="Save track" disabled>${icon("bookmark")}</button>
           <button id="share-track" class="icon-button stage-button" aria-label="Share track" title="Share track" disabled>${icon("share")}</button>
         </div>
@@ -85,6 +88,7 @@ app.innerHTML = `
         <div class="border-controls" hidden><button id="border-toggle" aria-pressed="false" disabled><span class="border-check" aria-hidden="true"></span>Inner &amp; outer lines</button><div id="border-legend" hidden><span class="inner-key">Inner</span><span class="outer-key">Outer</span></div></div>
         <div class="stage-footer"><span id="view-hint">Drag to explore · Scroll to zoom</span><span id="model-note"></span></div>
         <div id="course-credit" class="course-credit" hidden></div>
+        <a id="maptiler-logo" href="https://www.maptiler.com/" target="_blank" rel="noopener noreferrer" hidden><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler" width="100" height="30" loading="lazy"></a>
         <div id="tile-notice" class="view-notice" hidden>Background map unavailable. Track traces still work.</div>
         <div id="view-notice" class="view-notice" hidden></div>
         <div id="message" role="status" aria-live="polite"></div>
@@ -117,19 +121,47 @@ const config = {
   outline: { color: "#29201b", weight: 9, opacity: 0.9 },
 };
 const map = L.map("map", { zoomControl: false }).setView([25, 12], 2);
-const tiles = L.tileLayer(config.tiles, {
+const streetTiles = L.tileLayer(config.tiles, {
   attribution: config.attribution,
   maxZoom: 19,
   crossOrigin: true,
 });
+const satelliteTiles = maptilerKey
+  ? L.tileLayer(
+      `https://api.maptiler.com/maps/satellite-v4/{z}/{x}/{y}.jpg?key=${encodeURIComponent(maptilerKey)}`,
+      {
+        tileSize: 512,
+        zoomOffset: -1,
+        minZoom: 1,
+        maxZoom: 22,
+        attribution:
+          '<a href="https://www.maptiler.com/copyright/" target="_blank" rel="noopener">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">&copy; OpenStreetMap contributors</a>',
+        crossOrigin: true,
+      },
+    )
+  : undefined;
+let tiles = streetTiles;
 let tileErrors = false;
-tiles.on("tileerror", () => {
-  tileErrors = true;
-  get("tile-notice").hidden = view === "3d";
-});
-tiles.on("load", () => {
-  if (!tileErrors) get("tile-notice").hidden = true;
-});
+for (const layer of [streetTiles, satelliteTiles]) {
+  if (!layer) continue;
+  layer.on("loading", () => {
+    if (tiles !== layer) return;
+    tileErrors = false;
+    get("tile-notice").hidden = true;
+  });
+  layer.on("tileerror", () => {
+    if (tiles !== layer) return;
+    tileErrors = true;
+    get("tile-notice").textContent =
+      tiles === satelliteTiles
+        ? "Satellite imagery unavailable. Try Map."
+        : "Background map unavailable. Track traces still work.";
+    get("tile-notice").hidden = view === "3d";
+  });
+  layer.on("load", () => {
+    if (tiles === layer && !tileErrors) get("tile-notice").hidden = true;
+  });
+}
 const markers = L.layerGroup().addTo(map),
   selectedLayers = L.layerGroup().addTo(map);
 const borderLayers = L.layerGroup().addTo(map);
@@ -144,7 +176,51 @@ let selectedLayoutId: string | undefined,
   sequence = 0,
   abort: AbortController | undefined;
 let viewer: Track3D | undefined, viewerPromise: Promise<void> | undefined;
+let modelLayout: Layout | undefined;
 let currentBorders: TrackBorders | undefined;
+let closeLap: (() => void) | undefined;
+let openInitialLap = initialParams.get("lap") === "1";
+get<HTMLButtonElement>("play-lap").onclick = async () => {
+  if (!layout?.metadata.model3d || !track || closeLap) return;
+  if (!isLapModel(layout.metadata.model3d)) {
+    setView("3d");
+    return;
+  }
+  const selected = modelLayout ?? layout;
+  const button = get<HTMLButtonElement>("play-lap");
+  button.disabled = true;
+  try {
+    const { openLap } = await import("./lap-player");
+    if ((modelLayout ?? layout) !== selected) return;
+    const url = new URL(location.href);
+    url.searchParams.set("lap", "1");
+    history.replaceState(null, "", url);
+    viewer?.setActive(false);
+    closeLap = openLap(
+      selected,
+      {
+        trackId: track!.id,
+        name: shortNames[track!.id] ?? track!.name,
+        country: track!.country.name,
+        layoutName:
+          track!.layouts.find((item) => item.id === selectedLayoutId)?.name ??
+          selectedLayoutId ??
+          "Lap playback",
+      },
+      () => {
+        closeLap = undefined;
+        viewer?.setActive(view === "3d");
+        const current = new URL(location.href);
+        current.searchParams.delete("lap");
+        history.replaceState(null, "", current);
+      },
+    );
+  } catch {
+    message("The lap could not load. Please try again.");
+  } finally {
+    button.disabled = false;
+  }
+};
 const borderOverlay = new BorderOverlay(
   get<HTMLButtonElement>("border-toggle"),
   get("border-legend"),
@@ -153,18 +229,20 @@ const borderOverlay = new BorderOverlay(
     borderLayers.clearLayers();
     if (data) traceLayers.remove();
     else traceLayers.addTo(map);
-    if (data) L.geoJSON(data, {
-      style: feature => ({
-        color: feature?.properties.role === "inner" ? "#f4775c" : "#42c6df",
-        weight: 2.5,
-        opacity: 1,
-        className: `track-border border-${feature?.properties.role}`,
-      }),
-      onEachFeature: (feature, layer) => layer.bindTooltip(
-        feature.properties.role === "inner" ? "Inner line" : "Outer line",
-      ),
-    }).addTo(borderLayers);
-    selectedLayers.eachLayer(layer => {
+    if (data)
+      L.geoJSON(data, {
+        style: (feature) => ({
+          color: feature?.properties.role === "inner" ? "#f4775c" : "#42c6df",
+          weight: 2.5,
+          opacity: 1,
+          className: `track-border border-${feature?.properties.role}`,
+        }),
+        onEachFeature: (feature, layer) =>
+          layer.bindTooltip(
+            feature.properties.role === "inner" ? "Inner line" : "Outer line",
+          ),
+      }).addTo(borderLayers);
+    selectedLayers.eachLayer((layer) => {
       if (layer instanceof L.Path) layer.bringToFront();
     });
     viewer?.setBorders(data);
@@ -446,12 +524,22 @@ function unavailable() {
 }
 async function applyView() {
   const is3d = view === "3d" && !!layout && !unavailable3D;
-  get("view-2d").setAttribute("aria-pressed", String(!is3d));
+  const satellite = tiles === satelliteTiles;
+  get("view-2d").setAttribute("aria-pressed", String(!is3d && !satellite));
+  get("view-satellite").setAttribute(
+    "aria-pressed",
+    String(!is3d && satellite),
+  );
   get("view-3d").setAttribute("aria-pressed", String(is3d));
   get<HTMLButtonElement>("view-3d").disabled = !layout || unavailable3D;
   get("map").hidden = is3d;
   get("track-3d").hidden = !is3d;
+  get("map").classList.toggle("is-satellite", satellite);
+  get("maptiler-logo").hidden = is3d || !satellite;
   document.querySelector(".map-area")!.classList.toggle("is-3d", is3d);
+  document
+    .querySelector(".map-area")!
+    .classList.toggle("is-satellite", satellite);
   get("rotate-view").hidden = !is3d;
   get("tile-notice").hidden = is3d || !tileErrors;
   get("view-hint").textContent = is3d
@@ -466,6 +554,18 @@ async function applyView() {
       ? "Terrain elevation · estimated"
       : "Mapped course · Elevation unavailable"
     : "";
+  if (!unavailable3D) {
+    const surface =
+      layout?.metadata.model3d?.kind === "surface"
+        ? layout.metadata.model3d
+        : undefined;
+    get("view-notice").hidden = !is3d || !surface;
+    if (surface)
+      get("view-notice").textContent =
+        surface.reason === "route-not-closed"
+          ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
+          : "Road surfaces follow the saved borders. Lap playback is unavailable until the trace and borders are aligned. Curbs are illustrative.";
+  }
   get("height-scale").hidden = !is3d || !terrain;
   updateHeightControl();
   get("course-credit").hidden = !layout;
@@ -499,7 +599,7 @@ async function applyView() {
   await viewerPromise;
   if (view !== "3d" || !layout || !viewer || unavailable3D) return;
   viewer.setActive(true);
-  viewer.setLayout(layout, currentGates, terrain, heightScale);
+  viewer.setLayout(modelLayout ?? layout, currentGates, terrain, heightScale);
   viewer.setBorders(currentBorders);
   viewer.setRotating(rotating);
 }
@@ -513,12 +613,24 @@ function setView(next: "2d" | "3d") {
   remember();
   urlState(track?.id, selectedLayoutId);
 }
+function setBasemap(next: L.TileLayer) {
+  if (next !== tiles) {
+    tiles.remove();
+    tiles = next;
+    tileErrors = false;
+  }
+  if (view === "2d") void applyView();
+  else setView("2d");
+}
 function worldMap(push = true) {
   if (!catalogue) return;
+  closeLap?.();
+  get("play-lap").hidden = true;
   sequence++;
   abort?.abort();
   track = undefined;
   layout = undefined;
+  modelLayout = undefined;
   layoutFile = undefined;
   selectedLayoutId = undefined;
   borderOverlay.setLayout();
@@ -585,12 +697,21 @@ function draw(data: Layout, privateGates: typeof currentGates = []) {
   selectedLayers.clearLayers();
   traceLayers.clearLayers();
   for (const feature of data.features) {
-    if (feature.properties.role === "inner" || feature.properties.role === "outer") continue;
+    if (
+      feature.properties.role === "inner" ||
+      feature.properties.role === "outer"
+    )
+      continue;
     const paths = geometryPaths(feature.geometry),
       coords = paths.map((path) => path.map((p) => L.latLng(p[1], p[0])));
     if (feature.properties.role === "trace") {
-      L.polyline(coords, { ...config.outline, className: "course-outline" }).addTo(traceLayers);
-      L.polyline(coords, { ...config.trace, className: "course-trace" }).addTo(traceLayers);
+      L.polyline(coords, {
+        ...config.outline,
+        className: "course-outline",
+      }).addTo(traceLayers);
+      L.polyline(coords, { ...config.trace, className: "course-trace" }).addTo(
+        traceLayers,
+      );
     } else if ("positionStatus" in feature.properties) {
       const props = feature.properties;
       drawGate(
@@ -871,8 +992,8 @@ function panel(
     download.download = `${selected.id}-${requested}.geojson`;
     row.append(download);
     const available = timingAvailability(m.timing);
-    for (const gate of layout.features.filter(
-      (f) => isTimingRole(f.properties.role),
+    for (const gate of layout.features.filter((f) =>
+      isTimingRole(f.properties.role),
     )) {
       if (
         gate.properties.role === "start" ||
@@ -902,8 +1023,8 @@ function panel(
       if (note !== description) content.append(element("p", note, "note"));
     for (const note of privateNotes)
       content.append(element("p", note, "note local-note"));
-    for (const gate of layout.features.filter(
-      (f) => isTimingRole(f.properties.role),
+    for (const gate of layout.features.filter((f) =>
+      isTimingRole(f.properties.role),
     )) {
       const p = gate.properties;
       if ("positionStatus" in p)
@@ -952,6 +1073,8 @@ function panel(
 }
 
 async function select(id: string, requested?: string, push = true) {
+  closeLap?.();
+  get("play-lap").hidden = true;
   const current = ++sequence;
   abort?.abort();
   abort = new AbortController();
@@ -961,6 +1084,7 @@ async function select(id: string, requested?: string, push = true) {
   borderOverlay.setLayout();
   viewer?.clear();
   layout = undefined;
+  modelLayout = undefined;
   layoutFile = undefined;
   currentGates = [];
   terrain = undefined;
@@ -1034,13 +1158,14 @@ async function select(id: string, requested?: string, push = true) {
       return;
     }
     const file = entry.file.replace(/track\.json$/, "") + selectedLayout.file;
-    const [raw, elevation] = await Promise.all([
-      load(file, signal),
-      load(`elevation/${id}.json`, signal)
-        .then((value) => elevationSchema.parse(value))
-        .catch(() => undefined),
-    ]);
+    const raw = await load(file, signal);
     const data = validateLayout(raw, selected, layoutId);
+    if (current !== sequence) return;
+    const elevation =
+      data.metadata.model3d?.terrain ??
+      (await load(`elevation/${id}.json`, signal)
+        .then((value) => elevationSchema.parse(value))
+        .catch(() => undefined));
     if (current !== sequence) return;
     layout = data;
     layoutFile = file;
@@ -1100,12 +1225,20 @@ async function select(id: string, requested?: string, push = true) {
       }
     }
     currentGates = privateLines;
+    modelLayout = data.metadata.model3d ? data : undefined;
     if (elevation?.trackId === id && courseElevation(layout, elevation))
       terrain = elevation;
     draw(layout, privateLines);
     borderOverlay.setLayout(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
+    get("play-lap").hidden = !data.metadata.model3d;
+    get("play-lap").textContent =
+      data.metadata.model3d?.kind === "surface" ? "Explore 3D" : "▷ Play lap";
+    if (data.metadata.model3d && openInitialLap) {
+      openInitialLap = false;
+      get<HTMLButtonElement>("play-lap").click();
+    }
     void applyView();
     remember();
   } catch (error) {
@@ -1114,6 +1247,7 @@ async function select(id: string, requested?: string, push = true) {
     traceLayers.clearLayers();
     viewer?.clear();
     layout = undefined;
+    modelLayout = undefined;
     layoutFile = undefined;
     get<HTMLButtonElement>("view-3d").disabled = true;
     message("Track data could not load.");
@@ -1248,7 +1382,10 @@ get("save-track").onclick = () => {
   );
   renderCatalogue();
 };
-get("view-2d").onclick = () => setView("2d");
+get("view-2d").onclick = () => setBasemap(streetTiles);
+get("view-satellite").onclick = () => {
+  if (satelliteTiles) setBasemap(satelliteTiles);
+};
 get("view-3d").onclick = () => setView("3d");
 get("fit-view").onclick = fit;
 get("zoom-in").onclick = () =>
