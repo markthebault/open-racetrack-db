@@ -345,6 +345,23 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     const file = `${dirname(trackFile)}/${item.file}`,
       layout = validateLayout(await read(file), track, item.id),
       old = layout.metadata.borderInference;
+    if (layout.metadata.borderComposition) {
+      report.push({
+        trackId: track.id,
+        layoutId: item.id,
+        file,
+        status: layout.features.some(
+          (f) =>
+            f.properties.role === "inner" &&
+            "license" in f.properties &&
+            f.properties.license === "LicenseRef-Track-Borders",
+        )
+          ? "composed-existing"
+          : "composed-estimate",
+        componentRoutes: layout.metadata.borderComposition.length,
+      });
+      continue;
+    }
     if (!old && layout.features.some((f) => f.properties.role === "inner"))
       continue;
     const row: RecordRow = {

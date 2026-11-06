@@ -1,8 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T11:10:22.559Z",
+  "generatedAt": "2026-11-06T11:53:43.916Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
+    {
+      "trackId": "ae-dubai-autodrome-87272771",
+      "layoutId": "dubai-autodrome-combo",
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
+    },
     {
       "trackId": "ae-yas-marina-e2656e19",
       "layoutId": "yas-historical-grand-prix",
@@ -104,8 +111,8 @@
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
       "layoutId": "autodromo-de-concordia-combo",
       "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/autodromo-de-concordia-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
@@ -509,8 +516,8 @@
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
       "layoutId": "autodromo-de-la-pampa",
       "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/autodromo-de-la-pampa.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
@@ -804,6 +811,13 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "ab03bb00cccf990d51d5a0db8c28166f28cfc12ed074755d8cec5e509729e136"
+    },
+    {
+      "trackId": "au-queensland-raceway-26175772",
+      "layoutId": "queensland-raceway-combo-circuit",
+      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-combo-circuit.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 4
     },
     {
       "trackId": "au-surfer-s-paradise-ee3387d5",
@@ -1239,8 +1253,8 @@
       "trackId": "ca-goodwood-kartways-6e03d980",
       "layoutId": "goodwood-kartways",
       "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-kartways.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "ca-goodwood-kartways-6e03d980",
@@ -1564,15 +1578,15 @@
       "trackId": "cy-achna-speedway-ab0bcabd",
       "layoutId": "achna-speedway",
       "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-speedway.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "cy-achna-speedway-ab0bcabd",
       "layoutId": "achna-speedway-full-runway",
       "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-speedway-full-runway.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 3
     },
     {
       "trackId": "cz-autodrom-sosnova-30857652",
@@ -1622,6 +1636,13 @@
       "file": "data/germany/de-estering-f9d6a5de/layouts/estering-standard.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "de-lausitzring-7a32e980",
+      "layoutId": "lausitzring-combo",
+      "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 7
     },
     {
       "trackId": "de-motorsport-arena-oschersleben-89251023",
@@ -1834,6 +1855,13 @@
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
+      "trackId": "ee-porsche-ring-45482078",
+      "layoutId": "sauga-circuit-combo",
+      "file": "data/estonia/porsche-ring-45482078/layouts/sauga-circuit-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
+    },
+    {
       "trackId": "es-barcelona-catalunya",
       "layoutId": "grand-prix",
       "file": "data/spain/barcelona-catalunya/layouts/grand-prix.geojson",
@@ -1971,8 +1999,8 @@
       "trackId": "es-navarra-f7a7574d",
       "layoutId": "navarra-combo",
       "file": "data/spain/es-navarra-f7a7574d/layouts/navarra-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 3
     },
     {
       "trackId": "es-navarra-f7a7574d",
@@ -2381,8 +2409,8 @@
       "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
       "layoutId": "ales",
       "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 4
     },
     {
       "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
@@ -2421,6 +2449,13 @@
       "file": "data/united-kingdom/aintree-motor-racing-circuit-121110221/layouts/aintree-sprint.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "gb-anglesey-circuit-108374689",
+      "layoutId": "anglesey-combo",
+      "file": "data/united-kingdom/anglesey-circuit-108374689/layouts/anglesey-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 4
     },
     {
       "trackId": "gb-bedford-autodrome-27782784",
@@ -2783,8 +2818,8 @@
       "trackId": "gb-mallory-park-racing-circuit-215336384",
       "layoutId": "mallory-park-combo",
       "file": "data/united-kingdom/mallory-park-racing-circuit-215336384/layouts/mallory-park-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "gb-nutts-corner-6fa16d73",
@@ -2792,6 +2827,13 @@
       "file": "data/united-kingdom/gb-nutts-corner-6fa16d73/layouts/nutts-corner.geojson",
       "status": "needs-imagery-review",
       "reason": "Imagery review: pavement and historical configuration are unclear along the proposed perimeter."
+    },
+    {
+      "trackId": "gb-oulton-park-circuit-21831735",
+      "layoutId": "oulton-park-combo",
+      "file": "data/united-kingdom/oulton-park-circuit-21831735/layouts/oulton-park-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 3
     },
     {
       "trackId": "gb-pembrey-circuit-177186595",
@@ -2871,8 +2913,15 @@
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
       "layoutId": "rissington-kart-circuit",
       "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-kart-circuit.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
+    },
+    {
+      "trackId": "gb-rockingham-bdd27703",
+      "layoutId": "rockingham-combo",
+      "file": "data/united-kingdom/gb-rockingham-bdd27703/layouts/rockingham-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
     },
     {
       "trackId": "gb-shelsley-walsh-hillclimb-aaa3a45c",
@@ -2899,8 +2948,8 @@
       "trackId": "gb-silverstone-circuit-3571477",
       "layoutId": "silverstone-combo",
       "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 3
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",
@@ -2939,8 +2988,8 @@
       "trackId": "gb-three-sisters-d8b843ac",
       "layoutId": "three-sisters",
       "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 3
     },
     {
       "trackId": "gb-three-sisters-d8b843ac",
@@ -3259,6 +3308,13 @@
       "imageSha256": "e0c747bfa9d9cecd398fc4357f17f19a8ee796c37a8b08d3f27bd62ecdcd07cc"
     },
     {
+      "trackId": "it-monza",
+      "layoutId": "monza-combo",
+      "file": "data/italy/monza/layouts/monza-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
+    },
+    {
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
       "layoutId": "historical-international-car",
       "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-car.geojson",
@@ -3315,8 +3371,8 @@
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
       "layoutId": "vallelunga-full",
       "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/vallelunga-full.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "jp-hsr-134862680",
@@ -3491,6 +3547,13 @@
       "file": "data/mexico/ciudad-deportiva-magdalena-mixhuca-605367312/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "my-sepang-international-circuit-23410503",
+      "layoutId": "sepang-combo",
+      "file": "data/malaysia/sepang-international-circuit-23410503/layouts/sepang-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
     },
     {
       "trackId": "my-terengganu-international-drag-strip-634005195",
@@ -3724,6 +3787,13 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
+    },
+    {
+      "trackId": "nz-taupo-international-motorsport-park-90114324",
+      "layoutId": "taupo-motorsport-park-combo",
+      "file": "data/new-zealand/taupo-international-motorsport-park-90114324/layouts/taupo-motorsport-park-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 3
     },
     {
       "trackId": "pa-autodromo-panama-rl",
@@ -4249,6 +4319,13 @@
       "imageSha256": "ff9ef0a3f23ae64b158a8c97a9e9b6a1adfb81273ac6696dbfb756b69c4eacb7"
     },
     {
+      "trackId": "tw-penbay-3b334d4e",
+      "layoutId": "penbay-combo",
+      "file": "data/taiwan/tw-penbay-3b334d4e/layouts/penbay-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 3
+    },
+    {
       "trackId": "tw-penbay-drag-strip-a015d5c3",
       "layoutId": "penbay-drag-strip",
       "file": "data/taiwan/tw-penbay-drag-strip-a015d5c3/layouts/penbay-drag-strip.geojson",
@@ -4285,8 +4362,8 @@
       "trackId": "us-apex-motor-b7ddcfd3",
       "layoutId": "apex-motor-club-apex-i",
       "file": "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-motor-club-apex-i.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "us-arizona-motorsports-park-9f848c55",
@@ -4707,6 +4784,13 @@
       "reason": "Close-up imagery review: proposed edges cut inside the pavement around turns; manual boundary correction is required."
     },
     {
+      "trackId": "us-heartland-park-raceway-137283766",
+      "layoutId": "heartland-park-of-topeka-combo",
+      "file": "data/united-states/heartland-park-raceway-137283766/layouts/heartland-park-of-topeka-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 5
+    },
+    {
       "trackId": "us-hedge-hollow-raceway-914202229",
       "layoutId": "main",
       "file": "data/united-states/hedge-hollow-raceway-914202229/layouts/main.geojson",
@@ -4735,6 +4819,13 @@
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-11481462.591188315%2C4097259.183286671%2C-11481128.076761933%2C4097660.514834664&bboxSR=3857&imageSR=3857&size=368%2C441&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "81c8d8be1c408fe10e4a244fcc23682d7fbcc32149bbcd85a63411bc1a660555",
       "reason": "Dirt oval with faint surface edges; imagery and surface material need review before a paved-road model can be prepared."
+    },
+    {
+      "trackId": "us-homestead-miami-speedway-108159182",
+      "layoutId": "homestead-combo",
+      "file": "data/united-states/homestead-miami-speedway-108159182/layouts/homestead-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 3
     },
     {
       "trackId": "us-homestead-miami-speedway-108159182",
@@ -5022,6 +5113,20 @@
       "reason": "Insufficient consistent image-edge evidence"
     },
     {
+      "trackId": "us-las-vegas-motor-speedway-27545411",
+      "layoutId": "lvms-super-speedway",
+      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-super-speedway.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
+    },
+    {
+      "trackId": "us-las-vegas-motor-speedway-27545411",
+      "layoutId": "lvms-super-speedway-infield",
+      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-super-speedway-infield.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 2
+    },
+    {
       "trackId": "us-lil-texas-motor-speedway-track-161240440",
       "layoutId": "main",
       "file": "data/united-states/lil-texas-motor-speedway-track-161240440/layouts/main.geojson",
@@ -5168,6 +5273,13 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "67892dbb3f420594aa5f9623d116d820b073884e333b94add4d141f932349015"
+    },
+    {
+      "trackId": "us-monticello-motor-club-235166661",
+      "layoutId": "monticello-motor-club-combo",
+      "file": "data/united-states/monticello-motor-club-235166661/layouts/monticello-motor-club-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 4
     },
     {
       "trackId": "us-nashville-superspeedway-185563917",
@@ -5530,6 +5642,13 @@
       "imageSha256": "dd54b2c9db990597e0c5f67b082e82f5212f2bb03deae289f4d409321700d890"
     },
     {
+      "trackId": "us-road-atlanta-9292566",
+      "layoutId": "road-atlanta-combo",
+      "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 3
+    },
+    {
       "trackId": "us-rockingham-speedway-infield-course-245545512",
       "layoutId": "main",
       "file": "data/united-states/rockingham-speedway-infield-course-245545512/layouts/main.geojson",
@@ -5552,6 +5671,13 @@
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8862660.972354%2C4160151.951666889%2C-8861743.40044475%2C4160682.0676941634&bboxSR=3857&imageSR=3857&size=1003%2C580&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "da884c98c40e05ba15ef417d77cb8a73f04976ed089c796f1ebb1f3979e6b9b4",
       "reason": "Route identity needs review: the saved trace follows an oval while the layout is named infield course."
+    },
+    {
+      "trackId": "us-sebring-international-raceway-426154257",
+      "layoutId": "sebring-combo",
+      "file": "data/united-states/sebring-international-raceway-426154257/layouts/sebring-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 3
     },
     {
       "trackId": "us-sonoma-raceway-2020-28825444",
@@ -5603,8 +5729,8 @@
       "trackId": "us-sonoma-raceway-2020-28825444",
       "layoutId": "sonoma-raceway-combo",
       "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "us-sonoma-raceway-2020-28825444",
@@ -5628,6 +5754,13 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13632648.470042057%2C4601768.160637285%2C-13631196.978168512%2C4603105.141221146&bboxSR=3857&imageSR=3857&size=1522%2C1402&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "0798bfe376265e316a15d6a3a402d728a304b759d802a9426ae26525c78ac2a6"
+    },
+    {
+      "trackId": "us-spring-mountain-motorsports-ranch-127683895",
+      "layoutId": "spring-mountain-raceway",
+      "file": "data/united-states/spring-mountain-motorsports-ranch-127683895/layouts/spring-mountain-raceway.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 7
     },
     {
       "trackId": "us-summit-point-jefferson-001540e4",
@@ -5917,6 +6050,13 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13618500.756304475%2C4798627.449957018%2C-13617250.457681043%2C4800127.568844686&bboxSR=3857&imageSR=3857&size=1286%2C1543&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "2661056b575a4217c0d151432fd7540df4ba852bba5c8d9d6c58deb26842ccfa"
+    },
+    {
+      "trackId": "us-utah-motorsports-campus-343796175",
+      "layoutId": "miller-motorsports-park-combo",
+      "file": "data/united-states/utah-motorsports-campus-343796175/layouts/miller-motorsports-park-combo.geojson",
+      "status": "composed-existing",
+      "componentRoutes": 4
     },
     {
       "trackId": "us-va-city-hill-climb-8d49ea09",

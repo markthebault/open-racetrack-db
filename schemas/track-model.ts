@@ -135,6 +135,24 @@ const lapModelSchema = z
     if (west >= east || south >= north)
       issue(["imagery", "extent3857"], "Invalid image extent");
   });
+/** A network shares one terrain raster across its individually playable components. */
+export const networkLapRecipeSchema = z.strictObject({
+  schemaVersion: lapModelSchema.shape.schemaVersion,
+  kind: lapModelSchema.shape.kind,
+  pathMethod: lapModelSchema.shape.pathMethod,
+  startOffsetM: lapModelSchema.shape.startOffsetM,
+  referenceLengthM: lapModelSchema.shape.referenceLengthM,
+  elevationMethod: lapModelSchema.shape.elevationMethod,
+  elevation: lapModelSchema.shape.elevation,
+  bankingDeg: lapModelSchema.shape.bankingDeg,
+  quality: lapModelSchema.shape.quality,
+  preparation: lapModelSchema.shape.preparation,
+  corners: lapModelSchema.shape.corners,
+  curbs: lapModelSchema.shape.curbs,
+  curbStyle: lapModelSchema.shape.curbStyle,
+  imagery: lapModelSchema.shape.imagery,
+  sources: lapModelSchema.shape.sources,
+});
 const surfaceModelSchema = z
   .strictObject({
     schemaVersion: z.literal(1),

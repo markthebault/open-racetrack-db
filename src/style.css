@@ -2047,3 +2047,7 @@ select {
 @media (max-width: 700px) { .lap-launch { font-size: 10px; padding: 10px 8px; } .stage-toolbar:has(.lap-launch:not([hidden])) { flex-wrap: wrap; justify-content: flex-end; max-width: 210px; } }
 
 .inferred-border-note { color: #8b4d20; font-size: 12px; margin-top: 16px; }
+
+.network-driving-routes { pointer-events:auto; display:flex; gap:.6rem; margin-top:.6rem; }
+.network-driving-routes select { min-width:0; max-width:100%; flex:1 1 0; border:1px solid var(--line); border-radius:.4rem; padding:.5rem; font:inherit; }
+.network-driving-routes button { flex:0 0 auto; padding:.5rem .7rem; border:0; border-radius:.4rem; background:#ffb347; color:#17242a; font:600 11px 'Manrope Variable',sans-serif; cursor:pointer; }

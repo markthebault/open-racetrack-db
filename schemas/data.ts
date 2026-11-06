@@ -3,7 +3,7 @@ import {
   inferredBorderLicenses,
 } from "./border-inference";
 import { z } from "zod";
-import { trackModelSchema } from "./track-model";
+import { trackModelSchema, networkLapRecipeSchema } from "./track-model";
 import {
   bounds,
   distance,
@@ -101,6 +101,11 @@ const borderProps = z.union([
   z.strictObject({
     role: z.enum(["inner", "outer"]),
     sourceIds: z.array(slug).length(0),
+    license: z.literal("LicenseRef-Component-Borders"),
+  }),
+  z.strictObject({
+    role: z.enum(["inner", "outer"]),
+    sourceIds: z.array(slug).length(0),
     license: z.literal("LicenseRef-Track-Borders"),
   }),
   z.strictObject({
@@ -130,27 +135,52 @@ const network = z.strictObject({
   type: z.literal("MultiLineString"),
   coordinates: z.array(z.array(position).min(2)).min(2),
 });
+const baseLayoutMetadataSchema = z.strictObject({
+  schemaVersion: z.union([z.literal(1), z.literal(2)]),
+  geometryKind: z.literal("network").optional(),
+  trackId: slug,
+  layoutId: slug,
+  license: z.literal("ODbL-1.0"),
+  licenseScope: z.literal("trace-and-timing").optional(),
+  attribution: text,
+  closed: z.boolean(),
+  geometryStatus: z.enum(["draft", "reviewed"]),
+  timingStatus: z.enum(["missing", "partial", "estimated", "verified"]),
+  timingMode: z.enum(["shared", "separate"]),
+  timing: timingGpsSchema.optional(),
+  lengthM: z.number().positive(),
+  reviewedAt: z.iso.date().nullable(),
+  notes: z.array(z.string()),
+  model3d: trackModelSchema.optional(),
+  borderInference: borderInferenceSchema.optional(),
+});
+const networkComponentSchema = z.strictObject({
+  tracePathIndex: z.number().int().nonnegative(),
+  sourceLayoutId: slug,
+  sourceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  name: text,
+  traceSourceIds: z.array(slug).min(1),
+  metadata: baseLayoutMetadataSchema.omit({ model3d: true }),
+  borderProperties: z.tuple([borderProps, borderProps]),
+  timingFeatures: z.array(
+    z.strictObject({
+      type: z.literal("Feature"),
+      id: slug,
+      properties: gateProps,
+      geometry: line,
+    }),
+  ),
+  recipe: networkLapRecipeSchema,
+});
 export const layoutSchema = z.strictObject({
   type: z.literal("FeatureCollection"),
   bbox: z.tuple([z.number(), z.number(), z.number(), z.number()]),
-  metadata: z.strictObject({
-    schemaVersion: z.union([z.literal(1), z.literal(2)]),
-    geometryKind: z.literal("network").optional(),
-    trackId: slug,
-    layoutId: slug,
-    license: z.literal("ODbL-1.0"),
-    licenseScope: z.literal("trace-and-timing").optional(),
-    attribution: text,
-    closed: z.boolean(),
-    geometryStatus: z.enum(["draft", "reviewed"]),
-    timingStatus: z.enum(["missing", "partial", "estimated", "verified"]),
-    timingMode: z.enum(["shared", "separate"]),
-    timing: timingGpsSchema.optional(),
-    lengthM: z.number().positive(),
-    reviewedAt: z.iso.date().nullable(),
-    notes: z.array(z.string()),
-    model3d: trackModelSchema.optional(),
-    borderInference: borderInferenceSchema.optional(),
+  metadata: baseLayoutMetadataSchema.extend({
+    borderComposition: z
+      .array(networkComponentSchema)
+      .min(2)
+      .max(borderLimits.pathsPerFeature)
+      .optional(),
   }),
   features: z
     .array(
@@ -287,6 +317,90 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("bbox: antimeridian unsupported");
   if (m.geometryStatus === "reviewed" && !m.reviewedAt)
     throw new Error("metadata.reviewedAt: required for reviewed geometry");
+  if (m.borderComposition) {
+    if (
+      !isNetwork ||
+      m.borderInference ||
+      borders.length !== 2 ||
+      borders.some(
+        (f) =>
+          !("license" in f.properties) ||
+          (f.properties.license !== "LicenseRef-Component-Borders" &&
+            !m.borderComposition!.every(
+              (c) =>
+                JSON.stringify(
+                  c.borderProperties[f.properties.role === "inner" ? 0 : 1],
+                ) === JSON.stringify(f.properties),
+            )),
+      ) ||
+      m.borderComposition.length !== paths.length ||
+      borders.some((f) => geometryPaths(f.geometry).length !== paths.length)
+    )
+      throw new Error(
+        "Border composition must cover every network path with component-specific rights",
+      );
+    unique(
+      m.borderComposition.map((c) => c.sourceLayoutId),
+      "network component IDs",
+    );
+    for (const [i, c] of m.borderComposition.entries()) {
+      if (
+        c.tracePathIndex !== i ||
+        c.metadata.trackId !== track.id ||
+        c.metadata.layoutId !== c.sourceLayoutId
+      )
+        throw new Error("Network component identity or ordering mismatch");
+      const { terrain } = m.model3d ?? {};
+      if (!terrain) throw new Error("Network composition needs shared terrain");
+      const child = {
+        type: "FeatureCollection",
+        bbox: bounds(
+          [
+            paths[i],
+            ...borders.map((f) => geometryPaths(f.geometry)[i]),
+          ].flat(),
+        ),
+        metadata: {
+          ...c.metadata,
+          model3d: trackModelSchema.parse({ ...c.recipe, terrain }),
+        },
+        features: [
+          {
+            type: "Feature",
+            id: "trace",
+            properties: { role: "trace", sourceIds: c.traceSourceIds },
+            geometry: { type: "LineString", coordinates: paths[i] },
+          },
+          ...borders.map((f) => ({
+            type: "Feature",
+            id: f.id,
+            properties:
+              c.borderProperties[f.properties.role === "inner" ? 0 : 1],
+            geometry: {
+              type: "LineString",
+              coordinates: geometryPaths(f.geometry)[i],
+            },
+          })),
+          ...c.timingFeatures,
+        ],
+      };
+      child.bbox = bounds(
+        child.features.flatMap((f) =>
+          geometryPaths(
+            f.geometry as Parameters<typeof geometryPaths>[0],
+          ).flat(),
+        ),
+      );
+      validateLayout(child, track, c.sourceLayoutId);
+    }
+  } else if (
+    borders.some(
+      (f) =>
+        "license" in f.properties &&
+        f.properties.license === "LicenseRef-Component-Borders",
+    )
+  )
+    throw new Error("Component border rights need a complete composition");
   if (m.borderInference) {
     if (m.borderInference.edgeConvention === "left-right-along-trace") {
       if (

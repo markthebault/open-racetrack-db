@@ -14,6 +14,7 @@ test("every bordered circuit and layout renders its own on-demand road surface i
     layouts: {
       id: string;
       model: NonNullable<Layout["metadata"]["model3d"]>;
+      composed: boolean;
     }[];
   }[] = [];
   for (const entry of catalogue.tracks) {
@@ -26,7 +27,11 @@ test("every bordered circuit and layout renders its own on-demand road surface i
         );
         if (layout.features.some((f) => f.properties.role === "inner")) {
           expect(layout.metadata.model3d).toBeTruthy();
-          layouts.push({ id: item.id, model: layout.metadata.model3d! });
+          layouts.push({
+            id: item.id,
+            model: layout.metadata.model3d!,
+            composed: !!layout.metadata.borderComposition,
+          });
         }
       }
     if (layouts.length) groups.push({ track, layouts });
@@ -63,11 +68,13 @@ test("every bordered circuit and layout renders its own on-demand road surface i
         String(selected.model.curbs.length),
       );
       await expect(page.locator("#play-lap")).toHaveText(
-        selected.model.kind === "surface"
-          ? "Explore 3D"
-          : selected.model.kind === "run"
-            ? "▷ Play run"
-            : "▷ Play lap",
+        selected.composed
+          ? "Choose driving route"
+          : selected.model.kind === "surface"
+            ? "Explore 3D"
+            : selected.model.kind === "run"
+              ? "▷ Play run"
+              : "▷ Play lap",
       );
       if (selected.model.kind === "surface")
         await expect(page.locator("#view-notice")).toBeVisible();

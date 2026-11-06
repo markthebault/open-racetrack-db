@@ -43,7 +43,9 @@ export function borderFootprint(layout: Layout) {
   for (let i = 0; i < outer.length; i++) {
     if (
       layout.metadata.borderInference?.edgeConvention ===
-      "left-right-along-trace"
+        "left-right-along-trace" ||
+      layout.metadata.borderComposition?.[i].metadata.borderInference
+        ?.edgeConvention === "left-right-along-trace"
     ) {
       const a = outer[i].points,
         b = inner[i].points,

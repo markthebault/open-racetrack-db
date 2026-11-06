@@ -35,10 +35,12 @@ export const bordersSchema = z
   );
 export type TrackBorders = z.infer<typeof bordersSchema>;
 export function borderLabels(layout?: Layout) {
-  return layout?.metadata.borderInference?.edgeConvention ===
-    "left-right-along-trace"
-    ? { inner: "Left", outer: "Right" }
-    : { inner: "Inner", outer: "Outer" };
+  return layout?.metadata.borderComposition
+    ? { inner: "Inner / left", outer: "Outer / right" }
+    : layout?.metadata.borderInference?.edgeConvention ===
+        "left-right-along-trace"
+      ? { inner: "Left", outer: "Right" }
+      : { inner: "Inner", outer: "Outer" };
 }
 
 export function bordersFromLayout(layout: Layout): TrackBorders | undefined {
@@ -67,10 +69,14 @@ export class BorderOverlay {
 
   setLayout(layout?: Layout) {
     this.data = layout ? bordersFromLayout(layout) : undefined;
-    this.estimated = !!layout?.metadata.borderInference;
+    this.estimated =
+      !!layout?.metadata.borderInference ||
+      !!layout?.metadata.borderComposition;
     const labels = borderLabels(layout);
-    this.button.querySelector("[data-border-label]")!.textContent =
-      `${labels.inner} & ${labels.outer.toLowerCase()} lines`;
+    this.button.querySelector("[data-border-label]")!.textContent = layout
+      ?.metadata.borderComposition
+      ? "Road limits"
+      : `${labels.inner} & ${labels.outer.toLowerCase()} lines`;
     this.legend.querySelector(".inner-key")!.textContent = labels.inner;
     this.legend.querySelector(".outer-key")!.textContent = labels.outer;
     this.button.parentElement!.hidden = !layout;

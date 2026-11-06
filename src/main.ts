@@ -1,3 +1,4 @@
+import { networkRouteLayout } from "./network-routes";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "@fontsource-variable/manrope";
@@ -184,20 +185,22 @@ let modelLayout: Layout | undefined;
 let currentBorders: TrackBorders | undefined;
 let closeLap: (() => void) | undefined;
 let openInitialLap = initialParams.get("lap") === "1";
-get<HTMLButtonElement>("play-lap").onclick = async () => {
-  if (!layout?.metadata.model3d || !track || closeLap) return;
-  if (!isLapModel(layout.metadata.model3d)) {
-    setView("3d");
-    return;
-  }
-  const selected = modelLayout ?? layout;
+async function launchPlayback(
+  selected: Layout,
+  routeName?: string,
+  routeId?: string,
+) {
+  if (!isLapModel(selected.metadata.model3d) || !track || closeLap) return;
+  const owner = modelLayout ?? layout;
   const button = get<HTMLButtonElement>("play-lap");
   button.disabled = true;
   try {
     const { openLap } = await import("./lap-player");
-    if ((modelLayout ?? layout) !== selected) return;
+    if ((modelLayout ?? layout) !== owner) return;
     const url = new URL(location.href);
     url.searchParams.set("lap", "1");
+    if (routeId) url.searchParams.set("route", routeId);
+    else url.searchParams.delete("route");
     history.replaceState(null, "", url);
     viewer?.setActive(false);
     closeLap = openLap(
@@ -207,6 +210,7 @@ get<HTMLButtonElement>("play-lap").onclick = async () => {
         name: shortNames[track!.id] ?? track!.name,
         country: track!.country.name,
         layoutName:
+          routeName ??
           track!.layouts.find((item) => item.id === selectedLayoutId)?.name ??
           selectedLayoutId ??
           "Lap playback",
@@ -216,6 +220,7 @@ get<HTMLButtonElement>("play-lap").onclick = async () => {
         viewer?.setActive(view === "3d");
         const current = new URL(location.href);
         current.searchParams.delete("lap");
+        current.searchParams.delete("route");
         history.replaceState(null, "", current);
       },
     );
@@ -224,6 +229,28 @@ get<HTMLButtonElement>("play-lap").onclick = async () => {
   } finally {
     button.disabled = false;
   }
+}
+let chosenNetworkRoute = initialParams.get("route");
+function launchNetworkRoute(index: number) {
+  const owner = modelLayout ?? layout,
+    component = owner?.metadata.borderComposition?.[index];
+  if (!owner || !component) return;
+  chosenNetworkRoute = component.sourceLayoutId;
+  void launchPlayback(
+    networkRouteLayout(owner, index),
+    component.name,
+    component.sourceLayoutId,
+  );
+}
+get<HTMLButtonElement>("play-lap").onclick = () => {
+  const selected = modelLayout ?? layout;
+  if (!selected?.metadata.model3d) return;
+  if (!isLapModel(selected.metadata.model3d)) {
+    setView("3d");
+    get("view-notice").querySelector<HTMLSelectElement>("select")?.focus();
+    return;
+  }
+  void launchPlayback(selected);
 };
 const borderOverlay = new BorderOverlay(
   get<HTMLButtonElement>("border-toggle"),
@@ -568,8 +595,9 @@ async function applyView() {
       const hasBorders = layout?.features.some(
         (feature) => feature.properties.role === "inner",
       );
-      const text =
-        model?.kind === "surface"
+      const text = layout?.metadata.borderComposition
+        ? "Choose a route for playback or video recording. Curbs are illustrative."
+        : model?.kind === "surface"
           ? model.reason === "route-not-closed"
             ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
             : "Road surfaces follow the saved borders. Lap playback is unavailable until the trace and borders are aligned. Curbs are illustrative."
@@ -579,7 +607,33 @@ async function applyView() {
               ? "This view shows the mapped trace. Lap playback has not been prepared for this layout yet."
               : "This view shows the mapped trace. Road borders and lap playback are not available for this layout yet.";
       notice.replaceChildren(document.createTextNode(text));
-      if (track && track.layouts.length > 1) {
+      if (layout?.metadata.borderComposition) {
+        const components = layout.metadata.borderComposition;
+        const controls = element("div", "", "network-driving-routes"),
+          select = element("select", "") as HTMLSelectElement;
+        select.setAttribute("aria-label", "Driving route");
+        for (const c of components) {
+          const option = element("option", c.name) as HTMLOptionElement;
+          option.value = c.sourceLayoutId;
+          select.append(option);
+        }
+        select.value = components.some(
+          (c) => c.sourceLayoutId === chosenNetworkRoute,
+        )
+          ? chosenNetworkRoute!
+          : components[0].sourceLayoutId;
+        select.onchange = () => {
+          chosenNetworkRoute = select.value;
+        };
+        const play = element("button", "▷ Play");
+        play.setAttribute("aria-label", "Play route");
+        play.onclick = () =>
+          launchNetworkRoute(
+            components.findIndex((c) => c.sourceLayoutId === select.value),
+          );
+        controls.append(select, play);
+        notice.append(controls);
+      } else if (track && track.layouts.length > 1) {
         const choose = element(
           "button",
           "Choose a driving layout",
@@ -1268,16 +1322,40 @@ async function select(id: string, requested?: string, push = true) {
       );
       get("selection").append(note);
     }
+    if (data.metadata.borderComposition) {
+      const credits = [
+        ...new Set(
+          data.metadata.borderComposition.map(
+            (c) =>
+              c.metadata.borderInference?.imagery.attribution ??
+              c.borderProperties[0].license,
+          ),
+        ),
+      ];
+      get("selection").append(
+        element(
+          "p",
+          `Combined road limits · Component-specific licences and imagery evidence are included in this GeoJSON. ${credits.join(" · ")}`,
+          "inferred-border-note",
+        ),
+      );
+    }
     get("play-lap").hidden = !data.metadata.model3d;
-    get("play-lap").textContent =
-      data.metadata.model3d?.kind === "surface"
+    get("play-lap").textContent = data.metadata.borderComposition
+      ? "Choose driving route"
+      : data.metadata.model3d?.kind === "surface"
         ? "Explore 3D"
         : data.metadata.model3d?.kind === "run"
           ? "▷ Play run"
           : "▷ Play lap";
     if (data.metadata.model3d && openInitialLap) {
       openInitialLap = false;
-      get<HTMLButtonElement>("play-lap").click();
+      const routeIndex = data.metadata.borderComposition?.findIndex(
+        (c) => c.sourceLayoutId === chosenNetworkRoute,
+      );
+      if (routeIndex !== undefined && routeIndex >= 0)
+        launchNetworkRoute(routeIndex);
+      else get<HTMLButtonElement>("play-lap").click();
     }
     void applyView();
     remember();

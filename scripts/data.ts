@@ -20,6 +20,7 @@ async function enrich(data:Layout,track:Track,id:string,existingFile:string){
  result.features.push(...extras.borders);
  if(extras.model3d)result.metadata.model3d=extras.model3d;
  if(extras.borderInference)result.metadata.borderInference=extras.borderInference;
+ if(extras.borderComposition)result.metadata.borderComposition=extras.borderComposition;
  if(result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
  result.bbox=bounds(result.features.flatMap(f=>geometryPaths(f.geometry).flat()));
  return validateLayout(result,track,id);

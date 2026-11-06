@@ -141,6 +141,9 @@ for (const selection of selections) {
             ? { pathMethod: "boundary-normal-midpoints-v1" }
             : {}),
           features: layout.features,
+          ...(layout.metadata.borderComposition
+            ? { borderComposition: layout.metadata.borderComposition }
+            : {}),
           timing: layout.metadata.timing,
           lengthM: layout.metadata.lengthM,
           terrain,
