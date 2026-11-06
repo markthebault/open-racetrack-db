@@ -14,7 +14,9 @@ const lapModelSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
     kind: z.enum(["lap", "run"]).optional(),
-    pathMethod: z.literal("paired-border-midpoints").optional(),
+    pathMethod: z
+      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1"])
+      .optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
     elevationMethod: z.enum(["periodic-monotone-cubic", "monotone-cubic"]),
@@ -35,6 +37,13 @@ const lapModelSchema = z
         inputSha256: z.string().regex(/^[a-f0-9]{64}$/),
         elevationToleranceM: z.number().positive(),
         curbMethod: z.literal("curvature-intervals-v1"),
+        boundaryPathEvidence: z
+          .strictObject({
+            imageSha256: z.string().regex(/^[a-f0-9]{64}$/),
+            imageRetrievedAt: z.iso.datetime(),
+            imageryUrl: webUrl,
+          })
+          .optional(),
       })
       .optional(),
     corners: z
@@ -92,7 +101,7 @@ const lapModelSchema = z
       model.kind === "run" &&
       (model.elevationMethod !== "monotone-cubic" ||
         model.startOffsetM !== 0 ||
-        !model.pathMethod)
+        model.pathMethod !== "paired-border-midpoints")
     )
       issue(
         ["kind"],

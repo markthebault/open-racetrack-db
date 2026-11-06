@@ -571,7 +571,7 @@ export function openLap(
         : "Image-reviewed curb locations · Estimated dimensions";
       find("[data-elevation-note]").textContent = published
         ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
-        : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
+        : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
         ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";

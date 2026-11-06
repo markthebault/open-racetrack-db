@@ -3,6 +3,7 @@ import { geometryPaths, type Layout } from "../schemas/data";
 import { plane, type Position } from "./geo";
 import { indexBorders, borderSection } from "./border-sections";
 import { pairedBorderMidline } from "./border-midline";
+import { boundaryNormalMidline, assertRoadContained } from "./boundary-path";
 import { buildOpenRoad } from "./open-road";
 
 export const GRAVITY = 9.80665;
@@ -102,9 +103,12 @@ export function buildRoad(layout: Layout): Road {
   const trace =
     recipe.pathMethod === "paired-border-midpoints"
       ? pairedBorderMidline(layout)
-      : geometryPaths(
-          layout.features.find((f) => f.properties.role === "trace")!.geometry,
-        )[0];
+      : recipe.pathMethod === "boundary-normal-midpoints-v1"
+        ? boundaryNormalMidline(layout)
+        : geometryPaths(
+            layout.features.find((f) => f.properties.role === "trace")!
+              .geometry,
+          )[0];
   const origin =
     (layout.metadata.timing?.start as Position | undefined) ?? trace[0];
   const projection = plane(origin);
@@ -181,6 +185,13 @@ export function buildRoad(layout: Layout): Road {
             points[(i + b) % count][key] * a) /
           (a + b);
       }
+  }
+  if (recipe.pathMethod === "boundary-normal-midpoints-v1") {
+    if (interpolatedSections)
+      throw new Error(
+        "Boundary driving path requires measured cross-sections throughout",
+      );
+    assertRoadContained(layout, points, origin);
   }
   // Recenter the driving path within actual asymmetric source edges. Geometry retains both edges.
   const mid = points.map((p) => ({

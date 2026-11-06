@@ -30,6 +30,10 @@ if (
   throw new Error(
     "Use --bordered, --popular or --track <id> [--layout <id>]. --check validates without writing; --refresh rebuilds generated models.",
   );
+if (flag("--boundary-path") && (!option("--track") || !option("--layout")))
+  throw new Error(
+    "Use --boundary-path only with an individually reviewed --track and --layout",
+  );
 if (flag("--all") && !flag("--check"))
   throw new Error(
     "--all checks existing models; use --bordered to prepare every bordered layout.",
@@ -125,10 +129,17 @@ for (const selection of selections) {
       );
       terrains.set(track.id, terrain);
     }
+    const boundaryPath =
+      flag("--boundary-path") ||
+      (old?.kind !== "surface" &&
+        old?.pathMethod === "boundary-normal-midpoints-v1");
     const inputSha256 = createHash("sha256")
       .update(
         JSON.stringify({
           version: PREPARATION_VERSION,
+          ...(boundaryPath
+            ? { pathMethod: "boundary-normal-midpoints-v1" }
+            : {}),
           features: layout.features,
           timing: layout.metadata.timing,
           lengthM: layout.metadata.lengthM,
@@ -154,12 +165,13 @@ for (const selection of selections) {
       continue;
     }
     const begin = performance.now(),
-      model = prepareModel(layout, terrain, inputSha256),
+      model = prepareModel(layout, terrain, inputSha256, boundaryPath),
       updated = validateLayout(
         { ...layout, metadata: { ...layout.metadata, model3d: model } },
         track,
         layoutId,
       );
+    delete row.reason;
     row.modelKind = model.kind ?? "lap";
     row.curbSections = model.curbs.length;
     if (isLapModel(model)) {

@@ -338,7 +338,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   if (m.model3d) {
     if (
       m.model3d.kind !== "surface" &&
-      m.model3d.pathMethod &&
+      m.model3d.pathMethod === "paired-border-midpoints" &&
       m.borderInference?.method !== "rgb-road-appearance-v3" &&
       m.borderInference?.edgeConvention !== "left-right-along-trace"
     )
