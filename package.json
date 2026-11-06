@@ -57,7 +57,8 @@
     "audit:crossings": "tsx scripts/audit-grade-crossings.ts --output sources/research/grade-crossing-audit.json",
     "validate:crossings": "tsx scripts/audit-grade-crossings.ts --output sources/research/grade-crossing-audit.json --check",
     "compose:networks": "tsx scripts/compose-networks.ts",
-    "validate:networks": "tsx scripts/compose-networks.ts --check"
+    "validate:networks": "tsx scripts/compose-networks.ts --check",
+    "imagery:quebec": "tsx scripts/quebec-imagery.ts"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
