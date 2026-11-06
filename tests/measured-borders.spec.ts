@@ -11,6 +11,7 @@ for (const [track, layout] of [
   ["pe-autodromo-la-chutana-293467712", "main"],
   ["us-iowa-speedway-119238784", "main"],
   ["us-gopro-motorplex-e67c71ed", "gopro-motorplex"],
+  ["gb-boyndie-kart-circuit-a57fdbb4", "boyndie-kart-circuit"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
