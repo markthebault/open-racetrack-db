@@ -64,10 +64,14 @@ export type BorderRefinementInput = z.infer<typeof borderRefinementInputSchema>;
 // Complete image measurements reconstruct independently of an automatic seed.
 export const borderMeasurementInputSchema = recipe
   .omit({ seedSha256: true })
+  .extend({ interpolation: z.literal("edge-linear-v1").optional() })
   .superRefine(check);
 export const borderMeasurementSchema = recipe
   .omit({ seedSha256: true })
-  .extend({ resultSha256: hash })
+  .extend({
+    interpolation: z.literal("edge-linear-v1").optional(),
+    resultSha256: hash,
+  })
   .superRefine(check);
 export type BorderMeasurementInput = z.infer<
   typeof borderMeasurementInputSchema

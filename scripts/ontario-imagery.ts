@@ -12,9 +12,9 @@ import {
 } from "../schemas/data";
 import { decodeRaster } from "./infer-image-borders";
 
-const projects = z.enum(["SCOOP2023", "DRAPE2024", "SWOOP2025"]);
-const service =
-  "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer";
+const projects = z.enum(["SWOOP2020", "SCOOP2023", "DRAPE2024", "SWOOP2025"]);
+const serviceFor = (project: z.infer<typeof projects>) =>
+  `https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_${project === "SWOOP2020" ? "2018to2022" : "2023to2027"}/ImageServer`;
 const hash = (bytes: Buffer | string) =>
   createHash("sha256").update(bytes).digest("hex");
 const json = async (file: string) => JSON.parse(await readFile(file, "utf8"));
@@ -67,7 +67,7 @@ export async function ontarioImagery(
       "Ontario imagery extent is too large for road-edge extraction",
     );
   const size = [Math.ceil(widthM / pixelM), Math.ceil(heightM / pixelM)];
-  const request = new URL(service + "/exportImage");
+  const request = new URL(serviceFor(project) + "/exportImage");
   request.search = new URLSearchParams({
     f: "json",
     bbox: bbox.join(","),
@@ -193,7 +193,7 @@ if (
     project = projects.parse(option("--project"));
   if (!trackId || !layoutId)
     throw new Error(
-      "Use --track <id> --layout <id> --project SCOOP2023|DRAPE2024|SWOOP2025",
+      "Use --track <id> --layout <id> --project SWOOP2020|SCOOP2023|DRAPE2024|SWOOP2025",
     );
   const index = indexSchema.parse(await json("data/index.json")),
     entry = index.tracks.find((t) => t.id === trackId);

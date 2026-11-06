@@ -56,6 +56,7 @@ test("Ontario requests pin the named collection and replay cached evidence witho
     const request = new URL(result.info.url),
       rule = JSON.parse(request.searchParams.get("mosaicRule")!);
     assert.equal(rule.where, "Project='SWOOP2025'");
+    assert.ok(request.pathname.includes("2023to2027"));
     assert.equal(result.info.license, "OGL-ON-1.0");
     assert.ok(
       result.info.groundPixelSizeM <= 0.2 &&
@@ -77,6 +78,34 @@ test("Ontario requests pin the named collection and replay cached evidence witho
       JSON.parse(await readFile(result.cachedImage, "utf8")),
       result.info,
     );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("historical SWOOP2020 requests use the older service and cannot collide with current imagery", async () => {
+  const root = await mkdtemp(join(tmpdir(), "ontario-historical-")),
+    mock = fixture();
+  try {
+    const historical = await ontarioImagery(layout, {
+      project: "SWOOP2020",
+      root,
+      fetcher: mock.fetcher,
+    });
+    const current = await ontarioImagery(layout, {
+      project: "SWOOP2025",
+      root,
+      fetcher: mock.fetcher,
+    });
+    const request = new URL(historical.info.url);
+    assert.ok(request.pathname.includes("2018to2022"));
+    assert.equal(
+      JSON.parse(request.searchParams.get("mosaicRule")!).where,
+      "Project='SWOOP2020'",
+    );
+    assert.equal(historical.info.sourceId, "ontario-swoop2020-border-imagery");
+    assert.notEqual(historical.cachedImage, current.cachedImage);
+    assert.equal(mock.requests(), 4);
   } finally {
     await rm(root, { recursive: true, force: true });
   }

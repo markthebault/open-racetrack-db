@@ -530,6 +530,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
               imageSha256: old.measurement.imageSha256,
               patches: old.measurement.patches,
               note: old.measurement.note,
+              ...(old.measurement.interpolation
+                ? { interpolation: old.measurement.interpolation }
+                : {}),
             })
           : undefined;
       if (

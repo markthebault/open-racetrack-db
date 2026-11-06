@@ -68,8 +68,9 @@ export function measuredImageBorders(
         throw new Error(
           "Complete measurements cannot preserve automatic seed joins",
         );
-      if (j && (a.station - patch.anchors[j - 1].station) * step > 100)
-        throw new Error("Image measurement gap exceeds 100 metres");
+      const maximumGapM = recipe.interpolation === "edge-linear-v1" ? 50 : 100;
+      if (j && (a.station - patch.anchors[j - 1].station) * step > maximumGapM)
+        throw new Error(`Image measurement gap exceeds ${maximumGapM} metres`);
       covered(a.coordinate);
       const q = projection.to(a.coordinate),
         p = smooth[index(a.station)],
@@ -82,7 +83,7 @@ export function measuredImageBorders(
         throw new Error(
           "Image measurement does not match its trace cross-section",
         );
-      return { ...a, across, along };
+      return { ...a, across, along, point: q };
     });
     for (let j = 1; j < anchors.length; j++) {
       const a = anchors[j - 1],
@@ -93,10 +94,17 @@ export function measuredImageBorders(
           normal = normals[index(i)],
           across = a.across * (1 - t) + b.across * t,
           along = a.along * (1 - t) + b.along * t;
-        const point = projection.from([
-          p[0] + normal[0] * across + normal[1] * along,
-          p[1] + normal[1] * across - normal[0] * along,
-        ]);
+        const point = projection.from(
+          recipe.interpolation === "edge-linear-v1"
+            ? [
+                a.point[0] + (b.point[0] - a.point[0]) * t,
+                a.point[1] + (b.point[1] - a.point[1]) * t,
+              ]
+            : [
+                p[0] + normal[0] * across + normal[1] * along,
+                p[1] + normal[1] * across - normal[0] * along,
+              ],
+        );
         covered(point);
         result[patch.edge][i] = point;
       }

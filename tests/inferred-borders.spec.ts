@@ -40,6 +40,7 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
     "data.geopf.fr",
     "www.ign.es",
     "api.maptiler.com",
+    "ws.geoservices.lrc.gov.on.ca",
   ])
     await page.route(`**/${host}/**`, (route) =>
       route.fulfill({
@@ -60,9 +61,11 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
       `${item.trackId}/${item.layoutId}`,
     );
     await expect(page.locator(".inferred-border-note")).toContainText(
-      item.layout.metadata.borderInference!.refinement
-        ? "Includes measured image corrections"
-        : "Not manually reviewed",
+      item.layout.metadata.borderInference!.measurement
+        ? "Sparse image measurements"
+        : item.layout.metadata.borderInference!.refinement
+          ? "Includes measured image corrections"
+          : "Not manually reviewed",
     );
     await expect(page.locator(".inferred-border-note")).toContainText(
       item.layout.metadata.borderInference!.imagery.attribution,

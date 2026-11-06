@@ -59,6 +59,87 @@ test("complete image measurements replay without an automatic seed or invented c
   assert.equal(a.result.inner.length > 200, true);
   assert.equal("evidence" in a, false);
 });
+
+test("explicit linear edges interpolate measured coordinates rather than retaining trace curvature", () => {
+  const { trace, image, input, f } = fixture();
+  const linear = measuredImageBorders(
+    trace,
+    { ...input, interpolation: "edge-linear-v1" },
+    hash,
+    image,
+  );
+  const legacy = measuredImageBorders(trace, input, hash, image);
+  assert.equal(linear.measurement.interpolation, "edge-linear-v1");
+  for (const patch of input.patches) {
+    const a = f.projection.to(patch.anchors[0].coordinate);
+    const b = f.projection.to(patch.anchors[1].coordinate);
+    const midpoint = f.projection.to(linear.result[patch.edge][5]);
+    assert.ok(
+      Math.hypot(
+        midpoint[0] - (a[0] + b[0]) / 2,
+        midpoint[1] - (a[1] + b[1]) / 2,
+      ) < 0.02,
+    );
+    assert.notDeepEqual(
+      linear.result[patch.edge][5],
+      legacy.result[patch.edge][5],
+    );
+  }
+  const { resultSha256, ...replayInput } = linear.measurement;
+  assert.equal(resultSha256.length, 64);
+  assert.deepEqual(measuredImageBorders(trace, replayInput, hash), linear);
+  const gap = structuredClone(input);
+  gap.patches[0].anchors.splice(1, 1);
+  assert.throws(
+    () =>
+      measuredImageBorders(
+        trace,
+        { ...gap, interpolation: "edge-linear-v1" },
+        hash,
+      ),
+    /50 metres/,
+  );
+  const point = plane([0, 0]).to(linear.result.inner[5]);
+  const ix = Math.round(point[0] + 255.5),
+    iy = Math.round(255.5 - point[1]);
+  image.data[(iy * 512 + ix) * 4 + 3] = 0;
+  assert.throws(
+    () =>
+      measuredImageBorders(
+        trace,
+        { ...input, interpolation: "edge-linear-v1" },
+        hash,
+        image,
+      ),
+    /missing/,
+  );
+});
+
+test("linear measurement projection verifies its interpolation-specific reconstruction hash", async () => {
+  const { projectSharedImageMeasurements } = await import(
+    "../scripts/project-border-refinement"
+  );
+  const { trace, input } = fixture();
+  const original = measuredImageBorders(
+    trace,
+    { ...input, interpolation: "edge-linear-v1" },
+    hash,
+  );
+  const projected = projectSharedImageMeasurements(
+    { trace, input: original.measurement },
+    { trace, imageSha256: hash },
+  );
+  assert.deepEqual(projected.patches, input.patches);
+  assert.equal(projected.rejected.length, 0);
+  assert.throws(
+    () =>
+      projectSharedImageMeasurements(
+        { trace, input: { ...original.measurement, interpolation: undefined } },
+        { trace, imageSha256: hash },
+      ),
+    /reconstruction hash/,
+  );
+});
 test("complete measurements reject wrong images, open routes, incomplete ranges, seed joins and long unmeasured gaps", () => {
   const { trace, image, input } = fixture();
   assert.throws(

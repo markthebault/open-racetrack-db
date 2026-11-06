@@ -169,6 +169,7 @@ export function projectSharedImageMeasurements(
       imageSha256: stored.imageSha256,
       patches: stored.patches,
       note: stored.note,
+      ...(stored.interpolation ? { interpolation: stored.interpolation } : {}),
     });
   if (input.imageSha256 !== target.imageSha256)
     throw new Error("Shared measurements require the same pinned image");
