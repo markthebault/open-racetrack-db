@@ -1,11 +1,15 @@
 import { PNG } from "pngjs";
 import { plane, equal, type Position } from "../src/geo";
-export type Raster = {
+type RasterExtent = {
   width: number;
   height: number;
-  data: Uint8Array;
   extent: [number, number, number, number];
 };
+export type Raster = RasterExtent &
+  (
+    | { data: Uint8Array; sample?: never }
+    | { data?: never; sample: (x: number, y: number) => readonly number[] }
+  );
 const R = 6378137;
 const mercator = (p: Position): Position => [
   (R * p[0] * Math.PI) / 180,
@@ -56,9 +60,11 @@ function pixel(image: Raster, geo: Position): number[] {
     [1, 1, u * v],
   ]) {
     const k = ((b + dy) * image.width + a + dx) * 4;
-    if (image.data[k + 3] < 128)
+    const rgba = image.sample?.(a + dx, b + dy);
+    if ((rgba ? rgba[3] : image.data![k + 3]) < 128)
       throw new Error("Imagery has missing coverage");
-    for (let c = 0; c < 3; c++) out[c] += (image.data[k + c] / 255) * weight;
+    for (let c = 0; c < 3; c++)
+      out[c] += ((rgba ? rgba[c] : image.data![k + c]) / 255) * weight;
   }
   return out;
 }

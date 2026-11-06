@@ -57,3 +57,11 @@ Together with existing models this gives 1,093 3D layouts across 623 circuits: 1
 For government export/WMS and licensed tiled sources, the 3D backdrop uses the same georeferenced imagery reference as the extraction. Pinned sources retain a separate display backdrop and source evidence in the GeoJSON. External imagery availability and quotas can affect the backdrop; saved road geometry and lap playback remain usable.
 
 Castle Combe Western Sprint remains surface-only. Its saved source route includes the pit-exit start and repeated circuit sections over one and three-quarter laps. The existing closed borders omit the pit-exit road. Recentring that start onto the main straight would change the route, so those borders cannot supply the whole run. The entry needs its own measured edges before playback can be enabled. The source trace and its draft timing extent remain intact.
+
+## Large imagery extents
+
+Licensed acquisition keeps its native target resolution when a bounding rectangle exceeds 64 megapixels. It fetches only the trace corridor and reads it through a tile-backed virtual raster with an eight-tile decode cache. No dense image of the full rectangle is allocated. Missing pixels remain missing; they are never filled with an assumed road colour. Smaller extents keep their existing PNG workflow.
+
+For tiled evidence, `metadata.borderInference.imagery.encoding` is `xyz-jpeg-manifest-v1`. Width and height describe the virtual pixel grid. Its `sha256` hashes the canonical JSON manifest with schema version, zoom, tile bounds and the sorted list of tile coordinates and JPEG SHA-256 values. The ignored local manifest and tile files are checked when reopening pinned evidence, including tiles outside the detector's sampled pixels. No tile bytes or manifests are added to the public GeoJSON. The saved road coordinates remain sufficient to rebuild the model. A separate preview PNG, limited to 2048 pixels per side, is for inspection and is never used for inference.
+
+Pikes Peak acquisition now succeeds at about 0.46 m ground pixels over a 172-megapixel virtual extent using 140 corridor tiles. The extraction retained at most 8 MB of decoded pixels. Its first proposals are held because reviewed edges include dirt shoulders and vegetation; acquiring suitable imagery alone does not establish valid road limits.

@@ -35,12 +35,22 @@ export const borderInferenceSchema = z.strictObject({
       attribution: z.string().min(1),
       retrievedAt: z.iso.datetime(),
       sha256: z.string().regex(/^[a-f0-9]{64}$/),
+      encoding: z.literal("xyz-jpeg-manifest-v1").optional(),
       width: z.number().int().positive(),
       height: z.number().int().positive(),
       extent3857: z.tuple([z.number(), z.number(), z.number(), z.number()]),
       groundPixelSizeM: z.number().positive().max(1.5),
     })
     .superRefine((image, ctx) => {
+      if (
+        image.encoding &&
+        (!image.tiles ||
+          image.license !== "LicenseRef-MapTiler-Derived-Borders")
+      )
+        ctx.addIssue({
+          code: "custom",
+          message: "Tile manifest evidence needs licensed XYZ imagery",
+        });
       if (image.license === "LicenseRef-MapTiler-Derived-Borders") {
         if (image.rightsBasis !== "source-specific-agreement" || !image.tiles)
           ctx.addIssue({

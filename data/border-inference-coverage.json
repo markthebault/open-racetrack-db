@@ -824,7 +824,7 @@
       "layoutId": "surfer-s-paradise",
       "file": "data/australia/au-surfer-s-paradise-ee3387d5/layouts/surfer-s-paradise.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery does not cover the full boundary search corridor"
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "au-the-bend-motorsport-park-542888894",
@@ -2935,14 +2935,14 @@
       "layoutId": "main",
       "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery does not cover the full boundary search corridor"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",
       "layoutId": "rallycross-standard",
       "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/rallycross-standard.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",
@@ -3162,14 +3162,18 @@
       "layoutId": "adria",
       "file": "data/italy/adria-international-raceway-1092277630/layouts/adria.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "New imagery screened: proposed straight boundaries extend into adjoining pit-lane or paddock paving. Road-limit correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "070c65b8821e5b986188a64ddc6f328f279eb64ef980f1d1539dd6e535b85625"
     },
     {
       "trackId": "it-adria-international-raceway-1092277630",
       "layoutId": "main",
       "file": "data/italy/adria-international-raceway-1092277630/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "New imagery screened: proposed straight boundaries extend into adjoining pit-lane or paddock paving. Road-limit correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "070c65b8821e5b986188a64ddc6f328f279eb64ef980f1d1539dd6e535b85625"
     },
     {
       "trackId": "it-autodromo-calabria-corse-1376430606",
@@ -3511,7 +3515,7 @@
       "layoutId": "bikernieki-rallycross-track",
       "file": "data/latvia/lv-bikernieki-rallycross-5981ece5/layouts/bikernieki-rallycross-track.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "mx-autodromo-monterrey-346649664",
@@ -3814,7 +3818,7 @@
       "layoutId": "slomczyn-rallycross",
       "file": "data/poland/pl-slomczyn-rallycross-e94ac261/layouts/slomczyn-rallycross.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery does not cover the full boundary search corridor"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "pl-tor-jastrzab-220208f2",
@@ -5432,7 +5436,10 @@
       "layoutId": "pikes-peak-hillclimb",
       "file": "data/united-states/us-pikes-peak-hillclimb-ab97c20e/layouts/pikes-peak-hillclimb.geojson",
       "status": "needs-imagery-review",
-      "reason": "Venue extent exceeds the supported high-resolution export; needs tiled imagery"
+      "reason": "High-resolution tiled imagery acquired at 0.4649 m ground pixels. Reviewed proposed limits include dirt shoulders and vegetation, including excessive widths near 2.7 km and 5.6 km; boundary correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "92272d4ba679b9e120e7e462c4e1cc2675ebeadb1f8621f3d27e6786f2fe1ee6",
+      "imageEncoding": "xyz-jpeg-manifest-v1"
     },
     {
       "trackId": "us-pikes-peak-international-raceway-1134026181",

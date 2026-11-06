@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import jpeg from "jpeg-js";
@@ -7,7 +8,15 @@ import {
   borderInferenceSchema,
   type BorderInference,
 } from "../schemas/border-inference";
-import { decodeRaster } from "./infer-image-borders";
+import { decodeRaster, type Raster } from "./infer-image-borders";
+import {
+  bytesHash,
+  createTiledRaster,
+  loadTiledRaster,
+  tileManifestHash,
+  writeTiledPreview,
+  type TileManifest,
+} from "./tiled-raster";
 
 const WORLD = 2 * Math.PI * 6378137,
   SIZE = 512;
@@ -102,7 +111,9 @@ export function licensedImagery(
       );
     return pending.get(name)!;
   }
-  return async (layout: Pick<Layout, "bbox" | "features">) => {
+  return async (
+    layout: Pick<Layout, "bbox" | "features">,
+  ): Promise<{ image: Raster; info: BorderInference["imagery"] }> => {
     await mkdir(root, { recursive: true });
     const paths = layout.features
         .filter((f) => f.properties.role === "trace")
@@ -111,36 +122,26 @@ export function licensedImagery(
       latitude = (layout.bbox[1] + layout.bbox[3]) / 2,
       cosine = Math.cos((latitude * Math.PI) / 180),
       pad = 80 / cosine;
-    let zoom = Math.ceil(Math.log2((WORLD * cosine) / (SIZE * 0.75)));
+    const zoom = Math.ceil(Math.log2((WORLD * cosine) / (SIZE * 0.75)));
     const extent = [
       Math.min(...points.map((p) => p[0])) - pad,
       Math.min(...points.map((p) => p[1])) - pad,
       Math.max(...points.map((p) => p[0])) + pad,
       Math.max(...points.map((p) => p[1])) + pad,
     ];
-    let span: number,
-      bounds: [number, number, number, number],
-      width: number,
-      height: number;
-    do {
-      span = WORLD / 2 ** zoom;
-      bounds = [
+    const span = WORLD / 2 ** zoom,
+      bounds: [number, number, number, number] = [
         Math.floor(extent[0] / span),
         Math.floor(extent[1] / span),
         Math.floor(extent[2] / span),
         Math.floor(extent[3] / span),
-      ];
-      width = (bounds[2] - bounds[0] + 1) * SIZE;
+      ],
+      width = (bounds[2] - bounds[0] + 1) * SIZE,
       height = (bounds[3] - bounds[1] + 1) * SIZE;
-      if (width * height <= 64_000_000) break;
-      zoom--;
-    } while (zoom > 0);
-    if ((span! / SIZE) * cosine > 1.5)
-      throw new Error(
-        "Track extent needs a segmented high-resolution imagery pass",
-      );
-    const cache = `${root}/mosaic-${sha(JSON.stringify({ zoom, bounds, paths })).slice(0, 24)}`;
+    const sparse = width * height > 64_000_000;
+    const cache = `${root}/${sparse ? "raster" : "mosaic"}-${sha(JSON.stringify({ zoom, bounds, paths })).slice(0, 24)}`;
     try {
+      if (sparse) return await loadTiledRaster(cache + ".json");
       const info = JSON.parse(
           await readFile(cache + ".json", "utf8"),
         ) as BorderInference["imagery"],
@@ -155,7 +156,11 @@ export function licensedImagery(
     const credit = await (attribution ??= (async () => {
       // Reuse attribution from a validated cached mosaic before making a metadata request.
       for (const name of await readdir(root))
-        if (name.startsWith("mosaic-") && name.endsWith(".json")) {
+        if (
+          (name.startsWith("mosaic-") || name.startsWith("raster-")) &&
+          name.endsWith(".json") &&
+          !name.endsWith(".manifest.json")
+        ) {
           const info = borderInferenceSchema.shape.imagery.parse(
             JSON.parse(await readFile(`${root}/${name}`, "utf8")),
           );
@@ -204,8 +209,61 @@ export function licensedImagery(
                 needed.add(`${tx},${ty}`);
         }
       }
-    const png = new PNG({ width: width!, height: height! }),
-      cells = [...needed].sort();
+    const cells = [...needed].sort();
+    if (cells.length > 4096)
+      throw new Error("Imagery corridor exceeds the tile processing limit");
+    const info: BorderInference["imagery"] = {
+      sourceId: "maptiler-licensed-border-imagery",
+      url: "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      license: "LicenseRef-MapTiler-Derived-Borders",
+      rightsBasis: "source-specific-agreement",
+      termsUrl: "https://www.maptiler.com/copyright/",
+      tiles: { provider: "maptiler-satellite-v4", zoom, bounds },
+      attribution: credit,
+      retrievedAt: new Date().toISOString(),
+      sha256: "0".repeat(64),
+      width,
+      height,
+      extent3857: [
+        bounds[0] * span - WORLD / 2,
+        WORLD / 2 - (bounds[3] + 1) * span,
+        (bounds[2] + 1) * span - WORLD / 2,
+        WORLD / 2 - bounds[1] * span,
+      ],
+      groundPixelSizeM: Number(((span / SIZE) * cosine).toFixed(4)),
+    };
+    if (sparse) {
+      const manifest: TileManifest = {
+        schemaVersion: 1,
+        zoom,
+        bounds,
+        tiles: [],
+      };
+      let cursor = 0;
+      await Promise.all(
+        [0, 1, 2].map(async () => {
+          while (cursor < cells.length) {
+            const [x, y] = cells[cursor++].split(",").map(Number),
+              bytes = await tile(zoom, x, y);
+            manifest.tiles.push({ x, y, sha256: bytesHash(bytes) });
+          }
+        }),
+      );
+      manifest.tiles.sort((a, b) => a.x - b.x || a.y - b.y);
+      info.encoding = "xyz-jpeg-manifest-v1";
+      info.sha256 = tileManifestHash(manifest);
+      info.retrievedAt = new Date().toISOString();
+      const readTile = (x: number, y: number) =>
+        readFileSync(`${root}/${zoom}-${x}-${y}.jpg`);
+      await writeTiledPreview(cache + ".preview.png", info, manifest, readTile);
+      await writeFile(
+        cache + ".manifest.json",
+        JSON.stringify(manifest, null, 2),
+      );
+      await writeFile(cache + ".json", JSON.stringify(info, null, 2));
+      return { image: createTiledRaster(info, manifest, readTile).image, info };
+    }
+    const png = new PNG({ width, height });
     let cursor = 0;
     await Promise.all(
       [0, 1, 2].map(async () => {
@@ -223,27 +281,9 @@ export function licensedImagery(
         }
       }),
     );
-    const bytes = PNG.sync.write(png),
-      info: BorderInference["imagery"] = {
-        sourceId: "maptiler-licensed-border-imagery",
-        url: "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-        license: "LicenseRef-MapTiler-Derived-Borders",
-        rightsBasis: "source-specific-agreement",
-        termsUrl: "https://www.maptiler.com/copyright/",
-        tiles: { provider: "maptiler-satellite-v4", zoom, bounds: bounds! },
-        attribution: credit,
-        retrievedAt: new Date().toISOString(),
-        sha256: sha(bytes),
-        width: width!,
-        height: height!,
-        extent3857: [
-          bounds![0] * span! - WORLD / 2,
-          WORLD / 2 - (bounds![3] + 1) * span!,
-          (bounds![2] + 1) * span! - WORLD / 2,
-          WORLD / 2 - bounds![1] * span!,
-        ],
-        groundPixelSizeM: Number(((span! / SIZE) * cosine).toFixed(4)),
-      };
+    const bytes = PNG.sync.write(png);
+    info.sha256 = sha(bytes);
+    info.retrievedAt = new Date().toISOString();
     await writeFile(cache + ".png", bytes);
     await writeFile(cache + ".json", JSON.stringify(info, null, 2));
     return {

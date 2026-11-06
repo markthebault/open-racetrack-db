@@ -1,3 +1,4 @@
+import { loadTiledRaster } from "./tiled-raster";
 import { readFile, writeFile, mkdir, rename, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
@@ -116,6 +117,8 @@ async function acquire(track: Track, layout: Layout): Promise<Acquired> {
       throw new Error(
         "A source-specific cached image requires --licensed-imagery authorization",
       );
+    if (info.encoding === "xyz-jpeg-manifest-v1")
+      return loadTiledRaster(pinned);
     const bytes = await readFile(pinned.replace(/\.json$/, ".png"));
     if (sha(bytes) !== info.sha256)
       throw new Error("Pinned cached image hash mismatch");
@@ -532,6 +535,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       row.evidence = evidence.evidence;
       row.source = source.url;
       row.imageSha256 = evidence.imagery.sha256;
+      if (evidence.imagery.encoding)
+        row.imageEncoding = evidence.imagery.encoding;
     } catch (error) {
       row.reason = error instanceof Error ? error.message : String(error);
       if (error instanceof ImageryQuotaError) row.retryAt = error.retryAt;
