@@ -76,3 +76,87 @@ test("incomplete compositions, swapped path identities and inconsistent componen
   };
   assert.throws(() => validateLayout(rights, track, rights.metadata.layoutId));
 });
+
+test("first-time network composition writes canonical GeoJSON without a regeneration step", async () => {
+  const { mkdtemp, mkdir, cp, writeFile, readFile, rm } =
+      await import("node:fs/promises"),
+    { tmpdir } = await import("node:os"),
+    { join } = await import("node:path"),
+    { fileURLToPath } = await import("node:url"),
+    { spawnSync } = await import("node:child_process"),
+    { serializeLayout } = await import("../scripts/layout-borders"),
+    { bounds } = await import("../src/geo"),
+    { geometryPaths } = await import("../schemas/data");
+  const id = "gb-snetterton-motor-racing-circuit-145755937",
+    item = read("data/index.json").tracks.find(
+      (t: { id: string }) => t.id === id,
+    ),
+    track: Track = read(`data/${item.file}`),
+    folder = dirname(item.file),
+    root = await mkdtemp(join(tmpdir(), "compose-track-")),
+    networkFile = `data/${folder}/layouts/snetterton-combo.geojson`;
+  try {
+    await mkdir(join(root, "data", folder, "layouts"), { recursive: true });
+    await mkdir(join(root, "data/elevation"), { recursive: true });
+    await mkdir(join(root, "sources", id, "layouts"), { recursive: true });
+    await cp(`data/${item.file}`, join(root, "data", item.file));
+    for (const l of track.layouts)
+      if (l.file)
+        await cp(
+          `data/${folder}/${l.file}`,
+          join(root, "data", folder, l.file),
+        );
+    await writeFile(
+      join(root, "data/elevation", `${id}.json`),
+      JSON.stringify(read(networkFile).metadata.model3d.terrain),
+    );
+    await cp(
+      `sources/${id}/layouts/snetterton-combo.json`,
+      join(root, "sources", id, "layouts/snetterton-combo.json"),
+    );
+    await writeFile(
+      join(root, "data/index.json"),
+      JSON.stringify({ schemaVersion: 1, tracks: [item] }),
+    );
+    await writeFile(
+      join(root, "data/border-inference-coverage.json"),
+      JSON.stringify({ schemaVersion: 1, records: [] }),
+    );
+    const draft: Layout = read(networkFile);
+    draft.features = draft.features.filter(
+      (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
+    );
+    delete draft.metadata.model3d;
+    delete draft.metadata.borderComposition;
+    delete draft.metadata.licenseScope;
+    draft.bbox = bounds(
+      draft.features.flatMap((f) => geometryPaths(f.geometry).flat()),
+    );
+    await writeFile(join(root, networkFile), serializeLayout(draft));
+    const run = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        import.meta.resolve("tsx"),
+        fileURLToPath(
+          new URL("../scripts/compose-networks.ts", import.meta.url),
+        ),
+        "--track",
+        id,
+        "--write",
+      ],
+      { cwd: root, encoding: "utf8" },
+    );
+    assert.equal(run.status, 0, run.stderr);
+    const bytes = await readFile(join(root, networkFile), "utf8"),
+      saved = validateLayout(JSON.parse(bytes), track, "snetterton-combo");
+    assert.equal(saved.metadata.borderComposition?.length, 3);
+    assert.equal(bytes, serializeLayout(saved));
+    assert.deepEqual(
+      saved.features.filter((f) => f.properties.role === "trace"),
+      draft.features.filter((f) => f.properties.role === "trace"),
+    );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});

@@ -237,8 +237,8 @@ for (const entry of catalogue.tracks) {
       modelInputHash(composed, terrain),
       "route-not-closed",
     );
-    validateLayout(composed, track, item.id);
-    await writeFile(`${directory}/${item.file}`, serializeLayout(composed));
+    const checked = validateLayout(composed, track, item.id);
+    await writeFile(`${directory}/${item.file}`, serializeLayout(checked));
     report.push({
       trackId: track.id,
       layoutId: item.id,
