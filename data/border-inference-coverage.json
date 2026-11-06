@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T18:49:49.496Z",
+  "generatedAt": "2026-11-06T19:06:34.505Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1200,8 +1200,24 @@
       "trackId": "ca-cayuga-motor-speedway-66930451",
       "layoutId": "main",
       "file": "data/canada/cayuga-motor-speedway-66930451/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9821,
+          0.9571
+        ],
+        "medianInteriorDifference": [
+          0.0504,
+          0.0178
+        ],
+        "samplingStepM": 2.991754934516456,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/exportImage?f=json&bbox=-8902069.75403188%2C5301871.015528466%2C-8901622.683056919%2C5302476.600594228&bboxSR=3857&imageSR=3857&size=1637%2C2217&format=png&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22where%22%3A%22Project%3D%27SWOOP2025%27%22%2C%22sortField%22%3A%22LowPS%22%2C%22sortValue%22%3A0%2C%22ascending%22%3Atrue%7D",
+      "imageSha256": "18d36d447dfdbe5e3ceadf2c12ca535f55cd9b9de3090c06db09292ea1aaf89c"
     },
     {
       "trackId": "ca-circuit-mont-tremblant-176774725",
