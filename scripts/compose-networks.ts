@@ -14,6 +14,7 @@ import { networkRouteLayout } from "../src/network-routes";
 import { prepareSurfaceModel } from "../src/model-preparation";
 import { serializeLayout } from "./layout-borders";
 import { bounds } from "../src/geo";
+import { modelInputHash } from "./model-input";
 const args = process.argv.slice(2),
   check = args.includes("--check"),
   write = args.includes("--write"),
@@ -212,11 +213,10 @@ for (const entry of catalogue.tracks) {
     const terrain =
       layout.metadata.model3d?.terrain ??
       elevationSchema.parse(await read(`data/elevation/${track.id}.json`));
-    // Model preparation computes the same deterministic input hash during the following prepare pass.
     composed.metadata.model3d = prepareSurfaceModel(
       composed,
       terrain,
-      "0".repeat(64),
+      modelInputHash(composed, terrain),
       "route-not-closed",
     );
     validateLayout(composed, track, item.id);

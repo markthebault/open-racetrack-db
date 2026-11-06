@@ -1,6 +1,5 @@
 import { readFile, writeFile, rm, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
-import { createHash } from "node:crypto";
 import { performance } from "node:perf_hooks";
 import {
   indexSchema,
@@ -15,6 +14,7 @@ import { isLapModel } from "../schemas/track-model";
 import { buildRoad, simulateLap } from "../src/lap-simulation";
 import { serializeLayout } from "./layout-borders";
 import { popularModels } from "./popular-models";
+import { modelInputHash } from "./model-input";
 const args = process.argv.slice(2),
   flag = (name: string) => args.includes(name),
   option = (name: string) => {
@@ -133,26 +133,7 @@ for (const selection of selections) {
       flag("--boundary-path") ||
       (old?.kind !== "surface" &&
         old?.pathMethod === "boundary-normal-midpoints-v1");
-    const inputSha256 = createHash("sha256")
-      .update(
-        JSON.stringify({
-          version: PREPARATION_VERSION,
-          ...(boundaryPath
-            ? { pathMethod: "boundary-normal-midpoints-v1" }
-            : {}),
-          features: layout.features,
-          ...(layout.metadata.borderComposition
-            ? { borderComposition: layout.metadata.borderComposition }
-            : {}),
-          timing: layout.metadata.timing,
-          lengthM: layout.metadata.lengthM,
-          terrain,
-          ...(layout.metadata.borderInference
-            ? { borderInference: layout.metadata.borderInference }
-            : {}),
-        }),
-      )
-      .digest("hex");
+    const inputSha256 = modelInputHash(layout, terrain, boundaryPath);
     const current =
       old?.preparation?.version === PREPARATION_VERSION &&
       old.preparation.inputSha256 === inputSha256;
