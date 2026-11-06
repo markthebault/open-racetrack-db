@@ -102,13 +102,16 @@ test("crossing or touching rings, unmatched widths and branch networks cannot be
   assert.throws(() => boundaryNormalMidline(d), /single closed route/);
 });
 
-test("the screened Mase layout reconstructs every cross-section while preserving original features", () => {
-  for (const file of ["data/japan/osm-226496291/layouts/main.geojson"]) {
+test("screened boundary layouts reconstruct every cross-section while preserving original features", () => {
+  for (const file of [
+    "data/japan/osm-226496291/layouts/main.geojson",
+    "data/canada/circuit-icar-1043569622/layouts/icar-mirabel.geojson",
+  ]) {
     const d: Layout = JSON.parse(readFileSync(file, "utf8")),
       original = JSON.stringify(d.features),
       previous = d.metadata.model3d!;
     if (previous.kind === "surface")
-      throw new Error("Mase should have a playable boundary recipe");
+      throw new Error(`${file} should have a playable boundary recipe`);
     const terrain = previous.terrain,
       imagery = previous.imagery,
       evidence = previous.preparation?.boundaryPathEvidence;

@@ -79,7 +79,6 @@ export function openLap(
     recorder: MediaRecorder | undefined,
     stream: MediaStream | undefined,
     downloadUrl: string | undefined;
-  const chunks: Blob[] = [];
   let lap: ReturnType<typeof simulateLap> | undefined;
   let mode: LapCamera | "imagery" = "chase";
   const mini = find<HTMLCanvasElement>(".lap-minimap"),
@@ -187,9 +186,10 @@ export function openLap(
     }
   }
   const stopRecording = () => {
-    if (recorder?.state === "recording") recorder.stop();
-    stream?.getTracks().forEach((t) => t.stop());
-    stream = undefined;
+    if (recorder?.state === "recording") {
+      find<HTMLButtonElement>(".lap-record").disabled = true;
+      recorder.stop();
+    }
     find(".lap-record").textContent = isRun ? "Record run" : "Record lap";
   };
   function setPlaying(next: boolean) {
@@ -422,7 +422,7 @@ export function openLap(
       downloadUrl = undefined;
     }
     find(".lap-download").hidden = true;
-    chunks.length = 0;
+    const chunks: Blob[] = [];
     time = 0;
     try {
       const mime = [
@@ -435,23 +435,39 @@ export function openLap(
         stream,
         mime ? { mimeType: mime, videoBitsPerSecond: 6_000_000 } : undefined,
       );
+      const recording = recorder,
+        recordingStream = stream;
+      let failed = false;
       recorder.ondataavailable = (e) => {
         if (e.data.size) chunks.push(e.data);
       };
       recorder.onstop = () => {
+        // The encoder must flush its final data before the capture tracks end.
+        recordingStream.getTracks().forEach((t) => t.stop());
+        if (stream === recordingStream) stream = undefined;
         if (closed) return;
-        downloadUrl = URL.createObjectURL(
-          new Blob(chunks, { type: recorder!.mimeType }),
-        );
+        find<HTMLButtonElement>(".lap-record").disabled = false;
+        if (failed) return;
+        const video = new Blob(chunks, { type: recording.mimeType });
+        if (!video.size) {
+          status.textContent =
+            "No video frames were captured. Try recording again.";
+          return;
+        }
+        downloadUrl = URL.createObjectURL(video);
         const a = find<HTMLAnchorElement>(".lap-download");
         a.href = downloadUrl;
-        a.download = `${context.trackId}-${layout.metadata.layoutId}-lap-${Date.now()}.${recorder!.mimeType.includes("mp4") ? "mp4" : "webm"}`;
+        a.download = `${context.trackId}-${layout.metadata.layoutId}-lap-${Date.now()}.${recording.mimeType.includes("mp4") ? "mp4" : "webm"}`;
         a.hidden = false;
         status.textContent = "Video ready";
       };
       recorder.onerror = () => {
+        failed = true;
         status.textContent = "Recording failed. Try again.";
         stopRecording();
+        recordingStream.getTracks().forEach((t) => t.stop());
+        if (stream === recordingStream) stream = undefined;
+        find<HTMLButtonElement>(".lap-record").disabled = false;
       };
       recorder.start(1000);
       find(".lap-record").textContent = "Stop recording";
@@ -461,6 +477,9 @@ export function openLap(
       else last = performance.now();
     } catch {
       stopRecording();
+      stream?.getTracks().forEach((t) => t.stop());
+      stream = undefined;
+      find<HTMLButtonElement>(".lap-record").disabled = false;
       status.textContent = "Unable to record video in this browser.";
     }
   };
