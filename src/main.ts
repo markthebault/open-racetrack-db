@@ -555,16 +555,40 @@ async function applyView() {
       : "Mapped course · Elevation unavailable"
     : "";
   if (!unavailable3D) {
-    const surface =
-      layout?.metadata.model3d?.kind === "surface"
-        ? layout.metadata.model3d
-        : undefined;
-    get("view-notice").hidden = !is3d || !surface;
-    if (surface)
-      get("view-notice").textContent =
-        surface.reason === "route-not-closed"
-          ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
-          : "Road surfaces follow the saved borders. Lap playback is unavailable until the trace and borders are aligned. Curbs are illustrative.";
+    const model = layout?.metadata.model3d;
+    const notice = get("view-notice");
+    notice.hidden = !is3d || isLapModel(model);
+    if (!notice.hidden) {
+      const network =
+        layout?.metadata.geometryKind === "network" || !layout?.metadata.closed;
+      const hasBorders = layout?.features.some(
+        (feature) => feature.properties.role === "inner",
+      );
+      const text =
+        model?.kind === "surface"
+          ? model.reason === "route-not-closed"
+            ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
+            : "Road surfaces follow the saved borders. Lap playback is unavailable until the trace and borders are aligned. Curbs are illustrative."
+          : network
+            ? `This view shows a route network. Lap playback needs a single driving layout.${hasBorders ? "" : " Road borders are unavailable for this entry."}`
+            : hasBorders
+              ? "This view shows the mapped trace. Lap playback has not been prepared for this layout yet."
+              : "This view shows the mapped trace. Road borders and lap playback are not available for this layout yet.";
+      notice.replaceChildren(document.createTextNode(text));
+      if (track && track.layouts.length > 1) {
+        const choose = element(
+          "button",
+          "Choose a driving layout",
+          "choose-driving-layout",
+        );
+        choose.onclick = () => {
+          const control = get<HTMLSelectElement>("layout");
+          control.scrollIntoView({ block: "center", behavior: "smooth" });
+          control.focus({ preventScroll: true });
+        };
+        notice.append(" ", choose);
+      }
+    }
   }
   get("height-scale").hidden = !is3d || !terrain;
   updateHeightControl();
