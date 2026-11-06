@@ -514,6 +514,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             refinementInput,
             acquired.image,
             acquired.info.sha256,
+            { open: !layout.metadata.closed },
           )
         : undefined;
       if (refined) result = refined.result;

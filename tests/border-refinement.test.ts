@@ -162,69 +162,203 @@ test("a redistributed refined GeoJSON verifies without imagery and detects edits
     { join, dirname } = await import("node:path"),
     { fileURLToPath, pathToFileURL } = await import("node:url"),
     { spawnSync } = await import("node:child_process");
-  const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
-    id = "us-arizona-motorsports-park-9f848c55",
-    layoutId = "arizona-motorsports-park",
-    entry = (await read("data/index.json")).tracks.find(
-      (t: { id: string }) => t.id === id,
-    ),
-    track = await read(`data/${entry.file}`),
-    item = track.layouts.find((l: { id: string }) => l.id === layoutId),
-    file = `data/${dirname(entry.file)}/${item.file}`,
-    root = await mkdtemp(join(tmpdir(), "refined-track-"));
-  try {
-    await mkdir(join(root, dirname(file)), { recursive: true });
-    await cp(`data/${entry.file}`, join(root, "data", entry.file));
-    await cp(file, join(root, file));
-    await writeFile(
-      join(root, "data/index.json"),
-      JSON.stringify({ schemaVersion: 1, tracks: [entry] }),
-    );
-    await writeFile(
-      join(root, "deny-network.mjs"),
-      "globalThis.fetch=async()=>{throw new Error('No network allowed for public-data validation');};",
-    );
-    const check = () =>
-      spawnSync(
-        process.execPath,
-        [
-          "--import",
-          pathToFileURL(join(root, "deny-network.mjs")).href,
-          "--import",
-          import.meta.resolve("tsx"),
-          fileURLToPath(
-            new URL("../scripts/infer-borders.ts", import.meta.url),
+  const read = async (p: string) => JSON.parse(await readFile(p, "utf8"));
+  for (const [id, layoutId] of [
+    ["us-arizona-motorsports-park-9f848c55", "arizona-motorsports-park"],
+    ["gb-curborough-68a60e27", "curborough"],
+  ]) {
+    const entry = (await read("data/index.json")).tracks.find(
+        (t: { id: string }) => t.id === id,
+      ),
+      track = await read(`data/${entry.file}`),
+      item = track.layouts.find((l: { id: string }) => l.id === layoutId),
+      file = `data/${dirname(entry.file)}/${item.file}`,
+      root = await mkdtemp(join(tmpdir(), "refined-track-"));
+    try {
+      await mkdir(join(root, dirname(file)), { recursive: true });
+      await cp(`data/${entry.file}`, join(root, "data", entry.file));
+      await cp(file, join(root, file));
+      await writeFile(
+        join(root, "data/index.json"),
+        JSON.stringify({ schemaVersion: 1, tracks: [entry] }),
+      );
+      await writeFile(
+        join(root, "deny-network.mjs"),
+        "globalThis.fetch=async()=>{throw new Error('No network allowed for public-data validation');};",
+      );
+      const check = () =>
+        spawnSync(
+          process.execPath,
+          [
+            "--import",
+            pathToFileURL(join(root, "deny-network.mjs")).href,
+            "--import",
+            import.meta.resolve("tsx"),
+            fileURLToPath(
+              new URL("../scripts/infer-borders.ts", import.meta.url),
+            ),
+            "--track",
+            id,
+            "--layout",
+            layoutId,
+            "--check",
+          ],
+          { cwd: root, encoding: "utf8" },
+        );
+      const valid = check();
+      assert.equal(valid.status, 0, valid.stderr);
+      const d = await read(join(root, file)),
+        edge = d.features.find(
+          (f: { properties: { role: string } }) =>
+            f.properties.role === "outer",
+        );
+      const anchored = new Set(
+        d.metadata.borderInference.refinement.patches
+          .filter((p: { edge: string }) => p.edge === "outer")
+          .flatMap((p: { anchors: { station: number }[] }) =>
+            p.anchors.map((a) => a.station),
           ),
-          "--track",
-          id,
-          "--layout",
-          layoutId,
-          "--check",
-        ],
-        { cwd: root, encoding: "utf8" },
       );
-    const valid = check();
-    assert.equal(valid.status, 0, valid.stderr);
-    const d = await read(join(root, file)),
-      edge = d.features.find(
-        (f: { properties: { role: string } }) => f.properties.role === "outer",
+      const station = edge.geometry.coordinates.findIndex(
+        (_: Position, i: number) => i > 0 && !anchored.has(i),
       );
-    const anchored = new Set(
-      d.metadata.borderInference.refinement.patches
-        .filter((p: { edge: string }) => p.edge === "outer")
-        .flatMap((p: { anchors: { station: number }[] }) =>
-          p.anchors.map((a) => a.station),
-        ),
-    );
-    const station = edge.geometry.coordinates.findIndex(
-      (_: Position, i: number) => i > 0 && !anchored.has(i),
-    );
-    edge.geometry.coordinates[station][0] += 0.000001;
-    await writeFile(join(root, file), JSON.stringify(d));
-    const edited = check();
-    assert.notEqual(edited.status, 0);
-    assert.match(edited.stderr, /refined border hash mismatch/);
-  } finally {
-    await rm(root, { recursive: true, force: true });
+      edge.geometry.coordinates[station][0] += 0.000001;
+      await writeFile(join(root, file), JSON.stringify(d));
+      const edited = check();
+      assert.notEqual(edited.status, 0);
+      assert.match(edited.stderr, /refined border hash mismatch/);
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
   }
+});
+
+test("open image corrections preserve distinct endpoints and left/right order", () => {
+  const trace = Array.from({ length: 81 }, (_, i) =>
+    p.from([0, -100 + i * 2.5]),
+  );
+  const image: Raster = {
+    width: 512,
+    height: 512,
+    extent: [-256, -256, 256, 256],
+    data: new Uint8Array(512 * 512 * 4),
+  };
+  for (let y = 0; y < 512; y++)
+    for (let x = 0; x < 512; x++)
+      image.data!.set(
+        Math.abs(x - 255.5) < 6 ? [90, 90, 90, 255] : [45, 150, 50, 255],
+        (y * 512 + x) * 4,
+      );
+  const seed = inferImageBorders(trace, image, {
+    method: "road-local-appearance-v4",
+    open: true,
+  });
+  const last = seed.inner.length - 1;
+  const measured = (station: number): Position => {
+    const a = p.to(seed.inner[station]);
+    return p.from([a[0] - 0.5, a[1]]);
+  };
+  const input = borderRefinementInputSchema.parse({
+    method: "cross-section-image-anchors-v1",
+    imageSha256: "d".repeat(64),
+    seedSha256: borderPairHash(seed),
+    patches: [
+      {
+        edge: "inner",
+        anchors: [0, last].map((station) => ({
+          station,
+          kind: "image-measured",
+          coordinate: measured(station),
+        })),
+      },
+    ],
+    note: "Measured open edge endpoints on the pinned synthetic road image.",
+  });
+  const { result } = refineImageBorders(
+    seed,
+    trace,
+    input,
+    image,
+    "d".repeat(64),
+    { open: true },
+  );
+  assert.ok(distance(result.inner[0], result.inner.at(-1)!) > 190);
+  assert.ok(distance(result.inner[0], measured(0)) < 0.03);
+  assert.ok(distance(result.inner[last], measured(last)) < 0.03);
+  assert.deepEqual(result.outer, seed.outer);
+  assert.equal(result.inner.length, seed.inner.length);
+  assert.throws(
+    () => refineImageBorders(seed, trace, input, image, "d".repeat(64)),
+    /closure/,
+  );
+  assert.throws(
+    () =>
+      refineImageBorders(
+        seed,
+        [...trace, trace[0]],
+        input,
+        image,
+        "d".repeat(64),
+        { open: true },
+      ),
+    /closure/,
+  );
+  const swapped = { ...seed, inner: seed.outer, outer: seed.inner };
+  const reversed = {
+    ...input,
+    seedSha256: borderPairHash(swapped),
+    patches: [
+      {
+        edge: "inner" as const,
+        anchors: [0, last].map((station) => ({
+          station,
+          kind: "image-measured" as const,
+          coordinate: swapped.inner[station],
+        })),
+      },
+    ],
+  };
+  assert.throws(
+    () =>
+      refineImageBorders(swapped, trace, reversed, image, "d".repeat(64), {
+        open: true,
+      }),
+    /left\/right/,
+  );
+});
+
+test("open border topology checks the first and last segments for crossings", async () => {
+  const { assertSeparateSimpleRings } = await import("../src/boundary-path");
+  assert.throws(
+    () =>
+      assertSeparateSimpleRings(
+        [
+          [
+            [0, 0],
+            [10, 10],
+            [0, 10],
+            [10, 0],
+          ],
+        ],
+        false,
+      ),
+    /cross or touch/,
+  );
+  assert.throws(
+    () =>
+      assertSeparateSimpleRings(
+        [
+          [
+            [0, 0],
+            [10, 0],
+          ],
+          [
+            [5, -5],
+            [5, 5],
+          ],
+        ],
+        false,
+      ),
+    /cross or touch/,
+  );
 });

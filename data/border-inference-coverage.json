@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T14:11:06.126Z",
+  "generatedAt": "2026-11-06T14:59:12.241Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1393,8 +1393,30 @@
       "trackId": "ch-st-ursanne-a8b987de",
       "layoutId": "st-ursanne",
       "file": "data/switzerland/ch-st-ursanne-a8b987de/layouts/st-ursanne.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9459,
+          0.8855
+        ],
+        "medianInteriorDifference": [
+          0.0745,
+          0.0727
+        ],
+        "samplingStepM": 3.0001512890431083,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "9d9476999256621e99846173afec09f67d4200eec6e9173f7060c5941584d890",
+      "reason": "Visible proposals include forest shadows and grass shoulders, especially stations 675, 859 and 1421; road edge corrections are required.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "cl-autodromo-gustavo-felo-rivera-350613590",
@@ -1717,8 +1739,30 @@
       "trackId": "de-osnabruck-hill-climb-d7c0b8d4",
       "layoutId": "osnabruck-hill-climb",
       "file": "data/germany/de-osnabruck-hill-climb-d7c0b8d4/layouts/osnabruck-hill-climb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8933,
+          0.8711
+        ],
+        "medianInteriorDifference": [
+          0.0801,
+          0.0839
+        ],
+        "samplingStepM": 3.000856717171961,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7bf26eaad10ab524b0e3c8d06e4eef529b3cf7976e31163ca57b321202cdfd68",
+      "reason": "Tree shadows and farm aprons create false widths up to 32.6 m; road limits are not supported by this proposal.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "de-porsche-leipzig-b-65f38c3a",
@@ -2481,8 +2525,8 @@
       "trackId": "gb-aintree-motor-racing-circuit-121110221",
       "layoutId": "aintree-sprint",
       "file": "data/united-kingdom/aintree-motor-racing-circuit-121110221/layouts/aintree-sprint.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "gb-anglesey-circuit-108374689",
@@ -2640,8 +2684,24 @@
       "trackId": "gb-curborough-68a60e27",
       "layoutId": "curborough",
       "file": "data/united-kingdom/gb-curborough-68a60e27/layouts/curborough.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9674,
+          0.9203
+        ],
+        "medianInteriorDifference": [
+          0.0359,
+          0.0349
+        ],
+        "samplingStepM": 3.010453924299312,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fa3cc607bfa967f1ef80e56450eafc1a18492941262ab454d0b425f2c124f772"
     },
     {
       "trackId": "gb-driftland-37d6ee3f",
@@ -2682,8 +2742,8 @@
       "trackId": "gb-dunsfold-ea05c91c",
       "layoutId": "main-runway-2020",
       "file": "data/united-kingdom/gb-dunsfold-ea05c91c/layouts/main-runway-2020.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "gb-east-fortune-circuit-87245436",
@@ -2718,8 +2778,8 @@
       "trackId": "gb-fintray-hill-climb-d6798bfc",
       "layoutId": "fintray-hill-climb",
       "file": "data/united-kingdom/gb-fintray-hill-climb-d6798bfc/layouts/fintray-hill-climb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "gb-gaydon-emissions-circuit-cfe097eb",
@@ -2732,22 +2792,66 @@
       "trackId": "gb-goodwood-festival-of-speed-6e11ee2d",
       "layoutId": "goodwood-festival-of-speed",
       "file": "data/united-kingdom/gb-goodwood-festival-of-speed-6e11ee2d/layouts/goodwood-festival-of-speed.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7536,
+          0.8125
+        ],
+        "medianInteriorDifference": [
+          0.0497,
+          0.0473
+        ],
+        "samplingStepM": 3.005057952435953,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5a5cde60d25f268d2ebb684d98bdac0fff2beb593a0e82c4d3e2c878a1e90e42",
+      "reason": "The shaded start and adjoining event paddocks produce false widths around 30 m; barriers and the main road need separate interpretation.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "gb-gurston-down-hillclimb-ade02267",
       "layoutId": "gurston-down-hillclimb",
       "file": "data/united-kingdom/gb-gurston-down-hillclimb-ade02267/layouts/gurston-down-hillclimb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "gb-harewood-hillclimb-f1871afb",
       "layoutId": "harewood-hillclimb",
       "file": "data/united-kingdom/gb-harewood-hillclimb-f1871afb/layouts/harewood-hillclimb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9498,
+          0.9351
+        ],
+        "medianInteriorDifference": [
+          0.0408,
+          0.0413
+        ],
+        "samplingStepM": 3.006131974814895,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "496581245bae4a1dd3335fd2ae471adfadaa0508bf5b2846b0023676cd706284",
+      "reason": "The building junction near station 326 and the final bend include ambiguous adjoining pavement or grass; edge corrections are required before saving.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "gb-kames-motorsport-circuit-38672231",
@@ -2774,8 +2878,24 @@
       "trackId": "gb-loton-hillclimb-2b41199e",
       "layoutId": "loton-hillclimb",
       "file": "data/united-kingdom/gb-loton-hillclimb-2b41199e/layouts/loton-hillclimb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.908,
+          0.869
+        ],
+        "medianInteriorDifference": [
+          0.0386,
+          0.0379
+        ],
+        "samplingStepM": 3.0033393623809044,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "b26c1dcf223b2eb277cbe0d3f94a7d10041a0fea2b9d24d5223744a5669ddba8"
     },
     {
       "trackId": "gb-lydden-hill-infield-8b6d41b9",
@@ -2886,8 +3006,8 @@
       "trackId": "gb-prescott-hill-climb-cff4bee0",
       "layoutId": "prescott-hill-climb",
       "file": "data/united-kingdom/gb-prescott-hill-climb-cff4bee0/layouts/prescott-hill-climb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "gb-prestwold-hall-reference",
@@ -2900,8 +3020,8 @@
       "trackId": "gb-raf-woodbridge-02bc9a03",
       "layoutId": "raf-woodbridge",
       "file": "data/united-kingdom/gb-raf-woodbridge-02bc9a03/layouts/raf-woodbridge.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "reason": "Image suggests an ambiguous apron or junction wider than 45 m"
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
@@ -2967,8 +3087,30 @@
       "trackId": "gb-shelsley-walsh-hillclimb-aaa3a45c",
       "layoutId": "shelsley-walsh-hillclimb",
       "file": "data/united-kingdom/gb-shelsley-walsh-hillclimb-aaa3a45c/layouts/shelsley-walsh-hillclimb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9618,
+          0.7529
+        ],
+        "medianInteriorDifference": [
+          0.076,
+          0.0769
+        ],
+        "samplingStepM": 3.000355632429409,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "c9b1781f399b66c4e6e81332d2fc4c20446dbc8499932b6f9f6ce5466054dee1",
+      "reason": "Forest and field shadows produce shoulders up to 20.9 m; visible narrow road limits need correction.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",
@@ -3745,8 +3887,30 @@
       "trackId": "nz-leadfoot-hillclimb-f16d38f6",
       "layoutId": "leadfoot-hillclimb",
       "file": "data/new-zealand/nz-leadfoot-hillclimb-f16d38f6/layouts/leadfoot-hillclimb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8276,
+          0.809
+        ],
+        "medianInteriorDifference": [
+          0.0374,
+          0.0479
+        ],
+        "samplingStepM": 3.0072333741312827,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "509d1436adbda320642591665de35b3d69a91881542d1474e1a4727398d03830",
+      "reason": "The forest hairpins are hidden by canopy and the proposal crosses grass on the inside; visible imagery cannot confirm both edges.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
@@ -4401,15 +4565,59 @@
       "trackId": "tw-penbay-drag-strip-a015d5c3",
       "layoutId": "penbay-drag-strip",
       "file": "data/taiwan/tw-penbay-drag-strip-a015d5c3/layouts/penbay-drag-strip.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7901,
+          0.9342
+        ],
+        "medianInteriorDifference": [
+          0.0386,
+          0.0493
+        ],
+        "samplingStepM": 3.0048322480611858,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "23b9f5ba8c08e6b1107b5a0c70c6cf54f5c085e2e0fdee2dd6cf28d5ebeb1331",
+      "reason": "The proposal alternates between straight pavement, internal seams and adjoining aprons; barrier-defined drag-strip limits need interpretation.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "tw-penbay-fia-6ece852f",
       "layoutId": "penbay-fia-international-drag",
       "file": "data/taiwan/tw-penbay-fia-6ece852f/layouts/penbay-fia-international-drag.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7901,
+          0.9342
+        ],
+        "medianInteriorDifference": [
+          0.0386,
+          0.0493
+        ],
+        "samplingStepM": 3.0048322480611858,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "23b9f5ba8c08e6b1107b5a0c70c6cf54f5c085e2e0fdee2dd6cf28d5ebeb1331",
+      "reason": "The proposal alternates between straight pavement, internal seams and adjoining aprons; barrier-defined drag-strip limits need interpretation.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "us-albany-saratoga-speedway-1164983896",
@@ -4794,14 +5002,14 @@
       "layoutId": "mapped-branch-2",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-2.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "mapped-branch-3",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-3.geojson",
       "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
@@ -4815,21 +5023,43 @@
       "layoutId": "mapped-branch-5",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-5.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "mapped-branch-6",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-6.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "mapped-branch-7",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-7.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8723,
+          0.7872
+        ],
+        "medianInteriorDifference": [
+          0.0825,
+          0.0917
+        ],
+        "samplingStepM": 3.0384933984782516,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-7970769.537610211%2C5247225.180739975%2C-7970586.724669154%2C5247591.626586821&bboxSR=3857&imageSR=3857&size=180%2C360&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7dbe0e69144320976a775357111f8ac3c0dfc254da69b57c0298c8664b6d6334",
+      "reason": "Mapped branch 7 proposal includes vegetation and adjacent runway apron; driving corridor limits require interpretation.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
@@ -5524,10 +5754,7 @@
       "layoutId": "pikes-peak-hillclimb",
       "file": "data/united-states/us-pikes-peak-hillclimb-ab97c20e/layouts/pikes-peak-hillclimb.geojson",
       "status": "needs-imagery-review",
-      "reason": "High-resolution tiled imagery acquired at 0.4649 m ground pixels. Reviewed proposed limits include dirt shoulders and vegetation, including excessive widths near 2.7 km and 5.6 km; boundary correction is required.",
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "92272d4ba679b9e120e7e462c4e1cc2675ebeadb1f8621f3d27e6786f2fe1ee6",
-      "imageEncoding": "xyz-jpeg-manifest-v1"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-pikes-peak-international-raceway-1134026181",
@@ -6291,8 +6518,30 @@
       "trackId": "za-knysna-hill-climb-0b642392",
       "layoutId": "knysna-hill-climb",
       "file": "data/south-africa/za-knysna-hill-climb-0b642392/layouts/knysna-hill-climb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "needs-imagery-review",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.976,
+          0.984
+        ],
+        "medianInteriorDifference": [
+          0.0601,
+          0.0492
+        ],
+        "samplingStepM": 3.001528374213576,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "c1beefa6b8d9d75771917f065cc4dd575227ad927b8e41d02b114f8a5e8d92ff",
+      "reason": "Tree shadows and shoulders cause false widths of 20 to 23 m in several sections; road-edge corrections are required.",
+      "visualScreening": {
+        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
+        "outcome": "held",
+        "note": "Screening does not establish surveyed accuracy or real curb locations."
+      }
     },
     {
       "trackId": "za-prince-george-circuit-677195345",

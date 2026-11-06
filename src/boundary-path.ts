@@ -22,7 +22,7 @@ export function insideRing(p: Position, ring: Position[]) {
 function signedArea(ring: Position[]) {
   return ring.slice(1).reduce((sum, p, i) => sum + cross(ring[i], p), 0) / 2;
 }
-export function assertSeparateSimpleRings(rings: Position[][]) {
+export function assertSeparateSimpleRings(rings: Position[][], closed = true) {
   type Edge = { a: Position; b: Position; ring: number; index: number };
   const grid = new Map<string, Edge[]>(),
     size = 32;
@@ -63,7 +63,7 @@ export function assertSeparateSimpleRings(rings: Position[][]) {
         if (
           other.ring === ring &&
           (index - other.index === 1 ||
-            index - other.index === points.length - 2)
+            (closed && index - other.index === points.length - 2))
         )
           continue;
         const a = cross(subtract(edge.b, edge.a), subtract(other.a, edge.a)),

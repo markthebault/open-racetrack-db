@@ -20,8 +20,8 @@
     {
       "id": "loton-hillclimb",
       "name": "Loton Hillclimb",
-      "referenceId": "United Kingdom/Loton Hillclimb",
       "file": "layouts/loton-hillclimb.geojson",
+      "referenceId": "United Kingdom/Loton Hillclimb",
       "description": "Draft configuration: Open climb follows the forward timed section of the independently named Loton Park Speed Hill Climb source way. The operator identifies the uphill course; the catalogue picture also shows the southern return loop, which is excluded from this timed draft. Separate endpoint nodes agree with timing gates. This independent timed section measures 1,303.5 m while the catalogue scalar 2,019 m describes a longer extent; no return-road detour or coordinate scaling is used to match that number. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1303.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:00:20.961Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T14:47:49.712Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

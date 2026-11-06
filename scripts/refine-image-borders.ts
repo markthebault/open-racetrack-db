@@ -24,7 +24,9 @@ export function refineImageBorders<T extends Borders>(
   input: BorderRefinementInput,
   image: Raster,
   imageSha256: string,
+  options: { open?: boolean } = {},
 ) {
+  const open = options.open === true;
   const recipe = borderRefinementInputSchema.parse(input);
   if (
     recipe.imageSha256 !== imageSha256 ||
@@ -32,18 +34,21 @@ export function refineImageBorders<T extends Borders>(
   )
     throw new Error("Refinement image or seed hash mismatch");
   if (
+    equal(trace[0], trace.at(-1)!) === open ||
     seed.inner.length !== seed.outer.length ||
-    ![seed.inner, seed.outer].every((p) => equal(p[0], p.at(-1)!))
+    ![seed.inner, seed.outer].every(
+      (p) => p.length > 2 && equal(p[0], p.at(-1)!) !== open,
+    )
   )
     throw new Error(
-      "Image refinements currently require paired closed borders",
+      "Image refinements require paired borders matching the route closure",
     );
   const {
       projection: project,
       smooth,
       normals,
       index,
-    } = imageCrossSections(trace),
+    } = imageCrossSections(trace, open),
     result = structuredClone(seed),
     toPixel = (p: Position) => {
       const x = (6378137 * p[0] * Math.PI) / 180,
@@ -54,7 +59,7 @@ export function refineImageBorders<T extends Borders>(
         ((n - y) / (n - s)) * image.height - 0.5,
       ];
     };
-  if (seed.inner.length !== smooth.length + 1)
+  if (seed.inner.length !== smooth.length + (open ? 0 : 1))
     throw new Error("Refinement stations do not match the source trace");
   for (const patch of recipe.patches) {
     const points = seed[patch.edge],
@@ -111,10 +116,12 @@ export function refineImageBorders<T extends Borders>(
       last = points.length - 1,
       firstChanged = !equal(points[0], seed[edge][0]),
       lastChanged = !equal(points[last], seed[edge][last]);
-    if (firstChanged && lastChanged && !equal(points[0], points[last]))
+    if (!open && firstChanged && lastChanged && !equal(points[0], points[last]))
       throw new Error("Refinement closure anchors disagree");
-    if (lastChanged && !firstChanged) points[0] = points[last];
-    else points[last] = points[0];
+    if (!open) {
+      if (lastChanged && !firstChanged) points[0] = points[last];
+      else points[last] = points[0];
+    }
     for (let i = 0; i < points.length; i++) {
       const a = project.to(seed.inner[i]),
         b = project.to(seed.outer[i]),
@@ -153,8 +160,17 @@ export function refineImageBorders<T extends Borders>(
   )
     throw new Error("Refined borders exceed supported road widths");
   const rings = [result.inner.map(project.to), result.outer.map(project.to)];
-  assertSeparateSimpleRings(rings);
-  if (!insideRing(rings[0][0], rings[1]))
+  assertSeparateSimpleRings(rings, !open);
+  if (
+    open &&
+    rings[0].some((p, i) => {
+      const q = rings[1][i],
+        normal = normals[i];
+      return (p[0] - q[0]) * normal[0] + (p[1] - q[1]) * normal[1] <= 0;
+    })
+  )
+    throw new Error("Refined open borders reverse left/right driving order");
+  if (!open && !insideRing(rings[0][0], rings[1]))
     throw new Error(
       "Refined inner boundary is not nested inside the outer boundary",
     );

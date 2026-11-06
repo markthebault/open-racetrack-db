@@ -5,101 +5,103 @@ const image = Buffer.from(
   "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
   "base64",
 );
-for (const width of [1440, 390])
-  test(`refined borders retain their evidence and support playback and a decodable export at ${width}px`, async ({
-    page,
-    request,
-  }) => {
-    await page.setViewportSize({ width, height: 900 });
-    const errors: string[] = [];
-    page.on("pageerror", (e) => errors.push(e.message));
-    for (const host of [
-      "imagery.nationalmap.gov",
-      "server.arcgisonline.com",
-      "api.maptiler.com",
-    ])
-      await page.route(`**/${host}/**`, (r) =>
-        r.fulfill({
-          contentType: "image/png",
-          body: image,
-          headers: { "access-control-allow-origin": "*" },
-        }),
+for (const [track, layout] of [
+  ["us-arizona-motorsports-park-9f848c55", "arizona-motorsports-park"],
+  ["gb-curborough-68a60e27", "curborough"],
+])
+  for (const width of [1440, 390])
+    test(`${track} refined borders retain evidence, playback and a decodable export at ${width}px`, async ({
+      page,
+      request,
+    }) => {
+      await page.setViewportSize({ width, height: 900 });
+      const errors: string[] = [];
+      page.on("pageerror", (e) => errors.push(e.message));
+      for (const host of [
+        "imagery.nationalmap.gov",
+        "server.arcgisonline.com",
+        "api.maptiler.com",
+      ])
+        await page.route(`**/${host}/**`, (r) =>
+          r.fulfill({
+            contentType: "image/png",
+            body: image,
+            headers: { "access-control-allow-origin": "*" },
+          }),
+        );
+      await page.goto(`/?track=${track}&layout=${layout}&view=3d`);
+      await expect(page.locator(".inferred-border-note")).toContainText(
+        "Includes measured image corrections",
       );
-    await page.goto(
-      "/?track=us-arizona-motorsports-park-9f848c55&layout=arizona-motorsports-park&view=3d",
-    );
-    await expect(page.locator(".inferred-border-note")).toContainText(
-      "Includes measured image corrections",
-    );
-    await expect(page.locator(".inferred-border-note")).toContainText(
-      "unverified",
-    );
-    await page.locator("#border-toggle").click();
-    await expect(page.locator("#border-toggle")).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
-    const href = await page.locator("#download").getAttribute("href"),
-      d = await (await request.get(href!)).json(),
-      refinement = d.metadata.borderInference.refinement;
-    const edges = Object.fromEntries(
-      d.features
-        .filter((f: { properties: { role: string } }) =>
-          ["inner", "outer"].includes(f.properties.role),
-        )
-        .map(
-          (f: {
-            properties: { role: string };
-            geometry: { coordinates: Position[] };
-          }) => [f.properties.role, f.geometry.coordinates],
+      await expect(page.locator(".inferred-border-note")).toContainText(
+        "unverified",
+      );
+      await page.locator("#border-toggle").click();
+      await expect(page.locator("#border-toggle")).toHaveAttribute(
+        "aria-pressed",
+        "true",
+      );
+      const href = await page.locator("#download").getAttribute("href"),
+        d = await (await request.get(href!)).json(),
+        refinement = d.metadata.borderInference.refinement;
+      const edges = Object.fromEntries(
+        d.features
+          .filter((f: { properties: { role: string } }) =>
+            ["inner", "outer"].includes(f.properties.role),
+          )
+          .map(
+            (f: {
+              properties: { role: string };
+              geometry: { coordinates: Position[] };
+            }) => [f.properties.role, f.geometry.coordinates],
+          ),
+      ) as { inner: Position[]; outer: Position[] };
+      expect(borderPairHash(edges)).toBe(refinement.resultSha256);
+      expect(
+        refinement.patches.some((p: { anchors: { kind: string }[] }) =>
+          p.anchors.some((a) => a.kind === "image-measured"),
         ),
-    ) as { inner: Position[]; outer: Position[] };
-    expect(borderPairHash(edges)).toBe(refinement.resultSha256);
-    expect(
-      refinement.patches.some((p: { anchors: { kind: string }[] }) =>
-        p.anchors.some((a) => a.kind === "image-measured"),
-      ),
-    ).toBe(true);
-    await page.locator("#play-lap").click();
-    await expect(page.locator(".lap-loading")).toBeHidden();
-    await expect(page.locator(".lap-evidence").first()).toContainText(
-      "Other sections remain automatic estimates",
-    );
-    await page.locator(".lap-play").click();
-    await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");
-    await page.locator(".lap-play").click();
-    await page.locator(".lap-record").click();
-    await expect(page.locator("[data-clock]")).toHaveText(/^0:02/, {
-      timeout: 10000,
+      ).toBe(true);
+      await page.locator("#play-lap").click();
+      await expect(page.locator(".lap-loading")).toBeHidden();
+      await expect(page.locator(".lap-evidence").first()).toContainText(
+        "Other sections remain automatic estimates",
+      );
+      await page.locator(".lap-play").click();
+      await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");
+      await page.locator(".lap-play").click();
+      await page.locator(".lap-record").click();
+      await expect(page.locator("[data-clock]")).toHaveText(/^0:02/, {
+        timeout: 10000,
+      });
+      await page.locator(".lap-record").click();
+      await expect(page.locator(".lap-download")).toBeVisible();
+      const dimensions = await page.locator(".lap-download").evaluate(
+        (link) =>
+          new Promise<number[]>((resolve, reject) => {
+            const video = document.createElement("video"),
+              timer = window.setTimeout(
+                () => reject(new Error("Recorded video did not decode")),
+                10000,
+              );
+            video.onloadeddata = () => {
+              window.clearTimeout(timer);
+              resolve([video.videoWidth, video.videoHeight]);
+              video.src = "";
+            };
+            video.onerror = () => {
+              window.clearTimeout(timer);
+              reject(new Error("Invalid recorded video"));
+            };
+            video.preload = "auto";
+            video.src = (link as HTMLAnchorElement).href;
+          }),
+      );
+      expect(dimensions).toEqual([1280, 720]);
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+      expect(errors).toEqual([]);
     });
-    await page.locator(".lap-record").click();
-    await expect(page.locator(".lap-download")).toBeVisible();
-    const dimensions = await page.locator(".lap-download").evaluate(
-      (link) =>
-        new Promise<number[]>((resolve, reject) => {
-          const video = document.createElement("video"),
-            timer = window.setTimeout(
-              () => reject(new Error("Recorded video did not decode")),
-              10000,
-            );
-          video.onloadeddata = () => {
-            window.clearTimeout(timer);
-            resolve([video.videoWidth, video.videoHeight]);
-            video.src = "";
-          };
-          video.onerror = () => {
-            window.clearTimeout(timer);
-            reject(new Error("Invalid recorded video"));
-          };
-          video.preload = "auto";
-          video.src = (link as HTMLAnchorElement).href;
-        }),
-    );
-    expect(dimensions).toEqual([1280, 720]);
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth,
-      ),
-    ).toBe(true);
-    expect(errors).toEqual([]);
-  });

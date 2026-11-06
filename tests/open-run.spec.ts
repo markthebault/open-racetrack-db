@@ -23,6 +23,8 @@ test("open routes expose left/right edges and stop at the finish, with video exp
     ["cy-achna-speedway-ab0bcabd", "achna-inner-alternative"],
     ["us-va-city-hill-climb-8d49ea09", "va-city-hill-climb"],
     ["gb-bucks-estate-sprint-45ee8814", "bucks-estate-sprint"],
+    ["gb-curborough-68a60e27", "curborough"],
+    ["gb-loton-hillclimb-2b41199e", "loton-hillclimb"],
   ]) {
     await page.goto(`/?track=${track}&layout=${layout}&view=3d`);
     await expect(page.locator("#play-lap")).toHaveText("▷ Play run");
