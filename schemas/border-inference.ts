@@ -9,6 +9,7 @@ export const inferredBorderLicenses = z.enum([
   "public-domain",
   "Etalab-2.0",
   "OGL-3.0",
+  "OGL-ON-1.0",
   "DL-DE-BY-2.0",
   "CC-BY-4.0",
   "LicenseRef-GUGiK-open-data",

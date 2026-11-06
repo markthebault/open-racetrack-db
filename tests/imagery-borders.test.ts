@@ -276,3 +276,47 @@ test("local pavement appearance follows changing widths through lighting changes
     /coverage/,
   );
 });
+
+test("missing pixels outside the selected road cannot become invented colours or reject otherwise identical borders", () => {
+  for (const method of [
+    undefined,
+    "road-appearance-v3",
+    "road-local-appearance-v4",
+  ] as const) {
+    const { image, trace } = circleImage(() => 12),
+      original = inferImageBorders(trace, image, { method });
+    for (let y = 0; y < image.height; y++)
+      for (let x = 0; x < image.width; x++) {
+        const radius = Math.hypot(x - 255.5, 255.5 - y);
+        if (radius > 122 && radius < 126)
+          image.data[(y * image.width + x) * 4 + 3] = 0;
+      }
+    const before = image.data.slice();
+    assert.deepEqual(inferImageBorders(trace, image, { method }), original);
+    assert.deepEqual(
+      image.data,
+      before,
+      "Missing source pixels must remain missing",
+    );
+  }
+});
+
+test("a missing stripe through the road still prevents border extraction", () => {
+  for (const method of [
+    undefined,
+    "road-appearance-v3",
+    "road-local-appearance-v4",
+  ] as const) {
+    const { image, trace } = circleImage(() => 12);
+    for (let y = 0; y < image.height; y++)
+      for (let x = 0; x < image.width; x++) {
+        const radius = Math.hypot(x - 255.5, 255.5 - y);
+        if (radius > 102 && radius < 104)
+          image.data[(y * image.width + x) * 4 + 3] = 0;
+      }
+    assert.throws(
+      () => inferImageBorders(trace, image, { method }),
+      /coverage|evidence|interval|review/,
+    );
+  }
+});

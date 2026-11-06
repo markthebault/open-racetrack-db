@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T18:08:03.205Z",
+  "generatedAt": "2026-11-06T18:49:49.496Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1239,8 +1239,24 @@
       "trackId": "ca-delaware-speedway-23968411",
       "layoutId": "main",
       "file": "data/canada/delaware-speedway-23968411/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8983,
+          0.9237
+        ],
+        "medianInteriorDifference": [
+          0.03,
+          0.0398
+        ],
+        "samplingStepM": 2.9991353569756884,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/exportImage?f=json&bbox=-9063538.267663285%2C5301093.515223965%2C-9063194.693315107%2C5301651.202134642&bboxSR=3857&imageSR=3857&size=1258%2C2042&format=png&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22where%22%3A%22Project%3D%27SWOOP2025%27%22%2C%22sortField%22%3A%22LowPS%22%2C%22sortValue%22%3A0%2C%22ascending%22%3Atrue%7D",
+      "imageSha256": "705439b969e6d872d891ccc5882d5431c798101e344c4380ee3022db08f92c7a"
     },
     {
       "trackId": "ca-dunnville-autodrome-645681018",

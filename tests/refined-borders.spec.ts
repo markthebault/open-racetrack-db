@@ -9,6 +9,7 @@ for (const [track, layout] of [
   ["us-arizona-motorsports-park-9f848c55", "arizona-motorsports-park"],
   ["us-arroyo-seco-raceway-83871979", "main"],
   ["us-the-ridge-motorsports-park-182180341", "main"],
+  ["ca-delaware-speedway-23968411", "main"],
   ["us-nola-motorsports-park-298904844", "main"],
   ["us-nola-motorsports-park-298904844", "north-long-course-2014"],
   ["gb-curborough-68a60e27", "curborough"],
@@ -25,6 +26,7 @@ for (const [track, layout] of [
       const errors: string[] = [];
       page.on("pageerror", (e) => errors.push(e.message));
       for (const host of [
+        "ws.geoservices.lrc.gov.on.ca",
         "imagery.nationalmap.gov",
         "server.arcgisonline.com",
         "api.maptiler.com",

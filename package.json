@@ -51,6 +51,7 @@
     "validate:elevation": "tsx scripts/elevation.ts --validate",
     "model:prepare": "tsx scripts/prepare-models.ts",
     "validate:models": "tsx scripts/prepare-models.ts --bordered --check",
+    "imagery:ontario": "tsx scripts/ontario-imagery.ts",
     "border:infer": "tsx scripts/infer-borders.ts",
     "validate:border-inference": "tsx scripts/infer-borders.ts --all --check",
     "audit:crossings": "tsx scripts/audit-grade-crossings.ts --output sources/research/grade-crossing-audit.json",

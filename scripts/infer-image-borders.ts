@@ -13,6 +13,7 @@ export type Raster = RasterExtent &
     | { data?: never; sample: (x: number, y: number) => readonly number[] }
   );
 const R = 6378137;
+class MissingImageCoverage extends Error {}
 const mercator = (p: Position): Position => [
   (R * p[0] * Math.PI) / 180,
   R * Math.asinh(Math.tan((p[1] * Math.PI) / 180)),
@@ -64,7 +65,7 @@ function pixel(image: Raster, geo: Position): number[] {
     const k = ((b + dy) * image.width + a + dx) * 4;
     const rgba = image.sample?.(a + dx, b + dy);
     if ((rgba ? rgba[3] : image.data![k + 3]) < 128)
-      throw new Error("Imagery has missing coverage");
+      throw new MissingImageCoverage("Imagery has missing coverage");
     for (let c = 0; c < 3; c++)
       out[c] += ((rgba ? rgba[c] : image.data![k + c]) / 255) * weight;
   }
@@ -174,19 +175,30 @@ export function inferImageBorders(
       "Grade separation requires matching closed local-appearance stations",
     );
   const samples = smooth.map((p, i) =>
-    Array.from({ length: 121 }, (_, j) =>
-      pixel(
-        image,
-        projection.from([
-          p[0] + normals[i][0] * (j - 60) * 0.5,
-          p[1] + normals[i][1] * (j - 60) * 0.5,
-        ]),
-      ),
-    ),
+    Array.from({ length: 121 }, (_, j) => {
+      try {
+        return pixel(
+          image,
+          projection.from([
+            p[0] + normals[i][0] * (j - 60) * 0.5,
+            p[1] + normals[i][1] * (j - 60) * 0.5,
+          ]),
+        );
+      } catch (error) {
+        if (error instanceof MissingImageCoverage) return null;
+        throw error;
+      }
+    }),
   );
-  const centers = samples.map((row) =>
-    [0, 1, 2].map((c) => row.slice(58, 63).reduce((s, p) => s + p[c], 0) / 5),
-  );
+  const centers = samples.map((row) => {
+    if (row.slice(58, 63).some((p) => p === null))
+      throw new MissingImageCoverage(
+        "Imagery has missing coverage near the source trace",
+      );
+    return [0, 1, 2].map(
+      (c) => row.slice(58, 63).reduce((s, p) => s + p![c], 0) / 5,
+    );
+  });
   const roadColor = [0, 1, 2].map(
     (c) =>
       centers.map((v) => v[c]).sort((a, b) => a - b)[Math.floor(count / 2)],
@@ -197,6 +209,7 @@ export function inferImageBorders(
     ? samples.map((row) => {
         const neutral = row
           .slice(30, 91)
+          .filter((p): p is number[] => p !== null)
           .filter(
             (p) =>
               (p[0] + p[1] + p[2]) / 3 > 0.1 && (p[0] + p[1] + p[2]) / 3 < 0.7,
@@ -208,7 +221,7 @@ export function inferImageBorders(
               (Math.max(...b) - Math.min(...b)),
           )
           .slice(0, 15);
-        if (neutral.length < 5) return [0, 1, 2].map((c) => row[60][c]);
+        if (neutral.length < 5) return [0, 1, 2].map((c) => row[60]![c]);
         return [0, 1, 2].map(
           (c) =>
             neutral.map((p) => p[c]).sort((a, b) => a - b)[
@@ -217,9 +230,9 @@ export function inferImageBorders(
         );
       })
     : undefined;
-  const means = (row: number[][], indices: number[]) =>
+  const means = (row: (number[] | null)[], indices: number[]) =>
     [0, 1, 2].map(
-      (c) => indices.reduce((s, j) => s + row[j][c], 0) / indices.length,
+      (c) => indices.reduce((s, j) => s + row[j]![c], 0) / indices.length,
     );
   const borders: Position[][] = [],
     evidence: { strong: number; interior: number }[] = [],
@@ -243,8 +256,23 @@ export function inferImageBorders(
         : roadColor;
       for (let j = 0; j < options; j++) {
         const offset = minOffset + j * 0.5,
-          k = 60 + sign * offset * 2,
-          inside = means(
+          k = 60 + sign * offset * 2;
+        const needed = appearance
+          ? [
+              ...[1, 2, 3, 4, 5, 6].map((d) => k - sign * d),
+              ...[1, 2, 3, 4].map((d) => k + sign * d),
+            ]
+          : Array.from(
+              { length: Math.abs(k - 60) + 9 },
+              (_, q) => Math.min(60, k) - 4 + q,
+            );
+        if (needed.some((q) => samples[i][q] === null)) {
+          cs.push(0);
+          ins.push(Infinity);
+          score.push(Infinity);
+          continue;
+        }
+        const inside = means(
             samples[i],
             [1, 2, 3, 4].map((v) => k - sign * v),
           ),
@@ -256,10 +284,10 @@ export function inferImageBorders(
         let residual = 0;
         if (appearance) {
           for (let d = 1; d <= 6; d++)
-            residual += norm(samples[i][k - sign * d], sectionColor) / 6;
+            residual += norm(samples[i][k - sign * d]!, sectionColor) / 6;
         } else {
           for (let a = Math.min(60, k); a <= Math.max(60, k); a++)
-            residual += norm(samples[i][a], centers[i]);
+            residual += norm(samples[i][a]!, centers[i]);
           residual /= Math.abs(k - 60) + 1;
         }
         cs.push(c);
@@ -355,6 +383,18 @@ export function inferImageBorders(
     throw new Error(
       "Image suggests an ambiguous apron or junction wider than 45 m",
     );
+  // Missing pixels are never filled. Every sampled point through the selected
+  // road and its 2 m edge neighbourhood must have actual source coverage.
+  for (let i = 0; i < count; i++) {
+    const first = Math.floor(60 - 2 * widths[1][i] - 4),
+      last = Math.ceil(60 + 2 * widths[0][i] + 4);
+    for (let j = first; j <= last; j++)
+      if (!samples[i][j])
+        throw new MissingImageCoverage(
+          "Selected road or edge neighbourhood has missing imagery coverage",
+        );
+  }
+  for (const border of borders) for (const p of border) pixel(image, p);
   const area = (points: Position[]) =>
     Math.abs(
       points
