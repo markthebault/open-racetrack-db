@@ -23,21 +23,21 @@
       "id": "main",
       "name": "Willow Springs",
       "file": "layouts/main.geojson",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "United States/Willow Springs"
+      "referenceId": "United States/Willow Springs",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
     },
     {
       "id": "streets-of-willow-springs",
       "name": "Streets of Willow Springs",
-      "referenceId": "United States/Streets of Willow Springs",
       "file": "layouts/streets-of-willow-springs.geojson",
+      "referenceId": "United States/Streets of Willow Springs",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2551.7 m. Difference from the supplied layout distance 0.7 m. Course configuration still requires visual review."
     },
     {
       "id": "willow-springs-horse-thief-mile",
       "name": "Willow Springs Horse Thief Mile",
-      "referenceId": "United States/Willow Springs Horse Thief Mile",
       "file": "layouts/willow-springs-horse-thief-mile.geojson",
+      "referenceId": "United States/Willow Springs Horse Thief Mile",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1633.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review."
     }
   ],
@@ -68,6 +68,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13164977.847728103%2C4146766.283565806%2C-13164266.16951283%2C4147873.534945671&bboxSR=3857&imageSR=3857&size=779%2C1212&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:56:45.413Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

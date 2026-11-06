@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T12:10:41.760Z",
+  "generatedAt": "2026-11-06T13:13:53.858Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -2440,8 +2440,24 @@
       "trackId": "fr-pole-mecanique-de-la-clef-des-champs-157894439",
       "layoutId": "main",
       "file": "data/france/pole-mecanique-de-la-clef-des-champs-157894439/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9199,
+          0.8587
+        ],
+        "medianInteriorDifference": [
+          0.0312,
+          0.033
+        ],
+        "samplingStepM": 2.9958491521937405,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=356525.3686740097%2C6402776.225859602%2C357562.1475244247%2C6403727.724156265&WIDTH=894&HEIGHT=820",
+      "imageSha256": "f5762f1fddb63228b6fd3dec060e43de9c06640fc909edea2674b18b022570e6"
     },
     {
       "trackId": "gb-aintree-motor-racing-circuit-121110221",
@@ -2975,8 +2991,24 @@
       "trackId": "gb-snetterton-motor-racing-circuit-145755937",
       "layoutId": "snetterton100",
       "file": "data/united-kingdom/snetterton-motor-racing-circuit-145755937/layouts/snetterton100.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9885,
+          0.9942
+        ],
+        "medianInteriorDifference": [
+          0.0443,
+          0.035
+        ],
+        "samplingStepM": 2.998058463727679,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "819e69155f93400a1d0e1944df4827787e0e644c5a14dd4fd110e4cff24075f4"
     },
     {
       "trackId": "gb-thorsway-mx-ad3657ee",
@@ -6159,8 +6191,24 @@
       "trackId": "us-willow-springs-international-raceway-10440074",
       "layoutId": "streets-of-willow-springs",
       "file": "data/united-states/willow-springs-international-raceway-10440074/layouts/streets-of-willow-springs.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9694,
+          0.9553
+        ],
+        "medianInteriorDifference": [
+          0.0239,
+          0.0285
+        ],
+        "samplingStepM": 2.9984477610371236,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13164977.847728103%2C4146766.283565806%2C-13164266.16951283%2C4147873.534945671&bboxSR=3857&imageSR=3857&size=779%2C1212&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "4114abe3cde8e6a8f04305e5abbca6fe42f15993ebd01605d1bd13f4a9b5486a"
     },
     {
       "trackId": "us-world-wide-technology-raceway-road-course-180008394",

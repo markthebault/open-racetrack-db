@@ -18,6 +18,7 @@ export const borderInferenceSchema = z.strictObject({
     "rgb-cross-sections-v1",
     "rgb-cross-sections-v2",
     "rgb-road-appearance-v3",
+    "rgb-road-local-appearance-v4",
   ]),
   status: z.literal("estimated"),
   reviewedAt: z.null(),

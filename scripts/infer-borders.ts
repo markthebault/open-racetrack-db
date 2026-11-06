@@ -37,6 +37,8 @@ if (!args.includes("--all") && !option("--track"))
   throw new Error(
     "Use --all or --track <id>; --write saves supported estimated borders in each existing GeoJSON.",
   );
+const localAppearance = args.includes("--local-appearance"),
+  appearance = localAppearance || args.includes("--appearance");
 const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
   sha = (b: Buffer | string) => createHash("sha256").update(b).digest("hex");
 const root = ".local/border-inference";
@@ -434,8 +436,12 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         result: ReturnType<typeof inferImageBorders>;
       const detectorOptions = {
         open: !layout.metadata.closed,
-        ...(args.includes("--appearance")
-          ? { method: "road-appearance-v3" as const }
+        ...(appearance
+          ? {
+              method: localAppearance
+                ? ("road-local-appearance-v4" as const)
+                : ("road-appearance-v3" as const),
+            }
           : {}),
       };
       try {
@@ -459,9 +465,11 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       }
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
-        method: args.includes("--appearance")
-          ? "rgb-road-appearance-v3"
-          : "rgb-cross-sections-v2",
+        method: localAppearance
+          ? "rgb-road-local-appearance-v4"
+          : appearance
+            ? "rgb-road-appearance-v3"
+            : "rgb-cross-sections-v2",
         status: "estimated",
         reviewedAt: null,
         ...(!layout.metadata.closed
@@ -473,7 +481,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           strongEdgeFraction: result.evidence.map((e) => e.strong),
           medianInteriorDifference: result.evidence.map((e) => e.interior),
           samplingStepM: result.step,
-          searchRangeM: [args.includes("--appearance") ? -10 : 2, 25],
+          searchRangeM: [appearance ? -10 : 2, 25],
         },
         note: "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been manually reviewed; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy.",
       });

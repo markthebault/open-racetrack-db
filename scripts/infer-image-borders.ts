@@ -110,9 +110,13 @@ function selfCrosses(path: Position[], closed = true) {
 export function inferImageBorders(
   trace: Position[],
   image: Raster,
-  options: { open?: boolean; method?: "road-appearance-v3" } = {},
+  options: {
+    open?: boolean;
+    method?: "road-appearance-v3" | "road-local-appearance-v4";
+  } = {},
 ) {
-  const appearance = options.method === "road-appearance-v3",
+  const localAppearance = options.method === "road-local-appearance-v4",
+    appearance = localAppearance || options.method === "road-appearance-v3",
     minOffset = appearance ? -10 : 2;
   const closed = equal(trace[0], trace.at(-1)!);
   if (!closed && !options.open)
@@ -168,6 +172,32 @@ export function inferImageBorders(
     (c) =>
       centers.map((v) => v[c]).sort((a, b) => a - b)[Math.floor(count / 2)],
   );
+  // Neutral pavement colours adapt to local lighting; this is only a proposal prior.
+  // Colour alone cannot distinguish a road from adjoining aprons or concrete.
+  const localColors = localAppearance
+    ? samples.map((row) => {
+        const neutral = row
+          .slice(30, 91)
+          .filter(
+            (p) =>
+              (p[0] + p[1] + p[2]) / 3 > 0.1 && (p[0] + p[1] + p[2]) / 3 < 0.7,
+          )
+          .sort(
+            (a, b) =>
+              Math.max(...a) -
+              Math.min(...a) -
+              (Math.max(...b) - Math.min(...b)),
+          )
+          .slice(0, 15);
+        if (neutral.length < 5) return [0, 1, 2].map((c) => row[60][c]);
+        return [0, 1, 2].map(
+          (c) =>
+            neutral.map((p) => p[c]).sort((a, b) => a - b)[
+              Math.floor(neutral.length / 2)
+            ],
+        );
+      })
+    : undefined;
   const means = (row: number[][], indices: number[]) =>
     [0, 1, 2].map(
       (c) => indices.reduce((s, j) => s + row[j][c], 0) / indices.length,
@@ -184,6 +214,14 @@ export function inferImageBorders(
       const cs: number[] = [],
         ins: number[] = [],
         score: number[] = [];
+      const sectionColor = localColors
+        ? [0, 1, 2].map(
+            (c) =>
+              [-2, -1, 0, 1, 2]
+                .map((d) => localColors[index(i + d)][c])
+                .sort((a, b) => a - b)[2],
+          )
+        : roadColor;
       for (let j = 0; j < options; j++) {
         const offset = minOffset + j * 0.5,
           k = 60 + sign * offset * 2,
@@ -199,7 +237,7 @@ export function inferImageBorders(
         let residual = 0;
         if (appearance) {
           for (let d = 1; d <= 6; d++)
-            residual += norm(samples[i][k - sign * d], roadColor) / 6;
+            residual += norm(samples[i][k - sign * d], sectionColor) / 6;
         } else {
           for (let a = Math.min(60, k); a <= Math.max(60, k); a++)
             residual += norm(samples[i][a], centers[i]);
@@ -214,7 +252,8 @@ export function inferImageBorders(
                 6 * residual +
                 0.003 * offset +
                 (appearance
-                  ? 3 * Math.max(0, 0.04 + residual - norm(outside, roadColor))
+                  ? 3 *
+                    Math.max(0, 0.04 + residual - norm(outside, sectionColor))
                   : 0),
         );
       }

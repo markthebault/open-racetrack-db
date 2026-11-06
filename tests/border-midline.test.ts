@@ -41,7 +41,7 @@ test("a border-derived driving path preserves an offset source trace and stays i
   d.bbox = bounds(
     d.features.flatMap((f) => f.geometry.coordinates as Position[]),
   );
-  d.metadata.borderInference!.method = "rgb-road-appearance-v3";
+  d.metadata.borderInference!.method = "rgb-road-local-appearance-v4";
   delete d.metadata.model3d;
   const original = JSON.stringify(d.features[0]);
   const mid = pairedBorderMidline(d);

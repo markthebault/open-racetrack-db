@@ -230,7 +230,9 @@ export function prepareTrackModel(
       "Preparation requires a closed route or paired open-road edges",
     );
   const paired =
-    run || layout.metadata.borderInference?.method === "rgb-road-appearance-v3";
+    run ||
+    layout.metadata.borderInference?.method === "rgb-road-appearance-v3" ||
+    layout.metadata.borderInference?.method === "rgb-road-local-appearance-v4";
   const length = boundaryPath
     ? geographicLength(boundaryNormalMidline(layout))
     : paired

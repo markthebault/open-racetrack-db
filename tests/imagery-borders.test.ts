@@ -229,3 +229,50 @@ test("appearance-based proposals recover image edges when portions of the trace 
     /review|evidence|interval/,
   );
 });
+
+test("local pavement appearance follows changing widths through lighting changes and rejects absent edges", () => {
+  const width = (a: number) => 12 + 3 * Math.sin(3 * a),
+    { image, trace } = circleImage(width);
+  for (let y = 0; y < image.height; y++)
+    for (let x = 0; x < image.width; x++) {
+      const east = x - 255.5,
+        north = 255.5 - y,
+        angle = Math.atan2(north, east),
+        road = Math.abs(Math.hypot(east, north) - 100) < width(angle) / 2,
+        light = Math.round(80 + 45 * Math.sin(angle));
+      image.data.set(
+        road ? [light, light + 2, light + 3, 255] : [112, 84, 46, 255],
+        (y * image.width + x) * 4,
+      );
+    }
+  const result = inferImageBorders(trace, image, {
+    method: "road-local-appearance-v4",
+  });
+  for (const [points, sign] of [
+    [result.inner, -1],
+    [result.outer, 1],
+  ] as const) {
+    const errors = points
+      .map((p) => {
+        const [x, y] = project.to(p);
+        return Math.abs(
+          Math.hypot(x, y) - (100 + (sign * width(Math.atan2(y, x))) / 2),
+        );
+      })
+      .sort((a, b) => a - b);
+    assert.ok(errors[Math.floor(errors.length * 0.95)] < 2);
+  }
+  image.data.fill(130);
+  for (let i = 3; i < image.data.length; i += 4) image.data[i] = 255;
+  assert.throws(
+    () =>
+      inferImageBorders(trace, image, { method: "road-local-appearance-v4" }),
+    /review|evidence|interval/,
+  );
+  image.data.fill(0);
+  assert.throws(
+    () =>
+      inferImageBorders(trace, image, { method: "road-local-appearance-v4" }),
+    /coverage/,
+  );
+});
