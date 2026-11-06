@@ -663,6 +663,15 @@ async function applyView() {
     credit.title = terrain.source.attribution.join(" ");
     get("course-credit").append(" · Terrain: ", credit);
   }
+  const grade = layout?.metadata.borderInference?.gradeSeparation;
+  if (is3d && grade) {
+    const credit = element("a", "GSI DEM5A");
+    credit.href = grade.elevation.url;
+    credit.target = "_blank";
+    credit.rel = "noreferrer";
+    credit.title = grade.elevation.attribution;
+    get("course-credit").append(" · Road elevations edited from ", credit);
+  }
   get("course-credit").title = layout?.metadata.attribution ?? "";
   if (!is3d) {
     viewer?.setActive(false);
@@ -1129,7 +1138,13 @@ function panel(
     if (terrain) {
       const profile = courseElevation(layout, terrain);
       if (profile)
-        root.append(elevationProfile(profile, m.geometryKind === "network"));
+        root.append(
+          elevationProfile(
+            profile,
+            m.geometryKind === "network",
+            !!m.borderInference?.gradeSeparation,
+          ),
+        );
       const detail = element("details", "", "elevation-sources");
       detail.append(element("summary", "Elevation data"));
       detail.append(
@@ -1146,6 +1161,20 @@ function panel(
       detail.append(link);
       for (const credit of terrain.source.attribution)
         detail.append(element("p", credit));
+      const grade = m.borderInference?.gradeSeparation;
+      if (grade) {
+        detail.append(
+          element(
+            "p",
+            "Road elevations are edited from GSI DEM5A ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey.",
+          ),
+        );
+        const credit = element("a", grade.elevation.attribution);
+        credit.href = grade.elevation.url;
+        credit.target = "_blank";
+        credit.rel = "noreferrer";
+        detail.append(credit);
+      }
       content.append(detail);
     }
   }

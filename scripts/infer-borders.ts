@@ -25,6 +25,8 @@ import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
 import { borderRefinementInputSchema } from "../schemas/border-refinement";
 import { borderPairHash, refineImageBorders } from "./refine-image-borders";
+import { gradeSeparationSchema } from "../schemas/grade-separation";
+import { verifyGradeSource } from "./verify-grade-source";
 const args = process.argv.slice(2),
   option = (s: string) => {
     const i = args.indexOf(s);
@@ -50,6 +52,16 @@ if (
 )
   throw new Error(
     "--edge-refinement requires one --track, --layout, --cached-image and --local-appearance",
+  );
+if (
+  option("--grade-separation") &&
+  (!option("--track") ||
+    !option("--layout") ||
+    !option("--cached-image") ||
+    !localAppearance)
+)
+  throw new Error(
+    "--grade-separation requires one --track, --layout, --cached-image and --local-appearance",
   );
 const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
   sha = (b: Buffer | string) => createHash("sha256").update(b).digest("hex");
@@ -398,6 +410,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     if (check) {
+      if (old?.gradeSeparation)
+        await verifyGradeSource(layout, old.gradeSeparation);
       if (old?.refinement) {
         const pair = Object.fromEntries(
           ["inner", "outer"].map((role) => [
@@ -467,6 +481,11 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         result: ReturnType<typeof inferImageBorders>;
       const detectorOptions = {
         open: !layout.metadata.closed,
+        gradeSeparation: option("--grade-separation")
+          ? gradeSeparationSchema.parse(
+              await read(option("--grade-separation")!),
+            )
+          : old?.gradeSeparation,
         ...(appearance
           ? {
               method: localAppearance
@@ -475,6 +494,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             }
           : {}),
       };
+      if (detectorOptions.gradeSeparation)
+        await verifyGradeSource(layout, detectorOptions.gradeSeparation);
       try {
         acquired = await imagery.get(key)!;
         result = inferImageBorders(
@@ -514,7 +535,10 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             refinementInput,
             acquired.image,
             acquired.info.sha256,
-            { open: !layout.metadata.closed },
+            {
+              open: !layout.metadata.closed,
+              gradeSeparation: detectorOptions.gradeSeparation,
+            },
           )
         : undefined;
       if (refined) result = refined.result;
@@ -527,10 +551,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             : "rgb-cross-sections-v2",
         status: "estimated",
         reviewedAt: null,
-        ...(!layout.metadata.closed
+        ...(!layout.metadata.closed || detectorOptions.gradeSeparation
           ? { edgeConvention: "left-right-along-trace" }
           : {}),
         traceSha256: inputHash,
+        ...(detectorOptions.gradeSeparation
+          ? { gradeSeparation: detectorOptions.gradeSeparation }
+          : {}),
         ...(refined ? { refinement: refined.refinement } : {}),
         imagery: acquired.info,
         evidence: {

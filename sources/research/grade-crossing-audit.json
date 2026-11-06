@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "missingLayoutSetSha256": "29fc6081991961b8b210fa55e205bd5f0834f57dac6400009bb210d10169bff1",
+  "missingLayoutSetSha256": "bad7dbdd3e76b0ccc48a3a82787523211d328a1ae73c07b3c8de387baa51c962",
   "note": "Diagnostic source-topology audit only. No boundaries, elevation profiles or models are accepted or changed. Explicit source bridge matches still require imagery review, separate road levels and crossing-aware runtime reconstruction. Collinear retraces and unexplained intersections stay unresolved. Coordinates come only from public mapped traces; no timing data is read.",
   "summary": {
-    "missingLayouts": 276,
-    "singlePathsAudited": 249,
+    "missingLayouts": 274,
+    "singlePathsAudited": 247,
     "networksSkipped": 27,
-    "layoutsWithCrossings": 7,
-    "layoutsWithSourceBridgeCandidates": 5,
+    "layoutsWithCrossings": 5,
+    "layoutsWithSourceBridgeCandidates": 3,
     "unexplainedCrossings": 3
   },
   "records": [
@@ -49,94 +49,6 @@
               "layer": "1",
               "branch": 0,
               "url": "https://www.openstreetmap.org/way/609543649/history/2"
-            }
-          ],
-          "status": "source-bridge-needs-profile"
-        }
-      ]
-    },
-    {
-      "trackId": "jp-suzuka-circuit-175231434",
-      "layoutId": "main",
-      "file": "data/japan/suzuka-circuit-175231434/layouts/main.geojson",
-      "traceSha256": "0f567681094845ad5010505e941ee1b855bed9aea9c7ec34b47bba9a42bbca74",
-      "source": {
-        "recipeFile": "sources/jp-suzuka-circuit-175231434/layouts/main.json",
-        "recipeSha256": "2ffab1460575f31f5b2de95b5a40c4d80aafdfabd86d22b287fa8ee1273b4d32",
-        "snapshotFile": "sources/jp-suzuka-circuit-175231434/osm.json",
-        "snapshotSha256": "03ac6b609135fb4b37842d5ab675e9c90b636e0497729c59fe88ff0f5f359f8f"
-      },
-      "crossings": [
-        {
-          "kind": "crossing",
-          "segments": [
-            124,
-            230
-          ],
-          "fractions": [
-            0.29415834,
-            0.49077117
-          ],
-          "stationsM": [
-            2712.317,
-            5098.168
-          ],
-          "coordinate": [
-            136.5306187,
-            34.8439714
-          ],
-          "bridgeCandidates": [
-            {
-              "wayId": 175231434,
-              "wayVersion": 7,
-              "bridge": "yes",
-              "layer": "1",
-              "branch": 1,
-              "url": "https://www.openstreetmap.org/way/175231434/history/7"
-            }
-          ],
-          "status": "source-bridge-needs-profile"
-        }
-      ]
-    },
-    {
-      "trackId": "jp-suzuka-circuit-175231434",
-      "layoutId": "suzuka",
-      "file": "data/japan/suzuka-circuit-175231434/layouts/suzuka.geojson",
-      "traceSha256": "9cbd01e6655be5f2f393be21894da14e862be8f0a6d902f7d0adc61a1a3effe9",
-      "source": {
-        "recipeFile": "sources/jp-suzuka-circuit-175231434/layouts/suzuka.json",
-        "recipeSha256": "882725630ee72fe419d80111d35e29fffa776a312a9c91d933c4a967fa35a4b2",
-        "snapshotFile": "sources/jp-suzuka-circuit-175231434/relation-284570.json",
-        "snapshotSha256": "31a9404547a9f834143b20bf24de263bba77bd5b0149a98ac0da88461ec4aac6"
-      },
-      "crossings": [
-        {
-          "kind": "crossing",
-          "segments": [
-            124,
-            219
-          ],
-          "fractions": [
-            0.29415834,
-            0.49077117
-          ],
-          "stationsM": [
-            2712.317,
-            5090.981
-          ],
-          "coordinate": [
-            136.5306187,
-            34.8439714
-          ],
-          "bridgeCandidates": [
-            {
-              "wayId": 175231434,
-              "wayVersion": 7,
-              "bridge": "yes",
-              "layer": "1",
-              "branch": 1,
-              "url": "https://www.openstreetmap.org/way/175231434/history/7"
             }
           ],
           "status": "source-bridge-needs-profile"

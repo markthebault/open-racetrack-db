@@ -3,6 +3,7 @@ import {
   inferredBorderLicenses,
 } from "./border-inference";
 import { z } from "zod";
+import { assertGradeRibbon } from "../src/grade-separation";
 import { trackModelSchema, networkLapRecipeSchema } from "./track-model";
 import {
   bounds,
@@ -402,9 +403,20 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   )
     throw new Error("Component border rights need a complete composition");
   if (m.borderInference) {
+    const grade = m.borderInference.gradeSeparation;
+    if (
+      grade &&
+      (!m.closed ||
+        isNetwork ||
+        m.borderInference.method !== "rgb-road-local-appearance-v4" ||
+        m.borderInference.edgeConvention !== "left-right-along-trace")
+    )
+      throw new Error(
+        "Grade-separated roads require one closed, station-paired local-appearance ribbon",
+      );
     if (m.borderInference.edgeConvention === "left-right-along-trace") {
       if (
-        m.closed ||
+        (m.closed && !grade) ||
         isNetwork ||
         borders.some((f) => f.geometry.type !== "LineString")
       )
@@ -415,10 +427,22 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       if (
         edges.length !== 2 ||
         edges[0].length !== edges[1].length ||
-        edges.some((p) => equal(p[0], p.at(-1)!))
+        edges.some((p) => equal(p[0], p.at(-1)!) !== m.closed)
       )
         throw new Error(
-          "Open-road edges must have matching stations and distinct endpoints",
+          "Paired edges must have matching stations and the declared route closure",
+        );
+      if (grade)
+        assertGradeRibbon(
+          {
+            inner: geometryPaths(
+              borders.find((f) => f.properties.role === "inner")!.geometry,
+            )[0],
+            outer: geometryPaths(
+              borders.find((f) => f.properties.role === "outer")!.geometry,
+            )[0],
+          },
+          grade,
         );
     } else if (!m.closed)
       throw new Error(
@@ -478,6 +502,15 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   } else if (borders.some((f) => "borderStatus" in f.properties))
     throw new Error("Estimated imagery borders require source evidence");
   if (m.model3d) {
+    if (
+      m.borderInference?.gradeSeparation &&
+      (m.model3d.kind === "surface" ||
+        m.model3d.kind === "run" ||
+        m.model3d.pathMethod !== "paired-border-midpoints")
+    )
+      throw new Error(
+        "Grade-separated models require paired closed-road playback",
+      );
     if (
       m.model3d.kind !== "surface" &&
       m.model3d.pathMethod === "paired-border-midpoints" &&

@@ -142,13 +142,16 @@ export function terrainProfile(
   terrain: ElevationGrid,
 ): ElevationAnchor[] {
   const projection = plane(road.origin),
-    step = Math.max(1, Math.floor(40 / road.step)),
+    pairedProfile = road.points[0].sourceStation !== undefined,
+    step = pairedProfile ? 1 : Math.max(1, Math.floor(40 / road.step)),
     samples: ElevationAnchor[] = [];
   const closed = road.recipe.kind !== "run",
     denominator = road.points.length - (closed ? 0 : 1);
   for (let i = 0; i < denominator; i += step) {
     const p = road.points[i],
-      height = sampleElevation(terrain, projection.from([p.x, -p.z]));
+      height = pairedProfile
+        ? p.y
+        : sampleElevation(terrain, projection.from([p.x, -p.z]));
     if (height === null)
       throw new Error("Terrain does not cover the selected course");
     samples.push([
@@ -323,6 +326,11 @@ export function prepareTrackModel(
     .sort((a, b) => a.distanceM - b.distanceM)
     .filter((c, i, a) => !i || c.distanceM > a[i - 1].distanceM);
   const result = trackModelSchema.parse({ ...seed, elevation, curbs, corners });
+  const grade = layout.metadata.borderInference?.gradeSeparation;
+  if (grade) {
+    result.sources.elevation = grade.elevation.url;
+    result.sources.notes = `Road elevations are edited from ${grade.elevation.attribution} DEM5A ground tiles. ${grade.elevation.note} The bridge uses explicit paired source stations; cross-sections never select another road branch. Curbs are geometry-based illustrations, not verified curb locations. Banking is unknown and assumed zero. Borders retain their feature licences and unverified status. Imagery loads externally; no meshes, image bytes or videos are stored.`;
+  }
   if (!isLapModel(result)) throw new Error("Expected a lap recipe");
   return result;
 }

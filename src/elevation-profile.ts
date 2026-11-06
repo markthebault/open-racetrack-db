@@ -3,14 +3,18 @@ import type { courseElevation } from "./elevation";
 export function elevationProfile(
   profile: NonNullable<ReturnType<typeof courseElevation>>,
   network: boolean,
+  roadProfile = false,
 ) {
   const section = document.createElement("section");
   section.className = "elevation-panel";
-  section.setAttribute("aria-label", "Estimated terrain elevation");
+  section.setAttribute(
+    "aria-label",
+    roadProfile ? "Estimated road elevation" : "Estimated terrain elevation",
+  );
   const heading = document.createElement("div");
   heading.className = "elevation-heading";
   const title = document.createElement("span");
-  title.textContent = "Terrain elevation";
+  title.textContent = roadProfile ? "Road elevation" : "Terrain elevation";
   const change = document.createElement("strong");
   change.id = "elevation-range";
   change.textContent = `${Math.round(profile.max - profile.min)} m relief`;
@@ -32,7 +36,7 @@ export function elevationProfile(
   svg.setAttribute("role", "img");
   svg.setAttribute(
     "aria-label",
-    `Estimated terrain elevation from ${Math.round(profile.min)} to ${Math.round(profile.max)} metres. ${network ? "Network branches are shown separately." : "Profile follows the mapped trace."}`,
+    `Estimated ${roadProfile ? "road" : "terrain"} elevation from ${Math.round(profile.min)} to ${Math.round(profile.max)} metres. ${roadProfile ? "Bridge decks interpolate between sampled approaches." : network ? "Network branches are shown separately." : "Profile follows the mapped trace."}`,
   );
   const longest = Math.max(
     ...profile.paths.map((path) => path.at(-1)!.distance),
@@ -59,9 +63,11 @@ export function elevationProfile(
   chart.append(labels, svg);
   const note = document.createElement("span");
   note.className = "elevation-caption";
-  note.textContent = network
-    ? "Terrain estimate · separate branches"
-    : "Terrain estimate · along the mapped trace";
+  note.textContent = roadProfile
+    ? "Road estimate · Bridge interpolated"
+    : network
+      ? "Terrain estimate · separate branches"
+      : "Terrain estimate · along the mapped trace";
   section.append(heading, chart, note);
   return section;
 }

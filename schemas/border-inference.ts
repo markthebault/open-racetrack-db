@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { imageryTilesSchema } from "./imagery-tiles";
 import { borderRefinementSchema } from "./border-refinement";
+import { gradeSeparationSchema } from "./grade-separation";
 const httpUrl = z
   .url()
   .refine((v) => /^https?:/.test(v), "Expected HTTP(S) source URL");
@@ -26,6 +27,7 @@ export const borderInferenceSchema = z.strictObject({
   edgeConvention: z.enum(["inner-outer", "left-right-along-trace"]).optional(),
   traceSha256: z.string().regex(/^[a-f0-9]{64}$/),
   refinement: borderRefinementSchema.optional(),
+  gradeSeparation: gradeSeparationSchema.optional(),
   imagery: z
     .strictObject({
       sourceId: z.string().min(1),

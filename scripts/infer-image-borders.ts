@@ -1,4 +1,6 @@
 import { PNG } from "pngjs";
+import type { GradeSeparation } from "../schemas/grade-separation";
+import { assertGradeRibbon } from "../src/grade-separation";
 import { plane, equal, type Position } from "../src/geo";
 type RasterExtent = {
   width: number;
@@ -153,13 +155,24 @@ export function inferImageBorders(
   options: {
     open?: boolean;
     method?: "road-appearance-v3" | "road-local-appearance-v4";
+    gradeSeparation?: GradeSeparation;
   } = {},
 ) {
-  const localAppearance = options.method === "road-local-appearance-v4",
+  const gradeSeparation = options.gradeSeparation,
+    localAppearance = options.method === "road-local-appearance-v4",
     appearance = localAppearance || options.method === "road-appearance-v3",
     minOffset = appearance ? -10 : 2;
   const { closed, projection, count, step, smooth, normals, index } =
     imageCrossSections(trace, options.open);
+  if (
+    options.gradeSeparation &&
+    (!closed ||
+      !localAppearance ||
+      options.gradeSeparation.stationCount !== count)
+  )
+    throw new Error(
+      "Grade separation requires matching closed local-appearance stations",
+    );
   const samples = smooth.map((p, i) =>
     Array.from({ length: 121 }, (_, j) =>
       pixel(
@@ -310,7 +323,7 @@ export function inferImageBorders(
       p[1] + normals[i][1] * filtered[i] * sign,
     ]);
     if (closed) planar.push(planar[0]);
-    if (selfCrosses(planar, closed))
+    if (!gradeSeparation && selfCrosses(planar, closed))
       throw new Error(
         "Inferred boundary crosses itself; image needs manual review",
       );
@@ -348,6 +361,14 @@ export function inferImageBorders(
         .slice(1)
         .reduce((a, p, i) => a + points[i][0] * p[1] - p[0] * points[i][1], 0),
     );
-  const inner = !closed || area(borders[0]) < area(borders[1]) ? 0 : 1;
+  if (options.gradeSeparation)
+    assertGradeRibbon(
+      { inner: borders[0], outer: borders[1] },
+      options.gradeSeparation,
+    );
+  const inner =
+    options.gradeSeparation || !closed || area(borders[0]) < area(borders[1])
+      ? 0
+      : 1;
   return { inner: borders[inner], outer: borders[1 - inner], evidence, step };
 }

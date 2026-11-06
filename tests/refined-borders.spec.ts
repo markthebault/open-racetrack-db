@@ -9,9 +9,11 @@ for (const [track, layout] of [
   ["us-arizona-motorsports-park-9f848c55", "arizona-motorsports-park"],
   ["gb-curborough-68a60e27", "curborough"],
   ["gb-m-sport-proving-ground-fe7c7315", "msport-inner-variant"],
+  ["jp-suzuka-circuit-175231434", "main"],
+  ["jp-suzuka-circuit-175231434", "suzuka"],
 ])
   for (const width of [1440, 390])
-    test(`${track} refined borders retain evidence, playback and a decodable export at ${width}px`, async ({
+    test(`${track}/${layout} refined borders retain evidence, playback and a decodable export at ${width}px`, async ({
       page,
       request,
     }) => {
@@ -68,6 +70,20 @@ for (const [track, layout] of [
       await expect(page.locator(".lap-evidence").first()).toContainText(
         "Other sections remain automatic estimates",
       );
+      if (d.metadata.borderInference.gradeSeparation) {
+        const grade = d.metadata.borderInference.gradeSeparation;
+        expect(grade.stationCount).toBe(edges.inner.length - 1);
+        expect(grade.elevation.anchors.length).toBeLessThan(100);
+        expect(d.metadata.borderInference.edgeConvention).toBe(
+          "left-right-along-trace",
+        );
+        await expect(page.locator(".lap-profile-caption")).toContainText(
+          "Bridge interpolated",
+        );
+        await expect(page.locator(".lap-imagery-credit")).toContainText(
+          "Road elevations edited from GSI",
+        );
+      }
       await page.locator(".lap-play").click();
       await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");
       await page.locator(".lap-play").click();

@@ -1,4 +1,6 @@
 import { createHash } from "node:crypto";
+import type { GradeSeparation } from "../schemas/grade-separation";
+import { assertGradeRibbon } from "../src/grade-separation";
 import {
   borderRefinementInputSchema,
   type BorderRefinementInput,
@@ -24,7 +26,7 @@ export function refineImageBorders<T extends Borders>(
   input: BorderRefinementInput,
   image: Raster,
   imageSha256: string,
-  options: { open?: boolean } = {},
+  options: { open?: boolean; gradeSeparation?: GradeSeparation } = {},
 ) {
   const open = options.open === true;
   const recipe = borderRefinementInputSchema.parse(input);
@@ -160,7 +162,11 @@ export function refineImageBorders<T extends Borders>(
   )
     throw new Error("Refined borders exceed supported road widths");
   const rings = [result.inner.map(project.to), result.outer.map(project.to)];
-  assertSeparateSimpleRings(rings, !open);
+  if (options.gradeSeparation) {
+    if (open)
+      throw new Error("Grade-separated refinements require closed edges");
+    assertGradeRibbon(result, options.gradeSeparation);
+  } else assertSeparateSimpleRings(rings, !open);
   if (
     open &&
     rings[0].some((p, i) => {
@@ -170,7 +176,7 @@ export function refineImageBorders<T extends Borders>(
     })
   )
     throw new Error("Refined open borders reverse left/right driving order");
-  if (!open && !insideRing(rings[0][0], rings[1]))
+  if (!open && !options.gradeSeparation && !insideRing(rings[0][0], rings[1]))
     throw new Error(
       "Refined inner boundary is not nested inside the outer boundary",
     );

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { roadGroundHeight, carveRoadGround } from "./road-ground";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { plane } from "./geo";
@@ -6,12 +7,7 @@ import { roadStrip as strip } from "./road-geometry";
 import { LapCameraRig } from "./lap-camera";
 import { sampleElevation, type ElevationGrid } from "./elevation";
 import { imageryBlob } from "./imagery";
-import {
-  sampleLap,
-  type Lap,
-  type Road,
-  type RoadPoint,
-} from "./lap-simulation";
+import { sampleLap, type Lap, type Road } from "./lap-simulation";
 
 export const fromMercator = (x: number, y: number): [number, number] => [
   ((x / 6378137) * 180) / Math.PI,
@@ -298,12 +294,7 @@ export class LapScene {
     );
     const pos = this.groundGeometry.getAttribute("position");
     const validGround: boolean[] = [];
-    const cells = new Map<string, RoadPoint[]>();
-    for (const p of road.points) {
-      const key = `${Math.floor(p.x / 40)},${Math.floor(p.z / 40)}`;
-      if (!cells.has(key)) cells.set(key, []);
-      cells.get(key)!.push(p);
-    }
+    const groundHeight = roadGroundHeight(road);
     for (let i = 0; i < pos.count; i++) {
       const x = pos.getX(i),
         z = pos.getZ(i);
@@ -312,29 +303,12 @@ export class LapScene {
         : null;
       validGround.push(sampled !== null);
       if (sampled === null) continue;
-      let y = sampled;
-      let nearest: RoadPoint | undefined,
-        best = Infinity;
-      for (let a = -1; a <= 1; a++)
-        for (let b = -1; b <= 1; b++)
-          for (const p of cells.get(
-            `${Math.floor(x / 40) + a},${Math.floor(z / 40) + b}`,
-          ) ?? []) {
-            const d = (x - p.x) ** 2 + (z - p.z) ** 2;
-            if (d < best) {
-              best = d;
-              nearest = p;
-            }
-          }
-      if (nearest) {
-        const width = Math.max(nearest.left, nearest.right) + 5,
-          blend =
-            1 - THREE.MathUtils.smoothstep(Math.sqrt(best), width, width + 35);
-        y = THREE.MathUtils.lerp(y, nearest.y - 0.1, blend);
-      }
+      const y = groundHeight(x, z, sampled);
       pos.setY(i, y - 0.3);
     }
     // Missing raster coverage remains a hole, rather than an invented 400 m wall.
+    if (road.points.some((p) => p.elevated))
+      carveRoadGround(this.groundGeometry, road, { columns: 160, rows: 220 });
     const sourceTriangles = this.groundGeometry.getIndex()!.array,
       triangles: number[] = [];
     for (let i = 0; i < sourceTriangles.length; i += 3) {

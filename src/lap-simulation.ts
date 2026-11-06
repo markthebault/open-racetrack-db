@@ -5,6 +5,7 @@ import { indexBorders, borderSection } from "./border-sections";
 import { pairedBorderMidline } from "./border-midline";
 import { boundaryNormalMidline, assertRoadContained } from "./boundary-path";
 import { buildOpenRoad } from "./open-road";
+import { gradeProfileHeight, onBridge } from "./grade-separation";
 
 export const GRAVITY = 9.80665;
 export const DEFAULT_CAR = {
@@ -34,6 +35,8 @@ export interface RoadPoint {
   grade: number;
   leftEdge?: Position;
   rightEdge?: Position;
+  sourceStation?: number;
+  elevated?: boolean;
 }
 export interface Road {
   points: RoadPoint[];
@@ -132,9 +135,16 @@ export function buildRoad(layout: Layout): Road {
     }
   }
   const start = (finish + recipe.startOffsetM / length) % 1;
+  const grade = layout.metadata.borderInference?.gradeSeparation;
   const borders = layout.features
     .filter(
       (f) => f.properties.role === "inner" || f.properties.role === "outer",
+    )
+    .sort((a, b) =>
+      grade
+        ? Number(a.properties.role === "outer") -
+          Number(b.properties.role === "outer")
+        : 0,
     )
     .flatMap((f) => geometryPaths(f.geometry))
     .map((path) =>
@@ -146,6 +156,15 @@ export function buildRoad(layout: Layout): Road {
   if (borders.length !== 2)
     throw new Error("This lap needs two continuous source borders.");
   const index = indexBorders(borders);
+  if (
+    grade &&
+    (recipe.pathMethod !== "paired-border-midpoints" ||
+      raw.length !== grade.stationCount ||
+      borders.some((p) => p.length !== grade.stationCount + 1))
+  )
+    throw new Error(
+      "Grade-separated playback requires its matching paired station grid",
+    );
   let interpolatedSections = 0;
   const points: RoadPoint[] = [];
   for (let i = 0; i < count; i++) {
@@ -154,6 +173,39 @@ export function buildRoad(layout: Layout): Road {
       t = curve.getTangentAt(u).normalize();
     const nx = t.z,
       nz = -t.x; // driver left in east/up/south coordinates
+    if (grade) {
+      // Spatial nearest-edge searches can select the OTHER road at an overpass.
+      // Curve parameter maps back to the original paired control stations instead.
+      const station = curve.getUtoTmapping(u, 0) * raw.length,
+        a = Math.floor(station),
+        b = (a + 1) % raw.length,
+        fraction = station - a,
+        edges = borders.map((path): Position => [
+          path[a][0] * (1 - fraction) + path[b][0] * fraction,
+          path[a][1] * (1 - fraction) + path[b][1] * fraction,
+        ]),
+        dx = edges[0][0] - edges[1][0],
+        dz = edges[0][1] - edges[1][1],
+        width = Math.hypot(dx, dz);
+      points.push({
+        x: (edges[0][0] + edges[1][0]) / 2,
+        z: (edges[0][1] + edges[1][1]) / 2,
+        y: gradeProfileHeight(grade, station),
+        s: i * step,
+        ds: step,
+        left: width / 2,
+        right: width / 2,
+        nx: dx / width,
+        nz: dz / width,
+        curvature: 0,
+        grade: 0,
+        leftEdge: edges[0],
+        rightEdge: edges[1],
+        sourceStation: station,
+        elevated: onBridge(grade, station),
+      });
+      continue;
+    }
     const section = borderSection(index, p.x, p.z, nx, nz);
     if (!section) interpolatedSections++;
     // Missing cross-sections are repaired below by interpolation, never a silently invented width.

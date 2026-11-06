@@ -178,7 +178,7 @@ export function openLap(
       out.fillText("Natural elevation · Approximate reconstruction", 30, 695);
       out.font = "12px sans-serif";
       out.fillText(
-        `Imagery: ${lap.road.recipe.imagery.attribution} · Trace © OSM · Supplemental borders`,
+        `Imagery: ${lap.road.recipe.imagery.attribution} · Trace © OSM · Supplemental borders${layout.metadata.borderInference?.gradeSeparation ? " · Road elevations edited from GSI" : ""}`,
         30,
         715,
         1220,
@@ -525,7 +525,7 @@ export function openLap(
         throw new Error("This layout has no embedded 3D model data.");
       if (closed) return;
       find(".lap-imagery-credit").textContent =
-        `Imagery: ${recipe.imagery.attribution}`;
+        `Imagery: ${recipe.imagery.attribution}${layout.metadata.borderInference?.gradeSeparation ? " · Road elevations edited from GSI" : ""}`;
       if (layout.metadata.borderInference) {
         const evidence = layout.metadata.borderInference;
         const note = document.createElement("p");
@@ -615,23 +615,26 @@ export function openLap(
       find(".lap-profile").innerHTML =
         `<svg viewBox="0 0 240 90" role="img" aria-label="Road elevation profile"><path d="M0,82 L${path.replaceAll(" ", " L")} L240,82 Z" fill="#f38a4d22"/><polyline points="${path}" fill="none" stroke="#f08c56" stroke-width="2"/><line class="lap-profile-cursor" x1="0" y1="5" x2="0" y2="82" stroke="#f1f4ec" stroke-width="1"/></svg>`;
       const published = recipe.quality.elevation === "venue-anchors";
+      const grade = layout.metadata.borderInference?.gradeSeparation;
       const estimatedCurbs = recipe.quality.curbs === "geometry-estimated";
       find(".lap-scale").textContent = estimatedCurbs
         ? "1× elevation · Terrain estimate · Illustrative curbs"
         : "1× elevation · Approximate reconstruction";
       find(".lap-profile-caption").textContent =
-        `${low.toFixed(0)}–${high.toFixed(0)} m altitude · ${published ? "Published elevation anchors" : `Terrain estimate (~${recipe.terrain.source.sampleSpacingM} m grid)`}`;
+        `${low.toFixed(0)}–${high.toFixed(0)} m altitude · ${grade ? "GSI terrain estimate · Bridge interpolated" : published ? "Published elevation anchors" : `Terrain estimate (~${recipe.terrain.source.sampleSpacingM} m grid)`}`;
       find("[data-quality]").textContent = estimatedCurbs
         ? "Illustrative curbs · Positions unverified"
         : "Image-reviewed curb locations · Estimated dimensions";
-      find("[data-elevation-note]").textContent = published
-        ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
-        : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
+      find("[data-elevation-note]").textContent = grade
+        ? "Road elevations are edited from GSI DEM5A ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey. Road levels remain separate at the overpass."
+        : published
+          ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
+          : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
         ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}. Imagery: ${recipe.imagery.attribution}. No additional rights granted.`;
+        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}. Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",
