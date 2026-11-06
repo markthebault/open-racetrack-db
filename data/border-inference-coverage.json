@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T17:46:39.968Z",
+  "generatedAt": "2026-11-06T18:08:03.205Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -5761,8 +5761,24 @@
       "trackId": "us-nola-motorsports-park-298904844",
       "layoutId": "main",
       "file": "data/united-states/nola-motorsports-park-298904844/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.865,
+          0.8481
+        ],
+        "medianInteriorDifference": [
+          0.0354,
+          0.0356
+        ],
+        "samplingStepM": 2.9996824744103034,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "9c3a3b8e6d2ba8f8f0832ff9c263845d3f5972ee725d8317fe43be5060878696"
     },
     {
       "trackId": "us-nola-motorsports-park-298904844",
@@ -5775,8 +5791,24 @@
       "trackId": "us-nola-motorsports-park-298904844",
       "layoutId": "north-long-course-2014",
       "file": "data/united-states/nola-motorsports-park-298904844/layouts/north-long-course-2014.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8805,
+          0.8413
+        ],
+        "medianInteriorDifference": [
+          0.0365,
+          0.0349
+        ],
+        "samplingStepM": 2.9991306517043474,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "9c3a3b8e6d2ba8f8f0832ff9c263845d3f5972ee725d8317fe43be5060878696"
     },
     {
       "trackId": "us-nola-motorsports-park-298904844",

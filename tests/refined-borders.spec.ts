@@ -9,6 +9,8 @@ for (const [track, layout] of [
   ["us-arizona-motorsports-park-9f848c55", "arizona-motorsports-park"],
   ["us-arroyo-seco-raceway-83871979", "main"],
   ["us-the-ridge-motorsports-park-182180341", "main"],
+  ["us-nola-motorsports-park-298904844", "main"],
+  ["us-nola-motorsports-park-298904844", "north-long-course-2014"],
   ["gb-curborough-68a60e27", "curborough"],
   ["gb-m-sport-proving-ground-fe7c7315", "msport-inner-variant"],
   ["jp-suzuka-circuit-175231434", "main"],
