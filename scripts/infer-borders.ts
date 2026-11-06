@@ -20,6 +20,8 @@ import {
   type Raster,
 } from "./infer-image-borders";
 import { serializeLayout } from "./layout-borders";
+import { loadEnv } from "vite";
+import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
 const args = process.argv.slice(2),
   option = (s: string) => {
     const i = args.indexOf(s);
@@ -40,6 +42,19 @@ const catalogue = indexSchema.parse(await read("data/index.json"));
 type ImageInfo = BorderInference["imagery"];
 type Acquired = { image: Raster; info: ImageInfo };
 const imagery = new Map<string, Promise<Acquired>>();
+const imageryEnv = loadEnv("development", process.cwd(), [
+  "VITE_",
+  "MAPTILER_",
+]);
+const licensed = args.includes("--licensed-imagery")
+  ? licensedImagery(
+      process.env.MAPTILER_EXTRACTION_API_KEY ??
+        imageryEnv.MAPTILER_EXTRACTION_API_KEY ??
+        process.env.VITE_MAPTILER_API_KEY ??
+        imageryEnv.VITE_MAPTILER_API_KEY,
+      Math.min(60000, Number(option("--timeout-ms") ?? 25000)),
+    )
+  : undefined;
 const providers = {
   US: {
     id: "usgs-naip-border-imagery",
@@ -133,6 +148,7 @@ async function acquire(track: Track, layout: Layout): Promise<Acquired> {
           },
         };
       }
+    if (licensed) return licensed(layout);
     throw new Error(
       "No registered high-resolution imagery source with documented reusable terms",
     );
@@ -260,6 +276,13 @@ type RecordRow = {
   [key: string]: unknown;
 };
 const report: RecordRow[] = [];
+const previous = args.includes("--retry-failed")
+  ? new Map<string, RecordRow>(
+      (await read("data/border-inference-coverage.json")).records.map(
+        (r: RecordRow) => [r.trackId + "/" + r.layoutId, r],
+      ),
+    )
+  : undefined;
 let saving = Promise.resolve();
 function saveProgress() {
   const bytes =
@@ -307,6 +330,14 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       },
       trace = layout.features.find((f) => f.properties.role === "trace")!,
       inputHash = sha(JSON.stringify(trace.geometry));
+    const prior = previous?.get(track.id + "/" + item.id);
+    if (
+      prior &&
+      !["acquisition-failed", "imagery-quota"].includes(prior.status)
+    ) {
+      report.push(prior);
+      continue;
+    }
     if (check) {
       if (old)
         report.push({
@@ -366,11 +397,25 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     try {
       const key = track.id + ":" + JSON.stringify(layout.bbox);
       if (!imagery.has(key)) imagery.set(key, acquire(track, layout));
-      const acquired = await imagery.get(key)!,
+      let acquired: Acquired | undefined,
+        result: ReturnType<typeof inferImageBorders>;
+      try {
+        acquired = await imagery.get(key)!;
         result = inferImageBorders(
           geometryPaths(trace.geometry)[0],
           acquired.image,
         );
+      } catch (error) {
+        // A second image source can resolve shadows, old coverage or a failed export.
+        if (!licensed || acquired?.info.tiles) throw error;
+        const fallback = key + ":licensed";
+        if (!imagery.has(fallback)) imagery.set(fallback, licensed(layout));
+        acquired = await imagery.get(fallback)!;
+        result = inferImageBorders(
+          geometryPaths(trace.geometry)[0],
+          acquired.image,
+        );
+      }
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
         method: "rgb-cross-sections-v2",
@@ -389,11 +434,11 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       const source = {
         id: evidence.imagery.sourceId,
         type: "imagery" as const,
-        title: "Reusable aerial imagery for estimated road borders",
+        title: "Aerial imagery for estimated road borders",
         url: evidence.imagery.url,
         license: evidence.imagery.license,
         retrievedAt: evidence.imagery.retrievedAt,
-        evidenceNote: `Derived edge coordinates; reusable imagery evidence: ${evidence.imagery.reuseEvidenceUrl}. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed.`,
+        evidenceNote: `Derived edge coordinates. ${evidence.imagery.rightsBasis ? "Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately." : `Reusable imagery evidence: ${evidence.imagery.reuseEvidenceUrl}.`} Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed.`,
       };
       const candidateTrack = structuredClone(track);
       if (!candidateTrack.sources.some((s) => s.id === source.id))
@@ -434,11 +479,15 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       row.imageSha256 = evidence.imagery.sha256;
     } catch (error) {
       row.reason = error instanceof Error ? error.message : String(error);
-      row.status = row.reason.includes("No registered high-resolution")
-        ? "needs-reusable-imagery"
-        : row.reason.includes("acquisition failed")
-          ? "acquisition-failed"
-          : "needs-imagery-review";
+      if (error instanceof ImageryQuotaError) row.retryAt = error.retryAt;
+      row.status =
+        error instanceof ImageryQuotaError
+          ? "imagery-quota"
+          : row.reason.includes("No registered high-resolution")
+            ? "needs-reusable-imagery"
+            : row.reason.includes("acquisition failed")
+              ? "acquisition-failed"
+              : "needs-imagery-review";
     }
     report.push(row);
     console.log(

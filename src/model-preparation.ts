@@ -27,6 +27,14 @@ export const WORLD_IMAGERY_CREDIT =
 export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
   const reference = layout.metadata.borderInference?.imagery;
   if (reference) {
+    if (reference.tiles)
+      return {
+        url: reference.url,
+        tiles: reference.tiles,
+        extent3857: reference.extent3857,
+        attribution: reference.attribution,
+        termsUrl: reference.termsUrl,
+      };
     const url = new URL(reference.url);
     const exported = /\/exportImage$/i.test(url.pathname),
       wms = url.searchParams.get("REQUEST")?.toUpperCase() === "GETMAP";

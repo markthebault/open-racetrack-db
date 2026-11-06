@@ -5,6 +5,7 @@ import { plane } from "./geo";
 import { roadStrip as strip } from "./road-geometry";
 import { LapCameraRig } from "./lap-camera";
 import { sampleElevation, type ElevationGrid } from "./elevation";
+import { imageryBlob } from "./imagery";
 import {
   sampleLap,
   type Lap,
@@ -383,11 +384,10 @@ export class LapScene {
   };
   async loadImagery() {
     try {
-      const response = await fetch(this.road.recipe.imagery.url, {
-        signal: this.imageryAbort.signal,
-      });
-      if (!response.ok) throw new Error("Imagery unavailable");
-      const blob = await response.blob();
+      const blob = await imageryBlob(
+        this.road.recipe.imagery,
+        this.imageryAbort.signal,
+      );
       const bitmap = await createImageBitmap(blob, {
         imageOrientation: "flipY",
       });

@@ -11,7 +11,7 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
   page,
   request,
 }) => {
-  test.setTimeout(300000);
+  test.setTimeout(900000);
   const index = await read("data/index.json"),
     selected: { trackId: string; layoutId: string; layout: Layout }[] = [];
   for (const entry of index.tracks) {
@@ -35,7 +35,12 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
       headers: { "access-control-allow-origin": "*" },
     }),
   );
-  for (const host of ["imagery.nationalmap.gov", "data.geopf.fr", "www.ign.es"])
+  for (const host of [
+    "imagery.nationalmap.gov",
+    "data.geopf.fr",
+    "www.ign.es",
+    "api.maptiler.com",
+  ])
     await page.route(`**/${host}/**`, (route) =>
       route.fulfill({
         contentType: "image/png",
@@ -100,4 +105,31 @@ test("estimated borders remain labelled and usable on a narrow phone", async ({
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
+});
+
+test("an imagery quota failure leaves the saved 3D road and lap playback usable", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.route("**/api.maptiler.com/**", (route) =>
+    route.fulfill({
+      status: 429,
+      headers: { "access-control-allow-origin": "*" },
+      body: "Quota exceeded",
+    }),
+  );
+  await page.route("https://tile.openstreetmap.org/**", (route) =>
+    route.abort(),
+  );
+  await page.goto(
+    "/?track=de-test-und-prasentationsstrecke-bilster-berg-180270505&layout=main&lap=1",
+  );
+  await expect(page.locator(".lap-loading")).toBeHidden();
+  await expect(page.locator(".lap-status")).toContainText(
+    "3D road remains usable",
+  );
+  await page.locator(".lap-play").click();
+  await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");
+  expect(errors).toEqual([]);
 });

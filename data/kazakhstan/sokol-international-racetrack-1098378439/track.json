@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Sokol International",
       "file": "layouts/main.geojson",
-      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Sokol International Racetrack. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4464.2 m; supplied distance 4447 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Kazakhstan/Sokol International"
+      "referenceId": "Kazakhstan/Sokol International",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Sokol International Racetrack. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4464.2 m; supplied distance 4447 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:35:57.055Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:22.220Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

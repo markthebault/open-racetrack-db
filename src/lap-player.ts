@@ -278,10 +278,25 @@ export function openLap(
         [south, west],
         [north, east],
       ];
-      L.imageOverlay(lap.road.recipe.imagery.url, bounds, {
-        attribution: lap.road.recipe.imagery.attribution,
-        crossOrigin: "anonymous",
-      }).addTo(map);
+      const tileReference = lap.road.recipe.imagery.tiles;
+      if (tileReference) {
+        const key = import.meta.env.VITE_MAPTILER_API_KEY?.trim();
+        if (key)
+          L.tileLayer(
+            `https://api.maptiler.com/maps/satellite-v4/{z}/{x}/{y}.jpg?key=${encodeURIComponent(key)}`,
+            {
+              tileSize: 512,
+              zoomOffset: -1,
+              maxZoom: 22,
+              attribution: lap.road.recipe.imagery.attribution,
+              crossOrigin: true,
+            },
+          ).addTo(map);
+      } else
+        L.imageOverlay(lap.road.recipe.imagery.url, bounds, {
+          attribution: lap.road.recipe.imagery.attribution,
+          crossOrigin: "anonymous",
+        }).addTo(map);
       const projection = plane(lap.road.origin);
       for (const side of ["left", "right"] as const) {
         const coords = lap.road.points.map((p) => {
@@ -436,7 +451,10 @@ export function openLap(
         note.textContent =
           "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
         const credit = document.createElement("a");
-        credit.href = evidence.imagery.reuseEvidenceUrl;
+        credit.href =
+          evidence.imagery.reuseEvidenceUrl ??
+          evidence.imagery.termsUrl ??
+          evidence.imagery.url;
         credit.target = "_blank";
         credit.rel = "noreferrer";
         credit.textContent = evidence.imagery.attribution;

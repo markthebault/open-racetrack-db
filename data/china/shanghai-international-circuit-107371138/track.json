@@ -29,14 +29,14 @@
       "id": "shanghai-gp",
       "name": "Shanghai GP",
       "file": "layouts/shanghai-gp.geojson",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
-      "referenceId": "China/Shanghai GP"
+      "referenceId": "China/Shanghai GP",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     },
     {
       "id": "shanghai-ext-turn4",
       "name": "Shanghai Ext Turn4",
-      "referenceId": "China/Shanghai Ext Turn4",
       "file": "layouts/shanghai-ext-turn4.geojson",
+      "referenceId": "China/Shanghai Ext Turn4",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5409.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
     }
   ],
@@ -67,6 +67,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:31.696Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:18.906Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

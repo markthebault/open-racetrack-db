@@ -12,6 +12,7 @@ Some layout GeoJSON files include `inner` and `outer` features. They are separat
 
 When borders are present, `metadata.licenseScope` is `trace-and-timing`: the collection's ODbL declaration and OSM attribution apply to its original trace and applicable timing data, not to the supplemental border features. Legacy supplemental borders have no borrowed OSM source IDs. Estimated imagery-derived borders instead carry their imagery source ID, the source-specific feature licence (for example public-domain NAIP or Etalab-2.0 IGN imagery), and `borderStatus: estimated`. Their `metadata.borderInference` records attribution, reuse evidence, raster hashes, georeferencing and image-evidence metrics. These estimates are unreviewed; source pixel size and edge evidence do not certify positional accuracy. Application code remains MIT. Neither a display option nor inclusion in a GeoJSON download changes the rights attached to a feature.
 
+Licensed MapTiler-derived estimates use `LicenseRef-MapTiler-Derived-Borders`. The dataset operator has confirmed a separate agreement allowing automated extraction and redistribution of derived coordinates. Agreement text is held separately and was not independently reviewed here. This reference does not relicense the imagery as open data or give recipients additional imagery rights. Attribution and feature-level rights remain attached to each estimate. No satellite raster bytes, API credentials or agreement documents are distributed in the dataset.
 
 ## Terrain grids
 

@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { inferImageBorders, type Raster } from "../scripts/infer-image-borders";
 import { plane, type Position } from "../src/geo";
 import { borderInferenceSchema } from "../schemas/border-inference";
+import { displayTilePlan } from "../src/imagery";
 const project = plane([0, 0]);
 function circleImage(widthAt: (angle: number) => number) {
   const image: Raster = {
@@ -103,4 +104,64 @@ test("imagery provenance requires a usable resolution and an explicit unreviewed
     }).success,
     false,
   );
+  const licensed = {
+    ...record,
+    imagery: {
+      ...record.imagery,
+      reuseEvidenceUrl: undefined,
+      license: "LicenseRef-MapTiler-Derived-Borders",
+      rightsBasis: "source-specific-agreement",
+      tiles: {
+        provider: "maptiler-satellite-v4",
+        zoom: 17,
+        bounds: [100, 110, 105, 115],
+      },
+    },
+  };
+  assert.ok(borderInferenceSchema.safeParse(licensed).success);
+  assert.equal(
+    borderInferenceSchema.safeParse({
+      ...licensed,
+      imagery: { ...licensed.imagery, rightsBasis: undefined },
+    }).success,
+    false,
+  );
+  assert.equal(
+    borderInferenceSchema.safeParse({
+      ...licensed,
+      imagery: {
+        ...licensed.imagery,
+        url: "https://api.maptiler.com/maps/satellite-v4/tiles.json?key=do-not-save",
+      },
+    }).success,
+    false,
+  );
+  assert.equal(
+    borderInferenceSchema.safeParse({
+      ...record,
+      imagery: { ...record.imagery, reuseEvidenceUrl: undefined },
+    }).success,
+    false,
+  );
+});
+
+test("display tiles crop parent imagery to the saved extent without shifting the road", () => {
+  const plan = displayTilePlan({
+    provider: "maptiler-satellite-v4",
+    zoom: 17,
+    bounds: [101, 113, 109, 118],
+  });
+  assert.ok(plan.width <= 2048 && plan.height <= 2048);
+  assert.ok(plan.zoom < 17);
+  // The first original tile starts at a fractional position in its parent tile.
+  const first = plan.cells[0],
+    parent = 2 ** (17 - plan.zoom);
+  assert.equal(first.left / plan.width, (first.x * parent - 101) / 9);
+  assert.equal(first.top / plan.height, (first.y * parent - 113) / 6);
+  assert.ok(Math.min(...plan.cells.map((c) => c.left)) <= 0);
+  assert.ok(Math.max(...plan.cells.map((c) => c.left + c.width)) >= plan.width);
+  assert.ok(
+    Math.max(...plan.cells.map((c) => c.top + c.height)) >= plan.height,
+  );
+  assert.ok(plan.cells.length < 9 * 6);
 });

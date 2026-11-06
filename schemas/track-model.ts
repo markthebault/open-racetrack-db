@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { elevationSchema } from "./elevation";
+import { imageryTilesSchema } from "./imagery-tiles";
 
 const text = z.string().min(1);
 const webUrl = z
@@ -55,6 +56,7 @@ const lapModelSchema = z
     }),
     imagery: z.strictObject({
       url: webUrl,
+      tiles: imageryTilesSchema.optional(),
       extent3857: z.tuple([z.number(), z.number(), z.number(), z.number()]),
       attribution: text,
       termsUrl: webUrl.optional(),

@@ -26,57 +26,57 @@
     {
       "id": "yas-marina-combo",
       "name": "Yas Marina Combo",
-      "referenceId": "United Arab Emirates/Yas Marina Combo",
       "file": "layouts/yas-marina-combo.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina Combo",
       "description": "Combined mapped configurations: Historical Grand Prix course, Historical Grand Prix Corkscrew, Historical North course, Historical North with Chicane, Historical North Corkscrew, Historical North Handling, Historical South course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "yas-marina-gp",
       "name": "Yas Marina GP",
-      "referenceId": "United Arab Emirates/Yas Marina GP",
       "file": "layouts/yas-marina-gp.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina GP",
       "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     },
     {
       "id": "yas-marina-gp-corkscrew",
       "name": "Yas Marina GP Corkscrew",
-      "referenceId": "United Arab Emirates/Yas Marina GP Corkscrew",
       "file": "layouts/yas-marina-gp-corkscrew.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina GP Corkscrew",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4776.8 m. Difference from the supplied layout distance 31.8 m. Course configuration still requires visual review."
     },
     {
       "id": "yas-marina-north",
       "name": "Yas Marina North",
-      "referenceId": "United Arab Emirates/Yas Marina North",
       "file": "layouts/yas-marina-north.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina North",
       "description": "Draft configuration: Historical northern configuration retains the top hairpin and smooth western straight, excluding the western chicane and GP southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3119.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-north-chicane",
       "name": "Yas Marina North Chicane",
-      "referenceId": "United Arab Emirates/Yas Marina North Chicane",
       "file": "layouts/yas-marina-north-chicane.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina North Chicane",
       "description": "Draft configuration: Historical northern configuration retains the top hairpin and adds the western straight chicane, excluding the southern GP extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3144.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-north-corkscrew",
       "name": "Yas Marina North Corkscrew",
-      "referenceId": "United Arab Emirates/Yas Marina North Corkscrew",
       "file": "layouts/yas-marina-north-corkscrew.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina North Corkscrew",
       "description": "Draft configuration: Northern short course closing through the central corkscrew connector and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2300.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-north-handling",
       "name": "Yas Marina North Handling",
-      "referenceId": "United Arab Emirates/Yas Marina North Handling",
       "file": "layouts/yas-marina-north-handling.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina North Handling",
       "description": "Draft configuration: Northern handling circuit including the western and southern stepped returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 964.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "yas-marina-south",
       "name": "Yas Marina South",
-      "referenceId": "United Arab Emirates/Yas Marina South",
       "file": "layouts/yas-marina-south.geojson",
+      "referenceId": "United Arab Emirates/Yas Marina South",
       "description": "Draft configuration: The operator historical brochure identifies the Southern course through the South and Marina sectors and hotel turns, returning via the independent short connection. The pinned 2019 public-node route retains the long Western curve, two Southern direction changes, Eastern hotel notch and short Northern connection, excluding both pit lanes and North/Corkscrew alternatives. The 2694.4 m independent length differs from the 2583 m timing scalar and 2.35 km operator description; fine historical corner alignment and short-connection mapping remain draft, without scaling the route. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2694.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
@@ -302,6 +302,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T03:41:30.898Z",
       "evidenceNote": "The historical general configuration retains independently identified Grand Prix, Corkscrew, North, North with Chicane, North Corkscrew, North Handling and South courses as separate paths from one consistent 2019 snapshot. The operator overview establishes six named main variants; the additional back-straight chicane is independently mapped and retained as a separate draft choice. Pit lanes, handling shortcuts, unrelated access roads and post-2021 reconstruction are excluded. Detailed corner, temporary barrier and timing-extent differences remain provisional. The independent unique branch distance is 6706.1 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:20:15.092Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
