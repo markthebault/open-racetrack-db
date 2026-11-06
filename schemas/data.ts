@@ -288,6 +288,28 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   if (m.geometryStatus === "reviewed" && !m.reviewedAt)
     throw new Error("metadata.reviewedAt: required for reviewed geometry");
   if (m.borderInference) {
+    if (m.borderInference.edgeConvention === "left-right-along-trace") {
+      if (
+        m.closed ||
+        isNetwork ||
+        borders.some((f) => f.geometry.type !== "LineString")
+      )
+        throw new Error(
+          "Open-road edge convention requires a single open trace and paired edge paths",
+        );
+      const edges = borders.map((f) => geometryPaths(f.geometry)[0]);
+      if (
+        edges.length !== 2 ||
+        edges[0].length !== edges[1].length ||
+        edges.some((p) => equal(p[0], p.at(-1)!))
+      )
+        throw new Error(
+          "Open-road edges must have matching stations and distinct endpoints",
+        );
+    } else if (!m.closed)
+      throw new Error(
+        "Open estimated borders require explicit left/right edge semantics",
+      );
     if (
       borders.length !== 2 ||
       borders.some((f) => !("borderStatus" in f.properties))
@@ -314,6 +336,14 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   } else if (borders.some((f) => "borderStatus" in f.properties))
     throw new Error("Estimated imagery borders require source evidence");
   if (m.model3d) {
+    if (
+      m.model3d.kind !== "surface" &&
+      m.model3d.pathMethod &&
+      m.borderInference?.method !== "rgb-road-appearance-v3"
+    )
+      throw new Error(
+        "Paired driving paths require correspondence-preserving border inference",
+      );
     if (borders.length !== 2) throw new Error("model3d: requires both borders");
     if (m.model3d.kind !== "surface" && (!m.closed || isNetwork))
       throw new Error("model3d: lap playback requires a closed route");

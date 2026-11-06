@@ -11,11 +11,21 @@ const mercator = (p: Position): Position => [
   (R * p[0] * Math.PI) / 180,
   R * Math.asinh(Math.tan((p[1] * Math.PI) / 180)),
 ];
-const average = (values: Position[], i: number, radius: number): Position => {
+const average = (
+  values: Position[],
+  i: number,
+  radius: number,
+  closed = true,
+): Position => {
   let x = 0,
     y = 0;
   for (let j = -radius; j <= radius; j++) {
-    const p = values[(i + j + values.length) % values.length];
+    const p =
+      values[
+        closed
+          ? (i + j + values.length) % values.length
+          : Math.max(0, Math.min(values.length - 1, i + j))
+      ];
     x += p[0];
     y += p[1];
   }
@@ -52,7 +62,7 @@ function pixel(image: Raster, geo: Position): number[] {
   }
   return out;
 }
-function selfCrosses(path: Position[]) {
+function selfCrosses(path: Position[], closed = true) {
   const cell = 24,
     cells = new Map<string, number[]>();
   for (let i = 1; i < path.length; i++) {
@@ -75,7 +85,8 @@ function selfCrosses(path: Position[]) {
         cells.get(key)!.push(i);
       }
     for (const j of seen) {
-      if (Math.abs(i - j) <= 1 || (i === path.length - 1 && j === 1)) continue;
+      if (Math.abs(i - j) <= 1 || (closed && i === path.length - 1 && j === 1))
+        continue;
       const c = path[j - 1],
         d = path[j];
       const cross = (p: Position, q: Position, r: Position) =>
@@ -90,8 +101,15 @@ function selfCrosses(path: Position[]) {
   return false;
 }
 /** Image-driven proposals only. Evidence metrics are not calibrated positional confidence. */
-export function inferImageBorders(trace: Position[], image: Raster) {
-  if (!equal(trace[0], trace.at(-1)!))
+export function inferImageBorders(
+  trace: Position[],
+  image: Raster,
+  options: { open?: boolean; method?: "road-appearance-v3" } = {},
+) {
+  const appearance = options.method === "road-appearance-v3",
+    minOffset = appearance ? -10 : 2;
+  const closed = equal(trace[0], trace.at(-1)!);
+  if (!closed && !options.open)
     throw new Error(
       "A single closed route is required to classify inner and outer edges",
     );
@@ -104,7 +122,7 @@ export function inferImageBorders(trace: Position[], image: Raster) {
         Math.hypot(raw[i][0] - raw[i - 1][0], raw[i][1] - raw[i - 1][1]),
     );
   const count = Math.max(12, Math.ceil(stations.at(-1)! / 3)),
-    step = stations.at(-1)! / count,
+    step = stations.at(-1)! / (closed ? count : count - 1),
     path: Position[] = [];
   let segment = 0;
   for (let i = 0; i < count; i++) {
@@ -117,10 +135,12 @@ export function inferImageBorders(trace: Position[], image: Raster) {
       raw[segment][1] + (raw[segment + 1][1] - raw[segment][1]) * t,
     ]);
   }
-  const smooth = path.map((_, i) => average(path, i, 1));
+  const smooth = path.map((_, i) => average(path, i, 1, closed));
+  const index = (i: number) =>
+    closed ? (i + count) % count : Math.max(0, Math.min(count - 1, i));
   const normals = smooth.map((_, i): Position => {
-    const a = smooth[(i - 2 + count) % count],
-      b = smooth[(i + 2) % count],
+    const a = smooth[index(i - 2)],
+      b = smooth[index(i + 2)],
       d = Math.hypot(b[0] - a[0], b[1] - a[1]);
     return [-(b[1] - a[1]) / d, (b[0] - a[0]) / d];
   });
@@ -138,6 +158,10 @@ export function inferImageBorders(trace: Position[], image: Raster) {
   const centers = samples.map((row) =>
     [0, 1, 2].map((c) => row.slice(58, 63).reduce((s, p) => s + p[c], 0) / 5),
   );
+  const roadColor = [0, 1, 2].map(
+    (c) =>
+      centers.map((v) => v[c]).sort((a, b) => a - b)[Math.floor(count / 2)],
+  );
   const means = (row: number[][], indices: number[]) =>
     [0, 1, 2].map(
       (c) => indices.reduce((s, j) => s + row[j][c], 0) / indices.length,
@@ -146,7 +170,7 @@ export function inferImageBorders(trace: Position[], image: Raster) {
     evidence: { strong: number; interior: number }[] = [],
     widths: number[][] = [];
   for (const sign of [1, -1]) {
-    const options = 47,
+    const options = appearance ? 71 : 47,
       contrast: number[][] = [],
       interior: number[][] = [],
       scores: number[][] = [];
@@ -155,7 +179,7 @@ export function inferImageBorders(trace: Position[], image: Raster) {
         ins: number[] = [],
         score: number[] = [];
       for (let j = 0; j < options; j++) {
-        const offset = 2 + j * 0.5,
+        const offset = minOffset + j * 0.5,
           k = 60 + sign * offset * 2,
           inside = means(
             samples[i],
@@ -167,12 +191,26 @@ export function inferImageBorders(trace: Position[], image: Raster) {
           );
         const c = norm(outside, inside);
         let residual = 0;
-        for (let a = Math.min(60, k); a <= Math.max(60, k); a++)
-          residual += norm(samples[i][a], centers[i]);
-        residual /= Math.abs(k - 60) + 1;
+        if (appearance) {
+          for (let d = 1; d <= 6; d++)
+            residual += norm(samples[i][k - sign * d], roadColor) / 6;
+        } else {
+          for (let a = Math.min(60, k); a <= Math.max(60, k); a++)
+            residual += norm(samples[i][a], centers[i]);
+          residual /= Math.abs(k - 60) + 1;
+        }
         cs.push(c);
         ins.push(residual);
-        score.push(-2 * c + 6 * residual + 0.003 * offset);
+        score.push(
+          appearance && sign === -1 && widths[0][i] + offset < 4
+            ? Infinity
+            : -2 * c +
+                6 * residual +
+                0.003 * offset +
+                (appearance
+                  ? 3 * Math.max(0, 0.04 + residual - norm(outside, roadColor))
+                  : 0),
+        );
       }
       contrast.push(cs);
       interior.push(ins);
@@ -180,7 +218,7 @@ export function inferImageBorders(trace: Position[], image: Raster) {
     }
     let dp = new Float64Array(options);
     const back: Uint8Array[] = [];
-    for (let i = 0; i < count * 2; i++) {
+    for (let i = 0; i < count * (closed ? 2 : 1); i++) {
       const next = new Float64Array(options),
         prior = new Uint8Array(options);
       for (let j = 0; j < options; j++) {
@@ -201,25 +239,27 @@ export function inferImageBorders(trace: Position[], image: Raster) {
       dp = next;
       back.push(prior);
     }
+    if (!Array.from(dp).some(Number.isFinite))
+      throw new Error("No coherent image-supported road interval");
     let state = Array.from(dp).indexOf(Math.min(...dp));
-    const chosen = new Uint8Array(count * 2);
+    const chosen = new Uint8Array(back.length);
     for (let i = back.length - 1; i >= 0; i--) {
       chosen[i] = state;
       state = back[i][state];
     }
-    const picks = Array.from(chosen.slice(count)),
-      ds = picks.map((j) => 2 + j * 0.5),
+    const picks = Array.from(chosen.slice(closed ? count : 0)),
+      ds = picks.map((j) => minOffset + j * 0.5),
       filtered = ds.map((_, i) => {
         let sum = 0;
-        for (let j = -2; j <= 2; j++) sum += ds[(i + j + count) % count] / 5;
+        for (let j = -2; j <= 2; j++) sum += ds[index(i + j)] / 5;
         return sum;
       });
     const planar = smooth.map((p, i): Position => [
       p[0] + normals[i][0] * filtered[i] * sign,
       p[1] + normals[i][1] * filtered[i] * sign,
     ]);
-    planar.push(planar[0]);
-    if (selfCrosses(planar))
+    if (closed) planar.push(planar[0]);
+    if (selfCrosses(planar, closed))
       throw new Error(
         "Inferred boundary crosses itself; image needs manual review",
       );
@@ -243,7 +283,11 @@ export function inferImageBorders(trace: Position[], image: Raster) {
       interior: Number(residual.toFixed(4)),
     });
   }
-  if (widths[0].some((w, i) => w + widths[1][i] > 45))
+  if (
+    widths[0].some(
+      (w, i) => w + widths[1][i] > 45 || (appearance && w + widths[1][i] < 3.5),
+    )
+  )
     throw new Error(
       "Image suggests an ambiguous apron or junction wider than 45 m",
     );
@@ -253,6 +297,6 @@ export function inferImageBorders(trace: Position[], image: Raster) {
         .slice(1)
         .reduce((a, p, i) => a + points[i][0] * p[1] - p[0] * points[i][1], 0),
     );
-  const inner = area(borders[0]) < area(borders[1]) ? 0 : 1;
+  const inner = !closed || area(borders[0]) < area(borders[1]) ? 0 : 1;
   return { inner: borders[inner], outer: borders[1 - inner], evidence, step };
 }

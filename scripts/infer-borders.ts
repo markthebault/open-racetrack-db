@@ -308,6 +308,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     track = validateTrack(await read(trackFile));
   let changed = false;
   for (const item of track.layouts) {
+    if (option("--layout") && item.id !== option("--layout")) continue;
     if (!item.file) {
       report.push({
         trackId: track.id,
@@ -351,7 +352,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     }
     if (
       old &&
-      old.method === "rgb-cross-sections-v2" &&
+      old.method !== "rgb-cross-sections-v1" &&
       !args.includes("--refresh")
     ) {
       row.status =
@@ -385,25 +386,34 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         await rename(file + ".next", file);
       }
     }
-    if (!layout.metadata.closed || layout.metadata.geometryKind === "network") {
+    if (layout.metadata.geometryKind === "network") {
       report.push({
         ...row,
         status: "needs-route-review",
         reason:
-          "Open routes and branch networks need left/right edge semantics and a reviewed driving order.",
+          "Branch networks need reviewed component edge topology and driving choices.",
       });
       continue;
     }
     try {
-      const key = track.id + ":" + JSON.stringify(layout.bbox);
+      // Tiled mosaics cover a trace corridor. Equal bounds do not imply equal coverage.
+      const key =
+        track.id + ":" + JSON.stringify(layout.bbox) + ":" + inputHash;
       if (!imagery.has(key)) imagery.set(key, acquire(track, layout));
       let acquired: Acquired | undefined,
         result: ReturnType<typeof inferImageBorders>;
+      const detectorOptions = {
+        open: !layout.metadata.closed,
+        ...(args.includes("--appearance")
+          ? { method: "road-appearance-v3" as const }
+          : {}),
+      };
       try {
         acquired = await imagery.get(key)!;
         result = inferImageBorders(
           geometryPaths(trace.geometry)[0],
           acquired.image,
+          detectorOptions,
         );
       } catch (error) {
         // A second image source can resolve shadows, old coverage or a failed export.
@@ -414,20 +424,26 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         result = inferImageBorders(
           geometryPaths(trace.geometry)[0],
           acquired.image,
+          detectorOptions,
         );
       }
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
-        method: "rgb-cross-sections-v2",
+        method: args.includes("--appearance")
+          ? "rgb-road-appearance-v3"
+          : "rgb-cross-sections-v2",
         status: "estimated",
         reviewedAt: null,
+        ...(!layout.metadata.closed
+          ? { edgeConvention: "left-right-along-trace" }
+          : {}),
         traceSha256: inputHash,
         imagery: acquired.info,
         evidence: {
           strongEdgeFraction: result.evidence.map((e) => e.strong),
           medianInteriorDifference: result.evidence.map((e) => e.interior),
           samplingStepM: result.step,
-          searchRangeM: [2, 25],
+          searchRangeM: [args.includes("--appearance") ? -10 : 2, 25],
         },
         note: "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been manually reviewed; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy.",
       });
@@ -531,7 +547,9 @@ if (write) {
       const prior = await read("data/border-inference-coverage.json");
       records = [
         ...prior.records.filter(
-          (r: RecordRow) => r.trackId !== option("--track"),
+          (r: RecordRow) =>
+            r.trackId !== option("--track") ||
+            (!!option("--layout") && r.layoutId !== option("--layout")),
         ),
         ...records,
       ];

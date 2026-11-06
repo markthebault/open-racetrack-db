@@ -2,6 +2,7 @@ import { CatmullRomCurve3, Vector3 } from "three";
 import { geometryPaths, type Layout } from "../schemas/data";
 import { plane, type Position } from "./geo";
 import { indexBorders, borderSection } from "./border-sections";
+import { pairedBorderMidline } from "./border-midline";
 
 export const GRAVITY = 9.80665;
 export const DEFAULT_CAR = {
@@ -84,10 +85,14 @@ export function roadHeight(anchors: ElevationAnchor[], station: number) {
 export function buildRoad(layout: Layout): Road {
   const recipe = layout.metadata.model3d;
   if (!recipe) throw new Error("This layout has no embedded 3D model data.");
-  if (recipe.kind === "surface") throw new Error("This layout has no playable closed-lap model.");
-  const trace = geometryPaths(
-    layout.features.find((f) => f.properties.role === "trace")!.geometry,
-  )[0];
+  if (recipe.kind === "surface")
+    throw new Error("This layout has no playable closed-lap model.");
+  const trace =
+    recipe.pathMethod === "paired-border-midpoints"
+      ? pairedBorderMidline(layout)
+      : geometryPaths(
+          layout.features.find((f) => f.properties.role === "trace")!.geometry,
+        )[0];
   const origin =
     (layout.metadata.timing?.start as Position | undefined) ?? trace[0];
   const projection = plane(origin);

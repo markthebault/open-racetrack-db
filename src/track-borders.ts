@@ -34,6 +34,12 @@ export const bordersSchema = z
     "Expected one inner and one outer border",
   );
 export type TrackBorders = z.infer<typeof bordersSchema>;
+export function borderLabels(layout?: Layout) {
+  return layout?.metadata.borderInference?.edgeConvention ===
+    "left-right-along-trace"
+    ? { inner: "Left", outer: "Right" }
+    : { inner: "Inner", outer: "Outer" };
+}
 
 export function bordersFromLayout(layout: Layout): TrackBorders | undefined {
   const features = layout.features.filter(
@@ -62,6 +68,11 @@ export class BorderOverlay {
   setLayout(layout?: Layout) {
     this.data = layout ? bordersFromLayout(layout) : undefined;
     this.estimated = !!layout?.metadata.borderInference;
+    const labels = borderLabels(layout);
+    this.button.querySelector("[data-border-label]")!.textContent =
+      `${labels.inner} & ${labels.outer.toLowerCase()} lines`;
+    this.legend.querySelector(".inner-key")!.textContent = labels.inner;
+    this.legend.querySelector(".outer-key")!.textContent = labels.outer;
     this.button.parentElement!.hidden = !layout;
     this.refresh();
   }

@@ -544,12 +544,12 @@ export function openLap(
         : "Image-reviewed curb locations · Estimated dimensions";
       find("[data-elevation-note]").textContent = published
         ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
-        : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow the mapped trace.`;
+        : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
         ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders retain LicenseRef-Track-Borders. Imagery: ${recipe.imagery.attribution}. No additional rights granted.`;
+        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}. Imagery: ${recipe.imagery.attribution}. No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",

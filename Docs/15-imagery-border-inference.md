@@ -21,7 +21,7 @@ The detector samples RGB image cross-sections along the existing trace, scores v
 
 Accepted outputs are **unreviewed estimates**. Shadows, vegetation, paint, gravel, aprons, historical layouts and image age can still move a detected boundary. Fine road-edge accuracy and curb placement need manual review or survey data. The UI labels estimated borders and retains the imagery credit. Derived curbs remain illustrative. A 3D model does not make the underlying borders verified.
 
-Open routes and branch networks are deferred because inner/outer semantics and driving order need review. Unmapped layouts need independent course identification before boundary extraction. The licensed source supplies global coverage where available; Sentinel imagery at 10 m does not resolve typical road edges.
+Open routes use `edgeConvention: left-right-along-trace`: the existing `inner` feature stores the left edge and `outer` stores the right edge, in trace order. The UI labels these left/right. Their endpoints remain separate and the browser creates a ribbon between corresponding stations. They currently receive surface-only models; point-to-point car playback still needs implementation. Branch networks need component topology and driving choices before extraction. Unmapped layouts need independent course identification before boundary extraction. The licensed source supplies global coverage where available; Sentinel imagery at 10 m does not resolve typical road edges.
 
 ## Reusable sources
 
@@ -32,10 +32,18 @@ Open routes and branch networks are deferred because inner/outer semantics and d
 
 MapTiler extraction is enabled under an operator-confirmed separate imagery agreement. Its private text is held outside the repository. The derived features use `LicenseRef-MapTiler-Derived-Borders` and `rightsBasis: source-specific-agreement`; this is not an open-imagery licence or a claim that the agreement was independently reviewed. The [standard Cloud terms](https://www.maptiler.com/terms/cloud/) alone do not authorize tracing, extraction, caching or bulk downloads. Esri [World Imagery feature-extraction guidance](https://www.esri.com/arcgis-blog/products/arcgis-living-atlas/imagery/learn-to-use-ai-to-extract-information-from-world-imagery) restricts derived outputs to noncommercial use within ArcGIS. Those display services do not establish permission to redistribute inferred borders in this public dataset. Government imagery is preferred where supported. The licensed source is tried when other coverage or its image evidence fails. Existing successful estimates are cached and preserved.
 
+## Offset source traces
+
+`--appearance` opts into `rgb-road-appearance-v3`. It estimates the dominant road appearance near the trace and searches signed edge offsets from -10 to 25 m. This can recover pavement boundaries when part of a source trace lies on or outside the road. Width, contrast, continuity and crossing checks still apply. Proposals can follow aprons, vegetation or obsolete alignments and need image review before acceptance. A featureless image is rejected.
+
+For this method, `model3d.pathMethod: paired-border-midpoints` reconstructs the driving path from corresponding edge stations. No extra centerline or mesh is stored. The original trace and timing features remain intact. Distances follow the derived midpoint path and remain estimates. Existing models keep their original path method.
+
+`--track <id> --layout <id>` processes a single layout and preserves the other coverage report rows.
+
 ## Coverage
 
-The batch assessed all 495 mapped layouts without existing borders, plus 11 layouts without mapped routes. It saved 74 unreviewed estimates: 46 from the initial reusable-source pass and 28 from licensed satellite imagery. The remaining mapped layouts comprise 257 needing image/geometry review, 73 needing open-route or network interpretation and 91 awaiting the imagery provider's request quota reset. The report records the retry time. These gaps remain explicit.
+The batch assessed all 495 originally unbordered mapped layouts, plus 11 layouts without mapped routes. It has saved 87 unreviewed estimates. Thirteen additions use the appearance method after visual proposal screening, exact source-image matching and topology checks. Their original trace/timing features are preserved. The remaining mapped layouts comprise 254 needing image/geometry review, 62 needing network interpretation, 89 awaiting the imagery provider's request quota reset and 3 with acquisition failures. The report records the provider retry time. These gaps remain explicit. Surface-only routes still require playback work where a driving order can be established.
 
-All 74 estimates have compact self-contained models and lap playback. Together with existing models this gives 956 3D layouts across 562 circuits: 915 playable laps and 41 surface-only views. Original trace/timing features and all 882 previous border sets are preserved.
+Together with existing models this gives 969 3D layouts across 569 circuits: 928 playable laps and 41 surface-only views. All 882 original border sets are preserved. The initial pass's estimates also remain unchanged.
 
 For government export/WMS and licensed tiled sources, the 3D backdrop uses the same georeferenced imagery reference as the extraction. Pinned sources retain a separate display backdrop and source evidence in the GeoJSON. External imagery availability and quotas can affect the backdrop; saved road geometry and lap playback remain usable.

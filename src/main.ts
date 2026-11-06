@@ -30,7 +30,11 @@ import {
   type ElevationGrid,
 } from "./elevation";
 import { elevationProfile } from "./elevation-profile";
-import { BorderOverlay, type TrackBorders } from "./track-borders";
+import {
+  BorderOverlay,
+  borderLabels,
+  type TrackBorders,
+} from "./track-borders";
 import { isLapModel } from "../schemas/track-model";
 
 const base = import.meta.env.BASE_URL;
@@ -85,7 +89,7 @@ app.innerHTML = `
         <div id="stage-empty" class="stage-empty" hidden>${icon("map")}<strong>No course trace yet.</strong><p>This layout is listed, but its mapped route is still missing.</p></div>
         <div class="view-tools" aria-label="View controls"><button id="rotate-view" class="icon-button" aria-label="Rotate automatically" aria-pressed="false" title="Rotate automatically" hidden>${icon("rotate")}</button><button id="zoom-in" class="icon-button" aria-label="Zoom in" title="Zoom in">${icon("plus")}</button><button id="zoom-out" class="icon-button" aria-label="Zoom out" title="Zoom out">${icon("minus")}</button><button id="fit-view" class="icon-button" aria-label="Reset view" title="Reset view">${icon("fit")}</button></div>
         <button id="height-scale" class="height-scale" aria-pressed="true" title="Switch between natural height and exaggerated elevation" hidden>Height <strong>3×</strong><span>exaggerated</span></button>
-        <div class="border-controls" hidden><button id="border-toggle" aria-pressed="false" disabled><span class="border-check" aria-hidden="true"></span>Inner &amp; outer lines</button><div id="border-legend" hidden><span class="inner-key">Inner</span><span class="outer-key">Outer</span></div></div>
+        <div class="border-controls" hidden><button id="border-toggle" aria-pressed="false" disabled><span class="border-check" aria-hidden="true"></span><span data-border-label>Inner &amp; outer lines</span></button><div id="border-legend" hidden><span class="inner-key">Inner</span><span class="outer-key">Outer</span></div></div>
         <div class="stage-footer"><span id="view-hint">Drag to explore · Scroll to zoom</span><span id="model-note"></span></div>
         <div id="course-credit" class="course-credit" hidden></div>
         <a id="maptiler-logo" href="https://www.maptiler.com/" target="_blank" rel="noopener noreferrer" hidden><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler" width="100" height="30" loading="lazy"></a>
@@ -239,7 +243,7 @@ const borderOverlay = new BorderOverlay(
         }),
         onEachFeature: (feature, layer) =>
           layer.bindTooltip(
-            feature.properties.role === "inner" ? "Inner line" : "Outer line",
+            `${borderLabels(layout)[feature.properties.role === "inner" ? "inner" : "outer"]} line`,
           ),
       }).addTo(borderLayers);
     selectedLayers.eachLayer((layer) => {

@@ -14,9 +14,14 @@ export const inferredBorderLicenses = z.enum([
 ]);
 export const borderInferenceSchema = z.strictObject({
   schemaVersion: z.literal(1),
-  method: z.enum(["rgb-cross-sections-v1", "rgb-cross-sections-v2"]),
+  method: z.enum([
+    "rgb-cross-sections-v1",
+    "rgb-cross-sections-v2",
+    "rgb-road-appearance-v3",
+  ]),
   status: z.literal("estimated"),
   reviewedAt: z.null(),
+  edgeConvention: z.enum(["inner-outer", "left-right-along-trace"]).optional(),
   traceSha256: z.string().regex(/^[a-f0-9]{64}$/),
   imagery: z
     .strictObject({
@@ -65,7 +70,7 @@ export const borderInferenceSchema = z.strictObject({
       z.number().nonnegative(),
     ]),
     samplingStepM: z.number().positive(),
-    searchRangeM: z.tuple([z.number().positive(), z.number().positive()]),
+    searchRangeM: z.tuple([z.number().min(-25), z.number().positive()]),
   }),
   note: z.string().min(1),
 });

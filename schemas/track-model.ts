@@ -14,6 +14,7 @@ const lapModelSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
     kind: z.literal("lap").optional(),
+    pathMethod: z.literal("paired-border-midpoints").optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
     elevationMethod: z.literal("periodic-monotone-cubic"),
@@ -23,7 +24,7 @@ const lapModelSchema = z
       .max(50000),
     bankingDeg: z.literal(0),
     quality: z.strictObject({
-      stationing: z.enum(["venue-reference", "mapped-trace"]),
+      stationing: z.enum(["venue-reference", "mapped-trace", "border-midline"]),
       elevation: z.enum(["venue-anchors", "terrain-raster"]),
       curbs: z.enum(["imagery-reviewed", "geometry-estimated"]),
       borders: z.literal("supplemental-unverified"),

@@ -165,3 +165,67 @@ test("display tiles crop parent imagery to the saved extent without shifting the
   );
   assert.ok(plan.cells.length < 9 * 6);
 });
+
+test("open-road inference preserves separate ends and follows visible changing widths", () => {
+  const image: Raster = {
+    width: 512,
+    height: 512,
+    data: new Uint8Array(512 * 512 * 4),
+    extent: [-256, -256, 256, 256],
+  };
+  const width = (x: number) => 12 + 3 * Math.sin(x / 70);
+  for (let y = 0; y < 512; y++)
+    for (let x = 0; x < 512; x++) {
+      const road = Math.abs(255.5 - y) < width(x - 255.5) / 2;
+      image.data.set(
+        road ? [95, 95, 95, 255] : [45, 150, 50, 255],
+        (y * 512 + x) * 4,
+      );
+    }
+  const trace = [project.from([-190, 0]), project.from([190, 0])];
+  const result = inferImageBorders(trace, image, { open: true });
+  assert.notDeepEqual(result.inner[0], result.inner.at(-1));
+  for (const [side, sign] of [
+    [result.inner, 1],
+    [result.outer, -1],
+  ] as const) {
+    const errors = side.map((p) => {
+      const [x, y] = project.to(p);
+      return Math.abs(y - (sign * width(x)) / 2);
+    });
+    assert.ok(Math.max(...errors) < 2);
+    assert.ok(Math.abs(project.to(side[0])[0] + 190) < 2);
+    assert.ok(Math.abs(project.to(side.at(-1)!)[0] - 190) < 2);
+  }
+});
+
+test("appearance-based proposals recover image edges when portions of the trace lie outside the road", () => {
+  const { image, trace } = circleImage(() => 12);
+  for (let i = 0; i < trace.length - 1; i++) {
+    const angle = (i / (trace.length - 1)) * Math.PI * 2,
+      r = 100 + 7 * Math.sin(2 * angle);
+    trace[i] = project.from([r * Math.cos(angle), r * Math.sin(angle)]);
+  }
+  trace[trace.length - 1] = trace[0];
+  const result = inferImageBorders(trace, image, {
+    method: "road-appearance-v3",
+  });
+  for (const [side, radius] of [
+    [result.inner, 94],
+    [result.outer, 106],
+  ] as const) {
+    const errors = side
+      .map((p) => {
+        const [x, y] = project.to(p);
+        return Math.abs(Math.hypot(x, y) - radius);
+      })
+      .sort((a, b) => a - b);
+    assert.ok(errors[Math.floor(errors.length * 0.9)] < 2);
+  }
+  image.data.fill(130);
+  for (let i = 3; i < image.data.length; i += 4) image.data[i] = 255;
+  assert.throws(
+    () => inferImageBorders(trace, image, { method: "road-appearance-v3" }),
+    /review|evidence|interval/,
+  );
+});

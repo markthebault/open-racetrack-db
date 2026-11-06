@@ -7,7 +7,7 @@ import {
 } from "three";
 import { geometryPaths, type Layout } from "../schemas/data";
 import type { SurfaceModel3D } from "../schemas/track-model";
-import { plane, length, type Position } from "./geo";
+import { plane, length, equal, type Position } from "./geo";
 import { sampleElevation, type ElevationGrid } from "./elevation";
 
 export function borderPaths(layout: Layout) {
@@ -41,6 +41,22 @@ export function borderFootprint(layout: Layout) {
   const points: Position[] = [],
     triangles: number[] = [];
   for (let i = 0; i < outer.length; i++) {
+    if (
+      layout.metadata.borderInference?.edgeConvention ===
+      "left-right-along-trace"
+    ) {
+      const a = outer[i].points,
+        b = inner[i].points,
+        offset = points.length;
+      if (a.length !== b.length)
+        throw new Error("Open-road edges must have matching stations");
+      for (let j = 0; j < a.length; j++) points.push(a[j], b[j]);
+      for (let j = 0; j < a.length - 1; j++) {
+        const k = offset + j * 2;
+        triangles.push(k, k + 2, k + 1, k + 1, k + 2, k + 3);
+      }
+      continue;
+    }
     const a = closedRing(outer[i].points),
       b = closedRing(inner[i].points);
     const av = a.map((p) => new Vector2(...project.to(p))),
@@ -92,6 +108,7 @@ export function boundarySamples(
   origin: Position,
   spacing = 5,
 ) {
+  const closed = equal(path[0], path.at(-1)!);
   const project = plane(origin),
     points = path.map((p) => {
       const [x, north] = project.to(p);
@@ -108,11 +125,11 @@ export function boundarySamples(
     );
   const planarLength = stations.at(-1)!,
     referenceLength = length(path),
-    count = Math.max(3, Math.ceil(planarLength / spacing)),
+    count = Math.max(3, Math.ceil(planarLength / spacing)) + (closed ? 0 : 1),
     samples = [];
   let segment = 0;
   for (let i = 0; i < count; i++) {
-    const d = (i / count) * planarLength;
+    const d = (i / (closed ? count : count - 1)) * planarLength;
     while (segment < stations.length - 2 && stations[segment + 1] < d)
       segment++;
     const t =
@@ -121,10 +138,10 @@ export function boundarySamples(
     samples.push({
       x: points[segment].x + (points[segment + 1].x - points[segment].x) * t,
       z: points[segment].z + (points[segment + 1].z - points[segment].z) * t,
-      s: (i / count) * referenceLength,
+      s: (i / (closed ? count : count - 1)) * referenceLength,
     });
   }
-  return { samples, length: referenceLength };
+  return { samples, length: referenceLength, closed };
 }
 /** Explicitly illustrative intervals on source boundaries, used only for layouts without a safe lap path. */
 export function boundaryCurbs(layout: Layout): SurfaceModel3D["curbs"] {
@@ -134,12 +151,14 @@ export function boundaryCurbs(layout: Layout): SurfaceModel3D["curbs"] {
     ],
     curbs: SurfaceModel3D["curbs"] = [];
   for (const path of borderPaths(layout)) {
-    const { samples, length } = boundarySamples(path.points, origin),
+    const { samples, length, closed } = boundarySamples(path.points, origin),
       n = samples.length,
-      step = length / n;
+      step = length / (closed ? n : n - 1);
+    const index = (i: number) =>
+      closed ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
     const curved = samples.map((b, i) => {
-      const a = samples[(i - 2 + n) % n],
-        c = samples[(i + 2) % n];
+      const a = samples[index(i - 2)],
+        c = samples[index(i + 2)];
       const k =
         (2 * ((b.x - a.x) * (c.z - a.z) - (b.z - a.z) * (c.x - a.x))) /
         Math.max(
@@ -180,17 +199,23 @@ export function boundaryCurbGeometry(layout: Layout, model: SurfaceModel3D) {
       (c) => c.role === path.role && c.pathIndex === path.pathIndex,
     );
     if (!intervals.length) continue;
-    const { samples } = boundarySamples(path.points, origin, 3),
+    const { samples, closed } = boundarySamples(path.points, origin, 3),
       n = samples.length;
+    const index = (i: number) =>
+      closed ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
     const area = samples.reduce((a, p, i) => {
       const q = samples[(i + 1) % n];
       return a + p.x * q.z - q.x * p.z;
     }, 0);
-    const sign = Math.sign(area) * (path.role === "outer" ? 1 : -1);
+    const sign = closed
+      ? Math.sign(area) * (path.role === "outer" ? 1 : -1)
+      : path.role === "inner"
+        ? 1
+        : -1;
     const edge = (i: number, width: number) => {
-      const p = samples[i % n],
-        a = samples[(i - 1 + n) % n],
-        b = samples[(i + 1) % n],
+      const p = samples[index(i)],
+        a = samples[index(i - 1)],
+        b = samples[index(i + 1)],
         d = Math.hypot(b.x - a.x, b.z - a.z);
       const nx = ((b.z - a.z) / Math.max(d, 1e-9)) * sign,
         nz = (-(b.x - a.x) / Math.max(d, 1e-9)) * sign;
@@ -202,7 +227,7 @@ export function boundaryCurbGeometry(layout: Layout, model: SurfaceModel3D) {
             [p.x + nx * width, h + 0.08, p.z + nz * width],
           ];
     };
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < (closed ? n : n - 1); i++) {
       const interval = intervals.find(
         (c) => samples[i].s >= c.startM && samples[i].s < c.endM,
       );

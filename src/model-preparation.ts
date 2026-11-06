@@ -8,7 +8,8 @@ import {
 } from "../schemas/track-model";
 import { boundaryCurbs, borderRoadGeometry } from "./border-surface";
 import { sampleElevation, type ElevationGrid } from "./elevation";
-import { plane } from "./geo";
+import { plane, length as geographicLength } from "./geo";
+import { pairedBorderMidline } from "./border-midline";
 import {
   buildRoad,
   roadHeight,
@@ -207,9 +208,14 @@ export function prepareTrackModel(
 ): LapModel3D {
   if (!layout.metadata.closed || layout.metadata.geometryKind === "network")
     throw new Error("Preparation requires one closed route");
-  const length = layout.metadata.lengthM;
+  const paired =
+    layout.metadata.borderInference?.method === "rgb-road-appearance-v3";
+  const length = paired
+    ? geographicLength(pairedBorderMidline(layout))
+    : layout.metadata.lengthM;
   const seed: LapModel3D = {
     schemaVersion: 1,
+    ...(paired ? { pathMethod: "paired-border-midpoints" as const } : {}),
     startOffsetM: 0,
     referenceLengthM: length,
     elevationMethod: "periodic-monotone-cubic",
@@ -220,7 +226,7 @@ export function prepareTrackModel(
     ],
     bankingDeg: 0,
     quality: {
-      stationing: "mapped-trace",
+      stationing: paired ? "border-midline" : "mapped-trace",
       elevation: "terrain-raster",
       curbs: "geometry-estimated",
       borders: "supplemental-unverified",
@@ -240,7 +246,7 @@ export function prepareTrackModel(
       elevation: terrain.source.url,
       imagery: imageryForLayout(layout).url,
       imageryCredit: imageryForLayout(layout).attribution,
-      notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the mapped trace, not an official length measurement. ${layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
+      notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use ${paired ? "the midpoint of corresponding border stations" : "the mapped trace"}, not an official length measurement. ${layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
     },
   };
   const road = buildRoad({
@@ -308,7 +314,7 @@ export function prepareSurfaceModel(
       elevation: terrain.source.url,
       imagery: imageryForLayout(layout).url,
       imageryCredit: imageryForLayout(layout).attribution,
-      notes: `Road surfaces are triangulated directly between this layout's saved border rings. Elevation follows the approximately ${terrain.source.sampleSpacingM} m terrain raster, not a survey of the road. Curbs are geometry-based illustrations on curved boundaries; their locations, widths, heights and colours are assumed, not extracted from imagery. Banking is unknown. ${reason === "route-not-closed" ? "The source is an open route or branch network, without one validated closed driving order." : "The source trace and borders have too many unmatched cross-sections for safe lap reconstruction."} Lap playback is unavailable. Boundary coordinates and their separate feature-level licence are preserved. Imagery loads externally on demand; no image bytes or meshes are stored.`,
+      notes: `Road surfaces are triangulated directly between this layout's saved road boundaries. Elevation follows the approximately ${terrain.source.sampleSpacingM} m terrain raster, not a survey of the road. Curbs are geometry-based illustrations on curved boundaries; their locations, widths, heights and colours are assumed, not extracted from imagery. Banking is unknown. ${reason === "route-not-closed" ? "The source is an open route or branch network, without one validated closed driving order." : "The source trace and borders have too many unmatched cross-sections for safe lap reconstruction."} Lap playback is unavailable. Boundary coordinates and their separate feature-level licence are preserved. Imagery loads externally on demand; no image bytes or meshes are stored.`,
     },
   });
   if (result.kind !== "surface") throw new Error("Expected a surface recipe");
