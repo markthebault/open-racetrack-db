@@ -78,7 +78,8 @@ export function openLap(
     mapDot: L.CircleMarker | undefined,
     recorder: MediaRecorder | undefined,
     stream: MediaStream | undefined,
-    downloadUrl: string | undefined;
+    downloadUrl: string | undefined,
+    lastCapturedFrame = -Infinity;
   let lap: ReturnType<typeof simulateLap> | undefined;
   let mode: LapCamera | "imagery" = "chase";
   const mini = find<HTMLCanvasElement>(".lap-minimap"),
@@ -183,6 +184,13 @@ export function openLap(
         1220,
       );
       out.drawImage(mini, 1040, 24, 220, 180);
+      const track = stream?.getVideoTracks()[0] as
+          CanvasCaptureMediaStreamTrack | undefined,
+        now = performance.now();
+      if (track?.requestFrame && now - lastCapturedFrame >= 1000 / 30) {
+        track.requestFrame();
+        lastCapturedFrame = now;
+      }
     }
   }
   const stopRecording = () => {
@@ -426,11 +434,20 @@ export function openLap(
     time = 0;
     try {
       const mime = [
-        "video/mp4;codecs=avc1.42001E",
         "video/webm;codecs=vp9",
+        "video/webm;codecs=vp8",
         "video/webm",
+        "video/mp4;codecs=avc1.42001E",
       ].find((m) => MediaRecorder.isTypeSupported(m));
-      stream = output.captureStream(30);
+      stream = output.captureStream(0);
+      if (
+        typeof (stream.getVideoTracks()[0] as CanvasCaptureMediaStreamTrack)
+          .requestFrame !== "function"
+      ) {
+        stream.getTracks().forEach((t) => t.stop());
+        stream = output.captureStream(30);
+      }
+      lastCapturedFrame = -Infinity;
       recorder = new MediaRecorder(
         stream,
         mime ? { mimeType: mime, videoBitsPerSecond: 6_000_000 } : undefined,
@@ -469,6 +486,7 @@ export function openLap(
         if (stream === recordingStream) stream = undefined;
         find<HTMLButtonElement>(".lap-record").disabled = false;
       };
+      recorder.onstart = () => paint(true);
       recorder.start(1000);
       find(".lap-record").textContent = "Stop recording";
       status.textContent = "Recording at 1× · Keep this tab visible";

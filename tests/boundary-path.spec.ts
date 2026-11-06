@@ -35,6 +35,28 @@ for (const [track, layout] of [
     await expect(page.locator("[data-clock]")).not.toHaveText(/^0:00/);
     await page.locator(".lap-record").click();
     await expect(page.locator(".lap-download")).toBeVisible();
+    const dimensions = await page.locator(".lap-download").evaluate(
+      (link) =>
+        new Promise<number[]>((resolve, reject) => {
+          const video = document.createElement("video"),
+            timer = window.setTimeout(
+              () => reject(new Error("Recorded video did not decode")),
+              10000,
+            );
+          video.onloadeddata = () => {
+            window.clearTimeout(timer);
+            resolve([video.videoWidth, video.videoHeight]);
+            video.src = "";
+          };
+          video.onerror = () => {
+            window.clearTimeout(timer);
+            reject(new Error("Recorded video is invalid"));
+          };
+          video.preload = "auto";
+          video.src = (link as HTMLAnchorElement).href;
+        }),
+    );
+    expect(dimensions).toEqual([1280, 720]);
     const download = page.waitForEvent("download");
     await page.locator(".lap-download").click();
     const video = await download;
