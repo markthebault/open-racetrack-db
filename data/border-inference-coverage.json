@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T17:01:37.317Z",
+  "generatedAt": "2026-11-06T17:32:43.289Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -4744,8 +4744,22 @@
       "trackId": "us-arroyo-seco-raceway-83871979",
       "layoutId": "main",
       "file": "data/united-states/arroyo-seco-raceway-83871979/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Proposed limits shrink at bends and follow internal asphalt differences; image-measured correction is required.",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9035,
+          0.8111
+        ],
+        "medianInteriorDifference": [
+          0.0279,
+          0.032
+        ],
+        "samplingStepM": 2.998348687772485,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-11959430.46051135%2C3794231.0462070303%2C-11958326.956984973%2C3794765.0965297935&bboxSR=3857&imageSR=3857&size=1245%2C603&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "a3469e956e0a50272c93290ebca530d4b2416c8bba15860f0823ba1cae9e3cd0"
     },
