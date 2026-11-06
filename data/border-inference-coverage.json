@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T11:00:07.762Z",
+  "generatedAt": "2026-11-06T11:10:22.559Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -111,29 +111,93 @@
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
       "layoutId": "historical-short-course",
       "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/historical-short-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8604,
+          0.8623
+        ],
+        "medianInteriorDifference": [
+          0.0343,
+          0.0334
+        ],
+        "samplingStepM": 2.9981237561909793,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fd1b01fcdddde0bcf196bc51eec3fbd9931b5d358f4e20f9cd55d1cc870af9b7"
     },
     {
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
       "layoutId": "main",
       "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8897,
+          0.8375
+        ],
+        "medianInteriorDifference": [
+          0.0349,
+          0.0325
+        ],
+        "samplingStepM": 2.9997179222770334,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5ff803042454dc5488ae30362effb3bc6ee43761af4b1a6b2e6af77cf4268536"
     },
     {
       "trackId": "ar-autodromo-ciudad-de-nueve-de-julio-200059102",
       "layoutId": "main",
       "file": "data/argentina/autodromo-ciudad-de-nueve-de-julio-200059102/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7563,
+          0.8124
+        ],
+        "medianInteriorDifference": [
+          0.0351,
+          0.0351
+        ],
+        "samplingStepM": 2.999986905038861,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "e95338d27f2803d0fb17991b3f1adf899d2bacbd17be7a71fd446605412a404f"
     },
     {
       "trackId": "ar-autodromo-ciudad-de-parana-256068024",
       "layoutId": "autodromo-de-parana",
       "file": "data/argentina/autodromo-ciudad-de-parana-256068024/layouts/autodromo-de-parana.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9377,
+          0.916
+        ],
+        "medianInteriorDifference": [
+          0.0556,
+          0.0586
+        ],
+        "samplingStepM": 2.9981136063552483,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "aa1f129c63a811d477b10142a4994b8d39578498985946b854066fe6eb5ae64f"
     },
     {
       "trackId": "ar-autodromo-ciudad-de-parana-256068024",
@@ -176,8 +240,24 @@
       "trackId": "ar-autodromo-de-obera-47075845",
       "layoutId": "main",
       "file": "data/argentina/autodromo-de-obera-47075845/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8962,
+          0.8331
+        ],
+        "medianInteriorDifference": [
+          0.0455,
+          0.0493
+        ],
+        "samplingStepM": 2.9986435572262367,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "4909fb4849335064a93657de411dcd0b3a0d299ad74e5616cfd657ab7c31d73c"
     },
     {
       "trackId": "ar-autodromo-de-rio-grande-158221493",
@@ -190,15 +270,47 @@
       "trackId": "ar-autodromo-de-termas-de-rio-hondo-170936090",
       "layoutId": "main",
       "file": "data/argentina/autodromo-de-termas-de-rio-hondo-170936090/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8602,
+          0.9055
+        ],
+        "medianInteriorDifference": [
+          0.0414,
+          0.0396
+        ],
+        "samplingStepM": 2.9989244354221873,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "13395f3da91f19d66915c18a4eeae20be64ff15277c71d144fdf6a2c6bc0e978"
     },
     {
       "trackId": "ar-autodromo-eusebio-marcilla-261995732",
       "layoutId": "main",
       "file": "data/argentina/autodromo-eusebio-marcilla-261995732/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8893,
+          0.93
+        ],
+        "medianInteriorDifference": [
+          0.0482,
+          0.0425
+        ],
+        "samplingStepM": 2.9981764801620656,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "772279f4bf58a96a8cbcf89024c2f0b1a814e6ca0ca27ae0d62d1bd6fcbc1c03"
     },
     {
       "trackId": "ar-autodromo-general-san-martin-163088750",
@@ -211,8 +323,24 @@
       "trackId": "ar-autodromo-general-san-martin-218188079",
       "layoutId": "main",
       "file": "data/argentina/autodromo-general-san-martin-218188079/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9817,
+          0.9465
+        ],
+        "medianInteriorDifference": [
+          0.0414,
+          0.0435
+        ],
+        "samplingStepM": 2.9978809497869876,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "cf78182b9b34c6c99f08b862c12cc769a94c096454add88396a2941fed3d6ea1"
     },
     {
       "trackId": "ar-autodromo-hermanos-emiliozzi-123976830",
@@ -225,15 +353,47 @@
       "trackId": "ar-autodromo-internacional-jose-carlos-bassi-584033696",
       "layoutId": "main",
       "file": "data/argentina/autodromo-internacional-jose-carlos-bassi-584033696/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.929,
+          0.9069
+        ],
+        "medianInteriorDifference": [
+          0.0417,
+          0.0521
+        ],
+        "samplingStepM": 2.999889330709355,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "d3912f7df197cd775de1719eecffcca631fbc8d1b192ce730b899ccfcd08c6be"
     },
     {
       "trackId": "ar-autodromo-jorge-angel-pena-230227827",
       "layoutId": "main",
       "file": "data/argentina/autodromo-jorge-angel-pena-230227827/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.802,
+          0.7927
+        ],
+        "medianInteriorDifference": [
+          0.044,
+          0.0379
+        ],
+        "samplingStepM": 2.998291653825969,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "4d10bbb3639ac6f16aa5a57c4555e9310046b05306375ed69c028ea93ecd7642"
     },
     {
       "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
@@ -252,8 +412,24 @@
       "trackId": "ar-autodromo-martin-miguel-de-guemes-166054180",
       "layoutId": "main",
       "file": "data/argentina/autodromo-martin-miguel-de-guemes-166054180/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8472,
+          0.8435
+        ],
+        "medianInteriorDifference": [
+          0.0482,
+          0.0467
+        ],
+        "samplingStepM": 2.9997377227916653,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "8bbdc72283be4498d132eaa14fac217b442923247ea368a4e071af5d26c72681"
     },
     {
       "trackId": "ar-autodromo-miguel-angel-atauri-191923384",
@@ -280,8 +456,24 @@
       "trackId": "ar-autodromo-oscar-cabalen-261476125",
       "layoutId": "main",
       "file": "data/argentina/autodromo-oscar-cabalen-261476125/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9102,
+          0.8978
+        ],
+        "medianInteriorDifference": [
+          0.0367,
+          0.0349
+        ],
+        "samplingStepM": 2.9992952972480285,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fc5ccff59e66139c7483ac4c7c62201503acc674dba2bfa4aa3893497fc2870b"
     },
     {
       "trackId": "ar-autodromo-oscar-y-juan-galvez-48743061",
@@ -294,8 +486,24 @@
       "trackId": "ar-autodromo-parque-ciudad-de-rio-cuarto-110485750",
       "layoutId": "main",
       "file": "data/argentina/autodromo-parque-ciudad-de-rio-cuarto-110485750/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9276,
+          0.7976
+        ],
+        "medianInteriorDifference": [
+          0.068,
+          0.0773
+        ],
+        "samplingStepM": 2.9991934079460276,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "93655d4fbd01e16993f3deb2b1ee004a7dfeeb92be556f04a5c7bdc4fc3ab4be"
     },
     {
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
@@ -308,15 +516,47 @@
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
       "layoutId": "full-course-chicanes",
       "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/full-course-chicanes.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8797,
+          0.8783
+        ],
+        "medianInteriorDifference": [
+          0.0334,
+          0.0372
+        ],
+        "samplingStepM": 2.998318670521759,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5721f14e89cd6cda92232edd4b81f1289b023d80906d47c755566585b8b2c480"
     },
     {
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
       "layoutId": "main",
       "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8797,
+          0.8783
+        ],
+        "medianInteriorDifference": [
+          0.0334,
+          0.0372
+        ],
+        "samplingStepM": 2.998318670521759,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5721f14e89cd6cda92232edd4b81f1289b023d80906d47c755566585b8b2c480"
     },
     {
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
@@ -352,29 +592,77 @@
       "trackId": "ar-autodromo-rosendo-hernandez-193768834",
       "layoutId": "main",
       "file": "data/argentina/autodromo-rosendo-hernandez-193768834/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9078,
+          0.9102
+        ],
+        "medianInteriorDifference": [
+          0.0503,
+          0.0474
+        ],
+        "samplingStepM": 2.998946188766265,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "026a3abbaed64f25de5bee0d2a5ab47de0995774dceef9b55d310f04dada8d38"
     },
     {
       "trackId": "ar-autodromo-san-nicolas-ciudad-549052237",
       "layoutId": "autodromo-de-san-nicolas",
       "file": "data/argentina/autodromo-san-nicolas-ciudad-549052237/layouts/autodromo-de-san-nicolas.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9731,
+          0.8506
+        ],
+        "medianInteriorDifference": [
+          0.0638,
+          0.0495
+        ],
+        "samplingStepM": 2.9982924168856937,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "1bbd7fb953e8ebbda147a230bf36857b9471d1139cc4c07dd9916639e079e233"
     },
     {
       "trackId": "ar-autodromo-san-nicolas-ciudad-549052237",
       "layoutId": "main",
       "file": "data/argentina/autodromo-san-nicolas-ciudad-549052237/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9731,
+          0.8506
+        ],
+        "medianInteriorDifference": [
+          0.0638,
+          0.0495
+        ],
+        "samplingStepM": 2.9982924168856937,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "1bbd7fb953e8ebbda147a230bf36857b9471d1139cc4c07dd9916639e079e233"
     },
     {
       "trackId": "ar-circuito-san-juan-villicum-f819032e",
       "layoutId": "circuito-san-juan-villicum",
       "file": "data/argentina/ar-circuito-san-juan-villicum-f819032e/layouts/circuito-san-juan-villicum.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: proposed outer edge crosses grass beside the main straight."
     },
     {
       "trackId": "ar-los-golondrinas-917054622",
@@ -429,8 +717,24 @@
       "trackId": "au-lakeside-park-raceway-45165631",
       "layoutId": "main",
       "file": "data/australia/lakeside-park-raceway-45165631/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9529,
+          0.9059
+        ],
+        "medianInteriorDifference": [
+          0.0588,
+          0.0511
+        ],
+        "samplingStepM": 2.9996882637476863,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "94411bfa62dd55f37aca409cfd5adf46e52d9eccc3c8ec5b412ffe2311fdde21"
     },
     {
       "trackId": "au-marulan-pheasant-wood-dcdb4abd",
@@ -459,15 +763,47 @@
       "trackId": "au-norwell-motorplex-727431739",
       "layoutId": "main",
       "file": "data/australia/norwell-motorplex-727431739/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9868,
+          0.9868
+        ],
+        "medianInteriorDifference": [
+          0.05,
+          0.0596
+        ],
+        "samplingStepM": 2.9958448227681056,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "252141ffbaa7727b33cb65b62643e01ad6da4afd72f860634cd42daf4e8e3f3b"
     },
     {
       "trackId": "au-one-raceway-243608030",
       "layoutId": "main",
       "file": "data/australia/one-raceway-243608030/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9932,
+          0.9837
+        ],
+        "medianInteriorDifference": [
+          0.0762,
+          0.0724
+        ],
+        "samplingStepM": 2.998587190246176,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "ab03bb00cccf990d51d5a0db8c28166f28cfc12ed074755d8cec5e509729e136"
     },
     {
       "trackId": "au-surfer-s-paradise-ee3387d5",
@@ -480,22 +816,54 @@
       "trackId": "au-the-bend-motorsport-park-542888894",
       "layoutId": "main",
       "file": "data/australia/the-bend-motorsport-park-542888894/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9603,
+          0.9659
+        ],
+        "medianInteriorDifference": [
+          0.057,
+          0.0514
+        ],
+        "samplingStepM": 2.9993762985406924,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "1c8dbd6e125f9b28eeebd8ae68847ab5239521d23db28871e7fe54af6a642b40"
     },
     {
       "trackId": "au-the-bend-motorsport-park-542888894",
       "layoutId": "tailem-bend-east",
       "file": "data/australia/the-bend-motorsport-park-542888894/layouts/tailem-bend-east.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9386,
+          0.9816
+        ],
+        "medianInteriorDifference": [
+          0.0508,
+          0.0546
+        ],
+        "samplingStepM": 2.9990631007137982,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "2438c964f503f3f7e0f8d0225755f2f525abac9ef8216453c32bd558771ced94"
     },
     {
       "trackId": "bg-pautalia-f5a0fa61",
       "layoutId": "pautalia",
       "file": "data/bulgaria/bg-pautalia-f5a0fa61/layouts/pautalia.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: several proposed inner edges cross infield areas between karting turns."
     },
     {
       "trackId": "bh-bahrain-international-circuit-4818385",
@@ -508,15 +876,47 @@
       "trackId": "br-autodromo-fazenda-capuava-394182409",
       "layoutId": "main",
       "file": "data/brazil/autodromo-fazenda-capuava-394182409/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9411,
+          0.9134
+        ],
+        "medianInteriorDifference": [
+          0.0501,
+          0.0568
+        ],
+        "samplingStepM": 2.997387726499725,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "4cc791803a9f1d981554f13f5c6b3bbe8a3dfa06a44e687761508188ba3c816b"
     },
     {
       "trackId": "br-autodromo-internacional-de-caruaru-486846335",
       "layoutId": "main",
       "file": "data/brazil/autodromo-internacional-de-caruaru-486846335/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8448,
+          0.7789
+        ],
+        "medianInteriorDifference": [
+          0.0346,
+          0.0308
+        ],
+        "samplingStepM": 2.999372216114167,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "333ce10f906baa09267e99fb4e9053b34c4d5052fe0a5ca955734d424d11bfff"
     },
     {
       "trackId": "br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914",
@@ -543,8 +943,24 @@
       "trackId": "br-autodromo-mega-space-253775870",
       "layoutId": "main",
       "file": "data/brazil/autodromo-mega-space-253775870/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9682,
+          0.9624
+        ],
+        "medianInteriorDifference": [
+          0.0492,
+          0.0547
+        ],
+        "samplingStepM": 2.9987625415658132,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "b03cfd1deec687c9357e491603331948dcef53e11559d0a2cfb29c0429b8f1c4"
     },
     {
       "trackId": "br-autodromo-nelson-piquet-32900091",
@@ -557,8 +973,24 @@
       "trackId": "br-autodromo-plan-speed-park-1232577484",
       "layoutId": "main",
       "file": "data/brazil/autodromo-plan-speed-park-1232577484/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9143,
+          0.9283
+        ],
+        "medianInteriorDifference": [
+          0.0502,
+          0.057
+        ],
+        "samplingStepM": 2.999511415460855,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "3268622befb541bce27d096db9bd419567c94ddb9427c7c29c20409d835e2b37"
     },
     {
       "trackId": "br-circuito-dos-cristais-oval-reference",
@@ -592,8 +1024,24 @@
       "trackId": "ca-atlantic-motorsports-park-84491757",
       "layoutId": "main",
       "file": "data/canada/atlantic-motorsports-park-84491757/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9077,
+          0.7843
+        ],
+        "medianInteriorDifference": [
+          0.0312,
+          0.0311
+        ],
+        "samplingStepM": 2.9970437386444972,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "102ab41bd1fab7f7d67994ccfaf47e6a1e08738a7293d77f6921159854a4e9ce"
     },
     {
       "trackId": "ca-autodrome-de-drummondville-830836070",
@@ -652,8 +1100,24 @@
       "trackId": "ca-autodrome-st-felicien-952161845",
       "layoutId": "main",
       "file": "data/canada/autodrome-st-felicien-952161845/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.933,
+          0.9004
+        ],
+        "medianInteriorDifference": [
+          0.0474,
+          0.0525
+        ],
+        "samplingStepM": 2.997097148084481,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "e093c44eb953072be6d38cdf4441b35aa352e03f35e7b6e52a073471776c0cfb"
     },
     {
       "trackId": "ca-cameron-speedway-kart-circuit-f7997f0a",
@@ -739,7 +1203,7 @@
       "layoutId": "main",
       "file": "data/canada/circuit-riverside-speedway-ste-croix-101951392/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: proposed edges follow pavement interiors and shadows rather than consistent road boundaries."
     },
     {
       "trackId": "ca-delaware-speedway-23968411",
@@ -782,29 +1246,61 @@
       "trackId": "ca-goodwood-kartways-6e03d980",
       "layoutId": "goodwood-long-chicane",
       "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-long-chicane.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9449,
+          0.7941
+        ],
+        "medianInteriorDifference": [
+          0.0471,
+          0.0551
+        ],
+        "samplingStepM": 2.9981678178378037,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "6d7601b5a64f399de28f7230ff8016cb44b2c75e47355d83faf43a1a0ee1d676"
     },
     {
       "trackId": "ca-goodwood-kartways-6e03d980",
       "layoutId": "goodwood-standard-long",
       "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-standard-long.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9547,
+          0.8075
+        ],
+        "medianInteriorDifference": [
+          0.0477,
+          0.0506
+        ],
+        "samplingStepM": 2.9977433202050774,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "6d7601b5a64f399de28f7230ff8016cb44b2c75e47355d83faf43a1a0ee1d676"
     },
     {
       "trackId": "ca-mission-raceway-190876520",
       "layoutId": "main",
       "file": "data/canada/mission-raceway-190876520/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: tree shadows obscure the road and the proposed boundary drifts beyond visible pavement."
     },
     {
       "trackId": "ca-mission-raceway-190876520",
       "layoutId": "mission-raceway-park-road-course",
       "file": "data/canada/mission-raceway-190876520/layouts/mission-raceway-park-road-course.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: tree shadows obscure the road and the proposed boundary drifts beyond visible pavement."
     },
     {
       "trackId": "ca-rad-torque-raceway-486902392",
@@ -885,28 +1381,44 @@
       "layoutId": "main",
       "file": "data/chile/autodromo-gustavo-felo-rivera-350613590/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed boundary cuts across the turn and follows inconsistent pavement edges."
     },
     {
       "trackId": "cl-autodromo-las-vizcachas-52099172",
       "layoutId": "main",
       "file": "data/chile/autodromo-las-vizcachas-52099172/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8806,
+          0.9395
+        ],
+        "medianInteriorDifference": [
+          0.0451,
+          0.0433
+        ],
+        "samplingStepM": 2.996337124454731,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "59ba6064f8c40553544ff46c3a85c850f8b40fc6144d642cb7cdcffee557f417"
     },
     {
       "trackId": "cl-autodromo-municipal-de-alto-hospicio-372529140",
       "layoutId": "main",
       "file": "data/chile/autodromo-municipal-de-alto-hospicio-372529140/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: surface material and faint road boundaries need verification before preparing a paved-road simulation."
     },
     {
       "trackId": "cn-guangdong-international-circuit-1135943127",
       "layoutId": "main",
       "file": "data/china/guangdong-international-circuit-1135943127/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "needs-route-review",
+      "reason": "Route identity needs review: the named circuit trace follows a small karting loop rather than the visible full venue."
     },
     {
       "trackId": "cn-huangtupo-5cab1bd3",
@@ -919,14 +1431,14 @@
       "layoutId": "main",
       "file": "data/china/osm-1252235657/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: the visible site has earthworks and indistinct or incomplete pavement boundaries."
     },
     {
       "trackId": "cn-osm-995566205",
       "layoutId": "main",
       "file": "data/china/osm-995566205/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: proposed edges follow portions of a broad paved pad rather than consistently identifiable road limits."
     },
     {
       "trackId": "cn-shanghai-international-circuit-107371138",
@@ -1029,8 +1541,24 @@
       "trackId": "cy-achna-speedway-ab0bcabd",
       "layoutId": "achna-main-course",
       "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-main-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9591,
+          0.95
+        ],
+        "medianInteriorDifference": [
+          0.0504,
+          0.0489
+        ],
+        "samplingStepM": 2.997679988193387,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "9823dc7ff1e9b3a33171ca060f0c66b0ed1931c215596feec34fb19634c84d21"
     },
     {
       "trackId": "cy-achna-speedway-ab0bcabd",
@@ -1051,14 +1579,14 @@
       "layoutId": "autodrom-sosnova",
       "file": "data/czechia/autodrom-sosnova-30857652/layouts/autodrom-sosnova.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edge crosses broad paved junctions without an identifiable road boundary."
     },
     {
       "trackId": "cz-autodrom-sosnova-30857652",
       "layoutId": "main",
       "file": "data/czechia/autodrom-sosnova-30857652/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edge crosses broad paved junctions without an identifiable road boundary."
     },
     {
       "trackId": "cz-autodrom-vysoke-myto-293787466",
@@ -1106,8 +1634,24 @@
       "trackId": "de-motorsport-arena-oschersleben-89251023",
       "layoutId": "motorsport-arena-oschersleben",
       "file": "data/germany/motorsport-arena-oschersleben-89251023/layouts/motorsport-arena-oschersleben.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9411,
+          0.8462
+        ],
+        "medianInteriorDifference": [
+          0.0417,
+          0.0348
+        ],
+        "samplingStepM": 2.998241721240462,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7a67319c2f4197fc711cab4e03c930cc6b2438a8b943dc447b85c936aa500218"
     },
     {
       "trackId": "de-nurburgring",
@@ -1249,8 +1793,24 @@
       "trackId": "dk-fdm-sj-llandsringen-29293789",
       "layoutId": "saellandsringen",
       "file": "data/denmark/fdm-sj-llandsringen-29293789/layouts/saellandsringen.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8456,
+          0.9306
+        ],
+        "medianInteriorDifference": [
+          0.0485,
+          0.0532
+        ],
+        "samplingStepM": 2.995428484093356,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "3aa2f6f4f11bf0f685dbc4bc86a7100a0ed9e709c8f0a7cd607ed60cb6b48eef"
     },
     {
       "trackId": "dk-jyllandsringen-102145328",
@@ -1373,7 +1933,7 @@
       "layoutId": "idiada-wet-handling-circuit",
       "file": "data/spain/es-idiada-wet-handling-circuit-2f0fde0d/layouts/idiada-wet-handling-circuit.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edges cut across a broad wet-handling pad; route limits need manual interpretation."
     },
     {
       "trackId": "es-jerez",
@@ -1476,15 +2036,47 @@
       "trackId": "fi-botniaring-111368167",
       "layoutId": "main",
       "file": "data/finland/botniaring-111368167/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8748,
+          0.8793
+        ],
+        "medianInteriorDifference": [
+          0.0412,
+          0.0475
+        ],
+        "samplingStepM": 2.9978279561942167,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "d435959094f940166c053d7ca7e2fc03a063e82e83b61e6c7649298ab36d9796"
     },
     {
       "trackId": "fi-pesamaen-moottoriurheilukeskus-631890399",
       "layoutId": "main",
       "file": "data/finland/pesamaen-moottoriurheilukeskus-631890399/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9512,
+          0.9394
+        ],
+        "medianInteriorDifference": [
+          0.0945,
+          0.0877
+        ],
+        "samplingStepM": 2.9952943089577415,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "ebab69255aa949c077f7150d8471c0e2ff5180f4567ffcb76118b3546b08be71"
     },
     {
       "trackId": "fi-premier-park-377440680",
@@ -1533,15 +2125,47 @@
       "trackId": "fr-circuit-automobile-de-pont-l-eveque-153222666",
       "layoutId": "main",
       "file": "data/france/circuit-automobile-de-pont-l-eveque-153222666/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.98,
+          0.9891
+        ],
+        "medianInteriorDifference": [
+          0.0322,
+          0.0339
+        ],
+        "samplingStepM": 2.9991663180840473,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=20851.022310860983%2C6319533.517122761%2C21532.09269682523%2C6320179.411249043&WIDTH=593&HEIGHT=562",
+      "imageSha256": "39398922be5a0913af1ebc08ebc2945eb933e00192afef9b0fab7d0a10f7ca41"
     },
     {
       "trackId": "fr-circuit-auxois-sud-123852945",
       "layoutId": "main",
       "file": "data/france/circuit-auxois-sud-123852945/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9918,
+          0.9938
+        ],
+        "medianInteriorDifference": [
+          0.0301,
+          0.0299
+        ],
+        "samplingStepM": 2.9978288552458356,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=507133.6108181656%2C5978153.412533962%2C507928.8690479548%2C5978956.43011443&WIDTH=721&HEIGHT=728",
+      "imageSha256": "540a850b26b60001515b1b14dac9385919660eb9456695946baa2783a513469b"
     },
     {
       "trackId": "fr-circuit-beltoise-trappes-180319169",
@@ -1639,8 +2263,24 @@
       "trackId": "fr-circuits-de-vendee-662836845",
       "layoutId": "circuit-de-fontenay-le-comte",
       "file": "data/france/circuits-de-vendee-662836845/layouts/circuit-de-fontenay-le-comte.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7821,
+          0.8
+        ],
+        "medianInteriorDifference": [
+          0.0257,
+          0.0279
+        ],
+        "samplingStepM": 2.9979619134857027,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "99f6620662f3a267b4649866489765711153421e28b1fac32b08254f486b210a"
     },
     {
       "trackId": "fr-circuits-de-vendee-662836845",
@@ -1799,8 +2439,24 @@
       "trackId": "gb-bishopscourt-racing-circuit-197724420",
       "layoutId": "main",
       "file": "data/united-kingdom/bishopscourt-racing-circuit-197724420/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9508,
+          0.9272
+        ],
+        "medianInteriorDifference": [
+          0.0428,
+          0.0396
+        ],
+        "samplingStepM": 2.9973187787373523,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "669cf32073aca71637bc9ab3e977b7505a832445e4b3a91f4630c5cffd49ca01"
     },
     {
       "trackId": "gb-blyton-park-driving-centre-129241665",
@@ -1892,8 +2548,24 @@
       "trackId": "gb-castle-combe-circuit-35406015",
       "layoutId": "main",
       "file": "data/united-kingdom/castle-combe-circuit-35406015/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8531,
+          0.8232
+        ],
+        "medianInteriorDifference": [
+          0.0295,
+          0.0257
+        ],
+        "samplingStepM": 2.999905643502051,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "b1f7cf86d5b70c311172ff16951b67e9af72efc7c55c8d54fd06f5bed552e03c"
     },
     {
       "trackId": "gb-curborough-68a60e27",
@@ -1928,7 +2600,7 @@
       "layoutId": "airfield-perimeter-2020",
       "file": "data/united-kingdom/gb-dunsfold-ea05c91c/layouts/airfield-perimeter-2020.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: a proposed edge deviates into grass at a runway junction."
     },
     {
       "trackId": "gb-dunsfold-ea05c91c",
@@ -1948,8 +2620,24 @@
       "trackId": "gb-east-fortune-circuit-87245436",
       "layoutId": "main",
       "file": "data/united-kingdom/east-fortune-circuit-87245436/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8435,
+          0.9159
+        ],
+        "medianInteriorDifference": [
+          0.036,
+          0.0478
+        ],
+        "samplingStepM": 2.9962595001707486,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "60d128bc72d8aa0b569cfcbe00782562e6b79d8bfbbc019e6627c2902d676713"
     },
     {
       "trackId": "gb-elvington-a019c302",
@@ -2009,7 +2697,7 @@
       "layoutId": "main",
       "file": "data/united-kingdom/kames-motorsport-circuit-38672231/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed boundaries cut across branch junctions and need manual correction."
     },
     {
       "trackId": "gb-loton-hillclimb-2b41199e",
@@ -2036,7 +2724,7 @@
       "layoutId": "msport-inner-variant",
       "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-inner-variant.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed route boundaries deviate from visible pavement around the lower course."
     },
     {
       "trackId": "gb-m-sport-proving-ground-fe7c7315",
@@ -2049,15 +2737,47 @@
       "trackId": "gb-mallory-park-racing-circuit-215336384",
       "layoutId": "main",
       "file": "data/united-kingdom/mallory-park-racing-circuit-215336384/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8238,
+          0.8496
+        ],
+        "medianInteriorDifference": [
+          0.0367,
+          0.0372
+        ],
+        "samplingStepM": 2.998512303541756,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "134b9f58019171eb9c2c2f383e1a820a70b2425b541343df483783c0c62c2d45"
     },
     {
       "trackId": "gb-mallory-park-racing-circuit-215336384",
       "layoutId": "mallory-park",
       "file": "data/united-kingdom/mallory-park-racing-circuit-215336384/layouts/mallory-park.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7773,
+          0.8363
+        ],
+        "medianInteriorDifference": [
+          0.0367,
+          0.0395
+        ],
+        "samplingStepM": 2.9980298094146485,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "134b9f58019171eb9c2c2f383e1a820a70b2425b541343df483783c0c62c2d45"
     },
     {
       "trackId": "gb-mallory-park-racing-circuit-215336384",
@@ -2071,14 +2791,14 @@
       "layoutId": "nutts-corner",
       "file": "data/united-kingdom/gb-nutts-corner-6fa16d73/layouts/nutts-corner.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: pavement and historical configuration are unclear along the proposed perimeter."
     },
     {
       "trackId": "gb-pembrey-circuit-177186595",
       "layoutId": "main",
       "file": "data/united-kingdom/pembrey-circuit-177186595/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: lower-course geometry does not consistently match visible pavement; historical configuration needs confirmation."
     },
     {
       "trackId": "gb-prescott-hill-climb-cff4bee0",
@@ -2105,15 +2825,47 @@
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
       "layoutId": "rissington-gearbox",
       "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-gearbox.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7759,
+          0.7586
+        ],
+        "medianInteriorDifference": [
+          0.028,
+          0.028
+        ],
+        "samplingStepM": 2.993669096887559,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "25b11d7ea431c95f4f7c18ec1f543ce706e67685d2e0c4ecaae1556d2a2cb7da"
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
       "layoutId": "rissington-inner",
       "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-inner.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7866,
+          0.8415
+        ],
+        "medianInteriorDifference": [
+          0.0303,
+          0.0289
+        ],
+        "samplingStepM": 2.9989815742559993,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "25b11d7ea431c95f4f7c18ec1f543ce706e67685d2e0c4ecaae1556d2a2cb7da"
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
@@ -2194,43 +2946,123 @@
       "trackId": "gb-three-sisters-d8b843ac",
       "layoutId": "three-sisters-club",
       "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-club.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9513,
+          0.894
+        ],
+        "medianInteriorDifference": [
+          0.0423,
+          0.0413
+        ],
+        "samplingStepM": 2.9951279206792067,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fbe99b561c4bce8ae6d85f59c9b1dd0e543211ba1d4cd49fa61665f619c8d9e9"
     },
     {
       "trackId": "gb-three-sisters-d8b843ac",
       "layoutId": "three-sisters-full",
       "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-full.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9463,
+          0.9194
+        ],
+        "medianInteriorDifference": [
+          0.0384,
+          0.0385
+        ],
+        "samplingStepM": 2.996920060886851,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fbe99b561c4bce8ae6d85f59c9b1dd0e543211ba1d4cd49fa61665f619c8d9e9"
     },
     {
       "trackId": "gb-three-sisters-d8b843ac",
       "layoutId": "three-sisters-perimeter",
       "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-perimeter.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9627,
+          0.8773
+        ],
+        "medianInteriorDifference": [
+          0.0418,
+          0.0388
+        ],
+        "samplingStepM": 2.993113630937442,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fbe99b561c4bce8ae6d85f59c9b1dd0e543211ba1d4cd49fa61665f619c8d9e9"
     },
     {
       "trackId": "gb-thruxton-circuit-7736906",
       "layoutId": "main",
       "file": "data/united-kingdom/thruxton-circuit-7736906/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7779,
+          0.7675
+        ],
+        "medianInteriorDifference": [
+          0.0366,
+          0.0322
+        ],
+        "samplingStepM": 2.9989926280995713,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "547ed5feb41aa62233205a2d9a115c14fb63855ef0094d8df1bc369cb0d7f3c6"
     },
     {
       "trackId": "gr-athens-circuit-megara-70043231",
       "layoutId": "main",
       "file": "data/greece/athens-circuit-megara-70043231/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edges make an excursion onto bare ground near the western junction."
     },
     {
       "trackId": "hu-pannonia-ring-56131915",
       "layoutId": "main",
       "file": "data/hungary/pannonia-ring-56131915/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9582,
+          0.9658
+        ],
+        "medianInteriorDifference": [
+          0.0474,
+          0.0488
+        ],
+        "samplingStepM": 2.9994374856576407,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fbc50bca2e55ac0be9ea3f24e7a59c8aaddebb45a76c9267715563150212653e"
     },
     {
       "trackId": "id-sentul-international-circuit-161200518",
@@ -2243,8 +3075,24 @@
       "trackId": "in-buddh-international-circuit-169886195",
       "layoutId": "main",
       "file": "data/india/buddh-international-circuit-169886195/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9138,
+          0.8831
+        ],
+        "medianInteriorDifference": [
+          0.052,
+          0.0557
+        ],
+        "samplingStepM": 2.9997188692468284,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f28272ddb2240fa1dc40275cf2077284c470150f4eca608c83d308c2a3d6e3ca"
     },
     {
       "trackId": "in-chennai-8b8f6213",
@@ -2285,22 +3133,54 @@
       "trackId": "it-autodromo-concordia-672397901",
       "layoutId": "main",
       "file": "data/italy/autodromo-concordia-672397901/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9543,
+          0.9452
+        ],
+        "medianInteriorDifference": [
+          0.0672,
+          0.0636
+        ],
+        "samplingStepM": 2.9999773054537973,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "74b248227ebaa918fb26c063da6bc4b548938e1ca922837156f3e2ce599d5227"
     },
     {
       "trackId": "it-autodromo-di-morano-sul-po-117679849",
       "layoutId": "main",
       "file": "data/italy/autodromo-di-morano-sul-po-117679849/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: overgrown or historical pavement has faint boundaries and needs a clearer source."
     },
     {
       "trackId": "it-autodromo-di-mores-167585485",
       "layoutId": "main",
       "file": "data/italy/autodromo-di-mores-167585485/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9248,
+          0.8916
+        ],
+        "medianInteriorDifference": [
+          0.0345,
+          0.0324
+        ],
+        "samplingStepM": 2.9970715824657463,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "9ea44cc183a99f18c56ed4e04ecedb005b8183dfa3a545f895046f4175c5d0ed"
     },
     {
       "trackId": "it-autodromo-riccardo-paletti-85226080",
@@ -2336,29 +3216,93 @@
       "trackId": "it-misano",
       "layoutId": "short",
       "file": "data/italy/misano/layouts/short.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9777,
+          0.997
+        ],
+        "medianInteriorDifference": [
+          0.0555,
+          0.0558
+        ],
+        "samplingStepM": 2.998106428064489,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "bc638af77bf501dd483839030bee42f58ec010efd749fd5f8f731b1c85742774"
     },
     {
       "trackId": "it-modena-929ca255",
       "layoutId": "modena",
       "file": "data/italy/it-modena-929ca255/layouts/modena.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8956,
+          0.9227
+        ],
+        "medianInteriorDifference": [
+          0.0507,
+          0.0574
+        ],
+        "samplingStepM": 2.9974213764159043,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "e0c747bfa9d9cecd398fc4357f17f19a8ee796c37a8b08d3f27bd62ecdcd07cc"
     },
     {
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
       "layoutId": "historical-international-car",
       "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-car.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9993,
+          0.9912
+        ],
+        "medianInteriorDifference": [
+          0.0548,
+          0.0491
+        ],
+        "samplingStepM": 2.998995272462496,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "71289af3e601b99c15d0e8e1fad30891362ebfc406935f21c7db12bb29bf8b5f"
     },
     {
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
       "layoutId": "historical-international-junction-chicanes",
       "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-junction-chicanes.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9883,
+          0.9956
+        ],
+        "medianInteriorDifference": [
+          0.0552,
+          0.0505
+        ],
+        "samplingStepM": 2.999719953592232,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "71289af3e601b99c15d0e8e1fad30891362ebfc406935f21c7db12bb29bf8b5f"
     },
     {
       "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
@@ -2379,7 +3323,7 @@
       "layoutId": "main",
       "file": "data/japan/hsr-134862680/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: the proposed outer edge crosses grass between the course and an adjacent paved lane."
     },
     {
       "trackId": "jp-maraigawa-86ab8dd9",
@@ -2420,8 +3364,24 @@
       "trackId": "jp-ts-1197577813",
       "layoutId": "main",
       "file": "data/japan/ts-1197577813/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9595,
+          0.9062
+        ],
+        "medianInteriorDifference": [
+          0.0306,
+          0.028
+        ],
+        "samplingStepM": 2.995206246906227,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "29fd3ca9dd777ea7068a63ffee9dee4068d56bb0e4057afd3fd33ae9927e0a8c"
     },
     {
       "trackId": "kr-ansan-0cee918e",
@@ -2573,8 +3533,24 @@
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
       "layoutId": "highlands-motorsports-park-a",
       "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-a.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9204,
+          0.992
+        ],
+        "medianInteriorDifference": [
+          0.0581,
+          0.0648
+        ],
+        "samplingStepM": 2.994091895196132,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "1d477e20517f47cefb47e46b7342a9ee32fb28f426d0fdc52ad50ebf549847be"
     },
     {
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
@@ -2661,29 +3637,93 @@
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-grand-prix",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-grand-prix.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8676,
+          0.9406
+        ],
+        "medianInteriorDifference": [
+          0.0454,
+          0.0454
+        ],
+        "samplingStepM": 2.9973700104672125,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-grand-prix-dipper",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-grand-prix-dipper.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8796,
+          0.9301
+        ],
+        "medianInteriorDifference": [
+          0.0478,
+          0.0458
+        ],
+        "samplingStepM": 2.9978200171703824,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-outer-course",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8709,
+          0.9492
+        ],
+        "medianInteriorDifference": [
+          0.0448,
+          0.0396
+        ],
+        "samplingStepM": 2.9977994287965477,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-outer-dipper",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-dipper.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8742,
+          0.9371
+        ],
+        "medianInteriorDifference": [
+          0.0466,
+          0.0412
+        ],
+        "samplingStepM": 2.9984461888660836,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
     },
     {
       "trackId": "pa-autodromo-panama-rl",
@@ -2769,14 +3809,14 @@
       "layoutId": "lousada-standard-2019",
       "file": "data/portugal/pt-lousada-rx-d17ce73b/layouts/lousada-standard-2019.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Mixed-surface course: paved and unpaved limits, surface-specific simulation and route interpretation need review."
     },
     {
       "trackId": "pt-macao-rx-2348fa2a",
       "layoutId": "macao-joker",
       "file": "data/portugal/pt-macao-rx-2348fa2a/layouts/macao-joker.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Mixed-surface course: paved and unpaved limits, surface-specific simulation and route interpretation need review."
     },
     {
       "trackId": "pt-macao-rx-2348fa2a",
@@ -2900,22 +3940,70 @@
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "main",
       "file": "data/russia/moscow-raceway-168247376/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9172,
+          0.8855
+        ],
+        "medianInteriorDifference": [
+          0.0451,
+          0.0397
+        ],
+        "samplingStepM": 2.9999911882527375,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-fim",
       "file": "data/russia/moscow-raceway-168247376/layouts/moscow-fim.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9181,
+          0.8787
+        ],
+        "medianInteriorDifference": [
+          0.0424,
+          0.0383
+        ],
+        "samplingStepM": 2.9991723481260806,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-gp1",
       "file": "data/russia/moscow-raceway-168247376/layouts/moscow-gp1.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9172,
+          0.8855
+        ],
+        "medianInteriorDifference": [
+          0.0451,
+          0.0397
+        ],
+        "samplingStepM": 2.9999911882527375,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
@@ -2965,8 +4053,24 @@
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-supersprint",
       "file": "data/russia/moscow-raceway-168247376/layouts/moscow-supersprint.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9577,
+          0.9488
+        ],
+        "medianInteriorDifference": [
+          0.0463,
+          0.0541
+        ],
+        "samplingStepM": 2.9960597059030087,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f4017eefad97cbd6d2f4db291ce9d2de9b1e83a60805634ffef1eaebc6c69b9b"
     },
     {
       "trackId": "ru-osm-156001847",
@@ -3047,14 +4151,14 @@
       "layoutId": "holjes-motorclub",
       "file": "data/sweden/se-holjes-motorclub-3144cff3/layouts/holjes-motorclub.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Mixed-surface course: paved and unpaved limits, surface-specific simulation and route interpretation need review."
     },
     {
       "trackId": "se-karlskoga-motorstadion-290177249",
       "layoutId": "gellerason-gp-2019",
       "file": "data/sweden/karlskoga-motorstadion-290177249/layouts/gellerason-gp-2019.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edges deviate across infield areas and junctions."
     },
     {
       "trackId": "se-karlskoga-motorstadion-290177249",
@@ -3075,14 +4179,14 @@
       "layoutId": "main",
       "file": "data/sweden/sturup-raceway-42957249/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edges form an unintended kink beside a branch or pit entry."
     },
     {
       "trackId": "se-sturup-raceway-42957249",
       "layoutId": "sturup-raceway",
       "file": "data/sweden/sturup-raceway-42957249/layouts/sturup-raceway.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed edges form an unintended kink beside a branch or pit entry."
     },
     {
       "trackId": "sk-slovakia-ring-47361993",
@@ -3119,14 +4223,30 @@
       "layoutId": "bangsaen-street-circuit",
       "file": "data/thailand/th-bangsaen-street-circuit-2551e057/layouts/bangsaen-street-circuit.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: vegetation obscures the street boundary and one proposed edge makes a small loop at a junction."
     },
     {
       "trackId": "tw-lihpao-g2-66f08127",
       "layoutId": "lihpao-g2-track-day",
       "file": "data/taiwan/tw-lihpao-g2-66f08127/layouts/lihpao-g2-track-day.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9899,
+          0.9469
+        ],
+        "medianInteriorDifference": [
+          0.0729,
+          0.0562
+        ],
+        "samplingStepM": 2.9998690462426016,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "ff9ef0a3f23ae64b158a8c97a9e9b6a1adfb81273ac6696dbfb756b69c4eacb7"
     },
     {
       "trackId": "tw-penbay-drag-strip-a015d5c3",
@@ -3147,7 +4267,7 @@
       "layoutId": "main",
       "file": "data/united-states/albany-saratoga-speedway-1164983896/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Dirt oval: road boundaries and surface-specific simulation need review before preparation."
     },
     {
       "trackId": "us-apex-motor-b7ddcfd3",
@@ -3173,7 +4293,7 @@
       "layoutId": "arizona-motorsports-park",
       "file": "data/united-states/us-arizona-motorsports-park-9f848c55/layouts/arizona-motorsports-park.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: a proposed edge follows the pavement interior rather than the outside road edge."
     },
     {
       "trackId": "us-arlington-street-circuit-be2e2ad4",
@@ -3192,7 +4312,7 @@
       "layoutId": "main",
       "file": "data/united-states/arroyo-seco-raceway-83871979/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Close-up imagery review: a proposed outer edge follows an apron or bare ground beyond the road."
     },
     {
       "trackId": "us-autobahn-country-club-42852101",
@@ -3212,14 +4332,14 @@
       "layoutId": "badger-bus-stop",
       "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-bus-stop.geojson",
       "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "reason": "Imagery review: proposed karting-route edges cross grass at the southern section."
     },
     {
       "trackId": "us-badger-kart-8181738f",
       "layoutId": "badger-classic",
       "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-classic.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: proposed karting-route edges cross grass at the southern section."
     },
     {
       "trackId": "us-badger-kart-8181738f",
@@ -3240,7 +4360,7 @@
       "layoutId": "main",
       "file": "data/united-states/bristol-motor-speedway-116606212/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Imagery review: the oval has a dirt-covered surface in this frame; surface material and the intended configuration need verification."
     },
     {
       "trackId": "us-bushnell-motorsports-park-16aaa9aa",
@@ -3253,8 +4373,24 @@
       "trackId": "us-carolina-motorsports-park-261069261",
       "layoutId": "carolina-motorsports-park-b",
       "file": "data/united-states/carolina-motorsports-park-261069261/layouts/carolina-motorsports-park-b.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9502,
+          0.9315
+        ],
+        "medianInteriorDifference": [
+          0.0586,
+          0.0765
+        ],
+        "samplingStepM": 2.998706014244811,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8972431.209522896%2C4094019.81585188%2C-8971098.200420177%2C4095023.6778119593&bboxSR=3857&imageSR=3857&size=1465%2C1104&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "ed67f546c87083c36521073286ff01d844245257ab2bfaa40ae1282771116341"
     },
     {
       "trackId": "us-charlotte-motor-speedway-116034341",
@@ -3295,8 +4431,24 @@
       "trackId": "us-darlington-raceway-104277971",
       "layoutId": "main",
       "file": "data/united-states/darlington-raceway-104277971/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7974,
+          0.9387
+        ],
+        "medianInteriorDifference": [
+          0.0479,
+          0.0581
+        ],
+        "samplingStepM": 2.99983407230867,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5d7d47883f2183b1da4d43bb60ac74a956629ddd6e1e1d49e768d917abfa0933"
     },
     {
       "trackId": "us-daytona-international-speedway-11371365",

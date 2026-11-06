@@ -21,8 +21,8 @@
     {
       "id": "ruapuna",
       "name": "Ruapuna",
-      "referenceId": "New Zealand/Ruapuna",
       "file": "layouts/ruapuna.geojson",
+      "referenceId": "New Zealand/Ruapuna",
       "description": "Combined mapped configurations: Grand Prix, Grand Prix with dipper, Outer course with dipper, Outer course, Eastern course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -128,6 +128,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T02:30:14.394Z",
       "evidenceNote": "This general entry represents the combined Grand Prix, dipper, Western outer and short Eastern course branches. The federation 3.33 km map establishes Grand Prix identity and the operator test rules establish the dipper variant. The operator identifies six configurations at the facility. Branch geometry comes only from one pinned independent snapshot; no comparison-image vertices are copied. Northern pit-access roads, the adjacent dirt speedway and the new 2026 duplicate course way are excluded. Descriptive component names and historical alignments remain provisional. The independent unique branch distance is 3731.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:36.389Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

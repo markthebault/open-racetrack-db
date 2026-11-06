@@ -21,8 +21,8 @@
     {
       "id": "goodwood-kartways",
       "name": "Goodwood Kartways",
-      "referenceId": "Canada/Goodwood Kartways",
       "file": "layouts/goodwood-kartways.geojson",
+      "referenceId": "Canada/Goodwood Kartways",
       "description": "Combined mapped configurations: Goodwood Standard Long Track, Goodwood Long Track with Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -83,6 +83,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T21:15:28.087Z",
       "evidenceNote": "The operator publishes Standard Long Track and Long Track with Chicane events, and its facility plan identifies the complete northern loop, central hairpins and southern return. This general venue configuration groups those two independently mapped lap choices, excluding the northern training shortcuts and the paddock access spur. Contemporary bus-stop alignment and historical catalogue correspondence remain draft. Shared edges count once. The independent unique branch distance is 856.6 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:57.838Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
