@@ -19,7 +19,8 @@ export function measuredImageBorders(
   if (trace.length < 4 || !equal(trace[0], trace.at(-1)!))
     throw new Error("Complete image measurements require one closed route");
   const frames = imageCrossSections(trace),
-    { projection, normals, smooth, count, index, step } = frames;
+    { projection, normals, smooth, count, index, step } = frames,
+    paired = recipe.method === "paired-image-edge-anchors-v1";
   if (
     recipe.patches.length !== 2 ||
     new Set(recipe.patches.map((p) => p.edge)).size !== 2
@@ -79,7 +80,11 @@ export function measuredImageBorders(
         dy = q[1] - p[1],
         across = dx * normal[0] + dy * normal[1],
         along = dx * normal[1] - dy * normal[0];
-      if (Math.abs(along) > 1.5 || Math.abs(across) > 45)
+      if (
+        paired
+          ? Math.hypot(dx, dy) > 45
+          : Math.abs(along) > 1.5 || Math.abs(across) > 45
+      )
         throw new Error(
           "Image measurement does not match its trace cross-section",
         );
@@ -124,6 +129,52 @@ export function measuredImageBorders(
     result.inner.map(projection.to),
     result.outer.map(projection.to),
   ];
+  if (paired) {
+    // Image pairs define their own road section; old source normals do not move them.
+    // The retained source route still bounds displacement and driving identity.
+    const midpoints = rings[0].map(
+      (a, i): Position => [
+        (a[0] + rings[1][i][0]) / 2,
+        (a[1] + rings[1][i][1]) / 2,
+      ],
+    );
+    if (
+      midpoints.some(
+        (p, i) =>
+          Math.hypot(p[0] - smooth[index(i)][0], p[1] - smooth[index(i)][1]) >
+          10,
+      )
+    )
+      throw new Error(
+        "Image-paired road departs more than 10 metres from its retained source station",
+      );
+    const area = (path: Position[]) =>
+        path.reduce((s, p, i) => {
+          const q = path[(i + 1) % path.length];
+          return s + p[0] * q[1] - p[1] * q[0];
+        }, 0),
+      winding = Math.sign(area(midpoints));
+    if (!winding || winding !== Math.sign(area(smooth)))
+      throw new Error("Image-paired road reverses its retained driving order");
+    assertSeparateSimpleRings([midpoints], true);
+    const inner = recipe.patches.find((p) => p.edge === "inner")!;
+    for (const anchor of inner.anchors.slice(0, -1)) {
+      const i = anchor.station,
+        a = midpoints[index(i - 1)],
+        b = midpoints[index(i + 1)],
+        dx = b[0] - a[0],
+        dy = b[1] - a[1],
+        tangent = Math.hypot(dx, dy),
+        wx = rings[1][i][0] - rings[0][i][0],
+        wy = rings[1][i][1] - rings[0][i][1],
+        width = Math.hypot(wx, wy),
+        outward = (winding * (dy * wx - dx * wy)) / tangent;
+      if (!tangent || outward < width * 0.5)
+        throw new Error(
+          `Image edge pairs do not cross their measured road in driving order at station ${i}`,
+        );
+    }
+  }
   assertSeparateSimpleRings(rings, true);
   if (!insideRing(rings[0][0], rings[1]))
     throw new Error(

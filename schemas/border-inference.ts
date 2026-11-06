@@ -27,6 +27,7 @@ export const borderInferenceSchema = z
       "rgb-road-appearance-v3",
       "rgb-road-local-appearance-v4",
       "image-measured-cross-sections-v1",
+      "image-measured-paired-edges-v1",
     ]),
     status: z.literal("estimated"),
     reviewedAt: z.null(),
@@ -101,7 +102,9 @@ export const borderInferenceSchema = z
     note: z.string().min(1),
   })
   .superRefine((value, ctx) => {
-    const measured = value.method === "image-measured-cross-sections-v1";
+    const measured =
+      value.method === "image-measured-cross-sections-v1" ||
+      value.method === "image-measured-paired-edges-v1";
     if (
       measured
         ? !value.measurement ||
@@ -115,6 +118,15 @@ export const borderInferenceSchema = z
         code: "custom",
         message:
           "Measured borders require complete measurements; automatic borders require their proposal evidence",
+      });
+    if (
+      value.measurement &&
+      (value.method === "image-measured-paired-edges-v1") !==
+        (value.measurement.method === "paired-image-edge-anchors-v1")
+    )
+      ctx.addIssue({
+        code: "custom",
+        message: "Measured border method must match its reconstruction recipe",
       });
   });
 export type BorderInference = z.infer<typeof borderInferenceSchema>;

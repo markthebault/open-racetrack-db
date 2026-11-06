@@ -622,7 +622,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
         method: measured
-          ? "image-measured-cross-sections-v1"
+          ? measured.measurement.method === "paired-image-edge-anchors-v1"
+            ? "image-measured-paired-edges-v1"
+            : "image-measured-cross-sections-v1"
           : localAppearance
             ? "rgb-road-local-appearance-v4"
             : appearance
@@ -652,7 +654,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
               },
             }),
         note: measured
-          ? "Road-border estimates reconstructed directly from complete, sparse image measurements on the existing trace cross-sections. All intervals interpolate between image anchors; they are not automatic detections or a continuous edge survey. Every saved edge station and anchor requires pinned-image coverage during authoring. Isolated missing pixels inside the road are not filled or used as boundary evidence. Imagery resolution is not survey accuracy. These borders have not been formally verified."
+          ? measured.measurement.method === "paired-image-edge-anchors-v1"
+            ? "Road-border estimates reconstructed from complete pairs of sparse image-edge measurements. Each pair defines its own road section; the original trace is preserved and constrains station displacement and route order. Linear intervals, junction openings and curbs remain estimates, not surveyed racing limits. Every saved edge station and anchor requires pinned-image coverage during authoring. No automatic evidence scores are claimed."
+            : "Road-border estimates reconstructed directly from complete, sparse image measurements on the existing trace cross-sections. All intervals interpolate between image anchors; they are not automatic detections or a continuous edge survey. Every saved edge station and anchor requires pinned-image coverage during authoring. Isolated missing pixels inside the road are not filled or used as boundary evidence. Imagery resolution is not survey accuracy. These borders have not been formally verified."
           : "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been formally verified; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy." +
             (refined
               ? " Sparse edge anchors measured on the pinned image correct the documented sections. Evidence scores describe the original automatic proposal, not the corrected borders. The seed and final border hashes and correction recipe are retained."

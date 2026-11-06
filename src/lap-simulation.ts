@@ -135,16 +135,28 @@ export function buildRoad(layout: Layout): Road {
     }
   }
   const start = (finish + recipe.startOffsetM / length) % 1;
-  const grade = layout.metadata.borderInference?.gradeSeparation;
+  const grade = layout.metadata.borderInference?.gradeSeparation,
+    imagePairs =
+      layout.metadata.borderInference?.method ===
+      "image-measured-paired-edges-v1",
+    pairedSections = !!grade || imagePairs,
+    innerLeft =
+      raw.reduce((sum, p, i) => {
+        const q = raw[(i + 1) % raw.length];
+        return sum + p.x * q.z - p.z * q.x;
+      }, 0) < 0;
   const borders = layout.features
     .filter(
       (f) => f.properties.role === "inner" || f.properties.role === "outer",
     )
     .sort((a, b) =>
-      grade
-        ? Number(a.properties.role === "outer") -
-          Number(b.properties.role === "outer")
-        : 0,
+      imagePairs
+        ? Number(a.properties.role !== (innerLeft ? "inner" : "outer")) -
+          Number(b.properties.role !== (innerLeft ? "inner" : "outer"))
+        : grade
+          ? Number(a.properties.role === "outer") -
+            Number(b.properties.role === "outer")
+          : 0,
     )
     .flatMap((f) => geometryPaths(f.geometry))
     .map((path) =>
@@ -155,7 +167,7 @@ export function buildRoad(layout: Layout): Road {
     );
   if (borders.length !== 2)
     throw new Error("This lap needs two continuous source borders.");
-  const index = indexBorders(borders);
+  const index = pairedSections ? undefined : indexBorders(borders);
   if (
     grade &&
     (recipe.pathMethod !== "paired-border-midpoints" ||
@@ -165,6 +177,14 @@ export function buildRoad(layout: Layout): Road {
     throw new Error(
       "Grade-separated playback requires its matching paired station grid",
     );
+  if (
+    imagePairs &&
+    (recipe.pathMethod !== "paired-border-midpoints" ||
+      borders.some((p) => p.length !== raw.length + 1))
+  )
+    throw new Error(
+      "Image-paired playback requires its matching paired station grid",
+    );
   let interpolatedSections = 0;
   const points: RoadPoint[] = [];
   for (let i = 0; i < count; i++) {
@@ -173,24 +193,29 @@ export function buildRoad(layout: Layout): Road {
       t = curve.getTangentAt(u).normalize();
     const nx = t.z,
       nz = -t.x; // driver left in east/up/south coordinates
-    if (grade) {
-      // Spatial nearest-edge searches can select the OTHER road at an overpass.
+    if (pairedSections) {
+      // Spatial nearest-edge searches can select the OTHER road at an overpass
+      // or a neighbouring hairpin. Keep the measured correspondence instead.
       // Curve parameter maps back to the original paired control stations instead.
       const station = curve.getUtoTmapping(u, 0) * raw.length,
         a = Math.floor(station),
         b = (a + 1) % raw.length,
         fraction = station - a,
-        edges = borders.map((path): Position => [
-          path[a][0] * (1 - fraction) + path[b][0] * fraction,
-          path[a][1] * (1 - fraction) + path[b][1] * fraction,
-        ]),
+        edges = borders.map(
+          (path): Position => [
+            path[a][0] * (1 - fraction) + path[b][0] * fraction,
+            path[a][1] * (1 - fraction) + path[b][1] * fraction,
+          ],
+        ),
         dx = edges[0][0] - edges[1][0],
         dz = edges[0][1] - edges[1][1],
         width = Math.hypot(dx, dz);
       points.push({
         x: (edges[0][0] + edges[1][0]) / 2,
         z: (edges[0][1] + edges[1][1]) / 2,
-        y: gradeProfileHeight(grade, station),
+        y: grade
+          ? gradeProfileHeight(grade, station)
+          : roadHeight(recipe.elevation, (i / count) * recipe.referenceLengthM),
         s: i * step,
         ds: step,
         left: width / 2,
@@ -202,11 +227,11 @@ export function buildRoad(layout: Layout): Road {
         leftEdge: edges[0],
         rightEdge: edges[1],
         sourceStation: station,
-        elevated: onBridge(grade, station),
+        ...(grade ? { elevated: onBridge(grade, station) } : {}),
       });
       continue;
     }
-    const section = borderSection(index, p.x, p.z, nx, nz);
+    const section = borderSection(index!, p.x, p.z, nx, nz);
     if (!section) interpolatedSections++;
     // Missing cross-sections are repaired below by interpolation, never a silently invented width.
     points.push({
@@ -238,7 +263,7 @@ export function buildRoad(layout: Layout): Road {
           (a + b);
       }
   }
-  if (recipe.pathMethod === "boundary-normal-midpoints-v1") {
+  if (recipe.pathMethod === "boundary-normal-midpoints-v1" || imagePairs) {
     if (interpolatedSections)
       throw new Error(
         "Boundary driving path requires measured cross-sections throughout",

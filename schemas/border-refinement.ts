@@ -62,17 +62,40 @@ export const borderRefinementSchema = recipe
   .superRefine(check);
 export type BorderRefinementInput = z.infer<typeof borderRefinementInputSchema>;
 // Complete image measurements reconstruct independently of an automatic seed.
-export const borderMeasurementInputSchema = recipe
-  .omit({ seedSha256: true })
-  .extend({ interpolation: z.literal("edge-linear-v1").optional() })
-  .superRefine(check);
-export const borderMeasurementSchema = recipe
-  .omit({ seedSha256: true })
-  .extend({
-    interpolation: z.literal("edge-linear-v1").optional(),
-    resultSha256: hash,
-  })
-  .superRefine(check);
+const completeRecipe = recipe.omit({ seedSha256: true }).extend({
+  method: z.enum([
+    "cross-section-image-anchors-v1",
+    "paired-image-edge-anchors-v1",
+  ]),
+  interpolation: z.literal("edge-linear-v1").optional(),
+});
+function checkComplete(
+  value: z.infer<typeof completeRecipe>,
+  ctx: z.RefinementCtx,
+) {
+  check(value, ctx);
+  if (value.method !== "paired-image-edge-anchors-v1") return;
+  const inner = value.patches.find((p) => p.edge === "inner"),
+    outer = value.patches.find((p) => p.edge === "outer");
+  if (
+    value.interpolation !== "edge-linear-v1" ||
+    value.patches.length !== 2 ||
+    !inner ||
+    !outer ||
+    JSON.stringify(inner.anchors.map((a) => a.station)) !==
+      JSON.stringify(outer.anchors.map((a) => a.station))
+  )
+    ctx.addIssue({
+      code: "custom",
+      message:
+        "Paired image edges require linear interpolation and matching complete anchor stations",
+    });
+}
+export const borderMeasurementInputSchema =
+  completeRecipe.superRefine(checkComplete);
+export const borderMeasurementSchema = completeRecipe
+  .extend({ resultSha256: hash })
+  .superRefine(checkComplete);
 export type BorderMeasurementInput = z.infer<
   typeof borderMeasurementInputSchema
 >;

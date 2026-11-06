@@ -9,6 +9,9 @@ for (const [track, layout] of [
   ["ca-canadian-tire-motorsports-park-ddt-78298a58", "ddt-one-kink"],
   ["ca-canadian-tire-motorsports-park-ddt-78298a58", "ddt-two-kinks"],
   ["pe-autodromo-la-chutana-293467712", "main"],
+  ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
+  ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
+  ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
 ])
   for (const width of [1440, 390])
     test(`${track}/${layout} measured borders retain evidence, playback and a decodable export at ${width}px`, async ({
@@ -48,6 +51,13 @@ for (const [track, layout] of [
         refinement = d.metadata.borderInference.measurement;
       if (track === "pe-autodromo-la-chutana-293467712")
         expect(refinement.interpolation).toBe("edge-linear-v1");
+      if (track === "ca-cameron-speedway-kart-circuit-f7997f0a") {
+        expect(refinement.interpolation).toBe("edge-linear-v1");
+        expect(refinement.method).toBe("paired-image-edge-anchors-v1");
+        expect(d.metadata.borderInference.method).toBe(
+          "image-measured-paired-edges-v1",
+        );
+      }
       const edges = Object.fromEntries(
         d.features
           .filter((f: { properties: { role: string } }) =>

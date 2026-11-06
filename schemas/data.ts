@@ -547,6 +547,15 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("Estimated imagery borders require source evidence");
   if (m.model3d) {
     if (
+      m.borderInference?.method === "image-measured-paired-edges-v1" &&
+      (m.model3d.kind === "surface" ||
+        m.model3d.kind === "run" ||
+        m.model3d.pathMethod !== "paired-border-midpoints")
+    )
+      throw new Error(
+        "Image-paired models require closed paired-road playback",
+      );
+    if (
       m.borderInference?.gradeSeparation &&
       (m.model3d.kind === "surface" ||
         m.model3d.kind === "run" ||
@@ -561,6 +570,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       m.borderInference?.method !== "rgb-road-appearance-v3" &&
       m.borderInference?.method !== "rgb-road-local-appearance-v4" &&
       m.borderInference?.method !== "image-measured-cross-sections-v1" &&
+      m.borderInference?.method !== "image-measured-paired-edges-v1" &&
       m.borderInference?.edgeConvention !== "left-right-along-trace"
     )
       throw new Error(

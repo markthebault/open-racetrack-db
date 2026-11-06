@@ -181,6 +181,7 @@ export function projectSharedImageMeasurements(
     throw new Error("Source measurement reconstruction hash mismatch");
   const a = imageCrossSections(source.trace),
     b = imageCrossSections(target.trace),
+    paired = stored.method === "paired-image-edge-anchors-v1",
     rejected: {
       edge: string;
       sourceStation: number;
@@ -228,7 +229,9 @@ export function projectSharedImageMeasurements(
           throw new Error("Ambiguous target branches");
         if (
           anchor.station === a.count ||
-          (target.direction === "reverse" && anchor.station === 0)
+          (target.direction === "reverse" &&
+            anchor.station === 0 &&
+            (!paired || station === 0))
         ) {
           if (station !== 0) throw new Error("Mismatched closed seams");
           station =
@@ -244,7 +247,7 @@ export function projectSharedImageMeasurements(
           dy = q[1] - base[1],
           across = dx * normal[0] + dy * normal[1],
           alongM = dx * normal[1] - dy * normal[0];
-        if (Math.abs(alongM) > 1.5)
+        if (!paired && Math.abs(alongM) > 1.5)
           throw new Error("Projection moves too far along the road");
         mappings.push({
           edge: patch.edge,
@@ -257,10 +260,12 @@ export function projectSharedImageMeasurements(
           {
             ...anchor,
             station,
-            coordinate: b.projection.from([
-              base[0] + across * normal[0],
-              base[1] + across * normal[1],
-            ]),
+            coordinate: paired
+              ? anchor.coordinate
+              : b.projection.from([
+                  base[0] + across * normal[0],
+                  base[1] + across * normal[1],
+                ]),
           },
         ];
       } catch (error) {
@@ -273,7 +278,62 @@ export function projectSharedImageMeasurements(
       }
     }),
   }));
-  if (target.direction === "reverse")
+  if (paired) {
+    const retained = new Set<string>();
+    for (const patch of patches) {
+      const records = mappings.filter((m) => m.edge === patch.edge),
+        candidates = patch.anchors.map((anchor, i) => ({
+          anchor,
+          mapping: records[i],
+        }));
+      if (target.direction === "reverse") candidates.reverse();
+      const groups = new Map<number, typeof candidates>();
+      for (const candidate of candidates) {
+        const group = groups.get(candidate.anchor.station) ?? [];
+        group.push(candidate);
+        groups.set(candidate.anchor.station, group);
+      }
+      const chosen = new Set<object>();
+      for (const [station, group] of groups) {
+        const separated = group.some((x) =>
+          group.some((y) => {
+            const delta = Math.abs(
+              x.mapping.sourceStation - y.mapping.sourceStation,
+            );
+            return Math.min(delta, a.count - delta) > 2;
+          }),
+        );
+        const best = separated
+          ? undefined
+          : [...group].sort(
+              (x, y) =>
+                x.mapping.traceGapM - y.mapping.traceGapM ||
+                x.mapping.sourceStation - y.mapping.sourceStation,
+            )[0];
+        if (best) chosen.add(best);
+        for (const candidate of group)
+          if (candidate !== best)
+            rejected.push({
+              edge: patch.edge,
+              sourceStation: candidate.mapping.sourceStation,
+              reason: `Image measurements collide at target station ${station}; ${separated ? "nonlocal ambiguity needs new measurements" : "nearest supported source section retained"}`,
+            });
+      }
+      const ordered = candidates.filter((c) => chosen.has(c));
+      // Reuse physical pairs on the TARGET's retained station order. Different
+      // layouts may visit shared arcs in a different order; no source route is copied.
+      // The complete target still needs its own closure, junctions and reconstruction checks.
+      patch.anchors = ordered
+        .sort((x, y) => x.anchor.station - y.anchor.station)
+        .map((c) => {
+          retained.add(`${patch.edge}/${c.mapping.sourceStation}`);
+          return c.anchor;
+        });
+    }
+    for (let i = mappings.length - 1; i >= 0; i--)
+      if (!retained.has(`${mappings[i].edge}/${mappings[i].sourceStation}`))
+        mappings.splice(i, 1);
+  } else if (target.direction === "reverse")
     for (const patch of patches) patch.anchors.reverse();
   for (const patch of patches)
     if (

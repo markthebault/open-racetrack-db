@@ -140,9 +140,10 @@ export function compressElevation(
 export function terrainProfile(
   road: Road,
   terrain: ElevationGrid,
+  explicitRoadLevels = false,
 ): ElevationAnchor[] {
   const projection = plane(road.origin),
-    pairedProfile = road.points[0].sourceStation !== undefined,
+    pairedProfile = explicitRoadLevels,
     step = pairedProfile ? 1 : Math.max(1, Math.floor(40 / road.step)),
     samples: ElevationAnchor[] = [];
   const closed = road.recipe.kind !== "run",
@@ -238,7 +239,9 @@ export function prepareTrackModel(
     layout.metadata.borderInference?.method ===
       "rgb-road-local-appearance-v4" ||
     layout.metadata.borderInference?.method ===
-      "image-measured-cross-sections-v1";
+      "image-measured-cross-sections-v1" ||
+    layout.metadata.borderInference?.method ===
+      "image-measured-paired-edges-v1";
   const length = boundaryPath
     ? geographicLength(boundaryNormalMidline(layout))
     : paired
@@ -307,7 +310,11 @@ export function prepareTrackModel(
     throw new BorderAlignmentError(
       "Too many invalid border cross-sections; inspect geometry before preparing this layout",
     );
-  const elevation = terrainProfile(road, terrain),
+  const elevation = terrainProfile(
+      road,
+      terrain,
+      !!layout.metadata.borderInference?.gradeSeparation,
+    ),
     curbs = illustrativeCurbs(road);
   const corners = [
     {
