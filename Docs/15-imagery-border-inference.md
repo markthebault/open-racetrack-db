@@ -84,6 +84,16 @@ For tiled evidence, `metadata.borderInference.imagery.encoding` is `xyz-jpeg-man
 
 Pikes Peak acquisition now succeeds at about 0.46 m ground pixels over a 172-megapixel virtual extent using 140 corridor tiles. The extraction retained at most 8 MB of decoded pixels. Its first proposals are held because reviewed edges include dirt shoulders and vegetation; acquiring suitable imagery alone does not establish valid road limits.
 
+## Figure-eight crossings
+
+`npm run audit:crossings` audits the public traces of all currently unbordered mapped layouts and saves one shared [crossing report](../sources/research/grade-crossing-audit.json). It does not change geometry or accept proposals. `npm run validate:crossings`, included in the build, checks that the report still reproduces from the missing-layout set, public trace geometry and pinned source snapshots. Regenerate the report after changing that set or its inputs.
+
+The audit distinguishes proper intersections, vertex touches and collinear retraces, retaining both route stations. Ordinary adjacent vertices and the closed seam are excluded. A bridge candidate requires an explicitly tagged raceway bridge in the selected route's exact source-way version, with a position and direction matching exactly one crossing branch. A nearby bridge, a layer tag alone or a collinear retrace cannot explain a crossing. This identifies candidates for further review, not verified vertical separation.
+
+Of 276 missing-border layouts, 249 have one trace path and were audited; 27 networks need their own driving-order interpretation. Seven single-path layouts cross themselves. Five have a source bridge candidate: Suzuka's two full-course entries, San Martín, Highlands Full and Bushnell. Ansan and Palanga retain unexplained crossings in their saved route sources. Suzuka's native imagery confirms the overpass, and diagnostic edge proposals cross only at that location. These proposals remain private diagnostics: the production extractor still rejects self-crossing boundaries.
+
+Accepting a figure-eight road will require explicit left/right edge semantics, source-backed crossing intervals, an elevation profile for each road level, interpolation of edges hidden by the bridge and station-aware runtime cross-sections. Ground terrain must not be raised to the bridge deck or mistaken for its height. Until those checks and reconstruction are implemented, these entries remain coverage gaps. No model, border, playback or coverage count changes result from this audit.
+
 ## Unmapped course identity
 
 A licensed high-resolution inspection on 6 November 2026 covered nine unmapped entries across seven areas: Arlington and its Practice entry, Elvington's northern return, Huangtupo, Lydden Hill Infield, both Kames timed runs, Thoresway and Detroit City Airport. The images have approximately 0.44–0.75 m ground pixels. Retrieval time does not establish capture time; these source references supply no capture date.

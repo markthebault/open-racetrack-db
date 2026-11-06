@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "missingLayoutSetSha256": "29fc6081991961b8b210fa55e205bd5f0834f57dac6400009bb210d10169bff1",
+  "note": "Diagnostic source-topology audit only. No boundaries, elevation profiles or models are accepted or changed. Explicit source bridge matches still require imagery review, separate road levels and crossing-aware runtime reconstruction. Collinear retraces and unexplained intersections stay unresolved. Coordinates come only from public mapped traces; no timing data is read.",
+  "summary": {
+    "missingLayouts": 276,
+    "singlePathsAudited": 249,
+    "networksSkipped": 27,
+    "layoutsWithCrossings": 7,
+    "layoutsWithSourceBridgeCandidates": 5,
+    "unexplainedCrossings": 3
+  },
+  "records": [
+    {
+      "trackId": "ar-autodromo-general-san-martin-163088750",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-general-san-martin-163088750/layouts/main.geojson",
+      "traceSha256": "8c84c5165e121a4193c7b017cfdb99c72b55ba800378ea848082b459e470de59",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-general-san-martin-163088750/layouts/main.json",
+        "recipeSha256": "41c3e87ff2d3e1149899d9b22f8db369ded0912841da8c353476e0d9ffa0f5ca",
+        "snapshotFile": "sources/ar-autodromo-general-san-martin-163088750/osm.json",
+        "snapshotSha256": "f89a5a11931b900983f65a159e0483c046955b6e524556a3b8d893f735b05913"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            117,
+            146
+          ],
+          "fractions": [
+            0.45058938,
+            0.42791065
+          ],
+          "stationsM": [
+            3652.666,
+            5106.287
+          ],
+          "coordinate": [
+            -68.9191137,
+            -32.8915574
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 609543649,
+              "wayVersion": 2,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 0,
+              "url": "https://www.openstreetmap.org/way/609543649/history/2"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ]
+    },
+    {
+      "trackId": "jp-suzuka-circuit-175231434",
+      "layoutId": "main",
+      "file": "data/japan/suzuka-circuit-175231434/layouts/main.geojson",
+      "traceSha256": "0f567681094845ad5010505e941ee1b855bed9aea9c7ec34b47bba9a42bbca74",
+      "source": {
+        "recipeFile": "sources/jp-suzuka-circuit-175231434/layouts/main.json",
+        "recipeSha256": "2ffab1460575f31f5b2de95b5a40c4d80aafdfabd86d22b287fa8ee1273b4d32",
+        "snapshotFile": "sources/jp-suzuka-circuit-175231434/osm.json",
+        "snapshotSha256": "03ac6b609135fb4b37842d5ab675e9c90b636e0497729c59fe88ff0f5f359f8f"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            124,
+            230
+          ],
+          "fractions": [
+            0.29415834,
+            0.49077117
+          ],
+          "stationsM": [
+            2712.317,
+            5098.168
+          ],
+          "coordinate": [
+            136.5306187,
+            34.8439714
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 175231434,
+              "wayVersion": 7,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/175231434/history/7"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ]
+    },
+    {
+      "trackId": "jp-suzuka-circuit-175231434",
+      "layoutId": "suzuka",
+      "file": "data/japan/suzuka-circuit-175231434/layouts/suzuka.geojson",
+      "traceSha256": "9cbd01e6655be5f2f393be21894da14e862be8f0a6d902f7d0adc61a1a3effe9",
+      "source": {
+        "recipeFile": "sources/jp-suzuka-circuit-175231434/layouts/suzuka.json",
+        "recipeSha256": "882725630ee72fe419d80111d35e29fffa776a312a9c91d933c4a967fa35a4b2",
+        "snapshotFile": "sources/jp-suzuka-circuit-175231434/relation-284570.json",
+        "snapshotSha256": "31a9404547a9f834143b20bf24de263bba77bd5b0149a98ac0da88461ec4aac6"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            124,
+            219
+          ],
+          "fractions": [
+            0.29415834,
+            0.49077117
+          ],
+          "stationsM": [
+            2712.317,
+            5090.981
+          ],
+          "coordinate": [
+            136.5306187,
+            34.8439714
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 175231434,
+              "wayVersion": 7,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/175231434/history/7"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ]
+    },
+    {
+      "trackId": "kr-ansan-0cee918e",
+      "layoutId": "ansan",
+      "file": "data/south-korea/kr-ansan-0cee918e/layouts/ansan.geojson",
+      "traceSha256": "9da26df72767627bc260783ba3743e6b804383fa8bf1defb6c4989202cd8572b",
+      "source": {
+        "recipeFile": "sources/kr-ansan-0cee918e/layouts/ansan.json",
+        "recipeSha256": "a2188db97304232bcc10cd12b209eb7f82a73bd56521d2223ac228a4b5edbb6c",
+        "snapshotFile": "sources/kr-ansan-0cee918e/imagery-course-ansan.json",
+        "snapshotSha256": "310a288308cf4e9426d8bb53f274d7eb76fe8d109a717e6b40cfba2ef43a64d0"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            35,
+            66
+          ],
+          "fractions": [
+            0.28589052,
+            0.28578041
+          ],
+          "stationsM": [
+            1223.567,
+            2410.636
+          ],
+          "coordinate": [
+            126.8332674,
+            37.2786402
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained"
+        }
+      ]
+    },
+    {
+      "trackId": "lt-palanga-street-circuit-a9c06d36",
+      "layoutId": "palanga-street-circuit",
+      "file": "data/lithuania/lt-palanga-street-circuit-a9c06d36/layouts/palanga-street-circuit.geojson",
+      "traceSha256": "3d7c3c1ac7e344faacdd31891257246869752224ab7aa06763bfc5302b049a21",
+      "source": {
+        "recipeFile": "sources/lt-palanga-street-circuit-a9c06d36/layouts/palanga-street-circuit.json",
+        "recipeSha256": "fe8d508833cfbeb10f3eba86af18f50e9d5f91e83e85f0aea5fb087af376dd2f",
+        "snapshotFile": "sources/lt-palanga-street-circuit-a9c06d36/selected-palanga-street-current-independent-roads-35031050.json",
+        "snapshotSha256": "d353604160073cf66dd095b8796ed99d5d2b55e1f8dfafe0ac396b05a147c0ab"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            30,
+            80
+          ],
+          "fractions": [
+            0.65302042,
+            0.58035052
+          ],
+          "stationsM": [
+            293.579,
+            2660.744
+          ],
+          "coordinate": [
+            21.1063473,
+            55.9079895
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained"
+        },
+        {
+          "kind": "crossing",
+          "segments": [
+            49,
+            80
+          ],
+          "fractions": [
+            0.55216981,
+            0.4227985
+          ],
+          "stationsM": [
+            1488.582,
+            2648.117
+          ],
+          "coordinate": [
+            21.1065324,
+            55.9079433
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained"
+        }
+      ]
+    },
+    {
+      "trackId": "nz-highlands-motorsports-park-c98a7d90",
+      "layoutId": "highlands-motorsports-park-full",
+      "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.geojson",
+      "traceSha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
+      "source": {
+        "recipeFile": "sources/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.json",
+        "recipeSha256": "802b825bbe8f769239c9acaf046b835372a12c91e476c86920cae72624f449f5",
+        "snapshotFile": "sources/nz-highlands-motorsports-park-c98a7d90/components-osm-234778728.json",
+        "snapshotSha256": "b49c2985b983224e685b8d9f68014dbde244656a9af8cd74de880862d08c09b3"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            57,
+            102
+          ],
+          "fractions": [
+            0.72628881,
+            0.57630959
+          ],
+          "stationsM": [
+            1933.764,
+            3458.235
+          ],
+          "coordinate": [
+            169.1707595,
+            -45.0575631
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 677363476,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/677363476/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ]
+    },
+    {
+      "trackId": "us-bushnell-motorsports-park-16aaa9aa",
+      "layoutId": "bushnell-motorsports-park",
+      "file": "data/united-states/us-bushnell-motorsports-park-16aaa9aa/layouts/bushnell-motorsports-park.geojson",
+      "traceSha256": "900eff0b16b0b174da2146a5683129857204d5f202a1ecafffd4f3a5ff85f06e",
+      "source": {
+        "recipeFile": "sources/us-bushnell-motorsports-park-16aaa9aa/layouts/bushnell-motorsports-park.json",
+        "recipeSha256": "94a3a772e1a3421c8d72934fa059803419496742deb12a49bb9690a8f3447cfe",
+        "snapshotFile": "sources/us-bushnell-motorsports-park-16aaa9aa/course-network-1410074352.json",
+        "snapshotSha256": "d8fb850078e41034d993525f82a6d0ad5232447d2e2468522eef857ee8378fc7"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            195,
+            241
+          ],
+          "fractions": [
+            0.44102561,
+            0.4270671
+          ],
+          "stationsM": [
+            789.366,
+            977.509
+          ],
+          "coordinate": [
+            -82.1493283,
+            28.6726192
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 1410074353,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/1410074353/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ]
+    }
+  ]
+}
