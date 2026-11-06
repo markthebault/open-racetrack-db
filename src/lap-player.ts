@@ -456,9 +456,17 @@ export function openLap(
         recordingStream = stream;
       let failed = false;
       recorder.ondataavailable = (e) => {
-        if (e.data.size) chunks.push(e.data);
+        if (e.data.size) {
+          chunks.push(e.data);
+          window.clearTimeout(startupTimer);
+          if (!closed && recording.state === "recording") {
+            find<HTMLButtonElement>(".lap-record").disabled = false;
+            status.textContent = "Recording at 1× · Keep this tab visible";
+          }
+        }
       };
       recorder.onstop = () => {
+        window.clearTimeout(startupTimer);
         // The encoder must flush its final data before the capture tracks end.
         recordingStream.getTracks().forEach((t) => t.stop());
         if (stream === recordingStream) stream = undefined;
@@ -479,6 +487,7 @@ export function openLap(
         status.textContent = "Video ready";
       };
       recorder.onerror = () => {
+        window.clearTimeout(startupTimer);
         failed = true;
         status.textContent = "Recording failed. Try again.";
         stopRecording();
@@ -489,7 +498,15 @@ export function openLap(
       recorder.onstart = () => paint(true);
       recorder.start(1000);
       find(".lap-record").textContent = "Stop recording";
-      status.textContent = "Recording at 1× · Keep this tab visible";
+      find<HTMLButtonElement>(".lap-record").disabled = true;
+      status.textContent = "Starting video capture…";
+      const startupTimer = window.setTimeout(() => {
+        if (recording.state === "recording" && !chunks.length) {
+          failed = true;
+          status.textContent = "Video capture did not start. Try again.";
+          setPlaying(false);
+        }
+      }, 15000);
       paint(true);
       if (!playing) setPlaying(true);
       else last = performance.now();
@@ -512,8 +529,9 @@ export function openLap(
       if (layout.metadata.borderInference) {
         const evidence = layout.metadata.borderInference;
         const note = document.createElement("p");
-        note.textContent =
-          "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
+        note.textContent = evidence.refinement
+          ? "Road-border estimates include corrections measured on pinned aerial imagery. Other sections remain automatic estimates. These borders have not been formally verified."
+          : "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
         const credit = document.createElement("a");
         credit.href =
           evidence.imagery.reuseEvidenceUrl ??

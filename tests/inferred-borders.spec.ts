@@ -60,7 +60,9 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
       `${item.trackId}/${item.layoutId}`,
     );
     await expect(page.locator(".inferred-border-note")).toContainText(
-      "Not manually reviewed",
+      item.layout.metadata.borderInference!.refinement
+        ? "Includes measured image corrections"
+        : "Not manually reviewed",
     );
     await expect(page.locator(".inferred-border-note")).toContainText(
       item.layout.metadata.borderInference!.imagery.attribution,

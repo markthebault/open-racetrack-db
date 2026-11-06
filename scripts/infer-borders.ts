@@ -23,6 +23,8 @@ import {
 import { serializeLayout } from "./layout-borders";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
+import { borderRefinementInputSchema } from "../schemas/border-refinement";
+import { borderPairHash, refineImageBorders } from "./refine-image-borders";
 const args = process.argv.slice(2),
   option = (s: string) => {
     const i = args.indexOf(s);
@@ -39,6 +41,16 @@ if (!args.includes("--all") && !option("--track"))
   );
 const localAppearance = args.includes("--local-appearance"),
   appearance = localAppearance || args.includes("--appearance");
+if (
+  option("--edge-refinement") &&
+  (!option("--track") ||
+    !option("--layout") ||
+    !option("--cached-image") ||
+    !localAppearance)
+)
+  throw new Error(
+    "--edge-refinement requires one --track, --layout, --cached-image and --local-appearance",
+  );
 const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
   sha = (b: Buffer | string) => createHash("sha256").update(b).digest("hex");
 const root = ".local/border-inference";
@@ -386,6 +398,20 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     if (check) {
+      if (old?.refinement) {
+        const pair = Object.fromEntries(
+          ["inner", "outer"].map((role) => [
+            role,
+            geometryPaths(
+              layout.features.find((f) => f.properties.role === role)!.geometry,
+            )[0],
+          ]),
+        ) as { inner: Position[]; outer: Position[] };
+        if (borderPairHash(pair) !== old.refinement.resultSha256)
+          throw new Error(
+            `${track.id}/${item.id}: refined border hash mismatch`,
+          );
+      }
       if (old)
         report.push({
           ...row,
@@ -399,7 +425,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     if (
       old &&
       old.method !== "rgb-cross-sections-v1" &&
-      !args.includes("--refresh")
+      !args.includes("--refresh") &&
+      !option("--edge-refinement")
     ) {
       row.status =
         old.traceSha256 === inputHash ? "cached-estimate" : "stale-estimate";
@@ -428,6 +455,10 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     try {
+      if (old?.refinement && !localAppearance)
+        throw new Error(
+          "Refreshing refined borders requires --local-appearance and the same pinned image",
+        );
       // Tiled mosaics cover a trace corridor. Equal bounds do not imply equal coverage.
       const key =
         track.id + ":" + JSON.stringify(layout.bbox) + ":" + inputHash;
@@ -463,6 +494,29 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           detectorOptions,
         );
       }
+      const refinementInput = option("--edge-refinement")
+        ? borderRefinementInputSchema.parse(
+            await read(option("--edge-refinement")!),
+          )
+        : old?.refinement
+          ? {
+              method: old.refinement.method,
+              imageSha256: old.refinement.imageSha256,
+              seedSha256: old.refinement.seedSha256,
+              patches: old.refinement.patches,
+              note: old.refinement.note,
+            }
+          : undefined;
+      const refined = refinementInput
+        ? refineImageBorders(
+            result,
+            geometryPaths(trace.geometry)[0],
+            refinementInput,
+            acquired.image,
+            acquired.info.sha256,
+          )
+        : undefined;
+      if (refined) result = refined.result;
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
         method: localAppearance
@@ -476,6 +530,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           ? { edgeConvention: "left-right-along-trace" }
           : {}),
         traceSha256: inputHash,
+        ...(refined ? { refinement: refined.refinement } : {}),
         imagery: acquired.info,
         evidence: {
           strongEdgeFraction: result.evidence.map((e) => e.strong),
@@ -483,7 +538,11 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           samplingStepM: result.step,
           searchRangeM: [appearance ? -10 : 2, 25],
         },
-        note: "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been manually reviewed; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy.",
+        note:
+          "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been formally verified; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy." +
+          (refined
+            ? " Sparse edge anchors measured on the pinned image correct the documented sections. Evidence scores describe the original automatic proposal, not the corrected borders. The seed and final border hashes and correction recipe are retained."
+            : ""),
       });
       const source = {
         id: evidence.imagery.sourceId,

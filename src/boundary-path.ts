@@ -22,7 +22,7 @@ export function insideRing(p: Position, ring: Position[]) {
 function signedArea(ring: Position[]) {
   return ring.slice(1).reduce((sum, p, i) => sum + cross(ring[i], p), 0) / 2;
 }
-function assertSeparateSimpleRings(rings: Position[][]) {
+export function assertSeparateSimpleRings(rings: Position[][]) {
   type Edge = { a: Position; b: Position; ring: number; index: number };
   const grid = new Map<string, Edge[]>(),
     size = 32;
@@ -115,13 +115,11 @@ export function boundaryNormalMidline(layout: Layout): Position[] {
   if (!layout.metadata.closed || layout.metadata.geometryKind === "network")
     throw new Error("Boundary path requires a single closed route");
   const { project, inner, outer } = roadRings(layout);
-  const segments = inner
-    .slice(1)
-    .map((b, i) => ({
-      a: inner[i],
-      b,
-      length: Math.hypot(...subtract(b, inner[i])),
-    }));
+  const segments = inner.slice(1).map((b, i) => ({
+    a: inner[i],
+    b,
+    length: Math.hypot(...subtract(b, inner[i])),
+  }));
   const length = segments.reduce((sum, s) => sum + s.length, 0);
   if (length < 30 || length > 30000)
     throw new Error("Unsupported boundary path length");

@@ -106,20 +106,9 @@ function selfCrosses(path: Position[], closed = true) {
   }
   return false;
 }
-/** Image-driven proposals only. Evidence metrics are not calibrated positional confidence. */
-export function inferImageBorders(
-  trace: Position[],
-  image: Raster,
-  options: {
-    open?: boolean;
-    method?: "road-appearance-v3" | "road-local-appearance-v4";
-  } = {},
-) {
-  const localAppearance = options.method === "road-local-appearance-v4",
-    appearance = localAppearance || options.method === "road-appearance-v3",
-    minOffset = appearance ? -10 : 2;
+export function imageCrossSections(trace: Position[], open = false) {
   const closed = equal(trace[0], trace.at(-1)!);
-  if (!closed && !options.open)
+  if (!closed && !open)
     throw new Error(
       "A single closed route is required to classify inner and outer edges",
     );
@@ -154,6 +143,23 @@ export function inferImageBorders(
       d = Math.hypot(b[0] - a[0], b[1] - a[1]);
     return [-(b[1] - a[1]) / d, (b[0] - a[0]) / d];
   });
+  return { closed, projection, count, step, smooth, normals, index };
+}
+
+/** Image-driven proposals only. Evidence metrics are not calibrated positional confidence. */
+export function inferImageBorders(
+  trace: Position[],
+  image: Raster,
+  options: {
+    open?: boolean;
+    method?: "road-appearance-v3" | "road-local-appearance-v4";
+  } = {},
+) {
+  const localAppearance = options.method === "road-local-appearance-v4",
+    appearance = localAppearance || options.method === "road-appearance-v3",
+    minOffset = appearance ? -10 : 2;
+  const { closed, projection, count, step, smooth, normals, index } =
+    imageCrossSections(trace, options.open);
   const samples = smooth.map((p, i) =>
     Array.from({ length: 121 }, (_, j) =>
       pixel(

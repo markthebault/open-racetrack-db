@@ -433,6 +433,34 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       );
     const info = m.borderInference.imagery,
       source = track.sources.find((s) => s.id === info.sourceId);
+    if (m.borderInference.refinement) {
+      const refinement = m.borderInference.refinement;
+      if (
+        m.borderInference.method !== "rgb-road-local-appearance-v4" ||
+        refinement.imageSha256 !== info.sha256
+      )
+        throw new Error(
+          "borderInference: refinement needs its pinned local-appearance image",
+        );
+      for (const patch of refinement.patches) {
+        const edge = borders.find((f) => f.properties.role === patch.edge);
+        if (!edge || edge.geometry.type !== "LineString")
+          throw new Error(
+            "borderInference: refinement needs a continuous edge",
+          );
+        for (const anchor of patch.anchors)
+          if (
+            !edge.geometry.coordinates[anchor.station] ||
+            distance(
+              edge.geometry.coordinates[anchor.station],
+              anchor.coordinate,
+            ) > 0.03
+          )
+            throw new Error(
+              "borderInference: saved edge differs from its image anchor",
+            );
+      }
+    }
     if (!source || source.type !== "imagery" || source.license !== info.license)
       throw new Error("borderInference: imagery rights/source mismatch");
     if (

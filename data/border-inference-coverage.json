@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T13:25:08.169Z",
+  "generatedAt": "2026-11-06T14:11:06.126Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -669,7 +669,9 @@
       "layoutId": "circuito-san-juan-villicum",
       "file": "data/argentina/ar-circuito-san-juan-villicum-f819032e/layouts/circuito-san-juan-villicum.geojson",
       "status": "needs-imagery-review",
-      "reason": "Close-up imagery review: proposed outer edge crosses grass beside the main straight."
+      "reason": "Proposed edges cross infield grass and runoff; road-limit correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "b68e9e805141a70a50f7df49d377e2bb3c76a3f4c07ff60f57713bbd02322048"
     },
     {
       "trackId": "ar-los-golondrinas-917054622",
@@ -877,7 +879,9 @@
       "layoutId": "pautalia",
       "file": "data/bulgaria/bg-pautalia-f5a0fa61/layouts/pautalia.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: several proposed inner edges cross infield areas between karting turns."
+      "reason": "Proposed intervals cut between karting branches through the infield; actual edge topology needs correction.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "e36f8bb64a18d8883458349e2b4d1aae4e4f7240da5a4f37a7531f73b874e47b"
     },
     {
       "trackId": "bh-bahrain-international-circuit-4818385",
@@ -1217,7 +1221,9 @@
       "layoutId": "main",
       "file": "data/canada/circuit-riverside-speedway-ste-croix-101951392/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Close-up imagery review: proposed edges follow pavement interiors and shadows rather than consistent road boundaries."
+      "reason": "Proposed limits include infield areas beside the returns; road-limit correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "e225186687084ffb34be7453f3230f1551ef44a6b9bc9f8a1300d8a07f508de5"
     },
     {
       "trackId": "ca-delaware-speedway-23968411",
@@ -1395,7 +1401,9 @@
       "layoutId": "main",
       "file": "data/chile/autodromo-gustavo-felo-rivera-350613590/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed boundary cuts across the turn and follows inconsistent pavement edges."
+      "reason": "Surface material and adjoining shoulders need material-specific edge review.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "6081316741dcb60ba18633145f79ff92a5422fdb837f62e96b5fc674ffcba346"
     },
     {
       "trackId": "cl-autodromo-las-vizcachas-52099172",
@@ -1425,7 +1433,9 @@
       "layoutId": "main",
       "file": "data/chile/autodromo-municipal-de-alto-hospicio-372529140/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: surface material and faint road boundaries need verification before preparing a paved-road simulation."
+      "reason": "Low contrast between the course surface and desert shoulders leaves the limits uncertain.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "d523ae96f7365196d8a0108d8652039153c74fe2d49a5df3cd5496c7ee718dc2"
     },
     {
       "trackId": "cn-guangdong-international-circuit-1135943127",
@@ -1445,7 +1455,9 @@
       "layoutId": "main",
       "file": "data/china/osm-1252235657/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: the visible site has earthworks and indistinct or incomplete pavement boundaries."
+      "reason": "The available image shows construction and no complete paved route at this alignment; another capture is needed.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5e87cf4c83de740ecbbe84f4bdb0526ab749556e74a8c81221b93ae47d2fcde5"
     },
     {
       "trackId": "cn-osm-995566205",
@@ -1593,14 +1605,18 @@
       "layoutId": "autodrom-sosnova",
       "file": "data/czechia/autodrom-sosnova-30857652/layouts/autodrom-sosnova.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed edge crosses broad paved junctions without an identifiable road boundary."
+      "reason": "Junction and apron paving leave the road limits ambiguous.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f2a42ecb71eb328118543a9cc85a0c8f68e45c61e6c633d921194de551f831ac"
     },
     {
       "trackId": "cz-autodrom-sosnova-30857652",
       "layoutId": "main",
       "file": "data/czechia/autodrom-sosnova-30857652/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed edge crosses broad paved junctions without an identifiable road boundary."
+      "reason": "Mixed surface materials and broad junctions need road-edge correction.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f2a42ecb71eb328118543a9cc85a0c8f68e45c61e6c633d921194de551f831ac"
     },
     {
       "trackId": "cz-autodrom-vysoke-myto-293787466",
@@ -1961,7 +1977,9 @@
       "layoutId": "idiada-wet-handling-circuit",
       "file": "data/spain/es-idiada-wet-handling-circuit-2f0fde0d/layouts/idiada-wet-handling-circuit.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed edges cut across a broad wet-handling pad; route limits need manual interpretation."
+      "reason": "The wet strip and surrounding pavement need separate road-limit interpretation.",
+      "source": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=170233.8728255008%2C5051044.274142444%2C171129.81698476823%2C5051685.836202249&WIDTH=898&HEIGHT=643",
+      "imageSha256": "c39ac69dafd5cbfadcb59a2632b07ebed7abf798e1791012c0c67e12d2ec97c5"
     },
     {
       "trackId": "es-jerez",
@@ -2748,7 +2766,9 @@
       "layoutId": "main",
       "file": "data/united-kingdom/kames-motorsport-circuit-38672231/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed boundaries cut across branch junctions and need manual correction."
+      "reason": "Proposed limits depart from visible pavement in places; correction and route interpretation are required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "275906a59a3fcfa439f9880aa2d463d40b55fb17bf59bb308461897969230f4e"
     },
     {
       "trackId": "gb-loton-hillclimb-2b41199e",
@@ -2775,7 +2795,9 @@
       "layoutId": "msport-inner-variant",
       "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-inner-variant.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed route boundaries deviate from visible pavement around the lower course."
+      "reason": "The proposed inner limit extends into an island at a lane junction; correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "96b15b0949e1b122789ab2ab691147db0511e5ea24c845d43780b25accf0ce16"
     },
     {
       "trackId": "gb-m-sport-proving-ground-fe7c7315",
@@ -2842,7 +2864,9 @@
       "layoutId": "nutts-corner",
       "file": "data/united-kingdom/gb-nutts-corner-6fa16d73/layouts/nutts-corner.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: pavement and historical configuration are unclear along the proposed perimeter."
+      "reason": "Karting junctions and adjoining apron limits need closer boundary correction.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "05f7e14f0d0b53f5ec5a9e5efbf6b6139fad06d206654604eb2dca122e0b0df2"
     },
     {
       "trackId": "gb-oulton-park-circuit-21831735",
@@ -3120,7 +3144,9 @@
       "layoutId": "main",
       "file": "data/greece/athens-circuit-megara-70043231/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed edges make an excursion onto bare ground near the western junction."
+      "reason": "Proposed limits cross infield and adjacent paving rather than following the road edges.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "680da9bd1334bca0b63b59796c98490291594347eb2792f18c641039ae08f8d5"
     },
     {
       "trackId": "hu-pannonia-ring-56131915",
@@ -3242,7 +3268,9 @@
       "layoutId": "main",
       "file": "data/italy/autodromo-di-morano-sul-po-117679849/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: overgrown or historical pavement has faint boundaries and needs a clearer source."
+      "reason": "Vegetation and earthworks obscure the historical pavement; an unobscured capture is needed.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "0e818f2f407376bb4be47ba7ceebe2a116909efae4685d974dfe6d78f6aba1eb"
     },
     {
       "trackId": "it-autodromo-di-mores-167585485",
@@ -3415,7 +3443,9 @@
       "layoutId": "main",
       "file": "data/japan/hsr-134862680/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Close-up imagery review: the proposed outer edge crosses grass between the course and an adjacent paved lane."
+      "reason": "Wide sections include adjacent grass or paving in the proposal; road-limit correction is required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "028b00d17614e1c2749eb78e450f351f1a3a07ceb18f997410d8b3788fff10fe"
     },
     {
       "trackId": "jp-maraigawa-86ab8dd9",
@@ -4257,14 +4287,18 @@
       "layoutId": "holjes-motorclub",
       "file": "data/sweden/se-holjes-motorclub-3144cff3/layouts/holjes-motorclub.geojson",
       "status": "needs-imagery-review",
-      "reason": "Mixed-surface course: paved and unpaved limits, surface-specific simulation and route interpretation need review."
+      "reason": "Mixed road surfaces and vegetation need material-specific edge review.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "2f8e0d742b6435a1d7e3d0c1e6c6b6b505179051d2baf728b3bf5c8c5982c850"
     },
     {
       "trackId": "se-karlskoga-motorstadion-290177249",
       "layoutId": "gellerason-gp-2019",
       "file": "data/sweden/karlskoga-motorstadion-290177249/layouts/gellerason-gp-2019.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed edges deviate across infield areas and junctions."
+      "reason": "Source alignment and visible paved branches differ in the infield; route and boundary correction are required.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7a012259315340f6c7cc49206720ab5da19c567113c4cd510776c92f4fd3e853"
     },
     {
       "trackId": "se-karlskoga-motorstadion-290177249",
@@ -4292,7 +4326,9 @@
       "layoutId": "sturup-raceway",
       "file": "data/sweden/sturup-raceway-42957249/layouts/sturup-raceway.geojson",
       "status": "needs-imagery-review",
-      "reason": "Imagery review: proposed edges form an unintended kink beside a branch or pit entry."
+      "reason": "Branch junctions produce proposed widths of about 31 m; the driving-road limits need correction.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "d9a739ef07405d8e3d7e27028bfd105a070083b1b43a4105bdd2248b99116982"
     },
     {
       "trackId": "sk-slovakia-ring-47361993",
@@ -4380,7 +4416,9 @@
       "layoutId": "main",
       "file": "data/united-states/albany-saratoga-speedway-1164983896/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Dirt oval: road boundaries and surface-specific simulation need review before preparation."
+      "reason": "The unpaved oval and its shoulders need material-specific edge review.",
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8213555.601721533%2C5309984.403457704%2C-8213221.445118348%2C5310460.109820232&bboxSR=3857&imageSR=3857&size=326%2C464&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "b87f6ba47b77648a762cdcb0b93008be98efeaa9499026b2f2b27086d41193e8"
     },
     {
       "trackId": "us-apex-motor-b7ddcfd3",
@@ -4405,8 +4443,24 @@
       "trackId": "us-arizona-motorsports-park-9f848c55",
       "layoutId": "arizona-motorsports-park",
       "file": "data/united-states/us-arizona-motorsports-park-9f848c55/layouts/arizona-motorsports-park.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Close-up imagery review: a proposed edge follows the pavement interior rather than the outside road edge."
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9024,
+          0.9024
+        ],
+        "medianInteriorDifference": [
+          0.026,
+          0.0286
+        ],
+        "samplingStepM": 2.998708822309231,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12511492.929863865%2C3963436.7341607376%2C-12510961.766575743%2C3964864.0786967683&bboxSR=3857&imageSR=3857&size=591%2C1587&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "00aa4f6130eedde91138d917d1bd0c7693611bd24d2661cf3700cbb46f6918a2"
     },
     {
       "trackId": "us-arlington-street-circuit-be2e2ad4",
@@ -4425,7 +4479,9 @@
       "layoutId": "main",
       "file": "data/united-states/arroyo-seco-raceway-83871979/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Close-up imagery review: a proposed outer edge follows an apron or bare ground beyond the road."
+      "reason": "Proposed limits shrink at bends and follow internal asphalt differences; image-measured correction is required.",
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-11959430.46051135%2C3794231.0462070303%2C-11958326.956984973%2C3794765.0965297935&bboxSR=3857&imageSR=3857&size=1245%2C603&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "a3469e956e0a50272c93290ebca530d4b2416c8bba15860f0823ba1cae9e3cd0"
     },
     {
       "trackId": "us-autobahn-country-club-42852101",
@@ -4817,7 +4873,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8993838.323389865%2C4251098.522794615%2C-8993421.991163721%2C4251526.016591474&bboxSR=3857&imageSR=3857&size=452%2C464&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "39a4ac61fb0f354e3eb6104d27954f2af22ca72f1973efa587ef787252bb994a",
-      "reason": "Close-up imagery review: proposed edges cut inside the pavement around turns; manual boundary correction is required."
+      "reason": "Some proposed limits follow paved runoff beyond curbs or nearby infield transitions; correction is required."
     },
     {
       "trackId": "us-heartland-park-raceway-137283766",
@@ -4854,7 +4910,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-11481462.591188315%2C4097259.183286671%2C-11481128.076761933%2C4097660.514834664&bboxSR=3857&imageSR=3857&size=368%2C441&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "81c8d8be1c408fe10e4a244fcc23682d7fbcc32149bbcd85a63411bc1a660555",
-      "reason": "Dirt oval with faint surface edges; imagery and surface material need review before a paved-road model can be prepared."
+      "reason": "The unpaved oval and its shoulders need material-specific edge review."
     },
     {
       "trackId": "us-homestead-miami-speedway-108159182",
@@ -4975,7 +5031,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc",
-      "reason": "Close-up imagery review: proposed boundaries drift from visible pavement edges near bends and junctions."
+      "reason": "The proposed hairpin limits cross an infield area; road-limit correction is required."
     },
     {
       "trackId": "us-inde-motorsports-b9c30311",
@@ -4999,7 +5055,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc",
-      "reason": "Close-up imagery review: proposed boundaries drift from visible pavement edges near bends and junctions."
+      "reason": "The proposed hairpin limits cross an infield area; road-limit correction is required."
     },
     {
       "trackId": "us-inde-motorsports-b9c30311",
@@ -5021,9 +5077,9 @@
           25
         ]
       },
-      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246585.214055078%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=614%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
-      "imageSha256": "7921515f64e9c4f275b86aa0b1969204cc1d9569edbf2965a350c3b0cb279c08",
-      "reason": "Imagery review: mapped route and proposed edges cross bare ground rather than following the visible paved course."
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc",
+      "reason": "The source alignment crosses unpaved infield in this image; route interpretation or a different capture is needed."
     },
     {
       "trackId": "us-inde-motorsports-b9c30311",
@@ -5068,9 +5124,9 @@
           25
         ]
       },
-      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246585.214055078%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=614%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
-      "imageSha256": "7921515f64e9c4f275b86aa0b1969204cc1d9569edbf2965a350c3b0cb279c08",
-      "reason": "Imagery review: mapped route and proposed edges cross bare ground rather than following the visible paved course."
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc",
+      "reason": "The source alignment crosses unpaved infield in this image; route interpretation or a different capture is needed."
     },
     {
       "trackId": "us-indianapolis-motor-speedway-51308226",
@@ -5632,7 +5688,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8618658.223558933%2C4521734.58388436%2C-8617917.657676836%2C4522255.813708221&bboxSR=3857&imageSR=3857&size=783%2C551&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "d1cfc4a83e4cfcb1d1b06207f7e39f89deb6e8a15008d837dea5d1459c8fcd1b",
-      "reason": "Imagery review: proposed edge deviates toward the apron or grandstand area; manual boundary correction is required."
+      "reason": "The proposed inner limit follows grass or apron transitions rather than a consistent racing-road edge."
     },
     {
       "trackId": "us-road-america-110527567",
@@ -5709,7 +5765,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8862660.972354%2C4160151.951666889%2C-8861743.40044475%2C4160682.0676941634&bboxSR=3857&imageSR=3857&size=1003%2C580&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "da884c98c40e05ba15ef417d77cb8a73f04976ed089c796f1ebb1f3979e6b9b4",
-      "reason": "Route identity needs review: the saved trace follows an oval while the layout is named infield course."
+      "reason": "The proposed inner limit crosses infield grass beside the oval; racing-road limits need correction."
     },
     {
       "trackId": "us-sebring-international-raceway-426154257",
@@ -5936,7 +5992,7 @@
       },
       "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13714545.514273945%2C5983603.416143338%2C-13712737.529394997%2C5984398.096939429&bboxSR=3857&imageSR=3857&size=1637%2C720&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
       "imageSha256": "fb81a1ce961aea213bb49407de355da785425226a3877fb1dfa284c9379e6140",
-      "reason": "Imagery review: proposed edge follows a pit-entry spur, causing an unintended driving-path kink."
+      "reason": "An alignment on the long straight leaves the visible main pavement in this image; route interpretation or newer imagery is needed."
     },
     {
       "trackId": "us-the-thermal-club-443108132",
@@ -6260,7 +6316,7 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "91eb64b67732985a3e19740432ad22afecc82bfe9324bd82f3867d00c2d4ae57",
-      "reason": "Route identity needs review: visible small loop needs confirmation against the named circuit layout."
+      "reason": "The proposed loop traverses an infield area without a matching continuous visible road; route identification is required."
     },
     {
       "trackId": "za-roy-hesketh-circuit-89176333",
@@ -6284,7 +6340,7 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "eb8af996cabe024b73e29206d49b09f38eb2dc5ff49e229fd767a958f6532ca8",
-      "reason": "Imagery review: overgrown pavement has faint boundaries; a clearer source or manual correction is required."
+      "reason": "Vegetation obscures sections of the road and moves the detected limits; an unobscured capture is needed."
     }
   ]
 }
