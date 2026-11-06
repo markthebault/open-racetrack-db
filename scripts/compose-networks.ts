@@ -56,10 +56,23 @@ for (const entry of catalogue.tracks) {
   );
   for (const { item, layout } of layouts) {
     if (layout.metadata.geometryKind !== "network") continue;
+    const sourceRecipe = await read(
+      `sources/${track.id}/layouts/${item.id}.json`,
+    );
+    const intended: { layoutId: string }[] | undefined =
+      sourceRecipe.components;
     const previous = layout.metadata.borderComposition;
     if (check) {
       if (!previous) continue;
       for (const component of previous) {
+        if (
+          intended &&
+          intended[component.tracePathIndex]?.layoutId !==
+            component.sourceLayoutId
+        )
+          throw new Error(
+            `${track.id}/${item.id}: component identity differs from the source recipe`,
+          );
         const source = layouts.find(
           (l) => l.item.id === component.sourceLayoutId,
         )?.layout;
@@ -88,8 +101,8 @@ for (const entry of catalogue.tracks) {
 
     const trace = layout.features.find((f) => f.properties.role === "trace")!,
       paths = geometryPaths(trace.geometry);
-    const matches = paths.map((path) =>
-      layouts.find(
+    const matches = paths.map((path, index) => {
+      const candidates = layouts.filter(
         ({ layout: child }) =>
           isLapModel(child.metadata.model3d) &&
           child.metadata.geometryKind !== "network" &&
@@ -99,8 +112,13 @@ for (const entry of catalogue.tracks) {
                 .geometry,
             )[0],
           ) === JSON.stringify(path),
-      ),
-    );
+      );
+      return intended
+        ? candidates.find((c) => c.item.id === intended[index]?.layoutId)
+        : candidates.length === 1
+          ? candidates[0]
+          : undefined;
+    });
     if (matches.some((m) => !m)) {
       report.push({
         trackId: track.id,

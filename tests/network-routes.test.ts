@@ -26,6 +26,14 @@ test("every composed network recreates each exact source route from a standalone
   assert.ok(rows.length > 0);
   for (const { track, network, directory } of rows) {
     validateLayout(network, track, network.metadata.layoutId);
+    const recipe = read(
+      `sources/${track.id}/layouts/${network.metadata.layoutId}.json`,
+    );
+    if (recipe.components)
+      assert.deepEqual(
+        network.metadata.borderComposition!.map((c) => c.sourceLayoutId),
+        recipe.components.map((c: { layoutId: string }) => c.layoutId),
+      );
     assert.ok(borderFootprint(network).triangles.length > 0);
     const standalone = JSON.parse(JSON.stringify(network));
     for (const [i, c] of network.metadata.borderComposition!.entries()) {
