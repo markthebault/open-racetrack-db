@@ -23,8 +23,12 @@ import {
 import { serializeLayout } from "./layout-borders";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
-import { borderRefinementInputSchema } from "../schemas/border-refinement";
+import {
+  borderRefinementInputSchema,
+  borderMeasurementInputSchema,
+} from "../schemas/border-refinement";
 import { borderPairHash, refineImageBorders } from "./refine-image-borders";
+import { measuredImageBorders } from "./measured-image-borders";
 import { gradeSeparationSchema } from "../schemas/grade-separation";
 import { verifyGradeSource } from "./verify-grade-source";
 const args = process.argv.slice(2),
@@ -43,6 +47,17 @@ if (!args.includes("--all") && !option("--track"))
   );
 const localAppearance = args.includes("--local-appearance"),
   appearance = localAppearance || args.includes("--appearance");
+if (
+  option("--measurements") &&
+  (!option("--track") ||
+    !option("--layout") ||
+    !option("--cached-image") ||
+    option("--edge-refinement") ||
+    option("--grade-separation"))
+)
+  throw new Error(
+    "--measurements requires one --track, --layout and --cached-image, without partial refinements or grade separation",
+  );
 if (
   option("--edge-refinement") &&
   (!option("--track") ||
@@ -426,6 +441,30 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             `${track.id}/${item.id}: refined border hash mismatch`,
           );
       }
+      if (old?.measurement) {
+        const { resultSha256, ...input } = old.measurement,
+          replay = measuredImageBorders(
+            geometryPaths(trace.geometry)[0],
+            input,
+            old.imagery.sha256,
+          ),
+          pair = Object.fromEntries(
+            ["inner", "outer"].map((role) => [
+              role,
+              geometryPaths(
+                layout.features.find((f) => f.properties.role === role)!
+                  .geometry,
+              )[0],
+            ]),
+          ) as { inner: Position[]; outer: Position[] };
+        if (
+          borderPairHash(pair) !== resultSha256 ||
+          replay.measurement.resultSha256 !== resultSha256
+        )
+          throw new Error(
+            `${track.id}/${item.id}: measured border reconstruction mismatch`,
+          );
+      }
       if (old)
         report.push({
           ...row,
@@ -440,7 +479,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       old &&
       old.method !== "rgb-cross-sections-v1" &&
       !args.includes("--refresh") &&
-      !option("--edge-refinement")
+      !option("--edge-refinement") &&
+      !option("--measurements")
     ) {
       row.status =
         old.traceSha256 === inputHash ? "cached-estimate" : "stale-estimate";
@@ -469,7 +509,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     try {
-      if (old?.refinement && !localAppearance)
+      if (old?.refinement && !localAppearance && !option("--measurements"))
         throw new Error(
           "Refreshing refined borders requires --local-appearance and the same pinned image",
         );
@@ -478,7 +518,29 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         track.id + ":" + JSON.stringify(layout.bbox) + ":" + inputHash;
       if (!imagery.has(key)) imagery.set(key, acquire(track, layout));
       let acquired: Acquired | undefined,
-        result: ReturnType<typeof inferImageBorders>;
+        result: ReturnType<typeof inferImageBorders>,
+        measured: ReturnType<typeof measuredImageBorders> | undefined;
+      const measurementInput = option("--measurements")
+        ? borderMeasurementInputSchema.parse(
+            await read(option("--measurements")!),
+          )
+        : old?.measurement
+          ? borderMeasurementInputSchema.parse({
+              method: old.measurement.method,
+              imageSha256: old.measurement.imageSha256,
+              patches: old.measurement.patches,
+              note: old.measurement.note,
+            })
+          : undefined;
+      if (
+        measurementInput &&
+        (!layout.metadata.closed ||
+          option("--edge-refinement") ||
+          option("--grade-separation"))
+      )
+        throw new Error(
+          "Complete image measurements support a single closed route",
+        );
       const detectorOptions = {
         open: !layout.metadata.closed,
         gradeSeparation: option("--grade-separation")
@@ -496,38 +558,50 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       };
       if (detectorOptions.gradeSeparation)
         await verifyGradeSource(layout, detectorOptions.gradeSeparation);
-      try {
+      if (measurementInput) {
         acquired = await imagery.get(key)!;
-        result = inferImageBorders(
+        measured = measuredImageBorders(
           geometryPaths(trace.geometry)[0],
+          measurementInput,
+          acquired.info.sha256,
           acquired.image,
-          detectorOptions,
         );
-      } catch (error) {
-        // A second image source can resolve shadows, old coverage or a failed export.
-        if (!licensed || acquired?.info.tiles) throw error;
-        const fallback = key + ":licensed";
-        if (!imagery.has(fallback)) imagery.set(fallback, licensed(layout));
-        acquired = await imagery.get(fallback)!;
-        result = inferImageBorders(
-          geometryPaths(trace.geometry)[0],
-          acquired.image,
-          detectorOptions,
-        );
-      }
-      const refinementInput = option("--edge-refinement")
-        ? borderRefinementInputSchema.parse(
-            await read(option("--edge-refinement")!),
-          )
-        : old?.refinement
-          ? {
-              method: old.refinement.method,
-              imageSha256: old.refinement.imageSha256,
-              seedSha256: old.refinement.seedSha256,
-              patches: old.refinement.patches,
-              note: old.refinement.note,
-            }
-          : undefined;
+        result = { ...measured.result, step: measured.step, evidence: [] };
+      } else
+        try {
+          acquired = await imagery.get(key)!;
+          result = inferImageBorders(
+            geometryPaths(trace.geometry)[0],
+            acquired.image,
+            detectorOptions,
+          );
+        } catch (error) {
+          // A second image source can resolve shadows, old coverage or a failed export.
+          if (!licensed || acquired?.info.tiles) throw error;
+          const fallback = key + ":licensed";
+          if (!imagery.has(fallback)) imagery.set(fallback, licensed(layout));
+          acquired = await imagery.get(fallback)!;
+          result = inferImageBorders(
+            geometryPaths(trace.geometry)[0],
+            acquired.image,
+            detectorOptions,
+          );
+        }
+      const refinementInput = measured
+        ? undefined
+        : option("--edge-refinement")
+          ? borderRefinementInputSchema.parse(
+              await read(option("--edge-refinement")!),
+            )
+          : old?.refinement
+            ? {
+                method: old.refinement.method,
+                imageSha256: old.refinement.imageSha256,
+                seedSha256: old.refinement.seedSha256,
+                patches: old.refinement.patches,
+                note: old.refinement.note,
+              }
+            : undefined;
       const refined = refinementInput
         ? refineImageBorders(
             result,
@@ -544,11 +618,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       if (refined) result = refined.result;
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
-        method: localAppearance
-          ? "rgb-road-local-appearance-v4"
-          : appearance
-            ? "rgb-road-appearance-v3"
-            : "rgb-cross-sections-v2",
+        method: measured
+          ? "image-measured-cross-sections-v1"
+          : localAppearance
+            ? "rgb-road-local-appearance-v4"
+            : appearance
+              ? "rgb-road-appearance-v3"
+              : "rgb-cross-sections-v2",
         status: "estimated",
         reviewedAt: null,
         ...(!layout.metadata.closed || detectorOptions.gradeSeparation
@@ -560,17 +636,24 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           : {}),
         ...(refined ? { refinement: refined.refinement } : {}),
         imagery: acquired.info,
-        evidence: {
-          strongEdgeFraction: result.evidence.map((e) => e.strong),
-          medianInteriorDifference: result.evidence.map((e) => e.interior),
-          samplingStepM: result.step,
-          searchRangeM: [appearance ? -10 : 2, 25],
-        },
-        note:
-          "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been formally verified; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy." +
-          (refined
-            ? " Sparse edge anchors measured on the pinned image correct the documented sections. Evidence scores describe the original automatic proposal, not the corrected borders. The seed and final border hashes and correction recipe are retained."
-            : ""),
+        ...(measured
+          ? { measurement: measured.measurement }
+          : {
+              evidence: {
+                strongEdgeFraction: result.evidence.map((e) => e.strong),
+                medianInteriorDifference: result.evidence.map(
+                  (e) => e.interior,
+                ),
+                samplingStepM: result.step,
+                searchRangeM: [appearance ? -10 : 2, 25],
+              },
+            }),
+        note: measured
+          ? "Road-border estimates reconstructed directly from complete, sparse image measurements on the existing trace cross-sections. All intervals interpolate between image anchors; they are not automatic detections or a continuous edge survey. Every saved edge station and anchor requires pinned-image coverage during authoring. Isolated missing pixels inside the road are not filled or used as boundary evidence. Imagery resolution is not survey accuracy. These borders have not been formally verified."
+          : "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been formally verified; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy." +
+            (refined
+              ? " Sparse edge anchors measured on the pinned image correct the documented sections. Evidence scores describe the original automatic proposal, not the corrected borders. The seed and final border hashes and correction recipe are retained."
+              : ""),
       });
       const source = {
         id: evidence.imagery.sourceId,

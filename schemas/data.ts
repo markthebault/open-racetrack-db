@@ -457,6 +457,50 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       );
     const info = m.borderInference.imagery,
       source = track.sources.find((s) => s.id === info.sourceId);
+    if (m.borderInference.measurement) {
+      const measurement = m.borderInference.measurement;
+      if (
+        !m.closed ||
+        isNetwork ||
+        measurement.imageSha256 !== info.sha256 ||
+        measurement.patches.length !== 2 ||
+        new Set(measurement.patches.map((p) => p.edge)).size !== 2
+      )
+        throw new Error(
+          "borderInference: measurements require one closed route and their pinned image",
+        );
+      for (const patch of measurement.patches) {
+        const edge = borders.find((f) => f.properties.role === patch.edge);
+        if (
+          !edge ||
+          edge.geometry.type !== "LineString" ||
+          patch.anchors[0].station !== 0 ||
+          patch.anchors.at(-1)!.station !== edge.geometry.coordinates.length - 1
+        )
+          throw new Error(
+            "borderInference: measurements must cover each complete edge",
+          );
+        for (const anchor of patch.anchors)
+          if (
+            anchor.kind !== "image-measured" ||
+            !edge.geometry.coordinates[anchor.station] ||
+            distance(
+              edge.geometry.coordinates[anchor.station],
+              anchor.coordinate,
+            ) > 0.03
+          )
+            throw new Error(
+              "borderInference: saved edge differs from its image measurement",
+            );
+      }
+      if (
+        geometryPaths(borders[0].geometry)[0].length !==
+        geometryPaths(borders[1].geometry)[0].length
+      )
+        throw new Error(
+          "borderInference: measured edges need matching stations",
+        );
+    }
     if (m.borderInference.refinement) {
       const refinement = m.borderInference.refinement;
       if (
@@ -516,6 +560,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       m.model3d.pathMethod === "paired-border-midpoints" &&
       m.borderInference?.method !== "rgb-road-appearance-v3" &&
       m.borderInference?.method !== "rgb-road-local-appearance-v4" &&
+      m.borderInference?.method !== "image-measured-cross-sections-v1" &&
       m.borderInference?.edgeConvention !== "left-right-along-trace"
     )
       throw new Error(

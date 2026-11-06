@@ -235,7 +235,10 @@ export function prepareTrackModel(
   const paired =
     run ||
     layout.metadata.borderInference?.method === "rgb-road-appearance-v3" ||
-    layout.metadata.borderInference?.method === "rgb-road-local-appearance-v4";
+    layout.metadata.borderInference?.method ===
+      "rgb-road-local-appearance-v4" ||
+    layout.metadata.borderInference?.method ===
+      "image-measured-cross-sections-v1";
   const length = boundaryPath
     ? geographicLength(boundaryNormalMidline(layout))
     : paired

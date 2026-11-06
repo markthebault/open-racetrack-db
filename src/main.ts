@@ -1346,7 +1346,7 @@ async function select(id: string, requested?: string, push = true) {
     if (data.metadata.borderInference) {
       const note = element(
         "p",
-        `${data.metadata.borderInference.refinement ? "Estimated aerial-image borders · Includes measured image corrections; remains unverified." : "Estimated aerial-image borders · Not manually reviewed."} ${data.metadata.borderInference.imagery.attribution}`,
+        `${data.metadata.borderInference.measurement ? "Estimated aerial-image borders · Sparse image measurements; interpolated sections remain unverified." : data.metadata.borderInference.refinement ? "Estimated aerial-image borders · Includes measured image corrections; remains unverified." : "Estimated aerial-image borders · Not manually reviewed."} ${data.metadata.borderInference.imagery.attribution}`,
         "inferred-border-note",
       );
       get("selection").append(note);

@@ -12,6 +12,7 @@ test("every composed network exposes all embedded routes, exact download and usa
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   for (const host of [
+    "ws.geoservices.lrc.gov.on.ca",
     "api.maptiler.com",
     "server.arcgisonline.com",
     "imagery.nationalmap.gov",

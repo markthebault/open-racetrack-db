@@ -185,7 +185,8 @@ export function openLap(
       );
       out.drawImage(mini, 1040, 24, 220, 180);
       const track = stream?.getVideoTracks()[0] as
-          CanvasCaptureMediaStreamTrack | undefined,
+          | CanvasCaptureMediaStreamTrack
+          | undefined,
         now = performance.now();
       if (track?.requestFrame && now - lastCapturedFrame >= 1000 / 30) {
         track.requestFrame();
@@ -529,9 +530,11 @@ export function openLap(
       if (layout.metadata.borderInference) {
         const evidence = layout.metadata.borderInference;
         const note = document.createElement("p");
-        note.textContent = evidence.refinement
-          ? "Road-border estimates include corrections measured on pinned aerial imagery. Other sections remain automatic estimates. These borders have not been formally verified."
-          : "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
+        note.textContent = evidence.measurement
+          ? "Road-border estimates are reconstructed from sparse measurements on pinned aerial imagery. Sections between measurements are interpolated and have not been formally verified."
+          : evidence.refinement
+            ? "Road-border estimates include corrections measured on pinned aerial imagery. Other sections remain automatic estimates. These borders have not been formally verified."
+            : "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
         const credit = document.createElement("a");
         credit.href =
           evidence.imagery.reuseEvidenceUrl ??

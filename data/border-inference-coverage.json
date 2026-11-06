@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T19:06:34.505Z",
+  "generatedAt": "2026-11-06T19:43:54.101Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1169,32 +1169,24 @@
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
       "layoutId": "canadian-tire-motorsports-park-ddt",
       "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/canadian-tire-motorsports-park-ddt.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 2
     },
     {
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
       "layoutId": "ddt-one-kink",
       "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/ddt-one-kink.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Native-image review confirms broad paved runoff at the northern bends and pit-side paving. Automatic limits vary between road seams and runoff. Both driving limits require measured paint/curb interpretation before saving.",
-      "visualScreening": {
-        "scope": "Overview, forty native-image sections per variant, and enlarged northern cross-sections",
-        "outcome": "held",
-        "note": "One-kink outer seed reaches 28.4 m near station 629; a nominal-width replacement would not establish the road limits."
-      }
+      "status": "inferred-estimate",
+      "source": "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/exportImage?f=json&bbox=-8759681.529435575%2C5472752.510517193%2C-8758820.658161806%2C5473705.0726322625&bboxSR=3857&imageSR=3857&size=3094%2C3424&format=png&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22where%22%3A%22Project%3D%27SCOOP2023%27%22%2C%22sortField%22%3A%22LowPS%22%2C%22sortValue%22%3A0%2C%22ascending%22%3Atrue%7D",
+      "imageSha256": "546a1facf61eb374b20749b58dbe342d45c56e675c7fa25e3a0383aa74f6644c"
     },
     {
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
       "layoutId": "ddt-two-kinks",
       "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/ddt-two-kinks.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Native-image review confirms broad paved runoff at the northern bends and pit-side paving. Automatic limits vary between road seams and runoff. Both driving limits require measured paint/curb interpretation before saving.",
-      "visualScreening": {
-        "scope": "Overview, forty native-image sections per variant, and enlarged northern cross-sections",
-        "outcome": "held",
-        "note": "One-kink outer seed reaches 28.4 m near station 629; a nominal-width replacement would not establish the road limits."
-      }
+      "status": "inferred-estimate",
+      "source": "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/exportImage?f=json&bbox=-8759681.529435575%2C5472752.510517193%2C-8758820.658161806%2C5473705.0726322625&bboxSR=3857&imageSR=3857&size=3094%2C3424&format=png&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22where%22%3A%22Project%3D%27SCOOP2023%27%22%2C%22sortField%22%3A%22LowPS%22%2C%22sortValue%22%3A0%2C%22ascending%22%3Atrue%7D",
+      "imageSha256": "546a1facf61eb374b20749b58dbe342d45c56e675c7fa25e3a0383aa74f6644c"
     },
     {
       "trackId": "ca-cayuga-motor-speedway-66930451",

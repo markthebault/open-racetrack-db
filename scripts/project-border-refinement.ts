@@ -2,10 +2,14 @@ import {
   borderRefinementInputSchema,
   borderRefinementSchema,
   type BorderRefinementInput,
+  borderMeasurementInputSchema,
+  borderMeasurementSchema,
+  type BorderMeasurementInput,
 } from "../schemas/border-refinement";
 import { distance, type Position } from "../src/geo";
 import { imageCrossSections } from "./infer-image-borders";
 import { borderPairHash } from "./refine-image-borders";
+import { measuredImageBorders } from "./measured-image-borders";
 
 type Pair = { inner: Position[]; outer: Position[] };
 
@@ -141,4 +145,143 @@ export function projectBorderRefinement(
     }),
     mappings,
   };
+}
+
+/** Transfer only supported image measurements. Rejected branches stay explicit and need their own measurements. */
+export function projectSharedImageMeasurements(
+  source: {
+    trace: Position[];
+    input: BorderMeasurementInput & {
+      resultSha256?: string;
+    };
+  },
+  target: {
+    trace: Position[];
+    imageSha256: string;
+    direction?: "same" | "reverse";
+  },
+) {
+  const stored = borderMeasurementInputSchema
+      .or(borderMeasurementSchema)
+      .parse(source.input),
+    input = borderMeasurementInputSchema.parse({
+      method: stored.method,
+      imageSha256: stored.imageSha256,
+      patches: stored.patches,
+      note: stored.note,
+    });
+  if (input.imageSha256 !== target.imageSha256)
+    throw new Error("Shared measurements require the same pinned image");
+  const replay = measuredImageBorders(source.trace, input, target.imageSha256);
+  if (
+    "resultSha256" in stored &&
+    replay.measurement.resultSha256 !== stored.resultSha256
+  )
+    throw new Error("Source measurement reconstruction hash mismatch");
+  const a = imageCrossSections(source.trace),
+    b = imageCrossSections(target.trace),
+    rejected: {
+      edge: string;
+      sourceStation: number;
+      reason: string;
+    }[] = [],
+    mappings: {
+      edge: string;
+      sourceStation: number;
+      station: number;
+      traceGapM: number;
+      alongM: number;
+    }[] = [];
+  const patches = input.patches.map((patch) => ({
+    edge: patch.edge,
+    anchors: patch.anchors.flatMap((anchor) => {
+      try {
+        const origin = b.projection.to(
+            a.projection.from(a.smooth[a.index(anchor.station)]),
+          ),
+          gaps = b.smooth.map((p) =>
+            Math.hypot(p[0] - origin[0], p[1] - origin[1]),
+          );
+        let station = gaps.reduce(
+          (best, gap, i) => (gap < gaps[best] ? i : best),
+          0,
+        );
+        const traceGapM = gaps[station],
+          normal = b.normals[station],
+          sourceNormal = a.normals[a.index(anchor.station)];
+        if (
+          traceGapM > 3 ||
+          (normal[0] * sourceNormal[0] + normal[1] * sourceNormal[1]) *
+            (target.direction === "reverse" ? -1 : 1) <
+            0.98
+        )
+          throw new Error(
+            "No nearby target cross-section with the requested direction",
+          );
+        if (
+          gaps.some((gap, i) => {
+            const delta = Math.abs(i - station);
+            return Math.min(delta, b.count - delta) > 8 && gap <= 3;
+          })
+        )
+          throw new Error("Ambiguous target branches");
+        if (
+          anchor.station === a.count ||
+          (target.direction === "reverse" && anchor.station === 0)
+        ) {
+          if (station !== 0) throw new Error("Mismatched closed seams");
+          station =
+            target.direction === "reverse"
+              ? anchor.station === 0
+                ? b.count
+                : 0
+              : b.count;
+        }
+        const base = b.smooth[b.index(station)],
+          q = b.projection.to(anchor.coordinate),
+          dx = q[0] - base[0],
+          dy = q[1] - base[1],
+          across = dx * normal[0] + dy * normal[1],
+          alongM = dx * normal[1] - dy * normal[0];
+        if (Math.abs(alongM) > 1.5)
+          throw new Error("Projection moves too far along the road");
+        mappings.push({
+          edge: patch.edge,
+          sourceStation: anchor.station,
+          station,
+          traceGapM,
+          alongM,
+        });
+        return [
+          {
+            ...anchor,
+            station,
+            coordinate: b.projection.from([
+              base[0] + across * normal[0],
+              base[1] + across * normal[1],
+            ]),
+          },
+        ];
+      } catch (error) {
+        rejected.push({
+          edge: patch.edge,
+          sourceStation: anchor.station,
+          reason: String(error),
+        });
+        return [];
+      }
+    }),
+  }));
+  if (target.direction === "reverse")
+    for (const patch of patches) patch.anchors.reverse();
+  for (const patch of patches)
+    if (
+      patch.anchors.some(
+        (a, i) => i > 0 && a.station <= patch.anchors[i - 1].station,
+      )
+    )
+      throw new Error(
+        "Projected measurements duplicate or reorder target stations",
+      );
+  return { patches, mappings, rejected };
 }

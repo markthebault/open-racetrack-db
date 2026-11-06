@@ -24,7 +24,10 @@ const recipe = z.strictObject({
   patches: z.array(patch).min(1).max(200),
   note: z.string().min(1),
 });
-function check(value: z.infer<typeof recipe>, ctx: z.RefinementCtx) {
+function check(
+  value: Pick<z.infer<typeof recipe>, "patches">,
+  ctx: z.RefinementCtx,
+) {
   for (const [i, p] of value.patches.entries()) {
     if (!p.anchors.some((a) => a.kind === "image-measured"))
       ctx.addIssue({
@@ -58,3 +61,14 @@ export const borderRefinementSchema = recipe
   .extend({ resultSha256: hash })
   .superRefine(check);
 export type BorderRefinementInput = z.infer<typeof borderRefinementInputSchema>;
+// Complete image measurements reconstruct independently of an automatic seed.
+export const borderMeasurementInputSchema = recipe
+  .omit({ seedSha256: true })
+  .superRefine(check);
+export const borderMeasurementSchema = recipe
+  .omit({ seedSha256: true })
+  .extend({ resultSha256: hash })
+  .superRefine(check);
+export type BorderMeasurementInput = z.infer<
+  typeof borderMeasurementInputSchema
+>;
