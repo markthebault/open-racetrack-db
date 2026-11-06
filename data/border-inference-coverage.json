@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T17:32:43.289Z",
+  "generatedAt": "2026-11-06T17:46:39.968Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -6273,15 +6273,15 @@
       "trackId": "us-the-ridge-motorsports-park-182180341",
       "layoutId": "main",
       "file": "data/united-states/the-ridge-motorsports-park-182180341/layouts/main.geojson",
-      "status": "needs-imagery-review",
+      "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.8966,
-          0.9331
+          0.9916,
+          0.9772
         ],
         "medianInteriorDifference": [
-          0.06,
-          0.0544
+          0.0347,
+          0.0368
         ],
         "samplingStepM": 2.99927610544466,
         "searchRangeM": [
@@ -6289,9 +6289,8 @@
           25
         ]
       },
-      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13714545.514273945%2C5983603.416143338%2C-13712737.529394997%2C5984398.096939429&bboxSR=3857&imageSR=3857&size=1637%2C720&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
-      "imageSha256": "fb81a1ce961aea213bb49407de355da785425226a3877fb1dfa284c9379e6140",
-      "reason": "An alignment on the long straight leaves the visible main pavement in this image; route interpretation or newer imagery is needed."
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7f40e5b5f1939e9b502f54f10f1fa75a9e2f83c7a0501a25ca6efe1fe141cb43"
     },
     {
       "trackId": "us-the-thermal-club-443108132",
