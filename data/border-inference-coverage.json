@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T22:20:59.191Z",
+  "generatedAt": "2026-11-06T22:52:25.078Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -5185,25 +5185,9 @@
       "trackId": "us-gopro-motorplex-e67c71ed",
       "layoutId": "gopro-motorplex",
       "file": "data/united-states/us-gopro-motorplex-e67c71ed/layouts/gopro-motorplex.geojson",
-      "status": "needs-imagery-review",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.9676,
-          0.9701
-        ],
-        "medianInteriorDifference": [
-          0.0447,
-          0.0454
-        ],
-        "samplingStepM": 2.994623711959016,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8993838.323389865%2C4251098.522794615%2C-8993421.991163721%2C4251526.016591474&bboxSR=3857&imageSR=3857&size=452%2C464&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
-      "imageSha256": "39a4ac61fb0f354e3eb6104d27954f2af22ca72f1973efa587ef787252bb994a",
-      "reason": "Some proposed limits follow paved runoff beyond curbs or nearby infield transitions; correction is required."
+      "status": "inferred-estimate",
+      "source": "https://services.nconemap.gov/secure/rest/services/Imagery/Orthoimagery_2020_2023_4band_analysis/ImageServer/exportImage?f=json&bbox=-8993807.561190087%2C4251129.284994392%2C-8993452.753363501%2C4251495.254391696&bboxSR=3857&imageSR=3857&size=1893%2C1952&format=png32&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22date%22%2C+%22sortValue%22%3A+%223000%2F01%2F01%22%2C+%22ascending%22%3A+true%7D",
+      "imageSha256": "7a334200febc39266ce0da5dd8831ff7f16c1404597f5f5c98732176800dcd96"
     },
     {
       "trackId": "us-heartland-park-raceway-137283766",

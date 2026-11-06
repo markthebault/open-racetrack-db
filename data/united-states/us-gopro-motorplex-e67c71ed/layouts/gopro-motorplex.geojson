@@ -1,16 +1,17 @@
 {
   "type": "FeatureCollection",
   "bbox": [
-    -80.7923058,
-    35.6398553,
-    -80.7900028,
-    35.6418084
+    -80.7923488,
+    35.6398222,
+    -80.7899382,
+    35.6418582
   ],
   "metadata": {
     "schemaVersion": 1,
     "trackId": "us-gopro-motorplex-e67c71ed",
     "layoutId": "gopro-motorplex",
     "license": "ODbL-1.0",
+    "licenseScope": "trace-and-timing",
     "attribution": "© OpenStreetMap contributors",
     "closed": true,
     "geometryStatus": "draft",
@@ -30,7 +31,1116 @@
     "reviewedAt": null,
     "notes": [
       "Draft configuration: Full kart course with both central hairpins, northern rounded loop and southern shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1200.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
-    ]
+    ],
+    "model3d": {"schemaVersion":1,"pathMethod":"paired-border-midpoints","startOffsetM":0,"referenceLengthM":1197.3,"elevationMethod":"periodic-monotone-cubic","elevation":[[0,266.677],[77.8245,264.89],[155.649,267],[194.56125,267],[233.4735,265.687],[272.38575,266],[311.298,264.791],[350.21025,260.861],[389.1225,260.112],[428.03475,262.911],[466.947,263.449],[505.85925,261.943],[583.6837499999999,266.674],[622.596,267],[661.50825,264.479],[700.4205,263.822],[778.245,268.252],[856.0695,263.366],[894.98175,263.203],[933.894,265.025],[972.80625,262.387],[1050.6307499999998,266.54],[1089.543,266.875],[1128.45525,268.298],[1197.3,266.677]],"bankingDeg":0,"quality":{"stationing":"border-midline","elevation":"terrain-raster","curbs":"geometry-estimated","borders":"supplemental-unverified"},"preparation":{"version":2,"inputSha256":"a3497bc99fb80ad609cf5958256fd6c2f17eaa3fd5a80d4ea4047d0ef0ccb09c","elevationToleranceM":0.5,"curbMethod":"curvature-intervals-v1"},"corners":[{"distanceM":0,"name":"Start / finish"},{"distanceM":95.78,"name":"Bend 1"},{"distanceM":140.69,"name":"Bend 2"},{"distanceM":167.62,"name":"Bend 3"},{"distanceM":233.48,"name":"Bend 4"},{"distanceM":432.52,"name":"Bend 5"},{"distanceM":535.79,"name":"Bend 6"},{"distanceM":576.2,"name":"Bend 7"},{"distanceM":607.63,"name":"Bend 8"},{"distanceM":680.96,"name":"Bend 9"},{"distanceM":821.65,"name":"Bend 10"},{"distanceM":920.42,"name":"Bend 11"},{"distanceM":1076.07,"name":"Bend 12"}],"curbs":[{"startM":57.85,"endM":133.72,"side":"right","widthM":1,"heightM":0.08},{"startM":120.71,"endM":160.66,"side":"left","widthM":1,"heightM":0.08},{"startM":147.65,"endM":187.59,"side":"right","widthM":1,"heightM":0.08},{"startM":201.53,"endM":265.42,"side":"right","widthM":1,"heightM":0.08},{"startM":369.15,"endM":495.9,"side":"right","widthM":1,"heightM":0.08},{"startM":497.86,"endM":573.72,"side":"left","widthM":1,"heightM":0.08},{"startM":557.72,"endM":594.68,"side":"right","widthM":1,"heightM":0.08},{"startM":581.67,"endM":633.59,"side":"left","widthM":1,"heightM":0.08},{"startM":653.51,"endM":708.42,"side":"left","widthM":1,"heightM":0.08},{"startM":761.27,"endM":882.03,"side":"left","widthM":1,"heightM":0.08},{"startM":869.02,"endM":971.83,"side":"right","widthM":1,"heightM":0.08},{"startM":1018.68,"endM":1133.46,"side":"right","widthM":1,"heightM":0.08}],"curbStyle":{"colors":["#f2f2e7","#c73732"],"stripeLengthM":2},"imagery":{"url":"https://services.nconemap.gov/secure/rest/services/Imagery/Orthoimagery_2020_2023_4band_analysis/ImageServer/exportImage?f=image&bbox=-8993807.611187937%2C4251129.284994392%2C-8993452.703365654%2C4251495.254391696&bboxSR=3857&imageSR=3857&size=1893%2C1952&format=png32&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22date%22%2C+%22sortValue%22%3A+%223000%2F01%2F01%22%2C+%22ascending%22%3A+true%7D","extent3857":[-8993807.611187937,4251129.284994392,-8993452.703365654,4251495.254391696],"attribution":"NC OneMap (2019), NC Department of Information Technology, Government Data Analytics Center, Center for Geographic Information and Analysis; NC 911 Board. RGB export and estimated road borders.","termsUrl":"https://www.nconemap.gov/pages/terms"},"terrain":{"schemaVersion":1,"trackId":"us-gopro-motorplex-e67c71ed","bounds":[-80.7926362,35.6395867,-80.7896724,35.642077],"columns":16,"rows":16,"heights":[260,259,258,257,257,258,259,260,260,260,258,257,256,256,256,256,262,261,259,259,258,259,260,261,262,262,261,260,259,259,258,258,263,262,261,260,259,259,260,262,263,264,264,263,262,262,261,260,264,264,263,262,261,260,260,262,263,265,265,265,265,264,263,262,264,264,264,263,262,261,261,262,263,265,266,267,267,266,265,264,264,265,266,265,264,262,262,262,263,265,266,267,268,268,266,265,263,265,266,266,265,264,263,262,263,264,266,268,269,268,267,266,263,264,266,266,266,265,264,263,263,264,266,268,269,269,268,267,263,264,266,266,267,266,265,263,263,264,266,267,268,269,268,268,264,265,266,267,267,267,265,264,263,264,266,267,268,269,269,268,265,265,266,267,267,267,266,264,264,264,266,267,268,269,269,269,265,265,266,267,267,267,266,265,264,264,266,267,268,269,269,270,265,265,266,266,267,267,266,265,265,264,266,267,268,269,270,270,264,264,265,266,266,267,266,265,265,265,266,267,268,269,270,270,262,263,264,265,265,266,266,266,265,265,266,267,268,269,269,270,261,262,263,264,264,265,265,266,266,266,266,267,268,269,269,270],"source":{"name":"Mapzen Terrain Tiles","url":"https://registry.opendata.aws/terrain-tiles/","zoom":12,"sampledAt":"2026-10-03T22:19:15.943Z","sampleSpacingM":18,"attribution":["Mapzen Terrain Tiles","Global elevation data courtesy of the U.S. Geological Survey and NOAA."]}},"sources":{"elevation":"https://registry.opendata.aws/terrain-tiles/","imagery":"https://services.nconemap.gov/secure/rest/services/Imagery/Orthoimagery_2020_2023_4band_analysis/ImageServer/exportImage?f=image&bbox=-8993807.611187937%2C4251129.284994392%2C-8993452.703365654%2C4251495.254391696&bboxSR=3857&imageSR=3857&size=1893%2C1952&format=png32&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22date%22%2C+%22sortValue%22%3A+%223000%2F01%2F01%22%2C+%22ascending%22%3A+true%7D","imageryCredit":"NC OneMap (2019), NC Department of Information Technology, Government Data Analytics Center, Center for Geographic Information and Analysis; NC 911 Board. RGB export and estimated road borders.","notes":"Road height is sampled from the existing approximately 18 m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the midpoint of corresponding border stations, not an official length measurement. The saved start gate sets the simulation origin. Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included."}},
+    "borderInference": {
+      "schemaVersion": 1,
+      "method": "image-measured-cross-sections-v1",
+      "status": "estimated",
+      "reviewedAt": null,
+      "traceSha256": "30fa8baff43e016b15074969c8e0699735e82b55c4a38fa136798f8c594d683f",
+      "measurement": {
+        "method": "cross-section-image-anchors-v1",
+        "imageSha256": "7a334200febc39266ce0da5dd8831ff7f16c1404597f5f5c98732176800dcd96",
+        "patches": [
+          {
+            "edge": "inner",
+            "anchors": [
+              {
+                "station": 0,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910097,
+                  35.6411261
+                ]
+              },
+              {
+                "station": 6,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908551,
+                  35.6412282
+                ]
+              },
+              {
+                "station": 12,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7907014,
+                  35.6413288
+                ]
+              },
+              {
+                "station": 18,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905422,
+                  35.641374
+                ]
+              },
+              {
+                "station": 24,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7903501,
+                  35.6413535
+                ]
+              },
+              {
+                "station": 30,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.79016,
+                  35.641318
+                ]
+              },
+              {
+                "station": 36,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7900732,
+                  35.6412739
+                ]
+              },
+              {
+                "station": 42,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7901406,
+                  35.6411526
+                ]
+              },
+              {
+                "station": 48,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7902525,
+                  35.6410187
+                ]
+              },
+              {
+                "station": 54,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.790354,
+                  35.6408798
+                ]
+              },
+              {
+                "station": 60,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7904574,
+                  35.6407418
+                ]
+              },
+              {
+                "station": 66,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.790558,
+                  35.6406023
+                ]
+              },
+              {
+                "station": 72,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7906642,
+                  35.6404657
+                ]
+              },
+              {
+                "station": 78,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7907656,
+                  35.6403267
+                ]
+              },
+              {
+                "station": 84,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908728,
+                  35.6401905
+                ]
+              },
+              {
+                "station": 90,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909733,
+                  35.6400511
+                ]
+              },
+              {
+                "station": 96,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910788,
+                  35.6399424
+                ]
+              },
+              {
+                "station": 102,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912109,
+                  35.6399196
+                ]
+              },
+              {
+                "station": 108,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7913103,
+                  35.6399746
+                ]
+              },
+              {
+                "station": 114,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914213,
+                  35.6401232
+                ]
+              },
+              {
+                "station": 120,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916465,
+                  35.6401599
+                ]
+              },
+              {
+                "station": 126,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7918006,
+                  35.640217
+                ]
+              },
+              {
+                "station": 132,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7919606,
+                  35.640311
+                ]
+              },
+              {
+                "station": 144,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7922454,
+                  35.6405
+                ]
+              },
+              {
+                "station": 150,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7922256,
+                  35.6406223
+                ]
+              },
+              {
+                "station": 156,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7921264,
+                  35.6407595
+                ]
+              },
+              {
+                "station": 162,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7920244,
+                  35.6408982
+                ]
+              },
+              {
+                "station": 168,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7919234,
+                  35.6410374
+                ]
+              },
+              {
+                "station": 174,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7918166,
+                  35.6411737
+                ]
+              },
+              {
+                "station": 180,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917184,
+                  35.6413143
+                ]
+              },
+              {
+                "station": 186,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916164,
+                  35.641453
+                ]
+              },
+              {
+                "station": 192,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7915116,
+                  35.6415903
+                ]
+              },
+              {
+                "station": 198,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914097,
+                  35.641722
+                ]
+              },
+              {
+                "station": 204,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912605,
+                  35.6417882
+                ]
+              },
+              {
+                "station": 210,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910987,
+                  35.6417371
+                ]
+              },
+              {
+                "station": 216,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910072,
+                  35.6416289
+                ]
+              },
+              {
+                "station": 222,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910305,
+                  35.6414976
+                ]
+              },
+              {
+                "station": 228,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7911419,
+                  35.6414066
+                ]
+              },
+              {
+                "station": 234,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7913183,
+                  35.6413343
+                ]
+              },
+              {
+                "station": 240,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914907,
+                  35.6412465
+                ]
+              },
+              {
+                "station": 246,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916505,
+                  35.6411447
+                ]
+              },
+              {
+                "station": 252,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917927,
+                  35.6410059
+                ]
+              },
+              {
+                "station": 258,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917741,
+                  35.640833
+                ]
+              },
+              {
+                "station": 264,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7918226,
+                  35.6407019
+                ]
+              },
+              {
+                "station": 276,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916927,
+                  35.640426
+                ]
+              },
+              {
+                "station": 282,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7915087,
+                  35.6403623
+                ]
+              },
+              {
+                "station": 288,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7913121,
+                  35.6403321
+                ]
+              },
+              {
+                "station": 300,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909398,
+                  35.64042
+                ]
+              },
+              {
+                "station": 306,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908245,
+                  35.6405518
+                ]
+              },
+              {
+                "station": 312,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7907075,
+                  35.6406825
+                ]
+              },
+              {
+                "station": 318,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905869,
+                  35.640811
+                ]
+              },
+              {
+                "station": 324,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7904706,
+                  35.640942
+                ]
+              },
+              {
+                "station": 330,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7903492,
+                  35.6410894
+                ]
+              },
+              {
+                "station": 336,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905182,
+                  35.6412513
+                ]
+              },
+              {
+                "station": 342,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7907243,
+                  35.641162
+                ]
+              },
+              {
+                "station": 348,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908825,
+                  35.6410635
+                ]
+              },
+              {
+                "station": 354,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910395,
+                  35.6409326
+                ]
+              },
+              {
+                "station": 360,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910802,
+                  35.6407623
+                ]
+              },
+              {
+                "station": 366,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7911312,
+                  35.6406448
+                ]
+              },
+              {
+                "station": 372,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912479,
+                  35.6406646
+                ]
+              },
+              {
+                "station": 378,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7913918,
+                  35.6407417
+                ]
+              },
+              {
+                "station": 384,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914333,
+                  35.6408427
+                ]
+              },
+              {
+                "station": 390,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912939,
+                  35.6409401
+                ]
+              },
+              {
+                "station": 396,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7911416,
+                  35.6410441
+                ]
+              },
+              {
+                "station": 401,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910097,
+                  35.6411261
+                ]
+              }
+            ]
+          },
+          {
+            "edge": "outer",
+            "anchors": [
+              {
+                "station": 0,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910659,
+                  35.6411829
+                ]
+              },
+              {
+                "station": 6,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909121,
+                  35.6412844
+                ]
+              },
+              {
+                "station": 12,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.790754,
+                  35.6413856
+                ]
+              },
+              {
+                "station": 18,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905408,
+                  35.6414577
+                ]
+              },
+              {
+                "station": 24,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7903363,
+                  35.6414336
+                ]
+              },
+              {
+                "station": 30,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.790136,
+                  35.641403
+                ]
+              },
+              {
+                "station": 36,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7899382,
+                  35.6412726
+                ]
+              },
+              {
+                "station": 42,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7900543,
+                  35.6411104
+                ]
+              },
+              {
+                "station": 48,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7901605,
+                  35.6409738
+                ]
+              },
+              {
+                "station": 54,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.790262,
+                  35.6408348
+                ]
+              },
+              {
+                "station": 60,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7903664,
+                  35.6406973
+                ]
+              },
+              {
+                "station": 66,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7904669,
+                  35.6405579
+                ]
+              },
+              {
+                "station": 72,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905712,
+                  35.6404203
+                ]
+              },
+              {
+                "station": 78,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7906689,
+                  35.6402795
+                ]
+              },
+              {
+                "station": 84,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7907779,
+                  35.6401442
+                ]
+              },
+              {
+                "station": 90,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908823,
+                  35.6400066
+                ]
+              },
+              {
+                "station": 96,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910172,
+                  35.6398777
+                ]
+              },
+              {
+                "station": 102,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912248,
+                  35.6398222
+                ]
+              },
+              {
+                "station": 108,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914065,
+                  35.6399284
+                ]
+              },
+              {
+                "station": 114,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914939,
+                  35.6400625
+                ]
+              },
+              {
+                "station": 120,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916535,
+                  35.6400882
+                ]
+              },
+              {
+                "station": 126,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7918541,
+                  35.6401552
+                ]
+              },
+              {
+                "station": 132,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7920136,
+                  35.6402533
+                ]
+              },
+              {
+                "station": 138,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7921735,
+                  35.6403495
+                ]
+              },
+              {
+                "station": 144,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7923292,
+                  35.6404717
+                ]
+              },
+              {
+                "station": 150,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7923103,
+                  35.6406575
+                ]
+              },
+              {
+                "station": 156,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7922069,
+                  35.6407991
+                ]
+              },
+              {
+                "station": 162,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.792103,
+                  35.6409368
+                ]
+              },
+              {
+                "station": 168,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7919982,
+                  35.6410742
+                ]
+              },
+              {
+                "station": 174,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7918981,
+                  35.6412138
+                ]
+              },
+              {
+                "station": 180,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917923,
+                  35.6413506
+                ]
+              },
+              {
+                "station": 186,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916903,
+                  35.6414893
+                ]
+              },
+              {
+                "station": 192,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7915864,
+                  35.6416271
+                ]
+              },
+              {
+                "station": 198,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.791475,
+                  35.6417706
+                ]
+              },
+              {
+                "station": 204,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912657,
+                  35.6418582
+                ]
+              },
+              {
+                "station": 210,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910444,
+                  35.6418028
+                ]
+              },
+              {
+                "station": 216,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909171,
+                  35.6416474
+                ]
+              },
+              {
+                "station": 222,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909367,
+                  35.6414654
+                ]
+              },
+              {
+                "station": 228,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7911009,
+                  35.6413489
+                ]
+              },
+              {
+                "station": 234,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912702,
+                  35.6412624
+                ]
+              },
+              {
+                "station": 240,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914464,
+                  35.6411927
+                ]
+              },
+              {
+                "station": 246,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7915956,
+                  35.6410894
+                ]
+              },
+              {
+                "station": 252,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917068,
+                  35.6409852
+                ]
+              },
+              {
+                "station": 258,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916807,
+                  35.6408418
+                ]
+              },
+              {
+                "station": 264,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917371,
+                  35.6406722
+                ]
+              },
+              {
+                "station": 270,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7917957,
+                  35.6405372
+                ]
+              },
+              {
+                "station": 276,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7916671,
+                  35.6404931
+                ]
+              },
+              {
+                "station": 282,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7914817,
+                  35.6404336
+                ]
+              },
+              {
+                "station": 288,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912868,
+                  35.6403991
+                ]
+              },
+              {
+                "station": 294,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7911344,
+                  35.6403704
+                ]
+              },
+              {
+                "station": 300,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.791019,
+                  35.6404677
+                ]
+              },
+              {
+                "station": 306,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908967,
+                  35.640595
+                ]
+              },
+              {
+                "station": 312,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7907779,
+                  35.6407246
+                ]
+              },
+              {
+                "station": 318,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7906599,
+                  35.6408547
+                ]
+              },
+              {
+                "station": 324,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905391,
+                  35.6409831
+                ]
+              },
+              {
+                "station": 330,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7904305,
+                  35.6411027
+                ]
+              },
+              {
+                "station": 336,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7905116,
+                  35.641176
+                ]
+              },
+              {
+                "station": 342,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7906723,
+                  35.6411016
+                ]
+              },
+              {
+                "station": 348,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7908308,
+                  35.641004
+                ]
+              },
+              {
+                "station": 354,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909597,
+                  35.6409013
+                ]
+              },
+              {
+                "station": 360,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7909953,
+                  35.6407496
+                ]
+              },
+              {
+                "station": 366,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910701,
+                  35.6405809
+                ]
+              },
+              {
+                "station": 372,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7912928,
+                  35.6405943
+                ]
+              },
+              {
+                "station": 378,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.791458,
+                  35.6406953
+                ]
+              },
+              {
+                "station": 384,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7915101,
+                  35.6408767
+                ]
+              },
+              {
+                "station": 390,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7913513,
+                  35.6409995
+                ]
+              },
+              {
+                "station": 396,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7911949,
+                  35.6410993
+                ]
+              },
+              {
+                "station": 401,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.7910659,
+                  35.6411829
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "Sparse road-edge observations on pinned NC OneMap 2020–2023 analysis imagery, exported as RGB bands 0,1,2. Edges follow the racing asphalt at visible curb/paint boundaries, excluding broad painted runoff, adjoining concrete aprons and pit access. Open-connection limits and unmeasured intervals are interpolated estimates. Source raster spacing is not survey accuracy; banking is unresolved and rendered curbs remain illustrative",
+        "resultSha256": "7b3bd0bb038a6ee6898eed9a78c44d8f75974a37c51b02a3793dcba8a7965ea3"
+      },
+      "imagery": {
+        "sourceId": "nc-onemap-2020-2023-analysis-border-imagery",
+        "url": "https://services.nconemap.gov/secure/rest/services/Imagery/Orthoimagery_2020_2023_4band_analysis/ImageServer/exportImage?f=json&bbox=-8993807.561190087%2C4251129.284994392%2C-8993452.753363501%2C4251495.254391696&bboxSR=3857&imageSR=3857&size=1893%2C1952&format=png32&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22date%22%2C+%22sortValue%22%3A+%223000%2F01%2F01%22%2C+%22ascending%22%3A+true%7D",
+        "reuseEvidenceUrl": "https://www.nconemap.gov/pages/terms",
+        "license": "LicenseRef-NCOneMap-open-data",
+        "attribution": "NC OneMap (2019), NC Department of Information Technology, Government Data Analytics Center, Center for Geographic Information and Analysis; NC 911 Board. RGB export and estimated road borders.",
+        "retrievedAt": "2026-11-06T22:41:53.149769Z",
+        "sha256": "7a334200febc39266ce0da5dd8831ff7f16c1404597f5f5c98732176800dcd96",
+        "width": 1893,
+        "height": 1952,
+        "extent3857": [
+          -8993807.611187937,
+          4251129.284994392,
+          -8993452.703365654,
+          4251495.254391696
+        ],
+        "groundPixelSizeM": 0.1524
+      },
+      "note": "Road-border estimates reconstructed directly from complete, sparse image measurements on the existing trace cross-sections. All intervals interpolate between image anchors; they are not automatic detections or a continuous edge survey. Every saved edge station and anchor requires pinned-image coverage during authoring. Isolated missing pixels inside the road are not filled or used as boundary evidence. Imagery resolution is not survey accuracy. These borders have not been formally verified."
+    }
   },
   "features": [
     {
@@ -427,6 +1537,8 @@
           ]
         ]
       }
-    }
+    },
+    {"type":"Feature","id":"inner","properties":{"role":"inner","sourceIds":["nc-onemap-2020-2023-analysis-border-imagery"],"license":"LicenseRef-NCOneMap-open-data","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[-80.7910097,35.6411261],[-80.7909837,35.641143],[-80.7909579,35.6411601],[-80.7909322,35.6411772],[-80.7909065,35.6411942],[-80.7908808,35.6412112],[-80.7908551,35.6412282],[-80.7908293,35.6412451],[-80.7908035,35.641262],[-80.7907777,35.6412789],[-80.7907519,35.6412958],[-80.7907264,35.6413124],[-80.7907014,35.6413288],[-80.7906759,35.6413433],[-80.7906503,35.6413556],[-80.7906242,35.6413656],[-80.7905979,35.6413719],[-80.7905708,35.641375],[-80.7905422,35.641374],[-80.7905124,35.6413719],[-80.7904808,35.6413683],[-80.7904486,35.6413647],[-80.7904157,35.6413609],[-80.7903829,35.6413572],[-80.7903501,35.6413535],[-80.7903178,35.6413486],[-80.7902857,35.6413437],[-80.7902542,35.6413383],[-80.7902229,35.6413321],[-80.7901915,35.6413251],[-80.79016,35.641318],[-80.7901301,35.6413102],[-80.7901035,35.6413031],[-80.790084,35.6412952],[-80.7900732,35.6412875],[-80.7900711,35.6412806],[-80.7900732,35.6412739],[-80.7900756,35.6412623],[-80.7900838,35.6412451],[-80.7900967,35.6412241],[-80.7901109,35.6412009],[-80.7901257,35.6411768],[-80.7901406,35.6411526],[-80.7901593,35.6411303],[-80.7901779,35.641108],[-80.7901965,35.6410856],[-80.7902152,35.6410633],[-80.7902338,35.641041],[-80.7902525,35.6410187],[-80.7902694,35.6409955],[-80.7902863,35.6409724],[-80.7903032,35.6409492],[-80.7903202,35.6409261],[-80.7903371,35.6409029],[-80.790354,35.6408798],[-80.7903712,35.6408568],[-80.7903885,35.6408338],[-80.7904057,35.6408108],[-80.7904229,35.6407878],[-80.7904402,35.6407648],[-80.7904574,35.6407418],[-80.7904742,35.6407186],[-80.7904909,35.6406953],[-80.7905077,35.6406721],[-80.7905245,35.6406488],[-80.7905412,35.6406255],[-80.790558,35.6406023],[-80.7905757,35.6405795],[-80.7905934,35.6405568],[-80.7906111,35.640534],[-80.7906288,35.6405112],[-80.7906465,35.6404885],[-80.7906642,35.6404657],[-80.7906811,35.6404425],[-80.790698,35.6404194],[-80.7907149,35.6403962],[-80.7907318,35.640373],[-80.7907487,35.6403499],[-80.7907656,35.6403267],[-80.7907835,35.640304],[-80.7908013,35.6402813],[-80.7908192,35.6402586],[-80.7908371,35.6402359],[-80.7908549,35.6402132],[-80.7908728,35.6401905],[-80.7908896,35.6401673],[-80.7909063,35.640144],[-80.7909231,35.6401208],[-80.7909398,35.6400976],[-80.7909566,35.6400743],[-80.7909733,35.6400511],[-80.7909919,35.6400288],[-80.7910101,35.6400071],[-80.7910276,35.6399864],[-80.7910445,35.6399684],[-80.7910611,35.6399534],[-80.7910788,35.6399424],[-80.7910966,35.6399336],[-80.791117,35.6399269],[-80.7911389,35.6399226],[-80.7911637,35.6399202],[-80.7911881,35.6399199],[-80.7912109,35.6399196],[-80.7912302,35.6399207],[-80.7912467,35.6399244],[-80.7912636,35.6399325],[-80.7912797,35.6399429],[-80.7912959,35.6399569],[-80.7913103,35.6399746],[-80.7913243,35.6399951],[-80.7913386,35.6400183],[-80.791354,35.6400431],[-80.7913715,35.6400696],[-80.7913933,35.640097],[-80.7914213,35.6401232],[-80.7914578,35.6401441],[-80.7914987,35.6401581],[-80.7915402,35.6401645],[-80.7915794,35.6401648],[-80.7916145,35.6401625],[-80.7916465,35.6401599],[-80.7916753,35.6401632],[-80.7917021,35.6401687],[-80.7917274,35.6401774],[-80.791752,35.6401883],[-80.7917762,35.6402019],[-80.7918006,35.640217],[-80.7918266,35.6402323],[-80.7918531,35.6402478],[-80.79188,35.6402636],[-80.7919069,35.6402794],[-80.7919337,35.6402952],[-80.7919606,35.640311],[-80.7919872,35.640327],[-80.7920139,35.640343],[-80.7920405,35.640359],[-80.7920672,35.6403751],[-80.7920938,35.6403911],[-80.7921204,35.6404071],[-80.7921471,35.6404231],[-80.792173,35.6404387],[-80.7921975,35.6404533],[-80.7922184,35.6404677],[-80.7922344,35.640483],[-80.7922454,35.6405],[-80.7922533,35.6405185],[-80.7922566,35.6405376],[-80.7922554,35.6405578],[-80.7922487,35.6405785],[-80.7922388,35.6406001],[-80.7922256,35.6406223],[-80.7922106,35.6406447],[-80.7921942,35.6406674],[-80.7921774,35.6406902],[-80.7921604,35.6407133],[-80.7921434,35.6407364],[-80.7921264,35.6407595],[-80.7921094,35.6407826],[-80.7920924,35.6408057],[-80.7920754,35.6408288],[-80.7920584,35.640852],[-80.7920414,35.6408751],[-80.7920244,35.6408982],[-80.7920076,35.6409214],[-80.7919907,35.6409446],[-80.7919739,35.6409678],[-80.7919571,35.640991],[-80.7919402,35.6410142],[-80.7919234,35.6410374],[-80.7919056,35.6410601],[-80.7918878,35.6410828],[-80.79187,35.6411056],[-80.7918522,35.6411283],[-80.7918344,35.641151],[-80.7918166,35.6411737],[-80.7918002,35.6411971],[-80.7917839,35.6412206],[-80.7917675,35.641244],[-80.7917511,35.6412674],[-80.7917348,35.6412909],[-80.7917184,35.6413143],[-80.7917014,35.6413374],[-80.7916844,35.6413605],[-80.7916674,35.6413836],[-80.7916504,35.6414068],[-80.7916334,35.6414299],[-80.7916164,35.641453],[-80.7915989,35.6414759],[-80.7915815,35.6414988],[-80.791564,35.6415217],[-80.7915465,35.6415445],[-80.7915291,35.6415674],[-80.7915116,35.6415903],[-80.7914948,35.6416135],[-80.791478,35.6416366],[-80.7914614,35.6416594],[-80.7914449,35.6416818],[-80.7914277,35.6417025],[-80.7914097,35.641722],[-80.7913907,35.6417396],[-80.79137,35.6417554],[-80.7913458,35.6417675],[-80.7913195,35.6417771],[-80.7912905,35.6417836],[-80.7912605,35.6417882],[-80.7912299,35.6417858],[-80.7912005,35.6417805],[-80.7911722,35.6417731],[-80.7911456,35.6417628],[-80.791121,35.641751],[-80.7910987,35.6417371],[-80.7910774,35.6417242],[-80.7910582,35.6417086],[-80.7910422,35.6416906],[-80.7910276,35.6416712],[-80.7910163,35.6416504],[-80.7910072,35.6416289],[-80.7910046,35.641606],[-80.7910045,35.6415832],[-80.7910072,35.64156],[-80.7910122,35.641538],[-80.7910197,35.6415168],[-80.7910305,35.6414976],[-80.7910406,35.6414787],[-80.7910544,35.6414618],[-80.7910708,35.6414462],[-80.7910915,35.6414325],[-80.7911152,35.6414194],[-80.7911419,35.6414066],[-80.7911705,35.6413947],[-80.7911999,35.6413826],[-80.7912294,35.6413705],[-80.791259,35.6413585],[-80.7912887,35.6413464],[-80.7913183,35.6413343],[-80.7913466,35.6413203],[-80.7913749,35.6413062],[-80.7914034,35.6412921],[-80.7914324,35.6412777],[-80.7914619,35.6412629],[-80.7914907,35.6412465],[-80.7915191,35.6412299],[-80.791546,35.6412124],[-80.7915724,35.6411954],[-80.7915983,35.6411786],[-80.7916242,35.6411618],[-80.7916505,35.6411447],[-80.7916774,35.6411274],[-80.7917042,35.6411086],[-80.7917305,35.6410878],[-80.7917553,35.6410638],[-80.7917773,35.6410367],[-80.7917927,35.6410059],[-80.7918009,35.6409731],[-80.7918006,35.6409406],[-80.791796,35.6409097],[-80.7917882,35.6408817],[-80.7917801,35.6408561],[-80.7917741,35.640833],[-80.7917732,35.6408115],[-80.7917767,35.6407906],[-80.7917844,35.6407698],[-80.7917953,35.6407482],[-80.7918087,35.6407255],[-80.7918226,35.6407019],[-80.7918332,35.6406763],[-80.7918439,35.6406504],[-80.7918553,35.6406233],[-80.7918663,35.6405942],[-80.7918724,35.6405623],[-80.7918696,35.6405283],[-80.7918557,35.6404946],[-80.7918299,35.6404673],[-80.7917968,35.6404489],[-80.7917605,35.6404388],[-80.7917257,35.640432],[-80.7916927,35.640426],[-80.791662,35.6404154],[-80.7916313,35.6404048],[-80.7916007,35.6403941],[-80.79157,35.6403835],[-80.7915394,35.6403729],[-80.7915087,35.6403623],[-80.7914759,35.6403573],[-80.7914432,35.6403522],[-80.7914104,35.6403472],[-80.7913776,35.6403422],[-80.7913449,35.6403371],[-80.7913121,35.6403321],[-80.7912809,35.6403224],[-80.791249,35.6403126],[-80.7912155,35.6403034],[-80.7911793,35.6402966],[-80.7911404,35.6402952],[-80.7911011,35.6403018],[-80.7910649,35.640316],[-80.7910341,35.6403354],[-80.7910075,35.6403566],[-80.7909838,35.640378],[-80.7909615,35.6403992],[-80.7909398,35.64042],[-80.7909205,35.640442],[-80.7909013,35.640464],[-80.7908821,35.6404859],[-80.7908629,35.6405079],[-80.7908437,35.6405298],[-80.7908245,35.6405518],[-80.790805,35.6405736],[-80.7907855,35.6405954],[-80.790766,35.6406171],[-80.7907465,35.6406389],[-80.790727,35.6406607],[-80.7907075,35.6406825],[-80.7906874,35.6407039],[-80.7906673,35.6407253],[-80.7906472,35.6407468],[-80.7906271,35.6407682],[-80.790607,35.6407896],[-80.7905869,35.640811],[-80.7905675,35.6408328],[-80.7905482,35.6408547],[-80.7905288,35.6408765],[-80.7905094,35.6408983],[-80.79049,35.6409202],[-80.7904706,35.640942],[-80.7904502,35.6409632],[-80.7904297,35.6409844],[-80.7904087,35.6410063],[-80.7903865,35.6410297],[-80.7903653,35.6410567],[-80.7903492,35.6410894],[-80.7903417,35.6411278],[-80.7903516,35.6411687],[-80.7903793,35.6412049],[-80.7904207,35.6412313],[-80.7904687,35.6412467],[-80.7905182,35.6412513],[-80.7905639,35.6412427],[-80.7906037,35.6412287],[-80.790638,35.6412124],[-80.7906688,35.6411957],[-80.7906971,35.6411789],[-80.7907243,35.641162],[-80.7907509,35.6411455],[-80.7907772,35.6411291],[-80.7908035,35.6411127],[-80.7908299,35.6410963],[-80.7908562,35.6410799],[-80.7908825,35.6410635],[-80.7909109,35.6410476],[-80.7909406,35.6410307],[-80.7909697,35.6410107],[-80.7909967,35.6409873],[-80.7910199,35.6409607],[-80.7910395,35.6409326],[-80.7910525,35.640903],[-80.7910614,35.6408734],[-80.7910674,35.6408444],[-80.7910721,35.6408164],[-80.7910762,35.6407892],[-80.7910802,35.6407623],[-80.7910874,35.6407362],[-80.7910944,35.6407109],[-80.7911014,35.6406879],[-80.7911088,35.6406682],[-80.7911189,35.640654],[-80.7911312,35.6406448],[-80.7911477,35.6406403],[-80.7911657,35.6406394],[-80.7911857,35.6406416],[-80.7912068,35.6406466],[-80.7912273,35.6406541],[-80.7912479,35.6406646],[-80.7912709,35.6406753],[-80.7912956,35.640688],[-80.791322,35.6407025],[-80.7913479,35.6407166],[-80.7913721,35.6407295],[-80.7913918,35.6407417],[-80.7914094,35.6407523],[-80.7914229,35.6407657],[-80.7914325,35.6407821],[-80.7914379,35.640801],[-80.7914382,35.6408215],[-80.7914333,35.6408427],[-80.7914172,35.6408604],[-80.7913965,35.6408765],[-80.7913722,35.6408919],[-80.7913466,35.6409076],[-80.7913203,35.6409238],[-80.7912939,35.6409401],[-80.7912685,35.6409574],[-80.7912431,35.6409748],[-80.7912178,35.6409921],[-80.7911924,35.6410094],[-80.791167,35.6410268],[-80.7911416,35.6410441],[-80.7911152,35.6410604],[-80.7910889,35.6410768],[-80.7910625,35.6410931],[-80.791036,35.6411095],[-80.7910097,35.6411261]]}},
+    {"type":"Feature","id":"outer","properties":{"role":"outer","sourceIds":["nc-onemap-2020-2023-analysis-border-imagery"],"license":"LicenseRef-NCOneMap-open-data","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[-80.7910659,35.6411829],[-80.7910403,35.6411996],[-80.7910148,35.6412164],[-80.7909892,35.6412334],[-80.7909635,35.6412504],[-80.7909378,35.6412674],[-80.7909121,35.6412844],[-80.7908861,35.6413011],[-80.79086,35.6413177],[-80.790834,35.6413344],[-80.790808,35.6413511],[-80.7907814,35.6413681],[-80.790754,35.6413856],[-80.790726,35.6414041],[-80.7906945,35.6414217],[-80.7906597,35.6414374],[-80.7906211,35.6414491],[-80.7905809,35.6414562],[-80.7905408,35.6414577],[-80.790503,35.6414548],[-80.7904681,35.6414505],[-80.7904345,35.6414462],[-80.7904018,35.641442],[-80.790369,35.6414378],[-80.7903363,35.6414336],[-80.7903031,35.6414297],[-80.7902695,35.6414257],[-80.7902357,35.641421],[-80.790202,35.6414154],[-80.7901688,35.6414092],[-80.790136,35.641403],[-80.790101,35.641398],[-80.7900625,35.6413918],[-80.7900203,35.641379],[-80.7899787,35.6413549],[-80.7899485,35.6413168],[-80.7899382,35.6412726],[-80.7899514,35.6412331],[-80.7899723,35.6412019],[-80.7899943,35.6411767],[-80.7900148,35.6411539],[-80.7900345,35.6411322],[-80.7900543,35.6411104],[-80.790072,35.6410876],[-80.7900897,35.6410649],[-80.7901074,35.6410421],[-80.7901251,35.6410193],[-80.7901428,35.6409966],[-80.7901605,35.6409738],[-80.7901774,35.6409506],[-80.7901943,35.6409275],[-80.7902112,35.6409043],[-80.7902282,35.6408811],[-80.7902451,35.640858],[-80.790262,35.6408348],[-80.7902794,35.6408119],[-80.7902968,35.640789],[-80.7903142,35.640766],[-80.7903316,35.6407431],[-80.790349,35.6407202],[-80.7903664,35.6406973],[-80.7903832,35.6406741],[-80.7903999,35.6406508],[-80.7904167,35.6406276],[-80.7904334,35.6406044],[-80.7904502,35.6405811],[-80.7904669,35.6405579],[-80.7904843,35.640535],[-80.7905017,35.640512],[-80.7905191,35.6404891],[-80.7905364,35.6404662],[-80.7905538,35.6404432],[-80.7905712,35.6404203],[-80.7905875,35.6403968],[-80.7906038,35.6403734],[-80.7906201,35.6403499],[-80.7906363,35.6403264],[-80.7906526,35.640303],[-80.7906689,35.6402795],[-80.7906871,35.640257],[-80.7907052,35.6402344],[-80.7907234,35.6402119],[-80.7907416,35.6401893],[-80.7907597,35.6401667],[-80.7907779,35.6401442],[-80.7907953,35.6401213],[-80.7908127,35.6400983],[-80.7908301,35.6400754],[-80.7908475,35.6400525],[-80.7908649,35.6400295],[-80.7908823,35.6400066],[-80.7909017,35.6399847],[-80.7909214,35.6399624],[-80.7909415,35.6399398],[-80.7909636,35.6399173],[-80.7909883,35.6398958],[-80.7910172,35.6398777],[-80.7910464,35.6398595],[-80.7910793,35.6398453],[-80.791114,35.6398349],[-80.7911495,35.6398282],[-80.7911864,35.6398245],[-80.7912248,35.6398222],[-80.7912631,35.6398276],[-80.7913002,35.6398393],[-80.7913339,35.6398573],[-80.7913631,35.6398789],[-80.7913874,35.6399026],[-80.7914065,35.6399284],[-80.7914226,35.6399542],[-80.7914367,35.6399793],[-80.7914502,35.6400033],[-80.7914635,35.6400257],[-80.7914778,35.6400457],[-80.7914939,35.6400625],[-80.7915132,35.640075],[-80.791535,35.6400833],[-80.7915598,35.6400879],[-80.7915877,35.6400889],[-80.7916191,35.6400886],[-80.7916535,35.6400882],[-80.7916898,35.6400917],[-80.7917266,35.6400983],[-80.7917619,35.6401092],[-80.7917952,35.6401227],[-80.7918256,35.6401386],[-80.7918541,35.6401552],[-80.7918812,35.6401719],[-80.7919079,35.6401883],[-80.7919343,35.6402045],[-80.7919608,35.6402208],[-80.7919872,35.640237],[-80.7920136,35.6402533],[-80.7920403,35.6402693],[-80.7920669,35.6402854],[-80.7920936,35.6403014],[-80.7921202,35.6403174],[-80.7921469,35.6403335],[-80.7921735,35.6403495],[-80.7922004,35.6403653],[-80.7922278,35.6403814],[-80.7922566,35.6403985],[-80.792285,35.6404184],[-80.79231,35.6404428],[-80.7923292,35.6404717],[-80.7923429,35.6405034],[-80.7923488,35.6405365],[-80.7923472,35.6405696],[-80.7923381,35.6406011],[-80.7923254,35.6406305],[-80.7923103,35.6406575],[-80.7922933,35.6406826],[-80.7922759,35.6407065],[-80.7922584,35.6407299],[-80.7922412,35.640753],[-80.7922241,35.6407761],[-80.7922069,35.6407991],[-80.7921896,35.6408221],[-80.7921723,35.640845],[-80.7921549,35.640868],[-80.7921376,35.6408909],[-80.7921203,35.6409138],[-80.792103,35.6409368],[-80.7920855,35.6409597],[-80.7920681,35.6409826],[-80.7920506,35.6410055],[-80.7920331,35.6410284],[-80.7920157,35.6410513],[-80.7919982,35.6410742],[-80.7919815,35.6410975],[-80.7919648,35.6411207],[-80.7919481,35.641144],[-80.7919315,35.6411673],[-80.7919148,35.6411905],[-80.7918981,35.6412138],[-80.7918805,35.6412366],[-80.7918628,35.6412594],[-80.7918452,35.6412822],[-80.7918276,35.641305],[-80.7918099,35.6413278],[-80.7917923,35.6413506],[-80.7917753,35.6413737],[-80.7917583,35.6413968],[-80.7917413,35.6414199],[-80.7917243,35.6414431],[-80.7917073,35.6414662],[-80.7916903,35.6414893],[-80.791673,35.6415123],[-80.7916557,35.6415352],[-80.7916383,35.6415582],[-80.791621,35.6415812],[-80.7916037,35.6416041],[-80.7915864,35.6416271],[-80.7915697,35.6416504],[-80.791553,35.6416737],[-80.7915359,35.6416976],[-80.7915181,35.6417217],[-80.7914978,35.6417462],[-80.791475,35.6417706],[-80.7914481,35.641794],[-80.7914172,35.6418155],[-80.7913816,35.6418323],[-80.7913438,35.6418451],[-80.7913052,35.641853],[-80.7912657,35.6418582],[-80.7912267,35.6418574],[-80.7911876,35.6418529],[-80.7911494,35.6418454],[-80.7911128,35.6418341],[-80.7910774,35.6418201],[-80.7910444,35.6418028],[-80.7910131,35.6417828],[-80.7909858,35.6417598],[-80.790963,35.6417336],[-80.7909436,35.6417063],[-80.7909287,35.6416773],[-80.7909171,35.6416474],[-80.7909112,35.6416168],[-80.7909087,35.6415859],[-80.79091,35.6415554],[-80.7909147,35.6415248],[-80.790923,35.6414948],[-80.7909367,35.6414654],[-80.7909558,35.641438],[-80.7909801,35.6414134],[-80.7910076,35.641392],[-80.7910382,35.641375],[-80.7910696,35.6413609],[-80.7911009,35.6413489],[-80.7911294,35.6413341],[-80.7911575,35.6413197],[-80.7911858,35.6413054],[-80.7912139,35.641291],[-80.7912421,35.6412767],[-80.7912702,35.6412624],[-80.7913002,35.6412509],[-80.7913302,35.6412393],[-80.7913601,35.6412278],[-80.7913896,35.6412165],[-80.7914186,35.6412052],[-80.7914464,35.6411927],[-80.7914714,35.6411767],[-80.7914958,35.6411595],[-80.7915206,35.6411421],[-80.7915457,35.6411244],[-80.7915708,35.6411068],[-80.7915956,35.6410894],[-80.7916206,35.641073],[-80.7916439,35.6410563],[-80.7916651,35.6410393],[-80.7916831,35.6410217],[-80.7916978,35.6410038],[-80.7917068,35.6409852],[-80.791711,35.6409654],[-80.7917096,35.6409442],[-80.7917054,35.6409216],[-80.7916976,35.6408971],[-80.7916885,35.6408707],[-80.7916807,35.6408418],[-80.7916794,35.6408108],[-80.791684,35.6407796],[-80.7916942,35.6407499],[-80.7917074,35.6407225],[-80.7917224,35.640697],[-80.7917371,35.6406722],[-80.7917505,35.6406476],[-80.7917638,35.6406231],[-80.7917767,35.6405996],[-80.7917881,35.6405774],[-80.791795,35.6405565],[-80.7917957,35.6405372],[-80.7917862,35.6405209],[-80.7917718,35.6405103],[-80.7917531,35.640504],[-80.7917278,35.6405004],[-80.791699,35.6404971],[-80.7916671,35.6404931],[-80.7916363,35.6404832],[-80.7916054,35.6404733],[-80.7915745,35.6404634],[-80.7915436,35.6404534],[-80.7915126,35.6404435],[-80.7914817,35.6404336],[-80.7914492,35.6404279],[-80.7914167,35.6404221],[-80.7913843,35.6404164],[-80.7913518,35.6404106],[-80.7913193,35.6404049],[-80.7912868,35.6403991],[-80.791256,35.6403902],[-80.7912265,35.6403815],[-80.7911992,35.6403741],[-80.791175,35.640369],[-80.7911536,35.6403675],[-80.7911344,35.6403704],[-80.7911159,35.6403784],[-80.7910975,35.6403911],[-80.7910785,35.6404074],[-80.7910591,35.6404264],[-80.7910392,35.6404467],[-80.791019,35.6404677],[-80.7909987,35.6404888],[-80.7909783,35.6405101],[-80.7909579,35.6405313],[-80.7909375,35.6405525],[-80.7909171,35.6405738],[-80.7908967,35.640595],[-80.7908769,35.6406166],[-80.7908571,35.6406382],[-80.7908373,35.6406598],[-80.7908175,35.6406814],[-80.7907977,35.640703],[-80.7907779,35.6407246],[-80.7907582,35.6407463],[-80.7907386,35.640768],[-80.7907189,35.6407896],[-80.7906992,35.6408113],[-80.7906796,35.640833],[-80.7906599,35.6408547],[-80.7906398,35.6408761],[-80.7906197,35.6408975],[-80.7905995,35.6409189],[-80.7905794,35.6409403],[-80.7905592,35.6409617],[-80.7905391,35.6409831],[-80.7905184,35.6410041],[-80.7904976,35.6410252],[-80.7904773,35.6410458],[-80.7904577,35.6410654],[-80.7904414,35.6410843],[-80.7904305,35.6411027],[-80.7904259,35.641121],[-80.7904293,35.6411384],[-80.7904409,35.6411539],[-80.7904603,35.6411661],[-80.7904845,35.6411737],[-80.7905116,35.641176],[-80.7905391,35.6411702],[-80.7905663,35.6411602],[-80.7905931,35.6411473],[-80.7906197,35.641133],[-80.7906461,35.6411176],[-80.7906723,35.6411016],[-80.7906986,35.6410854],[-80.7907251,35.6410691],[-80.7907515,35.6410528],[-80.7907779,35.6410366],[-80.7908044,35.6410203],[-80.7908308,35.641004],[-80.7908576,35.6409891],[-80.7908838,35.6409747],[-80.7909072,35.6409591],[-80.7909276,35.6409419],[-80.7909448,35.6409222],[-80.7909597,35.6409013],[-80.7909697,35.6408781],[-80.7909769,35.6408539],[-80.7909821,35.6408287],[-80.7909867,35.6408027],[-80.790991,35.6407762],[-80.7909953,35.6407496],[-80.7910004,35.6407228],[-80.7910056,35.6406955],[-80.7910122,35.6406666],[-80.7910222,35.6406362],[-80.791041,35.6406066],[-80.7910701,35.6405809],[-80.7911094,35.6405659],[-80.79115,35.6405601],[-80.7911897,35.6405616],[-80.7912272,35.6405686],[-80.7912617,35.6405797],[-80.7912928,35.6405943],[-80.7913224,35.6406096],[-80.7913504,35.6406258],[-80.7913772,35.6406422],[-80.7914042,35.6406588],[-80.7914318,35.6406758],[-80.791458,35.6406953],[-80.7914848,35.6407164],[-80.7915059,35.6407435],[-80.7915194,35.6407747],[-80.7915249,35.6408082],[-80.7915217,35.6408427],[-80.7915101,35.6408767],[-80.7914865,35.640905],[-80.7914589,35.6409284],[-80.7914304,35.6409479],[-80.7914032,35.6409657],[-80.7913771,35.6409826],[-80.7913513,35.6409995],[-80.7913252,35.6410161],[-80.7912992,35.6410328],[-80.7912731,35.6410494],[-80.791247,35.641066],[-80.791221,35.6410827],[-80.7911949,35.6410993],[-80.791169,35.6411161],[-80.791143,35.6411328],[-80.7911172,35.6411495],[-80.7910914,35.6411662],[-80.7910659,35.6411829]]}}
   ]
 }

@@ -16,6 +16,7 @@ export const inferredBorderLicenses = z.enum([
   "DL-DE-BY-2.0",
   "CC-BY-4.0",
   "LicenseRef-GUGiK-open-data",
+  "LicenseRef-NCOneMap-open-data",
   "LicenseRef-MapTiler-Derived-Borders",
 ]);
 export const borderInferenceSchema = z

@@ -10,6 +10,7 @@ for (const [track, layout] of [
   ["ca-canadian-tire-motorsports-park-ddt-78298a58", "ddt-two-kinks"],
   ["pe-autodromo-la-chutana-293467712", "main"],
   ["us-iowa-speedway-119238784", "main"],
+  ["us-gopro-motorplex-e67c71ed", "gopro-motorplex"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
@@ -24,6 +25,7 @@ for (const [track, layout] of [
       page.on("pageerror", (e) => errors.push(e.message));
       for (const host of [
         "ws.geoservices.lrc.gov.on.ca",
+        "services.nconemap.gov",
         "imagery.nationalmap.gov",
         "server.arcgisonline.com",
         "api.maptiler.com",
