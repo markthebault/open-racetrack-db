@@ -166,6 +166,7 @@ test("a redistributed refined GeoJSON verifies without imagery and detects edits
   for (const [id, layoutId] of [
     ["us-arizona-motorsports-park-9f848c55", "arizona-motorsports-park"],
     ["gb-curborough-68a60e27", "curborough"],
+    ["gb-m-sport-proving-ground-fe7c7315", "msport-inner-variant"],
   ]) {
     const entry = (await read("data/index.json")).tracks.find(
         (t: { id: string }) => t.id === id,

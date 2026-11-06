@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T14:59:12.241Z",
+  "generatedAt": "2026-11-06T15:21:08.029Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1177,14 +1177,24 @@
       "layoutId": "ddt-one-kink",
       "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/ddt-one-kink.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Native-image review confirms broad paved runoff at the northern bends and pit-side paving. Automatic limits vary between road seams and runoff. Both driving limits require measured paint/curb interpretation before saving.",
+      "visualScreening": {
+        "scope": "Overview, forty native-image sections per variant, and enlarged northern cross-sections",
+        "outcome": "held",
+        "note": "One-kink outer seed reaches 28.4 m near station 629; a nominal-width replacement would not establish the road limits."
+      }
     },
     {
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
       "layoutId": "ddt-two-kinks",
       "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/ddt-two-kinks.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Native-image review confirms broad paved runoff at the northern bends and pit-side paving. Automatic limits vary between road seams and runoff. Both driving limits require measured paint/curb interpretation before saving.",
+      "visualScreening": {
+        "scope": "Overview, forty native-image sections per variant, and enlarged northern cross-sections",
+        "outcome": "held",
+        "note": "One-kink outer seed reaches 28.4 m near station 629; a nominal-width replacement would not establish the road limits."
+      }
     },
     {
       "trackId": "ca-cayuga-motor-speedway-66930451",
@@ -2914,8 +2924,22 @@
       "trackId": "gb-m-sport-proving-ground-fe7c7315",
       "layoutId": "msport-inner-variant",
       "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-inner-variant.geojson",
-      "status": "needs-imagery-review",
-      "reason": "The proposed inner limit extends into an island at a lane junction; correction is required.",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9142,
+          0.9538
+        ],
+        "medianInteriorDifference": [
+          0.0325,
+          0.0314
+        ],
+        "samplingStepM": 2.99747316447697,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "96b15b0949e1b122789ab2ab691147db0511e5ea24c845d43780b25accf0ce16"
     },
@@ -2924,7 +2948,9 @@
       "layoutId": "msport-long-variant",
       "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-long-variant.geojson",
       "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "reason": "Automatic borders cross themselves around the northern circle entry and triangle joins. Diagnostic inspection found inner crossings at stations 19/30, 74/98 and 120/127 and outer crossings at 77/94 and 146/154. Needs measured junction/return limits; invalid diagnostic proposal was not saved.",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "96b15b0949e1b122789ab2ab691147db0511e5ea24c845d43780b25accf0ce16"
     },
     {
       "trackId": "gb-mallory-park-racing-circuit-215336384",
