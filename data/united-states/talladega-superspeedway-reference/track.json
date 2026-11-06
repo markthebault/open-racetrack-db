@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Talladega Superspeedway",
       "file": "layouts/main.geojson",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "United States/Talladega Superspeedway"
+      "referenceId": "United States/Talladega Superspeedway",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9581492.86650781%2C3969736.5963638932%2C-9580153.611400466%2C3971948.7664010776&bboxSR=3857&imageSR=3857&size=1488%2C2458&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:42.193Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

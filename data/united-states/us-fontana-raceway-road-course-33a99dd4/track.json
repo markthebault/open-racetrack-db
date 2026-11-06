@@ -20,8 +20,8 @@
     {
       "id": "fontana-raceway-road-course",
       "name": "Fontana Raceway Road Course",
-      "referenceId": "United States/Fontana Raceway Road Course",
       "file": "layouts/fontana-raceway-road-course.geojson",
+      "referenceId": "United States/Fontana Raceway Road Course",
       "description": "Draft configuration: The organizer identifies the historical 2.8-mile auto competition ROVAL. The pinned 2018 independent source retains the complete oval return, Northern rectangular infield hairpin, Eastern inner hairpin, Western infield S and short Southern diagonal chicane. The extra rectangular zigzag through the Northern paddock is excluded. Public-domain 2022 aerial imagery confirms these paved connections independently. The 4544.8 m trace remains unscaled against the 4509 m catalogue distance, with historical temporary barrier alignment and fine corner detail kept draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4544.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T22:27:41.201Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13080834.283060687%2C4040286.9717503577%2C-13079235.188576303%2C4041195.170616412&bboxSR=3857&imageSR=3857&size=1766%2C1003&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:47:57.196Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

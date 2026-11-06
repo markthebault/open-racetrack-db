@@ -27,8 +27,8 @@
     {
       "id": "summit-point-shenandoah",
       "name": "Summit Point Shenandoah",
-      "referenceId": "United States/Summit Point Shenandoah",
       "file": "layouts/summit-point-shenandoah.geojson",
+      "referenceId": "United States/Summit Point Shenandoah",
       "description": "Draft configuration: The complete independently mapped main Shenandoah loop follows the long outer return, both terminal hairpins and the inner Karussell section identified by the operator full-configuration plan. The two optional crossover connectors and unrelated service or training roads are excluded. The actual source centreline is 3379.8 m; the operator describes the full course as 2.2 miles, while the catalogue scalar is 3794 m. These differences are recorded without scaling or warping coordinates. Alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3379.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -59,6 +59,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:57:16.986Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8681053.389413519%2C4755801.705685634%2C-8680017.55717073%2C4756696.310837173&bboxSR=3857&imageSR=3857&size=1070%2C924&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:43.810Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

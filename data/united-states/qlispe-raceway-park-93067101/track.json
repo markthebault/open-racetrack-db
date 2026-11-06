@@ -27,8 +27,8 @@
     {
       "id": "spokane-county-raceway",
       "name": "Spokane County Raceway",
-      "referenceId": "United States/Spokane County Raceway",
       "file": "layouts/spokane-county-raceway.geojson",
+      "referenceId": "United States/Spokane County Raceway",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3555.6 m. Difference from the supplied layout distance 4.4 m. Course configuration still requires visual review."
     }
   ],
@@ -50,6 +50,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13088723.02251664%2C6050021.648594796%2C-13087153.23795164%2C6052390.780499812&bboxSR=3857&imageSR=3857&size=1410%2C2128&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:54:16.488Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
