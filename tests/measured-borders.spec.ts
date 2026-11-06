@@ -9,6 +9,7 @@ for (const [track, layout] of [
   ["ca-canadian-tire-motorsports-park-ddt-78298a58", "ddt-one-kink"],
   ["ca-canadian-tire-motorsports-park-ddt-78298a58", "ddt-two-kinks"],
   ["pe-autodromo-la-chutana-293467712", "main"],
+  ["us-iowa-speedway-119238784", "main"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
