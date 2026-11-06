@@ -28,15 +28,15 @@
     {
       "id": "loheac",
       "name": "Loheac",
-      "referenceId": "France/Loheac",
       "file": "layouts/loheac.geojson",
+      "referenceId": "France/Loheac",
       "description": "Draft configuration: Full paved road circuit uses the northern triangle, internal hairpin and rounded southern outer curve; service and shortened branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2014.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "loheac-rallycross",
       "name": "Loheac Rallycross",
-      "referenceId": "France/Loheac Rallycross",
       "file": "layouts/loheac-rallycross.geojson",
+      "referenceId": "France/Loheac Rallycross",
       "description": "Draft configuration: Rallycross main course uses the full northern straight and broad eastern return, excluding the shorter northern alternative. The event regulations identify a 1,088 m main lap and 1,070 m alternative lap; the independently mapped longer branch measures 1,079.2 m. The catalogue scalar 1,409 m differs. Course branches agree with the configuration picture; all coordinates remain exact source nodes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1079.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -85,6 +85,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:06:20.403Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "ign-bd-ortho-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=-211107.4225810507%2C6083885.563954134%2C-210589.35437103573%2C6084685.155674075&WIDTH=464&HEIGHT=716",
+      "license": "Etalab-2.0",
+      "retrievedAt": "2026-11-05T23:45:20.396Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gouv.fr/datasets/bd-ortho-r. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

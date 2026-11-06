@@ -7,6 +7,7 @@ export async function existingLayoutExtras(
 ): Promise<{
   borders: Layout["features"];
   model3d?: Layout["metadata"]["model3d"];
+  borderInference?: Layout["metadata"]["borderInference"];
 }> {
   let bytes: string;
   try {
@@ -24,6 +25,7 @@ export async function existingLayoutExtras(
         feature.properties.role === "outer",
     ),
     model3d: data.metadata.model3d,
+    borderInference: data.metadata.borderInference,
   };
 }
 

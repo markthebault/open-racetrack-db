@@ -35,63 +35,63 @@
       "id": "silverstone-gp-wing-sf",
       "name": "Silverstone GP Wing SF",
       "file": "layouts/silverstone-gp-wing-sf.geojson",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
-      "referenceId": "United Kingdom/Silverstone GP Wing SF"
+      "referenceId": "United Kingdom/Silverstone GP Wing SF",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     },
     {
       "id": "silverstone-gp-old-sf",
       "name": "Silverstone GP Old SF",
       "file": "layouts/silverstone-gp-old-sf.geojson",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
-      "referenceId": "United Kingdom/Silverstone GP Old SF"
+      "referenceId": "United Kingdom/Silverstone GP Old SF",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     },
     {
       "id": "silverstone-stowe",
       "name": "Silverstone Stowe",
-      "referenceId": "United Kingdom/Silverstone Stowe",
       "file": "layouts/silverstone-stowe.geojson",
+      "referenceId": "United Kingdom/Silverstone Stowe",
       "description": "Draft configuration: Stowe course includes the northern kink and full southern projecting hairpin; short straight-return variants excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1742.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "silverstone-gp-historic",
       "name": "Silverstone GP Historic",
-      "referenceId": "United Kingdom/Silverstone GP Historic",
       "file": "layouts/silverstone-gp-historic.geojson",
+      "referenceId": "United Kingdom/Silverstone GP Historic",
       "description": "Draft configuration selected from the independently named circuit relation 51160. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "silverstone-national",
       "name": "Silverstone National",
-      "referenceId": "United Kingdom/Silverstone National",
       "file": "layouts/silverstone-national.geojson",
+      "referenceId": "United Kingdom/Silverstone National",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2635.1 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review."
     },
     {
       "id": "silverstone-international",
       "name": "Silverstone International",
-      "referenceId": "United Kingdom/Silverstone International",
       "file": "layouts/silverstone-international.geojson",
+      "referenceId": "United Kingdom/Silverstone International",
       "description": "Draft configuration: Historical southern international configuration uses the rounded southern outer corner and northern shoulder; the additional northern zigzag branch is excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2975.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "silverstone-rx",
       "name": "Silverstone RX",
-      "referenceId": "United Kingdom/Silverstone RX",
       "file": "layouts/silverstone-rx.geojson",
+      "referenceId": "United Kingdom/Silverstone RX",
       "description": "The FIA 2018 event plan identifies the ten-turn Standard rallycross circuit and its separate start-grid approach. The pinned Environment Agency January–March 2019 National LIDAR Programme 1 m intensity raster independently locates the asphalt junction, both gravel hairpins and intervening bends. This is reflected laser intensity, not color aerial photography. The long northeastern Stowe loop, southwestern Stowe loop, kart courses, pits and the separate Joker bend are excluded. The closed Standard route measures independently of the approach. The supplied general configuration also depicts a start-grid stem, so the two connected sections are retained as separate paths rather than closing the stem into a fictitious lap. The approach follows the independently visible shared asphalt grid; its endpoint is provisional and is not asserted to be a timing endpoint. Native survey grid, crop transform, grayscale stretch, nearest-neighbor reprojection and source hashes are pinned. Neither nominal distance nor private timing positions determine any course vertex. Historical correspondence, grid extent and exact racing-line alignment remain draft. Independently digitized aerial branch network: 1238.1 m. Shared edges count once; this configuration set is not a single lap, and no line joins separate paths. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "silverstone-combo",
       "name": "Silverstone Combo",
-      "referenceId": "United Kingdom/Silverstone Combo",
       "file": "layouts/silverstone-combo.geojson",
+      "referenceId": "United Kingdom/Silverstone Combo",
       "description": "Combined mapped configurations: Silverstone GP Wing SF, Silverstone GP Old SF, Silverstone GP Historic, Silverstone National, Silverstone International. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "rallycross-standard",
       "name": "Rallycross Standard",
-      "description": "The FIA identifies the 972 m Standard rallycross lap, including the shorter western S and both gravel hairpins. Independent 2019 Environment Agency 1 m LiDAR intensity locates its 981.1 m draft centerline. The start-grid approach, Joker bend, other Stowe branches and pits are excluded. Native georeferencing and resolution remain unchanged; no coordinates are fitted to nominal distance or private timing positions. Fine racing-line placement and historical alignment remain draft.",
-      "file": "layouts/rallycross-standard.geojson"
+      "file": "layouts/rallycross-standard.geojson",
+      "description": "The FIA identifies the 972 m Standard rallycross lap, including the shorter western S and both gravel hairpins. Independent 2019 Environment Agency 1 m LiDAR intensity locates its 981.1 m draft centerline. The start-grid approach, Joker bend, other Stowe branches and pits are excluded. Native georeferencing and resolution remain unchanged; no coordinates are fitted to nominal distance or private timing positions. Fine racing-line placement and historical alignment remain draft."
     }
   ],
   "sources": [
@@ -211,6 +211,15 @@
       "license": "OGL-3.0",
       "retrievedAt": "2026-10-02T13:28:16.440420Z",
       "evidenceNote": "Reuse evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. The FIA identifies the 972 m Standard rallycross lap, including the shorter western S and both gravel hairpins. Independent 2019 Environment Agency 1 m LiDAR intensity locates its 981.1 m draft centerline. The start-grid approach, Joker bend, other Stowe branches and pits are excluded. Native georeferencing and resolution remain unchanged; no coordinates are fitted to nominal distance or private timing positions. Fine racing-line placement and historical alignment remain draft."
+    },
+    {
+      "id": "pinned-border-aee35c7ca2e4",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SP6540",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T13:28:16.440420Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

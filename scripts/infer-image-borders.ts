@@ -1,0 +1,258 @@
+import { PNG } from "pngjs";
+import { plane, equal, type Position } from "../src/geo";
+export type Raster = {
+  width: number;
+  height: number;
+  data: Uint8Array;
+  extent: [number, number, number, number];
+};
+const R = 6378137;
+const mercator = (p: Position): Position => [
+  (R * p[0] * Math.PI) / 180,
+  R * Math.asinh(Math.tan((p[1] * Math.PI) / 180)),
+];
+const average = (values: Position[], i: number, radius: number): Position => {
+  let x = 0,
+    y = 0;
+  for (let j = -radius; j <= radius; j++) {
+    const p = values[(i + j + values.length) % values.length];
+    x += p[0];
+    y += p[1];
+  }
+  return [x / (radius * 2 + 1), y / (radius * 2 + 1)];
+};
+const norm = (a: number[], b: number[]) =>
+  Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+export function decodeRaster(bytes: Buffer, extent: Raster["extent"]): Raster {
+  const png = PNG.sync.read(bytes);
+  return { width: png.width, height: png.height, data: png.data, extent };
+}
+function pixel(image: Raster, geo: Position): number[] {
+  const p = mercator(geo),
+    [w, s, e, n] = image.extent,
+    x = ((p[0] - w) / (e - w)) * image.width - 0.5,
+    y = ((n - p[1]) / (n - s)) * image.height - 0.5;
+  if (x < 0 || y < 0 || x >= image.width - 1 || y >= image.height - 1)
+    throw new Error("Imagery does not cover the full boundary search corridor");
+  const a = Math.floor(x),
+    b = Math.floor(y),
+    u = x - a,
+    v = y - b,
+    out = [0, 0, 0];
+  for (const [dx, dy, weight] of [
+    [0, 0, (1 - u) * (1 - v)],
+    [1, 0, u * (1 - v)],
+    [0, 1, (1 - u) * v],
+    [1, 1, u * v],
+  ]) {
+    const k = ((b + dy) * image.width + a + dx) * 4;
+    if (image.data[k + 3] < 128)
+      throw new Error("Imagery has missing coverage");
+    for (let c = 0; c < 3; c++) out[c] += (image.data[k + c] / 255) * weight;
+  }
+  return out;
+}
+function selfCrosses(path: Position[]) {
+  const cell = 24,
+    cells = new Map<string, number[]>();
+  for (let i = 1; i < path.length; i++) {
+    const a = path[i - 1],
+      b = path[i],
+      seen = new Set<number>();
+    for (
+      let x = Math.floor(Math.min(a[0], b[0]) / cell);
+      x <= Math.floor(Math.max(a[0], b[0]) / cell);
+      x++
+    )
+      for (
+        let y = Math.floor(Math.min(a[1], b[1]) / cell);
+        y <= Math.floor(Math.max(a[1], b[1]) / cell);
+        y++
+      ) {
+        const key = `${x},${y}`;
+        for (const j of cells.get(key) ?? []) seen.add(j);
+        if (!cells.has(key)) cells.set(key, []);
+        cells.get(key)!.push(i);
+      }
+    for (const j of seen) {
+      if (Math.abs(i - j) <= 1 || (i === path.length - 1 && j === 1)) continue;
+      const c = path[j - 1],
+        d = path[j];
+      const cross = (p: Position, q: Position, r: Position) =>
+        (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0]);
+      if (
+        cross(a, b, c) * cross(a, b, d) < 0 &&
+        cross(c, d, a) * cross(c, d, b) < 0
+      )
+        return true;
+    }
+  }
+  return false;
+}
+/** Image-driven proposals only. Evidence metrics are not calibrated positional confidence. */
+export function inferImageBorders(trace: Position[], image: Raster) {
+  if (!equal(trace[0], trace.at(-1)!))
+    throw new Error(
+      "A single closed route is required to classify inner and outer edges",
+    );
+  const projection = plane(trace[0]),
+    raw = trace.map((p) => projection.to(p)),
+    stations = [0];
+  for (let i = 1; i < raw.length; i++)
+    stations.push(
+      stations[i - 1] +
+        Math.hypot(raw[i][0] - raw[i - 1][0], raw[i][1] - raw[i - 1][1]),
+    );
+  const count = Math.max(12, Math.ceil(stations.at(-1)! / 3)),
+    step = stations.at(-1)! / count,
+    path: Position[] = [];
+  let segment = 0;
+  for (let i = 0; i < count; i++) {
+    const s = i * step;
+    while (segment < raw.length - 2 && stations[segment + 1] < s) segment++;
+    const t =
+      (s - stations[segment]) / (stations[segment + 1] - stations[segment]);
+    path.push([
+      raw[segment][0] + (raw[segment + 1][0] - raw[segment][0]) * t,
+      raw[segment][1] + (raw[segment + 1][1] - raw[segment][1]) * t,
+    ]);
+  }
+  const smooth = path.map((_, i) => average(path, i, 1));
+  const normals = smooth.map((_, i): Position => {
+    const a = smooth[(i - 2 + count) % count],
+      b = smooth[(i + 2) % count],
+      d = Math.hypot(b[0] - a[0], b[1] - a[1]);
+    return [-(b[1] - a[1]) / d, (b[0] - a[0]) / d];
+  });
+  const samples = smooth.map((p, i) =>
+    Array.from({ length: 121 }, (_, j) =>
+      pixel(
+        image,
+        projection.from([
+          p[0] + normals[i][0] * (j - 60) * 0.5,
+          p[1] + normals[i][1] * (j - 60) * 0.5,
+        ]),
+      ),
+    ),
+  );
+  const centers = samples.map((row) =>
+    [0, 1, 2].map((c) => row.slice(58, 63).reduce((s, p) => s + p[c], 0) / 5),
+  );
+  const means = (row: number[][], indices: number[]) =>
+    [0, 1, 2].map(
+      (c) => indices.reduce((s, j) => s + row[j][c], 0) / indices.length,
+    );
+  const borders: Position[][] = [],
+    evidence: { strong: number; interior: number }[] = [],
+    widths: number[][] = [];
+  for (const sign of [1, -1]) {
+    const options = 47,
+      contrast: number[][] = [],
+      interior: number[][] = [],
+      scores: number[][] = [];
+    for (let i = 0; i < count; i++) {
+      const cs: number[] = [],
+        ins: number[] = [],
+        score: number[] = [];
+      for (let j = 0; j < options; j++) {
+        const offset = 2 + j * 0.5,
+          k = 60 + sign * offset * 2,
+          inside = means(
+            samples[i],
+            [1, 2, 3, 4].map((v) => k - sign * v),
+          ),
+          outside = means(
+            samples[i],
+            [1, 2, 3, 4].map((v) => k + sign * v),
+          );
+        const c = norm(outside, inside);
+        let residual = 0;
+        for (let a = Math.min(60, k); a <= Math.max(60, k); a++)
+          residual += norm(samples[i][a], centers[i]);
+        residual /= Math.abs(k - 60) + 1;
+        cs.push(c);
+        ins.push(residual);
+        score.push(-2 * c + 6 * residual + 0.003 * offset);
+      }
+      contrast.push(cs);
+      interior.push(ins);
+      scores.push(score);
+    }
+    let dp = new Float64Array(options);
+    const back: Uint8Array[] = [];
+    for (let i = 0; i < count * 2; i++) {
+      const next = new Float64Array(options),
+        prior = new Uint8Array(options);
+      for (let j = 0; j < options; j++) {
+        let best = Infinity;
+        for (
+          let a = Math.max(0, j - 4);
+          a <= Math.min(options - 1, j + 4);
+          a++
+        ) {
+          const v = dp[a] + 0.1 * ((a - j) * 0.5) ** 2;
+          if (v < best) {
+            best = v;
+            prior[j] = a;
+          }
+        }
+        next[j] = best + scores[i % count][j];
+      }
+      dp = next;
+      back.push(prior);
+    }
+    let state = Array.from(dp).indexOf(Math.min(...dp));
+    const chosen = new Uint8Array(count * 2);
+    for (let i = back.length - 1; i >= 0; i--) {
+      chosen[i] = state;
+      state = back[i][state];
+    }
+    const picks = Array.from(chosen.slice(count)),
+      ds = picks.map((j) => 2 + j * 0.5),
+      filtered = ds.map((_, i) => {
+        let sum = 0;
+        for (let j = -2; j <= 2; j++) sum += ds[(i + j + count) % count] / 5;
+        return sum;
+      });
+    const planar = smooth.map((p, i): Position => [
+      p[0] + normals[i][0] * filtered[i] * sign,
+      p[1] + normals[i][1] * filtered[i] * sign,
+    ]);
+    planar.push(planar[0]);
+    if (selfCrosses(planar))
+      throw new Error(
+        "Inferred boundary crosses itself; image needs manual review",
+      );
+    if (picks.filter((j) => j === 0 || j === options - 1).length / count > 0.06)
+      throw new Error(
+        "Too many sections hit the search limit; image needs manual review",
+      );
+    const strong =
+        picks.filter((j, i) => contrast[i][j] > 0.055).length / count,
+      errors = picks.map((j, i) => interior[i][j]).sort((a, b) => a - b),
+      residual = errors[Math.floor(count / 2)];
+    if (strong < 0.75 || residual > 0.12)
+      throw new Error("Insufficient consistent image-edge evidence");
+    const points = planar.map(
+      (p) => projection.from(p).map((v) => Number(v.toFixed(7))) as Position,
+    );
+    borders.push(points);
+    widths.push(filtered);
+    evidence.push({
+      strong: Number(strong.toFixed(4)),
+      interior: Number(residual.toFixed(4)),
+    });
+  }
+  if (widths[0].some((w, i) => w + widths[1][i] > 45))
+    throw new Error(
+      "Image suggests an ambiguous apron or junction wider than 45 m",
+    );
+  const area = (points: Position[]) =>
+    Math.abs(
+      points
+        .slice(1)
+        .reduce((a, p, i) => a + points[i][0] * p[1] - p[0] * points[i][1], 0),
+    );
+  const inner = area(borders[0]) < area(borders[1]) ? 0 : 1;
+  return { inner: borders[inner], outer: borders[1 - inner], evidence, step };
+}

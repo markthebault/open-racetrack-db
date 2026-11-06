@@ -27,8 +27,8 @@
     {
       "id": "albacete-old",
       "name": "Albacete Old",
-      "referenceId": "Spain/Albacete Old",
       "file": "layouts/albacete-old.geojson",
+      "referenceId": "Spain/Albacete Old",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3587.8 m. Difference from the supplied layout distance 10.8 m. Course configuration still requires visual review."
     }
   ],
@@ -50,6 +50,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:38.980Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "ign-pnoa-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=-200192.0643919691%2C4722029.0616523335%2C-199096.5888691909%2C4723115.158720184&WIDTH=1136&HEIGHT=1126",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-05T23:51:18.714Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

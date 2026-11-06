@@ -1232,6 +1232,14 @@ async function select(id: string, requested?: string, push = true) {
     borderOverlay.setLayout(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
+    if (data.metadata.borderInference) {
+      const note = element(
+        "p",
+        `Estimated aerial-image borders · Not manually reviewed. ${data.metadata.borderInference.imagery.attribution}`,
+        "inferred-border-note",
+      );
+      get("selection").append(note);
+    }
     get("play-lap").hidden = !data.metadata.model3d;
     get("play-lap").textContent =
       data.metadata.model3d?.kind === "surface" ? "Explore 3D" : "▷ Play lap";

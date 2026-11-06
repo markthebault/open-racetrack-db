@@ -30,50 +30,50 @@
     {
       "id": "ncm-corvette-race-loop",
       "name": "NCM Corvette Race Loop",
-      "referenceId": "United States/NCM Corvette Race Loop",
       "file": "layouts/ncm-corvette-race-loop.geojson",
+      "referenceId": "United States/NCM Corvette Race Loop",
       "description": "Draft configuration: Outer race loop with direct long straight and northern linked bends; excludes the parallel infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3247.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "ncm-full",
       "name": "NCM Full",
-      "referenceId": "United States/NCM Full",
       "file": "layouts/ncm-full.geojson",
+      "referenceId": "United States/NCM Full",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5003.9 m. Difference from the supplied layout distance 10.1 m. Course configuration still requires visual review."
     },
     {
       "id": "ncm-grand-full",
       "name": "NCM Grand Full",
-      "referenceId": "United States/NCM Grand Full",
       "file": "layouts/ncm-grand-full.geojson",
+      "referenceId": "United States/NCM Grand Full",
       "description": "Draft configuration: Full course combining the western inner return and northeastern hooked extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5038.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "ncm-grand-straight",
       "name": "NCM Grand Straight",
-      "referenceId": "United States/NCM Grand Straight",
       "file": "layouts/ncm-grand-straight.geojson",
+      "referenceId": "United States/NCM Grand Straight",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4808.2 m. Difference from the supplied layout distance 3.8 m. Course configuration still requires visual review."
     },
     {
       "id": "ncm-r-t-course",
       "name": "NCM R&T Course",
-      "referenceId": "United States/NCM R&T Course",
       "file": "layouts/ncm-r-t-course.geojson",
+      "referenceId": "United States/NCM R&T Course",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4745.6 m. Difference from the supplied layout distance 3.4 m. Course configuration still requires visual review."
     },
     {
       "id": "ncm-short-east",
       "name": "NCM Short East",
-      "referenceId": "United States/NCM Short East",
       "file": "layouts/ncm-short-east.geojson",
+      "referenceId": "United States/NCM Short East",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1779.8 m. Difference from the supplied layout distance 15.8 m. Course configuration still requires visual review."
     },
     {
       "id": "ncm-west",
       "name": "NCM West",
-      "referenceId": "United States/NCM West",
       "file": "layouts/ncm-west.geojson",
+      "referenceId": "United States/NCM West",
       "description": "Draft configuration: The independently mapped West circuit follows its complete northern return, central inner loop, eastern West-course hairpin and southern chicane. The operator separate-circuit plan identifies these West branches and a nominal two-mile course; the actual source route is 3234.3 m. The East circuit, long alternative straight, pit and paddock roads are excluded. The catalogue distance of 3385 m is retained without changing source coordinates; alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3234.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -149,6 +149,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:58:48.055Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9615226.209722685%2C4438879.612636188%2C-9614171.58119999%2C4439809.862613145&bboxSR=3857&imageSR=3857&size=1123%2C991&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:53:10.026Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -1,6 +1,6 @@
 # 3D models for the bordered catalogue
 
-The atlas now has **882 3D layouts across all 534 circuits with inner and outer borders**. There are 841 playable closed laps and 41 surface-only views: 24 branch networks, one open route and 16 closed routes whose trace/border alignment fails the lap audit. Every layout has its own existing GeoJSON, with no mesh, image or trajectory file added.
+The first catalogue-wide batch prepared **882 3D layouts across 534 circuits with existing inner and outer borders**. Additional image-derived estimates and their coverage gaps are tracked in [15-imagery-border-inference.md](15-imagery-border-inference.md). There are 841 playable closed laps and 41 surface-only views: 24 branch networks, one open route and 16 closed routes whose trace/border alignment fails the lap audit. Every layout has its own existing GeoJSON, with no mesh, image or trajectory file added.
 
 Choose **3D** to see the saved road boundaries as a road surface with illustrative curbs. **Play lap** opens the car player for eligible closed routes. Surface-only layouts instead offer **Explore 3D** and explain why playback is unavailable. The main atlas also retains **Map**, **Satellite** and **3D**. Satellite requires the configured MapTiler browser key.
 

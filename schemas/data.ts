@@ -1,3 +1,7 @@
+import {
+  borderInferenceSchema,
+  inferredBorderLicenses,
+} from "./border-inference";
 import { z } from "zod";
 import { trackModelSchema } from "./track-model";
 import {
@@ -93,11 +97,19 @@ const traceProps = z.strictObject({
   role: z.literal("trace"),
   sourceIds: z.array(slug).min(1),
 });
-const borderProps = z.strictObject({
-  role: z.enum(["inner", "outer"]),
-  sourceIds: z.array(slug).length(0),
-  license: z.literal("LicenseRef-Track-Borders"),
-});
+const borderProps = z.union([
+  z.strictObject({
+    role: z.enum(["inner", "outer"]),
+    sourceIds: z.array(slug).length(0),
+    license: z.literal("LicenseRef-Track-Borders"),
+  }),
+  z.strictObject({
+    role: z.enum(["inner", "outer"]),
+    sourceIds: z.array(slug).length(1),
+    license: inferredBorderLicenses,
+    borderStatus: z.literal("estimated"),
+  }),
+]);
 export function isTimingRole(
   role: string,
 ): role is "start_finish" | "start" | "finish" {
@@ -138,6 +150,7 @@ export const layoutSchema = z.strictObject({
     reviewedAt: z.iso.date().nullable(),
     notes: z.array(z.string()),
     model3d: trackModelSchema.optional(),
+    borderInference: borderInferenceSchema.optional(),
   }),
   features: z
     .array(
@@ -274,6 +287,32 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("bbox: antimeridian unsupported");
   if (m.geometryStatus === "reviewed" && !m.reviewedAt)
     throw new Error("metadata.reviewedAt: required for reviewed geometry");
+  if (m.borderInference) {
+    if (
+      borders.length !== 2 ||
+      borders.some((f) => !("borderStatus" in f.properties))
+    )
+      throw new Error(
+        "borderInference: requires two estimated imagery borders",
+      );
+    const info = m.borderInference.imagery,
+      source = track.sources.find((s) => s.id === info.sourceId);
+    if (!source || source.type !== "imagery" || source.license !== info.license)
+      throw new Error("borderInference: imagery rights/source mismatch");
+    if (
+      borders.some(
+        (f) =>
+          !("license" in f.properties) ||
+          f.properties.license !== info.license ||
+          f.properties.sourceIds[0] !== info.sourceId,
+      )
+    )
+      throw new Error("borderInference: feature licence/source mismatch");
+    const [w, s, e, n] = info.extent3857;
+    if (w >= e || s >= n)
+      throw new Error("borderInference: invalid image extent");
+  } else if (borders.some((f) => "borderStatus" in f.properties))
+    throw new Error("Estimated imagery borders require source evidence");
   if (m.model3d) {
     if (borders.length !== 2) throw new Error("model3d: requires both borders");
     if (m.model3d.kind !== "surface" && (!m.closed || isNetwork))

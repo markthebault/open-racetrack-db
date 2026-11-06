@@ -8,9 +8,9 @@ Authoring inputs and processing procedures are maintained separately from the pu
 
 ## Optional track borders
 
-Some layout GeoJSON files include `inner` and `outer` features. They are separate supplemental data, not OSM-derived route coordinates. Their feature-level `license` value is `LicenseRef-Track-Borders`. This identifier denotes a separate rights scope: this repository makes no additional redistribution or commercial-use license grant for these features. Obtain suitable permission before reusing them beyond the rights you already hold.
+Some layout GeoJSON files include `inner` and `outer` features. They are separate supplemental data, not OSM-derived route coordinates. Legacy supplemental features use the feature-level `license` value `LicenseRef-Track-Borders`. This identifier denotes a separate rights scope: this repository makes no additional redistribution or commercial-use license grant for those legacy features. Obtain suitable permission before reusing them beyond the rights you already hold.
 
-When borders are present, `metadata.licenseScope` is `trace-and-timing`: the collection's ODbL declaration and OSM attribution apply to its original trace and applicable timing data, not to the supplemental border features. Borders have no borrowed OSM source IDs. Application code remains MIT. Neither a display option nor inclusion in a GeoJSON download changes the rights attached to a feature.
+When borders are present, `metadata.licenseScope` is `trace-and-timing`: the collection's ODbL declaration and OSM attribution apply to its original trace and applicable timing data, not to the supplemental border features. Legacy supplemental borders have no borrowed OSM source IDs. Estimated imagery-derived borders instead carry their imagery source ID, the source-specific feature licence (for example public-domain NAIP or Etalab-2.0 IGN imagery), and `borderStatus: estimated`. Their `metadata.borderInference` records attribution, reuse evidence, raster hashes, georeferencing and image-evidence metrics. These estimates are unreviewed; source pixel size and edge evidence do not certify positional accuracy. Application code remains MIT. Neither a display option nor inclusion in a GeoJSON download changes the rights attached to a feature.
 
 
 ## Terrain grids

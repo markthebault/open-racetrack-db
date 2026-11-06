@@ -430,6 +430,19 @@ export function openLap(
       if (closed) return;
       find(".lap-imagery-credit").textContent =
         `Imagery: ${recipe.imagery.attribution}`;
+      if (layout.metadata.borderInference) {
+        const evidence = layout.metadata.borderInference;
+        const note = document.createElement("p");
+        note.textContent =
+          "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
+        const credit = document.createElement("a");
+        credit.href = evidence.imagery.reuseEvidenceUrl;
+        credit.target = "_blank";
+        credit.rel = "noreferrer";
+        credit.textContent = evidence.imagery.attribution;
+        note.append(" ", credit);
+        find(".lap-evidence").append(note);
+      }
       const road = buildRoad(layout);
       lap = simulateLap(road);
       if (closed) return;

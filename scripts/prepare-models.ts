@@ -133,6 +133,9 @@ for (const selection of selections) {
           timing: layout.metadata.timing,
           lengthM: layout.metadata.lengthM,
           terrain,
+          ...(layout.metadata.borderInference
+            ? { borderInference: layout.metadata.borderInference }
+            : {}),
         }),
       )
       .digest("hex");

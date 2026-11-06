@@ -22,14 +22,14 @@
       "id": "main",
       "name": "Monteblanco",
       "file": "layouts/main.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Spain/Monteblanco"
+      "referenceId": "Spain/Monteblanco",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "monteblanco-variant-1",
       "name": "Monteblanco Variant 1",
-      "referenceId": "Spain/Monteblanco Variant 1",
       "file": "layouts/monteblanco-variant-1.geojson",
+      "referenceId": "Spain/Monteblanco Variant 1",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3838.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review."
     }
   ],
@@ -51,6 +51,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:38.980Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "ign-pnoa-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=-732327.6299938229%2C4488948.699818089%2C-731035.7717415268%2C4490125.104865287&WIDTH=1370&HEIGHT=1247",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-05T23:51:25.474Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

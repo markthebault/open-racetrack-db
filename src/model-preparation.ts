@@ -25,6 +25,26 @@ export const WORLD_IMAGERY_CREDIT =
 
 /** Exact request aspect ratio avoids an undocumented extent adjustment by the map service. */
 export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
+  const reference = layout.metadata.borderInference?.imagery;
+  if (reference) {
+    const url = new URL(reference.url);
+    const exported = /\/exportImage$/i.test(url.pathname),
+      wms = url.searchParams.get("REQUEST")?.toUpperCase() === "GETMAP";
+    if (exported || wms) {
+      if (exported) {
+        url.searchParams.set("f", "image");
+        url.searchParams.set("bbox", reference.extent3857.join(","));
+        url.searchParams.set("size", `${reference.width},${reference.height}`);
+      }
+      return {
+        url: url.href,
+        extent3857: reference.extent3857,
+        attribution: reference.attribution,
+        termsUrl: reference.reuseEvidenceUrl,
+      };
+    }
+  }
+
   const radians = Math.PI / 180,
     r = 6378137;
   const points = layout.features.flatMap((f) =>
@@ -210,8 +230,8 @@ export function prepareTrackModel(
     },
     sources: {
       elevation: terrain.source.url,
-      imagery: WORLD_IMAGERY_SERVICE,
-      imageryCredit: WORLD_IMAGERY_CREDIT,
+      imagery: imageryForLayout(layout).url,
+      imageryCredit: imageryForLayout(layout).attribution,
       notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the mapped trace, not an official length measurement. ${layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
     },
   };
@@ -278,8 +298,8 @@ export function prepareSurfaceModel(
     },
     sources: {
       elevation: terrain.source.url,
-      imagery: WORLD_IMAGERY_SERVICE,
-      imageryCredit: WORLD_IMAGERY_CREDIT,
+      imagery: imageryForLayout(layout).url,
+      imageryCredit: imageryForLayout(layout).attribution,
       notes: `Road surfaces are triangulated directly between this layout's saved border rings. Elevation follows the approximately ${terrain.source.sampleSpacingM} m terrain raster, not a survey of the road. Curbs are geometry-based illustrations on curved boundaries; their locations, widths, heights and colours are assumed, not extracted from imagery. Banking is unknown. ${reason === "route-not-closed" ? "The source is an open route or branch network, without one validated closed driving order." : "The source trace and borders have too many unmatched cross-sections for safe lap reconstruction."} Lap playback is unavailable. Boundary coordinates and their separate feature-level licence are preserved. Imagery loads externally on demand; no image bytes or meshes are stored.`,
     },
   });
