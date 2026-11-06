@@ -27,8 +27,8 @@
     {
       "id": "slovakia-ring",
       "name": "Slovakia-Ring",
-      "referenceId": "Slovakia/Slovakia-Ring",
       "file": "layouts/slovakia-ring.geojson",
+      "referenceId": "Slovakia/Slovakia-Ring",
       "description": "Draft configuration: Full circuit using the rounded northeastern turnaround and southern infield returns; excludes the extra northeastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5921.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -59,6 +59,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:11:50.946Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:25:11.731Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

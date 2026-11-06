@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import jpeg from "jpeg-js";
 import { PNG } from "pngjs";
@@ -152,20 +152,26 @@ export function licensedImagery(
     } catch (e) {
       if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
     }
-    const credit = await (attribution ??= request(
-      "maps/satellite-v4/tiles.json",
-    )
-      .then((bytes) => {
-        const json = JSON.parse(bytes.toString());
-        return String(json.attribution || "© MapTiler")
-          .replace(/<[^>]+>/g, "")
-          .replace(/&copy;/g, "©")
-          .replace(/&amp;/g, "&");
-      })
-      .catch((error) => {
-        attribution = undefined;
-        throw error;
-      }));
+    const credit = await (attribution ??= (async () => {
+      // Reuse attribution from a validated cached mosaic before making a metadata request.
+      for (const name of await readdir(root))
+        if (name.startsWith("mosaic-") && name.endsWith(".json")) {
+          const info = borderInferenceSchema.shape.imagery.parse(
+            JSON.parse(await readFile(`${root}/${name}`, "utf8")),
+          );
+          if (info.tiles?.provider === "maptiler-satellite-v4")
+            return info.attribution;
+        }
+      const bytes = await request("maps/satellite-v4/tiles.json"),
+        json = JSON.parse(bytes.toString());
+      return String(json.attribution || "© MapTiler")
+        .replace(/<[^>]+>/g, "")
+        .replace(/&copy;/g, "©")
+        .replace(/&amp;/g, "&");
+    })().catch((error) => {
+      attribution = undefined;
+      throw error;
+    }));
     // Request only tiles touched by the road search corridor, with transparent cells elsewhere.
     const needed = new Set<string>();
     for (const path of paths)

@@ -134,7 +134,7 @@ export class LapScene {
   private cameraRig: LapCameraRig;
   private renderState?: ReturnType<typeof sampleLap>;
   private groundGeometry: THREE.PlaneGeometry;
-  private overviewPath?: THREE.LineLoop;
+  private overviewPath?: THREE.Line;
   constructor(
     private container: HTMLElement,
     private road: Road,
@@ -235,7 +235,9 @@ export class LapScene {
     }
     this.scene.add(this.car);
     if (road.length > 15000) {
-      this.overviewPath = new THREE.LineLoop(
+      this.overviewPath = new (
+        road.recipe.kind === "run" ? THREE.Line : THREE.LineLoop
+      )(
         new THREE.BufferGeometry().setFromPoints(
           road.points.map(
             (p) =>

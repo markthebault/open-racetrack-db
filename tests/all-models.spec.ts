@@ -63,7 +63,11 @@ test("every bordered circuit and layout renders its own on-demand road surface i
         String(selected.model.curbs.length),
       );
       await expect(page.locator("#play-lap")).toHaveText(
-        selected.model.kind === "surface" ? "Explore 3D" : "▷ Play lap",
+        selected.model.kind === "surface"
+          ? "Explore 3D"
+          : selected.model.kind === "run"
+            ? "▷ Play run"
+            : "▷ Play lap",
       );
       if (selected.model.kind === "surface")
         await expect(page.locator("#view-notice")).toBeVisible();

@@ -1,38 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T09:36:54.723Z",
-  "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
+  "generatedAt": "2026-11-06T10:30:36.851Z",
+  "note": "Image-derived borders are unreviewed estimates. Candidate rows have imagery-backed proposals but no saved borders yet. Existing borders are preserved; remaining routes need image/geometry review or route interpretation.",
   "records": [
-    {
-      "trackId": "ae-yas-marina-e2656e19",
-      "layoutId": "yas-historical-grand-prix",
-      "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-historical-grand-prix.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "ae-yas-marina-e2656e19",
-      "layoutId": "yas-historical-north-corkscrew",
-      "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-historical-north-corkscrew.geojson",
-      "status": "inferred-estimate",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.9856,
-          0.9987
-        ],
-        "medianInteriorDifference": [
-          0.049,
-          0.0556
-        ],
-        "samplingStepM": 2.9973394987394855,
-        "searchRangeM": [
-          2,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "d3ac3e57c4e0df0056a0b7611c8f709491aba7d3009387db3cd1c49057a858a6"
-    },
     {
       "trackId": "ae-yas-marina-e2656e19",
       "layoutId": "yas-marina-combo",
@@ -44,13 +14,6 @@
       "trackId": "ae-yas-marina-e2656e19",
       "layoutId": "yas-marina-gp-corkscrew",
       "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-marina-gp-corkscrew.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "ae-yas-marina-e2656e19",
-      "layoutId": "yas-marina-north-handling",
-      "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-marina-north-handling.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
@@ -78,6 +41,13 @@
       "imageSha256": "a7047c08e7d4a96b5db528b99b5d8bedb3147d787487dca923d1f1a4cc72b4b4"
     },
     {
+      "trackId": "ae-yas-marina-e2656e19",
+      "layoutId": "yas-marina-north-handling",
+      "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-marina-north-handling.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
       "trackId": "ar-autodromo-ciudad-de-concepcion-del-uruguay-252762414",
       "layoutId": "main",
       "file": "data/argentina/autodromo-ciudad-de-concepcion-del-uruguay-252762414/layouts/main.geojson",
@@ -101,6 +71,20 @@
       "imageSha256": "1d29ba156be83937011a561600c3ddf285b5b9ddd3120b7468442b79034ef7f2"
     },
     {
+      "trackId": "ae-yas-marina-e2656e19",
+      "layoutId": "yas-historical-grand-prix",
+      "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-historical-grand-prix.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
       "layoutId": "autodromo-de-concordia-combo",
       "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/autodromo-de-concordia-combo.geojson",
@@ -108,16 +92,32 @@
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
-      "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
-      "layoutId": "historical-short-course",
-      "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/historical-short-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "trackId": "ae-yas-marina-e2656e19",
+      "layoutId": "yas-historical-north-corkscrew",
+      "file": "data/united-arab-emirates/ae-yas-marina-e2656e19/layouts/yas-historical-north-corkscrew.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9856,
+          0.9987
+        ],
+        "medianInteriorDifference": [
+          0.049,
+          0.0556
+        ],
+        "samplingStepM": 2.9973394987394855,
+        "searchRangeM": [
+          2,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "d3ac3e57c4e0df0056a0b7611c8f709491aba7d3009387db3cd1c49057a858a6"
     },
     {
       "trackId": "ar-autodromo-ciudad-de-concordia-261993714",
-      "layoutId": "main",
-      "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/main.geojson",
+      "layoutId": "historical-short-course",
+      "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/historical-short-course.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -130,15 +130,15 @@
     },
     {
       "trackId": "ar-autodromo-ciudad-de-parana-256068024",
-      "layoutId": "autodromo-de-parana",
-      "file": "data/argentina/autodromo-ciudad-de-parana-256068024/layouts/autodromo-de-parana.geojson",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-ciudad-de-parana-256068024/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "ar-autodromo-ciudad-de-parana-256068024",
-      "layoutId": "main",
-      "file": "data/argentina/autodromo-ciudad-de-parana-256068024/layouts/main.geojson",
+      "layoutId": "autodromo-de-parana",
+      "file": "data/argentina/autodromo-ciudad-de-parana-256068024/layouts/autodromo-de-parana.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
@@ -236,17 +236,17 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
-      "layoutId": "circuito-de-rosario-combo",
-      "status": "unmapped",
-      "reason": "This layout is listed. Its course trace still needs to be mapped."
-    },
-    {
       "trackId": "ar-autodromo-luis-ruben-di-palma-144463794",
       "layoutId": "main",
       "file": "data/argentina/autodromo-luis-ruben-di-palma-144463794/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
+      "layoutId": "circuito-de-rosario-combo",
+      "status": "unmapped",
+      "reason": "This layout is listed. Its course trace still needs to be mapped."
     },
     {
       "trackId": "ar-autodromo-martin-miguel-de-guemes-166054180",
@@ -299,6 +299,13 @@
     },
     {
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
       "layoutId": "autodromo-de-la-pampa",
       "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/autodromo-de-la-pampa.geojson",
       "status": "needs-route-review",
@@ -308,13 +315,6 @@
       "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
       "layoutId": "full-course-chicanes",
       "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/full-course-chicanes.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "ar-autodromo-provincia-de-la-pampa-261477881",
-      "layoutId": "main",
-      "file": "data/argentina/autodromo-provincia-de-la-pampa-261477881/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -357,13 +357,6 @@
     },
     {
       "trackId": "ar-autodromo-san-nicolas-ciudad-549052237",
-      "layoutId": "autodromo-de-san-nicolas",
-      "file": "data/argentina/autodromo-san-nicolas-ciudad-549052237/layouts/autodromo-de-san-nicolas.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "ar-autodromo-san-nicolas-ciudad-549052237",
       "layoutId": "main",
       "file": "data/argentina/autodromo-san-nicolas-ciudad-549052237/layouts/main.geojson",
       "status": "needs-imagery-review",
@@ -373,6 +366,13 @@
       "trackId": "ar-circuito-san-juan-villicum-f819032e",
       "layoutId": "circuito-san-juan-villicum",
       "file": "data/argentina/ar-circuito-san-juan-villicum-f819032e/layouts/circuito-san-juan-villicum.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "ar-autodromo-san-nicolas-ciudad-549052237",
+      "layoutId": "autodromo-de-san-nicolas",
+      "file": "data/argentina/autodromo-san-nicolas-ciudad-549052237/layouts/autodromo-de-san-nicolas.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -540,9 +540,9 @@
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
-      "trackId": "br-autodromo-mega-space-253775870",
+      "trackId": "br-autodromo-plan-speed-park-1232577484",
       "layoutId": "main",
-      "file": "data/brazil/autodromo-mega-space-253775870/layouts/main.geojson",
+      "file": "data/brazil/autodromo-plan-speed-park-1232577484/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -554,9 +554,9 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "br-autodromo-plan-speed-park-1232577484",
+      "trackId": "br-autodromo-mega-space-253775870",
       "layoutId": "main",
-      "file": "data/brazil/autodromo-plan-speed-park-1232577484/layouts/main.geojson",
+      "file": "data/brazil/autodromo-mega-space-253775870/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -684,18 +684,18 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
+      "trackId": "ca-cayuga-motor-speedway-66930451",
+      "layoutId": "main",
+      "file": "data/canada/cayuga-motor-speedway-66930451/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
       "layoutId": "canadian-tire-motorsports-park-ddt",
       "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/canadian-tire-motorsports-park-ddt.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
-      "layoutId": "ddt-one-kink",
-      "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/ddt-one-kink.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
@@ -705,9 +705,9 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "ca-cayuga-motor-speedway-66930451",
-      "layoutId": "main",
-      "file": "data/canada/cayuga-motor-speedway-66930451/layouts/main.geojson",
+      "trackId": "ca-canadian-tire-motorsports-park-ddt-78298a58",
+      "layoutId": "ddt-one-kink",
+      "file": "data/canada/ca-canadian-tire-motorsports-park-ddt-78298a58/layouts/ddt-one-kink.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -780,15 +780,15 @@
     },
     {
       "trackId": "ca-goodwood-kartways-6e03d980",
-      "layoutId": "goodwood-long-chicane",
-      "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-long-chicane.geojson",
+      "layoutId": "goodwood-standard-long",
+      "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-standard-long.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "ca-goodwood-kartways-6e03d980",
-      "layoutId": "goodwood-standard-long",
-      "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-standard-long.geojson",
+      "layoutId": "goodwood-long-chicane",
+      "file": "data/canada/ca-goodwood-kartways-6e03d980/layouts/goodwood-long-chicane.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -796,13 +796,6 @@
       "trackId": "ca-mission-raceway-190876520",
       "layoutId": "main",
       "file": "data/canada/mission-raceway-190876520/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "ca-mission-raceway-190876520",
-      "layoutId": "mission-raceway-park-road-course",
-      "file": "data/canada/mission-raceway-190876520/layouts/mission-raceway-park-road-course.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -828,6 +821,13 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "ec9abc9de8e2c59f4dbe3574f0b58ec2e8c07d063d3e7e915db0113a39779e97"
+    },
+    {
+      "trackId": "ca-mission-raceway-190876520",
+      "layoutId": "mission-raceway-park-road-course",
+      "file": "data/canada/mission-raceway-190876520/layouts/mission-raceway-park-road-course.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "ca-rocky-mountain-motorsports-1011942069",
@@ -981,27 +981,6 @@
     },
     {
       "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutId": "achna-full-straight",
-      "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-full-straight.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutId": "achna-inner-alternative",
-      "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-inner-alternative.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "cy-achna-speedway-ab0bcabd",
-      "layoutId": "achna-main-course",
-      "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-main-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "cy-achna-speedway-ab0bcabd",
       "layoutId": "achna-speedway",
       "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-speedway.geojson",
       "status": "needs-route-review",
@@ -1015,9 +994,9 @@
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
-      "trackId": "cz-autodrom-sosnova-30857652",
-      "layoutId": "autodrom-sosnova",
-      "file": "data/czechia/autodrom-sosnova-30857652/layouts/autodrom-sosnova.geojson",
+      "trackId": "cy-achna-speedway-ab0bcabd",
+      "layoutId": "achna-main-course",
+      "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-main-course.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -1027,6 +1006,59 @@
       "file": "data/czechia/autodrom-sosnova-30857652/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "cy-achna-speedway-ab0bcabd",
+      "layoutId": "achna-inner-alternative",
+      "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-inner-alternative.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9106,
+          0.9431
+        ],
+        "medianInteriorDifference": [
+          0.0401,
+          0.0489
+        ],
+        "samplingStepM": 3.003138789425235,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "0cd0fa5e9766321a184dbdf5f93f9f1136c767b8cec404fbc016a89ed373a666"
+    },
+    {
+      "trackId": "cz-autodrom-sosnova-30857652",
+      "layoutId": "autodrom-sosnova",
+      "file": "data/czechia/autodrom-sosnova-30857652/layouts/autodrom-sosnova.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "cy-achna-speedway-ab0bcabd",
+      "layoutId": "achna-full-straight",
+      "file": "data/cyprus/cy-achna-speedway-ab0bcabd/layouts/achna-full-straight.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9613,
+          0.8564
+        ],
+        "medianInteriorDifference": [
+          0.0759,
+          0.0665
+        ],
+        "samplingStepM": 3.001886272835145,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "9823dc7ff1e9b3a33171ca060f0c66b0ed1931c215596feec34fb19634c84d21"
     },
     {
       "trackId": "cz-autodrom-vysoke-myto-293787466",
@@ -1051,15 +1083,15 @@
     },
     {
       "trackId": "de-estering-f9d6a5de",
-      "layoutId": "estering-joker",
-      "file": "data/germany/de-estering-f9d6a5de/layouts/estering-joker.geojson",
+      "layoutId": "estering-standard",
+      "file": "data/germany/de-estering-f9d6a5de/layouts/estering-standard.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "de-estering-f9d6a5de",
-      "layoutId": "estering-standard",
-      "file": "data/germany/de-estering-f9d6a5de/layouts/estering-standard.geojson",
+      "layoutId": "estering-joker",
+      "file": "data/germany/de-estering-f9d6a5de/layouts/estering-joker.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -1116,6 +1148,36 @@
     },
     {
       "trackId": "de-test-und-prasentationsstrecke-bilster-berg-180270505",
+      "layoutId": "main",
+      "file": "data/germany/test-und-prasentationsstrecke-bilster-berg-180270505/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9807,
+          0.9815
+        ],
+        "medianInteriorDifference": [
+          0.0372,
+          0.036
+        ],
+        "samplingStepM": 2.9995636444032776,
+        "searchRangeM": [
+          2,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "549ca8e329b4faf9d24b947fb8000c5cbe8a66273c7c2ae3328239905e2a594d"
+    },
+    {
+      "trackId": "dk-fdm-sj-llandsringen-29293789",
+      "layoutId": "main",
+      "file": "data/denmark/fdm-sj-llandsringen-29293789/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "de-test-und-prasentationsstrecke-bilster-berg-180270505",
       "layoutId": "bilster-berg-gesamtstrecke-chicane",
       "file": "data/germany/test-und-prasentationsstrecke-bilster-berg-180270505/layouts/bilster-berg-gesamtstrecke-chicane.geojson",
       "status": "inferred-estimate",
@@ -1136,6 +1198,13 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "549ca8e329b4faf9d24b947fb8000c5cbe8a66273c7c2ae3328239905e2a594d"
+    },
+    {
+      "trackId": "dk-fdm-sj-llandsringen-29293789",
+      "layoutId": "saellandsringen",
+      "file": "data/denmark/fdm-sj-llandsringen-29293789/layouts/saellandsringen.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "de-test-und-prasentationsstrecke-bilster-berg-180270505",
@@ -1184,41 +1253,11 @@
       "imageSha256": "91932e65735211fb36a667346d04f16892d05419b789b37d8e769ad3483942f8"
     },
     {
-      "trackId": "de-test-und-prasentationsstrecke-bilster-berg-180270505",
+      "trackId": "dk-jyllandsringen-102145328",
       "layoutId": "main",
-      "file": "data/germany/test-und-prasentationsstrecke-bilster-berg-180270505/layouts/main.geojson",
-      "status": "inferred-estimate",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.9807,
-          0.9815
-        ],
-        "medianInteriorDifference": [
-          0.0372,
-          0.036
-        ],
-        "samplingStepM": 2.9995636444032776,
-        "searchRangeM": [
-          2,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "549ca8e329b4faf9d24b947fb8000c5cbe8a66273c7c2ae3328239905e2a594d"
-    },
-    {
-      "trackId": "dk-fdm-sj-llandsringen-29293789",
-      "layoutId": "main",
-      "file": "data/denmark/fdm-sj-llandsringen-29293789/layouts/main.geojson",
+      "file": "data/denmark/jyllandsringen-102145328/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "dk-fdm-sj-llandsringen-29293789",
-      "layoutId": "saellandsringen",
-      "file": "data/denmark/fdm-sj-llandsringen-29293789/layouts/saellandsringen.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "dk-jyllandsringen-102145328",
@@ -1231,13 +1270,6 @@
       "trackId": "dk-jyllandsringen-102145328",
       "layoutId": "jyllands-ringen-ny",
       "file": "data/denmark/jyllandsringen-102145328/layouts/jyllands-ringen-ny.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "dk-jyllandsringen-102145328",
-      "layoutId": "main",
-      "file": "data/denmark/jyllandsringen-102145328/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
@@ -1301,14 +1333,14 @@
     },
     {
       "trackId": "es-circuito-de-albacete-42783924",
-      "layoutId": "albacete-old",
-      "file": "data/spain/circuito-de-albacete-42783924/layouts/albacete-old.geojson",
+      "layoutId": "main",
+      "file": "data/spain/circuito-de-albacete-42783924/layouts/main.geojson",
       "status": "cached-estimate"
     },
     {
       "trackId": "es-circuito-de-albacete-42783924",
-      "layoutId": "main",
-      "file": "data/spain/circuito-de-albacete-42783924/layouts/main.geojson",
+      "layoutId": "albacete-old",
+      "file": "data/spain/circuito-de-albacete-42783924/layouts/albacete-old.geojson",
       "status": "cached-estimate"
     },
     {
@@ -1350,6 +1382,13 @@
       "status": "cached-estimate"
     },
     {
+      "trackId": "es-mir-racing-villena-circuit-449369135",
+      "layoutId": "main",
+      "file": "data/spain/mir-racing-villena-circuit-449369135/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
       "trackId": "es-jerez",
       "layoutId": "motorcycle",
       "file": "data/spain/jerez/layouts/motorcycle.geojson",
@@ -1359,13 +1398,6 @@
       "trackId": "es-madring-a3263d76",
       "layoutId": "madring",
       "file": "data/spain/es-madring-a3263d76/layouts/madring.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "es-mir-racing-villena-circuit-449369135",
-      "layoutId": "main",
-      "file": "data/spain/mir-racing-villena-circuit-449369135/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
@@ -1381,12 +1413,6 @@
       "file": "data/spain/es-navarra-f7a7574d/layouts/navarra-combo.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "es-navarra-f7a7574d",
-      "layoutId": "navarra-historical-eastern",
-      "file": "data/spain/es-navarra-f7a7574d/layouts/navarra-historical-eastern.geojson",
-      "status": "cached-estimate"
     },
     {
       "trackId": "es-navarra-f7a7574d",
@@ -1418,6 +1444,19 @@
       "imageSha256": "f8a1fdf193655866154f751ceb4784412e4067c6451b9bbf054618a346d34eef"
     },
     {
+      "trackId": "es-navarra-f7a7574d",
+      "layoutId": "navarra-historical-eastern",
+      "file": "data/spain/es-navarra-f7a7574d/layouts/navarra-historical-eastern.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "fi-botniaring-111368167",
+      "layoutId": "main",
+      "file": "data/finland/botniaring-111368167/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
       "trackId": "fi-alastaro-circuit-350221251",
       "layoutId": "main",
       "file": "data/finland/alastaro-circuit-350221251/layouts/main.geojson",
@@ -1441,9 +1480,9 @@
       "imageSha256": "3392cf5a0729d7adbc43b13e0be2776b9798bb3833bc6f7d442950eae2d130a2"
     },
     {
-      "trackId": "fi-botniaring-111368167",
+      "trackId": "fi-premier-park-377440680",
       "layoutId": "main",
-      "file": "data/finland/botniaring-111368167/layouts/main.geojson",
+      "file": "data/finland/premier-park-377440680/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -1451,13 +1490,6 @@
       "trackId": "fi-pesamaen-moottoriurheilukeskus-631890399",
       "layoutId": "main",
       "file": "data/finland/pesamaen-moottoriurheilukeskus-631890399/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "fi-premier-park-377440680",
-      "layoutId": "main",
-      "file": "data/finland/premier-park-377440680/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -1561,12 +1593,6 @@
     },
     {
       "trackId": "fr-circuit-du-manoir-de-l-automobile-203158898",
-      "layoutId": "loheac-rallycross",
-      "file": "data/france/circuit-du-manoir-de-l-automobile-203158898/layouts/loheac-rallycross.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "fr-circuit-du-manoir-de-l-automobile-203158898",
       "layoutId": "main",
       "file": "data/france/circuit-du-manoir-de-l-automobile-203158898/layouts/main.geojson",
       "status": "cached-estimate"
@@ -1578,9 +1604,9 @@
       "status": "cached-estimate"
     },
     {
-      "trackId": "fr-circuit-lfg-179304369",
-      "layoutId": "lafertegaucher",
-      "file": "data/france/circuit-lfg-179304369/layouts/lafertegaucher.geojson",
+      "trackId": "fr-circuit-du-manoir-de-l-automobile-203158898",
+      "layoutId": "loheac-rallycross",
+      "file": "data/france/circuit-du-manoir-de-l-automobile-203158898/layouts/loheac-rallycross.geojson",
       "status": "cached-estimate"
     },
     {
@@ -1593,6 +1619,19 @@
       "trackId": "fr-circuit-maurice-forget-30d9b95a",
       "layoutId": "circuit-maurice-forget",
       "file": "data/france/fr-circuit-maurice-forget-30d9b95a/layouts/circuit-maurice-forget.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "fr-circuit-lfg-179304369",
+      "layoutId": "lafertegaucher",
+      "file": "data/france/circuit-lfg-179304369/layouts/lafertegaucher.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "fr-circuits-de-vendee-662836845",
+      "layoutId": "main",
+      "file": "data/france/circuits-de-vendee-662836845/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -1611,44 +1650,23 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "fr-circuits-de-vendee-662836845",
-      "layoutId": "main",
-      "file": "data/france/circuits-de-vendee-662836845/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
       "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-central-curved",
-      "file": "data/france/geoparc-391622752/layouts/geoparc-central-curved.geojson",
+      "layoutId": "main",
+      "file": "data/france/geoparc-391622752/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-crossed-infield",
-      "file": "data/france/geoparc-391622752/layouts/geoparc-crossed-infield.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-curved-short",
-      "file": "data/france/geoparc-391622752/layouts/geoparc-curved-short.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-direct-infield",
-      "file": "data/france/geoparc-391622752/layouts/geoparc-direct-infield.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "fr-geoparc-391622752",
       "layoutId": "geoparc-long",
       "file": "data/france/geoparc-391622752/layouts/geoparc-long.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "fr-geoparc-391622752",
+      "layoutId": "geoparc-short",
+      "file": "data/france/geoparc-391622752/layouts/geoparc-short.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
@@ -1667,23 +1685,23 @@
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
-      "trackId": "fr-geoparc-391622752",
-      "layoutId": "geoparc-short",
-      "file": "data/france/geoparc-391622752/layouts/geoparc-short.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "fr-geoparc-391622752",
-      "layoutId": "main",
-      "file": "data/france/geoparc-391622752/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
       "trackId": "fr-kerlabo-rx-aad6ff1a",
       "layoutId": "kerlabo-rx",
       "file": "data/france/fr-kerlabo-rx-aad6ff1a/layouts/kerlabo-rx.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "fr-geoparc-391622752",
+      "layoutId": "geoparc-crossed-infield",
+      "file": "data/france/geoparc-391622752/layouts/geoparc-crossed-infield.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "fr-geoparc-391622752",
+      "layoutId": "geoparc-direct-infield",
+      "file": "data/france/geoparc-391622752/layouts/geoparc-direct-infield.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -1694,41 +1712,18 @@
       "status": "cached-estimate"
     },
     {
-      "trackId": "fr-paul-ricard",
-      "layoutId": "paul-ricard-1c-v2-blancpain",
-      "file": "data/france/paul-ricard/layouts/paul-ricard-1c-v2-blancpain.geojson",
-      "status": "cached-estimate"
+      "trackId": "fr-geoparc-391622752",
+      "layoutId": "geoparc-central-curved",
+      "file": "data/france/geoparc-391622752/layouts/geoparc-central-curved.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
-      "trackId": "fr-paul-ricard",
-      "layoutId": "paul-ricard-le-castellet",
-      "file": "data/france/paul-ricard/layouts/paul-ricard-le-castellet.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutId": "ales",
-      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutId": "ales-north-loop",
-      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales-north-loop.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutId": "ales-south-loop",
-      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales-south-loop.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
-      "layoutId": "ales-technical",
-      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales-technical.geojson",
-      "status": "cached-estimate"
+      "trackId": "fr-geoparc-391622752",
+      "layoutId": "geoparc-curved-short",
+      "file": "data/france/geoparc-391622752/layouts/geoparc-curved-short.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
@@ -1744,17 +1739,48 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
+      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
+      "layoutId": "ales",
+      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "fr-paul-ricard",
+      "layoutId": "paul-ricard-1c-v2-blancpain",
+      "file": "data/france/paul-ricard/layouts/paul-ricard-1c-v2-blancpain.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "fr-paul-ricard",
+      "layoutId": "paul-ricard-le-castellet",
+      "file": "data/france/paul-ricard/layouts/paul-ricard-le-castellet.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
+      "layoutId": "ales-technical",
+      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales-technical.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
+      "layoutId": "ales-north-loop",
+      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales-north-loop.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "fr-pole-mecanique-ales-cevennes-196899321",
+      "layoutId": "ales-south-loop",
+      "file": "data/france/pole-mecanique-ales-cevennes-196899321/layouts/ales-south-loop.geojson",
+      "status": "cached-estimate"
+    },
+    {
       "trackId": "gb-aintree-motor-racing-circuit-121110221",
       "layoutId": "aintree-sprint",
       "file": "data/united-kingdom/aintree-motor-racing-circuit-121110221/layouts/aintree-sprint.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "gb-bedford-autodrome-27782784",
-      "layoutId": "bedford-autodrome-southwest",
-      "file": "data/united-kingdom/bedford-autodrome-27782784/layouts/bedford-autodrome-southwest.geojson",
-      "status": "cached-estimate"
     },
     {
       "trackId": "gb-bicester-heritage-091776aa",
@@ -1783,6 +1809,12 @@
       "file": "data/united-kingdom/gb-boyndie-kart-circuit-a57fdbb4/layouts/boyndie-kart-circuit.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "gb-bedford-autodrome-27782784",
+      "layoutId": "bedford-autodrome-southwest",
+      "file": "data/united-kingdom/bedford-autodrome-27782784/layouts/bedford-autodrome-southwest.geojson",
+      "status": "cached-estimate"
     },
     {
       "trackId": "gb-bruntingthorpe-b2f151a7",
@@ -1830,8 +1862,24 @@
       "trackId": "gb-bucks-estate-sprint-45ee8814",
       "layoutId": "bucks-estate-sprint",
       "file": "data/united-kingdom/gb-bucks-estate-sprint-45ee8814/layouts/bucks-estate-sprint.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9787,
+          0.9894
+        ],
+        "medianInteriorDifference": [
+          0.0407,
+          0.0583
+        ],
+        "samplingStepM": 3.025428637490089,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "23e53299d554468e1e5ef308d403fb2db7fe68d10dd2bf094df2913a39766418"
     },
     {
       "trackId": "gb-carver-barracks-615ac11d",
@@ -1863,15 +1911,22 @@
     },
     {
       "trackId": "gb-driftland-37d6ee3f",
-      "layoutId": "driftland-cross-course",
-      "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-cross-course.geojson",
+      "layoutId": "driftland-inner-course",
+      "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-inner-course.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
+      "trackId": "gb-dunsfold-ea05c91c",
+      "layoutId": "dunsfold",
+      "file": "data/united-kingdom/gb-dunsfold-ea05c91c/layouts/dunsfold.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
       "trackId": "gb-driftland-37d6ee3f",
-      "layoutId": "driftland-inner-course",
-      "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-inner-course.geojson",
+      "layoutId": "driftland-cross-course",
+      "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-cross-course.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
@@ -1881,13 +1936,6 @@
       "file": "data/united-kingdom/gb-dunsfold-ea05c91c/layouts/airfield-perimeter-2020.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "gb-dunsfold-ea05c91c",
-      "layoutId": "dunsfold",
-      "file": "data/united-kingdom/gb-dunsfold-ea05c91c/layouts/dunsfold.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
       "trackId": "gb-dunsfold-ea05c91c",
@@ -1946,6 +1994,13 @@
     },
     {
       "trackId": "gb-kames-motorsport-circuit-38672231",
+      "layoutId": "main",
+      "file": "data/united-kingdom/kames-motorsport-circuit-38672231/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "gb-kames-motorsport-circuit-38672231",
       "layoutId": "kames-motorsport-circuit",
       "status": "unmapped",
       "reason": "This layout is listed. Its course trace still needs to be mapped."
@@ -1955,13 +2010,6 @@
       "layoutId": "kames-motorsport-circuit-reverse",
       "status": "unmapped",
       "reason": "The previous draft selected a southwestern extension outside this historical configuration. Public historical course nodes are available, but the supplied open timed-run sequence and distance remain unresolved."
-    },
-    {
-      "trackId": "gb-kames-motorsport-circuit-38672231",
-      "layoutId": "main",
-      "file": "data/united-kingdom/kames-motorsport-circuit-38672231/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "gb-loton-hillclimb-2b41199e",
@@ -1985,13 +2033,6 @@
     },
     {
       "trackId": "gb-m-sport-proving-ground-fe7c7315",
-      "layoutId": "msport-inner-variant",
-      "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-inner-variant.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "gb-m-sport-proving-ground-fe7c7315",
       "layoutId": "msport-long-variant",
       "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-long-variant.geojson",
       "status": "needs-imagery-review",
@@ -2001,6 +2042,13 @@
       "trackId": "gb-mallory-park-racing-circuit-215336384",
       "layoutId": "main",
       "file": "data/united-kingdom/mallory-park-racing-circuit-215336384/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "gb-m-sport-proving-ground-fe7c7315",
+      "layoutId": "msport-inner-variant",
+      "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-inner-variant.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -2055,10 +2103,10 @@
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
-      "layoutId": "rissington-gearbox",
-      "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-gearbox.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "layoutId": "rissington-kart-circuit",
+      "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-kart-circuit.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
@@ -2069,10 +2117,10 @@
     },
     {
       "trackId": "gb-rissington-kart-circuit-12acd2fe",
-      "layoutId": "rissington-kart-circuit",
-      "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-kart-circuit.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "layoutId": "rissington-gearbox",
+      "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-gearbox.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "gb-shelsley-walsh-hillclimb-aaa3a45c",
@@ -2089,18 +2137,59 @@
       "reason": "Imagery does not cover the full boundary search corridor"
     },
     {
-      "trackId": "gb-silverstone-circuit-3571477",
-      "layoutId": "rallycross-standard",
-      "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/rallycross-standard.geojson",
+      "trackId": "gb-thorsway-mx-ad3657ee",
+      "layoutId": "thorsway-mx",
+      "status": "unmapped",
+      "reason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
+      "trackId": "gb-three-sisters-d8b843ac",
+      "layoutId": "three-sisters",
+      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "gb-snetterton-motor-racing-circuit-145755937",
+      "layoutId": "snetterton-combo",
+      "file": "data/united-kingdom/snetterton-motor-racing-circuit-145755937/layouts/snetterton-combo.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "gb-three-sisters-d8b843ac",
+      "layoutId": "three-sisters-full",
+      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-full.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "gb-silverstone-circuit-3571477",
-      "layoutId": "silverstone-combo",
-      "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "trackId": "gb-snetterton-motor-racing-circuit-145755937",
+      "layoutId": "snetterton100",
+      "file": "data/united-kingdom/snetterton-motor-racing-circuit-145755937/layouts/snetterton100.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "gb-three-sisters-d8b843ac",
+      "layoutId": "three-sisters-perimeter",
+      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-perimeter.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "gb-three-sisters-d8b843ac",
+      "layoutId": "three-sisters-club",
+      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-club.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "gb-thruxton-circuit-7736906",
+      "layoutId": "main",
+      "file": "data/united-kingdom/thruxton-circuit-7736906/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",
@@ -2116,57 +2205,16 @@
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
-      "trackId": "gb-snetterton-motor-racing-circuit-145755937",
-      "layoutId": "snetterton-combo",
-      "file": "data/united-kingdom/snetterton-motor-racing-circuit-145755937/layouts/snetterton-combo.geojson",
+      "trackId": "gb-silverstone-circuit-3571477",
+      "layoutId": "silverstone-combo",
+      "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-combo.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
-      "trackId": "gb-snetterton-motor-racing-circuit-145755937",
-      "layoutId": "snetterton100",
-      "file": "data/united-kingdom/snetterton-motor-racing-circuit-145755937/layouts/snetterton100.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "gb-thorsway-mx-ad3657ee",
-      "layoutId": "thorsway-mx",
-      "status": "unmapped",
-      "reason": "This layout is listed. Its course trace still needs to be mapped."
-    },
-    {
-      "trackId": "gb-three-sisters-d8b843ac",
-      "layoutId": "three-sisters",
-      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "gb-three-sisters-d8b843ac",
-      "layoutId": "three-sisters-club",
-      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-club.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "gb-three-sisters-d8b843ac",
-      "layoutId": "three-sisters-full",
-      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-full.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "gb-three-sisters-d8b843ac",
-      "layoutId": "three-sisters-perimeter",
-      "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters-perimeter.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "gb-thruxton-circuit-7736906",
-      "layoutId": "main",
-      "file": "data/united-kingdom/thruxton-circuit-7736906/layouts/main.geojson",
+      "trackId": "gb-silverstone-circuit-3571477",
+      "layoutId": "rallycross-standard",
+      "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/rallycross-standard.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -2214,13 +2262,6 @@
     },
     {
       "trackId": "it-adria-international-raceway-1092277630",
-      "layoutId": "adria",
-      "file": "data/italy/adria-international-raceway-1092277630/layouts/adria.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "it-adria-international-raceway-1092277630",
       "layoutId": "main",
       "file": "data/italy/adria-international-raceway-1092277630/layouts/main.geojson",
       "status": "needs-imagery-review",
@@ -2230,6 +2271,13 @@
       "trackId": "it-autodromo-calabria-corse-1376430606",
       "layoutId": "main",
       "file": "data/italy/autodromo-calabria-corse-1376430606/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "it-adria-international-raceway-1092277630",
+      "layoutId": "adria",
+      "file": "data/italy/adria-international-raceway-1092277630/layouts/adria.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -2285,13 +2333,6 @@
       "imageSha256": "17e63fd8f11b5bf69e689e4d5cee6aa7f3cdd5b0db2fe0355e4f12ccaf0b621b"
     },
     {
-      "trackId": "it-misano",
-      "layoutId": "short",
-      "file": "data/italy/misano/layouts/short.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
       "trackId": "it-modena-929ca255",
       "layoutId": "modena",
       "file": "data/italy/it-modena-929ca255/layouts/modena.geojson",
@@ -2299,16 +2340,9 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
-      "layoutId": "historical-international-car",
-      "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-car.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
-      "layoutId": "historical-international-junction-chicanes",
-      "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-junction-chicanes.geojson",
+      "trackId": "it-misano",
+      "layoutId": "short",
+      "file": "data/italy/misano/layouts/short.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -2325,6 +2359,20 @@
       "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/vallelunga-full.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
+      "layoutId": "historical-international-car",
+      "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-car.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
+      "layoutId": "historical-international-junction-chicanes",
+      "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/historical-international-junction-chicanes.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "jp-hsr-134862680",
@@ -2523,6 +2571,13 @@
     },
     {
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
+      "layoutId": "highlands-motorsports-park-combo",
+      "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-combo.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "nz-highlands-motorsports-park-c98a7d90",
       "layoutId": "highlands-motorsports-park-a",
       "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-a.geojson",
       "status": "needs-imagery-review",
@@ -2552,6 +2607,13 @@
       "imageSha256": "c7ffd072c5199f633bcccff4c40ca7dbe0ccdcfc25d213daec0edd83eee93bb5"
     },
     {
+      "trackId": "nz-leadfoot-hillclimb-f16d38f6",
+      "layoutId": "leadfoot-hillclimb",
+      "file": "data/new-zealand/nz-leadfoot-hillclimb-f16d38f6/layouts/leadfoot-hillclimb.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
       "layoutId": "highlands-motorsports-park-c",
       "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-c.geojson",
@@ -2576,24 +2638,10 @@
     },
     {
       "trackId": "nz-highlands-motorsports-park-c98a7d90",
-      "layoutId": "highlands-motorsports-park-combo",
-      "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "nz-highlands-motorsports-park-c98a7d90",
       "layoutId": "highlands-motorsports-park-full",
       "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "nz-leadfoot-hillclimb-f16d38f6",
-      "layoutId": "leadfoot-hillclimb",
-      "file": "data/new-zealand/nz-leadfoot-hillclimb-f16d38f6/layouts/leadfoot-hillclimb.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
@@ -2601,13 +2649,6 @@
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "nz-ruapuna-e0b8962a",
-      "layoutId": "ruapuna-eastern-course",
-      "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-eastern-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
@@ -2625,6 +2666,13 @@
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
+      "layoutId": "ruapuna-outer-dipper",
+      "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-dipper.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-outer-course",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-course.geojson",
       "status": "needs-imagery-review",
@@ -2632,10 +2680,10 @@
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
-      "layoutId": "ruapuna-outer-dipper",
-      "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-dipper.geojson",
+      "layoutId": "ruapuna-eastern-course",
+      "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-eastern-course.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "pa-autodromo-panama-rl",
@@ -2704,13 +2752,6 @@
     },
     {
       "trackId": "pt-lousada-rx-d17ce73b",
-      "layoutId": "lousada-joker-2019",
-      "file": "data/portugal/pt-lousada-rx-d17ce73b/layouts/lousada-joker-2019.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "pt-lousada-rx-d17ce73b",
       "layoutId": "lousada-rx",
       "file": "data/portugal/pt-lousada-rx-d17ce73b/layouts/lousada-rx.geojson",
       "status": "needs-route-review",
@@ -2724,16 +2765,23 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "pt-macao-rx-2348fa2a",
-      "layoutId": "macao-joker",
-      "file": "data/portugal/pt-macao-rx-2348fa2a/layouts/macao-joker.geojson",
+      "trackId": "pt-lousada-rx-d17ce73b",
+      "layoutId": "lousada-joker-2019",
+      "file": "data/portugal/pt-lousada-rx-d17ce73b/layouts/lousada-joker-2019.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "pt-macao-rx-2348fa2a",
       "layoutId": "macao-rx",
       "file": "data/portugal/pt-macao-rx-2348fa2a/layouts/macao-rx.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "pt-montalegre-b7bbb3e7",
+      "layoutId": "montalegre",
+      "file": "data/portugal/pt-montalegre-b7bbb3e7/layouts/montalegre.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
@@ -2762,22 +2810,22 @@
     },
     {
       "trackId": "pt-montalegre-b7bbb3e7",
-      "layoutId": "montalegre",
-      "file": "data/portugal/pt-montalegre-b7bbb3e7/layouts/montalegre.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "layoutId": "montalegre-standard-2018",
+      "file": "data/portugal/pt-montalegre-b7bbb3e7/layouts/montalegre-standard-2018.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "pt-macao-rx-2348fa2a",
+      "layoutId": "macao-joker",
+      "file": "data/portugal/pt-macao-rx-2348fa2a/layouts/macao-joker.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "pt-montalegre-b7bbb3e7",
       "layoutId": "montalegre-joker-2018",
       "file": "data/portugal/pt-montalegre-b7bbb3e7/layouts/montalegre-joker-2018.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
-    },
-    {
-      "trackId": "pt-montalegre-b7bbb3e7",
-      "layoutId": "montalegre-standard-2018",
-      "file": "data/portugal/pt-montalegre-b7bbb3e7/layouts/montalegre-standard-2018.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
@@ -2857,17 +2905,17 @@
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-fim",
-      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-fim.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "layoutId": "moscow-raceway",
+      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-raceway.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
-      "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-gp1",
-      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-gp1.geojson",
+      "trackId": "ru-osm-156001847",
+      "layoutId": "main",
+      "file": "data/russia/osm-156001847/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
@@ -2878,38 +2926,17 @@
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-gp5",
-      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-gp5.geojson",
+      "layoutId": "moscow-gp1",
+      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-gp1.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-raceway",
-      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-raceway.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-sprint1",
-      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-sprint1.geojson",
+      "layoutId": "moscow-fim",
+      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-fim.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "ru-moscow-raceway-168247376",
-      "layoutId": "moscow-supersprint",
-      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-supersprint.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "ru-osm-156001847",
-      "layoutId": "main",
-      "file": "data/russia/osm-156001847/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "ru-osm-49185165",
@@ -2933,6 +2960,43 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "e7b4afe9ab4c11e7ca04408ac261ffcda542209512c5a00d100382ea6b2e1bb9"
+    },
+    {
+      "trackId": "ru-moscow-raceway-168247376",
+      "layoutId": "moscow-sprint1",
+      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-sprint1.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "ru-moscow-raceway-168247376",
+      "layoutId": "moscow-gp5",
+      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-gp5.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.924,
+          0.9079
+        ],
+        "medianInteriorDifference": [
+          0.0432,
+          0.0389
+        ],
+        "samplingStepM": 2.9975249178420382,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
+    },
+    {
+      "trackId": "ru-moscow-raceway-168247376",
+      "layoutId": "moscow-supersprint",
+      "file": "data/russia/moscow-raceway-168247376/layouts/moscow-supersprint.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "ru-ramenskoe-860ae810",
@@ -2979,6 +3043,13 @@
       "imageSha256": "011eae4a170f9be87c4cbe82355a89e29bfee6876866828bf5f9a815f75603d3"
     },
     {
+      "trackId": "se-karlskoga-motorstadion-290177249",
+      "layoutId": "main",
+      "file": "data/sweden/karlskoga-motorstadion-290177249/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
       "trackId": "se-holjes-motorclub-3144cff3",
       "layoutId": "holjes-motorclub",
       "file": "data/sweden/se-holjes-motorclub-3144cff3/layouts/holjes-motorclub.geojson",
@@ -2989,13 +3060,6 @@
       "trackId": "se-karlskoga-motorstadion-290177249",
       "layoutId": "gellerason-gp-2019",
       "file": "data/sweden/karlskoga-motorstadion-290177249/layouts/gellerason-gp-2019.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "se-karlskoga-motorstadion-290177249",
-      "layoutId": "main",
-      "file": "data/sweden/karlskoga-motorstadion-290177249/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
@@ -3031,8 +3095,24 @@
       "trackId": "sk-slovakia-ring-47361993",
       "layoutId": "slovakia-ring",
       "file": "data/slovakia/slovakia-ring-47361993/layouts/slovakia-ring.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9544,
+          0.9939
+        ],
+        "medianInteriorDifference": [
+          0.0466,
+          0.0519
+        ],
+        "samplingStepM": 2.999704243876428,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "3ac0ac6dce43c8561b610efe5f73a5e0a0d1853213503745af509c8abb3ff1c6"
     },
     {
       "trackId": "th-bangsaen-street-circuit-2551e057",
@@ -3070,16 +3150,11 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "us-apex-motor-b7ddcfd3",
-      "layoutId": "apex-i-chicane",
-      "file": "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-i-chicane.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-apex-motor-b7ddcfd3",
-      "layoutId": "apex-i-straight",
-      "file": "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-i-straight.geojson",
-      "status": "cached-estimate"
+      "trackId": "us-arizona-motorsports-park-9f848c55",
+      "layoutId": "arizona-motorsports-park",
+      "file": "data/united-states/us-arizona-motorsports-park-9f848c55/layouts/arizona-motorsports-park.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "us-apex-motor-b7ddcfd3",
@@ -3087,13 +3162,6 @@
       "file": "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-motor-club-apex-i.geojson",
       "status": "needs-route-review",
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "us-arizona-motorsports-park-9f848c55",
-      "layoutId": "arizona-motorsports-park",
-      "file": "data/united-states/us-arizona-motorsports-park-9f848c55/layouts/arizona-motorsports-park.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
       "trackId": "us-arlington-street-circuit-be2e2ad4",
@@ -3108,6 +3176,12 @@
       "reason": "This layout is listed. Its course trace still needs to be mapped."
     },
     {
+      "trackId": "us-apex-motor-b7ddcfd3",
+      "layoutId": "apex-i-straight",
+      "file": "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-i-straight.geojson",
+      "status": "cached-estimate"
+    },
+    {
       "trackId": "us-arroyo-seco-raceway-83871979",
       "layoutId": "main",
       "file": "data/united-states/arroyo-seco-raceway-83871979/layouts/main.geojson",
@@ -3115,9 +3189,9 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
-      "trackId": "us-autobahn-country-club-42852101",
-      "layoutId": "autobahn-country-club",
-      "file": "data/united-states/autobahn-country-club-42852101/layouts/autobahn-country-club.geojson",
+      "trackId": "us-apex-motor-b7ddcfd3",
+      "layoutId": "apex-i-chicane",
+      "file": "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-i-chicane.geojson",
       "status": "cached-estimate"
     },
     {
@@ -3129,10 +3203,16 @@
     },
     {
       "trackId": "us-badger-kart-8181738f",
-      "layoutId": "badger-bus-stop",
-      "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-bus-stop.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "layoutId": "badger-kart-club",
+      "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-kart-club.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "us-autobahn-country-club-42852101",
+      "layoutId": "autobahn-country-club",
+      "file": "data/united-states/autobahn-country-club-42852101/layouts/autobahn-country-club.geojson",
+      "status": "cached-estimate"
     },
     {
       "trackId": "us-badger-kart-8181738f",
@@ -3143,17 +3223,17 @@
     },
     {
       "trackId": "us-badger-kart-8181738f",
-      "layoutId": "badger-kart-club",
-      "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-kart-club.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "us-badger-kart-8181738f",
       "layoutId": "badger-national",
       "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-national.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "us-badger-kart-8181738f",
+      "layoutId": "badger-bus-stop",
+      "file": "data/united-states/us-badger-kart-8181738f/layouts/badger-bus-stop.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-bristol-motor-speedway-116606212",
@@ -3170,17 +3250,17 @@
       "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
+      "trackId": "us-charlotte-motor-speedway-116034341",
+      "layoutId": "charlotte-motor-speedway-full",
+      "file": "data/united-states/charlotte-motor-speedway-116034341/layouts/charlotte-motor-speedway-full.geojson",
+      "status": "cached-estimate"
+    },
+    {
       "trackId": "us-carolina-motorsports-park-261069261",
       "layoutId": "carolina-motorsports-park-b",
       "file": "data/united-states/carolina-motorsports-park-261069261/layouts/carolina-motorsports-park-b.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
-    },
-    {
-      "trackId": "us-charlotte-motor-speedway-116034341",
-      "layoutId": "charlotte-motor-speedway-full",
-      "file": "data/united-states/charlotte-motor-speedway-116034341/layouts/charlotte-motor-speedway-full.geojson",
-      "status": "cached-estimate"
     },
     {
       "trackId": "us-charlotte-motor-speedway-116034341",
@@ -3219,6 +3299,12 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
+      "trackId": "us-detroit-city-airport-f3ab2023",
+      "layoutId": "detroit-city-airport",
+      "status": "unmapped",
+      "reason": "This layout is listed. Its course trace still needs to be mapped."
+    },
+    {
       "trackId": "us-daytona-international-speedway-11371365",
       "layoutId": "main",
       "file": "data/united-states/daytona-international-speedway-11371365/layouts/main.geojson",
@@ -3240,12 +3326,6 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "6e38a8a2a6e0f3fae94db54954cba88957c5362248558f42f7da8c208622279b"
-    },
-    {
-      "trackId": "us-detroit-city-airport-f3ab2023",
-      "layoutId": "detroit-city-airport",
-      "status": "unmapped",
-      "reason": "This layout is listed. Its course trace still needs to be mapped."
     },
     {
       "trackId": "us-dover-motor-speedway-350676133",
@@ -3271,6 +3351,36 @@
       "imageSha256": "d34c4c179061847d85460c3a40608b99fe9a00d22c21239837c04f1d17253712"
     },
     {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "fontana-raceway-infield-course",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/fontana-raceway-infield-course.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "us-eagles-canyon-raceway-1557375600",
+      "layoutId": "main",
+      "file": "data/united-states/eagles-canyon-raceway-1557375600/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8565,
+          0.8272
+        ],
+        "medianInteriorDifference": [
+          0.0308,
+          0.0319
+        ],
+        "samplingStepM": 2.9991617401167434,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-10846807.18330386%2C3943795.698246786%2C-10845426.205666635%2C3945013.431130174&bboxSR=3857&imageSR=3857&size=1538%2C1356&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "d87c724148aa13851b386ba98f73316ebf26098e271f0298539e6e353f501f8c"
+    },
+    {
       "trackId": "us-eagles-canyon-raceway-1557375600",
       "layoutId": "eagles-canyon-raceway",
       "file": "data/united-states/eagles-canyon-raceway-1557375600/layouts/eagles-canyon-raceway.geojson",
@@ -3294,59 +3404,27 @@
       "imageSha256": "d87c724148aa13851b386ba98f73316ebf26098e271f0298539e6e353f501f8c"
     },
     {
-      "trackId": "us-eagles-canyon-raceway-1557375600",
-      "layoutId": "main",
-      "file": "data/united-states/eagles-canyon-raceway-1557375600/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-flatrock-racetrack-1213613922",
-      "layoutId": "main",
-      "file": "data/united-states/flatrock-racetrack-1213613922/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
-      "layoutId": "fontana-raceway-infield-course",
-      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/fontana-raceway-infield-course.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
-      "layoutId": "infield-inner-hairpin",
-      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-inner-hairpin.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
-      "layoutId": "infield-northern-return",
-      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-northern-return.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
-      "layoutId": "infield-western-hook",
-      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-western-hook.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
       "trackId": "us-fontana-raceway-road-course-33a99dd4",
       "layoutId": "fontana-raceway-road-course",
       "file": "data/united-states/us-fontana-raceway-road-course-33a99dd4/layouts/fontana-raceway-road-course.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7822,
+          0.771
+        ],
+        "medianInteriorDifference": [
+          0.0331,
+          0.0477
+        ],
+        "samplingStepM": 2.9998835585802976,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13080834.283060687%2C4040286.9717503577%2C-13079235.188576303%2C4041195.170616412&bboxSR=3857&imageSR=3857&size=1766%2C1003&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "e385552372fcd6ad1e1603ac772be5f22dd69f9412f943517ae0a37d4011fb91"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
@@ -3356,11 +3434,357 @@
       "reason": "Branch networks need reviewed component edge topology and driving choices."
     },
     {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "infield-western-hook",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-western-hook.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-flatrock-racetrack-1213613922",
+      "layoutId": "main",
+      "file": "data/united-states/flatrock-racetrack-1213613922/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "infield-inner-hairpin",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-inner-hairpin.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-gingerman-raceway-72c836ae",
+      "layoutId": "gingerman-raceway",
+      "file": "data/united-states/us-gingerman-raceway-72c836ae/layouts/gingerman-raceway.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "infield-northern-return",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-northern-return.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-gopro-motorplex-e67c71ed",
+      "layoutId": "gopro-motorplex",
+      "file": "data/united-states/us-gopro-motorplex-e67c71ed/layouts/gopro-motorplex.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9676,
+          0.9701
+        ],
+        "medianInteriorDifference": [
+          0.0447,
+          0.0454
+        ],
+        "samplingStepM": 2.994623711959016,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8993838.323389865%2C4251098.522794615%2C-8993421.991163721%2C4251526.016591474&bboxSR=3857&imageSR=3857&size=452%2C464&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "39a4ac61fb0f354e3eb6104d27954f2af22ca72f1973efa587ef787252bb994a"
+    },
+    {
+      "trackId": "us-hedge-hollow-raceway-914202229",
+      "layoutId": "main",
+      "file": "data/united-states/hedge-hollow-raceway-914202229/layouts/main.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-high-plains-speedway-322387515",
+      "layoutId": "main",
+      "file": "data/united-states/high-plains-speedway-322387515/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9451,
+          0.8407
+        ],
+        "medianInteriorDifference": [
+          0.0667,
+          0.0739
+        ],
+        "samplingStepM": 2.9993248572813913,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-11481462.591188315%2C4097259.183286671%2C-11481128.076761933%2C4097660.514834664&bboxSR=3857&imageSR=3857&size=368%2C441&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "81c8d8be1c408fe10e4a244fcc23682d7fbcc32149bbcd85a63411bc1a660555"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-combo",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-combo.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+    },
+    {
+      "trackId": "us-homestead-miami-speedway-108159182",
+      "layoutId": "main",
+      "file": "data/united-states/homestead-miami-speedway-108159182/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-inde-motorsports-ranch-8dbe7597",
+      "layoutId": "inde-motorsports-ranch-north-4",
+      "file": "data/united-states/us-inde-motorsports-ranch-8dbe7597/layouts/inde-motorsports-ranch-north-4.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9164,
+          0.8733
+        ],
+        "medianInteriorDifference": [
+          0.0313,
+          0.029
+        ],
+        "samplingStepM": 2.9945352604176,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246585.214055078%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=614%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7921515f64e9c4f275b86aa0b1969204cc1d9569edbf2965a350c3b0cb279c08"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-full",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9567,
+          0.8549
+        ],
+        "medianInteriorDifference": [
+          0.0445,
+          0.036
+        ],
+        "samplingStepM": 2.9980960441433857,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f63584dc2928b4fc989b12cd663da0a8e6b38103244cd64e598900e6ee760891"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-full-north-2",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-2.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-full-north-3",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-3.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9531,
+          0.8626
+        ],
+        "medianInteriorDifference": [
+          0.0411,
+          0.0328
+        ],
+        "samplingStepM": 2.9989648370039035,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f63584dc2928b4fc989b12cd663da0a8e6b38103244cd64e598900e6ee760891"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-full-north-4",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-4.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9474,
+          0.8614
+        ],
+        "medianInteriorDifference": [
+          0.0422,
+          0.033
+        ],
+        "samplingStepM": 2.9990854999215015,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f63584dc2928b4fc989b12cd663da0a8e6b38103244cd64e598900e6ee760891"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-north",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8711,
+          0.8496
+        ],
+        "medianInteriorDifference": [
+          0.0313,
+          0.0298
+        ],
+        "samplingStepM": 2.9992546483822595,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-north-2",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north-2.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8711,
+          0.8496
+        ],
+        "medianInteriorDifference": [
+          0.0313,
+          0.0298
+        ],
+        "samplingStepM": 2.9992546483822595,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-north-4",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north-4.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9164,
+          0.8733
+        ],
+        "medianInteriorDifference": [
+          0.0313,
+          0.029
+        ],
+        "samplingStepM": 2.9945352604176,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246585.214055078%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=614%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "7921515f64e9c4f275b86aa0b1969204cc1d9569edbf2965a350c3b0cb279c08"
+    },
+    {
+      "trackId": "us-inde-motorsports-b9c30311",
+      "layoutId": "inde-motorsports-ranch-south",
+      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-south.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9338,
+          0.8382
+        ],
+        "medianInteriorDifference": [
+          0.0422,
+          0.0292
+        ],
+        "samplingStepM": 2.997393512127924,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "cb1bac244a995562a3cfb85ce2f9c54731ac7ed59e5ba4de5ac5cfd057677b8d"
+    },
+    {
+      "trackId": "us-indianapolis-motor-speedway-51308226",
+      "layoutId": "main",
+      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-indianapolis-motor-speedway-51308226",
+      "layoutId": "ims-sro-practice",
+      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/ims-sro-practice.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-indianapolis-motor-speedway-51308226",
+      "layoutId": "indianapolis-motor-speedway-indy",
+      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/indianapolis-motor-speedway-indy.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-jennings-gp-1356000240",
+      "layoutId": "main",
+      "file": "data/united-states/jennings-gp-1356000240/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.937,
+          0.9715
+        ],
+        "medianInteriorDifference": [
+          0.0319,
+          0.0358
+        ],
+        "samplingStepM": 2.998144378803396,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9257441.88884647%2C3577301.7455318156%2C-9256533.119717654%2C3578311.807250083&bboxSR=3857&imageSR=3857&size=1044%2C1160&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "2a6f0d2b7dd159e6c999261d05794c74d952234c211e152d960609932188900f"
+    },
+    {
+      "trackId": "us-kansas-speedway-road-course-37552701",
+      "layoutId": "main",
+      "file": "data/united-states/kansas-speedway-road-course-37552701/layouts/main.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-iowa-speedway-119238784",
+      "layoutId": "main",
+      "file": "data/united-states/iowa-speedway-119238784/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "mapped-branch-1",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-1.geojson",
-      "status": "acquisition-failed",
-      "reason": "Imagery acquisition failed: The operation was aborted due to timeout"
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
@@ -3370,11 +3794,228 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
+      "trackId": "us-lil-texas-motor-speedway-track-161240440",
+      "layoutId": "main",
+      "file": "data/united-states/lil-texas-motor-speedway-track-161240440/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-lime-rock-park-17179697",
+      "layoutId": "main",
+      "file": "data/united-states/lime-rock-park-17179697/layouts/main.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-lime-rock-park-17179697",
+      "layoutId": "lime-rock",
+      "file": "data/united-states/lime-rock-park-17179697/layouts/lime-rock.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-martinsville-speedway-402168721",
+      "layoutId": "main",
+      "file": "data/united-states/martinsville-speedway-402168721/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8949,
+          0.9529
+        ],
+        "medianInteriorDifference": [
+          0.0276,
+          0.044
+        ],
+        "samplingStepM": 2.992535453992743,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8889252.443205066%2C4387938.01450505%2C-8888838.993425924%2C4388512.187623863&bboxSR=3857&imageSR=3857&size=443%2C615&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "12ec48bc67df70183dd3ec477bd0973f644d80b24db3bc5213f49d488ecd68f9"
+    },
+    {
+      "trackId": "us-las-vegas-motor-speedway-27545411",
+      "layoutId": "lvms-combo",
+      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-combo.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-las-vegas-motor-speedway-27545411",
+      "layoutId": "lvms-outfield-road-course",
+      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-outfield-road-course.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-las-vegas-motor-speedway-27545411",
+      "layoutId": "lvms-outfield-road-course-chicane",
+      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-outfield-road-course-chicane.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-miami-concours-18a8e76d",
+      "layoutId": "miami-concours-club-outer-loop",
+      "file": "data/united-states/us-miami-concours-18a8e76d/layouts/miami-concours-club-outer-loop.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-michigan-international-speedway-205025102",
+      "layoutId": "michigan-int-speedway-infield-long",
+      "file": "data/united-states/michigan-international-speedway-205025102/layouts/michigan-int-speedway-infield-long.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-milford-road-course-6e8e65d4",
+      "layoutId": "milford-road-course",
+      "file": "data/united-states/us-milford-road-course-6e8e65d4/layouts/milford-road-course.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9354,
+          0.9752
+        ],
+        "medianInteriorDifference": [
+          0.0442,
+          0.0401
+        ],
+        "samplingStepM": 2.9986573409201656,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9313893.466236452%2C5245823.895738943%2C-9312792.99429772%2C5247459.45354046&bboxSR=3857&imageSR=3857&size=1081%2C1607&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "90c197e6d3f185c60cd613b038d2fe698ae4c60b0f47e71f6fa73ccf66796a12"
+    },
+    {
+      "trackId": "us-milwaukee-mile-107508989",
+      "layoutId": "main",
+      "file": "data/united-states/milwaukee-mile-107508989/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7874,
+          0.9027
+        ],
+        "medianInteriorDifference": [
+          0.0244,
+          0.0314
+        ],
+        "samplingStepM": 2.9958031194838712,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9797644.492584273%2C5314600.378601261%2C-9797063.591730153%2C5315697.533853296&bboxSR=3857&imageSR=3857&size=567%2C1070&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "1d15932fb62239f5417fba5828fa846cadc8d75d193fbebc2c94b15b7a1204a4"
+    },
+    {
+      "trackId": "us-mid-ohio-sports-car-course-444205375",
+      "layoutId": "mid-ohio-raceway-without-chicane",
+      "file": "data/united-states/mid-ohio-sports-car-course-444205375/layouts/mid-ohio-raceway-without-chicane.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9527,
+          0.9328
+        ],
+        "medianInteriorDifference": [
+          0.0597,
+          0.0645
+        ],
+        "samplingStepM": 2.9985557043716744,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "473e9ff6b0ef80ea57c012e5afdb41e21cc9437490c4df530e32d340401e493a"
+    },
+    {
+      "trackId": "us-nashville-superspeedway-185563917",
+      "layoutId": "main",
+      "file": "data/united-states/nashville-superspeedway-185563917/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9759,
+          0.762
+        ],
+        "medianInteriorDifference": [
+          0.0353,
+          0.0519
+        ],
+        "samplingStepM": 2.9975969160639724,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9619166.877594544%2C4306332.518390624%2C-9618426.209712535%2C4307534.7427750435&bboxSR=3857&imageSR=3857&size=799%2C1297&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "c5fd7200f3842ecbb370aaee91b837323949ea17d3216048b6dd70b575dc832d"
+    },
+    {
+      "trackId": "us-monticello-motor-club-235166661",
+      "layoutId": "main",
+      "file": "data/united-states/monticello-motor-club-235166661/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9782,
+          0.9483
+        ],
+        "medianInteriorDifference": [
+          0.052,
+          0.0563
+        ],
+        "samplingStepM": 2.9997123877656002,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "67892dbb3f420594aa5f9623d116d820b073884e333b94add4d141f932349015"
+    },
+    {
+      "trackId": "us-new-hampshire-motor-speedway-60096117",
+      "layoutId": "main",
+      "file": "data/united-states/new-hampshire-motor-speedway-60096117/layouts/main.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-new-hampshire-motor-speedway-60096117",
+      "layoutId": "new-hampshire-motor-speedway",
+      "file": "data/united-states/new-hampshire-motor-speedway-60096117/layouts/new-hampshire-motor-speedway.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-new-hampshire-motor-speedway-60096117",
+      "layoutId": "new-hampshire-motor-spdwy-chicane",
+      "file": "data/united-states/new-hampshire-motor-speedway-60096117/layouts/new-hampshire-motor-spdwy-chicane.geojson",
+      "status": "cached-estimate"
+    },
+    {
+      "trackId": "us-ncm-motorsports-park-326452603",
+      "layoutId": "main",
+      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "mapped-branch-3",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-3.geojson",
-      "status": "acquisition-failed",
-      "reason": "Imagery acquisition failed: The operation was aborted due to timeout"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-fort-devens-7cacf24a",
@@ -3405,6 +4046,13 @@
       "reason": "Too many sections hit the search limit; image needs manual review"
     },
     {
+      "trackId": "us-ncm-motorsports-park-326452603",
+      "layoutId": "ncm-grand-straight",
+      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-grand-straight.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
       "trackId": "us-fort-devens-7cacf24a",
       "layoutId": "mapped-branch-8",
       "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-8.geojson",
@@ -3412,308 +4060,25 @@
       "reason": "Insufficient consistent image-edge evidence"
     },
     {
-      "trackId": "us-fort-devens-7cacf24a",
-      "layoutId": "mapped-branch-9",
-      "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-9.geojson",
-      "status": "acquisition-failed",
-      "reason": "Imagery acquisition failed: HTTP 502"
-    },
-    {
-      "trackId": "us-gingerman-raceway-72c836ae",
-      "layoutId": "gingerman-raceway",
-      "file": "data/united-states/us-gingerman-raceway-72c836ae/layouts/gingerman-raceway.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-gopro-motorplex-e67c71ed",
-      "layoutId": "gopro-motorplex",
-      "file": "data/united-states/us-gopro-motorplex-e67c71ed/layouts/gopro-motorplex.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-hedge-hollow-raceway-914202229",
-      "layoutId": "main",
-      "file": "data/united-states/hedge-hollow-raceway-914202229/layouts/main.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-high-plains-speedway-322387515",
-      "layoutId": "main",
-      "file": "data/united-states/high-plains-speedway-322387515/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-homestead-miami-speedway-108159182",
-      "layoutId": "main",
-      "file": "data/united-states/homestead-miami-speedway-108159182/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-combo",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-full",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-full-north-2",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-2.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-full-north-3",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-3.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-full-north-4",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-4.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-north",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-north-2",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north-2.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-north-4",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north-4.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-b9c30311",
-      "layoutId": "inde-motorsports-ranch-south",
-      "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-south.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-inde-motorsports-ranch-8dbe7597",
-      "layoutId": "inde-motorsports-ranch-north-4",
-      "file": "data/united-states/us-inde-motorsports-ranch-8dbe7597/layouts/inde-motorsports-ranch-north-4.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-indianapolis-motor-speedway-51308226",
-      "layoutId": "ims-sro-practice",
-      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/ims-sro-practice.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-indianapolis-motor-speedway-51308226",
-      "layoutId": "indianapolis-motor-speedway-indy",
-      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/indianapolis-motor-speedway-indy.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-indianapolis-motor-speedway-51308226",
-      "layoutId": "main",
-      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-iowa-speedway-119238784",
-      "layoutId": "main",
-      "file": "data/united-states/iowa-speedway-119238784/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-jennings-gp-1356000240",
-      "layoutId": "main",
-      "file": "data/united-states/jennings-gp-1356000240/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-kansas-speedway-road-course-37552701",
-      "layoutId": "main",
-      "file": "data/united-states/kansas-speedway-road-course-37552701/layouts/main.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-las-vegas-motor-speedway-27545411",
-      "layoutId": "lvms-combo",
-      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-combo.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-las-vegas-motor-speedway-27545411",
-      "layoutId": "lvms-outfield-road-course",
-      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-outfield-road-course.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-las-vegas-motor-speedway-27545411",
-      "layoutId": "lvms-outfield-road-course-chicane",
-      "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-outfield-road-course-chicane.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-lil-texas-motor-speedway-track-161240440",
-      "layoutId": "main",
-      "file": "data/united-states/lil-texas-motor-speedway-track-161240440/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-lime-rock-park-17179697",
-      "layoutId": "lime-rock",
-      "file": "data/united-states/lime-rock-park-17179697/layouts/lime-rock.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-lime-rock-park-17179697",
-      "layoutId": "main",
-      "file": "data/united-states/lime-rock-park-17179697/layouts/main.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-martinsville-speedway-402168721",
-      "layoutId": "main",
-      "file": "data/united-states/martinsville-speedway-402168721/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-miami-concours-18a8e76d",
-      "layoutId": "miami-concours-club-outer-loop",
-      "file": "data/united-states/us-miami-concours-18a8e76d/layouts/miami-concours-club-outer-loop.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-michigan-international-speedway-205025102",
-      "layoutId": "michigan-int-speedway-infield-long",
-      "file": "data/united-states/michigan-international-speedway-205025102/layouts/michigan-int-speedway-infield-long.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-mid-ohio-sports-car-course-444205375",
-      "layoutId": "mid-ohio-raceway-without-chicane",
-      "file": "data/united-states/mid-ohio-sports-car-course-444205375/layouts/mid-ohio-raceway-without-chicane.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-milford-road-course-6e8e65d4",
-      "layoutId": "milford-road-course",
-      "file": "data/united-states/us-milford-road-course-6e8e65d4/layouts/milford-road-course.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-milwaukee-mile-107508989",
-      "layoutId": "main",
-      "file": "data/united-states/milwaukee-mile-107508989/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-monticello-motor-club-235166661",
-      "layoutId": "main",
-      "file": "data/united-states/monticello-motor-club-235166661/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-nashville-superspeedway-185563917",
-      "layoutId": "main",
-      "file": "data/united-states/nashville-superspeedway-185563917/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-ncm-motorsports-park-326452603",
-      "layoutId": "main",
-      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-ncm-motorsports-park-326452603",
-      "layoutId": "ncm-grand-straight",
-      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-grand-straight.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "trackId": "us-new-jersey-raceway-park-a3427ce5",
+      "layoutId": "new-jersey-raceway-park",
+      "file": "data/united-states/us-new-jersey-raceway-park-a3427ce5/layouts/new-jersey-raceway-park.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-ncm-motorsports-park-326452603",
       "layoutId": "ncm-r-t-course",
       "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-r-t-course.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-ncm-motorsports-park-326452603",
       "layoutId": "ncm-short-east",
       "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-short-east.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-ncm-motorsports-park-326452603",
@@ -3722,38 +4087,11 @@
       "status": "cached-estimate"
     },
     {
-      "trackId": "us-new-hampshire-motor-speedway-60096117",
-      "layoutId": "main",
-      "file": "data/united-states/new-hampshire-motor-speedway-60096117/layouts/main.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-new-hampshire-motor-speedway-60096117",
-      "layoutId": "new-hampshire-motor-spdwy-chicane",
-      "file": "data/united-states/new-hampshire-motor-speedway-60096117/layouts/new-hampshire-motor-spdwy-chicane.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-new-hampshire-motor-speedway-60096117",
-      "layoutId": "new-hampshire-motor-speedway",
-      "file": "data/united-states/new-hampshire-motor-speedway-60096117/layouts/new-hampshire-motor-speedway.geojson",
-      "status": "cached-estimate"
-    },
-    {
-      "trackId": "us-new-jersey-raceway-park-a3427ce5",
-      "layoutId": "new-jersey-raceway-park",
-      "file": "data/united-states/us-new-jersey-raceway-park-a3427ce5/layouts/new-jersey-raceway-park.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
       "trackId": "us-nola-motorsports-park-298904844",
       "layoutId": "main",
       "file": "data/united-states/nola-motorsports-park-298904844/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-nola-motorsports-park-298904844",
@@ -3766,25 +4104,15 @@
       "trackId": "us-nola-motorsports-park-298904844",
       "layoutId": "north-long-course-2014",
       "file": "data/united-states/nola-motorsports-park-298904844/layouts/north-long-course-2014.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-nola-motorsports-park-298904844",
       "layoutId": "north-western-connecting-branches-2014",
       "file": "data/united-states/nola-motorsports-park-298904844/layouts/north-western-connecting-branches-2014.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-ozarks-international-raceway-1112103055",
-      "layoutId": "main",
-      "file": "data/united-states/ozarks-international-raceway-1112103055/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-palm-beach-international-raceway-rl",
@@ -3796,9 +4124,24 @@
       "trackId": "us-phoenix-raceway-29333335",
       "layoutId": "main",
       "file": "data/united-states/phoenix-raceway-29333335/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.827,
+          1
+        ],
+        "medianInteriorDifference": [
+          0.0565,
+          0.0559
+        ],
+        "samplingStepM": 2.996265584386273,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12502839.091856157%2C3944804.8178719366%2C-12501919.46795857%2C3945477.6353962817&bboxSR=3857&imageSR=3857&size=1024%2C750&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "c3a36e74a5bf68505077c2f58faa3f5d86463ae56129fb552a5cefc9c012411a"
     },
     {
       "trackId": "us-pikes-peak-hillclimb-ab97c20e",
@@ -3808,76 +4151,71 @@
       "reason": "Venue extent exceeds the supported high-resolution export; needs tiled imagery"
     },
     {
+      "trackId": "us-ozarks-international-raceway-1112103055",
+      "layoutId": "main",
+      "file": "data/united-states/ozarks-international-raceway-1112103055/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
       "trackId": "us-pikes-peak-international-raceway-1134026181",
       "layoutId": "main",
       "file": "data/united-states/pikes-peak-international-raceway-1134026181/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-pittsburgh-international-race-complex-225264359",
-      "layoutId": "main",
-      "file": "data/united-states/pittsburgh-international-race-complex-225264359/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-portland-international-raceway-5510199",
       "layoutId": "main",
       "file": "data/united-states/portland-international-raceway-5510199/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9621,
+          0.9485
+        ],
+        "medianInteriorDifference": [
+          0.0308,
+          0.0338
+        ],
+        "samplingStepM": 2.9986820637103673,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13659343.848740702%2C5715372.204269879%2C-13657451.416578481%2C5716567.456930184&bboxSR=3857&imageSR=3857&size=1766%2C1116&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "e55aa8fe4895fc3d8c2ddcb621f6ac8dba7bed4c57eafe0157509a7efa18c9d2"
     },
     {
       "trackId": "us-putnam-county-speedway-1083517671",
       "layoutId": "main",
       "file": "data/united-states/putnam-county-speedway-1083517671/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-qlispe-raceway-park-93067101",
       "layoutId": "main",
       "file": "data/united-states/qlispe-raceway-park-93067101/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-a",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-a.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-a2",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-a2.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-b",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-b.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-c",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-c.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8615,
+          0.9175
+        ],
+        "medianInteriorDifference": [
+          0.0435,
+          0.0392
+        ],
+        "samplingStepM": 2.998810909745808,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13088723.02251664%2C6050021.648594796%2C-13087153.23795164%2C6052390.780499812&bboxSR=3857&imageSR=3857&size=1410%2C2128&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "9ac1b711f543bc9145e685d4c165dd36da510edb08526eb8e1096555106aaca4"
     },
     {
       "trackId": "us-reno-fernley-57a16580",
@@ -3887,52 +4225,32 @@
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-d",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-d.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "trackId": "us-pittsburgh-international-race-complex-225264359",
+      "layoutId": "main",
+      "file": "data/united-states/pittsburgh-international-race-complex-225264359/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-fort-devens-7cacf24a",
+      "layoutId": "mapped-branch-9",
+      "file": "data/united-states/us-fort-devens-7cacf24a/layouts/mapped-branch-9.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-f",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-f.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-g",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-g.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-reno-fernley-57a16580",
-      "layoutId": "reno-fernley-g2",
-      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-g2.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "layoutId": "reno-fernley-a",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-a.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-reno-fernley-h-c926ace0",
       "layoutId": "reno-fernley-h",
       "file": "data/united-states/us-reno-fernley-h-c926ace0/layouts/reno-fernley-h.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-richmond-raceway-complex-452377296",
-      "layoutId": "main",
-      "file": "data/united-states/richmond-raceway-complex-452377296/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-road-america-110527567",
@@ -3958,36 +4276,184 @@
       "imageSha256": "e1b21e551e414f2191295e68f3aeb766e5a6fddabd1023e3779895dd18ddf231"
     },
     {
-      "trackId": "us-road-atlanta-9292566",
+      "trackId": "us-richmond-raceway-complex-452377296",
       "layoutId": "main",
-      "file": "data/united-states/road-atlanta-9292566/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "file": "data/united-states/richmond-raceway-complex-452377296/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8677,
+          0.8804
+        ],
+        "medianInteriorDifference": [
+          0.0433,
+          0.0635
+        ],
+        "samplingStepM": 2.998582409851983,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8618658.223558933%2C4521734.58388436%2C-8617917.657676836%2C4522255.813708221&bboxSR=3857&imageSR=3857&size=783%2C551&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "d1cfc4a83e4cfcb1d1b06207f7e39f89deb6e8a15008d837dea5d1459c8fcd1b"
     },
     {
       "trackId": "us-rockingham-speedway-infield-course-245545512",
       "layoutId": "main",
       "file": "data/united-states/rockingham-speedway-infield-course-245545512/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7673,
+          0.9788
+        ],
+        "medianInteriorDifference": [
+          0.0362,
+          0.0533
+        ],
+        "samplingStepM": 2.9987738647612847,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8862660.972354%2C4160151.951666889%2C-8861743.40044475%2C4160682.0676941634&bboxSR=3857&imageSR=3857&size=1003%2C580&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "da884c98c40e05ba15ef417d77cb8a73f04976ed089c796f1ebb1f3979e6b9b4"
+    },
+    {
+      "trackId": "us-road-atlanta-9292566",
+      "layoutId": "main",
+      "file": "data/united-states/road-atlanta-9292566/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9715,
+          0.9558
+        ],
+        "medianInteriorDifference": [
+          0.0571,
+          0.0595
+        ],
+        "samplingStepM": 2.9984210969237606,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9330746.464436121%2C4047019.5223278794%2C-9329638.5210315%2C4049212.362013004&bboxSR=3857&imageSR=3857&size=1223%2C2420&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "dd54b2c9db990597e0c5f67b082e82f5212f2bb03deae289f4d409321700d890"
+    },
+    {
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-a2",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-a2.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-b",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-b.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-c",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-c.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-d",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-d.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-f",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-f.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-summit-point-jefferson-001540e4",
+      "layoutId": "summit-point-jefferson",
+      "file": "data/united-states/us-summit-point-jefferson-001540e4/layouts/summit-point-jefferson.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-sonoma-raceway-2020-28825444",
       "layoutId": "main",
       "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9942,
+          0.9622
+        ],
+        "medianInteriorDifference": [
+          0.0416,
+          0.0443
+        ],
+        "samplingStepM": 2.99900617441173,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "c501df94a25932de268f8aebd829b503cb5c33ca1137120a1fc71e9593929322"
     },
     {
       "trackId": "us-sonoma-raceway-2020-28825444",
       "layoutId": "sonoma-raceway",
       "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8296,
+          0.7881
+        ],
+        "medianInteriorDifference": [
+          0.0336,
+          0.0302
+        ],
+        "samplingStepM": 2.999164354109604,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13632648.470042057%2C4601768.160637285%2C-13631196.978168512%2C4603105.141221146&bboxSR=3857&imageSR=3857&size=1522%2C1402&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "0798bfe376265e316a15d6a3a402d728a304b759d802a9426ae26525c78ac2a6"
+    },
+    {
+      "trackId": "us-summit-point-motorsports-park-220556257",
+      "layoutId": "main",
+      "file": "data/united-states/summit-point-motorsports-park-220556257/layouts/main.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9335,
+          0.9814
+        ],
+        "medianInteriorDifference": [
+          0.0629,
+          0.0635
+        ],
+        "samplingStepM": 2.9989827171169305,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8681053.389413519%2C4755801.705685634%2C-8680017.55717073%2C4756696.310837173&bboxSR=3857&imageSR=3857&size=1070%2C924&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "e846b6caceb2fd0006b3e5a3b400c91e9d1da02c910ad2bbf5ed88e39ad97e9f"
     },
     {
       "trackId": "us-sonoma-raceway-2020-28825444",
@@ -4000,215 +4466,393 @@
       "trackId": "us-sonoma-raceway-2020-28825444",
       "layoutId": "sonoma-raceway-sro-practice",
       "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway-sro-practice.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-summit-point-jefferson-001540e4",
-      "layoutId": "summit-point-jefferson",
-      "file": "data/united-states/us-summit-point-jefferson-001540e4/layouts/summit-point-jefferson.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-summit-point-motorsports-park-220556257",
-      "layoutId": "main",
-      "file": "data/united-states/summit-point-motorsports-park-220556257/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8296,
+          0.7881
+        ],
+        "medianInteriorDifference": [
+          0.0336,
+          0.0302
+        ],
+        "samplingStepM": 2.999164354109604,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13632648.470042057%2C4601768.160637285%2C-13631196.978168512%2C4603105.141221146&bboxSR=3857&imageSR=3857&size=1522%2C1402&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "0798bfe376265e316a15d6a3a402d728a304b759d802a9426ae26525c78ac2a6"
     },
     {
       "trackId": "us-summit-point-motorsports-park-220556257",
       "layoutId": "summit-point-shenandoah",
       "file": "data/united-states/summit-point-motorsports-park-220556257/layouts/summit-point-shenandoah.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9787,
+          0.9317
+        ],
+        "medianInteriorDifference": [
+          0.0634,
+          0.063
+        ],
+        "samplingStepM": 2.9989489025232707,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8681053.389413519%2C4755801.705685634%2C-8680017.55717073%2C4756696.310837173&bboxSR=3857&imageSR=3857&size=1070%2C924&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "e846b6caceb2fd0006b3e5a3b400c91e9d1da02c910ad2bbf5ed88e39ad97e9f"
+    },
+    {
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-g",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-g.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-talladega-grand-prix-raceway-1061184414",
       "layoutId": "main",
       "file": "data/united-states/talladega-grand-prix-raceway-1061184414/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-talladega-grand-prix-raceway-1061184414",
-      "layoutId": "talladega-gran-prix",
-      "file": "data/united-states/talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9409,
+          0.9732
+        ],
+        "medianInteriorDifference": [
+          0.0249,
+          0.0258
+        ],
+        "samplingStepM": 2.998069787189781,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9573897.635304669%2C3961788.6477086484%2C-9573181.462718908%2C3962665.003992685&bboxSR=3857&imageSR=3857&size=797%2C975&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "af67965fd3fb35794ee2e6a893e15ee171ad61572491981b4d2115c5246e230c"
     },
     {
       "trackId": "us-talladega-superspeedway-reference",
       "layoutId": "main",
       "file": "data/united-states/talladega-superspeedway-reference/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7864,
+          0.8713
+        ],
+        "medianInteriorDifference": [
+          0.0259,
+          0.0249
+        ],
+        "samplingStepM": 2.9984493799392293,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9581492.86650781%2C3969736.5963638932%2C-9580153.611400466%2C3971948.7664010776&bboxSR=3857&imageSR=3857&size=1488%2C2458&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "b7b20b1344801a737c6464e5302be7201d69a9fbe0546e62fb567022e117f36a"
     },
     {
-      "trackId": "us-texas-world-speedway-e743bb9c",
-      "layoutId": "texas-world-speedway",
-      "file": "data/united-states/us-texas-world-speedway-e743bb9c/layouts/texas-world-speedway.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "trackId": "us-reno-fernley-57a16580",
+      "layoutId": "reno-fernley-g2",
+      "file": "data/united-states/us-reno-fernley-57a16580/layouts/reno-fernley-g2.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
     },
     {
       "trackId": "us-the-ridge-motorsports-park-182180341",
       "layoutId": "main",
       "file": "data/united-states/the-ridge-motorsports-park-182180341/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8966,
+          0.9331
+        ],
+        "medianInteriorDifference": [
+          0.06,
+          0.0544
+        ],
+        "samplingStepM": 2.99927610544466,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13714545.514273945%2C5983603.416143338%2C-13712737.529394997%2C5984398.096939429&bboxSR=3857&imageSR=3857&size=1637%2C720&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "fb81a1ce961aea213bb49407de355da785425226a3877fb1dfa284c9379e6140"
     },
     {
       "trackId": "us-the-thermal-club-443108132",
       "layoutId": "thermal-club-north-desert",
       "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-north-desert.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9052,
+          0.8909
+        ],
+        "medianInteriorDifference": [
+          0.0354,
+          0.0361
+        ],
+        "samplingStepM": 2.9983315884955086,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12930713.652941406%2C3975442.3983521867%2C-12929538.499808501%2C3976883.3394635627&bboxSR=3857&imageSR=3857&size=1305%2C1601&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "9b6d1b56a8c27ca0aa4afe7416448509eeb765774d6be598cd804c0877207c92"
     },
     {
       "trackId": "us-the-thermal-club-443108132",
       "layoutId": "thermal-club-north-palm",
       "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-north-palm.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9433,
+          0.9417
+        ],
+        "medianInteriorDifference": [
+          0.0398,
+          0.0358
+        ],
+        "samplingStepM": 2.995814677161961,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12930713.64941205%2C3975442.401881542%2C-12929538.503337856%2C3975841.0007184534&bboxSR=3857&imageSR=3857&size=1306%2C443&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "fdf3c9a45e8ba5bc7b1a4317fb0644d0d24a6853fe64c9df669dd0cb49673bd1"
     },
     {
-      "trackId": "us-thompson-speedway-151397704",
-      "layoutId": "main",
-      "file": "data/united-states/thompson-speedway-151397704/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-thompson-speedway-151397704",
-      "layoutId": "thompson-spdwy-1-5-mile-road-course",
-      "file": "data/united-states/thompson-speedway-151397704/layouts/thompson-spdwy-1-5-mile-road-course.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-thompson-speedway-151397704",
-      "layoutId": "thompson-spdwy-1-7-mile-road-course",
-      "file": "data/united-states/thompson-speedway-151397704/layouts/thompson-spdwy-1-7-mile-road-course.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "trackId": "us-talladega-grand-prix-raceway-1061184414",
+      "layoutId": "talladega-gran-prix",
+      "file": "data/united-states/talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-thunderhill-raceway-park-28825115",
       "layoutId": "main",
       "file": "data/united-states/thunderhill-raceway-park-28825115/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.823,
+          0.8764
+        ],
+        "medianInteriorDifference": [
+          0.032,
+          0.038
+        ],
+        "samplingStepM": 2.998448283360468,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13618500.756304475%2C4798627.449957018%2C-13617250.457681043%2C4800127.568844686&bboxSR=3857&imageSR=3857&size=1286%2C1543&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "2661056b575a4217c0d151432fd7540df4ba852bba5c8d9d6c58deb26842ccfa"
     },
     {
       "trackId": "us-thunderhill-raceway-park-28825115",
       "layoutId": "thunderhill-raceway-park-no-turn-5",
       "file": "data/united-states/thunderhill-raceway-park-28825115/layouts/thunderhill-raceway-park-no-turn-5.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8087,
+          0.8636
+        ],
+        "medianInteriorDifference": [
+          0.0311,
+          0.0371
+        ],
+        "samplingStepM": 2.9997581430832794,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13618500.756304475%2C4798627.449957018%2C-13617250.457681043%2C4800127.568844686&bboxSR=3857&imageSR=3857&size=1286%2C1543&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "2661056b575a4217c0d151432fd7540df4ba852bba5c8d9d6c58deb26842ccfa"
     },
     {
       "trackId": "us-thunderhill-raceway-park-28825115",
       "layoutId": "thunderhill-raceway-park-turn-5",
       "file": "data/united-states/thunderhill-raceway-park-28825115/layouts/thunderhill-raceway-park-turn-5.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.823,
+          0.8764
+        ],
+        "medianInteriorDifference": [
+          0.032,
+          0.038
+        ],
+        "samplingStepM": 2.998448283360468,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13618500.756304475%2C4798627.449957018%2C-13617250.457681043%2C4800127.568844686&bboxSR=3857&imageSR=3857&size=1286%2C1543&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "2661056b575a4217c0d151432fd7540df4ba852bba5c8d9d6c58deb26842ccfa"
     },
     {
       "trackId": "us-va-city-hill-climb-8d49ea09",
       "layoutId": "va-city-hill-climb",
       "file": "data/united-states/us-va-city-hill-climb-8d49ea09/layouts/va-city-hill-climb.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7993,
+          0.7617
+        ],
+        "medianInteriorDifference": [
+          0.029,
+          0.0278
+        ],
+        "samplingStepM": 3.0000377780874827,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13319301.456740012%2C4758802.049838478%2C-13316643.141990015%2C4764500.019553944&bboxSR=3857&imageSR=3857&size=1633%2C3500&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "fc9d27d1bf78250e9d5760af17c9f98a394f84348a8c239f0beb54211b43695a"
     },
     {
       "trackId": "us-virginia-international-raceway-20264407",
       "layoutId": "main",
       "file": "data/united-states/virginia-international-raceway-20264407/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.956,
+          0.9308
+        ],
+        "medianInteriorDifference": [
+          0.0368,
+          0.037
+        ],
+        "samplingStepM": 2.998867888038756,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8818010.80833511%2C4376749.075293714%2C-8816666.12530624%2C4379263.873483302&bboxSR=3857&imageSR=3857&size=1441%2C2694&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "2663153cdbe30df5a1b23d7fe6aeb0d1aafd338743c66eba6f27f81f128e5740"
     },
     {
       "trackId": "us-virginia-international-raceway-20264407",
       "layoutId": "virginia-int-raceway-grand",
       "file": "data/united-states/virginia-international-raceway-20264407/layouts/virginia-int-raceway-grand.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9463,
+          0.9418
+        ],
+        "medianInteriorDifference": [
+          0.0354,
+          0.0378
+        ],
+        "samplingStepM": 2.9991243621055443,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8818010.80833511%2C4376749.075293714%2C-8816666.12530624%2C4379263.873483302&bboxSR=3857&imageSR=3857&size=1441%2C2694&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "2663153cdbe30df5a1b23d7fe6aeb0d1aafd338743c66eba6f27f81f128e5740"
+    },
+    {
+      "trackId": "us-texas-world-speedway-e743bb9c",
+      "layoutId": "texas-world-speedway",
+      "file": "data/united-states/us-texas-world-speedway-e743bb9c/layouts/texas-world-speedway.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
+      "trackId": "us-thompson-speedway-151397704",
+      "layoutId": "main",
+      "file": "data/united-states/thompson-speedway-151397704/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-virginia-international-raceway-20264407",
       "layoutId": "virginia-int-raceway-south",
       "file": "data/united-states/virginia-international-raceway-20264407/layouts/virginia-int-raceway-south.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-thompson-speedway-151397704",
+      "layoutId": "thompson-spdwy-1-5-mile-road-course",
+      "file": "data/united-states/thompson-speedway-151397704/layouts/thompson-spdwy-1-5-mile-road-course.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-waterford-hills-796357203",
       "layoutId": "main",
       "file": "data/united-states/waterford-hills-796357203/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "us-waterford-hills-796357203",
       "layoutId": "waterford-hills",
       "file": "data/united-states/waterford-hills-796357203/layouts/waterford-hills.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-thompson-speedway-151397704",
+      "layoutId": "thompson-spdwy-1-7-mile-road-course",
+      "file": "data/united-states/thompson-speedway-151397704/layouts/thompson-spdwy-1-7-mile-road-course.geojson",
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8262,
+          0.9436
+        ],
+        "medianInteriorDifference": [
+          0.0357,
+          0.0443
+        ],
+        "samplingStepM": 2.9967155025042467,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "5abfd2eb005af419da1b3f5f13097ee6fa5692242d2151bc2a8c83f8094d0e84"
     },
     {
       "trackId": "us-willow-springs-international-raceway-10440074",
       "layoutId": "streets-of-willow-springs",
       "file": "data/united-states/willow-springs-international-raceway-10440074/layouts/streets-of-willow-springs.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "us-world-wide-technology-raceway-road-course-180008394",
-      "layoutId": "gateway-motorsports-park",
-      "file": "data/united-states/world-wide-technology-raceway-road-course-180008394/layouts/gateway-motorsports-park.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
-    },
-    {
-      "trackId": "us-world-wide-technology-raceway-road-course-180008394",
-      "layoutId": "main",
-      "file": "data/united-states/world-wide-technology-raceway-road-course-180008394/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
-    },
-    {
-      "trackId": "ve-autodromo-internacional-simon-bolivar-1486879925",
-      "layoutId": "main",
-      "file": "data/venezuela/autodromo-internacional-simon-bolivar-1486879925/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
     },
     {
       "trackId": "za-knysna-hill-climb-0b642392",
@@ -4218,20 +4862,71 @@
       "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
+      "trackId": "ve-autodromo-internacional-simon-bolivar-1486879925",
+      "layoutId": "main",
+      "file": "data/venezuela/autodromo-internacional-simon-bolivar-1486879925/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Insufficient consistent image-edge evidence"
+    },
+    {
       "trackId": "za-prince-george-circuit-677195345",
       "layoutId": "main",
       "file": "data/south-africa/prince-george-circuit-677195345/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.7937,
+          0.877
+        ],
+        "medianInteriorDifference": [
+          0.0321,
+          0.0323
+        ],
+        "samplingStepM": 2.994477259140314,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "91eb64b67732985a3e19740432ad22afecc82bfe9324bd82f3867d00c2d4ae57"
+    },
+    {
+      "trackId": "us-world-wide-technology-raceway-road-course-180008394",
+      "layoutId": "main",
+      "file": "data/united-states/world-wide-technology-raceway-road-course-180008394/layouts/main.geojson",
+      "status": "needs-imagery-review",
+      "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-world-wide-technology-raceway-road-course-180008394",
+      "layoutId": "gateway-motorsports-park",
+      "file": "data/united-states/world-wide-technology-raceway-road-course-180008394/layouts/gateway-motorsports-park.geojson",
+      "status": "needs-route-review",
+      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
     },
     {
       "trackId": "za-roy-hesketh-circuit-89176333",
       "layoutId": "main",
       "file": "data/south-africa/roy-hesketh-circuit-89176333/layouts/main.geojson",
-      "status": "imagery-quota",
-      "reason": "Licensed imagery request quota reached; retry after 2026-11-06T10:25:32.150Z",
-      "retryAt": "2026-11-06T10:25:32.150Z"
+      "status": "candidate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.896,
+          0.82
+        ],
+        "medianInteriorDifference": [
+          0.0371,
+          0.0343
+        ],
+        "samplingStepM": 2.999742253416926,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "eb8af996cabe024b73e29206d49b09f38eb2dc5ff49e229fd767a958f6532ca8"
     }
   ]
 }

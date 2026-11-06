@@ -13,11 +13,11 @@ const color = z.string().regex(/^#[\da-fA-F]{6}$/);
 const lapModelSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
-    kind: z.literal("lap").optional(),
+    kind: z.enum(["lap", "run"]).optional(),
     pathMethod: z.literal("paired-border-midpoints").optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
-    elevationMethod: z.literal("periodic-monotone-cubic"),
+    elevationMethod: z.enum(["periodic-monotone-cubic", "monotone-cubic"]),
     elevation: z
       .array(z.tuple([metres, z.number().min(-12000).max(9000)]))
       .min(3)
@@ -83,8 +83,26 @@ const lapModelSchema = z
         ["elevation"],
         "Elevation anchors must cover zero to the reference lap length",
       );
-    if (model.elevation[0][1] !== model.elevation.at(-1)![1])
+    if (
+      model.kind !== "run" &&
+      model.elevation[0][1] !== model.elevation.at(-1)![1]
+    )
       issue(["elevation"], "Closed-lap elevations must meet at the seam");
+    if (
+      model.kind === "run" &&
+      (model.elevationMethod !== "monotone-cubic" ||
+        model.startOffsetM !== 0 ||
+        !model.pathMethod)
+    )
+      issue(
+        ["kind"],
+        "Open runs need a paired path, clamped elevation and zero start offset",
+      );
+    if (
+      model.kind !== "run" &&
+      model.elevationMethod !== "periodic-monotone-cubic"
+    )
+      issue(["elevationMethod"], "Closed laps need periodic elevation");
     for (let i = 1; i < model.elevation.length; i++)
       if (model.elevation[i][0] <= model.elevation[i - 1][0])
         issue(["elevation", i], "Elevation stations must increase strictly");
@@ -94,7 +112,9 @@ const lapModelSchema = z
     });
     model.corners.forEach((corner, i) => {
       if (
-        corner.distanceM >= model.referenceLengthM ||
+        (model.kind === "run"
+          ? corner.distanceM > model.referenceLengthM
+          : corner.distanceM >= model.referenceLengthM) ||
         (i && corner.distanceM <= model.corners[i - 1].distanceM)
       )
         issue(

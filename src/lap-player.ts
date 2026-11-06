@@ -20,6 +20,7 @@ export function openLap(
   },
   onClose: () => void,
 ) {
+  const isRun = layout.metadata.model3d?.kind === "run";
   const previousFocus = document.activeElement as HTMLElement | null;
   const dialog = document.createElement("dialog");
   dialog.className = "lap-player";
@@ -39,7 +40,7 @@ export function openLap(
   <label>Cornering <span><input name="lateralG" type="number" value="1.1" min="0.2" max="3" step="0.1" required> g</span></label><button type="submit">Recalculate lap</button></form></div>
   <div class="lap-results"><div><span>SIMULATED LAP</span><strong data-duration>—</strong></div><div><span>PEAK SPEED</span><strong data-peak>—</strong></div></div>
   <div class="lap-section"><span class="lap-kicker">THE ROAD</span><div class="lap-profile" aria-label="Road elevation profile"></div><p class="lap-profile-caption"></p><p class="lap-data-quality" data-quality></p><p data-road-detail>Variable road width · Source border coordinates</p><details class="lap-evidence"><summary>Track accuracy & sources</summary><p>Road edges use this layout’s supplemental border coordinates and remain unverified. Width changes are preserved.</p><p data-elevation-note></p><p data-curb-note></p><p>Banking is unavailable and assumed zero. This is an approximate preview, not a surveyed track model.</p><p data-source-links></p><p data-source-credit></p></details>
-  <details class="lap-evidence"><summary>How the lap is simulated</summary><p>300 hp at the engine; 85% drivetrain efficiency, 1,400 kg, CdA 0.66 m² and rolling resistance 0.015 by default. Power, drag, gravity on slopes and a combined braking/cornering grip ellipse constrain the speed at each step. A periodic forward/backward solver plans one flying lap.</p><p>The car follows the road centre, without racing-line optimisation, gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.</p></details><details class="lap-evidence"><summary>Compact storage</summary><p data-storage>One GeoJSON stores the coordinates, elevation anchors, terrain grid, curb intervals and imagery reference. All meshes and lap samples are built in your browser when you open this view, and disposed when you close it. Aerial imagery loads on demand.</p></details></div>
+  <details class="lap-evidence"><summary>How the lap is simulated</summary><p data-solver-note>300 hp at the engine; 85% drivetrain efficiency, 1,400 kg, CdA 0.66 m² and rolling resistance 0.015 by default. Power, drag, gravity on slopes and a combined braking/cornering grip ellipse constrain the speed at each step. A periodic forward/backward solver plans one flying lap.</p><p>The car follows the road centre, without racing-line optimisation, gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.</p></details><details class="lap-evidence"><summary>Compact storage</summary><p data-storage>One GeoJSON stores the coordinates, elevation anchors, terrain grid, curb intervals and imagery reference. All meshes and lap samples are built in your browser when you open this view, and disposed when you close it. Aerial imagery loads on demand.</p></details></div>
   </div></div><footer class="lap-playback"><div class="lap-transport"><button class="lap-play" disabled>Play lap</button><button class="lap-restart" aria-label="Restart lap" disabled>↺</button><span class="lap-rate">1× real time</span><span data-lap-time>—</span></div><label class="lap-timeline"><span class="sr-only">Lap time</span><input aria-label="Lap time" type="range" min="0" max="100" step="0.01" value="0" disabled></label><div class="lap-export"><button class="lap-record" disabled>Record lap</button><a class="lap-download" hidden>Download video</a><span class="lap-status" role="status"></span></div></footer>`;
   document.body.append(dialog);
   dialog.showModal();
@@ -48,6 +49,25 @@ export function openLap(
   dialog.querySelector(".lap-header h2")!.textContent = context.layoutName;
   const find = <T extends HTMLElement>(selector: string) =>
     dialog.querySelector<T>(selector)!;
+  if (isRun) {
+    dialog.setAttribute("aria-label", `${context.name} run simulator`);
+    find(".lap-stage").setAttribute("aria-label", "Run playback");
+    find(".lap-close").setAttribute("aria-label", "Close run simulator");
+    find(".lap-restart").setAttribute("aria-label", "Restart run");
+    find(".lap-timeline input").setAttribute("aria-label", "Run time");
+    find(".lap-play").textContent = "Play run";
+    find(".lap-record").textContent = "Record run";
+    find(".lap-results span").textContent = "SIMULATED RUN";
+    find(".lap-section h3 + p").textContent =
+      "Generic car · Standing start · Point-to-point run";
+    const explanation = find("[data-solver-note]");
+    explanation.closest("details")!.querySelector("summary")!.textContent =
+      "How the run is simulated";
+    explanation.textContent = explanation.textContent.replace(
+      "A periodic forward/backward solver plans one flying lap.",
+      "A forward/backward solver plans a standing-start run to the finish. The finish speed is unconstrained; no stopping zone is modelled.",
+    );
+  }
   let closed = false,
     playing = false,
     time = 0,
@@ -79,7 +99,7 @@ export function openLap(
     miniPoints.forEach((p, i) =>
       i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y),
     );
-    ctx.closePath();
+    if (!isRun) ctx.closePath();
     ctx.strokeStyle = "#52636b";
     ctx.lineWidth = 7;
     ctx.stroke();
@@ -170,12 +190,16 @@ export function openLap(
     if (recorder?.state === "recording") recorder.stop();
     stream?.getTracks().forEach((t) => t.stop());
     stream = undefined;
-    find(".lap-record").textContent = "Record lap";
+    find(".lap-record").textContent = isRun ? "Record run" : "Record lap";
   };
   function setPlaying(next: boolean) {
     playing = next;
     last = performance.now();
-    find(".lap-play").textContent = playing ? "Pause" : "Play lap";
+    find(".lap-play").textContent = playing
+      ? "Pause"
+      : isRun
+        ? "Play run"
+        : "Play lap";
     if (!playing) stopRecording();
     if (playing) raf = requestAnimationFrame(tick);
     else cancelAnimationFrame(raf);
@@ -301,10 +325,13 @@ export function openLap(
       for (const side of ["left", "right"] as const) {
         const coords = lap.road.points.map((p) => {
           const d = p[side] * (side === "left" ? 1 : -1),
-            g = projection.from([p.x + p.nx * d, -p.z - p.nz * d]);
+            edge = side === "left" ? p.leftEdge : p.rightEdge,
+            g = projection.from(
+              edge ? [edge[0], -edge[1]] : [p.x + p.nx * d, -p.z - p.nz * d],
+            );
           return [g[1], g[0]] as [number, number];
         });
-        coords.push(coords[0]);
+        if (lap.road.recipe.kind !== "run") coords.push(coords[0]);
         L.polyline(coords, {
           color: side === "left" ? "#ff8454" : "#58dbeb",
           weight: 2,

@@ -2,8 +2,8 @@
   "type": "FeatureCollection",
   "bbox": [
     33.7990486,
-    35.0244064,
-    33.8004256,
+    35.0243898,
+    33.8004508,
     35.026275
   ],
   "metadata": {
@@ -11,6 +11,7 @@
     "trackId": "cy-achna-speedway-ab0bcabd",
     "layoutId": "achna-inner-alternative",
     "license": "ODbL-1.0",
+    "licenseScope": "trace-and-timing",
     "attribution": "© OpenStreetMap contributors",
     "closed": false,
     "geometryStatus": "draft",
@@ -20,7 +21,61 @@
     "reviewedAt": null,
     "notes": [
       "The operator course plan identifies the inner hairpin alternative connecting the northern cross-course section to the western return. Exact independent source way 734690066 preserves both real mapped junction endpoints. This connecting branch is not a separately timed lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
-    ]
+    ],
+    "model3d": {"schemaVersion":1,"kind":"run","pathMethod":"paired-border-midpoints","startOffsetM":0,"referenceLengthM":363.1,"elevationMethod":"monotone-cubic","elevation":[[0,49.848],[193.4549180327869,50],[363.1,51.389]],"bankingDeg":0,"quality":{"stationing":"border-midline","elevation":"terrain-raster","curbs":"geometry-estimated","borders":"supplemental-unverified"},"preparation":{"version":2,"inputSha256":"bdcd2f308746b944336c914e1c777a8a042308203f880799c7149d8cac9f8472","elevationToleranceM":0.5,"curbMethod":"curvature-intervals-v1"},"corners":[{"distanceM":0,"name":"Run start"},{"distanceM":60.52,"name":"Bend 1"},{"distanceM":100.37,"name":"Bend 2"},{"distanceM":156.46,"name":"Bend 3"},{"distanceM":224.35,"name":"Bend 4"},{"distanceM":290.78,"name":"Bend 5"},{"distanceM":341.39,"name":"Bend 6"},{"distanceM":363.1,"name":"Finish"}],"curbs":[{"startM":0,"endM":37.52,"side":"left","widthM":1,"heightM":0.08},{"startM":24.47,"endM":96.56,"side":"right","widthM":1,"heightM":0.08},{"startM":83.51,"endM":117.23,"side":"left","widthM":1,"heightM":0.08},{"startM":136.65,"endM":176.27,"side":"right","widthM":1,"heightM":0.08},{"startM":186.83,"endM":261.87,"side":"right","widthM":1,"heightM":0.08},{"startM":248.83,"endM":332.72,"side":"left","widthM":1,"heightM":0.08},{"startM":319.68,"endM":363.1,"side":"right","widthM":1,"heightM":0.08}],"curbStyle":{"colors":["#f2f2e7","#c73732"],"stripeLengthM":2},"imagery":{"url":"https://api.maptiler.com/maps/satellite-v4/tiles.json","tiles":{"provider":"maptiler-satellite-v4","zoom":17,"bounds":[77841,51905,77842,51906]},"extent3857":[3762230.5321963765,4167041.033994669,3762842.0284226574,4167652.53022095],"attribution":"© MapTiler © OpenStreetMap contributors","termsUrl":"https://www.maptiler.com/copyright/"},"terrain":{"schemaVersion":1,"trackId":"cy-achna-speedway-ab0bcabd","bounds":[33.7972862,35.0219597,33.8030429,35.0282484],"columns":16,"rows":16,"heights":[51,51,51,51,50,50,49,49,49,50,51,51,51,50,50,49,52,51,51,51,50,50,49,49,49,50,50,50,50,50,50,50,52,51,51,51,51,50,50,49,49,49,49,49,49,49,49,50,52,51,51,51,51,50,50,49,49,49,49,49,49,49,50,50,52,52,51,51,51,51,50,50,49,50,50,50,50,50,50,50,52,52,51,51,51,51,50,50,50,50,50,50,50,50,50,50,52,52,52,51,51,51,51,50,50,50,51,50,50,50,49,49,52,52,52,52,52,51,51,50,50,50,50,50,50,50,50,49,52,52,52,52,52,51,51,50,50,50,50,50,50,50,50,50,53,53,53,53,52,51,51,50,50,50,50,50,50,50,50,50,53,53,53,53,52,51,51,50,50,51,51,50,50,49,49,50,54,53,53,53,52,52,51,51,51,51,51,51,50,49,49,49,54,54,53,53,53,52,51,51,51,51,51,51,50,50,49,49,53,53,53,53,52,52,51,50,51,51,52,52,51,51,50,50,52,52,53,53,52,52,51,50,50,51,52,53,53,52,51,50,52,52,52,52,52,52,52,51,51,51,52,52,52,52,51,50],"source":{"name":"Mapzen Terrain Tiles","url":"https://registry.opendata.aws/terrain-tiles/","zoom":12,"sampledAt":"2026-10-03T22:19:15.943Z","sampleSpacingM":47,"attribution":["Mapzen Terrain Tiles","Global elevation data courtesy of the U.S. Geological Survey and NOAA.","Produced using Copernicus data and information funded by the European Union, EU-DEM layers."]}},"sources":{"elevation":"https://registry.opendata.aws/terrain-tiles/","imagery":"https://api.maptiler.com/maps/satellite-v4/tiles.json","imageryCredit":"© MapTiler © OpenStreetMap contributors","notes":"Road height is sampled from the existing approximately 47 m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the midpoint of corresponding border stations, not an official length measurement. This standing-start run begins at the first paired edge station and ends at the last; original timing metadata are retained. Finish speed is unconstrained, with no stopping zone modelled. Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included."}},
+    "borderInference": {
+      "schemaVersion": 1,
+      "method": "rgb-road-appearance-v3",
+      "status": "estimated",
+      "reviewedAt": null,
+      "edgeConvention": "left-right-along-trace",
+      "traceSha256": "c8197875d5875c70a217b6f1b31a1a45058615327d87cc26ad750e235c2b5775",
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 17,
+          "bounds": [
+            77841,
+            51905,
+            77842,
+            51906
+          ]
+        },
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T09:57:20.353Z",
+        "sha256": "0cd0fa5e9766321a184dbdf5f93f9f1136c767b8cec404fbc016a89ed373a666",
+        "width": 1024,
+        "height": 1024,
+        "extent3857": [
+          3762230.5321963765,
+          4167041.033994669,
+          3762842.0284226574,
+          4167652.53022095
+        ],
+        "groundPixelSizeM": 0.489
+      },
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9106,
+          0.9431
+        ],
+        "medianInteriorDifference": [
+          0.0401,
+          0.0489
+        ],
+        "samplingStepM": 3.003138789425235,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "note": "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been manually reviewed; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy."
+    }
   },
   "features": [
     {
@@ -105,6 +160,8 @@
           ]
         ]
       }
-    }
+    },
+    {"type":"Feature","id":"inner","properties":{"role":"inner","sourceIds":["maptiler-licensed-border-imagery"],"license":"LicenseRef-MapTiler-Derived-Borders","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[33.8002664,35.0262525],[33.8002553,35.0262357],[33.800238,35.0262107],[33.800221,35.0261868],[33.8002065,35.026166],[33.800196,35.0261483],[33.8001956,35.0261339],[33.800208,35.0261209],[33.8002281,35.0261071],[33.8002503,35.0260919],[33.800274,35.0260763],[33.8002987,35.0260621],[33.800324,35.0260471],[33.8003508,35.026029],[33.8003786,35.0260075],[33.8004023,35.0259815],[33.8004192,35.0259525],[33.8004284,35.0259224],[33.8004373,35.0258937],[33.8004457,35.0258659],[33.8004508,35.0258372],[33.8004507,35.0258082],[33.8004475,35.0257798],[33.8004447,35.0257522],[33.8004441,35.0257251],[33.8004445,35.025698],[33.800445,35.0256708],[33.8004447,35.0256434],[33.8004403,35.0256163],[33.8004309,35.0255896],[33.8004214,35.0255631],[33.8004119,35.0255367],[33.8004025,35.0255103],[33.8003963,35.0254836],[33.8003944,35.0254566],[33.8003926,35.0254296],[33.8003919,35.0254026],[33.8003945,35.0253753],[33.800397,35.025348],[33.8003996,35.0253207],[33.8004011,35.0252934],[33.8004015,35.0252663],[33.8003996,35.0252393],[33.8003956,35.0252125],[33.8003916,35.0251857],[33.8003909,35.0251586],[33.8003935,35.0251313],[33.8003982,35.0251037],[33.8004073,35.0250755],[33.800419,35.0250463],[33.8004307,35.0250164],[33.8004412,35.0249864],[33.8004437,35.0249576],[33.8004388,35.0249306],[33.8004285,35.0249047],[33.8004128,35.0248796],[33.8003928,35.0248551],[33.8003761,35.0248302],[33.8003626,35.0248047],[33.8003501,35.0247792],[33.8003398,35.0247532],[33.8003317,35.024727],[33.8003247,35.0247006],[33.8003187,35.024674],[33.8003128,35.0246475],[33.8003068,35.0246209],[33.8003009,35.0245943],[33.8002938,35.0245679],[33.8002856,35.0245412],[33.8002769,35.0245128],[33.8002655,35.0244839],[33.8002453,35.024458],[33.8002193,35.0244361],[33.8001888,35.0244166],[33.8001567,35.0243998],[33.8001216,35.024391],[33.8000844,35.0243898],[33.8000462,35.0243956],[33.80001,35.0244042],[33.7999771,35.0244174],[33.7999463,35.0244358],[33.7999189,35.0244598],[33.7998989,35.0244873],[33.7998885,35.0245174],[33.7998896,35.0245486],[33.7998954,35.024578],[33.7998987,35.0246056],[33.7999018,35.0246312],[33.7999069,35.0246548],[33.7999094,35.0246762],[33.7999062,35.024697],[33.7998986,35.0247197],[33.7998903,35.0247437],[33.7998809,35.0247683],[33.7998676,35.0247903],[33.7998496,35.0248102],[33.7998258,35.0248274],[33.7998004,35.0248441],[33.7997749,35.0248609],[33.7997479,35.024875],[33.7997191,35.0248845],[33.799688,35.0248875],[33.7996554,35.024886],[33.7996229,35.0248827],[33.7995913,35.0248795],[33.7995626,35.0248759],[33.7995371,35.0248707],[33.7995126,35.0248608],[33.7994866,35.0248477],[33.7994584,35.0248346],[33.7994295,35.0248211],[33.799401,35.0248067],[33.7993724,35.0247923],[33.7993427,35.024781],[33.799312,35.0247727],[33.7992793,35.0247683],[33.7992464,35.0247639],[33.7992136,35.0247605],[33.7991809,35.024757],[33.7991479,35.0247554],[33.7991149,35.0247546],[33.7990818,35.0247539],[33.7990599,35.0247531]]}},
+    {"type":"Feature","id":"outer","properties":{"role":"outer","sourceIds":["maptiler-licensed-border-imagery"],"license":"LicenseRef-MapTiler-Derived-Borders","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[33.8001223,35.0262718],[33.8001187,35.026254],[33.8001156,35.0262271],[33.8001134,35.0261993],[33.8001132,35.0261696],[33.8001198,35.02614],[33.8001344,35.026114],[33.800156,35.0260923],[33.8001815,35.0260728],[33.8002055,35.0260535],[33.8002292,35.0260343],[33.8002522,35.0260142],[33.800276,35.0259945],[33.8003015,35.0259783],[33.8003267,35.0259635],[33.8003482,35.0259477],[33.8003661,35.0259289],[33.8003797,35.0259058],[33.8003893,35.0258808],[33.8003958,35.025855],[33.8003957,35.0258292],[33.8003905,35.025804],[33.8003816,35.0257788],[33.8003744,35.025753],[33.8003716,35.0257263],[33.8003699,35.0256995],[33.8003704,35.025673],[33.8003745,35.0256465],[33.8003757,35.02562],[33.8003729,35.0255935],[33.80037,35.0255668],[33.800366,35.02554],[33.8003587,35.0255134],[33.8003536,35.0254867],[33.8003496,35.0254599],[33.8003478,35.0254329],[33.8003482,35.0254057],[33.8003485,35.0253786],[33.8003489,35.0253515],[33.8003493,35.0253243],[33.8003475,35.0252973],[33.8003435,35.0252705],[33.8003384,35.0252438],[33.8003355,35.0252169],[33.8003348,35.0251898],[33.8003373,35.0251625],[33.8003366,35.0251354],[33.8003326,35.0251087],[33.8003265,35.0250824],[33.8003209,35.0250563],[33.8003133,35.0250307],[33.8003102,35.0250044],[33.8003118,35.024977],[33.8003124,35.0249496],[33.8003097,35.0249225],[33.8003059,35.0248956],[33.8002999,35.0248691],[33.8002929,35.0248427],[33.8002859,35.0248163],[33.8002788,35.0247899],[33.8002718,35.0247635],[33.8002658,35.0247369],[33.8002599,35.0247103],[33.8002528,35.0246839],[33.8002458,35.0246575],[33.8002377,35.0246313],[33.8002285,35.0246052],[33.8002215,35.0245788],[33.8002156,35.0245526],[33.8002101,35.0245278],[33.8002048,35.0245049],[33.800194,35.0244858],[33.8001756,35.0244703],[33.800153,35.0244576],[33.8001321,35.0244469],[33.8001119,35.0244425],[33.8000899,35.0244435],[33.8000648,35.0244502],[33.8000384,35.0244559],[33.8000138,35.0244654],[33.7999938,35.0244795],[33.7999761,35.0244948],[33.7999629,35.0245088],[33.799957,35.024525],[33.7999587,35.0245458],[33.7999627,35.02457],[33.799967,35.0245962],[33.7999726,35.0246239],[33.7999804,35.0246527],[33.7999826,35.0246829],[33.7999772,35.0247131],[33.7999668,35.0247421],[33.7999556,35.0247715],[33.7999437,35.0248013],[33.7999257,35.0248302],[33.7999017,35.0248566],[33.7998727,35.0248773],[33.7998433,35.0248953],[33.7998123,35.0249117],[33.7997777,35.0249271],[33.7997386,35.0249369],[33.7996988,35.0249407],[33.7996609,35.0249407],[33.7996251,35.0249403],[33.7995885,35.0249397],[33.7995497,35.024937],[33.7995117,35.0249272],[33.7994791,35.0249093],[33.7994512,35.0248889],[33.7994244,35.0248711],[33.7993989,35.024854],[33.7993737,35.0248383],[33.7993489,35.0248248],[33.7993251,35.0248149],[33.7993004,35.0248084],[33.7992721,35.0248056],[33.7992414,35.0248033],[33.7992087,35.0248025],[33.7991754,35.0248045],[33.7991417,35.0248091],[33.7991079,35.0248155],[33.7990741,35.024821],[33.7990515,35.0248256]]}}
   ]
 }

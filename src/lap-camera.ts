@@ -19,18 +19,23 @@ export class CameraCourse {
   point(distance: number): Vector3 {
     const { points, length } = this.road,
       n = points.length;
-    const s = ((distance % length) + length) % length;
+    const open = this.road.recipe.kind === "run";
+    const index = (i: number) =>
+      open ? Math.max(0, Math.min(n - 1, i)) : (i + n) % n;
+    const s = open
+      ? Math.max(0, Math.min(length, distance))
+      : ((distance % length) + length) % length;
     let lo = 0,
-      hi = n - 1;
+      hi = n - (open ? 2 : 1);
     while (lo < hi) {
       const m = Math.ceil((lo + hi) / 2);
       if (points[m].s <= s) lo = m;
       else hi = m - 1;
     }
     const i = lo,
-      j = (i + 1) % n,
-      prev = (i - 1 + n) % n,
-      next = (i + 2) % n;
+      j = index(i + 1),
+      prev = index(i - 1),
+      next = index(i + 2);
     const h = points[i].ds,
       u = (s - points[i].s) / h;
     const tangentA = this.centres[j]
@@ -77,7 +82,10 @@ export class CameraCourse {
     if (mode === "driver")
       return {
         position: this.point(distance).add(new Vector3(0, 1.3, 0)),
-        target: this.smoothPoint(distance + 40).add(new Vector3(0, 1.3, 0)),
+        target: (this.road.recipe.kind === "run"
+          ? this.smoothPoint(distance).addScaledVector(forward, 40)
+          : this.smoothPoint(distance + 40)
+        ).add(new Vector3(0, 1.3, 0)),
       };
     return {
       position: anchor

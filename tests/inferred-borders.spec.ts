@@ -84,7 +84,14 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
     await expect(page.locator(".lap-loading")).toBeHidden();
     await page.locator(".lap-play").click();
     await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");
-    await page.getByRole("button", { name: "Close lap simulator" }).click();
+    await page
+      .getByRole("button", {
+        name:
+          item.layout.metadata.model3d?.kind === "run"
+            ? "Close run simulator"
+            : "Close lap simulator",
+      })
+      .click();
     if ((i + 1) % 10 === 0) console.log(`Checked ${i + 1} inferred layouts`);
   }
   console.log(`Checked all ${selected.length} inferred layouts.`);

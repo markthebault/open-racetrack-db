@@ -339,14 +339,28 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     if (
       m.model3d.kind !== "surface" &&
       m.model3d.pathMethod &&
-      m.borderInference?.method !== "rgb-road-appearance-v3"
+      m.borderInference?.method !== "rgb-road-appearance-v3" &&
+      m.borderInference?.edgeConvention !== "left-right-along-trace"
     )
       throw new Error(
         "Paired driving paths require correspondence-preserving border inference",
       );
     if (borders.length !== 2) throw new Error("model3d: requires both borders");
-    if (m.model3d.kind !== "surface" && (!m.closed || isNetwork))
+    if (
+      m.model3d.kind !== "surface" &&
+      m.model3d.kind !== "run" &&
+      (!m.closed || isNetwork)
+    )
       throw new Error("model3d: lap playback requires a closed route");
+    if (
+      m.model3d.kind === "run" &&
+      (m.closed ||
+        isNetwork ||
+        m.borderInference?.edgeConvention !== "left-right-along-trace")
+    )
+      throw new Error(
+        "model3d: open playback needs an open route with paired left/right edges",
+      );
     if (m.licenseScope !== "trace-and-timing")
       throw new Error("model3d: trace license scope must be explicit");
     if (

@@ -30,6 +30,8 @@ const args = process.argv.slice(2),
   write = args.includes("--write"),
   check = args.includes("--check");
 if (check && write) throw new Error("--check cannot be combined with --write");
+if (option("--cached-image") && !option("--track"))
+  throw new Error("--cached-image requires a specific --track");
 if (!args.includes("--all") && !option("--track"))
   throw new Error(
     "Use --all or --track <id>; --write saves supported estimated borders in each existing GeoJSON.",
@@ -46,15 +48,20 @@ const imageryEnv = loadEnv("development", process.cwd(), [
   "VITE_",
   "MAPTILER_",
 ]);
-const licensed = args.includes("--licensed-imagery")
-  ? licensedImagery(
-      process.env.MAPTILER_EXTRACTION_API_KEY ??
-        imageryEnv.MAPTILER_EXTRACTION_API_KEY ??
-        process.env.VITE_MAPTILER_API_KEY ??
-        imageryEnv.VITE_MAPTILER_API_KEY,
-      Math.min(60000, Number(option("--timeout-ms") ?? 25000)),
-    )
-  : undefined;
+const licensed =
+  args.includes("--licensed-imagery") && !option("--cached-image")
+    ? licensedImagery(
+        [
+          process.env.MAPTILER_EXTRACTION_API_KEY,
+          imageryEnv.MAPTILER_EXTRACTION_API_KEY,
+          process.env.VITE_MAPTILER_API_KEY,
+          imageryEnv.VITE_MAPTILER_API_KEY,
+        ]
+          .map((value) => value?.trim())
+          .find(Boolean) ?? "",
+        Math.min(60000, Number(option("--timeout-ms") ?? 25000)),
+      )
+    : undefined;
 const providers = {
   US: {
     id: "usgs-naip-border-imagery",
@@ -97,6 +104,23 @@ async function fetchBytes(url: string) {
   throw new Error(`Imagery acquisition failed: ${failure}`);
 }
 async function acquire(track: Track, layout: Layout): Promise<Acquired> {
+  const pinned = option("--cached-image");
+  if (pinned) {
+    if (!pinned.endsWith(".json"))
+      throw new Error("Cached image reference must be a JSON sidecar");
+    const info = borderInferenceSchema.shape.imagery.parse(await read(pinned));
+    if (
+      info.rightsBasis === "source-specific-agreement" &&
+      !args.includes("--licensed-imagery")
+    )
+      throw new Error(
+        "A source-specific cached image requires --licensed-imagery authorization",
+      );
+    const bytes = await readFile(pinned.replace(/\.json$/, ".png"));
+    if (sha(bytes) !== info.sha256)
+      throw new Error("Pinned cached image hash mismatch");
+    return { image: decodeRaster(bytes, info.extent3857), info };
+  }
   const country = track.country.code as keyof typeof providers,
     provider = providers[country];
   // Prefer pinned, reusable high-resolution sources at this venue before requesting new imagery.
@@ -360,31 +384,17 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       report.push(row);
       continue;
     }
+    const preservedTerrain = layout.metadata.model3d?.terrain;
     if (old) {
       layout.features = layout.features.filter(
         (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
       );
-      if (write && layout.metadata.model3d) {
-        try {
-          await writeFile(
-            `data/elevation/${track.id}.json`,
-            JSON.stringify(layout.metadata.model3d.terrain) + "\n",
-            { flag: "wx" },
-          );
-        } catch (error) {
-          if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
-        }
-      }
       delete layout.metadata.borderInference;
       delete layout.metadata.model3d;
       delete layout.metadata.licenseScope;
       layout.bbox = bounds(
         layout.features.flatMap((f) => geometryPaths(f.geometry).flat()),
       );
-      if (write) {
-        await writeFile(file + ".next", serializeLayout(layout));
-        await rename(file + ".next", file);
-      }
     }
     if (layout.metadata.geometryKind === "network") {
       report.push({
@@ -479,6 +489,18 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       );
       const checked = validateLayout(candidate, candidateTrack, item.id);
       if (write) {
+        if (preservedTerrain) {
+          await mkdir("data/elevation", { recursive: true });
+          try {
+            await writeFile(
+              `data/elevation/${track.id}.json`,
+              JSON.stringify(preservedTerrain) + "\n",
+              { flag: "wx" },
+            );
+          } catch (error) {
+            if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+          }
+        }
         Object.assign(track, candidateTrack);
         await writeFile(
           trackFile + ".next",
@@ -504,6 +526,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             : row.reason.includes("acquisition failed")
               ? "acquisition-failed"
               : "needs-imagery-review";
+      if (old) {
+        row.attemptStatus = row.status;
+        row.status =
+          old.traceSha256 === inputHash
+            ? "retained-estimate"
+            : "stale-estimate";
+      }
     }
     report.push(row);
     console.log(

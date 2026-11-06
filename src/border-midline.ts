@@ -9,7 +9,10 @@ export function pairedBorderMidline(layout: Layout): Position[] {
       throw new Error("Midline needs two paired continuous edges");
     return geometryPaths(feature.geometry)[0];
   });
-  if (edges[0].length !== edges[1].length || edges[0].length < 3)
+  if (
+    edges[0].length !== edges[1].length ||
+    edges[0].length < (layout.metadata.closed ? 3 : 2)
+  )
     throw new Error("Midline needs matching edge stations");
   if (
     edges.some(

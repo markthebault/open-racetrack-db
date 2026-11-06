@@ -222,6 +222,7 @@ const output = {
   elapsedMs: performance.now() - started,
   circuits: new Set(report.map((r) => r.trackId)).size,
   laps: report.filter((r) => r.modelKind === "lap").length,
+  runs: report.filter((r) => r.modelKind === "run").length,
   surfaces: report.filter((r) => r.modelKind === "surface").length,
   tracks: report,
 };

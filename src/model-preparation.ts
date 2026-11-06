@@ -106,6 +106,7 @@ export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
 export function compressElevation(
   samples: ElevationAnchor[],
   tolerance = ELEVATION_TOLERANCE_M,
+  closed = true,
 ): ElevationAnchor[] {
   if (samples.length < 3)
     throw new Error("At least three elevation samples are required");
@@ -122,7 +123,7 @@ export function compressElevation(
     for (let i = 1; i < samples.length - 1; i++)
       if (!indices.has(i)) {
         const error = Math.abs(
-          roadHeight(anchors, samples[i][0]) - samples[i][1],
+          roadHeight(anchors, samples[i][0], closed) - samples[i][1],
         );
         if (error > worst) {
           worst = error;
@@ -142,18 +143,26 @@ export function terrainProfile(
   const projection = plane(road.origin),
     step = Math.max(1, Math.floor(40 / road.step)),
     samples: ElevationAnchor[] = [];
-  for (let i = 0; i < road.points.length; i += step) {
+  const closed = road.recipe.kind !== "run",
+    denominator = road.points.length - (closed ? 0 : 1);
+  for (let i = 0; i < denominator; i += step) {
     const p = road.points[i],
       height = sampleElevation(terrain, projection.from([p.x, -p.z]));
     if (height === null)
       throw new Error("Terrain does not cover the selected course");
     samples.push([
-      (i / road.points.length) * road.recipe.referenceLengthM,
+      (i / denominator) * road.recipe.referenceLengthM,
       Number(height.toFixed(3)),
     ]);
   }
-  samples.push([road.recipe.referenceLengthM, samples[0][1]]);
-  return compressElevation(samples);
+  const last = road.points.at(-1)!;
+  const endHeight = closed
+    ? samples[0][1]
+    : sampleElevation(terrain, projection.from([last.x, -last.z]));
+  if (endHeight === null)
+    throw new Error("Terrain does not cover the route finish");
+  samples.push([road.recipe.referenceLengthM, Number(endHeight.toFixed(3))]);
+  return compressElevation(samples, ELEVATION_TOLERANCE_M, closed);
 }
 
 /** Illustration only: no claim that curvature identifies a real painted curb or its dimensions. */
@@ -161,10 +170,11 @@ export function illustrativeCurbs(road: Road): LapModel3D["curbs"] {
   const n = road.points.length,
     length = road.recipe.referenceLengthM,
     step = length / n;
+  const index = (i: number) =>
+    road.recipe.kind === "run" ? Math.max(0, Math.min(n - 1, i)) : (i + n) % n;
   const signs = road.points.map((_, i) => {
     let k = 0;
-    for (let j = -2; j <= 2; j++)
-      k += road.points[(i + j + n) % n].curvature / 5;
+    for (let j = -2; j <= 2; j++) k += road.points[index(i + j)].curvature / 5;
     return Math.abs(k) > 1 / 300 ? Math.sign(k) : 0;
   });
   const runs: { start: number; end: number; sign: number; angle: number }[] =
@@ -206,19 +216,29 @@ export function prepareTrackModel(
   terrain: ElevationGrid,
   inputSha256: string,
 ): LapModel3D {
-  if (!layout.metadata.closed || layout.metadata.geometryKind === "network")
-    throw new Error("Preparation requires one closed route");
+  const run =
+    !layout.metadata.closed &&
+    layout.metadata.borderInference?.edgeConvention ===
+      "left-right-along-trace";
+  if (
+    (!layout.metadata.closed && !run) ||
+    layout.metadata.geometryKind === "network"
+  )
+    throw new Error(
+      "Preparation requires a closed route or paired open-road edges",
+    );
   const paired =
-    layout.metadata.borderInference?.method === "rgb-road-appearance-v3";
+    run || layout.metadata.borderInference?.method === "rgb-road-appearance-v3";
   const length = paired
     ? geographicLength(pairedBorderMidline(layout))
     : layout.metadata.lengthM;
   const seed: LapModel3D = {
     schemaVersion: 1,
+    ...(run ? { kind: "run" as const } : {}),
     ...(paired ? { pathMethod: "paired-border-midpoints" as const } : {}),
     startOffsetM: 0,
     referenceLengthM: length,
-    elevationMethod: "periodic-monotone-cubic",
+    elevationMethod: run ? "monotone-cubic" : "periodic-monotone-cubic",
     elevation: [
       [0, 0],
       [length / 2, 0],
@@ -246,7 +266,7 @@ export function prepareTrackModel(
       elevation: terrain.source.url,
       imagery: imageryForLayout(layout).url,
       imageryCredit: imageryForLayout(layout).attribution,
-      notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use ${paired ? "the midpoint of corresponding border stations" : "the mapped trace"}, not an official length measurement. ${layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
+      notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use ${paired ? "the midpoint of corresponding border stations" : "the mapped trace"}, not an official length measurement. ${run ? "This standing-start run begins at the first paired edge station and ends at the last; original timing metadata are retained. Finish speed is unconstrained, with no stopping zone modelled." : layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
     },
   };
   const road = buildRoad({
@@ -262,8 +282,13 @@ export function prepareTrackModel(
   const corners = [
     {
       distanceM: 0,
-      name: layout.metadata.timing?.start ? "Start / finish" : "Trace start",
+      name: run
+        ? "Run start"
+        : layout.metadata.timing?.start
+          ? "Start / finish"
+          : "Trace start",
     },
+    ...(run ? [{ distanceM: length, name: "Finish" }] : []),
     ...curbs
       .filter((c) => c.startM > 0)
       .map((c, i) => ({
@@ -326,6 +351,12 @@ export function prepareModel(
   terrain: ElevationGrid,
   inputSha256: string,
 ): TrackModel3D {
+  if (
+    !layout.metadata.closed &&
+    layout.metadata.geometryKind !== "network" &&
+    layout.metadata.borderInference?.edgeConvention === "left-right-along-trace"
+  )
+    return prepareTrackModel(layout, terrain, inputSha256);
   if (!layout.metadata.closed || layout.metadata.geometryKind === "network")
     return prepareSurfaceModel(
       layout,

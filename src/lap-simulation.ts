@@ -3,6 +3,7 @@ import { geometryPaths, type Layout } from "../schemas/data";
 import { plane, type Position } from "./geo";
 import { indexBorders, borderSection } from "./border-sections";
 import { pairedBorderMidline } from "./border-midline";
+import { buildOpenRoad } from "./open-road";
 
 export const GRAVITY = 9.80665;
 export const DEFAULT_CAR = {
@@ -30,6 +31,8 @@ export interface RoadPoint {
   nz: number;
   curvature: number;
   grade: number;
+  leftEdge?: Position;
+  rightEdge?: Position;
 }
 export interface Road {
   points: RoadPoint[];
@@ -48,14 +51,21 @@ export interface Lap {
 }
 
 /** Periodic monotone cubic interpolation: anchors are exact and hills cannot overshoot. */
-export function roadHeight(anchors: ElevationAnchor[], station: number) {
+export function roadHeight(
+  anchors: ElevationAnchor[],
+  station: number,
+  closed = true,
+) {
   const end = anchors.at(-1)![0];
-  const s = ((station % end) + end) % end;
+  const s = closed
+    ? ((station % end) + end) % end
+    : Math.max(0, Math.min(end, station));
   const n = anchors.length - 1;
   const slopes = anchors
     .slice(0, -1)
     .map((p, i) => (anchors[i + 1][1] - p[1]) / (anchors[i + 1][0] - p[0]));
   const tangent = (i: number) => {
+    if (!closed && (i === 0 || i === n)) return slopes[i === 0 ? 0 : n - 1];
     const previous = (i - 1 + n) % n,
       next = i % n;
     const a = slopes[previous],
@@ -65,6 +75,7 @@ export function roadHeight(anchors: ElevationAnchor[], station: number) {
       hb = anchors[next + 1][0] - anchors[next][0];
     return (3 * (ha + hb)) / ((2 * hb + ha) / a + (hb + 2 * ha) / b);
   };
+  if (!closed && s === end) return anchors.at(-1)![1];
   const i = Math.max(
     0,
     anchors.findIndex((p, j) => j < n && s >= p[0] && s < anchors[j + 1][0]),
@@ -87,6 +98,7 @@ export function buildRoad(layout: Layout): Road {
   if (!recipe) throw new Error("This layout has no embedded 3D model data.");
   if (recipe.kind === "surface")
     throw new Error("This layout has no playable closed-lap model.");
+  if (recipe.kind === "run") return buildOpenRoad(layout, recipe);
   const trace =
     recipe.pathMethod === "paired-border-midpoints"
       ? pairedBorderMidline(layout)
@@ -254,7 +266,11 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
   if (Object.values(car).some((v) => !Number.isFinite(v) || v <= 0))
     throw new Error("Car values must be positive.");
   const { points } = road,
-    n = points.length;
+    n = points.length,
+    closed = road.recipe.kind !== "run",
+    edges = closed ? n : n - 1,
+    index = (i: number) =>
+      closed ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
   const speed = points.map((p, i) =>
     Math.min(
       car.topSpeedKph / 3.6,
@@ -262,17 +278,18 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
         (car.lateralG * GRAVITY) /
           Math.max(
             Math.abs(p.curvature),
-            Math.abs(points[(i + 1) % n].curvature),
-            Math.abs(points[(i - 1 + n) % n].curvature),
+            Math.abs(points[index(i + 1)].curvature),
+            Math.abs(points[index(i - 1)].curvature),
             1e-8,
           ),
       ),
     ),
   );
+  if (!closed) speed[0] = 0;
   // Conservative endpoint bound: evaluate grip at the larger endpoint speed and curvature.
   for (let pass = 0; pass < 100; pass++) {
     let change = 0;
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < edges; i++) {
       const step = points[i].ds;
       const j = (i + 1) % n,
         grade = (points[j].y - points[i].y) / step,
@@ -291,13 +308,13 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
           low = mid;
         else high = mid;
       }
-      const v = Math.max(1, low);
+      const v = Math.max(closed ? 1 : 0, low);
       if (v < speed[j]) {
         change = Math.max(change, speed[j] - v);
         speed[j] = v;
       }
     }
-    for (let i = n - 1; i >= 0; i--) {
+    for (let i = edges - 1; i >= 0; i--) {
       const step = points[i].ds;
       const j = (i + 1) % n,
         grade = (points[j].y - points[i].y) / step,
@@ -316,7 +333,7 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
           low = mid;
         else high = mid;
       }
-      const v = Math.max(1, low);
+      const v = Math.max(closed ? 1 : 0, low);
       if (v < speed[i]) {
         change = Math.max(change, speed[i] - v);
         speed[i] = v;
@@ -325,15 +342,15 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
     if (change < 1e-7) break;
   }
   const time = [0];
-  for (let i = 0; i < n; i++)
+  for (let i = 0; i < edges; i++)
     time.push(time[i] + (2 * points[i].ds) / (speed[i] + speed[(i + 1) % n]));
-  return { road, car, speed, time, duration: time[n] };
+  return { road, car, speed, time, duration: time[edges] };
 }
 
 export function sampleLap(lap: Lap, elapsed: number) {
   const time = Math.max(0, Math.min(lap.duration, elapsed));
   let lo = 0,
-    hi = lap.speed.length - 1;
+    hi = lap.speed.length - (lap.road.recipe.kind === "run" ? 2 : 1);
   while (lo < hi) {
     const m = Math.ceil((lo + hi) / 2);
     if (lap.time[m] <= time) lo = m;

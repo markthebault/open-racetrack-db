@@ -12,14 +12,24 @@ export function roadStrip(
     uv: number[] = [],
     colors: number[] = [];
   const n = road.points.length;
-  for (let i = 0; i < n; i++) {
+  const edgePoint = (p: RoadPoint, d: number) => {
+    const edge = d >= 0 ? p.leftEdge : p.rightEdge;
+    if (!edge) return [p.x + p.nx * d, p.y + lift, p.z + p.nz * d];
+    const fraction = Math.abs(d) / (d >= 0 ? p.left : p.right);
+    return [
+      p.x + (edge[0] - p.x) * fraction,
+      p.y + lift,
+      p.z + (edge[1] - p.z) * fraction,
+    ];
+  };
+  for (let i = 0; i < (road.recipe.kind === "run" ? n - 1 : n); i++) {
     const a = road.points[i],
       b = road.points[(i + 1) % n];
     const station = (a.s / road.length) * road.recipe.referenceLengthM;
     if (range && (station < range[0] || station > range[1])) continue;
     const corners = [
-      ...offsets(a).map((d) => [a.x + a.nx * d, a.y + lift, a.z + a.nz * d]),
-      ...offsets(b).map((d) => [b.x + b.nx * d, b.y + lift, b.z + b.nz * d]),
+      ...offsets(a).map((d) => edgePoint(a, d)),
+      ...offsets(b).map((d) => edgePoint(b, d)),
     ];
     const color = new THREE.Color(
       road.recipe.curbStyle.colors[

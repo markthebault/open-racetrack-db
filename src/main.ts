@@ -1270,7 +1270,11 @@ async function select(id: string, requested?: string, push = true) {
     }
     get("play-lap").hidden = !data.metadata.model3d;
     get("play-lap").textContent =
-      data.metadata.model3d?.kind === "surface" ? "Explore 3D" : "▷ Play lap";
+      data.metadata.model3d?.kind === "surface"
+        ? "Explore 3D"
+        : data.metadata.model3d?.kind === "run"
+          ? "▷ Play run"
+          : "▷ Play lap";
     if (data.metadata.model3d && openInitialLap) {
       openInitialLap = false;
       get<HTMLButtonElement>("play-lap").click();
