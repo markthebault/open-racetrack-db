@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T22:41:48.679Z",
+  "generatedAt": "2026-11-07T23:06:17.070486+00:00",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1031,15 +1031,15 @@
       "trackId": "br-circuito-paladino-555004344",
       "layoutId": "main",
       "file": "data/brazil/circuito-paladino-555004344/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "needs-route-review",
+      "reason": "Native imagery review: the retained source trace is displaced from the visible pavement. A source-guided alignment proposal is not an accepted replacement; source correction and independent validation are needed before extracting limits."
     },
     {
       "trackId": "br-race-park-maringa-187793914",
       "layoutId": "main",
       "file": "data/brazil/race-park-maringa-187793914/layouts/main.geojson",
       "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "reason": "Native imagery review: low contrast and adjoining soil/grass prevent consistent road-edge identification. Pinned OSM ways declare concrete/asphalt, but the current image does not establish complete limits or confirm present surface condition."
     },
     {
       "trackId": "br-velopark-94748799",
@@ -2080,8 +2080,8 @@
       "trackId": "es-mir-racing-villena-circuit-449369135",
       "layoutId": "main",
       "file": "data/spain/mir-racing-villena-circuit-449369135/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "needs-route-review",
+      "reason": "Native imagery review: parts of the retained inner-route trace cross infield areas. The intended configuration and source alignment need correction before extracting continuous road limits."
     },
     {
       "trackId": "es-motorland-aragon-230256659",
@@ -2767,15 +2767,15 @@
       "trackId": "gb-driftland-37d6ee3f",
       "layoutId": "driftland-cross-course",
       "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-cross-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "needs-route-review",
+      "reason": "Native imagery and strict local-appearance screening: short junction reversals produce self-crossing limits. The physical road and the intended turn geometry need source review."
     },
     {
       "trackId": "gb-driftland-37d6ee3f",
       "layoutId": "driftland-inner-course",
       "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-inner-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "needs-route-review",
+      "reason": "Native imagery and strict local-appearance screening: tight shared-pavement junctions and abrupt source reversals produce self-crossing limits. Separate racing-road boundaries and the driving order need source review."
     },
     {
       "trackId": "gb-dunsfold-ea05c91c",
@@ -2832,7 +2832,7 @@
       "layoutId": "fintray-hill-climb",
       "file": "data/united-kingdom/gb-fintray-hill-climb-d6798bfc/layouts/fintray-hill-climb.geojson",
       "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "reason": "Native imagery review: tree canopy obscures much of the upper road, including the final hairpin. Covering leaf-off imagery or independently sourced road limits are needed; widths are not inferred from trees."
     },
     {
       "trackId": "gb-gaydon-emissions-circuit-cfe097eb",
