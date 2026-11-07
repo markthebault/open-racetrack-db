@@ -29,22 +29,22 @@
     {
       "id": "jyllands-ringen-combo",
       "name": "Jyllands-Ringen Combo",
-      "referenceId": "Denmark/Jyllands-Ringen Combo",
       "file": "layouts/jyllands-ringen-combo.geojson",
+      "referenceId": "Denmark/Jyllands-Ringen Combo",
       "description": "Combined mapped configurations: Jyllands-Ringen-GL, Jyllands-Ringen-NY. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "jyllands-ringen-gl",
       "name": "Jyllands-Ringen-GL",
-      "referenceId": "Denmark/Jyllands-Ringen-GL",
       "file": "layouts/jyllands-ringen-gl.geojson",
+      "referenceId": "Denmark/Jyllands-Ringen-GL",
       "description": "Draft configuration: Original short course with smooth eastern outer return and triangular inner hairpin; excludes the extra eastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1474.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "jyllands-ringen-ny",
       "name": "Jyllands-Ringen-NY",
-      "referenceId": "Denmark/Jyllands-Ringen-NY",
       "file": "layouts/jyllands-ringen-ny.geojson",
+      "referenceId": "Denmark/Jyllands-Ringen-NY",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2204.2 m. Difference from the supplied layout distance 4.2 m. Course configuration still requires visual review."
     }
   ],
@@ -102,6 +102,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T17:29:04.911Z",
       "evidenceNote": "Aggregate configuration shows the combined mapped branches of Jyllands-Ringen-GL, Jyllands-Ringen-NY. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:29.334Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

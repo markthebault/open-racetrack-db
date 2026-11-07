@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { assemble, type Way } from "../scripts/route";
 import { layoutSchema } from "../schemas/data";
+import { measuredImageBorders } from "../scripts/measured-image-borders";
+import { buildRoad } from "../src/lap-simulation";
 const json = async (p: string) => JSON.parse(await readFile(p, "utf8"));
 const hash = (x: unknown) => createHash("sha256").update(JSON.stringify(x)).digest("hex");
 
@@ -26,9 +28,19 @@ test("Jyllandsringen fallback follows exact racing-course source nodes while pre
   assert.deepEqual(main.features.find((f) => f.properties.role === "trace")!.geometry, current);
   assert.equal(main.metadata.timingStatus, "missing");
   assert.equal(main.metadata.timing, undefined);
-  assert.equal(main.metadata.borderInference, undefined);
-  assert.equal(main.metadata.model3d, undefined);
-  assert.equal(main.features.some((f) => ["inner", "outer"].includes(f.properties.role)), false);
+  const evidence = main.metadata.borderInference!;
+  assert.equal(evidence.method, "image-measured-paired-edges-v1");
+  assert.equal(evidence.traceSha256, hash(current));
+  assert.equal(evidence.imagery.sha256, proof.imageryReview.imagery.sha256);
+  const { resultSha256, ...input } = evidence.measurement!;
+  const replay = measuredImageBorders(current.coordinates, input, evidence.imagery.sha256);
+  assert.equal(replay.measurement.resultSha256, resultSha256);
+  assert.equal(resultSha256, proof.measurement.resultSha256);
+  for (const edge of ["inner", "outer"] as const)
+    assert.deepEqual(replay.result[edge], main.features.find((f) => f.properties.role === edge)!.geometry.coordinates);
+  assert.equal(buildRoad(main).interpolatedSections, 0);
+  assert.ok(main.metadata.model3d);
+  assert.match(input.note, /virtual controls are not independent physical edge measurements/);
   assert.ok(proof.excludedWayIds.includes(102146041));
   for (const id of proof.excludedWayIds) assert.equal(recipe.segments.some((p: { wayId: number }) => p.wayId === id), false);
   for (const saved of proof.preservedLayouts) {

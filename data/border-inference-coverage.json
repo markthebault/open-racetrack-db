@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T10:27:57.428Z",
+  "generatedAt": "2026-11-07T11:20:57.500Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1942,8 +1942,9 @@
       "trackId": "dk-jyllandsringen-102145328",
       "layoutId": "main",
       "file": "data/denmark/jyllandsringen-102145328/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "The full racing-circuit source is corrected, but both appearance detectors still propose self-crossing boundaries. Independent image edge measurements are required."
+      "status": "inferred-estimate",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "0346a37d92ca0febeac3e06cafd9ad979266392413452cfaae81e4e7d88d43d9"
     },
     {
       "trackId": "ee-porsche-ring-45482078",

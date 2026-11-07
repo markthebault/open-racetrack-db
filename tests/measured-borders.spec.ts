@@ -10,6 +10,7 @@ for (const [track, layout] of [
   ["ca-canadian-tire-motorsports-park-ddt-78298a58", "ddt-two-kinks"],
   ["pe-autodromo-la-chutana-293467712", "main"],
   ["us-iowa-speedway-119238784", "main"],
+  ["dk-jyllandsringen-102145328", "main"],
   ["us-gopro-motorplex-e67c71ed", "gopro-motorplex"],
   ["gb-boyndie-kart-circuit-a57fdbb4", "boyndie-kart-circuit"],
   ["gb-nutts-corner-6fa16d73", "nutts-corner"],

@@ -176,21 +176,11 @@
     "finding": "The full 102145330 chain and reversed 338068128 chain follow the racing pavement, including the outer Bane 2 course. The old fallback crosses the internal training loops and pit path. Both source-node junctions match exactly; no snapping or interpolated connector is introduced."
   },
   "borderStatus": {
-    "status": "held-for-image-measurement",
-    "reason": "The changed source needs independent road-limit observations; other layout borders are not reused.",
-    "detectorFindings": [
-      {
-        "method": "road-appearance-v3",
-        "result": "Inferred boundary crosses itself; image needs manual review"
-      },
-      {
-        "method": "road-local-appearance-v4",
-        "result": "Inferred boundary crosses itself; image needs manual review"
-      }
-    ]
+    "status": "estimated-with-image-measurements",
+    "reason": "Complete paired image controls now pass width, topology and coverage checks. Straight fits and shared-pavement joins are explicitly provisional."
   },
   "preservation": "All other traces, original borders, timing and terrain remain unchanged. Main timing remains missing; no sibling GPS gate is copied.",
-  "limitations": "Source centerline positions and travel direction remain draft. Image-based boundary estimates require separate review. Curbs are illustrative, raster elevations estimated and banking unknown.",
+  "limitations": "Source centerline positions and travel direction remain draft. Image-derived borders remain unverified. Dense fitted controls are not independent observations; opening joins are estimates. Curbs are illustrative, raster elevations estimated and banking unknown.",
   "preservedLayouts": [
     {
       "layoutId": "jyllands-ringen-gl",
@@ -240,5 +230,12 @@
       },
       "timingStatus": "estimated"
     }
-  ]
+  ],
+  "measurement": {
+    "method": "paired-image-edge-anchors-v1",
+    "imageSha256": "0346a37d92ca0febeac3e06cafd9ad979266392413452cfaae81e4e7d88d43d9",
+    "resultSha256": "2adcb7782c09915af2b06d6a6ed774b74202c6c0a595a3296efe490d5e87662d",
+    "controls": 894,
+    "note": "Sparse road-edge controls reviewed on nine native-image cross-section sheets, three wide detail sheets and the complete southern road image. Road-colour proposals are authoring diagnostics only: paint, shadows, aprons, vehicles and branch openings are corrected against visible road edges. Positive source normals point to the inner ring and negative to the outer ring. Source trace and direction are retained. Shared-pavement openings use explicitly estimated joins between adjoining observed edge positions; these virtual controls are not independent physical edge measurements. Intervals between controls remain interpolated estimates. The pit-side straight and straight sections at source stations 288–321, 387–423 and 663–705 use separate observed endpoint lines for the two road limits; intermediate fitted controls are not independent image observations. No nominal width or stated length is fitted. Borders remain unverified; curbs illustrative, terrain elevations estimated and banking unknown. Curved sections use smooth interpolating fits through selected visible curb positions at source-station ranges 225–300, 366–396, 429–477, 492–540 and 591–630; the 768–15 seam uses a provisional smooth join through the adjoining observations. These fits replace rejected angular colour proposals. Dense samples of the fits are reconstruction controls, not additional image observations."
+  }
 }
