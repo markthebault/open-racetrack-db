@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 const image=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=','base64');
-for(const [track,folder,siblingId] of [['gb-silverstone-circuit-3571477','united-kingdom/silverstone-circuit-3571477','silverstone-gp-wing-sf'],['us-ncm-motorsports-park-326452603','united-states/ncm-motorsports-park-326452603','ncm-grand-full'],['us-homestead-miami-speedway-108159182','united-states/homestead-miami-speedway-108159182','homestead-modified-road-course']])
+for(const [track,folder,siblingId] of [['us-pittsburgh-international-race-complex-225264359','united-states/pittsburgh-international-race-complex-225264359','pittsburgh-int-race-complex-full'],['gb-silverstone-circuit-3571477','united-kingdom/silverstone-circuit-3571477','silverstone-gp-wing-sf'],['us-ncm-motorsports-park-326452603','united-states/ncm-motorsports-park-326452603','ncm-grand-full'],['us-homestead-miami-speedway-108159182','united-states/homestead-miami-speedway-108159182','homestead-modified-road-course']])
 for(const width of [1440,390])test(`${track} exact border reuse supports playback and video at ${width}px`,async({page,request})=>{
  await page.setViewportSize({width,height:900});
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));

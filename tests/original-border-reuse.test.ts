@@ -50,6 +50,7 @@ test('Silverstone correction replays named source exactly while retaining the su
 
 for(const [name,track,folder,sibling,proofName] of [
  ['NCM','us-ncm-motorsports-park-326452603','ncm-motorsports-park-326452603','ncm-grand-full','ncm'],
+ ['Pittsburgh','us-pittsburgh-international-race-complex-225264359','pittsburgh-international-race-complex-225264359','pittsburgh-int-race-complex-full','pittsburgh'],
  ['Homestead','us-homestead-miami-speedway-108159182','homestead-miami-speedway-108159182','homestead-modified-road-course','homestead'],
 ])test(`${name} fallback exactly replays its corrected source and pinned original borders`,async()=>{
  const base=`data/united-states/${folder}/layouts`,s=`sources/${track}`;
