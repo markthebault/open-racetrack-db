@@ -7,6 +7,8 @@ for (const [track, layout] of [
   ["se-gotland-ring-311644846", "gotland-ring-4-1"],
   ["se-gotland-ring-311644846", "gotland-ring-6-0"],
   ["se-gotland-ring-311644846", "gotland-ring-7-3"],
+  ["us-apex-motor-b7ddcfd3", "apex-motor-club-apex-ii"],
+  ["us-apex-motor-b7ddcfd3", "apex-motor-club-apex-iii"],
 ])
   test(`${track}/${layout} exposes its boundary path, plays and records a video`, async ({
     page,

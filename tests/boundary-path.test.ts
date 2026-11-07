@@ -110,6 +110,8 @@ test("screened boundary layouts reconstruct every cross-section while preserving
     "data/sweden/gotland-ring-311644846/layouts/gotland-ring-4-1.geojson",
     "data/sweden/gotland-ring-311644846/layouts/gotland-ring-6-0.geojson",
     "data/sweden/gotland-ring-311644846/layouts/gotland-ring-7-3.geojson",
+    "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-motor-club-apex-ii.geojson",
+    "data/united-states/us-apex-motor-b7ddcfd3/layouts/apex-motor-club-apex-iii.geojson",
   ]) {
     const d: Layout = JSON.parse(readFileSync(file, "utf8")),
       original = JSON.stringify(d.features),
