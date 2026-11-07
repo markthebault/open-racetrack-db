@@ -11,8 +11,9 @@ import { imageCrossSections } from "./infer-image-borders";
 export async function verifyGradeSource(
   layout: Layout,
   grade: GradeSeparation,
+  sourcesRoot = 'sources',
 ) {
-  const root = `sources/${layout.metadata.trackId}`,
+  const root = `${sourcesRoot}/${layout.metadata.trackId}`,
     recipe = JSON.parse(
       await readFile(
         `${root}/layouts/${layout.metadata.layoutId}.json`,
