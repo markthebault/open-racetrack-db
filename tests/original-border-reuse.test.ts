@@ -48,10 +48,13 @@ test('Silverstone correction replays named source exactly while retaining the su
  assert.ok(data.metadata.model3d);
 });
 
-test('NCM fallback excludes the pit road and exactly reuses its pinned Grand Full trace and borders',async()=>{
- const base='data/united-states/ncm-motorsports-park-326452603/layouts',s='sources/us-ncm-motorsports-park-326452603';
- const main=layoutSchema.parse(await json(`${base}/main.geojson`)),named=layoutSchema.parse(await json(`${base}/ncm-grand-full.geojson`));
- const recipe=await json(`${s}/layouts/main.json`),proof=await json('sources/research/ncm-route-correction.json');
+for(const [name,track,folder,sibling,proofName] of [
+ ['NCM','us-ncm-motorsports-park-326452603','ncm-motorsports-park-326452603','ncm-grand-full','ncm'],
+ ['Homestead','us-homestead-miami-speedway-108159182','homestead-miami-speedway-108159182','homestead-modified-road-course','homestead'],
+])test(`${name} fallback exactly replays its corrected source and pinned original borders`,async()=>{
+ const base=`data/united-states/${folder}/layouts`,s=`sources/${track}`;
+ const main=layoutSchema.parse(await json(`${base}/main.geojson`)),named=layoutSchema.parse(await json(`${base}/${sibling}.geojson`));
+ const recipe=await json(`${s}/layouts/main.json`),proof=await json(`sources/research/${proofName}-route-correction.json`);
  const ways=async(file:string)=>(await json(`${s}/${file}`)).elements.filter((e:Way&{type:string})=>e.type==='way');
  const oldGeometry={type:'LineString',coordinates:assemble(await ways('osm.json'),proof.previousRecipe.segments,true)};
  assert.equal(geometryHash(oldGeometry),proof.previousTraceSha256);
