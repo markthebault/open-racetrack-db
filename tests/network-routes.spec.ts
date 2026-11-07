@@ -57,6 +57,10 @@ test("every composed network exposes all embedded routes, exact download and usa
         d.metadata.borderComposition,
       );
       for (const c of d.metadata.borderComposition) {
+        if (c.recipe.kind === "surface") {
+          await expect(page.locator(`select[aria-label="Driving route"] option[value="${c.sourceLayoutId}"]`)).toBeDisabled();
+          continue;
+        }
         await page
           .getByRole("combobox", { name: "Driving route", exact: true })
           .selectOption(c.sourceLayoutId);
@@ -117,4 +121,14 @@ test("Apex default network offers a route on a phone and supports a route deep l
   await page.reload();
   await expect(page.locator(".lap-loading")).toBeHidden();
   await expect(page.locator(".lap-player")).toBeVisible();
+});
+
+test("Buenos Aires keeps an unavailable deep link on the route chooser", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto("/?track=ar-autodromo-oscar-y-juan-galvez-48743061&layout=buenos-aires-combo&view=3d&lap=1&route=buenos-aires-h");
+  await expect(page.locator("#view-notice")).toContainText("13 of 14 routes support playback");
+  await expect(page.locator('.lap-player')).toHaveCount(0);
+  await expect(page.locator('select[aria-label="Driving route"] option[value="buenos-aires-h"]')).toBeDisabled();
+  await expect(page.getByRole('combobox', {name:'Driving route',exact:true})).toHaveValue('buenos-aires-g');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

@@ -4,7 +4,7 @@ import {
 } from "./border-inference";
 import { z } from "zod";
 import { assertGradeRibbon } from "../src/grade-separation";
-import { trackModelSchema, networkLapRecipeSchema } from "./track-model";
+import { trackModelSchema, networkRecipeSchema } from "./track-model";
 import {
   bounds,
   distance,
@@ -171,7 +171,7 @@ const networkComponentSchema = z.strictObject({
       geometry: line,
     }),
   ),
-  recipe: networkLapRecipeSchema,
+  recipe: networkRecipeSchema,
 });
 export const layoutSchema = z.strictObject({
   type: z.literal("FeatureCollection"),
@@ -340,6 +340,8 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       throw new Error(
         "Border composition must cover every network path with component-specific rights",
       );
+    if (m.borderComposition.every((c) => c.recipe.kind === "surface"))
+      throw new Error("Network composition needs at least one playable route");
     unique(
       m.borderComposition.map((c) => c.sourceLayoutId),
       "network component IDs",

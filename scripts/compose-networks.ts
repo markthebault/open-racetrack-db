@@ -8,7 +8,7 @@ import {
   geometryPaths,
   type Layout,
 } from "../schemas/data";
-import { isLapModel, networkLapRecipeSchema } from "../schemas/track-model";
+import { isLapModel, networkRecipeSchema } from "../schemas/track-model";
 import { elevationSchema } from "../src/elevation";
 import { networkRouteLayout } from "../src/network-routes";
 import { prepareSurfaceModel } from "../src/model-preparation";
@@ -35,6 +35,7 @@ const catalogue = indexSchema.parse(await read("data/index.json")),
     layoutId: string;
     status: string;
     routes?: number;
+    unavailableRoutes?: number;
     file?: string;
     legacyBorders?: boolean;
   }[] = [];
@@ -94,7 +95,10 @@ for (const entry of catalogue.tracks) {
         trackId: track.id,
         layoutId: item.id,
         status: "current",
-        routes: previous.length,
+        routes: previous.filter((c) => c.recipe.kind !== "surface").length,
+        ...(previous.some((c) => c.recipe.kind === "surface")
+          ? { unavailableRoutes: previous.filter((c) => c.recipe.kind === "surface").length }
+          : {}),
       });
       continue;
     }
@@ -104,7 +108,10 @@ for (const entry of catalogue.tracks) {
     const matches = paths.map((path, index) => {
       const candidates = layouts.filter(
         ({ layout: child }) =>
-          isLapModel(child.metadata.model3d) &&
+          (isLapModel(child.metadata.model3d) ||
+            (!!intended &&
+              child.metadata.closed &&
+              child.metadata.model3d?.kind === "surface")) &&
           child.metadata.geometryKind !== "network" &&
           JSON.stringify(
             geometryPaths(
@@ -119,7 +126,10 @@ for (const entry of catalogue.tracks) {
           ? candidates[0]
           : undefined;
     });
-    if (matches.some((m) => !m)) {
+    if (
+      matches.some((m) => !m) ||
+      !matches.some((m) => isLapModel(m?.layout.metadata.model3d))
+    ) {
       report.push({
         trackId: track.id,
         layoutId: item.id,
@@ -133,8 +143,8 @@ for (const entry of catalogue.tracks) {
     for (const [i, match] of matches.entries()) {
       const child = match!.layout,
         model = child.metadata.model3d!;
-      if (!isLapModel(model)) throw new Error("Expected a playable component");
-      const recipe = networkLapRecipeSchema.parse(
+
+      const recipe = networkRecipeSchema.parse(
         Object.fromEntries(
           Object.entries(model).filter(([key]) => key !== "terrain"),
         ),
@@ -168,7 +178,7 @@ for (const entry of catalogue.tracks) {
         timingFeatures: child.features.filter((f) =>
           ["start_finish", "start", "finish"].includes(f.properties.role),
         ) as (typeof components)[number]["timingFeatures"],
-        recipe: networkLapRecipeSchema.parse(recipe),
+        recipe: networkRecipeSchema.parse(recipe),
       });
     }
     const originalBorders = layout.features.filter(
@@ -243,7 +253,10 @@ for (const entry of catalogue.tracks) {
       trackId: track.id,
       layoutId: item.id,
       status: "composed",
-      routes: components.length,
+      routes: components.filter((c) => c.recipe.kind !== "surface").length,
+      ...(components.some((c) => c.recipe.kind === "surface")
+        ? { unavailableRoutes: components.filter((c) => c.recipe.kind === "surface").length }
+        : {}),
       file: `${directory}/${item.file}`,
       legacyBorders,
     });
@@ -266,6 +279,9 @@ if (write) {
       ? "composed-existing"
       : "composed-estimate";
     target.componentRoutes = row.routes;
+    if (row.unavailableRoutes)
+      target.unavailableComponentRoutes = row.unavailableRoutes;
+    else delete target.unavailableComponentRoutes;
     delete target.reason;
     if (!old) coverage.records.push(target);
   }

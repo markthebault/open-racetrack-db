@@ -206,6 +206,23 @@ const surfaceModelSchema = z
         message: "Invalid image extent",
       });
   });
+/** Preserve unavailable component models without duplicating the network terrain. */
+export const networkSurfaceRecipeSchema = z.strictObject({
+  schemaVersion: surfaceModelSchema.shape.schemaVersion,
+  kind: surfaceModelSchema.shape.kind,
+  reason: surfaceModelSchema.shape.reason,
+  bankingDeg: surfaceModelSchema.shape.bankingDeg,
+  quality: surfaceModelSchema.shape.quality,
+  imagery: surfaceModelSchema.shape.imagery,
+  curbStyle: surfaceModelSchema.shape.curbStyle,
+  curbs: surfaceModelSchema.shape.curbs,
+  sources: surfaceModelSchema.shape.sources,
+  preparation: surfaceModelSchema.shape.preparation,
+});
+export const networkRecipeSchema = z.union([
+  networkLapRecipeSchema,
+  networkSurfaceRecipeSchema,
+]);
 // Read existing downloaded v1 Spa files without requiring a data-side migration tool.
 export const trackModelSchema = z.preprocess(
   (value) => {

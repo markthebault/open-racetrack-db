@@ -426,7 +426,10 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         )
           ? "composed-existing"
           : "composed-estimate",
-        componentRoutes: layout.metadata.borderComposition.length,
+        componentRoutes: layout.metadata.borderComposition.filter((c) => c.recipe.kind !== "surface").length,
+        ...(layout.metadata.borderComposition.some((c) => c.recipe.kind === "surface")
+          ? { unavailableComponentRoutes: layout.metadata.borderComposition.filter((c) => c.recipe.kind === "surface").length }
+          : {}),
       });
       continue;
     }

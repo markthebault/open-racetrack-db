@@ -234,7 +234,7 @@ let chosenNetworkRoute = initialParams.get("route");
 function launchNetworkRoute(index: number) {
   const owner = modelLayout ?? layout,
     component = owner?.metadata.borderComposition?.[index];
-  if (!owner || !component) return;
+  if (!owner || !component || component.recipe.kind === "surface") return;
   chosenNetworkRoute = component.sourceLayoutId;
   void launchPlayback(
     networkRouteLayout(owner, index),
@@ -594,8 +594,12 @@ async function applyView() {
       const hasBorders = layout?.features.some(
         (feature) => feature.properties.role === "inner",
       );
-      const text = layout?.metadata.borderComposition
-        ? "Choose a route for playback or video recording. Curbs are illustrative."
+      const components = layout?.metadata.borderComposition,
+        playable = components?.filter((c) => c.recipe.kind !== "surface");
+      const text = components
+        ? playable!.length === components.length
+          ? "Choose a route for playback or video recording. Curbs are illustrative."
+          : `${playable!.length} of ${components.length} routes support playback. Disabled routes need geometry review. Curbs are illustrative.`
         : model?.kind === "surface"
           ? model.reason === "route-not-closed"
             ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
@@ -612,15 +616,21 @@ async function applyView() {
           select = element("select", "") as HTMLSelectElement;
         select.setAttribute("aria-label", "Driving route");
         for (const c of components) {
-          const option = element("option", c.name) as HTMLOptionElement;
+          const unavailable = c.recipe.kind === "surface";
+          const option = element(
+            "option",
+            unavailable ? `${c.name} · Playback unavailable` : c.name,
+          ) as HTMLOptionElement;
           option.value = c.sourceLayoutId;
+          option.disabled = unavailable;
           select.append(option);
         }
         select.value = components.some(
-          (c) => c.sourceLayoutId === chosenNetworkRoute,
+          (c) =>
+            c.sourceLayoutId === chosenNetworkRoute && c.recipe.kind !== "surface",
         )
           ? chosenNetworkRoute!
-          : components[0].sourceLayoutId;
+          : playable![0].sourceLayoutId;
         select.onchange = () => {
           chosenNetworkRoute = select.value;
         };

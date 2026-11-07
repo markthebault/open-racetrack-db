@@ -44,6 +44,11 @@ test("every composed network recreates each exact source route from a standalone
         );
       assert.deepEqual(route.features, source.features, c.name);
       assert.deepEqual(route.metadata, source.metadata, c.name);
+      if (c.recipe.kind === "surface") {
+        assert.equal(route.metadata.model3d?.kind, "surface");
+        assert.throws(() => buildRoad(route), /no playable/);
+        continue;
+      }
       const road = buildRoad(route),
         lap = simulateLap(road);
       assert.ok(lap.duration > 0 && Number.isFinite(lap.duration));
@@ -159,4 +164,14 @@ test("first-time network composition writes canonical GeoJSON without a regenera
   } finally {
     await rm(root, { recursive: true, force: true });
   }
+});
+
+test("Buenos Aires preserves the held component while exposing its thirteen supported routes", () => {
+  const { track, network } = networks().find(({ network }) => network.metadata.layoutId === "buenos-aires-combo")!;
+  const components = network.metadata.borderComposition!;
+  assert.equal(components.filter((c) => c.recipe.kind !== "surface").length, 13);
+  assert.deepEqual(components.filter((c) => c.recipe.kind === "surface").map((c) => c.sourceLayoutId), ["buenos-aires-h"]);
+  const unavailable = structuredClone(network);
+  for (const c of unavailable.metadata.borderComposition!) c.recipe = structuredClone(components[1].recipe);
+  assert.throws(() => validateLayout(unavailable, track, unavailable.metadata.layoutId), /at least one playable/);
 });
