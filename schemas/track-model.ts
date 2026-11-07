@@ -37,6 +37,7 @@ const lapModelSchema = z
         inputSha256: z.string().regex(/^[a-f0-9]{64}$/),
         elevationToleranceM: z.number().positive(),
         curbMethod: z.literal("curvature-intervals-v1"),
+        preserveImageryReference: z.literal(true).optional(),
         boundaryPathEvidence: z
           .strictObject({
             imageSha256: z.string().regex(/^[a-f0-9]{64}$/),
@@ -187,6 +188,7 @@ const surfaceModelSchema = z
       inputSha256: z.string().regex(/^[a-f0-9]{64}$/),
       elevationToleranceM: z.number().positive(),
       curbMethod: z.literal("boundary-curvature-v1"),
+      preserveImageryReference: z.literal(true).optional(),
     }),
   })
   .superRefine((model, ctx) => {

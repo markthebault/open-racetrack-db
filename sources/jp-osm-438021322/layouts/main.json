@@ -2,24 +2,40 @@
   "schemaVersion": 1,
   "trackId": "jp-osm-438021322",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "7298e38b4ee4f760a11ae4989526b46bf977bc8bd6e145d86667b2659b511b25",
+  "sourceId": "osm-selection-110390472",
+  "snapshotFile": "selected-network-110390472.json",
+  "snapshotSha256": "6eb2229fa4d9ad93924184a4794c817c9940d3a183280ef6cb686144c0bac6f6",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Closed named OSM raceway retained as a course candidate. Named-layout association requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "Course 2000 car configuration identified against the JAF circuit guide and native satellite imagery. Previous source way 438021322 version 16, tagged both highway=raceway and leisure=sports_centre, follows the venue perimeter across parking and buildings rather than the racing surface. This layout now retains the exact independently registered tsukuba source trace, direction and phase, using the direct 80R return and excluding the motorcycle chicane. Source ways 110390474 version 7 and 110390472 version 4 identify Course 2000 and are one-way. JAF diagram coordinates, corner radii, stated widths and nominal length are not traced or fitted. Original borders are reused only with pinned trace and border-feature hashes after full native-image overlay review. Main timing remains missing; sibling timing is not inherited. Source alignment, terrain and curb positions remain estimates."
   ],
   "segments": [
     {
-      "wayId": 438021322,
-      "wayVersion": 16,
+      "wayId": 110390474,
+      "wayVersion": 7,
+      "fromIndex": 102,
+      "toIndex": 133
+    },
+    {
+      "wayId": 110390474,
+      "wayVersion": 7,
       "fromIndex": 0,
-      "toIndex": 18
+      "toIndex": 85
+    },
+    {
+      "wayId": 110390472,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 8
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "tsukuba",
+    "traceSha256": "e4624ee2e2240da6af18121e7ffe5e4d4206d5121d35b560617f086572bf6c9f",
+    "bordersSha256": "2312213f8e7595e3cf68ba8ef83fc409b75d4c45af90e34367e336e63cd17c74"
+  }
 }

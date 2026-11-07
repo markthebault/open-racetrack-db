@@ -56,6 +56,8 @@ For playable laps, the pipeline projects the existing geometry into local metres
 
 An input SHA-256 covers the preparation version, source features, timing, mapped length and terrain. Unchanged inputs skip reconstruction. `--check` detects missing or stale generated data. Source/terrain changes require preparation again; the normal build checks this. A hand-authored or imagery-reviewed model, including Spa, is never overwritten by this tool. To promote generated data after actual review, update its quality/source notes and remove its `preparation` tag.
 
+An individually checked display reference can set `model3d.preparation.preserveImageryReference: true`. Its existing `model3d.imagery` reference then survives preparation and is included in the input hash. This allows replacing an unavailable imagery service without changing road geometry or storing image bytes. The reference and attribution remain in the same GeoJSON; it does not identify imagery-derived borders or verify curb positions.
+
 ## Storage and imagery
 
 The complete 882-layout model set is approximately 6.0 MB before compression, or 2.3 MB with each block gzip compressed, including embedded terrain grids. Each layout stores one compact parameter block in its existing GeoJSON. No mesh, baked trajectory, imagery bytes or video is stored in track data. Obsolete terrain sidecars are removed only when no other mapped layout in that venue still needs one; remaining shared grids serve the other layouts. Playback for prepared layouts needs only their one GeoJSON plus shared application code and remote imagery.

@@ -27,6 +27,8 @@ export const WORLD_IMAGERY_CREDIT =
 
 /** Exact request aspect ratio avoids an undocumented extent adjustment by the map service. */
 export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
+  const saved = layout.metadata.model3d;
+  if (saved?.preparation?.preserveImageryReference) return saved.imagery;
   const reference = layout.metadata.borderInference?.imagery;
   if (reference) {
     if (reference.tiles)
@@ -303,6 +305,9 @@ export function prepareTrackModel(
       inputSha256,
       elevationToleranceM: ELEVATION_TOLERANCE_M,
       curbMethod: "curvature-intervals-v1",
+      ...(previous?.preparation?.preserveImageryReference
+        ? { preserveImageryReference: true as const }
+        : {}),
       ...(priorBoundary?.preparation?.boundaryPathEvidence
         ? {
             boundaryPathEvidence:
@@ -395,6 +400,9 @@ export function prepareSurfaceModel(
       inputSha256,
       elevationToleranceM: ELEVATION_TOLERANCE_M,
       curbMethod: "boundary-curvature-v1",
+      ...(layout.metadata.model3d?.preparation?.preserveImageryReference
+        ? { preserveImageryReference: true as const }
+        : {}),
     },
     sources: {
       elevation: terrain.source.url,

@@ -73,7 +73,7 @@ for(const [name,track,folder,sibling,proofName] of [
 
 
 test('coverage checks recognize all exact reused layouts without image acquisition',()=>{
- for(const track of ['gb-silverstone-circuit-3571477','us-ncm-motorsports-park-326452603','us-homestead-miami-speedway-108159182','us-pittsburgh-international-race-complex-225264359','fr-circuit-de-bresse-231110480','it-vallelunga-circuit-piero-taruffi-48683097']){
+ for(const track of ['gb-silverstone-circuit-3571477','us-ncm-motorsports-park-326452603','us-homestead-miami-speedway-108159182','us-pittsburgh-international-race-complex-225264359','fr-circuit-de-bresse-231110480','it-vallelunga-circuit-piero-taruffi-48683097','jp-osm-438021322']){
   const output=execFileSync(process.execPath,['--import','tsx','scripts/infer-borders.ts','--track',track,'--layout','main','--check'],{encoding:'utf8'}),report=JSON.parse(output.trim());
   assert.equal(report.layouts,1);assert.deepEqual(report.statuses,{'reused-existing':1});
  }
@@ -82,6 +82,7 @@ test('coverage checks recognize all exact reused layouts without image acquisiti
 for(const [name,id,country,folder,sibling,prefix] of [
  ['Bresse','fr-circuit-de-bresse-231110480','france','circuit-de-bresse-231110480','bresse','bresse'],
  ['Vallelunga','it-vallelunga-circuit-piero-taruffi-48683097','italy','vallelunga-circuit-piero-taruffi-48683097','vallelunga-outer','vallelunga'],
+ ['Tsukuba','jp-osm-438021322','japan','osm-438021322','tsukuba','tsukuba'],
 ])test(`${name} standard-course correction reuses pinned original borders without sibling timing`,async()=>{
  const root=`sources/${id}`,base=`data/${country}/${folder}/layouts`,r=await json(root+'/layouts/main.json'),proof=await json(`sources/research/${prefix}-main-route-review.json`),main=layoutSchema.parse(await json(base+'/main.geojson')),named=layoutSchema.parse(await json(`${base}/${sibling}.geojson`));
  const oldWays=(await json(root+'/osm.json')).elements.filter((e:Way&{type:string})=>e.type==='way'),ways=(await json(root+'/'+r.snapshotFile)).elements.filter((e:Way&{type:string})=>e.type==='way');

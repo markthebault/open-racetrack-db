@@ -20,6 +20,9 @@ export function modelInputHash(
         timing: layout.metadata.timing,
         lengthM: layout.metadata.lengthM,
         terrain,
+        ...(layout.metadata.model3d?.preparation?.preserveImageryReference
+          ? { displayImagery: layout.metadata.model3d.imagery }
+          : {}),
         ...(layout.metadata.borderInference
           ? { borderInference: layout.metadata.borderInference }
           : {}),

@@ -8,8 +8,10 @@ import { popularModels } from "../scripts/popular-models";
 import {
   compressElevation,
   imageryForLayout,
+  prepareModel,
   PREPARATION_VERSION,
 } from "../src/model-preparation";
+import { modelInputHash } from "../scripts/model-input";
 import {
   buildRoad,
   simulateLap,
@@ -19,6 +21,29 @@ import {
 import { indexBorders, borderSection } from "../src/border-sections";
 const read = (p: string) => JSON.parse(readFileSync(p, "utf8"));
 const index = read("data/index.json");
+
+test("explicit display imagery survives regeneration and participates in the source hash", () => {
+  const files = [
+    "data/japan/osm-438021322/layouts/main.geojson",
+    "data/japan/osm-438021322/layouts/tsukuba.geojson",
+    ...read("sources/research/imagery-service-repairs.json").records.map((r: { file: string }) => r.file),
+  ];
+  for (const file of files) {
+    const data = read(file);
+    const { layout } = load(data.metadata.trackId, data.metadata.layoutId);
+    const old = layout.metadata.model3d!;
+    assert.ok(old.preparation?.preserveImageryReference);
+    const boundary = old.kind !== "surface" && old.pathMethod === "boundary-normal-midpoints-v1";
+    const hash = modelInputHash(layout, old.terrain, boundary);
+    assert.equal(hash, old.preparation.inputSha256);
+    const regenerated = prepareModel(layout, old.terrain, hash, boundary);
+    // Older source descriptions can predate the current generator wording.
+    regenerated.sources.notes = old.sources.notes;
+    assert.deepEqual(regenerated, old);
+    layout.metadata.model3d!.imagery.attribution += " updated";
+    assert.notEqual(modelInputHash(layout, old.terrain, boundary), hash);
+  }
+});
 function load(trackId: string, layoutId: string) {
   const entry = index.tracks.find((t: { id: string }) => t.id === trackId),
     track = validateTrack(read("data/" + entry.file)),
