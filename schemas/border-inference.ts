@@ -112,7 +112,9 @@ export const borderInferenceSchema = z
           value.refinement ||
           value.evidence ||
           value.gradeSeparation ||
-          value.edgeConvention
+          (value.measurement?.routeKind === "run"
+            ? value.edgeConvention !== "left-right-along-trace"
+            : !!value.edgeConvention)
         : !value.evidence || value.measurement
     )
       ctx.addIssue({

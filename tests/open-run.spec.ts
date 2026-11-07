@@ -10,7 +10,11 @@ test("open routes expose left/right edges and stop at the finish, with video exp
   test.setTimeout(120000);
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  for (const host of ["api.maptiler.com", "imagery.nationalmap.gov"])
+  for (const host of [
+    "api.maptiler.com",
+    "imagery.nationalmap.gov",
+    "opendata.lgln.niedersachsen.de",
+  ])
     await page.route(`**/${host}/**`, (r) =>
       r.fulfill({
         body: placeholder,
@@ -25,6 +29,7 @@ test("open routes expose left/right edges and stop at the finish, with video exp
     ["gb-bucks-estate-sprint-45ee8814", "bucks-estate-sprint"],
     ["gb-curborough-68a60e27", "curborough"],
     ["gb-loton-hillclimb-2b41199e", "loton-hillclimb"],
+    ["de-osnabruck-hill-climb-d7c0b8d4", "osnabruck-hill-climb"],
   ]) {
     await page.goto(`/?track=${track}&layout=${layout}&view=3d`);
     await expect(page.locator("#play-lap")).toHaveText("▷ Play run");

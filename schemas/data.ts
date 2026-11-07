@@ -460,14 +460,14 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     if (m.borderInference.measurement) {
       const measurement = m.borderInference.measurement;
       if (
-        !m.closed ||
+        m.closed === (measurement.routeKind === "run") ||
         isNetwork ||
         measurement.imageSha256 !== info.sha256 ||
         measurement.patches.length !== 2 ||
         new Set(measurement.patches.map((p) => p.edge)).size !== 2
       )
         throw new Error(
-          "borderInference: measurements require one closed route and their pinned image",
+          "borderInference: measurements require a matching closed route or open run and their pinned image",
         );
       for (const patch of measurement.patches) {
         const edge = borders.find((f) => f.properties.role === patch.edge);

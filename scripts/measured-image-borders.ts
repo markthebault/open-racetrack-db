@@ -14,12 +14,16 @@ export function measuredImageBorders(
   image?: Raster,
 ) {
   const recipe = borderMeasurementInputSchema.parse(input);
+  const run = recipe.routeKind === "run";
   if (recipe.imageSha256 !== imageSha256)
     throw new Error("Measurement image hash mismatch");
-  if (trace.length < 4 || !equal(trace[0], trace.at(-1)!))
+  if (run && (trace.length < 2 || equal(trace[0], trace.at(-1)!)))
+    throw new Error("Open run measurements require distinct source endpoints");
+  if (!run && (trace.length < 4 || !equal(trace[0], trace.at(-1)!)))
     throw new Error("Complete image measurements require one closed route");
-  const frames = imageCrossSections(trace),
+  const frames = imageCrossSections(trace, run),
     { projection, normals, smooth, count, index, step } = frames,
+    lastStation = run ? count - 1 : count,
     paired = recipe.method === "paired-image-edge-anchors-v1";
   if (
     recipe.patches.length !== 2 ||
@@ -57,12 +61,18 @@ export function measuredImageBorders(
   for (const patch of recipe.patches) {
     if (
       patch.anchors[0].station !== 0 ||
-      patch.anchors.at(-1)!.station !== count
+      patch.anchors.at(-1)!.station !== lastStation
     )
       throw new Error(
         "Measurements must cover the complete station range and closure",
       );
-    if (!equal(patch.anchors[0].coordinate, patch.anchors.at(-1)!.coordinate))
+    const sameEndpoints = equal(
+      patch.anchors[0].coordinate,
+      patch.anchors.at(-1)!.coordinate,
+    );
+    if (run && sameEndpoints)
+      throw new Error("Open measurement edges must keep separate endpoints");
+    if (!run && !sameEndpoints)
       throw new Error("Measurement closure anchors disagree");
     const anchors = patch.anchors.map((a, j) => {
       if (a.kind !== "image-measured")
@@ -175,8 +185,33 @@ export function measuredImageBorders(
         );
     }
   }
-  assertSeparateSimpleRings(rings, true);
-  if (!insideRing(rings[0][0], rings[1]))
+  if (run) {
+    const midpoints = rings[0].map(
+      (p, i): Position => [
+        (p[0] + rings[1][i][0]) / 2,
+        (p[1] + rings[1][i][1]) / 2,
+      ],
+    );
+    if (
+      midpoints.some(
+        (p, i) => Math.hypot(p[0] - smooth[i][0], p[1] - smooth[i][1]) > 10,
+      )
+    )
+      throw new Error(
+        "Measured open road departs more than 10 metres from its source",
+      );
+    if (
+      rings[0].some((p, i) => {
+        const q = rings[1][i],
+          n = normals[index(i)];
+        return (p[0] - q[0]) * n[0] + (p[1] - q[1]) * n[1] < 3.5;
+      })
+    )
+      throw new Error("Open measurements must retain driver-left/right order");
+    assertSeparateSimpleRings([midpoints], false);
+  }
+  assertSeparateSimpleRings(rings, !run);
+  if (!run && !insideRing(rings[0][0], rings[1]))
     throw new Error(
       "Measured inner boundary is not nested inside the outer boundary",
     );

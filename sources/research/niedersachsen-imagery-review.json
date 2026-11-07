@@ -83,6 +83,40 @@
       "composedLayoutId": "estering-combo",
       "identificationReference": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
       "referenceUse": "Operator plan used to identify branches and gravel runoff only; all edge coordinates come from the separately georeferenced LGLN image, not the diagram."
+    },
+    {
+      "trackId": "de-osnabruck-hill-climb-d7c0b8d4",
+      "layoutId": "osnabruck-hill-climb",
+      "imagery": {
+        "sourceId": "lgln-ni-dop20-current-border-imagery",
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG%3A3857&BBOX=911327.7989347345%2C6836266.855199759%2C913399.9430702715%2C6838230.908155024&WIDTH=6000&HEIGHT=5688&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "reuseEvidenceUrl": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&REQUEST=GetCapabilities",
+        "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC-BY-4.0",
+        "attribution": "LGLN (2026), CC BY 4.0. DOP20 current. Modifications: estimated road borders.",
+        "retrievedAt": "2026-11-07T00:13:02.557Z",
+        "sha256": "cceb2c5db8056a446f139d319308440dd54b22c9b6ff92cee917cd11f1a149d7",
+        "width": 6000,
+        "height": 5688,
+        "extent3857": [
+          911327.7989347345,
+          6836266.855199759,
+          913399.9430702715,
+          6838230.908155024
+        ],
+        "groundPixelSizeM": 0.2116
+      },
+      "centreFeatureInfo": {
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=ni_dop20_info&STYLES=&CRS=EPSG%3A3857&BBOX=911327.7989347345%2C6836266.855199759%2C913399.9430702715%2C6838230.908155024&WIDTH=6000&HEIGHT=5688&FORMAT=image%2Fpng&TRANSPARENT=TRUE&QUERY_LAYERS=ni_dop20_info&INFO_FORMAT=text%2Fhtml&I=3000&J=2844",
+        "responseSha256": "65f3abb47cc4cfab3e765c35202ed76e9f28b9ac5c0c2efeafc8682f9aaaa8dd",
+        "tile": "324445784",
+        "edition": "2025",
+        "flight": "Melle",
+        "flightDate": "2025-03-06",
+        "flightNumber": "3837"
+      },
+      "status": "measured-estimate-prepared",
+      "finding": "The geometric automatic candidate spread into grass and farm aprons and was not accepted. The open-run recipe instead contains 113 physical edge observations, with three right-edge openings interpolated. Distinct measured endpoint cross-sections define the standing-start simulation, not surveyed timing gates or a stopping zone. Source trace, timing and terrain are retained. Widths, banking and rendered curbs remain unverified estimates."
     }
   ]
 }

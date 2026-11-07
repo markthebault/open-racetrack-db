@@ -530,6 +530,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
               imageSha256: old.measurement.imageSha256,
               patches: old.measurement.patches,
               note: old.measurement.note,
+              ...(old.measurement.routeKind
+                ? { routeKind: old.measurement.routeKind }
+                : {}),
               ...(old.measurement.interpolation
                 ? { interpolation: old.measurement.interpolation }
                 : {}),
@@ -537,12 +540,12 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           : undefined;
       if (
         measurementInput &&
-        (!layout.metadata.closed ||
+        (layout.metadata.closed === (measurementInput.routeKind === "run") ||
           option("--edge-refinement") ||
           option("--grade-separation"))
       )
         throw new Error(
-          "Complete image measurements support a single closed route",
+          "Complete image measurements require matching closed-route or open-run semantics",
         );
       const detectorOptions = {
         open: !layout.metadata.closed,

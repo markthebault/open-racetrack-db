@@ -15,6 +15,7 @@ for (const [track, layout] of [
   ["gb-nutts-corner-6fa16d73", "nutts-corner"],
   ["de-estering-f9d6a5de", "estering-standard"],
   ["de-estering-f9d6a5de", "estering-joker"],
+  ["de-osnabruck-hill-climb-d7c0b8d4", "osnabruck-hill-climb"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
@@ -57,6 +58,16 @@ for (const [track, layout] of [
       const href = await page.locator("#download").getAttribute("href"),
         d = await (await request.get(href!)).json(),
         refinement = d.metadata.borderInference.measurement;
+      if (track === "de-osnabruck-hill-climb-d7c0b8d4") {
+        expect(refinement.routeKind).toBe("run");
+        expect(d.metadata.borderInference.edgeConvention).toBe(
+          "left-right-along-trace",
+        );
+        expect(d.metadata.model3d.kind).toBe("run");
+        await expect(page.locator("#border-toggle")).toContainText(
+          "Left & right lines",
+        );
+      }
       if (track === "pe-autodromo-la-chutana-293467712")
         expect(refinement.interpolation).toBe("edge-linear-v1");
       if (track === "ca-cameron-speedway-kart-circuit-f7997f0a") {

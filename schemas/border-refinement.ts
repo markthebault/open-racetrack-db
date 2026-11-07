@@ -68,6 +68,7 @@ const completeRecipe = recipe.omit({ seedSha256: true }).extend({
     "paired-image-edge-anchors-v1",
   ]),
   interpolation: z.literal("edge-linear-v1").optional(),
+  routeKind: z.literal("run").optional(),
 });
 function checkComplete(
   value: z.infer<typeof completeRecipe>,
@@ -75,6 +76,11 @@ function checkComplete(
 ) {
   check(value, ctx);
   if (value.method !== "paired-image-edge-anchors-v1") return;
+  if (value.routeKind === "run")
+    ctx.addIssue({
+      code: "custom",
+      message: "Open measurements require trace cross-sections",
+    });
   const inner = value.patches.find((p) => p.edge === "inner"),
     outer = value.patches.find((p) => p.edge === "outer");
   if (

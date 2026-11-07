@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T00:06:03.400Z",
+  "generatedAt": "2026-11-07T00:29:28.066Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1778,30 +1778,9 @@
       "trackId": "de-osnabruck-hill-climb-d7c0b8d4",
       "layoutId": "osnabruck-hill-climb",
       "file": "data/germany/de-osnabruck-hill-climb-d7c0b8d4/layouts/osnabruck-hill-climb.geojson",
-      "status": "needs-imagery-review",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.8933,
-          0.8711
-        ],
-        "medianInteriorDifference": [
-          0.0801,
-          0.0839
-        ],
-        "samplingStepM": 3.000856717171961,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "7bf26eaad10ab524b0e3c8d06e4eef529b3cf7976e31163ca57b321202cdfd68",
-      "reason": "Tree shadows and farm aprons create false widths up to 32.6 m; road limits are not supported by this proposal.",
-      "visualScreening": {
-        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
-        "outcome": "held",
-        "note": "Screening does not establish surveyed accuracy or real curb locations."
-      }
+      "status": "inferred-estimate",
+      "source": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG%3A3857&BBOX=911327.7989347345%2C6836266.855199759%2C913399.9430702715%2C6838230.908155024&WIDTH=6000&HEIGHT=5688&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+      "imageSha256": "cceb2c5db8056a446f139d319308440dd54b22c9b6ff92cee917cd11f1a149d7"
     },
     {
       "trackId": "de-porsche-leipzig-b-65f38c3a",
