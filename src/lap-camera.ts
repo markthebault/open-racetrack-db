@@ -10,11 +10,79 @@ export interface CameraPose {
 /** Continuous metre-based sampling of the actual driving midpoint, including across the seam. */
 export class CameraCourse {
   private centres: Vector3[];
+  private underpasses: { start: number; end: number; height: number }[] = [];
   constructor(private road: Road) {
     this.centres = road.points.map((p) => {
       const offset = (p.left - p.right) / 2;
       return new Vector3(p.x + p.nx * offset, p.y + 0.15, p.z + p.nz * offset);
     });
+    // Only explicitly elevated road sections can constrain the camera. Nearby
+    // roads and flat crossings must not manufacture an overhead obstruction.
+    const points = road.points;
+    const decks = points.flatMap((a, i) => {
+      const b = points[(i + 1) % points.length];
+      return a.elevated && b.elevated ? [{ a, b }] : [];
+    });
+    let previous = -2;
+    for (const [i, p] of points.entries()) {
+      if (p.elevated) continue;
+      let height = 7.5;
+      for (const { a, b } of decks) {
+        const dx = b.x - a.x,
+          dz = b.z - a.z,
+          length2 = dx * dx + dz * dz;
+        if (!length2) continue;
+        const t = ((p.x - a.x) * dx + (p.z - a.z) * dz) / length2;
+        if (t < 0 || t > 1) continue;
+        const width = (a.left + a.right) * (1 - t) + (b.left + b.right) * t;
+        if (Math.hypot(p.x - a.x - t * dx, p.z - a.z - t * dz) > width / 2 + 1)
+          continue;
+        const separation = a.y * (1 - t) + b.y * t - p.y;
+        if (separation >= 3) height = Math.min(height, separation - 1.2);
+      }
+      if (height === 7.5) continue;
+      if (i !== previous + 1)
+        this.underpasses.push({ start: p.s, end: p.s + p.ds, height });
+      else {
+        const group = this.underpasses.at(-1)!;
+        group.end = p.s + p.ds;
+        group.height = Math.min(group.height, height);
+      }
+      previous = i;
+    }
+    // A timing gate can split one physical underpass across the lap seam.
+    const first = this.underpasses[0],
+      last = this.underpasses.at(-1);
+    if (
+      first &&
+      last &&
+      first !== last &&
+      first.start === 0 &&
+      last.end >= road.length - 1e-6
+    ) {
+      first.start = last.start - road.length;
+      first.height = Math.min(first.height, last.height);
+      this.underpasses.pop();
+    }
+  }
+
+  private chaseHeight(distance: number) {
+    const s =
+      ((distance % this.road.length) + this.road.length) % this.road.length;
+    let height = 7.5;
+    for (const pass of this.underpasses)
+      for (const shift of [-this.road.length, 0, this.road.length]) {
+        // Keep the look-ahead target and the trailing mount below the deck, with
+        // a C2 spatial transition before entry and after the camera has cleared it.
+        const start = pass.start - 12,
+          end = pass.end + 20,
+          position = s + shift;
+        const gap = Math.max(start - position, position - end, 0);
+        const t = Math.min(1, gap / 50),
+          blend = t ** 3 * (10 - 15 * t + 6 * t * t);
+        height = Math.min(height, pass.height + (7.5 - pass.height) * blend);
+      }
+    return height;
   }
   point(distance: number): Vector3 {
     const { points, length } = this.road,
@@ -91,7 +159,7 @@ export class CameraCourse {
       position: anchor
         .clone()
         .addScaledVector(forward, -20)
-        .add(new Vector3(0, 7.5, 0)),
+        .add(new Vector3(0, this.chaseHeight(distance), 0)),
       target: anchor
         .clone()
         .addScaledVector(forward, 12)
