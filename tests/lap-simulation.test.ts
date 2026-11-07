@@ -12,6 +12,7 @@ import {
   type Road,
 } from "../src/lap-simulation";
 import { type Layout } from "../schemas/data";
+import { distance } from "../src/geo";
 const layout = JSON.parse(
   readFileSync(
     "data/belgium/spa-francorchamps/layouts/grand-prix.geojson",
@@ -156,4 +157,29 @@ test("constant-radius circuit matches the analytic lateral speed limit", () => {
   const limit = Math.sqrt(DEFAULT_CAR.lateralG * GRAVITY * r);
   assert.ok(Math.max(...result.speed) <= limit + 1e-6);
   assert.ok(Math.min(...result.speed) > limit * 0.95);
+});
+
+
+test("Oschersleben tight first corner retains paired sections without distant-edge width jumps", () => {
+  const data = JSON.parse(readFileSync(
+    "data/germany/motorsport-arena-oschersleben-89251023/layouts/main.geojson", "utf8",
+  )) as Layout;
+  const inner = data.features.find((f) => f.properties.role === "inner")!;
+  const outer = data.features.find((f) => f.properties.role === "outer")!;
+  assert.equal(inner.geometry.type, "LineString");
+  assert.equal(outer.geometry.type, "LineString");
+  if (inner.geometry.type !== "LineString" || outer.geometry.type !== "LineString") return;
+  assert.equal(inner.geometry.coordinates.length, outer.geometry.coordinates.length);
+  const innerPoints = inner.geometry.coordinates, outerPoints = outer.geometry.coordinates;
+  const maximumMeasuredWidth = Math.max(...innerPoints.map(
+    (p, i) => distance(p, outerPoints[i]),
+  ));
+  const reconstructed = buildRoad(data);
+  assert.equal(reconstructed.interpolatedSections, 0);
+  for (const point of reconstructed.points) {
+    assert.ok(point.leftEdge && point.rightEdge && Number.isFinite(point.sourceStation));
+    assert.ok(point.left + point.right >= 3.5);
+    assert.ok(point.left + point.right <= maximumMeasuredWidth + 0.05,
+      "A cross-section must not reach a different part of the opposite border at the tight turn");
+  }
 });
