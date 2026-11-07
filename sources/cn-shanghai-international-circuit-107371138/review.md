@@ -20,6 +20,12 @@ The generic longest-cycle fallback adds a triangular internal connector detour n
 
 The original supplemental pair is not reused because native overlay review exposes positional errors. New main limits require image observations with complete reconstruction provenance and existing coverage, width and driving-order guards. All other layouts, prior borders, timing and original terrain are preserved. Curbs remain illustrative, raster elevations approximate and unknown banking zero.
 
-### Border coverage remains unavailable
+### Previous border hold (superseded for main)
 
 Native imagery review rejects direct reuse of the original supplemental limits and the automatic candidates. No candidate borders or model are promoted for main. Source correction is independently supported and does not establish boundary accuracy. The v4 proposal reaches the correct Turn 6 tip but follows run-off/aprons and meanders on parts of the straight; geometric validation alone is insufficient. No candidate edge coordinates or 3D model are promoted. This source correction does not close the coverage gap.
+
+### Main paired-image reconstruction, 2026-11-07
+
+The new main reconstructs road-limit estimates from 626 sparse paired observations on the pinned licensed image. All eleven native cross-section proposal sheets, four measured overlays and four straight-fit details were inspected. Original and automatic candidate limits are not reused. Separate edge fits between source stations 1224 and 1584, and from 1764 through closure to 132, use independently observed endpoints on each side. Their intersections supply intermediate controls, including covered bridge/gantry spans; hidden ground edges are not claimed as direct pixel observations. Shared-pavement and apron joins remain route-selection estimates, with no nominal-width substitute.
+
+The full public recipe reproduces both final borders, with image coverage, width, source-order and topology checks retained. The original sibling, source trace, timing and original terrain are preserved. Main timing remains missing. Curbs are illustrative, raster heights approximate and unknown banking zero. This estimate is not a surveyed boundary or formal accuracy validation.

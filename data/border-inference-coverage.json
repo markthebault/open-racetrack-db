@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T07:10:11.994Z",
+  "generatedAt": "2026-11-07T07:55:59.908Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -1531,8 +1531,9 @@
       "trackId": "cn-shanghai-international-circuit-107371138",
       "layoutId": "main",
       "file": "data/china/shanghai-international-circuit-107371138/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Generic route corrected to the pinned named racing chain. Native review rejects existing supplemental and automatic edge candidates; complete image measurements remain required. See sources/research/shanghai-route-correction.json."
+      "status": "inferred-estimate",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "a9b9e77ea69d236165fdb4a88e3a20f539076851584ca2247c3a22fab9e75bc6"
     },
     {
       "trackId": "cn-shanghai-international-circuit-107371138",

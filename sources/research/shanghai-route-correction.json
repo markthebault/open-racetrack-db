@@ -86,6 +86,10 @@
   "preservation": "All other layouts, existing borders, timing and original terrain are preserved. Main timing stays missing; sibling timing GPS is not copied. Original supplemental borders are not reused.",
   "limitations": "Source alignment and travel direction remain draft. Image-derived limits are estimates; shared-pavement joins interpolate. Curbs remain illustrative, raster heights approximate and unknown banking zero.",
   "borderStatus": {
+    "status": "estimated-with-image-measurements",
+    "reason": "Initial original and automatic candidates remain rejected. Main now reconstructs complete sparse paired observations with fitted straight edges through documented bridge and gantry spans. Estimates remain unverified."
+  },
+  "previousBorderHold": {
     "status": "held-for-image-measurement",
     "reason": "Native imagery review rejects direct reuse of the original supplemental limits and the automatic candidates. No candidate borders or model are promoted for main. Source correction is independently supported and does not establish boundary accuracy.",
     "candidateMethods": [
@@ -100,5 +104,46 @@
       "detailSheets": 0,
       "v2NativeRegions": 4
     }
+  },
+  "measurement": {
+    "method": "paired-image-edge-anchors-v1",
+    "imageSha256": "a9b9e77ea69d236165fdb4a88e3a20f539076851584ca2247c3a22fab9e75bc6",
+    "resultSha256": "1cdcad7020a1057152f8a6b356f310994408fc8ee5d1e5f81d20101b8d2ac797",
+    "anchors": 626,
+    "pairsIncludingClosure": 313,
+    "straightFits": [
+      {
+        "startStation": 1224,
+        "endStation": 1584,
+        "wrapsClosure": false,
+        "endpointOffsetsM": [
+          [
+            -9,
+            4
+          ],
+          [
+            -12.5,
+            5.5
+          ]
+        ]
+      },
+      {
+        "startStation": 1764,
+        "endStation": 132,
+        "wrapsClosure": true,
+        "endpointOffsetsM": [
+          [
+            -5,
+            14
+          ],
+          [
+            -11,
+            10
+          ]
+        ]
+      }
+    ],
+    "review": "All eleven native cross-section proposal sheets and four full measured overlays were inspected. Four additional native straight-fit details cover stations 0, 132, 1452 and 1584. Selected image observations replace automatic apron and run-off excursions. Complete source order, image-mask coverage, width and topology checks remain enforced. The original supplemental sibling stays unchanged.",
+    "limitations": "Fitted straight intersections through bridge/gantry occlusion are inferred ground limits, not directly visible pixels. Shared-pavement joins and apron limits are route-selection estimates. Imagery is not a road survey; curbs remain illustrative, terrain estimated and unknown banking zero."
   }
 }
