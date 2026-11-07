@@ -664,9 +664,11 @@ async function applyView() {
     document.createTextNode(layout?.metadata.attribution ?? ""),
   );
   if (is3d && terrain) {
-    const credit = element("a", "Mapzen Terrain Tiles");
+    const credit = element("a", terrain.source.name);
     credit.href =
-      "https://github.com/tilezen/joerd/blob/master/docs/attribution.md";
+      terrain.source.name === "Mapzen Terrain Tiles"
+        ? "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+        : terrain.source.url;
     credit.target = "_blank";
     credit.rel = "noreferrer";
     credit.title = terrain.source.attribution.join(" ");
@@ -1159,12 +1161,14 @@ function panel(
       detail.append(
         element(
           "p",
-          `Approximate ground elevation from Mapzen Terrain Tiles, sampled to a ~${terrain.source.sampleSpacingM} m grid. Source resolution varies. This is not a survey of the track surface, bridges or banking.`,
+          `Approximate ground elevation from ${terrain.source.name}, sampled to a ~${terrain.source.sampleSpacingM} m grid. Source resolution varies. This is not a survey of the track surface, bridges or banking.`,
         ),
       );
       const link = element("a", "Terrain sources & attribution");
       link.href =
-        "https://github.com/tilezen/joerd/blob/master/docs/attribution.md";
+        terrain.source.name === "Mapzen Terrain Tiles"
+          ? "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          : terrain.source.url;
       link.target = "_blank";
       link.rel = "noreferrer";
       detail.append(link);

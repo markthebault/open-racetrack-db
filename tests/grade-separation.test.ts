@@ -22,6 +22,7 @@ import { PlaneGeometry } from "three";
 import { TerrainDrape } from "../src/terrain-drape";
 import { verifyGradeSource } from "../scripts/verify-grade-source";
 import type { Layout } from "../schemas/data";
+import { elevationSchema, sampleElevation } from "../src/elevation";
 
 function fixture() {
   const n = 160,
@@ -514,4 +515,141 @@ test("prepared Parcmotor model retains ICGC ground provenance and reconstructs i
   assert.match(model.sources.notes, /ICGC MET 50cm 2021-2023 ground raster/);
   assert.doesNotMatch(model.sources.notes, /DEM5A/);
   assert.equal(buildRoad(layout).interpolatedSections, 0);
+});
+
+test("NLS profiles pin native Finnish raster geometry and require the dataset delivery credit", () => {
+  const { recipe, pair } = fixture();
+  const { anchors, note, sampling, toleranceM } = recipe.elevation;
+  const elevation = {
+    anchors,
+    note,
+    sampling,
+    toleranceM,
+    source: "NLS Elevation model 2 m",
+    url: "https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/datasets-and-interfaces/product-descriptions/elevation-model-2-m",
+    attribution:
+      "National Land Survey of Finland, Elevation model 2 m, delivered 2026-11-07, CC BY 4.0",
+    deliveredAt: "2026-11-07",
+    reuseEvidenceUrl:
+      "https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/datasets-and-interfaces/product-descriptions/elevation-model-2-m",
+    crossingInterpolation: "both-road-approaches-v1",
+    rasters: [
+      {
+        url: "https://www.nic.funet.fi/index/geodata/mml/dem2m/2008_latest/M4/M41/M4131A.tif",
+        itemUrl:
+          "https://paituli.csc.fi/geoserver/ogc/stac/v1/collections/nls_digital_elevation_model_2m_at_paituli/items/nls_digital_elevation_model_2m_at_paituli_m4131a_2021",
+        sourceDatetime: "2021-09-07T05:17:39.000+00:00",
+        crs: "EPSG:3067",
+        verticalDatum: "N2000 (EPSG:3900) orthometric metres",
+        pixelSizeM: 2,
+        origin: [356000, 6768000],
+        width: 3000,
+        height: 3000,
+        sha256: "e".repeat(64),
+      },
+    ],
+  };
+  const parsed = gradeSeparationSchema.parse({ ...recipe, elevation });
+  assert.deepEqual(parsed.elevation, elevation);
+  assert.doesNotThrow(() => assertGradeRibbon(pair, parsed));
+  assert.equal(
+    gradeProfileHeight(parsed, 140),
+    gradeProfileHeight(recipe, 140),
+  );
+  const terrain = {
+    schemaVersion: 1,
+    trackId: "synthetic-fixture",
+    bounds: [0, 0, 1, 1],
+    columns: 2,
+    rows: 2,
+    heights: [100, 200, 300, 400],
+    source: {
+      name: elevation.source,
+      url: elevation.url,
+      sampledAt: "2026-11-07T00:00:00Z",
+      sampleSpacingM: 80,
+      attribution: [elevation.attribution],
+      deliveredAt: elevation.deliveredAt,
+      sampling: elevation.sampling,
+      rasters: elevation.rasters,
+    },
+  };
+  const ground = elevationSchema.parse(terrain);
+  assert.deepEqual(ground, terrain);
+  assert.equal(sampleElevation(ground, [0, 1]), 100);
+  assert.equal(sampleElevation(ground, [1, 0]), 400);
+  assert.equal(sampleElevation(ground, [0.5, 0.5]), 250);
+  assert.equal(
+    sampleElevation({ ...ground, heights: [100, null, 300, 400] }, [0.5, 0.5]),
+    null,
+  );
+  for (const source of [
+    { ...terrain.source, name: "Mapzen Terrain Tiles" },
+    { ...terrain.source, zoom: 12 },
+    { ...terrain.source, deliveredAt: "2026-11-08" },
+    { ...terrain.source, attribution: [] },
+    {
+      ...terrain.source,
+      rasters: [...elevation.rasters, ...elevation.rasters],
+    },
+    {
+      ...terrain.source,
+      rasters: [{ ...elevation.rasters[0], verticalDatum: "ellipsoid" }],
+    },
+  ])
+    assert.equal(
+      elevationSchema.safeParse({ ...terrain, source }).success,
+      false,
+    );
+  for (const invalid of [
+    { ...elevation, source: "ICGC MET 50cm 2021-2023" },
+    { ...elevation, attribution: "National Land Survey of Finland" },
+    { ...elevation, deliveredAt: "2026-11-08" },
+    { ...elevation, deliveredAt: "2026-13-40" },
+    { ...elevation, crossingInterpolation: undefined },
+    { ...elevation, rasters: [...elevation.rasters, ...elevation.rasters] },
+    ...[
+      { pixelSizeM: 10 },
+      { crs: "EPSG:3857" },
+      { verticalDatum: "ellipsoid" },
+      { origin: [356001, 6768000] },
+      { width: 12000 },
+      { url: "https://example.com/not-the-native-source.tif" },
+      { url: elevation.rasters[0].url + "?render=rgb" },
+      { itemUrl: "https://paituli.csc.fi/not-a-dataset-item" },
+    ].map((change) => ({
+      ...elevation,
+      rasters: [{ ...elevation.rasters[0], ...change }],
+    })),
+    { ...elevation, anchors: anchors.filter(([station]) => station !== 50) },
+  ])
+    assert.equal(
+      gradeSeparationSchema.safeParse({ ...recipe, elevation: invalid })
+        .success,
+      false,
+    );
+});
+
+test("Ahvenisto rebuilds road and surrounding ground in the same NLS height datum", async () => {
+  const layout = JSON.parse(
+    await readFile(
+      "data/finland/ahveniston-moottorirata-20303307/layouts/main.geojson",
+      "utf8",
+    ),
+  ) as Layout;
+  const grade = layout.metadata.borderInference!.gradeSeparation!;
+  const terrain = elevationSchema.parse(layout.metadata.model3d!.terrain);
+  assert.ok(grade.elevation.source === "NLS Elevation model 2 m");
+  assert.ok(terrain.source.name === "NLS Elevation model 2 m");
+  assert.deepEqual(terrain.source.rasters, grade.elevation.rasters);
+  await verifyGradeSource(layout, grade);
+  const { prepareModel } = await import("../src/model-preparation");
+  const { modelInputHash } = await import("../scripts/model-input");
+  const model = prepareModel(layout, terrain, modelInputHash(layout, terrain));
+  assert.deepEqual(model, layout.metadata.model3d);
+  assert.match(model.sources.notes, /NLS Elevation model 2 m ground raster/);
+  assert.doesNotMatch(model.sources.notes, /DEM5A/);
+  const road = buildRoad(layout);
+  assert.equal(road.interpolatedSections, 0);
+  assert.ok(Number.isFinite(sampleElevation(terrain, road.origin)));
 });

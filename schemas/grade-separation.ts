@@ -1,4 +1,9 @@
 import { z } from "zod";
+import {
+  nlsAttribution,
+  nlsAttributionSchema,
+  nlsRastersSchema,
+} from "./nls-elevation";
 
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const range = z.tuple([
@@ -72,6 +77,20 @@ const elevationSchema = z.discriminatedUnion("source", [
       sha256: hash,
     }),
   }),
+  z.strictObject({
+    ...profile,
+    source: z.literal("NLS Elevation model 2 m"),
+    url: z.literal(
+      "https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/datasets-and-interfaces/product-descriptions/elevation-model-2-m",
+    ),
+    attribution: nlsAttributionSchema,
+    deliveredAt: z.iso.date(),
+    reuseEvidenceUrl: z.literal(
+      "https://www.maanmittauslaitos.fi/en/maps-and-spatial-data/datasets-and-interfaces/product-descriptions/elevation-model-2-m",
+    ),
+    crossingInterpolation: z.literal("both-road-approaches-v1"),
+    rasters: nlsRastersSchema,
+  }),
 ]);
 
 /** Paired edge station indices, independent of the simulation's start/finish rotation. */
@@ -143,10 +162,14 @@ export const gradeSeparationSchema = z
       const keys = value.elevation.tiles.map((t) => `${t.zoom}/${t.x}/${t.y}`);
       if (new Set(keys).size !== keys.length)
         issue("Duplicate elevation tiles");
-    } else {
+    } else if (value.elevation.source === "ICGC MET 50cm 2021-2023") {
       const [column, row, width, height] = value.elevation.raster.sourceWindow;
       if (column + width > 538000 || row + height > 524000)
         issue("ICGC crop must lie inside the original native raster grid");
+    } else {
+      const elevation = value.elevation;
+      if (elevation.attribution !== nlsAttribution(elevation.deliveredAt))
+        issue("NLS attribution must identify the product and delivery date");
     }
   });
 export type GradeSeparation = z.infer<typeof gradeSeparationSchema>;
