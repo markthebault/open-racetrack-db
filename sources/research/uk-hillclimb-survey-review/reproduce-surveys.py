@@ -68,21 +68,24 @@ def intensity(record, cache):
     print(f'{name}: archive, native TIFF, grid, mask, stretch and RGB crop PASS')
 
 
-def point_cloud(record, cache):
+def point_cloud(record, cache, source):
     import laspy
 
-    source = record['additionalPointCloud']
     expected = source['renderReview']
-    with archive(source, cache / 'harewood-pc-2015.zip') as z:
-        raw = z.read(expected['member'])
-    assert sha(raw) == expected['memberSha256']
-    with laspy.open(io.BytesIO(raw), read_evlrs=False) as reader:
-        header = reader.header
-        assert header.point_count == expected['pointCount']
-        assert header.mins.tolist() == expected['headerMins']
-        assert header.maxs.tolist() == expected['headerMaxs']
-        assert str(header.parse_crs()) == expected['crsHeader']
-    print('harewood 2015: archive, member and actual point-cloud header PASS')
+    filename = source.get('cacheFile', 'harewood-pc-2015.zip')
+    assert Path(filename).name == filename
+    members = expected.get('members', [expected])
+    with archive(source, cache / filename) as z:
+        for member in members:
+            raw = z.read(member['member'])
+            assert sha(raw) == member['memberSha256']
+            with laspy.open(io.BytesIO(raw), read_evlrs=False) as reader:
+                header = reader.header
+                assert header.point_count == member['pointCount']
+                assert header.mins.tolist() == member['headerMins']
+                assert header.maxs.tolist() == member['headerMaxs']
+                assert str(header.parse_crs()) == member['crsHeader']
+    print(f"{record['name']} {filename}: archive, {len(members)} members and actual point-cloud headers PASS")
 
 
 def border_image(record, cache):
@@ -141,8 +144,12 @@ def main():
             assert sha(canonical) == query['attributesSha256']
         if 'intensityRaster' in record:
             intensity(record, args.cache)
-        if args.point_cloud and 'additionalPointCloud' in record:
-            point_cloud(record, args.cache)
+        if args.point_cloud:
+            sources = record.get('supportingPointClouds', [])
+            if 'additionalPointCloud' in record:
+                sources = [record['additionalPointCloud'], *sources]
+            for source in sources:
+                point_cloud(record, args.cache, source)
         if args.border_images and 'borderImage' in record:
             border_image(record, args.cache)
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-11-07T01:07:42.406702+00:00",
-  "scope": "Source discovery and native-pixel inspection. Harewood and Gurston now have complete measured/interpolated open-run estimates; Shelsley, Prescott and Fintray remain held. No terrain samples are changed.",
+  "scope": "Source discovery and native-pixel inspection. Harewood and Gurston have complete measured/interpolated open-run estimates. Shelsley remains held for boundary and timed-extent identification; Prescott and Fintray remain held. No terrain samples are changed.",
   "nativeIntensityLicense": {
     "license": "OGL-3.0",
     "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
@@ -489,8 +489,8 @@
         -2.409076,
         52.2651758
       ],
-      "status": "awaiting-boundary-evidence-and-measurements",
-      "finding": "The 2020 intensity raster identifies much of the road, but tree cover through the middle wooded bend and the start/building apron remain ambiguous. The 2008 intensity-bearing archive is a possible additional capture, not yet acquired or reviewed.",
+      "status": "awaiting-timed-extent-and-boundary-review",
+      "finding": "Both the 2008 and matching 2020 classified point-cloud archives were acquired and inspected without filling empty ground-intensity cells. The 2020 archive contains the indexed SO7060 survey member in EPSG:27700 with 56,916,299 points. Ground-only returns help distinguish the road from trees, but woodland verges still require explicit observations. A separate extent audit found that the saved draft road is about 1,017 m while the operator specifies a 1,000-yard timed course. Approach/finish extent must be identified independently before claiming a verified timed run; do not shorten or rescale to match the number.",
       "indexQueries": {
         "aerialPhotography": {
           "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.4151401%2C+%22ymin%22%3A+52.2592863%2C+%22xmax%22%3A+-2.409076%2C+%22ymax%22%3A+52.2651758%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
@@ -689,6 +689,208 @@
           "maskedPixels": 289,
           "rgbPixelsSha256": "9736097e54018ce4a081efa03c398d54b4a8bfb23a9ea9663138eead86957077"
         }
+      },
+      "supportingPointClouds": [
+        {
+          "url": "https://environment.data.gov.uk/tiles/collections/survey/lidar_point_cloud/2008/NaN/SO7060",
+          "bytes": 50717775,
+          "sha256": "b3f8806dbf51519b694b63d25e08dabc0fd27e53137c7852a3cb29f58a077ba0",
+          "cacheFile": "shelsley-pc-2008.zip",
+          "retrievedAt": "2026-11-07T02:10:21.509212+00:00",
+          "renderReview": {
+            "members": [
+              {
+                "member": "SO7263_P_5561_20080124_20080130.laz",
+                "memberSha256": "85a717a4296db127b1da8ce11a5fa896d05544bc34c142dde21bc9514f445dc0",
+                "pointCount": 804811,
+                "headerMins": [
+                  372000.0,
+                  263000.0,
+                  27.16
+                ],
+                "headerMaxs": [
+                  373000.0,
+                  264000.0,
+                  209.88
+                ],
+                "crsHeader": "None"
+              },
+              {
+                "member": "SO7163_P_5561_20080124_20080130.laz",
+                "memberSha256": "9e834fd4e50e719af87aa3d5a2b941eb2d1aae1fb73f9074698be24df9daffc3",
+                "pointCount": 833449,
+                "headerMins": [
+                  371000.0,
+                  263000.0,
+                  24.810000000000002
+                ],
+                "headerMaxs": [
+                  372000.0,
+                  264000.0,
+                  218.39000000000001
+                ],
+                "crsHeader": "None"
+              },
+              {
+                "member": "SO7162_P_5561_20080124_20080130.laz",
+                "memberSha256": "4670059b9c2d7149fa6ff1f8472de60e77027ac50b8f8f18891e047626502e4e",
+                "pointCount": 866661,
+                "headerMins": [
+                  371000.0,
+                  262000.0,
+                  24.810000000000002
+                ],
+                "headerMaxs": [
+                  372000.0,
+                  263000.0,
+                  218.39000000000001
+                ],
+                "crsHeader": "None"
+              },
+              {
+                "member": "SO7262_P_5561_20080124_20080130.laz",
+                "memberSha256": "50779b1ec79d69585dd71e08fe645a7af3f41ef060e1b7cd2b75a0cebf075b85",
+                "pointCount": 802975,
+                "headerMins": [
+                  372000.0,
+                  262000.0,
+                  26.52
+                ],
+                "headerMaxs": [
+                  373000.0,
+                  263000.0,
+                  216.65
+                ],
+                "crsHeader": "None"
+              }
+            ],
+            "nativeExtent27700": [
+              371703.0,
+              262367.0,
+              372237.0,
+              263140.0
+            ],
+            "spacing": 1,
+            "aggregation": "Mean of measured intensity values per native OS grid cell; cells without points remain transparent. No hole filling.",
+            "renders": [
+              {
+                "file": "shelsley-pc-2008-all-last.png",
+                "sha256": "76d4c33f91f281d38289d7e3560f3606dccd073a1f64ccfc9532ac705da36d53",
+                "stretch": [
+                  5.0,
+                  59.666666666666664
+                ],
+                "pixelsWithPoints": 245871,
+                "emptyPixels": 166911
+              },
+              {
+                "file": "shelsley-pc-2008-ground.png",
+                "sha256": "c6344f3a34888ed4e10b6abf9bae2c56cd02e3f53abf99b976029c4b9a8f18a5",
+                "stretch": [
+                  7.0,
+                  62.0
+                ],
+                "pixelsWithPoints": 107840,
+                "emptyPixels": 304942
+              }
+            ],
+            "coordinateCaution": "Headers have no CRS records; index identifies OSTN02/OSGM02. Historical visual inspection only; no modern-datum geometry or road elevation assertion."
+          },
+          "use": "Supporting native-grid visual research only. Missing cells are transparent; no geometry or elevations have been copied into the layout.",
+          "license": "OGL-3.0",
+          "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud",
+          "captureDateRange": [
+            "2008-01-24",
+            "2008-01-30"
+          ]
+        },
+        {
+          "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_point_cloud/2020/1/SO7060",
+          "bytes": 236675021,
+          "sha256": "c5b18f6b930b8f751dfa20906984e6299662ec55d7822da246e99726a7b5d1b0",
+          "cacheFile": "shelsley-pc-2020.zip",
+          "retrievedAt": "2026-11-07T02:18:33.530354+00:00",
+          "renderReview": {
+            "members": [
+              {
+                "member": "SO7060_P_10635_20200106_20200205.laz",
+                "memberSha256": "8f2402fdf32e917b677d29e0046f4bbc48a34d5277187d4d2680af5552055269",
+                "pointCount": 56916299,
+                "headerMins": [
+                  370000.01,
+                  260000.01,
+                  27.88
+                ],
+                "headerMaxs": [
+                  374999.99,
+                  264999.99,
+                  298.23
+                ],
+                "crsHeader": "EPSG:27700"
+              }
+            ],
+            "spacing": 1,
+            "nativeExtent27700": [
+              371703.0,
+              262367.0,
+              372237.0,
+              263140.0
+            ],
+            "aggregation": "Mean of measured intensities per native grid cell; absent cells remain transparent, no interpolation.",
+            "renders": [
+              {
+                "file": "shelsley-pc-2020-all-last.png",
+                "sha256": "794f405efad1ffed441741f0aeb4eebfeadcd5f623e511153e0af94da2bc43cd",
+                "stretch": [
+                  39.0,
+                  591.0
+                ],
+                "pixelsWithPoints": 393167,
+                "emptyPixels": 19615
+              },
+              {
+                "file": "shelsley-pc-2020-ground.png",
+                "sha256": "4cb8aa4485bdf5ca49f5d0b8561f1bda3d8e3571eae75e7a26fd038c5d2f821d",
+                "stretch": [
+                  41.0,
+                  595.6666666666666
+                ],
+                "pixelsWithPoints": 344334,
+                "emptyPixels": 68448
+              }
+            ]
+          },
+          "use": "Supporting native-grid visual research only. Missing cells are transparent; no geometry or elevations have been copied into the layout.",
+          "license": "OGL-3.0",
+          "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+          "captureDateRange": [
+            "2020-01-06",
+            "2020-02-05"
+          ]
+        }
+      ],
+      "extentReview": {
+        "sourceRouteLengthM": 1017.1,
+        "operatorTimedLengthYards": 1000,
+        "operatorTimedLengthM": 914.4,
+        "sourceEndpointsProvisional": true,
+        "references": [
+          {
+            "url": "https://www.midlandautomobileclub.co.uk/downloads/2025/SRs_2025_Hillclimb_Final_15042025.pdf",
+            "sha256": "48cab9fed58a0e105a913a828fb631aa2f04ccab9b870e4d8dd2c2fd4ac81ee3",
+            "bytes": 403089,
+            "license": "reference-only",
+            "use": "Operator 2025 supplementary regulations, section 9: course length 1,000 yards; timing-gate identification reference only."
+          },
+          {
+            "url": "https://www.tinsanmotorsport.co.uk/wp-content/uploads/2022/09/Shelsley-Walsh-walking-the-course-printable.pdf",
+            "sha256": "bbc632b357a4f72f7236bd3b60cf4a431df82b7ca9fa7a1c401213813370a299",
+            "bytes": 510506,
+            "license": "reference-only",
+            "use": "Firsthand course guide, one page, visually inspected for start, Kennel, Crossing, Bottom S, Top S and finish order. Schematic only; no diagram coordinates or shapes copied."
+          }
+        ],
+        "outcome": "held; neither gate position nor route trimming inferred from scalar distance"
       }
     },
     {
