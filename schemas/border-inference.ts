@@ -122,8 +122,10 @@ export const borderInferenceSchema = z
         ? !value.measurement ||
           value.refinement ||
           value.evidence ||
-          value.gradeSeparation ||
-          (value.measurement?.routeKind === "run"
+          (value.gradeSeparation &&
+            (value.method !== "image-measured-paired-edges-v1" ||
+              value.measurement?.routeKind === "run")) ||
+          (value.measurement?.routeKind === "run" || value.gradeSeparation
             ? value.edgeConvention !== "left-right-along-trace"
             : !!value.edgeConvention)
         : !value.evidence || value.measurement

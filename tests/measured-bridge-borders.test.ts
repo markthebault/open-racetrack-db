@@ -146,3 +146,63 @@ test("complete measured bridge edges retain level separation, source direction a
   assert.ok(compacted.afterPairs < compacted.beforePairs);
   assert.ok(compacted.maximumErrorM <= 0.1);
 });
+
+test("saved measured bridge recipes require closed paired semantics without automatic evidence", async () => {
+  const { borderInferenceSchema } = await import("../schemas/border-inference");
+  const { trace, input, grade, image } = fixture();
+  const built = measuredImageBorders(
+    trace,
+    input,
+    input.imageSha256,
+    image,
+    grade,
+  );
+  const data = {
+    schemaVersion: 1,
+    method: "image-measured-paired-edges-v1",
+    status: "estimated",
+    reviewedAt: null,
+    traceSha256: "a".repeat(64),
+    measurement: built.measurement,
+    gradeSeparation: grade,
+    edgeConvention: "left-right-along-trace",
+    imagery: {
+      sourceId: "test",
+      url: "https://example.org/image",
+      reuseEvidenceUrl: "https://example.org/rights",
+      license: "public-domain",
+      attribution: "Synthetic test image",
+      retrievedAt: "2026-11-07T00:00:00.000Z",
+      sha256: input.imageSha256,
+      width: 512,
+      height: 512,
+      extent3857: [-256, -256, 256, 256],
+      groundPixelSizeM: 1,
+    },
+    note: "Synthetic complete paired bridge metadata only.",
+  };
+  assert.ok(borderInferenceSchema.safeParse(data).success);
+  for (const bad of [
+    { ...data, edgeConvention: undefined },
+    { ...data, measurement: undefined },
+    { ...data, measurement: { ...built.measurement, routeKind: "run" } },
+    {
+      ...data,
+      method: "image-measured-cross-sections-v1",
+      measurement: {
+        ...built.measurement,
+        method: "cross-section-image-anchors-v1",
+      },
+    },
+    {
+      ...data,
+      evidence: {
+        strongEdgeFraction: [1, 1],
+        medianInteriorDifference: [0, 0],
+        samplingStepM: 3,
+        searchRangeM: [2, 25],
+      },
+    },
+  ])
+    assert.equal(borderInferenceSchema.safeParse(bad).success, false);
+});
