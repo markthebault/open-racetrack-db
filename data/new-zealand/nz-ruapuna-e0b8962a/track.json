@@ -14,7 +14,9 @@
   ],
   "sourceIds": [
     "osm-components-33795438",
-    "osm-network-ruapuna"
+    "osm-network-ruapuna",
+    "linz-christchurch-2025-ruapuna",
+    "component-network-ruapuna"
   ],
   "defaultLayoutId": "ruapuna",
   "layouts": [
@@ -23,7 +25,7 @@
       "name": "Ruapuna",
       "file": "layouts/ruapuna.geojson",
       "referenceId": "New Zealand/Ruapuna",
-      "description": "Combined mapped configurations: Grand Prix, Grand Prix with dipper, Outer course with dipper, Outer course, Eastern course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined Grand Prix, Dipper, outer and Eastern configurations. Four exact OSM routes and one independently digitized image route. Coordinate-distinct overlapping paths remain separate in the mapped branch length; this is not one lap."
     },
     {
       "id": "ruapuna-grand-prix",
@@ -53,7 +55,7 @@
       "id": "ruapuna-eastern-course",
       "name": "Eastern course",
       "file": "layouts/ruapuna-eastern-course.geojson",
-      "description": "A draft short Eastern course using the mapped Northern central return, shared straight and terminal Eastern bend. The source is tagged raceway and its same-node joins are preserved. Branch names are descriptive, not homologation labels; independently measured length is 1180.2 m."
+      "description": "Draft short Eastern course independently digitized from March 2025 LINZ aerial imagery. Northern return junction corrected; historical alignment and direction remain provisional."
     }
   ],
   "sources": [
@@ -137,6 +139,24 @@
       "license": "LicenseRef-MapTiler-Derived-Borders",
       "retrievedAt": "2026-11-06T08:24:36.389Z",
       "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "linz-christchurch-2025-ruapuna",
+      "type": "imagery",
+      "title": "LINZ Christchurch 0.075 m Urban Aerial Photos (2025)",
+      "url": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/collection.json",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-07T11:55:49.122468Z",
+      "evidenceNote": "Environment Canterbury; imagery by Aerial Surveys, captured March 2025; hosted and processed by Toitū Te Whenua LINZ, CC BY 4.0. Reprojected, cropped and sampled by OpenRacetrackDB. Native 0.075 m imagery resampled at 0.2 m ground spacing. Tile metadata, checksums and exact reprojection extent retained in sources/research/ruapuna-eastern-route-correction.json."
+    },
+    {
+      "id": "component-network-ruapuna",
+      "type": "imagery",
+      "title": "Ruapuna mixed-source component network",
+      "url": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/collection.json",
+      "license": "ODbL-1.0 AND CC-BY-4.0",
+      "retrievedAt": "2026-11-07T11:55:49.122468Z",
+      "evidenceNote": "Four independently pinned OSM routes plus an Eastern route digitized from LINZ imagery. Actual coordinate-source IDs are attached to the public trace. Each component trace and snapshot is hash pinned; no coordinate snapping or invented connecting edges."
     }
   ]
 }

@@ -6,6 +6,7 @@ import {existingLayoutExtras,serializeLayout} from './layout-borders';
 import {reuseOriginalBorders,originalBorderReuseSchema} from './reuse-original-borders';
 import {withTiming,timingDatabaseSchema} from './public-timing';
 import {buildCourseNetwork} from './course-network';
+import {buildComponentNetwork} from './component-network';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
@@ -43,6 +44,11 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
  const sourceBytes=sourceFile===baseFile?snapshot:await readFile(`sources/${track.id}/${sourceFile}`,'utf8'),sourceHash=createHash('sha256').update(sourceBytes).digest('hex');
  if(sourceFile!==baseFile&&!manifest.snapshots?.some((s:any)=>s.file===sourceFile&&s.sha256===sourceHash&&s.sourceId===recipe.sourceId))throw new Error(`${track.id}: unregistered layout source`);
  if(recipe.snapshotSha256!==sourceHash)throw new Error(`${track.id}/${layout.id}: recipe hash mismatch`);if(recipe.trackId!==track.id||recipe.layoutId!==layout.id)throw new Error(`${track.id}/${layout.id}: recipe identity mismatch`);
+ if(recipe.geometrySource==='components'){
+  const data=await buildComponentNetwork(recipe,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,path)));
+  if(!generate)validateLayout(await json(path),track,layout.id);
+  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from pinned component routes`);continue;
+ }
  if(recipe.geometrySource==='imagery'){
   const source=imageryCourseSchema.parse(JSON.parse(sourceBytes)),image=await readFile(`sources/${track.id}/${source.imageryFile}`);
   if(createHash('sha256').update(image).digest('hex')!==source.imagerySha256)throw new Error('Imagery raster hash mismatch');
