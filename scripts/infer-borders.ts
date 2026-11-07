@@ -59,7 +59,8 @@ if (
     !option("--track") ||
     !option("--layout") ||
     !option("--cached-image") ||
-    args.includes("--all") || check)
+    args.includes("--all") ||
+    check)
 )
   throw new Error(
     "Original border replacement requires one --track, --layout, --cached-image, complete --measurements, --replace-border-hash and --replacement-reason; never --all or --check",
@@ -69,11 +70,10 @@ if (
   (!option("--track") ||
     !option("--layout") ||
     !option("--cached-image") ||
-    option("--edge-refinement") ||
-    option("--grade-separation"))
+    option("--edge-refinement"))
 )
   throw new Error(
-    "--measurements requires one --track, --layout and --cached-image, without partial refinements or grade separation",
+    "--measurements requires one --track, --layout and --cached-image, without partial refinements",
   );
 if (
   option("--edge-refinement") &&
@@ -90,10 +90,10 @@ if (
   (!option("--track") ||
     !option("--layout") ||
     !option("--cached-image") ||
-    !localAppearance)
+    (!localAppearance && !option("--measurements")))
 )
   throw new Error(
-    "--grade-separation requires one --track, --layout, --cached-image and --local-appearance",
+    "--grade-separation requires one --track, --layout, --cached-image and either --local-appearance or complete paired measurements",
   );
 const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
   sha = (b: Buffer | string) => createHash("sha256").update(b).digest("hex");
@@ -426,15 +426,25 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         )
           ? "composed-existing"
           : "composed-estimate",
-        componentRoutes: layout.metadata.borderComposition.filter((c) => c.recipe.kind !== "surface").length,
-        ...(layout.metadata.borderComposition.some((c) => c.recipe.kind === "surface")
-          ? { unavailableComponentRoutes: layout.metadata.borderComposition.filter((c) => c.recipe.kind === "surface").length }
+        componentRoutes: layout.metadata.borderComposition.filter(
+          (c) => c.recipe.kind !== "surface",
+        ).length,
+        ...(layout.metadata.borderComposition.some(
+          (c) => c.recipe.kind === "surface",
+        )
+          ? {
+              unavailableComponentRoutes:
+                layout.metadata.borderComposition.filter(
+                  (c) => c.recipe.kind === "surface",
+                ).length,
+            }
           : {}),
       });
       continue;
     }
     if (
-      !old && !replacement &&
+      !old &&
+      !replacement &&
       layout.features.some((f) => f.properties.role === "inner")
     ) {
       let recipe;
@@ -445,11 +455,24 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       }
       if (recipe?.originalBorderReuse) {
         const pin = recipe.originalBorderReuse,
-          sibling = track.layouts.find((candidate) => candidate.id === pin.sourceLayoutId);
-        if (!sibling?.file) throw new Error("Reused border source layout is unavailable");
-        const source = validateLayout(await read(`${dirname(trackFile)}/${sibling.file}`), track, sibling.id);
+          sibling = track.layouts.find(
+            (candidate) => candidate.id === pin.sourceLayoutId,
+          );
+        if (!sibling?.file)
+          throw new Error("Reused border source layout is unavailable");
+        const source = validateLayout(
+          await read(`${dirname(trackFile)}/${sibling.file}`),
+          track,
+          sibling.id,
+        );
         reuseOriginalBorders(layout, source, pin);
-        report.push({trackId: track.id, layoutId: item.id, file, status: "reused-existing", ...pin});
+        report.push({
+          trackId: track.id,
+          layoutId: item.id,
+          file,
+          status: "reused-existing",
+          ...pin,
+        });
       }
       continue;
     }
@@ -492,6 +515,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             geometryPaths(trace.geometry)[0],
             input,
             old.imagery.sha256,
+            undefined,
+            old.gradeSeparation,
           ),
           pair = Object.fromEntries(
             ["inner", "outer"].map((role) => [
@@ -588,8 +613,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       if (
         measurementInput &&
         (layout.metadata.closed === (measurementInput.routeKind === "run") ||
-          option("--edge-refinement") ||
-          option("--grade-separation"))
+          option("--edge-refinement"))
       )
         throw new Error(
           "Complete image measurements require matching closed-route or open-run semantics",
@@ -620,6 +644,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           measurementInput,
           acquired.info.sha256,
           acquired.image,
+          detectorOptions.gradeSeparation,
         );
         result = { ...measured.result, step: measured.step, evidence: [] };
       } else

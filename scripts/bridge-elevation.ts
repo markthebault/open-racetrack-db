@@ -40,10 +40,49 @@ export async function bilinearGsiHeight(
   return height;
 }
 
+/** Interpolate only explicitly identified road spans; missing approach samples remain errors. */
+export function interpolateCrossingApproaches(
+  input: [number, number][],
+  crossings: GradeSeparation["crossings"],
+  interpolateUnderpasses = false,
+) {
+  const samples = input.map(([station, height]): [number, number] => [
+    station,
+    height,
+  ]);
+  const ranges = crossings.flatMap((c) =>
+    interpolateUnderpasses ? [c.upper, c.lower] : [c.upper],
+  );
+  for (const [i, [a, b]] of ranges.entries()) {
+    if (
+      !Number.isInteger(a) ||
+      !Number.isInteger(b) ||
+      a < 0 ||
+      a >= b ||
+      b >= samples.length - 1 ||
+      ranges.slice(0, i).some(([u, v]) => a <= v && b >= u)
+    )
+      throw new Error("Invalid or overlapping road approach intervals");
+    if (!Number.isFinite(samples[a][1]) || !Number.isFinite(samples[b][1]))
+      throw new Error("Missing bridge or underpass approach elevation");
+    for (let j = a + 1; j < b; j++)
+      samples[j][1] =
+        samples[a][1] + ((samples[b][1] - samples[a][1]) * (j - a)) / (b - a);
+  }
+  if (
+    samples.some(
+      ([station, height], i) => station !== i || !Number.isFinite(height),
+    )
+  )
+    throw new Error("Missing ground elevation outside an identified road span");
+  return { samples, endpoints: ranges.flat() };
+}
+
 export async function createBridgeElevation(
   midline: Position[],
   crossings: GradeSeparation["crossings"],
   cache: string,
+  options: { interpolateUnderpasses?: boolean } = {},
 ): Promise<GradeSeparation["elevation"]> {
   const zoom = 15 as const,
     world = 2 ** zoom * 256,
@@ -89,8 +128,15 @@ export async function createBridgeElevation(
       image.data[k + 3],
     );
   };
-  const samples: [number, number][] = [];
+  let samples: [number, number][] = [];
   for (let i = 0; i < midline.length - 1; i++) {
+    if (
+      options.interpolateUnderpasses &&
+      crossings.some((c) => [c.upper, c.lower].some(([a, b]) => i > a && i < b))
+    ) {
+      samples.push([i, NaN]);
+      continue;
+    }
     const [lon, lat] = midline[i],
       x = (lon / 360 + 0.5) * world,
       y =
@@ -102,18 +148,14 @@ export async function createBridgeElevation(
     ]);
   }
   samples.push([midline.length - 1, samples[0][1]]);
-  for (const c of crossings) {
-    const [a, b] = c.upper;
-    for (let i = a + 1; i < b; i++)
-      samples[i][1] =
-        samples[a][1] + ((samples[b][1] - samples[a][1]) * (i - a)) / (b - a);
-  }
-  // Linear compression pins every bridge endpoint and never inserts terrain underneath a deck.
-  const keep = new Set([
-      0,
-      samples.length - 1,
-      ...crossings.flatMap((c) => c.upper),
-    ]),
+  const interpolated = interpolateCrossingApproaches(
+    samples,
+    crossings,
+    options.interpolateUnderpasses,
+  );
+  samples = interpolated.samples;
+  // Both road levels retain measured endpoints; deck pixels never become lower-road evidence.
+  const keep = new Set([0, samples.length - 1, ...interpolated.endpoints]),
     toleranceM = 0.25;
   const simplify = (start: number, end: number) => {
     let worst = toleranceM,
@@ -137,6 +179,9 @@ export async function createBridgeElevation(
   const pinned = [...keep].sort((a, b) => a - b);
   for (let i = 1; i < pinned.length; i++) simplify(pinned[i - 1], pinned[i]);
   return {
+    ...(options.interpolateUnderpasses
+      ? { crossingInterpolation: "both-road-approaches-v1" as const }
+      : {}),
     source: "GSI DEM5A",
     url: "https://maps.gsi.go.jp/development/ichiran.html#dem",
     attribution: "Geospatial Information Authority of Japan (GSI)",
@@ -146,6 +191,8 @@ export async function createBridgeElevation(
     toleranceM,
     tiles: [...tiles.values()].sort((a, b) => a.x - b.x || a.y - b.y),
     anchors: [...keep].sort((a, b) => a - b).map((i) => samples[i]),
-    note: "Edited from GSI elevation tiles: bilinear ground elevations along paired road stations, compressed within 0.25 m of those samples. Each bridge deck is linearly interpolated only between its sampled approach endpoints; ground samples under the bridge are excluded from that deck. Road levels and clearance are estimates, not a road or bridge survey. No capture date is supplied by these tile responses.",
+    note: options.interpolateUnderpasses
+      ? "Edited from GSI elevation tiles: bilinear ground samples outside the declared crossing intervals, compressed within 0.25 m of those samples. Both the upper deck and occluded lower road interpolate between their separate sampled approach endpoints. Interior raster cells are excluded from both spans, so deck heights cannot raise the lower road. Heights and separation remain estimates, not a bridge survey; no nominal height is assigned. No capture date is supplied by these tile responses."
+      : "Edited from GSI elevation tiles: bilinear ground elevations along paired road stations, compressed within 0.25 m of those samples. Each bridge deck is linearly interpolated only between its sampled approach endpoints; ground samples under the bridge are excluded from that deck. Road levels and clearance are estimates, not a road or bridge survey. No capture date is supplied by these tile responses.",
   };
 }

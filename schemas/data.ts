@@ -410,11 +410,14 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       grade &&
       (!m.closed ||
         isNetwork ||
-        m.borderInference.method !== "rgb-road-local-appearance-v4" ||
+        ![
+          "rgb-road-local-appearance-v4",
+          "image-measured-paired-edges-v1",
+        ].includes(m.borderInference.method) ||
         m.borderInference.edgeConvention !== "left-right-along-trace")
     )
       throw new Error(
-        "Grade-separated roads require one closed, station-paired local-appearance ribbon",
+        "Grade-separated roads require one closed, station-paired road ribbon",
       );
     if (m.borderInference.edgeConvention === "left-right-along-trace") {
       if (

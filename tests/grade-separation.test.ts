@@ -13,6 +13,7 @@ import {
 import {
   bilinearGsiHeight,
   decodeGsiHeight,
+  interpolateCrossingApproaches,
 } from "../scripts/bridge-elevation";
 import { plane, length, type Position } from "../src/geo";
 import { buildRoad, simulateLap } from "../src/lap-simulation";
@@ -199,6 +200,14 @@ test("paired runtime stations cross at different heights without choosing the ot
         : b,
     );
   assert.equal(road.interpolatedSections, 0);
+  const measured = structuredClone(layout);
+  measured.metadata.borderInference!.method = "image-measured-paired-edges-v1";
+  assert.deepEqual(buildRoad(measured).points, road.points);
+  const flatMeasured = structuredClone(measured);
+  flatMeasured.metadata.borderInference!.gradeSeparation!.elevation.anchors.forEach(
+    (p) => (p[1] = 40),
+  );
+  assert.throws(() => buildRoad(flatMeasured), /separation/);
   const reordered = structuredClone(layout);
   reordered.features.reverse();
   assert.deepEqual(buildRoad(reordered).points, road.points);
@@ -285,4 +294,41 @@ test("both saved Suzuka recipes pin their bridge source and preserve separate ru
       ),
     );
   }
+});
+
+test("separate underpass approaches exclude deck pixels without inventing missing ground samples", () => {
+  const crossing = {
+    upper: [2, 4],
+    lower: [6, 8],
+  } as GradeSeparation["crossings"][number];
+  const samples: [number, number][] = Array.from({ length: 11 }, (_, i) => [
+    i,
+    i >= 2 && i <= 4 ? 46 : 40,
+  ]);
+  samples[3][1] = NaN;
+  samples[7][1] = 46;
+  const legacy = interpolateCrossingApproaches(samples, [crossing]);
+  assert.equal(legacy.samples[7][1], 46);
+  const edited = interpolateCrossingApproaches(samples, [crossing], true);
+  assert.equal(edited.samples[3][1], 46);
+  assert.equal(edited.samples[7][1], 40);
+  assert.deepEqual(edited.endpoints, [2, 4, 6, 8]);
+  assert.ok(Number.isNaN(samples[3][1]));
+  const missing = structuredClone(samples);
+  missing[6][1] = NaN;
+  assert.throws(
+    () => interpolateCrossingApproaches(missing, [crossing], true),
+    /approach elevation/,
+  );
+  missing[6][1] = 40;
+  missing[1][1] = NaN;
+  assert.throws(
+    () => interpolateCrossingApproaches(missing, [crossing], true),
+    /outside an identified/,
+  );
+  const { recipe } = fixture();
+  recipe.elevation.crossingInterpolation = "both-road-approaches-v1";
+  assert.doesNotThrow(() => gradeSeparationSchema.parse(recipe));
+  recipe.elevation.anchors.splice(2, 0, [60, 46]);
+  assert.throws(() => gradeSeparationSchema.parse(recipe), /only between/);
 });

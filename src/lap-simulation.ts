@@ -5,7 +5,11 @@ import { indexBorders, borderSection } from "./border-sections";
 import { pairedBorderMidline } from "./border-midline";
 import { boundaryNormalMidline, assertRoadContained } from "./boundary-path";
 import { buildOpenRoad } from "./open-road";
-import { gradeProfileHeight, onBridge } from "./grade-separation";
+import {
+  assertGradeRibbon,
+  gradeProfileHeight,
+  onBridge,
+} from "./grade-separation";
 
 export const GRAVITY = 9.80665;
 export const DEFAULT_CAR = {
@@ -150,12 +154,12 @@ export function buildRoad(layout: Layout): Road {
       (f) => f.properties.role === "inner" || f.properties.role === "outer",
     )
     .sort((a, b) =>
-      imagePairs
-        ? Number(a.properties.role !== (innerLeft ? "inner" : "outer")) -
-          Number(b.properties.role !== (innerLeft ? "inner" : "outer"))
-        : grade
-          ? Number(a.properties.role === "outer") -
-            Number(b.properties.role === "outer")
+      grade
+        ? Number(a.properties.role === "outer") -
+          Number(b.properties.role === "outer")
+        : imagePairs
+          ? Number(a.properties.role !== (innerLeft ? "inner" : "outer")) -
+            Number(b.properties.role !== (innerLeft ? "inner" : "outer"))
           : 0,
     )
     .flatMap((f) => geometryPaths(f.geometry))
@@ -201,12 +205,10 @@ export function buildRoad(layout: Layout): Road {
         a = Math.floor(station),
         b = (a + 1) % raw.length,
         fraction = station - a,
-        edges = borders.map(
-          (path): Position => [
-            path[a][0] * (1 - fraction) + path[b][0] * fraction,
-            path[a][1] * (1 - fraction) + path[b][1] * fraction,
-          ],
-        ),
+        edges = borders.map((path): Position => [
+          path[a][0] * (1 - fraction) + path[b][0] * fraction,
+          path[a][1] * (1 - fraction) + path[b][1] * fraction,
+        ]),
         dx = edges[0][0] - edges[1][0],
         dz = edges[0][1] - edges[1][1],
         width = Math.hypot(dx, dz);
@@ -268,7 +270,13 @@ export function buildRoad(layout: Layout): Road {
       throw new Error(
         "Boundary driving path requires measured cross-sections throughout",
       );
-    assertRoadContained(layout, points, origin);
+    if (grade) {
+      const edge = (role: "inner" | "outer") =>
+        geometryPaths(
+          layout.features.find((f) => f.properties.role === role)!.geometry,
+        )[0];
+      assertGradeRibbon({ inner: edge("inner"), outer: edge("outer") }, grade);
+    } else assertRoadContained(layout, points, origin);
   }
   // Recenter the driving path within actual asymmetric source edges. Geometry retains both edges.
   const mid = points.map((p) => ({

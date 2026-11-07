@@ -128,6 +128,12 @@ Both 3D views rebuild road sections by paired station correspondence, avoiding a
 
 A same-image `border:infer --refresh --local-appearance --licensed-imagery --cached-image ...` replays the embedded crossing and refinement recipes without authoring files. Use a reviewed `--grade-separation` recipe with one `--track`, `--layout`, `--cached-image` and `--local-appearance` when first adding an explicitly sourced crossing. Terrain acquisition alone is not sufficient to create such a recipe.
 
+### Measured edges at a bridge
+
+Complete `paired-image-edge-anchors-v1` measurements can accompany `--grade-separation` instead of an automatic local-appearance proposal. The saved GeoJSON uses `image-measured-paired-edges-v1` and driver-left/right station order. Source snapshot, bridge-way version, image coverage, road width, driving direction and all four ribbon intersections remain checked. The same embedded recipes reproduce the borders during refresh and validation. Compaction checks the reconstructed error and crossing geometry before dropping redundant paired controls.
+
+An elevation raster can contain the deck height where the lower road is hidden. The optional `elevation.crossingInterpolation: both-road-approaches-v1` therefore interpolates both declared road spans between their own sampled approach endpoints. All four endpoints remain in the compact height profile; interior raster samples cannot enter either span. Missing elevations elsewhere remain errors. This mode supplies no nominal clearance and does not establish surveyed road heights. Existing recipes without the flag retain their previous upper-span interpolation.
+
 ## Unmapped course identity
 
 A licensed high-resolution inspection on 6 November 2026 covered nine unmapped entries across seven areas: Arlington and its Practice entry, Elvington's northern return, Huangtupo, Lydden Hill Infield, both Kames timed runs, Thoresway and Detroit City Airport. The images have approximately 0.44–0.75 m ground pixels. Retrieval time does not establish capture time; these source references supply no capture date.

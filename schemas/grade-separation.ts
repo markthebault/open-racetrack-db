@@ -36,6 +36,7 @@ export const gradeSeparationSchema = z
         "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
       ),
       sampling: z.literal("bilinear-pixel-centres"),
+      crossingInterpolation: z.literal("both-road-approaches-v1").optional(),
       toleranceM: z.number().positive().max(0.5),
       tiles: z
         .array(
@@ -80,14 +81,19 @@ export const gradeSeparationSchema = z
           issue("Crossing intervals must not overlap");
         spans.push(r);
       }
-      // Bridge decks are interpolated from pinned approach samples, not a nominal clearance.
-      for (const station of crossing.upper)
-        if (!a.some((p) => p[0] === station))
-          issue("Bridge interpolation must retain both approach anchors");
-      if (a.some((p) => p[0] > crossing.upper[0] && p[0] < crossing.upper[1]))
-        issue(
-          "Bridge spans must interpolate only between their two approach anchors",
-        );
+      // An occluded lower road must not inherit the deck's raster height.
+      const interpolated = value.elevation.crossingInterpolation
+        ? [crossing.upper, crossing.lower]
+        : [crossing.upper];
+      for (const span of interpolated) {
+        for (const station of span)
+          if (!a.some((p) => p[0] === station))
+            issue("Bridge interpolation must retain both approach anchors");
+        if (a.some((p) => p[0] > span[0] && p[0] < span[1]))
+          issue(
+            "Bridge spans must interpolate only between their two approach anchors",
+          );
+      }
     }
     const keys = value.elevation.tiles.map((t) => `${t.zoom}/${t.x}/${t.y}`);
     if (new Set(keys).size !== keys.length) issue("Duplicate elevation tiles");

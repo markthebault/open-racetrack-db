@@ -6,12 +6,18 @@ import { imageCrossSections, type Raster } from "./infer-image-borders";
 import { borderPairHash } from "./refine-image-borders";
 import { assertSeparateSimpleRings, insideRing } from "../src/boundary-path";
 import { distance, equal, type Position } from "../src/geo";
+import {
+  gradeSeparationSchema,
+  type GradeSeparation,
+} from "../schemas/grade-separation";
+import { assertGradeRibbon } from "../src/grade-separation";
 /** Complete, sparse image anchors. No automatic seed, nominal width or filled image pixels. */
 export function measuredImageBorders(
   trace: Position[],
   input: BorderMeasurementInput,
   imageSha256: string,
   image?: Raster,
+  gradeInput?: GradeSeparation,
 ) {
   const recipe = borderMeasurementInputSchema.parse(input);
   const run = recipe.routeKind === "run";
@@ -25,6 +31,13 @@ export function measuredImageBorders(
     { projection, normals, smooth, count, index, step } = frames,
     lastStation = run ? count - 1 : count,
     paired = recipe.method === "paired-image-edge-anchors-v1";
+  const grade = gradeInput
+    ? gradeSeparationSchema.parse(gradeInput)
+    : undefined;
+  if (grade && (run || !paired || grade.stationCount !== count))
+    throw new Error(
+      "Bridge measurements require a closed paired recipe with matching source stations",
+    );
   if (
     recipe.patches.length !== 2 ||
     new Set(recipe.patches.map((p) => p.edge)).size !== 2
@@ -79,11 +92,15 @@ export function measuredImageBorders(
         throw new Error(
           "Complete measurements cannot preserve automatic seed joins",
         );
-      const linear = recipe.interpolation === "edge-linear-v1" ||
-        (j > 0 && recipe.linearIntervals?.some((range) =>
-          range.edge === patch.edge &&
-          patch.anchors[j - 1].station >= range.startStation &&
-          a.station <= range.endStation));
+      const linear =
+        recipe.interpolation === "edge-linear-v1" ||
+        (j > 0 &&
+          recipe.linearIntervals?.some(
+            (range) =>
+              range.edge === patch.edge &&
+              patch.anchors[j - 1].station >= range.startStation &&
+              a.station <= range.endStation,
+          ));
       const maximumGapM = linear ? 50 : 100;
       if (j && (a.station - patch.anchors[j - 1].station) * step > maximumGapM)
         throw new Error(`Image measurement gap exceeds ${maximumGapM} metres`);
@@ -108,10 +125,14 @@ export function measuredImageBorders(
     for (let j = 1; j < anchors.length; j++) {
       const a = anchors[j - 1],
         b = anchors[j];
-      const linear = recipe.interpolation === "edge-linear-v1" ||
-        recipe.linearIntervals?.some((range) =>
-          range.edge === patch.edge && a.station >= range.startStation &&
-          b.station <= range.endStation);
+      const linear =
+        recipe.interpolation === "edge-linear-v1" ||
+        recipe.linearIntervals?.some(
+          (range) =>
+            range.edge === patch.edge &&
+            a.station >= range.startStation &&
+            b.station <= range.endStation,
+        );
       for (let i = a.station; i <= b.station; i++) {
         const t = (i - a.station) / (b.station - a.station),
           p = smooth[index(i)],
@@ -148,15 +169,13 @@ export function measuredImageBorders(
     result.inner.map(projection.to),
     result.outer.map(projection.to),
   ];
-  if (paired) {
+  if (paired && !grade) {
     // Image pairs define their own road section; old source normals do not move them.
     // The retained source route still bounds displacement and driving identity.
-    const midpoints = rings[0].map(
-      (a, i): Position => [
-        (a[0] + rings[1][i][0]) / 2,
-        (a[1] + rings[1][i][1]) / 2,
-      ],
-    );
+    const midpoints = rings[0].map((a, i): Position => [
+      (a[0] + rings[1][i][0]) / 2,
+      (a[1] + rings[1][i][1]) / 2,
+    ]);
     if (
       midpoints.some(
         (p, i) =>
@@ -195,12 +214,10 @@ export function measuredImageBorders(
     }
   }
   if (run) {
-    const midpoints = rings[0].map(
-      (p, i): Position => [
-        (p[0] + rings[1][i][0]) / 2,
-        (p[1] + rings[1][i][1]) / 2,
-      ],
-    );
+    const midpoints = rings[0].map((p, i): Position => [
+      (p[0] + rings[1][i][0]) / 2,
+      (p[1] + rings[1][i][1]) / 2,
+    ]);
     if (
       midpoints.some(
         (p, i) => Math.hypot(p[0] - smooth[i][0], p[1] - smooth[i][1]) > 10,
@@ -219,8 +236,34 @@ export function measuredImageBorders(
       throw new Error("Open measurements must retain driver-left/right order");
     assertSeparateSimpleRings([midpoints], false);
   }
-  assertSeparateSimpleRings(rings, !run);
-  if (!run && !insideRing(rings[0][0], rings[1]))
+  if (grade) {
+    const midpoints = rings[0].map((p, i): Position => [
+      (p[0] + rings[1][i][0]) / 2,
+      (p[1] + rings[1][i][1]) / 2,
+    ]);
+    for (let i = 0; i < count; i++) {
+      const p = midpoints[i],
+        source = smooth[i],
+        a = midpoints[index(i - 2)],
+        b = midpoints[index(i + 2)],
+        u = smooth[index(i - 2)],
+        v = smooth[index(i + 2)],
+        dx = b[0] - a[0],
+        dy = b[1] - a[1],
+        sx = v[0] - u[0],
+        sy = v[1] - u[1];
+      if (Math.hypot(p[0] - source[0], p[1] - source[1]) > 10)
+        throw new Error(
+          "Image-paired road departs more than 10 metres from its retained source station",
+        );
+      if (dx * sx + dy * sy < 0.5 * Math.hypot(dx, dy) * Math.hypot(sx, sy))
+        throw new Error(
+          "Bridge measurements reverse their source driving order",
+        );
+    }
+    assertGradeRibbon(result, grade);
+  } else assertSeparateSimpleRings(rings, !run);
+  if (!grade && !run && !insideRing(rings[0][0], rings[1]))
     throw new Error(
       "Measured inner boundary is not nested inside the outer boundary",
     );
