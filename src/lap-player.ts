@@ -551,6 +551,12 @@ export function openLap(
         credit.textContent = evidence.imagery.attribution;
         note.append(" ", credit);
         find(".lap-evidence").append(note);
+        if (evidence.measurement?.note) {
+          const detail = document.createElement("p");
+          detail.dataset.measurementDetail = "";
+          detail.textContent = evidence.measurement.note;
+          find(".lap-evidence").append(detail);
+        }
       }
       const road = buildRoad(layout);
       lap = simulateLap(road);

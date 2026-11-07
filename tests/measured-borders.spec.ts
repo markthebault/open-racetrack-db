@@ -19,6 +19,7 @@ for (const [track, layout] of [
   ["gb-harewood-hillclimb-f1871afb", "harewood-hillclimb"],
   ["gb-gurston-down-hillclimb-ade02267", "gurston-down-hillclimb"],
   ["de-circuit-meppen-206291125", "main"],
+  ["gb-shelsley-walsh-hillclimb-aaa3a45c", "shelsley-walsh-hillclimb"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
@@ -106,6 +107,14 @@ for (const [track, layout] of [
       await expect(page.locator("[data-source-credit]")).toContainText(
         d.metadata.borderInference.imagery.attribution,
       );
+      if (track === "gb-shelsley-walsh-hillclimb-aaa3a45c") {
+        await expect(page.locator("[data-measurement-detail]")).toContainText(
+          "approximately 96 m",
+        );
+        await expect(page.locator("[data-measurement-detail]")).toContainText(
+          "38.5 m beyond the supplied finish",
+        );
+      }
       await page.locator(".lap-play").click();
       await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");
       await page.locator(".lap-play").click();

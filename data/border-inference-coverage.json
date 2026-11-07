@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T02:29:47.260693Z",
+  "generatedAt": "2026-11-07T02:57:10.032Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -3102,30 +3102,9 @@
       "trackId": "gb-shelsley-walsh-hillclimb-aaa3a45c",
       "layoutId": "shelsley-walsh-hillclimb",
       "file": "data/united-kingdom/gb-shelsley-walsh-hillclimb-aaa3a45c/layouts/shelsley-walsh-hillclimb.geojson",
-      "status": "needs-route-review",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.9618,
-          0.7529
-        ],
-        "medianInteriorDifference": [
-          0.076,
-          0.0769
-        ],
-        "samplingStepM": 3.000355632429409,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "c9b1781f399b66c4e6e81332d2fc4c20446dbc8499932b6f9f6ce5466054dee1",
-      "reason": "The duplicated service-way/raceway start approach has been removed using exact pinned road nodes and an independent start photograph. The corrected source route is 939.4 m; its sparse final endpoint remains 38.5 m beyond the supplied finish. Timing extent and wooded road verges still require review. Retained automatic evidence scores describe the earlier rejected proposal, not the corrected route.",
-      "visualScreening": {
-        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
-        "outcome": "held",
-        "note": "Screening does not establish surveyed accuracy or real curb locations."
-      }
+      "status": "inferred-estimate",
+      "source": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SO7060",
+      "imageSha256": "8020247cc766f29c252cef5cd8007dd80e6b530345cd8764d3738b281511b548"
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",

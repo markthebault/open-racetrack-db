@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-11-07T01:07:42.406702+00:00",
-  "scope": "Source discovery and native-pixel inspection. Harewood and Gurston have complete measured/interpolated open-run estimates. Shelsley remains held for boundary and timed-extent identification; Prescott and Fintray remain held. No terrain samples are changed.",
+  "scope": "Source discovery, native-pixel inspection and sparse road-limit estimates. Harewood, Gurston and Shelsley have measured/interpolated open-run estimates. Shelsley timing extent remains provisional. Prescott and Fintray remain held. No terrain samples are changed.",
   "nativeIntensityLicense": {
     "license": "OGL-3.0",
     "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
@@ -489,8 +489,8 @@
         -2.409076,
         52.2651758
       ],
-      "status": "awaiting-timed-extent-and-boundary-review",
-      "finding": "The start selection has been corrected using pinned one-way raceway nodes and an independently geolocated west-facing start photograph. Removing a nearly coincident service-way/raceway out-and-back reduces the source route from 1017.1 m to 939.4 m. No coordinates were adjusted to match the operator distance. The sparse source endpoint still lies 38.5 m beyond the supplied finish; timing extent remains provisional. Woodland verges require explicit image measurements; no borders or driving model are added by this correction.",
+      "status": "measured-interpolated-open-run-estimate-provisional-timing",
+      "finding": "64 sparse driver-left/right controls describe the corrected open source route. Native one-metre last-return intensity was inspected with satellite context and classified ground returns. The wooded interval between stations 200 and 232 (approximately 96 m) interpolates between adjoining observations; no continuous verge survey is claimed. The source endpoint remains 38.5 m beyond the supplied finish; the preview models the provisional source extent, not an exact timed course.",
       "indexQueries": {
         "aerialPhotography": {
           "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.4151401%2C+%22ymin%22%3A+52.2592863%2C+%22xmax%22%3A+-2.409076%2C+%22ymax%22%3A+52.2651758%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
@@ -910,6 +910,34 @@
           },
           "finishEndpointBeyondSuppliedGateM": 38.5
         }
+      },
+      "borderImage": {
+        "imagery": {
+          "sourceId": "ea-national-lidar-intensity-shelsley-2020",
+          "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SO7060",
+          "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+          "license": "OGL-3.0",
+          "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency National LIDAR Programme last-return intensity, captured 6 January–5 February 2020.",
+          "retrievedAt": "2026-11-07T00:59:42.855603Z",
+          "sha256": "8020247cc766f29c252cef5cd8007dd80e6b530345cd8764d3738b281511b548",
+          "width": 534,
+          "height": 777,
+          "extent3857": [
+            -268951.8544318416,
+            6847045.694781776,
+            -268079.3197425416,
+            6848315.281773509
+          ],
+          "groundPixelSizeM": 1.0
+        },
+        "pixelSpacing3857": 1.6339600923221098,
+        "coordinateGrid": {
+          "file": "uk_os_OSTN15_NTv2_OSGBtoETRS.tif",
+          "url": "https://cdn.proj.org/uk_os_OSTN15_NTv2_OSGBtoETRS.tif",
+          "sha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa"
+        },
+        "sampling": "Nearest original raster pixel; missing samples remain transparent; no surface filling.",
+        "resultSha256": "345c126e8b08e9602d1ae5a16d5b2f73602f2d1714b8f2f9e0cc189211b36957"
       }
     },
     {

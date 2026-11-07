@@ -20,8 +20,8 @@
     {
       "id": "shelsley-walsh-hillclimb",
       "name": "Shelsley Walsh Hillclimb",
-      "referenceId": "United Kingdom/Shelsley Walsh Hillclimb",
       "file": "layouts/shelsley-walsh-hillclimb.geojson",
+      "referenceId": "United Kingdom/Shelsley Walsh Hillclimb",
       "description": "Draft configuration: The course follows the named, one-way raceway from existing start-area node 2537296479 through Kennel bend and the upper Esses. The previous selection incorrectly travelled east on service way 1066055853 and returned west on a nearly coincident raceway, adding 77.7 m of duplicated approach. The geolocated start photograph (Geograph 8009693, looking west) and pinned raceway direction support removing that out-and-back; no coordinates are fitted to a target length. The corrected source route measures 939.4 m. The operator specifies a 1,000-yard (914.4 m) timed course, whereas the legacy catalogue scalar is 1163 m. The sparse final raceway segment ends 38.5 m beyond the supplied finish along the same road, with under 2 m perpendicular displacement. The existing 40 m endpoint allowance is retained; the source extent remains provisional and is not an exact timed-run distance. No interpolated finish vertex is added. All retained coordinates are exact pinned OpenStreetMap nodes. Boundaries and timing extent require review."
     }
   ],
@@ -52,6 +52,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-11-07T02:45:29.000Z",
       "evidenceNote": "Photograph taken 25 March 2025, subject position at 10 m precision and westward view identify the start area and travel direction only; no image pixels or coordinates copied into the road geometry."
+    },
+    {
+      "id": "ea-national-lidar-intensity-shelsley-2020",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SO7060",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-11-07T00:59:42.855603Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
