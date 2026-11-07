@@ -36,6 +36,12 @@ export const borderInferenceSchema = z
       .enum(["inner-outer", "left-right-along-trace"])
       .optional(),
     traceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+    supersedes: z
+      .strictObject({
+        borderSha256: z.string().regex(/^[a-f0-9]{64}$/),
+        reason: z.string().trim().min(20),
+      })
+      .optional(),
     refinement: borderRefinementSchema.optional(),
     measurement: borderMeasurementSchema.optional(),
     gradeSeparation: gradeSeparationSchema.optional(),
@@ -106,6 +112,11 @@ export const borderInferenceSchema = z
     const measured =
       value.method === "image-measured-cross-sections-v1" ||
       value.method === "image-measured-paired-edges-v1";
+    if (value.supersedes && !measured)
+      ctx.addIssue({
+        code: "custom",
+        message: "Replacement borders require complete image measurements",
+      });
     if (
       measured
         ? !value.measurement ||

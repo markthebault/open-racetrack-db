@@ -21,6 +21,7 @@ import {
   type Raster,
 } from "./infer-image-borders";
 import { serializeLayout } from "./layout-borders";
+import { borderReplacement } from "./border-replacement";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
 import {
@@ -47,6 +48,21 @@ if (!args.includes("--all") && !option("--track"))
   );
 const localAppearance = args.includes("--local-appearance"),
   appearance = localAppearance || args.includes("--appearance");
+const replacementHash = option("--replace-border-hash");
+if (
+  args.includes("--replace-border-hash") &&
+  (!replacementHash ||
+    !/^[a-f0-9]{64}$/.test(replacementHash) ||
+    !option("--replacement-reason") ||
+    !option("--measurements") ||
+    !option("--track") ||
+    !option("--layout") ||
+    !option("--cached-image") ||
+    args.includes("--all") || check)
+)
+  throw new Error(
+    "Original border replacement requires one --track, --layout, --cached-image, complete --measurements, --replace-border-hash and --replacement-reason; never --all or --check",
+  );
 if (
   option("--measurements") &&
   (!option("--track") ||
@@ -389,6 +405,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     const file = `${dirname(trackFile)}/${item.file}`,
       layout = validateLayout(await read(file), track, item.id),
       old = layout.metadata.borderInference;
+    const replacement = replacementHash
+      ? borderReplacement(
+          layout,
+          replacementHash,
+          option("--replacement-reason")!,
+        )
+      : undefined;
     if (layout.metadata.borderComposition) {
       report.push({
         trackId: track.id,
@@ -406,7 +429,10 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       });
       continue;
     }
-    if (!old && layout.features.some((f) => f.properties.role === "inner"))
+    if (
+      !old && !replacement &&
+      layout.features.some((f) => f.properties.role === "inner")
+    )
       continue;
     const row: RecordRow = {
         trackId: track.id,
@@ -488,7 +514,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     const preservedTerrain = layout.metadata.model3d?.terrain;
-    if (old) {
+    if (old || replacement) {
       layout.features = layout.features.filter(
         (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
       );
@@ -516,7 +542,6 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       // Tiled mosaics cover a trace corridor. Equal bounds do not imply equal coverage.
       const key =
         track.id + ":" + JSON.stringify(layout.bbox) + ":" + inputHash;
-      if (!imagery.has(key)) imagery.set(key, acquire(track, layout));
       let acquired: Acquired | undefined,
         result: ReturnType<typeof inferImageBorders>,
         measured: ReturnType<typeof measuredImageBorders> | undefined;
@@ -564,6 +589,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       };
       if (detectorOptions.gradeSeparation)
         await verifyGradeSource(layout, detectorOptions.gradeSeparation);
+      // Start acquisition only when its rejection can immediately be awaited.
+      if (!imagery.has(key)) imagery.set(key, acquire(track, layout));
       if (measurementInput) {
         acquired = await imagery.get(key)!;
         measured = measuredImageBorders(
@@ -639,6 +666,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           ? { edgeConvention: "left-right-along-trace" }
           : {}),
         traceSha256: inputHash,
+        ...((replacement ?? old?.supersedes)
+          ? { supersedes: replacement ?? old?.supersedes }
+          : {}),
         ...(detectorOptions.gradeSeparation
           ? { gradeSeparation: detectorOptions.gradeSeparation }
           : {}),
@@ -742,6 +772,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           old.traceSha256 === inputHash
             ? "retained-estimate"
             : "stale-estimate";
+      } else if (replacement) {
+        row.attemptStatus = row.status;
+        row.status = "retained-existing-borders";
       }
     }
     report.push(row);
