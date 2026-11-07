@@ -1,0 +1,24 @@
+import {test,expect} from '@playwright/test';
+const image=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=','base64');
+for(const width of [1440,390])test(`Silverstone exact border reuse supports playback and video at ${width}px`,async({page,request})=>{
+ await page.setViewportSize({width,height:900});
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ for(const host of ['server.arcgisonline.com','api.maptiler.com'])await page.route(`**/${host}/**`,r=>r.fulfill({contentType:'image/png',body:image,headers:{'access-control-allow-origin':'*'}}));
+ await page.goto('/?track=gb-silverstone-circuit-3571477&layout=main&view=3d');
+ await page.locator('#border-toggle').click();await expect(page.locator('#border-toggle')).toHaveAttribute('aria-pressed','true');
+ const href=await page.locator('#download').getAttribute('href'),data=await(await request.get(href!)).json();
+ const sibling=await(await request.get('/data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-gp-wing-sf.geojson')).json();
+ const borders=(d:typeof data)=>d.features.filter((f:{properties:{role:string}})=>['inner','outer'].includes(f.properties.role));
+ expect(borders(data)).toEqual(borders(sibling));expect(data.metadata.timing).toBeUndefined();expect(data.metadata.timingStatus).toBe('missing');
+ expect(data.metadata.notes.join('\n')).toContain('exact trace SHA-256');expect(data.metadata.borderInference).toBeUndefined();
+ await page.locator('#play-lap').click();await expect(page.locator('.lap-loading')).toBeHidden();
+ await page.locator('.lap-play').click();await expect(page.locator('[data-clock]')).not.toHaveText('0:00.00');await page.locator('.lap-play').click();
+ await page.locator('.lap-record').click();await expect(page.locator('[data-clock]')).toHaveText(/^0:02/,{timeout:10000});await page.locator('.lap-record').click();
+ await expect(page.locator('.lap-download')).toBeVisible();
+ const dimensions=await page.locator('.lap-download').evaluate(link=>new Promise<number[]>((resolve,reject)=>{
+  const video=document.createElement('video'),timer=window.setTimeout(()=>reject(new Error('Recorded video did not decode')),10000);
+  video.onloadeddata=()=>{window.clearTimeout(timer);resolve([video.videoWidth,video.videoHeight]);video.src='';};
+  video.onerror=()=>{window.clearTimeout(timer);reject(new Error('Invalid recorded video'));};video.src=(link as HTMLAnchorElement).href;
+ }));
+ expect(dimensions).toEqual([1280,720]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
+});

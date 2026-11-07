@@ -4,7 +4,7 @@ Geometry: **draft**. Public timing: **missing**. Inspector: Codex, 2026-09-30.
 
 Parent country snapshot: `europe/gb/osm.json`, SHA-256 `cfc2aa3f77dbadd9ea61d6d4ea3c8c926e4de537f70ff050c4d76dad5189830a`. Venue subset SHA-256: `82f276cd737121b529d4c964c9c0c53afab91e86915f7043beb4e25b12cac482`.
 
-## Connected course candidate
+## Previous connected course candidate (superseded)
 
 Recipe: `layouts/main.json`. Approximate trace length: 5989.9 m. Candidate count: 25. Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review. Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read. Some source ways lack one-way direction tags. Travel direction is provisional.
 
@@ -13,3 +13,9 @@ Identity: [OSM way 156355633](https://www.openstreetmap.org/way/156355633). Sour
 Pit, karting, motocross, service and unrelated ways are filtered before selection. Branches within the remaining graph are hypotheses, not independent evidence of named configurations. No geometry is marked reviewed. Public timing is absent pending a reusable source. Private start/finish comparisons do not establish a named layout or redistribution rights. No CIR, track-map or reference boundary file is read.
 
 Remaining work: confirm the selected course against venue evidence, inspect every ambiguous branch and travel direction, and add independently reusable timing evidence.
+
+## Grand Prix source correction, 2026-11-07
+
+`main` now uses the exact node chain of the already registered named OSM relation 51160, pinned in `relation-51160.json` (SHA-256 `a418ae334a6585e8578319b8e9c8021d46feea383b7796fe2eeaffe90d47b1bf`). The previous longest-cycle hypothesis included connector fragments with 172.71 and 153.02 degree reversals at nodes 2364623819 and 2364623927. The official Formula 1 course map and pinned licensed imagery support the full Grand Prix branch order. No coordinates are taken from the official map and the source is not fitted to an official length. The previous recipe and exact correction proof are retained in `sources/research/silverstone-route-correction.json`.
+
+The corrected trace is identical in geometry, direction and phase to `silverstone-gp-wing-sf`. Its existing inner/outer features are reused with pinned SHA-256 hashes, retaining `LicenseRef-Track-Borders`. Generation fails if trace, border coordinates or border rights change. No sibling timing GPS is copied: `main` retains missing timing. Geometry remains draft; this correction does not establish surveyed accuracy. Other layouts and source snapshots are unchanged.

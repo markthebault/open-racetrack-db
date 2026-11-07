@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T05:04:08.898Z",
+  "generatedAt": "2026-11-07T05:31:10.021Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -3113,8 +3113,10 @@
       "trackId": "gb-silverstone-circuit-3571477",
       "layoutId": "main",
       "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "reused-existing",
+      "sourceLayoutId": "silverstone-gp-wing-sf",
+      "traceSha256": "8e3079af801747f4662b9e845a25cdda49ad23ff8115bceaefdfd44e3c9bff59",
+      "bordersSha256": "cbb39a0dc5063df04007e56ce13a386d803e9ead38a4b5e3b8500612749e8b03"
     },
     {
       "trackId": "gb-silverstone-circuit-3571477",
@@ -4898,7 +4900,7 @@
       "trackId": "us-detroit-city-airport-f3ab2023",
       "layoutId": "detroit-city-airport",
       "status": "unmapped",
-      "reason": "High-resolution imagery shows the apron but does not establish the event’s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
+      "reason": "High-resolution imagery shows the apron but does not establish the event\u2019s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
     },
     {
       "trackId": "us-dover-motor-speedway-350676133",
