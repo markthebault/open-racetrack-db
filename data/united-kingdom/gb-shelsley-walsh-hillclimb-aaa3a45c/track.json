@@ -22,7 +22,7 @@
       "name": "Shelsley Walsh Hillclimb",
       "referenceId": "United Kingdom/Shelsley Walsh Hillclimb",
       "file": "layouts/shelsley-walsh-hillclimb.geojson",
-      "description": "Draft configuration: The open mapped hillclimb retains the Southern start approach and its small lower return, the Kennel bend, main climb and upper Esses. The operator identifies the hill and corner sequence; all route coordinates remain unchanged independent road nodes. The gate-to-gate source route measures 1017.1 m against the 1163 m catalogue scalar. The sparsely mapped upper straight has no existing node within 30 m of the finish: the nearest endpoint is 38.5 m away along the same road, whose perpendicular timing displacement is below 2 m. A documented 40 m endpoint allowance preserves that draft uncertainty without adding a fabricated vertex or extending to nearby footpaths. Timing extent and approach alignment remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1017.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The course follows the named, one-way raceway from existing start-area node 2537296479 through Kennel bend and the upper Esses. The previous selection incorrectly travelled east on service way 1066055853 and returned west on a nearly coincident raceway, adding 77.7 m of duplicated approach. The geolocated start photograph (Geograph 8009693, looking west) and pinned raceway direction support removing that out-and-back; no coordinates are fitted to a target length. The corrected source route measures 939.4 m. The operator specifies a 1,000-yard (914.4 m) timed course, whereas the legacy catalogue scalar is 1163 m. The sparse final raceway segment ends 38.5 m beyond the supplied finish along the same road, with under 2 m perpendicular displacement. The existing 40 m endpoint allowance is retained; the source extent remains provisional and is not an exact timed-run distance. No interpolated finish vertex is added. All retained coordinates are exact pinned OpenStreetMap nodes. Boundaries and timing extent require review."
     }
   ],
   "sources": [
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:00:38.255Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "selection-start-shelsley-2025",
+      "type": "reference",
+      "title": "Shelsley Walsh start identification photograph",
+      "url": "https://www.geograph.org.uk/photo/8009693",
+      "license": "reference-only",
+      "retrievedAt": "2026-11-07T02:45:29.000Z",
+      "evidenceNote": "Photograph taken 25 March 2025, subject position at 10 m precision and westward view identify the start area and travel direction only; no image pixels or coordinates copied into the road geometry."
     }
   ]
 }

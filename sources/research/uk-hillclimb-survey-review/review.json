@@ -457,7 +457,7 @@
           "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SU0025",
           "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
           "license": "OGL-3.0",
-          "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency National LIDAR Programme last-return intensity, captured 25\u201329 April 2019.",
+          "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency National LIDAR Programme last-return intensity, captured 25–29 April 2019.",
           "retrievedAt": "2026-11-07T00:59:41.218960Z",
           "sha256": "7bd93debfb82e27c45d571c59c0a7412969543160cad6d1a56f11961a57f9de1",
           "width": 411,
@@ -490,7 +490,7 @@
         52.2651758
       ],
       "status": "awaiting-timed-extent-and-boundary-review",
-      "finding": "Both the 2008 and matching 2020 classified point-cloud archives were acquired and inspected without filling empty ground-intensity cells. The 2020 archive contains the indexed SO7060 survey member in EPSG:27700 with 56,916,299 points. Ground-only returns help distinguish the road from trees, but woodland verges still require explicit observations. A separate extent audit found that the saved draft road is about 1,017 m while the operator specifies a 1,000-yard timed course. Approach/finish extent must be identified independently before claiming a verified timed run; do not shorten or rescale to match the number.",
+      "finding": "The start selection has been corrected using pinned one-way raceway nodes and an independently geolocated west-facing start photograph. Removing a nearly coincident service-way/raceway out-and-back reduces the source route from 1017.1 m to 939.4 m. No coordinates were adjusted to match the operator distance. The sparse source endpoint still lies 38.5 m beyond the supplied finish; timing extent remains provisional. Woodland verges require explicit image measurements; no borders or driving model are added by this correction.",
       "indexQueries": {
         "aerialPhotography": {
           "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.4151401%2C+%22ymin%22%3A+52.2592863%2C+%22xmax%22%3A+-2.409076%2C+%22ymax%22%3A+52.2651758%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
@@ -870,7 +870,7 @@
         }
       ],
       "extentReview": {
-        "sourceRouteLengthM": 1017.1,
+        "sourceRouteLengthM": 939.4,
         "operatorTimedLengthYards": 1000,
         "operatorTimedLengthM": 914.4,
         "sourceEndpointsProvisional": true,
@@ -890,7 +890,26 @@
             "use": "Firsthand course guide, one page, visually inspected for start, Kennel, Crossing, Bottom S, Top S and finish order. Schematic only; no diagram coordinates or shapes copied."
           }
         ],
-        "outcome": "held; neither gate position nor route trimming inferred from scalar distance"
+        "outcome": "duplicated start approach corrected; sparse finish extent and road boundaries remain provisional",
+        "previousSourceRouteLengthM": 1017.1,
+        "startSelectionReview": {
+          "removedServiceWayId": 1066055853,
+          "firstRacewayWayId": 661290386,
+          "firstRacewayNodeId": 2537296479,
+          "firstRacewayIndex": 3,
+          "removedDistanceM": 77.7,
+          "method": "Select existing named one-way raceway nodes; identify start area and travel direction independently. No length-fitting or copied photograph coordinates.",
+          "photo": {
+            "url": "https://www.geograph.org.uk/photo/8009693",
+            "photographer": "Jeff Gogarty",
+            "dateTaken": "2025-03-25",
+            "subjectPrecisionM": 10,
+            "viewDirection": "WEST",
+            "retrievedAt": "2026-11-07T02:45:29.000Z",
+            "use": "reference-only; visually reviewed photograph and subject metadata identify start area; image pixels not redistributed"
+          },
+          "finishEndpointBeyondSuppliedGateM": 38.5
+        }
       }
     },
     {

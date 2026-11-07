@@ -590,8 +590,7 @@ async function applyView() {
     const notice = get("view-notice");
     notice.hidden = !is3d || isLapModel(model);
     if (!notice.hidden) {
-      const network =
-        layout?.metadata.geometryKind === "network" || !layout?.metadata.closed;
+      const network = layout?.metadata.geometryKind === "network";
       const hasBorders = layout?.features.some(
         (feature) => feature.properties.role === "inner",
       );
