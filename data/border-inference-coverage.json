@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T05:31:10.021Z",
+  "generatedAt": "2026-11-07T05:53:40.780Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -4530,8 +4530,9 @@
       "trackId": "sk-slovakia-ring-47361993",
       "layoutId": "main",
       "file": "data/slovakia/slovakia-ring-47361993/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "3ac0ac6dce43c8561b610efe5f73a5e0a0d1853213503745af509c8abb3ff1c6"
     },
     {
       "trackId": "sk-slovakia-ring-47361993",
@@ -4900,7 +4901,7 @@
       "trackId": "us-detroit-city-airport-f3ab2023",
       "layoutId": "detroit-city-airport",
       "status": "unmapped",
-      "reason": "High-resolution imagery shows the apron but does not establish the event\u2019s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
+      "reason": "High-resolution imagery shows the apron but does not establish the event’s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
     },
     {
       "trackId": "us-dover-motor-speedway-350676133",

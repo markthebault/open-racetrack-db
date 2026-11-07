@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "trackId": "sk-slovakia-ring-47361993",
+  "layoutId": "main",
+  "baselineCommit": "9479a772ba724442b80fd1f340ec2ccdac16a96c",
+  "previousRecipe": {
+    "schemaVersion": 1,
+    "trackId": "sk-slovakia-ring-47361993",
+    "layoutId": "main",
+    "sourceId": "osm-snapshot",
+    "snapshotSha256": "97d4cb6199f3b08bbad73930b2924425a65e4ff97e7e1a0cdcf368326fa1804d",
+    "closed": true,
+    "timingMode": "shared",
+    "geometryStatus": "draft",
+    "reviewedAt": null,
+    "notes": [
+      "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+      "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
+      "Some source ways lack one-way direction tags. Travel direction is provisional."
+    ],
+    "segments": [
+      {
+        "wayId": 47378777,
+        "wayVersion": 8,
+        "fromIndex": 0,
+        "toIndex": 20
+      },
+      {
+        "wayId": 47378779,
+        "wayVersion": 6,
+        "fromIndex": 0,
+        "toIndex": 2
+      },
+      {
+        "wayId": 47378308,
+        "wayVersion": 9,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 1422356971,
+        "wayVersion": 1,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 47373776,
+        "wayVersion": 7,
+        "fromIndex": 0,
+        "toIndex": 6
+      },
+      {
+        "wayId": 47378308,
+        "wayVersion": 9,
+        "fromIndex": 6,
+        "toIndex": 83
+      },
+      {
+        "wayId": 47378311,
+        "wayVersion": 6,
+        "fromIndex": 0,
+        "toIndex": 2
+      },
+      {
+        "wayId": 47378778,
+        "wayVersion": 7,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 1422356970,
+        "wayVersion": 1,
+        "fromIndex": 5,
+        "toIndex": 0
+      },
+      {
+        "wayId": 47373775,
+        "wayVersion": 5,
+        "fromIndex": 0,
+        "toIndex": 4
+      },
+      {
+        "wayId": 47378778,
+        "wayVersion": 7,
+        "fromIndex": 6,
+        "toIndex": 30
+      },
+      {
+        "wayId": 47378776,
+        "wayVersion": 6,
+        "fromIndex": 0,
+        "toIndex": 2
+      },
+      {
+        "wayId": 47361993,
+        "wayVersion": 12,
+        "fromIndex": 0,
+        "toIndex": 8
+      },
+      {
+        "wayId": 47373778,
+        "wayVersion": 6,
+        "fromIndex": 0,
+        "toIndex": 5
+      },
+      {
+        "wayId": 1422356969,
+        "wayVersion": 1,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 47361993,
+        "wayVersion": 12,
+        "fromIndex": 12,
+        "toIndex": 13
+      },
+      {
+        "wayId": 47373780,
+        "wayVersion": 8,
+        "fromIndex": 0,
+        "toIndex": 11
+      },
+      {
+        "wayId": 47378085,
+        "wayVersion": 9,
+        "fromIndex": 0,
+        "toIndex": 15
+      },
+      {
+        "wayId": 47378083,
+        "wayVersion": 11,
+        "fromIndex": 0,
+        "toIndex": 10
+      },
+      {
+        "wayId": 47374306,
+        "wayVersion": 8,
+        "fromIndex": 0,
+        "toIndex": 13
+      },
+      {
+        "wayId": 47374313,
+        "wayVersion": 7,
+        "fromIndex": 0,
+        "toIndex": 3
+      }
+    ],
+    "gates": []
+  },
+  "previousTraceSha256": "16270bce1ea0397490110e35bced4e85f8a16ee606ebbbc5cdc4b618cc83e264",
+  "reason": "The generic longest-cycle hypothesis follows three connector detours rather than an independently identified configuration. At the northeastern turnaround its source-normal sections leave the main paved bend. Operator variant 4 marks the rounded turns and southern infield returns in red while these three connectors are black. Replace the generic hypothesis with the already pinned independently selected full circuit, preserving every exact source node, travel direction and phase. This is not a correction to the separately named layout or a new surveyed course.",
+  "removedConnectorWayIds": [
+    1422356971,
+    47373776,
+    1422356970,
+    47373775,
+    47373778,
+    1422356969
+  ],
+  "replacement": {
+    "sourceId": "osm-selection-47361993",
+    "snapshotFile": "selected-network-47361993.json",
+    "snapshotSha256": "d2617de8aa2ad326da9391e4f245745a9afcf888982b30b0b15f1224fa1397f1",
+    "traceSha256": "aa8fc7bfe6268919778cb5e8c97783ca2f854da32f92fdcae17114ba10977541"
+  },
+  "identityEvidence": {
+    "page": "https://slovakiaring.sk/en/the-circuit",
+    "variantMap": "https://slovakiaring.sk/assets/images/svg/racetrack/track-4.svg",
+    "mapSha256": "83ba6b23dd51f0ecccfd00043c6d1de95270a502f15dac6a2b3cb71bc1108090",
+    "use": "Configuration identity and branch arrangement only. No map coordinates are extracted and the source is not fitted to the official length. The operator distinguishes V4 (5922 m) and V4b (5935 m); this correction follows the pinned V4 route, not V4b or every possible connector combination."
+  },
+  "imageryReview": {
+    "sha256": "3ac0ac6dce43c8561b610efe5f73a5e0a0d1853213503745af509c8abb3ff1c6",
+    "groundPixelSizeM": 0.3992,
+    "finding": "Native georeferenced overview and northeastern junction crop confirm rounded paved bend and shared connector openings. Old hypothesis stations 324–378 traverse the extra northeastern spur; unaccepted partial manual measurements of the old trace are not used."
+  },
+  "preservation": "The previous source recipe is retained here. Other layouts and their borders, all timing and original terrain remain unchanged. Main timing remains missing. New limits must pass independent inference/image review on the corrected route; no sibling timing, borders or model are copied."
+}

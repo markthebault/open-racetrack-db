@@ -162,6 +162,7 @@ test("constant-radius circuit matches the analytic lateral speed limit", () => {
 
 for (const [name, file] of [
   ["Oschersleben tight first corner", "data/germany/motorsport-arena-oschersleben-89251023/layouts/main.geojson"],
+  ["Slovakia full-circuit junctions", "data/slovakia/slovakia-ring-47361993/layouts/main.geojson"],
   ["Bahrain extended junctions", "data/bahrain/bahrain-international-circuit-4818385/layouts/main.geojson"],
 ])
 test(`${name} retains paired sections without distant-edge width jumps`, () => {

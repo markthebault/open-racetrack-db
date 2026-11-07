@@ -1,0 +1,26 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {assemble,type Way} from '../scripts/route';
+import {geometryHash} from '../scripts/reuse-original-borders';
+import {layoutSchema} from '../schemas/data';
+const json=async(p:string)=>JSON.parse(await readFile(p,'utf8'));
+test('Slovakia fallback correction retains its old source proof and exactly replays the supported full-circuit chain',async()=>{
+ const source='sources/sk-slovakia-ring-47361993',dir='data/slovakia/slovakia-ring-47361993/layouts';
+ const recipe=await json(`${source}/layouts/main.json`),proof=await json('sources/research/slovakia-route-correction.json');
+ const data=layoutSchema.parse(await json(`${dir}/main.geojson`)),sibling=layoutSchema.parse(await json(`${dir}/slovakia-ring.geojson`));
+ const ways=async(p:string)=>(await json(`${source}/${p}`)).elements.filter((e:Way&{type:string})=>e.type==='way');
+ const oldGeometry={type:'LineString',coordinates:assemble(await ways('osm.json'),proof.previousRecipe.segments,true)};
+ assert.equal(geometryHash(oldGeometry),proof.previousTraceSha256);
+ const geometry={type:'LineString',coordinates:assemble(await ways(recipe.snapshotFile),recipe.segments,true)};
+ assert.equal(recipe.snapshotSha256,proof.replacement.snapshotSha256);
+ assert.equal(geometryHash(geometry),proof.replacement.traceSha256);
+ assert.notEqual(geometryHash(geometry),proof.previousTraceSha256);
+ assert.deepEqual(data.features.find(f=>f.properties.role==='trace')!.geometry,geometry);
+ assert.deepEqual(sibling.features.find(f=>f.properties.role==='trace')!.geometry,geometry);
+ assert.equal(data.metadata.timing,undefined);assert.equal(data.metadata.timingStatus,'missing');
+ assert.equal(data.metadata.borderInference?.measurement?.method,'paired-image-edge-anchors-v1');
+ assert.equal(data.metadata.borderInference?.imagery.sha256,proof.imageryReview.sha256);
+ for(const id of proof.removedConnectorWayIds)assert.equal(recipe.segments.some((s:{wayId:number})=>s.wayId===id),false);
+ assert.ok(data.metadata.model3d);
+});
