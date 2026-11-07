@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "trackId": "dk-jyllandsringen-102145328",
+  "layoutId": "main",
+  "baselineCommit": "af104d5064f1ccb152ef3da42ec36dc47289b4c4",
+  "previousRecipe": {
+    "schemaVersion": 1,
+    "trackId": "dk-jyllandsringen-102145328",
+    "layoutId": "main",
+    "sourceId": "osm-snapshot",
+    "snapshotSha256": "337473ccc2448a50b4d97e156e449ac2801d0fbf2dcdca9cd4a8c661deeef354",
+    "closed": true,
+    "timingMode": "shared",
+    "geometryStatus": "draft",
+    "reviewedAt": null,
+    "notes": [
+      "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+      "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
+      "Some source ways lack one-way direction tags. Travel direction is provisional."
+    ],
+    "segments": [
+      {
+        "wayId": 102145331,
+        "wayVersion": 7,
+        "fromIndex": 0,
+        "toIndex": 12
+      },
+      {
+        "wayId": 358560148,
+        "wayVersion": 2,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 338068121,
+        "wayVersion": 3,
+        "fromIndex": 1,
+        "toIndex": 2
+      },
+      {
+        "wayId": 102145334,
+        "wayVersion": 6,
+        "fromIndex": 0,
+        "toIndex": 12
+      },
+      {
+        "wayId": 338068124,
+        "wayVersion": 3,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 358560149,
+        "wayVersion": 2,
+        "fromIndex": 0,
+        "toIndex": 1
+      },
+      {
+        "wayId": 102145330,
+        "wayVersion": 18,
+        "fromIndex": 112,
+        "toIndex": 115
+      },
+      {
+        "wayId": 338068128,
+        "wayVersion": 2,
+        "fromIndex": 21,
+        "toIndex": 0
+      },
+      {
+        "wayId": 102145330,
+        "wayVersion": 18,
+        "fromIndex": 0,
+        "toIndex": 11
+      },
+      {
+        "wayId": 102146041,
+        "wayVersion": 7,
+        "fromIndex": 0,
+        "toIndex": 22
+      },
+      {
+        "wayId": 102145330,
+        "wayVersion": 18,
+        "fromIndex": 31,
+        "toIndex": 40
+      },
+      {
+        "wayId": 102145335,
+        "wayVersion": 9,
+        "fromIndex": 19,
+        "toIndex": 0
+      },
+      {
+        "wayId": 102145330,
+        "wayVersion": 18,
+        "fromIndex": 43,
+        "toIndex": 101
+      }
+    ],
+    "gates": []
+  },
+  "previousTraceSha256": "97d31b3643abf785cd72e67027a19a59bf7bd5d3be14832910c04817525a8a62",
+  "reason": "The generic longest-cycle fallback includes internal training circles, their connectors and a way tagged as pit. The venue facilities description and marshal-post map identify the combined racing circuit through Bane 1 and the outer Bane 2 loop. Independently inspected licensed imagery distinguishes the racing circuit from these training and pit paths. Replace only the generic main fallback; retain GL, NY and their combined source exactly. No diagram coordinates or distance fitting are used.",
+  "excludedWayIds": [
+    102145331,
+    358560148,
+    338068121,
+    102145334,
+    338068124,
+    358560149,
+    102146041,
+    102145335
+  ],
+  "replacement": {
+    "sourceId": "osm-network-102145328",
+    "snapshotFile": "course-network-102145328.json",
+    "snapshotSha256": "c4c6277a36cb9e35e25b8b3864e18ebac6c8a79020e35bc2e5ae5d904bfe4f19",
+    "traceSha256": "13cd02106f7534c3904beb6df2cd44851a4fce7ba1c78a36d237bd61d69bd5b6",
+    "segments": [
+      {
+        "wayId": 102145330,
+        "wayVersion": 18,
+        "fromIndex": 0,
+        "toIndex": 115
+      },
+      {
+        "wayId": 338068128,
+        "wayVersion": 2,
+        "fromIndex": 21,
+        "toIndex": 0
+      }
+    ],
+    "sharedEndpointNodeIds": [
+      1178910200,
+      1178910082
+    ]
+  },
+  "identityEvidence": {
+    "operatorUrl": "https://fdmjyllandsringen.dk/produkter/banefaciliteter",
+    "mapUrl": "https://app-cdn.sportity.com/b48adcae-305c-443f-b735-7e343090937a/8755e932-9649-478e-85bb-9a276248299b_Kort%20oversigt.pdf",
+    "mapSha256": "cb31237897801b7fc145c3ec1b3a913ea16cfa385add1f8b0e9b877b4ff95e24",
+    "page": 1,
+    "use": "Identity and branch order only. No coordinates or widths are extracted from the operator map and no path is fitted to the stated 2300 m."
+  },
+  "imageryReview": {
+    "imagery": {
+      "sourceId": "maptiler-licensed-border-imagery",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "rightsBasis": "source-specific-agreement",
+      "termsUrl": "https://www.maptiler.com/copyright/",
+      "tiles": {
+        "provider": "maptiler-satellite-v4",
+        "zoom": 16,
+        "bounds": [
+          34525,
+          20349,
+          34527,
+          20351
+        ]
+      },
+      "attribution": "© MapTiler © OpenStreetMap contributors",
+      "retrievedAt": "2026-11-06T08:22:29.918Z",
+      "sha256": "0346a37d92ca0febeac3e06cafd9ad979266392413452cfaae81e4e7d88d43d9",
+      "width": 1536,
+      "height": 1536,
+      "extent3857": [
+        1074398.8695764393,
+        7592337.145509986,
+        1076233.358255282,
+        7594171.634188831
+      ],
+      "groundPixelSizeM": 0.6648
+    },
+    "finding": "The full 102145330 chain and reversed 338068128 chain follow the racing pavement, including the outer Bane 2 course. The old fallback crosses the internal training loops and pit path. Both source-node junctions match exactly; no snapping or interpolated connector is introduced."
+  },
+  "borderStatus": {
+    "status": "held-for-image-measurement",
+    "reason": "The changed source needs independent road-limit observations; other layout borders are not reused.",
+    "detectorFindings": [
+      {
+        "method": "road-appearance-v3",
+        "result": "Inferred boundary crosses itself; image needs manual review"
+      },
+      {
+        "method": "road-local-appearance-v4",
+        "result": "Inferred boundary crosses itself; image needs manual review"
+      }
+    ]
+  },
+  "preservation": "All other traces, original borders, timing and terrain remain unchanged. Main timing remains missing; no sibling GPS gate is copied.",
+  "limitations": "Source centerline positions and travel direction remain draft. Image-based boundary estimates require separate review. Curbs are illustrative, raster elevations estimated and banking unknown.",
+  "preservedLayouts": [
+    {
+      "layoutId": "jyllands-ringen-gl",
+      "traceSha256": "6618142bd17ca5cba9c135cd51a42d515759c0a27a8673179bc2796ec9c8ee20",
+      "borderFeaturesSha256": "6d3e3593a20d243feb3c51b19d6a7ee929f44b5288284363c7ee6e16adcf6766",
+      "timing": {
+        "start": [
+          9.660058666666666,
+          56.17639666666666
+        ],
+        "finish": [
+          9.660058666666666,
+          56.17639666666666
+        ]
+      },
+      "timingStatus": "estimated"
+    },
+    {
+      "layoutId": "jyllands-ringen-ny",
+      "traceSha256": "41354a51b5bbb446926108e78f8d36e429147591c7f939f6c4bd4b818328b4ba",
+      "borderFeaturesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "timing": {
+        "start": [
+          9.660058666666666,
+          56.17639666666666
+        ],
+        "finish": [
+          9.660058666666666,
+          56.17639666666666
+        ]
+      },
+      "timingStatus": "estimated"
+    },
+    {
+      "layoutId": "jyllands-ringen-combo",
+      "traceSha256": "7cc65dfa39fc8b6a843a119f0c7d136c6fb0bf3937922d4ddaa4ae574779778c",
+      "borderFeaturesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "timing": {
+        "start": [
+          9.660058666666666,
+          56.17639666666666
+        ],
+        "finish": [
+          9.660058666666666,
+          56.17639666666666
+        ]
+      },
+      "timingStatus": "estimated"
+    }
+  ]
+}
