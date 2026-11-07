@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-07T01:07:42.406702+00:00",
+  "scope": "Source discovery and native-pixel inspection only. No border, elevation, model, playback or coverage changes.",
+  "nativeIntensityLicense": {
+    "license": "OGL-3.0",
+    "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency National LIDAR Programme.",
+    "product": "Last-return laser intensity; this is not RGB aerial photography."
+  },
+  "pointCloudLicense": {
+    "license": "OGL-3.0",
+    "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/977a4ca4-1759-4f26-baa7-b566bd7ca7bf/lidar-time-stamped-point-cloud",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency time-stamped point cloud."
+  },
+  "records": [
+    {
+      "name": "harewood",
+      "layoutFile": "data/united-kingdom/gb-harewood-hillclimb-f1871afb/layouts/harewood-hillclimb.geojson",
+      "layoutBbox": [
+        -1.4934563,
+        53.9038052,
+        -1.4863201,
+        53.9080569
+      ],
+      "status": "awaiting-boundary-evidence-and-measurements",
+      "finding": "The 2019 intensity raster shows the continuous road substantially more clearly than the reviewed satellite mosaic. Building entrances around stations 324/336, the start junction and the widened final paved bay need explicit boundary observations. The 2015 point cloud provides additional historic surface evidence. No complete measured-edge recipe has been accepted.",
+      "indexQueries": {
+        "aerialPhotography": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.4934563%2C+%22ymin%22%3A+53.9038052%2C+%22xmax%22%3A+-1.4863201%2C+%22ymax%22%3A+53.9080569%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:52:29.775074+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "nationalLidarProgramme": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/National_LIDAR_Programme_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.4934563%2C+%22ymin%22%3A+53.9038052%2C+%22xmax%22%3A+-1.4863201%2C+%22ymax%22%3A+53.9080569%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:22.241652+00:00",
+          "featureCount": 1,
+          "attributes": [
+            {
+              "objectid": 2698,
+              "polygon_id": "P_10708",
+              "dsm_fn": "DSM_SE3045_P_10708_20191230_20191230.tif",
+              "dtm_fn": "DTM_SE3045_P_10708_20191230_20191230.tif",
+              "fz_dsm_fn": "FZ_DSM_SE3045_P_10708_20191230_20191230.tif",
+              "int_lz_fn": "Intensity_LZ_SE3045_P_10708_20191230_20191230.tif",
+              "tilename": "SE3045",
+              "sd_flown": 1577664000000,
+              "ed_flown": 1577664000000,
+              "surveys": "19-276 [ 2019/12/30 ]",
+              "season": "2019/2020",
+              "pnt_fn": "SE3045_P_10708_20191230_20191230.laz",
+              "resolution": 1,
+              "year": 1546300800000,
+              "supplied": null,
+              "latest": "No",
+              "vom_fn": "VOM_SE3045_P_10708_20191230_20191230.tif",
+              "Shape__Area": 25000000,
+              "Shape__Length": 20000
+            }
+          ],
+          "attributesSha256": "f5e571208204adae2ade71afe12b16848d00078988496a9fc45f490d71d9cdf1"
+        },
+        "pointCloud": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/LIDAR_PointCloud_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.4934563%2C+%22ymin%22%3A+53.9038052%2C+%22xmax%22%3A+-1.4863201%2C+%22ymax%22%3A+53.9080569%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:23.205675+00:00",
+          "featureCount": 2,
+          "attributes": [
+            {
+              "objectid": 7570,
+              "filename": "SE3345_P_9855_20150402_20150406.laz",
+              "os_ref": "SE3345",
+              "sd_flown": 1427932800000,
+              "ed_flown": 1428278400000,
+              "pt_count": 6694730,
+              "pt_spacing": 0.33008550000000003,
+              "intensity": "YES",
+              "returns": 4,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_9855\\SE3345_P_9855_20150402_20150406.laz",
+              "year": "2015",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_9855",
+              "Shape__Area": 781662.1832885742,
+              "Shape__Length": 3563.319999999949
+            },
+            {
+              "objectid": 113695,
+              "filename": "SE3345_P_6436_20090420_20090423.laz",
+              "os_ref": "SE3345",
+              "sd_flown": 1240185600000,
+              "ed_flown": 1240444800000,
+              "pt_count": 1693363,
+              "pt_spacing": 0.75017544,
+              "intensity": "YES",
+              "returns": 4,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_6436\\SE3345_P_6436_20090420_20090423.laz",
+              "year": "2009",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_6436",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            }
+          ],
+          "attributesSha256": "ac31d755f764cd893718ed77be2a9b2ed6840febc8373973a8b729a139502832"
+        }
+      },
+      "intensityRaster": {
+        "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SE3045",
+        "sha256": "55e51a93dd5f940dd6b49d1d859ae081c078055b0a093f4037c01f5764bd80ed",
+        "bytes": 38851974,
+        "survey": {
+          "objectid": 2698,
+          "polygon_id": "P_10708",
+          "dsm_fn": "DSM_SE3045_P_10708_20191230_20191230.tif",
+          "dtm_fn": "DTM_SE3045_P_10708_20191230_20191230.tif",
+          "fz_dsm_fn": "FZ_DSM_SE3045_P_10708_20191230_20191230.tif",
+          "int_lz_fn": "Intensity_LZ_SE3045_P_10708_20191230_20191230.tif",
+          "tilename": "SE3045",
+          "sd_flown": 1577664000000,
+          "ed_flown": 1577664000000,
+          "surveys": "19-276 [ 2019/12/30 ]",
+          "season": "2019/2020",
+          "pnt_fn": "SE3045_P_10708_20191230_20191230.laz",
+          "resolution": 1,
+          "year": 1546300800000,
+          "supplied": null,
+          "latest": "No",
+          "vom_fn": "VOM_SE3045_P_10708_20191230_20191230.tif",
+          "Shape__Area": 25000000,
+          "Shape__Length": 20000
+        },
+        "retrievedAt": "2026-11-07T00:59:41.117867+00:00",
+        "render": {
+          "member": "Intensity_LZ_SE3045_P_10708_20191230_20191230.tif",
+          "nativeSha256": "b13a1f19dbc4b04b699904625a9fff783307d05e2d1ee200a8a508d70140d8f8",
+          "crs": "EPSG:27700",
+          "transform": [
+            1.0,
+            0.0,
+            433316.0,
+            0.0,
+            -1.0,
+            445944.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "width": 591,
+          "height": 589,
+          "sourceResolution": [
+            1.0,
+            1.0
+          ],
+          "pixelWindow": [
+            3316,
+            4056,
+            591,
+            589
+          ],
+          "displayStretch": [
+            43.0,
+            421.0
+          ],
+          "transformOperation": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (9) + British National Grid",
+          "transformationAccuracyM": 1.0,
+          "gridSha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa",
+          "resampling": "native pixel crop; nearest enlargement for labelled inspection only",
+          "maskedPixels": 1218,
+          "rgbPixelsSha256": "fd36fcf3e23c87279feddc149838a545fc331a68aae521b29bc62f29f2f3bbce"
+        }
+      },
+      "additionalPointCloud": {
+        "url": "https://environment.data.gov.uk/tiles/collections/survey/lidar_point_cloud/2015/NaN/SE3045",
+        "bytes": 230902741,
+        "sha256": "a4f16f3caf0e9e3e37dafcd97c705c6f6f8c77f44b13c0ab5e79fd6093f927f4",
+        "renderReview": {
+          "member": "SE3345_P_9855_20150402_20150406.laz",
+          "memberSha256": "be7a2d3ad42644440f6804ab344f637c57f739bd46e8db00cc800cdfd1360989",
+          "pointCount": 6694730,
+          "headerMins": [
+            433000.0,
+            445218.32,
+            26.080000000000002
+          ],
+          "headerMaxs": [
+            433999.99,
+            445999.99,
+            115.37
+          ],
+          "crsHeader": "None",
+          "spacing": 0.5,
+          "extent27700": [
+            433316.0,
+            445355.0,
+            433907.0,
+            445944.0
+          ],
+          "aggregation": "Mean of measured intensity values in each native OS grid cell; transparent cells have no measurements; no hole filling or smoothing.",
+          "renders": [
+            {
+              "file": "harewood-pc-2015-all-last.png",
+              "sha256": "c9859aa1e734c74a2d3c8fc01f85d646c3e2b2e0672b659b77f038dc8e3fef68",
+              "stretch": [
+                9.285714285714286,
+                107.0
+              ],
+              "pixelsWithPoints": 1334815,
+              "emptyPixels": 57581,
+              "selectedPoints": 2494769
+            },
+            {
+              "file": "harewood-pc-2015-ground.png",
+              "sha256": "3ab0ac06456c05cde6b189ab3f82fac96460acffe6980ab0009044ff17de691a",
+              "stretch": [
+                11.0,
+                108.0
+              ],
+              "pixelsWithPoints": 1061115,
+              "emptyPixels": 331281,
+              "selectedPoints": 1817898
+            }
+          ]
+        },
+        "coordinateCaution": "The LAZ header has no CRS record. The matching index identifies OSTN'02 and OSGM'02; no modern-datum road geometry or elevation update is inferred from the visualization."
+      }
+    },
+    {
+      "name": "gurston",
+      "layoutFile": "data/united-kingdom/gb-gurston-down-hillclimb-ade02267/layouts/gurston-down-hillclimb.geojson",
+      "layoutBbox": [
+        -1.9697384,
+        51.0303294,
+        -1.9656569,
+        51.0370863
+      ],
+      "status": "awaiting-boundary-evidence-and-measurements",
+      "finding": "The field bends and much of the long road are visible in the 2019 intensity raster. Hedgerow cover, side openings and the farm entrance at the first saved station still require boundary observations. Older indexed point clouds report no intensity.",
+      "indexQueries": {
+        "aerialPhotography": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.9697384%2C+%22ymin%22%3A+51.0303294%2C+%22xmax%22%3A+-1.9656569%2C+%22ymax%22%3A+51.0370863%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:52:29.658939+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "nationalLidarProgramme": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/National_LIDAR_Programme_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.9697384%2C+%22ymin%22%3A+51.0303294%2C+%22xmax%22%3A+-1.9656569%2C+%22ymax%22%3A+51.0370863%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:22.279989+00:00",
+          "featureCount": 1,
+          "attributes": [
+            {
+              "objectid": 1226,
+              "polygon_id": "P_11641",
+              "dsm_fn": "DSM_SU0025_P_11641_20190425_20190429.tif",
+              "dtm_fn": "DTM_SU0025_P_11641_20190425_20190429.tif",
+              "fz_dsm_fn": "FZ_DSM_SU0025_P_11641_20190425_20190429.tif",
+              "int_lz_fn": "Intensity_LZ_SU0025_P_11641_20190425_20190429.tif",
+              "tilename": "SU0025",
+              "sd_flown": 1556150400000,
+              "ed_flown": 1556496000000,
+              "surveys": "19-137 [ 2019/04/25 ], 19-138 [ 2019/04/29 ]",
+              "season": "2018/2019",
+              "pnt_fn": "SU0025_P_11641_20190425_20190429.laz",
+              "resolution": 1,
+              "year": 1546300800000,
+              "supplied": null,
+              "latest": "No",
+              "vom_fn": "VOM_SU0025_P_11641_20190425_20190429.tif",
+              "Shape__Area": 25000000,
+              "Shape__Length": 20000
+            }
+          ],
+          "attributesSha256": "4087abb916b7fe7934c5db39d10c5076c9ba2c6d342ac586cff50e599e52a618"
+        },
+        "pointCloud": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/LIDAR_PointCloud_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.9697384%2C+%22ymin%22%3A+51.0303294%2C+%22xmax%22%3A+-1.9656569%2C+%22ymax%22%3A+51.0370863%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:24.279626+00:00",
+          "featureCount": 3,
+          "attributes": [
+            {
+              "objectid": 26450,
+              "filename": "SU0226_P_3908_20061118_20061118.laz",
+              "os_ref": "SU0226",
+              "sd_flown": 1163808000000,
+              "ed_flown": 1163808000000,
+              "pt_count": 362450,
+              "pt_spacing": 1.05241692,
+              "intensity": "NO",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_3908\\SU0226_P_3908_20061118_20061118.laz",
+              "year": "2006",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_3908",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            },
+            {
+              "objectid": 26442,
+              "filename": "SU0225_P_3908_20061118_20061118.laz",
+              "os_ref": "SU0225",
+              "sd_flown": 1163808000000,
+              "ed_flown": 1163808000000,
+              "pt_count": 330059,
+              "pt_spacing": 1.11698995,
+              "intensity": "NO",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_3908\\SU0225_P_3908_20061118_20061118.laz",
+              "year": "2006",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_3908",
+              "Shape__Area": 451020,
+              "Shape__Length": 2902.040000000008
+            },
+            {
+              "objectid": 26117,
+              "filename": "SU0225_P_3877_20061118_20061118.laz",
+              "os_ref": "SU0225",
+              "sd_flown": 1163808000000,
+              "ed_flown": 1163808000000,
+              "pt_count": 833094,
+              "pt_spacing": 0.91130303,
+              "intensity": "NO",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_3877\\SU0225_P_3877_20061118_20061118.laz",
+              "year": "2006",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_3877",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            }
+          ],
+          "attributesSha256": "f8cd69f0136f44876a60a511e3c762af3bb99eb4eba6e86b52c1d7afc505bcf3"
+        }
+      },
+      "intensityRaster": {
+        "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SU0025",
+        "sha256": "01f8999732efa90486be80c7fb576bf929e0488a4a521b6e32d072103e4a92fc",
+        "bytes": 44731618,
+        "survey": {
+          "objectid": 1226,
+          "polygon_id": "P_11641",
+          "dsm_fn": "DSM_SU0025_P_11641_20190425_20190429.tif",
+          "dtm_fn": "DTM_SU0025_P_11641_20190425_20190429.tif",
+          "fz_dsm_fn": "FZ_DSM_SU0025_P_11641_20190425_20190429.tif",
+          "int_lz_fn": "Intensity_LZ_SU0025_P_11641_20190425_20190429.tif",
+          "tilename": "SU0025",
+          "sd_flown": 1556150400000,
+          "ed_flown": 1556496000000,
+          "surveys": "19-137 [ 2019/04/25 ], 19-138 [ 2019/04/29 ]",
+          "season": "2018/2019",
+          "pnt_fn": "SU0025_P_11641_20190425_20190429.laz",
+          "resolution": 1,
+          "year": 1546300800000,
+          "supplied": null,
+          "latest": "No",
+          "vom_fn": "VOM_SU0025_P_11641_20190425_20190429.tif",
+          "Shape__Area": 25000000,
+          "Shape__Length": 20000
+        },
+        "retrievedAt": "2026-11-07T00:59:41.218960+00:00",
+        "render": {
+          "member": "Intensity_LZ_SU0025_P_11641_20190425_20190429.tif",
+          "nativeSha256": "4af8ff2439e945c79486a5b6fc81fb80203f0a2e88dbc6cc546b09e4aa8499e1",
+          "crs": "EPSG:27700",
+          "transform": [
+            1.0,
+            0.0,
+            402158.0,
+            0.0,
+            -1.0,
+            126475.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "width": 406,
+          "height": 870,
+          "sourceResolution": [
+            1.0,
+            1.0
+          ],
+          "pixelWindow": [
+            2158,
+            3525,
+            406,
+            870
+          ],
+          "displayStretch": [
+            205.0,
+            1114.0
+          ],
+          "transformOperation": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (9) + British National Grid",
+          "transformationAccuracyM": 1.0,
+          "gridSha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa",
+          "resampling": "native pixel crop; nearest enlargement for labelled inspection only",
+          "maskedPixels": 0,
+          "rgbPixelsSha256": "82922c44fe5ebb7abb39d22fb6e9187fbc2ec199581bdd7bffa602c17536c3da"
+        }
+      }
+    },
+    {
+      "name": "shelsley",
+      "layoutFile": "data/united-kingdom/gb-shelsley-walsh-hillclimb-aaa3a45c/layouts/shelsley-walsh-hillclimb.geojson",
+      "layoutBbox": [
+        -2.4151401,
+        52.2592863,
+        -2.409076,
+        52.2651758
+      ],
+      "status": "awaiting-boundary-evidence-and-measurements",
+      "finding": "The 2020 intensity raster identifies much of the road, but tree cover through the middle wooded bend and the start/building apron remain ambiguous. The 2008 intensity-bearing archive is a possible additional capture, not yet acquired or reviewed.",
+      "indexQueries": {
+        "aerialPhotography": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.4151401%2C+%22ymin%22%3A+52.2592863%2C+%22xmax%22%3A+-2.409076%2C+%22ymax%22%3A+52.2651758%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:52:29.614879+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "nationalLidarProgramme": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/National_LIDAR_Programme_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.4151401%2C+%22ymin%22%3A+52.2592863%2C+%22xmax%22%3A+-2.409076%2C+%22ymax%22%3A+52.2651758%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:22.239850+00:00",
+          "featureCount": 1,
+          "attributes": [
+            {
+              "objectid": 2967,
+              "polygon_id": "P_10635",
+              "dsm_fn": "DSM_SO7060_P_10635_20200106_20200205.tif",
+              "dtm_fn": "DTM_SO7060_P_10635_20200106_20200205.tif",
+              "fz_dsm_fn": "FZ_DSM_SO7060_P_10635_20200106_20200205.tif",
+              "int_lz_fn": "Intensity_LZ_SO7060_P_10635_20200106_20200205.tif",
+              "tilename": "SO7060",
+              "sd_flown": 1578268800000,
+              "ed_flown": 1580860800000,
+              "surveys": "20-002 [ 2020/01/06 ], 20-035 [ 2020/01/21 ], 20-047 [ 2020/02/05 ]",
+              "season": "2019/2020",
+              "pnt_fn": "SO7060_P_10635_20200106_20200205.laz",
+              "resolution": 1,
+              "year": 1577836800000,
+              "supplied": null,
+              "latest": "No",
+              "vom_fn": "VOM_SO7060_P_10635_20200106_20200205.tif",
+              "Shape__Area": 25000000,
+              "Shape__Length": 20000
+            }
+          ],
+          "attributesSha256": "96e42897ce94ec6dd3f97fb56c94b57693d77166a9ac94270a16719683572d99"
+        },
+        "pointCloud": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/LIDAR_PointCloud_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.4151401%2C+%22ymin%22%3A+52.2592863%2C+%22xmax%22%3A+-2.409076%2C+%22ymax%22%3A+52.2651758%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:23.077809+00:00",
+          "featureCount": 4,
+          "attributes": [
+            {
+              "objectid": 66635,
+              "filename": "SO7263_P_5561_20080124_20080130.laz",
+              "os_ref": "SO7263",
+              "sd_flown": 1201132800000,
+              "ed_flown": 1201651200000,
+              "pt_count": 804811,
+              "pt_spacing": 1.11068106,
+              "intensity": "YES",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_5561\\SO7263_P_5561_20080124_20080130.laz",
+              "year": "2008",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_5561",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            },
+            {
+              "objectid": 66605,
+              "filename": "SO7163_P_5561_20080124_20080130.laz",
+              "os_ref": "SO7163",
+              "sd_flown": 1201132800000,
+              "ed_flown": 1201651200000,
+              "pt_count": 833449,
+              "pt_spacing": 1.0894628199999998,
+              "intensity": "YES",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_5561\\SO7163_P_5561_20080124_20080130.laz",
+              "year": "2008",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_5561",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            },
+            {
+              "objectid": 66579,
+              "filename": "SO7162_P_5561_20080124_20080130.laz",
+              "os_ref": "SO7162",
+              "sd_flown": 1201132800000,
+              "ed_flown": 1201651200000,
+              "pt_count": 866661,
+              "pt_spacing": 1.06730229,
+              "intensity": "YES",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_5561\\SO7162_P_5561_20080124_20080130.laz",
+              "year": "2008",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_5561",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            },
+            {
+              "objectid": 66578,
+              "filename": "SO7262_P_5561_20080124_20080130.laz",
+              "os_ref": "SO7262",
+              "sd_flown": 1201132800000,
+              "ed_flown": 1201651200000,
+              "pt_count": 802975,
+              "pt_spacing": 1.10626902,
+              "intensity": "YES",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_5561\\SO7262_P_5561_20080124_20080130.laz",
+              "year": "2008",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_5561",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            }
+          ],
+          "attributesSha256": "84012f2aa6c0ed194180384e9cb33ab94ae169eb4c18aa4bbacfda561068179d"
+        }
+      },
+      "intensityRaster": {
+        "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/SO7060",
+        "sha256": "6c7c1f240688a0ec43def33b12b02627bcdb2aa143e866235e80674b99229b4f",
+        "bytes": 41153642,
+        "survey": {
+          "objectid": 2967,
+          "polygon_id": "P_10635",
+          "dsm_fn": "DSM_SO7060_P_10635_20200106_20200205.tif",
+          "dtm_fn": "DTM_SO7060_P_10635_20200106_20200205.tif",
+          "fz_dsm_fn": "FZ_DSM_SO7060_P_10635_20200106_20200205.tif",
+          "int_lz_fn": "Intensity_LZ_SO7060_P_10635_20200106_20200205.tif",
+          "tilename": "SO7060",
+          "sd_flown": 1578268800000,
+          "ed_flown": 1580860800000,
+          "surveys": "20-002 [ 2020/01/06 ], 20-035 [ 2020/01/21 ], 20-047 [ 2020/02/05 ]",
+          "season": "2019/2020",
+          "pnt_fn": "SO7060_P_10635_20200106_20200205.laz",
+          "resolution": 1,
+          "year": 1577836800000,
+          "supplied": null,
+          "latest": "No",
+          "vom_fn": "VOM_SO7060_P_10635_20200106_20200205.tif",
+          "Shape__Area": 25000000,
+          "Shape__Length": 20000
+        },
+        "retrievedAt": "2026-11-07T00:59:42.855603+00:00",
+        "render": {
+          "member": "Intensity_LZ_SO7060_P_10635_20200106_20200205.tif",
+          "nativeSha256": "784aff816e358a6a1716211eab8c3e10b18a06865eb8afb2062c28f7fb5ccf11",
+          "crs": "EPSG:27700",
+          "transform": [
+            1.0,
+            0.0,
+            371703.0,
+            0.0,
+            -1.0,
+            263140.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "width": 534,
+          "height": 773,
+          "sourceResolution": [
+            1.0,
+            1.0
+          ],
+          "pixelWindow": [
+            1703,
+            1860,
+            534,
+            773
+          ],
+          "displayStretch": [
+            45.0,
+            590.0
+          ],
+          "transformOperation": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (9) + British National Grid",
+          "transformationAccuracyM": 1.0,
+          "gridSha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa",
+          "resampling": "native pixel crop; nearest enlargement for labelled inspection only",
+          "maskedPixels": 289,
+          "rgbPixelsSha256": "9736097e54018ce4a081efa03c398d54b4a8bfb23a9ea9663138eead86957077"
+        }
+      }
+    },
+    {
+      "name": "prescott",
+      "layoutFile": "data/united-kingdom/gb-prescott-hill-climb-cff4bee0/layouts/prescott-hill-climb.geojson",
+      "layoutBbox": [
+        -2.0266652,
+        51.9627916,
+        -2.0233734,
+        51.9657628
+      ],
+      "status": "awaiting-boundary-evidence-and-measurements",
+      "finding": "The 2019 intensity raster reveals open sections but canopy and adjacent paths obscure limits through the wooded portion. The indexed 2005 point cloud reports no intensity.",
+      "indexQueries": {
+        "aerialPhotography": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.0266652%2C+%22ymin%22%3A+51.9627916%2C+%22xmax%22%3A+-2.0233734%2C+%22ymax%22%3A+51.9657628%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:52:29.939696+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "nationalLidarProgramme": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/National_LIDAR_Programme_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.0266652%2C+%22ymin%22%3A+51.9627916%2C+%22xmax%22%3A+-2.0233734%2C+%22ymax%22%3A+51.9657628%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:22.558887+00:00",
+          "featureCount": 1,
+          "attributes": [
+            {
+              "objectid": 2251,
+              "polygon_id": "P_10655",
+              "dsm_fn": "DSM_SO9525_P_10655_20190213_20190213.tif",
+              "dtm_fn": "DTM_SO9525_P_10655_20190213_20190213.tif",
+              "fz_dsm_fn": "FZ_DSM_SO9525_P_10655_20190213_20190213.tif",
+              "int_lz_fn": "Intensity_LZ_SO9525_P_10655_20190213_20190213.tif",
+              "tilename": "SO9525",
+              "sd_flown": 1550016000000,
+              "ed_flown": 1550016000000,
+              "surveys": "19-047 [ 2019/02/13 ]",
+              "season": "2018/2019",
+              "pnt_fn": "SO9525_P_10655_20190213_20190213.laz",
+              "resolution": 1,
+              "year": 1546300800000,
+              "supplied": null,
+              "latest": "No",
+              "vom_fn": "VOM_SO9525_P_10655_20190213_20190213.tif",
+              "Shape__Area": 25000000,
+              "Shape__Length": 20000
+            }
+          ],
+          "attributesSha256": "1f2fc411525467af4d40232664c694349fe23a0db7fa2660cb4b39032adb8aa0"
+        },
+        "pointCloud": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/LIDAR_PointCloud_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.0266652%2C+%22ymin%22%3A+51.9627916%2C+%22xmax%22%3A+-2.0233734%2C+%22ymax%22%3A+51.9657628%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:23.403716+00:00",
+          "featureCount": 1,
+          "attributes": [
+            {
+              "objectid": 24157,
+              "filename": "SO9829_P_3794_20051223_20051223.laz",
+              "os_ref": "SO9829",
+              "sd_flown": 1135296000000,
+              "ed_flown": 1135296000000,
+              "pt_count": 348322,
+              "pt_spacing": 1.6948176300000002,
+              "intensity": "NO",
+              "returns": 1,
+              "classified": "YES",
+              "gps_time": "GPS ABSOLUTE TIME\n",
+              "transform": "OSTN'02",
+              "geoid": "OSGM'02",
+              "filepath": ".\\LAZ_Point_Archive\\P_3794\\SO9829_P_3794_20051223_20051223.laz",
+              "year": "2005",
+              "supplied": null,
+              "latest": "No",
+              "polygon_id": "P_3794",
+              "Shape__Area": 1000000,
+              "Shape__Length": 4000
+            }
+          ],
+          "attributesSha256": "1823e84ac661f955f1a4a17f3e3fac7b7fcc6e90fe920a92016d9c9ad56309d2"
+        }
+      },
+      "intensityRaster": {
+        "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SO9525",
+        "sha256": "3f974941838f1405ac5fb6579f988068cf93697e5274e1c34c857f31432c275c",
+        "bytes": 43671619,
+        "survey": {
+          "objectid": 2251,
+          "polygon_id": "P_10655",
+          "dsm_fn": "DSM_SO9525_P_10655_20190213_20190213.tif",
+          "dtm_fn": "DTM_SO9525_P_10655_20190213_20190213.tif",
+          "fz_dsm_fn": "FZ_DSM_SO9525_P_10655_20190213_20190213.tif",
+          "int_lz_fn": "Intensity_LZ_SO9525_P_10655_20190213_20190213.tif",
+          "tilename": "SO9525",
+          "sd_flown": 1550016000000,
+          "ed_flown": 1550016000000,
+          "surveys": "19-047 [ 2019/02/13 ]",
+          "season": "2018/2019",
+          "pnt_fn": "SO9525_P_10655_20190213_20190213.laz",
+          "resolution": 1,
+          "year": 1546300800000,
+          "supplied": null,
+          "latest": "No",
+          "vom_fn": "VOM_SO9525_P_10655_20190213_20190213.tif",
+          "Shape__Area": 25000000,
+          "Shape__Length": 20000
+        },
+        "retrievedAt": "2026-11-07T00:59:43.553337+00:00",
+        "render": {
+          "member": "Intensity_LZ_SO9525_P_10655_20190213_20190213.tif",
+          "nativeSha256": "d75a523ff7c98d40a1b65e8ad776d6a617d5cc98fbafdc3b8f84fe0ef1ceebcc",
+          "crs": "EPSG:27700",
+          "transform": [
+            1.0,
+            0.0,
+            398204.0,
+            0.0,
+            -1.0,
+            229758.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "width": 345,
+          "height": 449,
+          "sourceResolution": [
+            1.0,
+            1.0
+          ],
+          "pixelWindow": [
+            3204,
+            242,
+            345,
+            449
+          ],
+          "displayStretch": [
+            51.0,
+            668.0
+          ],
+          "transformOperation": "axis order change (2D) + Inverse of OSGB36 to WGS 84 (9) + British National Grid",
+          "transformationAccuracyM": 1.0,
+          "gridSha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa",
+          "resampling": "native pixel crop; nearest enlargement for labelled inspection only",
+          "maskedPixels": 0,
+          "rgbPixelsSha256": "ebbc8cf1cfb9b80a307446cff8862870bd1ba439b0e894fd75793665a4231907"
+        }
+      }
+    },
+    {
+      "name": "fintray",
+      "layoutFile": "data/united-kingdom/gb-fintray-hill-climb-d6798bfc/layouts/fintray-hill-climb.geojson",
+      "layoutBbox": [
+        -2.2476995,
+        57.2367187,
+        -2.2426078,
+        57.2383378
+      ],
+      "status": "awaiting-boundary-evidence-and-measurements",
+      "finding": "No features were returned by the three Environment Agency index queries. These England-focused sources do not establish absence of Scottish survey imagery. A different provider or capture is still needed for the obscured upper return.",
+      "indexQueries": {
+        "aerialPhotography": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.2476995%2C+%22ymin%22%3A+57.2367187%2C+%22xmax%22%3A+-2.2426078%2C+%22ymax%22%3A+57.2383378%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:52:30.014215+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "nationalLidarProgramme": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/National_LIDAR_Programme_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.2476995%2C+%22ymin%22%3A+57.2367187%2C+%22xmax%22%3A+-2.2426078%2C+%22ymax%22%3A+57.2383378%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:22.561125+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "pointCloud": {
+          "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/LIDAR_PointCloud_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-2.2476995%2C+%22ymin%22%3A+57.2367187%2C+%22xmax%22%3A+-2.2426078%2C+%22ymax%22%3A+57.2383378%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
+          "retrievedAt": "2026-11-07T00:59:24.275822+00:00",
+          "featureCount": 0,
+          "attributes": [],
+          "attributesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      }
+    }
+  ]
+}
