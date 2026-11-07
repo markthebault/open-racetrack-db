@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Pinned imagery research only. Centre-point flight metadata does not establish the capture date of every pixel. Current WMS content can later change; preserve the cached hash. No new borders, meshes, models or playback coverage are asserted.",
+  "note": "Pinned imagery acquisition and boundary-screening research. Centre-point flight metadata does not establish the capture date of every pixel. Current WMS content can later change; preserve the cached hash. Acquisition alone does not establish border or playback coverage; accepted estimates are stored in each layout GeoJSON.",
   "rights": {
     "provider": "LGLN",
     "license": "CC-BY-4.0",
@@ -40,8 +40,14 @@
         "flightDate": "2025-03-08",
         "flightNumber": "3802"
       },
-      "status": "awaiting-boundary-measurements",
-      "finding": "The eastern branch and tight saved chicane require independent physical edge observations; source-normal offsets can fold or select the adjoining unused return. The previous blurred-mosaic draft was not published."
+      "status": "measured-paired-edge-estimate",
+      "finding": "The retained closed route follows the visible main road and the eastern chicane, excluding the unused return. Paired image positions fit the visible curb/paint/asphalt limits independently of coarse trace normals. Branch openings and the gap from the paint triangle to the return island use explicitly described fitted virtual join controls. The earlier blurred-mosaic draft was rejected and not published. All original trace/timing and terrain are retained. Curbs remain illustrative, banking unknown, and the estimate is unverified.",
+      "compaction": {
+        "beforePairs": 244,
+        "afterPairs": 195,
+        "maximumErrorM": 0.0728709160214791,
+        "hash": "96e67cfcd4f1730fc30a6344211c77651d6c63fdccdd19f47732faafe28f9d50"
+      }
     },
     {
       "trackId": "de-estering-f9d6a5de",

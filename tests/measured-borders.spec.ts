@@ -17,6 +17,7 @@ for (const [track, layout] of [
   ["de-estering-f9d6a5de", "estering-joker"],
   ["de-osnabruck-hill-climb-d7c0b8d4", "osnabruck-hill-climb"],
   ["gb-harewood-hillclimb-f1871afb", "harewood-hillclimb"],
+  ["de-circuit-meppen-206291125", "main"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
@@ -71,7 +72,7 @@ for (const [track, layout] of [
       }
       if (track === "pe-autodromo-la-chutana-293467712")
         expect(refinement.interpolation).toBe("edge-linear-v1");
-      if (track === "ca-cameron-speedway-kart-circuit-f7997f0a") {
+      if (refinement.method === "paired-image-edge-anchors-v1") {
         expect(refinement.interpolation).toBe("edge-linear-v1");
         expect(refinement.method).toBe("paired-image-edge-anchors-v1");
         expect(d.metadata.borderInference.method).toBe(
