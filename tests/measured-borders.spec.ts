@@ -11,6 +11,7 @@ for (const [track, layout] of [
   ["pe-autodromo-la-chutana-293467712", "main"],
   ["us-iowa-speedway-119238784", "main"],
   ["dk-jyllandsringen-102145328", "main"],
+  ["nz-ruapuna-e0b8962a", "ruapuna-eastern-course"],
   ["us-gopro-motorplex-e67c71ed", "gopro-motorplex"],
   ["gb-boyndie-kart-circuit-a57fdbb4", "boyndie-kart-circuit"],
   ["gb-nutts-corner-6fa16d73", "nutts-corner"],

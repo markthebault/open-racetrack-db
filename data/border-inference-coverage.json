@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T11:20:57.500Z",
+  "generatedAt": "2026-11-07T12:47:45.253Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -3958,107 +3958,38 @@
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 5
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-eastern-course",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-eastern-course.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "cached-estimate"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-grand-prix",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-grand-prix.geojson",
-      "status": "inferred-estimate",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.8676,
-          0.9406
-        ],
-        "medianInteriorDifference": [
-          0.0454,
-          0.0454
-        ],
-        "samplingStepM": 2.9973700104672125,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
+      "status": "cached-estimate"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-grand-prix-dipper",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-grand-prix-dipper.geojson",
-      "status": "inferred-estimate",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.8796,
-          0.9301
-        ],
-        "medianInteriorDifference": [
-          0.0478,
-          0.0458
-        ],
-        "samplingStepM": 2.9978200171703824,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
+      "status": "cached-estimate"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-outer-course",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-course.geojson",
-      "status": "inferred-estimate",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.8709,
-          0.9492
-        ],
-        "medianInteriorDifference": [
-          0.0448,
-          0.0396
-        ],
-        "samplingStepM": 2.9977994287965477,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
+      "status": "cached-estimate"
     },
     {
       "trackId": "nz-ruapuna-e0b8962a",
       "layoutId": "ruapuna-outer-dipper",
       "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-outer-dipper.geojson",
-      "status": "inferred-estimate",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.8742,
-          0.9371
-        ],
-        "medianInteriorDifference": [
-          0.0466,
-          0.0412
-        ],
-        "samplingStepM": 2.9984461888660836,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "54166895176b4d81c09f9d579a9a599573c722c576df862f06211158106a59e3"
+      "status": "cached-estimate"
     },
     {
       "trackId": "nz-taupo-international-motorsport-park-90114324",

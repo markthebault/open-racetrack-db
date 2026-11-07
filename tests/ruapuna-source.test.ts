@@ -5,6 +5,10 @@ import {createHash} from 'node:crypto';
 import {assemble} from '../scripts/route';
 import {imageryCoordinates,validateImageryRaster} from '../scripts/imagery-course';
 import {buildComponentNetwork} from '../scripts/component-network';
+import {measuredImageBorders} from '../scripts/measured-image-borders';
+import {networkRouteLayout} from '../src/network-routes';
+import {layoutSchema} from '../schemas/data';
+import {buildRoad} from '../src/lap-simulation';
 const read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 test('Ruapuna Eastern corrects the false Northern OSM spur with independently pinned imagery and preserves other layouts',async()=>{
  const root='sources/nz-ruapuna-e0b8962a',dir='data/new-zealand/nz-ruapuna-e0b8962a',proof=await read('sources/research/ruapuna-eastern-route-correction.json'),track=await read(dir+'/track.json'),recipe=await read(root+'/layouts/ruapuna-eastern-course.json'),source=await read(root+'/'+recipe.snapshotFile),raster=await readFile(root+'/'+source.imageryFile);
@@ -18,4 +22,15 @@ test('Ruapuna Eastern corrects the false Northern OSM spur with independently pi
   assert.equal(hash(g),saved.traceSha256);assert.equal(hash(d.features.filter((f:any)=>['inner','outer'].includes(f.properties.role))),saved.borderFeaturesSha256);assert.equal(hash(d.metadata.model3d),saved.modelSha256);assert.equal(d.metadata.timingStatus,saved.timingStatus);assert.deepEqual(coordinates[networkRecipe.components.findIndex((c:any)=>c.layoutId===saved.layoutId)],g.coordinates);
  }
  assert.deepEqual(coordinates[4],trace);
+ const evidence=eastern.metadata.borderInference,{resultSha256,...input}=evidence.measurement,replay=measuredImageBorders(trace,input,source.imagerySha256);
+ assert.equal(replay.measurement.resultSha256,resultSha256);
+ for(const role of ['inner','outer'])assert.deepEqual(replay.result[role as 'inner'|'outer'],eastern.features.find((f:any)=>f.properties.role===role).geometry.coordinates);
+ assert.equal(buildRoad(eastern).interpolatedSections,0);
+ const combined=layoutSchema.parse(await read(dir+'/layouts/ruapuna.geojson'));
+ assert.equal(combined.metadata.borderComposition!.length,5);
+ for(let i=0;i<5;i++){
+  const embedded=networkRouteLayout(combined,i),leaf=await read(dir+'/layouts/'+networkRecipe.components[i].layoutId+'.geojson');
+  assert.deepEqual(embedded.features,leaf.features);assert.deepEqual(embedded.metadata,leaf.metadata);
+ }
+ assert.deepEqual(eastern.metadata.model3d.terrain,combined.metadata.model3d!.terrain);
 });
