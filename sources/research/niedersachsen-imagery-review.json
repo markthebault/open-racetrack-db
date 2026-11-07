@@ -74,8 +74,15 @@
         "flightDate": "2026-03-18",
         "flightNumber": "3856"
       },
-      "status": "awaiting-boundary-measurements",
-      "finding": "The winter capture reveals the southern road through leaf-off trees. Standard and Joker routes still require physical edge and branch-opening observations before acceptance."
+      "status": "measured-estimate-prepared",
+      "finding": "The two captured courses now have complete image-measured border recipes in their existing GeoJSONs. The Standard route has 101 physical observations plus two closure anchors; Joker reuses 84 supported observations and adds 17 at its differing branch and seam, plus two closure anchors. Gravel runoff, paddock aprons and unused branches are excluded; openings interpolate between observations. Road widths remain unverified estimates, banking is unknown and rendered curbs are illustrative. The generic car uses the requested fixed grip assumptions, not surface-specific rallycross traction.",
+      "measurementLayouts": [
+        "estering-standard",
+        "estering-joker"
+      ],
+      "composedLayoutId": "estering-combo",
+      "identificationReference": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
+      "referenceUse": "Operator plan used to identify branches and gravel runoff only; all edge coordinates come from the separately georeferenced LGLN image, not the diagram."
     }
   ]
 }

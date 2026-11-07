@@ -42,6 +42,7 @@ test("every inferred layout exposes its estimate and credit, downloads the same 
     "api.maptiler.com",
     "ws.geoservices.lrc.gov.on.ca",
     "services.nconemap.gov",
+    "opendata.lgln.niedersachsen.de",
   ])
     await page.route(`**/${host}/**`, (route) =>
       route.fulfill({

@@ -13,6 +13,8 @@ for (const [track, layout] of [
   ["us-gopro-motorplex-e67c71ed", "gopro-motorplex"],
   ["gb-boyndie-kart-circuit-a57fdbb4", "boyndie-kart-circuit"],
   ["gb-nutts-corner-6fa16d73", "nutts-corner"],
+  ["de-estering-f9d6a5de", "estering-standard"],
+  ["de-estering-f9d6a5de", "estering-joker"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
@@ -28,6 +30,7 @@ for (const [track, layout] of [
       for (const host of [
         "ws.geoservices.lrc.gov.on.ca",
         "services.nconemap.gov",
+        "opendata.lgln.niedersachsen.de",
         "imagery.nationalmap.gov",
         "server.arcgisonline.com",
         "api.maptiler.com",
