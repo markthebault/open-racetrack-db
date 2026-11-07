@@ -411,3 +411,107 @@ test("source verification maps a shifted paired origin back to the exact retaine
   await assert.rejects(verifyGradeSource(layout, wrong), /source bridge/);
   assert.equal(original.sourceStationOffset, undefined);
 });
+
+test("ICGC profiles retain their native crop and datum without accepting GSI or rendered-image metadata", () => {
+  const { recipe, pair } = fixture();
+  const { anchors, note, sampling, toleranceM } = recipe.elevation;
+  const icgc = {
+    ...recipe,
+    elevation: {
+      anchors,
+      note,
+      sampling,
+      toleranceM,
+      source: "ICGC MET 50cm 2021-2023",
+      url: "https://catalegs.ide.cat/geonetwork/geonetwork/api/records/model-elevacions-terreny-lidar-catalunya-50cm-2021-2023?language=all",
+      attribution:
+        "Institut Cartogràfic i Geològic de Catalunya (ICGC), CC BY 4.0",
+      reuseEvidenceUrl:
+        "https://datacloud.ide.cat/especificacions/model-elevacions-terreny-territorial-v1r0-20260902.pdf",
+      crossingInterpolation: "both-road-approaches-v1",
+      raster: {
+        url: "https://datacloud.icgc.cat/datacloud/model-elevacions-terreny/tif_unzip/model-elevacions-terreny-lidar-catalunya-50cm-2021-2023.tif",
+        crs: "EPSG:25831",
+        verticalDatum: "EGM08D595 orthometric metres",
+        pixelSizeM: 0.5,
+        sourceWindow: [262736, 287153, 1845, 1807],
+        sha256: "c".repeat(64),
+      },
+    },
+  };
+  const parsed = gradeSeparationSchema.parse(JSON.parse(JSON.stringify(icgc)));
+  assert.deepEqual(parsed, icgc);
+  assert.doesNotThrow(() => assertGradeRibbon(pair, parsed));
+  assert.equal(
+    gradeProfileHeight(parsed, 140),
+    gradeProfileHeight(recipe, 140),
+  );
+  for (const elevation of [
+    { ...icgc.elevation, source: "GSI DEM5A" },
+    {
+      ...icgc.elevation,
+      tiles: [{ zoom: 15, x: 1, y: 2, sha256: "d".repeat(64) }],
+    },
+    { ...icgc.elevation, crossingInterpolation: undefined },
+    {
+      ...icgc.elevation,
+      raster: {
+        ...icgc.elevation.raster,
+        url: "https://geoserveis.icgc.cat/servei/catalunya/elevacions-territorial/wms",
+      },
+    },
+    {
+      ...icgc.elevation,
+      raster: { ...icgc.elevation.raster, verticalDatum: "ellipsoid" },
+    },
+    { ...icgc.elevation, raster: { ...icgc.elevation.raster, pixelSizeM: 5 } },
+    ...[
+      [-1, 0, 2, 2],
+      [0.5, 0, 2, 2],
+      [538000, 0, 1, 1],
+      [0, 523999, 2, 2],
+      [0, 0, 0, 2],
+    ].map((sourceWindow) => ({
+      ...icgc.elevation,
+      raster: { ...icgc.elevation.raster, sourceWindow },
+    })),
+    {
+      ...icgc.elevation,
+      anchors: anchors.filter(([station]) => station !== 50),
+    },
+    {
+      ...icgc.elevation,
+      anchors: [...anchors.slice(0, 2), [60, 40], ...anchors.slice(2)],
+    },
+  ]) {
+    assert.equal(
+      gradeSeparationSchema.safeParse({ ...icgc, elevation }).success,
+      false,
+    );
+  }
+  // Source-specific provenance cannot relax the shared road-level clearance guard.
+  const flat = structuredClone(parsed);
+  flat.elevation.anchors.forEach((p) => (p[1] = 40));
+  assert.throws(() => assertGradeRibbon(pair, flat), /separation/);
+});
+
+test("prepared Parcmotor model retains ICGC ground provenance and reconstructs its source-backed bridge", async () => {
+  const layout = JSON.parse(
+    await readFile(
+      "data/spain/parcmotor-castelloli-31877576/layouts/main.geojson",
+      "utf8",
+    ),
+  ) as Layout;
+  const grade = layout.metadata.borderInference!.gradeSeparation!;
+  assert.equal(grade.elevation.source, "ICGC MET 50cm 2021-2023");
+  await verifyGradeSource(layout, grade);
+  const { prepareModel } = await import("../src/model-preparation");
+  const { modelInputHash } = await import("../scripts/model-input");
+  const terrain = layout.metadata.model3d!.terrain;
+  const model = prepareModel(layout, terrain, modelInputHash(layout, terrain));
+  assert.deepEqual(model, layout.metadata.model3d);
+  assert.equal(model.sources.elevation, grade.elevation.url);
+  assert.match(model.sources.notes, /ICGC MET 50cm 2021-2023 ground raster/);
+  assert.doesNotMatch(model.sources.notes, /DEM5A/);
+  assert.equal(buildRoad(layout).interpolatedSections, 0);
+});

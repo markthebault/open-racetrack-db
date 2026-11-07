@@ -83,11 +83,17 @@ export async function createBridgeElevation(
   crossings: GradeSeparation["crossings"],
   cache: string,
   options: { interpolateUnderpasses?: boolean } = {},
-): Promise<GradeSeparation["elevation"]> {
+): Promise<Extract<GradeSeparation["elevation"], { source: "GSI DEM5A" }>> {
   const zoom = 15 as const,
     world = 2 ** zoom * 256,
     decoded = new Map<string, PNG>(),
-    tiles = new Map<string, GradeSeparation["elevation"]["tiles"][number]>();
+    tiles = new Map<
+      string,
+      Extract<
+        GradeSeparation["elevation"],
+        { source: "GSI DEM5A" }
+      >["tiles"][number]
+    >();
   await mkdir(cache, { recursive: true });
   const pixel = async (x: number, y: number) => {
     const tx = Math.floor(x / 256),

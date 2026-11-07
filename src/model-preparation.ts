@@ -354,7 +354,11 @@ export function prepareTrackModel(
   const grade = layout.metadata.borderInference?.gradeSeparation;
   if (grade) {
     result.sources.elevation = grade.elevation.url;
-    result.sources.notes = `Road elevations are edited from ${grade.elevation.attribution} DEM5A ground tiles. ${grade.elevation.note} The bridge uses explicit paired source stations; cross-sections never select another road branch. Curbs are geometry-based illustrations, not verified curb locations. Banking is unknown and assumed zero. Borders retain their feature licences and unverified status. Imagery loads externally; no meshes, image bytes or videos are stored.`;
+    const groundSource =
+      grade.elevation.source === "GSI DEM5A"
+        ? `${grade.elevation.attribution} DEM5A ground tiles`
+        : `${grade.elevation.source} ground raster (${grade.elevation.attribution})`;
+    result.sources.notes = `Road elevations are edited from ${groundSource}. ${grade.elevation.note} The bridge uses explicit paired source stations; cross-sections never select another road branch. Curbs are geometry-based illustrations, not verified curb locations. Banking is unknown and assumed zero. Borders retain their feature licences and unverified status. Imagery loads externally; no meshes, image bytes or videos are stored.`;
   }
   if (!isLapModel(result)) throw new Error("Expected a lap recipe");
   return result;

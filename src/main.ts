@@ -674,7 +674,7 @@ async function applyView() {
   }
   const grade = layout?.metadata.borderInference?.gradeSeparation;
   if (is3d && grade) {
-    const credit = element("a", "GSI DEM5A");
+    const credit = element("a", grade.elevation.source);
     credit.href = grade.elevation.url;
     credit.target = "_blank";
     credit.rel = "noreferrer";
@@ -1175,7 +1175,7 @@ function panel(
         detail.append(
           element(
             "p",
-            "Road elevations are edited from GSI DEM5A ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey.",
+            `Road elevations are edited from ${grade.elevation.source} ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey.`,
           ),
         );
         const credit = element("a", grade.elevation.attribution);

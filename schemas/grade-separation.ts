@@ -5,6 +5,75 @@ const range = z.tuple([
   z.number().int().nonnegative(),
   z.number().int().positive(),
 ]);
+const profile = {
+  sampling: z.literal("bilinear-pixel-centres"),
+  crossingInterpolation: z.literal("both-road-approaches-v1").optional(),
+  toleranceM: z.number().positive().max(0.5),
+  anchors: z
+    .array(
+      z.tuple([z.number().nonnegative(), z.number().min(-12000).max(9000)]),
+    )
+    .min(3)
+    .max(50000),
+  note: z.string().min(1),
+};
+const elevationSchema = z.discriminatedUnion("source", [
+  z.strictObject({
+    source: z.literal("GSI DEM5A"),
+    url: z.literal("https://maps.gsi.go.jp/development/ichiran.html#dem"),
+    attribution: z.literal("Geospatial Information Authority of Japan (GSI)"),
+    reuseEvidenceUrl: z.literal(
+      "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    ),
+    sampling: profile.sampling,
+    crossingInterpolation: profile.crossingInterpolation,
+    toleranceM: profile.toleranceM,
+    tiles: z
+      .array(
+        z.strictObject({
+          zoom: z.literal(15),
+          x: z.number().int().min(0).max(32767),
+          y: z.number().int().min(0).max(32767),
+          sha256: hash,
+        }),
+      )
+      .min(1)
+      .max(500),
+    anchors: profile.anchors,
+    note: profile.note,
+  }),
+  z.strictObject({
+    ...profile,
+    source: z.literal("ICGC MET 50cm 2021-2023"),
+    url: z.literal(
+      "https://catalegs.ide.cat/geonetwork/geonetwork/api/records/model-elevacions-terreny-lidar-catalunya-50cm-2021-2023?language=all",
+    ),
+    attribution: z.literal(
+      "Institut Cartogràfic i Geològic de Catalunya (ICGC), CC BY 4.0",
+    ),
+    reuseEvidenceUrl: z.literal(
+      "https://datacloud.ide.cat/especificacions/model-elevacions-terreny-territorial-v1r0-20260902.pdf",
+    ),
+    crossingInterpolation: z.literal("both-road-approaches-v1"),
+    raster: z.strictObject({
+      url: z.literal(
+        "https://datacloud.icgc.cat/datacloud/model-elevacions-terreny/tif_unzip/model-elevacions-terreny-lidar-catalunya-50cm-2021-2023.tif",
+      ),
+      crs: z.literal("EPSG:25831"),
+      verticalDatum: z.literal("EGM08D595 orthometric metres"),
+      pixelSizeM: z.literal(0.5),
+      // Column, row, width and height in the original 538000 × 524000 cell grid.
+      sourceWindow: z.tuple([
+        z.number().int().nonnegative(),
+        z.number().int().nonnegative(),
+        z.number().int().positive(),
+        z.number().int().positive(),
+      ]),
+      sha256: hash,
+    }),
+  }),
+]);
+
 /** Paired edge station indices, independent of the simulation's start/finish rotation. */
 export const gradeSeparationSchema = z
   .strictObject({
@@ -29,35 +98,7 @@ export const gradeSeparationSchema = z
       )
       .min(1)
       .max(16),
-    elevation: z.strictObject({
-      source: z.literal("GSI DEM5A"),
-      url: z.literal("https://maps.gsi.go.jp/development/ichiran.html#dem"),
-      attribution: z.literal("Geospatial Information Authority of Japan (GSI)"),
-      reuseEvidenceUrl: z.literal(
-        "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
-      ),
-      sampling: z.literal("bilinear-pixel-centres"),
-      crossingInterpolation: z.literal("both-road-approaches-v1").optional(),
-      toleranceM: z.number().positive().max(0.5),
-      tiles: z
-        .array(
-          z.strictObject({
-            zoom: z.literal(15),
-            x: z.number().int().min(0).max(32767),
-            y: z.number().int().min(0).max(32767),
-            sha256: hash,
-          }),
-        )
-        .min(1)
-        .max(500),
-      anchors: z
-        .array(
-          z.tuple([z.number().nonnegative(), z.number().min(-12000).max(9000)]),
-        )
-        .min(3)
-        .max(50000),
-      note: z.string().min(1),
-    }),
+    elevation: elevationSchema,
   })
   .superRefine((value, ctx) => {
     const issue = (message: string) =>
@@ -98,7 +139,14 @@ export const gradeSeparationSchema = z
           );
       }
     }
-    const keys = value.elevation.tiles.map((t) => `${t.zoom}/${t.x}/${t.y}`);
-    if (new Set(keys).size !== keys.length) issue("Duplicate elevation tiles");
+    if (value.elevation.source === "GSI DEM5A") {
+      const keys = value.elevation.tiles.map((t) => `${t.zoom}/${t.x}/${t.y}`);
+      if (new Set(keys).size !== keys.length)
+        issue("Duplicate elevation tiles");
+    } else {
+      const [column, row, width, height] = value.elevation.raster.sourceWindow;
+      if (column + width > 538000 || row + height > 524000)
+        issue("ICGC crop must lie inside the original native raster grid");
+    }
   });
 export type GradeSeparation = z.infer<typeof gradeSeparationSchema>;
