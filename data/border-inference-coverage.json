@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T20:41:57.232Z",
+  "generatedAt": "2026-11-07T22:04:02.137Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -3382,8 +3382,24 @@
       "trackId": "in-kari-motor-speedway-191172211",
       "layoutId": "main",
       "file": "data/india/kari-motor-speedway-191172211/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9906,
+          0.9865
+        ],
+        "medianInteriorDifference": [
+          0.045,
+          0.0389
+        ],
+        "samplingStepM": 2.9982970531128386,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "284d3a54f3ccc942a0b1a49e1f5604d8ef3eb1114cec33de36fbd0aa58bd0881"
     },
     {
       "trackId": "it-adria-international-raceway-1092277630",

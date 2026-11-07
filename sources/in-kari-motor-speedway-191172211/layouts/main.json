@@ -2,24 +2,16 @@
   "schemaVersion": 1,
   "trackId": "in-kari-motor-speedway-191172211",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "21ad8108847989710cfa3ea87a2bcac91a3dec22984ffb0e6d21717ef5eb6389",
+  "sourceId": "licensed-kari-main-route",
+  "snapshotFile": "kari-main-image-route.json",
+  "snapshotSha256": "5978322551d6924290a56cfbb1f1904f58ee542cbe954d986fceb5f04085db4a",
+  "geometrySource": "licensed-imagery",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Closed named OSM raceway retained as a course candidate. Named-layout association requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
-  ],
-  "segments": [
-    {
-      "wayId": 191172211,
-      "wayVersion": 4,
-      "fromIndex": 0,
-      "toIndex": 26
-    }
+    "Current full-course pavement independently digitized from pinned licensed satellite imagery. The prior OSM way191172211v4 follows a fence around the venue; the older road chain does not match the current alignment. Source controls include a local-appearance proposal and explicit native-image corrections. Source geometry, direction and georeferencing remain draft estimates; no diagram coordinates or nominal dimensions are traced or fitted. The imagery is not redistributed. The trace retains its source-specific licence instead of being declared OSM-derived. No timing coordinate is available."
   ],
   "gates": []
 }

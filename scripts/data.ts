@@ -8,6 +8,7 @@ import {withTiming,timingDatabaseSchema} from './public-timing';
 import {buildCourseNetwork} from './course-network';
 import {buildComponentNetwork} from './component-network';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
+import {buildLicensedImageryRoute} from './licensed-imagery-route';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
@@ -56,6 +57,12 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
   const data=buildImageryCourse(recipe,source,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`,recipe.originalBorderReuse)));
   if(!generate)validateLayout(await json(path),track,layout.id);
   console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from pinned reusable imagery`);continue;
+ }
+ if(recipe.geometrySource==='licensed-imagery'){
+  const data=buildLicensedImageryRoute(recipe,JSON.parse(sourceBytes),track),path=`${dir}/${layout.file}`;
+  outputs.set(path,serializeLayout(await enrich(data,track,layout.id,path)));
+  if(!generate)validateLayout(await json(path),track,layout.id);
+  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from a registered licensed-image route`);continue;
  }
  const ways=JSON.parse(sourceBytes).elements.filter((e:any)=>e.type==='way') as Way[];
  if(recipe.geometryKind==='network'){

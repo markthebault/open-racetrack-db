@@ -1,5 +1,6 @@
 import L from "leaflet";
 import type { Layout } from "../schemas/data";
+import { traceCredit } from "./trace-credit";
 import { plane } from "./geo";
 import {
   buildRoad,
@@ -186,7 +187,7 @@ export function openLap(
         1220,
       );
       out.fillText(
-        `Imagery: ${lap.road.recipe.imagery.attribution} · Trace © OSM · Supplemental borders${elevationCredit ? ` · Road elevations edited from ${elevationCredit}` : ""}`,
+        `Imagery: ${lap.road.recipe.imagery.attribution} · ${traceCredit(layout)} · Supplemental borders${elevationCredit ? ` · Road elevations edited from ${elevationCredit}` : ""}`,
         30,
         715,
         1220,
@@ -352,7 +353,7 @@ export function openLap(
         L.polyline(coords, {
           color: side === "left" ? "#ff8454" : "#58dbeb",
           weight: 2,
-          attribution: "Trace © OSM · Supplemental borders",
+          attribution: `${traceCredit(layout)} · Supplemental borders`,
         }).addTo(map);
       }
       mapDot = L.circleMarker([0, 0], {
@@ -651,7 +652,7 @@ export function openLap(
         ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
+        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",

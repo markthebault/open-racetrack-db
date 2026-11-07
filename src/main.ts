@@ -72,7 +72,7 @@ app.innerHTML = `
       <footer class="sidebar-footer">
         <button id="world-map" class="world-button">${icon("globe")} Explore the world map ${icon("arrow")}</button>
         <div id="coverage"></div>
-        <p>Open trace data. Open to everyone.<br><a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">Trace data ODbL 1.0</a><span> · </span><a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">Code MIT</a></p>
+        <p>Explore track data.<br><a href="https://github.com/markthebault/open-racetrack-db/blob/main/DATA_LICENSE.md" target="_blank" rel="noreferrer">Data licences & attribution</a><span> · </span><a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">Code MIT</a></p>
       </footer>
     </aside>
     <section id="workspace" class="workspace" aria-label="Explore a circuit" tabindex="-1">
@@ -877,7 +877,7 @@ function sourceLinks(parent: HTMLElement, selected: Track, data?: Layout) {
     ),
     element(
       "p",
-      "Approximate geographic traces, not surveyed centerlines. Trace data ODbL 1.0.",
+      `Approximate geographic traces, not surveyed centerlines. Trace licence: ${data?.metadata.license ?? "See sources"}.`,
     ),
   );
   parent.append(details);

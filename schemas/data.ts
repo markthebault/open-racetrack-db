@@ -141,7 +141,7 @@ const baseLayoutMetadataSchema = z.strictObject({
   geometryKind: z.literal("network").optional(),
   trackId: slug,
   layoutId: slug,
-  license: z.literal("ODbL-1.0"),
+  license: z.enum(["ODbL-1.0", "LicenseRef-MapTiler-Derived-Borders"]),
   licenseScope: z.literal("trace-and-timing").optional(),
   attribution: text,
   closed: z.boolean(),
@@ -261,6 +261,18 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   const traces = data.features.filter((f) => f.properties.role === "trace");
   if (traces.length !== 1 || traces[0].id !== "trace")
     throw new Error("features: expected one trace");
+  if (m.license === "ODbL-1.0" && track.sources.some(s =>
+    traces[0].properties.sourceIds.includes(s.id) && s.type === "imagery" &&
+    s.license === "LicenseRef-MapTiler-Derived-Borders"))
+    throw new Error("Licensed imagery trace cannot be declared ODbL");
+  if (m.license === "LicenseRef-MapTiler-Derived-Borders") {
+    if (traces[0].properties.sourceIds.length !== 1 ||
+      !track.sources.some(s => s.id === traces[0].properties.sourceIds[0] &&
+        s.type === "imagery" && s.license === m.license))
+      throw new Error("Licensed trace requires its registered imagery source");
+    if (m.timing || data.features.some(f => isTimingRole(f.properties.role)))
+      throw new Error("Licensed trace timing requires a separate source licence");
+  }
   const paths = geometryPaths(traces[0].geometry),
     trace = paths[0],
     isNetwork = m.geometryKind === "network";
