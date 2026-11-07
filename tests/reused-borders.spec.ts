@@ -1,13 +1,14 @@
 import {test,expect} from '@playwright/test';
 const image=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=','base64');
-for(const width of [1440,390])test(`Silverstone exact border reuse supports playback and video at ${width}px`,async({page,request})=>{
+for(const [track,folder,siblingId] of [['gb-silverstone-circuit-3571477','united-kingdom/silverstone-circuit-3571477','silverstone-gp-wing-sf'],['us-ncm-motorsports-park-326452603','united-states/ncm-motorsports-park-326452603','ncm-grand-full']])
+for(const width of [1440,390])test(`${track} exact border reuse supports playback and video at ${width}px`,async({page,request})=>{
  await page.setViewportSize({width,height:900});
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  for(const host of ['server.arcgisonline.com','api.maptiler.com'])await page.route(`**/${host}/**`,r=>r.fulfill({contentType:'image/png',body:image,headers:{'access-control-allow-origin':'*'}}));
- await page.goto('/?track=gb-silverstone-circuit-3571477&layout=main&view=3d');
+ await page.goto(`/?track=${track}&layout=main&view=3d`);
  await page.locator('#border-toggle').click();await expect(page.locator('#border-toggle')).toHaveAttribute('aria-pressed','true');
  const href=await page.locator('#download').getAttribute('href'),data=await(await request.get(href!)).json();
- const sibling=await(await request.get('/data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-gp-wing-sf.geojson')).json();
+ const sibling=await(await request.get(`/data/${folder}/layouts/${siblingId}.geojson`)).json();
  const borders=(d:typeof data)=>d.features.filter((f:{properties:{role:string}})=>['inner','outer'].includes(f.properties.role));
  expect(borders(data)).toEqual(borders(sibling));expect(data.metadata.timing).toBeUndefined();expect(data.metadata.timingStatus).toBe('missing');
  expect(data.metadata.notes.join('\n')).toContain('exact trace SHA-256');expect(data.metadata.borderInference).toBeUndefined();

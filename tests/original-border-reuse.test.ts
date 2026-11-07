@@ -47,3 +47,21 @@ test('Silverstone correction replays named source exactly while retaining the su
  assert.ok(data.metadata.notes.some(n=>n.includes(pin.bordersSha256)));
  assert.ok(data.metadata.model3d);
 });
+
+test('NCM fallback excludes the pit road and exactly reuses its pinned Grand Full trace and borders',async()=>{
+ const base='data/united-states/ncm-motorsports-park-326452603/layouts',s='sources/us-ncm-motorsports-park-326452603';
+ const main=layoutSchema.parse(await json(`${base}/main.geojson`)),named=layoutSchema.parse(await json(`${base}/ncm-grand-full.geojson`));
+ const recipe=await json(`${s}/layouts/main.json`),proof=await json('sources/research/ncm-route-correction.json');
+ const ways=async(file:string)=>(await json(`${s}/${file}`)).elements.filter((e:Way&{type:string})=>e.type==='way');
+ const oldGeometry={type:'LineString',coordinates:assemble(await ways('osm.json'),proof.previousRecipe.segments,true)};
+ assert.equal(geometryHash(oldGeometry),proof.previousTraceSha256);
+ const geometry={type:'LineString',coordinates:assemble(await ways(recipe.snapshotFile),recipe.segments,true)};
+ assert.notEqual(geometryHash(geometry),proof.previousTraceSha256);
+ assert.equal(geometryHash(geometry),proof.replacement.traceSha256);
+ assert.equal(recipe.snapshotSha256,proof.replacement.snapshotSha256);
+ assert.deepEqual(main.features.find(f=>f.properties.role==='trace')!.geometry,geometry);
+ for(const id of proof.excludedWayIds)assert.equal(recipe.segments.some((p:{wayId:number})=>p.wayId===id),false);
+ assert.deepEqual(reuseOriginalBorders(main,named,recipe.originalBorderReuse).borders,main.features.filter(f=>['inner','outer'].includes(f.properties.role)));
+ assert.equal(main.metadata.timing,undefined);assert.equal(main.metadata.timingStatus,'missing');
+ assert.equal(main.metadata.borderInference,undefined);assert.ok(main.metadata.model3d);
+});
