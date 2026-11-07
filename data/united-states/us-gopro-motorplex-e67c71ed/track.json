@@ -20,8 +20,8 @@
     {
       "id": "gopro-motorplex",
       "name": "GoPro Motorplex",
-      "referenceId": "United States/GoPro Motorplex",
       "file": "layouts/gopro-motorplex.geojson",
+      "referenceId": "United States/GoPro Motorplex",
       "description": "Draft configuration: Full kart course with both central hairpins, northern rounded loop and southern shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1200.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "nc-onemap-2020-2023-analysis-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://services.nconemap.gov/secure/rest/services/Imagery/Orthoimagery_2020_2023_4band_analysis/ImageServer/exportImage?f=json&bbox=-8993807.561190087%2C4251129.284994392%2C-8993452.753363501%2C4251495.254391696&bboxSR=3857&imageSR=3857&size=1893%2C1952&format=png32&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22date%22%2C+%22sortValue%22%3A+%223000%2F01%2F01%22%2C+%22ascending%22%3A+true%7D",
+      "license": "LicenseRef-NCOneMap-open-data",
+      "retrievedAt": "2026-11-06T22:41:53.149769Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.nconemap.gov/pages/terms. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

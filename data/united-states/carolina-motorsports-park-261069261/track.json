@@ -28,15 +28,15 @@
     {
       "id": "carolina-motorsports-park-a",
       "name": "Carolina Motorsports Park A",
-      "referenceId": "United States/Carolina Motorsports Park A",
       "file": "layouts/carolina-motorsports-park-a.geojson",
+      "referenceId": "United States/Carolina Motorsports Park A",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3676.5 m. Difference from the supplied layout distance 7.5 m. Course configuration still requires visual review."
     },
     {
       "id": "carolina-motorsports-park-b",
       "name": "Carolina Motorsports Park B",
-      "referenceId": "United States/Carolina Motorsports Park B",
       "file": "layouts/carolina-motorsports-park-b.geojson",
+      "referenceId": "United States/Carolina Motorsports Park B",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3676.5 m. Difference from the supplied layout distance 10.5 m. Course configuration still requires visual review."
     }
   ],
@@ -58,6 +58,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8972431.209522896%2C4094019.81585188%2C-8971098.200420177%2C4095023.6778119593&bboxSR=3857&imageSR=3857&size=1465%2C1104&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:46:52.069Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

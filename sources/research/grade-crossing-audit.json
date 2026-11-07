@@ -1,0 +1,2778 @@
+{
+  "schemaVersion": 1,
+  "missingLayoutSetSha256": "e7dd4a31c7b5d181930e53027a780e23de625a0e101d9a4e9b019cefddded692",
+  "note": "Diagnostic source-topology audit only. No boundaries, elevation profiles or models are accepted or changed. Explicit source bridge matches still require imagery review, separate road levels and crossing-aware runtime reconstruction. Collinear retraces and unexplained intersections stay unresolved. Source turns of at least 145 degrees flag possible needle joins before image authoring; real hairpins can also trigger this diagnostic. They require identity and image review, never automatic route replacement, border acceptance or rejection. Coordinates come only from public mapped traces; no timing data is read.",
+  "summary": {
+    "missingLayouts": 232,
+    "singlePathsAudited": 209,
+    "networksSkipped": 23,
+    "layoutsWithCrossings": 5,
+    "layoutsWithSharpSourceTurns": 37,
+    "sharpSourceTurnEvents": 74,
+    "layoutsWithSourceBridgeCandidates": 3,
+    "unexplainedCrossings": 3
+  },
+  "records": [
+    {
+      "trackId": "ar-autodromo-ciudad-de-parana-256068024",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-ciudad-de-parana-256068024/layouts/main.geojson",
+      "traceSha256": "498735922fa773e3809c8ea23937dcb5d3916867dde0cedf00b6d45eb5c5ed27",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-ciudad-de-parana-256068024/layouts/main.json",
+        "recipeSha256": "1fde34e8e9bbf68822590ae85692b90af245001da6d140fe5f6cbd36899fd994",
+        "snapshotFile": "sources/ar-autodromo-ciudad-de-parana-256068024/osm.json",
+        "snapshotSha256": "7f257ee0244014efe85e9bdbbc45b9d0654fbb58f945df710d6c243915a66930"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 55,
+          "coordinate": [
+            -60.3780476,
+            -31.7660882
+          ],
+          "previousVertex": 54,
+          "nextVertex": 56,
+          "turnDeg": 172.69,
+          "incomingM": 24.94,
+          "outgoingM": 50.24,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 256068024,
+              "wayVersion": 9,
+              "wayIndex": 55,
+              "nodeId": 3695579595
+            },
+            {
+              "wayId": 365556712,
+              "wayVersion": 3,
+              "wayIndex": 38,
+              "nodeId": 3695579595
+            }
+          ]
+        },
+        {
+          "vertex": 93,
+          "coordinate": [
+            -60.3784693,
+            -31.7664206
+          ],
+          "previousVertex": 92,
+          "nextVertex": 94,
+          "turnDeg": 157.85,
+          "incomingM": 17.39,
+          "outgoingM": 7.16,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 365555504,
+              "wayVersion": 2,
+              "wayIndex": 7,
+              "nodeId": 3695568328
+            },
+            {
+              "wayId": 365556712,
+              "wayVersion": 3,
+              "wayIndex": 0,
+              "nodeId": 3695568328
+            }
+          ]
+        },
+        {
+          "vertex": 114,
+          "coordinate": [
+            -60.3797468,
+            -31.765536
+          ],
+          "previousVertex": 113,
+          "nextVertex": 115,
+          "turnDeg": 156.44,
+          "incomingM": 23.56,
+          "outgoingM": 20.73,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 256068024,
+              "wayVersion": 9,
+              "wayIndex": 62,
+              "nodeId": 2617652925
+            },
+            {
+              "wayId": 256068026,
+              "wayVersion": 6,
+              "wayIndex": 10,
+              "nodeId": 2617652925
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "ar-autodromo-de-rio-grande-158221493",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-de-rio-grande-158221493/layouts/main.geojson",
+      "traceSha256": "216166ef3ad3f4106a616ed6daa9a7407f2e5d6277a964063e65a143de85dc77",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-de-rio-grande-158221493/layouts/main.json",
+        "recipeSha256": "f1d199199329677d044ddf0cb7dc8eae5931ab2c7fe01129e74844f6b316b3ea",
+        "snapshotFile": "sources/ar-autodromo-de-rio-grande-158221493/osm.json",
+        "snapshotSha256": "7b80c30789044fed6dc0e3777458505e9dcdd171ffad095e1db6d658a3f12041"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 21,
+          "coordinate": [
+            -67.7711986,
+            -53.8062981
+          ],
+          "previousVertex": 20,
+          "nextVertex": 22,
+          "turnDeg": 150,
+          "incomingM": 11.76,
+          "outgoingM": 21.82,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 158221493,
+              "wayVersion": 10,
+              "wayIndex": 21,
+              "nodeId": 1704536055
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "ar-autodromo-general-san-martin-163088750",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-general-san-martin-163088750/layouts/main.geojson",
+      "traceSha256": "8c84c5165e121a4193c7b017cfdb99c72b55ba800378ea848082b459e470de59",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-general-san-martin-163088750/layouts/main.json",
+        "recipeSha256": "41c3e87ff2d3e1149899d9b22f8db369ded0912841da8c353476e0d9ffa0f5ca",
+        "snapshotFile": "sources/ar-autodromo-general-san-martin-163088750/osm.json",
+        "snapshotSha256": "f89a5a11931b900983f65a159e0483c046955b6e524556a3b8d893f735b05913"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            117,
+            146
+          ],
+          "fractions": [
+            0.45058938,
+            0.42791065
+          ],
+          "stationsM": [
+            3652.666,
+            5106.287
+          ],
+          "coordinate": [
+            -68.9191137,
+            -32.8915574
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 609543649,
+              "wayVersion": 2,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 0,
+              "url": "https://www.openstreetmap.org/way/609543649/history/2"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ],
+      "sharpSourceTurns": []
+    },
+    {
+      "trackId": "ar-autodromo-hermanos-emiliozzi-123976830",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-hermanos-emiliozzi-123976830/layouts/main.geojson",
+      "traceSha256": "7d2e17b929f072773df95f93c877efeb6f73a5bbe65be1cc2a1412c501d5f835",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-hermanos-emiliozzi-123976830/layouts/main.json",
+        "recipeSha256": "594e2feb638fbc7b8881e5debb0bc78b3f04ed374213500baa263f6d969c68d5",
+        "snapshotFile": "sources/ar-autodromo-hermanos-emiliozzi-123976830/osm.json",
+        "snapshotSha256": "f018ef7632060c4e4abc78904929aa077a7f0b2d13b086d8b4bfd28a3891bfb0"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 12,
+          "coordinate": [
+            -60.2548018,
+            -36.8594928
+          ],
+          "previousVertex": 11,
+          "nextVertex": 13,
+          "turnDeg": 152.13,
+          "incomingM": 8.95,
+          "outgoingM": 38.71,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 123976849,
+              "wayVersion": 9,
+              "wayIndex": 21,
+              "nodeId": 6895827081
+            },
+            {
+              "wayId": 736526036,
+              "wayVersion": 3,
+              "wayIndex": 4,
+              "nodeId": 6895827081
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "ar-autodromo-miguel-angel-atauri-191923384",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-miguel-angel-atauri-191923384/layouts/main.geojson",
+      "traceSha256": "ada8acabbfe06e9e5cf5af04a5f1f9ba41c3889be3d0d26cfbd6089f77b912c0",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-miguel-angel-atauri-191923384/layouts/main.json",
+        "recipeSha256": "d667d23ef7a76523ee6eab630d7185f390e4ffadf1fe30cd61c62ca8c3b34341",
+        "snapshotFile": "sources/ar-autodromo-miguel-angel-atauri-191923384/osm.json",
+        "snapshotSha256": "0f3560391dace7edb7cd3d406131394c0e50942bdf38e1213cdbc0c5149aeb51"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 37,
+          "coordinate": [
+            -57.6963547,
+            -36.3278722
+          ],
+          "previousVertex": 36,
+          "nextVertex": 38,
+          "turnDeg": 148.58,
+          "incomingM": 26.23,
+          "outgoingM": 13.78,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 191923393,
+              "wayVersion": 3,
+              "wayIndex": 3,
+              "nodeId": 2024833187
+            },
+            {
+              "wayId": 191923397,
+              "wayVersion": 4,
+              "wayIndex": 4,
+              "nodeId": 2024833187
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "ar-autodromo-oscar-y-juan-galvez-48743061",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-oscar-y-juan-galvez-48743061/layouts/main.geojson",
+      "traceSha256": "afa03008a4d833fac0bb81fa126e895ba0d9afb2d6eac456eecfa302fa3f1586",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-oscar-y-juan-galvez-48743061/layouts/main.json",
+        "recipeSha256": "29df555ae70201f9bb8ee0205f5d9c5b5d7a9a35db86a4465df5f10d9111ee05",
+        "snapshotFile": "sources/ar-autodromo-oscar-y-juan-galvez-48743061/osm.json",
+        "snapshotSha256": "538c4d1d06b96c697bc57d55714b0709a31feb4b23fec98049e1136916117a75"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 116,
+          "coordinate": [
+            -58.4567952,
+            -34.6966858
+          ],
+          "previousVertex": 115,
+          "nextVertex": 117,
+          "turnDeg": 169.3,
+          "incomingM": 25.7,
+          "outgoingM": 5.67,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 130552388,
+              "wayVersion": 7,
+              "wayIndex": 3,
+              "nodeId": 12822496623
+            },
+            {
+              "wayId": 581250912,
+              "wayVersion": 5,
+              "wayIndex": 15,
+              "nodeId": 12822496623
+            }
+          ]
+        },
+        {
+          "vertex": 166,
+          "coordinate": [
+            -58.459972,
+            -34.6944192
+          ],
+          "previousVertex": 165,
+          "nextVertex": 167,
+          "turnDeg": 168.64,
+          "incomingM": 13.03,
+          "outgoingM": 20.72,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 48747027,
+              "wayVersion": 5,
+              "wayIndex": 0,
+              "nodeId": 618682551
+            },
+            {
+              "wayId": 130552647,
+              "wayVersion": 4,
+              "wayIndex": 0,
+              "nodeId": 618682551
+            }
+          ]
+        },
+        {
+          "vertex": 183,
+          "coordinate": [
+            -58.4603978,
+            -34.696027
+          ],
+          "previousVertex": 182,
+          "nextVertex": 184,
+          "turnDeg": 168.3,
+          "incomingM": 9.35,
+          "outgoingM": 208.97,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 48747027,
+              "wayVersion": 5,
+              "wayIndex": 17,
+              "nodeId": 618682560
+            },
+            {
+              "wayId": 130552651,
+              "wayVersion": 6,
+              "wayIndex": 1,
+              "nodeId": 618682560
+            }
+          ]
+        },
+        {
+          "vertex": 242,
+          "coordinate": [
+            -58.4598658,
+            -34.6975524
+          ],
+          "previousVertex": 241,
+          "nextVertex": 243,
+          "turnDeg": 167.11,
+          "incomingM": 11.96,
+          "outgoingM": 176.55,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 48747037,
+              "wayVersion": 6,
+              "wayIndex": 0,
+              "nodeId": 618682573
+            },
+            {
+              "wayId": 130552389,
+              "wayVersion": 5,
+              "wayIndex": 2,
+              "nodeId": 618682573
+            }
+          ]
+        },
+        {
+          "vertex": 243,
+          "coordinate": [
+            -58.461779,
+            -34.6977686
+          ],
+          "previousVertex": 242,
+          "nextVertex": 244,
+          "turnDeg": 161.33,
+          "incomingM": 176.55,
+          "outgoingM": 14.73,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 48747028,
+              "wayVersion": 7,
+              "wayIndex": 17,
+              "nodeId": 618682572
+            },
+            {
+              "wayId": 130552389,
+              "wayVersion": 5,
+              "wayIndex": 3,
+              "nodeId": 618682572
+            }
+          ]
+        },
+        {
+          "vertex": 260,
+          "coordinate": [
+            -58.4612587,
+            -34.6963962
+          ],
+          "previousVertex": 259,
+          "nextVertex": 261,
+          "turnDeg": 158.2,
+          "incomingM": 12.22,
+          "outgoingM": 84.82,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 48747028,
+              "wayVersion": 7,
+              "wayIndex": 0,
+              "nodeId": 618682561
+            },
+            {
+              "wayId": 130552651,
+              "wayVersion": 6,
+              "wayIndex": 2,
+              "nodeId": 618682561
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "ar-autodromo-rosamonte-97397524",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-rosamonte-97397524/layouts/main.geojson",
+      "traceSha256": "74ad9fa8216ce4463cce57228af920a0011ab41e8dbf35a93226e704e7b37ed0",
+      "source": {
+        "recipeFile": "sources/ar-autodromo-rosamonte-97397524/layouts/main.json",
+        "recipeSha256": "d25324b4dbdafb4a7143a56ce40f9242b26cf61d71763fa5b07a6fb73e85c596",
+        "snapshotFile": "sources/ar-autodromo-rosamonte-97397524/osm.json",
+        "snapshotSha256": "5cb0544bb68c44c68ee3d775293cbb5d7c04c04fa18e66382753490b8645b4c1"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 59,
+          "coordinate": [
+            -55.9266262,
+            -27.4377265
+          ],
+          "previousVertex": 58,
+          "nextVertex": 60,
+          "turnDeg": 155.87,
+          "incomingM": 46.14,
+          "outgoingM": 20.05,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 261473571,
+              "wayVersion": 3,
+              "wayIndex": 1,
+              "nodeId": 2670887539
+            },
+            {
+              "wayId": 261473583,
+              "wayVersion": 2,
+              "wayIndex": 7,
+              "nodeId": 2670887539
+            }
+          ]
+        },
+        {
+          "vertex": 117,
+          "coordinate": [
+            -55.9278048,
+            -27.4372147
+          ],
+          "previousVertex": 116,
+          "nextVertex": 118,
+          "turnDeg": 145.26,
+          "incomingM": 10.13,
+          "outgoingM": 81.17,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 524784679,
+              "wayVersion": 2,
+              "wayIndex": 1,
+              "nodeId": 1128024739
+            },
+            {
+              "wayId": 524784681,
+              "wayVersion": 2,
+              "wayIndex": 9,
+              "nodeId": 1128024739
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "at-wachauring-melk-1578791a",
+      "layoutId": "wachauring-melk",
+      "file": "data/austria/at-wachauring-melk-1578791a/layouts/wachauring-melk.geojson",
+      "traceSha256": "0a6597c7d3f1e1f218b5f9662ddac770cf0516748536f745497a0308d1d7a0fd",
+      "source": {
+        "recipeFile": "sources/at-wachauring-melk-1578791a/layouts/wachauring-melk.json",
+        "recipeSha256": "60938aeab479aa7a4ba12b1a6a7f146aaba0cd12adc19ae25b0c9793175e8ff1",
+        "snapshotFile": "sources/at-wachauring-melk-1578791a/selected-network-28514203.json",
+        "snapshotSha256": "7c13af8ce5d9f6ca8c5438c1243304f1496b2afa8fc3e4c05f401131a9eb44e9"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 68,
+          "coordinate": [
+            15.3256531,
+            48.213076
+          ],
+          "previousVertex": 67,
+          "nextVertex": 69,
+          "turnDeg": 162.16,
+          "incomingM": 11.99,
+          "outgoingM": 25.98,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 983210017,
+              "wayVersion": 1,
+              "wayIndex": 12,
+              "nodeId": 9091161655
+            },
+            {
+              "wayId": 983210020,
+              "wayVersion": 1,
+              "wayIndex": 5,
+              "nodeId": 9091161655
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "br-autodromo-internacional-virgilio-tavora-376752251",
+      "layoutId": "main",
+      "file": "data/brazil/autodromo-internacional-virgilio-tavora-376752251/layouts/main.geojson",
+      "traceSha256": "3f4d5e8efb3af65009b0212315cccb7fc9cad4ed6d2814e5f5577b1ef2ae2ffe",
+      "source": {
+        "recipeFile": "sources/br-autodromo-internacional-virgilio-tavora-376752251/layouts/main.json",
+        "recipeSha256": "d4c5faa11e1b3c1c48f7f06aeced3033f369acf27bbac4e58d1dec1efb26853c",
+        "snapshotFile": "sources/br-autodromo-internacional-virgilio-tavora-376752251/osm.json",
+        "snapshotSha256": "ab5160d4c9fea0c0e25c14d86addc209a54d19a4da9e9b8a67d0e34bc124199c"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 2,
+          "coordinate": [
+            -38.4617089,
+            -3.8963774
+          ],
+          "previousVertex": 1,
+          "nextVertex": 3,
+          "turnDeg": 162.73,
+          "incomingM": 147.17,
+          "outgoingM": 10.33,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 376752251,
+              "wayVersion": 4,
+              "wayIndex": 2,
+              "nodeId": 3801403730
+            },
+            {
+              "wayId": 667228587,
+              "wayVersion": 1,
+              "wayIndex": 4,
+              "nodeId": 3801403730
+            }
+          ]
+        },
+        {
+          "vertex": 89,
+          "coordinate": [
+            -38.458948,
+            -3.8952483
+          ],
+          "previousVertex": 88,
+          "nextVertex": 90,
+          "turnDeg": 151.87,
+          "incomingM": 33.24,
+          "outgoingM": 16.41,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 376752251,
+              "wayVersion": 4,
+              "wayIndex": 37,
+              "nodeId": 3801403543
+            },
+            {
+              "wayId": 376752252,
+              "wayVersion": 4,
+              "wayIndex": 0,
+              "nodeId": 3801403543
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "ca-autodrome-montmagny-speedway-659151671",
+      "layoutId": "main",
+      "file": "data/canada/autodrome-montmagny-speedway-659151671/layouts/main.geojson",
+      "traceSha256": "3ea5b01b602f9c76da9cad07669dc6934c5a499fe937e32449e698f0fa75d6e8",
+      "source": {
+        "recipeFile": "sources/ca-autodrome-montmagny-speedway-659151671/layouts/main.json",
+        "recipeSha256": "75183c115702cac4e99f7fbfbf3e0140739f67a3d79415d0c229ea62d18eba91",
+        "snapshotFile": "sources/ca-autodrome-montmagny-speedway-659151671/osm.json",
+        "snapshotSha256": "d398c6e3729f5ebe079e829a60beba1788f5bdcb418282abf50f2503be06c908"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            -70.554899,
+            46.9382143
+          ],
+          "previousVertex": 84,
+          "nextVertex": 1,
+          "turnDeg": 167.02,
+          "incomingM": 17.7,
+          "outgoingM": 18.53,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 659151671,
+              "wayVersion": 3,
+              "wayIndex": 31,
+              "nodeId": 6171393372
+            },
+            {
+              "wayId": 659151673,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 6171393372
+            }
+          ]
+        },
+        {
+          "vertex": 25,
+          "coordinate": [
+            -70.5525049,
+            46.9387458
+          ],
+          "previousVertex": 24,
+          "nextVertex": 26,
+          "turnDeg": 178.89,
+          "incomingM": 2.28,
+          "outgoingM": 30.24,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 659151671,
+              "wayVersion": 3,
+              "wayIndex": 6,
+              "nodeId": 6342144910
+            },
+            {
+              "wayId": 659151672,
+              "wayVersion": 2,
+              "wayIndex": 8,
+              "nodeId": 6342144910
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "cn-guangdong-international-circuit-1135943127",
+      "layoutId": "main",
+      "file": "data/china/guangdong-international-circuit-1135943127/layouts/main.geojson",
+      "traceSha256": "71e90128fd858c21536a58aad2c06dbd08c513f2ba73d85fcf922602a10e1c52",
+      "source": {
+        "recipeFile": "sources/cn-guangdong-international-circuit-1135943127/layouts/main.json",
+        "recipeSha256": "fc690950d023aaf07e3130b186431694cc0cef3fd72843e170f897270e23a0d7",
+        "snapshotFile": "sources/cn-guangdong-international-circuit-1135943127/osm.json",
+        "snapshotSha256": "003034b6d703b2d1e4daa4311708a05c2d5e89f56ae89ec03ce8f59921b841ab"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 201,
+          "coordinate": [
+            113.5493746,
+            23.0601668
+          ],
+          "previousVertex": 200,
+          "nextVertex": 0,
+          "turnDeg": 148.53,
+          "incomingM": 4.16,
+          "outgoingM": 4.46,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1135943128,
+              "wayVersion": 2,
+              "wayIndex": 6,
+              "nodeId": 10589134371
+            },
+            {
+              "wayId": 1135943129,
+              "wayVersion": 2,
+              "wayIndex": 109,
+              "nodeId": 10589134371
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "co-pits-autodromo-de-tocancipa-60009149",
+      "layoutId": "tocancipa",
+      "file": "data/colombia/pits-autodromo-de-tocancipa-60009149/layouts/tocancipa.geojson",
+      "traceSha256": "3478bae45ad70ab45796ff5a9154b39f473a74227fdc7043383f66441ac8c691",
+      "source": {
+        "recipeFile": "sources/co-pits-autodromo-de-tocancipa-60009149/layouts/tocancipa.json",
+        "recipeSha256": "d997f2969daa050cd59650410a1cbb51faca824e6fe7d87c770dc68f1a17eb09",
+        "snapshotFile": "sources/co-pits-autodromo-de-tocancipa-60009149/selected-network-60009149.json",
+        "snapshotSha256": "a71f09e83bc509403953288510e09394d7d04124aec438f1f4d7d4af2f063dbb"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 31,
+          "coordinate": [
+            -73.9433674,
+            4.959904
+          ],
+          "previousVertex": 30,
+          "nextVertex": 32,
+          "turnDeg": 172.32,
+          "incomingM": 7.68,
+          "outgoingM": 10.05,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 60009150,
+              "wayVersion": 7,
+              "wayIndex": 7,
+              "nodeId": 5081730103
+            },
+            {
+              "wayId": 521563550,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 5081730103
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "dk-jyllandsringen-102145328",
+      "layoutId": "jyllands-ringen-ny",
+      "file": "data/denmark/jyllandsringen-102145328/layouts/jyllands-ringen-ny.geojson",
+      "traceSha256": "41354a51b5bbb446926108e78f8d36e429147591c7f939f6c4bd4b818328b4ba",
+      "source": {
+        "recipeFile": "sources/dk-jyllandsringen-102145328/layouts/jyllands-ringen-ny.json",
+        "recipeSha256": "530c453ff0dfd1025b2cc128be2fd62837bb95a5675bae27106847308824b36f",
+        "snapshotFile": "sources/dk-jyllandsringen-102145328/course-network-102145328.json",
+        "snapshotSha256": "c4c6277a36cb9e35e25b8b3864e18ebac6c8a79020e35bc2e5ae5d904bfe4f19"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 55,
+          "coordinate": [
+            9.6594287,
+            56.1761928
+          ],
+          "previousVertex": 54,
+          "nextVertex": 56,
+          "turnDeg": 146.56,
+          "incomingM": 41.35,
+          "outgoingM": 10.65,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 102145329,
+              "wayVersion": 6,
+              "wayIndex": 0,
+              "nodeId": 1178910112
+            },
+            {
+              "wayId": 102145335,
+              "wayVersion": 9,
+              "wayIndex": 13,
+              "nodeId": 1178910112
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "fr-geoparc-391622752",
+      "layoutId": "main",
+      "file": "data/france/geoparc-391622752/layouts/main.geojson",
+      "traceSha256": "f5a1dbf04157a823813aa41af0f89d8d6ddc58b6aec83df5ab8d6493fcf63e36",
+      "source": {
+        "recipeFile": "sources/fr-geoparc-391622752/layouts/main.json",
+        "recipeSha256": "c92befce42b5791b9fd650c7e1e0a88f4615ab1af21a99ee8955b28f99480be5",
+        "snapshotFile": "sources/fr-geoparc-391622752/osm.json",
+        "snapshotSha256": "410cd6f3020c4ba38eb92bf14d2025066349e8fd8c7b65351ce7f7c06a74dd45"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 91,
+          "coordinate": [
+            6.9184531,
+            48.3001251
+          ],
+          "previousVertex": 90,
+          "nextVertex": 92,
+          "turnDeg": 147.16,
+          "incomingM": 16.36,
+          "outgoingM": 25.16,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 391622754,
+              "wayVersion": 5,
+              "wayIndex": 26,
+              "nodeId": 3948468166
+            },
+            {
+              "wayId": 391622756,
+              "wayVersion": 6,
+              "wayIndex": 12,
+              "nodeId": 3948468166
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "gb-blyton-park-driving-centre-129241665",
+      "layoutId": "main",
+      "file": "data/united-kingdom/blyton-park-driving-centre-129241665/layouts/main.geojson",
+      "traceSha256": "c1e74a50bc857e2eb112af10927bfd9bed6300bef4882004833c48e28861882b",
+      "source": {
+        "recipeFile": "sources/gb-blyton-park-driving-centre-129241665/layouts/main.json",
+        "recipeSha256": "71656b5ab719d48c32c0369f3b699641c8f5d4f2c92a919395905a02c49a821f",
+        "snapshotFile": "sources/gb-blyton-park-driving-centre-129241665/osm.json",
+        "snapshotSha256": "19b560511479cf10e2fe473b6fe00a485dae288333b03e34af9e81f93fedcff9"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 61,
+          "coordinate": [
+            -0.6942486,
+            53.4586353
+          ],
+          "previousVertex": 60,
+          "nextVertex": 62,
+          "turnDeg": 159.68,
+          "incomingM": 32.33,
+          "outgoingM": 20.43,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 129241665,
+              "wayVersion": 10,
+              "wayIndex": 60,
+              "nodeId": 2460494879
+            },
+            {
+              "wayId": 367128319,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 2460494879
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "gb-driftland-37d6ee3f",
+      "layoutId": "driftland-cross-course",
+      "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-cross-course.geojson",
+      "traceSha256": "9664da67346b937fc1d10cf854b1d550357ff97e097d6568d61ea3552e594693",
+      "source": {
+        "recipeFile": "sources/gb-driftland-37d6ee3f/layouts/driftland-cross-course.json",
+        "recipeSha256": "e617edf9c834c1d83deeb3bd7450fdabef8c96259ad74071882d0feb3b16786e",
+        "snapshotFile": "sources/gb-driftland-37d6ee3f/components-osm-530624043.json",
+        "snapshotSha256": "100b58ae693409316a772c58dd366225d1adcf578b8c623c4c9e23614ff05fe1"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 33,
+          "coordinate": [
+            -3.2786143,
+            56.1279842
+          ],
+          "previousVertex": 32,
+          "nextVertex": 34,
+          "turnDeg": 161.78,
+          "incomingM": 4.98,
+          "outgoingM": 6.05,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 530624048,
+              "wayVersion": 2,
+              "wayIndex": 15,
+              "nodeId": 9288637264
+            },
+            {
+              "wayId": 1006792956,
+              "wayVersion": 1,
+              "wayIndex": 3,
+              "nodeId": 9288637264
+            }
+          ]
+        },
+        {
+          "vertex": 52,
+          "coordinate": [
+            -3.2796111,
+            56.1273446
+          ],
+          "previousVertex": 51,
+          "nextVertex": 53,
+          "turnDeg": 148.2,
+          "incomingM": 4.98,
+          "outgoingM": 5.14,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 530624043,
+              "wayVersion": 2,
+              "wayIndex": 39,
+              "nodeId": 5152277912
+            },
+            {
+              "wayId": 530624051,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 5152277912
+            }
+          ]
+        },
+        {
+          "vertex": 61,
+          "coordinate": [
+            -3.2788432,
+            56.1278372
+          ],
+          "previousVertex": 60,
+          "nextVertex": 62,
+          "turnDeg": 148.95,
+          "incomingM": 3.93,
+          "outgoingM": 18.08,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1006792954,
+              "wayVersion": 1,
+              "wayIndex": 23,
+              "nodeId": 5152277871
+            },
+            {
+              "wayId": 1006792955,
+              "wayVersion": 1,
+              "wayIndex": 7,
+              "nodeId": 5152277871
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "gb-driftland-37d6ee3f",
+      "layoutId": "driftland-inner-course",
+      "file": "data/united-kingdom/gb-driftland-37d6ee3f/layouts/driftland-inner-course.geojson",
+      "traceSha256": "ebb037bbcb333339bc32db66d0566d1328b926d4472492bef7d8b17a25e3675e",
+      "source": {
+        "recipeFile": "sources/gb-driftland-37d6ee3f/layouts/driftland-inner-course.json",
+        "recipeSha256": "b1440677d9fa582c43e9d3b3a90ed93f773665e559282e45f7c5c42601cc8e93",
+        "snapshotFile": "sources/gb-driftland-37d6ee3f/components-osm-530624043.json",
+        "snapshotSha256": "100b58ae693409316a772c58dd366225d1adcf578b8c623c4c9e23614ff05fe1"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            -3.2789547,
+            56.1272541
+          ],
+          "previousVertex": 98,
+          "nextVertex": 1,
+          "turnDeg": 150.84,
+          "incomingM": 10.26,
+          "outgoingM": 24.9,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 530624043,
+              "wayVersion": 2,
+              "wayIndex": 33,
+              "nodeId": 5152277865
+            },
+            {
+              "wayId": 530624048,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 5152277865
+            }
+          ]
+        },
+        {
+          "vertex": 50,
+          "coordinate": [
+            -3.2796744,
+            56.1273722
+          ],
+          "previousVertex": 49,
+          "nextVertex": 51,
+          "turnDeg": 160.05,
+          "incomingM": 17.55,
+          "outgoingM": 9.99,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 530624043,
+              "wayVersion": 2,
+              "wayIndex": 40,
+              "nodeId": 5152277915
+            },
+            {
+              "wayId": 530624058,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 5152277915
+            }
+          ]
+        },
+        {
+          "vertex": 54,
+          "coordinate": [
+            -3.2800005,
+            56.1277056
+          ],
+          "previousVertex": 53,
+          "nextVertex": 55,
+          "turnDeg": 171.97,
+          "incomingM": 15.13,
+          "outgoingM": 4.04,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 530624043,
+              "wayVersion": 2,
+              "wayIndex": 44,
+              "nodeId": 9288637230
+            },
+            {
+              "wayId": 1006792954,
+              "wayVersion": 1,
+              "wayIndex": 7,
+              "nodeId": 9288637230
+            }
+          ]
+        },
+        {
+          "vertex": 81,
+          "coordinate": [
+            -3.2789756,
+            56.1280676
+          ],
+          "previousVertex": 80,
+          "nextVertex": 82,
+          "turnDeg": 157.85,
+          "incomingM": 5.26,
+          "outgoingM": 12.39,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1006792954,
+              "wayVersion": 1,
+              "wayIndex": 18,
+              "nodeId": 9288637265
+            },
+            {
+              "wayId": 1006792956,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 9288637265
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "gb-m-sport-proving-ground-fe7c7315",
+      "layoutId": "msport-long-variant",
+      "file": "data/united-kingdom/gb-m-sport-proving-ground-fe7c7315/layouts/msport-long-variant.geojson",
+      "traceSha256": "db0ead435c4999deb28247e2b81205ccb34e2f66ceb2c5e5c58f4a7ac8d7756a",
+      "source": {
+        "recipeFile": "sources/gb-m-sport-proving-ground-fe7c7315/layouts/msport-long-variant.json",
+        "recipeSha256": "9bfda5216e065bcc59040239d11901590706fd5fb472c978a6018f0c7ac1c6c6",
+        "snapshotFile": "sources/gb-m-sport-proving-ground-fe7c7315/components-osm-716453717.json",
+        "snapshotSha256": "15c3ad68a51cc3d650e07333459de48c581e8ccf3f76af16169523d0158770fa"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 6,
+          "coordinate": [
+            -3.4016612,
+            54.6849346
+          ],
+          "previousVertex": 5,
+          "nextVertex": 7,
+          "turnDeg": 155.3,
+          "incomingM": 20.25,
+          "outgoingM": 12.08,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 716453717,
+              "wayVersion": 2,
+              "wayIndex": 21,
+              "nodeId": 6730611271
+            },
+            {
+              "wayId": 716453720,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 6730611271
+            }
+          ]
+        },
+        {
+          "vertex": 23,
+          "coordinate": [
+            -3.4010634,
+            54.6855086
+          ],
+          "previousVertex": 22,
+          "nextVertex": 24,
+          "turnDeg": 164.77,
+          "incomingM": 11.47,
+          "outgoingM": 11.6,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 716453717,
+              "wayVersion": 2,
+              "wayIndex": 13,
+              "nodeId": 6730611283
+            },
+            {
+              "wayId": 716453720,
+              "wayVersion": 2,
+              "wayIndex": 17,
+              "nodeId": 6730611283
+            }
+          ]
+        },
+        {
+          "vertex": 27,
+          "coordinate": [
+            -3.3992668,
+            54.6853027
+          ],
+          "previousVertex": 26,
+          "nextVertex": 28,
+          "turnDeg": 147.85,
+          "incomingM": 74.94,
+          "outgoingM": 8.21,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 716453717,
+              "wayVersion": 2,
+              "wayIndex": 9,
+              "nodeId": 6730611270
+            },
+            {
+              "wayId": 716453719,
+              "wayVersion": 2,
+              "wayIndex": 11,
+              "nodeId": 6730611270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "kr-ansan-0cee918e",
+      "layoutId": "ansan",
+      "file": "data/south-korea/kr-ansan-0cee918e/layouts/ansan.geojson",
+      "traceSha256": "9da26df72767627bc260783ba3743e6b804383fa8bf1defb6c4989202cd8572b",
+      "source": {
+        "recipeFile": "sources/kr-ansan-0cee918e/layouts/ansan.json",
+        "recipeSha256": "a2188db97304232bcc10cd12b209eb7f82a73bd56521d2223ac228a4b5edbb6c",
+        "snapshotFile": "sources/kr-ansan-0cee918e/imagery-course-ansan.json",
+        "snapshotSha256": "310a288308cf4e9426d8bb53f274d7eb76fe8d109a717e6b40cfba2ef43a64d0"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            35,
+            66
+          ],
+          "fractions": [
+            0.28589052,
+            0.28578041
+          ],
+          "stationsM": [
+            1223.567,
+            2410.636
+          ],
+          "coordinate": [
+            126.8332674,
+            37.2786402
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained"
+        }
+      ],
+      "sharpSourceTurns": []
+    },
+    {
+      "trackId": "lt-palanga-street-circuit-a9c06d36",
+      "layoutId": "palanga-street-circuit",
+      "file": "data/lithuania/lt-palanga-street-circuit-a9c06d36/layouts/palanga-street-circuit.geojson",
+      "traceSha256": "3d7c3c1ac7e344faacdd31891257246869752224ab7aa06763bfc5302b049a21",
+      "source": {
+        "recipeFile": "sources/lt-palanga-street-circuit-a9c06d36/layouts/palanga-street-circuit.json",
+        "recipeSha256": "fe8d508833cfbeb10f3eba86af18f50e9d5f91e83e85f0aea5fb087af376dd2f",
+        "snapshotFile": "sources/lt-palanga-street-circuit-a9c06d36/selected-palanga-street-current-independent-roads-35031050.json",
+        "snapshotSha256": "d353604160073cf66dd095b8796ed99d5d2b55e1f8dfafe0ac396b05a147c0ab"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            30,
+            80
+          ],
+          "fractions": [
+            0.65302042,
+            0.58035052
+          ],
+          "stationsM": [
+            293.579,
+            2660.744
+          ],
+          "coordinate": [
+            21.1063473,
+            55.9079895
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained"
+        },
+        {
+          "kind": "crossing",
+          "segments": [
+            49,
+            80
+          ],
+          "fractions": [
+            0.55216981,
+            0.4227985
+          ],
+          "stationsM": [
+            1488.582,
+            2648.117
+          ],
+          "coordinate": [
+            21.1065324,
+            55.9079433
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained"
+        }
+      ],
+      "sharpSourceTurns": [
+        {
+          "vertex": 58,
+          "coordinate": [
+            21.1071265,
+            55.9103623
+          ],
+          "previousVertex": 57,
+          "nextVertex": 59,
+          "turnDeg": 167.37,
+          "incomingM": 18.05,
+          "outgoingM": 40.16,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 157997993,
+              "wayVersion": 16,
+              "wayIndex": 5,
+              "nodeId": 6005558538
+            },
+            {
+              "wayId": 199484052,
+              "wayVersion": 15,
+              "wayIndex": 19,
+              "nodeId": 6005558538
+            }
+          ]
+        },
+        {
+          "vertex": 77,
+          "coordinate": [
+            21.111849,
+            55.9066396
+          ],
+          "previousVertex": 76,
+          "nextVertex": 78,
+          "turnDeg": 170.45,
+          "incomingM": 45.5,
+          "outgoingM": 44.34,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 199484052,
+              "wayVersion": 15,
+              "wayIndex": 0,
+              "nodeId": 2604466508
+            },
+            {
+              "wayId": 342899899,
+              "wayVersion": 9,
+              "wayIndex": 0,
+              "nodeId": 2604466508
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "mx-autodromo-potosino-731117519",
+      "layoutId": "main",
+      "file": "data/mexico/autodromo-potosino-731117519/layouts/main.geojson",
+      "traceSha256": "d21c16a414a53fa62dfd07eea48700ab37ed024e02386cbd78fde4fddaa22867",
+      "source": {
+        "recipeFile": "sources/mx-autodromo-potosino-731117519/layouts/main.json",
+        "recipeSha256": "4e301cb9dd9d196c1bf823cc5a65b5099c4f0499f1a4d60bfeae5b973ef4a540",
+        "snapshotFile": "sources/mx-autodromo-potosino-731117519/osm.json",
+        "snapshotSha256": "b3cdf1ed3478a59b3208f5d55f2e0eb4c8a193fbc132bb0e261301ad604599e5"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 11,
+          "coordinate": [
+            -100.7252464,
+            22.0902271
+          ],
+          "previousVertex": 10,
+          "nextVertex": 12,
+          "turnDeg": 173.93,
+          "incomingM": 91.65,
+          "outgoingM": 75.71,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 731117522,
+              "wayVersion": 2,
+              "wayIndex": 1,
+              "nodeId": 6847963226
+            },
+            {
+              "wayId": 731117523,
+              "wayVersion": 1,
+              "wayIndex": 25,
+              "nodeId": 6847963226
+            }
+          ]
+        },
+        {
+          "vertex": 36,
+          "coordinate": [
+            -100.7245592,
+            22.0905319
+          ],
+          "previousVertex": 35,
+          "nextVertex": 37,
+          "turnDeg": 167.9,
+          "incomingM": 38.97,
+          "outgoingM": 50.19,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 731117522,
+              "wayVersion": 2,
+              "wayIndex": 2,
+              "nodeId": 6847963202
+            },
+            {
+              "wayId": 731117523,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 6847963202
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "mx-autodromo-tangamanga-226300277",
+      "layoutId": "main",
+      "file": "data/mexico/autodromo-tangamanga-226300277/layouts/main.geojson",
+      "traceSha256": "37b377ee29ea55d482b767066a2057915c68229b8af5db362d41ea130f88bf0e",
+      "source": {
+        "recipeFile": "sources/mx-autodromo-tangamanga-226300277/layouts/main.json",
+        "recipeSha256": "5e91bb06b36a60da57459f3fc441f95606c32434a9e0aca7aec8ac3fd8ed1296",
+        "snapshotFile": "sources/mx-autodromo-tangamanga-226300277/osm.json",
+        "snapshotSha256": "cc7ecb2b8ae7f52cf00c06f2886d5878b96e849084a73233378989802a5762b9"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            -100.9931624,
+            22.1826354
+          ],
+          "previousVertex": 44,
+          "nextVertex": 1,
+          "turnDeg": 175.73,
+          "incomingM": 197.41,
+          "outgoingM": 15.52,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 226300277,
+              "wayVersion": 7,
+              "wayIndex": 50,
+              "nodeId": 2351534593
+            },
+            {
+              "wayId": 677361283,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 2351534593
+            }
+          ]
+        },
+        {
+          "vertex": 44,
+          "coordinate": [
+            -100.9912518,
+            22.182488
+          ],
+          "previousVertex": 43,
+          "nextVertex": 0,
+          "turnDeg": 176.39,
+          "incomingM": 14.12,
+          "outgoingM": 197.41,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 226300277,
+              "wayVersion": 7,
+              "wayIndex": 6,
+              "nodeId": 6342489629
+            },
+            {
+              "wayId": 677361283,
+              "wayVersion": 1,
+              "wayIndex": 1,
+              "nodeId": 6342489629
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "mx-centro-dinamico-pegaso-145076064",
+      "layoutId": "main",
+      "file": "data/mexico/centro-dinamico-pegaso-145076064/layouts/main.geojson",
+      "traceSha256": "10bf5494bd535a1a653630bed754d03b2edf3c6db082cb8e25ef2bbd99042ace",
+      "source": {
+        "recipeFile": "sources/mx-centro-dinamico-pegaso-145076064/layouts/main.json",
+        "recipeSha256": "b027c1739df34f6bb9af5c68191816d9d7d59ac3b8eeb361037da12288ada511",
+        "snapshotFile": "sources/mx-centro-dinamico-pegaso-145076064/osm.json",
+        "snapshotSha256": "93db61ea4979738f016ec6a88648a98566d49a9ded225fb47235091d3959088a"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 33,
+          "coordinate": [
+            -99.5572322,
+            19.3642315
+          ],
+          "previousVertex": 32,
+          "nextVertex": 34,
+          "turnDeg": 163.42,
+          "incomingM": 29.11,
+          "outgoingM": 27.05,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 145076065,
+              "wayVersion": 1,
+              "wayIndex": 2,
+              "nodeId": 1585256372
+            },
+            {
+              "wayId": 145076068,
+              "wayVersion": 2,
+              "wayIndex": 15,
+              "nodeId": 1585256372
+            }
+          ]
+        },
+        {
+          "vertex": 35,
+          "coordinate": [
+            -99.5576707,
+            19.3641953
+          ],
+          "previousVertex": 34,
+          "nextVertex": 36,
+          "turnDeg": 157.66,
+          "incomingM": 19.15,
+          "outgoingM": 12.24,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 145076065,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 1585256389
+            },
+            {
+              "wayId": 145076070,
+              "wayVersion": 2,
+              "wayIndex": 13,
+              "nodeId": 1585256389
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "nz-highlands-motorsports-park-c98a7d90",
+      "layoutId": "highlands-motorsports-park-full",
+      "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.geojson",
+      "traceSha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
+      "source": {
+        "recipeFile": "sources/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.json",
+        "recipeSha256": "802b825bbe8f769239c9acaf046b835372a12c91e476c86920cae72624f449f5",
+        "snapshotFile": "sources/nz-highlands-motorsports-park-c98a7d90/components-osm-234778728.json",
+        "snapshotSha256": "b49c2985b983224e685b8d9f68014dbde244656a9af8cd74de880862d08c09b3"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            57,
+            102
+          ],
+          "fractions": [
+            0.72628881,
+            0.57630959
+          ],
+          "stationsM": [
+            1933.764,
+            3458.235
+          ],
+          "coordinate": [
+            169.1707595,
+            -45.0575631
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 677363476,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/677363476/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ],
+      "sharpSourceTurns": []
+    },
+    {
+      "trackId": "se-karlskoga-motorstadion-290177249",
+      "layoutId": "main",
+      "file": "data/sweden/karlskoga-motorstadion-290177249/layouts/main.geojson",
+      "traceSha256": "1ed01e13ba0653911d9db9f8eb5005e777930971e19f4678ad6d32c76c691000",
+      "source": {
+        "recipeFile": "sources/se-karlskoga-motorstadion-290177249/layouts/main.json",
+        "recipeSha256": "b5669d93810363e3cb95ffe56a3d0eeebf358ad60d4f9ceddc158f47e91af3f6",
+        "snapshotFile": "sources/se-karlskoga-motorstadion-290177249/osm.json",
+        "snapshotSha256": "07a401c8b1aef6810026d7721874483b5c53f50a55e4ab197775349a080ede0a"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 64,
+          "coordinate": [
+            14.5102246,
+            59.3829483
+          ],
+          "previousVertex": 63,
+          "nextVertex": 65,
+          "turnDeg": 153.64,
+          "incomingM": 27.56,
+          "outgoingM": 17.3,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 599046003,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 2567254993
+            },
+            {
+              "wayId": 695043360,
+              "wayVersion": 3,
+              "wayIndex": 14,
+              "nodeId": 2567254993
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "se-mantorp-park-42957116",
+      "layoutId": "main",
+      "file": "data/sweden/mantorp-park-42957116/layouts/main.geojson",
+      "traceSha256": "a1428231992f0419fbc344808238137e1489d35ef7438778c9568c24dc36d504",
+      "source": {
+        "recipeFile": "sources/se-mantorp-park-42957116/layouts/main.json",
+        "recipeSha256": "c63d33ddd240d11b09937fc4c126dc75a2a9358589d3eac99645d46d7bb2f347",
+        "snapshotFile": "sources/se-mantorp-park-42957116/osm.json",
+        "snapshotSha256": "c991f802b320f9e99ddb6cd3915d9f039f4d181f02cfe967e28ff389bb48c651"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            15.2796271,
+            58.3703382
+          ],
+          "previousVertex": 35,
+          "nextVertex": 1,
+          "turnDeg": 163.14,
+          "incomingM": 26.72,
+          "outgoingM": 17.85,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 172891683,
+              "wayVersion": 2,
+              "wayIndex": 5,
+              "nodeId": 538063838
+            },
+            {
+              "wayId": 172891686,
+              "wayVersion": 4,
+              "wayIndex": 0,
+              "nodeId": 538063838
+            }
+          ]
+        },
+        {
+          "vertex": 18,
+          "coordinate": [
+            15.2871015,
+            58.3699952
+          ],
+          "previousVertex": 17,
+          "nextVertex": 19,
+          "turnDeg": 164.58,
+          "incomingM": 17.82,
+          "outgoingM": 36.23,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 172891678,
+              "wayVersion": 2,
+              "wayIndex": 2,
+              "nodeId": 1799878595
+            },
+            {
+              "wayId": 172891686,
+              "wayVersion": 4,
+              "wayIndex": 18,
+              "nodeId": 1799878595
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-bushnell-motorsports-park-16aaa9aa",
+      "layoutId": "bushnell-motorsports-park",
+      "file": "data/united-states/us-bushnell-motorsports-park-16aaa9aa/layouts/bushnell-motorsports-park.geojson",
+      "traceSha256": "900eff0b16b0b174da2146a5683129857204d5f202a1ecafffd4f3a5ff85f06e",
+      "source": {
+        "recipeFile": "sources/us-bushnell-motorsports-park-16aaa9aa/layouts/bushnell-motorsports-park.json",
+        "recipeSha256": "94a3a772e1a3421c8d72934fa059803419496742deb12a49bb9690a8f3447cfe",
+        "snapshotFile": "sources/us-bushnell-motorsports-park-16aaa9aa/course-network-1410074352.json",
+        "snapshotSha256": "d8fb850078e41034d993525f82a6d0ad5232447d2e2468522eef857ee8378fc7"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            195,
+            241
+          ],
+          "fractions": [
+            0.44102561,
+            0.4270671
+          ],
+          "stationsM": [
+            789.366,
+            977.509
+          ],
+          "coordinate": [
+            -82.1493283,
+            28.6726192
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 1410074353,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/1410074353/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile"
+        }
+      ],
+      "sharpSourceTurns": []
+    },
+    {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "infield-inner-hairpin",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-inner-hairpin.geojson",
+      "traceSha256": "725534cdf383f749f8e84406c67c76c6127c74741efd730c3c16f9d7fe37f827",
+      "source": {
+        "recipeFile": "sources/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-inner-hairpin.json",
+        "recipeSha256": "5c62c59a5bdadc149b3ee0f975ea166255bfdbb8a9a59b0f418deb22df27f0e0",
+        "snapshotFile": "sources/us-fontana-raceway-infield-course-d6cf6f7f/components-osm-7386028.json",
+        "snapshotSha256": "903b09f3ab4e074d8c910fc6bb0f32171981355791f42c16d160883457595127"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 10,
+          "coordinate": [
+            -117.4990214,
+            34.0901601
+          ],
+          "previousVertex": 9,
+          "nextVertex": 11,
+          "turnDeg": 157.05,
+          "incomingM": 254.9,
+          "outgoingM": 5.22,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 355478197,
+              "wayVersion": 1,
+              "wayIndex": 1,
+              "nodeId": 442004824
+            },
+            {
+              "wayId": 355478203,
+              "wayVersion": 2,
+              "wayIndex": 6,
+              "nodeId": 442004824
+            }
+          ]
+        },
+        {
+          "vertex": 17,
+          "coordinate": [
+            -117.4974989,
+            34.0904381
+          ],
+          "previousVertex": 16,
+          "nextVertex": 18,
+          "turnDeg": 158.85,
+          "incomingM": 158.31,
+          "outgoingM": 4.25,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 37693705,
+              "wayVersion": 7,
+              "wayIndex": 6,
+              "nodeId": 442004825
+            },
+            {
+              "wayId": 355478194,
+              "wayVersion": 1,
+              "wayIndex": 1,
+              "nodeId": 442004825
+            }
+          ]
+        },
+        {
+          "vertex": 23,
+          "coordinate": [
+            -117.4980982,
+            34.0901553
+          ],
+          "previousVertex": 22,
+          "nextVertex": 24,
+          "turnDeg": 169.93,
+          "incomingM": 6.86,
+          "outgoingM": 133.58,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 37693699,
+              "wayVersion": 7,
+              "wayIndex": 0,
+              "nodeId": 442004826
+            },
+            {
+              "wayId": 37693705,
+              "wayVersion": 7,
+              "wayIndex": 0,
+              "nodeId": 442004826
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "infield-northern-return",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-northern-return.geojson",
+      "traceSha256": "1c31a116a6d44e8d15d530502c56a20f19ce0caa5b2f4ae8bc517389bcb807ff",
+      "source": {
+        "recipeFile": "sources/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-northern-return.json",
+        "recipeSha256": "52e611a1b7cfc501bd265ea63f23cdb6fdd00eda707b673030a24e6e061b9db8",
+        "snapshotFile": "sources/us-fontana-raceway-infield-course-d6cf6f7f/components-osm-7386028.json",
+        "snapshotSha256": "903b09f3ab4e074d8c910fc6bb0f32171981355791f42c16d160883457595127"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 2,
+          "coordinate": [
+            -117.4989792,
+            34.0909395
+          ],
+          "previousVertex": 1,
+          "nextVertex": 3,
+          "turnDeg": 163.17,
+          "incomingM": 45.73,
+          "outgoingM": 5.61,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 355478191,
+              "wayVersion": 3,
+              "wayIndex": 35,
+              "nodeId": 5966516973
+            },
+            {
+              "wayId": 631874926,
+              "wayVersion": 1,
+              "wayIndex": 6,
+              "nodeId": 5966516973
+            }
+          ]
+        },
+        {
+          "vertex": 79,
+          "coordinate": [
+            -117.5028227,
+            34.0901813
+          ],
+          "previousVertex": 78,
+          "nextVertex": 80,
+          "turnDeg": 151.98,
+          "incomingM": 103.67,
+          "outgoingM": 4.4,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 37693701,
+              "wayVersion": 8,
+              "wayIndex": 15,
+              "nodeId": 442004763
+            },
+            {
+              "wayId": 355478195,
+              "wayVersion": 2,
+              "wayIndex": 2,
+              "nodeId": 442004763
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-fontana-raceway-infield-course-d6cf6f7f",
+      "layoutId": "infield-western-hook",
+      "file": "data/united-states/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-western-hook.geojson",
+      "traceSha256": "387897c3966dd86a71fff5bab345fedaf5e0fb73124ab2d0045b0cbb1d510da1",
+      "source": {
+        "recipeFile": "sources/us-fontana-raceway-infield-course-d6cf6f7f/layouts/infield-western-hook.json",
+        "recipeSha256": "8076882d93bc730a22529a2519ea3fd2423443654a22e148d13658a7a0994b90",
+        "snapshotFile": "sources/us-fontana-raceway-infield-course-d6cf6f7f/components-osm-7386028.json",
+        "snapshotSha256": "903b09f3ab4e074d8c910fc6bb0f32171981355791f42c16d160883457595127"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 31,
+          "coordinate": [
+            -117.5017894,
+            34.0901766
+          ],
+          "previousVertex": 30,
+          "nextVertex": 32,
+          "turnDeg": 158.49,
+          "incomingM": 95.16,
+          "outgoingM": 5.89,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 355478196,
+              "wayVersion": 1,
+              "wayIndex": 1,
+              "nodeId": 442004758
+            },
+            {
+              "wayId": 355478201,
+              "wayVersion": 2,
+              "wayIndex": 7,
+              "nodeId": 442004758
+            }
+          ]
+        },
+        {
+          "vertex": 41,
+          "coordinate": [
+            -117.4989792,
+            34.0909395
+          ],
+          "previousVertex": 40,
+          "nextVertex": 42,
+          "turnDeg": 163.17,
+          "incomingM": 45.73,
+          "outgoingM": 5.61,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 355478191,
+              "wayVersion": 3,
+              "wayIndex": 35,
+              "nodeId": 5966516973
+            },
+            {
+              "wayId": 631874926,
+              "wayVersion": 1,
+              "wayIndex": 6,
+              "nodeId": 5966516973
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-indianapolis-motor-speedway-51308226",
+      "layoutId": "main",
+      "file": "data/united-states/indianapolis-motor-speedway-51308226/layouts/main.geojson",
+      "traceSha256": "b52e8f124881d0a2b1bdfcf172b5d457100246361df48e69effa8c4f2067ab7c",
+      "source": {
+        "recipeFile": "sources/us-indianapolis-motor-speedway-51308226/layouts/main.json",
+        "recipeSha256": "da94d9f4bfcc81c33a9083dd2faa201a85408174399ebc995e50c845a2e605be",
+        "snapshotFile": "sources/us-indianapolis-motor-speedway-51308226/osm.json",
+        "snapshotSha256": "b47c64e5091ab6ed447247a4da9e2564dfda4828e446c367f5c69991c712250e"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 347,
+          "coordinate": [
+            -86.2389183,
+            39.7973536
+          ],
+          "previousVertex": 346,
+          "nextVertex": 348,
+          "turnDeg": 177.45,
+          "incomingM": 113.71,
+          "outgoingM": 37.51,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 588780351,
+              "wayVersion": 7,
+              "wayIndex": 3,
+              "nodeId": 654509385
+            },
+            {
+              "wayId": 588780375,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 654509385
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-michigan-international-speedway-205025102",
+      "layoutId": "michigan-int-speedway-infield-long",
+      "file": "data/united-states/michigan-international-speedway-205025102/layouts/michigan-int-speedway-infield-long.geojson",
+      "traceSha256": "b55faf0537e09d7b1c8186a15a5977d9ab8dbe8b0414fad8257c31fd318fa84e",
+      "source": {
+        "recipeFile": "sources/us-michigan-international-speedway-205025102/layouts/michigan-int-speedway-infield-long.json",
+        "recipeSha256": "8106d55e60cea03c847e1d1e6c389c11f76260d5e126e47f099e8fc700b34bdd",
+        "snapshotFile": "sources/us-michigan-international-speedway-205025102/course-network-205025102.json",
+        "snapshotSha256": "7718f78b7eca760d96e4af1d51969c6f21d56d5f39b25052a22bae3b3c602297"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 38,
+          "coordinate": [
+            -84.2366092,
+            42.065419
+          ],
+          "previousVertex": 37,
+          "nextVertex": 39,
+          "turnDeg": 153.03,
+          "incomingM": 89.82,
+          "outgoingM": 17.8,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 205025102,
+              "wayVersion": 5,
+              "wayIndex": 172,
+              "nodeId": 2150018473
+            },
+            {
+              "wayId": 205025112,
+              "wayVersion": 6,
+              "wayIndex": 0,
+              "nodeId": 2150018473
+            }
+          ]
+        },
+        {
+          "vertex": 52,
+          "coordinate": [
+            -84.2354728,
+            42.0684201
+          ],
+          "previousVertex": 51,
+          "nextVertex": 53,
+          "turnDeg": 164.4,
+          "incomingM": 7.15,
+          "outgoingM": 107.54,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 205025102,
+              "wayVersion": 5,
+              "wayIndex": 158,
+              "nodeId": 2150018652
+            },
+            {
+              "wayId": 287942540,
+              "wayVersion": 4,
+              "wayIndex": 3,
+              "nodeId": 2150018652
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-ncm-motorsports-park-326452603",
+      "layoutId": "ncm-grand-straight",
+      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-grand-straight.geojson",
+      "traceSha256": "3e1953f359b9359cb752bf3c5b976637c4f46abc52d1974c9d47ef613ed2d827",
+      "source": {
+        "recipeFile": "sources/us-ncm-motorsports-park-326452603/layouts/ncm-grand-straight.json",
+        "recipeSha256": "eacd34b7b6be2677fdb4f03eff3423c88dce8b98b926632faf21d7e98dd9da5b",
+        "snapshotFile": "sources/us-ncm-motorsports-park-326452603/course-network-326452603.json",
+        "snapshotSha256": "fe0f8f7398de5845d3e09572f4adf7d838305efe2f20f1f3a7d501293034b770"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 185,
+          "coordinate": [
+            -86.3664412,
+            37.0020455
+          ],
+          "previousVertex": 184,
+          "nextVertex": 186,
+          "turnDeg": 150.59,
+          "incomingM": 10.04,
+          "outgoingM": 76.05,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452608,
+              "wayVersion": 5,
+              "wayIndex": 18,
+              "nodeId": 3330961521
+            },
+            {
+              "wayId": 326452609,
+              "wayVersion": 8,
+              "wayIndex": 101,
+              "nodeId": 3330961521
+            }
+          ]
+        },
+        {
+          "vertex": 187,
+          "coordinate": [
+            -86.3652606,
+            37.0025919
+          ],
+          "previousVertex": 186,
+          "nextVertex": 188,
+          "turnDeg": 151.38,
+          "incomingM": 45.14,
+          "outgoingM": 2.58,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452603,
+              "wayVersion": 5,
+              "wayIndex": 0,
+              "nodeId": 3330961529
+            },
+            {
+              "wayId": 326452609,
+              "wayVersion": 8,
+              "wayIndex": 99,
+              "nodeId": 3330961529
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-ncm-motorsports-park-326452603",
+      "layoutId": "ncm-r-t-course",
+      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-r-t-course.geojson",
+      "traceSha256": "056e6e485671b69d6d52c17db208422087337eb6f3989a8d8df23e91782dc017",
+      "source": {
+        "recipeFile": "sources/us-ncm-motorsports-park-326452603/layouts/ncm-r-t-course.json",
+        "recipeSha256": "95bf3880f26f3bab9a6b975f3c6286b1b55f3ba3823ec1d579cb1a9fef820068",
+        "snapshotFile": "sources/us-ncm-motorsports-park-326452603/course-network-326452603.json",
+        "snapshotSha256": "fe0f8f7398de5845d3e09572f4adf7d838305efe2f20f1f3a7d501293034b770"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            -86.3719974,
+            36.9994431
+          ],
+          "previousVertex": 317,
+          "nextVertex": 1,
+          "turnDeg": 172.65,
+          "incomingM": 64.17,
+          "outgoingM": 187.28,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452609,
+              "wayVersion": 8,
+              "wayIndex": 104,
+              "nodeId": 3330946586
+            },
+            {
+              "wayId": 326452610,
+              "wayVersion": 4,
+              "wayIndex": 0,
+              "nodeId": 3330946586
+            }
+          ]
+        },
+        {
+          "vertex": 5,
+          "coordinate": [
+            -86.3652606,
+            37.0025919
+          ],
+          "previousVertex": 4,
+          "nextVertex": 6,
+          "turnDeg": 151.38,
+          "incomingM": 45.14,
+          "outgoingM": 2.58,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452603,
+              "wayVersion": 5,
+              "wayIndex": 0,
+              "nodeId": 3330961529
+            },
+            {
+              "wayId": 326452609,
+              "wayVersion": 8,
+              "wayIndex": 99,
+              "nodeId": 3330961529
+            }
+          ]
+        },
+        {
+          "vertex": 22,
+          "coordinate": [
+            -86.3654668,
+            37.0034716
+          ],
+          "previousVertex": 21,
+          "nextVertex": 23,
+          "turnDeg": 168.85,
+          "incomingM": 7.88,
+          "outgoingM": 36.26,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452603,
+              "wayVersion": 5,
+              "wayIndex": 17,
+              "nodeId": 3330961551
+            },
+            {
+              "wayId": 326452604,
+              "wayVersion": 6,
+              "wayIndex": 104,
+              "nodeId": 3330961551
+            }
+          ]
+        },
+        {
+          "vertex": 280,
+          "coordinate": [
+            -86.3638504,
+            37.0032698
+          ],
+          "previousVertex": 279,
+          "nextVertex": 281,
+          "turnDeg": 159.82,
+          "incomingM": 7.47,
+          "outgoingM": 45.11,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452609,
+              "wayVersion": 8,
+              "wayIndex": 96,
+              "nodeId": 3330961547
+            },
+            {
+              "wayId": 333233170,
+              "wayVersion": 3,
+              "wayIndex": 3,
+              "nodeId": 3330961547
+            }
+          ]
+        },
+        {
+          "vertex": 281,
+          "coordinate": [
+            -86.3634135,
+            37.0034768
+          ],
+          "previousVertex": 280,
+          "nextVertex": 282,
+          "turnDeg": 161.29,
+          "incomingM": 45.11,
+          "outgoingM": 26.6,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452610,
+              "wayVersion": 4,
+              "wayIndex": 37,
+              "nodeId": 9413777565
+            },
+            {
+              "wayId": 333233170,
+              "wayVersion": 3,
+              "wayIndex": 2,
+              "nodeId": 9413777565
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-ncm-motorsports-park-326452603",
+      "layoutId": "ncm-short-east",
+      "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-short-east.geojson",
+      "traceSha256": "f1337aa2e21ec3e557d24a5c33dde9a8e2ca2a85a29a97b071dde7c8c3bbcac6",
+      "source": {
+        "recipeFile": "sources/us-ncm-motorsports-park-326452603/layouts/ncm-short-east.json",
+        "recipeSha256": "8e9e98f15c036b892916fc586632bbe1ac97f48701fd9b80967d554c0f9f1b8b",
+        "snapshotFile": "sources/us-ncm-motorsports-park-326452603/course-network-326452603.json",
+        "snapshotSha256": "fe0f8f7398de5845d3e09572f4adf7d838305efe2f20f1f3a7d501293034b770"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            -86.3719974,
+            36.9994431
+          ],
+          "previousVertex": 45,
+          "nextVertex": 1,
+          "turnDeg": 172.65,
+          "incomingM": 64.17,
+          "outgoingM": 187.28,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452609,
+              "wayVersion": 8,
+              "wayIndex": 104,
+              "nodeId": 3330946586
+            },
+            {
+              "wayId": 326452610,
+              "wayVersion": 4,
+              "wayIndex": 0,
+              "nodeId": 3330946586
+            }
+          ]
+        },
+        {
+          "vertex": 9,
+          "coordinate": [
+            -86.3634135,
+            37.0034768
+          ],
+          "previousVertex": 8,
+          "nextVertex": 10,
+          "turnDeg": 161.29,
+          "incomingM": 45.11,
+          "outgoingM": 26.6,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 326452610,
+              "wayVersion": 4,
+              "wayIndex": 37,
+              "nodeId": 9413777565
+            },
+            {
+              "wayId": 333233170,
+              "wayVersion": 3,
+              "wayIndex": 2,
+              "nodeId": 9413777565
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-nola-motorsports-park-298904844",
+      "layoutId": "north-western-connecting-branches-2014",
+      "file": "data/united-states/nola-motorsports-park-298904844/layouts/north-western-connecting-branches-2014.geojson",
+      "traceSha256": "a584daf6ddcc238416568dfe4abe78eccda9e0be971f11157e3967abfa4b5e9f",
+      "source": {
+        "recipeFile": "sources/us-nola-motorsports-park-298904844/layouts/north-western-connecting-branches-2014.json",
+        "recipeSha256": "8b240010ba82b0e6f243a84396e93210c0f9f74bde740e9f6b72fc4a7ba11811",
+        "snapshotFile": "sources/us-nola-motorsports-park-298904844/components-osm-298904844.json",
+        "snapshotSha256": "e22de97708358d947c85a2f87972dd460080e8fcd209c47777d16d4a1b43687c"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 0,
+          "coordinate": [
+            -90.2064507,
+            29.8811226
+          ],
+          "previousVertex": 122,
+          "nextVertex": 1,
+          "turnDeg": 165.75,
+          "incomingM": 297.38,
+          "outgoingM": 23.43,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 298904859,
+              "wayVersion": 1,
+              "wayIndex": 40,
+              "nodeId": 3028716661
+            },
+            {
+              "wayId": 298904865,
+              "wayVersion": 1,
+              "wayIndex": 5,
+              "nodeId": 3028716661
+            }
+          ]
+        },
+        {
+          "vertex": 25,
+          "coordinate": [
+            -90.2073987,
+            29.8826758
+          ],
+          "previousVertex": 24,
+          "nextVertex": 26,
+          "turnDeg": 157.01,
+          "incomingM": 152.91,
+          "outgoingM": 12.98,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 298904844,
+              "wayVersion": 2,
+              "wayIndex": 22,
+              "nodeId": 3028716699
+            },
+            {
+              "wayId": 298904859,
+              "wayVersion": 1,
+              "wayIndex": 15,
+              "nodeId": 3028716699
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-ozarks-international-raceway-1112103055",
+      "layoutId": "main",
+      "file": "data/united-states/ozarks-international-raceway-1112103055/layouts/main.geojson",
+      "traceSha256": "b11e3a39fef521f8b2efe57c908bfd9bd2a1a1a673b7dab9eea6ca9268de3db5",
+      "source": {
+        "recipeFile": "sources/us-ozarks-international-raceway-1112103055/layouts/main.json",
+        "recipeSha256": "85769abe62c07dcaeba97c0102ac336a3d2df1f1f2b5c3b06f3926dca63cbeab",
+        "snapshotFile": "sources/us-ozarks-international-raceway-1112103055/osm.json",
+        "snapshotSha256": "9fe953e19a3b24a1d1fd979570d8066bdda559e172c5cecfc824a4acd261eac7"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 70,
+          "coordinate": [
+            -92.883714,
+            38.2739289
+          ],
+          "previousVertex": 69,
+          "nextVertex": 71,
+          "turnDeg": 149.75,
+          "incomingM": 80.54,
+          "outgoingM": 5.63,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1112103055,
+              "wayVersion": 3,
+              "wayIndex": 79,
+              "nodeId": 13081888291
+            },
+            {
+              "wayId": 1423317409,
+              "wayVersion": 1,
+              "wayIndex": 5,
+              "nodeId": 13081888291
+            }
+          ]
+        },
+        {
+          "vertex": 75,
+          "coordinate": [
+            -92.8841466,
+            38.2741351
+          ],
+          "previousVertex": 74,
+          "nextVertex": 76,
+          "turnDeg": 159.58,
+          "incomingM": 10.82,
+          "outgoingM": 6.22,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1423317408,
+              "wayVersion": 1,
+              "wayIndex": 15,
+              "nodeId": 13081888271
+            },
+            {
+              "wayId": 1423317409,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 13081888271
+            }
+          ]
+        },
+        {
+          "vertex": 442,
+          "coordinate": [
+            -92.8899633,
+            38.27152
+          ],
+          "previousVertex": 441,
+          "nextVertex": 443,
+          "turnDeg": 151.47,
+          "incomingM": 18.55,
+          "outgoingM": 14.93,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1112103056,
+              "wayVersion": 2,
+              "wayIndex": 110,
+              "nodeId": 10174232866
+            },
+            {
+              "wayId": 1423317410,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 10174232866
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-talladega-grand-prix-raceway-1061184414",
+      "layoutId": "talladega-gran-prix",
+      "file": "data/united-states/talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.geojson",
+      "traceSha256": "6e0ca4636618f4fef61aa627375d1c0067034183e5cc5686d813f197cf2d3e73",
+      "source": {
+        "recipeFile": "sources/us-talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.json",
+        "recipeSha256": "80f65dbd2c22e0432b82d3a2cd20cb7efba302e0dfa652438c15aa31d14488dd",
+        "snapshotFile": "sources/us-talladega-grand-prix-raceway-1061184414/course-network-1061184414.json",
+        "snapshotSha256": "287f3c1df01aa159e6b0d64b25f494d3eef66f506af86f876c8ce0b4fac893f3"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 20,
+          "coordinate": [
+            -85.9995477,
+            33.5010034
+          ],
+          "previousVertex": 19,
+          "nextVertex": 21,
+          "turnDeg": 164.49,
+          "incomingM": 194.95,
+          "outgoingM": 40.15,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 1061184414,
+              "wayVersion": 1,
+              "wayIndex": 20,
+              "nodeId": 9750050685
+            },
+            {
+              "wayId": 1061184416,
+              "wayVersion": 1,
+              "wayIndex": 0,
+              "nodeId": 9750050685
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-thompson-speedway-151397704",
+      "layoutId": "main",
+      "file": "data/united-states/thompson-speedway-151397704/layouts/main.geojson",
+      "traceSha256": "9c5526a823813395e20ebc6b87916b9a7dab18230db30a5f84ddc32e00f8c110",
+      "source": {
+        "recipeFile": "sources/us-thompson-speedway-151397704/layouts/main.json",
+        "recipeSha256": "2f99ec818797147724487a6285a68520dd79b4dbafe105217107c6f0be22751e",
+        "snapshotFile": "sources/us-thompson-speedway-151397704/osm.json",
+        "snapshotSha256": "22556f08f1dc459fb0e8fa35dc9055510c193e6b041615e201c11586dc7fe6b3"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 12,
+          "coordinate": [
+            -71.8240437,
+            41.9811153
+          ],
+          "previousVertex": 11,
+          "nextVertex": 13,
+          "turnDeg": 159.58,
+          "incomingM": 51.47,
+          "outgoingM": 20.25,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 151397704,
+              "wayVersion": 8,
+              "wayIndex": 12,
+              "nodeId": 2961370618
+            },
+            {
+              "wayId": 292603767,
+              "wayVersion": 11,
+              "wayIndex": 0,
+              "nodeId": 2961370618
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-thompson-speedway-151397704",
+      "layoutId": "thompson-spdwy-1-5-mile-road-course",
+      "file": "data/united-states/thompson-speedway-151397704/layouts/thompson-spdwy-1-5-mile-road-course.geojson",
+      "traceSha256": "740c9f645f5b3401a88641fbbddddf256d268dc75d603bca3c7ed39b2782070b",
+      "source": {
+        "recipeFile": "sources/us-thompson-speedway-151397704/layouts/thompson-spdwy-1-5-mile-road-course.json",
+        "recipeSha256": "ad1ea780235224bba2587112d307482a4d56e0c24e40f5d9e46c97a2a54b821b",
+        "snapshotFile": "sources/us-thompson-speedway-151397704/selected-network-151397704.json",
+        "snapshotSha256": "10d89f6adaa9afc7162fe83c7b1530c33464373397208acea8dc879578b05243"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 12,
+          "coordinate": [
+            -71.8240437,
+            41.9811153
+          ],
+          "previousVertex": 11,
+          "nextVertex": 13,
+          "turnDeg": 159.58,
+          "incomingM": 51.47,
+          "outgoingM": 20.25,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 151397704,
+              "wayVersion": 8,
+              "wayIndex": 12,
+              "nodeId": 2961370618
+            },
+            {
+              "wayId": 292603767,
+              "wayVersion": 11,
+              "wayIndex": 0,
+              "nodeId": 2961370618
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trackId": "us-virginia-international-raceway-20264407",
+      "layoutId": "virginia-int-raceway-south",
+      "file": "data/united-states/virginia-international-raceway-20264407/layouts/virginia-int-raceway-south.geojson",
+      "traceSha256": "76ea9c0689a55e90074f0bf5c552494543a808d99ca1cd02c6a1d5fe13f65862",
+      "source": {
+        "recipeFile": "sources/us-virginia-international-raceway-20264407/layouts/virginia-int-raceway-south.json",
+        "recipeSha256": "2c95d34761834e9c97c4e260134a8122f017234cd820376b5577fb1ba2edc3cc",
+        "snapshotFile": "sources/us-virginia-international-raceway-20264407/selected-network-20264407.json",
+        "snapshotSha256": "611107693d4d4d49c28a0192230942143df7aa893c504f49ef9ce6f8278160de"
+      },
+      "crossings": [],
+      "sharpSourceTurns": [
+        {
+          "vertex": 68,
+          "coordinate": [
+            -79.209366,
+            36.559665
+          ],
+          "previousVertex": 67,
+          "nextVertex": 69,
+          "turnDeg": 149.24,
+          "incomingM": 7.25,
+          "outgoingM": 16.01,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 20299611,
+              "wayVersion": 6,
+              "wayIndex": 50,
+              "nodeId": 215337396
+            },
+            {
+              "wayId": 1315957536,
+              "wayVersion": 1,
+              "wayIndex": 9,
+              "nodeId": 215337396
+            }
+          ]
+        },
+        {
+          "vertex": 107,
+          "coordinate": [
+            -79.205565,
+            36.557942
+          ],
+          "previousVertex": 106,
+          "nextVertex": 108,
+          "turnDeg": 159.12,
+          "incomingM": 27.38,
+          "outgoingM": 9.96,
+          "status": "needs-identity-and-image-review",
+          "sourceOccurrences": [
+            {
+              "wayId": 20299611,
+              "wayVersion": 6,
+              "wayIndex": 7,
+              "nodeId": 215337234
+            },
+            {
+              "wayId": 989707446,
+              "wayVersion": 2,
+              "wayIndex": 0,
+              "nodeId": 215337234
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -28,14 +28,14 @@
       "id": "castle-combe",
       "name": "Castle Combe",
       "file": "layouts/castle-combe.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United Kingdom/Castle Combe"
+      "referenceId": "United Kingdom/Castle Combe",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "castle-combe-western-sprint",
       "name": "Castle Combe Western Sprint",
-      "referenceId": "United Kingdom/Castle Combe Western Sprint",
       "file": "layouts/castle-combe-western-sprint.geojson",
+      "referenceId": "United Kingdom/Castle Combe Western Sprint",
       "description": "Draft configuration: The organizer's 2025 regulations explicitly start the Great Western Sprint at the pit lane exit and finish at Westway on the second lap, over one and three-quarter laps. The independent route retains the 188.9 m initial mapped pit-exit section and complete circuit before returning to the mapped finish. Every join and repeated lap section uses exact pinned source nodes. The 5360.4 m timed route differs from the catalogue scalar of 3006 m; the organizer describes 3.3 miles. Fine timing extent and historical lap count remain draft, without scaling or replacing the sprint with a closed venue loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5360.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -66,6 +66,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T06:05:52.879Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:22.882Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

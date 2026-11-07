@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Guadix",
       "file": "layouts/main.geojson",
-      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuito de Guadix. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2777.9 m; supplied distance 2697 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Spain/Guadix"
+      "referenceId": "Spain/Guadix",
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuito de Guadix. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2777.9 m; supplied distance 2697 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:38.980Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "ign-pnoa-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=-342705.1257795562%2C4494792.816276117%2C-341663.7599202703%2C4495554.689866239&WIDTH=1104&HEIGHT=807",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-05T23:51:21.044Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

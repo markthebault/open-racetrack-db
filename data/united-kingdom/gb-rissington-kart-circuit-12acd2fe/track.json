@@ -21,8 +21,8 @@
     {
       "id": "rissington-kart-circuit",
       "name": "Rissington Kart Circuit",
-      "referenceId": "United Kingdom/Rissington Kart Circuit",
       "file": "layouts/rissington-kart-circuit.geojson",
+      "referenceId": "United Kingdom/Rissington Kart Circuit",
       "description": "Combined mapped configurations: Rissington Inner Circuit, Rissington Gearbox Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -83,6 +83,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T19:53:51.544Z",
       "evidenceNote": "The general venue configuration represents both the club Inner Circuit and Gearbox Circuit branches. Separate published club plans identify the inner loop, eastern dog-leg and outer gearbox return. Each named route is independently mapped and selectable; their union is displayed as a network rather than one lap. The unique mapped branch length is 1300.5 m and is not stretched to the catalogue distance of 1258 m. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:41.825Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

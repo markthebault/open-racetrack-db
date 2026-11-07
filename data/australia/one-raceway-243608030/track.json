@@ -27,8 +27,8 @@
     {
       "id": "one-raceway-goulburn",
       "name": "One Raceway Goulburn",
-      "referenceId": "Australia/One Raceway Goulburn",
       "file": "layouts/one-raceway-goulburn.geojson",
+      "referenceId": "Australia/One Raceway Goulburn",
       "description": "Draft configuration: Historical Wakefield Park main circuit retains the Northern cap, Eastern outer turn, inner hairpin and Southern return from a pinned 2018 independent source. The ride-day organizer identifies the former 2.2 km circuit and its ten-corner plan. The exact mapped route measures 2203.3 m against the catalogue scalar of 2321 m. This entry preserves that historical course; the venue was subsequently rebuilt and reopened with reprofiled corners in 2024. Modern alignment and direction remain unverified. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2203.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -59,6 +59,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T05:45:27.747Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:27.283Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

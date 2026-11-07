@@ -29,8 +29,8 @@
     {
       "id": "autodromo-de-la-pampa",
       "name": "Autodromo de La Pampa",
-      "referenceId": "Argentina/Autodromo de La Pampa",
       "file": "layouts/autodromo-de-la-pampa.geojson",
+      "referenceId": "Argentina/Autodromo de La Pampa",
       "description": "Combined mapped configurations: Full course with both chicanes, Northern short-course return. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -100,6 +100,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T07:30:30.519Z",
       "evidenceNote": "The supplied general-entry shape includes the full northern loop, its short-course return and straight alternatives. The operator identifies the general circuit, zonal alternatives and both chicanes, totaling 5222 m of asphalt. These independently mapped complementary courses preserve that physical configuration set, with the Sector Boxes pit route excluded. Its unique-edge distance is not a timed lap; no coordinates are scaled to the catalogue scalar, and exact historical branch and timing choice remains draft. The independent unique branch distance is 5240.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:04.634Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

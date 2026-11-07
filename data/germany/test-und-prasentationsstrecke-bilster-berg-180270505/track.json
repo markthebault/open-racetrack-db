@@ -28,36 +28,36 @@
     {
       "id": "bilster-berg-gesamtstrecke",
       "name": "Bilster Berg Gesamtstrecke",
-      "referenceId": "Germany/Bilster Berg Gesamtstrecke",
       "file": "layouts/bilster-berg-gesamtstrecke.geojson",
+      "referenceId": "Germany/Bilster Berg Gesamtstrecke",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4186.5 m. Difference from the supplied layout distance 12.5 m. Course configuration still requires visual review."
     },
     {
       "id": "bilster-berg-gesamtstrecke-chicane",
       "name": "Bilster Berg Gesamtstrecke Chicane",
-      "referenceId": "Germany/Bilster Berg Gesamtstrecke Chicane",
       "file": "layouts/bilster-berg-gesamtstrecke-chicane.geojson",
+      "referenceId": "Germany/Bilster Berg Gesamtstrecke Chicane",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4205.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review."
     },
     {
       "id": "bilster-berg-ostschleife",
       "name": "Bilster Berg Ostschleife",
-      "referenceId": "Germany/Bilster Berg Ostschleife",
       "file": "layouts/bilster-berg-ostschleife.geojson",
+      "referenceId": "Germany/Bilster Berg Ostschleife",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2572.8 m. Difference from the supplied layout distance 10.2 m. Course configuration still requires visual review."
     },
     {
       "id": "bilster-berg-ostschleife-with-chicane",
       "name": "Bilster Berg Ostschleife With Chicane",
-      "referenceId": "Germany/Bilster Berg Ostschleife With Chicane",
       "file": "layouts/bilster-berg-ostschleife-with-chicane.geojson",
+      "referenceId": "Germany/Bilster Berg Ostschleife With Chicane",
       "description": "Draft configuration: Eastern loop including the western connector chicane; excludes the full western loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2572.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "bilster-berg-westschleife",
       "name": "Bilster Berg Westschleife",
-      "referenceId": "Germany/Bilster Berg Westschleife",
       "file": "layouts/bilster-berg-westschleife.geojson",
+      "referenceId": "Germany/Bilster Berg Westschleife",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1650.2 m. Difference from the supplied layout distance 22.2 m. Course configuration still requires visual review."
     }
   ],
@@ -97,6 +97,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:06:55.461Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:25.065Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

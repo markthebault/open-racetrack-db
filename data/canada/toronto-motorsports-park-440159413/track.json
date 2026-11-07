@@ -27,22 +27,22 @@
     {
       "id": "toronto-motorsports-park-full-course",
       "name": "Toronto Motorsports Park Full Course",
-      "referenceId": "Canada/Toronto Motorsports Park Full Course",
       "file": "layouts/toronto-motorsports-park-full-course.geojson",
+      "referenceId": "Canada/Toronto Motorsports Park Full Course",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2355.4 m. Difference from the supplied layout distance 19.4 m. Course configuration still requires visual review."
     },
     {
       "id": "toronto-motorsports-park-north",
       "name": "Toronto Motorsports Park North",
-      "referenceId": "Canada/Toronto Motorsports Park North",
       "file": "layouts/toronto-motorsports-park-north.geojson",
+      "referenceId": "Canada/Toronto Motorsports Park North",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 860.5 m. Difference from the supplied layout distance 10.5 m. Course configuration still requires visual review."
     },
     {
       "id": "toronto-motorsports-park-west",
       "name": "Toronto Motorsports Park West",
-      "referenceId": "Canada/Toronto Motorsports Park West",
       "file": "layouts/toronto-motorsports-park-west.geojson",
+      "referenceId": "Canada/Toronto Motorsports Park West",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1473.9 m. Difference from the supplied layout distance 9.9 m. Course configuration still requires visual review."
     }
   ],
@@ -64,6 +64,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:02.766Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:05.460Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

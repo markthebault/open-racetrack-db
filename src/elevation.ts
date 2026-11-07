@@ -1,5 +1,7 @@
 import { geometryPaths, type Layout } from "../schemas/data";
 import { distance, type Position } from "./geo";
+import { pairedBorderMidline } from "./border-midline";
+import { gradeProfileHeight } from "./grade-separation";
 import type { ElevationGrid } from "../schemas/elevation";
 export { elevationSchema, type ElevationGrid } from "../schemas/elevation";
 
@@ -32,14 +34,19 @@ export function sampleElevation(
 
 export function courseElevation(layout: Layout, grid: ElevationGrid) {
   const trace = layout.features.find((f) => f.properties.role === "trace")!;
-  const paths = geometryPaths(trace.geometry).map((path) => {
+  const grade = layout.metadata.borderInference?.gradeSeparation;
+  const paths = (
+    grade ? [pairedBorderMidline(layout)] : geometryPaths(trace.geometry)
+  ).map((path) => {
     let travelled = 0;
     return path.map((point, i) => {
       if (i) travelled += distance(path[i - 1], point);
       return {
         point,
         distance: travelled,
-        elevation: sampleElevation(grid, point),
+        elevation: grade
+          ? gradeProfileHeight(grade, i)
+          : sampleElevation(grid, point),
       };
     });
   });

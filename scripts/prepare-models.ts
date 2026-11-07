@@ -1,6 +1,5 @@
 import { readFile, writeFile, rm, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
-import { createHash } from "node:crypto";
 import { performance } from "node:perf_hooks";
 import {
   indexSchema,
@@ -15,6 +14,7 @@ import { isLapModel } from "../schemas/track-model";
 import { buildRoad, simulateLap } from "../src/lap-simulation";
 import { serializeLayout } from "./layout-borders";
 import { popularModels } from "./popular-models";
+import { modelInputHash } from "./model-input";
 const args = process.argv.slice(2),
   flag = (name: string) => args.includes(name),
   option = (name: string) => {
@@ -29,6 +29,10 @@ if (
 )
   throw new Error(
     "Use --bordered, --popular or --track <id> [--layout <id>]. --check validates without writing; --refresh rebuilds generated models.",
+  );
+if (flag("--boundary-path") && (!option("--track") || !option("--layout")))
+  throw new Error(
+    "Use --boundary-path only with an individually reviewed --track and --layout",
   );
 if (flag("--all") && !flag("--check"))
   throw new Error(
@@ -125,17 +129,11 @@ for (const selection of selections) {
       );
       terrains.set(track.id, terrain);
     }
-    const inputSha256 = createHash("sha256")
-      .update(
-        JSON.stringify({
-          version: PREPARATION_VERSION,
-          features: layout.features,
-          timing: layout.metadata.timing,
-          lengthM: layout.metadata.lengthM,
-          terrain,
-        }),
-      )
-      .digest("hex");
+    const boundaryPath =
+      flag("--boundary-path") ||
+      (old?.kind !== "surface" &&
+        old?.pathMethod === "boundary-normal-midpoints-v1");
+    const inputSha256 = modelInputHash(layout, terrain, boundaryPath);
     const current =
       old?.preparation?.version === PREPARATION_VERSION &&
       old.preparation.inputSha256 === inputSha256;
@@ -151,12 +149,13 @@ for (const selection of selections) {
       continue;
     }
     const begin = performance.now(),
-      model = prepareModel(layout, terrain, inputSha256),
+      model = prepareModel(layout, terrain, inputSha256, boundaryPath),
       updated = validateLayout(
         { ...layout, metadata: { ...layout.metadata, model3d: model } },
         track,
         layoutId,
       );
+    delete row.reason;
     row.modelKind = model.kind ?? "lap";
     row.curbSections = model.curbs.length;
     if (isLapModel(model)) {
@@ -219,6 +218,7 @@ const output = {
   elapsedMs: performance.now() - started,
   circuits: new Set(report.map((r) => r.trackId)).size,
   laps: report.filter((r) => r.modelKind === "lap").length,
+  runs: report.filter((r) => r.modelKind === "run").length,
   surfaces: report.filter((r) => r.modelKind === "surface").length,
   tracks: report,
 };

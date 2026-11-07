@@ -29,29 +29,29 @@
     {
       "id": "charlotte-motor-speedway-full",
       "name": "Charlotte Motor Speedway Full",
-      "referenceId": "United States/Charlotte Motor Speedway Full",
       "file": "layouts/charlotte-motor-speedway-full.geojson",
+      "referenceId": "United States/Charlotte Motor Speedway Full",
       "description": "Draft configuration: The operator identifies the complete 1.5-mile superspeedway oval. The catalogue Full configuration follows the whole outer oval; its depicted parallel pit access is excluded from the driving course. The independently mapped oval uses neither the frontstretch nor backstretch ROVAL chicane and excludes the infield road course. Its exact source-node distance is 2365.1 m against the catalogue scalar of 2322 m; centreline and advertised race distances remain separate. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2365.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "charlotte-motor-speedway-infield",
       "name": "Charlotte Motor Speedway Infield",
-      "referenceId": "United States/Charlotte Motor Speedway Infield",
       "file": "layouts/charlotte-motor-speedway-infield.geojson",
+      "referenceId": "United States/Charlotte Motor Speedway Infield",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1262.3 m. Difference from the supplied layout distance 18.7 m. Course configuration still requires visual review."
     },
     {
       "id": "charlotte-motor-speedway-roval",
       "name": "Charlotte Motor Speedway ROVAL",
-      "referenceId": "United States/Charlotte Motor Speedway ROVAL",
       "file": "layouts/charlotte-motor-speedway-roval.geojson",
+      "referenceId": "United States/Charlotte Motor Speedway ROVAL",
       "description": "Draft configuration: Operator September 2018 event course plan identifies the earlier infield horseshoe and both frontstretch and backstretch chicanes. Exact nodes from the consistent 2020 independent snapshot retain those earlier branches; the later expanded backstretch and 2024 infield extension are excluded. The source frontstretch and backstretch ways are separately named and retain their pinned versions. This is a draft earlier course centreline, with coarse corner alignment and catalogue distance retained separately; travel direction and historical timing correspondence remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3600.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "charlotte-motor-speedway-short",
       "name": "Charlotte Motor Speedway Short",
-      "referenceId": "United States/Charlotte Motor Speedway Short",
       "file": null,
+      "referenceId": "United States/Charlotte Motor Speedway Short",
       "missingGeometryReason": "This layout is listed. Its course trace still needs to be mapped."
     }
   ],
@@ -109,6 +109,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T21:22:31.590Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8981997.81666646%2C4211124.333223577%2C-8981163.34207546%2C4212421.011462296&bboxSR=3857&imageSR=3857&size=908%2C1411&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:46:55.930Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

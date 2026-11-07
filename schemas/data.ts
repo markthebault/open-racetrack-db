@@ -1,5 +1,10 @@
+import {
+  borderInferenceSchema,
+  inferredBorderLicenses,
+} from "./border-inference";
 import { z } from "zod";
-import { trackModelSchema } from "./track-model";
+import { assertGradeRibbon } from "../src/grade-separation";
+import { trackModelSchema, networkRecipeSchema } from "./track-model";
 import {
   bounds,
   distance,
@@ -93,11 +98,24 @@ const traceProps = z.strictObject({
   role: z.literal("trace"),
   sourceIds: z.array(slug).min(1),
 });
-const borderProps = z.strictObject({
-  role: z.enum(["inner", "outer"]),
-  sourceIds: z.array(slug).length(0),
-  license: z.literal("LicenseRef-Track-Borders"),
-});
+const borderProps = z.union([
+  z.strictObject({
+    role: z.enum(["inner", "outer"]),
+    sourceIds: z.array(slug).length(0),
+    license: z.literal("LicenseRef-Component-Borders"),
+  }),
+  z.strictObject({
+    role: z.enum(["inner", "outer"]),
+    sourceIds: z.array(slug).length(0),
+    license: z.literal("LicenseRef-Track-Borders"),
+  }),
+  z.strictObject({
+    role: z.enum(["inner", "outer"]),
+    sourceIds: z.array(slug).length(1),
+    license: inferredBorderLicenses,
+    borderStatus: z.literal("estimated"),
+  }),
+]);
 export function isTimingRole(
   role: string,
 ): role is "start_finish" | "start" | "finish" {
@@ -118,26 +136,52 @@ const network = z.strictObject({
   type: z.literal("MultiLineString"),
   coordinates: z.array(z.array(position).min(2)).min(2),
 });
+const baseLayoutMetadataSchema = z.strictObject({
+  schemaVersion: z.union([z.literal(1), z.literal(2)]),
+  geometryKind: z.literal("network").optional(),
+  trackId: slug,
+  layoutId: slug,
+  license: z.literal("ODbL-1.0"),
+  licenseScope: z.literal("trace-and-timing").optional(),
+  attribution: text,
+  closed: z.boolean(),
+  geometryStatus: z.enum(["draft", "reviewed"]),
+  timingStatus: z.enum(["missing", "partial", "estimated", "verified"]),
+  timingMode: z.enum(["shared", "separate"]),
+  timing: timingGpsSchema.optional(),
+  lengthM: z.number().positive(),
+  reviewedAt: z.iso.date().nullable(),
+  notes: z.array(z.string()),
+  model3d: trackModelSchema.optional(),
+  borderInference: borderInferenceSchema.optional(),
+});
+const networkComponentSchema = z.strictObject({
+  tracePathIndex: z.number().int().nonnegative(),
+  sourceLayoutId: slug,
+  sourceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  name: text,
+  traceSourceIds: z.array(slug).min(1),
+  metadata: baseLayoutMetadataSchema.omit({ model3d: true }),
+  borderProperties: z.tuple([borderProps, borderProps]),
+  timingFeatures: z.array(
+    z.strictObject({
+      type: z.literal("Feature"),
+      id: slug,
+      properties: gateProps,
+      geometry: line,
+    }),
+  ),
+  recipe: networkRecipeSchema,
+});
 export const layoutSchema = z.strictObject({
   type: z.literal("FeatureCollection"),
   bbox: z.tuple([z.number(), z.number(), z.number(), z.number()]),
-  metadata: z.strictObject({
-    schemaVersion: z.union([z.literal(1), z.literal(2)]),
-    geometryKind: z.literal("network").optional(),
-    trackId: slug,
-    layoutId: slug,
-    license: z.literal("ODbL-1.0"),
-    licenseScope: z.literal("trace-and-timing").optional(),
-    attribution: text,
-    closed: z.boolean(),
-    geometryStatus: z.enum(["draft", "reviewed"]),
-    timingStatus: z.enum(["missing", "partial", "estimated", "verified"]),
-    timingMode: z.enum(["shared", "separate"]),
-    timing: timingGpsSchema.optional(),
-    lengthM: z.number().positive(),
-    reviewedAt: z.iso.date().nullable(),
-    notes: z.array(z.string()),
-    model3d: trackModelSchema.optional(),
+  metadata: baseLayoutMetadataSchema.extend({
+    borderComposition: z
+      .array(networkComponentSchema)
+      .min(2)
+      .max(borderLimits.pathsPerFeature)
+      .optional(),
   }),
   features: z
     .array(
@@ -274,10 +318,282 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("bbox: antimeridian unsupported");
   if (m.geometryStatus === "reviewed" && !m.reviewedAt)
     throw new Error("metadata.reviewedAt: required for reviewed geometry");
+  if (m.borderComposition) {
+    if (
+      !isNetwork ||
+      m.borderInference ||
+      borders.length !== 2 ||
+      borders.some(
+        (f) =>
+          !("license" in f.properties) ||
+          (f.properties.license !== "LicenseRef-Component-Borders" &&
+            !m.borderComposition!.every(
+              (c) =>
+                JSON.stringify(
+                  c.borderProperties[f.properties.role === "inner" ? 0 : 1],
+                ) === JSON.stringify(f.properties),
+            )),
+      ) ||
+      m.borderComposition.length !== paths.length ||
+      borders.some((f) => geometryPaths(f.geometry).length !== paths.length)
+    )
+      throw new Error(
+        "Border composition must cover every network path with component-specific rights",
+      );
+    if (m.borderComposition.every((c) => c.recipe.kind === "surface"))
+      throw new Error("Network composition needs at least one playable route");
+    unique(
+      m.borderComposition.map((c) => c.sourceLayoutId),
+      "network component IDs",
+    );
+    for (const [i, c] of m.borderComposition.entries()) {
+      if (
+        c.tracePathIndex !== i ||
+        c.metadata.trackId !== track.id ||
+        c.metadata.layoutId !== c.sourceLayoutId
+      )
+        throw new Error("Network component identity or ordering mismatch");
+      const { terrain } = m.model3d ?? {};
+      if (!terrain) throw new Error("Network composition needs shared terrain");
+      const child = {
+        type: "FeatureCollection",
+        bbox: bounds(
+          [
+            paths[i],
+            ...borders.map((f) => geometryPaths(f.geometry)[i]),
+          ].flat(),
+        ),
+        metadata: {
+          ...c.metadata,
+          model3d: trackModelSchema.parse({ ...c.recipe, terrain }),
+        },
+        features: [
+          {
+            type: "Feature",
+            id: "trace",
+            properties: { role: "trace", sourceIds: c.traceSourceIds },
+            geometry: { type: "LineString", coordinates: paths[i] },
+          },
+          ...borders.map((f) => ({
+            type: "Feature",
+            id: f.id,
+            properties:
+              c.borderProperties[f.properties.role === "inner" ? 0 : 1],
+            geometry: {
+              type: "LineString",
+              coordinates: geometryPaths(f.geometry)[i],
+            },
+          })),
+          ...c.timingFeatures,
+        ],
+      };
+      child.bbox = bounds(
+        child.features.flatMap((f) =>
+          geometryPaths(
+            f.geometry as Parameters<typeof geometryPaths>[0],
+          ).flat(),
+        ),
+      );
+      validateLayout(child, track, c.sourceLayoutId);
+    }
+  } else if (
+    borders.some(
+      (f) =>
+        "license" in f.properties &&
+        f.properties.license === "LicenseRef-Component-Borders",
+    )
+  )
+    throw new Error("Component border rights need a complete composition");
+  if (m.borderInference) {
+    const grade = m.borderInference.gradeSeparation;
+    if (
+      grade &&
+      (!m.closed ||
+        isNetwork ||
+        m.borderInference.method !== "rgb-road-local-appearance-v4" ||
+        m.borderInference.edgeConvention !== "left-right-along-trace")
+    )
+      throw new Error(
+        "Grade-separated roads require one closed, station-paired local-appearance ribbon",
+      );
+    if (m.borderInference.edgeConvention === "left-right-along-trace") {
+      if (
+        (m.closed && !grade) ||
+        isNetwork ||
+        borders.some((f) => f.geometry.type !== "LineString")
+      )
+        throw new Error(
+          "Open-road edge convention requires a single open trace and paired edge paths",
+        );
+      const edges = borders.map((f) => geometryPaths(f.geometry)[0]);
+      if (
+        edges.length !== 2 ||
+        edges[0].length !== edges[1].length ||
+        edges.some((p) => equal(p[0], p.at(-1)!) !== m.closed)
+      )
+        throw new Error(
+          "Paired edges must have matching stations and the declared route closure",
+        );
+      if (grade)
+        assertGradeRibbon(
+          {
+            inner: geometryPaths(
+              borders.find((f) => f.properties.role === "inner")!.geometry,
+            )[0],
+            outer: geometryPaths(
+              borders.find((f) => f.properties.role === "outer")!.geometry,
+            )[0],
+          },
+          grade,
+        );
+    } else if (!m.closed)
+      throw new Error(
+        "Open estimated borders require explicit left/right edge semantics",
+      );
+    if (
+      borders.length !== 2 ||
+      borders.some((f) => !("borderStatus" in f.properties))
+    )
+      throw new Error(
+        "borderInference: requires two estimated imagery borders",
+      );
+    const info = m.borderInference.imagery,
+      source = track.sources.find((s) => s.id === info.sourceId);
+    if (m.borderInference.measurement) {
+      const measurement = m.borderInference.measurement;
+      if (
+        m.closed === (measurement.routeKind === "run") ||
+        isNetwork ||
+        measurement.imageSha256 !== info.sha256 ||
+        measurement.patches.length !== 2 ||
+        new Set(measurement.patches.map((p) => p.edge)).size !== 2
+      )
+        throw new Error(
+          "borderInference: measurements require a matching closed route or open run and their pinned image",
+        );
+      for (const patch of measurement.patches) {
+        const edge = borders.find((f) => f.properties.role === patch.edge);
+        if (
+          !edge ||
+          edge.geometry.type !== "LineString" ||
+          patch.anchors[0].station !== 0 ||
+          patch.anchors.at(-1)!.station !== edge.geometry.coordinates.length - 1
+        )
+          throw new Error(
+            "borderInference: measurements must cover each complete edge",
+          );
+        for (const anchor of patch.anchors)
+          if (
+            anchor.kind !== "image-measured" ||
+            !edge.geometry.coordinates[anchor.station] ||
+            distance(
+              edge.geometry.coordinates[anchor.station],
+              anchor.coordinate,
+            ) > 0.03
+          )
+            throw new Error(
+              "borderInference: saved edge differs from its image measurement",
+            );
+      }
+      if (
+        geometryPaths(borders[0].geometry)[0].length !==
+        geometryPaths(borders[1].geometry)[0].length
+      )
+        throw new Error(
+          "borderInference: measured edges need matching stations",
+        );
+    }
+    if (m.borderInference.refinement) {
+      const refinement = m.borderInference.refinement;
+      if (
+        m.borderInference.method !== "rgb-road-local-appearance-v4" ||
+        refinement.imageSha256 !== info.sha256
+      )
+        throw new Error(
+          "borderInference: refinement needs its pinned local-appearance image",
+        );
+      for (const patch of refinement.patches) {
+        const edge = borders.find((f) => f.properties.role === patch.edge);
+        if (!edge || edge.geometry.type !== "LineString")
+          throw new Error(
+            "borderInference: refinement needs a continuous edge",
+          );
+        for (const anchor of patch.anchors)
+          if (
+            !edge.geometry.coordinates[anchor.station] ||
+            distance(
+              edge.geometry.coordinates[anchor.station],
+              anchor.coordinate,
+            ) > 0.03
+          )
+            throw new Error(
+              "borderInference: saved edge differs from its image anchor",
+            );
+      }
+    }
+    if (!source || source.type !== "imagery" || source.license !== info.license)
+      throw new Error("borderInference: imagery rights/source mismatch");
+    if (
+      borders.some(
+        (f) =>
+          !("license" in f.properties) ||
+          f.properties.license !== info.license ||
+          f.properties.sourceIds[0] !== info.sourceId,
+      )
+    )
+      throw new Error("borderInference: feature licence/source mismatch");
+    const [w, s, e, n] = info.extent3857;
+    if (w >= e || s >= n)
+      throw new Error("borderInference: invalid image extent");
+  } else if (borders.some((f) => "borderStatus" in f.properties))
+    throw new Error("Estimated imagery borders require source evidence");
   if (m.model3d) {
+    if (
+      m.borderInference?.method === "image-measured-paired-edges-v1" &&
+      (m.model3d.kind === "surface" ||
+        m.model3d.kind === "run" ||
+        m.model3d.pathMethod !== "paired-border-midpoints")
+    )
+      throw new Error(
+        "Image-paired models require closed paired-road playback",
+      );
+    if (
+      m.borderInference?.gradeSeparation &&
+      (m.model3d.kind === "surface" ||
+        m.model3d.kind === "run" ||
+        m.model3d.pathMethod !== "paired-border-midpoints")
+    )
+      throw new Error(
+        "Grade-separated models require paired closed-road playback",
+      );
+    if (
+      m.model3d.kind !== "surface" &&
+      m.model3d.pathMethod === "paired-border-midpoints" &&
+      m.borderInference?.method !== "rgb-road-appearance-v3" &&
+      m.borderInference?.method !== "rgb-road-local-appearance-v4" &&
+      m.borderInference?.method !== "image-measured-cross-sections-v1" &&
+      m.borderInference?.method !== "image-measured-paired-edges-v1" &&
+      m.borderInference?.edgeConvention !== "left-right-along-trace"
+    )
+      throw new Error(
+        "Paired driving paths require correspondence-preserving border inference",
+      );
     if (borders.length !== 2) throw new Error("model3d: requires both borders");
-    if (m.model3d.kind !== "surface" && (!m.closed || isNetwork))
+    if (
+      m.model3d.kind !== "surface" &&
+      m.model3d.kind !== "run" &&
+      (!m.closed || isNetwork)
+    )
       throw new Error("model3d: lap playback requires a closed route");
+    if (
+      m.model3d.kind === "run" &&
+      (m.closed ||
+        isNetwork ||
+        m.borderInference?.edgeConvention !== "left-right-along-trace")
+    )
+      throw new Error(
+        "model3d: open playback needs an open route with paired left/right edges",
+      );
     if (m.licenseScope !== "trace-and-timing")
       throw new Error("model3d: trace license scope must be explicit");
     if (

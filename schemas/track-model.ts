@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { elevationSchema } from "./elevation";
+import { imageryTilesSchema } from "./imagery-tiles";
 
 const text = z.string().min(1);
 const webUrl = z
@@ -12,17 +13,20 @@ const color = z.string().regex(/^#[\da-fA-F]{6}$/);
 const lapModelSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
-    kind: z.literal("lap").optional(),
+    kind: z.enum(["lap", "run"]).optional(),
+    pathMethod: z
+      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1"])
+      .optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
-    elevationMethod: z.literal("periodic-monotone-cubic"),
+    elevationMethod: z.enum(["periodic-monotone-cubic", "monotone-cubic"]),
     elevation: z
       .array(z.tuple([metres, z.number().min(-12000).max(9000)]))
       .min(3)
       .max(50000),
     bankingDeg: z.literal(0),
     quality: z.strictObject({
-      stationing: z.enum(["venue-reference", "mapped-trace"]),
+      stationing: z.enum(["venue-reference", "mapped-trace", "border-midline"]),
       elevation: z.enum(["venue-anchors", "terrain-raster"]),
       curbs: z.enum(["imagery-reviewed", "geometry-estimated"]),
       borders: z.literal("supplemental-unverified"),
@@ -33,6 +37,19 @@ const lapModelSchema = z
         inputSha256: z.string().regex(/^[a-f0-9]{64}$/),
         elevationToleranceM: z.number().positive(),
         curbMethod: z.literal("curvature-intervals-v1"),
+        boundaryPathEvidence: z
+          .strictObject({
+            imageSha256: z.string().regex(/^[a-f0-9]{64}$/),
+            imageRetrievedAt: z.iso.datetime(),
+            imageryUrl: webUrl,
+            imageCapturedAt: z.iso.datetime().optional(),
+            imageGroundResolutionM: z.number().positive().optional(),
+            imageWindowPx: z.tuple([
+              z.number().int().nonnegative(), z.number().int().nonnegative(),
+              z.number().int().positive(), z.number().int().positive(),
+            ]).optional(),
+          })
+          .optional(),
       })
       .optional(),
     corners: z
@@ -55,6 +72,7 @@ const lapModelSchema = z
     }),
     imagery: z.strictObject({
       url: webUrl,
+      tiles: imageryTilesSchema.optional(),
       extent3857: z.tuple([z.number(), z.number(), z.number(), z.number()]),
       attribution: text,
       termsUrl: webUrl.optional(),
@@ -80,8 +98,26 @@ const lapModelSchema = z
         ["elevation"],
         "Elevation anchors must cover zero to the reference lap length",
       );
-    if (model.elevation[0][1] !== model.elevation.at(-1)![1])
+    if (
+      model.kind !== "run" &&
+      model.elevation[0][1] !== model.elevation.at(-1)![1]
+    )
       issue(["elevation"], "Closed-lap elevations must meet at the seam");
+    if (
+      model.kind === "run" &&
+      (model.elevationMethod !== "monotone-cubic" ||
+        model.startOffsetM !== 0 ||
+        model.pathMethod !== "paired-border-midpoints")
+    )
+      issue(
+        ["kind"],
+        "Open runs need a paired path, clamped elevation and zero start offset",
+      );
+    if (
+      model.kind !== "run" &&
+      model.elevationMethod !== "periodic-monotone-cubic"
+    )
+      issue(["elevationMethod"], "Closed laps need periodic elevation");
     for (let i = 1; i < model.elevation.length; i++)
       if (model.elevation[i][0] <= model.elevation[i - 1][0])
         issue(["elevation", i], "Elevation stations must increase strictly");
@@ -91,7 +127,9 @@ const lapModelSchema = z
     });
     model.corners.forEach((corner, i) => {
       if (
-        corner.distanceM >= model.referenceLengthM ||
+        (model.kind === "run"
+          ? corner.distanceM > model.referenceLengthM
+          : corner.distanceM >= model.referenceLengthM) ||
         (i && corner.distanceM <= model.corners[i - 1].distanceM)
       )
         issue(
@@ -103,6 +141,24 @@ const lapModelSchema = z
     if (west >= east || south >= north)
       issue(["imagery", "extent3857"], "Invalid image extent");
   });
+/** A network shares one terrain raster across its individually playable components. */
+export const networkLapRecipeSchema = z.strictObject({
+  schemaVersion: lapModelSchema.shape.schemaVersion,
+  kind: lapModelSchema.shape.kind,
+  pathMethod: lapModelSchema.shape.pathMethod,
+  startOffsetM: lapModelSchema.shape.startOffsetM,
+  referenceLengthM: lapModelSchema.shape.referenceLengthM,
+  elevationMethod: lapModelSchema.shape.elevationMethod,
+  elevation: lapModelSchema.shape.elevation,
+  bankingDeg: lapModelSchema.shape.bankingDeg,
+  quality: lapModelSchema.shape.quality,
+  preparation: lapModelSchema.shape.preparation,
+  corners: lapModelSchema.shape.corners,
+  curbs: lapModelSchema.shape.curbs,
+  curbStyle: lapModelSchema.shape.curbStyle,
+  imagery: lapModelSchema.shape.imagery,
+  sources: lapModelSchema.shape.sources,
+});
 const surfaceModelSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
@@ -150,6 +206,23 @@ const surfaceModelSchema = z
         message: "Invalid image extent",
       });
   });
+/** Preserve unavailable component models without duplicating the network terrain. */
+export const networkSurfaceRecipeSchema = z.strictObject({
+  schemaVersion: surfaceModelSchema.shape.schemaVersion,
+  kind: surfaceModelSchema.shape.kind,
+  reason: surfaceModelSchema.shape.reason,
+  bankingDeg: surfaceModelSchema.shape.bankingDeg,
+  quality: surfaceModelSchema.shape.quality,
+  imagery: surfaceModelSchema.shape.imagery,
+  curbStyle: surfaceModelSchema.shape.curbStyle,
+  curbs: surfaceModelSchema.shape.curbs,
+  sources: surfaceModelSchema.shape.sources,
+  preparation: surfaceModelSchema.shape.preparation,
+});
+export const networkRecipeSchema = z.union([
+  networkLapRecipeSchema,
+  networkSurfaceRecipeSchema,
+]);
 // Read existing downloaded v1 Spa files without requiring a data-side migration tool.
 export const trackModelSchema = z.preprocess(
   (value) => {

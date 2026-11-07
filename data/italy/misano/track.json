@@ -22,8 +22,8 @@
       "id": "main",
       "name": "Misano",
       "file": "layouts/main.geojson",
-      "description": "Long course through Curva del Carro on way 624263857. The mapped short-course connector and MotoGP long-lap penalty detour are excluded.",
-      "referenceId": "Italy/Misano"
+      "referenceId": "Italy/Misano",
+      "description": "Long course through Curva del Carro on way 624263857. The mapped short-course connector and MotoGP long-lap penalty detour are excluded."
     },
     {
       "id": "short",
@@ -50,6 +50,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:38:48.437Z",
       "evidenceNote": "Identifies international long and short circuits and clockwise travel. Reference only; no coordinates are copied or traced."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:03.485Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

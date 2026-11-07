@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Meppen",
       "file": "layouts/main.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Germany/Meppen"
+      "referenceId": "Germany/Meppen",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:55.611Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "lgln-ni-dop20-current-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG%3A3857&BBOX=810140.0278648273%2C6937715.430983013%2C810969.983001071%2C6938731.330087694&WIDTH=2512&HEIGHT=3075&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-06T23:45:26.868Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&REQUEST=GetCapabilities. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

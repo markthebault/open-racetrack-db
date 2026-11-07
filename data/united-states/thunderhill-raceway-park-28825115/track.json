@@ -27,36 +27,36 @@
     {
       "id": "thunderhill-raceway-park-5mile",
       "name": "Thunderhill Raceway Park - 5mile",
-      "referenceId": "United States/Thunderhill Raceway Park - 5mile",
       "file": "layouts/thunderhill-raceway-park-5mile.geojson",
+      "referenceId": "United States/Thunderhill Raceway Park - 5mile",
       "description": "Draft configuration: Combined configuration links both circuits, retains the southwestern Omega section and uses the eastern Hill Bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 7339.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-east",
       "name": "Thunderhill Raceway Park East",
-      "referenceId": "United States/Thunderhill Raceway Park East",
       "file": "layouts/thunderhill-raceway-park-east.geojson",
+      "referenceId": "United States/Thunderhill Raceway Park East",
       "description": "Draft configuration: Eastern circuit uses the Hill Bypass and excludes the western circuit connectors. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4595.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-no-turn-5",
       "name": "Thunderhill Raceway Park no Turn 5",
-      "referenceId": "United States/Thunderhill Raceway Park no Turn 5",
       "file": "layouts/thunderhill-raceway-park-no-turn-5.geojson",
+      "referenceId": "United States/Thunderhill Raceway Park no Turn 5",
       "description": "Draft configuration: Eastern circuit bypasses the Cyclone at Turn 5 using the independently named Hill Bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4595.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-turn-5",
       "name": "Thunderhill Raceway Park Turn 5",
-      "referenceId": "United States/Thunderhill Raceway Park Turn 5",
       "file": "layouts/thunderhill-raceway-park-turn-5.geojson",
+      "referenceId": "United States/Thunderhill Raceway Park Turn 5",
       "description": "Draft configuration: Eastern circuit retains the Cyclone at Turn 5 and excludes the Hill Bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4608.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thunderhill-raceway-park-west",
       "name": "Thunderhill Raceway Park West",
-      "referenceId": "United States/Thunderhill Raceway Park West",
       "file": "layouts/thunderhill-raceway-park-west.geojson",
+      "referenceId": "United States/Thunderhill Raceway Park West",
       "description": "Draft configuration: Western circuit retains the southwestern Omega section and excludes the eastern circuit. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2673.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -123,6 +123,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13618500.756304475%2C4798627.449957018%2C-13617250.457681043%2C4800127.568844686&bboxSR=3857&imageSR=3857&size=1286%2C1543&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:56:05.300Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

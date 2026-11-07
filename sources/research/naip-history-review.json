@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "scope": "Bounded dated USDA NAIP source selection and image integrity. Raster bytes remain outside Git and track exports; no meshes are stored.",
+  "records": [
+    {
+      "id": "waterford-hills",
+      "trackId": "us-waterford-hills-796357203",
+      "layoutIds": [
+        "main",
+        "waterford-hills"
+      ],
+      "queryUrl": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=naip&bbox=-83.3930016%2C42.7071308%2C-83.3887203%2C42.7112846&limit=100",
+      "reviewedAt": "2026-11-07T03:54:34.427632Z",
+      "finding": "The dated July 2020 capture resolves road limits in the eastern straight that are obscured in the later export. The 2018 capture and later USGS export supply context; boundaries are estimated, not surveyed. Both catalogue entries have identical trace geometry.",
+      "items": [
+        {
+          "id": "mi_m_4208321_ne_17_060_20220730",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items/mi_m_4208321_ne_17_060_20220730",
+          "datetime": "2022-07-30T16:00:00Z",
+          "gsd": 0.6,
+          "assetHref": "https://naipeuwest.blob.core.windows.net/naip/v002/mi/2022/mi_060cm_2022/42083/m_4208321_ne_17_060_20220730.tif",
+          "epsg": 26917,
+          "transform": [
+            0.6,
+            0.0,
+            300114.0,
+            0.0,
+            -0.6,
+            4736136.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "id": "mi_m_4208321_ne_17_060_20200705",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items/mi_m_4208321_ne_17_060_20200705",
+          "datetime": "2020-07-05T00:00:00Z",
+          "gsd": 0.6,
+          "assetHref": "https://naipeuwest.blob.core.windows.net/naip/v002/mi/2020/mi_060cm_2020/42083/m_4208321_ne_17_060_20200705.tif",
+          "epsg": 26917,
+          "transform": [
+            0.6,
+            0.0,
+            300058.2,
+            0.0,
+            -0.6,
+            4736233.2,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "id": "mi_m_4208321_ne_17_060_20180707_20181211",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items/mi_m_4208321_ne_17_060_20180707_20181211",
+          "datetime": "2018-07-07T00:00:00Z",
+          "gsd": 0.6,
+          "assetHref": "https://naipeuwest.blob.core.windows.net/naip/v002/mi/2018/mi_060cm_2018/42083/m_4208321_ne_17_060_20180707_20181211.tif",
+          "epsg": 26917,
+          "transform": [
+            0.6,
+            0.0,
+            300057.6,
+            0.0,
+            -0.6,
+            4736233.2,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "id": "mi_m_4208321_ne_17_h_20160712",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items/mi_m_4208321_ne_17_h_20160712",
+          "datetime": "2016-07-12T00:00:00Z",
+          "gsd": 0.6,
+          "assetHref": "https://naipeuwest.blob.core.windows.net/naip/v002/mi/2016/mi_060cm_2016/42083/m_4208321_ne_17_h_20160712.tif",
+          "epsg": 26917,
+          "transform": [
+            0.6,
+            0.0,
+            300014.4,
+            0.0,
+            -0.6000000000000145,
+            4736235.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "id": "mi_m_4208321_ne_17_1_20140722_20141021",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items/mi_m_4208321_ne_17_1_20140722_20141021",
+          "datetime": "2014-07-22T00:00:00Z",
+          "gsd": 1.0,
+          "assetHref": "https://naipeuwest.blob.core.windows.net/naip/v002/mi/2014/mi_100cm_2014/42083/m_4208321_ne_17_1_20140722.tif",
+          "epsg": 26917,
+          "transform": [
+            1.0,
+            0.0,
+            300014.0,
+            0.0,
+            -1.0,
+            4736235.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "id": "mi_m_4208321_ne_17_1_20120702_20120911",
+          "url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/naip/items/mi_m_4208321_ne_17_1_20120702_20120911",
+          "datetime": "2012-07-02T00:00:00Z",
+          "gsd": 1.0,
+          "assetHref": "https://naipeuwest.blob.core.windows.net/naip/v002/mi/2012/mi_100cm_2012/42083/m_4208321_ne_17_1_20120702.tif",
+          "epsg": 26917,
+          "transform": [
+            1.0,
+            0.0,
+            300014.0,
+            0.0,
+            -1.0,
+            4736235.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "renders": [
+        {
+          "purpose": "border-measurement-source",
+          "cacheFile": "waterford-naip-2020-pinned.png",
+          "imagery": {
+            "sourceId": "usda-naip-2020-waterford",
+            "url": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9283355.35133619,5267411.421804621,-9282701.004197175,5268217.619932853/802x988.png?collection=naip&item=mi_m_4208321_ne_17_060_20200705&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
+            "reuseEvidenceUrl": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+            "license": "public-domain",
+            "attribution": "USDA NAIP 2020, via Microsoft Planetary Computer. Capture: 2020-07-05.",
+            "retrievedAt": "2026-11-07T03:36:30.863136Z",
+            "sha256": "2543928ebc99fb2149444fea455886e0f2f6423464212b91db0b41b9b5402697",
+            "width": 802,
+            "height": 988,
+            "extent3857": [
+              -9283355.35133619,
+              5267411.421804621,
+              -9282701.004197175,
+              5268217.619932853
+            ],
+            "groundPixelSizeM": 0.5996
+          }
+        },
+        {
+          "purpose": "visual-context-only",
+          "cacheFile": "waterford-naip-2018-pinned.png",
+          "imagery": {
+            "sourceId": "usda-naip-2018-waterford",
+            "url": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9283355.35133619,5267411.421804621,-9282701.004197175,5268217.619932853/802x988.png?collection=naip&item=mi_m_4208321_ne_17_060_20180707_20181211&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
+            "reuseEvidenceUrl": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+            "license": "public-domain",
+            "attribution": "USDA NAIP 2018, via Microsoft Planetary Computer. Capture: 2018-07-07.",
+            "retrievedAt": "2026-11-07T03:36:32.012422Z",
+            "sha256": "0973d4802715e21f4ef62daad355edbff63e58aae912c7840ab01d2ed25146a1",
+            "width": 802,
+            "height": 988,
+            "extent3857": [
+              -9283355.35133619,
+              5267411.421804621,
+              -9282701.004197175,
+              5268217.619932853
+            ],
+            "groundPixelSizeM": 0.5996
+          }
+        }
+      ],
+      "resultSha256": "2063bef80e4968f6793d2db73695361add5d8ed9e9626e8581f8deaf0cfd0599",
+      "laterExportIndex": {
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&where=Category%3D1&geometry=%7B%22x%22%3A-83.39085645%2C%22y%22%3A42.709202649999995%2C%22spatialReference%22%3A%7B%22wkid%22%3A4326%7D%7D&geometryType=esriGeometryPoint&inSR=4326&outFields=Name%2CYear%2Cacquisition_date&returnGeometry=false&spatialRel=esriSpatialRelIntersects",
+        "attributes": {
+          "OBJECTID": 77592,
+          "Name": "m_4208321_ne_17_060_20220730",
+          "Year": 2022,
+          "acquisition_date": 1659139200000
+        },
+        "use": "Identifies the later USGS capture for visual context only; primary measurements use the separately pinned July 2020 render."
+      }
+    }
+  ]
+}

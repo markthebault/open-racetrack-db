@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-06",
+  "purpose": "Source coverage and route-identity review for nine unmapped catalogue entries across seven inspection areas. These are not route or border coordinates and do not count as recovered layouts.",
+  "rights": "MapTiler acquisition and derived-coordinate redistribution use the operator-confirmed separate agreement. Its text and acquisition credentials remain outside the repository. Imagery bytes and inspection grids are not redistributed.",
+  "captureDatePolicy": "Retrieval timestamps are not capture dates. The imagery service supplies no capture date in these cached source references; no event-date coverage is inferred.",
+  "records": [
+    {
+      "id": "arlington",
+      "referenceIds": [
+        "United States/Arlington Street Circuit",
+        "United States/Arlington Street Circuit Practice"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 17,
+          "bounds": [
+            30182,
+            52902,
+            30192,
+            52909
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:31:25.310Z",
+        "sha256": "d2a42510a411180aa0dcb1da276c7f7b5b2bc9db34b9dd394de96f3cc5728263",
+        "width": 5632,
+        "height": 4096,
+        "extent3857": [
+          -10809418.791976485,
+          3860375.6765145417,
+          -10806055.562731937,
+          3862821.6614196673
+        ],
+        "groundPixelSizeM": 0.5023
+      },
+      "captureDate": null,
+      "finding": "The stadium district and ordinary streets are resolved, but this image does not establish the event stadium horseshoe and new racing connectors or temporary barrier-controlled turns. No source capture date is supplied. The current bounded OSM extract contains no raceway-tagged ways; ordinary roads are not substituted for the event route.",
+      "geometryRecovered": false
+    },
+    {
+      "id": "elvington-return",
+      "referenceIds": [
+        "United Kingdom/Elvington"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 16,
+          "bounds": [
+            32585,
+            21064,
+            32588,
+            21067
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:35:37.439Z",
+        "sha256": "a04aa95bbe461a596a8e7b60bb5be21e4a3facc3b5646b172eb80b0c167a79d6",
+        "width": 2048,
+        "height": 2048,
+        "extent3857": [
+          -111903.80940949917,
+          7154505.847492497,
+          -109457.82450437173,
+          7156951.832397623
+        ],
+        "groundPixelSizeM": 0.7033
+      },
+      "captureDate": null,
+      "finding": "The public pavement-end review area is resolved at sub-metre pixels. The northern curved strip ends before the main runway with a visible intervening unpaved area. This does not establish a paved course connector; no line is bridged across the gap.",
+      "geometryRecovered": false
+    },
+    {
+      "id": "huangtupo-site",
+      "referenceIds": [
+        "China/Huangtupo"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 17,
+          "bounds": [
+            107055,
+            53883,
+            107062,
+            53889
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:37:29.763Z",
+        "sha256": "d259fed0745504bb036f2109f638dd744a0547f7d680f4793391f6534b444452",
+        "width": 4096,
+        "height": 3584,
+        "extent3857": [
+          12694355.909488931,
+          3560742.5256366506,
+          12696801.894394059,
+          3562882.7624286357
+        ],
+        "groundPixelSizeM": 0.5148
+      },
+      "captureDate": null,
+      "finding": "Fine imagery resolves the western S-shaped loop and the adjoining broad paved test area, including several apparent connections and surface outlines. It does not identify which connections form the requested named timed course. The operator identity and complete driving sequence remain unresolved; a western-loop-only substitute is not registered.",
+      "geometryRecovered": false
+    },
+    {
+      "id": "lydden-site",
+      "referenceIds": [
+        "United Kingdom/Lydden Hill Infield"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 16,
+          "bounds": [
+            32984,
+            21885,
+            32987,
+            21890
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:37:34.934Z",
+        "sha256": "d3ee6febef9a9e79b61a8782881919d40ebbce958608abeb84b8223abb7f641c",
+        "width": 2048,
+        "height": 3072,
+        "extent3857": [
+          132083.18487678468,
+          6651244.453262897,
+          134529.1697819084,
+          6654913.430620585
+        ],
+        "groundPixelSizeM": 0.7487
+      },
+      "captureDate": null,
+      "finding": "The main circuit and several infield/rallycross surfaces are visible, but this capture does not establish the historical northeastern arm and inner shortcut combination requested by the catalogue. A near-matching distance is not used to select a branch.",
+      "geometryRecovered": false
+    },
+    {
+      "id": "kames-full",
+      "referenceIds": [
+        "United Kingdom/Kames Motorsport Circuit",
+        "United Kingdom/Kames Motorsport Circuit Reverse"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 16,
+          "bounds": [
+            32025,
+            20562,
+            32028,
+            20567
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:37:38.956Z",
+        "sha256": "40507612c61ffd5db7cab96eaddf95d86844d1a13eeb5b9962a0e5465900a56b",
+        "width": 2048,
+        "height": 3072,
+        "extent3857": [
+          -454341.6961270869,
+          7460253.9606332015,
+          -451895.71122196317,
+          7463922.937990891
+        ],
+        "groundPixelSizeM": 0.6763
+      },
+      "captureDate": null,
+      "finding": "The visible race/rally network includes multiple branches and the southwestern extension. Imagery does not establish the historical open timed-run order, repeated sections or distinct endpoint conventions. The current extended venue loop is not substituted for either historical run.",
+      "geometryRecovered": false
+    },
+    {
+      "id": "thoresway-full",
+      "referenceIds": [
+        "United Kingdom/Thorsway MX"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 16,
+          "bounds": [
+            32715,
+            21209,
+            32719,
+            21215
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:37:45.369Z",
+        "sha256": "87f6f783d52eda5cb7089ce8c0cb361b266c2b60fba184b876fd548619ff6367",
+        "width": 2560,
+        "height": 3584,
+        "extent3857": [
+          -32409.299992915243,
+          7064004.406002849,
+          -29351.81886150688,
+          7068284.879586818
+        ],
+        "groundPixelSizeM": 0.7113
+      },
+      "captureDate": null,
+      "finding": "The inspection image shows large areas of bare earth and partial course surface, without a uniquely identifiable complete historical central branch sequence. Its capture date is not supplied. Existing 2019 survey evidence and historical practice recordings still require route-order interpretation.",
+      "geometryRecovered": false
+    },
+    {
+      "id": "detroit-airport",
+      "referenceIds": [
+        "United States/Detroit City Airport"
+      ],
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 17,
+          "bounds": [
+            35308,
+            48451,
+            35316,
+            48462
+          ]
+        },
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T15:38:07.575Z",
+        "sha256": "51fe8e5d8c06950852b8bb7fbad5093284d3b32a79cc79b4b75a72b4f1d60733",
+        "width": 4608,
+        "height": 6144,
+        "extent3857": [
+          -9242153.964017231,
+          5220037.535651257,
+          -9239402.230998965,
+          5223706.513008945
+        ],
+        "groundPixelSizeM": 0.4409
+      },
+      "captureDate": null,
+      "finding": "Fine airport imagery resolves runways, taxiways and apron surfaces. It contains no identified event-date temporary chicane or barrier sequence for the requested course. The known smaller southern apron GPS loop is not treated as the requested configuration.",
+      "geometryRecovered": false
+    }
+  ],
+  "additionalSource": {
+    "source": "OpenStreetMap bounded map API extract",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-97.100,32.738,-97.075,32.753",
+    "retrievedAt": "2026-11-06",
+    "sha256": "ad3ab6a10e67d1c59e9406b373e8d8e6d8ab7b9427d13baa6a940005928cb490",
+    "bytes": 5012427,
+    "wayCount": 2895,
+    "racewayWayCount": 0,
+    "note": "No raceway-tagged ways in this bounded response does not establish absence of racing geometry outside it or in future edits. Raw contributor data is not redistributed."
+  }
+}

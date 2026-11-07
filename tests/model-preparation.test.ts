@@ -145,6 +145,26 @@ test("imagery georeferencing is derived from the selected course, without provid
   assert.ok(!JSON.stringify(image).includes("base64"));
 });
 
+test("dated NAIP playback retains the exact RGB render and rejects mismatched georeferencing", () => {
+  const { layout } = load("us-waterford-hills-796357203", "main");
+  const source = layout.metadata.borderInference!.imagery;
+  const display = imageryForLayout(layout);
+  assert.equal(display.url, source.url);
+  assert.deepEqual(display.extent3857, source.extent3857);
+  assert.equal(display.attribution, source.attribution);
+  assert.equal(display.termsUrl, source.reuseEvidenceUrl);
+  for (const change of [
+    (u: URL) => u.searchParams.set("dst_crs", "EPSG:4326"),
+    (u: URL) => u.searchParams.delete("bidx"),
+    (u: URL) => { u.pathname = u.pathname.replace(/\d+x\d+\.png$/, "100x100.png"); },
+    (u: URL) => { u.pathname = u.pathname.replace("/bbox/", "/bbox/1,"); },
+  ]) {
+    const copy = structuredClone(layout), url = new URL(source.url);
+    change(url); copy.metadata.borderInference!.imagery.url = url.href;
+    assert.notEqual(imageryForLayout(copy).url, url.href);
+  }
+});
+
 test("previous downloaded Spa model fields remain readable without changing its source profile", () => {
   const { layout } = load("be-spa-francorchamps", "grand-prix"),
     model = layout.metadata.model3d!;

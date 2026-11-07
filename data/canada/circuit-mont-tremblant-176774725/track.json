@@ -27,8 +27,8 @@
     {
       "id": "mont-tremblant",
       "name": "Mont Tremblant",
-      "referenceId": "Canada/Mont Tremblant",
       "file": "layouts/mont-tremblant.geojson",
+      "referenceId": "Canada/Mont Tremblant",
       "description": "The operator identifies the full 4.26 km configuration and separately describes the north loop. The catalogue distance and independent source distance are closest to the full course; no north-loop geometry is substituted. Draft configuration selected from the independently named circuit relation 17620722. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
@@ -59,6 +59,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T13:47:04.117Z",
       "evidenceNote": "The operator identifies the full 4.26 km configuration and separately describes the north loop. The catalogue distance and independent source distance are closest to the full course; no north-loop geometry is substituted. Identification only; no coordinates are copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:57.577Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -28,14 +28,14 @@
       "id": "new-hampshire-motor-speedway",
       "name": "New Hampshire Motor Speedway",
       "file": "layouts/new-hampshire-motor-speedway.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United States/New Hampshire Motor Speedway"
+      "referenceId": "United States/New Hampshire Motor Speedway",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "new-hampshire-motor-spdwy-chicane",
       "name": "New Hampshire Motor Spdwy Chicane",
-      "referenceId": "United States/New Hampshire Motor Spdwy Chicane",
       "file": "layouts/new-hampshire-motor-spdwy-chicane.geojson",
+      "referenceId": "United States/New Hampshire Motor Spdwy Chicane",
       "description": "Draft configuration selected from the independently named circuit relation 10625003. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
@@ -57,6 +57,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-10-01T13:50:23.506Z",
       "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-7955308.209473712%2C5366751.901784211%2C-7954530.4436760815%2C5367890.096820805&bboxSR=3857&imageSR=3857&size=754%2C1104&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:52:14.191Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

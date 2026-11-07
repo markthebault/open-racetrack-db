@@ -21,8 +21,8 @@
     {
       "id": "canadian-tire-motorsports-park-ddt",
       "name": "Canadian Tire Motorsports Park DDT",
-      "referenceId": "Canada/Canadian Tire Motorsports Park DDT",
       "file": "layouts/canadian-tire-motorsports-park-ddt.geojson",
+      "referenceId": "Canada/Canadian Tire Motorsports Park DDT",
       "description": "Combined mapped configurations: Driver Development Track Two Kinks, Driver Development Track One Kink. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -83,6 +83,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T20:13:43.315Z",
       "evidenceNote": "The general Driver Development Track entry is represented by the publicly identified One Kink and Two Kinks driving configurations. Both retain the full southern loop and main northern track; the second uses the inner Turn 13 return. Northern pit-parallel and angular central access cuts are excluded. The separately advertised Intermediate training route has not been independently identified and is not asserted by this set. The independent unique branch distance is 2984.4 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "ontario-scoop2023-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/exportImage?f=json&bbox=-8759681.529435575%2C5472752.510517193%2C-8758820.658161806%2C5473705.0726322625&bboxSR=3857&imageSR=3857&size=3094%2C3424&format=png&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22where%22%3A%22Project%3D%27SCOOP2023%27%22%2C%22sortField%22%3A%22LowPS%22%2C%22sortValue%22%3A0%2C%22ascending%22%3Atrue%7D",
+      "license": "OGL-ON-1.0",
+      "retrievedAt": "2026-11-06T18:50:39.392Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://data.ontario.ca/en/dataset/open-ontario-imagery. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

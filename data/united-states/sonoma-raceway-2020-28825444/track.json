@@ -29,50 +29,50 @@
     {
       "id": "sonoma-raceway",
       "name": "Sonoma Raceway",
-      "referenceId": "United States/Sonoma Raceway",
       "file": "layouts/sonoma-raceway.geojson",
+      "referenceId": "United States/Sonoma Raceway",
       "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-combo",
       "name": "Sonoma Raceway Combo",
-      "referenceId": "United States/Sonoma Raceway Combo",
       "file": "layouts/sonoma-raceway-combo.geojson",
+      "referenceId": "United States/Sonoma Raceway Combo",
       "description": "Combined mapped configurations: Sonoma Raceway, Sonoma Raceway Stock Car. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "sonoma-raceway-indy",
       "name": "Sonoma Raceway Indy",
-      "referenceId": "United States/Sonoma Raceway Indy",
       "file": "layouts/sonoma-raceway-indy.geojson",
+      "referenceId": "United States/Sonoma Raceway Indy",
       "description": "Draft configuration: Full road course with rounded Turn 7 return and eastern chicane connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4069.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-short",
       "name": "Sonoma Raceway Short",
-      "referenceId": "United States/Sonoma Raceway Short",
       "file": "layouts/sonoma-raceway-short.geojson",
+      "referenceId": "United States/Sonoma Raceway Short",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3582.8 m. Difference from the supplied layout distance 16.8 m. Course configuration still requires visual review."
     },
     {
       "id": "sonoma-raceway-sro-practice",
       "name": "Sonoma Raceway SRO Practice",
-      "referenceId": "United States/Sonoma Raceway SRO Practice",
       "file": "layouts/sonoma-raceway-sro-practice.geojson",
+      "referenceId": "United States/Sonoma Raceway SRO Practice",
       "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-stock-car",
       "name": "Sonoma Raceway Stock Car",
-      "referenceId": "United States/Sonoma Raceway Stock Car",
       "file": "layouts/sonoma-raceway-stock-car.geojson",
+      "referenceId": "United States/Sonoma Raceway Stock Car",
       "description": "Draft configuration: Stock-car shortcut omitting the full western infield loop, with direct eastern return and no extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3181.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "sonoma-raceway-with-7a",
       "name": "Sonoma Raceway with 7A",
-      "referenceId": "United States/Sonoma Raceway with 7A",
       "file": "layouts/sonoma-raceway-with-7a.geojson",
+      "referenceId": "United States/Sonoma Raceway with 7A",
       "description": "Draft configuration: Full course using the angled Turn 7A return and direct eastern connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4074.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -166,6 +166,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:50:58.898Z",
       "evidenceNote": "Aggregate includes the full road course and stock-car shortcut. Extra Turn 7A, short-course and eastern chicane branches are excluded. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T10:30:15.076Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13632648.470042057%2C4601768.160637285%2C-13631196.978168512%2C4603105.141221146&bboxSR=3857&imageSR=3857&size=1522%2C1402&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:26.892Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

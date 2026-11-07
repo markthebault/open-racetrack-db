@@ -2,40 +2,21 @@
   "schemaVersion": 1,
   "trackId": "br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "a675df574a5bac25f84e9e54b33d578197283cd79e815fb8aabbf2e8b9f296aa",
+  "sourceId": "osm-selection-103598914",
+  "snapshotFile": "selected-network-103598914.json",
+  "snapshotSha256": "5054457a447ee33c14a7b6ef3454f6af7b90e92f1a5aa391ef26998955241756",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "The generic longest-cycle fallback follows the parallel pit lane and an extra return spur instead of the direct racing straight. The independently authored historical map distinguishes the straight from pit lane; native imagery confirms the current physical paving. The exact registered source coordinates and traversal direction are retained without diagram tracing or distance fitting. Travel direction remains provisional. Main public timing stays missing."
   ],
   "segments": [
     {
       "wayId": 103598914,
       "wayVersion": 8,
       "fromIndex": 56,
-      "toIndex": 55
-    },
-    {
-      "wayId": 103598919,
-      "wayVersion": 3,
-      "fromIndex": 0,
-      "toIndex": 8
-    },
-    {
-      "wayId": 103598920,
-      "wayVersion": 5,
-      "fromIndex": 21,
-      "toIndex": 0
-    },
-    {
-      "wayId": 103598914,
-      "wayVersion": 8,
-      "fromIndex": 53,
       "toIndex": 0
     },
     {

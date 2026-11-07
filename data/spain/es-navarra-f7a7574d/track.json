@@ -22,15 +22,15 @@
     {
       "id": "navarra-combo",
       "name": "Navarra Combo",
-      "referenceId": "Spain/Navarra Combo",
       "file": "layouts/navarra-combo.geojson",
+      "referenceId": "Spain/Navarra Combo",
       "description": "Combined mapped configurations: Historical main course, Historical western course, Historical eastern course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "navarra-gp-2024",
       "name": "Navarra GP 2024",
-      "referenceId": "Spain/Navarra GP 2024",
       "file": "layouts/navarra-gp-2024.geojson",
+      "referenceId": "Spain/Navarra GP 2024",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4296.1 m. Difference from the supplied layout distance 17.9 m. Course configuration still requires visual review."
     },
     {
@@ -115,6 +115,24 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T03:22:31.391Z",
       "evidenceNote": "The historical general entry groups independently connected main, Western and Eastern course configurations from one pinned 2023 source. The post-2024 main course remains separately selectable. Historical configuration names are descriptive; parallel pit access and adjacent karting are excluded. Branches remain separate paths and shared edges count once. The independent unique branch distance is 4524.1 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "ign-pnoa-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=-241639.3303396477%2C5244487.927829646%2C-240464.6565968344%2C5246014.051127809&WIDTH=1154&HEIGHT=1499",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-05T23:51:32.706Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:47.283Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

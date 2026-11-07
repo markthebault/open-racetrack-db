@@ -22,15 +22,15 @@
       "id": "grand-prix",
       "name": "Catalunya GP",
       "file": "layouts/grand-prix.geojson",
-      "description": "Full course uses the mapped Turn 10 arc on way 893732520 and the direct final corners on way 1560896066. The final-sector chicane, Nissan alternative, short-course connector and long-lap penalty detour are excluded.",
-      "referenceId": "Spain/Catalunya GP"
+      "referenceId": "Spain/Catalunya GP",
+      "description": "Full course uses the mapped Turn 10 arc on way 893732520 and the direct final corners on way 1560896066. The final-sector chicane, Nissan alternative, short-course connector and long-lap penalty detour are excluded."
     },
     {
       "id": "with-chicane",
       "name": "Catalunya",
       "file": "layouts/with-chicane.geojson",
-      "description": "Same Turn 10 arc as the main course, with the mapped final-sector chicane on ways 1057826347 and 967275593. The Nissan alternative and long-lap penalty detour are excluded.",
-      "referenceId": "Spain/Catalunya"
+      "referenceId": "Spain/Catalunya",
+      "description": "Same Turn 10 arc as the main course, with the mapped final-sector chicane on ways 1057826347 and 967275593. The Nissan alternative and long-lap penalty detour are excluded."
     }
   ],
   "sources": [
@@ -51,6 +51,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:41:13.515Z",
       "evidenceNote": "Identifies Grand Prix configurations with and without the final chicane. Reference only; all coordinates come from OSM."
+    },
+    {
+      "id": "ign-pnoa-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=250619.9634581316%2C5095831.81891502%2C252077.65060129573%2C5097577.039210364&WIDTH=1455&HEIGHT=1741",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-05T23:51:20.028Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

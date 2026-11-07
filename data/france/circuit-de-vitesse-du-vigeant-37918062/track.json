@@ -27,15 +27,15 @@
     {
       "id": "val-de-vienne-main",
       "name": "Val de Vienne Main",
-      "referenceId": "France/Val de Vienne Main",
       "file": "layouts/val-de-vienne-main.geojson",
+      "referenceId": "France/Val de Vienne Main",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3735.9 m. Difference from the supplied layout distance 2.1 m. Course configuration still requires visual review."
     },
     {
       "id": "val-de-vienne-motorcycle",
       "name": "Val de Vienne Motorcycle",
-      "referenceId": "France/Val de Vienne Motorcycle",
       "file": "layouts/val-de-vienne-motorcycle.geojson",
+      "referenceId": "France/Val de Vienne Motorcycle",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3775.6 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review."
     }
   ],
@@ -57,6 +57,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "ign-bd-ortho-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=69335.87309510585%2C5811351.394254243%2C71334.53765478724%2C5812220.48762722&WIDTH=1845&HEIGHT=803",
+      "license": "Etalab-2.0",
+      "retrievedAt": "2026-11-05T23:45:18.698Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gouv.fr/datasets/bd-ortho-r. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

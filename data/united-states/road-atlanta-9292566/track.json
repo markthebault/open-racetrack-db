@@ -28,29 +28,29 @@
     {
       "id": "road-atlanta",
       "name": "Road Atlanta",
-      "referenceId": "United States/Road Atlanta",
       "file": "layouts/road-atlanta.geojson",
+      "referenceId": "United States/Road Atlanta",
       "description": "Draft configuration: Full course with direct northern corner and southeastern linked bends; excludes the extra northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4090.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "road-atlanta-combo",
       "name": "Road Atlanta Combo",
-      "referenceId": "United States/Road Atlanta Combo",
       "file": "layouts/road-atlanta-combo.geojson",
+      "referenceId": "United States/Road Atlanta Combo",
       "description": "Combined mapped configurations: Road Atlanta, Road Atlanta Short, Road Atlanta SRO Practice. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "road-atlanta-short",
       "name": "Road Atlanta Short",
-      "referenceId": "United States/Road Atlanta Short",
       "file": "layouts/road-atlanta-short.geojson",
+      "referenceId": "United States/Road Atlanta Short",
       "description": "Draft configuration: Short course closing through the southern curved connector; excludes the long southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2855.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "road-atlanta-sro-practice",
       "name": "Road Atlanta SRO Practice",
-      "referenceId": "United States/Road Atlanta SRO Practice",
       "file": "layouts/road-atlanta-sro-practice.geojson",
+      "referenceId": "United States/Road Atlanta SRO Practice",
       "description": "Draft configuration: Full course with direct northern corner and southeastern linked bends; excludes the extra northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4092.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -117,6 +117,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T17:29:04.961Z",
       "evidenceNote": "Aggregate configuration shows the combined mapped branches of Road Atlanta, Road Atlanta Short, Road Atlanta SRO Practice. The catalogue configuration picture identifies the same perimeter, connector and infield branches. Component route recipes retain their independent identification evidence; timing locations and branch identity remain drafts. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9330746.464436121%2C4047019.5223278794%2C-9329638.5210315%2C4049212.362013004&bboxSR=3857&imageSR=3857&size=1223%2C2420&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:03.323Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

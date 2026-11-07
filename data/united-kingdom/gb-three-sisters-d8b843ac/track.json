@@ -21,8 +21,8 @@
     {
       "id": "three-sisters",
       "name": "Three Sisters",
-      "referenceId": "United Kingdom/Three Sisters",
       "file": "layouts/three-sisters.geojson",
+      "referenceId": "United Kingdom/Three Sisters",
       "description": "Combined mapped configurations: Three Sisters Full Circuit, Three Sisters Perimeter Circuit, Three Sisters Club Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -98,6 +98,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T20:09:50.431Z",
       "evidenceNote": "The general venue configuration includes the operator named Full, Perimeter and Club circuits. The published route diagrams identify the outer Coward Summit return, inner Penrith climb, Lucy Valley and complete Joey Dunlop hairpin. Each route is separately selectable. Their union excludes the angular pit detour and is displayed as a configuration network rather than a lap. The independent unique branch distance is 1712.2 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:44.224Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

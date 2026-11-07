@@ -2,78 +2,52 @@
   "schemaVersion": 1,
   "trackId": "us-ncm-motorsports-park-326452603",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "b6fbbbf8897672e3f252e8cb37645982a63aacdefab1cb6a0de7f2f0b5fa0f1b",
+  "sourceId": "osm-selection-326452603",
+  "snapshotFile": "selected-network-326452603.json",
+  "snapshotSha256": "3b0f817c2366d140bf1d83da10e219384fdf55ef6d61855c4899044ae6c4f1f1",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "Draft Grand Full course from the pinned independently selected OSM node chain. Replaces the generic longest-cycle hypothesis that included the parallel pit lane and connector detours. Operator course identity and licensed native imagery support the racing straight, western chicane and northeastern extension. Exact source coordinates and direction are retained, without tracing the operator map or fitting its stated length. Main public timing remains missing."
   ],
   "segments": [
     {
-      "wayId": 326452609,
-      "wayVersion": 8,
-      "fromIndex": 104,
-      "toIndex": 173
-    },
-    {
-      "wayId": 326452604,
+      "wayId": 326452607,
       "wayVersion": 6,
-      "fromIndex": 0,
-      "toIndex": 98
-    },
-    {
-      "wayId": 326452608,
-      "wayVersion": 5,
-      "fromIndex": 0,
-      "toIndex": 18
-    },
-    {
-      "wayId": 326452609,
-      "wayVersion": 8,
-      "fromIndex": 101,
-      "toIndex": 99
-    },
-    {
-      "wayId": 326452603,
-      "wayVersion": 5,
-      "fromIndex": 0,
-      "toIndex": 17
-    },
-    {
-      "wayId": 326452604,
-      "wayVersion": 6,
-      "fromIndex": 104,
-      "toIndex": 106
-    },
-    {
-      "wayId": 326452609,
-      "wayVersion": 8,
-      "fromIndex": 185,
-      "toIndex": 231
-    },
-    {
-      "wayId": 326452609,
-      "wayVersion": 8,
-      "fromIndex": 0,
-      "toIndex": 96
-    },
-    {
-      "wayId": 333233170,
-      "wayVersion": 3,
-      "fromIndex": 3,
-      "toIndex": 2
-    },
-    {
-      "wayId": 326452610,
-      "wayVersion": 4,
-      "fromIndex": 37,
+      "fromIndex": 21,
       "toIndex": 0
+    },
+    {
+      "wayId": 326452609,
+      "wayVersion": 8,
+      "fromIndex": 103,
+      "toIndex": 0
+    },
+    {
+      "wayId": 326452609,
+      "wayVersion": 8,
+      "fromIndex": 231,
+      "toIndex": 185
+    },
+    {
+      "wayId": 326452604,
+      "wayVersion": 6,
+      "fromIndex": 106,
+      "toIndex": 0
+    },
+    {
+      "wayId": 326452609,
+      "wayVersion": 8,
+      "fromIndex": 173,
+      "toIndex": 104
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "ncm-grand-full",
+    "traceSha256": "b2f14f12e28d976efa8bc776a22eaf81d8fccf1869c247017c8b470a3afedf9d",
+    "bordersSha256": "98f1ab590d0259d6735278d3cb0afca944b53efadecf0d1f4d157460dd1433c1"
+  }
 }

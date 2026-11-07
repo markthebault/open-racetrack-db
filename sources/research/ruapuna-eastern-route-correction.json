@@ -1,0 +1,5256 @@
+{
+  "schemaVersion": 1,
+  "trackId": "nz-ruapuna-e0b8962a",
+  "reviewedAt": "2026-11-07T12:04:17.886Z",
+  "reason": "OSM Northern junction doubles back 44 m along the main straight. Its declared shared node is beyond the physical junction; this creates a false acute turn. Same-node joins are not weakened. Eastern is independently digitized from the openly licensed 2025 LINZ image. The four other named layouts retain exact original source coordinates, boundaries, timing and models.",
+  "previousEasternRecipe": {
+    "schemaVersion": 1,
+    "trackId": "nz-ruapuna-e0b8962a",
+    "layoutId": "ruapuna-eastern-course",
+    "sourceId": "osm-components-33795438",
+    "snapshotFile": "components-osm-33795438.json",
+    "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+    "closed": true,
+    "timingMode": "shared",
+    "geometryStatus": "draft",
+    "reviewedAt": null,
+    "notes": [
+      "A draft short Eastern course using the mapped Northern central return, shared straight and terminal Eastern bend. The source is tagged raceway and its same-node joins are preserved. Branch names are descriptive, not homologation labels; independently measured length is 1180.2 m. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    ],
+    "segments": [
+      {
+        "wayId": 33795441,
+        "wayVersion": 11,
+        "fromIndex": 49,
+        "toIndex": 20
+      },
+      {
+        "wayId": 33795504,
+        "wayVersion": 9,
+        "fromIndex": 6,
+        "toIndex": 0
+      }
+    ],
+    "gates": []
+  },
+  "previousNetworkRecipe": {
+    "schemaVersion": 2,
+    "geometryKind": "network",
+    "trackId": "nz-ruapuna-e0b8962a",
+    "layoutId": "ruapuna",
+    "sourceId": "osm-network-ruapuna",
+    "snapshotFile": "network-ruapuna.json",
+    "snapshotSha256": "319980638d06acfc7466d716a2b4105e10dbf04e77d588cece150db61ad1bc82",
+    "geometryStatus": "draft",
+    "timingMode": "shared",
+    "reviewedAt": null,
+    "notes": [],
+    "gates": [],
+    "paths": [
+      {
+        "closed": true,
+        "segments": [
+          {
+            "wayId": 33795438,
+            "wayVersion": 13,
+            "fromIndex": 0,
+            "toIndex": 2
+          },
+          {
+            "wayId": 33795448,
+            "wayVersion": 8,
+            "fromIndex": 0,
+            "toIndex": 93
+          },
+          {
+            "wayId": 33795441,
+            "wayVersion": 11,
+            "fromIndex": 0,
+            "toIndex": 49
+          }
+        ]
+      },
+      {
+        "closed": true,
+        "segments": [
+          {
+            "wayId": 33795438,
+            "wayVersion": 13,
+            "fromIndex": 0,
+            "toIndex": 2
+          },
+          {
+            "wayId": 33795448,
+            "wayVersion": 8,
+            "fromIndex": 0,
+            "toIndex": 93
+          },
+          {
+            "wayId": 33795441,
+            "wayVersion": 11,
+            "fromIndex": 0,
+            "toIndex": 29
+          },
+          {
+            "wayId": 33795523,
+            "wayVersion": 8,
+            "fromIndex": 6,
+            "toIndex": 20
+          },
+          {
+            "wayId": 33795441,
+            "wayVersion": 11,
+            "fromIndex": 30,
+            "toIndex": 49
+          }
+        ]
+      },
+      {
+        "closed": true,
+        "segments": [
+          {
+            "wayId": 33795438,
+            "wayVersion": 13,
+            "fromIndex": 0,
+            "toIndex": 2
+          },
+          {
+            "wayId": 33795448,
+            "wayVersion": 8,
+            "fromIndex": 0,
+            "toIndex": 49
+          },
+          {
+            "wayId": 33795523,
+            "wayVersion": 8,
+            "fromIndex": 0,
+            "toIndex": 20
+          },
+          {
+            "wayId": 33795441,
+            "wayVersion": 11,
+            "fromIndex": 30,
+            "toIndex": 49
+          }
+        ]
+      },
+      {
+        "closed": true,
+        "segments": [
+          {
+            "wayId": 33795438,
+            "wayVersion": 13,
+            "fromIndex": 0,
+            "toIndex": 2
+          },
+          {
+            "wayId": 33795448,
+            "wayVersion": 8,
+            "fromIndex": 0,
+            "toIndex": 49
+          },
+          {
+            "wayId": 33795523,
+            "wayVersion": 8,
+            "fromIndex": 0,
+            "toIndex": 6
+          },
+          {
+            "wayId": 33795441,
+            "wayVersion": 11,
+            "fromIndex": 29,
+            "toIndex": 49
+          }
+        ]
+      },
+      {
+        "closed": true,
+        "segments": [
+          {
+            "wayId": 33795441,
+            "wayVersion": 11,
+            "fromIndex": 49,
+            "toIndex": 20
+          },
+          {
+            "wayId": 33795504,
+            "wayVersion": 9,
+            "fromIndex": 6,
+            "toIndex": 0
+          }
+        ]
+      }
+    ],
+    "components": [
+      {
+        "layoutId": "ruapuna-grand-prix",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-grand-prix-dipper",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-outer-dipper",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-outer-course",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-eastern-course",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      }
+    ]
+  },
+  "previousNetworkSnapshot": {
+    "attribution": "© OpenStreetMap contributors",
+    "retrievedAt": "2026-10-02T02:30:14.394Z",
+    "components": [
+      {
+        "layoutId": "ruapuna-grand-prix",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-grand-prix-dipper",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-outer-dipper",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-outer-course",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      },
+      {
+        "layoutId": "ruapuna-eastern-course",
+        "snapshotFile": "components-osm-33795438.json",
+        "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      }
+    ],
+    "elements": [
+      {
+        "type": "way",
+        "id": 33795438,
+        "version": 13,
+        "nodes": [
+          387002251,
+          8385841122,
+          387002290
+        ],
+        "geometry": [
+          {
+            "lat": -43.5301028,
+            "lon": 172.479888
+          },
+          {
+            "lat": -43.5298429,
+            "lon": 172.4793348
+          },
+          {
+            "lat": -43.5288037,
+            "lon": 172.4771005
+          }
+        ],
+        "tags": {
+          "area": "no",
+          "highway": "raceway",
+          "name": "Raceway Ruapuna Park",
+          "oneway": "yes",
+          "sport": "car_racing"
+        }
+      },
+      {
+        "type": "way",
+        "id": 33795441,
+        "version": 11,
+        "nodes": [
+          387002284,
+          13690467488,
+          13690467489,
+          5872377226,
+          5872377227,
+          387002283,
+          5872377228,
+          387002282,
+          5872377229,
+          387002281,
+          5872377230,
+          387002280,
+          5872377231,
+          387002279,
+          387002278,
+          387002277,
+          5872377232,
+          387002276,
+          5872377233,
+          387002275,
+          387005214,
+          387002274,
+          5872377234,
+          5872377235,
+          387002273,
+          5872377236,
+          387002272,
+          5872377237,
+          387002271,
+          5550978995,
+          387005441,
+          387002270,
+          5872377238,
+          387002269,
+          5872377239,
+          387002268,
+          5872377240,
+          387002267,
+          387002266,
+          387002265,
+          5872377241,
+          387002264,
+          387002263,
+          5872377243,
+          387002262,
+          5872377244,
+          5872377242,
+          5872377245,
+          5872377246,
+          387002251
+        ],
+        "geometry": [
+          {
+            "lat": -43.5293495,
+            "lon": 172.4761502
+          },
+          {
+            "lat": -43.5293321,
+            "lon": 172.4761891
+          },
+          {
+            "lat": -43.5293119,
+            "lon": 172.4762405
+          },
+          {
+            "lat": -43.529291,
+            "lon": 172.476311
+          },
+          {
+            "lat": -43.5292794,
+            "lon": 172.4763667
+          },
+          {
+            "lat": -43.5292665,
+            "lon": 172.4764408
+          },
+          {
+            "lat": -43.5292584,
+            "lon": 172.4765205
+          },
+          {
+            "lat": -43.5292582,
+            "lon": 172.4766017
+          },
+          {
+            "lat": -43.5292595,
+            "lon": 172.4767607
+          },
+          {
+            "lat": -43.5292706,
+            "lon": 172.4769107
+          },
+          {
+            "lat": -43.5293139,
+            "lon": 172.4771359
+          },
+          {
+            "lat": -43.5293702,
+            "lon": 172.4773656
+          },
+          {
+            "lat": -43.5294897,
+            "lon": 172.4777112
+          },
+          {
+            "lat": -43.5296191,
+            "lon": 172.4780523
+          },
+          {
+            "lat": -43.5302476,
+            "lon": 172.4794513
+          },
+          {
+            "lat": -43.530316,
+            "lon": 172.4795886
+          },
+          {
+            "lat": -43.5303576,
+            "lon": 172.4796514
+          },
+          {
+            "lat": -43.5304156,
+            "lon": 172.4796916
+          },
+          {
+            "lat": -43.530481,
+            "lon": 172.4797092
+          },
+          {
+            "lat": -43.5305463,
+            "lon": 172.4797088
+          },
+          {
+            "lat": -43.5307688,
+            "lon": 172.47968
+          },
+          {
+            "lat": -43.5315419,
+            "lon": 172.4795801
+          },
+          {
+            "lat": -43.5316274,
+            "lon": 172.4795731
+          },
+          {
+            "lat": -43.5316718,
+            "lon": 172.4795763
+          },
+          {
+            "lat": -43.5317162,
+            "lon": 172.4795886
+          },
+          {
+            "lat": -43.5317879,
+            "lon": 172.4796227
+          },
+          {
+            "lat": -43.5318531,
+            "lon": 172.4796659
+          },
+          {
+            "lat": -43.531903,
+            "lon": 172.4797429
+          },
+          {
+            "lat": -43.5319464,
+            "lon": 172.479829
+          },
+          {
+            "lat": -43.5321463,
+            "lon": 172.4805946
+          },
+          {
+            "lat": -43.5326771,
+            "lon": 172.4824712
+          },
+          {
+            "lat": -43.5330478,
+            "lon": 172.4838115
+          },
+          {
+            "lat": -43.5330609,
+            "lon": 172.4839299
+          },
+          {
+            "lat": -43.5330592,
+            "lon": 172.4840347
+          },
+          {
+            "lat": -43.5330491,
+            "lon": 172.4841248
+          },
+          {
+            "lat": -43.5330291,
+            "lon": 172.4842149
+          },
+          {
+            "lat": -43.5330027,
+            "lon": 172.4842944
+          },
+          {
+            "lat": -43.5329731,
+            "lon": 172.4843694
+          },
+          {
+            "lat": -43.5328985,
+            "lon": 172.4844982
+          },
+          {
+            "lat": -43.5328113,
+            "lon": 172.484584
+          },
+          {
+            "lat": -43.5327522,
+            "lon": 172.484621
+          },
+          {
+            "lat": -43.5326751,
+            "lon": 172.4846513
+          },
+          {
+            "lat": -43.5325749,
+            "lon": 172.4846757
+          },
+          {
+            "lat": -43.5325187,
+            "lon": 172.4846802
+          },
+          {
+            "lat": -43.5324675,
+            "lon": 172.4846712
+          },
+          {
+            "lat": -43.5324084,
+            "lon": 172.4846475
+          },
+          {
+            "lat": -43.5323478,
+            "lon": 172.4846147
+          },
+          {
+            "lat": -43.5322912,
+            "lon": 172.4845668
+          },
+          {
+            "lat": -43.5322617,
+            "lon": 172.4845315
+          },
+          {
+            "lat": -43.5301028,
+            "lon": 172.479888
+          }
+        ],
+        "tags": {
+          "area": "no",
+          "highway": "raceway",
+          "name": "Raceway Ruapuna Park",
+          "oneway": "yes",
+          "sport": "car_racing"
+        }
+      },
+      {
+        "type": "way",
+        "id": 33795448,
+        "version": 8,
+        "nodes": [
+          387002290,
+          5872377189,
+          5872377191,
+          387004129,
+          5872377190,
+          387004130,
+          387004131,
+          387004132,
+          5872377192,
+          387004133,
+          5872377193,
+          387004134,
+          5872377194,
+          387004135,
+          5872377195,
+          387004138,
+          5872377196,
+          387004139,
+          5872377197,
+          387004140,
+          387004141,
+          387004142,
+          387004143,
+          387004144,
+          5872377198,
+          387004145,
+          387004146,
+          387004147,
+          5872377199,
+          387004148,
+          5872377200,
+          387004149,
+          5872377201,
+          387004150,
+          387004151,
+          5872377202,
+          387004152,
+          5872377203,
+          387004153,
+          5872377204,
+          387004154,
+          5872377205,
+          387004155,
+          5872377206,
+          387004156,
+          5872377207,
+          387004157,
+          5872377208,
+          387004158,
+          387004159,
+          387004160,
+          5872377210,
+          387004161,
+          5872377209,
+          387004162,
+          387004163,
+          5872377212,
+          387004164,
+          5872377211,
+          387004165,
+          387004166,
+          387004167,
+          5872377213,
+          387004168,
+          5872377214,
+          387004169,
+          5872377215,
+          387004170,
+          5872377216,
+          387004171,
+          387004172,
+          5872377217,
+          387004173,
+          5872377218,
+          387004174,
+          5872377219,
+          387004175,
+          5872377220,
+          387004176,
+          387004177,
+          387004178,
+          5872377221,
+          387004179,
+          387004180,
+          387004181,
+          5872377222,
+          387004182,
+          5872377223,
+          387004183,
+          5872377224,
+          387004184,
+          5872377225,
+          13690467487,
+          387002284,
+          387004185,
+          387004186,
+          387004187,
+          387004188,
+          387004189,
+          387004131
+        ],
+        "geometry": [
+          {
+            "lat": -43.5288037,
+            "lon": 172.4771005
+          },
+          {
+            "lat": -43.52872,
+            "lon": 172.476821
+          },
+          {
+            "lat": -43.5286798,
+            "lon": 172.476679
+          },
+          {
+            "lat": -43.5286462,
+            "lon": 172.4765325
+          },
+          {
+            "lat": -43.5286231,
+            "lon": 172.4763866
+          },
+          {
+            "lat": -43.5286098,
+            "lon": 172.4762407
+          },
+          {
+            "lat": -43.528603,
+            "lon": 172.4760007
+          },
+          {
+            "lat": -43.5285771,
+            "lon": 172.4751623
+          },
+          {
+            "lat": -43.5285885,
+            "lon": 172.4750921
+          },
+          {
+            "lat": -43.5286098,
+            "lon": 172.4750219
+          },
+          {
+            "lat": -43.5286329,
+            "lon": 172.4749618
+          },
+          {
+            "lat": -43.5286658,
+            "lon": 172.4749017
+          },
+          {
+            "lat": -43.5286986,
+            "lon": 172.4748628
+          },
+          {
+            "lat": -43.5287281,
+            "lon": 172.474833
+          },
+          {
+            "lat": -43.5287684,
+            "lon": 172.4747985
+          },
+          {
+            "lat": -43.5288152,
+            "lon": 172.474773
+          },
+          {
+            "lat": -43.5288557,
+            "lon": 172.4747556
+          },
+          {
+            "lat": -43.5288961,
+            "lon": 172.4747472
+          },
+          {
+            "lat": -43.528949,
+            "lon": 172.4747578
+          },
+          {
+            "lat": -43.5290019,
+            "lon": 172.474773
+          },
+          {
+            "lat": -43.5290828,
+            "lon": 172.4748073
+          },
+          {
+            "lat": -43.5294375,
+            "lon": 172.4750305
+          },
+          {
+            "lat": -43.5300349,
+            "lon": 172.4754854
+          },
+          {
+            "lat": -43.5303833,
+            "lon": 172.4757347
+          },
+          {
+            "lat": -43.5305202,
+            "lon": 172.4758228
+          },
+          {
+            "lat": -43.5306571,
+            "lon": 172.4758973
+          },
+          {
+            "lat": -43.5309745,
+            "lon": 172.4760347
+          },
+          {
+            "lat": -43.5319266,
+            "lon": 172.4764295
+          },
+          {
+            "lat": -43.531972,
+            "lon": 172.4764571
+          },
+          {
+            "lat": -43.5320075,
+            "lon": 172.4764982
+          },
+          {
+            "lat": -43.5320515,
+            "lon": 172.4765691
+          },
+          {
+            "lat": -43.5320808,
+            "lon": 172.4766355
+          },
+          {
+            "lat": -43.5321033,
+            "lon": 172.4766956
+          },
+          {
+            "lat": -43.5321257,
+            "lon": 172.4767557
+          },
+          {
+            "lat": -43.5330031,
+            "lon": 172.4802747
+          },
+          {
+            "lat": -43.5330109,
+            "lon": 172.4803373
+          },
+          {
+            "lat": -43.5330155,
+            "lon": 172.4803863
+          },
+          {
+            "lat": -43.5330111,
+            "lon": 172.4804464
+          },
+          {
+            "lat": -43.5329969,
+            "lon": 172.4805065
+          },
+          {
+            "lat": -43.5329751,
+            "lon": 172.4805494
+          },
+          {
+            "lat": -43.5329533,
+            "lon": 172.4805923
+          },
+          {
+            "lat": -43.532916,
+            "lon": 172.4806248
+          },
+          {
+            "lat": -43.5328786,
+            "lon": 172.4806438
+          },
+          {
+            "lat": -43.532832,
+            "lon": 172.4806506
+          },
+          {
+            "lat": -43.5327853,
+            "lon": 172.4806438
+          },
+          {
+            "lat": -43.5327463,
+            "lon": 172.4806226
+          },
+          {
+            "lat": -43.5327106,
+            "lon": 172.4805923
+          },
+          {
+            "lat": -43.5326793,
+            "lon": 172.4805431
+          },
+          {
+            "lat": -43.5326546,
+            "lon": 172.4804893
+          },
+          {
+            "lat": -43.5326297,
+            "lon": 172.4803863
+          },
+          {
+            "lat": -43.5324742,
+            "lon": 172.4795795
+          },
+          {
+            "lat": -43.5324545,
+            "lon": 172.4794934
+          },
+          {
+            "lat": -43.5324283,
+            "lon": 172.4794074
+          },
+          {
+            "lat": -43.532386,
+            "lon": 172.4793195
+          },
+          {
+            "lat": -43.5323373,
+            "lon": 172.4792362
+          },
+          {
+            "lat": -43.5320261,
+            "lon": 172.4786954
+          },
+          {
+            "lat": -43.5319776,
+            "lon": 172.4786197
+          },
+          {
+            "lat": -43.5319325,
+            "lon": 172.4785396
+          },
+          {
+            "lat": -43.5318934,
+            "lon": 172.4784465
+          },
+          {
+            "lat": -43.5318575,
+            "lon": 172.4783399
+          },
+          {
+            "lat": -43.5318032,
+            "lon": 172.4781443
+          },
+          {
+            "lat": -43.5316341,
+            "lon": 172.477571
+          },
+          {
+            "lat": -43.5315955,
+            "lon": 172.4774784
+          },
+          {
+            "lat": -43.531547,
+            "lon": 172.4773994
+          },
+          {
+            "lat": -43.5315098,
+            "lon": 172.477354
+          },
+          {
+            "lat": -43.5314661,
+            "lon": 172.4773221
+          },
+          {
+            "lat": -43.5314039,
+            "lon": 172.4773131
+          },
+          {
+            "lat": -43.5313416,
+            "lon": 172.4773221
+          },
+          {
+            "lat": -43.5312763,
+            "lon": 172.4773538
+          },
+          {
+            "lat": -43.5312012,
+            "lon": 172.477408
+          },
+          {
+            "lat": -43.5308998,
+            "lon": 172.4776054
+          },
+          {
+            "lat": -43.5308065,
+            "lon": 172.4776426
+          },
+          {
+            "lat": -43.5307131,
+            "lon": 172.4776483
+          },
+          {
+            "lat": -43.5306323,
+            "lon": 172.477653
+          },
+          {
+            "lat": -43.5305514,
+            "lon": 172.4776397
+          },
+          {
+            "lat": -43.5304842,
+            "lon": 172.4776019
+          },
+          {
+            "lat": -43.5304204,
+            "lon": 172.4775394
+          },
+          {
+            "lat": -43.5303752,
+            "lon": 172.4774709
+          },
+          {
+            "lat": -43.5303398,
+            "lon": 172.4773822
+          },
+          {
+            "lat": -43.5302838,
+            "lon": 172.4772191
+          },
+          {
+            "lat": -43.530066,
+            "lon": 172.4765239
+          },
+          {
+            "lat": -43.5300321,
+            "lon": 172.4764078
+          },
+          {
+            "lat": -43.5299851,
+            "lon": 172.4763008
+          },
+          {
+            "lat": -43.5299166,
+            "lon": 172.4761892
+          },
+          {
+            "lat": -43.5298459,
+            "lon": 172.4761182
+          },
+          {
+            "lat": -43.5297674,
+            "lon": 172.4760747
+          },
+          {
+            "lat": -43.5296988,
+            "lon": 172.4760604
+          },
+          {
+            "lat": -43.5296334,
+            "lon": 172.4760557
+          },
+          {
+            "lat": -43.5295665,
+            "lon": 172.4760622
+          },
+          {
+            "lat": -43.5295183,
+            "lon": 172.4760774
+          },
+          {
+            "lat": -43.5294686,
+            "lon": 172.4760948
+          },
+          {
+            "lat": -43.5294118,
+            "lon": 172.4761208
+          },
+          {
+            "lat": -43.529374,
+            "lon": 172.4761386
+          },
+          {
+            "lat": -43.5293495,
+            "lon": 172.4761502
+          },
+          {
+            "lat": -43.5290579,
+            "lon": 172.476378
+          },
+          {
+            "lat": -43.5289707,
+            "lon": 172.4763952
+          },
+          {
+            "lat": -43.5288587,
+            "lon": 172.4763608
+          },
+          {
+            "lat": -43.5287467,
+            "lon": 172.476275
+          },
+          {
+            "lat": -43.5286783,
+            "lon": 172.4761806
+          },
+          {
+            "lat": -43.528603,
+            "lon": 172.4760007
+          }
+        ],
+        "tags": {
+          "area": "no",
+          "highway": "raceway",
+          "name": "Raceway Ruapuna Park",
+          "oneway": "yes",
+          "sport": "car_racing"
+        }
+      },
+      {
+        "type": "way",
+        "id": 33795523,
+        "version": 8,
+        "nodes": [
+          387004159,
+          387005426,
+          387005427,
+          387005428,
+          387005429,
+          387005430,
+          5550978995,
+          387005431,
+          387005432,
+          387005433,
+          387005434,
+          387005435,
+          8385841125,
+          387005436,
+          387005437,
+          387005438,
+          8385841126,
+          387005439,
+          387005440,
+          8385841127,
+          387005441
+        ],
+        "geometry": [
+          {
+            "lat": -43.5326297,
+            "lon": 172.4803863
+          },
+          {
+            "lat": -43.5325487,
+            "lon": 172.4803213
+          },
+          {
+            "lat": -43.5324416,
+            "lon": 172.4802928
+          },
+          {
+            "lat": -43.5323399,
+            "lon": 172.4803009
+          },
+          {
+            "lat": -43.5322748,
+            "lon": 172.4803551
+          },
+          {
+            "lat": -43.5322214,
+            "lon": 172.4804259
+          },
+          {
+            "lat": -43.5321463,
+            "lon": 172.4805946
+          },
+          {
+            "lat": -43.5320599,
+            "lon": 172.4807681
+          },
+          {
+            "lat": -43.5319891,
+            "lon": 172.4808757
+          },
+          {
+            "lat": -43.5319118,
+            "lon": 172.4809132
+          },
+          {
+            "lat": -43.5317916,
+            "lon": 172.480924
+          },
+          {
+            "lat": -43.5316545,
+            "lon": 172.4809341
+          },
+          {
+            "lat": -43.5315996,
+            "lon": 172.480965
+          },
+          {
+            "lat": -43.5315466,
+            "lon": 172.481027
+          },
+          {
+            "lat": -43.5314962,
+            "lon": 172.4811488
+          },
+          {
+            "lat": -43.5314911,
+            "lon": 172.4812787
+          },
+          {
+            "lat": -43.5315068,
+            "lon": 172.4813583
+          },
+          {
+            "lat": -43.5315352,
+            "lon": 172.4814136
+          },
+          {
+            "lat": -43.5315969,
+            "lon": 172.4814807
+          },
+          {
+            "lat": -43.5325347,
+            "lon": 172.4823057
+          },
+          {
+            "lat": -43.5326771,
+            "lon": 172.4824712
+          }
+        ],
+        "tags": {
+          "area": "no",
+          "highway": "raceway",
+          "name": "Raceway Ruapuna Park",
+          "oneway": "yes",
+          "sport": "car_racing"
+        }
+      },
+      {
+        "type": "way",
+        "id": 33795504,
+        "version": 9,
+        "nodes": [
+          387002251,
+          387005302,
+          387005301,
+          387005300,
+          387005299,
+          387005298,
+          387005214
+        ],
+        "geometry": [
+          {
+            "lat": -43.5301028,
+            "lon": 172.479888
+          },
+          {
+            "lat": -43.5303617,
+            "lon": 172.4802999
+          },
+          {
+            "lat": -43.5303861,
+            "lon": 172.4801344
+          },
+          {
+            "lat": -43.5304172,
+            "lon": 172.4800314
+          },
+          {
+            "lat": -43.5304795,
+            "lon": 172.4799284
+          },
+          {
+            "lat": -43.5305541,
+            "lon": 172.4798511
+          },
+          {
+            "lat": -43.5307688,
+            "lon": 172.47968
+          }
+        ],
+        "tags": {
+          "area": "no",
+          "highway": "raceway",
+          "name": "Raceway Ruapuna Park",
+          "oneway": "yes",
+          "sport": "car_racing"
+        }
+      }
+    ]
+  },
+  "imagery": {
+    "file": ".local/coverage-goal/ruapuna-linz-2025.png",
+    "url": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029077.tiff",
+    "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029077.json",
+    "sourceId": "linz-christchurch-2025-ruapuna",
+    "license": "CC-BY-4.0",
+    "reuseEvidenceUrl": "https://www.linz.govt.nz/products-services/data/licensing-and-using-data/attributing-elevation-or-aerial-imagery-data",
+    "attribution": "Environment Canterbury; imagery by Aerial Surveys, captured March 2025; hosted and processed by Toitū Te Whenua LINZ, CC BY 4.0. Reprojected, cropped and sampled by OpenRacetrackDB.",
+    "retrievedAt": "2026-11-07T11:55:49.122468Z",
+    "sha256": "f4110bfda892f5cc63774924a0fa94b6b250f9303fe7d32bc284b85f584008f7",
+    "width": 2511,
+    "height": 2097,
+    "extent3857": [
+      19200276.180325482,
+      -5393526.419173922,
+      19200968.838912364,
+      -5392948.078245551
+    ],
+    "groundPixelSizeM": 0.2,
+    "captureInterval": [
+      "2025-03-14T11:00:00Z",
+      "2025-03-15T11:00:00Z"
+    ],
+    "items": [
+      {
+        "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_028075.json",
+        "assetUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_028075.tiff",
+        "metadata": {
+          "type": "Feature",
+          "stac_version": "1.0.0",
+          "id": "BX23_500_028075",
+          "links": [
+            {
+              "href": "./BX23_500_028075.json",
+              "rel": "self",
+              "type": "application/geo+json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "collection",
+              "type": "application/json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "parent",
+              "type": "application/json"
+            }
+          ],
+          "assets": {
+            "visual": {
+              "href": "./BX23_500_028075.tiff",
+              "file:checksum": "1220d7f14e89768d4fa034860fedc8d9d3f862c7c72035fd620d58f2ca7eb839372b",
+              "created": "2025-09-24T02:13:25Z",
+              "updated": "2025-09-24T02:13:25Z",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+            }
+          },
+          "stac_extensions": [
+            "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+          ],
+          "properties": {
+            "created": "2025-09-24T02:13:25Z",
+            "updated": "2025-09-24T02:13:25Z",
+            "processing:datetime": "2025-09-24T02:13:25Z",
+            "processing:software": {
+              "gdal": "GDAL 3.9.0, released 2024/05/07",
+              "linz/topo-imagery": "https://github.com/linz/topo-imagery/commit/2cca3ddfb2d1177a9c1876003d0f19ecbd87864b"
+            },
+            "processing:version": "v7.10.0",
+            "start_datetime": "2025-03-14T11:00:00Z",
+            "end_datetime": "2025-03-15T11:00:00Z",
+            "datetime": null
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  172.4772625,
+                  -43.5292271
+                ],
+                [
+                  172.4772345,
+                  -43.5324685
+                ],
+                [
+                  172.4802047,
+                  -43.532482
+                ],
+                [
+                  172.4802325,
+                  -43.5292406
+                ],
+                [
+                  172.4772625,
+                  -43.5292271
+                ]
+              ]
+            ]
+          },
+          "bbox": [
+            172.4772345,
+            -43.532482,
+            172.4802325,
+            -43.5292271
+          ],
+          "collection": "01K5WQYE366PEEAT62GQJXV78T"
+        }
+      },
+      {
+        "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_028076.json",
+        "assetUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_028076.tiff",
+        "metadata": {
+          "type": "Feature",
+          "stac_version": "1.0.0",
+          "id": "BX23_500_028076",
+          "links": [
+            {
+              "href": "./BX23_500_028076.json",
+              "rel": "self",
+              "type": "application/geo+json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "collection",
+              "type": "application/json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "parent",
+              "type": "application/json"
+            }
+          ],
+          "assets": {
+            "visual": {
+              "href": "./BX23_500_028076.tiff",
+              "file:checksum": "1220dc7f4cdbfca7bf17df132167ec77789d014ddea4ea7626ff4a31bc6bf09cc09b",
+              "created": "2025-09-24T02:13:25Z",
+              "updated": "2025-09-24T02:13:25Z",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+            }
+          },
+          "stac_extensions": [
+            "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+          ],
+          "properties": {
+            "created": "2025-09-24T02:13:25Z",
+            "updated": "2025-09-24T02:13:25Z",
+            "processing:datetime": "2025-09-24T02:13:25Z",
+            "processing:software": {
+              "gdal": "GDAL 3.9.0, released 2024/05/07",
+              "linz/topo-imagery": "https://github.com/linz/topo-imagery/commit/2cca3ddfb2d1177a9c1876003d0f19ecbd87864b"
+            },
+            "processing:version": "v7.10.0",
+            "start_datetime": "2025-03-14T11:00:00Z",
+            "end_datetime": "2025-03-15T11:00:00Z",
+            "datetime": null
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  172.4802325,
+                  -43.5292406
+                ],
+                [
+                  172.4802047,
+                  -43.532482
+                ],
+                [
+                  172.4831748,
+                  -43.5324955
+                ],
+                [
+                  172.4832025,
+                  -43.5292541
+                ],
+                [
+                  172.4802325,
+                  -43.5292406
+                ]
+              ]
+            ]
+          },
+          "bbox": [
+            172.4802047,
+            -43.5324955,
+            172.4832025,
+            -43.5292406
+          ],
+          "collection": "01K5WQYE366PEEAT62GQJXV78T"
+        }
+      },
+      {
+        "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_028077.json",
+        "assetUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_028077.tiff",
+        "metadata": {
+          "type": "Feature",
+          "stac_version": "1.0.0",
+          "id": "BX23_500_028077",
+          "links": [
+            {
+              "href": "./BX23_500_028077.json",
+              "rel": "self",
+              "type": "application/geo+json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "collection",
+              "type": "application/json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "parent",
+              "type": "application/json"
+            }
+          ],
+          "assets": {
+            "visual": {
+              "href": "./BX23_500_028077.tiff",
+              "file:checksum": "122087695b4accbe29949ef16913cd8e733f68ad9d425183120762e86dbf7c06d261",
+              "created": "2025-09-24T02:13:25Z",
+              "updated": "2025-09-24T02:13:25Z",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+            }
+          },
+          "stac_extensions": [
+            "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+          ],
+          "properties": {
+            "created": "2025-09-24T02:13:25Z",
+            "updated": "2025-09-24T02:13:25Z",
+            "processing:datetime": "2025-09-24T02:13:25Z",
+            "processing:software": {
+              "gdal": "GDAL 3.9.0, released 2024/05/07",
+              "linz/topo-imagery": "https://github.com/linz/topo-imagery/commit/2cca3ddfb2d1177a9c1876003d0f19ecbd87864b"
+            },
+            "processing:version": "v7.10.0",
+            "start_datetime": "2025-03-14T11:00:00Z",
+            "end_datetime": "2025-03-15T11:00:00Z",
+            "datetime": null
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  172.4832025,
+                  -43.5292541
+                ],
+                [
+                  172.4831748,
+                  -43.5324955
+                ],
+                [
+                  172.486145,
+                  -43.5325088
+                ],
+                [
+                  172.4861725,
+                  -43.5292674
+                ],
+                [
+                  172.4832025,
+                  -43.5292541
+                ]
+              ]
+            ]
+          },
+          "bbox": [
+            172.4831748,
+            -43.5325088,
+            172.4861725,
+            -43.5292541
+          ],
+          "collection": "01K5WQYE366PEEAT62GQJXV78T"
+        }
+      },
+      {
+        "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029075.json",
+        "assetUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029075.tiff",
+        "metadata": {
+          "type": "Feature",
+          "stac_version": "1.0.0",
+          "id": "BX23_500_029075",
+          "links": [
+            {
+              "href": "./BX23_500_029075.json",
+              "rel": "self",
+              "type": "application/geo+json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "collection",
+              "type": "application/json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "parent",
+              "type": "application/json"
+            }
+          ],
+          "assets": {
+            "visual": {
+              "href": "./BX23_500_029075.tiff",
+              "file:checksum": "12205b533fb85af704f19c09cdd16cddff88600adf0752f66359aa8f80414ab63fb4",
+              "created": "2025-09-24T02:13:25Z",
+              "updated": "2025-09-24T02:13:25Z",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+            }
+          },
+          "stac_extensions": [
+            "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+          ],
+          "properties": {
+            "created": "2025-09-24T02:13:25Z",
+            "updated": "2025-09-24T02:13:25Z",
+            "processing:datetime": "2025-09-24T02:13:25Z",
+            "processing:software": {
+              "gdal": "GDAL 3.9.0, released 2024/05/07",
+              "linz/topo-imagery": "https://github.com/linz/topo-imagery/commit/2cca3ddfb2d1177a9c1876003d0f19ecbd87864b"
+            },
+            "processing:version": "v7.10.0",
+            "start_datetime": "2025-03-14T11:00:00Z",
+            "end_datetime": "2025-03-15T11:00:00Z",
+            "datetime": null
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  172.4772345,
+                  -43.5324685
+                ],
+                [
+                  172.4772065,
+                  -43.5357098
+                ],
+                [
+                  172.4801768,
+                  -43.5357234
+                ],
+                [
+                  172.4802047,
+                  -43.532482
+                ],
+                [
+                  172.4772345,
+                  -43.5324685
+                ]
+              ]
+            ]
+          },
+          "bbox": [
+            172.4772065,
+            -43.5357234,
+            172.4802047,
+            -43.5324685
+          ],
+          "collection": "01K5WQYE366PEEAT62GQJXV78T"
+        }
+      },
+      {
+        "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029076.json",
+        "assetUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029076.tiff",
+        "metadata": {
+          "type": "Feature",
+          "stac_version": "1.0.0",
+          "id": "BX23_500_029076",
+          "links": [
+            {
+              "href": "./BX23_500_029076.json",
+              "rel": "self",
+              "type": "application/geo+json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "collection",
+              "type": "application/json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "parent",
+              "type": "application/json"
+            }
+          ],
+          "assets": {
+            "visual": {
+              "href": "./BX23_500_029076.tiff",
+              "file:checksum": "1220eef55274e44cb65938cac2c0ce26cbd4797344085a3e683386226d6fabb0245e",
+              "created": "2025-09-24T02:13:25Z",
+              "updated": "2025-09-24T02:13:25Z",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+            }
+          },
+          "stac_extensions": [
+            "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+          ],
+          "properties": {
+            "created": "2025-09-24T02:13:25Z",
+            "updated": "2025-09-24T02:13:25Z",
+            "processing:datetime": "2025-09-24T02:13:25Z",
+            "processing:software": {
+              "gdal": "GDAL 3.9.0, released 2024/05/07",
+              "linz/topo-imagery": "https://github.com/linz/topo-imagery/commit/2cca3ddfb2d1177a9c1876003d0f19ecbd87864b"
+            },
+            "processing:version": "v7.10.0",
+            "start_datetime": "2025-03-14T11:00:00Z",
+            "end_datetime": "2025-03-15T11:00:00Z",
+            "datetime": null
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  172.4802047,
+                  -43.532482
+                ],
+                [
+                  172.4801768,
+                  -43.5357234
+                ],
+                [
+                  172.4831471,
+                  -43.5357369
+                ],
+                [
+                  172.4831748,
+                  -43.5324955
+                ],
+                [
+                  172.4802047,
+                  -43.532482
+                ]
+              ]
+            ]
+          },
+          "bbox": [
+            172.4801768,
+            -43.5357369,
+            172.4831748,
+            -43.532482
+          ],
+          "collection": "01K5WQYE366PEEAT62GQJXV78T"
+        }
+      },
+      {
+        "itemUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029077.json",
+        "assetUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/BX23_500_029077.tiff",
+        "metadata": {
+          "type": "Feature",
+          "stac_version": "1.0.0",
+          "id": "BX23_500_029077",
+          "links": [
+            {
+              "href": "./BX23_500_029077.json",
+              "rel": "self",
+              "type": "application/geo+json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "collection",
+              "type": "application/json"
+            },
+            {
+              "href": "./collection.json",
+              "rel": "parent",
+              "type": "application/json"
+            }
+          ],
+          "assets": {
+            "visual": {
+              "href": "./BX23_500_029077.tiff",
+              "file:checksum": "1220105a0a5a040d32411386e90975068175b26c44b13f41db95e8e117d2db5fa533",
+              "created": "2025-09-24T02:13:25Z",
+              "updated": "2025-09-24T02:13:25Z",
+              "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+            }
+          },
+          "stac_extensions": [
+            "https://stac-extensions.github.io/file/v2.0.0/schema.json",
+            "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+          ],
+          "properties": {
+            "created": "2025-09-24T02:13:25Z",
+            "updated": "2025-09-24T02:13:25Z",
+            "processing:datetime": "2025-09-24T02:13:25Z",
+            "processing:software": {
+              "gdal": "GDAL 3.9.0, released 2024/05/07",
+              "linz/topo-imagery": "https://github.com/linz/topo-imagery/commit/2cca3ddfb2d1177a9c1876003d0f19ecbd87864b"
+            },
+            "processing:version": "v7.10.0",
+            "start_datetime": "2025-03-14T11:00:00Z",
+            "end_datetime": "2025-03-15T11:00:00Z",
+            "datetime": null
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  172.4831748,
+                  -43.5324955
+                ],
+                [
+                  172.4831471,
+                  -43.5357369
+                ],
+                [
+                  172.4861174,
+                  -43.5357502
+                ],
+                [
+                  172.486145,
+                  -43.5325088
+                ],
+                [
+                  172.4831748,
+                  -43.5324955
+                ]
+              ]
+            ]
+          },
+          "bbox": [
+            172.4831471,
+            -43.5357502,
+            172.486145,
+            -43.5324955
+          ],
+          "collection": "01K5WQYE366PEEAT62GQJXV78T"
+        }
+      }
+    ],
+    "nativePixelSizeM": 0.075,
+    "note": "Nearest-neighbour reprojection of native 0.075 m CC BY 4.0 imagery sampled at 0.2 m. Missing cells retain alpha; no pixels are filled. Capture interval is collection metadata, not exact tile flight date."
+  },
+  "authoring": {
+    "pinsAuthorScale": [
+      [
+        300,
+        235
+      ],
+      [
+        550,
+        382
+      ],
+      [
+        800,
+        530
+      ],
+      [
+        1050,
+        677
+      ],
+      [
+        1250,
+        795
+      ],
+      [
+        1340,
+        849
+      ],
+      [
+        1368,
+        883
+      ],
+      [
+        1374,
+        920
+      ],
+      [
+        1370,
+        961
+      ],
+      [
+        1357,
+        1004
+      ],
+      [
+        1331,
+        1046
+      ],
+      [
+        1293,
+        1081
+      ],
+      [
+        1249,
+        1104
+      ],
+      [
+        1200,
+        1112
+      ],
+      [
+        1155,
+        1106
+      ],
+      [
+        1090,
+        1084
+      ],
+      [
+        900,
+        1010
+      ],
+      [
+        700,
+        932
+      ],
+      [
+        500,
+        854
+      ],
+      [
+        300,
+        776
+      ],
+      [
+        218,
+        744
+      ],
+      [
+        180,
+        725
+      ],
+      [
+        154,
+        700
+      ],
+      [
+        140,
+        667
+      ],
+      [
+        137,
+        630
+      ],
+      [
+        142,
+        530
+      ],
+      [
+        149,
+        420
+      ],
+      [
+        155,
+        325
+      ],
+      [
+        161,
+        289
+      ],
+      [
+        176,
+        262
+      ],
+      [
+        199,
+        243
+      ],
+      [
+        228,
+        230
+      ],
+      [
+        254,
+        224
+      ],
+      [
+        278,
+        226
+      ]
+    ],
+    "pixels": [
+      [
+        502.2,
+        393.2921
+      ],
+      [
+        509.1311,
+        396.8085
+      ],
+      [
+        517.014,
+        400.9583
+      ],
+      [
+        525.7986,
+        405.7082
+      ],
+      [
+        535.4348,
+        411.025
+      ],
+      [
+        545.8725,
+        416.8754
+      ],
+      [
+        557.0615,
+        423.2262
+      ],
+      [
+        568.9518,
+        430.0442
+      ],
+      [
+        581.4932,
+        437.2961
+      ],
+      [
+        594.6356,
+        444.9485
+      ],
+      [
+        608.3289,
+        452.9684
+      ],
+      [
+        622.523,
+        461.3224
+      ],
+      [
+        637.1677,
+        469.9773
+      ],
+      [
+        652.213,
+        478.8998
+      ],
+      [
+        667.6086,
+        488.0566
+      ],
+      [
+        683.3046,
+        497.4146
+      ],
+      [
+        699.2508,
+        506.9405
+      ],
+      [
+        715.397,
+        516.601
+      ],
+      [
+        731.6931,
+        526.3629
+      ],
+      [
+        748.0891,
+        536.1929
+      ],
+      [
+        764.5348,
+        546.0577
+      ],
+      [
+        780.9801,
+        555.9242
+      ],
+      [
+        797.3749,
+        565.759
+      ],
+      [
+        813.669,
+        575.529
+      ],
+      [
+        829.8123,
+        585.2008
+      ],
+      [
+        845.7548,
+        594.7413
+      ],
+      [
+        861.4463,
+        604.1171
+      ],
+      [
+        876.8367,
+        613.295
+      ],
+      [
+        891.8759,
+        622.2417
+      ],
+      [
+        906.5137,
+        630.9241
+      ],
+      [
+        920.7,
+        639.3089
+      ],
+      [
+        934.6555,
+        647.5433
+      ],
+      [
+        948.6099,
+        655.7822
+      ],
+      [
+        962.5632,
+        664.0254
+      ],
+      [
+        976.5155,
+        672.2724
+      ],
+      [
+        990.467,
+        680.523
+      ],
+      [
+        1004.4176,
+        688.7769
+      ],
+      [
+        1018.3675,
+        697.0337
+      ],
+      [
+        1032.3167,
+        705.2931
+      ],
+      [
+        1046.2654,
+        713.5547
+      ],
+      [
+        1060.2136,
+        721.8183
+      ],
+      [
+        1074.1614,
+        730.0835
+      ],
+      [
+        1088.1088,
+        738.35
+      ],
+      [
+        1102.056,
+        746.6175
+      ],
+      [
+        1116.003,
+        754.8856
+      ],
+      [
+        1129.95,
+        763.154
+      ],
+      [
+        1143.897,
+        771.4225
+      ],
+      [
+        1157.844,
+        779.6906
+      ],
+      [
+        1171.7912,
+        787.9581
+      ],
+      [
+        1185.7386,
+        796.2246
+      ],
+      [
+        1199.6864,
+        804.4898
+      ],
+      [
+        1213.6346,
+        812.7534
+      ],
+      [
+        1227.5833,
+        821.015
+      ],
+      [
+        1241.5325,
+        829.2744
+      ],
+      [
+        1255.4824,
+        837.5312
+      ],
+      [
+        1269.433,
+        845.785
+      ],
+      [
+        1283.3845,
+        854.0356
+      ],
+      [
+        1297.3368,
+        862.2827
+      ],
+      [
+        1311.2901,
+        870.5258
+      ],
+      [
+        1325.2445,
+        878.7648
+      ],
+      [
+        1339.2,
+        886.9992
+      ],
+      [
+        1353.1694,
+        895.2368
+      ],
+      [
+        1367.1865,
+        903.498
+      ],
+      [
+        1381.2458,
+        911.7801
+      ],
+      [
+        1395.3423,
+        920.0802
+      ],
+      [
+        1409.4706,
+        928.3956
+      ],
+      [
+        1423.6255,
+        936.7234
+      ],
+      [
+        1437.8018,
+        945.0608
+      ],
+      [
+        1451.9942,
+        953.405
+      ],
+      [
+        1466.1975,
+        961.7531
+      ],
+      [
+        1480.4065,
+        970.1025
+      ],
+      [
+        1494.6159,
+        978.4503
+      ],
+      [
+        1508.8204,
+        986.7936
+      ],
+      [
+        1523.0149,
+        995.1297
+      ],
+      [
+        1537.194,
+        1003.4558
+      ],
+      [
+        1551.3526,
+        1011.769
+      ],
+      [
+        1565.4854,
+        1020.0665
+      ],
+      [
+        1579.5871,
+        1028.3456
+      ],
+      [
+        1593.6526,
+        1036.6035
+      ],
+      [
+        1607.6765,
+        1044.8372
+      ],
+      [
+        1621.6537,
+        1053.044
+      ],
+      [
+        1635.5788,
+        1061.2212
+      ],
+      [
+        1649.4467,
+        1069.3658
+      ],
+      [
+        1663.2521,
+        1077.4752
+      ],
+      [
+        1676.9898,
+        1085.5464
+      ],
+      [
+        1690.6545,
+        1093.5767
+      ],
+      [
+        1704.241,
+        1101.5632
+      ],
+      [
+        1717.7441,
+        1109.5033
+      ],
+      [
+        1731.1584,
+        1117.3939
+      ],
+      [
+        1744.4788,
+        1125.2324
+      ],
+      [
+        1757.7,
+        1133.016
+      ],
+      [
+        1772.4772,
+        1141.7166
+      ],
+      [
+        1787.3336,
+        1150.4621
+      ],
+      [
+        1802.2485,
+        1159.2409
+      ],
+      [
+        1817.2013,
+        1168.041
+      ],
+      [
+        1832.1714,
+        1176.8509
+      ],
+      [
+        1847.1382,
+        1185.6589
+      ],
+      [
+        1862.0812,
+        1194.4531
+      ],
+      [
+        1876.9797,
+        1203.2219
+      ],
+      [
+        1891.8132,
+        1211.9535
+      ],
+      [
+        1906.561,
+        1220.6363
+      ],
+      [
+        1921.2025,
+        1229.2584
+      ],
+      [
+        1935.7171,
+        1237.8083
+      ],
+      [
+        1950.0843,
+        1246.2741
+      ],
+      [
+        1964.2835,
+        1254.6441
+      ],
+      [
+        1978.294,
+        1262.9067
+      ],
+      [
+        1992.0952,
+        1271.05
+      ],
+      [
+        2005.6665,
+        1279.0625
+      ],
+      [
+        2018.9875,
+        1286.9322
+      ],
+      [
+        2032.0373,
+        1294.6476
+      ],
+      [
+        2044.7956,
+        1302.1969
+      ],
+      [
+        2057.2415,
+        1309.5684
+      ],
+      [
+        2069.3547,
+        1316.7504
+      ],
+      [
+        2081.1144,
+        1323.7311
+      ],
+      [
+        2092.5,
+        1330.4988
+      ],
+      [
+        2108.8013,
+        1340.0066
+      ],
+      [
+        2124.8197,
+        1349.0463
+      ],
+      [
+        2140.4758,
+        1357.6879
+      ],
+      [
+        2155.6902,
+        1366.0011
+      ],
+      [
+        2170.3836,
+        1374.0559
+      ],
+      [
+        2184.4766,
+        1381.9222
+      ],
+      [
+        2197.89,
+        1389.6699
+      ],
+      [
+        2210.5444,
+        1397.3689
+      ],
+      [
+        2222.3604,
+        1405.089
+      ],
+      [
+        2233.2587,
+        1412.9002
+      ],
+      [
+        2243.16,
+        1420.8723
+      ],
+      [
+        2255.686,
+        1432.1652
+      ],
+      [
+        2266.5773,
+        1443.2156
+      ],
+      [
+        2275.8929,
+        1454.3097
+      ],
+      [
+        2283.6916,
+        1465.7338
+      ],
+      [
+        2290.032,
+        1477.7741
+      ],
+      [
+        2295.159,
+        1492.5377
+      ],
+      [
+        2298.0478,
+        1507.9543
+      ],
+      [
+        2299.4397,
+        1523.7616
+      ],
+      [
+        2300.076,
+        1539.6967
+      ],
+      [
+        2300.0866,
+        1553.173
+      ],
+      [
+        2299.3313,
+        1566.8568
+      ],
+      [
+        2297.901,
+        1580.6641
+      ],
+      [
+        2295.8869,
+        1594.5111
+      ],
+      [
+        2293.38,
+        1608.3136
+      ],
+      [
+        2290.3017,
+        1622.7632
+      ],
+      [
+        2286.6869,
+        1637.3076
+      ],
+      [
+        2282.4349,
+        1651.8236
+      ],
+      [
+        2277.4455,
+        1666.188
+      ],
+      [
+        2271.618,
+        1680.2777
+      ],
+      [
+        2264.5652,
+        1694.8806
+      ],
+      [
+        2256.6209,
+        1709.3929
+      ],
+      [
+        2247.8507,
+        1723.6327
+      ],
+      [
+        2238.3199,
+        1737.4184
+      ],
+      [
+        2228.094,
+        1750.5682
+      ],
+      [
+        2218.7445,
+        1761.3354
+      ],
+      [
+        2208.7518,
+        1771.8126
+      ],
+      [
+        2198.2225,
+        1781.916
+      ],
+      [
+        2187.2634,
+        1791.5616
+      ],
+      [
+        2175.981,
+        1800.6654
+      ],
+      [
+        2164.482,
+        1809.1437
+      ],
+      [
+        2150.6005,
+        1818.4433
+      ],
+      [
+        2136.2266,
+        1827.095
+      ],
+      [
+        2121.4279,
+        1834.9462
+      ],
+      [
+        2106.2718,
+        1841.8441
+      ],
+      [
+        2090.826,
+        1847.6361
+      ],
+      [
+        2074.9033,
+        1852.3112
+      ],
+      [
+        2058.4588,
+        1855.9714
+      ],
+      [
+        2041.773,
+        1858.6328
+      ],
+      [
+        2025.1266,
+        1860.3118
+      ],
+      [
+        2008.8,
+        1861.0247
+      ],
+      [
+        1993.7287,
+        1860.7315
+      ],
+      [
+        1979.0166,
+        1859.4733
+      ],
+      [
+        1964.3071,
+        1857.3575
+      ],
+      [
+        1949.2437,
+        1854.4917
+      ],
+      [
+        1933.47,
+        1850.9832
+      ],
+      [
+        1919.3493,
+        1847.3648
+      ],
+      [
+        1905.304,
+        1843.1808
+      ],
+      [
+        1891.0041,
+        1838.4421
+      ],
+      [
+        1876.1198,
+        1833.16
+      ],
+      [
+        1860.3209,
+        1827.3456
+      ],
+      [
+        1843.2777,
+        1821.01
+      ],
+      [
+        1824.66,
+        1814.1644
+      ],
+      [
+        1813.0901,
+        1809.921
+      ],
+      [
+        1800.8405,
+        1805.3623
+      ],
+      [
+        1787.9619,
+        1800.5119
+      ],
+      [
+        1774.5053,
+        1795.3935
+      ],
+      [
+        1760.5216,
+        1790.0308
+      ],
+      [
+        1746.0615,
+        1784.4474
+      ],
+      [
+        1731.1761,
+        1778.6671
+      ],
+      [
+        1715.9161,
+        1772.7134
+      ],
+      [
+        1700.3324,
+        1766.6102
+      ],
+      [
+        1684.4759,
+        1760.381
+      ],
+      [
+        1668.3975,
+        1754.0496
+      ],
+      [
+        1652.1481,
+        1747.6395
+      ],
+      [
+        1635.7785,
+        1741.1746
+      ],
+      [
+        1619.3396,
+        1734.6784
+      ],
+      [
+        1602.8822,
+        1728.1746
+      ],
+      [
+        1586.4573,
+        1721.687
+      ],
+      [
+        1570.1157,
+        1715.2392
+      ],
+      [
+        1553.9083,
+        1708.8548
+      ],
+      [
+        1537.886,
+        1702.5576
+      ],
+      [
+        1522.0996,
+        1696.3711
+      ],
+      [
+        1506.6,
+        1690.3192
+      ],
+      [
+        1491.559,
+        1684.4583
+      ],
+      [
+        1476.4851,
+        1678.5839
+      ],
+      [
+        1461.3806,
+        1672.6969
+      ],
+      [
+        1446.248,
+        1666.7984
+      ],
+      [
+        1431.0897,
+        1660.8894
+      ],
+      [
+        1415.9081,
+        1654.9707
+      ],
+      [
+        1400.7056,
+        1649.0436
+      ],
+      [
+        1385.4846,
+        1643.1088
+      ],
+      [
+        1370.2475,
+        1637.1674
+      ],
+      [
+        1354.9968,
+        1631.2205
+      ],
+      [
+        1339.7348,
+        1625.2689
+      ],
+      [
+        1324.464,
+        1619.3137
+      ],
+      [
+        1309.1867,
+        1613.3558
+      ],
+      [
+        1293.9055,
+        1607.3963
+      ],
+      [
+        1278.6226,
+        1601.4362
+      ],
+      [
+        1263.3405,
+        1595.4764
+      ],
+      [
+        1248.0617,
+        1589.5179
+      ],
+      [
+        1232.7884,
+        1583.5617
+      ],
+      [
+        1217.5233,
+        1577.6088
+      ],
+      [
+        1202.2685,
+        1571.6601
+      ],
+      [
+        1187.0266,
+        1565.7168
+      ],
+      [
+        1171.8,
+        1559.7797
+      ],
+      [
+        1156.5818,
+        1553.8461
+      ],
+      [
+        1141.3636,
+        1547.9125
+      ],
+      [
+        1126.1455,
+        1541.9789
+      ],
+      [
+        1110.9273,
+        1536.0453
+      ],
+      [
+        1095.7091,
+        1530.1117
+      ],
+      [
+        1080.4909,
+        1524.178
+      ],
+      [
+        1065.2727,
+        1518.2444
+      ],
+      [
+        1050.0545,
+        1512.3108
+      ],
+      [
+        1034.8364,
+        1506.3772
+      ],
+      [
+        1019.6182,
+        1500.4436
+      ],
+      [
+        1004.4,
+        1494.51
+      ],
+      [
+        989.1818,
+        1488.5764
+      ],
+      [
+        973.9636,
+        1482.6427
+      ],
+      [
+        958.7455,
+        1476.7091
+      ],
+      [
+        943.5273,
+        1470.7755
+      ],
+      [
+        928.3091,
+        1464.8419
+      ],
+      [
+        913.0909,
+        1458.9083
+      ],
+      [
+        897.8727,
+        1452.9747
+      ],
+      [
+        882.6545,
+        1447.0411
+      ],
+      [
+        867.4364,
+        1441.1075
+      ],
+      [
+        852.2182,
+        1435.1738
+      ],
+      [
+        837,
+        1429.2402
+      ],
+      [
+        821.637,
+        1423.2502
+      ],
+      [
+        806.012,
+        1417.1582
+      ],
+      [
+        790.1664,
+        1410.9802
+      ],
+      [
+        774.1415,
+        1404.7324
+      ],
+      [
+        757.9787,
+        1398.4308
+      ],
+      [
+        741.7193,
+        1392.0917
+      ],
+      [
+        725.4048,
+        1385.7311
+      ],
+      [
+        709.0765,
+        1379.3652
+      ],
+      [
+        692.7758,
+        1373.0099
+      ],
+      [
+        676.544,
+        1366.6816
+      ],
+      [
+        660.4226,
+        1360.3962
+      ],
+      [
+        644.4529,
+        1354.1698
+      ],
+      [
+        628.6762,
+        1348.0187
+      ],
+      [
+        613.1339,
+        1341.9589
+      ],
+      [
+        597.8675,
+        1336.0065
+      ],
+      [
+        582.9182,
+        1330.1776
+      ],
+      [
+        568.3275,
+        1324.4883
+      ],
+      [
+        554.1367,
+        1318.9549
+      ],
+      [
+        540.3871,
+        1313.5932
+      ],
+      [
+        527.1203,
+        1308.4196
+      ],
+      [
+        514.3774,
+        1303.4501
+      ],
+      [
+        502.2,
+        1298.7007
+      ],
+      [
+        484.0091,
+        1291.6705
+      ],
+      [
+        466.6132,
+        1285.0471
+      ],
+      [
+        449.9864,
+        1278.7719
+      ],
+      [
+        434.1029,
+        1272.7862
+      ],
+      [
+        418.9369,
+        1267.0313
+      ],
+      [
+        404.4626,
+        1261.4486
+      ],
+      [
+        390.6543,
+        1255.9792
+      ],
+      [
+        377.486,
+        1250.5646
+      ],
+      [
+        364.932,
+        1245.146
+      ],
+      [
+        350.2707,
+        1238.7293
+      ],
+      [
+        336.7946,
+        1232.7876
+      ],
+      [
+        324.2879,
+        1226.8744
+      ],
+      [
+        312.535,
+        1220.5433
+      ],
+      [
+        301.32,
+        1213.348
+      ],
+      [
+        288.9517,
+        1204.0521
+      ],
+      [
+        277.4007,
+        1194.0287
+      ],
+      [
+        266.9283,
+        1183.2051
+      ],
+      [
+        257.796,
+        1171.5084
+      ],
+      [
+        250.1064,
+        1158.7809
+      ],
+      [
+        243.6866,
+        1145.0861
+      ],
+      [
+        238.4626,
+        1130.7954
+      ],
+      [
+        234.36,
+        1116.2801
+      ],
+      [
+        231.5897,
+        1101.9145
+      ],
+      [
+        230.1834,
+        1087.5709
+      ],
+      [
+        229.6099,
+        1072.1012
+      ],
+      [
+        229.338,
+        1054.3575
+      ],
+      [
+        229.3126,
+        1042.2391
+      ],
+      [
+        229.5657,
+        1029.003
+      ],
+      [
+        230.0569,
+        1014.8154
+      ],
+      [
+        230.7457,
+        999.8424
+      ],
+      [
+        231.5918,
+        984.2503
+      ],
+      [
+        232.5548,
+        968.2051
+      ],
+      [
+        233.5941,
+        951.8731
+      ],
+      [
+        234.6696,
+        935.4203
+      ],
+      [
+        235.7406,
+        919.013
+      ],
+      [
+        236.7669,
+        902.8172
+      ],
+      [
+        237.708,
+        886.9992
+      ],
+      [
+        238.5822,
+        871.9198
+      ],
+      [
+        239.4979,
+        856.6644
+      ],
+      [
+        240.4482,
+        841.2716
+      ],
+      [
+        241.4262,
+        825.7797
+      ],
+      [
+        242.4251,
+        810.2274
+      ],
+      [
+        243.438,
+        794.6532
+      ],
+      [
+        244.4581,
+        779.0956
+      ],
+      [
+        245.4785,
+        763.5932
+      ],
+      [
+        246.4924,
+        748.1843
+      ],
+      [
+        247.4928,
+        732.9077
+      ],
+      [
+        248.473,
+        717.8018
+      ],
+      [
+        249.426,
+        702.905
+      ],
+      [
+        250.4291,
+        686.1914
+      ],
+      [
+        251.3649,
+        669.1424
+      ],
+      [
+        252.2587,
+        651.9517
+      ],
+      [
+        253.136,
+        634.8128
+      ],
+      [
+        254.0221,
+        617.9196
+      ],
+      [
+        254.9422,
+        601.4655
+      ],
+      [
+        255.9217,
+        585.6444
+      ],
+      [
+        256.9859,
+        570.6497
+      ],
+      [
+        258.1603,
+        556.6753
+      ],
+      [
+        259.47,
+        543.9146
+      ],
+      [
+        261.3541,
+        526.5265
+      ],
+      [
+        263.186,
+        511.2396
+      ],
+      [
+        265.6709,
+        497.2279
+      ],
+      [
+        269.514,
+        483.6656
+      ],
+      [
+        274.3896,
+        471.3757
+      ],
+      [
+        280.2317,
+        459.65
+      ],
+      [
+        286.9924,
+        448.6355
+      ],
+      [
+        294.624,
+        438.4789
+      ],
+      [
+        306.1318,
+        426.5627
+      ],
+      [
+        319.1624,
+        416.0357
+      ],
+      [
+        333.126,
+        406.6808
+      ],
+      [
+        344.6591,
+        400.1873
+      ],
+      [
+        356.9081,
+        394.3958
+      ],
+      [
+        369.4026,
+        389.3076
+      ],
+      [
+        381.672,
+        384.9242
+      ],
+      [
+        396.2948,
+        380.3609
+      ],
+      [
+        410.8158,
+        376.8489
+      ],
+      [
+        425.196,
+        374.8827
+      ],
+      [
+        438.7881,
+        374.6293
+      ],
+      [
+        452.2532,
+        375.7711
+      ],
+      [
+        465.372,
+        378.2298
+      ],
+      [
+        476.5077,
+        381.4712
+      ],
+      [
+        487.3017,
+        386.0124
+      ],
+      [
+        502.2,
+        393.2921
+      ]
+    ],
+    "note": "Centripetal Catmull-Rom interpolation of image-selected centerline pins; sampled vertices are fitted controls, not additional independent observations."
+  },
+  "limitations": "Draft route identification; historical alignment and direction provisional. Image interpolation is not a survey. No catalogue length was fitted. No start/finish coordinates were copied from other layouts.",
+  "preservedLayouts": [
+    {
+      "layoutId": "ruapuna-grand-prix-dipper",
+      "traceSha256": "617194b83e9f8224d76063805df51341759dcd340b4c716f4d5dbb47a162ac9d",
+      "borderFeaturesSha256": "ca215c30ef9820ae9cdaff3529d7d330b4d1eb4e6d72c8f089c122ead207a057",
+      "modelSha256": "4fcbf5bc8319918ce23338a21691e978f43891942bd10004787b5a224255bee3",
+      "timingStatus": "missing"
+    },
+    {
+      "layoutId": "ruapuna-grand-prix",
+      "traceSha256": "5cf6abaf787ec74872eacbffd140263e77b42ba9936ef0bba277af312a3028f8",
+      "borderFeaturesSha256": "97d0e82f10b9ef56cd9d15508cbc617af033eed00f6faf7c6d7c9be54d2e9c14",
+      "modelSha256": "1da7aef4dcfbe579c2cc2b874e50688a96782bb90acc24936542f8776977ff81",
+      "timingStatus": "missing"
+    },
+    {
+      "layoutId": "ruapuna-outer-course",
+      "traceSha256": "7afe52c890727b3c95cdc13fcdebc1cc4e8443a0eba966567ffb65ea06df94ce",
+      "borderFeaturesSha256": "6b29dd408f27451ee4fe0a7e49d66ed2a2c111706272468f74a422d476e7fc55",
+      "modelSha256": "0c841d9c43ef8410dd375cd1d3e27bfdafad02a809bbbf8bf67a276923791c0a",
+      "timingStatus": "missing"
+    },
+    {
+      "layoutId": "ruapuna-outer-dipper",
+      "traceSha256": "c97e94dc6173088a1f7c69c384e2ef2594b62d20ce99f2893106e3ef4abcba36",
+      "borderFeaturesSha256": "1a0d3f1465c7ef0c88c49431463345062cf59495f249f842f57a77299380b36d",
+      "modelSha256": "b25e6faae8a1350bae99ac2469dd1904fe76e71cbe2c9b758592d5e02de20816",
+      "timingStatus": "missing"
+    }
+  ],
+  "borderReview": {
+    "status": "estimated",
+    "method": "image-measured-paired-edges-v1",
+    "imagerySha256": "f4110bfda892f5cc63774924a0fa94b6b250f9303fe7d32bc284b85f584008f7",
+    "measurementResultSha256": "128b00f0fc8c3ec3ccad935b1ee52bad18f31e5b25273fb120721978d862a13f",
+    "reconstructionControls": 740,
+    "authoringPins": {
+      "inner": [
+        [
+          300,
+          239
+        ],
+        [
+          320,
+          241
+        ],
+        [
+          340,
+          247
+        ],
+        [
+          370,
+          264
+        ],
+        [
+          400,
+          284
+        ],
+        [
+          450,
+          318
+        ],
+        [
+          500,
+          350
+        ],
+        [
+          550,
+          383
+        ],
+        [
+          600,
+          416
+        ],
+        [
+          800,
+          547
+        ],
+        [
+          1050,
+          695
+        ],
+        [
+          1250,
+          817
+        ],
+        [
+          1295,
+          849
+        ],
+        [
+          1320,
+          883
+        ],
+        [
+          1333,
+          920
+        ],
+        [
+          1338,
+          957
+        ],
+        [
+          1334,
+          993
+        ],
+        [
+          1320,
+          1031
+        ],
+        [
+          1296,
+          1060
+        ],
+        [
+          1260,
+          1080
+        ],
+        [
+          1220,
+          1092
+        ],
+        [
+          1180,
+          1094
+        ],
+        [
+          1145,
+          1087
+        ],
+        [
+          1090,
+          1065
+        ],
+        [
+          900,
+          991
+        ],
+        [
+          700,
+          913
+        ],
+        [
+          500,
+          835
+        ],
+        [
+          400,
+          796
+        ],
+        [
+          350,
+          778
+        ],
+        [
+          300,
+          759
+        ],
+        [
+          220,
+          723
+        ],
+        [
+          190,
+          708
+        ],
+        [
+          170,
+          688
+        ],
+        [
+          158,
+          660
+        ],
+        [
+          153,
+          630
+        ],
+        [
+          163,
+          530
+        ],
+        [
+          170,
+          420
+        ],
+        [
+          181,
+          325
+        ],
+        [
+          196,
+          295
+        ],
+        [
+          214,
+          274
+        ],
+        [
+          238,
+          255
+        ],
+        [
+          266,
+          243
+        ],
+        [
+          285,
+          239
+        ]
+      ],
+      "outer": [
+        [
+          300,
+          209
+        ],
+        [
+          330,
+          208
+        ],
+        [
+          360,
+          211
+        ],
+        [
+          390,
+          221
+        ],
+        [
+          420,
+          233
+        ],
+        [
+          460,
+          249
+        ],
+        [
+          500,
+          270
+        ],
+        [
+          550,
+          300
+        ],
+        [
+          800,
+          450
+        ],
+        [
+          1050,
+          600
+        ],
+        [
+          1250,
+          720
+        ],
+        [
+          1370,
+          792
+        ],
+        [
+          1403,
+          825
+        ],
+        [
+          1420,
+          857
+        ],
+        [
+          1425,
+          895
+        ],
+        [
+          1422,
+          925
+        ],
+        [
+          1409,
+          965
+        ],
+        [
+          1394,
+          1000
+        ],
+        [
+          1370,
+          1046
+        ],
+        [
+          1337,
+          1083
+        ],
+        [
+          1294,
+          1112
+        ],
+        [
+          1248,
+          1130
+        ],
+        [
+          1200,
+          1136
+        ],
+        [
+          1155,
+          1130
+        ],
+        [
+          1090,
+          1106
+        ],
+        [
+          900,
+          1032
+        ],
+        [
+          700,
+          954
+        ],
+        [
+          500,
+          876
+        ],
+        [
+          300,
+          798
+        ],
+        [
+          210,
+          764
+        ],
+        [
+          174,
+          745
+        ],
+        [
+          148,
+          723
+        ],
+        [
+          131,
+          695
+        ],
+        [
+          120,
+          665
+        ],
+        [
+          116,
+          628
+        ],
+        [
+          122,
+          530
+        ],
+        [
+          129,
+          420
+        ],
+        [
+          136,
+          325
+        ],
+        [
+          140,
+          285
+        ],
+        [
+          149,
+          254
+        ],
+        [
+          162,
+          240
+        ],
+        [
+          182,
+          231
+        ],
+        [
+          208,
+          222
+        ],
+        [
+          235,
+          213
+        ],
+        [
+          260,
+          207
+        ],
+        [
+          280,
+          206
+        ]
+      ]
+    },
+    "curveFit": "Centripetal Catmull-Rom through selected road-edge pins with collinear knots at intervals no greater than 65 authoring pixels. Normal intersections are explicit public reconstruction controls, not additional independent observations.",
+    "limitations": "Road edges selected from the pinned March 2025 Environment Canterbury imagery via LINZ. Visible edge pins use smooth centripetal interpolation; collinear reconstruction knots retain the observed straights. Dense cross-section intersections sample these fitted curves and are not additional independent image observations. Northern straight/return, Southern Dipper and Eastern pit-exit/service shared-pavement openings use virtual joins between visible adjacent edge positions; those joins are estimated, not physical measured limits. No nominal width or catalogue length is fitted. Borders remain unverified, curbs illustrative, terrain elevation estimated and banking unknown."
+  },
+  "centerlineRefinement": {
+    "reason": "Enlarged image review rejected an initial road-edge candidate that cut across the main starting-grid area. The road extends to the pit-wall edge, including both grid rows. The independently digitized centerline is refined to the midpoint of the two image-derived road edges, including their explicitly estimated shared-pavement joins. The former centerline ran near the inner edge and cannot remain a centerline for this wider road. No displacement guard is weakened.",
+    "previousPublishedImageryCourse": {
+      "schemaVersion": 1,
+      "sourceKind": "georeferenced-imagery",
+      "sourceId": "linz-christchurch-2025-ruapuna",
+      "attribution": "Environment Canterbury; imagery by Aerial Surveys, captured March 2025; hosted and processed by Toitū Te Whenua LINZ, CC BY 4.0. Reprojected, cropped and sampled by OpenRacetrackDB.",
+      "license": "CC-BY-4.0",
+      "imageryFile": "linz-christchurch-2025-ruapuna.png",
+      "imagerySha256": "f4110bfda892f5cc63774924a0fa94b6b250f9303fe7d32bc284b85f584008f7",
+      "sourceUrl": "https://nz-imagery.s3-ap-southeast-2.amazonaws.com/canterbury/christchurch_2025_0.075m/rgb/2193/collection.json",
+      "reuseEvidenceUrl": "https://www.linz.govt.nz/products-services/data/licensing-and-using-data/attributing-elevation-or-aerial-imagery-data",
+      "retrievedAt": "2026-11-07T11:55:49.122468Z",
+      "width": 2511,
+      "height": 2097,
+      "extent": {
+        "xmin": 19200276.180325482,
+        "ymin": -5393526.419173922,
+        "xmax": 19200968.838912364,
+        "ymax": -5392948.078245551,
+        "spatialReference": 3857
+      },
+      "identificationUrl": "https://www.ruapuna.co.nz/wp-content/uploads/2024/12/CCC_Strategic_Plan.pdf",
+      "evidence": "Short Eastern course identity is described in the operator strategic plan. Coordinates are independently digitized from 2025 LINZ imagery, including the physical Northern return junction. The inner Dipper branch is excluded; no diagram coordinates or nominal width are used.",
+      "pixels": [
+        [
+          502.2,
+          393.2921
+        ],
+        [
+          509.1311,
+          396.8085
+        ],
+        [
+          517.014,
+          400.9583
+        ],
+        [
+          525.7986,
+          405.7082
+        ],
+        [
+          535.4348,
+          411.025
+        ],
+        [
+          545.8725,
+          416.8754
+        ],
+        [
+          557.0615,
+          423.2262
+        ],
+        [
+          568.9518,
+          430.0442
+        ],
+        [
+          581.4932,
+          437.2961
+        ],
+        [
+          594.6356,
+          444.9485
+        ],
+        [
+          608.3289,
+          452.9684
+        ],
+        [
+          622.523,
+          461.3224
+        ],
+        [
+          637.1677,
+          469.9773
+        ],
+        [
+          652.213,
+          478.8998
+        ],
+        [
+          667.6086,
+          488.0566
+        ],
+        [
+          683.3046,
+          497.4146
+        ],
+        [
+          699.2508,
+          506.9405
+        ],
+        [
+          715.397,
+          516.601
+        ],
+        [
+          731.6931,
+          526.3629
+        ],
+        [
+          748.0891,
+          536.1929
+        ],
+        [
+          764.5348,
+          546.0577
+        ],
+        [
+          780.9801,
+          555.9242
+        ],
+        [
+          797.3749,
+          565.759
+        ],
+        [
+          813.669,
+          575.529
+        ],
+        [
+          829.8123,
+          585.2008
+        ],
+        [
+          845.7548,
+          594.7413
+        ],
+        [
+          861.4463,
+          604.1171
+        ],
+        [
+          876.8367,
+          613.295
+        ],
+        [
+          891.8759,
+          622.2417
+        ],
+        [
+          906.5137,
+          630.9241
+        ],
+        [
+          920.7,
+          639.3089
+        ],
+        [
+          934.6555,
+          647.5433
+        ],
+        [
+          948.6099,
+          655.7822
+        ],
+        [
+          962.5632,
+          664.0254
+        ],
+        [
+          976.5155,
+          672.2724
+        ],
+        [
+          990.467,
+          680.523
+        ],
+        [
+          1004.4176,
+          688.7769
+        ],
+        [
+          1018.3675,
+          697.0337
+        ],
+        [
+          1032.3167,
+          705.2931
+        ],
+        [
+          1046.2654,
+          713.5547
+        ],
+        [
+          1060.2136,
+          721.8183
+        ],
+        [
+          1074.1614,
+          730.0835
+        ],
+        [
+          1088.1088,
+          738.35
+        ],
+        [
+          1102.056,
+          746.6175
+        ],
+        [
+          1116.003,
+          754.8856
+        ],
+        [
+          1129.95,
+          763.154
+        ],
+        [
+          1143.897,
+          771.4225
+        ],
+        [
+          1157.844,
+          779.6906
+        ],
+        [
+          1171.7912,
+          787.9581
+        ],
+        [
+          1185.7386,
+          796.2246
+        ],
+        [
+          1199.6864,
+          804.4898
+        ],
+        [
+          1213.6346,
+          812.7534
+        ],
+        [
+          1227.5833,
+          821.015
+        ],
+        [
+          1241.5325,
+          829.2744
+        ],
+        [
+          1255.4824,
+          837.5312
+        ],
+        [
+          1269.433,
+          845.785
+        ],
+        [
+          1283.3845,
+          854.0356
+        ],
+        [
+          1297.3368,
+          862.2827
+        ],
+        [
+          1311.2901,
+          870.5258
+        ],
+        [
+          1325.2445,
+          878.7648
+        ],
+        [
+          1339.2,
+          886.9992
+        ],
+        [
+          1353.1694,
+          895.2368
+        ],
+        [
+          1367.1865,
+          903.498
+        ],
+        [
+          1381.2458,
+          911.7801
+        ],
+        [
+          1395.3423,
+          920.0802
+        ],
+        [
+          1409.4706,
+          928.3956
+        ],
+        [
+          1423.6255,
+          936.7234
+        ],
+        [
+          1437.8018,
+          945.0608
+        ],
+        [
+          1451.9942,
+          953.405
+        ],
+        [
+          1466.1975,
+          961.7531
+        ],
+        [
+          1480.4065,
+          970.1025
+        ],
+        [
+          1494.6159,
+          978.4503
+        ],
+        [
+          1508.8204,
+          986.7936
+        ],
+        [
+          1523.0149,
+          995.1297
+        ],
+        [
+          1537.194,
+          1003.4558
+        ],
+        [
+          1551.3526,
+          1011.769
+        ],
+        [
+          1565.4854,
+          1020.0665
+        ],
+        [
+          1579.5871,
+          1028.3456
+        ],
+        [
+          1593.6526,
+          1036.6035
+        ],
+        [
+          1607.6765,
+          1044.8372
+        ],
+        [
+          1621.6537,
+          1053.044
+        ],
+        [
+          1635.5788,
+          1061.2212
+        ],
+        [
+          1649.4467,
+          1069.3658
+        ],
+        [
+          1663.2521,
+          1077.4752
+        ],
+        [
+          1676.9898,
+          1085.5464
+        ],
+        [
+          1690.6545,
+          1093.5767
+        ],
+        [
+          1704.241,
+          1101.5632
+        ],
+        [
+          1717.7441,
+          1109.5033
+        ],
+        [
+          1731.1584,
+          1117.3939
+        ],
+        [
+          1744.4788,
+          1125.2324
+        ],
+        [
+          1757.7,
+          1133.016
+        ],
+        [
+          1772.4772,
+          1141.7166
+        ],
+        [
+          1787.3336,
+          1150.4621
+        ],
+        [
+          1802.2485,
+          1159.2409
+        ],
+        [
+          1817.2013,
+          1168.041
+        ],
+        [
+          1832.1714,
+          1176.8509
+        ],
+        [
+          1847.1382,
+          1185.6589
+        ],
+        [
+          1862.0812,
+          1194.4531
+        ],
+        [
+          1876.9797,
+          1203.2219
+        ],
+        [
+          1891.8132,
+          1211.9535
+        ],
+        [
+          1906.561,
+          1220.6363
+        ],
+        [
+          1921.2025,
+          1229.2584
+        ],
+        [
+          1935.7171,
+          1237.8083
+        ],
+        [
+          1950.0843,
+          1246.2741
+        ],
+        [
+          1964.2835,
+          1254.6441
+        ],
+        [
+          1978.294,
+          1262.9067
+        ],
+        [
+          1992.0952,
+          1271.05
+        ],
+        [
+          2005.6665,
+          1279.0625
+        ],
+        [
+          2018.9875,
+          1286.9322
+        ],
+        [
+          2032.0373,
+          1294.6476
+        ],
+        [
+          2044.7956,
+          1302.1969
+        ],
+        [
+          2057.2415,
+          1309.5684
+        ],
+        [
+          2069.3547,
+          1316.7504
+        ],
+        [
+          2081.1144,
+          1323.7311
+        ],
+        [
+          2092.5,
+          1330.4988
+        ],
+        [
+          2108.8013,
+          1340.0066
+        ],
+        [
+          2124.8197,
+          1349.0463
+        ],
+        [
+          2140.4758,
+          1357.6879
+        ],
+        [
+          2155.6902,
+          1366.0011
+        ],
+        [
+          2170.3836,
+          1374.0559
+        ],
+        [
+          2184.4766,
+          1381.9222
+        ],
+        [
+          2197.89,
+          1389.6699
+        ],
+        [
+          2210.5444,
+          1397.3689
+        ],
+        [
+          2222.3604,
+          1405.089
+        ],
+        [
+          2233.2587,
+          1412.9002
+        ],
+        [
+          2243.16,
+          1420.8723
+        ],
+        [
+          2255.686,
+          1432.1652
+        ],
+        [
+          2266.5773,
+          1443.2156
+        ],
+        [
+          2275.8929,
+          1454.3097
+        ],
+        [
+          2283.6916,
+          1465.7338
+        ],
+        [
+          2290.032,
+          1477.7741
+        ],
+        [
+          2295.159,
+          1492.5377
+        ],
+        [
+          2298.0478,
+          1507.9543
+        ],
+        [
+          2299.4397,
+          1523.7616
+        ],
+        [
+          2300.076,
+          1539.6967
+        ],
+        [
+          2300.0866,
+          1553.173
+        ],
+        [
+          2299.3313,
+          1566.8568
+        ],
+        [
+          2297.901,
+          1580.6641
+        ],
+        [
+          2295.8869,
+          1594.5111
+        ],
+        [
+          2293.38,
+          1608.3136
+        ],
+        [
+          2290.3017,
+          1622.7632
+        ],
+        [
+          2286.6869,
+          1637.3076
+        ],
+        [
+          2282.4349,
+          1651.8236
+        ],
+        [
+          2277.4455,
+          1666.188
+        ],
+        [
+          2271.618,
+          1680.2777
+        ],
+        [
+          2264.5652,
+          1694.8806
+        ],
+        [
+          2256.6209,
+          1709.3929
+        ],
+        [
+          2247.8507,
+          1723.6327
+        ],
+        [
+          2238.3199,
+          1737.4184
+        ],
+        [
+          2228.094,
+          1750.5682
+        ],
+        [
+          2218.7445,
+          1761.3354
+        ],
+        [
+          2208.7518,
+          1771.8126
+        ],
+        [
+          2198.2225,
+          1781.916
+        ],
+        [
+          2187.2634,
+          1791.5616
+        ],
+        [
+          2175.981,
+          1800.6654
+        ],
+        [
+          2164.482,
+          1809.1437
+        ],
+        [
+          2150.6005,
+          1818.4433
+        ],
+        [
+          2136.2266,
+          1827.095
+        ],
+        [
+          2121.4279,
+          1834.9462
+        ],
+        [
+          2106.2718,
+          1841.8441
+        ],
+        [
+          2090.826,
+          1847.6361
+        ],
+        [
+          2074.9033,
+          1852.3112
+        ],
+        [
+          2058.4588,
+          1855.9714
+        ],
+        [
+          2041.773,
+          1858.6328
+        ],
+        [
+          2025.1266,
+          1860.3118
+        ],
+        [
+          2008.8,
+          1861.0247
+        ],
+        [
+          1993.7287,
+          1860.7315
+        ],
+        [
+          1979.0166,
+          1859.4733
+        ],
+        [
+          1964.3071,
+          1857.3575
+        ],
+        [
+          1949.2437,
+          1854.4917
+        ],
+        [
+          1933.47,
+          1850.9832
+        ],
+        [
+          1919.3493,
+          1847.3648
+        ],
+        [
+          1905.304,
+          1843.1808
+        ],
+        [
+          1891.0041,
+          1838.4421
+        ],
+        [
+          1876.1198,
+          1833.16
+        ],
+        [
+          1860.3209,
+          1827.3456
+        ],
+        [
+          1843.2777,
+          1821.01
+        ],
+        [
+          1824.66,
+          1814.1644
+        ],
+        [
+          1813.0901,
+          1809.921
+        ],
+        [
+          1800.8405,
+          1805.3623
+        ],
+        [
+          1787.9619,
+          1800.5119
+        ],
+        [
+          1774.5053,
+          1795.3935
+        ],
+        [
+          1760.5216,
+          1790.0308
+        ],
+        [
+          1746.0615,
+          1784.4474
+        ],
+        [
+          1731.1761,
+          1778.6671
+        ],
+        [
+          1715.9161,
+          1772.7134
+        ],
+        [
+          1700.3324,
+          1766.6102
+        ],
+        [
+          1684.4759,
+          1760.381
+        ],
+        [
+          1668.3975,
+          1754.0496
+        ],
+        [
+          1652.1481,
+          1747.6395
+        ],
+        [
+          1635.7785,
+          1741.1746
+        ],
+        [
+          1619.3396,
+          1734.6784
+        ],
+        [
+          1602.8822,
+          1728.1746
+        ],
+        [
+          1586.4573,
+          1721.687
+        ],
+        [
+          1570.1157,
+          1715.2392
+        ],
+        [
+          1553.9083,
+          1708.8548
+        ],
+        [
+          1537.886,
+          1702.5576
+        ],
+        [
+          1522.0996,
+          1696.3711
+        ],
+        [
+          1506.6,
+          1690.3192
+        ],
+        [
+          1491.559,
+          1684.4583
+        ],
+        [
+          1476.4851,
+          1678.5839
+        ],
+        [
+          1461.3806,
+          1672.6969
+        ],
+        [
+          1446.248,
+          1666.7984
+        ],
+        [
+          1431.0897,
+          1660.8894
+        ],
+        [
+          1415.9081,
+          1654.9707
+        ],
+        [
+          1400.7056,
+          1649.0436
+        ],
+        [
+          1385.4846,
+          1643.1088
+        ],
+        [
+          1370.2475,
+          1637.1674
+        ],
+        [
+          1354.9968,
+          1631.2205
+        ],
+        [
+          1339.7348,
+          1625.2689
+        ],
+        [
+          1324.464,
+          1619.3137
+        ],
+        [
+          1309.1867,
+          1613.3558
+        ],
+        [
+          1293.9055,
+          1607.3963
+        ],
+        [
+          1278.6226,
+          1601.4362
+        ],
+        [
+          1263.3405,
+          1595.4764
+        ],
+        [
+          1248.0617,
+          1589.5179
+        ],
+        [
+          1232.7884,
+          1583.5617
+        ],
+        [
+          1217.5233,
+          1577.6088
+        ],
+        [
+          1202.2685,
+          1571.6601
+        ],
+        [
+          1187.0266,
+          1565.7168
+        ],
+        [
+          1171.8,
+          1559.7797
+        ],
+        [
+          1156.5818,
+          1553.8461
+        ],
+        [
+          1141.3636,
+          1547.9125
+        ],
+        [
+          1126.1455,
+          1541.9789
+        ],
+        [
+          1110.9273,
+          1536.0453
+        ],
+        [
+          1095.7091,
+          1530.1117
+        ],
+        [
+          1080.4909,
+          1524.178
+        ],
+        [
+          1065.2727,
+          1518.2444
+        ],
+        [
+          1050.0545,
+          1512.3108
+        ],
+        [
+          1034.8364,
+          1506.3772
+        ],
+        [
+          1019.6182,
+          1500.4436
+        ],
+        [
+          1004.4,
+          1494.51
+        ],
+        [
+          989.1818,
+          1488.5764
+        ],
+        [
+          973.9636,
+          1482.6427
+        ],
+        [
+          958.7455,
+          1476.7091
+        ],
+        [
+          943.5273,
+          1470.7755
+        ],
+        [
+          928.3091,
+          1464.8419
+        ],
+        [
+          913.0909,
+          1458.9083
+        ],
+        [
+          897.8727,
+          1452.9747
+        ],
+        [
+          882.6545,
+          1447.0411
+        ],
+        [
+          867.4364,
+          1441.1075
+        ],
+        [
+          852.2182,
+          1435.1738
+        ],
+        [
+          837,
+          1429.2402
+        ],
+        [
+          821.637,
+          1423.2502
+        ],
+        [
+          806.012,
+          1417.1582
+        ],
+        [
+          790.1664,
+          1410.9802
+        ],
+        [
+          774.1415,
+          1404.7324
+        ],
+        [
+          757.9787,
+          1398.4308
+        ],
+        [
+          741.7193,
+          1392.0917
+        ],
+        [
+          725.4048,
+          1385.7311
+        ],
+        [
+          709.0765,
+          1379.3652
+        ],
+        [
+          692.7758,
+          1373.0099
+        ],
+        [
+          676.544,
+          1366.6816
+        ],
+        [
+          660.4226,
+          1360.3962
+        ],
+        [
+          644.4529,
+          1354.1698
+        ],
+        [
+          628.6762,
+          1348.0187
+        ],
+        [
+          613.1339,
+          1341.9589
+        ],
+        [
+          597.8675,
+          1336.0065
+        ],
+        [
+          582.9182,
+          1330.1776
+        ],
+        [
+          568.3275,
+          1324.4883
+        ],
+        [
+          554.1367,
+          1318.9549
+        ],
+        [
+          540.3871,
+          1313.5932
+        ],
+        [
+          527.1203,
+          1308.4196
+        ],
+        [
+          514.3774,
+          1303.4501
+        ],
+        [
+          502.2,
+          1298.7007
+        ],
+        [
+          484.0091,
+          1291.6705
+        ],
+        [
+          466.6132,
+          1285.0471
+        ],
+        [
+          449.9864,
+          1278.7719
+        ],
+        [
+          434.1029,
+          1272.7862
+        ],
+        [
+          418.9369,
+          1267.0313
+        ],
+        [
+          404.4626,
+          1261.4486
+        ],
+        [
+          390.6543,
+          1255.9792
+        ],
+        [
+          377.486,
+          1250.5646
+        ],
+        [
+          364.932,
+          1245.146
+        ],
+        [
+          350.2707,
+          1238.7293
+        ],
+        [
+          336.7946,
+          1232.7876
+        ],
+        [
+          324.2879,
+          1226.8744
+        ],
+        [
+          312.535,
+          1220.5433
+        ],
+        [
+          301.32,
+          1213.348
+        ],
+        [
+          288.9517,
+          1204.0521
+        ],
+        [
+          277.4007,
+          1194.0287
+        ],
+        [
+          266.9283,
+          1183.2051
+        ],
+        [
+          257.796,
+          1171.5084
+        ],
+        [
+          250.1064,
+          1158.7809
+        ],
+        [
+          243.6866,
+          1145.0861
+        ],
+        [
+          238.4626,
+          1130.7954
+        ],
+        [
+          234.36,
+          1116.2801
+        ],
+        [
+          231.5897,
+          1101.9145
+        ],
+        [
+          230.1834,
+          1087.5709
+        ],
+        [
+          229.6099,
+          1072.1012
+        ],
+        [
+          229.338,
+          1054.3575
+        ],
+        [
+          229.3126,
+          1042.2391
+        ],
+        [
+          229.5657,
+          1029.003
+        ],
+        [
+          230.0569,
+          1014.8154
+        ],
+        [
+          230.7457,
+          999.8424
+        ],
+        [
+          231.5918,
+          984.2503
+        ],
+        [
+          232.5548,
+          968.2051
+        ],
+        [
+          233.5941,
+          951.8731
+        ],
+        [
+          234.6696,
+          935.4203
+        ],
+        [
+          235.7406,
+          919.013
+        ],
+        [
+          236.7669,
+          902.8172
+        ],
+        [
+          237.708,
+          886.9992
+        ],
+        [
+          238.5822,
+          871.9198
+        ],
+        [
+          239.4979,
+          856.6644
+        ],
+        [
+          240.4482,
+          841.2716
+        ],
+        [
+          241.4262,
+          825.7797
+        ],
+        [
+          242.4251,
+          810.2274
+        ],
+        [
+          243.438,
+          794.6532
+        ],
+        [
+          244.4581,
+          779.0956
+        ],
+        [
+          245.4785,
+          763.5932
+        ],
+        [
+          246.4924,
+          748.1843
+        ],
+        [
+          247.4928,
+          732.9077
+        ],
+        [
+          248.473,
+          717.8018
+        ],
+        [
+          249.426,
+          702.905
+        ],
+        [
+          250.4291,
+          686.1914
+        ],
+        [
+          251.3649,
+          669.1424
+        ],
+        [
+          252.2587,
+          651.9517
+        ],
+        [
+          253.136,
+          634.8128
+        ],
+        [
+          254.0221,
+          617.9196
+        ],
+        [
+          254.9422,
+          601.4655
+        ],
+        [
+          255.9217,
+          585.6444
+        ],
+        [
+          256.9859,
+          570.6497
+        ],
+        [
+          258.1603,
+          556.6753
+        ],
+        [
+          259.47,
+          543.9146
+        ],
+        [
+          261.3541,
+          526.5265
+        ],
+        [
+          263.186,
+          511.2396
+        ],
+        [
+          265.6709,
+          497.2279
+        ],
+        [
+          269.514,
+          483.6656
+        ],
+        [
+          274.3896,
+          471.3757
+        ],
+        [
+          280.2317,
+          459.65
+        ],
+        [
+          286.9924,
+          448.6355
+        ],
+        [
+          294.624,
+          438.4789
+        ],
+        [
+          306.1318,
+          426.5627
+        ],
+        [
+          319.1624,
+          416.0357
+        ],
+        [
+          333.126,
+          406.6808
+        ],
+        [
+          344.6591,
+          400.1873
+        ],
+        [
+          356.9081,
+          394.3958
+        ],
+        [
+          369.4026,
+          389.3076
+        ],
+        [
+          381.672,
+          384.9242
+        ],
+        [
+          396.2948,
+          380.3609
+        ],
+        [
+          410.8158,
+          376.8489
+        ],
+        [
+          425.196,
+          374.8827
+        ],
+        [
+          438.7881,
+          374.6293
+        ],
+        [
+          452.2532,
+          375.7711
+        ],
+        [
+          465.372,
+          378.2298
+        ],
+        [
+          476.5077,
+          381.4712
+        ],
+        [
+          487.3017,
+          386.0124
+        ],
+        [
+          502.2,
+          393.2921
+        ]
+      ],
+      "closed": true
+    },
+    "previousPublishedRecipe": {
+      "schemaVersion": 1,
+      "geometrySource": "imagery",
+      "trackId": "nz-ruapuna-e0b8962a",
+      "layoutId": "ruapuna-eastern-course",
+      "sourceId": "linz-christchurch-2025-ruapuna",
+      "snapshotFile": "imagery-ruapuna-eastern-2025.json",
+      "snapshotSha256": "884ce1cd2396ab111511a34a1fa8f1e1d783896f8640ac8b1768d63c3ba66e49",
+      "closed": true,
+      "timingMode": "shared",
+      "geometryStatus": "draft",
+      "reviewedAt": null,
+      "notes": [
+        "Draft short Eastern course, independently digitized from March 2025 Environment Canterbury aerial imagery via LINZ (CC BY 4.0). Corrects an OSM Northern junction spur that doubled back 44 m along the straight. Selected image centerline pins use centripetal curve interpolation; sampled vertices are reconstruction controls, not independent measurements. Historical identity and direction remain provisional. Timing is missing. No nominal width or catalogue length is fitted. Original source recipe and correction evidence retained in sources/research/ruapuna-eastern-route-correction.json."
+      ],
+      "gates": []
+    },
+    "rejectedCandidateMeasurementSha256": "0be65b38a98fe3270475c842001c22150e29eed740c5d6b735472da2f3294c9b",
+    "previousPublishedNetwork": {
+      "recipe": {
+        "schemaVersion": 2,
+        "geometryKind": "network",
+        "geometrySource": "components",
+        "trackId": "nz-ruapuna-e0b8962a",
+        "layoutId": "ruapuna",
+        "sourceId": "component-network-ruapuna",
+        "snapshotFile": "components-network-ruapuna.json",
+        "snapshotSha256": "dcc9d4d750db4818ddffcf96860632a332d5d94aa37d62dd4dc00bc5ae2df413",
+        "geometryStatus": "draft",
+        "timingMode": "shared",
+        "reviewedAt": null,
+        "notes": [
+          "Combined configuration set: four exact original OSM routes and the image-derived Eastern route, rebuilt from pinned independent sources without snapping. This is not one lap. Only exactly shared coordinate edges count once in the branch length; nearby coordinate-distinct image and OSM paths remain separate. No line connects independent paths. Public timing coordinates remain unchanged and do not turn this configuration set into a single lap. Original network source retained for correction review."
+        ],
+        "gates": [],
+        "components": [
+          {
+            "layoutId": "ruapuna-grand-prix",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "c2aa1d53876925057d351954ee26eebcba5e5784a280eedb09e27e890d4a0fe6"
+          },
+          {
+            "layoutId": "ruapuna-grand-prix-dipper",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "2967ea08bbbddba12030d5b117470aedfa5d5d9aede54da14054eddd8b10f320"
+          },
+          {
+            "layoutId": "ruapuna-outer-dipper",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "700a013f8c28dadd2050edd0beb59e004fb8a0295bf217cb27628f4a9ce5d638"
+          },
+          {
+            "layoutId": "ruapuna-outer-course",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "fff7e45e8c045ba56d169c2cf19e1857e572aa6362ee7d7298a1853a191fb69e"
+          },
+          {
+            "layoutId": "ruapuna-eastern-course",
+            "snapshotFile": "imagery-ruapuna-eastern-2025.json",
+            "snapshotSha256": "884ce1cd2396ab111511a34a1fa8f1e1d783896f8640ac8b1768d63c3ba66e49",
+            "traceSha256": "cc5e04a5132257e465a0e0dc7ccec5cde206ee1d5da2a10fad0eb95608b46f49"
+          }
+        ]
+      },
+      "snapshot": {
+        "schemaVersion": 1,
+        "sourceKind": "component-network",
+        "trackId": "nz-ruapuna-e0b8962a",
+        "layoutId": "ruapuna",
+        "components": [
+          {
+            "layoutId": "ruapuna-grand-prix",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "c2aa1d53876925057d351954ee26eebcba5e5784a280eedb09e27e890d4a0fe6"
+          },
+          {
+            "layoutId": "ruapuna-grand-prix-dipper",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "2967ea08bbbddba12030d5b117470aedfa5d5d9aede54da14054eddd8b10f320"
+          },
+          {
+            "layoutId": "ruapuna-outer-dipper",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "700a013f8c28dadd2050edd0beb59e004fb8a0295bf217cb27628f4a9ce5d638"
+          },
+          {
+            "layoutId": "ruapuna-outer-course",
+            "snapshotFile": "components-osm-33795438.json",
+            "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+            "traceSha256": "fff7e45e8c045ba56d169c2cf19e1857e572aa6362ee7d7298a1853a191fb69e"
+          },
+          {
+            "layoutId": "ruapuna-eastern-course",
+            "snapshotFile": "imagery-ruapuna-eastern-2025.json",
+            "snapshotSha256": "884ce1cd2396ab111511a34a1fa8f1e1d783896f8640ac8b1768d63c3ba66e49",
+            "traceSha256": "cc5e04a5132257e465a0e0dc7ccec5cde206ee1d5da2a10fad0eb95608b46f49"
+          }
+        ]
+      }
+    }
+  },
+  "videoReview": {
+    "method": "full-lap-browser-export-and-40-frame-visual-review",
+    "videoSha256": "67dfc2bf2a93a685889bffa97bbe65d127585795eb392c8c3c525454d8becbfe",
+    "codec": "vp9",
+    "width": 1280,
+    "height": 720,
+    "frames": 830,
+    "simulationSeconds": 37.1210043530007,
+    "recordingWallSeconds": 37.301,
+    "videoDurationSeconds": 37.116,
+    "browserErrors": 0,
+    "decoderErrors": 0,
+    "reviewedFrames": 40,
+    "maxChaseYawChangeAt60HzDeg": 0.45498062760259067,
+    "roadRepairs": 0,
+    "limitations": "Visualisation, not a road-surface or vehicle-dynamics survey. Curbs are illustrative, terrain elevations estimated and banking unknown."
+  }
+}

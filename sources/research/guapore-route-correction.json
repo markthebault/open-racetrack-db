@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "trackId": "br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914",
+  "layoutId": "main",
+  "baselineCommit": "9d44c01be2fee6d9a0decec1a1c657220f9c3d45",
+  "previousRecipe": {
+    "schemaVersion": 1,
+    "trackId": "br-autodromo-internacional-de-guapore-nelson-luiz-barro-103598914",
+    "layoutId": "main",
+    "sourceId": "osm-snapshot",
+    "snapshotSha256": "a675df574a5bac25f84e9e54b33d578197283cd79e815fb8aabbf2e8b9f296aa",
+    "closed": true,
+    "timingMode": "shared",
+    "geometryStatus": "draft",
+    "reviewedAt": null,
+    "notes": [
+      "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+      "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
+      "Some source ways lack one-way direction tags. Travel direction is provisional."
+    ],
+    "segments": [
+      {
+        "wayId": 103598914,
+        "wayVersion": 8,
+        "fromIndex": 56,
+        "toIndex": 55
+      },
+      {
+        "wayId": 103598919,
+        "wayVersion": 3,
+        "fromIndex": 0,
+        "toIndex": 8
+      },
+      {
+        "wayId": 103598920,
+        "wayVersion": 5,
+        "fromIndex": 21,
+        "toIndex": 0
+      },
+      {
+        "wayId": 103598914,
+        "wayVersion": 8,
+        "fromIndex": 53,
+        "toIndex": 0
+      },
+      {
+        "wayId": 446405589,
+        "wayVersion": 2,
+        "fromIndex": 1,
+        "toIndex": 0
+      },
+      {
+        "wayId": 103598914,
+        "wayVersion": 8,
+        "fromIndex": 84,
+        "toIndex": 56
+      }
+    ],
+    "gates": []
+  },
+  "previousTraceSha256": "81d7b67856777292582d3b823dac497266e1591df85cebecdef1c5d5ef6a3133",
+  "reason": "The generic longest-cycle fallback follows the parallel pit lane and an extra return spur instead of the direct racing straight. The independently authored historical map distinguishes the straight from pit lane; native imagery confirms the current physical paving.",
+  "excludedWayIds": [
+    103598919,
+    103598920
+  ],
+  "replacement": {
+    "sourceLayoutId": "guapore",
+    "sourceId": "osm-selection-103598914",
+    "snapshotFile": "selected-network-103598914.json",
+    "snapshotSha256": "5054457a447ee33c14a7b6ef3454f6af7b90e92f1a5aa391ef26998955241756",
+    "traceSha256": "a8705f492b185d73d8fdfbf3c9485b48b5d825a68de337f5c8f447596c867076"
+  },
+  "identityEvidence": {
+    "primaryUrl": "https://turismo.guapore.rs.gov.br/locais/autodromo-internacional-nelson-luis-barro",
+    "primaryUse": "Municipal circuit identity corroboration only; its stated distance is not fitted.",
+    "operatorUrl": "https://autodromodeguapore.com.br/",
+    "operatorStatus": "HTTP 403; operator site is not claimed as visually inspected.",
+    "independentMapPage": "https://commons.wikimedia.org/wiki/File:Aut%C3%B3dromo_Internacional_de_Guapor%C3%A9_(Brazil)_track_map.svg",
+    "independentMapUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Aut%C3%B3dromo_Internacional_de_Guapor%C3%A9_%28Brazil%29_track_map.svg",
+    "mapSha256": "de607d61e37034b3cab26d9c3392b38ae584438544944db6a1d1669647fbac85",
+    "mapAuthor": "Will Pittenger",
+    "mapLicense": "CC-BY-SA-3.0",
+    "mapDate": "2010-08-04",
+    "use": "Visually inspected historical full-course identity and pit-lane distinction only; no diagram coordinates or distances are extracted or fitted. Native imagery confirms the physical road arrangement."
+  },
+  "imageryReview": {
+    "sha256": "0071d72dc6dc0616a41ceb9e878eef96aa8d163c6ea8e7ef0d7b08a254a88072",
+    "finding": "Native imagery distinguishes the parallel pit lane and extra spur from the racing straight. The original supplemental pair is rejected for main because several limits fall in grass beyond the visible pavement. Four native RGB proposal overlays inspected; corners and openings require sparse image measurements."
+  },
+  "preservation": "All other layouts, existing borders, timing and original terrain are preserved. Main timing stays missing; sibling timing GPS is not copied. Original supplemental borders are not reused.",
+  "limitations": "Source alignment and travel direction remain draft. Image-derived limits are estimates; shared-pavement joins interpolate. Curbs remain illustrative, raster heights approximate and unknown banking zero.",
+  "borderStatus": {
+    "status": "held-for-image-measurement",
+    "reason": "Native imagery review rejects direct reuse of the original supplemental limits and the automatic candidates. No candidate borders or model are promoted for main. Source correction is independently supported and does not establish boundary accuracy.",
+    "candidateMethods": [
+      "rgb-road-local-appearance-v4"
+    ],
+    "candidateFindings": "V4 limits follow pit aprons, internal asphalt patches and grass in several sections. V2 is rejected by the search-limit guard. The approximately 0.26 m higher-zoom tiles show the same underlying blur and do not resolve the uncertainty.",
+    "reviewedArtifacts": {
+      "originalNativeRegions": 4,
+      "v4NativeRegions": 4,
+      "crossSectionSheets": 7,
+      "detailSheets": 2
+    },
+    "higherZoomReview": {
+      "sha256": "e2559e87a30039ec8723891dae4b9ddaf4f29a5431d12d93fa7fda733ab2abc3",
+      "groundPixelSizeM": 0.2615,
+      "extent3857": [
+        -5772830.124209652,
+        -3356808.534171801,
+        -5771607.131757088,
+        -3355432.667662669
+      ],
+      "finding": "Native straight detail inspected. Additional pixels do not supply sharper edge evidence; no geometry extracted from this higher-zoom image."
+    }
+  }
+}

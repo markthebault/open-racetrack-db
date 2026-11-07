@@ -30,22 +30,22 @@
     {
       "id": "mallory-park",
       "name": "Mallory Park",
-      "referenceId": "United Kingdom/Mallory Park",
       "file": "layouts/mallory-park.geojson",
+      "referenceId": "United Kingdom/Mallory Park",
       "description": "Draft configuration: Road course retains Gerards Bend, the Esses, Shaws Hairpin and Devils Elbow, without Edwinas, Stapletons, Charlies or Bus Stop chicanes. This corrects the previous unreviewed relation association. The operator identifies a 1.35-mile configuration; the independent source line measures 2032.7 m and remains a draft with historical alignment provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2032.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "mallory-park-combo",
       "name": "Mallory Park Combo",
-      "referenceId": "United Kingdom/Mallory Park Combo",
       "file": "layouts/mallory-park-combo.geojson",
+      "referenceId": "United Kingdom/Mallory Park Combo",
       "description": "Combined mapped configurations: Mallory Park, Mallory Park Oval Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "mallory-park-oval-circuit",
       "name": "Mallory Park Oval Circuit",
-      "referenceId": "United Kingdom/Mallory Park Oval Circuit",
       "file": "layouts/mallory-park-oval-circuit.geojson",
+      "referenceId": "United Kingdom/Mallory Park Oval Circuit",
       "description": "Draft configuration: Plain oval retains Gerards Bend and the north oval shortcut, without Edwinas, Stapletons, Charlies or Bus Stop chicanes. This corrects the earlier distance-based hypothesis that followed added chicanes. The operator identifies a 1-mile oval; the independent source line measures 1551.7 m. The distance discrepancy is documented and no coordinates are altered. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1551.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -121,6 +121,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T18:54:43.131Z",
       "evidenceNote": "Aggregate includes the plain road course and plain oval shortcut. Edwinas, Stapletons, Charlies, Bus Stop and pit branches are excluded. Both component hypotheses were reassessed against the operator course map and catalogue branch identity. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:36.855Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

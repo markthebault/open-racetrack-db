@@ -21,8 +21,8 @@
     {
       "id": "m-sport-proving-ground",
       "name": "M-Sport Proving Ground",
-      "referenceId": "United Kingdom/M-Sport Proving Ground",
       "file": "layouts/m-sport-proving-ground.geojson",
+      "referenceId": "United Kingdom/M-Sport Proving Ground",
       "description": "Combined mapped configurations: M-Sport long variant, M-Sport inner variant. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -83,6 +83,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T07:10:23.707Z",
       "evidenceNote": "The supplied proving-ground shape depicts the northern circle and triangle and multiple southern alternatives. The operator identifies the 2.5 km proving ground, eighteen anti-clockwise configurations and a steady-state circle; its aerial photograph independently confirms the northern circle, triangle and southern course alternatives. These two complementary exact source-node cycles retain every independently mapped closed-course branch in that footprint. Preserve their physical configuration set, shared edges and real junctions; do not interpret its unique branch distance as a timed lap or adjust coordinates to the catalogue scalar. Descriptive component names do not assert official layout names, and exact historical timed branch choice remains unverified. The independent unique branch distance is 3082 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:40.951Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

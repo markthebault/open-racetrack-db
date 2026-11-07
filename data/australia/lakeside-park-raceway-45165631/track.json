@@ -27,8 +27,8 @@
     {
       "id": "lakeside-queensland",
       "name": "Lakeside Queensland",
-      "referenceId": "Australia/Lakeside Queensland",
       "file": "layouts/lakeside-queensland.geojson",
+      "referenceId": "Australia/Lakeside Queensland",
       "description": "Draft configuration selected from the independently named circuit relation 16233647. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
@@ -50,6 +50,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-10-01T13:50:23.347Z",
       "evidenceNote": "Pinned independent circuit ways include public-road sections. Source-node connectivity is exact. Course association uses timing location and declared length; travel direction remains provisional."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:18.747Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

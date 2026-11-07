@@ -29,15 +29,15 @@
     {
       "id": "autodromo-de-concordia",
       "name": "Autodromo de Concordia",
-      "referenceId": "Argentina/Autodromo de Concordia",
       "file": "layouts/autodromo-de-concordia.geojson",
+      "referenceId": "Argentina/Autodromo de Concordia",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4546.9 m. Difference from the supplied layout distance 12.1 m. Course configuration still requires visual review."
     },
     {
       "id": "autodromo-de-concordia-combo",
       "name": "Autodromo de Concordia Combo",
-      "referenceId": "Argentina/Autodromo de Concordia Combo",
       "file": "layouts/autodromo-de-concordia-combo.geojson",
+      "referenceId": "Argentina/Autodromo de Concordia Combo",
       "description": "Combined mapped configurations: Autodromo de Concordia, Historical short course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -92,6 +92,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T12:11:44.866Z",
       "evidenceNote": "Configuration set retains the full northern extension, southern S and separate eastern short-course closing bend. The championship organizer confirms independently raced long and short courses. Both paths retain exact OSM way 261993714 version 8; the northern extension retains exact way 544373728 version 2. The additional parallel western return, pit approach and tiny southern connector are excluded because they are absent from the supplied configuration identity. The short route measures 3,049.0 m against the 2017 published 3,120 m; historical-year corner placement remains draft. Shared mapped edges count once; the 4,876.9 m branch network is not one lap. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:20:08.404Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

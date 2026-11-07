@@ -29,15 +29,15 @@
     {
       "id": "nola-motorsports-park",
       "name": "Nola Motorsports Park",
-      "referenceId": "United States/Nola Motorsports Park",
       "file": "layouts/nola-motorsports-park.geojson",
+      "referenceId": "United States/Nola Motorsports Park",
       "description": "Combined mapped configurations: North long course, 2014, North track with Western connecting branches, 2014. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "nola-motorsports-park-course-a",
       "name": "Nola Motorsports Park Course A",
-      "referenceId": "United States/Nola Motorsports Park Course A",
       "file": "layouts/nola-motorsports-park-course-a.geojson",
+      "referenceId": "United States/Nola Motorsports Park Course A",
       "description": "Draft configuration: Course A with western inner hairpin and direct northeastern return bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4434.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
@@ -125,6 +125,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T05:06:44.564Z",
       "evidenceNote": "The catalogue course footprint includes the North long course, its Western inner hairpin, the curved turn-3A shortcut and the Western front-straight connection. The reviewed 2014 independent source provides every branch as two complete mapped loops. The operator's NOLA plan identifies the long course and turn-3A shortcut; the extra connecting return follows the independent road mapping. Historical corner alignment and the unnamed branch combination remain draft. The independent unique branch distance is 4888.9 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T10:29:50.087Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
