@@ -22,6 +22,7 @@ import {
 } from "./infer-image-borders";
 import { serializeLayout } from "./layout-borders";
 import { borderReplacement } from "./border-replacement";
+import { reuseOriginalBorders } from "./reuse-original-borders";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
 import {
@@ -432,8 +433,23 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     if (
       !old && !replacement &&
       layout.features.some((f) => f.properties.role === "inner")
-    )
+    ) {
+      let recipe;
+      try {
+        recipe = await read(`sources/${track.id}/layouts/${item.id}.json`);
+      } catch (error) {
+        if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+      }
+      if (recipe?.originalBorderReuse) {
+        const pin = recipe.originalBorderReuse,
+          sibling = track.layouts.find((candidate) => candidate.id === pin.sourceLayoutId);
+        if (!sibling?.file) throw new Error("Reused border source layout is unavailable");
+        const source = validateLayout(await read(`${dirname(trackFile)}/${sibling.file}`), track, sibling.id);
+        reuseOriginalBorders(layout, source, pin);
+        report.push({trackId: track.id, layoutId: item.id, file, status: "reused-existing", ...pin});
+      }
       continue;
+    }
     const row: RecordRow = {
         trackId: track.id,
         layoutId: item.id,

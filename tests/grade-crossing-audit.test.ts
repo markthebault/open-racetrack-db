@@ -122,3 +122,34 @@ test("both pinned Suzuka routes identify the same public bridge and upper branch
     assert.equal(hits[0].bridgeCandidates[0].branch, 1);
   }
 });
+
+test('sharp source turns include a closed seam and do not invent open-end turns', async () => {
+ const {auditSharpSourceTurns}=await import('../scripts/audit-grade-crossings');
+ const needle:Position[]=[[0,0],[0.001,0],[0.001,0.001],[0.002,0],[0,0]],events=auditSharpSourceTurns(needle,true);
+ assert.equal(events.filter(e=>e.vertex===0).length,1);
+ assert.equal(events.find(e=>e.vertex===0)!.turnDeg,180);
+ assert.equal(auditSharpSourceTurns(needle,false).some(e=>e.vertex===0||e.vertex===needle.length-1),false);
+ assert.ok(events.every(e=>e.status==='needs-identity-and-image-review'));
+});
+
+test('duplicate source points do not hide a needle or yield nonfinite measurements', async () => {
+ const {auditSharpSourceTurns}=await import('../scripts/audit-grade-crossings');
+ assert.deepEqual(auditSharpSourceTurns([[0,0],[0,0],[0,0]],true),[]);
+ const events=auditSharpSourceTurns([[0,0],[0.001,0],[0.001,0],[0,0]],false);
+ assert.equal(events.length,1);assert.ok(events.every(e=>e.turnDeg===180&&e.incomingM>100&&e.outgoingM>100));
+ assert.deepEqual(auditSharpSourceTurns([[0,0],[0.001,0],[0.002,0]],false),[]);
+});
+
+test('Tangamanga short candidate retains its mapped loop while flagging both straight joins', async () => {
+ const {auditSharpSourceTurns}=await import('../scripts/audit-grade-crossings'),layout=JSON.parse(await readFile('data/mexico/autodromo-tangamanga-226300277/layouts/main.geojson','utf8')),trace=layout.features.find((f:{properties:{role:string}})=>f.properties.role==='trace').geometry.coordinates,events=auditSharpSourceTurns(trace,true);
+ assert.equal(events.length,2);assert.ok(events.every(e=>e.turnDeg>160));assert.ok(events.some(e=>e.vertex===0));assert.equal(layout.metadata.model3d,undefined);
+});
+
+
+test('sharp turn source occurrences exclude unused slices and stale way versions', async () => {
+ const {auditSharpSourceTurns}=await import('../scripts/audit-grade-crossings'),points:Position[]=[[0,0],[0.001,0],[0,0]],way={type:'way',id:1,version:2,nodes:[10,11,12],geometry:points.map(([lon,lat])=>({lon,lat}))};
+ const event=auditSharpSourceTurns(points,false,[way],[{wayId:1,wayVersion:2,fromIndex:0,toIndex:1}])[0];
+ assert.deepEqual(event.sourceOccurrences,[{wayId:1,wayVersion:2,wayIndex:1,nodeId:11}]);
+ assert.deepEqual(auditSharpSourceTurns(points,false,[way],[{wayId:1,wayVersion:1}])[0].sourceOccurrences,[]);
+ assert.deepEqual(auditSharpSourceTurns(points,false,[way],[{wayId:1,wayVersion:2,fromIndex:2,toIndex:2}])[0].sourceOccurrences,[]);
+});

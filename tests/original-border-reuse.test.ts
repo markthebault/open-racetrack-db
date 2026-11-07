@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
 import {layoutSchema,type Layout} from '../schemas/data';
 import {geometryHash,reuseOriginalBorders} from '../scripts/reuse-original-borders';
 import {assemble,type Way} from '../scripts/route';
@@ -68,4 +69,12 @@ for(const [name,track,folder,sibling,proofName] of [
  assert.deepEqual(reuseOriginalBorders(main,named,recipe.originalBorderReuse).borders,main.features.filter(f=>['inner','outer'].includes(f.properties.role)));
  assert.equal(main.metadata.timing,undefined);assert.equal(main.metadata.timingStatus,'missing');
  assert.equal(main.metadata.borderInference,undefined);assert.ok(main.metadata.model3d);
+});
+
+
+test('coverage checks recognize all exact reused layouts without image acquisition',()=>{
+ for(const track of ['gb-silverstone-circuit-3571477','us-ncm-motorsports-park-326452603','us-homestead-miami-speedway-108159182','us-pittsburgh-international-race-complex-225264359']){
+  const output=execFileSync(process.execPath,['--import','tsx','scripts/infer-borders.ts','--track',track,'--layout','main','--check'],{encoding:'utf8'}),report=JSON.parse(output.trim());
+  assert.equal(report.layouts,1);assert.deepEqual(report.statuses,{'reused-existing':1});
+ }
 });
