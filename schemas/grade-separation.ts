@@ -1,5 +1,10 @@
 import { z } from "zod";
 import {
+  rerProductUrl,
+  rerAttribution,
+  rerRasterSchema,
+} from "./rer-elevation";
+import {
   nlsAttribution,
   nlsAttributionSchema,
   nlsRastersSchema,
@@ -91,6 +96,15 @@ const elevationSchema = z.discriminatedUnion("source", [
     crossingInterpolation: z.literal("both-road-approaches-v1"),
     rasters: nlsRastersSchema,
   }),
+  z.strictObject({
+    ...profile,
+    source: z.literal("RER DTM 0.5m 2023-24"),
+    url: z.literal(rerProductUrl),
+    attribution: z.literal(rerAttribution),
+    reuseEvidenceUrl: z.literal(rerProductUrl),
+    crossingInterpolation: z.literal("both-road-approaches-v1"),
+    raster: rerRasterSchema,
+  }),
 ]);
 
 /** Paired edge station indices, independent of the simulation's start/finish rotation. */
@@ -166,7 +180,7 @@ export const gradeSeparationSchema = z
       const [column, row, width, height] = value.elevation.raster.sourceWindow;
       if (column + width > 538000 || row + height > 524000)
         issue("ICGC crop must lie inside the original native raster grid");
-    } else {
+    } else if (value.elevation.source === "NLS Elevation model 2 m") {
       const elevation = value.elevation;
       if (elevation.attribution !== nlsAttribution(elevation.deliveredAt))
         issue("NLS attribution must identify the product and delivery date");

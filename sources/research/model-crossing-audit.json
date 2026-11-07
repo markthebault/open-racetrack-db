@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "mappedLayoutSetSha256": "ac192851e5b6493af017f214a6114ac550de498ec5fb56db5dbd26a671ec113c",
+  "mappedLayoutSetSha256": "57dfe87b61ebabdb90fdb69e110b6e9d19075916995a3cda95b011c0c3816e47",
   "note": "Diagnostic audit of every mapped single-path trace, including layouts with existing borders and models. Composed networks delegate to their independently audited component layouts; uncomposed networks remain unverified. Runtime crossing levels measure the saved reconstruction, not the physical bridge or vehicle clearance. A three-metre difference is only a diagnostic threshold. Missing source profiles, unexplained intersections and runtime errors remain unresolved; model availability does not establish accurate bridge elevations. No source geometry, borders, timing or models are changed.",
   "summary": {
     "mappedLayouts": 1377,
@@ -9,11 +9,11 @@
     "networksWithoutComposition": 26,
     "layoutsWithCrossings": 19,
     "crossings": 145,
-    "sourceProfilesPresent": 6,
-    "bridgeProfilesMissingInPlayableModels": 3,
+    "sourceProfilesPresent": 7,
+    "bridgeProfilesMissingInPlayableModels": 2,
     "bridgeProfilesMissingWithoutPlayback": 3,
     "unexplainedSourceCrossings": 133,
-    "runtimeCrossingsBelowThreeMetres": 5,
+    "runtimeCrossingsBelowThreeMetres": 4,
     "runtimeCrossingsUnresolved": 2
   },
   "records": [
@@ -3029,20 +3029,20 @@
             }
           ],
           "status": "source-bridge-needs-profile",
-          "profileStatus": "bridge-profile-missing-playable-model",
+          "profileStatus": "source-profile-present",
           "runtime": {
             "status": "sampled",
             "levels": [
               {
-                "heightM": 123.909,
-                "widthM": 33.121
+                "heightM": 128.799,
+                "widthM": 8.246
               },
               {
-                "heightM": 123.528,
-                "widthM": 10.385
+                "heightM": 124.191,
+                "widthM": 10.836
               }
             ],
-            "verticalSeparationM": 0.381,
+            "verticalSeparationM": 4.608,
             "repairedSections": 0
           }
         }

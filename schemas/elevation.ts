@@ -1,5 +1,10 @@
 import { z } from "zod";
 import {
+  rerProductUrl,
+  rerAttribution,
+  rerRasterSchema,
+} from "./rer-elevation";
+import {
   nlsAttribution,
   nlsAttributionSchema,
   nlsProductUrl,
@@ -37,6 +42,15 @@ export const elevationSchema = z
         deliveredAt: z.iso.date(),
         sampling: z.literal("bilinear-pixel-centres"),
         rasters: nlsRastersSchema,
+      }),
+      z.strictObject({
+        name: z.literal("RER DTM 0.5m 2023-24"),
+        url: z.literal(rerProductUrl),
+        sampledAt: z.iso.datetime(),
+        sampleSpacingM: z.number().positive(),
+        attribution: z.tuple([z.literal(rerAttribution)]),
+        sampling: z.literal("bilinear-pixel-centres"),
+        raster: rerRasterSchema,
       }),
     ]),
   })

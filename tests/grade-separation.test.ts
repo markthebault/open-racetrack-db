@@ -653,3 +653,130 @@ test("Ahvenisto rebuilds road and surrounding ground in the same NLS height datu
   assert.equal(road.interpolatedSections, 0);
   assert.ok(Number.isFinite(sampleElevation(terrain, road.origin)));
 });
+
+test("RER ground profiles pin the covered native crop and reject mixed editions, datums and resampling", () => {
+  const { recipe, pair } = fixture();
+  const { anchors, note, sampling, toleranceM } = recipe.elevation;
+  const raster = {
+    serviceUrl:
+      "https://servizigis.regione.emilia-romagna.it/wcs/dtmrer2023_24",
+    coverageId: "1",
+    crs: "EPSG:7791",
+    verticalDatum: "Genova 1942 orthometric metres, ITALGEO2005 geoid",
+    pixelSizeM: 0.5,
+    bounds: [647202.5, 4932518.5, 648023.5, 4933334.5],
+    width: 1642,
+    height: 1632,
+    sha256: "a".repeat(64),
+    footprintSha256: "b".repeat(64),
+    footprints: [
+      { objectId: 24661, sheet: "32_64704932", acquiredDates: ["2024-03-21"] },
+    ],
+  };
+  const elevation = {
+    anchors,
+    note,
+    sampling,
+    toleranceM,
+    source: "RER DTM 0.5m 2023-24",
+    url: "https://geoportale.regione.emilia-romagna.it/catalogo/dati-cartografici/altimetria/layer-60",
+    attribution: "Regione Emilia-Romagna, DTM 0.5m RER 2023-24, CC BY 4.0",
+    reuseEvidenceUrl:
+      "https://geoportale.regione.emilia-romagna.it/catalogo/dati-cartografici/altimetria/layer-60",
+    crossingInterpolation: "both-road-approaches-v1",
+    raster,
+  };
+  const parsed = gradeSeparationSchema.parse({ ...recipe, elevation });
+  assert.deepEqual(parsed.elevation, elevation);
+  assert.doesNotThrow(() => assertGradeRibbon(pair, parsed));
+  const terrain = {
+    schemaVersion: 1,
+    trackId: "synthetic-fixture",
+    bounds: [0, 0, 1, 1],
+    columns: 2,
+    rows: 2,
+    heights: [100, 200, 300, 400],
+    source: {
+      name: elevation.source,
+      url: elevation.url,
+      sampledAt: "2026-11-07T00:00:00Z",
+      sampleSpacingM: 80,
+      attribution: [elevation.attribution],
+      sampling,
+      raster,
+    },
+  };
+  assert.equal(
+    sampleElevation(elevationSchema.parse(terrain), [0.5, 0.5]),
+    250,
+  );
+  for (const change of [
+    {
+      serviceUrl:
+        "https://servizigis.regione.emilia-romagna.it/wcs/dtmrer2025_26",
+    },
+    { coverageId: "2" },
+    { crs: "EPSG:3067" },
+    { verticalDatum: "ellipsoid" },
+    { pixelSizeM: 5 },
+    { width: 1641 },
+    { bounds: [647202.6, 4932518.5, 648023.6, 4933334.5] },
+    { bounds: [648023.5, 4932518.5, 647202.5, 4933334.5] },
+    { bounds: [0, 0, 821, 816] },
+    { footprints: [] },
+    { footprints: [...raster.footprints, ...raster.footprints] },
+    {
+      footprints: [{ ...raster.footprints[0], acquiredDates: ["2024-99-99"] }],
+    },
+    { footprintSha256: "" },
+  ]) {
+    const bad = { ...raster, ...change };
+    assert.equal(
+      gradeSeparationSchema.safeParse({
+        ...recipe,
+        elevation: { ...elevation, raster: bad },
+      }).success,
+      false,
+    );
+    assert.equal(
+      elevationSchema.safeParse({
+        ...terrain,
+        source: { ...terrain.source, raster: bad },
+      }).success,
+      false,
+    );
+  }
+  assert.equal(
+    gradeSeparationSchema.safeParse({
+      ...recipe,
+      elevation: { ...elevation, source: "GSI DEM5A" },
+    }).success,
+    false,
+  );
+  assert.equal(
+    gradeSeparationSchema.safeParse({
+      ...recipe,
+      elevation: { ...elevation, anchors: anchors.filter(([s]) => s !== 50) },
+    }).success,
+    false,
+  );
+});
+
+test("Fiorano reconstructs its overpass and ground from the same covered RER crop", async () => {
+  const layout = JSON.parse(
+    await readFile("data/italy/fiorano-circuit-35073932/layouts/main.geojson", "utf8"),
+  ) as Layout;
+  const grade = layout.metadata.borderInference!.gradeSeparation!;
+  const terrain = elevationSchema.parse(layout.metadata.model3d!.terrain);
+  assert.ok(grade.elevation.source === "RER DTM 0.5m 2023-24");
+  assert.ok(terrain.source.name === "RER DTM 0.5m 2023-24");
+  assert.deepEqual(terrain.source.raster, grade.elevation.raster);
+  await verifyGradeSource(layout, grade);
+  const { prepareModel } = await import("../src/model-preparation");
+  const { modelInputHash } = await import("../scripts/model-input");
+  const model = prepareModel(layout, terrain, modelInputHash(layout, terrain));
+  assert.deepEqual(model, layout.metadata.model3d);
+  assert.match(model.sources.notes, /RER DTM 0.5m 2023-24 ground raster/);
+  assert.doesNotMatch(model.sources.notes, /DEM5A|NLS Elevation/);
+  assert.equal(buildRoad(layout).interpolatedSections, 0);
+});
