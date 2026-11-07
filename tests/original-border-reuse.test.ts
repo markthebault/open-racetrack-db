@@ -73,8 +73,21 @@ for(const [name,track,folder,sibling,proofName] of [
 
 
 test('coverage checks recognize all exact reused layouts without image acquisition',()=>{
- for(const track of ['gb-silverstone-circuit-3571477','us-ncm-motorsports-park-326452603','us-homestead-miami-speedway-108159182','us-pittsburgh-international-race-complex-225264359']){
+ for(const track of ['gb-silverstone-circuit-3571477','us-ncm-motorsports-park-326452603','us-homestead-miami-speedway-108159182','us-pittsburgh-international-race-complex-225264359','fr-circuit-de-bresse-231110480']){
   const output=execFileSync(process.execPath,['--import','tsx','scripts/infer-borders.ts','--track',track,'--layout','main','--check'],{encoding:'utf8'}),report=JSON.parse(output.trim());
   assert.equal(report.layouts,1);assert.deepEqual(report.statuses,{'reused-existing':1});
  }
+});
+
+test('Bresse standard-course correction reuses pinned original borders without sibling timing',async()=>{
+ const root='sources/fr-circuit-de-bresse-231110480',base='data/france/circuit-de-bresse-231110480/layouts',r=await json(root+'/layouts/main.json'),proof=await json('sources/research/bresse-main-route-review.json'),main=layoutSchema.parse(await json(base+'/main.geojson')),named=layoutSchema.parse(await json(base+'/bresse.geojson'));
+ const oldWays=(await json(root+'/osm.json')).elements.filter((e:Way&{type:string})=>e.type==='way'),ways=(await json(root+'/'+r.snapshotFile)).elements.filter((e:Way&{type:string})=>e.type==='way');
+ assert.deepEqual({type:'LineString',coordinates:assemble(oldWays,proof.original.recipe.segments,true)},proof.original.layout.features.find((f:any)=>f.properties.role==='trace').geometry);
+ const current={type:'LineString',coordinates:assemble(ways,r.segments,true)};
+ assert.deepEqual(main.features.find(f=>f.properties.role==='trace')!.geometry,current);
+ assert.deepEqual(current,named.features.find(f=>f.properties.role==='trace')!.geometry);
+ assert.notDeepEqual(current,proof.original.layout.features.find((f:any)=>f.properties.role==='trace').geometry);
+ assert.deepEqual(reuseOriginalBorders(main,named,r.originalBorderReuse).borders,main.features.filter(f=>['inner','outer'].includes(f.properties.role)));
+ assert.equal(main.metadata.timing,undefined);assert.equal(main.metadata.timingStatus,'missing');assert.ok(named.metadata.timing);
+ assert.equal(main.metadata.borderInference,undefined);assert.ok(main.metadata.model3d);
 });

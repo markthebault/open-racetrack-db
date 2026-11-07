@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T19:36:35.509Z",
+  "generatedAt": "2026-11-07T20:08:13.583Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -2338,10 +2338,10 @@
       "trackId": "fr-circuit-de-bresse-231110480",
       "layoutId": "main",
       "file": "data/france/circuit-de-bresse-231110480/layouts/main.geojson",
-      "status": "needs-route-review",
-      "reason": "Native imagery review: the source route uses narrow service/pit circulation beside the southern course and paddock buildings. Identify the intended course before adding borders; the separate bresse layout already has borders and playback.",
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "18fcbe1785bb73fc5ab64dcdfad0f06e67ce79e63e8d6a2518fff6cfaa80339f"
+      "status": "reused-existing",
+      "sourceLayoutId": "bresse",
+      "traceSha256": "127c2ed269a6e7dcc118732e60614c60c5639465b3e751b743695e8aaca2a9c1",
+      "bordersSha256": "973745fdd71bcaecb3191992bd1658394fbcfd5e3f79da142aabeefe7c0d5fbf"
     },
     {
       "trackId": "fr-circuit-de-vitesse-du-vigeant-37918062",
