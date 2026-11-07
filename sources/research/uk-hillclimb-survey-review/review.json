@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-11-07T01:07:42.406702+00:00",
-  "scope": "Source discovery and native-pixel inspection. Harewood now has a complete measured/interpolated open-run estimate; the other four routes remain held. No terrain samples are changed.",
+  "scope": "Source discovery and native-pixel inspection. Harewood and Gurston now have complete measured/interpolated open-run estimates; Shelsley, Prescott and Fintray remain held. No terrain samples are changed.",
   "nativeIntensityLicense": {
     "license": "OGL-3.0",
     "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
@@ -272,8 +272,8 @@
         -1.9656569,
         51.0370863
       ],
-      "status": "awaiting-boundary-evidence-and-measurements",
-      "finding": "The field bends and much of the long road are visible in the 2019 intensity raster. Hedgerow cover, side openings and the farm entrance at the first saved station still require boundary observations. Older indexed point clouds report no intensity.",
+      "status": "measured-open-run-estimate",
+      "finding": "The full saved open route uses 66 sparse road-limit controls from the 2019 last-return intensity raster. The paved strip is separated from adjoining fields, hedges and farm roofs; exact hedge-side verge positions remain uncertain at metre-scale raster resolution. Two right-side intervals at stations 60 and 210 interpolate between neighbouring observations where vegetation or the side opening obscures the edge. The entrance follows adjoining visible road directions and excludes the roof. Original trace, timing and terrain are retained. Unverified estimates, sparse interpolation and illustrative curbs remain explicit.",
       "indexQueries": {
         "aerialPhotography": {
           "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.9697384%2C+%22ymin%22%3A+51.0303294%2C+%22xmax%22%3A+-1.9656569%2C+%22ymax%22%3A+51.0370863%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
@@ -450,6 +450,34 @@
           "maskedPixels": 0,
           "rgbPixelsSha256": "82922c44fe5ebb7abb39d22fb6e9187fbc2ec199581bdd7bffa602c17536c3da"
         }
+      },
+      "borderImage": {
+        "imagery": {
+          "sourceId": "ea-national-lidar-intensity-gurston-2019",
+          "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SU0025",
+          "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+          "license": "OGL-3.0",
+          "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency National LIDAR Programme last-return intensity, captured 25\u201329 April 2019.",
+          "retrievedAt": "2026-11-07T00:59:41.218960Z",
+          "sha256": "7bd93debfb82e27c45d571c59c0a7412969543160cad6d1a56f11961a57f9de1",
+          "width": 411,
+          "height": 877,
+          "extent3857": [
+            -219369.34060023478,
+            6626560.712387175,
+            -218715.82773072112,
+            6627955.191186599
+          ],
+          "groundPixelSizeM": 1.0
+        },
+        "pixelSpacing3857": 1.5900556435855195,
+        "coordinateGrid": {
+          "file": "uk_os_OSTN15_NTv2_OSGBtoETRS.tif",
+          "url": "https://cdn.proj.org/uk_os_OSTN15_NTv2_OSGBtoETRS.tif",
+          "sha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa"
+        },
+        "sampling": "Nearest original raster pixel; missing samples remain transparent; no surface filling.",
+        "resultSha256": "e2a50d2df75f9051433217f698f5c9dd487b2470a6383d7e08b5d821da157264"
       }
     },
     {

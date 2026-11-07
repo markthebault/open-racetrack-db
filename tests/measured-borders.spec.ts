@@ -17,6 +17,7 @@ for (const [track, layout] of [
   ["de-estering-f9d6a5de", "estering-joker"],
   ["de-osnabruck-hill-climb-d7c0b8d4", "osnabruck-hill-climb"],
   ["gb-harewood-hillclimb-f1871afb", "harewood-hillclimb"],
+  ["gb-gurston-down-hillclimb-ade02267", "gurston-down-hillclimb"],
   ["de-circuit-meppen-206291125", "main"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
