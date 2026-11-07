@@ -79,7 +79,12 @@ export function measuredImageBorders(
         throw new Error(
           "Complete measurements cannot preserve automatic seed joins",
         );
-      const maximumGapM = recipe.interpolation === "edge-linear-v1" ? 50 : 100;
+      const linear = recipe.interpolation === "edge-linear-v1" ||
+        (j > 0 && recipe.linearIntervals?.some((range) =>
+          range.edge === patch.edge &&
+          patch.anchors[j - 1].station >= range.startStation &&
+          a.station <= range.endStation));
+      const maximumGapM = linear ? 50 : 100;
       if (j && (a.station - patch.anchors[j - 1].station) * step > maximumGapM)
         throw new Error(`Image measurement gap exceeds ${maximumGapM} metres`);
       covered(a.coordinate);
@@ -103,6 +108,10 @@ export function measuredImageBorders(
     for (let j = 1; j < anchors.length; j++) {
       const a = anchors[j - 1],
         b = anchors[j];
+      const linear = recipe.interpolation === "edge-linear-v1" ||
+        recipe.linearIntervals?.some((range) =>
+          range.edge === patch.edge && a.station >= range.startStation &&
+          b.station <= range.endStation);
       for (let i = a.station; i <= b.station; i++) {
         const t = (i - a.station) / (b.station - a.station),
           p = smooth[index(i)],
@@ -110,7 +119,7 @@ export function measuredImageBorders(
           across = a.across * (1 - t) + b.across * t,
           along = a.along * (1 - t) + b.along * t;
         const point = projection.from(
-          recipe.interpolation === "edge-linear-v1"
+          linear
             ? [
                 a.point[0] + (b.point[0] - a.point[0]) * t,
                 a.point[1] + (b.point[1] - a.point[1]) * t,

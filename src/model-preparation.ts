@@ -38,9 +38,24 @@ export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
         termsUrl: reference.termsUrl,
       };
     const url = new URL(reference.url);
+    const naipRender = url.protocol === "https:" &&
+      url.hostname === "planetarycomputer.microsoft.com"
+      ? url.pathname.match(/^\/api\/data\/v1\/item\/bbox\/([^/]+)\/(\d+)x(\d+)\.png$/)
+      : null;
+    const pinnedNaip = !!naipRender &&
+      url.searchParams.get("collection") === "naip" &&
+      url.searchParams.get("assets") === "image" &&
+      url.searchParams.get("coord_crs")?.toLowerCase() === "epsg:3857" &&
+      url.searchParams.get("dst_crs")?.toLowerCase() === "epsg:3857" &&
+      url.searchParams.getAll("bidx").join(",") === "1,2,3" &&
+      Number(naipRender[2]) === reference.width &&
+      Number(naipRender[3]) === reference.height &&
+      naipRender[1].split(",").length === 4 &&
+      naipRender[1].split(",").every((v, i) =>
+        Number.isFinite(Number(v)) && Math.abs(Number(v) - reference.extent3857[i]) < 1e-6);
     const exported = /\/exportImage$/i.test(url.pathname),
       wms = url.searchParams.get("REQUEST")?.toUpperCase() === "GETMAP";
-    if (exported || wms) {
+    if (exported || wms || pinnedNaip) {
       if (exported) {
         url.searchParams.set("f", "image");
         url.searchParams.set("bbox", reference.extent3857.join(","));

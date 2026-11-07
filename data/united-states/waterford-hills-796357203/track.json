@@ -27,8 +27,8 @@
     {
       "id": "waterford-hills",
       "name": "Waterford Hills",
-      "referenceId": "United States/Waterford Hills",
       "file": "layouts/waterford-hills.geojson",
+      "referenceId": "United States/Waterford Hills",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2287.8 m. Difference from the supplied layout distance 0.8 m. Course configuration still requires visual review."
     }
   ],
@@ -50,6 +50,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usda-naip-2020-waterford",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9283355.35133619,5267411.421804621,-9282701.004197175,5268217.619932853/802x988.png?collection=naip&item=mi_m_4208321_ne_17_060_20200705&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-07T03:36:30.863136Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -561,6 +561,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
               ...(old.measurement.interpolation
                 ? { interpolation: old.measurement.interpolation }
                 : {}),
+              ...(old.measurement.linearIntervals
+                ? { linearIntervals: old.measurement.linearIntervals }
+                : {}),
             })
           : undefined;
       if (

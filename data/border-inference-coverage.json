@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T02:57:10.032Z",
+  "generatedAt": "2026-11-07T03:56:23.623Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -4895,7 +4895,7 @@
       "trackId": "us-detroit-city-airport-f3ab2023",
       "layoutId": "detroit-city-airport",
       "status": "unmapped",
-      "reason": "High-resolution imagery shows the apron but does not establish the event\u2019s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
+      "reason": "High-resolution imagery shows the apron but does not establish the event’s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
     },
     {
       "trackId": "us-dover-motor-speedway-350676133",
@@ -6517,15 +6517,17 @@
       "trackId": "us-waterford-hills-796357203",
       "layoutId": "main",
       "file": "data/united-states/waterford-hills-796357203/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "source": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9283355.35133619,5267411.421804621,-9282701.004197175,5268217.619932853/802x988.png?collection=naip&item=mi_m_4208321_ne_17_060_20200705&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
+      "imageSha256": "2543928ebc99fb2149444fea455886e0f2f6423464212b91db0b41b9b5402697"
     },
     {
       "trackId": "us-waterford-hills-796357203",
       "layoutId": "waterford-hills",
       "file": "data/united-states/waterford-hills-796357203/layouts/waterford-hills.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "source": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9283355.35133619,5267411.421804621,-9282701.004197175,5268217.619932853/802x988.png?collection=naip&item=mi_m_4208321_ne_17_060_20200705&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
+      "imageSha256": "2543928ebc99fb2149444fea455886e0f2f6423464212b91db0b41b9b5402697"
     },
     {
       "trackId": "us-willow-springs-international-raceway-10440074",

@@ -68,6 +68,11 @@ const completeRecipe = recipe.omit({ seedSha256: true }).extend({
     "paired-image-edge-anchors-v1",
   ]),
   interpolation: z.literal("edge-linear-v1").optional(),
+  linearIntervals: z.array(z.strictObject({
+    edge: z.enum(["inner", "outer"]),
+    startStation: z.number().int().min(0).max(199999),
+    endStation: z.number().int().min(0).max(199999),
+  })).min(1).max(1000).optional(),
   routeKind: z.literal("run").optional(),
 });
 function checkComplete(
@@ -75,6 +80,22 @@ function checkComplete(
   ctx: z.RefinementCtx,
 ) {
   check(value, ctx);
+  if (value.linearIntervals) {
+    if (value.interpolation || value.method !== "cross-section-image-anchors-v1")
+      ctx.addIssue({ code: "custom", message: "Local linear intervals require source-frame measurements without global interpolation" });
+    for (const edge of ["inner", "outer"] as const) {
+      const patch = value.patches.find((p) => p.edge === edge);
+      const ranges = value.linearIntervals.filter((r) => r.edge === edge)
+        .sort((a, b) => a.startStation - b.startStation);
+      for (const [i, range] of ranges.entries()) {
+        if (range.startStation >= range.endStation ||
+            !patch?.anchors.some((a) => a.station === range.startStation) ||
+            !patch.anchors.some((a) => a.station === range.endStation) ||
+            (i > 0 && range.startStation < ranges[i - 1].endStation))
+          ctx.addIssue({ code: "custom", message: "Local linear intervals need ordered, nonoverlapping existing edge anchors" });
+      }
+    }
+  }
   if (value.method !== "paired-image-edge-anchors-v1") return;
   if (value.routeKind === "run")
     ctx.addIssue({

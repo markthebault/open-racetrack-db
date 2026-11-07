@@ -48,6 +48,66 @@ function fixture() {
   });
   return { trace, image, input, f };
 }
+
+test("local straight interpolation changes only the selected edge interval and replays exactly", () => {
+  const { trace, image, input } = fixture();
+  const recipe = { ...input, linearIntervals: [{ edge: "outer" as const, startStation: 10, endStation: 20 }] };
+  const before = structuredClone(recipe);
+  const baseline = measuredImageBorders(trace, input, hash, image);
+  const local = measuredImageBorders(trace, recipe, hash, image);
+  const linear = measuredImageBorders(trace, { ...input, interpolation: "edge-linear-v1" }, hash, image);
+  assert.deepEqual(local.result.inner, baseline.result.inner);
+  assert.deepEqual(local.result.outer.slice(0, 11), baseline.result.outer.slice(0, 11));
+  assert.deepEqual(local.result.outer.slice(20), baseline.result.outer.slice(20));
+  assert.deepEqual(local.result.outer[15], linear.result.outer[15]);
+  assert.notDeepEqual(local.result.outer[15], baseline.result.outer[15]);
+  assert.deepEqual(recipe, before);
+  const { resultSha256, ...embedded } = local.measurement;
+  const replay = measuredImageBorders(trace, embedded, hash, image);
+  assert.equal(replay.measurement.resultSha256, resultSha256);
+  assert.deepEqual(replay, local);
+});
+
+test("local straight intervals reject ambiguous modes, unordered ranges and unanchored endpoints", () => {
+  const { trace, input } = fixture();
+  const range = { edge: "outer" as const, startStation: 10, endStation: 20 };
+  for (const ranges of [
+    [{ ...range, startStation: 11 }],
+    [{ ...range, endStation: 10 }],
+    [range, { ...range, startStation: 10, endStation: 30 }],
+  ]) assert.throws(() => measuredImageBorders(trace, { ...input, linearIntervals: ranges }, hash), /existing edge anchors/);
+  assert.throws(() => measuredImageBorders(trace, {
+    ...input, interpolation: "edge-linear-v1", linearIntervals: [range],
+  }, hash), /without global interpolation/);
+  assert.throws(() => measuredImageBorders(trace, {
+    ...input, method: "paired-image-edge-anchors-v1", interpolation: "edge-linear-v1", linearIntervals: [range],
+  }, hash), /Local linear intervals/);
+});
+
+test("the stricter 50 metre gap applies inside local straight intervals only", () => {
+  const { trace, input } = fixture(), sparse = structuredClone(input);
+  const outer = sparse.patches.find((p) => p.edge === "outer")!;
+  outer.anchors = outer.anchors.filter((a) => ![10, 20].includes(a.station));
+  measuredImageBorders(trace, sparse, hash);
+  assert.throws(() => measuredImageBorders(trace, {
+    ...sparse, linearIntervals: [{ edge: "outer", startStation: 0, endStation: 30 }],
+  }, hash), /gap exceeds 50/);
+  measuredImageBorders(trace, {
+    ...sparse, linearIntervals: [{ edge: "outer", startStation: 30, endStation: 40 }],
+  }, hash);
+});
+
+test("local straight reconstruction still checks pixels between its observed anchors", () => {
+  const { trace, input, image } = fixture();
+  const recipe = { ...input, linearIntervals: [{ edge: "outer" as const, startStation: 10, endStation: 20 }] };
+  const built = measuredImageBorders(trace, recipe, hash, image);
+  const point = built.result.outer[15];
+  const x = Math.floor(((6378137 * point[0] * Math.PI / 180 - image.extent[0]) / (image.extent[2] - image.extent[0])) * image.width - .5);
+  const y = Math.floor(((image.extent[3] - 6378137 * Math.asinh(Math.tan(point[1] * Math.PI / 180))) / (image.extent[3] - image.extent[1])) * image.height - .5);
+  if (!image.data) throw new Error("Expected dense fixture raster");
+  image.data[(y * image.width + x) * 4 + 3] = 0;
+  assert.throws(() => measuredImageBorders(trace, recipe, hash, image), /missing pinned-image coverage/);
+});
 test("complete image measurements replay without an automatic seed or invented confidence scores", () => {
   const { trace, image, input } = fixture(),
     before = structuredClone(input),
