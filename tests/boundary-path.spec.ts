@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 for (const [track, layout] of [
   ["jp-osm-226496291", "main"],
   ["ca-circuit-icar-1043569622", "icar-mirabel"],
+  ["ca-strawberry-creek-raceway-2f57a75c", "strawberry-creek-raceway"],
 ])
   test(`${track}/${layout} exposes its boundary path, plays and records a video`, async ({
     page,

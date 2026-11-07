@@ -106,6 +106,7 @@ test("screened boundary layouts reconstruct every cross-section while preserving
   for (const file of [
     "data/japan/osm-226496291/layouts/main.geojson",
     "data/canada/circuit-icar-1043569622/layouts/icar-mirabel.geojson",
+    "data/canada/ca-strawberry-creek-raceway-2f57a75c/layouts/strawberry-creek-raceway.geojson",
   ]) {
     const d: Layout = JSON.parse(readFileSync(file, "utf8")),
       original = JSON.stringify(d.features),
