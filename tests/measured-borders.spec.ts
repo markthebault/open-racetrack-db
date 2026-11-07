@@ -19,6 +19,7 @@ for (const [track, layout] of [
   ["gb-harewood-hillclimb-f1871afb", "harewood-hillclimb"],
   ["gb-gurston-down-hillclimb-ade02267", "gurston-down-hillclimb"],
   ["de-circuit-meppen-206291125", "main"],
+  ["bh-bahrain-international-circuit-4818385", "main"],
   ["de-motorsport-arena-oschersleben-89251023", "main"],
   ["at-red-bull-ring-84416610", "main"],
   ["us-waterford-hills-796357203", "main"],

@@ -160,9 +160,13 @@ test("constant-radius circuit matches the analytic lateral speed limit", () => {
 });
 
 
-test("Oschersleben tight first corner retains paired sections without distant-edge width jumps", () => {
+for (const [name, file] of [
+  ["Oschersleben tight first corner", "data/germany/motorsport-arena-oschersleben-89251023/layouts/main.geojson"],
+  ["Bahrain extended junctions", "data/bahrain/bahrain-international-circuit-4818385/layouts/main.geojson"],
+])
+test(`${name} retains paired sections without distant-edge width jumps`, () => {
   const data = JSON.parse(readFileSync(
-    "data/germany/motorsport-arena-oschersleben-89251023/layouts/main.geojson", "utf8",
+    file, "utf8",
   )) as Layout;
   const inner = data.features.find((f) => f.properties.role === "inner")!;
   const outer = data.features.find((f) => f.properties.role === "outer")!;
