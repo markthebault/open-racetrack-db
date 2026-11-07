@@ -2,53 +2,22 @@
   "schemaVersion": 1,
   "trackId": "cn-shanghai-international-circuit-107371138",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "b0e3442e8fe42656b548c2cd21e491fef7eae3e87508266fd6d7570c1baa79d6",
+  "sourceId": "osm-relation-2094941",
+  "snapshotFile": "relation-2094941.json",
+  "snapshotSha256": "14401f8df72d3724f89b040338183dce5008dccb3e760552f8aeab5cf4fe7736",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "The generic longest-cycle fallback adds a triangular internal connector detour near the back-straight hairpin. The FIA circuit map identifies the direct Grand Prix chain retained in the already registered named source. The exact registered source coordinates and traversal direction are retained without diagram tracing or distance fitting. Travel direction remains provisional. Main public timing stays missing."
   ],
   "segments": [
     {
       "wayId": 156328670,
       "wayVersion": 14,
-      "fromIndex": 4,
-      "toIndex": 0
-    },
-    {
-      "wayId": 156328670,
-      "wayVersion": 14,
-      "fromIndex": 256,
-      "toIndex": 163
-    },
-    {
-      "wayId": 156346104,
-      "wayVersion": 5,
-      "fromIndex": 17,
-      "toIndex": 0
-    },
-    {
-      "wayId": 107371138,
-      "wayVersion": 9,
       "fromIndex": 0,
-      "toIndex": 11
-    },
-    {
-      "wayId": 156328684,
-      "wayVersion": 8,
-      "fromIndex": 18,
-      "toIndex": 0
-    },
-    {
-      "wayId": 156328670,
-      "wayVersion": 14,
-      "fromIndex": 148,
-      "toIndex": 4
+      "toIndex": 256
     }
   ],
   "gates": []

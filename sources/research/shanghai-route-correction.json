@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "trackId": "cn-shanghai-international-circuit-107371138",
+  "layoutId": "main",
+  "baselineCommit": "9d44c01be2fee6d9a0decec1a1c657220f9c3d45",
+  "previousRecipe": {
+    "schemaVersion": 1,
+    "trackId": "cn-shanghai-international-circuit-107371138",
+    "layoutId": "main",
+    "sourceId": "osm-snapshot",
+    "snapshotSha256": "b0e3442e8fe42656b548c2cd21e491fef7eae3e87508266fd6d7570c1baa79d6",
+    "closed": true,
+    "timingMode": "shared",
+    "geometryStatus": "draft",
+    "reviewedAt": null,
+    "notes": [
+      "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+      "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
+      "Some source ways lack one-way direction tags. Travel direction is provisional."
+    ],
+    "segments": [
+      {
+        "wayId": 156328670,
+        "wayVersion": 14,
+        "fromIndex": 4,
+        "toIndex": 0
+      },
+      {
+        "wayId": 156328670,
+        "wayVersion": 14,
+        "fromIndex": 256,
+        "toIndex": 163
+      },
+      {
+        "wayId": 156346104,
+        "wayVersion": 5,
+        "fromIndex": 17,
+        "toIndex": 0
+      },
+      {
+        "wayId": 107371138,
+        "wayVersion": 9,
+        "fromIndex": 0,
+        "toIndex": 11
+      },
+      {
+        "wayId": 156328684,
+        "wayVersion": 8,
+        "fromIndex": 18,
+        "toIndex": 0
+      },
+      {
+        "wayId": 156328670,
+        "wayVersion": 14,
+        "fromIndex": 148,
+        "toIndex": 4
+      }
+    ],
+    "gates": []
+  },
+  "previousTraceSha256": "ba9e47512f0a36897e297df32cb67b83f3701acbf7c8ccd76bd7af8f68ad3095",
+  "reason": "The generic longest-cycle fallback adds a triangular internal connector detour near the back-straight hairpin. The FIA circuit map identifies the direct Grand Prix chain retained in the already registered named source.",
+  "excludedWayIds": [
+    156346104,
+    107371138,
+    156328684
+  ],
+  "replacement": {
+    "sourceLayoutId": "shanghai-gp",
+    "sourceId": "osm-relation-2094941",
+    "snapshotFile": "relation-2094941.json",
+    "snapshotSha256": "14401f8df72d3724f89b040338183dce5008dccb3e760552f8aeab5cf4fe7736",
+    "traceSha256": "4386072a736eb6d6c749cca631b549adce4a4d1d3cf8f867ba878e6daaa39e64"
+  },
+  "identityEvidence": {
+    "primaryUrl": "https://www.fia.com/system/files/decision-document/2026_chinese_grand_prix_-_competition_notes_-_circuit_map_pit_lane_drawing_emergency_exits_map_battery_containment_area_and_red_zone.pdf",
+    "mapSha256": "7fba64c20346a9055e92251359c44720410578b42545d62458c1609f20d2a331",
+    "page": 2,
+    "mapDate": "2026-03-12",
+    "use": "Visually inspected Grand Prix branch identity only. No diagram coordinates, widths or stated distances are extracted or fitted."
+  },
+  "imageryReview": {
+    "sha256": "a9b9e77ea69d236165fdb4a88e3a20f539076851584ca2247c3a22fab9e75bc6",
+    "finding": "The native source overlay distinguishes the triangular connector detour from the Grand Prix route. The original supplemental border pair is rejected for main because its Turn 6 apex falls short of the visible road. Four native RGB proposal overlays inspected; run-off and junction limits require sparse image measurements."
+  },
+  "preservation": "All other layouts, existing borders, timing and original terrain are preserved. Main timing stays missing; sibling timing GPS is not copied. Original supplemental borders are not reused.",
+  "limitations": "Source alignment and travel direction remain draft. Image-derived limits are estimates; shared-pavement joins interpolate. Curbs remain illustrative, raster heights approximate and unknown banking zero.",
+  "borderStatus": {
+    "status": "held-for-image-measurement",
+    "reason": "Native imagery review rejects direct reuse of the original supplemental limits and the automatic candidates. No candidate borders or model are promoted for main. Source correction is independently supported and does not establish boundary accuracy.",
+    "candidateMethods": [
+      "rgb-road-local-appearance-v4",
+      "rgb-cross-sections-v2"
+    ],
+    "candidateFindings": "Both corrected-trace RGB candidates reach the visible Turn 6 tip, but boundaries at run-off, junction openings and parts of the straight require sparse image observations. V4 shows larger apron excursions; V2 remains a proposal, not accepted borders. Geometric validation alone does not establish positional accuracy.",
+    "reviewedArtifacts": {
+      "originalNativeRegions": 4,
+      "v4NativeRegions": 4,
+      "crossSectionSheets": 0,
+      "detailSheets": 0,
+      "v2NativeRegions": 4
+    }
+  }
+}
