@@ -32,7 +32,11 @@ export function compactPairedImageMeasurements(
       options.gradeSeparation,
     ),
     recipe = borderMeasurementInputSchema.parse(input),
-    frames = imageCrossSections(trace),
+    frames = imageCrossSections(
+      trace,
+      false,
+      options.gradeSeparation?.sourceStationOffset,
+    ),
     inner = recipe.patches.find((p) => p.edge === "inner")!,
     outer = recipe.patches.find((p) => p.edge === "outer")!,
     stations = inner.anchors.map((a) => a.station),

@@ -27,13 +27,13 @@ export function measuredImageBorders(
     throw new Error("Open run measurements require distinct source endpoints");
   if (!run && (trace.length < 4 || !equal(trace[0], trace.at(-1)!)))
     throw new Error("Complete image measurements require one closed route");
-  const frames = imageCrossSections(trace, run),
-    { projection, normals, smooth, count, index, step } = frames,
-    lastStation = run ? count - 1 : count,
-    paired = recipe.method === "paired-image-edge-anchors-v1";
   const grade = gradeInput
     ? gradeSeparationSchema.parse(gradeInput)
     : undefined;
+  const frames = imageCrossSections(trace, run, grade?.sourceStationOffset),
+    { projection, normals, smooth, count, index, step } = frames,
+    lastStation = run ? count - 1 : count,
+    paired = recipe.method === "paired-image-edge-anchors-v1";
   if (grade && (run || !paired || grade.stationCount !== count))
     throw new Error(
       "Bridge measurements require a closed paired recipe with matching source stations",

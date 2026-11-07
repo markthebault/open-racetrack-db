@@ -206,3 +206,130 @@ test("saved measured bridge recipes require closed paired semantics without auto
   ])
     assert.equal(borderInferenceSchema.safeParse(bad).success, false);
 });
+
+test("a shifted source grid replays a closed bridge without moving or reversing the retained trace", async () => {
+  const { gradeProfileHeight } = await import("../src/grade-separation");
+  const { trace, grade, input, image } = fixture(),
+    original = structuredClone(trace),
+    frames = imageCrossSections(trace),
+    offset = 5;
+  const shiftedFrames = imageCrossSections(trace, false, offset);
+  assert.deepEqual(shiftedFrames.smooth, [
+    ...frames.smooth.slice(offset),
+    ...frames.smooth.slice(0, offset),
+  ]);
+  assert.deepEqual(shiftedFrames.normals, [
+    ...frames.normals.slice(offset),
+    ...frames.normals.slice(0, offset),
+  ]);
+  assert.equal(shiftedFrames.step, frames.step);
+  const n = grade.stationCount,
+    wrap = (s: number) => (s - offset + n) % n,
+    seam = gradeProfileHeight(grade, offset),
+    rotated = structuredClone(grade);
+  rotated.sourceStationOffset = offset;
+  for (const crossing of rotated.crossings)
+    for (const key of ["upper", "lower"] as const)
+      crossing[key] = crossing[key].map(wrap) as [number, number];
+  rotated.elevation.anchors = [
+    [0, seam],
+    ...grade.elevation.anchors
+      .slice(0, -1)
+      .map(([s, h]): [number, number] => [wrap(s), h])
+      .filter(([s]) => s !== 0)
+      .sort((a, b) => a[0] - b[0]),
+    [n, seam],
+  ];
+  const shiftedInput = structuredClone(input);
+  shiftedInput.patches.forEach((patch, side) =>
+    patch.anchors.forEach((anchor, station) => {
+      anchor.coordinate =
+        input.patches[side].anchors[(station + offset) % n].coordinate;
+    }),
+  );
+  const before = measuredImageBorders(
+      trace,
+      input,
+      input.imageSha256,
+      image,
+      grade,
+    ),
+    after = measuredImageBorders(
+      trace,
+      shiftedInput,
+      input.imageSha256,
+      image,
+      rotated,
+    );
+  for (const edge of ["inner", "outer"] as const)
+    assert.deepEqual(after.result[edge].slice(0, n), [
+      ...before.result[edge].slice(offset, n),
+      ...before.result[edge].slice(0, offset),
+    ]);
+  const { resultSha256, ...saved } = after.measurement;
+  assert.equal(
+    measuredImageBorders(trace, saved, input.imageSha256, image, rotated)
+      .measurement.resultSha256,
+    resultSha256,
+  );
+  const wrong = structuredClone(rotated);
+  delete wrong.sourceStationOffset;
+  assert.throws(
+    () =>
+      measuredImageBorders(
+        trace,
+        shiftedInput,
+        input.imageSha256,
+        image,
+        wrong,
+      ),
+    /departs|driving order/,
+  );
+  assert.deepEqual(trace, original);
+  for (const bad of [-1, 0.5, frames.count])
+    assert.throws(
+      () => imageCrossSections(trace, false, bad),
+      /source grid index/,
+    );
+  assert.throws(
+    () => imageCrossSections(trace.slice(0, -1), true, 1),
+    /source grid index/,
+  );
+  for (const bad of [-1, 0.5, n])
+    assert.equal(
+      gradeSeparationSchema.safeParse({ ...rotated, sourceStationOffset: bad })
+        .success,
+      false,
+    );
+  const compacted = compactPairedImageMeasurements(trace, shiftedInput, image, {
+    maximumErrorM: 0.1,
+    gradeSeparation: rotated,
+  });
+  assert.ok(compacted.maximumErrorM <= 0.1);
+  const { refineImageBorders, borderPairHash } =
+    await import("../scripts/refine-image-borders");
+  const refined = refineImageBorders(
+    after.result,
+    trace,
+    {
+      method: "cross-section-image-anchors-v1",
+      imageSha256: input.imageSha256,
+      seedSha256: borderPairHash(after.result),
+      note: "Synthetic shifted-grid refinement fixture only.",
+      patches: [
+        {
+          edge: "inner",
+          anchors: [10, 11].map((station) => ({
+            station,
+            kind: "image-measured" as const,
+            coordinate: after.result.inner[station],
+          })),
+        },
+      ],
+    },
+    image,
+    input.imageSha256,
+    { gradeSeparation: rotated },
+  );
+  assert.deepEqual(refined.result, after.result);
+});

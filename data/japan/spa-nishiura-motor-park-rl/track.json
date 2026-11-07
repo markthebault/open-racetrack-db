@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Spa Nishiura Motor Park",
       "file": "layouts/main.geojson",
-      "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "Japan/Spa Nishiura Motor Park"
+      "referenceId": "Japan/Spa Nishiura Motor Park",
+      "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:13.081Z",
       "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. reference supplies the expected layout name and private timing GPS only."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-07T15:32:28.011Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

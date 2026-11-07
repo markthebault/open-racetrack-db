@@ -11,6 +11,7 @@ export const gradeSeparationSchema = z
     schemaVersion: z.literal(1),
     method: z.literal("source-bridge-ground-approaches-v1"),
     stationCount: z.number().int().min(12).max(199999),
+    sourceStationOffset: z.number().int().nonnegative().optional(),
     crossings: z
       .array(
         z.strictObject({
@@ -62,6 +63,8 @@ export const gradeSeparationSchema = z
     const issue = (message: string) =>
       ctx.addIssue({ code: "custom", message });
     const a = value.elevation.anchors;
+    if ((value.sourceStationOffset ?? 0) >= value.stationCount)
+      issue("Source station offset must be inside the closed source grid");
     if (
       a[0][0] !== 0 ||
       a.at(-1)![0] !== value.stationCount ||

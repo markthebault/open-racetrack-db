@@ -1,7 +1,10 @@
 import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { resolve, dirname } from "node:path";
-import type { GradeSeparation } from "../schemas/grade-separation";
+import {
+  gradeSeparationSchema,
+  type GradeSeparation,
+} from "../schemas/grade-separation";
 import type { Layout } from "../schemas/data";
 import { geometryPaths } from "../schemas/data";
 import { auditGradeCrossings } from "./audit-grade-crossings";
@@ -11,8 +14,9 @@ import { imageCrossSections } from "./infer-image-borders";
 export async function verifyGradeSource(
   layout: Layout,
   grade: GradeSeparation,
-  sourcesRoot = 'sources',
+  sourcesRoot = "sources",
 ) {
+  grade = gradeSeparationSchema.parse(grade);
   const root = `${sourcesRoot}/${layout.metadata.trackId}`,
     recipe = JSON.parse(
       await readFile(
@@ -41,13 +45,18 @@ export async function verifyGradeSource(
   )
     throw new Error("Grade source recipe, snapshot or crossing count mismatch");
   const used = new Set<number>();
+  const station = (metres: number) =>
+    (((metres / frames.step - (grade.sourceStationOffset ?? 0)) %
+      frames.count) +
+      frames.count) %
+    frames.count;
   for (const c of grade.crossings) {
     const matches = hits.flatMap((hit, i) => {
       if (used.has(i) || hit.status !== "source-bridge-needs-profile")
         return [];
       const candidate = hit.bridgeCandidates[0],
-        upper = hit.stationsM[candidate.branch] / frames.step,
-        lower = hit.stationsM[1 - candidate.branch] / frames.step;
+        upper = station(hit.stationsM[candidate.branch]),
+        lower = station(hit.stationsM[1 - candidate.branch]);
       return candidate.wayId === c.source.wayId &&
         candidate.wayVersion === c.source.wayVersion &&
         candidate.bridge === c.source.bridge &&

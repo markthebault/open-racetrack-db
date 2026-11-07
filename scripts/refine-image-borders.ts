@@ -50,7 +50,11 @@ export function refineImageBorders<T extends Borders>(
       smooth,
       normals,
       index,
-    } = imageCrossSections(trace, open),
+    } = imageCrossSections(
+      trace,
+      open,
+      options.gradeSeparation?.sourceStationOffset,
+    ),
     result = structuredClone(seed),
     toPixel = (p: Position) => {
       const x = (6378137 * p[0] * Math.PI) / 180,

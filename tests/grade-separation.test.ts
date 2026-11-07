@@ -208,6 +208,44 @@ test("paired runtime stations cross at different heights without choosing the ot
     (p) => (p[1] = 40),
   );
   assert.throws(() => buildRoad(flatMeasured), /separation/);
+  const shifted = structuredClone(measured),
+    offset = 20;
+  const shiftedGrade = shifted.metadata.borderInference!.gradeSeparation!;
+  shiftedGrade.sourceStationOffset = offset;
+  for (const crossing of shiftedGrade.crossings)
+    for (const key of ["upper", "lower"] as const)
+      crossing[key] = crossing[key].map((s) => s - offset) as [number, number];
+  shiftedGrade.elevation.anchors = [
+    [0, 40],
+    [30, 40],
+    [50, 40],
+    [110, 46.5],
+    [130, 46.7],
+    [140, 40],
+    [160, 40],
+  ];
+  for (const feature of shifted.features.filter(
+    (f) => f.properties.role !== "trace",
+  )) {
+    const points = feature.geometry.coordinates as Position[];
+    feature.geometry.coordinates = [
+      ...points.slice(offset, -1),
+      ...points.slice(0, offset),
+      points[offset],
+    ];
+  }
+  const shiftedRoad = buildRoad(shifted);
+  assert.deepEqual(
+    shiftedRoad.origin,
+    trace[0],
+    "source-grid shift preserves the fallback start location",
+  );
+  assert.ok(
+    Math.hypot(
+      shiftedRoad.points[0].x - road.points[0].x,
+      shiftedRoad.points[0].z - road.points[0].z,
+    ) < 2,
+  );
   const reordered = structuredClone(layout);
   reordered.features.reverse();
   assert.deepEqual(buildRoad(reordered).points, road.points);
@@ -331,4 +369,45 @@ test("separate underpass approaches exclude deck pixels without inventing missin
   assert.doesNotThrow(() => gradeSeparationSchema.parse(recipe));
   recipe.elevation.anchors.splice(2, 0, [60, 46]);
   assert.throws(() => gradeSeparationSchema.parse(recipe), /only between/);
+});
+
+test("source verification maps a shifted paired origin back to the exact retained source bridge", async () => {
+  const layout = JSON.parse(
+    await readFile(
+      "data/japan/suzuka-circuit-175231434/layouts/main.geojson",
+      "utf8",
+    ),
+  ) as Layout;
+  const original = layout.metadata.borderInference!.gradeSeparation!,
+    grade = structuredClone(original),
+    offset = 17,
+    n = grade.stationCount,
+    wrap = (s: number) => (s - offset + n) % n,
+    seam = gradeProfileHeight(original, offset);
+  grade.sourceStationOffset = offset;
+  for (const crossing of grade.crossings)
+    for (const key of ["upper", "lower"] as const)
+      crossing[key] = crossing[key].map(wrap) as [number, number];
+  grade.elevation.anchors = [
+    [0, seam],
+    ...original.elevation.anchors
+      .slice(0, -1)
+      .map(([s, h]): [number, number] => [wrap(s), h])
+      .filter(([s]) => s !== 0)
+      .sort((a, b) => a[0] - b[0]),
+    [n, seam],
+  ];
+  await verifyGradeSource(layout, grade);
+  const wrong = structuredClone(grade);
+  wrong.sourceStationOffset = Math.floor(n / 2);
+  await assert.rejects(verifyGradeSource(layout, wrong), /source bridge/);
+  wrong.sourceStationOffset = n;
+  await assert.rejects(
+    verifyGradeSource(layout, wrong),
+    /inside the closed source grid/,
+  );
+  wrong.sourceStationOffset = offset;
+  wrong.crossings[0].source.wayVersion++;
+  await assert.rejects(verifyGradeSource(layout, wrong), /source bridge/);
+  assert.equal(original.sourceStationOffset, undefined);
 });

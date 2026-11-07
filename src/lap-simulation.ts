@@ -107,17 +107,19 @@ export function buildRoad(layout: Layout): Road {
   if (recipe.kind === "surface")
     throw new Error("This layout has no playable closed-lap model.");
   if (recipe.kind === "run") return buildOpenRoad(layout, recipe);
+  const grade = layout.metadata.borderInference?.gradeSeparation;
+  const sourceTrace = geometryPaths(
+    layout.features.find((f) => f.properties.role === "trace")!.geometry,
+  )[0];
   const trace =
     recipe.pathMethod === "paired-border-midpoints"
       ? pairedBorderMidline(layout)
       : recipe.pathMethod === "boundary-normal-midpoints-v1"
         ? boundaryNormalMidline(layout)
-        : geometryPaths(
-            layout.features.find((f) => f.properties.role === "trace")!
-              .geometry,
-          )[0];
+        : sourceTrace;
   const origin =
-    (layout.metadata.timing?.start as Position | undefined) ?? trace[0];
+    (layout.metadata.timing?.start as Position | undefined) ??
+    (grade?.sourceStationOffset ? sourceTrace[0] : trace[0]);
   const projection = plane(origin);
   const raw = trace.slice(0, -1).map((p) => {
     const [x, y] = projection.to(p);
@@ -139,8 +141,7 @@ export function buildRoad(layout: Layout): Road {
     }
   }
   const start = (finish + recipe.startOffsetM / length) % 1;
-  const grade = layout.metadata.borderInference?.gradeSeparation,
-    imagePairs =
+  const imagePairs =
       layout.metadata.borderInference?.method ===
       "image-measured-paired-edges-v1",
     pairedSections = !!grade || imagePairs,

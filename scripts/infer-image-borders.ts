@@ -109,7 +109,11 @@ function selfCrosses(path: Position[], closed = true) {
   }
   return false;
 }
-export function imageCrossSections(trace: Position[], open = false) {
+export function imageCrossSections(
+  trace: Position[],
+  open = false,
+  sourceStationOffset = 0,
+) {
   const closed = equal(trace[0], trace.at(-1)!);
   if (!closed && !open)
     throw new Error(
@@ -126,6 +130,15 @@ export function imageCrossSections(trace: Position[], open = false) {
   const count = Math.max(12, Math.ceil(stations.at(-1)! / 3)),
     step = stations.at(-1)! / (closed ? count : count - 1),
     path: Position[] = [];
+  if (
+    !Number.isInteger(sourceStationOffset) ||
+    sourceStationOffset < 0 ||
+    sourceStationOffset >= count ||
+    (!closed && sourceStationOffset !== 0)
+  )
+    throw new Error(
+      "Source station offset requires a valid closed source grid index",
+    );
   let segment = 0;
   for (let i = 0; i < count; i++) {
     const s = i * step;
@@ -137,7 +150,13 @@ export function imageCrossSections(trace: Position[], open = false) {
       raw[segment][1] + (raw[segment + 1][1] - raw[segment][1]) * t,
     ]);
   }
-  const smooth = path.map((_, i) => average(path, i, 1, closed));
+  const source = path.map((_, i) => average(path, i, 1, closed));
+  const smooth = sourceStationOffset
+    ? [
+        ...source.slice(sourceStationOffset),
+        ...source.slice(0, sourceStationOffset),
+      ]
+    : source;
   const index = (i: number) =>
     closed ? (i + count) % count : Math.max(0, Math.min(count - 1, i));
   const normals = smooth.map((_, i): Position => {
@@ -164,7 +183,11 @@ export function inferImageBorders(
     appearance = localAppearance || options.method === "road-appearance-v3",
     minOffset = appearance ? -10 : 2;
   const { closed, projection, count, step, smooth, normals, index } =
-    imageCrossSections(trace, options.open);
+    imageCrossSections(
+      trace,
+      options.open,
+      gradeSeparation?.sourceStationOffset,
+    );
   if (
     options.gradeSeparation &&
     (!closed ||
