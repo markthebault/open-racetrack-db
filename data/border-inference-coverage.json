@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T07:55:59.908Z",
+  "generatedAt": "2026-11-07T08:20:57.837Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -2399,8 +2399,9 @@
       "trackId": "fr-circuits-de-vendee-662836845",
       "layoutId": "main",
       "file": "data/france/circuits-de-vendee-662836845/layouts/main.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "99f6620662f3a267b4649866489765711153421e28b1fac32b08254f486b210a"
     },
     {
       "trackId": "fr-geoparc-391622752",
@@ -4903,7 +4904,7 @@
       "trackId": "us-detroit-city-airport-f3ab2023",
       "layoutId": "detroit-city-airport",
       "status": "unmapped",
-      "reason": "High-resolution imagery shows the apron but does not establish the event\u2019s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
+      "reason": "High-resolution imagery shows the apron but does not establish the event’s temporary chicanes. The public GPS recording checked here follows a different, smaller apron loop."
     },
     {
       "trackId": "us-dover-motor-speedway-350676133",
