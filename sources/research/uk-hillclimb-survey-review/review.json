@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-11-07T01:07:42.406702+00:00",
-  "scope": "Source discovery and native-pixel inspection only. No border, elevation, model, playback or coverage changes.",
+  "scope": "Source discovery and native-pixel inspection. Harewood now has a complete measured/interpolated open-run estimate; the other four routes remain held. No terrain samples are changed.",
   "nativeIntensityLicense": {
     "license": "OGL-3.0",
     "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
@@ -23,8 +23,8 @@
         -1.4863201,
         53.9080569
       ],
-      "status": "awaiting-boundary-evidence-and-measurements",
-      "finding": "The 2019 intensity raster shows the continuous road substantially more clearly than the reviewed satellite mosaic. Building entrances around stations 324/336, the start junction and the widened final paved bay need explicit boundary observations. The 2015 point cloud provides additional historic surface evidence. No complete measured-edge recipe has been accepted.",
+      "status": "measured-open-run-estimate",
+      "finding": "The complete route uses 82 edge anchors from the pinned 2019 intensity raster. Starting limits follow neighbouring visible road lines across the paved entrance; the right edge at building entrances around stations 324 and 336 interpolates between neighbouring observations. The widened final paved bay is retained. Satellite context and the 2015 intensity cloud were supporting visual checks, not terrain updates. Unverified estimated borders, metre-scale source pixels and sparse interpolation limit accuracy.",
       "indexQueries": {
         "aerialPhotography": {
           "url": "https://environment.data.gov.uk/KB6uNVj5ZcJr7jUP/ArcGIS/rest/services/Vertical_Aerial_Photography_Catalogues/FeatureServer/0/query?f=json&where=1%3D1&geometry=%7B%22xmin%22%3A+-1.4934563%2C+%22ymin%22%3A+53.9038052%2C+%22xmax%22%3A+-1.4863201%2C+%22ymax%22%3A+53.9080569%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=false",
@@ -233,6 +233,34 @@
           ]
         },
         "coordinateCaution": "The LAZ header has no CRS record. The matching index identifies OSTN'02 and OSGM'02; no modern-datum road geometry or elevation update is inferred from the visualization."
+      },
+      "borderImage": {
+        "imagery": {
+          "sourceId": "ea-national-lidar-intensity-harewood-2019",
+          "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SE3045",
+          "reuseEvidenceUrl": "https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme",
+          "license": "OGL-3.0",
+          "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Environment Agency National LIDAR Programme last-return intensity, captured 30 December 2019.",
+          "retrievedAt": "2026-11-07T00:59:41.117867Z",
+          "sha256": "4233880a4b3eb29f8ef2e056e98a0e4313e40bf186affcc12e4d713db07104e2",
+          "width": 586,
+          "height": 591,
+          "extent3857": [
+            -166350.46087953405,
+            7151858.893832322,
+            -165355.74880914646,
+            7152862.093207065
+          ],
+          "groundPixelSizeM": 1.0
+        },
+        "pixelSpacing3857": 1.6974608709685741,
+        "coordinateGrid": {
+          "file": "uk_os_OSTN15_NTv2_OSGBtoETRS.tif",
+          "url": "https://cdn.proj.org/uk_os_OSTN15_NTv2_OSGBtoETRS.tif",
+          "sha256": "5d6ed64d2119952c4c559fa1fccbc594b6520fc3ec3ef2fc10be13202c4384fa"
+        },
+        "sampling": "Nearest original raster pixel; missing samples remain transparent; no surface filling.",
+        "resultSha256": "306c3490d3e880cc6dc1afd38f0e81dbe84d925fa30d52fb6913b594ae2eaf5b"
       }
     },
     {

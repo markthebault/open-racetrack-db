@@ -85,10 +85,52 @@ def point_cloud(record, cache):
     print('harewood 2015: archive, member and actual point-cloud header PASS')
 
 
+def border_image(record, cache):
+    from pyproj import Transformer, datadir
+    from pyproj.transformer import TransformerGroup
+
+    spec = record['borderImage']
+    grid = spec['coordinateGrid']
+    grid_path = cache / grid['file']
+    if not grid_path.exists():
+        with urllib.request.urlopen(grid['url'], timeout=45) as response:
+            grid_path.write_bytes(response.read())
+    assert sha(grid_path.read_bytes()) == grid['sha256']
+    datadir.append_data_dir(str(cache.resolve()))
+    group = TransformerGroup(4326, 27700, always_xy=True)
+    assert group.best_available
+    transform = group.transformers[0]
+    assert transform.description == record['intensityRaster']['render']['transformOperation']
+    image = spec['imagery']
+    west, _, _, north = image['extent3857']
+    spacing = spec['pixelSpacing3857']
+    xx, yy = np.meshgrid(
+        west + (np.arange(image['width']) + .5) * spacing,
+        north - (np.arange(image['height']) + .5) * spacing,
+    )
+    lon, lat = Transformer.from_crs(3857, 4326, always_xy=True).transform(xx, yy)
+    east, northing = transform.transform(lon, lat)
+    native = record['intensityRaster']['render']
+    a, _, left, _, e, top, *_ = native['transform']
+    cols = np.floor((east - left) / a).astype(int)
+    rows = np.floor((northing - top) / e).astype(int)
+    source = np.array(Image.open(cache / f"{record['name']}-ea-intensity-native.png").convert('RGBA'))
+    valid = (cols >= 0) & (cols < source.shape[1]) & (rows >= 0) & (rows < source.shape[0])
+    output = np.zeros((image['height'], image['width'], 4), dtype='uint8')
+    output[valid] = source[rows[valid], cols[valid]]
+    output[np.all(output[:, :, :3] == [80, 20, 20], axis=2)] = [0, 0, 0, 0]
+    path = cache / f"{record['name']}-ea-pinned.png"
+    Image.fromarray(output).save(path)
+    assert sha(path.read_bytes()) == image['sha256']
+    path.with_suffix('.json').write_text(json.dumps(image, indent=2) + '\n')
+    print(f"{record['name']}: pinned border image and coordinate-grid hashes PASS")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cache', type=Path, required=True)
     parser.add_argument('--point-cloud', action='store_true')
+    parser.add_argument('--border-images', action='store_true', help='Recreate pinned EPSG:3857 border evidence; requires pyproj')
     args = parser.parse_args()
     args.cache.mkdir(parents=True, exist_ok=True)
     manifest = json.loads((ROOT / 'review.json').read_text())
@@ -101,6 +143,8 @@ def main():
             intensity(record, args.cache)
         if args.point_cloud and 'additionalPointCloud' in record:
             point_cloud(record, args.cache)
+        if args.border_images and 'borderImage' in record:
+            border_image(record, args.cache)
 
 
 if __name__ == '__main__':

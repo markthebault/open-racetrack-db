@@ -16,6 +16,7 @@ for (const [track, layout] of [
   ["de-estering-f9d6a5de", "estering-standard"],
   ["de-estering-f9d6a5de", "estering-joker"],
   ["de-osnabruck-hill-climb-d7c0b8d4", "osnabruck-hill-climb"],
+  ["gb-harewood-hillclimb-f1871afb", "harewood-hillclimb"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-a"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-b"],
   ["ca-cameron-speedway-kart-circuit-f7997f0a", "historical-southern-course-c"],
@@ -58,7 +59,7 @@ for (const [track, layout] of [
       const href = await page.locator("#download").getAttribute("href"),
         d = await (await request.get(href!)).json(),
         refinement = d.metadata.borderInference.measurement;
-      if (track === "de-osnabruck-hill-climb-d7c0b8d4") {
+      if (refinement.routeKind === "run") {
         expect(refinement.routeKind).toBe("run");
         expect(d.metadata.borderInference.edgeConvention).toBe(
           "left-right-along-trace",
@@ -99,6 +100,9 @@ for (const [track, layout] of [
       await expect(page.locator(".lap-loading")).toBeHidden();
       await expect(page.locator(".lap-evidence").first()).toContainText(
         "Sections between measurements are interpolated",
+      );
+      await expect(page.locator("[data-source-credit]")).toContainText(
+        d.metadata.borderInference.imagery.attribution,
       );
       await page.locator(".lap-play").click();
       await expect(page.locator("[data-clock]")).not.toHaveText("0:00.00");

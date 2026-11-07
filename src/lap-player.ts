@@ -174,9 +174,15 @@ export function openLap(
       out.font = "20px monospace";
       out.fillText(formatLapTime(time), 275, 98);
       out.font = "16px sans-serif";
-      out.fillText(`${corner} · 1× real time`, 30, 668);
-      out.fillText("Natural elevation · Approximate reconstruction", 30, 695);
+      out.fillText(`${corner} · 1× real time`, 30, 642);
+      out.fillText("Natural elevation · Approximate reconstruction", 30, 665);
       out.font = "12px sans-serif";
+      out.fillText(
+        `Borders: ${layout.metadata.borderInference?.imagery.attribution ?? "Supplemental border coordinates"}`,
+        30,
+        690,
+        1220,
+      );
       out.fillText(
         `Imagery: ${lap.road.recipe.imagery.attribution} · Trace © OSM · Supplemental borders${layout.metadata.borderInference?.gradeSeparation ? " · Road elevations edited from GSI" : ""}`,
         30,
@@ -531,7 +537,7 @@ export function openLap(
         const evidence = layout.metadata.borderInference;
         const note = document.createElement("p");
         note.textContent = evidence.measurement
-          ? "Road-border estimates are reconstructed from sparse measurements on pinned aerial imagery. Sections between measurements are interpolated and have not been formally verified."
+          ? "Road-border estimates are reconstructed from sparse measurements on pinned georeferenced imagery. Sections between measurements are interpolated and have not been formally verified."
           : evidence.refinement
             ? "Road-border estimates include corrections measured on pinned aerial imagery. Other sections remain automatic estimates. These borders have not been formally verified."
             : "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
@@ -637,7 +643,7 @@ export function openLap(
         ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}. Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
+        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T00:29:28.066Z",
+  "generatedAt": "2026-11-07T01:22:06.486Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -2847,30 +2847,9 @@
       "trackId": "gb-harewood-hillclimb-f1871afb",
       "layoutId": "harewood-hillclimb",
       "file": "data/united-kingdom/gb-harewood-hillclimb-f1871afb/layouts/harewood-hillclimb.geojson",
-      "status": "needs-imagery-review",
-      "evidence": {
-        "strongEdgeFraction": [
-          0.9498,
-          0.9351
-        ],
-        "medianInteriorDifference": [
-          0.0408,
-          0.0413
-        ],
-        "samplingStepM": 3.006131974814895,
-        "searchRangeM": [
-          -10,
-          25
-        ]
-      },
-      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "496581245bae4a1dd3335fd2ae471adfadaa0508bf5b2846b0023676cd706284",
-      "reason": "The building junction near station 326 and the final bend include ambiguous adjoining pavement or grass; edge corrections are required before saving.",
-      "visualScreening": {
-        "scope": "Overview plus up to sixteen native-image sections, including the widest proposed sections",
-        "outcome": "held",
-        "note": "Screening does not establish surveyed accuracy or real curb locations."
-      }
+      "status": "inferred-estimate",
+      "source": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SE3045",
+      "imageSha256": "4233880a4b3eb29f8ef2e056e98a0e4313e40bf186affcc12e4d713db07104e2"
     },
     {
       "trackId": "gb-kames-motorsport-circuit-38672231",

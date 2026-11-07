@@ -20,8 +20,8 @@
     {
       "id": "harewood-hillclimb",
       "name": "Harewood Hillclimb",
-      "referenceId": "United Kingdom/Harewood Hillclimb",
       "file": "layouts/harewood-hillclimb.geojson",
+      "referenceId": "United Kingdom/Harewood Hillclimb",
       "description": "Draft open Harewood hillclimb follows the complete independently mapped corner sequence, including Orchard, Farmhouse, Country, Esses, Quarry, Clark, Willow and Chippy. The private start and finish agree with the two source endpoints. The planar source trace measures approximately 1.434 km; the supplied 1.509 km distance differs. No course coordinates are scaled, bridged or closed artificially."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T14:35:46.679Z",
       "evidenceNote": "Event operator supports the identity of the hillclimb and named corner sequence. Identification only; no coordinates copied."
+    },
+    {
+      "id": "ea-national-lidar-intensity-harewood-2019",
+      "type": "imagery",
+      "title": "Environment Agency last-return LiDAR intensity for estimated road borders",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2019/1/SE3045",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-11-07T00:59:41.117867Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
