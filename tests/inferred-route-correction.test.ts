@@ -11,3 +11,18 @@ test('Autobahn corrected fallback preserves source proof and independently regen
  assert.equal(main.metadata.borderInference!.method,'image-measured-paired-edges-v1');const {resultSha256,...input}=main.metadata.borderInference!.measurement!;const replay=measuredImageBorders(trace.coordinates,input,proof.measurement.imageSha256);assert.equal(replay.measurement.resultSha256,resultSha256);assert.equal(resultSha256,proof.measurement.resultSha256);for(const edge of ['inner','outer']as const)assert.deepEqual(replay.result[edge],main.features.find(f=>f.properties.role===edge)!.geometry.coordinates);assert.equal(input.patches.reduce((n,p)=>n+p.anchors.length,0),650);const road=buildRoad(main);assert.equal(road.interpolatedSections,0);assert.ok(Math.min(...road.points.map(p=>p.left+p.right))>10);assert.equal(main.metadata.borderInference!.status,'estimated');assert.equal(main.metadata.borderInference!.traceSha256,hash(trace));assert.deepEqual(main.metadata.borderInference!.imagery,named.metadata.borderInference!.imagery);assert.equal(main.metadata.borderInference!.imagery.sha256,proof.borderReplay.imageSha256);assert.equal(recipe.originalBorderReuse,undefined);
  assert.equal(main.metadata.timing,undefined);assert.equal(main.metadata.timingStatus,'missing');assert.ok(main.metadata.model3d);
 });
+
+test('Talladega full-course correction excludes internal shortcuts and retains timing',async()=>{
+ const root='sources/us-talladega-grand-prix-raceway-1061184414',recipe=await json(root+'/layouts/talladega-gran-prix.json'),proof=await json('sources/research/talladega-course-correction.json'),snapshot=await json(root+'/'+recipe.snapshotFile),ways=snapshot.elements.filter((e:Way&{type:string})=>e.type==='way'),layout=layoutSchema.parse(await json('data/united-states/talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.geojson'));
+ const previous=assemble(ways,proof.original.recipe.segments,true),current=assemble(ways,recipe.segments,true),closedCourse=ways.find((w:Way)=>w.id===1061184414);
+ assert.deepEqual(previous,proof.original.layout.features.find((f:any)=>f.properties.role==='trace').geometry.coordinates);
+ assert.notDeepEqual(previous,current);
+ assert.deepEqual(current,closedCourse.geometry.map((p:{lon:number;lat:number})=>[p.lon,p.lat]));
+ assert.deepEqual(layout.features.find(f=>f.properties.role==='trace')!.geometry.coordinates,current);
+ assert.deepEqual(layout.metadata.timing,proof.original.layout.metadata.timing);
+ const evidence=layout.metadata.borderInference!,{resultSha256,...input}=evidence.measurement!,replay=measuredImageBorders(current,input,evidence.imagery.sha256);
+ assert.equal(replay.measurement.resultSha256,resultSha256);
+ for(const edge of ['inner','outer']as const)assert.deepEqual(replay.result[edge],layout.features.find(f=>f.properties.role===edge)!.geometry.coordinates);
+ assert.equal(buildRoad(layout).interpolatedSections,0);
+ assert.ok(layout.metadata.model3d);
+});

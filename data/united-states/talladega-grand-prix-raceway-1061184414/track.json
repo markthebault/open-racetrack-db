@@ -29,7 +29,7 @@
       "name": "Talladega Gran Prix",
       "file": "layouts/talladega-gran-prix.geojson",
       "referenceId": "United States/Talladega Gran Prix",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2310.2 m. Difference from the supplied layout distance 17.8 m. Course configuration still requires visual review."
+      "description": "Full course selected from the complete closed OpenStreetMap way1061184414v1, compared with native satellite imagery and the operator facility map. Internal circulation shortcuts in the prior provisional cycle are excluded. Coordinates remain exact retained source nodes; no nominal length or width fit. Direction follows the operator map. Source geometry remains draft; border and terrain limits remain estimates."
     }
   ],
   "sources": [
@@ -59,6 +59,15 @@
       "license": "public-domain",
       "retrievedAt": "2026-11-05T23:55:57.533Z",
       "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-07T19:14:19.938Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

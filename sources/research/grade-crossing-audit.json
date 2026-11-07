@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "missingLayoutSetSha256": "e7dd4a31c7b5d181930e53027a780e23de625a0e101d9a4e9b019cefddded692",
+  "missingLayoutSetSha256": "6b173bfc99ae85582595f33165c062be96da911b9d9bacd2238fca826d4fd191",
   "note": "Diagnostic source-topology audit only. No boundaries, elevation profiles or models are accepted or changed. Explicit source bridge matches still require imagery review, separate road levels and crossing-aware runtime reconstruction. Collinear retraces and unexplained intersections stay unresolved. Source turns of at least 145 degrees flag possible needle joins before image authoring; real hairpins can also trigger this diagnostic. They require identity and image review, never automatic route replacement, border acceptance or rejection. Coordinates come only from public mapped traces; no timing data is read.",
   "summary": {
-    "missingLayouts": 232,
-    "singlePathsAudited": 209,
+    "missingLayouts": 231,
+    "singlePathsAudited": 208,
     "networksSkipped": 23,
     "layoutsWithCrossings": 5,
-    "layoutsWithSharpSourceTurns": 37,
-    "sharpSourceTurnEvents": 74,
+    "layoutsWithSharpSourceTurns": 36,
+    "sharpSourceTurnEvents": 73,
     "layoutsWithSourceBridgeCandidates": 3,
     "unexplainedCrossings": 3
   },
@@ -2574,48 +2574,6 @@
               "wayVersion": 1,
               "wayIndex": 0,
               "nodeId": 10174232866
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "trackId": "us-talladega-grand-prix-raceway-1061184414",
-      "layoutId": "talladega-gran-prix",
-      "file": "data/united-states/talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.geojson",
-      "traceSha256": "6e0ca4636618f4fef61aa627375d1c0067034183e5cc5686d813f197cf2d3e73",
-      "source": {
-        "recipeFile": "sources/us-talladega-grand-prix-raceway-1061184414/layouts/talladega-gran-prix.json",
-        "recipeSha256": "80f65dbd2c22e0432b82d3a2cd20cb7efba302e0dfa652438c15aa31d14488dd",
-        "snapshotFile": "sources/us-talladega-grand-prix-raceway-1061184414/course-network-1061184414.json",
-        "snapshotSha256": "287f3c1df01aa159e6b0d64b25f494d3eef66f506af86f876c8ce0b4fac893f3"
-      },
-      "crossings": [],
-      "sharpSourceTurns": [
-        {
-          "vertex": 20,
-          "coordinate": [
-            -85.9995477,
-            33.5010034
-          ],
-          "previousVertex": 19,
-          "nextVertex": 21,
-          "turnDeg": 164.49,
-          "incomingM": 194.95,
-          "outgoingM": 40.15,
-          "status": "needs-identity-and-image-review",
-          "sourceOccurrences": [
-            {
-              "wayId": 1061184414,
-              "wayVersion": 1,
-              "wayIndex": 20,
-              "nodeId": 9750050685
-            },
-            {
-              "wayId": 1061184416,
-              "wayVersion": 1,
-              "wayIndex": 0,
-              "nodeId": 9750050685
             }
           ]
         }
