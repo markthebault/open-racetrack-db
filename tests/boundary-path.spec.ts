@@ -4,6 +4,9 @@ for (const [track, layout] of [
   ["jp-osm-226496291", "main"],
   ["ca-circuit-icar-1043569622", "icar-mirabel"],
   ["ca-strawberry-creek-raceway-2f57a75c", "strawberry-creek-raceway"],
+  ["se-gotland-ring-311644846", "gotland-ring-4-1"],
+  ["se-gotland-ring-311644846", "gotland-ring-6-0"],
+  ["se-gotland-ring-311644846", "gotland-ring-7-3"],
 ])
   test(`${track}/${layout} exposes its boundary path, plays and records a video`, async ({
     page,

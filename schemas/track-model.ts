@@ -42,6 +42,12 @@ const lapModelSchema = z
             imageSha256: z.string().regex(/^[a-f0-9]{64}$/),
             imageRetrievedAt: z.iso.datetime(),
             imageryUrl: webUrl,
+            imageCapturedAt: z.iso.datetime().optional(),
+            imageGroundResolutionM: z.number().positive().optional(),
+            imageWindowPx: z.tuple([
+              z.number().int().nonnegative(), z.number().int().nonnegative(),
+              z.number().int().positive(), z.number().int().positive(),
+            ]).optional(),
           })
           .optional(),
       })

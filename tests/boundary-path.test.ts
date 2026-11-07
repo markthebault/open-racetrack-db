@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import type { Layout } from "../schemas/data";
+import { layoutSchema, type Layout } from "../schemas/data";
 import { bounds, plane, type Position } from "../src/geo";
 import { boundaryNormalMidline } from "../src/boundary-path";
 import { prepareTrackModel } from "../src/model-preparation";
@@ -107,6 +107,9 @@ test("screened boundary layouts reconstruct every cross-section while preserving
     "data/japan/osm-226496291/layouts/main.geojson",
     "data/canada/circuit-icar-1043569622/layouts/icar-mirabel.geojson",
     "data/canada/ca-strawberry-creek-raceway-2f57a75c/layouts/strawberry-creek-raceway.geojson",
+    "data/sweden/gotland-ring-311644846/layouts/gotland-ring-4-1.geojson",
+    "data/sweden/gotland-ring-311644846/layouts/gotland-ring-6-0.geojson",
+    "data/sweden/gotland-ring-311644846/layouts/gotland-ring-7-3.geojson",
   ]) {
     const d: Layout = JSON.parse(readFileSync(file, "utf8")),
       original = JSON.stringify(d.features),
@@ -146,4 +149,25 @@ test("a boundary route with unresolved corner sections is rejected rather than g
       prepareTrackModel(d, d.metadata.model3d!.terrain, "a".repeat(64), true),
     /measured cross-sections/,
   );
+});
+
+
+test("native review windows preserve capture date separately from retrieval and reject invalid crops", () => {
+  const d: Layout = JSON.parse(readFileSync("data/sweden/gotland-ring-311644846/layouts/gotland-ring-7-3.geojson", "utf8"));
+  const model = d.metadata.model3d!;
+  if (model.kind === "surface") throw new Error("Expected a playable Gotland model");
+  const evidence = model.preparation!.boundaryPathEvidence!;
+  assert.ok(evidence.imageCapturedAt);
+  assert.notEqual(evidence.imageCapturedAt, evidence.imageRetrievedAt);
+  assert.equal(evidence.imageGroundResolutionM, 10);
+  const parsed = layoutSchema.parse(d).metadata.model3d!;
+  if (parsed.kind === "surface") throw new Error("Expected a playable parsed model");
+  assert.deepEqual(parsed.preparation!.boundaryPathEvidence, evidence);
+  for (const window of [[-1, 0, 10, 10], [0, 0, 0, 10], [0, 0, 10.5, 10]]) {
+    const bad = structuredClone(d);
+    const badModel = bad.metadata.model3d!;
+    if (badModel.kind === "surface") throw new Error("Expected a playable cloned model");
+    badModel.preparation!.boundaryPathEvidence!.imageWindowPx = window as [number, number, number, number];
+    assert.throws(() => layoutSchema.parse(bad));
+  }
 });
