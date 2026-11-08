@@ -150,7 +150,9 @@ export function buildRoad(layout: Layout): Road {
   const start = (finish + recipe.startOffsetM / length) % 1;
   const imagePairs =
       layout.metadata.borderInference?.method ===
-      "image-measured-paired-edges-v1",
+      "image-measured-paired-edges-v1" ||
+      (layout.metadata.borderInference?.method === "image-measured-cross-sections-v1" &&
+        !!layout.metadata.borderInference.measurement?.linearIntervals?.length),
     pairedSections = !!grade || imagePairs,
     innerLeft =
       raw.reduce((sum, p, i) => {
@@ -206,8 +208,9 @@ export function buildRoad(layout: Layout): Road {
     const nx = t.z,
       nz = -t.x; // driver left in east/up/south coordinates
     if (pairedSections) {
-      // Spatial nearest-edge searches can select the OTHER road at an overpass
-      // or a neighbouring hairpin. Keep the measured correspondence instead.
+      // Local edge interpolation retains paired source stations but need not
+      // follow source normals. Keep that correspondence at tight bends too.
+      // Spatial searches could miss an edge or select a neighbouring road.
       // Curve parameter maps back to the original paired control stations instead.
       const station = curve.getUtoTmapping(u, 0) * raw.length,
         a = Math.floor(station),

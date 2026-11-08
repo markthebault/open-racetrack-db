@@ -4034,6 +4034,248 @@
         "installedPreviewFilesMatch": 2141
       },
       "note": "New measured Villicum borders/model. Other1376layoutbytes preserved. Earlier full-catalogue sweeps remain historical; no new full-catalogue sweep or physical-accuracy claim."
+    },
+    {
+      "trackId": "cz-autodrom-vysoke-myto-293787466",
+      "layoutId": "main",
+      "baselineCommit": "60eeaec5fb30e020a68161eb62745968587b0ef6",
+      "layoutSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6",
+      "localBrowser": {
+        "base": "http://127.0.0.1:5193",
+        "results": [
+          {
+            "width": 1440,
+            "satellite": true,
+            "borders": true,
+            "playing": true,
+            "actualImagery": true,
+            "exactDownloadSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6"
+          },
+          {
+            "width": 390,
+            "satellite": true,
+            "borders": true,
+            "playing": true,
+            "actualImagery": true,
+            "exactDownloadSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6"
+          },
+          {
+            "width": 320,
+            "satellite": true,
+            "borders": true,
+            "playing": true,
+            "actualImagery": true,
+            "exactDownloadSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6"
+          },
+          {
+            "track": "cz-autodrom-vysoke-myto-293787466",
+            "defaultLayout": "main",
+            "playable": true
+          }
+        ],
+        "errors": []
+      },
+      "liveBrowser": {
+        "base": "https://marks-mac-mini.baboon-trench.ts.net:8445",
+        "results": [
+          {
+            "width": 1440,
+            "satellite": true,
+            "borders": true,
+            "playing": true,
+            "actualImagery": true,
+            "exactDownloadSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6"
+          },
+          {
+            "width": 390,
+            "satellite": true,
+            "borders": true,
+            "playing": true,
+            "actualImagery": true,
+            "exactDownloadSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6"
+          },
+          {
+            "width": 320,
+            "satellite": true,
+            "borders": true,
+            "playing": true,
+            "actualImagery": true,
+            "exactDownloadSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6"
+          },
+          {
+            "track": "cz-autodrom-vysoke-myto-293787466",
+            "defaultLayout": "main",
+            "playable": true
+          }
+        ],
+        "errors": []
+      },
+      "providerChecks": {
+        "local": {
+          "base": "http://127.0.0.1:5193",
+          "imageryLoaded": true,
+          "otherProvidersBlocked": true,
+          "responses": [
+            {
+              "url": "https://ags.cuzk.gov.cz/arcgis1/rest/services/ORTOFOTO/MapServer/export?bbox=1799791.893444107%2C6435494.695923974%2C1800369.8728892638%2C6436091.086811134&bboxSR=3857&imageSR=3857&size=2480%2C2559&format=png24&transparent=false&layers=show%3A0&f=image",
+              "status": 200,
+              "type": "image/png"
+            }
+          ]
+        },
+        "live": {
+          "base": "https://marks-mac-mini.baboon-trench.ts.net:8445",
+          "imageryLoaded": true,
+          "otherProvidersBlocked": true,
+          "responses": [
+            {
+              "url": "https://ags.cuzk.gov.cz/arcgis1/rest/services/ORTOFOTO/MapServer/export?bbox=1799791.893444107%2C6435494.695923974%2C1800369.8728892638%2C6436091.086811134&bboxSR=3857&imageSR=3857&size=2480%2C2559&format=png24&transparent=false&layers=show%3A0&f=image",
+              "status": 200,
+              "type": "image/png"
+            }
+          ]
+        }
+      },
+      "pairedRuntimeScope": {
+        "allAffectedLayouts": 4,
+        "local": {
+          "base": "http://127.0.0.1:5193",
+          "results": [
+            {
+              "track": "jp-fuji-1937cd5f",
+              "layout": "fuji-short",
+              "actualImagery": true,
+              "exactDownload": true,
+              "seekFractions": [
+                0,
+                0.25,
+                0.75
+              ],
+              "playAndRecordControls": true
+            },
+            {
+              "track": "us-waterford-hills-796357203",
+              "layout": "main",
+              "actualImagery": true,
+              "exactDownload": true,
+              "seekFractions": [
+                0,
+                0.25,
+                0.75
+              ],
+              "playAndRecordControls": true
+            },
+            {
+              "track": "us-waterford-hills-796357203",
+              "layout": "waterford-hills",
+              "actualImagery": true,
+              "exactDownload": true,
+              "seekFractions": [
+                0,
+                0.25,
+                0.75
+              ],
+              "playAndRecordControls": true
+            }
+          ],
+          "errors": []
+        },
+        "live": {
+          "base": "https://marks-mac-mini.baboon-trench.ts.net:8445",
+          "results": [
+            {
+              "track": "jp-fuji-1937cd5f",
+              "layout": "fuji-short",
+              "actualImagery": true,
+              "exactDownload": true,
+              "seekFractions": [
+                0,
+                0.25,
+                0.75
+              ],
+              "playAndRecordControls": true
+            },
+            {
+              "track": "us-waterford-hills-796357203",
+              "layout": "main",
+              "actualImagery": true,
+              "exactDownload": true,
+              "seekFractions": [
+                0,
+                0.25,
+                0.75
+              ],
+              "playAndRecordControls": true
+            },
+            {
+              "track": "us-waterford-hills-796357203",
+              "layout": "waterford-hills",
+              "actualImagery": true,
+              "exactDownload": true,
+              "seekFractions": [
+                0,
+                0.25,
+                0.75
+              ],
+              "playAndRecordControls": true
+            }
+          ],
+          "errors": []
+        },
+        "allFourHaveZeroRepairedSections": true,
+        "otherModelsDoNotUseTheChangedLocalLinearBranch": true
+      },
+      "preservation": {
+        "baselineCommit": "60eeaec5fb30e020a68161eb62745968587b0ef6",
+        "otherLayoutsByteIdentical": 1373,
+        "timingUnchanged": 1377,
+        "terrainSidecarsByteIdentical": 164,
+        "existingModelsByteIdentical": 1155,
+        "refreshedModels": [
+          "data/japan/jp-fuji-1937cd5f/layouts/fuji-short.geojson",
+          "data/united-states/waterford-hills-796357203/layouts/main.geojson",
+          "data/united-states/waterford-hills-796357203/layouts/waterford-hills.geojson"
+        ],
+        "targetTraceVerticesPreserved": 156,
+        "embeddedTerrainMatchesRetainedGrid": true,
+        "layoutSha256": "9e72956e43359707c9114c070b7defc97a84db2df17b9e665ab64bbb959a92a6",
+        "originalTraceTimingAndMetadataPreserved": true,
+        "refreshedSourceFeaturesTerrainAndImageryPreserved": true
+      },
+      "video": {
+        "normalSpeed": true,
+        "flyingLap": true,
+        "simulatedSeconds": 64.7038337808629,
+        "wallSeconds": 65.093,
+        "frames": 1427,
+        "codec": "vp9",
+        "size": [
+          1280,
+          720
+        ],
+        "timing": {
+          "frames": 1427,
+          "firstSeconds": 0.0,
+          "lastSeconds": 64.702,
+          "maxFrameGapMs": 112.0000000000001,
+          "meanFps": 22.039504188433124
+        },
+        "fullDecodePassed": true,
+        "browserErrors": [],
+        "reviewedFrames": 40,
+        "screening": "Both complete contact sheets viewed. Car stays visible and on the reconstructed road in sampled frames; no apparent camera jump. Sampling does not establish continuous physical-boundary or curb accuracy."
+      },
+      "installedParity": {
+        "circuits": 763,
+        "catalogueLayouts": 1388,
+        "mappedLayouts": 1377,
+        "borderedLayouts": 1159,
+        "modelledLayouts": 1159,
+        "independentPlayableLayouts": 1112,
+        "imageryDerivedBorders": 259,
+        "installedPreviewFilesMatch": 2141
+      },
+      "note": "New measured VysokeMyto plus regenerated FujiShort and twoWaterford models. Scoped real-image controls and camera/containment regression checks cover the four affected local-linear layouts. Earlier full-catalogue sweeps remain historical. No complete catalogue video or physical-accuracy claim."
     }
   ],
   "subsequentSourceCorrections": [

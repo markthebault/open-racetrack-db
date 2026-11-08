@@ -170,6 +170,26 @@ test("imagery georeferencing is derived from the selected course, without provid
   assert.ok(!JSON.stringify(image).includes("base64"));
 });
 
+test("ArcGIS map and image exports retain the measured extent and image response", () => {
+  const { layout } = load("us-waterford-hills-796357203", "main");
+  delete layout.metadata.model3d;
+  const source = layout.metadata.borderInference!.imagery;
+  for (const endpoint of ["MapServer/export", "ImageServer/exportImage"]) {
+    source.url = `https://ags.cuzk.gov.cz/arcgis1/rest/services/ORTOFOTO/${endpoint}?f=pjson&bbox=0,0,1,1&size=1,1&bboxSR=3857&imageSR=3857&layers=show:0&format=png24`;
+    const display = imageryForLayout(layout), url = new URL(display.url);
+    assert.equal(url.pathname.endsWith(endpoint), true);
+    assert.equal(url.searchParams.get("f"), "image");
+    assert.equal(url.searchParams.get("bbox"), source.extent3857.join(","));
+    assert.equal(url.searchParams.get("size"), `${source.width},${source.height}`);
+    assert.equal(url.searchParams.get("imageSR"), "3857");
+    assert.equal(url.searchParams.get("layers"), "show:0");
+    assert.equal(url.searchParams.get("format"), "png24");
+    assert.deepEqual(display.extent3857, source.extent3857);
+    assert.equal(display.attribution, source.attribution);
+    assert.equal(display.termsUrl, source.reuseEvidenceUrl);
+  }
+});
+
 test("dated NAIP playback retains the exact RGB render and rejects mismatched georeferencing", () => {
   const { layout } = load("us-waterford-hills-796357203", "main");
   const source = layout.metadata.borderInference!.imagery;

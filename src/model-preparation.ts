@@ -58,7 +58,7 @@ export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
       naipRender[1].split(",").length === 4 &&
       naipRender[1].split(",").every((v, i) =>
         Number.isFinite(Number(v)) && Math.abs(Number(v) - reference.extent3857[i]) < 1e-6);
-    const exported = /\/exportImage$/i.test(url.pathname),
+    const exported = /\/export(?:Image)?$/i.test(url.pathname),
       wms = url.searchParams.get("REQUEST")?.toUpperCase() === "GETMAP";
     if (exported || wms || pinnedNaip) {
       if (exported) {

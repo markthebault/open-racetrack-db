@@ -164,6 +164,10 @@ for (const [name, file] of [
   ["Oschersleben tight first corner", "data/germany/motorsport-arena-oschersleben-89251023/layouts/main.geojson"],
   ["Slovakia full-circuit junctions", "data/slovakia/slovakia-ring-47361993/layouts/main.geojson"],
   ["Bahrain extended junctions", "data/bahrain/bahrain-international-circuit-4818385/layouts/main.geojson"],
+  ["Vysoké Mýto measured junctions", "data/czechia/autodrom-vysoke-myto-293787466/layouts/main.geojson"],
+  ["Fuji short interpolated inner bend", "data/japan/jp-fuji-1937cd5f/layouts/fuji-short.geojson"],
+  ["Waterford main interpolated junction", "data/united-states/waterford-hills-796357203/layouts/main.geojson"],
+  ["Waterford named interpolated junction", "data/united-states/waterford-hills-796357203/layouts/waterford-hills.geojson"],
 ])
 test(`${name} retains paired sections without distant-edge width jumps`, () => {
   const data = JSON.parse(readFileSync(
