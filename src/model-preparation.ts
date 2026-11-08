@@ -11,6 +11,8 @@ import { sampleElevation, type ElevationGrid } from "./elevation";
 import { plane, length as geographicLength } from "./geo";
 import { pairedBorderMidline } from "./border-midline";
 import { boundaryNormalMidline } from "./boundary-path";
+import type { SourceSequencePlan } from "../schemas/source-sequence";
+import { prepareSourceSequenceModel } from "./source-sequence-preparation";
 import {
   buildRoad,
   roadHeight,
@@ -420,7 +422,14 @@ export function prepareModel(
   terrain: ElevationGrid,
   inputSha256: string,
   boundaryPath = false,
+  sequencePlan?: SourceSequencePlan,
 ): TrackModel3D {
+  const previous = layout.metadata.model3d,
+    plan = sequencePlan ?? (previous?.kind !== "surface" ? previous?.sourceSequence?.plan : undefined);
+  if (plan) {
+    if (boundaryPath) throw new Error("Source sequence and boundary path cannot be combined");
+    return prepareSourceSequenceModel(layout, terrain, inputSha256, plan);
+  }
   if (
     !layout.metadata.closed &&
     layout.metadata.geometryKind !== "network" &&

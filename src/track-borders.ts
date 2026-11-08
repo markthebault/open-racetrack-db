@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { borderLimits, type Layout } from "../schemas/data";
+import { sequenceApproachEdges } from "./source-sequence-plan";
 
 const point = z.tuple([
   z.number().min(-180).max(180),
@@ -35,7 +36,8 @@ export const bordersSchema = z
   );
 export type TrackBorders = z.infer<typeof bordersSchema>;
 export function borderLabels(layout?: Layout) {
-  return layout?.metadata.borderComposition
+  return layout?.metadata.borderComposition ||
+    (layout?.metadata.model3d?.kind === "run" && layout.metadata.model3d.sourceSequence)
     ? { inner: "Inner / left", outer: "Outer / right" }
     : layout?.metadata.borderInference?.edgeConvention ===
         "left-right-along-trace"
@@ -48,7 +50,12 @@ export function bordersFromLayout(layout: Layout): TrackBorders | undefined {
     (f) => f.properties.role === "inner" || f.properties.role === "outer",
   );
   if (!features.length) return;
-  return bordersSchema.parse({ type: "FeatureCollection", features });
+  const approach = sequenceApproachEdges(layout);
+  return bordersSchema.parse({ type: "FeatureCollection", features: approach.length
+    ? features.map((f) => ({ ...f, geometry: { type: "MultiLineString", coordinates: [
+      ...(f.geometry.type === "LineString" ? [f.geometry.coordinates] : f.geometry.coordinates),
+      approach[f.properties.role === "inner" ? 0 : 1],
+    ] } })) : features });
 }
 
 export class BorderOverlay {
@@ -71,7 +78,7 @@ export class BorderOverlay {
     this.data = layout ? bordersFromLayout(layout) : undefined;
     this.estimated =
       !!layout?.metadata.borderInference ||
-      !!layout?.metadata.borderComposition;
+      !!layout?.metadata.borderComposition || !!(layout && sequenceApproachEdges(layout).length);
     const labels = borderLabels(layout);
     this.button.querySelector("[data-border-label]")!.textContent = layout
       ?.metadata.borderComposition

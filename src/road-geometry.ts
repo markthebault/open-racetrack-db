@@ -22,7 +22,7 @@ export function roadStrip(
       p.z + (edge[1] - p.z) * fraction,
     ];
   };
-  for (let i = 0; i < (road.recipe.kind === "run" ? n - 1 : n); i++) {
+  for (let i = 0; i < (road.renderSegmentCount ?? (road.recipe.kind === "run" ? n - 1 : n)); i++) {
     const a = road.points[i],
       b = road.points[(i + 1) % n];
     const station = (a.s / road.length) * road.recipe.referenceLengthM;

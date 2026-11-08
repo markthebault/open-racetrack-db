@@ -15,6 +15,7 @@ import { buildRoad, simulateLap } from "../src/lap-simulation";
 import { serializeLayout } from "./layout-borders";
 import { popularModels } from "./popular-models";
 import { modelInputHash } from "./model-input";
+import { sourceSequencePlanSchema } from "../schemas/source-sequence";
 const args = process.argv.slice(2),
   flag = (name: string) => args.includes(name),
   option = (name: string) => {
@@ -34,11 +35,17 @@ if (flag("--boundary-path") && (!option("--track") || !option("--layout")))
   throw new Error(
     "Use --boundary-path only with an individually reviewed --track and --layout",
   );
+if (option("--source-sequence-plan") && (!option("--track") || !option("--layout")))
+  throw new Error("Use a source-sequence plan only with an individually reviewed track and layout");
+if (option("--source-sequence-plan") && flag("--boundary-path"))
+  throw new Error("Choose a source-sequence plan or a boundary path, not both");
 if (flag("--all") && !flag("--check"))
   throw new Error(
     "--all checks existing models; use --bordered to prepare every bordered layout.",
   );
 const json = async (p: string) => JSON.parse(await readFile(p, "utf8"));
+const sequencePlan = option("--source-sequence-plan")
+  ? sourceSequencePlanSchema.parse(await json(option("--source-sequence-plan")!)) : undefined;
 const catalogue = indexSchema.parse(await json("data/index.json"));
 const tracks = new Map<string, Track>(),
   layouts = new Map<string, Layout>(),
@@ -133,7 +140,7 @@ for (const selection of selections) {
       flag("--boundary-path") ||
       (old?.kind !== "surface" &&
         old?.pathMethod === "boundary-normal-midpoints-v1");
-    const inputSha256 = modelInputHash(layout, terrain, boundaryPath);
+    const inputSha256 = modelInputHash(layout, terrain, boundaryPath, sequencePlan);
     const current =
       old?.preparation?.version === PREPARATION_VERSION &&
       old.preparation.inputSha256 === inputSha256;
@@ -149,7 +156,7 @@ for (const selection of selections) {
       continue;
     }
     const begin = performance.now(),
-      model = prepareModel(layout, terrain, inputSha256, boundaryPath),
+      model = prepareModel(layout, terrain, inputSha256, boundaryPath, sequencePlan),
       updated = validateLayout(
         { ...layout, metadata: { ...layout.metadata, model3d: model } },
         track,

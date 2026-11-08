@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { elevationSchema } from "./elevation";
 import { imageryTilesSchema } from "./imagery-tiles";
+import { sourceSequenceSchema } from "./source-sequence";
 
 const text = z.string().min(1);
 const webUrl = z
@@ -15,8 +16,9 @@ const lapModelSchema = z
     schemaVersion: z.literal(1),
     kind: z.enum(["lap", "run"]).optional(),
     pathMethod: z
-      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1"])
+      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1", "source-sequence-v1"])
       .optional(),
+    sourceSequence: sourceSequenceSchema.optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
     elevationMethod: z.enum(["periodic-monotone-cubic", "monotone-cubic"]),
@@ -108,12 +110,15 @@ const lapModelSchema = z
       model.kind === "run" &&
       (model.elevationMethod !== "monotone-cubic" ||
         model.startOffsetM !== 0 ||
-        model.pathMethod !== "paired-border-midpoints")
+        (model.pathMethod !== "paired-border-midpoints" && model.pathMethod !== "source-sequence-v1"))
     )
       issue(
         ["kind"],
-        "Open runs need a paired path, clamped elevation and zero start offset",
+        "Open runs need a paired or source-sequence path, clamped elevation and zero start offset",
       );
+    if ((model.pathMethod === "source-sequence-v1") !== !!model.sourceSequence ||
+        (model.sourceSequence && model.kind !== "run"))
+      issue(["sourceSequence"], "Source sequences require their dedicated open-run path");
     if (
       model.kind !== "run" &&
       model.elevationMethod !== "periodic-monotone-cubic"
@@ -147,6 +152,7 @@ export const networkLapRecipeSchema = z.strictObject({
   schemaVersion: lapModelSchema.shape.schemaVersion,
   kind: lapModelSchema.shape.kind,
   pathMethod: lapModelSchema.shape.pathMethod,
+  sourceSequence: lapModelSchema.shape.sourceSequence,
   startOffsetM: lapModelSchema.shape.startOffsetM,
   referenceLengthM: lapModelSchema.shape.referenceLengthM,
   elevationMethod: lapModelSchema.shape.elevationMethod,

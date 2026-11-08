@@ -650,7 +650,7 @@ export class Track3D {
     const model = layout.metadata.model3d,
       grade = layout.metadata.borderInference?.gradeSeparation,
       gradeRoad =
-        grade && model && model.kind !== "surface"
+        (grade || (model?.kind === "run" && model.sourceSequence)) && model && model.kind !== "surface"
           ? buildRoad(layout)
           : undefined,
       groundHeight = gradeRoad ? roadGroundHeight(gradeRoad) : undefined,

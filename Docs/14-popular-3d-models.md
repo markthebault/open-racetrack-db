@@ -71,6 +71,14 @@ Imagery is a live Esri World Imagery display resource with georeferencing, attri
 - A full local conversion of the existing 20 inputs took 1.96 s; an unchanged pass took 0.069 s. These timings exclude process startup, source research, imagery loading, tests and visual review. They are one-machine measurements, not service guarantees.
 - Elevation samples are compressed before storage, and source meshes are regenerated only when a view is opened. The generic player, camera, physics and validation are shared across all circuits.
 
+## Repeated open runs
+
+Open routes that repeat a circuit can use `model3d.pathMethod: source-sequence-v1`. Castle Combe Western Sprint retains its full 153-coordinate source route: the pit exit, a complete circuit, then the partial second circuit to Westway. It is a standing-start run with no artificial return road. Its original trace, timing and circuit border features remain unchanged.
+
+The same GeoJSON embeds `sourceSequence.plan`: the exact source-cycle indices and trace/border hashes, sparse left/right approach measurements, their pinned imagery evidence and licence. The final approach section inherits the original circuit borders. Separate compact approach and circuit elevation profiles share the same join height. The frontend builds the physical circuit once and reuses its coordinates and elevations on later passes; repeated road triangles are omitted. No mesh, per-frame trajectory, image or video file is needed. The standard border toggle includes the measured approach limits. Approach measurements are estimates, terrain is not a road survey, and curbs remain illustrations.
+
+To prepare an individually reviewed route, use `npm run model:prepare -- --track <id> --layout <id> --source-sequence-plan <file>`. Later regeneration reads the embedded plan without that authoring file. Reordered source nodes, mismatched source hashes, reversed approach edges, measurement gaps over 25 metres and disconnected road joins are rejected. This path method does not enable arbitrary open traces or disconnected networks.
+
 ## Validation
 
 Run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build`. Browser coverage traverses all 882 bordered layouts in the actual 3D UI, checking their individual source-road meshes, curb counts, layout labels and playback availability. Additional cases cover every popular example, generic track/layout labels, source-quality labels, playback/seek/camera controls, downloads with embedded data, no extra terrain requests, layout switching, phone scrolling and recording. Live imagery and representative rendered views were checked separately. Missing raster coverage is left as holes instead of being filled with a synthetic fixed height.

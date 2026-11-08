@@ -22,6 +22,8 @@ export function openLap(
   onClose: () => void,
 ) {
   const isRun = layout.metadata.model3d?.kind === "run";
+  const approachEvidence = layout.metadata.model3d?.kind === "run"
+    ? layout.metadata.model3d.sourceSequence?.plan.approach : undefined;
   const elevationCredit =
     layout.metadata.borderInference?.gradeSeparation?.elevation.attribution;
   const previousFocus = document.activeElement as HTMLElement | null;
@@ -181,7 +183,7 @@ export function openLap(
       out.fillText("Natural elevation · Approximate reconstruction", 30, 665);
       out.font = "12px sans-serif";
       out.fillText(
-        `Borders: ${layout.metadata.borderInference?.imagery.attribution ?? "Supplemental border coordinates"}`,
+        `Borders: ${layout.metadata.borderInference?.imagery.attribution ?? "Supplemental border coordinates"}${approachEvidence ? ` · Approach: ${approachEvidence.imagery.attribution}` : ""}`,
         30,
         690,
         1220,
@@ -561,6 +563,17 @@ export function openLap(
           find(".lap-evidence").append(detail);
         }
       }
+      if (approachEvidence) {
+        const note = document.createElement("p");
+        note.textContent = approachEvidence.note;
+        const credit = document.createElement("a"), info = approachEvidence.imagery;
+        credit.href = info.reuseEvidenceUrl ?? info.termsUrl ?? info.url;
+        credit.target = "_blank";
+        credit.rel = "noreferrer";
+        credit.textContent = `${info.attribution} · ${info.license}`;
+        note.append(" ", credit);
+        find(".lap-evidence").append(note);
+      }
       const road = buildRoad(layout);
       lap = simulateLap(road);
       if (closed) return;
@@ -647,12 +660,12 @@ export function openLap(
         ? `Road elevations are edited from ${grade.elevation.source} ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey. Road levels remain separate at the overpass.`
         : published
           ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
-          : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
+          : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.sourceSequence ? "the complete saved source sequence, with measured approach edges and one shared circuit elevation profile reused on each pass" : recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
         ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
+        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""}${approachEvidence ? ` Approach estimates: ${approachEvidence.imagery.license} (${approachEvidence.imagery.attribution}).` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",

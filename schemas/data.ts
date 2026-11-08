@@ -5,6 +5,7 @@ import {
 import { z } from "zod";
 import { assertGradeRibbon } from "../src/grade-separation";
 import { trackModelSchema, networkRecipeSchema } from "./track-model";
+import { sequenceTrace } from "../src/source-sequence-plan";
 import {
   bounds,
   distance,
@@ -604,11 +605,19 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       m.model3d.kind === "run" &&
       (m.closed ||
         isNetwork ||
-        m.borderInference?.edgeConvention !== "left-right-along-trace")
+        (m.model3d.pathMethod !== "source-sequence-v1" &&
+          m.borderInference?.edgeConvention !== "left-right-along-trace"))
     )
       throw new Error(
         "model3d: open playback needs an open route with paired left/right edges",
       );
+    if (m.model3d.kind === "run" && m.model3d.sourceSequence) {
+      sequenceTrace(data, m.model3d.sourceSequence.plan);
+      const info = m.model3d.sourceSequence.plan.approach.imagery,
+        source = track.sources.find((s) => s.id === info.sourceId);
+      if (!source || source.type !== "imagery" || source.license !== info.license || source.url !== info.url)
+        throw new Error("Source-sequence approach imagery rights/source mismatch");
+    }
     if (m.licenseScope !== "trace-and-timing")
       throw new Error("model3d: trace license scope must be explicit");
     if (

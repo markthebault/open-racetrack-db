@@ -1364,6 +1364,12 @@ async function select(id: string, requested?: string, push = true) {
       );
       get("selection").append(note);
     }
+    if (data.metadata.model3d?.kind === "run" && data.metadata.model3d.sourceSequence) {
+      const approach = data.metadata.model3d.sourceSequence.plan.approach;
+      get("selection").append(element("p",
+        `Estimated aerial-image approach limits · Original circuit borders retained. ${approach.imagery.attribution}`,
+        "inferred-border-note"));
+    }
     if (data.metadata.borderComposition) {
       const credits = [
         ...new Set(

@@ -5,6 +5,7 @@ import { indexBorders, borderSection } from "./border-sections";
 import { pairedBorderMidline } from "./border-midline";
 import { boundaryNormalMidline, assertRoadContained } from "./boundary-path";
 import { buildOpenRoad } from "./open-road";
+import { buildSourceSequenceRoad } from "./source-sequence";
 import {
   assertGradeRibbon,
   gradeProfileHeight,
@@ -49,6 +50,7 @@ export interface Road {
   origin: Position;
   recipe: LapRecipe;
   interpolatedSections: number;
+  renderSegmentCount?: number;
 }
 export interface Lap {
   road: Road;
@@ -106,7 +108,8 @@ export function buildRoad(layout: Layout): Road {
   if (!recipe) throw new Error("This layout has no embedded 3D model data.");
   if (recipe.kind === "surface")
     throw new Error("This layout has no playable closed-lap model.");
-  if (recipe.kind === "run") return buildOpenRoad(layout, recipe);
+  if (recipe.kind === "run") return recipe.pathMethod === "source-sequence-v1"
+    ? buildSourceSequenceRoad(layout, recipe) : buildOpenRoad(layout, recipe);
   const grade = layout.metadata.borderInference?.gradeSeparation;
   const sourceTrace = geometryPaths(
     layout.features.find((f) => f.properties.role === "trace")!.geometry,
