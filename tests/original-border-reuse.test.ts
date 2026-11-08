@@ -2,14 +2,32 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
-import {layoutSchema,type Layout} from '../schemas/data';
-import {geometryHash,reuseOriginalBorders} from '../scripts/reuse-original-borders';
+import {layoutSchema,validateTrack,type Layout} from '../schemas/data';
+import {geometryHash,reuseOriginalBorders,originalBorderSource} from '../scripts/reuse-original-borders';
 import {assemble,type Way} from '../scripts/route';
 const dir='data/united-kingdom/silverstone-circuit-3571477',sources='sources/gb-silverstone-circuit-3571477';
 const json=async(file:string)=>JSON.parse(await readFile(file,'utf8'));
 const source=layoutSchema.parse(await json(`${dir}/layouts/silverstone-gp-wing-sf.geojson`));
 const recipe=await json(`${sources}/layouts/main.json`),pin=recipe.originalBorderReuse;
 function target(){const t=structuredClone(source);t.metadata.layoutId='test-reuse';delete t.metadata.timing;delete t.metadata.model3d;t.metadata.timingStatus='missing';t.features=t.features.filter(f=>f.properties.role==='trace');return t;}
+test('cross-entry aliases require explicit catalogue identity, exact geometry and unchanged original rights',async()=>{
+ const trackFile='data/united-states/us-reno-fernley-57a16580/track.json',track=validateTrack(await json(trackFile)),r=await json('sources/'+track.id+'/layouts/reno-fernley-a.json'),pin=r.originalBorderReuse;
+ const t=layoutSchema.parse(await json('data/united-states/'+track.id+'/layouts/reno-fernley-a.geojson')),
+  s=await originalBorderSource(track,trackFile,pin),before=JSON.stringify(t),reused=reuseOriginalBorders(t,s,pin);
+ assert.equal(JSON.stringify(t),before);assert.match(reused.note,new RegExp(s.metadata.trackId+'/'+s.metadata.layoutId));
+ assert.deepEqual(reused.borders,s.features.filter(f=>['inner','outer'].includes(f.properties.role)));
+ const unscoped={sourceLayoutId:pin.sourceLayoutId,traceSha256:pin.traceSha256,bordersSha256:pin.bordersSha256};
+ assert.throws(()=>reuseOriginalBorders(t,s,unscoped),/source identity/);
+ assert.throws(()=>reuseOriginalBorders(t,s,{...pin,sourceTrackId:'not-registered'}),/source identity/);
+ await assert.rejects(originalBorderSource(track,trackFile,{...pin,sourceTrackId:'not-registered'}),/not registered/);
+ await assert.rejects(originalBorderSource(track,trackFile,{...pin,sourceLayoutId:'not-registered'}),/registered mapped/);
+ const changed=structuredClone(s),edge=changed.features.find(f=>f.properties.role==='inner')!;
+ if(edge.geometry.type!=='LineString')throw new Error('Expected closed source border');
+ // Even a freshly pinned hash cannot authorise a self-crossing cross-entry pair.
+ [edge.geometry.coordinates[1],edge.geometry.coordinates[20]]=[edge.geometry.coordinates[20],edge.geometry.coordinates[1]];
+ const changedPin={...pin,bordersSha256:geometryHash(['inner','outer'].flatMap(role=>changed.features.filter(f=>f.properties.role===role)))};
+ assert.throws(()=>reuseOriginalBorders({...t,features:t.features.filter(f=>f.properties.role==='trace')},changed,changedPin),/cross or touch/);
+});
 test('exact original border reuse clones rights and coordinates without importing timing or changing inputs',()=>{
  const t=target(),before=JSON.stringify(t),original=JSON.stringify(source),r=reuseOriginalBorders(t,source,pin);
  assert.equal(JSON.stringify(t),before);assert.equal(JSON.stringify(source),original);

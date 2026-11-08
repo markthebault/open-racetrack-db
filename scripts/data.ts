@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
 import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout,type Track} from '../schemas/data';
 import {existingLayoutExtras,serializeLayout} from './layout-borders';
-import {reuseOriginalBorders,originalBorderReuseSchema} from './reuse-original-borders';
+import {reuseOriginalBorders,originalBorderSource} from './reuse-original-borders';
 import {withTiming,timingDatabaseSchema} from './public-timing';
 import {buildCourseNetwork} from './course-network';
 import {buildComponentNetwork} from './component-network';
@@ -27,10 +27,8 @@ async function enrich(data:Layout,track:Track,id:string,existingFile:string,orig
  if(extras.borderInference)result.metadata.borderInference=extras.borderInference;
  if(extras.borderComposition)result.metadata.borderComposition=extras.borderComposition;
  if(originalBorderReuse!==undefined){
-  const pin=originalBorderReuseSchema.parse(originalBorderReuse),entry=track.layouts.find(l=>l.id===pin.sourceLayoutId);
-  if(!entry?.file)throw new Error(`${track.id}/${id}: original border source is not a registered mapped layout`);
-  const source=validateLayout(await json(`${dirname(dirname(existingFile))}/${entry.file}`),track,entry.id);
-  const reused=reuseOriginalBorders(result,source,pin);
+  const source=await originalBorderSource(track,`${dirname(dirname(existingFile))}/track.json`,originalBorderReuse);
+  const reused=reuseOriginalBorders(result,source,originalBorderReuse);
   result.features=result.features.filter(f=>f.properties.role!=='inner'&&f.properties.role!=='outer').concat(reused.borders);
   result.metadata.notes.push(reused.note);
  }
