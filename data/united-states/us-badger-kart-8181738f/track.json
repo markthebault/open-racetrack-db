@@ -21,8 +21,8 @@
     {
       "id": "badger-kart-club",
       "name": "Badger Kart Club",
-      "referenceId": "United States/Badger Kart Club",
       "file": "layouts/badger-kart-club.geojson",
+      "referenceId": "United States/Badger Kart Club",
       "description": "Combined mapped configurations: Badger Classic Track, Badger National Track, Badger Bus-Stop Track. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -98,6 +98,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T20:03:07.265Z",
       "evidenceNote": "The general venue entry includes the club named Classic, National and Bus-Stop configurations. The three published route diagrams identify the inner esses, complete National southern hairpin and eastern Bus-Stop. Their independently mapped branch union is displayed as a network, not a lap; the unlisted diagonal shortcut and outer shortcut bypassing the esses are excluded. The unique branch distance of 1125.8 m is preserved separately from the catalogue 1186 m. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "usda-naip-2022-badger",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9852267.038027512,5313538.548540335,-9851952.641758014,5313918.701561959/767x927.png?collection=naip&item=wi_m_4308860_se_16_060_20220624&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-08T11:06:17.415948Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
