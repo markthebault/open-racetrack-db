@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T07:31:05.758Z",
+  "generatedAt": "2026-11-08T07:48:00.873Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -895,8 +895,22 @@
       "trackId": "bg-pautalia-f5a0fa61",
       "layoutId": "pautalia",
       "file": "data/bulgaria/bg-pautalia-f5a0fa61/layouts/pautalia.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Proposed intervals cut between karting branches through the infield; actual edge topology needs correction.",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9671,
+          0.9401
+        ],
+        "medianInteriorDifference": [
+          0.0329,
+          0.0299
+        ],
+        "samplingStepM": 2.9914835299654228,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "e36f8bb64a18d8883458349e2b4d1aae4e4f7240da5a4f37a7531f73b874e47b"
     },

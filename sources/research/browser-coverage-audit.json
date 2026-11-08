@@ -3785,7 +3785,7 @@
     "newAcceptedLayouts": 0
   },
   "remaining": {
-    "mappedLayoutsWithoutBorders": 222,
+    "mappedLayoutsWithoutBorders": 221,
     "unmappedEntries": 11,
     "standaloneSurfaceOnlyLayouts": 7,
     "unavailableEmbeddedRoutes": 1,
@@ -3807,37 +3807,71 @@
     "applicationAndDataChanges": false,
     "previewDeploymentRequired": false
   },
-  "subsequentLayoutChecks": {
-    "scope": "One newly prepared layout checked separately from the preserved baseline catalogue sweeps. No new catalogue-wide video or physical-accuracy claim.",
-    "trackId": "fr-circuits-de-l-ouest-parisien-297738878",
-    "layoutId": "main",
-    "layoutSha256": "187202e64abc08255bb9bdadb858d10c347ad8b21ace83c90f221bf2f12985c4",
-    "preservation": {
-      "otherLayoutsByteIdentical": 1376,
-      "timingUnchanged": 1377,
-      "terrainSidecarsByteIdentical": 164,
-      "originalTraceVerticesPreserved": 139,
-      "originalMetadataPreserved": true,
-      "embeddedTerrainMatchesRetainedGrid": true,
+  "subsequentLayoutChecks": [
+    {
+      "scope": "One newly prepared layout checked separately from the preserved baseline catalogue sweeps. No new catalogue-wide video or physical-accuracy claim.",
+      "trackId": "fr-circuits-de-l-ouest-parisien-297738878",
+      "layoutId": "main",
       "layoutSha256": "187202e64abc08255bb9bdadb858d10c347ad8b21ace83c90f221bf2f12985c4",
-      "baselineCommit": "77f69bb7e3d74aa3211cc20d1b0f715635a56302"
+      "preservation": {
+        "otherLayoutsByteIdentical": 1376,
+        "timingUnchanged": 1377,
+        "terrainSidecarsByteIdentical": 164,
+        "originalTraceVerticesPreserved": 139,
+        "originalMetadataPreserved": true,
+        "embeddedTerrainMatchesRetainedGrid": true,
+        "layoutSha256": "187202e64abc08255bb9bdadb858d10c347ad8b21ace83c90f221bf2f12985c4",
+        "baselineCommit": "77f69bb7e3d74aa3211cc20d1b0f715635a56302"
+      },
+      "currentPreparedLayouts": 1155,
+      "currentIndependentPlayableLayouts": 1108,
+      "realImageLoaded": true,
+      "localAndLiveViewportWidths": [
+        1440,
+        390,
+        320
+      ],
+      "exactDownload": true,
+      "normalSpeedFullLapRecordedAndSampled": true,
+      "researchRecord": "road-limit-measurement-reviews.json",
+      "applicationChange": "Small-screen telemetry now fits beside the minimap; local and live screenshots reviewed.",
+      "installedPreviewParity": {
+        "checkedFiles": 2141,
+        "allCatalogueTrackAndLayoutBytesMatch": true,
+        "htmlMatches": true
+      }
     },
-    "currentPreparedLayouts": 1155,
-    "currentIndependentPlayableLayouts": 1108,
-    "realImageLoaded": true,
-    "localAndLiveViewportWidths": [
-      1440,
-      390,
-      320
-    ],
-    "exactDownload": true,
-    "normalSpeedFullLapRecordedAndSampled": true,
-    "researchRecord": "road-limit-measurement-reviews.json",
-    "applicationChange": "Small-screen telemetry now fits beside the minimap; local and live screenshots reviewed.",
-    "installedPreviewParity": {
-      "checkedFiles": 2141,
-      "allCatalogueTrackAndLayoutBytesMatch": true,
-      "htmlMatches": true
+    {
+      "scope": "One newly prepared layout checked separately from preserved baseline sweeps; no new catalogue-wide physical-accuracy or video claim.",
+      "trackId": "bg-pautalia-f5a0fa61",
+      "layoutId": "pautalia",
+      "layoutSha256": "977f5dcfd9fcf02f5007db2ca0c98f6bf3f6e227b5d020fe46ad817ea483b98d",
+      "preservation": {
+        "otherLayoutsByteIdentical": 1376,
+        "timingUnchanged": 1377,
+        "terrainSidecarsByteIdentical": 164,
+        "originalTraceVerticesPreserved": 156,
+        "originalMetadataPreserved": true,
+        "embeddedTerrainMatchesRetainedGrid": true,
+        "layoutSha256": "977f5dcfd9fcf02f5007db2ca0c98f6bf3f6e227b5d020fe46ad817ea483b98d",
+        "baselineCommit": "131f99da977a8d803be7b6b65f9525576b784103"
+      },
+      "currentPreparedLayouts": 1156,
+      "currentIndependentPlayableLayouts": 1109,
+      "realImageLoaded": true,
+      "localAndLiveViewportWidths": [
+        1440,
+        390,
+        320
+      ],
+      "exactDownload": true,
+      "normalSpeedFullLapRecordedAndSampled": true,
+      "researchRecord": "road-limit-measurement-reviews.json",
+      "installedPreviewParity": {
+        "checkedFiles": 2141,
+        "allCatalogueTrackAndLayoutBytesMatch": true,
+        "htmlMatches": true
+      }
     }
-  }
+  ]
 }
