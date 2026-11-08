@@ -6,6 +6,7 @@ import {z} from 'zod';
 import {bounds,networkLength,type Position} from '../src/geo';
 import {validateLayout,type Track} from '../schemas/data';
 import {assemble,type Way} from './route';
+import {isPitLane} from './selection-source';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
 
 const id=z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),file=z.string().regex(/^[a-z0-9][a-z0-9-]*\.json$/),sha=z.string().regex(/^[a-f0-9]{64}$/);
@@ -51,7 +52,7 @@ export async function buildComponentNetwork(input:unknown,track:Track,sourcesRoo
    if(leaf.geometrySource!==undefined&&leaf.geometrySource!=='osm')throw new Error('Unsupported component geometry source');
    if(!track.sources.some(s=>s.id===leaf.sourceId&&s.type==='osm'&&s.license==='ODbL-1.0'))throw new Error('Component OSM rights are not registered');
    const ways:Way[]=JSON.parse(bytes.toString()).elements.filter((w:any)=>w.type==='way');
-   for(const segment of leaf.segments){const tags=ways.find(w=>w.id===segment.wayId)?.tags??{};if(/^pit[_ -]?lane$/i.test(tags.service??'')||/^pit[_ -]?lane$/i.test(tags.raceway??'')||/^boxes$|pit[ /_-]?(lane|road|entry|exit)/i.test(tags.name??''))throw new Error('Component includes a pit lane');}
+   for(const segment of leaf.segments){const tags=ways.find(w=>w.id===segment.wayId)?.tags??{};if(isPitLane({tags}))throw new Error('Component includes a pit lane');}
    trace=assemble(ways,leaf.segments,leaf.closed);attributions.add('© OpenStreetMap contributors');
   }
   if(traceHash(trace)!==pin.traceSha256)throw new Error('Component trace selection changed');

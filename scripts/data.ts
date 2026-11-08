@@ -12,6 +12,7 @@ import {buildLicensedImageryRoute} from './licensed-imagery-route';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
 import {verifySharedGroundSource} from './shared-source-junctions';
+import {isPitLane} from './selection-source';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const outputs=new Map<string,string>();
@@ -72,7 +73,7 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
   if(!generate)validateLayout(await json(path),track,layout.id);
   console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m of independently mapped branches`);continue;
  }
- for(const segment of recipe.segments){const way=ways.find(w=>w.id===segment.wayId);if(/^pit[_ -]?lane$/i.test(way?.tags?.service??'')||/^pit[_ -]?lane$/i.test(way?.tags?.raceway??''))throw new Error(`${track.id}/${layout.id}: pit lane is not a course trace`);}
+ for(const segment of recipe.segments){const way=ways.find(w=>w.id===segment.wayId);if(/^pit[_ -]?lane$/i.test(way?.tags?.service??'')||/^pit[_ -]?lane$/i.test(way?.tags?.raceway??'')||(recipe.closed&&way&&isPitLane(way)))throw new Error(`${track.id}/${layout.id}: pit lane is not a course trace`);}
  let coordinates=assemble(ways,recipe.segments,recipe.closed);const features:Layout['features']=[];const anchors=new Map();
  for(const g of recipe.gates){const segment=recipe.segments[g.anchorSegmentIndex],way=ways.find(w=>w.id===segment?.wayId);if(!way)throw new Error('Gate anchor: missing way');const part=slice(way,segment),a=part[g.anchorEdgeIndex]?.point,b=part[g.anchorEdgeIndex+1]?.point;if(!a||!b)throw new Error('Gate anchor: edge out of bounds');let endpoints;
  if(g.endpointMethod==='perpendicular-display'){const gate=displayGate(g.sourcePosition,a,b,g.displayWidthM);endpoints=gate.coordinates;const index=coordinates.findIndex((p,i)=>p[0]===a[0]&&p[1]===a[1]&&coordinates[i+1]?.[0]===b[0]&&coordinates[i+1]?.[1]===b[1]);anchors.set(g.role,{index,point:gate.point});}

@@ -22,7 +22,7 @@
       "name": "Circuito San Juan Villicum",
       "referenceId": "Argentina/Circuito San Juan Villicum",
       "file": "layouts/circuito-san-juan-villicum.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4489.8 m. Difference from the supplied layout distance 29.2 m. Course configuration still requires visual review."
+      "description": "Draft full racing configuration using connected pinned OSM roads. Source alignment and timing remain estimated."
     }
   ],
   "sources": [
@@ -33,7 +33,16 @@
       "url": "https://www.openstreetmap.org/way/586151161",
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:32.542Z",
-      "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+      "evidenceNote": "Exact public OSM ways and shared node IDs from the pinned extract. Racing-straight and corner branch selections are independently identified by the WorldSBK2021 map and native imagery."
+    },
+    {
+      "id": "worldsbk-2021-villicum-identity",
+      "type": "reference",
+      "title": "WorldSBK2021 San Juan Villicum circuit identity",
+      "url": "https://resources.worldsbk.com/files/results/2021/ARG/SBK/L1A/MAP/Track.pdf?version=f10f0317e173c060abe22b9a70d44703",
+      "license": "reference-only",
+      "retrievedAt": "2026-11-08T08:47:28.538432Z",
+      "evidenceNote": "Configuration identity only. Distinguishes the racing course from pit and long-lap penalty branches. No diagram coordinates, GPS table values or official distance are imported."
     }
   ]
 }

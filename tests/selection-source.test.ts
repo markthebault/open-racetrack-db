@@ -1,7 +1,28 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {validateSelectionSource} from '../scripts/selection-source';
+import {readFile} from 'node:fs/promises';
+import {validateSelectionSource,isPitLane} from '../scripts/selection-source';
 import type {Segment,Way} from '../scripts/route';
+
+test('named Spanish pit roads cannot enter a closed racing selection',()=>{
+ for(const name of ['Boxes','Calle Boxes','calle de boxes','Pit Lane']) {
+  const way:Way={id:1,version:1,nodes:[1,2],geometry:[{lon:0,lat:0},{lon:.001,lat:0}],tags:{highway:'raceway',name}};
+  assert.equal(isPitLane(way),true);
+  assert.throws(()=>validateSelectionSource([way],{closed:true,segments:[{wayId:1,wayVersion:1,fromIndex:0,toIndex:1}],identificationUrl:'https://example.org/course'}),/pit\/service lane/);
+ }
+ for(const name of ['Box Hill Circuit','Boxes Circuit','Curva 16'])assert.equal(isPitLane({tags:{name}}),false);
+});
+
+test('Villicum racing selection includes all seventeen corners and excludes pit and penalty detours',async()=>{
+ const root='sources/ar-circuito-san-juan-villicum-f819032e',
+  recipe=JSON.parse(await readFile(`${root}/layouts/circuito-san-juan-villicum.json`,'utf8')),
+  snapshot=JSON.parse(await readFile(`${root}/${recipe.snapshotFile}`,'utf8')),
+  ways=snapshot.elements.filter((e:{type:string})=>e.type==='way') as Way[],
+  selected=recipe.segments.map((s:Segment)=>ways.find(w=>w.id===s.wayId)!);
+ validateSelectionSource(ways,{...recipe,identificationUrl:'https://resources.worldsbk.com/files/results/2021/ARG/SBK/L1A/MAP/Track.pdf'});
+ assert.deepEqual(selected.map((w:Way)=>w.tags?.name?.match(/^Curva (\d+)$/)?.[1]).filter(Boolean).map(Number).sort((a:number,b:number)=>a-b),Array.from({length:17},(_,i)=>i+1));
+ assert.ok(!selected.some((w:Way)=>w.id===865874139||w.id===1011550811));
+});
 
 const first:Segment={wayId:1,wayVersion:2,fromIndex:0,toIndex:1};
 const next:Segment={wayId:2,wayVersion:3,fromIndex:0,toIndex:1};
