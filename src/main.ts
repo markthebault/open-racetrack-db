@@ -1356,6 +1356,9 @@ async function select(id: string, requested?: string, push = true) {
     borderOverlay.setLayout(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
+    if (data.metadata.model3d?.kind !== "surface" && data.metadata.model3d?.sharedGround) {
+      get("selection").append(element("p", `Original borders with an image-reviewed junction correction. Road positions remain estimates. ${data.metadata.model3d.sharedGround.imagery.attribution}`, "inferred-border-note"));
+    }
     if (data.metadata.borderInference) {
       const note = element(
         "p",

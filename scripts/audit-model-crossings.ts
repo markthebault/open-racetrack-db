@@ -9,6 +9,7 @@ import {pathCrossings} from '../src/path-crossings';
 import {assertGradeRibbon} from '../src/grade-separation';
 import {auditGradeCrossings} from './audit-grade-crossings';
 import {verifyGradeSource} from './verify-grade-source';
+import {verifySharedGroundSource} from './shared-source-junctions';
 
 export type SourceCrossing=ReturnType<typeof auditGradeCrossings>[number];
 const hash=(value:string|Uint8Array)=>createHash('sha256').update(value).digest('hex');
@@ -30,12 +31,14 @@ export function runtimeCrossingLevels(layout:Layout,crossing:Position){
 export function modelCrossingStatus(layout:Layout,crossing:SourceCrossing){
  const model=layout.metadata.model3d,grade=layout.metadata.borderInference?.gradeSeparation;
  if(grade)return'source-profile-present';
+ if(model&&model.kind!=='surface'&&model.sharedGround&&crossing.kind==='touch'&&crossing.status==='unexplained'&&
+   crossing.bridgeCandidates.length===0&&crossing.coordinate.every((v,i)=>Math.abs(v-model.sharedGround!.sourceNode.coordinate[i])<1e-9))return'shared-ground-junction';
  if(crossing.status!=='source-bridge-needs-profile')return'unexplained-source-crossing';
  return !model?'bridge-profile-missing-no-model':model.kind==='surface'?'bridge-profile-missing-surface':'bridge-profile-missing-playable-model';
 }
 
 export async function collectModelCrossingAudit(dataRoot='data',sourcesRoot='sources'){
- const read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),index=await read(`${dataRoot}/index.json`),records=[],summary={mappedLayouts:0,singlePathsAudited:0,networksDelegatedToComponents:0,networksWithoutComposition:0,layoutsWithCrossings:0,crossings:0,sourceProfilesPresent:0,bridgeProfilesMissingInPlayableModels:0,bridgeProfilesMissingWithoutPlayback:0,unexplainedSourceCrossings:0,runtimeCrossingsBelowThreeMetres:0,runtimeCrossingsUnresolved:0},layoutSet=[];
+ const read=async(p:string)=>JSON.parse(await readFile(p,'utf8')),index=await read(`${dataRoot}/index.json`),records=[],summary={mappedLayouts:0,singlePathsAudited:0,networksDelegatedToComponents:0,networksWithoutComposition:0,layoutsWithCrossings:0,crossings:0,sourceProfilesPresent:0,sharedGroundJunctions:0,bridgeProfilesMissingInPlayableModels:0,bridgeProfilesMissingWithoutPlayback:0,unexplainedSourceCrossings:0,runtimeCrossingsBelowThreeMetres:0,runtimeCrossingsUnresolved:0},layoutSet=[];
  for(const entry of index.tracks){
   const track=await read(`${dataRoot}/${entry.file}`);
   for(const item of track.layouts){
@@ -53,6 +56,8 @@ export async function collectModelCrossingAudit(dataRoot='data',sourcesRoot='sou
    const source=JSON.parse(snapshotBytes.toString()),crossings=auditGradeCrossings(paths[0],layout.metadata.closed,source.elements??[],recipe.segments??[]);
    if(!crossings.length)continue;
    const grade=layout.metadata.borderInference?.gradeSeparation;
+   const ground=layout.metadata.model3d?.kind!=='surface'?layout.metadata.model3d?.sharedGround:undefined;
+   if(ground){await verifySharedGroundSource(layout,ground,sourcesRoot);buildRoad(layout);}
    if(grade){
     await verifyGradeSource(layout,grade,sourcesRoot);
     const pair=Object.fromEntries(['inner','outer'].map(role=>[role,geometryPaths(layout.features.find(f=>f.properties.role===role)!.geometry)[0]])) as {inner:Position[];outer:Position[]};assertGradeRibbon(pair,grade);
@@ -61,6 +66,7 @@ export async function collectModelCrossingAudit(dataRoot='data',sourcesRoot='sou
    const findings=crossings.map(crossing=>{
     const status=modelCrossingStatus(layout,crossing);summary.crossings++;
     if(status==='source-profile-present')summary.sourceProfilesPresent++;
+    else if(status==='shared-ground-junction')summary.sharedGroundJunctions++;
     else if(status==='bridge-profile-missing-playable-model')summary.bridgeProfilesMissingInPlayableModels++;
     else if(status==='unexplained-source-crossing')summary.unexplainedSourceCrossings++;
     else summary.bridgeProfilesMissingWithoutPlayback++;

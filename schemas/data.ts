@@ -6,6 +6,7 @@ import { z } from "zod";
 import { assertGradeRibbon } from "../src/grade-separation";
 import { trackModelSchema, networkRecipeSchema } from "./track-model";
 import { sequenceTrace } from "../src/source-sequence-plan";
+import { sharedGroundBoundaries } from "../src/shared-ground-data";
 import {
   bounds,
   distance,
@@ -564,6 +565,15 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   } else if (borders.some((f) => "borderStatus" in f.properties))
     throw new Error("Estimated imagery borders require source evidence");
   if (m.model3d) {
+    if (m.model3d.kind !== "surface" && m.model3d.sharedGround) {
+      const ground = m.model3d.sharedGround;
+      sharedGroundBoundaries(data);
+      if (m.borderInference || borders.some((f) => !("license" in f.properties) || f.properties.license !== "LicenseRef-Track-Borders"))
+        throw new Error("Shared ground requires preserved original borders and its separate image patch");
+      const source = track.sources.find((s) => s.id === ground.imagery.sourceId);
+      if (!source || source.type !== "imagery" || source.license !== ground.imagery.license || source.url !== ground.imagery.url)
+        throw new Error("Shared-ground image rights/source mismatch");
+    }
     if (
       m.borderInference?.method === "image-measured-paired-edges-v1" &&
       (m.model3d.kind === "surface" ||

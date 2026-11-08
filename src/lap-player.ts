@@ -137,8 +137,9 @@ export function openLap(
       `${s.acceleration < -0.3 ? "Braking" : s.acceleration > 0.3 ? "Accelerating" : "Coasting"} · ${Math.abs(s.acceleration / 9.80665).toFixed(2)} g · Lat ${Math.abs(s.lateralG).toFixed(2)} g`;
     find("[data-distance]").textContent =
       `${(s.distance / 1000).toFixed(2)} / ${(lap.road.length / 1000).toFixed(2)} km`;
-    find("[data-road-detail]").textContent =
-      `Here: ${(s.left + s.right).toFixed(1)} m wide · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`;
+    find("[data-road-detail]").textContent = lap.road.ground
+      ? `Mapped source path · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`
+      : `Here: ${(s.left + s.right).toFixed(1)} m wide · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`;
     timeline.value = String(time);
     find("[data-lap-time]").textContent =
       `${formatLapTime(time)} / ${formatLapTime(lap.duration)}`;
@@ -533,6 +534,12 @@ export function openLap(
   void (async () => {
     try {
       const recipe = layout.metadata.model3d;
+      if (recipe && recipe.kind !== "surface" && recipe.sharedGround) {
+        find(".lap-section h3 + p").textContent = "Generic car · Flying lap · Mapped source path";
+        find(".lap-evidence p").textContent = "Road edges retain the original boundaries with a local image-reviewed junction correction. Positions remain estimates.";
+        find("[data-solver-note]").nextElementSibling!.textContent = "The car follows the complete saved mapped route, without racing-line optimisation, gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.";
+        find("[data-storage]").textContent = "One GeoJSON keeps the original coordinates, terrain grid, image reference and a small junction correction. Road surfaces, boundary paint, illustrative curbs and lap samples are rebuilt in your browser when you open this view. No 3D meshes or video are stored.";
+      }
       if (!recipe || recipe.kind === "surface")
         throw new Error("This layout has no embedded 3D model data.");
       if (closed) return;
@@ -660,12 +667,14 @@ export function openLap(
         ? `Road elevations are edited from ${grade.elevation.source} ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey. Road levels remain separate at the overpass.`
         : published
           ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
-          : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.sourceSequence ? "the complete saved source sequence, with measured approach edges and one shared circuit elevation profile reused on each pass" : recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
+          : recipe.sharedGround
+            ? `Road and car heights sample the same approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster at each position, including both visits to the shared junction. The full mapped route is preserved. Original borders have a local image-reviewed junction correction; road positions and elevations remain estimates.`
+            : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.sourceSequence ? "the complete saved source sequence, with measured approach edges and one shared circuit elevation profile reused on each pass" : recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
-        ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
+        ? recipe.sharedGround ? "Curbs illustrate curved physical road boundaries. Their positions, widths, heights and colours are unverified." : "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""}${approachEvidence ? ` Approach estimates: ${approachEvidence.imagery.license} (${approachEvidence.imagery.attribution}).` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
+        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""}${approachEvidence ? ` Approach estimates: ${approachEvidence.imagery.license} (${approachEvidence.imagery.attribution}).` : ""}${recipe.sharedGround ? ` Junction estimates: ${recipe.sharedGround.imagery.license} (${recipe.sharedGround.imagery.attribution}).` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",

@@ -9,6 +9,8 @@ import { geometryPaths, type Layout } from "../schemas/data";
 import type { SurfaceModel3D } from "../schemas/track-model";
 import { plane, length, equal, type Position } from "./geo";
 import { sampleElevation, type ElevationGrid } from "./elevation";
+import { sharedGroundFootprint } from "./shared-ground-road";
+import { triangulateGroundFootprint } from "./ribbon-surface";
 
 export function borderPaths(layout: Layout) {
   return layout.features
@@ -76,6 +78,13 @@ export function borderFootprint(layout: Layout) {
   return { origin, points, triangles };
 }
 export function borderRoadGeometry(layout: Layout, grid: ElevationGrid) {
+  if (layout.metadata.model3d?.kind !== "surface" && layout.metadata.model3d?.sharedGround) {
+    const origin: Position = [(layout.bbox[0] + layout.bbox[2]) / 2, (layout.bbox[1] + layout.bbox[3]) / 2],
+      { footprint, projection } = sharedGroundFootprint(layout, origin),
+      surface = triangulateGroundFootprint(footprint, ([x, z]) =>
+        sampleElevation(grid, projection.from([x, -z])) ?? NaN);
+    return { ...surface, origin, missingVertices: 0 };
+  }
   const footprint = borderFootprint(layout),
     project = plane(footprint.origin),
     vertices: number[] = [],

@@ -8,6 +8,7 @@ import { LapCameraRig } from "./lap-camera";
 import { sampleElevation, type ElevationGrid } from "./elevation";
 import { imageryBlob } from "./imagery";
 import { sampleLap, type Lap, type Road } from "./lap-simulation";
+import { sharedGroundMeshes } from "./shared-ground-render";
 
 export const fromMercator = (x: number, y: number): [number, number] => [
   ((x / 6378137) * 180) / Math.PI,
@@ -164,9 +165,10 @@ export class LapScene {
       roughness: 0.94,
       side: THREE.DoubleSide,
     });
+    const shared = road.ground ? sharedGroundMeshes(road) : undefined;
     this.scene.add(
       new THREE.Mesh(
-        strip(road, (p) => [p.left, -p.right], 0.08),
+        shared?.asphalt ?? strip(road, (p) => [p.left, -p.right], 0.08),
         asphalt,
       ),
     );
@@ -175,18 +177,24 @@ export class LapScene {
       roughness: 0.9,
       side: THREE.DoubleSide,
     });
-    this.scene.add(
+    if (!shared) this.scene.add(
       new THREE.Mesh(
         strip(road, (p) => [p.left - 0.08, p.left - 0.23], 0.1),
         edge,
       ),
     );
-    this.scene.add(
+    if (!shared) this.scene.add(
       new THREE.Mesh(
         strip(road, (p) => [-p.right + 0.08, -p.right + 0.23], 0.1),
         edge,
       ),
     );
+    if (shared) {
+      this.scene.add(new THREE.Mesh(shared.outlines, edge));
+      this.scene.add(new THREE.Mesh(shared.curbs, new THREE.MeshStandardMaterial({
+        vertexColors: true, roughness: 0.8, side: THREE.DoubleSide,
+      })));
+    }
     for (const curb of road.recipe.curbs) {
       const mat = new THREE.MeshStandardMaterial({
         vertexColors: true,
@@ -238,9 +246,9 @@ export class LapScene {
           road.points.map(
             (p) =>
               new THREE.Vector3(
-                p.x + (p.nx * (p.left - p.right)) / 2,
+                p.x + (road.ground ? 0 : (p.nx * (p.left - p.right)) / 2),
                 p.y + 0.2,
-                p.z + (p.nz * (p.left - p.right)) / 2,
+                p.z + (road.ground ? 0 : (p.nz * (p.left - p.right)) / 2),
               ),
           ),
         ),
@@ -303,7 +311,7 @@ export class LapScene {
         : null;
       validGround.push(sampled !== null);
       if (sampled === null) continue;
-      const y = groundHeight(x, z, sampled);
+      const y = road.ground ? sampled : groundHeight(x, z, sampled);
       pos.setY(i, y - 0.3);
     }
     // Missing raster coverage remains a hole, rather than an invented 400 m wall.
@@ -328,7 +336,7 @@ export class LapScene {
     );
     this.scene.add(this.ground);
     // Shoulder mesh guarantees no raster triangle can rise through the road.
-    this.scene.add(
+    if (!shared) this.scene.add(
       new THREE.Mesh(
         strip(road, (p) => [p.left + 3, -p.right - 3], -0.1),
         new THREE.MeshStandardMaterial({
@@ -424,7 +432,7 @@ export class LapScene {
   update(lap: Lap, time: number, resetCamera = false) {
     const s = sampleLap(lap, time);
     this.renderState = s;
-    const offset = (s.left - s.right) / 2;
+    const offset = this.road.ground ? 0 : (s.left - s.right) / 2;
     this.car.position.set(s.x + s.nx * offset, s.y + 0.15, s.z + s.nz * offset);
     const forward = this.cameraRig.course.direction(s.distance, 3);
     this.car.rotation.set(

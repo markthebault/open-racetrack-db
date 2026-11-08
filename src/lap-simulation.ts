@@ -6,6 +6,8 @@ import { pairedBorderMidline } from "./border-midline";
 import { boundaryNormalMidline, assertRoadContained } from "./boundary-path";
 import { buildOpenRoad } from "./open-road";
 import { buildSourceSequenceRoad } from "./source-sequence";
+import { buildSharedGroundRoad } from "./shared-ground-road";
+import type { MultiPolygon } from "polygon-clipping";
 import {
   assertGradeRibbon,
   gradeProfileHeight,
@@ -51,6 +53,7 @@ export interface Road {
   recipe: LapRecipe;
   interpolatedSections: number;
   renderSegmentCount?: number;
+  ground?: { footprint: MultiPolygon; boundaries: { outer: Position[]; inner: Position[][] } };
 }
 export interface Lap {
   road: Road;
@@ -108,6 +111,7 @@ export function buildRoad(layout: Layout): Road {
   if (!recipe) throw new Error("This layout has no embedded 3D model data.");
   if (recipe.kind === "surface")
     throw new Error("This layout has no playable closed-lap model.");
+  if (recipe.pathMethod === "source-ground-boundaries-v1") return buildSharedGroundRoad(layout, recipe);
   if (recipe.kind === "run") return recipe.pathMethod === "source-sequence-v1"
     ? buildSourceSequenceRoad(layout, recipe) : buildOpenRoad(layout, recipe);
   const grade = layout.metadata.borderInference?.gradeSeparation;

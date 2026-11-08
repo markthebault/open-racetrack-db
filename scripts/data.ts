@@ -11,6 +11,7 @@ import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './im
 import {buildLicensedImageryRoute} from './licensed-imagery-route';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
+import {verifySharedGroundSource} from './shared-source-junctions';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const outputs=new Map<string,string>();
@@ -34,6 +35,7 @@ async function enrich(data:Layout,track:Track,id:string,existingFile:string,orig
  }
  if(result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
  result.bbox=bounds(result.features.flatMap(f=>geometryPaths(f.geometry).flat()));
+ if(result.metadata.model3d?.kind!=='surface'&&result.metadata.model3d?.sharedGround)await verifySharedGroundSource(result,result.metadata.model3d.sharedGround);
  return validateLayout(result,track,id);
 }
 for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.isDirectory()).sort((a,b)=>a.name.localeCompare(b.name))){for(const folder of (await readdir(`data/${country.name}`,{withFileTypes:true})).filter(d=>d.isDirectory())){

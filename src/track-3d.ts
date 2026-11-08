@@ -14,6 +14,7 @@ import { buildRoad, type Road } from "./lap-simulation";
 import { roadStrip } from "./road-geometry";
 import { roadGroundHeight, carveRoadGround } from "./road-ground";
 import { gradeProfileHeight } from "./grade-separation";
+import { sharedGroundMeshes } from "./shared-ground-render";
 
 function flagTexture(color: number) {
   const canvas = document.createElement("canvas");
@@ -800,6 +801,8 @@ export class Track3D {
       }),
     ];
     if (model) {
+      const groundRoad = model.kind !== "surface" && model.sharedGround ? buildRoad(layout) : undefined,
+        shared = groundRoad ? sharedGroundMeshes(groundRoad) : undefined;
       const project = plane(local.origin);
       const toBoard = (
         geometry: THREE.BufferGeometry,
@@ -825,7 +828,7 @@ export class Track3D {
         ? roadStrip(gradeRoad, (p) => [-p.right, p.left], 0.02)
         : undefined;
       const surface =
-        bridgeGeometry && gradeRoad
+        shared && groundRoad ? { geometry: shared.asphalt, origin: groundRoad.origin, triangles: shared.triangles } : bridgeGeometry && gradeRoad
           ? {
               geometry: bridgeGeometry,
               origin: gradeRoad.origin,
@@ -843,6 +846,10 @@ export class Track3D {
         ),
       );
       this.container.dataset.roadTriangles = String(surface.triangles);
+      if (shared && groundRoad) this.course.add(new THREE.Mesh(
+        toBoard(shared.outlines, groundRoad.origin, 0.04),
+        new THREE.MeshStandardMaterial({ color: 0xe9ebdc, roughness: 0.9, side: THREE.DoubleSide }),
+      ));
       if (gradeRoad) {
         const w = Math.max(0.018 / scale, 0.16),
           highlight = new THREE.Mesh(
@@ -867,7 +874,9 @@ export class Track3D {
             }),
           ),
         );
-      if (model.kind === "surface") {
+      if (shared && groundRoad) {
+        addCurb(shared.curbs, groundRoad.origin);
+      } else if (model.kind === "surface") {
         const curbs = boundaryCurbGeometry(layout, model);
         addCurb(curbs.geometry, curbs.origin);
       } else {
@@ -887,7 +896,7 @@ export class Track3D {
             road.origin,
           );
       }
-      this.container.dataset.curbSections = String(model.curbs.length);
+      this.container.dataset.curbSections = String(shared?.curbSections ?? model.curbs.length);
     }
     const geographic = geometryPaths(trace.geometry);
     for (const [pathIndex, path] of local.paths.entries()) {

@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { borderLimits, type Layout } from "../schemas/data";
 import { sequenceApproachEdges } from "./source-sequence-plan";
+import { sharedGroundBoundaries } from "./shared-ground-data";
 
 const point = z.tuple([
   z.number().min(-180).max(180),
@@ -50,6 +51,14 @@ export function bordersFromLayout(layout: Layout): TrackBorders | undefined {
     (f) => f.properties.role === "inner" || f.properties.role === "outer",
   );
   if (!features.length) return;
+  if (layout.metadata.model3d?.kind !== "surface" && layout.metadata.model3d?.sharedGround) {
+    const ground = sharedGroundBoundaries(layout);
+    return bordersSchema.parse({ type: "FeatureCollection", features: features.map((f) => ({
+      ...f, geometry: f.properties.role === "inner"
+        ? { type: "MultiLineString", coordinates: ground.inner }
+        : { type: "LineString", coordinates: ground.outer },
+    })) });
+  }
   const approach = sequenceApproachEdges(layout);
   return bordersSchema.parse({ type: "FeatureCollection", features: approach.length
     ? features.map((f) => ({ ...f, geometry: { type: "MultiLineString", coordinates: [
@@ -62,6 +71,7 @@ export class BorderOverlay {
   private data?: TrackBorders;
   private enabled = false;
   private estimated = false;
+  private sharedGround = false;
 
   constructor(
     private button: HTMLButtonElement,
@@ -79,6 +89,7 @@ export class BorderOverlay {
     this.estimated =
       !!layout?.metadata.borderInference ||
       !!layout?.metadata.borderComposition || !!(layout && sequenceApproachEdges(layout).length);
+    this.sharedGround = layout?.metadata.model3d?.kind !== "surface" && !!layout?.metadata.model3d?.sharedGround;
     const labels = borderLabels(layout);
     this.button.querySelector("[data-border-label]")!.textContent = layout
       ?.metadata.borderComposition
@@ -93,7 +104,7 @@ export class BorderOverlay {
   private refresh() {
     this.button.disabled = !this.data;
     this.button.title = this.data
-      ? this.estimated
+      ? this.sharedGround ? "Original borders with an image-reviewed junction correction; positions remain estimates" : this.estimated
         ? "Estimated aerial-image borders; not manually reviewed"
         : "Show or hide inner and outer lines"
       : "Lines unavailable for this layout";

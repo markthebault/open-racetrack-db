@@ -2,6 +2,7 @@ import { z } from "zod";
 import { elevationSchema } from "./elevation";
 import { imageryTilesSchema } from "./imagery-tiles";
 import { sourceSequenceSchema } from "./source-sequence";
+import { sharedGroundSchema } from "./shared-ground";
 
 const text = z.string().min(1);
 const webUrl = z
@@ -16,9 +17,10 @@ const lapModelSchema = z
     schemaVersion: z.literal(1),
     kind: z.enum(["lap", "run"]).optional(),
     pathMethod: z
-      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1", "source-sequence-v1"])
+      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1", "source-sequence-v1", "source-ground-boundaries-v1"])
       .optional(),
     sourceSequence: sourceSequenceSchema.optional(),
+    sharedGround: sharedGroundSchema.optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
     elevationMethod: z.enum(["periodic-monotone-cubic", "monotone-cubic"]),
@@ -38,7 +40,7 @@ const lapModelSchema = z
         version: z.union([z.literal(1), z.literal(2)]),
         inputSha256: z.string().regex(/^[a-f0-9]{64}$/),
         elevationToleranceM: z.number().positive(),
-        curbMethod: z.literal("curvature-intervals-v1"),
+        curbMethod: z.enum(["curvature-intervals-v1", "ground-boundary-curvature-v1"]),
         preserveImageryReference: z.literal(true).optional(),
         boundaryPathEvidence: z
           .strictObject({
@@ -119,6 +121,9 @@ const lapModelSchema = z
     if ((model.pathMethod === "source-sequence-v1") !== !!model.sourceSequence ||
         (model.sourceSequence && model.kind !== "run"))
       issue(["sourceSequence"], "Source sequences require their dedicated open-run path");
+    if ((model.pathMethod === "source-ground-boundaries-v1") !== !!model.sharedGround ||
+        (model.sharedGround && model.kind === "run"))
+      issue(["sharedGround"], "Shared ground requires its dedicated closed source path");
     if (
       model.kind !== "run" &&
       model.elevationMethod !== "periodic-monotone-cubic"
@@ -153,6 +158,7 @@ export const networkLapRecipeSchema = z.strictObject({
   kind: lapModelSchema.shape.kind,
   pathMethod: lapModelSchema.shape.pathMethod,
   sourceSequence: lapModelSchema.shape.sourceSequence,
+  sharedGround: lapModelSchema.shape.sharedGround,
   startOffsetM: lapModelSchema.shape.startOffsetM,
   referenceLengthM: lapModelSchema.shape.referenceLengthM,
   elevationMethod: lapModelSchema.shape.elevationMethod,

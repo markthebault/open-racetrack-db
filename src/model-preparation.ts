@@ -12,6 +12,7 @@ import { plane, length as geographicLength } from "./geo";
 import { pairedBorderMidline } from "./border-midline";
 import { boundaryNormalMidline } from "./boundary-path";
 import type { SourceSequencePlan } from "../schemas/source-sequence";
+import type { SharedGround } from "../schemas/shared-ground";
 import { prepareSourceSequenceModel } from "./source-sequence-preparation";
 import {
   buildRoad,
@@ -240,6 +241,7 @@ export function prepareTrackModel(
   terrain: ElevationGrid,
   inputSha256: string,
   boundaryPath = false,
+  sharedGround?: SharedGround,
 ): LapModel3D {
   const run =
     !layout.metadata.closed &&
@@ -261,7 +263,7 @@ export function prepareTrackModel(
       "image-measured-cross-sections-v1" ||
     layout.metadata.borderInference?.method ===
       "image-measured-paired-edges-v1";
-  const length = boundaryPath
+  const length = sharedGround ? layout.metadata.lengthM : boundaryPath
     ? geographicLength(boundaryNormalMidline(layout))
     : paired
       ? geographicLength(pairedBorderMidline(layout))
@@ -274,10 +276,15 @@ export function prepareTrackModel(
       ? previous
       : undefined;
   const imagery = priorBoundary?.imagery ?? imageryForLayout(layout);
+  const groundImagery = sharedGround ? {
+    url: sharedGround.imagery.url, tiles: sharedGround.imagery.tiles,
+    extent3857: sharedGround.imagery.extent3857, attribution: sharedGround.imagery.attribution,
+    termsUrl: sharedGround.imagery.termsUrl,
+  } : undefined;
   const seed: LapModel3D = {
     schemaVersion: 1,
     ...(run ? { kind: "run" as const } : {}),
-    ...(boundaryPath
+    ...(sharedGround ? { pathMethod: "source-ground-boundaries-v1" as const, sharedGround } : boundaryPath
       ? { pathMethod: "boundary-normal-midpoints-v1" as const }
       : paired
         ? { pathMethod: "paired-border-midpoints" as const }
@@ -292,7 +299,7 @@ export function prepareTrackModel(
     ],
     bankingDeg: 0,
     quality: {
-      stationing: paired || boundaryPath ? "border-midline" : "mapped-trace",
+      stationing: !sharedGround && (paired || boundaryPath) ? "border-midline" : "mapped-trace",
       elevation: "terrain-raster",
       curbs: "geometry-estimated",
       borders: "supplemental-unverified",
@@ -300,13 +307,13 @@ export function prepareTrackModel(
     corners: [],
     curbs: [],
     curbStyle: { colors: ["#f2f2e7", "#c73732"], stripeLengthM: 2 },
-    imagery,
+    imagery: groundImagery ?? imagery,
     terrain,
     preparation: {
       version: PREPARATION_VERSION,
       inputSha256,
       elevationToleranceM: ELEVATION_TOLERANCE_M,
-      curbMethod: "curvature-intervals-v1",
+      curbMethod: sharedGround ? "ground-boundary-curvature-v1" : "curvature-intervals-v1",
       ...(previous?.preparation?.preserveImageryReference
         ? { preserveImageryReference: true as const }
         : {}),
@@ -335,9 +342,9 @@ export function prepareTrackModel(
   const elevation = terrainProfile(
       road,
       terrain,
-      !!layout.metadata.borderInference?.gradeSeparation,
+      !!layout.metadata.borderInference?.gradeSeparation || !!sharedGround,
     ),
-    curbs = illustrativeCurbs(road);
+    curbs = sharedGround ? [] : illustrativeCurbs(road);
   const corners = [
     {
       distanceM: 0,
@@ -358,6 +365,11 @@ export function prepareTrackModel(
     .sort((a, b) => a.distanceM - b.distanceM)
     .filter((c, i, a) => !i || c.distanceM > a[i - 1].distanceM);
   const result = trackModelSchema.parse({ ...seed, elevation, curbs, corners });
+  if (sharedGround) {
+    result.sources.imagery = sharedGround.imagery.url;
+    result.sources.imageryCredit = sharedGround.imagery.attribution;
+    result.sources.notes = `The complete saved source route is followed without recentering or shortcuts. A compact source-indexed correction separates grass islands across their shared paved junction; five local image pins supplement original unverified boundary coordinates, whose feature-level licence is retained. Pins use ${sharedGround.imagery.license} and ${sharedGround.imagery.attribution}. Asphalt, boundary lines and illustrative curbs are reconstructed on demand; no mesh, imagery bytes or video is saved. Car and pavement use one world-coordinate field sampled from the unchanged approximately ${terrain.source.sampleSpacingM} m terrain raster, not a road survey. Every complete driving segment clears a 2.5 m radius enclosing the rendered car. Curbs are boundary-curvature illustrations with assumed dimensions and colours, not verified curb locations. Banking is unknown and assumed zero. The compressed elevation profile is a summary; runtime road heights sample the shared terrain field directly.`;
+  }
   const grade = layout.metadata.borderInference?.gradeSeparation;
   if (grade) {
     result.sources.elevation = grade.elevation.url;
@@ -423,9 +435,15 @@ export function prepareModel(
   inputSha256: string,
   boundaryPath = false,
   sequencePlan?: SourceSequencePlan,
+  groundPlan?: SharedGround,
 ): TrackModel3D {
   const previous = layout.metadata.model3d,
-    plan = sequencePlan ?? (previous?.kind !== "surface" ? previous?.sourceSequence?.plan : undefined);
+    plan = sequencePlan ?? (previous?.kind !== "surface" ? previous?.sourceSequence?.plan : undefined),
+    ground = groundPlan ?? (previous?.kind !== "surface" ? previous?.sharedGround : undefined);
+  if (ground) {
+    if (plan || boundaryPath) throw new Error("Shared ground cannot be combined with another driving path");
+    return prepareTrackModel(layout, terrain, inputSha256, false, ground);
+  }
   if (plan) {
     if (boundaryPath) throw new Error("Source sequence and boundary path cannot be combined");
     return prepareSourceSequenceModel(layout, terrain, inputSha256, plan);
