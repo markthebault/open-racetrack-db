@@ -87,6 +87,17 @@ export function assertSeparateSimpleRings(rings: Position[][], closed = true) {
       }
     }
 }
+
+/** Metric closed paths must stay in the road annulus, including every segment. */
+export function assertCompleteRoadSource(rings: [Position[], Position[]], sources: Position[][]) {
+  if (!insideRing(rings[0][0], rings[1]))
+    throw new Error("Source containment requires nested road boundaries");
+  for (const source of sources) {
+    if (!insideRing(source[0], rings[1]) || insideRing(source[0], rings[0]))
+      throw new Error("Complete source must remain inside the refined road footprint");
+    assertSeparateSimpleRings([...rings, source], true);
+  }
+}
 export function roadRings(layout: Layout) {
   const trace = layout.features.find((f) => f.properties.role === "trace");
   if (!trace || trace.geometry.type !== "LineString")

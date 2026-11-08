@@ -5,7 +5,7 @@ import {
   borderRefinementInputSchema,
   type BorderRefinementInput,
 } from "../schemas/border-refinement";
-import { assertSeparateSimpleRings, insideRing } from "../src/boundary-path";
+import { assertSeparateSimpleRings, assertCompleteRoadSource, insideRing } from "../src/boundary-path";
 import { distance, equal, type Position } from "../src/geo";
 import {
   imageCrossSections,
@@ -197,8 +197,12 @@ export function refineImageBorders<T extends Borders>(
         wx = rings[1][i][0] - rings[0][i][0],
         wy = rings[1][i][1] - rings[0][i][1],
         tangent = Math.hypot(dx, dy), width = Math.hypot(wx, wy);
-      if (Math.hypot(p[0] - c[0], p[1] - c[1]) > 10)
+      if (!recipe.sourceContainment && Math.hypot(p[0] - c[0], p[1] - c[1]) > 10)
         throw new Error(`Paired refinement departs more than 10 metres from its retained source station ${i}`);
+      if (recipe.sourceContainment && Math.abs(
+        (p[0] - c[0]) * normals[i][1] - (p[1] - c[1]) * normals[i][0],
+      ) > 10)
+        throw new Error(`Paired refinement moves more than 10 metres along its retained source station ${i}`);
       if (!tangent || winding * (dy * wx - dx * wy) / tangent < width * 0.5)
         throw new Error(`Paired refinement edges do not cross the road in driving order at station ${i}`);
     }
@@ -221,6 +225,11 @@ export function refineImageBorders<T extends Borders>(
     throw new Error(
       "Refined inner boundary is not nested inside the outer boundary",
     );
+  if (recipe.sourceContainment) {
+    // A wide asymmetric road can have its centre more than 10 m from the map trace.
+    // Require both complete source paths inside the road, including every segment.
+    assertCompleteRoadSource([rings[0], rings[1]], [trace.map(project.to), [...smooth, smooth[0]]]);
+  }
   for (const patch of recipe.patches)
     for (const anchor of patch.anchors)
       if (

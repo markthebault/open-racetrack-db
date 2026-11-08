@@ -7,6 +7,7 @@ import { assertGradeRibbon } from "../src/grade-separation";
 import { trackModelSchema, networkRecipeSchema } from "./track-model";
 import { sequenceTrace } from "../src/source-sequence-plan";
 import { sharedGroundBoundaries } from "../src/shared-ground-data";
+import { assertCompleteRoadSource } from "../src/boundary-path";
 import {
   bounds,
   distance,
@@ -15,6 +16,7 @@ import {
   length,
   networkLength,
   nearestEdge,
+  plane,
   type Position,
 } from "../src/geo";
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
@@ -555,6 +557,12 @@ export function validateLayout(input: unknown, track: Track, id: string) {
             throw new Error(
               "borderInference: saved edge differs from its image anchor",
             );
+      }
+      if (refinement.sourceContainment) {
+        const project = plane(paths[0][0]);
+        const rings = ["inner", "outer"].map(role =>
+          geometryPaths(borders.find(f => f.properties.role === role)!.geometry)[0].map(project.to));
+        assertCompleteRoadSource([rings[0], rings[1]], [paths[0].map(project.to)]);
       }
     }
     if (!source || source.type !== "imagery" || source.license !== info.license)

@@ -24,6 +24,7 @@ const recipe = z.strictObject({
   patches: z.array(patch).min(1).max(200),
   note: z.string().min(1),
   interpolation: z.literal("edge-linear-v1").optional(),
+  sourceContainment: z.literal("complete-source-within-road-v1").optional(),
 });
 function check(
   value: Pick<z.infer<typeof recipe>, "patches">,
@@ -60,6 +61,8 @@ function check(
 function checkPartial(value: z.infer<typeof recipe>, ctx: z.RefinementCtx) {
   check(value, ctx);
   if (value.method !== "paired-image-edge-anchors-v1") {
+    if (value.sourceContainment)
+      ctx.addIssue({ code: "custom", message: "Source footprint containment requires paired refinements" });
     if (value.interpolation)
       ctx.addIssue({ code: "custom", message: "Source-frame refinements cannot change interpolation" });
     return;
@@ -97,6 +100,8 @@ function checkComplete(
   ctx: z.RefinementCtx,
 ) {
   check(value, ctx);
+  if (value.sourceContainment)
+    ctx.addIssue({ code: "custom", message: "Source footprint containment is only available for partial paired refinements" });
   if (value.routeKind === "run" && value.sourceStationOffset !== undefined)
     ctx.addIssue({ code: "custom", message: "Open measurements cannot rotate their source station grid" });
   if (value.linearIntervals) {

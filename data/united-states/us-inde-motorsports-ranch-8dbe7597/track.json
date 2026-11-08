@@ -21,57 +21,57 @@
     {
       "id": "inde-motorsports-ranch-full",
       "name": "Inde Motorsports Ranch Full",
-      "referenceId": "United States/Inde Motorsports Ranch Full",
       "file": "layouts/inde-motorsports-ranch-full.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch Full",
       "description": "Draft configuration: Full course with northern hooked loop, central hairpin and southern return bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3738.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "inde-motorsports-ranch-full-north-2",
       "name": "Inde Motorsports Ranch Full North 2",
-      "referenceId": "United States/Inde Motorsports Ranch Full North 2",
       "file": "layouts/inde-motorsports-ranch-full-north-2.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch Full North 2",
       "description": "Draft configuration: Northern configuration uses the western bulge, uninterrupted upper eastern bend and central southern kink, excluding the upper eastern shortcut. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3736.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "inde-motorsports-ranch-full-north-3",
       "name": "Inde Motorsports Ranch Full North 3",
-      "referenceId": "United States/Inde Motorsports Ranch Full North 3",
       "file": "layouts/inde-motorsports-ranch-full-north-3.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch Full North 3",
       "description": "Draft configuration: Full southern course and direct northern triangle, bypassing both northern hooked detours. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3580.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "inde-motorsports-ranch-full-north-4",
       "name": "Inde Motorsports Ranch Full North 4",
-      "referenceId": "United States/Inde Motorsports Ranch Full North 4",
       "file": "layouts/inde-motorsports-ranch-full-north-4.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch Full North 4",
       "description": "Draft configuration: Full southern course and northern western bulge with eastern hooked return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3592.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "inde-motorsports-ranch-north",
       "name": "Inde Motorsports Ranch North",
-      "referenceId": "United States/Inde Motorsports Ranch North",
       "file": "layouts/inde-motorsports-ranch-north.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch North",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1256.7 m. Difference from the supplied layout distance 8.7 m. Course configuration still requires visual review."
     },
     {
       "id": "inde-motorsports-ranch-north-2",
       "name": "Inde Motorsports Ranch North 2",
-      "referenceId": "United States/Inde Motorsports Ranch North 2",
       "file": "layouts/inde-motorsports-ranch-north-2.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch North 2",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1256.7 m. Difference from the supplied layout distance 19.7 m. Course configuration still requires visual review."
     },
     {
       "id": "inde-motorsports-ranch-north-4",
       "name": "Inde Motorsports Ranch North 4",
-      "referenceId": "United States/Inde Motorsports Ranch North 4",
       "file": "layouts/inde-motorsports-ranch-north-4.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch North 4",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1111 m. Difference from the supplied layout distance 17.0 m. Course configuration still requires visual review."
     },
     {
       "id": "inde-motorsports-ranch-south",
       "name": "Inde Motorsports Ranch South",
-      "referenceId": "United States/Inde Motorsports Ranch South",
       "file": "layouts/inde-motorsports-ranch-south.geojson",
+      "referenceId": "United States/Inde Motorsports Ranch South",
       "description": "Draft configuration: Southern circuit, southwestern bend and eastern turnaround; excludes the northern course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2352.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -138,6 +138,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T10:29:12.371Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
