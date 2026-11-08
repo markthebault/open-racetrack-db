@@ -1,5 +1,19 @@
 import { readFile } from "node:fs/promises";
 import { layoutSchema, type Layout } from "../schemas/data";
+import type { TrackModel3D } from "../schemas/track-model";
+import { prepareModel } from "../src/model-preparation";
+import { modelInputHash } from "./model-input";
+
+/** Border refreshes invalidate road geometry, but not an explicitly pinned display source. */
+export function preserveDisplayImageryOnBorderRefresh(
+  layout: Layout,
+  previous?: TrackModel3D,
+): Layout {
+  if (!previous?.preparation?.preserveImageryReference) return layout;
+  const input = { ...layout, metadata: { ...layout.metadata, model3d: previous } },
+    model3d = prepareModel(input, previous.terrain, modelInputHash(input, previous.terrain));
+  return { ...layout, metadata: { ...layout.metadata, model3d } };
+}
 
 export async function existingLayoutExtras(
   file: string,

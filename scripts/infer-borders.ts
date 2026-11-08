@@ -20,7 +20,7 @@ import {
   decodeRaster,
   type Raster,
 } from "./infer-image-borders";
-import { serializeLayout } from "./layout-borders";
+import { preserveDisplayImageryOnBorderRefresh, serializeLayout } from "./layout-borders";
 import { borderReplacement } from "./border-replacement";
 import { reuseOriginalBorders } from "./reuse-original-borders";
 import { loadEnv } from "vite";
@@ -557,7 +557,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       report.push(row);
       continue;
     }
-    const preservedTerrain = layout.metadata.model3d?.terrain;
+    const preservedModel = layout.metadata.model3d,
+      preservedTerrain = preservedModel?.terrain;
     if (old || replacement) {
       layout.features = layout.features.filter(
         (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
@@ -772,9 +773,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       candidate.bbox = bounds(
         candidate.features.flatMap((f) => geometryPaths(f.geometry).flat()),
       );
-      const checked = validateLayout(candidate, candidateTrack, item.id);
+      const checked = validateLayout(
+        preserveDisplayImageryOnBorderRefresh(candidate, preservedModel),
+        candidateTrack,
+        item.id,
+      );
       if (write) {
-        if (preservedTerrain) {
+        if (preservedTerrain && !checked.metadata.model3d) {
           await mkdir("data/elevation", { recursive: true });
           try {
             await writeFile(

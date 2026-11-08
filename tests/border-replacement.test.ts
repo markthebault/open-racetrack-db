@@ -5,6 +5,8 @@ import { borderReplacement } from "../scripts/border-replacement";
 import { borderPairHash } from "../scripts/refine-image-borders";
 import { borderInferenceSchema } from "../schemas/border-inference";
 import type { Layout } from "../schemas/data";
+import { preserveDisplayImageryOnBorderRefresh } from "../scripts/layout-borders";
+import { modelInputHash } from "../scripts/model-input";
 
 function fixture() {
   // Keep this independent of any later correction to the production borders.
@@ -15,6 +17,30 @@ function fixture() {
     d.features.find((f) => f.properties.role === role)!.geometry = { type: "LineString", coordinates: pair[role] };
   return { d, hash: borderPairHash(pair) };
 }
+
+test("border refresh rebuilds geometry while retaining an explicit display source and embedded terrain", () => {
+  const layout = JSON.parse(readFileSync("data/japan/jp-fuji-1937cd5f/layouts/fuji-short.geojson", "utf8")) as Layout,
+    previous = structuredClone(layout.metadata.model3d!);
+  previous.preparation!.preserveImageryReference = true;
+  previous.preparation!.inputSha256 = "f".repeat(64);
+  previous.imagery.attribution = "Pinned display fixture";
+  delete layout.metadata.model3d;
+  layout.metadata.borderInference!.note += " Updated border observations.";
+  const before = structuredClone(layout), oldModel = structuredClone(previous),
+    refreshed = preserveDisplayImageryOnBorderRefresh(layout, previous),
+    model = refreshed.metadata.model3d!;
+  assert.equal(model.kind ?? "lap", "lap");
+  assert.ok(model.preparation!.preserveImageryReference);
+  assert.deepEqual(model.imagery, previous.imagery);
+  assert.deepEqual(model.terrain, previous.terrain);
+  assert.deepEqual(refreshed.features, layout.features);
+  assert.equal(model.preparation!.inputSha256, modelInputHash(refreshed, model.terrain));
+  assert.notEqual(model.preparation!.inputSha256, previous.preparation!.inputSha256);
+  assert.deepEqual(layout, before);
+  assert.deepEqual(previous, oldModel);
+  delete previous.preparation!.preserveImageryReference;
+  assert.equal(preserveDisplayImageryOnBorderRefresh(layout, previous), layout);
+});
 
 test("original border correction pins both old edges and never mutates the source during preflight", () => {
   const { d, hash } = fixture(), before = structuredClone(d);
