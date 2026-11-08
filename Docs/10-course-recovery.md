@@ -28,7 +28,7 @@ Yas Marina / `yas-marina-gp-corkscrew` is skipped separately. Its nominal-distan
 
 Yas Marina / `yas-historical-grand-prix` is also skipped. Native imagery places parts of the retained historical northern and southern route outside the visible road corridor, without continuous historical limits. Existing sibling borders cover many shared roads, but no complete matching pair is available for this exact route. Keep the historical trace; reopen with dated imagery or complete historical boundary evidence. Its combined entry remains unresolved, while the six other historical components retain their existing borders and models.
 
-The current catalogue has 211 mapped border gaps, including these four exclusions; 207 remain in the current border task. They are separate from the eleven unmapped exclusions above. A detector failure alone does not justify skipping a layout.
+The current catalogue has 210 mapped border gaps, including these four exclusions; 206 remain in the current border task. They are separate from the eleven unmapped exclusions above. A detector failure alone does not justify skipping a layout.
 
 Existing evidence includes the [bounded GPS review](../sources/research/public-gps-gap-search/review.md), [Elvington coverage](../sources/research/elvington-historical-coverage/review.md), [Thoresway historical review](../sources/research/thoresway-historical-coverage/review.md), [Arlington connectors](../sources/research/arlington-public-course-evidence/review.md), [Charlotte identity](../sources/research/charlotte-short-identity/review.md), [Rosario imagery](../sources/research/rosario-public-imagery/review.md) and [Huangtupo bands](../sources/research/huangtupo-historical-bands/review.md).
 

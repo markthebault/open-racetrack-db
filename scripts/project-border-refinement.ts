@@ -25,6 +25,8 @@ export function projectBorderRefinement(
   const stored = borderRefinementInputSchema
     .or(borderRefinementSchema)
     .parse(source.input);
+  if (stored.method !== "cross-section-image-anchors-v1")
+    throw new Error("Paired junction measurements require independent target correspondence review; source-normal projection is unavailable");
   const input = borderRefinementInputSchema.parse({
     method: stored.method,
     imageSha256: stored.imageSha256,

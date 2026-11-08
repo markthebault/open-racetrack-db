@@ -527,6 +527,10 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     }
     if (m.borderInference.refinement) {
       const refinement = m.borderInference.refinement;
+      if (refinement.method === "paired-image-edge-anchors-v1" &&
+          (!m.closed || isNetwork || m.borderInference.gradeSeparation ||
+           geometryPaths(borders[0].geometry)[0].length !== geometryPaths(borders[1].geometry)[0].length))
+        throw new Error("borderInference: paired junction refinements require a simple closed road with matching edge stations");
       if (
         !["rgb-road-local-appearance-v4", "rgb-road-source-contained-v5"].includes(m.borderInference.method) ||
         refinement.imageSha256 !== info.sha256

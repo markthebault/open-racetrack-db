@@ -6,7 +6,8 @@ import {
   borderPairHash,
 } from "../scripts/refine-image-borders";
 import { plane, distance, type Position } from "../src/geo";
-import { inferImageBorders, type Raster } from "../scripts/infer-image-borders";
+import { assertSeparateSimpleRings } from "../src/boundary-path";
+import { inferImageBorders, inferRefinedImageBorders, type Raster } from "../scripts/infer-image-borders";
 const p = plane([0, 0]),
   point = (r: number, i: number): Position =>
     p.from([
@@ -362,4 +363,71 @@ test("open border topology checks the first and last segments for crossings", as
       ),
     /cross or touch/,
   );
+});
+
+test("paired junction anchors repair a crossed seed and preserve untouched geometry", () => {
+  const { seed, trace, original, image } = fixture();
+  [seed.inner[24], seed.inner[26]] = [seed.inner[26], seed.inner[24]];
+  assert.throws(() => assertSeparateSimpleRings([seed.inner.map(p.to), seed.outer.map(p.to)], true), /cross|intersect/);
+  const before = structuredClone(seed);
+  const input = borderRefinementInputSchema.parse({
+    method: "paired-image-edge-anchors-v1",
+    interpolation: "edge-linear-v1",
+    imageSha256: "b".repeat(64),
+    seedSha256: borderPairHash(seed),
+    patches: (["inner", "outer"] as const).map(edge => ({
+      edge,
+      anchors: [20, 30, 40].map(station => ({
+        station,
+        kind: station === 30 ? "image-measured" : "preserved-seed",
+        coordinate: station === 30 ? original[edge][32] : seed[edge][station],
+      })),
+    })),
+    note: "Paired image points follow a junction independently of the old source normals.",
+  });
+  const { result, refinement } = refineImageBorders(seed, trace, input, image, "b".repeat(64));
+  assert.deepEqual(seed, before);
+  for (const edge of ["inner", "outer"] as const) {
+    assert.deepEqual(result[edge].slice(0, 20), before[edge].slice(0, 20));
+    assert.deepEqual(result[edge].slice(41), before[edge].slice(41));
+    assert.ok(distance(result[edge][30], original[edge][32]) < 0.03);
+  }
+  assert.equal(refinement.resultSha256, borderPairHash(result));
+  assert.throws(() => refineImageBorders(seed, trace, {
+    ...input, method: "cross-section-image-anchors-v1", interpolation: undefined,
+  }, image, "b".repeat(64)), /along the route/);
+  const displaced = structuredClone(input);
+  for (const patch of displaced.patches) patch.anchors[1].coordinate = original[patch.edge][35];
+  assert.throws(() => refineImageBorders(seed, trace, displaced, image, "b".repeat(64)), /10 metres/);
+  const incomplete = structuredClone(input);
+  incomplete.patches.pop();
+  assert.equal(borderRefinementInputSchema.safeParse(incomplete).success, false);
+  const gap = structuredClone(input);
+  for (const patch of gap.patches) patch.anchors[2].station = 60;
+  assert.throws(() => refineImageBorders(seed, trace, gap, image, "b".repeat(64)), /50 metres/);
+});
+
+
+test("inference applies pinned paired corrections and rejects invalid corrections without returning a seed", () => {
+  const { trace, original, image } = fixture();
+  const input = borderRefinementInputSchema.parse({
+    method: "paired-image-edge-anchors-v1", interpolation: "edge-linear-v1",
+    imageSha256: "b".repeat(64), seedSha256: borderPairHash(original),
+    patches: (["inner", "outer"] as const).map(edge => ({ edge,
+      anchors: [20, 30, 40].map(station => ({ station, kind: "image-measured",
+        coordinate: original[edge][station === 30 ? 32 : station] })),
+    })),
+    note: "Pinned visible edge pairs through the junction.",
+  });
+  const options = { method: "road-local-appearance-v4" as const };
+  const direct = refineImageBorders(original, trace, input, image, "b".repeat(64));
+  const inferred = inferRefinedImageBorders(trace, image, input, "b".repeat(64), options);
+  assert.deepEqual(inferred, direct);
+  assert.throws(() => inferRefinedImageBorders(trace, image, input, "c".repeat(64), options), /image hash/);
+  assert.throws(() => inferRefinedImageBorders(trace, image, {...input, seedSha256: "c".repeat(64)}, "b".repeat(64), options), /seed hash/);
+  const invalid = structuredClone(input);
+  for (const patch of invalid.patches) patch.anchors[1].coordinate = original[patch.edge][35];
+  assert.throws(() => inferRefinedImageBorders(trace, image, invalid, "b".repeat(64), options), /10 metres/);
+  const featureless = { ...image, data: new Uint8Array(image.width * image.height * 4).fill(128) };
+  assert.throws(() => inferRefinedImageBorders(trace, featureless, input, "b".repeat(64), options), /search limit|image-edge evidence|coherent image/);
 });

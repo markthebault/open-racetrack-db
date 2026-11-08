@@ -30,6 +30,9 @@ export function refineImageBorders<T extends Borders>(
 ) {
   const open = options.open === true;
   const recipe = borderRefinementInputSchema.parse(input);
+  const paired = recipe.method === "paired-image-edge-anchors-v1";
+  if (paired && (open || options.gradeSeparation))
+    throw new Error("Paired junction refinements require one simple closed road");
   if (
     recipe.imageSha256 !== imageSha256 ||
     recipe.seedSha256 !== borderPairHash(seed)
@@ -50,6 +53,7 @@ export function refineImageBorders<T extends Borders>(
       smooth,
       normals,
       index,
+      step,
     } = imageCrossSections(
       trace,
       open,
@@ -67,9 +71,12 @@ export function refineImageBorders<T extends Borders>(
     };
   if (seed.inner.length !== smooth.length + (open ? 0 : 1))
     throw new Error("Refinement stations do not match the source trace");
+  const changedStations = new Set<number>();
   for (const patch of recipe.patches) {
     const points = seed[patch.edge],
-      anchors = patch.anchors.map((a) => {
+      anchors = patch.anchors.map((a, j) => {
+        if (paired && j && (a.station - patch.anchors[j - 1].station) * step > 50)
+          throw new Error("Paired refinement measurement gap exceeds 50 metres");
         if (a.station >= points.length)
           throw new Error("Refinement station exceeds the seed");
         if (
@@ -97,6 +104,7 @@ export function refineImageBorders<T extends Borders>(
           ...a,
           across: d[0] * normal[0] + d[1] * normal[1],
           along: d[0] * normal[1] - d[1] * normal[0],
+          point: p,
         };
       });
     for (let j = 1; j < anchors.length; j++) {
@@ -109,11 +117,15 @@ export function refineImageBorders<T extends Borders>(
           across = a.across * (1 - t) + b.across * t,
           along = a.along * (1 - t) + b.along * t;
         result[patch.edge][i] = project
-          .from([
+          .from(paired ? [
+            a.point[0] + (b.point[0] - a.point[0]) * t,
+            a.point[1] + (b.point[1] - a.point[1]) * t,
+          ] : [
             p[0] + normal[0] * across + normal[1] * along,
             p[1] + normal[1] * across - normal[0] * along,
           ])
           .map((v) => Number(v.toFixed(7))) as Position;
+        if (paired) changedStations.add(index(i));
       }
     }
   }
@@ -134,7 +146,7 @@ export function refineImageBorders<T extends Borders>(
         p = project.to(points[i]),
         q = project.to(seed[edge][i]),
         width = Math.hypot(b[0] - a[0], b[1] - a[1]);
-      if (
+      if (!paired &&
         Math.abs(
           ((p[0] - q[0]) * (b[1] - a[1]) - (p[1] - q[1]) * (b[0] - a[0])) /
             width,
@@ -166,6 +178,31 @@ export function refineImageBorders<T extends Borders>(
   )
     throw new Error("Refined borders exceed supported road widths");
   const rings = [result.inner.map(project.to), result.outer.map(project.to)];
+  if (paired) {
+    const midpoints = rings[0].map((a, i): Position => [
+      (a[0] + rings[1][i][0]) / 2, (a[1] + rings[1][i][1]) / 2,
+    ]);
+    assertSeparateSimpleRings([midpoints], true);
+    const area = (path: Position[]) => path.reduce((sum, a, i) => {
+      const b = path[(i + 1) % path.length];
+      return sum + a[0] * b[1] - a[1] * b[0];
+    }, 0);
+    const winding = Math.sign(area(smooth));
+    if (!winding || winding !== Math.sign(area(midpoints)))
+      throw new Error("Paired refinement reverses the retained driving order");
+    for (const i of changedStations) {
+      const p = midpoints[i], c = smooth[i],
+        a = midpoints[index(i - 1)], b = midpoints[index(i + 1)],
+        dx = b[0] - a[0], dy = b[1] - a[1],
+        wx = rings[1][i][0] - rings[0][i][0],
+        wy = rings[1][i][1] - rings[0][i][1],
+        tangent = Math.hypot(dx, dy), width = Math.hypot(wx, wy);
+      if (Math.hypot(p[0] - c[0], p[1] - c[1]) > 10)
+        throw new Error(`Paired refinement departs more than 10 metres from its retained source station ${i}`);
+      if (!tangent || winding * (dy * wx - dx * wy) / tangent < width * 0.5)
+        throw new Error(`Paired refinement edges do not cross the road in driving order at station ${i}`);
+    }
+  }
   if (options.gradeSeparation) {
     if (open)
       throw new Error("Grade-separated refinements require closed edges");
