@@ -18,3 +18,7 @@ python3 sources/research/public-gps-gap-search/reproduce-index.py \
 Use `--online` instead to request those same pages through the ordinary public API. Live responses can differ from the captured snapshot; verification then fails and a new review is required. The first online recheck observed a changed Charlotte page-one response with unchanged group and point counts. The original snapshot remains pinned and passes offline verification; that live response is not silently substituted. The script reads point counts and the presence of timestamps without extracting coordinate values or generating routes.
 
 Reviewed 3 October 2026. Exact historical course identity and reusable geometry are still needed for the unresolved entries.
+
+## Current task disposition
+
+On 8 November 2026 the maintainer excluded these eleven unresolved layouts from the current coverage task and requested that they be documented as candidates for future removal. `coverageDisposition` in the existing index records exact IDs and reasons. Stop further open-ended searches for these entries; retain the evidence and catalogue placeholders. This decision does not change the captured API results, establish a route or count an entry as recovered. See the [coverage decision](../../../Docs/10-course-recovery.md#current-coverage-exclusions-8-november-2026).

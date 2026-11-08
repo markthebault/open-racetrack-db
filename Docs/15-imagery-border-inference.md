@@ -1,5 +1,7 @@
 # Image-derived border estimates
 
+The [current coverage exclusions](10-course-recovery.md#current-coverage-exclusions-8-november-2026) record layouts skipped by maintainer decision because their exact routes cannot be established from existing sources. They remain documented candidates for future removal and are not counted as successful models.
+
 The border pass targets every mapped layout without the existing supplemental inner/outer features. Existing borders are preserved. The first audit identified 495 mapped layouts across 320 circuits, plus 11 layouts with no mapped route.
 
 Run the shared batch:

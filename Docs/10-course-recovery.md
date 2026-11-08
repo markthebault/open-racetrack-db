@@ -1,5 +1,27 @@
 # Independent course recovery
 
+## Current coverage exclusions (8 November 2026)
+
+The maintainer has asked to skip layouts whose exact routes cannot be established from the current sources, and to document them as candidates for future removal. The eleven entries below are excluded from the current border, 3D and playback completion target. Stop open-ended recovery searches for them. Their catalogue placeholders and existing research remain intact; exclusion does not make them mapped or complete. Do not remove supported sibling layouts at the same venue.
+
+| Layout | Entries | Missing evidence |
+| --- | ---: | --- |
+| Kames timed runs (forward and reverse) | 2 | Historical branch order and separate timing endpoints; the withdrawn draft used a later extension. |
+| Elvington | 1 | Northern return join absent from the reviewed coverage; inspected GPS is unrelated. |
+| Lydden Hill Infield | 1 | Historical northeastern arm and inner shortcut sequence. |
+| Thoresway MX (catalogue: Thorsway MX) | 1 | Old central branch sequence; later rebuilt course is a different configuration. |
+| Arlington race and practice | 2 | Temporary connectors and catalogue timing convention; practice equivalence is unconfirmed. |
+| Detroit City Airport | 1 | Event-date apron route and chicanes; the known GPS loop is smaller. |
+| Charlotte Short | 1 | Historical frontstretch branch order, distinct from infield and rallycross courses. |
+| Rosario Combo | 1 | Exact northern open Combo sequence across alternative paved branches. |
+| Huangtupo | 1 | Complete historical route and narrow connections; 10 m imagery is insufficient. |
+
+The exact track and layout IDs, reasons and disposition are stored together in the existing [research index](../sources/research/public-gps-gap-search/review-index.json), under `coverageDisposition`. This is the exclusion register, not a new geometry format. Reopen an entry only when concrete route-identifying evidence with a usable source is supplied. Probable future discard is a recommendation; no catalogue deletion is performed now.
+
+At this decision, the catalogue still has 1,388 entries: 1,377 mapped layouts and these 11 skipped placeholders. Of the mapped layouts, 1,159 have borders and models and 218 still lack borders. Those 218 remain in scope unless a source review records why a specific layout must also be skipped. Playback and elevation checks remain separate requirements. Report total, skipped and supported counts separately; do not label skipped entries as recovered. Earlier recovery tasks and gap tables below are historical evidence and do not override this decision.
+
+Existing evidence includes the [bounded GPS review](../sources/research/public-gps-gap-search/review.md), [Elvington coverage](../sources/research/elvington-historical-coverage/review.md), [Thoresway historical review](../sources/research/thoresway-historical-coverage/review.md), [Arlington connectors](../sources/research/arlington-public-course-evidence/review.md), [Charlotte identity](../sources/research/charlotte-short-identity/review.md), [Rosario imagery](../sources/research/rosario-public-imagery/review.md) and [Huangtupo bands](../sources/research/huangtupo-historical-bands/review.md).
+
 Palanga now has a 2,727.1 m supporting street-course draft from 18 exact public road ways. A newly reviewed primary July 2014 onboard identifies the northwest loop, paved southern median turn, outer northeast approach and westbound A11. The earlier southeast-ramp candidate is excluded. Every join preserves shared source nodes, and the 65.1 m supplied-distance discrepancy remains explicit. Temporary chicanes and event barrier positions are unverified. The [source review](../sources/lt-palanga-street-circuit-a9c06d36/review.md) records the evidence and corrects the earlier unsupported claim that the southern event turn must lie farther south. `import:selections` now accepts `--reference` to update one registered selection without revisiting other venues.
 
 Drive Centre Arena now has a 4,415.4 m supporting physical-course draft from native 0.5 m licensed Min karta aerial imagery. The operator long/short map and official 2020 STCC guide identify the branch order; only licensed aerial pixels supply coordinates. The fine raster resolves the painted runway turnaround and eastern curves. All 125 public tile hashes reproduce through two ordinary anonymous map views, and every rendered pixel reproduces offline. The 146.4 m supplied-distance difference and 180.4 m operator-distance difference remain explicit; the imagery capture year, historical correspondence and temporary cone positions are unverified. The [source review](../sources/se-drive-centre-arena-09bd002c/review.md) preserves these limits, the native mosaic, tile URLs, georeferencing and conversion vertices.
