@@ -8,7 +8,12 @@ import {
 } from "../schemas/track-model";
 import { boundaryCurbs, borderRoadGeometry } from "./border-surface";
 import { sampleElevation, type ElevationGrid } from "./elevation";
-import { plane } from "./geo";
+import { plane, length as geographicLength } from "./geo";
+import { pairedBorderMidline } from "./border-midline";
+import { boundaryNormalMidline } from "./boundary-path";
+import type { SourceSequencePlan } from "../schemas/source-sequence";
+import type { SharedGround } from "../schemas/shared-ground";
+import { prepareSourceSequenceModel } from "./source-sequence-preparation";
 import {
   buildRoad,
   roadHeight,
@@ -25,6 +30,51 @@ export const WORLD_IMAGERY_CREDIT =
 
 /** Exact request aspect ratio avoids an undocumented extent adjustment by the map service. */
 export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
+  const saved = layout.metadata.model3d;
+  if (saved?.preparation?.preserveImageryReference) return saved.imagery;
+  const reference = layout.metadata.borderInference?.imagery;
+  if (reference) {
+    if (reference.tiles)
+      return {
+        url: reference.url,
+        tiles: reference.tiles,
+        extent3857: reference.extent3857,
+        attribution: reference.attribution,
+        termsUrl: reference.termsUrl,
+      };
+    const url = new URL(reference.url);
+    const naipRender = url.protocol === "https:" &&
+      url.hostname === "planetarycomputer.microsoft.com"
+      ? url.pathname.match(/^\/api\/data\/v1\/item\/bbox\/([^/]+)\/(\d+)x(\d+)\.png$/)
+      : null;
+    const pinnedNaip = !!naipRender &&
+      url.searchParams.get("collection") === "naip" &&
+      url.searchParams.get("assets") === "image" &&
+      url.searchParams.get("coord_crs")?.toLowerCase() === "epsg:3857" &&
+      url.searchParams.get("dst_crs")?.toLowerCase() === "epsg:3857" &&
+      url.searchParams.getAll("bidx").join(",") === "1,2,3" &&
+      Number(naipRender[2]) === reference.width &&
+      Number(naipRender[3]) === reference.height &&
+      naipRender[1].split(",").length === 4 &&
+      naipRender[1].split(",").every((v, i) =>
+        Number.isFinite(Number(v)) && Math.abs(Number(v) - reference.extent3857[i]) < 1e-6);
+    const exported = /\/export(?:Image)?$/i.test(url.pathname),
+      wms = url.searchParams.get("REQUEST")?.toUpperCase() === "GETMAP";
+    if (exported || wms || pinnedNaip) {
+      if (exported) {
+        url.searchParams.set("f", "image");
+        url.searchParams.set("bbox", reference.extent3857.join(","));
+        url.searchParams.set("size", `${reference.width},${reference.height}`);
+      }
+      return {
+        url: url.href,
+        extent3857: reference.extent3857,
+        attribution: reference.attribution,
+        termsUrl: reference.reuseEvidenceUrl,
+      };
+    }
+  }
+
   const radians = Math.PI / 180,
     r = 6378137;
   const points = layout.features.flatMap((f) =>
@@ -77,6 +127,7 @@ export function imageryForLayout(layout: Layout): TrackModel3D["imagery"] {
 export function compressElevation(
   samples: ElevationAnchor[],
   tolerance = ELEVATION_TOLERANCE_M,
+  closed = true,
 ): ElevationAnchor[] {
   if (samples.length < 3)
     throw new Error("At least three elevation samples are required");
@@ -93,7 +144,7 @@ export function compressElevation(
     for (let i = 1; i < samples.length - 1; i++)
       if (!indices.has(i)) {
         const error = Math.abs(
-          roadHeight(anchors, samples[i][0]) - samples[i][1],
+          roadHeight(anchors, samples[i][0], closed) - samples[i][1],
         );
         if (error > worst) {
           worst = error;
@@ -109,22 +160,34 @@ export function compressElevation(
 export function terrainProfile(
   road: Road,
   terrain: ElevationGrid,
+  explicitRoadLevels = false,
 ): ElevationAnchor[] {
   const projection = plane(road.origin),
-    step = Math.max(1, Math.floor(40 / road.step)),
+    pairedProfile = explicitRoadLevels,
+    step = pairedProfile ? 1 : Math.max(1, Math.floor(40 / road.step)),
     samples: ElevationAnchor[] = [];
-  for (let i = 0; i < road.points.length; i += step) {
+  const closed = road.recipe.kind !== "run",
+    denominator = road.points.length - (closed ? 0 : 1);
+  for (let i = 0; i < denominator; i += step) {
     const p = road.points[i],
-      height = sampleElevation(terrain, projection.from([p.x, -p.z]));
+      height = pairedProfile
+        ? p.y
+        : sampleElevation(terrain, projection.from([p.x, -p.z]));
     if (height === null)
       throw new Error("Terrain does not cover the selected course");
     samples.push([
-      (i / road.points.length) * road.recipe.referenceLengthM,
+      (i / denominator) * road.recipe.referenceLengthM,
       Number(height.toFixed(3)),
     ]);
   }
-  samples.push([road.recipe.referenceLengthM, samples[0][1]]);
-  return compressElevation(samples);
+  const last = road.points.at(-1)!;
+  const endHeight = closed
+    ? samples[0][1]
+    : sampleElevation(terrain, projection.from([last.x, -last.z]));
+  if (endHeight === null)
+    throw new Error("Terrain does not cover the route finish");
+  samples.push([road.recipe.referenceLengthM, Number(endHeight.toFixed(3))]);
+  return compressElevation(samples, ELEVATION_TOLERANCE_M, closed);
 }
 
 /** Illustration only: no claim that curvature identifies a real painted curb or its dimensions. */
@@ -132,10 +195,11 @@ export function illustrativeCurbs(road: Road): LapModel3D["curbs"] {
   const n = road.points.length,
     length = road.recipe.referenceLengthM,
     step = length / n;
+  const index = (i: number) =>
+    road.recipe.kind === "run" ? Math.max(0, Math.min(n - 1, i)) : (i + n) % n;
   const signs = road.points.map((_, i) => {
     let k = 0;
-    for (let j = -2; j <= 2; j++)
-      k += road.points[(i + j + n) % n].curvature / 5;
+    for (let j = -2; j <= 2; j++) k += road.points[index(i + j)].curvature / 5;
     return Math.abs(k) > 1 / 300 ? Math.sign(k) : 0;
   });
   const runs: { start: number; end: number; sign: number; angle: number }[] =
@@ -176,15 +240,58 @@ export function prepareTrackModel(
   layout: Layout,
   terrain: ElevationGrid,
   inputSha256: string,
+  boundaryPath = false,
+  sharedGround?: SharedGround,
 ): LapModel3D {
-  if (!layout.metadata.closed || layout.metadata.geometryKind === "network")
-    throw new Error("Preparation requires one closed route");
-  const length = layout.metadata.lengthM;
+  const run =
+    !layout.metadata.closed &&
+    layout.metadata.borderInference?.edgeConvention ===
+      "left-right-along-trace";
+  if (
+    (!layout.metadata.closed && !run) ||
+    layout.metadata.geometryKind === "network"
+  )
+    throw new Error(
+      "Preparation requires a closed route or paired open-road edges",
+    );
+  const paired =
+    run ||
+    layout.metadata.borderInference?.method === "rgb-road-appearance-v3" ||
+    layout.metadata.borderInference?.method ===
+      "rgb-road-local-appearance-v4" ||
+    layout.metadata.borderInference?.method ===
+      "image-measured-cross-sections-v1" ||
+    layout.metadata.borderInference?.method ===
+      "image-measured-paired-edges-v1";
+  const length = sharedGround ? layout.metadata.lengthM : boundaryPath
+    ? geographicLength(boundaryNormalMidline(layout))
+    : paired
+      ? geographicLength(pairedBorderMidline(layout))
+      : layout.metadata.lengthM;
+  const previous = layout.metadata.model3d;
+  const priorBoundary =
+    boundaryPath &&
+    previous?.kind !== "surface" &&
+    previous?.pathMethod === "boundary-normal-midpoints-v1"
+      ? previous
+      : undefined;
+  const imagery = priorBoundary?.imagery ?? imageryForLayout(layout);
+  const groundImagery = sharedGround ? {
+    url: sharedGround.imagery.url, tiles: sharedGround.imagery.tiles,
+    extent3857: sharedGround.imagery.extent3857, attribution: sharedGround.imagery.attribution,
+    termsUrl: sharedGround.imagery.termsUrl,
+  } : undefined;
   const seed: LapModel3D = {
     schemaVersion: 1,
+    ...(run ? { kind: "run" as const } : {}),
+    ...(sharedGround ? { pathMethod: "source-ground-boundaries-v1" as const, sharedGround } : boundaryPath
+      ? { pathMethod: "boundary-normal-midpoints-v1" as const }
+      : paired
+        ? { pathMethod: "paired-border-midpoints" as const }
+        : {}),
     startOffsetM: 0,
     referenceLengthM: length,
-    elevationMethod: "periodic-monotone-cubic",
+    elevationMethod: run ? "monotone-cubic" : "periodic-monotone-cubic",
     elevation: [
       [0, 0],
       [length / 2, 0],
@@ -192,7 +299,7 @@ export function prepareTrackModel(
     ],
     bankingDeg: 0,
     quality: {
-      stationing: "mapped-trace",
+      stationing: !sharedGround && (paired || boundaryPath) ? "border-midline" : "mapped-trace",
       elevation: "terrain-raster",
       curbs: "geometry-estimated",
       borders: "supplemental-unverified",
@@ -200,19 +307,28 @@ export function prepareTrackModel(
     corners: [],
     curbs: [],
     curbStyle: { colors: ["#f2f2e7", "#c73732"], stripeLengthM: 2 },
-    imagery: imageryForLayout(layout),
+    imagery: groundImagery ?? imagery,
     terrain,
     preparation: {
       version: PREPARATION_VERSION,
       inputSha256,
       elevationToleranceM: ELEVATION_TOLERANCE_M,
-      curbMethod: "curvature-intervals-v1",
+      curbMethod: sharedGround ? "ground-boundary-curvature-v1" : "curvature-intervals-v1",
+      ...(previous?.preparation?.preserveImageryReference
+        ? { preserveImageryReference: true as const }
+        : {}),
+      ...(priorBoundary?.preparation?.boundaryPathEvidence
+        ? {
+            boundaryPathEvidence:
+              priorBoundary.preparation.boundaryPathEvidence,
+          }
+        : {}),
     },
     sources: {
       elevation: terrain.source.url,
-      imagery: WORLD_IMAGERY_SERVICE,
-      imageryCredit: WORLD_IMAGERY_CREDIT,
-      notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the mapped trace, not an official length measurement. ${layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
+      imagery: imagery.url,
+      imageryCredit: imagery.attribution,
+      notes: `Road height is sampled from the existing approximately ${terrain.source.sampleSpacingM} m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use ${boundaryPath ? "midpoints of outward inner-boundary normals intersecting the outer boundary; the source trace is preserved" : paired ? "the midpoint of corresponding border stations" : "the mapped trace"}, not an official length measurement. ${run ? "This standing-start run begins at the first paired edge station and ends at the last; original timing metadata are retained. Finish speed is unconstrained, with no stopping zone modelled." : layout.metadata.timing?.start ? "The saved start gate sets the simulation origin." : "There is no saved GPS start gate; the simulation begins at the first trace coordinate."} Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included.`,
     },
   };
   const road = buildRoad({
@@ -223,13 +339,22 @@ export function prepareTrackModel(
     throw new BorderAlignmentError(
       "Too many invalid border cross-sections; inspect geometry before preparing this layout",
     );
-  const elevation = terrainProfile(road, terrain),
-    curbs = illustrativeCurbs(road);
+  const elevation = terrainProfile(
+      road,
+      terrain,
+      !!layout.metadata.borderInference?.gradeSeparation || !!sharedGround,
+    ),
+    curbs = sharedGround ? [] : illustrativeCurbs(road);
   const corners = [
     {
       distanceM: 0,
-      name: layout.metadata.timing?.start ? "Start / finish" : "Trace start",
+      name: run
+        ? "Run start"
+        : layout.metadata.timing?.start
+          ? "Start / finish"
+          : "Trace start",
     },
+    ...(run ? [{ distanceM: length, name: "Finish" }] : []),
     ...curbs
       .filter((c) => c.startM > 0)
       .map((c, i) => ({
@@ -240,6 +365,20 @@ export function prepareTrackModel(
     .sort((a, b) => a.distanceM - b.distanceM)
     .filter((c, i, a) => !i || c.distanceM > a[i - 1].distanceM);
   const result = trackModelSchema.parse({ ...seed, elevation, curbs, corners });
+  if (sharedGround) {
+    result.sources.imagery = sharedGround.imagery.url;
+    result.sources.imageryCredit = sharedGround.imagery.attribution;
+    result.sources.notes = `The complete saved source route is followed without recentering or shortcuts. A compact source-indexed correction separates grass islands across their shared paved junction; five local image pins supplement original unverified boundary coordinates, whose feature-level licence is retained. Pins use ${sharedGround.imagery.license} and ${sharedGround.imagery.attribution}. Asphalt, boundary lines and illustrative curbs are reconstructed on demand; no mesh, imagery bytes or video is saved. Car and pavement use one world-coordinate field sampled from the unchanged approximately ${terrain.source.sampleSpacingM} m terrain raster, not a road survey. Every complete driving segment clears a 2.5 m radius enclosing the rendered car. Curbs are boundary-curvature illustrations with assumed dimensions and colours, not verified curb locations. Banking is unknown and assumed zero. The compressed elevation profile is a summary; runtime road heights sample the shared terrain field directly.`;
+  }
+  const grade = layout.metadata.borderInference?.gradeSeparation;
+  if (grade) {
+    result.sources.elevation = grade.elevation.url;
+    const groundSource =
+      grade.elevation.source === "GSI DEM5A"
+        ? `${grade.elevation.attribution} DEM5A ground tiles`
+        : `${grade.elevation.source} ground raster (${grade.elevation.attribution})`;
+    result.sources.notes = `Road elevations are edited from ${groundSource}. ${grade.elevation.note} The bridge uses explicit paired source stations; cross-sections never select another road branch. Curbs are geometry-based illustrations, not verified curb locations. Banking is unknown and assumed zero. Borders retain their feature licences and unverified status. Imagery loads externally; no meshes, image bytes or videos are stored.`;
+  }
   if (!isLapModel(result)) throw new Error("Expected a lap recipe");
   return result;
 }
@@ -275,12 +414,15 @@ export function prepareSurfaceModel(
       inputSha256,
       elevationToleranceM: ELEVATION_TOLERANCE_M,
       curbMethod: "boundary-curvature-v1",
+      ...(layout.metadata.model3d?.preparation?.preserveImageryReference
+        ? { preserveImageryReference: true as const }
+        : {}),
     },
     sources: {
       elevation: terrain.source.url,
-      imagery: WORLD_IMAGERY_SERVICE,
-      imageryCredit: WORLD_IMAGERY_CREDIT,
-      notes: `Road surfaces are triangulated directly between this layout's saved border rings. Elevation follows the approximately ${terrain.source.sampleSpacingM} m terrain raster, not a survey of the road. Curbs are geometry-based illustrations on curved boundaries; their locations, widths, heights and colours are assumed, not extracted from imagery. Banking is unknown. ${reason === "route-not-closed" ? "The source is an open route or branch network, without one validated closed driving order." : "The source trace and borders have too many unmatched cross-sections for safe lap reconstruction."} Lap playback is unavailable. Boundary coordinates and their separate feature-level licence are preserved. Imagery loads externally on demand; no image bytes or meshes are stored.`,
+      imagery: imageryForLayout(layout).url,
+      imageryCredit: imageryForLayout(layout).attribution,
+      notes: `Road surfaces are triangulated directly between this layout's saved road boundaries. Elevation follows the approximately ${terrain.source.sampleSpacingM} m terrain raster, not a survey of the road. Curbs are geometry-based illustrations on curved boundaries; their locations, widths, heights and colours are assumed, not extracted from imagery. Banking is unknown. ${reason === "route-not-closed" ? "The source is an open route or branch network, without one validated closed driving order." : "The source trace and borders have too many unmatched cross-sections for safe lap reconstruction."} ${layout.metadata.borderComposition ? "Choose an embedded component route for playback and recording; this network does not represent a single lap." : "Lap playback is unavailable."} Boundary coordinates and their separate feature-level licence are preserved. Imagery loads externally on demand; no image bytes or meshes are stored.`,
     },
   });
   if (result.kind !== "surface") throw new Error("Expected a surface recipe");
@@ -291,7 +433,27 @@ export function prepareModel(
   layout: Layout,
   terrain: ElevationGrid,
   inputSha256: string,
+  boundaryPath = false,
+  sequencePlan?: SourceSequencePlan,
+  groundPlan?: SharedGround,
 ): TrackModel3D {
+  const previous = layout.metadata.model3d,
+    plan = sequencePlan ?? (previous?.kind !== "surface" ? previous?.sourceSequence?.plan : undefined),
+    ground = groundPlan ?? (previous?.kind !== "surface" ? previous?.sharedGround : undefined);
+  if (ground) {
+    if (plan || boundaryPath) throw new Error("Shared ground cannot be combined with another driving path");
+    return prepareTrackModel(layout, terrain, inputSha256, false, ground);
+  }
+  if (plan) {
+    if (boundaryPath) throw new Error("Source sequence and boundary path cannot be combined");
+    return prepareSourceSequenceModel(layout, terrain, inputSha256, plan);
+  }
+  if (
+    !layout.metadata.closed &&
+    layout.metadata.geometryKind !== "network" &&
+    layout.metadata.borderInference?.edgeConvention === "left-right-along-trace"
+  )
+    return prepareTrackModel(layout, terrain, inputSha256);
   if (!layout.metadata.closed || layout.metadata.geometryKind === "network")
     return prepareSurfaceModel(
       layout,
@@ -300,7 +462,7 @@ export function prepareModel(
       "route-not-closed",
     );
   try {
-    return prepareTrackModel(layout, terrain, inputSha256);
+    return prepareTrackModel(layout, terrain, inputSha256, boundaryPath);
   } catch (error) {
     if (error instanceof BorderAlignmentError)
       return prepareSurfaceModel(

@@ -1,9 +1,9 @@
 {
   "type": "FeatureCollection",
   "bbox": [
-    -0.9910687,
-    51.986019,
-    -0.9877299,
+    -0.9911481,
+    51.9859905,
+    -0.9877228,
     51.9873472
   ],
   "metadata": {
@@ -11,6 +11,7 @@
     "trackId": "gb-bucks-estate-sprint-45ee8814",
     "layoutId": "bucks-estate-sprint",
     "license": "ODbL-1.0",
+    "licenseScope": "trace-and-timing",
     "attribution": "© OpenStreetMap contributors",
     "closed": false,
     "geometryStatus": "draft",
@@ -30,7 +31,61 @@
     "reviewedAt": null,
     "notes": [
       "Draft configuration: The supplied Sprint configuration identifies the curved Osier Way section on the western side of Buckingham industrial estate, separately from the closed estate circuit. The council independently identifies Osier Way and the estate road network. Exact public OSM nodes 7051869904 through 1162286788 retain the curve in the supplied start-to-finish direction; they are approximately 10 m and 21 m from the two supplied timing markers. The independently mapped 281.4 m section conflicts with the supplied 450 m scalar by 168.6 m. No vertex is shifted or stretched to resolve that conflict. Complete historical timed distance, exact end-line placement and lane selection remain unverified draft limitations. The northern access road and Top Angel return are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 281.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
-    ]
+    ],
+    "model3d": {"schemaVersion":1,"kind":"run","pathMethod":"paired-border-midpoints","startOffsetM":0,"referenceLengthM":280.2,"elevationMethod":"monotone-cubic","elevation":[[0,99],[77.50212765957447,100.618],[155.00425531914894,103.823],[193.75531914893617,105.524],[280.2,104.471]],"bankingDeg":0,"quality":{"stationing":"border-midline","elevation":"terrain-raster","curbs":"geometry-estimated","borders":"supplemental-unverified"},"preparation":{"version":2,"inputSha256":"3086207bb440df6684ce548cf1b3449227f7197c525e047da8edc3c972e205f7","elevationToleranceM":0.5,"curbMethod":"curvature-intervals-v1"},"corners":[{"distanceM":0,"name":"Run start"},{"distanceM":42.77,"name":"Bend 1"},{"distanceM":98.81,"name":"Bend 2"},{"distanceM":154.85,"name":"Bend 3"},{"distanceM":280.2,"name":"Finish"}],"curbs":[{"startM":18.55,"endM":66.99,"side":"left","widthM":1,"heightM":0.08},{"startM":80.48,"endM":117.13,"side":"left","widthM":1,"heightM":0.08},{"startM":127.68,"endM":182.02,"side":"left","widthM":1,"heightM":0.08}],"curbStyle":{"colors":["#f2f2e7","#c73732"],"stripeLengthM":2},"imagery":{"url":"https://api.maptiler.com/maps/satellite-v4/tiles.json","tiles":{"provider":"maptiler-satellite-v4","zoom":16,"bounds":[32587,21651,32588,21651]},"extent3857":[-110680.81695693359,6797392.051344154,-109457.82450437173,6798003.547570435],"attribution":"© MapTiler © OpenStreetMap contributors","termsUrl":"https://www.maptiler.com/copyright/"},"terrain":{"schemaVersion":1,"trackId":"gb-bucks-estate-sprint-45ee8814","bounds":[-0.9915278,51.9857363,-0.9872708,51.9876299],"columns":16,"rows":16,"heights":[98,98,98,97,97,97,97,97,96,97,97,97,97,97,97,97,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,97,98,99,99,99,99,99,99,98,98,98,99,99,99,99,98,98,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,98,100,100,100,99,99,99,99,99,99,99,99,99,99,99,99,99,101,101,100,100,100,99,99,99,99,99,99,99,99,99,99,99,102,102,101,101,100,100,99,99,99,99,100,100,100,100,100,100,102,102,102,102,101,101,100,100,100,100,101,101,101,101,102,101,103,103,103,103,102,102,101,101,101,102,102,102,102,102,102,102,104,104,104,104,103,103,103,103,103,103,103,103,103,103,103,103,105,105,105,105,105,104,104,104,104,104,104,104,104,104,103,103,105,105,105,106,106,106,106,106,106,106,105,105,104,104,104,103,106,106,106,106,106,107,107,107,107,107,106,106,105,104,104,104,106,106,106,106,107,107,108,108,108,107,107,106,106,105,104,104,107,107,106,107,107,108,108,108,108,108,108,107,106,105,105,104,107,107,107,107,108,108,109,109,109,108,108,107,107,106,105,105],"source":{"name":"Mapzen Terrain Tiles","url":"https://registry.opendata.aws/terrain-tiles/","zoom":12,"sampledAt":"2026-10-03T22:19:15.943Z","sampleSpacingM":19,"attribution":["Mapzen Terrain Tiles","Global elevation data courtesy of the U.S. Geological Survey and NOAA.","© Environment Agency copyright and/or database right 2015. All rights reserved.","Produced using Copernicus data and information funded by the European Union, EU-DEM layers."]}},"sources":{"elevation":"https://registry.opendata.aws/terrain-tiles/","imagery":"https://api.maptiler.com/maps/satellite-v4/tiles.json","imageryCredit":"© MapTiler © OpenStreetMap contributors","notes":"Road height is sampled from the existing approximately 19 m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the midpoint of corresponding border stations, not an official length measurement. This standing-start run begins at the first paired edge station and ends at the last; original timing metadata are retained. Finish speed is unconstrained, with no stopping zone modelled. Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included."}},
+    "borderInference": {
+      "schemaVersion": 1,
+      "method": "rgb-road-appearance-v3",
+      "status": "estimated",
+      "reviewedAt": null,
+      "edgeConvention": "left-right-along-trace",
+      "traceSha256": "5f806c749f626ac835db672d63c2bdd96991128f7bd17b10e6f4b66403b4ddf9",
+      "imagery": {
+        "sourceId": "maptiler-licensed-border-imagery",
+        "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+        "rightsBasis": "source-specific-agreement",
+        "termsUrl": "https://www.maptiler.com/copyright/",
+        "tiles": {
+          "provider": "maptiler-satellite-v4",
+          "zoom": 16,
+          "bounds": [
+            32587,
+            21651,
+            32588,
+            21651
+          ]
+        },
+        "license": "LicenseRef-MapTiler-Derived-Borders",
+        "attribution": "© MapTiler © OpenStreetMap contributors",
+        "retrievedAt": "2026-11-06T09:57:21.871Z",
+        "sha256": "23e53299d554468e1e5ef308d403fb2db7fe68d10dd2bf094df2913a39766418",
+        "width": 1024,
+        "height": 512,
+        "extent3857": [
+          -110680.81695693359,
+          6797392.051344154,
+          -109457.82450437173,
+          6798003.547570435
+        ],
+        "groundPixelSizeM": 0.7355
+      },
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9787,
+          0.9894
+        ],
+        "medianInteriorDifference": [
+          0.0407,
+          0.0583
+        ],
+        "samplingStepM": 3.025428637490089,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "note": "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been manually reviewed; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy."
+    }
   },
   "features": [
     {
@@ -83,6 +138,8 @@
           ]
         ]
       }
-    }
+    },
+    {"type":"Feature","id":"inner","properties":{"role":"inner","sourceIds":["maptiler-licensed-border-imagery"],"license":"LicenseRef-MapTiler-Derived-Borders","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[-0.9910456,51.9873447],[-0.991027,51.9873306],[-0.9909993,51.9873093],[-0.990969,51.9872892],[-0.9909395,51.9872689],[-0.9909123,51.9872474],[-0.9908887,51.9872244],[-0.9908663,51.987201],[-0.9908451,51.987177],[-0.9908228,51.9871535],[-0.9907992,51.9871305],[-0.9907746,51.9871083],[-0.9907517,51.987086],[-0.9907274,51.9870647],[-0.9907025,51.9870438],[-0.9906753,51.9870234],[-0.9906475,51.9870027],[-0.9906183,51.9869823],[-0.9905847,51.9869643],[-0.9905488,51.9869475],[-0.9905108,51.9869319],[-0.9904717,51.9869169],[-0.9904331,51.9869022],[-0.9903995,51.9868856],[-0.9903683,51.986869],[-0.9903396,51.9868514],[-0.9903111,51.9868333],[-0.990283,51.9868137],[-0.9902564,51.9867918],[-0.9902312,51.9867683],[-0.9902057,51.9867446],[-0.9901793,51.9867217],[-0.990151,51.9867001],[-0.990119,51.9866813],[-0.9900851,51.9866638],[-0.9900493,51.9866477],[-0.9900135,51.9866317],[-0.989977,51.9866164],[-0.9899422,51.9866008],[-0.9899074,51.9865861],[-0.9898727,51.9865722],[-0.9898362,51.9865596],[-0.9897997,51.986546],[-0.9897623,51.986532],[-0.9897245,51.9865179],[-0.9896867,51.9865038],[-0.9896489,51.9864897],[-0.9896104,51.9864764],[-0.9895718,51.9864631],[-0.9895328,51.9864506],[-0.9894937,51.9864391],[-0.9894566,51.9864267],[-0.9894196,51.9864151],[-0.9893817,51.986404],[-0.9893426,51.9863928],[-0.9893033,51.9863806],[-0.9892625,51.9863701],[-0.9892212,51.9863603],[-0.9891794,51.9863514],[-0.9891377,51.9863425],[-0.9890959,51.9863336],[-0.9890542,51.9863247],[-0.9890124,51.9863159],[-0.9889706,51.986307],[-0.9889289,51.9862981],[-0.9888876,51.9862883],[-0.9888459,51.9862794],[-0.9888041,51.9862706],[-0.9887623,51.9862617],[-0.9887201,51.9862536],[-0.9886774,51.9862464],[-0.9886352,51.9862384],[-0.9885929,51.9862304],[-0.9885507,51.9862223],[-0.9885089,51.9862134],[-0.9884672,51.9862045],[-0.9884254,51.9861956],[-0.9883837,51.9861867],[-0.9883419,51.9861779],[-0.9883002,51.986169],[-0.9882584,51.9861601],[-0.9882167,51.9861512],[-0.9881749,51.9861423],[-0.9881327,51.9861343],[-0.9880904,51.9861262],[-0.9880482,51.9861182],[-0.988006,51.9861101],[-0.9879637,51.9861021],[-0.987922,51.9860932],[-0.9878797,51.9860852],[-0.987837,51.986078],[-0.9877943,51.9860708],[-0.9877516,51.9860636],[-0.9877228,51.9860594]]}},
+    {"type":"Feature","id":"outer","properties":{"role":"outer","sourceIds":["maptiler-licensed-border-imagery"],"license":"LicenseRef-MapTiler-Derived-Borders","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[-0.9911481,51.9873101],[-0.9911348,51.9872927],[-0.9911139,51.9872679],[-0.9910912,51.9872434],[-0.9910669,51.9872197],[-0.9910431,51.9871965],[-0.9910183,51.987174],[-0.9909934,51.9871515],[-0.9909686,51.9871289],[-0.9909437,51.9871064],[-0.9909176,51.9870844],[-0.9908922,51.9870613],[-0.9908648,51.9870381],[-0.9908339,51.9870158],[-0.9908023,51.9869939],[-0.9907717,51.9869724],[-0.9907406,51.9869521],[-0.9907102,51.9869323],[-0.9906809,51.9869119],[-0.9906517,51.9868915],[-0.9906224,51.9868711],[-0.9905932,51.9868508],[-0.9905635,51.9868301],[-0.9905334,51.9868091],[-0.9905016,51.9867883],[-0.9904673,51.9867686],[-0.9904337,51.9867488],[-0.9904009,51.9867291],[-0.9903683,51.98671],[-0.9903361,51.986691],[-0.9903031,51.9866729],[-0.9902692,51.9866554],[-0.9902353,51.986638],[-0.9902004,51.9866212],[-0.9901628,51.9866065],[-0.9901223,51.9865939],[-0.9900819,51.9865813],[-0.9900402,51.9865693],[-0.9900001,51.9865556],[-0.9899617,51.9865404],[-0.9899243,51.9865243],[-0.9898847,51.9865104],[-0.9898476,51.9864945],[-0.9898109,51.9864787],[-0.9897738,51.9864638],[-0.9897374,51.9864481],[-0.9897025,51.9864309],[-0.989664,51.9864176],[-0.9896247,51.986405],[-0.9895853,51.9863924],[-0.9895472,51.9863772],[-0.9895073,51.9863629],[-0.9894667,51.9863483],[-0.9894249,51.9863352],[-0.989383,51.9863234],[-0.989341,51.9863135],[-0.9892987,51.9863055],[-0.989257,51.9862966],[-0.9892152,51.9862877],[-0.9891739,51.9862779],[-0.9891322,51.986269],[-0.9890904,51.9862602],[-0.9890477,51.986253],[-0.989006,51.9862441],[-0.9889642,51.9862352],[-0.988922,51.9862271],[-0.9888802,51.9862182],[-0.9888394,51.9862077],[-0.9887981,51.9861979],[-0.9887559,51.9861899],[-0.9887122,51.9861844],[-0.988669,51.986178],[-0.9886244,51.9861743],[-0.9885789,51.9861722],[-0.9885342,51.9861684],[-0.9884915,51.9861612],[-0.9884493,51.9861531],[-0.988408,51.9861434],[-0.9883682,51.9861311],[-0.9883288,51.986118],[-0.9882899,51.986104],[-0.9882505,51.9860908],[-0.9882116,51.9860768],[-0.9881718,51.9860646],[-0.9881305,51.9860548],[-0.9880888,51.9860459],[-0.9880475,51.9860362],[-0.9880057,51.9860273],[-0.987964,51.9860184],[-0.9879217,51.9860104],[-0.9878785,51.986004],[-0.9878349,51.9859985],[-0.9877912,51.985993],[-0.9877615,51.9859905]]}}
   ]
 }

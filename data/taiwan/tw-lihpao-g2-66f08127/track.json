@@ -21,15 +21,15 @@
     {
       "id": "lihpao-g2",
       "name": "Lihpao G2",
-      "referenceId": "Taiwan/Lihpao G2",
       "file": "layouts/lihpao-g2.geojson",
+      "referenceId": "Taiwan/Lihpao G2",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3560.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review."
     },
     {
       "id": "lihpao-g2-track-day",
       "name": "Lihpao G2 Track Day",
-      "referenceId": "Taiwan/Lihpao G2 Track Day",
       "file": "layouts/lihpao-g2-track-day.geojson",
+      "referenceId": "Taiwan/Lihpao G2 Track Day",
       "description": "Draft configuration: Full circuit with western hooked return, northern linked bends and eastern parallel infield hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3560.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -60,6 +60,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:40:56.753Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:25:12.145Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

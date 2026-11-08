@@ -33,6 +33,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "ign-bd-ortho-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=507133.6108181656%2C5978153.412533962%2C507928.8690479548%2C5978956.43011443&WIDTH=721&HEIGHT=728",
+      "license": "Etalab-2.0",
+      "retrievedAt": "2026-11-05T23:45:16.412Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.data.gouv.fr/datasets/bd-ortho-r. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

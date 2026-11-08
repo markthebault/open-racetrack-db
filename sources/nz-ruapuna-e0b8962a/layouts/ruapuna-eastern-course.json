@@ -1,30 +1,18 @@
 {
   "schemaVersion": 1,
+  "geometrySource": "imagery",
   "trackId": "nz-ruapuna-e0b8962a",
   "layoutId": "ruapuna-eastern-course",
-  "sourceId": "osm-components-33795438",
-  "snapshotFile": "components-osm-33795438.json",
-  "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+  "sourceId": "linz-christchurch-2025-ruapuna",
+  "snapshotFile": "imagery-ruapuna-eastern-2025.json",
+  "snapshotSha256": "5cf2d0795ecd7d4cb7227ebcd2b3cf10712f259f8e276d36a9ee1afd1e83e294",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "A draft short Eastern course using the mapped Northern central return, shared straight and terminal Eastern bend. The source is tagged raceway and its same-node joins are preserved. Branch names are descriptive, not homologation labels; independently measured length is 1180.2 m. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
-  ],
-  "segments": [
-    {
-      "wayId": 33795441,
-      "wayVersion": 11,
-      "fromIndex": 49,
-      "toIndex": 20
-    },
-    {
-      "wayId": 33795504,
-      "wayVersion": 9,
-      "fromIndex": 6,
-      "toIndex": 0
-    }
+    "Draft short Eastern course, independently digitized from March 2025 Environment Canterbury aerial imagery via LINZ (CC BY 4.0). Corrects an OSM Northern junction spur that doubled back 44 m along the straight. Selected image road-edge pins use centripetal curve interpolation; their paired midpoints reconstruct the centerline. Sampled vertices are reconstruction controls, not independent measurements. Historical identity and direction remain provisional. Timing is missing. No nominal width or catalogue length is fitted. Original source recipe and correction evidence retained in sources/research/ruapuna-eastern-route-correction.json.",
+    "The centerline is refined to the midpoint of the observed road edges, including both starting-grid rows up to the pit-wall edge. Shared-pavement joins remain estimated. Earlier image centerline and rejected grid-edge proposal are retained in the correction evidence."
   ],
   "gates": []
 }

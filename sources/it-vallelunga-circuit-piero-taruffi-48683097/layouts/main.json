@@ -2,18 +2,35 @@
   "schemaVersion": 1,
   "trackId": "it-vallelunga-circuit-piero-taruffi-48683097",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "b0f9853018f80046a1c19e1444359ace7e3ac5d417d3d224e375fb9173e1a01d",
+  "sourceId": "osm-selection-vallelunga-outer-source-roads-48683097",
+  "snapshotFile": "selected-vallelunga-outer-source-roads-48683097.json",
+  "snapshotSha256": "045283fc9fa8aeb1ac8835bf31efebf6c244ba7120c5e2d0a85034a5da744662",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "International car course identified against the operator race bulletin track map and native satellite imagery. The previous generic longest-cycle selection detoured through the internal training loop and western optional junction branches. This layout now retains the exact independently registered vallelunga-outer source trace, direction and phase; diagram coordinates and nominal dimensions are not traced or fitted. All 21 selected source ways retain the same versions, node IDs and coordinates as the base snapshot. Original borders are reused only with pinned trace and border-feature hashes after full native-image overlay review. Main timing remains missing; sibling timing is not inherited. Source alignment, terrain and curb positions remain estimates."
   ],
   "segments": [
+    {
+      "wayId": 1499656409,
+      "wayVersion": 2,
+      "fromIndex": 0,
+      "toIndex": 5
+    },
+    {
+      "wayId": 1499656395,
+      "wayVersion": 1,
+      "fromIndex": 0,
+      "toIndex": 13
+    },
+    {
+      "wayId": 1499656396,
+      "wayVersion": 3,
+      "fromIndex": 0,
+      "toIndex": 32
+    },
     {
       "wayId": 1499656397,
       "wayVersion": 1,
@@ -33,45 +50,9 @@
       "toIndex": 11
     },
     {
-      "wayId": 1499848268,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 10
-    },
-    {
-      "wayId": 48683098,
-      "wayVersion": 6,
-      "fromIndex": 8,
-      "toIndex": 20
-    },
-    {
-      "wayId": 284142304,
-      "wayVersion": 4,
-      "fromIndex": 14,
-      "toIndex": 0
-    },
-    {
-      "wayId": 48683098,
-      "wayVersion": 6,
-      "fromIndex": 21,
-      "toIndex": 46
-    },
-    {
-      "wayId": 48683098,
-      "wayVersion": 6,
-      "fromIndex": 0,
-      "toIndex": 6
-    },
-    {
-      "wayId": 1499848269,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 10
-    },
-    {
       "wayId": 1079800413,
       "wayVersion": 9,
-      "fromIndex": 1,
+      "fromIndex": 0,
       "toIndex": 3
     },
     {
@@ -108,30 +89,12 @@
       "wayId": 1079800413,
       "wayVersion": 9,
       "fromIndex": 12,
-      "toIndex": 15
-    },
-    {
-      "wayId": 624366378,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 1
-    },
-    {
-      "wayId": 624366379,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 12
-    },
-    {
-      "wayId": 624366377,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 1
+      "toIndex": 16
     },
     {
       "wayId": 1499937318,
       "wayVersion": 1,
-      "fromIndex": 15,
+      "fromIndex": 0,
       "toIndex": 20
     },
     {
@@ -181,31 +144,12 @@
       "wayVersion": 2,
       "fromIndex": 0,
       "toIndex": 37
-    },
-    {
-      "wayId": 1499656409,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 5
-    },
-    {
-      "wayId": 1499656395,
-      "wayVersion": 1,
-      "fromIndex": 0,
-      "toIndex": 13
-    },
-    {
-      "wayId": 624366380,
-      "wayVersion": 3,
-      "fromIndex": 0,
-      "toIndex": 20
-    },
-    {
-      "wayId": 1499656396,
-      "wayVersion": 3,
-      "fromIndex": 10,
-      "toIndex": 32
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "vallelunga-outer",
+    "traceSha256": "fa9e6fb9ef04f379c464072783698c3b23f3f4ebbc3784683fb0ea2af6f33a69",
+    "bordersSha256": "4b95446b2c99400ea9e06552dfb0a3d13077626d00ea3771aca23d51303504a8"
+  }
 }

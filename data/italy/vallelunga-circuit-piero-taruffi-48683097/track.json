@@ -22,22 +22,22 @@
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "International car circuit",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "International car course with the full northern loop, direct western junctions, central hairpin and southern main straight, checked against the operator map and satellite imagery. Boundaries and elevation are estimates; no timing position is available."
     },
     {
       "id": "vallelunga-full",
       "name": "Vallelunga Full",
-      "referenceId": "Italy/Vallelunga Full",
       "file": "layouts/vallelunga-full.geojson",
+      "referenceId": "Italy/Vallelunga Full",
       "description": "Combined mapped configurations: Historical international course, direct junctions, Historical international course, junction chicanes. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "vallelunga-outer",
       "name": "Vallelunga Outer",
-      "referenceId": "Italy/Vallelunga Outer",
       "file": "layouts/vallelunga-outer.geojson",
+      "referenceId": "Italy/Vallelunga Outer",
       "description": "Draft configuration: International outer circuit follows the long northern bend, northeastern extension, inner central hairpin and full southern loop. The named operator course is 4085 m and the pinned independent route is 4085.9 m. Pit lanes, small western junction detours and shortened northern branches are excluded. Historical alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4085.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
@@ -134,6 +134,15 @@
       "license": "CC-BY-4.0",
       "retrievedAt": "2026-10-02T09:28:32.438025Z",
       "evidenceNote": "Pinned AGEA 2020 raster confirms pavement of the main course and both historical western junction chicanes. Regione Lazio, AGEA 2020 orthoimagery, CC BY 4.0; centerline independently digitized and changed by OpenRacetrackDB. Reuse evidence: https://geoportale.regione.lazio.it/faq/servizi-wms-wfs-wcs-come-accedere-da-remoto-ai-livelli-del-geoportale/. Public trace coordinates remain exact 2018 OSM nodes; no image or private diagram coordinates are copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:05.506Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

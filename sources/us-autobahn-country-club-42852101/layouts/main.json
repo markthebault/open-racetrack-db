@@ -2,53 +2,28 @@
   "schemaVersion": 1,
   "trackId": "us-autobahn-country-club-42852101",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "dced0a8a6ce16db158a3bf1af5da989fb577d94d8495ce175b6e6e8291f0883c",
+  "sourceId": "osm-selection-42852101",
+  "snapshotFile": "selected-network-42852101.json",
+  "snapshotSha256": "611ee846c7ebd0ddf0db984353d12a7e1df6fa9f15764ac1c87903c7e721ba27",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "Draft full course from the exact registered source chain. Replaces the generic longest-cycle pit-lane and internal-connector detours using operator course identity and native imagery. Coordinates and traversal direction follow the named source, without diagram tracing or distance fitting. Direction remains provisional and public main timing remains missing."
   ],
   "segments": [
-    {
-      "wayId": 42852101,
-      "wayVersion": 3,
-      "fromIndex": 2,
-      "toIndex": 6
-    },
     {
       "wayId": 42853481,
       "wayVersion": 4,
       "fromIndex": 106,
-      "toIndex": 126
-    },
-    {
-      "wayId": 42853481,
-      "wayVersion": 4,
-      "fromIndex": 0,
-      "toIndex": 83
-    },
-    {
-      "wayId": 42852104,
-      "wayVersion": 3,
-      "fromIndex": 0,
-      "toIndex": 18
-    },
-    {
-      "wayId": 42853481,
-      "wayVersion": 4,
-      "fromIndex": 96,
-      "toIndex": 104
-    },
-    {
-      "wayId": 42852103,
-      "wayVersion": 3,
-      "fromIndex": 5,
       "toIndex": 0
+    },
+    {
+      "wayId": 42853481,
+      "wayVersion": 4,
+      "fromIndex": 126,
+      "toIndex": 106
     }
   ],
   "gates": []

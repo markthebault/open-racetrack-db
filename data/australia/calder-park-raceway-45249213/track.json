@@ -22,14 +22,14 @@
       "id": "main",
       "name": "Calder",
       "file": "layouts/main.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Australia/Calder"
+      "referenceId": "Australia/Calder",
+      "description": "Draft northern-return course on the unchanged OSM trace. Image-estimated borders follow the visible paved return; this configuration is not verified as the operator National Circuit. Eastern shared drag/forecourt pavement, access joins and blurred edges remain estimates. No nominal width or length is fitted."
     },
     {
       "id": "calder-short",
       "name": "Calder Short",
-      "referenceId": "Australia/Calder Short",
       "file": "layouts/calder-short.geojson",
+      "referenceId": "Australia/Calder Short",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1483.7 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
     }
   ],
@@ -51,6 +51,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:16:55.558Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T11:12:31.603Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

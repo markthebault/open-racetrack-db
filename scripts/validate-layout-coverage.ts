@@ -5,6 +5,7 @@ import {validateSelectionSource} from './selection-source';
 import {length} from '../src/geo';
 import {readNetworkSelection} from './network-selection';
 import {buildCourseNetwork} from './course-network';
+import {buildComponentNetwork} from './component-network';
 import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
@@ -56,9 +57,16 @@ assert.equal(networks.schemaVersion,1);assert.equal(new Set(networks.records.map
 for(const selection of networks.records){
  const registration=catalogue.records.find((r:any)=>r.referenceId===selection.referenceId);assert.ok(registration?.geometryAvailable);
  const entry=index.tracks.find((t:any)=>t.id===registration.trackId),track=await read(`data/${entry.file}`);
- const recipe=await read(`sources/${track.id}/layouts/${registration.layoutId}.json`),network=await readNetworkSelection(track.id,selection.layoutIds);
- assert.deepEqual(recipe.paths,network.paths);assert.deepEqual(recipe.components,network.components);
- const snapshot=await read(`sources/${track.id}/${recipe.snapshotFile}`),data=buildCourseNetwork(recipe,snapshot.elements,track);
+ const recipe=await read(`sources/${track.id}/layouts/${registration.layoutId}.json`);
+ let data;
+ if(recipe.geometrySource==='components'){
+  assert.deepEqual(recipe.components.map((c:any)=>c.layoutId),selection.layoutIds);
+  data=await buildComponentNetwork(recipe,track);
+ }else{
+  const network=await readNetworkSelection(track.id,selection.layoutIds);
+  assert.deepEqual(recipe.paths,network.paths);assert.deepEqual(recipe.components,network.components);
+  const snapshot=await read(`sources/${track.id}/${recipe.snapshotFile}`);data=buildCourseNetwork(recipe,snapshot.elements,track);
+ }
  assert.ok(Math.abs(data.metadata.lengthM-selection.expectedLengthM)<.15);
  assert.ok(selection.evidence&&track.sources.some((s:any)=>s.type==='reference'&&s.url===selection.identificationUrl));
 }

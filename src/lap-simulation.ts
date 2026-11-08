@@ -2,6 +2,17 @@ import { CatmullRomCurve3, Vector3 } from "three";
 import { geometryPaths, type Layout } from "../schemas/data";
 import { plane, type Position } from "./geo";
 import { indexBorders, borderSection } from "./border-sections";
+import { pairedBorderMidline } from "./border-midline";
+import { boundaryNormalMidline, assertRoadContained } from "./boundary-path";
+import { buildOpenRoad } from "./open-road";
+import { buildSourceSequenceRoad } from "./source-sequence";
+import { buildSharedGroundRoad } from "./shared-ground-road";
+import type { MultiPolygon } from "polygon-clipping";
+import {
+  assertGradeRibbon,
+  gradeProfileHeight,
+  onBridge,
+} from "./grade-separation";
 
 export const GRAVITY = 9.80665;
 export const DEFAULT_CAR = {
@@ -29,6 +40,10 @@ export interface RoadPoint {
   nz: number;
   curvature: number;
   grade: number;
+  leftEdge?: Position;
+  rightEdge?: Position;
+  sourceStation?: number;
+  elevated?: boolean;
 }
 export interface Road {
   points: RoadPoint[];
@@ -37,6 +52,8 @@ export interface Road {
   origin: Position;
   recipe: LapRecipe;
   interpolatedSections: number;
+  renderSegmentCount?: number;
+  ground?: { footprint: MultiPolygon; boundaries: { outer: Position[]; inner: Position[][] } };
 }
 export interface Lap {
   road: Road;
@@ -47,14 +64,21 @@ export interface Lap {
 }
 
 /** Periodic monotone cubic interpolation: anchors are exact and hills cannot overshoot. */
-export function roadHeight(anchors: ElevationAnchor[], station: number) {
+export function roadHeight(
+  anchors: ElevationAnchor[],
+  station: number,
+  closed = true,
+) {
   const end = anchors.at(-1)![0];
-  const s = ((station % end) + end) % end;
+  const s = closed
+    ? ((station % end) + end) % end
+    : Math.max(0, Math.min(end, station));
   const n = anchors.length - 1;
   const slopes = anchors
     .slice(0, -1)
     .map((p, i) => (anchors[i + 1][1] - p[1]) / (anchors[i + 1][0] - p[0]));
   const tangent = (i: number) => {
+    if (!closed && (i === 0 || i === n)) return slopes[i === 0 ? 0 : n - 1];
     const previous = (i - 1 + n) % n,
       next = i % n;
     const a = slopes[previous],
@@ -64,6 +88,7 @@ export function roadHeight(anchors: ElevationAnchor[], station: number) {
       hb = anchors[next + 1][0] - anchors[next][0];
     return (3 * (ha + hb)) / ((2 * hb + ha) / a + (hb + 2 * ha) / b);
   };
+  if (!closed && s === end) return anchors.at(-1)![1];
   const i = Math.max(
     0,
     anchors.findIndex((p, j) => j < n && s >= p[0] && s < anchors[j + 1][0]),
@@ -84,12 +109,24 @@ export function roadHeight(anchors: ElevationAnchor[], station: number) {
 export function buildRoad(layout: Layout): Road {
   const recipe = layout.metadata.model3d;
   if (!recipe) throw new Error("This layout has no embedded 3D model data.");
-  if (recipe.kind === "surface") throw new Error("This layout has no playable closed-lap model.");
-  const trace = geometryPaths(
+  if (recipe.kind === "surface")
+    throw new Error("This layout has no playable closed-lap model.");
+  if (recipe.pathMethod === "source-ground-boundaries-v1") return buildSharedGroundRoad(layout, recipe);
+  if (recipe.kind === "run") return recipe.pathMethod === "source-sequence-v1"
+    ? buildSourceSequenceRoad(layout, recipe) : buildOpenRoad(layout, recipe);
+  const grade = layout.metadata.borderInference?.gradeSeparation;
+  const sourceTrace = geometryPaths(
     layout.features.find((f) => f.properties.role === "trace")!.geometry,
   )[0];
+  const trace =
+    recipe.pathMethod === "paired-border-midpoints"
+      ? pairedBorderMidline(layout)
+      : recipe.pathMethod === "boundary-normal-midpoints-v1"
+        ? boundaryNormalMidline(layout)
+        : sourceTrace;
   const origin =
-    (layout.metadata.timing?.start as Position | undefined) ?? trace[0];
+    (layout.metadata.timing?.start as Position | undefined) ??
+    (grade?.sourceStationOffset ? sourceTrace[0] : trace[0]);
   const projection = plane(origin);
   const raw = trace.slice(0, -1).map((p) => {
     const [x, y] = projection.to(p);
@@ -111,9 +148,29 @@ export function buildRoad(layout: Layout): Road {
     }
   }
   const start = (finish + recipe.startOffsetM / length) % 1;
+  const imagePairs =
+      layout.metadata.borderInference?.method ===
+      "image-measured-paired-edges-v1" ||
+      (layout.metadata.borderInference?.method === "image-measured-cross-sections-v1" &&
+        !!layout.metadata.borderInference.measurement?.linearIntervals?.length),
+    pairedSections = !!grade || imagePairs,
+    innerLeft =
+      raw.reduce((sum, p, i) => {
+        const q = raw[(i + 1) % raw.length];
+        return sum + p.x * q.z - p.z * q.x;
+      }, 0) < 0;
   const borders = layout.features
     .filter(
       (f) => f.properties.role === "inner" || f.properties.role === "outer",
+    )
+    .sort((a, b) =>
+      grade
+        ? Number(a.properties.role === "outer") -
+          Number(b.properties.role === "outer")
+        : imagePairs
+          ? Number(a.properties.role !== (innerLeft ? "inner" : "outer")) -
+            Number(b.properties.role !== (innerLeft ? "inner" : "outer"))
+          : 0,
     )
     .flatMap((f) => geometryPaths(f.geometry))
     .map((path) =>
@@ -124,7 +181,24 @@ export function buildRoad(layout: Layout): Road {
     );
   if (borders.length !== 2)
     throw new Error("This lap needs two continuous source borders.");
-  const index = indexBorders(borders);
+  const index = pairedSections ? undefined : indexBorders(borders);
+  if (
+    grade &&
+    (recipe.pathMethod !== "paired-border-midpoints" ||
+      raw.length !== grade.stationCount ||
+      borders.some((p) => p.length !== grade.stationCount + 1))
+  )
+    throw new Error(
+      "Grade-separated playback requires its matching paired station grid",
+    );
+  if (
+    imagePairs &&
+    (recipe.pathMethod !== "paired-border-midpoints" ||
+      borders.some((p) => p.length !== raw.length + 1))
+  )
+    throw new Error(
+      "Image-paired playback requires its matching paired station grid",
+    );
   let interpolatedSections = 0;
   const points: RoadPoint[] = [];
   for (let i = 0; i < count; i++) {
@@ -133,7 +207,44 @@ export function buildRoad(layout: Layout): Road {
       t = curve.getTangentAt(u).normalize();
     const nx = t.z,
       nz = -t.x; // driver left in east/up/south coordinates
-    const section = borderSection(index, p.x, p.z, nx, nz);
+    if (pairedSections) {
+      // Local edge interpolation retains paired source stations but need not
+      // follow source normals. Keep that correspondence at tight bends too.
+      // Spatial searches could miss an edge or select a neighbouring road.
+      // Curve parameter maps back to the original paired control stations instead.
+      const station = curve.getUtoTmapping(u, 0) * raw.length,
+        a = Math.floor(station),
+        b = (a + 1) % raw.length,
+        fraction = station - a,
+        edges = borders.map((path): Position => [
+          path[a][0] * (1 - fraction) + path[b][0] * fraction,
+          path[a][1] * (1 - fraction) + path[b][1] * fraction,
+        ]),
+        dx = edges[0][0] - edges[1][0],
+        dz = edges[0][1] - edges[1][1],
+        width = Math.hypot(dx, dz);
+      points.push({
+        x: (edges[0][0] + edges[1][0]) / 2,
+        z: (edges[0][1] + edges[1][1]) / 2,
+        y: grade
+          ? gradeProfileHeight(grade, station)
+          : roadHeight(recipe.elevation, (i / count) * recipe.referenceLengthM),
+        s: i * step,
+        ds: step,
+        left: width / 2,
+        right: width / 2,
+        nx: dx / width,
+        nz: dz / width,
+        curvature: 0,
+        grade: 0,
+        leftEdge: edges[0],
+        rightEdge: edges[1],
+        sourceStation: station,
+        ...(grade ? { elevated: onBridge(grade, station) } : {}),
+      });
+      continue;
+    }
+    const section = borderSection(index!, p.x, p.z, nx, nz);
     if (!section) interpolatedSections++;
     // Missing cross-sections are repaired below by interpolation, never a silently invented width.
     points.push({
@@ -164,6 +275,19 @@ export function buildRoad(layout: Layout): Road {
             points[(i + b) % count][key] * a) /
           (a + b);
       }
+  }
+  if (recipe.pathMethod === "boundary-normal-midpoints-v1" || imagePairs) {
+    if (interpolatedSections)
+      throw new Error(
+        "Boundary driving path requires measured cross-sections throughout",
+      );
+    if (grade) {
+      const edge = (role: "inner" | "outer") =>
+        geometryPaths(
+          layout.features.find((f) => f.properties.role === role)!.geometry,
+        )[0];
+      assertGradeRibbon({ inner: edge("inner"), outer: edge("outer") }, grade);
+    } else assertRoadContained(layout, points, origin);
   }
   // Recenter the driving path within actual asymmetric source edges. Geometry retains both edges.
   const mid = points.map((p) => ({
@@ -249,7 +373,11 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
   if (Object.values(car).some((v) => !Number.isFinite(v) || v <= 0))
     throw new Error("Car values must be positive.");
   const { points } = road,
-    n = points.length;
+    n = points.length,
+    closed = road.recipe.kind !== "run",
+    edges = closed ? n : n - 1,
+    index = (i: number) =>
+      closed ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
   const speed = points.map((p, i) =>
     Math.min(
       car.topSpeedKph / 3.6,
@@ -257,17 +385,18 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
         (car.lateralG * GRAVITY) /
           Math.max(
             Math.abs(p.curvature),
-            Math.abs(points[(i + 1) % n].curvature),
-            Math.abs(points[(i - 1 + n) % n].curvature),
+            Math.abs(points[index(i + 1)].curvature),
+            Math.abs(points[index(i - 1)].curvature),
             1e-8,
           ),
       ),
     ),
   );
+  if (!closed) speed[0] = 0;
   // Conservative endpoint bound: evaluate grip at the larger endpoint speed and curvature.
   for (let pass = 0; pass < 100; pass++) {
     let change = 0;
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < edges; i++) {
       const step = points[i].ds;
       const j = (i + 1) % n,
         grade = (points[j].y - points[i].y) / step,
@@ -286,13 +415,13 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
           low = mid;
         else high = mid;
       }
-      const v = Math.max(1, low);
+      const v = Math.max(closed ? 1 : 0, low);
       if (v < speed[j]) {
         change = Math.max(change, speed[j] - v);
         speed[j] = v;
       }
     }
-    for (let i = n - 1; i >= 0; i--) {
+    for (let i = edges - 1; i >= 0; i--) {
       const step = points[i].ds;
       const j = (i + 1) % n,
         grade = (points[j].y - points[i].y) / step,
@@ -311,7 +440,7 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
           low = mid;
         else high = mid;
       }
-      const v = Math.max(1, low);
+      const v = Math.max(closed ? 1 : 0, low);
       if (v < speed[i]) {
         change = Math.max(change, speed[i] - v);
         speed[i] = v;
@@ -320,15 +449,15 @@ export function simulateLap(road: Road, car: CarSpec = DEFAULT_CAR): Lap {
     if (change < 1e-7) break;
   }
   const time = [0];
-  for (let i = 0; i < n; i++)
+  for (let i = 0; i < edges; i++)
     time.push(time[i] + (2 * points[i].ds) / (speed[i] + speed[(i + 1) % n]));
-  return { road, car, speed, time, duration: time[n] };
+  return { road, car, speed, time, duration: time[edges] };
 }
 
 export function sampleLap(lap: Lap, elapsed: number) {
   const time = Math.max(0, Math.min(lap.duration, elapsed));
   let lo = 0,
-    hi = lap.speed.length - 1;
+    hi = lap.speed.length - (lap.road.recipe.kind === "run" ? 2 : 1);
   while (lo < hi) {
     const m = Math.ceil((lo + hi) / 2);
     if (lap.time[m] <= time) lo = m;

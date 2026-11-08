@@ -22,8 +22,8 @@
       "id": "main",
       "name": "Assen",
       "file": "layouts/main.geojson",
-      "description": "Complete closed TT Circuit way 359172905. The Junior Track, connecting shortcuts and alternative loops are excluded.",
-      "referenceId": "Netherlands/Assen"
+      "referenceId": "Netherlands/Assen",
+      "description": "Complete closed TT Circuit way 359172905. The Junior Track, connecting shortcuts and alternative loops are excluded."
     }
   ],
   "sources": [
@@ -44,6 +44,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:36:18.956Z",
       "evidenceNote": "Supports venue and main-circuit identification only. No coordinates are copied or traced from this document. Alternative layout labels follow the named OSM branches and local timing catalogue; they remain drafts."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:30.548Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

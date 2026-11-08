@@ -13,15 +13,16 @@
     -7.255200594285714
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "licensed-paladino-main-route"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Image-mapped paved loop",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Continuous paved loop independently digitized from licensed native satellite imagery. Approximate geometry and direction remain draft. Its approximately 1.19 km driving path has not been verified as the operator's nominal 1.28 km configuration; timing is unavailable."
     }
   ],
   "sources": [
@@ -33,6 +34,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:15:38.302Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "licensed-paladino-main-route",
+      "type": "imagery",
+      "title": "Licensed native-image course coordinates",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:43.996Z",
+      "evidenceNote": "Source-specific extraction and derived-coordinate redistribution agreement declared. Pinned image SHA-256 07f4a3fda8d1b3e9dbe31db0eb133c2bde4b69509f224d2f6cb6caab4145ce6a; exact georeferencing and final pixel vertices reproduce the trace. No raster bytes are distributed. Full continuous paved circuit independently digitized from the pinned licensed native satellite mosaic using 97 manual image-centre controls. No original OSM trace coordinates or source-guided alignment-proposal coordinates are used to construct these final vertices. The operator identifies this facility as Circuito Paladino. The image identifies the continuous paved loop; configuration and direction remain draft. The manual image controls are resampled at 3 m arc intervals, filtered by a periodic 3 m Gaussian and simplified within 0.15 m of that fitted curve. These are numerical processing tolerances, not surveyed accuracy or independent observations. No nominal course length or road width is fitted. Imagery acquisition date and georeferencing error are unknown; raw imagery is not redistributed."
+    },
+    {
+      "id": "paladino-course-identity",
+      "type": "reference",
+      "title": "Operator facility identification",
+      "url": "https://circuitopaladino.com.br/circuito-paladino",
+      "license": "reference-only",
+      "retrievedAt": "2026-11-07T23:15:02.826Z",
+      "evidenceNote": "Identifies the facility and its karting use. Published nominal dimensions are not fitted; this route and its driving direction remain draft. No operator image or diagram coordinates enter the source geometry."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:43.996Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

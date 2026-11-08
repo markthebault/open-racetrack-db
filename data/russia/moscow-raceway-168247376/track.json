@@ -28,8 +28,8 @@
     {
       "id": "moscow-raceway",
       "name": "Moscow Raceway",
-      "referenceId": "Russia/Moscow Raceway",
       "file": "layouts/moscow-raceway.geojson",
+      "referenceId": "Russia/Moscow Raceway",
       "description": "Combined mapped configurations: Moscow Raceway Grand Prix 2, Moscow Raceway Grand Prix 1, Moscow Raceway FIM, Moscow Raceway Sprint 1, Moscow Raceway Grand Prix 5, Moscow Raceway Supersprint. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -159,6 +159,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T20:23:22.417Z",
       "evidenceNote": "The general venue entry displays a network of six independently identified operator configurations: Grand Prix 1, Grand Prix 2, Grand Prix 5, FIM, Sprint 1 and Supersprint. Published highlighted plans identify each component; these include the full and bypassed Mercedes Arena, western bend bypass, back-straight chicanes, Sprint connector and Supersprint closure. Each component is separately selectable. The network is a set of configurations, not a single timed lap. Parallel pit routes and unverified later fork additions are excluded. The independent unique branch distance is 4853.8 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:53.757Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

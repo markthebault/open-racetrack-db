@@ -84,6 +84,29 @@ if (validate) {
     `Validated terrain elevation for ${venues.length} venues and ${count} mapped layouts.`,
   );
 } else {
+  // A Mapzen refresh must not overwrite a separately sourced ground model.
+  const eligibleVenues = venues.filter((venue) =>
+    venue.layouts.some(
+      (layout) =>
+        !layout.metadata.model3d ||
+        layout.metadata.model3d.terrain.source.name === "Mapzen Terrain Tiles",
+    ),
+  );
+  const preservedNativeModels = venues.flatMap((venue) =>
+    venue.layouts.flatMap((layout) => {
+      const source = layout.metadata.model3d?.terrain.source;
+      return source && source.name !== "Mapzen Terrain Tiles"
+        ? [
+            {
+              trackId: venue.id,
+              layoutId: layout.metadata.layoutId,
+              provider: source.name,
+              sourceUrl: source.url,
+            },
+          ]
+        : [];
+    }),
+  );
   function tileCoordinate(p: Position) {
     return [
       ((p[0] + 180) / 360) * tileCount,
@@ -285,7 +308,10 @@ if (validate) {
       if (!courseElevation(layout, grid))
         throw new Error(`${venue.id}: incomplete source terrain coverage`);
     for (const [i, layout] of venue.layouts.entries())
-      if (layout.metadata.model3d) {
+      if (
+        layout.metadata.model3d &&
+        layout.metadata.model3d.terrain.source.name === "Mapzen Terrain Tiles"
+      ) {
         layout.metadata.model3d.terrain = grid;
         await writeFile(venue.layoutFiles[i], serializeLayout(layout));
       }
@@ -293,9 +319,9 @@ if (validate) {
       await rm(venue.file, { force: true });
     else await writeFile(venue.file, JSON.stringify(grid) + "\n");
     completed++;
-    if (completed % 25 === 0 || completed === venues.length)
+    if (completed % 25 === 0 || completed === eligibleVenues.length)
       console.log(
-        `Elevation ${completed}/${venues.length} venues; ${tilesUsed.size} pinned terrain tiles.`,
+        `Elevation ${completed}/${eligibleVenues.length} venues; ${tilesUsed.size} pinned terrain tiles.`,
       );
   }
   await mkdir("data/elevation", { recursive: true });
@@ -307,7 +333,7 @@ if (validate) {
     "de-hockenheimring",
     "it-monza",
   ];
-  venues.sort(
+  eligibleVenues.sort(
     (a, b) =>
       (priority.indexOf(a.id) < 0 ? 999 : priority.indexOf(a.id)) -
       (priority.indexOf(b.id) < 0 ? 999 : priority.indexOf(b.id)),
@@ -315,7 +341,8 @@ if (validate) {
   let next = 0;
   await Promise.all(
     Array.from({ length: 4 }, async () => {
-      while (next < venues.length) await generate(venues[next++]);
+      while (next < eligibleVenues.length)
+        await generate(eligibleVenues[next++]);
     }),
   );
   await writeFile(
@@ -329,7 +356,8 @@ if (validate) {
           "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
         sampledAt,
         zoom,
-        venues: venues.map((v) => v.id).sort(),
+        venues: eligibleVenues.map((v) => v.id).sort(),
+        preservedNativeModels,
         tiles: Object.fromEntries(
           [...tilesUsed].sort(([a], [b]) => a.localeCompare(b)),
         ),

@@ -20,8 +20,8 @@
     {
       "id": "arizona-motorsports-park",
       "name": "Arizona Motorsports Park",
-      "referenceId": "United States/Arizona Motorsports Park",
       "file": "layouts/arizona-motorsports-park.geojson",
+      "referenceId": "United States/Arizona Motorsports Park",
       "description": "Draft configuration: Full course with the parallel northern infield hairpin and southern outer loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3595.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12511492.929863865%2C3963436.7341607376%2C-12510961.766575743%2C3964864.0786967683&bboxSR=3857&imageSR=3857&size=591%2C1587&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:45:41.985Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

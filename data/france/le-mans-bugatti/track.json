@@ -24,28 +24,28 @@
       "id": "main",
       "name": "Le Mans Bugatti",
       "file": "layouts/main.geojson",
-      "description": "Closed Bugatti course through Dunlop, La Chapelle, Musée, Garage Vert, Chemin aux Bœufs, Garage Bleu and Raccordement. The 24-hour circuit branches, Porsche Center roads, pit entries/exits and long-lap penalty detour are excluded.",
-      "referenceId": "France/Le Mans Bugatti"
+      "referenceId": "France/Le Mans Bugatti",
+      "description": "Closed Bugatti course through Dunlop, La Chapelle, Musée, Garage Vert, Chemin aux Bœufs, Garage Bleu and Raccordement. The 24-hour circuit branches, Porsche Center roads, pit entries/exits and long-lap penalty detour are excluded."
     },
     {
       "id": "le-mans-full",
       "name": "Le Mans Full",
       "file": "layouts/le-mans-full.geojson",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
-      "referenceId": "France/Le Mans Full"
+      "referenceId": "France/Le Mans Full",
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     },
     {
       "id": "maison-blanche-1",
       "name": "Maison Blanche 1",
-      "referenceId": "France/Maison Blanche 1",
       "file": "layouts/maison-blanche-1.geojson",
+      "referenceId": "France/Maison Blanche 1",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2822.6 m. Difference from the supplied layout distance 2.6 m. Course configuration still requires visual review."
     },
     {
       "id": "maison-blanche-2",
       "name": "Maison Blanche 2",
-      "referenceId": "France/Maison Blanche 2",
       "file": "layouts/maison-blanche-2.geojson",
+      "referenceId": "France/Maison Blanche 2",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1751.6 m. Difference from the supplied layout distance 2.6 m. Course configuration still requires visual review."
     }
   ],
@@ -85,6 +85,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "ign-bd-ortho-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=22997.087484494914%2C6098121.51064617%2C24423.112030147062%2C6100153.738772731&WIDTH=1274&HEIGHT=1815",
+      "license": "Etalab-2.0",
+      "retrievedAt": "2026-11-05T23:45:24.412Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gouv.fr/datasets/bd-ortho-r. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -8,8 +8,10 @@ import { popularModels } from "../scripts/popular-models";
 import {
   compressElevation,
   imageryForLayout,
+  prepareModel,
   PREPARATION_VERSION,
 } from "../src/model-preparation";
+import { modelInputHash } from "../scripts/model-input";
 import {
   buildRoad,
   simulateLap,
@@ -19,6 +21,29 @@ import {
 import { indexBorders, borderSection } from "../src/border-sections";
 const read = (p: string) => JSON.parse(readFileSync(p, "utf8"));
 const index = read("data/index.json");
+
+test("explicit display imagery survives regeneration and participates in the source hash", () => {
+  const files = [
+    "data/japan/osm-438021322/layouts/main.geojson",
+    "data/japan/osm-438021322/layouts/tsukuba.geojson",
+    ...read("sources/research/imagery-service-repairs.json").records.map((r: { file: string }) => r.file),
+  ];
+  for (const file of files) {
+    const data = read(file);
+    const { layout } = load(data.metadata.trackId, data.metadata.layoutId);
+    const old = layout.metadata.model3d!;
+    assert.ok(old.preparation?.preserveImageryReference);
+    const boundary = old.kind !== "surface" && old.pathMethod === "boundary-normal-midpoints-v1";
+    const hash = modelInputHash(layout, old.terrain, boundary);
+    assert.equal(hash, old.preparation.inputSha256);
+    const regenerated = prepareModel(layout, old.terrain, hash, boundary);
+    // Older source descriptions can predate the current generator wording.
+    regenerated.sources.notes = old.sources.notes;
+    assert.deepEqual(regenerated, old);
+    layout.metadata.model3d!.imagery.attribution += " updated";
+    assert.notEqual(modelInputHash(layout, old.terrain, boundary), hash);
+  }
+});
 function load(trackId: string, layoutId: string) {
   const entry = index.tracks.find((t: { id: string }) => t.id === trackId),
     track = validateTrack(read("data/" + entry.file)),
@@ -143,6 +168,46 @@ test("imagery georeferencing is derived from the selected course, without provid
   assert.ok(Math.abs((east - west) / (north - south) - w / h) < 1e-6);
   assert.ok(image.attribution.includes("Esri"));
   assert.ok(!JSON.stringify(image).includes("base64"));
+});
+
+test("ArcGIS map and image exports retain the measured extent and image response", () => {
+  const { layout } = load("us-waterford-hills-796357203", "main");
+  delete layout.metadata.model3d;
+  const source = layout.metadata.borderInference!.imagery;
+  for (const endpoint of ["MapServer/export", "ImageServer/exportImage"]) {
+    source.url = `https://ags.cuzk.gov.cz/arcgis1/rest/services/ORTOFOTO/${endpoint}?f=pjson&bbox=0,0,1,1&size=1,1&bboxSR=3857&imageSR=3857&layers=show:0&format=png24`;
+    const display = imageryForLayout(layout), url = new URL(display.url);
+    assert.equal(url.pathname.endsWith(endpoint), true);
+    assert.equal(url.searchParams.get("f"), "image");
+    assert.equal(url.searchParams.get("bbox"), source.extent3857.join(","));
+    assert.equal(url.searchParams.get("size"), `${source.width},${source.height}`);
+    assert.equal(url.searchParams.get("imageSR"), "3857");
+    assert.equal(url.searchParams.get("layers"), "show:0");
+    assert.equal(url.searchParams.get("format"), "png24");
+    assert.deepEqual(display.extent3857, source.extent3857);
+    assert.equal(display.attribution, source.attribution);
+    assert.equal(display.termsUrl, source.reuseEvidenceUrl);
+  }
+});
+
+test("dated NAIP playback retains the exact RGB render and rejects mismatched georeferencing", () => {
+  const { layout } = load("us-waterford-hills-796357203", "main");
+  const source = layout.metadata.borderInference!.imagery;
+  const display = imageryForLayout(layout);
+  assert.equal(display.url, source.url);
+  assert.deepEqual(display.extent3857, source.extent3857);
+  assert.equal(display.attribution, source.attribution);
+  assert.equal(display.termsUrl, source.reuseEvidenceUrl);
+  for (const change of [
+    (u: URL) => u.searchParams.set("dst_crs", "EPSG:4326"),
+    (u: URL) => u.searchParams.delete("bidx"),
+    (u: URL) => { u.pathname = u.pathname.replace(/\d+x\d+\.png$/, "100x100.png"); },
+    (u: URL) => { u.pathname = u.pathname.replace("/bbox/", "/bbox/1,"); },
+  ]) {
+    const copy = structuredClone(layout), url = new URL(source.url);
+    change(url); copy.metadata.borderInference!.imagery.url = url.href;
+    assert.notEqual(imageryForLayout(copy).url, url.href);
+  }
 });
 
 test("previous downloaded Spa model fields remain readable without changing its source profile", () => {

@@ -1,3 +1,4 @@
+import { networkRouteLayout } from "./network-routes";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "@fontsource-variable/manrope";
@@ -30,7 +31,11 @@ import {
   type ElevationGrid,
 } from "./elevation";
 import { elevationProfile } from "./elevation-profile";
-import { BorderOverlay, type TrackBorders } from "./track-borders";
+import {
+  BorderOverlay,
+  borderLabels,
+  type TrackBorders,
+} from "./track-borders";
 import { isLapModel } from "../schemas/track-model";
 
 const base = import.meta.env.BASE_URL;
@@ -67,7 +72,7 @@ app.innerHTML = `
       <footer class="sidebar-footer">
         <button id="world-map" class="world-button">${icon("globe")} Explore the world map ${icon("arrow")}</button>
         <div id="coverage"></div>
-        <p>Open trace data. Open to everyone.<br><a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noreferrer">Trace data ODbL 1.0</a><span> · </span><a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">Code MIT</a></p>
+        <p>Explore track data.<br><a href="https://github.com/markthebault/open-racetrack-db/blob/main/DATA_LICENSE.md" target="_blank" rel="noreferrer">Data licences & attribution</a><span> · </span><a href="https://opensource.org/license/mit" target="_blank" rel="noreferrer">Code MIT</a></p>
       </footer>
     </aside>
     <section id="workspace" class="workspace" aria-label="Explore a circuit" tabindex="-1">
@@ -85,7 +90,7 @@ app.innerHTML = `
         <div id="stage-empty" class="stage-empty" hidden>${icon("map")}<strong>No course trace yet.</strong><p>This layout is listed, but its mapped route is still missing.</p></div>
         <div class="view-tools" aria-label="View controls"><button id="rotate-view" class="icon-button" aria-label="Rotate automatically" aria-pressed="false" title="Rotate automatically" hidden>${icon("rotate")}</button><button id="zoom-in" class="icon-button" aria-label="Zoom in" title="Zoom in">${icon("plus")}</button><button id="zoom-out" class="icon-button" aria-label="Zoom out" title="Zoom out">${icon("minus")}</button><button id="fit-view" class="icon-button" aria-label="Reset view" title="Reset view">${icon("fit")}</button></div>
         <button id="height-scale" class="height-scale" aria-pressed="true" title="Switch between natural height and exaggerated elevation" hidden>Height <strong>3×</strong><span>exaggerated</span></button>
-        <div class="border-controls" hidden><button id="border-toggle" aria-pressed="false" disabled><span class="border-check" aria-hidden="true"></span>Inner &amp; outer lines</button><div id="border-legend" hidden><span class="inner-key">Inner</span><span class="outer-key">Outer</span></div></div>
+        <div class="border-controls" hidden><button id="border-toggle" aria-pressed="false" disabled><span class="border-check" aria-hidden="true"></span><span data-border-label>Inner &amp; outer lines</span></button><div id="border-legend" hidden><span class="inner-key">Inner</span><span class="outer-key">Outer</span></div></div>
         <div class="stage-footer"><span id="view-hint">Drag to explore · Scroll to zoom</span><span id="model-note"></span></div>
         <div id="course-credit" class="course-credit" hidden></div>
         <a id="maptiler-logo" href="https://www.maptiler.com/" target="_blank" rel="noopener noreferrer" hidden><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler" width="100" height="30" loading="lazy"></a>
@@ -180,20 +185,22 @@ let modelLayout: Layout | undefined;
 let currentBorders: TrackBorders | undefined;
 let closeLap: (() => void) | undefined;
 let openInitialLap = initialParams.get("lap") === "1";
-get<HTMLButtonElement>("play-lap").onclick = async () => {
-  if (!layout?.metadata.model3d || !track || closeLap) return;
-  if (!isLapModel(layout.metadata.model3d)) {
-    setView("3d");
-    return;
-  }
-  const selected = modelLayout ?? layout;
+async function launchPlayback(
+  selected: Layout,
+  routeName?: string,
+  routeId?: string,
+) {
+  if (!isLapModel(selected.metadata.model3d) || !track || closeLap) return;
+  const owner = modelLayout ?? layout;
   const button = get<HTMLButtonElement>("play-lap");
   button.disabled = true;
   try {
     const { openLap } = await import("./lap-player");
-    if ((modelLayout ?? layout) !== selected) return;
+    if ((modelLayout ?? layout) !== owner) return;
     const url = new URL(location.href);
     url.searchParams.set("lap", "1");
+    if (routeId) url.searchParams.set("route", routeId);
+    else url.searchParams.delete("route");
     history.replaceState(null, "", url);
     viewer?.setActive(false);
     closeLap = openLap(
@@ -203,6 +210,7 @@ get<HTMLButtonElement>("play-lap").onclick = async () => {
         name: shortNames[track!.id] ?? track!.name,
         country: track!.country.name,
         layoutName:
+          routeName ??
           track!.layouts.find((item) => item.id === selectedLayoutId)?.name ??
           selectedLayoutId ??
           "Lap playback",
@@ -212,6 +220,7 @@ get<HTMLButtonElement>("play-lap").onclick = async () => {
         viewer?.setActive(view === "3d");
         const current = new URL(location.href);
         current.searchParams.delete("lap");
+        current.searchParams.delete("route");
         history.replaceState(null, "", current);
       },
     );
@@ -220,6 +229,28 @@ get<HTMLButtonElement>("play-lap").onclick = async () => {
   } finally {
     button.disabled = false;
   }
+}
+let chosenNetworkRoute = initialParams.get("route");
+function launchNetworkRoute(index: number) {
+  const owner = modelLayout ?? layout,
+    component = owner?.metadata.borderComposition?.[index];
+  if (!owner || !component || component.recipe.kind === "surface") return;
+  chosenNetworkRoute = component.sourceLayoutId;
+  void launchPlayback(
+    networkRouteLayout(owner, index),
+    component.name,
+    component.sourceLayoutId,
+  );
+}
+get<HTMLButtonElement>("play-lap").onclick = () => {
+  const selected = modelLayout ?? layout;
+  if (!selected?.metadata.model3d) return;
+  if (!isLapModel(selected.metadata.model3d)) {
+    setView("3d");
+    get("view-notice").querySelector<HTMLSelectElement>("select")?.focus();
+    return;
+  }
+  void launchPlayback(selected);
 };
 const borderOverlay = new BorderOverlay(
   get<HTMLButtonElement>("border-toggle"),
@@ -239,7 +270,7 @@ const borderOverlay = new BorderOverlay(
         }),
         onEachFeature: (feature, layer) =>
           layer.bindTooltip(
-            feature.properties.role === "inner" ? "Inner line" : "Outer line",
+            `${borderLabels(layout)[feature.properties.role === "inner" ? "inner" : "outer"]} line`,
           ),
       }).addTo(borderLayers);
     selectedLayers.eachLayer((layer) => {
@@ -555,16 +586,76 @@ async function applyView() {
       : "Mapped course · Elevation unavailable"
     : "";
   if (!unavailable3D) {
-    const surface =
-      layout?.metadata.model3d?.kind === "surface"
-        ? layout.metadata.model3d
-        : undefined;
-    get("view-notice").hidden = !is3d || !surface;
-    if (surface)
-      get("view-notice").textContent =
-        surface.reason === "route-not-closed"
-          ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
-          : "Road surfaces follow the saved borders. Lap playback is unavailable until the trace and borders are aligned. Curbs are illustrative.";
+    const model = layout?.metadata.model3d;
+    const notice = get("view-notice");
+    notice.hidden = !is3d || isLapModel(model);
+    if (!notice.hidden) {
+      const network = layout?.metadata.geometryKind === "network";
+      const hasBorders = layout?.features.some(
+        (feature) => feature.properties.role === "inner",
+      );
+      const components = layout?.metadata.borderComposition,
+        playable = components?.filter((c) => c.recipe.kind !== "surface");
+      const text = components
+        ? playable!.length === components.length
+          ? "Choose a route for playback or video recording. Curbs are illustrative."
+          : `${playable!.length} of ${components.length} routes support playback. Disabled routes need geometry review. Curbs are illustrative.`
+        : model?.kind === "surface"
+          ? model.reason === "route-not-closed"
+            ? "Explore this road network in 3D. Lap playback needs a single closed route. Curbs are illustrative."
+            : "Road surfaces follow the saved borders. Lap playback is unavailable until the trace and borders are aligned. Curbs are illustrative."
+          : network
+            ? `This view shows a route network. Lap playback needs a single driving layout.${hasBorders ? "" : " Road borders are unavailable for this entry."}`
+            : hasBorders
+              ? "This view shows the mapped trace. Lap playback has not been prepared for this layout yet."
+              : "This view shows the mapped trace. Road borders and lap playback are not available for this layout yet.";
+      notice.replaceChildren(document.createTextNode(text));
+      if (layout?.metadata.borderComposition) {
+        const components = layout.metadata.borderComposition;
+        const controls = element("div", "", "network-driving-routes"),
+          select = element("select", "") as HTMLSelectElement;
+        select.setAttribute("aria-label", "Driving route");
+        for (const c of components) {
+          const unavailable = c.recipe.kind === "surface";
+          const option = element(
+            "option",
+            unavailable ? `${c.name} · Playback unavailable` : c.name,
+          ) as HTMLOptionElement;
+          option.value = c.sourceLayoutId;
+          option.disabled = unavailable;
+          select.append(option);
+        }
+        select.value = components.some(
+          (c) =>
+            c.sourceLayoutId === chosenNetworkRoute && c.recipe.kind !== "surface",
+        )
+          ? chosenNetworkRoute!
+          : playable![0].sourceLayoutId;
+        select.onchange = () => {
+          chosenNetworkRoute = select.value;
+        };
+        const play = element("button", "▷ Play");
+        play.setAttribute("aria-label", "Play route");
+        play.onclick = () =>
+          launchNetworkRoute(
+            components.findIndex((c) => c.sourceLayoutId === select.value),
+          );
+        controls.append(select, play);
+        notice.append(controls);
+      } else if (track && track.layouts.length > 1) {
+        const choose = element(
+          "button",
+          "Choose a driving layout",
+          "choose-driving-layout",
+        );
+        choose.onclick = () => {
+          const control = get<HTMLSelectElement>("layout");
+          control.scrollIntoView({ block: "center", behavior: "smooth" });
+          control.focus({ preventScroll: true });
+        };
+        notice.append(" ", choose);
+      }
+    }
   }
   get("height-scale").hidden = !is3d || !terrain;
   updateHeightControl();
@@ -573,13 +664,24 @@ async function applyView() {
     document.createTextNode(layout?.metadata.attribution ?? ""),
   );
   if (is3d && terrain) {
-    const credit = element("a", "Mapzen Terrain Tiles");
+    const credit = element("a", terrain.source.name);
     credit.href =
-      "https://github.com/tilezen/joerd/blob/master/docs/attribution.md";
+      terrain.source.name === "Mapzen Terrain Tiles"
+        ? "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+        : terrain.source.url;
     credit.target = "_blank";
     credit.rel = "noreferrer";
     credit.title = terrain.source.attribution.join(" ");
     get("course-credit").append(" · Terrain: ", credit);
+  }
+  const grade = layout?.metadata.borderInference?.gradeSeparation;
+  if (is3d && grade) {
+    const credit = element("a", grade.elevation.source);
+    credit.href = grade.elevation.url;
+    credit.target = "_blank";
+    credit.rel = "noreferrer";
+    credit.title = grade.elevation.attribution;
+    get("course-credit").append(" · Road elevations edited from ", credit);
   }
   get("course-credit").title = layout?.metadata.attribution ?? "";
   if (!is3d) {
@@ -775,7 +877,7 @@ function sourceLinks(parent: HTMLElement, selected: Track, data?: Layout) {
     ),
     element(
       "p",
-      "Approximate geographic traces, not surveyed centerlines. Trace data ODbL 1.0.",
+      `Approximate geographic traces, not surveyed centerlines. Trace licence: ${data?.metadata.license ?? "See sources"}.`,
     ),
   );
   parent.append(details);
@@ -1047,23 +1149,45 @@ function panel(
     if (terrain) {
       const profile = courseElevation(layout, terrain);
       if (profile)
-        root.append(elevationProfile(profile, m.geometryKind === "network"));
+        root.append(
+          elevationProfile(
+            profile,
+            m.geometryKind === "network",
+            !!m.borderInference?.gradeSeparation,
+          ),
+        );
       const detail = element("details", "", "elevation-sources");
       detail.append(element("summary", "Elevation data"));
       detail.append(
         element(
           "p",
-          `Approximate ground elevation from Mapzen Terrain Tiles, sampled to a ~${terrain.source.sampleSpacingM} m grid. Source resolution varies. This is not a survey of the track surface, bridges or banking.`,
+          `Approximate ground elevation from ${terrain.source.name}, sampled to a ~${terrain.source.sampleSpacingM} m grid. Source resolution varies. This is not a survey of the track surface, bridges or banking.`,
         ),
       );
       const link = element("a", "Terrain sources & attribution");
       link.href =
-        "https://github.com/tilezen/joerd/blob/master/docs/attribution.md";
+        terrain.source.name === "Mapzen Terrain Tiles"
+          ? "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+          : terrain.source.url;
       link.target = "_blank";
       link.rel = "noreferrer";
       detail.append(link);
       for (const credit of terrain.source.attribution)
         detail.append(element("p", credit));
+      const grade = m.borderInference?.gradeSeparation;
+      if (grade) {
+        detail.append(
+          element(
+            "p",
+            `Road elevations are edited from ${grade.elevation.source} ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey.`,
+          ),
+        );
+        const credit = element("a", grade.elevation.attribution);
+        credit.href = grade.elevation.url;
+        credit.target = "_blank";
+        credit.rel = "noreferrer";
+        detail.append(credit);
+      }
       content.append(detail);
     }
   }
@@ -1232,12 +1356,57 @@ async function select(id: string, requested?: string, push = true) {
     borderOverlay.setLayout(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
+    if (data.metadata.model3d?.kind !== "surface" && data.metadata.model3d?.sharedGround) {
+      get("selection").append(element("p", `Original borders with an image-reviewed junction correction. Road positions remain estimates. ${data.metadata.model3d.sharedGround.imagery.attribution}`, "inferred-border-note"));
+    }
+    if (data.metadata.borderInference) {
+      const note = element(
+        "p",
+        `${data.metadata.borderInference.measurement ? "Estimated aerial-image borders · Sparse image measurements; interpolated sections remain unverified." : data.metadata.borderInference.refinement ? "Estimated aerial-image borders · Includes measured image corrections; remains unverified." : "Estimated aerial-image borders · Not manually reviewed."} ${data.metadata.borderInference.imagery.attribution}`,
+        "inferred-border-note",
+      );
+      get("selection").append(note);
+    }
+    if (data.metadata.model3d?.kind === "run" && data.metadata.model3d.sourceSequence) {
+      const approach = data.metadata.model3d.sourceSequence.plan.approach;
+      get("selection").append(element("p",
+        `Estimated aerial-image approach limits · Original circuit borders retained. ${approach.imagery.attribution}`,
+        "inferred-border-note"));
+    }
+    if (data.metadata.borderComposition) {
+      const credits = [
+        ...new Set(
+          data.metadata.borderComposition.map(
+            (c) =>
+              c.metadata.borderInference?.imagery.attribution ??
+              c.borderProperties[0].license,
+          ),
+        ),
+      ];
+      get("selection").append(
+        element(
+          "p",
+          `Combined road limits · Component-specific licences and imagery evidence are included in this GeoJSON. ${credits.join(" · ")}`,
+          "inferred-border-note",
+        ),
+      );
+    }
     get("play-lap").hidden = !data.metadata.model3d;
-    get("play-lap").textContent =
-      data.metadata.model3d?.kind === "surface" ? "Explore 3D" : "▷ Play lap";
+    get("play-lap").textContent = data.metadata.borderComposition
+      ? "Choose driving route"
+      : data.metadata.model3d?.kind === "surface"
+        ? "Explore 3D"
+        : data.metadata.model3d?.kind === "run"
+          ? "▷ Play run"
+          : "▷ Play lap";
     if (data.metadata.model3d && openInitialLap) {
       openInitialLap = false;
-      get<HTMLButtonElement>("play-lap").click();
+      const routeIndex = data.metadata.borderComposition?.findIndex(
+        (c) => c.sourceLayoutId === chosenNetworkRoute,
+      );
+      if (routeIndex !== undefined && routeIndex >= 0)
+        launchNetworkRoute(routeIndex);
+      else get<HTMLButtonElement>("play-lap").click();
     }
     void applyView();
     remember();

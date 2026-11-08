@@ -28,29 +28,29 @@
     {
       "id": "almeria",
       "name": "Almeria",
-      "referenceId": "Spain/Almeria",
       "file": "layouts/almeria.geojson",
+      "referenceId": "Spain/Almeria",
       "description": "Draft configuration: Full eastern circuit with two northern lobes, inner return bends and pointed eastern last corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4017.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "andalucia-layout-1-5k",
       "name": "Andalucia Layout 1 5k",
-      "referenceId": "Spain/Andalucia Layout 1 5k",
       "file": "layouts/andalucia-layout-1-5k.geojson",
+      "referenceId": "Spain/Andalucia Layout 1 5k",
       "description": "Draft configuration: The catalogue configuration retains the northern hook, full eastern long straight and southern shortcut, excluding the inner southern hairpin and the pit/access connections to the adjacent Almeria circuit. The operator configuration plan independently identifies these physical branches; its contemporary red 5 km route bypasses the northern hook and is not substituted for this earlier configuration. The exact public source-node route measures 4721.9 m against the catalogue scalar of 4754 m. Historical alignment remains a draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4721.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "andalucia-layout-2-4k",
       "name": "Andalucia Layout 2 4k",
-      "referenceId": "Spain/Andalucia Layout 2 4k",
       "file": "layouts/andalucia-layout-2-4k.geojson",
+      "referenceId": "Spain/Andalucia Layout 2 4k",
       "description": "Draft configuration: The operator blue 4 km configuration identifies the northern hook, eastern diagonal return and southern shortcut, excluding the full eastern long straight, inner southern hairpin and pit/access alternatives. These branch choices match the catalogue configuration. The independently mapped source-node route measures 3683.7 m against the catalogue scalar of 3714 m; source coordinates and distances are unchanged. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3683.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "andalucia-layout-3-2-2k",
       "name": "Andalucia Layout 3 2.2k",
-      "referenceId": "Spain/Andalucia Layout 3 2.2k",
       "file": "layouts/andalucia-layout-3-2-2k.geojson",
+      "referenceId": "Spain/Andalucia Layout 3 2.2k",
       "description": "Draft configuration: Short southwestern loop, western elongated hairpin and compact eastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2344.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -117,6 +117,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:04:38.835Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "ign-pnoa-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=-253847.19951485697%2C4450923.96161795%2C-251173.0845880229%2C4452278.912326509&WIDTH=2845&HEIGHT=1442",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-05T23:51:22.784Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

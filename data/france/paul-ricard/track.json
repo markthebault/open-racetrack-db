@@ -22,56 +22,56 @@
       "id": "main",
       "name": "Paul Ricard 1C-V2",
       "file": "layouts/main.geojson",
-      "description": "Full course through the complete mapped Chicane Nord on way 229454180, the rounded Courbe de Signes on way 23463089 and the named Verrerie, Sainte-Baume, Beausset, Bendor and Pont sections. Pit ways, driving-center roads and connecting alternatives are excluded.",
-      "referenceId": "France/Paul Ricard 1C-V2"
+      "referenceId": "France/Paul Ricard 1C-V2",
+      "description": "Full course through the complete mapped Chicane Nord on way 229454180, the rounded Courbe de Signes on way 23463089 and the named Verrerie, Sainte-Baume, Beausset, Bendor and Pont sections. Pit ways, driving-center roads and connecting alternatives are excluded."
     },
     {
       "id": "mistral-straight",
       "name": "Paul Ricard 1A-V2",
       "file": "layouts/mistral-straight.geojson",
-      "description": "Full course uses the complete Mistral straight on way 686705519, bypassing Chicane Nord. The rounded Courbe de Signes and the remaining main-course sections are retained.",
-      "referenceId": "France/Paul Ricard 1A-V2"
+      "referenceId": "France/Paul Ricard 1A-V2",
+      "description": "Full course uses the complete Mistral straight on way 686705519, bypassing Chicane Nord. The rounded Courbe de Signes and the remaining main-course sections are retained."
     },
     {
       "id": "paul-ricard-1c-v2-blancpain",
       "name": "Paul Ricard 1C-V2 Blancpain",
-      "referenceId": "France/Paul Ricard 1C-V2 Blancpain",
       "file": "layouts/paul-ricard-1c-v2-blancpain.geojson",
+      "referenceId": "France/Paul Ricard 1C-V2 Blancpain",
       "description": "The supplied label is retained. Independent championship briefings identify the GT/Blancpain course as the full Mistral-straight 1A-V2 configuration. This trace follows that documented course rather than inferring a chicane from the catalogue label. Historical naming and measured-length differences still require review."
     },
     {
       "id": "paul-ricard-gtdrive",
       "name": "Paul Ricard GtDrive",
-      "referenceId": "France/Paul Ricard GtDrive",
       "file": "layouts/paul-ricard-gtdrive.geojson",
+      "referenceId": "France/Paul Ricard GtDrive",
       "description": "The independently named Driving Center course is identified by its complete connected OSM route and operator evidence. The current mapped route is approximately 1.56 km; the supplied 1.497 km course distance differs, so historical configuration and travel direction remain draft. No route is shortened to force the stated length."
     },
     {
       "id": "paul-ricard-le-castellet",
       "name": "Paul Ricard Le Castellet",
-      "referenceId": "France/Paul Ricard Le Castellet",
       "file": "layouts/paul-ricard-le-castellet.geojson",
+      "referenceId": "France/Paul Ricard Le Castellet",
       "description": "The Le Castellet entry uses the independently documented full Grand Prix configuration with the Mistral chicane. Coordinates reuse the pinned full-course OSM recipe; the separate catalogue name and private timing convention are retained. Configuration remains draft."
     },
     {
       "id": "paul-ricard-piste-gt",
       "name": "Paul Ricard Piste GT",
-      "referenceId": "France/Paul Ricard Piste GT",
       "file": "layouts/paul-ricard-piste-gt.geojson",
+      "referenceId": "France/Paul Ricard Piste GT",
       "description": "Draft western school-course association. The circuit operator identifies a separate 1.8 km school configuration. The pinned 1804.2 m connected route uses the Hôtel and Sainte-Baume corners and the short connection between the Mistral and western return section. The supplied course distance is 1786 m. Contemporary driving-school offers also call a longer 2.0 km configuration Piste GT, so the historical name and exact configuration remain provisional. All geometry is unchanged independent OSM data."
     },
     {
       "id": "paul-ricard-short",
       "name": "Paul Ricard Short",
-      "referenceId": "France/Paul Ricard Short",
       "file": "layouts/paul-ricard-short.geojson",
+      "referenceId": "France/Paul Ricard Short",
       "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The full Chicane Nord is included. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3848.4 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance."
     },
     {
       "id": "paul-ricard-short-without-chicane",
       "name": "Paul Ricard Short_without chicane",
-      "referenceId": "France/Paul Ricard Short_without chicane",
       "file": "layouts/paul-ricard-short-without-chicane.geojson",
+      "referenceId": "France/Paul Ricard Short_without chicane",
       "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The Mistral straight bypasses Chicane Nord. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3766.6 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance."
     }
   ],
@@ -138,6 +138,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T14:16:02.884Z",
       "evidenceNote": "Operator identifies the western 1.8 km school circuit. Supports layout identity only; no coordinates are copied."
+    },
+    {
+      "id": "ign-bd-ortho-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=643127.67533234%2C5349559.26969376%2C646156.4885625081%2C5351513.002461789&WIDTH=2942&HEIGHT=1898",
+      "license": "Etalab-2.0",
+      "retrievedAt": "2026-11-05T23:45:31.019Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gouv.fr/datasets/bd-ortho-r. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

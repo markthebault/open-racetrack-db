@@ -21,8 +21,8 @@
     {
       "id": "inde-motorsports-combo",
       "name": "Inde Motorsports Combo",
-      "referenceId": "United States/Inde Motorsports Combo",
       "file": "layouts/inde-motorsports-combo.geojson",
+      "referenceId": "United States/Inde Motorsports Combo",
       "description": "Combined mapped configurations: Inde Motorsports Ranch Full, Inde Motorsports Ranch Full North 2, Inde Motorsports Ranch Full North 3, Inde Motorsports Ranch Full North 4, Inde Motorsports Ranch North, Inde Motorsports Ranch North 2, Inde Motorsports Ranch North 4, Inde Motorsports Ranch South. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -173,6 +173,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T20:27:05.635Z",
       "evidenceNote": "The aggregate entry groups the 8 existing independently mapped draft configurations for this venue. These configurations were previously registered under other venue entries; their exact source recipes and parent snapshot hashes are preserved. Shared edges count once and separate paths remain separate. This is a configuration network, not one lap, and does not claim current operator certification. The independent unique branch distance is 4585.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T10:29:12.371Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

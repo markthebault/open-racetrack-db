@@ -27,8 +27,8 @@
     {
       "id": "mas-du-clos",
       "name": "Mas du Clos",
-      "referenceId": "France/Mas du Clos",
       "file": "layouts/mas-du-clos.geojson",
+      "referenceId": "France/Mas du Clos",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3073.6 m. Difference from the supplied layout distance 8.6 m. Course configuration still requires visual review."
     }
   ],
@@ -50,6 +50,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:20.587Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "ign-bd-ortho-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&FORMAT=image%2Fpng&CRS=EPSG%3A3857&BBOX=255956.9421398935%2C5769042.76925816%2C256780.10925231784%2C5770615.400053105&WIDTH=764&HEIGHT=1459",
+      "license": "Etalab-2.0",
+      "retrievedAt": "2026-11-05T23:45:20.129Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gouv.fr/datasets/bd-ortho-r. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

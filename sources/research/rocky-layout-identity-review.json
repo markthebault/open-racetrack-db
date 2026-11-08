@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-07",
+  "trackId": "ca-rocky-mountain-motorsports-1011942069",
+  "layoutId": "main",
+  "decision": "Preserve the source route. The northern notch is supported by the operator optional front-straight chicane layout; do not replace it with the full circuit solely to reuse borders.",
+  "primaryEvidence": {
+    "page": "https://rockymotorsports.com/the-circuit/",
+    "fullCircuitMap": "https://rockymotorsports.com/wp-content/uploads/2022/06/CIRCUIT_CONFIGURATIONS_FULL.jpg",
+    "chicaneMap": "https://rockymotorsports.com/wp-content/uploads/2022/06/CIRCUIT_CONFIGURATIONS_FULLWCHICANE.jpg",
+    "mapSha256": {
+      "FULL": "16d2ea960dcc371435761c4419f881f7847647972885129b7e5a817a4962d608",
+      "FULLWCHICANE": "03280e4942cd12b828db616a695c2b1fd0466c2401a66e44ccf6f47ef0f57f00"
+    },
+    "finding": "The operator identifies a 16-turn standard full circuit and an optional front-straight chicane adding three turns. The second diagram highlights the triangular northern deviation matching the extra connector chain in the main source route. Diagrams are identity references only; no coordinates are extracted."
+  },
+  "sourceComparison": {
+    "mainSnapshotSha256": "0500a984db5aa6453e21194833be40c490a6b739d8929ff450ccc3fcc90142e3",
+    "siblingSnapshotSha256": "eef2fa7e1193426f7bb595c326c8971b7602cb18d60f07d9607901e4ebbc30ff",
+    "extraConnectorWayIds": [
+      1011943947,
+      1011943946,
+      1011943948
+    ],
+    "finding": "Main leaves way 1011942069 after index 9, follows the three connectors, and rejoins at index 10. The named sibling instead follows the complete direct way. These routes must not share an identical border pair."
+  },
+  "imageryReview": {
+    "sha256": "724ab73090e5e7a8fc6ae0679aa09eb0e8020e278ccc4b2a1d75415e8bdaac97",
+    "finding": "The pinned licensed image shows earthworks and an unfinished northern chicane surface. The direct northern road is paved, but main stations approximately 108\u2013150 cross the unfinished notch. Capture date is not established. This image cannot establish current paved limits of the optional chicane."
+  },
+  "nextAction": "Obtain newer reusable detailed imagery of the chicane, verify its alignment and measure its distinct road limits. Do not infer nominal-width boundaries or discard the supported route.",
+  "canonicalChanges": false,
+  "imageryRefresh": {
+    "checkedAt": "2026-11-07",
+    "licensedImageSha256": "724ab73090e5e7a8fc6ae0679aa09eb0e8020e278ccc4b2a1d75415e8bdaac97",
+    "freshNetworkDownload": "Same pixels as the previously pinned mosaic, downloaded into an empty cache. No updated chicane image at the selected licensed source resolution.",
+    "countyMaproom": "https://www.mountainviewcounty.com/p/county-maproom",
+    "countyWebmap": "https://www.arcgis.com/sharing/rest/content/items/fe8780e155fa40af918c28ce24041f1c/data?f=json",
+    "county2025Service": "https://webmaps.mvcounty.com/public/rest/services/Imagery/2025/MapServer",
+    "countyServiceFinding": "The official county webmap registers a 2025 imagery service covering the area. Its description/copyright metadata is empty and no source-specific reuse terms were established in the checked metadata. Public access and empty copyright are not treated as extraction/redistribution rights. No edge geometry is extracted from this source."
+  }
+}

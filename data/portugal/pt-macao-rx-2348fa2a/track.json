@@ -21,8 +21,8 @@
     {
       "id": "macao-rx",
       "name": "Macao RX",
-      "referenceId": "Portugal/Macao RX",
       "file": "layouts/macao-rx.geojson",
+      "referenceId": "Portugal/Macao RX",
       "description": "Combined mapped configurations: Standard lap, Joker lap. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -83,6 +83,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T22:22:35.521Z",
       "evidenceNote": "The general rallycross entry includes the standard southern return and alternate joker connection shown in the federation plan, page 7. Exact independently mapped course nodes form both closed laps. The public sport tag is inaccurate: the primary federation document identifies the facility as rallycross. No pit or paddock access is included. The independent unique branch distance is 971.4 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:24:43.757Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

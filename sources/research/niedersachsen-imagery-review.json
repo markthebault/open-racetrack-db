@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "note": "Pinned imagery acquisition and boundary-screening research. Centre-point flight metadata does not establish the capture date of every pixel. Current WMS content can later change; preserve the cached hash. Acquisition alone does not establish border or playback coverage; accepted estimates are stored in each layout GeoJSON.",
+  "rights": {
+    "provider": "LGLN",
+    "license": "CC-BY-4.0",
+    "evidenceUrl": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&REQUEST=GetCapabilities",
+    "capabilitiesSha256": "af637c5d4f0011a7acf2df1517d3807b24ed22c5b2f8f39c51e7fc1518abfeb3",
+    "attribution": "LGLN (2026), CC BY 4.0. Modifications: estimated road borders."
+  },
+  "records": [
+    {
+      "trackId": "de-circuit-meppen-206291125",
+      "layoutId": "main",
+      "imagery": {
+        "sourceId": "lgln-ni-dop20-current-border-imagery",
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG%3A3857&BBOX=810140.0278648273%2C6937715.430983013%2C810969.983001071%2C6938731.330087694&WIDTH=2512&HEIGHT=3075&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "reuseEvidenceUrl": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&REQUEST=GetCapabilities",
+        "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC-BY-4.0",
+        "attribution": "LGLN (2026), CC BY 4.0. DOP20 current. Modifications: estimated road borders.",
+        "retrievedAt": "2026-11-06T23:45:26.868Z",
+        "sha256": "2aab83480b6826dda3d25eda3361b96ddfbfa987a3ffa5dc24fffb78a5e02b8e",
+        "width": 2512,
+        "height": 3075,
+        "extent3857": [
+          810140.0278648273,
+          6937715.430983013,
+          810969.983001071,
+          6938731.330087694
+        ],
+        "groundPixelSizeM": 0.2
+      },
+      "centreFeatureInfo": {
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=ni_dop20_info&STYLES=&CRS=EPSG%3A3857&BBOX=810140.0278648273%2C6937715.430983013%2C810969.983001071%2C6938731.330087694&WIDTH=2512&HEIGHT=3075&FORMAT=image%2Fpng&TRANSPARENT=TRUE&QUERY_LAYERS=ni_dop20_info&INFO_FORMAT=text%2Fhtml&I=1256&J=1537",
+        "responseSha256": "7fde23cb0aadbdb8d9a291efad1468ec45ae9bff6f0979f3b6099e30f298b379",
+        "tile": "323845846",
+        "edition": "2025",
+        "flight": "Meppen",
+        "flightDate": "2025-03-08",
+        "flightNumber": "3802"
+      },
+      "status": "measured-paired-edge-estimate",
+      "finding": "The retained closed route follows the visible main road and the eastern chicane, excluding the unused return. Paired image positions fit the visible curb/paint/asphalt limits independently of coarse trace normals. Branch openings and the gap from the paint triangle to the return island use explicitly described fitted virtual join controls. The earlier blurred-mosaic draft was rejected and not published. All original trace/timing and terrain are retained. Curbs remain illustrative, banking unknown, and the estimate is unverified.",
+      "compaction": {
+        "beforePairs": 244,
+        "afterPairs": 195,
+        "maximumErrorM": 0.0728709160214791,
+        "hash": "96e67cfcd4f1730fc30a6344211c77651d6c63fdccdd19f47732faafe28f9d50"
+      }
+    },
+    {
+      "trackId": "de-estering-f9d6a5de",
+      "layoutId": "estering-standard",
+      "imagery": {
+        "sourceId": "lgln-ni-dop20-current-border-imagery",
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG%3A3857&BBOX=1078592.543101128%2C7065993.48398879%2C1079184.4136828994%2C7066738.448417336&WIDTH=1763&HEIGHT=2219&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "reuseEvidenceUrl": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&REQUEST=GetCapabilities",
+        "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC-BY-4.0",
+        "attribution": "LGLN (2026), CC BY 4.0. DOP20 current. Modifications: estimated road borders.",
+        "retrievedAt": "2026-11-06T23:45:24.479Z",
+        "sha256": "f8d1b58e7b0aff88e2b4b586d55a79f3479a3596fcf9a0c97771db9d1e8ecbc5",
+        "width": 1763,
+        "height": 2219,
+        "extent3857": [
+          1078592.543101128,
+          7065993.48398879,
+          1079184.4136828994,
+          7066738.448417336
+        ],
+        "groundPixelSizeM": 0.1999
+      },
+      "centreFeatureInfo": {
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=ni_dop20_info&STYLES=&CRS=EPSG%3A3857&BBOX=1078592.543101128%2C7065993.48398879%2C1079184.4136828994%2C7066738.448417336&WIDTH=1763&HEIGHT=2219&FORMAT=image%2Fpng&TRANSPARENT=TRUE&QUERY_LAYERS=ni_dop20_info&INFO_FORMAT=text%2Fhtml&I=881&J=1109",
+        "responseSha256": "6c9a70a8a703e2d05d3a421f604b4f829962f22445e55e494133357639d0f20c",
+        "tile": "325455922",
+        "edition": "2026",
+        "flight": "Stade",
+        "flightDate": "2026-03-18",
+        "flightNumber": "3856"
+      },
+      "status": "measured-estimate-prepared",
+      "finding": "The two captured courses now have complete image-measured border recipes in their existing GeoJSONs. The Standard route has 101 physical observations plus two closure anchors; Joker reuses 84 supported observations and adds 17 at its differing branch and seam, plus two closure anchors. Gravel runoff, paddock aprons and unused branches are excluded; openings interpolate between observations. Road widths remain unverified estimates, banking is unknown and rendered curbs are illustrative. The generic car uses the requested fixed grip assumptions, not surface-specific rallycross traction.",
+      "measurementLayouts": [
+        "estering-standard",
+        "estering-joker"
+      ],
+      "composedLayoutId": "estering-combo",
+      "identificationReference": "https://estering.de/wp-content/uploads/2024/07/240616_RallyXNordic_MAP1-General-Track-Plan_sa.pdf",
+      "referenceUse": "Operator plan used to identify branches and gravel runoff only; all edge coordinates come from the separately georeferenced LGLN image, not the diagram."
+    },
+    {
+      "trackId": "de-osnabruck-hill-climb-d7c0b8d4",
+      "layoutId": "osnabruck-hill-climb",
+      "imagery": {
+        "sourceId": "lgln-ni-dop20-current-border-imagery",
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ni_dop20&STYLES=&CRS=EPSG%3A3857&BBOX=911327.7989347345%2C6836266.855199759%2C913399.9430702715%2C6838230.908155024&WIDTH=6000&HEIGHT=5688&FORMAT=image%2Fpng&TRANSPARENT=TRUE",
+        "reuseEvidenceUrl": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&REQUEST=GetCapabilities",
+        "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC-BY-4.0",
+        "attribution": "LGLN (2026), CC BY 4.0. DOP20 current. Modifications: estimated road borders.",
+        "retrievedAt": "2026-11-07T00:13:02.557Z",
+        "sha256": "cceb2c5db8056a446f139d319308440dd54b22c9b6ff92cee917cd11f1a149d7",
+        "width": 6000,
+        "height": 5688,
+        "extent3857": [
+          911327.7989347345,
+          6836266.855199759,
+          913399.9430702715,
+          6838230.908155024
+        ],
+        "groundPixelSizeM": 0.2116
+      },
+      "centreFeatureInfo": {
+        "url": "https://opendata.lgln.niedersachsen.de/doorman/noauth/dop_wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=ni_dop20_info&STYLES=&CRS=EPSG%3A3857&BBOX=911327.7989347345%2C6836266.855199759%2C913399.9430702715%2C6838230.908155024&WIDTH=6000&HEIGHT=5688&FORMAT=image%2Fpng&TRANSPARENT=TRUE&QUERY_LAYERS=ni_dop20_info&INFO_FORMAT=text%2Fhtml&I=3000&J=2844",
+        "responseSha256": "65f3abb47cc4cfab3e765c35202ed76e9f28b9ac5c0c2efeafc8682f9aaaa8dd",
+        "tile": "324445784",
+        "edition": "2025",
+        "flight": "Melle",
+        "flightDate": "2025-03-06",
+        "flightNumber": "3837"
+      },
+      "status": "measured-estimate-prepared",
+      "finding": "The geometric automatic candidate spread into grass and farm aprons and was not accepted. The open-run recipe instead contains 113 physical edge observations, with three right-edge openings interpolated. Distinct measured endpoint cross-sections define the standing-start simulation, not surveyed timing gates or a stopping zone. Source trace, timing and terrain are retained. Widths, banking and rendered curbs remain unverified estimates."
+    }
+  ]
+}

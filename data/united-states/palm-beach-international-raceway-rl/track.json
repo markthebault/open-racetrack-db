@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Palm Beach International Raceway",
       "file": "layouts/main.geojson",
-      "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "United States/Palm Beach International Raceway"
+      "referenceId": "United States/Palm Beach International Raceway",
+      "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Coordinates exclusively from pinned raceway way geometry. reference supplies the expected layout name and private timing GPS only."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8939824.257799374%2C3113122.1681933263%2C-8939425.983102735%2C3114469.372863637&bboxSR=3857&imageSR=3857&size=474%2C1602&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:53:07.295Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

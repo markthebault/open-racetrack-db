@@ -13,15 +13,16 @@
     38.63147350235291
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "osm-pnoa-villena-route"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Image-guided course",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM-derived course with lower outer bend corrected against PNOA2024. Road limits estimated from aerial imagery; configuration and direction remain provisional."
     }
   ],
   "sources": [
@@ -33,6 +34,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:04:38.980Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "osm-pnoa-villena-route",
+      "type": "imagery",
+      "title": "OSM-derived route with PNOA2024 lower-bend correction",
+      "url": "https://www.ign.es/wms/pnoa-historico?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=PNOA2024&CRS=EPSG%3A3857&BBOX=-99377.64538905515%2C4668786.912846344%2C-99098.95091505248%2C4669236.490280466&WIDTH=871&HEIGHT=1405&FORMAT=image%2Fpng",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-07T23:59:21.845959Z",
+      "evidenceNote": "OSM-derived route with an explicitly image-guided correction of the lower outer bend. Outside the corrected interval the original OSM candidate coordinates are retained exactly, with ODbL attribution; these pixels are not independent image observations. Ten native-image centre controls replace the old lower chicane that crosses the visible curb/apron. The correction follows pinned June2024 PNOA orthophotography, not operator diagram coordinates. Operator illustration identifies the route configuration only. Both OSM and PNOA attribution are retained. Source configuration, travel direction and georeferencing remain draft; no nominal dimensions, timing position or banking are fitted. Imagery reuse evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf"
+    },
+    {
+      "id": "ign-pnoa-2024-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://www.ign.es/wms/pnoa-historico?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=PNOA2024&CRS=EPSG%3A3857&BBOX=-99377.64538905515%2C4668786.912846344%2C-99098.95091505248%2C4669236.490280466&WIDTH=871&HEIGHT=1405&FORMAT=image%2Fpng",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-11-07T23:59:21.845959Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

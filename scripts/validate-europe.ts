@@ -4,6 +4,8 @@ import {exclusion} from './candidates';
 import assert from 'node:assert/strict';
 import {europeanCountries} from './europe-countries';
 import {worldCountries} from './world-countries';
+import {validateTrack} from '../schemas/data';
+import {buildLicensedImageryRoute} from './licensed-imagery-route';
 const worldwide=process.argv.includes('--world'),region=worldwide?'world':'europe',countries=worldwide?worldCountries:europeanCountries;
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const coverage=await json(`data/${region}-coverage.json`),index=await json('data/index.json');
@@ -24,6 +26,11 @@ for(const candidate of coverage.candidates){
 const bootstrap=await json(`sources/${region}/bootstrap.json`);assert.equal(new Set(bootstrap.map((t:any)=>t.id)).size,bootstrap.length);
 for(const track of bootstrap){
  assert.ok(index.tracks.some((t:any)=>t.id===track.id));
- if(worldwide){const recipe=await json(`sources/${track.id}/layouts/main.json`),snapshot=await json(`sources/${track.id}/${recipe.snapshotFile??'osm.json'}`);for(const segment of recipe.segments){const way=snapshot.elements.find((e:any)=>e.type==='way'&&e.id===segment.wayId);assert.ok(way);assert.equal(exclusion(way),undefined,`${track.id}: selected excluded source way ${way.id}`);}}
+ if(worldwide){const recipe=await json(`sources/${track.id}/layouts/main.json`),sourceBytes=await readFile(`sources/${track.id}/${recipe.snapshotFile??'osm.json'}`),snapshot=JSON.parse(sourceBytes.toString());
+  if(recipe.geometrySource==='licensed-imagery'){
+   assert.equal(createHash('sha256').update(sourceBytes).digest('hex'),recipe.snapshotSha256);
+   const entry=index.tracks.find((t:any)=>t.id===track.id),current=validateTrack(await json(`data/${entry.file}`)),built=buildLicensedImageryRoute(recipe,snapshot,current),item=current.layouts.find(l=>l.id==='main')!,file=`data/${entry.file.replace(/track.json$/,'')}${item.file}`;
+   assert.deepEqual((await json(file)).features.find((f:any)=>f.properties.role==='trace'),built.features[0]);
+  }else for(const segment of recipe.segments){const way=snapshot.elements.find((e:any)=>e.type==='way'&&e.id===segment.wayId);assert.ok(way);assert.equal(exclusion(way),undefined,`${track.id}: selected excluded source way ${way.id}`);}}
 }
 console.log(`Validated ${coverage.countries.length} country acquisition records and the ${region} inventory.`);

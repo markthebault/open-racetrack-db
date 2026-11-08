@@ -2,22 +2,81 @@
   "schemaVersion": 1,
   "trackId": "gb-silverstone-circuit-3571477",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "82f276cd737121b529d4c964c9c0c53afab91e86915f7043beb4e25b12cac482",
+  "sourceId": "osm-relation-51160",
+  "snapshotFile": "relation-51160.json",
+  "snapshotSha256": "a418ae334a6585e8578319b8e9c8021d46feea383b7796fe2eeaffe90d47b1bf",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "Draft Grand Prix course from pinned OSM relation 51160. Replaces the generic longest-cycle candidate whose connector fragments caused two needle reversals; exact source nodes and direction are retained. No reference-map coordinates or nominal-width offsets are used. Public timing remains missing."
   ],
   "segments": [
     {
+      "wayId": 169618245,
+      "wayVersion": 11,
+      "fromIndex": 0,
+      "toIndex": 52
+    },
+    {
+      "wayId": 169609611,
+      "wayVersion": 11,
+      "fromIndex": 0,
+      "toIndex": 7
+    },
+    {
+      "wayId": 169730588,
+      "wayVersion": 10,
+      "fromIndex": 0,
+      "toIndex": 25
+    },
+    {
+      "wayId": 3571477,
+      "wayVersion": 16,
+      "fromIndex": 0,
+      "toIndex": 3
+    },
+    {
+      "wayId": 169730585,
+      "wayVersion": 11,
+      "fromIndex": 0,
+      "toIndex": 21
+    },
+    {
+      "wayId": 169730587,
+      "wayVersion": 10,
+      "fromIndex": 0,
+      "toIndex": 14
+    },
+    {
+      "wayId": 169733768,
+      "wayVersion": 11,
+      "fromIndex": 0,
+      "toIndex": 31
+    },
+    {
+      "wayId": 169730586,
+      "wayVersion": 14,
+      "fromIndex": 0,
+      "toIndex": 5
+    },
+    {
+      "wayId": 430075118,
+      "wayVersion": 7,
+      "fromIndex": 0,
+      "toIndex": 22
+    },
+    {
+      "wayId": 169733766,
+      "wayVersion": 14,
+      "fromIndex": 0,
+      "toIndex": 26
+    },
+    {
       "wayId": 169733769,
       "wayVersion": 11,
-      "fromIndex": 20,
+      "fromIndex": 0,
       "toIndex": 22
     },
     {
@@ -90,24 +149,6 @@
       "wayId": 169800224,
       "wayVersion": 10,
       "fromIndex": 0,
-      "toIndex": 9
-    },
-    {
-      "wayId": 227820536,
-      "wayVersion": 7,
-      "fromIndex": 0,
-      "toIndex": 4
-    },
-    {
-      "wayId": 169733771,
-      "wayVersion": 6,
-      "fromIndex": 0,
-      "toIndex": 16
-    },
-    {
-      "wayId": 169800224,
-      "wayVersion": 10,
-      "fromIndex": 23,
       "toIndex": 34
     },
     {
@@ -133,85 +174,12 @@
       "wayVersion": 10,
       "fromIndex": 0,
       "toIndex": 15
-    },
-    {
-      "wayId": 169618245,
-      "wayVersion": 11,
-      "fromIndex": 0,
-      "toIndex": 52
-    },
-    {
-      "wayId": 169609611,
-      "wayVersion": 11,
-      "fromIndex": 0,
-      "toIndex": 7
-    },
-    {
-      "wayId": 169730588,
-      "wayVersion": 10,
-      "fromIndex": 0,
-      "toIndex": 25
-    },
-    {
-      "wayId": 3571477,
-      "wayVersion": 16,
-      "fromIndex": 0,
-      "toIndex": 3
-    },
-    {
-      "wayId": 169730585,
-      "wayVersion": 11,
-      "fromIndex": 0,
-      "toIndex": 21
-    },
-    {
-      "wayId": 169730587,
-      "wayVersion": 10,
-      "fromIndex": 0,
-      "toIndex": 14
-    },
-    {
-      "wayId": 169733768,
-      "wayVersion": 11,
-      "fromIndex": 0,
-      "toIndex": 31
-    },
-    {
-      "wayId": 169730586,
-      "wayVersion": 14,
-      "fromIndex": 0,
-      "toIndex": 5
-    },
-    {
-      "wayId": 430075118,
-      "wayVersion": 7,
-      "fromIndex": 0,
-      "toIndex": 22
-    },
-    {
-      "wayId": 169733766,
-      "wayVersion": 14,
-      "fromIndex": 0,
-      "toIndex": 23
-    },
-    {
-      "wayId": 227820535,
-      "wayVersion": 6,
-      "fromIndex": 0,
-      "toIndex": 21
-    },
-    {
-      "wayId": 227820536,
-      "wayVersion": 7,
-      "fromIndex": 19,
-      "toIndex": 24
-    },
-    {
-      "wayId": 227332428,
-      "wayVersion": 8,
-      "fromIndex": 15,
-      "toIndex": 17
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "silverstone-gp-wing-sf",
+    "traceSha256": "8e3079af801747f4662b9e845a25cdda49ad23ff8115bceaefdfd44e3c9bff59",
+    "bordersSha256": "cbb39a0dc5063df04007e56ce13a386d803e9ead38a4b5e3b8500612749e8b03"
+  }
 }

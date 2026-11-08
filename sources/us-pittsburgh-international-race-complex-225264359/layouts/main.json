@@ -2,40 +2,27 @@
   "schemaVersion": 1,
   "trackId": "us-pittsburgh-international-race-complex-225264359",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "d7881e00772bff3879184e04f6f43cf0d0dc4ea4630b1768906e6af7835aeb39",
+  "sourceId": "osm-network-225264359",
+  "snapshotFile": "course-network-225264359.json",
+  "snapshotSha256": "722a872d7475431f54044ba6b80c2809bba7eb72532eb69a2836aef6730c2e07",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
+    "Draft full course from the exact pinned OSM chain. Replaces the generic longest-cycle pit-entry detour with the operator-mapped direct racing join, removing two needle reversals. Native imagery and the official track-geometry diagram support branch identity. Coordinates and direction remain unchanged from the source, without diagram tracing or distance fitting. Public main timing remains missing."
   ],
   "segments": [
     {
       "wayId": 225264359,
       "wayVersion": 4,
       "fromIndex": 0,
-      "toIndex": 7
-    },
-    {
-      "wayId": 377973196,
-      "wayVersion": 1,
-      "fromIndex": 10,
-      "toIndex": 8
-    },
-    {
-      "wayId": 377724561,
-      "wayVersion": 2,
-      "fromIndex": 0,
-      "toIndex": 7
+      "toIndex": 6
     },
     {
       "wayId": 377564192,
       "wayVersion": 5,
-      "fromIndex": 8,
+      "fromIndex": 0,
       "toIndex": 98
     },
     {
@@ -45,5 +32,10 @@
       "toIndex": 37
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "pittsburgh-int-race-complex-full",
+    "traceSha256": "bcd558301806cfeb15d9aa8c330536400f0ed2af451b484843bca179c5055915",
+    "bordersSha256": "74423a1a8e909708477a66a3ad09f8d442a80a49380821f66177a4e4e6907f9a"
+  }
 }

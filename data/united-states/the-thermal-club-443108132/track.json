@@ -29,50 +29,50 @@
     {
       "id": "thermal-club-desert",
       "name": "Thermal Club Desert",
-      "referenceId": "United States/Thermal Club Desert",
       "file": "layouts/thermal-club-desert.geojson",
+      "referenceId": "United States/Thermal Club Desert",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2172.4 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
     },
     {
       "id": "thermal-club-full-track",
       "name": "Thermal Club Full Track",
-      "referenceId": "United States/Thermal Club Full Track",
       "file": "layouts/thermal-club-full-track.geojson",
+      "referenceId": "United States/Thermal Club Full Track",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 7236.5 m. Difference from the supplied layout distance 4.5 m. Course configuration still requires visual review."
     },
     {
       "id": "thermal-club-north-desert",
       "name": "Thermal Club North + Desert",
-      "referenceId": "United States/Thermal Club North + Desert",
       "file": "layouts/thermal-club-north-desert.geojson",
+      "referenceId": "United States/Thermal Club North + Desert",
       "description": "Draft configuration: North and Desert circuits connected through the long central straight, including southern linked bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4206.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "thermal-club-north-palm",
       "name": "Thermal Club North Palm",
-      "referenceId": "United States/Thermal Club North Palm",
       "file": "layouts/thermal-club-north-palm.geojson",
+      "referenceId": "United States/Thermal Club North Palm",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1953.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review."
     },
     {
       "id": "thermal-club-south-palm",
       "name": "Thermal Club South Palm",
-      "referenceId": "United States/Thermal Club South Palm",
       "file": "layouts/thermal-club-south-palm.geojson",
+      "referenceId": "United States/Thermal Club South Palm",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2874.4 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
     },
     {
       "id": "thermal-club-twin-palms",
       "name": "Thermal Club Twin Palms",
-      "referenceId": "United States/Thermal Club Twin Palms",
       "file": "layouts/thermal-club-twin-palms.geojson",
+      "referenceId": "United States/Thermal Club Twin Palms",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4983.2 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review."
     },
     {
       "id": "thermal-club-twin-palms-short",
       "name": "Thermal Club Twin Palms Short",
-      "referenceId": "United States/Thermal Club Twin Palms Short",
       "file": "layouts/thermal-club-twin-palms-short.geojson",
+      "referenceId": "United States/Thermal Club Twin Palms Short",
       "description": "Twin Palms Short retains the middle Desert course with its northern undulations and eastern roundabout return, joined to the South Palm outer course. It excludes the North Palm extension, the South Palm inner technical loop, karting roads and pit access. Independently read public-domain 2022 NAIP pavement centers identify the full short branch sequence; route distance is unscaled and historical barriers and direction remain draft. The 2022 aerial centerline differs from the 3999 m catalogue scalar; the geometry is not scaled to match it. Independently digitized aerial centerline: 3904.7 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     }
   ],
@@ -130,6 +130,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T23:50:48.347Z",
       "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12930713.652941406%2C3975442.3983521867%2C-12929538.499808501%2C3976883.3394635627&bboxSR=3857&imageSR=3857&size=1305%2C1601&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:58.330Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

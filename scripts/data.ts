@@ -3,24 +3,40 @@ import {createHash} from 'node:crypto';
 import {dirname} from 'node:path';
 import {validateTrack,validateLayout,indexSchema,geometryPaths,type Layout,type Track} from '../schemas/data';
 import {existingLayoutExtras,serializeLayout} from './layout-borders';
+import {reuseOriginalBorders,originalBorderReuseSchema} from './reuse-original-borders';
 import {withTiming,timingDatabaseSchema} from './public-timing';
 import {buildCourseNetwork} from './course-network';
+import {buildComponentNetwork} from './component-network';
 import {buildImageryCourse,imageryCourseSchema,validateImageryRaster} from './imagery-course';
+import {buildLicensedImageryRoute} from './licensed-imagery-route';
 import {bounds,displayGate,length,trimLoop,intersects} from '../src/geo';
 import {assemble,slice,type Way} from './route';
+import {verifySharedGroundSource} from './shared-source-junctions';
+import {isPitLane} from './selection-source';
 const args=process.argv.slice(2),check=args.includes('--check'),generate=args[0]==='generate';
 const json=async(path:string)=>JSON.parse(await readFile(path,'utf8'));
 const outputs=new Map<string,string>();
 const publicTiming=timingDatabaseSchema.parse(await json('data/timing.json')),seenTiming=new Set<string>();
-async function enrich(data:Layout,track:Track,id:string,existingFile:string){
+async function enrich(data:Layout,track:Track,id:string,existingFile:string,originalBorderReuse?:unknown){
  const result=withTiming(data,publicTiming);
  if(result.metadata.timing)seenTiming.add(`${track.id}/${id}`);
  // Supplemental borders are canonical layout data; their creation is external.
  const extras=await existingLayoutExtras(existingFile,generate&&!check);
  result.features.push(...extras.borders);
  if(extras.model3d)result.metadata.model3d=extras.model3d;
+ if(extras.borderInference)result.metadata.borderInference=extras.borderInference;
+ if(extras.borderComposition)result.metadata.borderComposition=extras.borderComposition;
+ if(originalBorderReuse!==undefined){
+  const pin=originalBorderReuseSchema.parse(originalBorderReuse),entry=track.layouts.find(l=>l.id===pin.sourceLayoutId);
+  if(!entry?.file)throw new Error(`${track.id}/${id}: original border source is not a registered mapped layout`);
+  const source=validateLayout(await json(`${dirname(dirname(existingFile))}/${entry.file}`),track,entry.id);
+  const reused=reuseOriginalBorders(result,source,pin);
+  result.features=result.features.filter(f=>f.properties.role!=='inner'&&f.properties.role!=='outer').concat(reused.borders);
+  result.metadata.notes.push(reused.note);
+ }
  if(result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
  result.bbox=bounds(result.features.flatMap(f=>geometryPaths(f.geometry).flat()));
+ if(result.metadata.model3d?.kind!=='surface'&&result.metadata.model3d?.sharedGround)await verifySharedGroundSource(result,result.metadata.model3d.sharedGround);
  return validateLayout(result,track,id);
 }
 for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.isDirectory()).sort((a,b)=>a.name.localeCompare(b.name))){for(const folder of (await readdir(`data/${country.name}`,{withFileTypes:true})).filter(d=>d.isDirectory())){
@@ -32,21 +48,32 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
  const sourceBytes=sourceFile===baseFile?snapshot:await readFile(`sources/${track.id}/${sourceFile}`,'utf8'),sourceHash=createHash('sha256').update(sourceBytes).digest('hex');
  if(sourceFile!==baseFile&&!manifest.snapshots?.some((s:any)=>s.file===sourceFile&&s.sha256===sourceHash&&s.sourceId===recipe.sourceId))throw new Error(`${track.id}: unregistered layout source`);
  if(recipe.snapshotSha256!==sourceHash)throw new Error(`${track.id}/${layout.id}: recipe hash mismatch`);if(recipe.trackId!==track.id||recipe.layoutId!==layout.id)throw new Error(`${track.id}/${layout.id}: recipe identity mismatch`);
+ if(recipe.geometrySource==='components'){
+  const data=await buildComponentNetwork(recipe,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,path)));
+  if(!generate)validateLayout(await json(path),track,layout.id);
+  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from pinned component routes`);continue;
+ }
  if(recipe.geometrySource==='imagery'){
   const source=imageryCourseSchema.parse(JSON.parse(sourceBytes)),image=await readFile(`sources/${track.id}/${source.imageryFile}`);
   if(createHash('sha256').update(image).digest('hex')!==source.imagerySha256)throw new Error('Imagery raster hash mismatch');
   validateImageryRaster(source,image);
-  const data=buildImageryCourse(recipe,source,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`)));
+  const data=buildImageryCourse(recipe,source,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`,recipe.originalBorderReuse)));
   if(!generate)validateLayout(await json(path),track,layout.id);
   console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from pinned reusable imagery`);continue;
  }
+ if(recipe.geometrySource==='licensed-imagery'){
+  const data=buildLicensedImageryRoute(recipe,JSON.parse(sourceBytes),track),path=`${dir}/${layout.file}`;
+  outputs.set(path,serializeLayout(await enrich(data,track,layout.id,path)));
+  if(!generate)validateLayout(await json(path),track,layout.id);
+  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m from a registered licensed-image route`);continue;
+ }
  const ways=JSON.parse(sourceBytes).elements.filter((e:any)=>e.type==='way') as Way[];
  if(recipe.geometryKind==='network'){
-  const data=buildCourseNetwork(recipe,ways,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`)));
+  const data=buildCourseNetwork(recipe,ways,track),path=`${dir}/${layout.file}`;outputs.set(path,serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`,recipe.originalBorderReuse)));
   if(!generate)validateLayout(await json(path),track,layout.id);
   console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m of independently mapped branches`);continue;
  }
- for(const segment of recipe.segments){const way=ways.find(w=>w.id===segment.wayId);if(/^pit[_ -]?lane$/i.test(way?.tags?.service??'')||/^pit[_ -]?lane$/i.test(way?.tags?.raceway??''))throw new Error(`${track.id}/${layout.id}: pit lane is not a course trace`);}
+ for(const segment of recipe.segments){const way=ways.find(w=>w.id===segment.wayId);if(/^pit[_ -]?lane$/i.test(way?.tags?.service??'')||/^pit[_ -]?lane$/i.test(way?.tags?.raceway??'')||(recipe.closed&&way&&isPitLane(way)))throw new Error(`${track.id}/${layout.id}: pit lane is not a course trace`);}
  let coordinates=assemble(ways,recipe.segments,recipe.closed);const features:Layout['features']=[];const anchors=new Map();
  for(const g of recipe.gates){const segment=recipe.segments[g.anchorSegmentIndex],way=ways.find(w=>w.id===segment?.wayId);if(!way)throw new Error('Gate anchor: missing way');const part=slice(way,segment),a=part[g.anchorEdgeIndex]?.point,b=part[g.anchorEdgeIndex+1]?.point;if(!a||!b)throw new Error('Gate anchor: edge out of bounds');let endpoints;
  if(g.endpointMethod==='perpendicular-display'){const gate=displayGate(g.sourcePosition,a,b,g.displayWidthM);endpoints=gate.coordinates;const index=coordinates.findIndex((p,i)=>p[0]===a[0]&&p[1]===a[1]&&coordinates[i+1]?.[0]===b[0]&&coordinates[i+1]?.[1]===b[1]);anchors.set(g.role,{index,point:gate.point});}
@@ -57,7 +84,7 @@ for(const country of (await readdir('data',{withFileTypes:true})).filter(d=>d.is
  const timingStatus=!features.length?'missing':recipe.timingMode==='separate'&&features.length===1?'partial':features.every(f=>'positionStatus'in f.properties&&f.properties.positionStatus==='verified')?'verified':'estimated';
  features.unshift({type:'Feature',id:'trace',properties:{role:'trace',sourceIds:[recipe.sourceId]},geometry:{type:'LineString',coordinates}});
  const data=validateLayout({type:'FeatureCollection',bbox:bounds(features.flatMap(f=>geometryPaths(f.geometry).flat())),metadata:{schemaVersion:1,trackId:track.id,layoutId:layout.id,license:'ODbL-1.0',attribution:'© OpenStreetMap contributors',closed:recipe.closed,geometryStatus:recipe.geometryStatus,timingStatus,timingMode:recipe.timingMode,lengthM:length(coordinates),reviewedAt:recipe.reviewedAt,notes:recipe.notes},features},track,layout.id);
- const path=`${dir}/${layout.file}`,bytes=serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`));outputs.set(path,bytes);
+ const path=`${dir}/${layout.file}`,bytes=serializeLayout(await enrich(data,track,layout.id,`${dir}/${layout.file}`,recipe.originalBorderReuse));outputs.set(path,bytes);
  if(!generate)validateLayout(await json(path),track,layout.id);
  console.log(`${track.id}/${layout.id}: ${data.metadata.lengthM} m; ${data.metadata.geometryStatus}, timing ${data.metadata.timingStatus}`);
  }

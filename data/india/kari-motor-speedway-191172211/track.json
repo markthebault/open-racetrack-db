@@ -13,15 +13,16 @@
     10.900302329629627
   ],
   "sourceIds": [
-    "osm-snapshot"
+    "osm-snapshot",
+    "licensed-kari-main-route"
   ],
   "defaultLayoutId": "main",
   "layouts": [
     {
       "id": "main",
-      "name": "Connected course candidate",
+      "name": "Full circuit",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Full racing course with the western dogleg, upper straight chicane and complete eastern S. Trace coordinates come from licensed satellite imagery and remain estimates; timing is unavailable."
     }
   ],
   "sources": [
@@ -33,6 +34,33 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:19:52.703Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "licensed-kari-main-route",
+      "type": "imagery",
+      "title": "Licensed georeferenced imagery course coordinates",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:55.339Z",
+      "evidenceNote": "Source-specific extraction and derived-coordinate redistribution agreement declared. Pinned raster SHA-256 284d3a54f3ccc942a0b1a49e1f5604d8ef3eb1114cec33de36fbd0aa58bd0881; exact XYZ extent and pixel vertices reproduce the source trace. Raw imagery is not distributed. Current full-course pavement independently digitized using provisional image controls refined by a dark low-chroma road-interior proposal and native-pixel review on the pinned native satellite raster, including the western return dogleg, upper straight chicane, northeast turn and complete eastern S. Operator describes a 2.3 km circuit; AMG publishes the full-course shape. Diagram coordinates, corner radii and stated lengths are not traced, scaled or fitted. Source way 191172211 version 4 is a venue fence, and the older OSM road chain does not match current pavement. Clockwise identity is separately described by the race promoter https://rpplind.com/circuits/. Alignment, travel direction and joins remain draft estimates; raster date and georeferencing error are unknown. The 112 provisional controls include a local-appearance proposal and explicit native-image corrections; fitted samples are not independent observations. The final trace uses 3 m arc sampling, a periodic 3 m Gaussian filter and 0.15 m simplification relative to that fitted curve, with source gaps no longer than 70 m. These processing tolerances are not positional accuracy. Raw controls on the western return were corrected before fitting. No official distance is fitted."
+    },
+    {
+      "id": "kari-main-course-identity",
+      "type": "reference",
+      "title": "Full-course configuration identification",
+      "url": "https://www.amgexperienceindia.in/location/kms",
+      "license": "reference-only",
+      "retrievedAt": "2026-11-07T21:45:22.769Z",
+      "evidenceNote": "Published course shape identifies the configuration only. No diagram coordinates or stated distances are traced or fitted."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:55.339Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

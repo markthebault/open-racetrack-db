@@ -23,42 +23,42 @@
       "id": "main",
       "name": "Bedford Autodrome West",
       "file": "layouts/main.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United Kingdom/Bedford Autodrome West"
+      "referenceId": "United Kingdom/Bedford Autodrome West",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "bedford-autodrome-east",
       "name": "Bedford Autodrome East",
       "file": "layouts/bedford-autodrome-east.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United Kingdom/Bedford Autodrome East"
+      "referenceId": "United Kingdom/Bedford Autodrome East",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "bedford-autodrome-north",
       "name": "Bedford Autodrome North",
       "file": "layouts/bedford-autodrome-north.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United Kingdom/Bedford Autodrome North"
+      "referenceId": "United Kingdom/Bedford Autodrome North",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "bedford-autodrome-south",
       "name": "Bedford Autodrome South",
       "file": "layouts/bedford-autodrome-south.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United Kingdom/Bedford Autodrome South"
+      "referenceId": "United Kingdom/Bedford Autodrome South",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "bedford-autodrome-gt",
       "name": "Bedford Autodrome GT",
-      "referenceId": "United Kingdom/Bedford Autodrome GT",
       "file": "layouts/bedford-autodrome-gt.geojson",
+      "referenceId": "United Kingdom/Bedford Autodrome GT",
       "description": "The operator GT plan identifies the complete northern triangle, direct eastern junction and outer hairpin, and central S-shaped connector. This repairs the previous shortcut through the northern triangle and incorrect eastern short course. Exact pinned public OSM nodes retain the western course, current mapped western bend, northern triangle and eastern return. The missing central connector is independently located on the licensed 2020 one-metre Environment Agency intensity survey. Public node segments, parent snapshot hash, connector pixel vertices, native survey mosaic, tile hashes and reprojection are preserved in the accompanying import metadata. OSM node coordinates are converted into the survey pixel grid without fitting them to private coordinates or lengths. The geometry combines ODbL public nodes with an OGL survey connector; both attributions are retained. Private course diagrams identify branches only. Native survey lane selection, later pavement changes and operator versus catalogue distance differences remain draft. Independent public-node and surveyed-connector course: 5907.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
     },
     {
       "id": "bedford-autodrome-southwest",
       "name": "Bedford Autodrome SouthWest",
-      "referenceId": "United Kingdom/Bedford Autodrome SouthWest",
       "file": "layouts/bedford-autodrome-southwest.geojson",
+      "referenceId": "United Kingdom/Bedford Autodrome SouthWest",
       "description": "Draft configuration: Southwestern configuration includes the western bends, central hairpin and direct northeastern turnaround; excludes the extended eastern loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4603.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -116,6 +116,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T15:27:14.116780Z",
       "evidenceNote": "Course identity only. No operator diagram coordinates are traced or imported."
+    },
+    {
+      "id": "pinned-border-3bd460e99db9",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://environment.data.gov.uk/tiles/collections/survey/national_lidar_programme_intensity/2020/1/TL0060",
+      "license": "OGL-3.0",
+      "retrievedAt": "2026-10-02T15:27:14.116780Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.data.gov.uk/dataset/f0db0249-f17b-4036-9e65-309148c97ce4/national-lidar-programme. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

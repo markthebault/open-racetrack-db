@@ -47,7 +47,7 @@ test("every bordered layout rebuilds a finite road surface and preserves an hone
       surface.geometry.dispose();
       if (isLapModel(model)) {
         laps++;
-        assert.ok(layout.metadata.closed, key);
+        assert.equal(layout.metadata.closed, model.kind !== "run", key);
         const road = buildRoad(layout);
         assert.ok(road.interpolatedSections / road.points.length <= 0.08, key);
         assert.ok(

@@ -1,0 +1,3797 @@
+{
+  "schemaVersion": 1,
+  "mappedLayoutSetSha256": "24460298af255a01a4d2ce915553530cd1c9d45c320a52fa604c9c12a83de4fa",
+  "note": "Diagnostic audit of every mapped single-path trace, including layouts with existing borders and models. Composed networks delegate to their independently audited component layouts; uncomposed networks remain unverified. Runtime crossing levels measure the saved reconstruction, not the physical bridge or vehicle clearance. A three-metre difference is only a diagnostic threshold. Missing source profiles, unexplained intersections and runtime errors remain unresolved; model availability does not establish accurate bridge elevations. No source geometry, borders, timing or models are changed.",
+  "summary": {
+    "mappedLayouts": 1377,
+    "singlePathsAudited": 1311,
+    "networksDelegatedToComponents": 40,
+    "networksWithoutComposition": 26,
+    "layoutsWithCrossings": 19,
+    "crossings": 145,
+    "sourceProfilesPresent": 7,
+    "sharedGroundJunctions": 1,
+    "bridgeProfilesMissingInPlayableModels": 2,
+    "bridgeProfilesMissingWithoutPlayback": 3,
+    "unexplainedSourceCrossings": 132,
+    "runtimeCrossingsBelowThreeMetres": 4,
+    "runtimeCrossingsUnresolved": 2
+  },
+  "records": [
+    {
+      "trackId": "ar-autodromo-general-san-martin-163088750",
+      "layoutId": "main",
+      "file": "data/argentina/autodromo-general-san-martin-163088750/layouts/main.geojson",
+      "traceSha256": "8c84c5165e121a4193c7b017cfdb99c72b55ba800378ea848082b459e470de59",
+      "hasBorders": false,
+      "modelKind": null,
+      "source": {
+        "recipeFile": "sources/ar-autodromo-general-san-martin-163088750/layouts/main.json",
+        "recipeSha256": "41c3e87ff2d3e1149899d9b22f8db369ded0912841da8c353476e0d9ffa0f5ca",
+        "snapshotFile": "sources/ar-autodromo-general-san-martin-163088750/osm.json",
+        "snapshotSha256": "f89a5a11931b900983f65a159e0483c046955b6e524556a3b8d893f735b05913"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            117,
+            146
+          ],
+          "fractions": [
+            0.45058938,
+            0.42791065
+          ],
+          "stationsM": [
+            3652.666,
+            5106.287
+          ],
+          "coordinate": [
+            -68.9191137,
+            -32.8915574
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 609543649,
+              "wayVersion": 2,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 0,
+              "url": "https://www.openstreetmap.org/way/609543649/history/2"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "bridge-profile-missing-no-model"
+        }
+      ]
+    },
+    {
+      "trackId": "au-oran-park-raceway-692abacd",
+      "layoutId": "oran-park-raceway",
+      "file": "data/australia/au-oran-park-raceway-692abacd/layouts/oran-park-raceway.geojson",
+      "traceSha256": "1b7ec1af762377e402fe115bfd9a31dd70e5770e85b1a896907fcef6e8ddbbf2",
+      "hasBorders": true,
+      "modelKind": "surface",
+      "source": {
+        "recipeFile": "sources/au-oran-park-raceway-692abacd/layouts/oran-park-raceway.json",
+        "recipeSha256": "f7fb45089a8f58d1d30d0363c791910a42dd5b620c66f22df48888853199f43c",
+        "snapshotFile": "sources/au-oran-park-raceway-692abacd/imagery-course-oran-park-raceway.json",
+        "snapshotSha256": "782f11b7f505bbac93950872416b725aaaca1df30cd9ad5a8aaff300a658a6e3"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            42,
+            68
+          ],
+          "fractions": [
+            0.26074175,
+            0.52148349
+          ],
+          "stationsM": [
+            999.091,
+            1603.499
+          ],
+          "coordinate": [
+            150.7366075,
+            -34.0046385
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        }
+      ]
+    },
+    {
+      "trackId": "es-parcmotor-castelloli-31877576",
+      "layoutId": "main",
+      "file": "data/spain/parcmotor-castelloli-31877576/layouts/main.geojson",
+      "traceSha256": "8ddb857401f60dbd0dbcb78f9651594aa0f0e0eeca35dca300e1978b2d4f5b62",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/es-parcmotor-castelloli-31877576/layouts/main.json",
+        "recipeSha256": "7bd1fe7e489c98800bc460fdc90d7ca2556015cb7affe0dcf24b902c95fe1715",
+        "snapshotFile": "sources/es-parcmotor-castelloli-31877576/osm.json",
+        "snapshotSha256": "cacac4f8a805efa66bffecf7c842134173fe9082798e33dff9d2f65a228034d3"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            0,
+            63
+          ],
+          "fractions": [
+            0.52209932,
+            0.86170501
+          ],
+          "stationsM": [
+            50.65,
+            2216.862
+          ],
+          "coordinate": [
+            1.6933124,
+            41.5903302
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 31905798,
+              "wayVersion": 2,
+              "bridge": "yes",
+              "layer": "2",
+              "branch": 0,
+              "url": "https://www.openstreetmap.org/way/31905798/history/2"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 359.604,
+                "widthM": 11.503
+              },
+              {
+                "heightM": 375.162,
+                "widthM": 11.761
+              }
+            ],
+            "verticalSeparationM": 15.558,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "fi-ahveniston-moottorirata-20303307",
+      "layoutId": "main",
+      "file": "data/finland/ahveniston-moottorirata-20303307/layouts/main.geojson",
+      "traceSha256": "8abbaf71f81fd5179354e36172244183958fa87b825169ad6e254adb546bafb6",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/fi-ahveniston-moottorirata-20303307/layouts/main.json",
+        "recipeSha256": "4e6d4f12ad4314523fe3392e4a99d2e31adb34ba4b80baf230607c51ea576a3d",
+        "snapshotFile": "sources/fi-ahveniston-moottorirata-20303307/osm.json",
+        "snapshotSha256": "70ccd50eedda30461c40fb11f9cfc8ef0dbfbed548a486328b7e9366c626e6a7"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            51,
+            164
+          ],
+          "fractions": [
+            0.59062769,
+            0.50873348
+          ],
+          "stationsM": [
+            803.989,
+            2776.821
+          ],
+          "coordinate": [
+            24.411579,
+            61.0018535
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 20303307,
+              "wayVersion": 12,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/20303307/history/12"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 105.628,
+                "widthM": 10.004
+              },
+              {
+                "heightM": 101.013,
+                "widthM": 10
+              }
+            ],
+            "verticalSeparationM": 4.615,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "gb-castle-combe-circuit-35406015",
+      "layoutId": "castle-combe-western-sprint",
+      "file": "data/united-kingdom/castle-combe-circuit-35406015/layouts/castle-combe-western-sprint.geojson",
+      "traceSha256": "0fd68a484f130c09d68e2eb2e8f55dd211f795c40071b1bb1e8521c74f5a702b",
+      "hasBorders": true,
+      "modelKind": "run",
+      "source": {
+        "recipeFile": "sources/gb-castle-combe-circuit-35406015/layouts/castle-combe-western-sprint.json",
+        "recipeSha256": "21dcfea38003a57ecbc44f578722d3e49b8959a1863e69066f68fde8d229ab33",
+        "snapshotFile": "sources/gb-castle-combe-circuit-35406015/selected-castle-combe-current-independent-course-roads-36853045.json",
+        "snapshotSha256": "5747616ec82f88301d976627f903f096b32b56fcb686ea529893c3feedc64ebc"
+      },
+      "crossings": [
+        {
+          "kind": "touch",
+          "segments": [
+            8,
+            90
+          ],
+          "fractions": [
+            1,
+            1
+          ],
+          "stationsM": [
+            188.872,
+            3191.579
+          ],
+          "coordinate": [
+            -2.2115726,
+            51.4933213
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            9,
+            91
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            280.212,
+            3282.918
+          ],
+          "coordinate": [
+            -2.2102959,
+            51.4931142
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            10,
+            91
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            371.551,
+            3374.258
+          ],
+          "coordinate": [
+            -2.2090191,
+            51.4929072
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            10,
+            92
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            382.89,
+            3385.597
+          ],
+          "coordinate": [
+            -2.2088637,
+            51.4928749
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            11,
+            92
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            394.229,
+            3396.935
+          ],
+          "coordinate": [
+            -2.2087084,
+            51.4928426
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            11,
+            93
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            407.493,
+            3410.199
+          ],
+          "coordinate": [
+            -2.2085312,
+            51.4927973
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            12,
+            93
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            420.756,
+            3423.463
+          ],
+          "coordinate": [
+            -2.208354,
+            51.4927519
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            12,
+            94
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            473.742,
+            3476.449
+          ],
+          "coordinate": [
+            -2.2076513,
+            51.4925632
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            13,
+            94
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            526.728,
+            3529.435
+          ],
+          "coordinate": [
+            -2.2069485,
+            51.4923744
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            13,
+            95
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            540.065,
+            3542.771
+          ],
+          "coordinate": [
+            -2.2067663,
+            51.4923354
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            14,
+            95
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            553.402,
+            3556.108
+          ],
+          "coordinate": [
+            -2.2065841,
+            51.4922965
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            14,
+            96
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            564.974,
+            3567.681
+          ],
+          "coordinate": [
+            -2.2064189,
+            51.4922804
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            15,
+            96
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            576.547,
+            3579.253
+          ],
+          "coordinate": [
+            -2.2062538,
+            51.4922643
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            15,
+            97
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            589.908,
+            3592.614
+          ],
+          "coordinate": [
+            -2.2060609,
+            51.492262
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            16,
+            97
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            603.268,
+            3605.974
+          ],
+          "coordinate": [
+            -2.2058679,
+            51.4922597
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            16,
+            98
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            627.775,
+            3630.482
+          ],
+          "coordinate": [
+            -2.205515,
+            51.492277
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            17,
+            98
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            652.282,
+            3654.989
+          ],
+          "coordinate": [
+            -2.2051621,
+            51.4922943
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            17,
+            99
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            660.345,
+            3663.051
+          ],
+          "coordinate": [
+            -2.2050456,
+            51.4922937
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            18,
+            99
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            668.407,
+            3671.113
+          ],
+          "coordinate": [
+            -2.2049292,
+            51.4922931
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            18,
+            100
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            678.058,
+            3680.764
+          ],
+          "coordinate": [
+            -2.2047924,
+            51.4922764
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            19,
+            100
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            687.709,
+            3690.415
+          ],
+          "coordinate": [
+            -2.2046556,
+            51.4922597
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            19,
+            101
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            696.37,
+            3699.076
+          ],
+          "coordinate": [
+            -2.2045483,
+            51.4922197
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            20,
+            101
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            705.031,
+            3707.737
+          ],
+          "coordinate": [
+            -2.204441,
+            51.4921796
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            20,
+            102
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            712.805,
+            3715.511
+          ],
+          "coordinate": [
+            -2.2043724,
+            51.4921243
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            21,
+            102
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            720.579,
+            3723.285
+          ],
+          "coordinate": [
+            -2.2043038,
+            51.4920689
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            21,
+            103
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            729.774,
+            3732.48
+          ],
+          "coordinate": [
+            -2.204257,
+            51.4919915
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            22,
+            103
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            738.969,
+            3741.675
+          ],
+          "coordinate": [
+            -2.2042103,
+            51.4919141
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            22,
+            104
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            746.784,
+            3749.49
+          ],
+          "coordinate": [
+            -2.204194,
+            51.4918445
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            23,
+            104
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            754.599,
+            3757.305
+          ],
+          "coordinate": [
+            -2.2041778,
+            51.491775
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            23,
+            105
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            762.494,
+            3765.2
+          ],
+          "coordinate": [
+            -2.2041873,
+            51.4917042
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            24,
+            105
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            770.389,
+            3773.095
+          ],
+          "coordinate": [
+            -2.2041969,
+            51.4916335
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            24,
+            106
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            778.095,
+            3780.802
+          ],
+          "coordinate": [
+            -2.2042385,
+            51.4915692
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            25,
+            106
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            785.802,
+            3788.508
+          ],
+          "coordinate": [
+            -2.20428,
+            51.4915049
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            25,
+            107
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            818.619,
+            3821.325
+          ],
+          "coordinate": [
+            -2.2045075,
+            51.491246
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            26,
+            107
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            851.436,
+            3854.142
+          ],
+          "coordinate": [
+            -2.2047351,
+            51.4909871
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            26,
+            108
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            909.735,
+            3912.441
+          ],
+          "coordinate": [
+            -2.2051393,
+            51.4905271
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            27,
+            108
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            968.034,
+            3970.74
+          ],
+          "coordinate": [
+            -2.2055435,
+            51.4900672
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            27,
+            109
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1031.663,
+            4034.369
+          ],
+          "coordinate": [
+            -2.2059846,
+            51.4895652
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            28,
+            109
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1095.291,
+            4097.998
+          ],
+          "coordinate": [
+            -2.2064258,
+            51.4890632
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            28,
+            110
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1103.499,
+            4106.205
+          ],
+          "coordinate": [
+            -2.20649,
+            51.4890011
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            29,
+            110
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1111.706,
+            4114.412
+          ],
+          "coordinate": [
+            -2.2065542,
+            51.4889391
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            29,
+            111
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1118.404,
+            4121.11
+          ],
+          "coordinate": [
+            -2.2066456,
+            51.4889194
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            30,
+            111
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1125.102,
+            4127.808
+          ],
+          "coordinate": [
+            -2.206737,
+            51.4888996
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            30,
+            112
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1132.708,
+            4135.414
+          ],
+          "coordinate": [
+            -2.2068467,
+            51.4889026
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            31,
+            112
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1140.313,
+            4143.02
+          ],
+          "coordinate": [
+            -2.2069565,
+            51.4889057
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            31,
+            113
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1146.222,
+            4148.929
+          ],
+          "coordinate": [
+            -2.207041,
+            51.4888982
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            32,
+            113
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1152.132,
+            4154.838
+          ],
+          "coordinate": [
+            -2.2071255,
+            51.4888907
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            32,
+            114
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1156.2,
+            4158.907
+          ],
+          "coordinate": [
+            -2.2071738,
+            51.4888699
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            33,
+            114
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1160.269,
+            4162.976
+          ],
+          "coordinate": [
+            -2.2072221,
+            51.488849
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            33,
+            115
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1165.392,
+            4168.098
+          ],
+          "coordinate": [
+            -2.2072502,
+            51.4888064
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            34,
+            115
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1170.514,
+            4173.22
+          ],
+          "coordinate": [
+            -2.2072784,
+            51.4887638
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            34,
+            116
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1215.832,
+            4218.539
+          ],
+          "coordinate": [
+            -2.2073722,
+            51.4883605
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            35,
+            116
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1261.151,
+            4263.857
+          ],
+          "coordinate": [
+            -2.2074661,
+            51.4879571
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            35,
+            117
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1267.058,
+            4269.764
+          ],
+          "coordinate": [
+            -2.2074903,
+            51.4879062
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            36,
+            117
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1272.965,
+            4275.671
+          ],
+          "coordinate": [
+            -2.2075144,
+            51.4878552
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            36,
+            118
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1280.408,
+            4283.114
+          ],
+          "coordinate": [
+            -2.2075535,
+            51.4877928
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            37,
+            118
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1287.85,
+            4290.557
+          ],
+          "coordinate": [
+            -2.2075926,
+            51.4877305
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            37,
+            119
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1312.413,
+            4315.12
+          ],
+          "coordinate": [
+            -2.2077694,
+            51.487539
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            38,
+            119
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1336.976,
+            4339.682
+          ],
+          "coordinate": [
+            -2.2079463,
+            51.4873475
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            38,
+            120
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1339.41,
+            4342.116
+          ],
+          "coordinate": [
+            -2.2079668,
+            51.4873297
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            39,
+            120
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1341.843,
+            4344.549
+          ],
+          "coordinate": [
+            -2.2079872,
+            51.4873119
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            39,
+            121
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1347.061,
+            4349.768
+          ],
+          "coordinate": [
+            -2.2080311,
+            51.4872737
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            40,
+            121
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1352.28,
+            4354.986
+          ],
+          "coordinate": [
+            -2.208075,
+            51.4872356
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            40,
+            122
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1358.781,
+            4361.487
+          ],
+          "coordinate": [
+            -2.2081449,
+            51.4871966
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            41,
+            122
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1365.281,
+            4367.987
+          ],
+          "coordinate": [
+            -2.2082149,
+            51.4871576
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            41,
+            123
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1373.011,
+            4375.717
+          ],
+          "coordinate": [
+            -2.2083126,
+            51.4871239
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            42,
+            123
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1380.741,
+            4383.447
+          ],
+          "coordinate": [
+            -2.2084103,
+            51.4870903
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            42,
+            124
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1504.89,
+            4507.596
+          ],
+          "coordinate": [
+            -2.2101296,
+            51.486773
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            43,
+            124
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1629.039,
+            4631.745
+          ],
+          "coordinate": [
+            -2.2118489,
+            51.4864556
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            43,
+            125
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1635.908,
+            4638.614
+          ],
+          "coordinate": [
+            -2.2119427,
+            51.4864355
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            44,
+            125
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1642.777,
+            4645.483
+          ],
+          "coordinate": [
+            -2.2120366,
+            51.4864155
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            44,
+            126
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1650.956,
+            4653.663
+          ],
+          "coordinate": [
+            -2.2121412,
+            51.4863813
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            45,
+            126
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1659.136,
+            4661.842
+          ],
+          "coordinate": [
+            -2.2122458,
+            51.4863471
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            45,
+            127
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1669.059,
+            4671.766
+          ],
+          "coordinate": [
+            -2.2123678,
+            51.4863003
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            46,
+            127
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1678.983,
+            4681.689
+          ],
+          "coordinate": [
+            -2.2124899,
+            51.4862535
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            46,
+            128
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1758.166,
+            4760.872
+          ],
+          "coordinate": [
+            -2.2134463,
+            51.4858629
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            47,
+            128
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1837.349,
+            4840.056
+          ],
+          "coordinate": [
+            -2.2144027,
+            51.4854724
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            47,
+            129
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1844.702,
+            4847.408
+          ],
+          "coordinate": [
+            -2.2144978,
+            51.4854429
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            48,
+            129
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1852.055,
+            4854.761
+          ],
+          "coordinate": [
+            -2.2145928,
+            51.4854134
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            48,
+            130
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1861.267,
+            4863.973
+          ],
+          "coordinate": [
+            -2.2147229,
+            51.4853959
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            49,
+            130
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1870.48,
+            4873.186
+          ],
+          "coordinate": [
+            -2.2148529,
+            51.4853783
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            49,
+            131
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1879.121,
+            4881.827
+          ],
+          "coordinate": [
+            -2.2149776,
+            51.4853808
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            50,
+            131
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1887.762,
+            4890.468
+          ],
+          "coordinate": [
+            -2.2151024,
+            51.4853833
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            50,
+            132
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1896.525,
+            4899.231
+          ],
+          "coordinate": [
+            -2.2152258,
+            51.4854009
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            51,
+            132
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1905.288,
+            4907.994
+          ],
+          "coordinate": [
+            -2.2153492,
+            51.4854184
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            51,
+            133
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1914.407,
+            4917.113
+          ],
+          "coordinate": [
+            -2.215466,
+            51.4854562
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            52,
+            133
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1923.526,
+            4926.232
+          ],
+          "coordinate": [
+            -2.2155829,
+            51.4854941
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            52,
+            134
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1933.649,
+            4936.356
+          ],
+          "coordinate": [
+            -2.2156953,
+            51.4855523
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            53,
+            134
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1943.773,
+            4946.479
+          ],
+          "coordinate": [
+            -2.2158078,
+            51.4856105
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            53,
+            135
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1951.602,
+            4954.308
+          ],
+          "coordinate": [
+            -2.2158708,
+            51.485669
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            54,
+            135
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1959.431,
+            4962.138
+          ],
+          "coordinate": [
+            -2.2159339,
+            51.4857274
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            54,
+            136
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1967.113,
+            4969.82
+          ],
+          "coordinate": [
+            -2.2159835,
+            51.4857892
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            55,
+            136
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1974.795,
+            4977.502
+          ],
+          "coordinate": [
+            -2.2160331,
+            51.485851
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            55,
+            137
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            1983.426,
+            4986.132
+          ],
+          "coordinate": [
+            -2.2160856,
+            51.4859214
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            56,
+            137
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            1992.057,
+            4994.763
+          ],
+          "coordinate": [
+            -2.2161381,
+            51.4859918
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            56,
+            138
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2055.503,
+            5058.209
+          ],
+          "coordinate": [
+            -2.2164564,
+            51.4865269
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            57,
+            138
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2118.949,
+            5121.655
+          ],
+          "coordinate": [
+            -2.2167748,
+            51.4870619
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            57,
+            139
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2122.437,
+            5125.143
+          ],
+          "coordinate": [
+            -2.2167782,
+            51.4870932
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            58,
+            139
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2125.925,
+            5128.631
+          ],
+          "coordinate": [
+            -2.2167815,
+            51.4871245
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            58,
+            140
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2129.698,
+            5132.405
+          ],
+          "coordinate": [
+            -2.2167641,
+            51.4871567
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            59,
+            140
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2133.472,
+            5136.178
+          ],
+          "coordinate": [
+            -2.2167466,
+            51.4871888
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            59,
+            141
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2136.632,
+            5139.338
+          ],
+          "coordinate": [
+            -2.2167213,
+            51.4872125
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            60,
+            141
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2139.791,
+            5142.498
+          ],
+          "coordinate": [
+            -2.216696,
+            51.4872361
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            60,
+            142
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2145.119,
+            5147.825
+          ],
+          "coordinate": [
+            -2.2166496,
+            51.4872743
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            61,
+            142
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2150.447,
+            5153.153
+          ],
+          "coordinate": [
+            -2.2166031,
+            51.4873125
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            61,
+            143
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2154.054,
+            5156.76
+          ],
+          "coordinate": [
+            -2.2165845,
+            51.4873428
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            62,
+            143
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2157.66,
+            5160.367
+          ],
+          "coordinate": [
+            -2.2165659,
+            51.4873731
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            62,
+            144
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2161.815,
+            5164.521
+          ],
+          "coordinate": [
+            -2.2165624,
+            51.4874104
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            63,
+            144
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2165.97,
+            5168.676
+          ],
+          "coordinate": [
+            -2.2165589,
+            51.4874477
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            63,
+            145
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2170.408,
+            5173.114
+          ],
+          "coordinate": [
+            -2.2165739,
+            51.4874865
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            64,
+            145
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2174.847,
+            5177.553
+          ],
+          "coordinate": [
+            -2.216589,
+            51.4875253
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            64,
+            146
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2178.447,
+            5181.153
+          ],
+          "coordinate": [
+            -2.2166177,
+            51.4875523
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            65,
+            146
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2182.047,
+            5184.753
+          ],
+          "coordinate": [
+            -2.2166464,
+            51.4875793
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            65,
+            147
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2231.023,
+            5233.729
+          ],
+          "coordinate": [
+            -2.2170894,
+            51.4879227
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            66,
+            147
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2279.999,
+            5282.705
+          ],
+          "coordinate": [
+            -2.2175324,
+            51.4882661
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            66,
+            148
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2284.215,
+            5286.922
+          ],
+          "coordinate": [
+            -2.2175681,
+            51.4882968
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            67,
+            148
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2288.432,
+            5291.138
+          ],
+          "coordinate": [
+            -2.2176039,
+            51.4883275
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            67,
+            149
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2293.341,
+            5296.048
+          ],
+          "coordinate": [
+            -2.2176359,
+            51.4883669
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            68,
+            149
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2298.251,
+            5300.957
+          ],
+          "coordinate": [
+            -2.2176679,
+            51.4884063
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            68,
+            150
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2314.784,
+            5317.491
+          ],
+          "coordinate": [
+            -2.2177639,
+            51.4885425
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            69,
+            150
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2331.318,
+            5334.025
+          ],
+          "coordinate": [
+            -2.2178599,
+            51.4886786
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "overlap",
+          "segments": [
+            69,
+            151
+          ],
+          "fractions": [
+            0.5,
+            0.5
+          ],
+          "stationsM": [
+            2344.423,
+            5347.129
+          ],
+          "coordinate": [
+            -2.2179257,
+            51.4887891
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "touch",
+          "segments": [
+            70,
+            151
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            2357.527,
+            5360.233
+          ],
+          "coordinate": [
+            -2.2179915,
+            51.4888996
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        }
+      ]
+    },
+    {
+      "trackId": "gb-dunsfold-top-gear-06a07bad",
+      "layoutId": "dunsfold-top-gear",
+      "file": "data/united-kingdom/gb-dunsfold-top-gear-06a07bad/layouts/dunsfold-top-gear.geojson",
+      "traceSha256": "922f04d11595a5d4128ce0bdab9f9a7b4f32cd1c427c7b57d4180458f7c09cb7",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/gb-dunsfold-top-gear-06a07bad/layouts/dunsfold-top-gear.json",
+        "recipeSha256": "c7fc36797b2744adfc800ad6404bb5b377f118de9b1e96bea200164570a8d725",
+        "snapshotFile": "sources/gb-dunsfold-top-gear-06a07bad/selected-dunsfold-top-gear-source-roads-22740179.json",
+        "snapshotSha256": "ec37a7a230a3e4e04c4fb293c260bc3d2e8f39eb5e335638a540cc265052efff"
+      },
+      "crossings": [
+        {
+          "kind": "touch",
+          "segments": [
+            0,
+            204
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            0,
+            2359.314
+          ],
+          "coordinate": [
+            -0.5437808,
+            51.1169939
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "shared-ground-junction"
+        }
+      ]
+    },
+    {
+      "trackId": "it-fiorano-circuit-35073932",
+      "layoutId": "main",
+      "file": "data/italy/fiorano-circuit-35073932/layouts/main.geojson",
+      "traceSha256": "006d15428c58fc9484b659aedab671fd701fd974cdc609b60657eaced9486670",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/it-fiorano-circuit-35073932/layouts/main.json",
+        "recipeSha256": "0b49742ad8d3605c868fee4025ba449b53eb0d96322bc4cc0eea2b2d06cea18f",
+        "snapshotFile": "sources/it-fiorano-circuit-35073932/osm.json",
+        "snapshotSha256": "85608108aaec8ed8512f42069c841b3d8f44536187992491a463eb1ad749ff9f"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            117,
+            227
+          ],
+          "fractions": [
+            0.4866958,
+            0.64160874
+          ],
+          "stationsM": [
+            1539.334,
+            2956.202
+          ],
+          "coordinate": [
+            10.8571995,
+            44.5341302
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 35073932,
+              "wayVersion": 11,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/35073932/history/11"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 128.799,
+                "widthM": 8.246
+              },
+              {
+                "heightM": 124.191,
+                "widthM": 10.836
+              }
+            ],
+            "verticalSeparationM": 4.608,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "jp-central-circuit-121305487",
+      "layoutId": "main",
+      "file": "data/japan/central-circuit-121305487/layouts/main.geojson",
+      "traceSha256": "29fc02215d3f78ee5a252cf3b3315fd54d75e5b1c3b78d1ba880c18e16a9c5da",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/jp-central-circuit-121305487/layouts/main.json",
+        "recipeSha256": "043b2dbe20d76e706d1f5629ce4f8be9cd07adae4e297f692ffa9e416146cdbb",
+        "snapshotFile": "sources/jp-central-circuit-121305487/osm.json",
+        "snapshotSha256": "76054c13e3ad09c4bb7390d887c61bf8f4e7f3302f1fc7c8531c7434d2dfd745"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            86,
+            105
+          ],
+          "fractions": [
+            0.25989133,
+            0.48339023
+          ],
+          "stationsM": [
+            2013.248,
+            2387.778
+          ],
+          "coordinate": [
+            134.9235088,
+            35.026544
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 121305979,
+              "wayVersion": 2,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 0,
+              "url": "https://www.openstreetmap.org/way/121305979/history/2"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 144.903,
+                "widthM": 12.13
+              },
+              {
+                "heightM": 140.102,
+                "widthM": 11.454
+              }
+            ],
+            "verticalSeparationM": 4.801,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "jp-spa-nishiura-motor-park-rl",
+      "layoutId": "main",
+      "file": "data/japan/spa-nishiura-motor-park-rl/layouts/main.geojson",
+      "traceSha256": "e264f7fbfdeb3f4105b0baccf33f3267951a3fb729f4b102142f71b2583bc342",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/jp-spa-nishiura-motor-park-rl/layouts/main.json",
+        "recipeSha256": "1326d93dd78fe8175ccbbe3b79123e087161e519d83c696b6138b69e397cd1be",
+        "snapshotFile": "sources/jp-spa-nishiura-motor-park-rl/osm.json",
+        "snapshotSha256": "2152656e99f5d62c931c71ad8c5acd31d9f1eec7eed3e2b0c3510cf32abbdd8f"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            16,
+            84
+          ],
+          "fractions": [
+            0.45114295,
+            0.45639293
+          ],
+          "stationsM": [
+            346.491,
+            1518.843
+          ],
+          "coordinate": [
+            137.1852325,
+            34.7737225
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 241883447,
+              "wayVersion": 5,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/241883447/history/5"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 10.648,
+                "widthM": 12.681
+              },
+              {
+                "heightM": 5.535,
+                "widthM": 12.709
+              }
+            ],
+            "verticalSeparationM": 5.113,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "jp-suzuka-circuit-175231434",
+      "layoutId": "main",
+      "file": "data/japan/suzuka-circuit-175231434/layouts/main.geojson",
+      "traceSha256": "0f567681094845ad5010505e941ee1b855bed9aea9c7ec34b47bba9a42bbca74",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/jp-suzuka-circuit-175231434/layouts/main.json",
+        "recipeSha256": "2ffab1460575f31f5b2de95b5a40c4d80aafdfabd86d22b287fa8ee1273b4d32",
+        "snapshotFile": "sources/jp-suzuka-circuit-175231434/osm.json",
+        "snapshotSha256": "03ac6b609135fb4b37842d5ab675e9c90b636e0497729c59fe88ff0f5f359f8f"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            124,
+            230
+          ],
+          "fractions": [
+            0.29415834,
+            0.49077117
+          ],
+          "stationsM": [
+            2712.317,
+            5098.168
+          ],
+          "coordinate": [
+            136.5306187,
+            34.8439714
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 175231434,
+              "wayVersion": 7,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/175231434/history/7"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 43.41,
+                "widthM": 9.045
+              },
+              {
+                "heightM": 49.632,
+                "widthM": 10.999
+              }
+            ],
+            "verticalSeparationM": 6.222,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "jp-suzuka-circuit-175231434",
+      "layoutId": "suzuka",
+      "file": "data/japan/suzuka-circuit-175231434/layouts/suzuka.geojson",
+      "traceSha256": "9cbd01e6655be5f2f393be21894da14e862be8f0a6d902f7d0adc61a1a3effe9",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/jp-suzuka-circuit-175231434/layouts/suzuka.json",
+        "recipeSha256": "882725630ee72fe419d80111d35e29fffa776a312a9c91d933c4a967fa35a4b2",
+        "snapshotFile": "sources/jp-suzuka-circuit-175231434/relation-284570.json",
+        "snapshotSha256": "31a9404547a9f834143b20bf24de263bba77bd5b0149a98ac0da88461ec4aac6"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            124,
+            219
+          ],
+          "fractions": [
+            0.29415834,
+            0.49077117
+          ],
+          "stationsM": [
+            2712.317,
+            5090.981
+          ],
+          "coordinate": [
+            136.5306187,
+            34.8439714
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 175231434,
+              "wayVersion": 7,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/175231434/history/7"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "source-profile-present",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 43.41,
+                "widthM": 9.043
+              },
+              {
+                "heightM": 49.633,
+                "widthM": 11
+              }
+            ],
+            "verticalSeparationM": 6.223,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "kr-ansan-0cee918e",
+      "layoutId": "ansan",
+      "file": "data/south-korea/kr-ansan-0cee918e/layouts/ansan.geojson",
+      "traceSha256": "9da26df72767627bc260783ba3743e6b804383fa8bf1defb6c4989202cd8572b",
+      "hasBorders": false,
+      "modelKind": null,
+      "source": {
+        "recipeFile": "sources/kr-ansan-0cee918e/layouts/ansan.json",
+        "recipeSha256": "a2188db97304232bcc10cd12b209eb7f82a73bd56521d2223ac228a4b5edbb6c",
+        "snapshotFile": "sources/kr-ansan-0cee918e/imagery-course-ansan.json",
+        "snapshotSha256": "310a288308cf4e9426d8bb53f274d7eb76fe8d109a717e6b40cfba2ef43a64d0"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            35,
+            66
+          ],
+          "fractions": [
+            0.28589052,
+            0.28578041
+          ],
+          "stationsM": [
+            1223.567,
+            2410.636
+          ],
+          "coordinate": [
+            126.8332674,
+            37.2786402
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        }
+      ]
+    },
+    {
+      "trackId": "kr-everland-speedway-6b81a616",
+      "layoutId": "everland-speedway",
+      "file": "data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson",
+      "traceSha256": "6b112045fbcbfc4265f2b9075bd3191b239fa3f5982b2d6f4e3be02b36c86802",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/kr-everland-speedway-6b81a616/layouts/everland-speedway.json",
+        "recipeSha256": "6cfea54b49be0295034877cd88c48b4c49a0a5583e6fba3308e539867b1d5c3a",
+        "snapshotFile": "sources/kr-everland-speedway-6b81a616/course-network-240199084.json",
+        "snapshotSha256": "049c7a0975098de75dc98bb3ad9c929d0dc6adb4086f4c1e6f9083e009f16a92"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            36,
+            72
+          ],
+          "fractions": [
+            0.34144322,
+            0.44362271
+          ],
+          "stationsM": [
+            1056.093,
+            2189.621
+          ],
+          "coordinate": [
+            127.2146082,
+            37.2967794
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 671420804,
+              "wayVersion": 2,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/671420804/history/2"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "bridge-profile-missing-playable-model",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 116.31,
+                "widthM": 11.519
+              },
+              {
+                "heightM": 116.591,
+                "widthM": 17.553
+              }
+            ],
+            "verticalSeparationM": 0.281,
+            "repairedSections": 0
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "lt-palanga-street-circuit-a9c06d36",
+      "layoutId": "palanga-street-circuit",
+      "file": "data/lithuania/lt-palanga-street-circuit-a9c06d36/layouts/palanga-street-circuit.geojson",
+      "traceSha256": "3d7c3c1ac7e344faacdd31891257246869752224ab7aa06763bfc5302b049a21",
+      "hasBorders": false,
+      "modelKind": null,
+      "source": {
+        "recipeFile": "sources/lt-palanga-street-circuit-a9c06d36/layouts/palanga-street-circuit.json",
+        "recipeSha256": "fe8d508833cfbeb10f3eba86af18f50e9d5f91e83e85f0aea5fb087af376dd2f",
+        "snapshotFile": "sources/lt-palanga-street-circuit-a9c06d36/selected-palanga-street-current-independent-roads-35031050.json",
+        "snapshotSha256": "d353604160073cf66dd095b8796ed99d5d2b55e1f8dfafe0ac396b05a147c0ab"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            30,
+            80
+          ],
+          "fractions": [
+            0.65302042,
+            0.58035052
+          ],
+          "stationsM": [
+            293.579,
+            2660.744
+          ],
+          "coordinate": [
+            21.1063473,
+            55.9079895
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        },
+        {
+          "kind": "crossing",
+          "segments": [
+            49,
+            80
+          ],
+          "fractions": [
+            0.55216981,
+            0.4227985
+          ],
+          "stationsM": [
+            1488.582,
+            2648.117
+          ],
+          "coordinate": [
+            21.1065324,
+            55.9079433
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        }
+      ]
+    },
+    {
+      "trackId": "ma-moulay-el-hassan-0e8884bb",
+      "layoutId": "moulay-el-hassan",
+      "file": "data/morocco/ma-moulay-el-hassan-0e8884bb/layouts/moulay-el-hassan.geojson",
+      "traceSha256": "06690c88e3a629d51f4d171082e1ea2df3fa595cd42e0a55c7492089acc4cc6e",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/ma-moulay-el-hassan-0e8884bb/layouts/moulay-el-hassan.json",
+        "recipeSha256": "8804aa3aa617e3351f92848484a9b0d38b6345602e477b5424bba34851329c3d",
+        "snapshotFile": "sources/ma-moulay-el-hassan-0e8884bb/selected-moulay-el-hassan-2020-independent-complete-course-8018285.json",
+        "snapshotSha256": "3b27d8cbf12b569b13906428936f17ff3c89c280b846e78c2a8a80cd96d3595f"
+      },
+      "crossings": [
+        {
+          "kind": "touch",
+          "segments": [
+            0,
+            53
+          ],
+          "fractions": [
+            0,
+            1
+          ],
+          "stationsM": [
+            0,
+            1511.014
+          ],
+          "coordinate": [
+            -7.9831856,
+            31.5829152
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing"
+        }
+      ]
+    },
+    {
+      "trackId": "nz-highlands-motorsports-park-c98a7d90",
+      "layoutId": "highlands-motorsports-park-full",
+      "file": "data/new-zealand/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.geojson",
+      "traceSha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
+      "hasBorders": false,
+      "modelKind": null,
+      "source": {
+        "recipeFile": "sources/nz-highlands-motorsports-park-c98a7d90/layouts/highlands-motorsports-park-full.json",
+        "recipeSha256": "802b825bbe8f769239c9acaf046b835372a12c91e476c86920cae72624f449f5",
+        "snapshotFile": "sources/nz-highlands-motorsports-park-c98a7d90/components-osm-234778728.json",
+        "snapshotSha256": "b49c2985b983224e685b8d9f68014dbde244656a9af8cd74de880862d08c09b3"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            57,
+            102
+          ],
+          "fractions": [
+            0.72628881,
+            0.57630959
+          ],
+          "stationsM": [
+            1933.764,
+            3458.235
+          ],
+          "coordinate": [
+            169.1707595,
+            -45.0575631
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 677363476,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/677363476/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "bridge-profile-missing-no-model"
+        }
+      ]
+    },
+    {
+      "trackId": "nz-highlands-motorsports-park-full-2952eb45",
+      "layoutId": "highlands-motorsports-park-full",
+      "file": "data/new-zealand/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.geojson",
+      "traceSha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.json",
+        "recipeSha256": "84135e5c63e5ebd576eec71e1c9815fcec862b805690419b8493b92dc302418e",
+        "snapshotFile": "sources/nz-highlands-motorsports-park-full-2952eb45/selected-network-234778728.json",
+        "snapshotSha256": "804c417c786bf32dab6b95f36749279e128d3585c0522f761903d77132075167"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            57,
+            102
+          ],
+          "fractions": [
+            0.72628881,
+            0.57630959
+          ],
+          "stationsM": [
+            1933.764,
+            3458.235
+          ],
+          "coordinate": [
+            169.1707595,
+            -45.0575631
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 677363476,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/677363476/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "bridge-profile-missing-playable-model",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 216.181,
+                "widthM": 30.93
+              },
+              {
+                "heightM": 216.073,
+                "widthM": 10.001
+              }
+            ],
+            "verticalSeparationM": 0.108,
+            "repairedSections": 1
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "se-drive-centre-arena-09bd002c",
+      "layoutId": "drive-centre-arena",
+      "file": "data/sweden/se-drive-centre-arena-09bd002c/layouts/drive-centre-arena.geojson",
+      "traceSha256": "8b5ffcdf360636db4555b37dfa3cf18791ab45bcb2765ba6865bccf927c9d0c5",
+      "hasBorders": true,
+      "modelKind": "lap",
+      "source": {
+        "recipeFile": "sources/se-drive-centre-arena-09bd002c/layouts/drive-centre-arena.json",
+        "recipeSha256": "c45d94c3dab7450a3ec5014adc1c96ce982afe7cd8aee7a803cc97290fbe535a",
+        "snapshotFile": "sources/se-drive-centre-arena-09bd002c/imagery-course-drive-centre-arena.json",
+        "snapshotSha256": "f297fc05025476607c93f4c769591af8877c765871f39897692c71eb5e173c5a"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            4,
+            134
+          ],
+          "fractions": [
+            0.00185588,
+            0.82636192
+          ],
+          "stationsM": [
+            132.692,
+            3219.42
+          ],
+          "coordinate": [
+            20.7580117,
+            65.1124127
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 177.607,
+                "widthM": 21.431
+              },
+              {
+                "heightM": 177.588,
+                "widthM": 17.336
+              }
+            ],
+            "verticalSeparationM": 0.019,
+            "repairedSections": 50
+          }
+        },
+        {
+          "kind": "crossing",
+          "segments": [
+            94,
+            130
+          ],
+          "fractions": [
+            0.74165884,
+            0.58537435
+          ],
+          "stationsM": [
+            1963.499,
+            3043.172
+          ],
+          "coordinate": [
+            20.7593157,
+            65.1109308
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing",
+          "runtime": {
+            "status": "sampled",
+            "levels": [
+              {
+                "heightM": 177.131,
+                "widthM": 21.118
+              },
+              {
+                "heightM": 177.165,
+                "widthM": 15.18
+              }
+            ],
+            "verticalSeparationM": 0.034,
+            "repairedSections": 50
+          }
+        },
+        {
+          "kind": "crossing",
+          "segments": [
+            141,
+            178
+          ],
+          "fractions": [
+            0.92790732,
+            0.13138782
+          ],
+          "stationsM": [
+            3504.273,
+            4262.221
+          ],
+          "coordinate": [
+            20.7563304,
+            65.1148748
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing",
+          "runtime": {
+            "status": "unresolved-runtime-crossing",
+            "matchingCrossings": 2
+          }
+        },
+        {
+          "kind": "crossing",
+          "segments": [
+            142,
+            177
+          ],
+          "fractions": [
+            0.07837002,
+            0.8935002
+          ],
+          "stationsM": [
+            3510.316,
+            4256.137
+          ],
+          "coordinate": [
+            20.7562943,
+            65.114927
+          ],
+          "bridgeCandidates": [],
+          "status": "unexplained",
+          "profileStatus": "unexplained-source-crossing",
+          "runtime": {
+            "status": "unresolved-runtime-crossing",
+            "matchingCrossings": 2
+          }
+        }
+      ]
+    },
+    {
+      "trackId": "us-bushnell-motorsports-park-16aaa9aa",
+      "layoutId": "bushnell-motorsports-park",
+      "file": "data/united-states/us-bushnell-motorsports-park-16aaa9aa/layouts/bushnell-motorsports-park.geojson",
+      "traceSha256": "900eff0b16b0b174da2146a5683129857204d5f202a1ecafffd4f3a5ff85f06e",
+      "hasBorders": false,
+      "modelKind": null,
+      "source": {
+        "recipeFile": "sources/us-bushnell-motorsports-park-16aaa9aa/layouts/bushnell-motorsports-park.json",
+        "recipeSha256": "94a3a772e1a3421c8d72934fa059803419496742deb12a49bb9690a8f3447cfe",
+        "snapshotFile": "sources/us-bushnell-motorsports-park-16aaa9aa/course-network-1410074352.json",
+        "snapshotSha256": "d8fb850078e41034d993525f82a6d0ad5232447d2e2468522eef857ee8378fc7"
+      },
+      "crossings": [
+        {
+          "kind": "crossing",
+          "segments": [
+            195,
+            241
+          ],
+          "fractions": [
+            0.44102561,
+            0.4270671
+          ],
+          "stationsM": [
+            789.366,
+            977.509
+          ],
+          "coordinate": [
+            -82.1493283,
+            28.6726192
+          ],
+          "bridgeCandidates": [
+            {
+              "wayId": 1410074353,
+              "wayVersion": 1,
+              "bridge": "yes",
+              "layer": "1",
+              "branch": 1,
+              "url": "https://www.openstreetmap.org/way/1410074353/history/1"
+            }
+          ],
+          "status": "source-bridge-needs-profile",
+          "profileStatus": "bridge-profile-missing-no-model"
+        }
+      ]
+    }
+  ]
+}

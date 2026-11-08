@@ -20,8 +20,8 @@
     {
       "id": "milford-road-course",
       "name": "Milford Road Course",
-      "referenceId": "United States/Milford Road Course",
       "file": "layouts/milford-road-course.geojson",
+      "referenceId": "United States/Milford Road Course",
       "description": "Draft configuration: Full outer loop, northern inner return and southern stepped bends; excludes the smooth southern bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4827.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9313893.466236452%2C5245823.895738943%2C-9312792.99429772%2C5247459.45354046&bboxSR=3857&imageSR=3857&size=1081%2C1607&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:52:42.839Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

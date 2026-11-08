@@ -1,6 +1,5 @@
 import { readFile, writeFile, rm, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
-import { createHash } from "node:crypto";
 import { performance } from "node:perf_hooks";
 import {
   indexSchema,
@@ -15,6 +14,12 @@ import { isLapModel } from "../schemas/track-model";
 import { buildRoad, simulateLap } from "../src/lap-simulation";
 import { serializeLayout } from "./layout-borders";
 import { popularModels } from "./popular-models";
+import { modelInputHash } from "./model-input";
+import { sourceSequencePlanSchema } from "../schemas/source-sequence";
+import { sharedGroundSchema } from "../schemas/shared-ground";
+import { verifySharedGroundSource } from "./shared-source-junctions";
+import { PNG } from "pngjs";
+import { createHash } from "node:crypto";
 const args = process.argv.slice(2),
   flag = (name: string) => args.includes(name),
   option = (name: string) => {
@@ -30,11 +35,42 @@ if (
   throw new Error(
     "Use --bordered, --popular or --track <id> [--layout <id>]. --check validates without writing; --refresh rebuilds generated models.",
   );
+if (flag("--boundary-path") && (!option("--track") || !option("--layout")))
+  throw new Error(
+    "Use --boundary-path only with an individually reviewed --track and --layout",
+  );
+if (option("--source-sequence-plan") && (!option("--track") || !option("--layout")))
+  throw new Error("Use a source-sequence plan only with an individually reviewed track and layout");
+if (option("--source-sequence-plan") && flag("--boundary-path"))
+  throw new Error("Choose a source-sequence plan or a boundary path, not both");
 if (flag("--all") && !flag("--check"))
   throw new Error(
     "--all checks existing models; use --bordered to prepare every bordered layout.",
   );
 const json = async (p: string) => JSON.parse(await readFile(p, "utf8"));
+const sequencePlan = option("--source-sequence-plan")
+  ? sourceSequencePlanSchema.parse(await json(option("--source-sequence-plan")!)) : undefined;
+const groundPlan = option("--shared-ground-plan")
+  ? sharedGroundSchema.parse(await json(option("--shared-ground-plan")!)) : undefined;
+if (groundPlan) {
+  if (!option("--track") || !option("--layout") || sequencePlan || flag("--boundary-path"))
+    throw new Error("Shared ground requires one individually reviewed track/layout and no other path method");
+  if (!option("--shared-ground-image")) throw new Error("A new shared-ground plan requires its pinned authoring image");
+  const bytes = await readFile(option("--shared-ground-image")!);
+  if (createHash("sha256").update(bytes).digest("hex") !== groundPlan.imagery.sha256)
+    throw new Error("Shared-ground authoring image hash mismatch");
+  const image = PNG.sync.read(bytes), info = groundPlan.imagery;
+  if (image.width !== info.width || image.height !== info.height)
+    throw new Error("Shared-ground image dimensions differ from the pinned reference");
+  const [w, s, e, n] = info.extent3857;
+  for (const ring of groundPlan.innerRings) for (const pin of ring) if (typeof pin !== "number") {
+    const x = ((6378137 * pin[0] * Math.PI / 180 - w) / (e - w)) * image.width - 0.5,
+      y = ((n - 6378137 * Math.asinh(Math.tan(pin[1] * Math.PI / 180))) / (n - s)) * image.height - 0.5;
+    if (x < 0 || y < 0 || x >= image.width - 1 || y >= image.height - 1 ||
+        [0, 1].some((dx) => [0, 1].some((dy) => image.data[((Math.floor(y) + dy) * image.width + Math.floor(x) + dx) * 4 + 3] < 128)))
+      throw new Error("Shared-ground pin has missing image coverage");
+  }
+}
 const catalogue = indexSchema.parse(await json("data/index.json"));
 const tracks = new Map<string, Track>(),
   layouts = new Map<string, Layout>(),
@@ -125,17 +161,13 @@ for (const selection of selections) {
       );
       terrains.set(track.id, terrain);
     }
-    const inputSha256 = createHash("sha256")
-      .update(
-        JSON.stringify({
-          version: PREPARATION_VERSION,
-          features: layout.features,
-          timing: layout.metadata.timing,
-          lengthM: layout.metadata.lengthM,
-          terrain,
-        }),
-      )
-      .digest("hex");
+    const boundaryPath =
+      flag("--boundary-path") ||
+      (old?.kind !== "surface" &&
+        old?.pathMethod === "boundary-normal-midpoints-v1");
+    const ground = groundPlan ?? (old?.kind !== "surface" ? old?.sharedGround : undefined);
+    if (ground) await verifySharedGroundSource(layout, ground);
+    const inputSha256 = modelInputHash(layout, terrain, boundaryPath, sequencePlan, ground);
     const current =
       old?.preparation?.version === PREPARATION_VERSION &&
       old.preparation.inputSha256 === inputSha256;
@@ -151,12 +183,13 @@ for (const selection of selections) {
       continue;
     }
     const begin = performance.now(),
-      model = prepareModel(layout, terrain, inputSha256),
+      model = prepareModel(layout, terrain, inputSha256, boundaryPath, sequencePlan, ground),
       updated = validateLayout(
         { ...layout, metadata: { ...layout.metadata, model3d: model } },
         track,
         layoutId,
       );
+    delete row.reason;
     row.modelKind = model.kind ?? "lap";
     row.curbSections = model.curbs.length;
     if (isLapModel(model)) {
@@ -219,6 +252,7 @@ const output = {
   elapsedMs: performance.now() - started,
   circuits: new Set(report.map((r) => r.trackId)).size,
   laps: report.filter((r) => r.modelKind === "lap").length,
+  runs: report.filter((r) => r.modelKind === "run").length,
   surfaces: report.filter((r) => r.modelKind === "surface").length,
   tracks: report,
 };

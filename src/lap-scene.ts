@@ -1,16 +1,14 @@
 import * as THREE from "three";
+import { roadGroundHeight, carveRoadGround } from "./road-ground";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { plane } from "./geo";
 import { roadStrip as strip } from "./road-geometry";
 import { LapCameraRig } from "./lap-camera";
 import { sampleElevation, type ElevationGrid } from "./elevation";
-import {
-  sampleLap,
-  type Lap,
-  type Road,
-  type RoadPoint,
-} from "./lap-simulation";
+import { imageryBlob } from "./imagery";
+import { sampleLap, type Lap, type Road } from "./lap-simulation";
+import { sharedGroundMeshes } from "./shared-ground-render";
 
 export const fromMercator = (x: number, y: number): [number, number] => [
   ((x / 6378137) * 180) / Math.PI,
@@ -133,7 +131,7 @@ export class LapScene {
   private cameraRig: LapCameraRig;
   private renderState?: ReturnType<typeof sampleLap>;
   private groundGeometry: THREE.PlaneGeometry;
-  private overviewPath?: THREE.LineLoop;
+  private overviewPath?: THREE.Line;
   constructor(
     private container: HTMLElement,
     private road: Road,
@@ -167,9 +165,10 @@ export class LapScene {
       roughness: 0.94,
       side: THREE.DoubleSide,
     });
+    const shared = road.ground ? sharedGroundMeshes(road) : undefined;
     this.scene.add(
       new THREE.Mesh(
-        strip(road, (p) => [p.left, -p.right], 0.08),
+        shared?.asphalt ?? strip(road, (p) => [p.left, -p.right], 0.08),
         asphalt,
       ),
     );
@@ -178,18 +177,24 @@ export class LapScene {
       roughness: 0.9,
       side: THREE.DoubleSide,
     });
-    this.scene.add(
+    if (!shared) this.scene.add(
       new THREE.Mesh(
         strip(road, (p) => [p.left - 0.08, p.left - 0.23], 0.1),
         edge,
       ),
     );
-    this.scene.add(
+    if (!shared) this.scene.add(
       new THREE.Mesh(
         strip(road, (p) => [-p.right + 0.08, -p.right + 0.23], 0.1),
         edge,
       ),
     );
+    if (shared) {
+      this.scene.add(new THREE.Mesh(shared.outlines, edge));
+      this.scene.add(new THREE.Mesh(shared.curbs, new THREE.MeshStandardMaterial({
+        vertexColors: true, roughness: 0.8, side: THREE.DoubleSide,
+      })));
+    }
     for (const curb of road.recipe.curbs) {
       const mat = new THREE.MeshStandardMaterial({
         vertexColors: true,
@@ -234,14 +239,16 @@ export class LapScene {
     }
     this.scene.add(this.car);
     if (road.length > 15000) {
-      this.overviewPath = new THREE.LineLoop(
+      this.overviewPath = new (
+        road.recipe.kind === "run" ? THREE.Line : THREE.LineLoop
+      )(
         new THREE.BufferGeometry().setFromPoints(
           road.points.map(
             (p) =>
               new THREE.Vector3(
-                p.x + (p.nx * (p.left - p.right)) / 2,
+                p.x + (road.ground ? 0 : (p.nx * (p.left - p.right)) / 2),
                 p.y + 0.2,
-                p.z + (p.nz * (p.left - p.right)) / 2,
+                p.z + (road.ground ? 0 : (p.nz * (p.left - p.right)) / 2),
               ),
           ),
         ),
@@ -295,12 +302,7 @@ export class LapScene {
     );
     const pos = this.groundGeometry.getAttribute("position");
     const validGround: boolean[] = [];
-    const cells = new Map<string, RoadPoint[]>();
-    for (const p of road.points) {
-      const key = `${Math.floor(p.x / 40)},${Math.floor(p.z / 40)}`;
-      if (!cells.has(key)) cells.set(key, []);
-      cells.get(key)!.push(p);
-    }
+    const groundHeight = roadGroundHeight(road);
     for (let i = 0; i < pos.count; i++) {
       const x = pos.getX(i),
         z = pos.getZ(i);
@@ -309,29 +311,12 @@ export class LapScene {
         : null;
       validGround.push(sampled !== null);
       if (sampled === null) continue;
-      let y = sampled;
-      let nearest: RoadPoint | undefined,
-        best = Infinity;
-      for (let a = -1; a <= 1; a++)
-        for (let b = -1; b <= 1; b++)
-          for (const p of cells.get(
-            `${Math.floor(x / 40) + a},${Math.floor(z / 40) + b}`,
-          ) ?? []) {
-            const d = (x - p.x) ** 2 + (z - p.z) ** 2;
-            if (d < best) {
-              best = d;
-              nearest = p;
-            }
-          }
-      if (nearest) {
-        const width = Math.max(nearest.left, nearest.right) + 5,
-          blend =
-            1 - THREE.MathUtils.smoothstep(Math.sqrt(best), width, width + 35);
-        y = THREE.MathUtils.lerp(y, nearest.y - 0.1, blend);
-      }
+      const y = road.ground ? sampled : groundHeight(x, z, sampled);
       pos.setY(i, y - 0.3);
     }
     // Missing raster coverage remains a hole, rather than an invented 400 m wall.
+    if (road.points.some((p) => p.elevated))
+      carveRoadGround(this.groundGeometry, road, { columns: 160, rows: 220 });
     const sourceTriangles = this.groundGeometry.getIndex()!.array,
       triangles: number[] = [];
     for (let i = 0; i < sourceTriangles.length; i += 3) {
@@ -351,7 +336,7 @@ export class LapScene {
     );
     this.scene.add(this.ground);
     // Shoulder mesh guarantees no raster triangle can rise through the road.
-    this.scene.add(
+    if (!shared) this.scene.add(
       new THREE.Mesh(
         strip(road, (p) => [p.left + 3, -p.right - 3], -0.1),
         new THREE.MeshStandardMaterial({
@@ -383,11 +368,10 @@ export class LapScene {
   };
   async loadImagery() {
     try {
-      const response = await fetch(this.road.recipe.imagery.url, {
-        signal: this.imageryAbort.signal,
-      });
-      if (!response.ok) throw new Error("Imagery unavailable");
-      const blob = await response.blob();
+      const blob = await imageryBlob(
+        this.road.recipe.imagery,
+        this.imageryAbort.signal,
+      );
       const bitmap = await createImageBitmap(blob, {
         imageOrientation: "flipY",
       });
@@ -448,7 +432,7 @@ export class LapScene {
   update(lap: Lap, time: number, resetCamera = false) {
     const s = sampleLap(lap, time);
     this.renderState = s;
-    const offset = (s.left - s.right) / 2;
+    const offset = this.road.ground ? 0 : (s.left - s.right) / 2;
     this.car.position.set(s.x + s.nx * offset, s.y + 0.15, s.z + s.nz * offset);
     const forward = this.cameraRig.course.direction(s.distance, 3);
     this.car.rotation.set(

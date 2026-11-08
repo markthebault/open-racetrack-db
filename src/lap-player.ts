@@ -1,5 +1,6 @@
 import L from "leaflet";
 import type { Layout } from "../schemas/data";
+import { traceCredit } from "./trace-credit";
 import { plane } from "./geo";
 import {
   buildRoad,
@@ -20,6 +21,11 @@ export function openLap(
   },
   onClose: () => void,
 ) {
+  const isRun = layout.metadata.model3d?.kind === "run";
+  const approachEvidence = layout.metadata.model3d?.kind === "run"
+    ? layout.metadata.model3d.sourceSequence?.plan.approach : undefined;
+  const elevationCredit =
+    layout.metadata.borderInference?.gradeSeparation?.elevation.attribution;
   const previousFocus = document.activeElement as HTMLElement | null;
   const dialog = document.createElement("dialog");
   dialog.className = "lap-player";
@@ -39,7 +45,7 @@ export function openLap(
   <label>Cornering <span><input name="lateralG" type="number" value="1.1" min="0.2" max="3" step="0.1" required> g</span></label><button type="submit">Recalculate lap</button></form></div>
   <div class="lap-results"><div><span>SIMULATED LAP</span><strong data-duration>—</strong></div><div><span>PEAK SPEED</span><strong data-peak>—</strong></div></div>
   <div class="lap-section"><span class="lap-kicker">THE ROAD</span><div class="lap-profile" aria-label="Road elevation profile"></div><p class="lap-profile-caption"></p><p class="lap-data-quality" data-quality></p><p data-road-detail>Variable road width · Source border coordinates</p><details class="lap-evidence"><summary>Track accuracy & sources</summary><p>Road edges use this layout’s supplemental border coordinates and remain unverified. Width changes are preserved.</p><p data-elevation-note></p><p data-curb-note></p><p>Banking is unavailable and assumed zero. This is an approximate preview, not a surveyed track model.</p><p data-source-links></p><p data-source-credit></p></details>
-  <details class="lap-evidence"><summary>How the lap is simulated</summary><p>300 hp at the engine; 85% drivetrain efficiency, 1,400 kg, CdA 0.66 m² and rolling resistance 0.015 by default. Power, drag, gravity on slopes and a combined braking/cornering grip ellipse constrain the speed at each step. A periodic forward/backward solver plans one flying lap.</p><p>The car follows the road centre, without racing-line optimisation, gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.</p></details><details class="lap-evidence"><summary>Compact storage</summary><p data-storage>One GeoJSON stores the coordinates, elevation anchors, terrain grid, curb intervals and imagery reference. All meshes and lap samples are built in your browser when you open this view, and disposed when you close it. Aerial imagery loads on demand.</p></details></div>
+  <details class="lap-evidence"><summary>How the lap is simulated</summary><p data-solver-note>300 hp at the engine; 85% drivetrain efficiency, 1,400 kg, CdA 0.66 m² and rolling resistance 0.015 by default. Power, drag, gravity on slopes and a combined braking/cornering grip ellipse constrain the speed at each step. A periodic forward/backward solver plans one flying lap.</p><p>The car follows the road centre, without racing-line optimisation, gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.</p></details><details class="lap-evidence"><summary>Compact storage</summary><p data-storage>One GeoJSON stores the coordinates, elevation anchors, terrain grid, curb intervals and imagery reference. All meshes and lap samples are built in your browser when you open this view, and disposed when you close it. Aerial imagery loads on demand.</p></details></div>
   </div></div><footer class="lap-playback"><div class="lap-transport"><button class="lap-play" disabled>Play lap</button><button class="lap-restart" aria-label="Restart lap" disabled>↺</button><span class="lap-rate">1× real time</span><span data-lap-time>—</span></div><label class="lap-timeline"><span class="sr-only">Lap time</span><input aria-label="Lap time" type="range" min="0" max="100" step="0.01" value="0" disabled></label><div class="lap-export"><button class="lap-record" disabled>Record lap</button><a class="lap-download" hidden>Download video</a><span class="lap-status" role="status"></span></div></footer>`;
   document.body.append(dialog);
   dialog.showModal();
@@ -48,6 +54,25 @@ export function openLap(
   dialog.querySelector(".lap-header h2")!.textContent = context.layoutName;
   const find = <T extends HTMLElement>(selector: string) =>
     dialog.querySelector<T>(selector)!;
+  if (isRun) {
+    dialog.setAttribute("aria-label", `${context.name} run simulator`);
+    find(".lap-stage").setAttribute("aria-label", "Run playback");
+    find(".lap-close").setAttribute("aria-label", "Close run simulator");
+    find(".lap-restart").setAttribute("aria-label", "Restart run");
+    find(".lap-timeline input").setAttribute("aria-label", "Run time");
+    find(".lap-play").textContent = "Play run";
+    find(".lap-record").textContent = "Record run";
+    find(".lap-results span").textContent = "SIMULATED RUN";
+    find(".lap-section h3 + p").textContent =
+      "Generic car · Standing start · Point-to-point run";
+    const explanation = find("[data-solver-note]");
+    explanation.closest("details")!.querySelector("summary")!.textContent =
+      "How the run is simulated";
+    explanation.textContent = explanation.textContent.replace(
+      "A periodic forward/backward solver plans one flying lap.",
+      "A forward/backward solver plans a standing-start run to the finish. The finish speed is unconstrained; no stopping zone is modelled.",
+    );
+  }
   let closed = false,
     playing = false,
     time = 0,
@@ -58,8 +83,8 @@ export function openLap(
     mapDot: L.CircleMarker | undefined,
     recorder: MediaRecorder | undefined,
     stream: MediaStream | undefined,
-    downloadUrl: string | undefined;
-  const chunks: Blob[] = [];
+    downloadUrl: string | undefined,
+    lastCapturedFrame = -Infinity;
   let lap: ReturnType<typeof simulateLap> | undefined;
   let mode: LapCamera | "imagery" = "chase";
   const mini = find<HTMLCanvasElement>(".lap-minimap"),
@@ -79,7 +104,7 @@ export function openLap(
     miniPoints.forEach((p, i) =>
       i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y),
     );
-    ctx.closePath();
+    if (!isRun) ctx.closePath();
     ctx.strokeStyle = "#52636b";
     ctx.lineWidth = 7;
     ctx.stroke();
@@ -112,8 +137,9 @@ export function openLap(
       `${s.acceleration < -0.3 ? "Braking" : s.acceleration > 0.3 ? "Accelerating" : "Coasting"} · ${Math.abs(s.acceleration / 9.80665).toFixed(2)} g · Lat ${Math.abs(s.lateralG).toFixed(2)} g`;
     find("[data-distance]").textContent =
       `${(s.distance / 1000).toFixed(2)} / ${(lap.road.length / 1000).toFixed(2)} km`;
-    find("[data-road-detail]").textContent =
-      `Here: ${(s.left + s.right).toFixed(1)} m wide · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`;
+    find("[data-road-detail]").textContent = lap.road.ground
+      ? `Mapped source path · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`
+      : `Here: ${(s.left + s.right).toFixed(1)} m wide · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`;
     timeline.value = String(time);
     find("[data-lap-time]").textContent =
       `${formatLapTime(time)} / ${formatLapTime(lap.duration)}`;
@@ -154,28 +180,47 @@ export function openLap(
       out.font = "20px monospace";
       out.fillText(formatLapTime(time), 275, 98);
       out.font = "16px sans-serif";
-      out.fillText(`${corner} · 1× real time`, 30, 668);
-      out.fillText("Natural elevation · Approximate reconstruction", 30, 695);
+      out.fillText(`${corner} · 1× real time`, 30, 642);
+      out.fillText("Natural elevation · Approximate reconstruction", 30, 665);
       out.font = "12px sans-serif";
       out.fillText(
-        `Imagery: ${lap.road.recipe.imagery.attribution} · Trace © OSM · Supplemental borders`,
+        `Borders: ${layout.metadata.borderInference?.imagery.attribution ?? "Supplemental border coordinates"}${approachEvidence ? ` · Approach: ${approachEvidence.imagery.attribution}` : ""}`,
+        30,
+        690,
+        1220,
+      );
+      out.fillText(
+        `Imagery: ${lap.road.recipe.imagery.attribution} · ${traceCredit(layout)} · Supplemental borders${elevationCredit ? ` · Road elevations edited from ${elevationCredit}` : ""}`,
         30,
         715,
         1220,
       );
       out.drawImage(mini, 1040, 24, 220, 180);
+      const track = stream?.getVideoTracks()[0] as
+          | CanvasCaptureMediaStreamTrack
+          | undefined,
+        now = performance.now();
+      if (track?.requestFrame && now - lastCapturedFrame >= 1000 / 30) {
+        track.requestFrame();
+        lastCapturedFrame = now;
+      }
     }
   }
   const stopRecording = () => {
-    if (recorder?.state === "recording") recorder.stop();
-    stream?.getTracks().forEach((t) => t.stop());
-    stream = undefined;
-    find(".lap-record").textContent = "Record lap";
+    if (recorder?.state === "recording") {
+      find<HTMLButtonElement>(".lap-record").disabled = true;
+      recorder.stop();
+    }
+    find(".lap-record").textContent = isRun ? "Record run" : "Record lap";
   };
   function setPlaying(next: boolean) {
     playing = next;
     last = performance.now();
-    find(".lap-play").textContent = playing ? "Pause" : "Play lap";
+    find(".lap-play").textContent = playing
+      ? "Pause"
+      : isRun
+        ? "Play run"
+        : "Play lap";
     if (!playing) stopRecording();
     if (playing) raf = requestAnimationFrame(tick);
     else cancelAnimationFrame(raf);
@@ -278,22 +323,40 @@ export function openLap(
         [south, west],
         [north, east],
       ];
-      L.imageOverlay(lap.road.recipe.imagery.url, bounds, {
-        attribution: lap.road.recipe.imagery.attribution,
-        crossOrigin: "anonymous",
-      }).addTo(map);
+      const tileReference = lap.road.recipe.imagery.tiles;
+      if (tileReference) {
+        const key = import.meta.env.VITE_MAPTILER_API_KEY?.trim();
+        if (key)
+          L.tileLayer(
+            `https://api.maptiler.com/maps/satellite-v4/{z}/{x}/{y}.jpg?key=${encodeURIComponent(key)}`,
+            {
+              tileSize: 512,
+              zoomOffset: -1,
+              maxZoom: 22,
+              attribution: lap.road.recipe.imagery.attribution,
+              crossOrigin: true,
+            },
+          ).addTo(map);
+      } else
+        L.imageOverlay(lap.road.recipe.imagery.url, bounds, {
+          attribution: lap.road.recipe.imagery.attribution,
+          crossOrigin: "anonymous",
+        }).addTo(map);
       const projection = plane(lap.road.origin);
       for (const side of ["left", "right"] as const) {
         const coords = lap.road.points.map((p) => {
           const d = p[side] * (side === "left" ? 1 : -1),
-            g = projection.from([p.x + p.nx * d, -p.z - p.nz * d]);
+            edge = side === "left" ? p.leftEdge : p.rightEdge,
+            g = projection.from(
+              edge ? [edge[0], -edge[1]] : [p.x + p.nx * d, -p.z - p.nz * d],
+            );
           return [g[1], g[0]] as [number, number];
         });
-        coords.push(coords[0]);
+        if (lap.road.recipe.kind !== "run") coords.push(coords[0]);
         L.polyline(coords, {
           color: side === "left" ? "#ff8454" : "#58dbeb",
           weight: 2,
-          attribution: "Trace © OSM · Supplemental borders",
+          attribution: `${traceCredit(layout)} · Supplemental borders`,
         }).addTo(map);
       }
       mapDot = L.circleMarker([0, 0], {
@@ -380,56 +443,144 @@ export function openLap(
       downloadUrl = undefined;
     }
     find(".lap-download").hidden = true;
-    chunks.length = 0;
+    const chunks: Blob[] = [];
     time = 0;
     try {
       const mime = [
-        "video/mp4;codecs=avc1.42001E",
         "video/webm;codecs=vp9",
+        "video/webm;codecs=vp8",
         "video/webm",
+        "video/mp4;codecs=avc1.42001E",
       ].find((m) => MediaRecorder.isTypeSupported(m));
-      stream = output.captureStream(30);
+      stream = output.captureStream(0);
+      if (
+        typeof (stream.getVideoTracks()[0] as CanvasCaptureMediaStreamTrack)
+          .requestFrame !== "function"
+      ) {
+        stream.getTracks().forEach((t) => t.stop());
+        stream = output.captureStream(30);
+      }
+      lastCapturedFrame = -Infinity;
       recorder = new MediaRecorder(
         stream,
         mime ? { mimeType: mime, videoBitsPerSecond: 6_000_000 } : undefined,
       );
+      const recording = recorder,
+        recordingStream = stream;
+      let failed = false;
       recorder.ondataavailable = (e) => {
-        if (e.data.size) chunks.push(e.data);
+        if (e.data.size) {
+          chunks.push(e.data);
+          window.clearTimeout(startupTimer);
+          if (!closed && recording.state === "recording") {
+            find<HTMLButtonElement>(".lap-record").disabled = false;
+            status.textContent = "Recording at 1× · Keep this tab visible";
+          }
+        }
       };
       recorder.onstop = () => {
+        window.clearTimeout(startupTimer);
+        // The encoder must flush its final data before the capture tracks end.
+        recordingStream.getTracks().forEach((t) => t.stop());
+        if (stream === recordingStream) stream = undefined;
         if (closed) return;
-        downloadUrl = URL.createObjectURL(
-          new Blob(chunks, { type: recorder!.mimeType }),
-        );
+        find<HTMLButtonElement>(".lap-record").disabled = false;
+        if (failed) return;
+        const video = new Blob(chunks, { type: recording.mimeType });
+        if (!video.size) {
+          status.textContent =
+            "No video frames were captured. Try recording again.";
+          return;
+        }
+        downloadUrl = URL.createObjectURL(video);
         const a = find<HTMLAnchorElement>(".lap-download");
         a.href = downloadUrl;
-        a.download = `${context.trackId}-${layout.metadata.layoutId}-lap-${Date.now()}.${recorder!.mimeType.includes("mp4") ? "mp4" : "webm"}`;
+        a.download = `${context.trackId}-${layout.metadata.layoutId}-lap-${Date.now()}.${recording.mimeType.includes("mp4") ? "mp4" : "webm"}`;
         a.hidden = false;
         status.textContent = "Video ready";
       };
       recorder.onerror = () => {
+        window.clearTimeout(startupTimer);
+        failed = true;
         status.textContent = "Recording failed. Try again.";
         stopRecording();
+        recordingStream.getTracks().forEach((t) => t.stop());
+        if (stream === recordingStream) stream = undefined;
+        find<HTMLButtonElement>(".lap-record").disabled = false;
       };
+      recorder.onstart = () => paint(true);
       recorder.start(1000);
       find(".lap-record").textContent = "Stop recording";
-      status.textContent = "Recording at 1× · Keep this tab visible";
+      find<HTMLButtonElement>(".lap-record").disabled = true;
+      status.textContent = "Starting video capture…";
+      const startupTimer = window.setTimeout(() => {
+        if (recording.state === "recording" && !chunks.length) {
+          failed = true;
+          status.textContent = "Video capture did not start. Try again.";
+          setPlaying(false);
+        }
+      }, 15000);
       paint(true);
       if (!playing) setPlaying(true);
       else last = performance.now();
     } catch {
       stopRecording();
+      stream?.getTracks().forEach((t) => t.stop());
+      stream = undefined;
+      find<HTMLButtonElement>(".lap-record").disabled = false;
       status.textContent = "Unable to record video in this browser.";
     }
   };
   void (async () => {
     try {
       const recipe = layout.metadata.model3d;
+      if (recipe && recipe.kind !== "surface" && recipe.sharedGround) {
+        find(".lap-section h3 + p").textContent = "Generic car · Flying lap · Mapped source path";
+        find(".lap-evidence p").textContent = "Road edges retain the original boundaries with a local image-reviewed junction correction. Positions remain estimates.";
+        find("[data-solver-note]").nextElementSibling!.textContent = "The car follows the complete saved mapped route, without racing-line optimisation, gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.";
+        find("[data-storage]").textContent = "One GeoJSON keeps the original coordinates, terrain grid, image reference and a small junction correction. Road surfaces, boundary paint, illustrative curbs and lap samples are rebuilt in your browser when you open this view. No 3D meshes or video are stored.";
+      }
       if (!recipe || recipe.kind === "surface")
         throw new Error("This layout has no embedded 3D model data.");
       if (closed) return;
       find(".lap-imagery-credit").textContent =
-        `Imagery: ${recipe.imagery.attribution}`;
+        `Imagery: ${recipe.imagery.attribution}${elevationCredit ? ` · Road elevations edited from ${elevationCredit}` : ""}`;
+      if (layout.metadata.borderInference) {
+        const evidence = layout.metadata.borderInference;
+        const note = document.createElement("p");
+        note.textContent = evidence.measurement
+          ? "Road-border estimates are reconstructed from sparse measurements on pinned georeferenced imagery. Sections between measurements are interpolated and have not been formally verified."
+          : evidence.refinement
+            ? "Road-border estimates include corrections measured on pinned aerial imagery. Other sections remain automatic estimates. These borders have not been formally verified."
+            : "Road borders are inferred aerial-image estimates and have not been manually reviewed.";
+        const credit = document.createElement("a");
+        credit.href =
+          evidence.imagery.reuseEvidenceUrl ??
+          evidence.imagery.termsUrl ??
+          evidence.imagery.url;
+        credit.target = "_blank";
+        credit.rel = "noreferrer";
+        credit.textContent = evidence.imagery.attribution;
+        note.append(" ", credit);
+        find(".lap-evidence").append(note);
+        if (evidence.measurement?.note) {
+          const detail = document.createElement("p");
+          detail.dataset.measurementDetail = "";
+          detail.textContent = evidence.measurement.note;
+          find(".lap-evidence").append(detail);
+        }
+      }
+      if (approachEvidence) {
+        const note = document.createElement("p");
+        note.textContent = approachEvidence.note;
+        const credit = document.createElement("a"), info = approachEvidence.imagery;
+        credit.href = info.reuseEvidenceUrl ?? info.termsUrl ?? info.url;
+        credit.target = "_blank";
+        credit.rel = "noreferrer";
+        credit.textContent = `${info.attribution} · ${info.license}`;
+        note.append(" ", credit);
+        find(".lap-evidence").append(note);
+      }
       const road = buildRoad(layout);
       lap = simulateLap(road);
       if (closed) return;
@@ -502,23 +653,28 @@ export function openLap(
       find(".lap-profile").innerHTML =
         `<svg viewBox="0 0 240 90" role="img" aria-label="Road elevation profile"><path d="M0,82 L${path.replaceAll(" ", " L")} L240,82 Z" fill="#f38a4d22"/><polyline points="${path}" fill="none" stroke="#f08c56" stroke-width="2"/><line class="lap-profile-cursor" x1="0" y1="5" x2="0" y2="82" stroke="#f1f4ec" stroke-width="1"/></svg>`;
       const published = recipe.quality.elevation === "venue-anchors";
+      const grade = layout.metadata.borderInference?.gradeSeparation;
       const estimatedCurbs = recipe.quality.curbs === "geometry-estimated";
       find(".lap-scale").textContent = estimatedCurbs
         ? "1× elevation · Terrain estimate · Illustrative curbs"
         : "1× elevation · Approximate reconstruction";
       find(".lap-profile-caption").textContent =
-        `${low.toFixed(0)}–${high.toFixed(0)} m altitude · ${published ? "Published elevation anchors" : `Terrain estimate (~${recipe.terrain.source.sampleSpacingM} m grid)`}`;
+        `${low.toFixed(0)}–${high.toFixed(0)} m altitude · ${grade ? `${grade.elevation.source} terrain estimate · Bridge interpolated` : published ? "Published elevation anchors" : `Terrain estimate (~${recipe.terrain.source.sampleSpacingM} m grid)`}`;
       find("[data-quality]").textContent = estimatedCurbs
         ? "Illustrative curbs · Positions unverified"
         : "Image-reviewed curb locations · Estimated dimensions";
-      find("[data-elevation-note]").textContent = published
-        ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
-        : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow the mapped trace.`;
+      find("[data-elevation-note]").textContent = grade
+        ? `Road elevations are edited from ${grade.elevation.source} ground samples. The bridge deck interpolates between sampled approaches; its height and clearance are estimates, not a survey. Road levels remain separate at the overpass.`
+        : published
+          ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
+          : recipe.sharedGround
+            ? `Road and car heights sample the same approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster at each position, including both visits to the shared junction. The full mapped route is preserved. Original borders have a local image-reviewed junction correction; road positions and elevations remain estimates.`
+            : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.sourceSequence ? "the complete saved source sequence, with measured approach edges and one shared circuit elevation profile reused on each pass" : recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
-        ? "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
+        ? recipe.sharedGround ? "Curbs illustrate curved physical road boundaries. Their positions, widths, heights and colours are unverified." : "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `Trace © OpenStreetMap contributors, ODbL. Supplemental borders retain LicenseRef-Track-Borders. Imagery: ${recipe.imagery.attribution}. No additional rights granted.`;
+        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""}${approachEvidence ? ` Approach estimates: ${approachEvidence.imagery.license} (${approachEvidence.imagery.attribution}).` : ""}${recipe.sharedGround ? ` Junction estimates: ${recipe.sharedGround.imagery.license} (${recipe.sharedGround.imagery.attribution}).` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",

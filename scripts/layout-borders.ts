@@ -1,5 +1,19 @@
 import { readFile } from "node:fs/promises";
 import { layoutSchema, type Layout } from "../schemas/data";
+import type { TrackModel3D } from "../schemas/track-model";
+import { prepareModel } from "../src/model-preparation";
+import { modelInputHash } from "./model-input";
+
+/** Border refreshes invalidate road geometry, but not an explicitly pinned display source. */
+export function preserveDisplayImageryOnBorderRefresh(
+  layout: Layout,
+  previous?: TrackModel3D,
+): Layout {
+  if (!previous?.preparation?.preserveImageryReference) return layout;
+  const input = { ...layout, metadata: { ...layout.metadata, model3d: previous } },
+    model3d = prepareModel(input, previous.terrain, modelInputHash(input, previous.terrain));
+  return { ...layout, metadata: { ...layout.metadata, model3d } };
+}
 
 export async function existingLayoutExtras(
   file: string,
@@ -7,6 +21,8 @@ export async function existingLayoutExtras(
 ): Promise<{
   borders: Layout["features"];
   model3d?: Layout["metadata"]["model3d"];
+  borderInference?: Layout["metadata"]["borderInference"];
+  borderComposition?: Layout["metadata"]["borderComposition"];
 }> {
   let bytes: string;
   try {
@@ -24,6 +40,8 @@ export async function existingLayoutExtras(
         feature.properties.role === "outer",
     ),
     model3d: data.metadata.model3d,
+    borderInference: data.metadata.borderInference,
+    borderComposition: data.metadata.borderComposition,
   };
 }
 
@@ -42,15 +60,20 @@ export function serializeLayout(data: Layout) {
   const metadata = {
     ...data.metadata,
     ...(data.metadata.model3d ? { model3d: "__INLINE_MODEL3D__" } : {}),
+    ...(data.metadata.borderComposition
+      ? { borderComposition: "__INLINE_BORDER_COMPOSITION__" }
+      : {}),
   };
-  const text = JSON.stringify(
-    { ...data, metadata, features: primary },
-    null,
-    2,
-  ).replace(
-    '"model3d": "__INLINE_MODEL3D__"',
-    () => `"model3d": ${JSON.stringify(data.metadata.model3d)}`,
-  );
+  const text = JSON.stringify({ ...data, metadata, features: primary }, null, 2)
+    .replace(
+      '"borderComposition": "__INLINE_BORDER_COMPOSITION__"',
+      () =>
+        `"borderComposition": ${JSON.stringify(data.metadata.borderComposition)}`,
+    )
+    .replace(
+      '"model3d": "__INLINE_MODEL3D__"',
+      () => `"model3d": ${JSON.stringify(data.metadata.model3d)}`,
+    );
   if (!supplemental.length) return text + "\n";
   const end = "\n  ]\n}";
   if (!text.endsWith(end)) throw new Error("Unexpected layout serialization");

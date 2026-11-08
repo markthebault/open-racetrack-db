@@ -2,60 +2,17 @@
   "schemaVersion": 1,
   "trackId": "es-mir-racing-villena-circuit-449369135",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "678e1d606d41c1d03cd666b28ec8519707cdf784cbc87653f1ed44367f2fef0e",
+  "sourceId": "osm-pnoa-villena-route",
+  "snapshotFile": "villena-pnoa-route.json",
+  "snapshotSha256": "e17e54f718205d4d0798f0eeebeb561a53307fef5f41a2996f330f4140d66f13",
+  "geometrySource": "imagery",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
-    "Some source ways lack one-way direction tags. Travel direction is provisional."
-  ],
-  "segments": [
-    {
-      "wayId": 449369135,
-      "wayVersion": 5,
-      "fromIndex": 0,
-      "toIndex": 13
-    },
-    {
-      "wayId": 449492075,
-      "wayVersion": 1,
-      "fromIndex": 0,
-      "toIndex": 14
-    },
-    {
-      "wayId": 449369135,
-      "wayVersion": 5,
-      "fromIndex": 22,
-      "toIndex": 62
-    },
-    {
-      "wayId": 1367431358,
-      "wayVersion": 1,
-      "fromIndex": 0,
-      "toIndex": 7
-    },
-    {
-      "wayId": 449369135,
-      "wayVersion": 5,
-      "fromIndex": 65,
-      "toIndex": 88
-    },
-    {
-      "wayId": 449492076,
-      "wayVersion": 2,
-      "fromIndex": 35,
-      "toIndex": 0
-    },
-    {
-      "wayId": 449369135,
-      "wayVersion": 5,
-      "fromIndex": 89,
-      "toIndex": 126
-    }
+    "OSM-derived route with an explicitly image-guided correction of the lower outer bend. Outside the corrected interval the original OSM candidate coordinates are retained exactly, with ODbL attribution; these pixels are not independent image observations. Ten native-image centre controls replace the old lower chicane that crosses the visible curb/apron. The correction follows pinned June2024 PNOA orthophotography, not operator diagram coordinates. Operator illustration identifies the route configuration only. Both OSM and PNOA attribution are retained. Source configuration, travel direction and georeferencing remain draft; no nominal dimensions, timing position or banking are fitted.",
+    "Work derived from PNOA 2024 CC-BY 4.0 ign.es. OSM-derived sections retain OpenStreetMap attribution and ODbL-1.0. Original source route is retained in shared research evidence. Configuration, course direction and timing remain unverified."
   ],
   "gates": []
 }

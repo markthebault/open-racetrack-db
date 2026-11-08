@@ -24,64 +24,64 @@
       "id": "grand-prix",
       "name": "Nurburgring GP",
       "file": "layouts/grand-prix.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Full GP route includes the arena and Müllenbach loop. This replaces the incorrectly labelled Sprint preview.",
-      "referenceId": "Germany/Nurburgring GP"
+      "referenceId": "Germany/Nurburgring GP",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Full GP route includes the arena and Müllenbach loop. This replaces the incorrectly labelled Sprint preview."
     },
     {
       "id": "gp-without-mb-arena",
       "name": "Nurburgring GP without MB Arena",
       "file": "layouts/gp-without-mb-arena.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review.",
-      "referenceId": "Germany/Nurburgring GP without MB Arena"
+      "referenceId": "Germany/Nurburgring GP without MB Arena",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review."
     },
     {
       "id": "sprintstrecke",
       "name": "Nurburgring Sprintstrecke",
       "file": "layouts/sprintstrecke.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only.",
-      "referenceId": "Germany/Nurburgring Sprintstrecke"
+      "referenceId": "Germany/Nurburgring Sprintstrecke",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only."
     },
     {
       "id": "24hr",
       "name": "Nurburgring 24Hr",
       "file": "layouts/24hr.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review.",
-      "referenceId": "Germany/Nurburgring 24Hr"
+      "referenceId": "Germany/Nurburgring 24Hr",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review."
     },
     {
       "id": "nls",
       "name": "Nurburgring NLS Circuit",
       "file": "layouts/nls.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only.",
-      "referenceId": "Germany/Nurburgring NLS Circuit"
+      "referenceId": "Germany/Nurburgring NLS Circuit",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only."
     },
     {
       "id": "nordschleife",
       "name": "Nurburgring Nordschleife",
       "file": "layouts/nordschleife.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only.",
-      "referenceId": "Germany/Nurburgring Nordschleife"
+      "referenceId": "Germany/Nurburgring Nordschleife",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only."
     },
     {
       "id": "nordschleife-btg",
       "name": "Nurburgring BTG",
       "file": "layouts/nordschleife-btg.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing.",
-      "referenceId": "Germany/Nurburgring BTG"
+      "referenceId": "Germany/Nurburgring BTG",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing."
     },
     {
       "id": "industry-pool",
       "name": "Nurburgring Industry Pool",
       "file": "layouts/industry-pool.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing.",
-      "referenceId": "Germany/Nurburgring Industry Pool"
+      "referenceId": "Germany/Nurburgring Industry Pool",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing."
     },
     {
       "id": "lap-record",
       "name": "Nurburgring Lap Record",
       "file": "layouts/lap-record.geojson",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Timing variant of the Nordschleife, using a distinct private start/finish convention.",
-      "referenceId": "Germany/Nurburgring Lap Record"
+      "referenceId": "Germany/Nurburgring Lap Record",
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Timing variant of the Nordschleife, using a distinct private start/finish convention."
     }
   ],
   "sources": [
@@ -111,6 +111,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T16:10:24Z",
       "evidenceNote": "Supports the stated course configuration only. No public coordinates are traced from this page."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:31.402Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

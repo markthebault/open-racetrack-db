@@ -1,176 +1,49 @@
 {
   "schemaVersion": 2,
   "geometryKind": "network",
+  "geometrySource": "components",
   "trackId": "nz-ruapuna-e0b8962a",
   "layoutId": "ruapuna",
-  "sourceId": "osm-network-ruapuna",
-  "snapshotFile": "network-ruapuna.json",
-  "snapshotSha256": "319980638d06acfc7466d716a2b4105e10dbf04e77d588cece150db61ad1bc82",
+  "sourceId": "component-network-ruapuna",
+  "snapshotFile": "components-network-ruapuna.json",
+  "snapshotSha256": "c9d19c2cf6ad3d4ad6ca43cc22ad1a8908dc12400a209dc2714f387106b62f75",
   "geometryStatus": "draft",
   "timingMode": "shared",
   "reviewedAt": null,
-  "notes": [],
-  "gates": [],
-  "paths": [
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 33795438,
-          "wayVersion": 13,
-          "fromIndex": 0,
-          "toIndex": 2
-        },
-        {
-          "wayId": 33795448,
-          "wayVersion": 8,
-          "fromIndex": 0,
-          "toIndex": 93
-        },
-        {
-          "wayId": 33795441,
-          "wayVersion": 11,
-          "fromIndex": 0,
-          "toIndex": 49
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 33795438,
-          "wayVersion": 13,
-          "fromIndex": 0,
-          "toIndex": 2
-        },
-        {
-          "wayId": 33795448,
-          "wayVersion": 8,
-          "fromIndex": 0,
-          "toIndex": 93
-        },
-        {
-          "wayId": 33795441,
-          "wayVersion": 11,
-          "fromIndex": 0,
-          "toIndex": 29
-        },
-        {
-          "wayId": 33795523,
-          "wayVersion": 8,
-          "fromIndex": 6,
-          "toIndex": 20
-        },
-        {
-          "wayId": 33795441,
-          "wayVersion": 11,
-          "fromIndex": 30,
-          "toIndex": 49
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 33795438,
-          "wayVersion": 13,
-          "fromIndex": 0,
-          "toIndex": 2
-        },
-        {
-          "wayId": 33795448,
-          "wayVersion": 8,
-          "fromIndex": 0,
-          "toIndex": 49
-        },
-        {
-          "wayId": 33795523,
-          "wayVersion": 8,
-          "fromIndex": 0,
-          "toIndex": 20
-        },
-        {
-          "wayId": 33795441,
-          "wayVersion": 11,
-          "fromIndex": 30,
-          "toIndex": 49
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 33795438,
-          "wayVersion": 13,
-          "fromIndex": 0,
-          "toIndex": 2
-        },
-        {
-          "wayId": 33795448,
-          "wayVersion": 8,
-          "fromIndex": 0,
-          "toIndex": 49
-        },
-        {
-          "wayId": 33795523,
-          "wayVersion": 8,
-          "fromIndex": 0,
-          "toIndex": 6
-        },
-        {
-          "wayId": 33795441,
-          "wayVersion": 11,
-          "fromIndex": 29,
-          "toIndex": 49
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 33795441,
-          "wayVersion": 11,
-          "fromIndex": 49,
-          "toIndex": 20
-        },
-        {
-          "wayId": 33795504,
-          "wayVersion": 9,
-          "fromIndex": 6,
-          "toIndex": 0
-        }
-      ]
-    }
+  "notes": [
+    "Combined configuration set: four exact original OSM routes and the image-derived Eastern route, rebuilt from pinned independent sources without snapping. This is not one lap. Only exactly shared coordinate edges count once in the branch length; nearby coordinate-distinct image and OSM paths remain separate. No line connects independent paths. Public timing coordinates remain unchanged and do not turn this configuration set into a single lap. Original network source retained for correction review."
   ],
+  "gates": [],
   "components": [
     {
       "layoutId": "ruapuna-grand-prix",
       "snapshotFile": "components-osm-33795438.json",
-      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+      "traceSha256": "c2aa1d53876925057d351954ee26eebcba5e5784a280eedb09e27e890d4a0fe6"
     },
     {
       "layoutId": "ruapuna-grand-prix-dipper",
       "snapshotFile": "components-osm-33795438.json",
-      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+      "traceSha256": "2967ea08bbbddba12030d5b117470aedfa5d5d9aede54da14054eddd8b10f320"
     },
     {
       "layoutId": "ruapuna-outer-dipper",
       "snapshotFile": "components-osm-33795438.json",
-      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+      "traceSha256": "700a013f8c28dadd2050edd0beb59e004fb8a0295bf217cb27628f4a9ce5d638"
     },
     {
       "layoutId": "ruapuna-outer-course",
       "snapshotFile": "components-osm-33795438.json",
-      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0",
+      "traceSha256": "fff7e45e8c045ba56d169c2cf19e1857e572aa6362ee7d7298a1853a191fb69e"
     },
     {
       "layoutId": "ruapuna-eastern-course",
-      "snapshotFile": "components-osm-33795438.json",
-      "snapshotSha256": "5451cdf2cf79402eea3142f3b9e2fc49d8109f1bb8f2a517bda8457312029ed0"
+      "snapshotFile": "imagery-ruapuna-eastern-2025.json",
+      "snapshotSha256": "5cf2d0795ecd7d4cb7227ebcd2b3cf10712f259f8e276d36a9ee1afd1e83e294",
+      "traceSha256": "d3c2c6349a3a04d382dfd6b32db2301bcaad70a9d953ccb099a9e669dcce84ec"
     }
   ]
 }

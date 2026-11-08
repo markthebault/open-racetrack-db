@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { indexSchema, type Layout, type Track } from "../schemas/data";
 const read = async (p: string) => JSON.parse(await readFile(p, "utf8"));
 
 test("every bordered circuit and layout renders its own on-demand road surface in the UI", async ({
   page,
-}) => {
+}, testInfo) => {
   test.setTimeout(1200000);
   const catalogue = indexSchema.parse(await read("data/index.json"));
   const groups: {
@@ -14,6 +14,7 @@ test("every bordered circuit and layout renders its own on-demand road surface i
     layouts: {
       id: string;
       model: NonNullable<Layout["metadata"]["model3d"]>;
+      composed: boolean;
     }[];
   }[] = [];
   for (const entry of catalogue.tracks) {
@@ -26,7 +27,11 @@ test("every bordered circuit and layout renders its own on-demand road surface i
         );
         if (layout.features.some((f) => f.properties.role === "inner")) {
           expect(layout.metadata.model3d).toBeTruthy();
-          layouts.push({ id: item.id, model: layout.metadata.model3d! });
+          layouts.push({
+            id: item.id,
+            model: layout.metadata.model3d!,
+            composed: !!layout.metadata.borderComposition,
+          });
         }
       }
     if (layouts.length) groups.push({ track, layouts });
@@ -39,6 +44,7 @@ test("every bordered circuit and layout renders its own on-demand road surface i
     `/?track=${groups[0].track.id}&layout=${groups[0].layouts[0].id}&view=3d&height=1`,
   );
   let checked = 0;
+  const rendered = [];
   for (const { track, layouts } of groups) {
     await page.locator(`#venues button[data-track-id="${track.id}"]`).click();
     await expect(page.locator("#selection h2")).toHaveText(track.name);
@@ -58,16 +64,32 @@ test("every bordered circuit and layout renders its own on-demand road surface i
       expect(
         Number(await view.getAttribute("data-road-triangles")),
       ).toBeGreaterThan(0);
-      await expect(view).toHaveAttribute(
-        "data-curb-sections",
-        String(selected.model.curbs.length),
-      );
+      if (selected.model.kind !== "surface" && selected.model.sharedGround)
+        expect(Number(await view.getAttribute("data-curb-sections"))).toBeGreaterThan(0);
+      else
+        await expect(view).toHaveAttribute(
+          "data-curb-sections",
+          String(selected.model.curbs.length),
+        );
       await expect(page.locator("#play-lap")).toHaveText(
-        selected.model.kind === "surface" ? "Explore 3D" : "▷ Play lap",
+        selected.composed
+          ? "Choose driving route"
+          : selected.model.kind === "surface"
+            ? "Explore 3D"
+            : selected.model.kind === "run"
+              ? "▷ Play run"
+              : "▷ Play lap",
       );
       if (selected.model.kind === "surface")
         await expect(page.locator("#view-notice")).toBeVisible();
       checked++;
+      rendered.push({
+        trackId: track.id,
+        layoutId: selected.id,
+        roadTriangles: Number(await view.getAttribute("data-road-triangles")),
+        curbSections: Number(await view.getAttribute("data-curb-sections")),
+        kind: selected.model.kind ?? "lap",
+      });
       if (checked % 50 === 0)
         console.log(`Rendered ${checked} bordered layouts`);
     }
@@ -76,4 +98,7 @@ test("every bordered circuit and layout renders its own on-demand road surface i
     `Rendered all ${checked} layouts across ${groups.length} circuits.`,
   );
   expect(errors).toEqual([]);
+  const report = testInfo.outputPath("rendered-layout-coverage.json");
+  await writeFile(report, JSON.stringify({ circuits: groups.length, layouts: rendered }, null, 2));
+  await testInfo.attach("rendered-layout-coverage", { path: report, contentType: "application/json" });
 });

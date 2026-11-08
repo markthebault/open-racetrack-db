@@ -9,6 +9,7 @@ export async function readNetworkSelection(trackId:string,layoutIds:string[]){
  for(const layoutId of layoutIds){
   const recipe=JSON.parse(await readFile(`${root}/layouts/${layoutId}.json`,'utf8'));
   if(recipe.trackId!==trackId||recipe.layoutId!==layoutId||recipe.geometryKind==='network')throw new Error('Network component must be an identified source route');
+  if(recipe.geometrySource&&recipe.geometrySource!=='osm')throw new Error('OSM network import cannot overwrite mixed-source components; use the pinned component-network recipe');
   const file=recipe.snapshotFile??'osm.json';if(!/^[a-z0-9][a-z0-9-]*\.json$/.test(file))throw new Error('Unsafe component snapshot');
   const bytes=await readFile(`${root}/${file}`),hash=createHash('sha256').update(bytes).digest('hex');if(hash!==recipe.snapshotSha256)throw new Error('Network component snapshot changed');
   const raw=JSON.parse(bytes.toString()),selected:Way[]=raw.elements.filter((w:Way)=>recipe.segments.some((s:Segment)=>s.wayId===w.id)).map((w:Way)=>({id:w.id,version:w.version,nodes:w.nodes,geometry:w.geometry,...(w.tags?{tags:w.tags}:{})}));

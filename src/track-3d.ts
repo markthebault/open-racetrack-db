@@ -10,8 +10,11 @@ import { TerrainDrape } from "./terrain-drape";
 import { timingMarkers } from "./timing";
 import type { TrackBorders } from "./track-borders";
 import { borderRoadGeometry, boundaryCurbGeometry } from "./border-surface";
-import { buildRoad } from "./lap-simulation";
+import { buildRoad, type Road } from "./lap-simulation";
 import { roadStrip } from "./road-geometry";
+import { roadGroundHeight, carveRoadGround } from "./road-ground";
+import { gradeProfileHeight } from "./grade-separation";
+import { sharedGroundMeshes } from "./shared-ground-render";
 
 function flagTexture(color: number) {
   const canvas = document.createElement("canvas");
@@ -162,6 +165,8 @@ function terrainSurface(
   origin: Position,
   scale: number,
   exaggeration: number,
+  conform?: (point: Position, height: number) => number,
+  road?: Road,
 ) {
   const projection = plane(origin);
   const columns = Math.min(
@@ -176,18 +181,19 @@ function terrainSurface(
   geometry.rotateX(-Math.PI / 2);
   const positions = geometry.getAttribute("position");
   const samples: (number | null)[] = [];
-  for (let i = 0; i < positions.count; i++)
+  for (let i = 0; i < positions.count; i++) {
+    const point = projection.from([
+        positions.getX(i) / scale,
+        -positions.getZ(i) / scale,
+      ]),
+      sampled = sampleElevation(grid, point);
     samples.push(
-      sampleElevation(
-        grid,
-        projection.from([
-          positions.getX(i) / scale,
-          -positions.getZ(i) / scale,
-        ]),
-      ),
+      sampled === null ? null : conform ? conform(point, sampled) : sampled,
     );
+  }
   const floor = Math.min(
     ...samples.filter((value): value is number => value !== null),
+    ...(road ? road.points.map((p) => p.y - 0.4) : []),
   );
   for (let i = 0; i < positions.count; i++)
     positions.setY(
@@ -197,6 +203,23 @@ function terrainSurface(
         : (samples[i]! - floor) * scale * exaggeration + 0.16,
     );
   // Raster holes remain holes instead of being filled with invented heights.
+  if (road) {
+    const source = plane(road.origin);
+    carveRoadGround(
+      geometry,
+      road,
+      { columns, rows },
+      (x, z, y) => {
+        const [east, north] = projection.to(source.from([x, -z]));
+        return [
+          east * scale,
+          -north * scale,
+          (y - floor) * scale * exaggeration + 0.16,
+        ];
+      },
+      0.4 * scale * exaggeration,
+    );
+  }
   const triangles = Array.from(geometry.getIndex()!.array);
   const valid = [];
   for (let i = 0; i < triangles.length; i += 3)
@@ -302,7 +325,7 @@ export class Track3D {
   private course = new THREE.Group();
   private borders = new THREE.Group();
   private traceHighlights: THREE.Mesh[] = [];
-  private borderProject?: (point: Position) => THREE.Vector3;
+  private borderProject?: (point: Position, station?: number) => THREE.Vector3;
   private active = false;
   private rotating = false;
   private frame = 0;
@@ -565,8 +588,8 @@ export class Track3D {
             ? [feature.geometry.coordinates]
             : feature.geometry.coordinates;
         for (const path of paths) {
-          const points = path.map((p) => {
-            const point = this.borderProject!(p);
+          const points = path.map((p, station) => {
+            const point = this.borderProject!(p, station);
             point.y += 0.48;
             return point;
           });
@@ -625,6 +648,14 @@ export class Track3D {
   ) {
     this.clear();
     const trace = layout.features.find((f) => f.properties.role === "trace")!;
+    const model = layout.metadata.model3d,
+      grade = layout.metadata.borderInference?.gradeSeparation,
+      gradeRoad =
+        (grade || (model?.kind === "run" && model.sourceSequence)) && model && model.kind !== "surface"
+          ? buildRoad(layout)
+          : undefined,
+      groundHeight = gradeRoad ? roadGroundHeight(gradeRoad) : undefined,
+      roadProjection = gradeRoad ? plane(gradeRoad.origin) : undefined;
     const local = planarCourse(geometryPaths(trace.geometry));
     const scale = 80 / Math.max(local.width, local.height, 1);
     const width = Math.max(35, local.width * scale + 22),
@@ -669,6 +700,13 @@ export class Track3D {
         local.origin,
         scale,
         heightScale,
+        groundHeight && roadProjection
+          ? (point, height) => {
+              const [x, north] = roadProjection.to(point);
+              return groundHeight(x, -north, height) - 0.3;
+            }
+          : undefined,
+        gradeRoad,
       );
       floor = surface.floor;
       ground = new TerrainDrape(surface.geometry);
@@ -762,8 +800,9 @@ export class Track3D {
         side: THREE.DoubleSide,
       }),
     ];
-    const model = layout.metadata.model3d;
     if (model) {
+      const groundRoad = model.kind !== "surface" && model.sharedGround ? buildRoad(layout) : undefined,
+        shared = groundRoad ? sharedGroundMeshes(groundRoad) : undefined;
       const project = plane(local.origin);
       const toBoard = (
         geometry: THREE.BufferGeometry,
@@ -785,7 +824,17 @@ export class Track3D {
         geometry.computeVertexNormals();
         return geometry;
       };
-      const surface = borderRoadGeometry(layout, model.terrain);
+      const bridgeGeometry = gradeRoad
+        ? roadStrip(gradeRoad, (p) => [-p.right, p.left], 0.02)
+        : undefined;
+      const surface =
+        shared && groundRoad ? { geometry: shared.asphalt, origin: groundRoad.origin, triangles: shared.triangles } : bridgeGeometry && gradeRoad
+          ? {
+              geometry: bridgeGeometry,
+              origin: gradeRoad.origin,
+              triangles: bridgeGeometry.getAttribute("position").count / 3,
+            }
+          : borderRoadGeometry(layout, model.terrain);
       this.course.add(
         new THREE.Mesh(
           toBoard(surface.geometry, surface.origin, 0.035),
@@ -797,6 +846,23 @@ export class Track3D {
         ),
       );
       this.container.dataset.roadTriangles = String(surface.triangles);
+      if (shared && groundRoad) this.course.add(new THREE.Mesh(
+        toBoard(shared.outlines, groundRoad.origin, 0.04),
+        new THREE.MeshStandardMaterial({ color: 0xe9ebdc, roughness: 0.9, side: THREE.DoubleSide }),
+      ));
+      if (gradeRoad) {
+        const w = Math.max(0.018 / scale, 0.16),
+          highlight = new THREE.Mesh(
+            toBoard(
+              roadStrip(gradeRoad, () => [-w / 2, w / 2], 0.03),
+              gradeRoad.origin,
+              0.055,
+            ),
+            mats[1].clone(),
+          );
+        this.course.add(highlight);
+        this.traceHighlights.push(highlight);
+      }
       const addCurb = (geometry: THREE.BufferGeometry, origin: Position) =>
         this.course.add(
           new THREE.Mesh(
@@ -808,11 +874,13 @@ export class Track3D {
             }),
           ),
         );
-      if (model.kind === "surface") {
+      if (shared && groundRoad) {
+        addCurb(shared.curbs, groundRoad.origin);
+      } else if (model.kind === "surface") {
         const curbs = boundaryCurbGeometry(layout, model);
         addCurb(curbs.geometry, curbs.origin);
       } else {
-        const road = buildRoad(layout);
+        const road = gradeRoad ?? buildRoad(layout);
         for (const curb of model.curbs)
           addCurb(
             roadStrip(
@@ -828,10 +896,11 @@ export class Track3D {
             road.origin,
           );
       }
-      this.container.dataset.curbSections = String(model.curbs.length);
+      this.container.dataset.curbSections = String(shared?.curbSections ?? model.curbs.length);
     }
     const geographic = geometryPaths(trace.geometry);
     for (const [pathIndex, path] of local.paths.entries()) {
+      if (gradeRoad) continue;
       const points = path.map(
         (p, i) =>
           new THREE.Vector3(
@@ -882,7 +951,14 @@ export class Track3D {
       point.y = ground?.heightAt(point.x, point.z) ?? point.y;
       return point;
     };
-    this.borderProject = toLocal;
+    this.borderProject = (p, station) => {
+      const point = toLocal(p);
+      if (grade && station !== undefined)
+        point.y =
+          (gradeProfileHeight(grade, station) - floor) * scale * heightScale +
+          0.16;
+      return point;
+    };
     const displayGates: {
       role: string;
       coordinates: Position[];

@@ -27,8 +27,8 @@
     {
       "id": "motorsport-arena-oschersleben",
       "name": "Motorsport Arena Oschersleben",
-      "referenceId": "Germany/Motorsport Arena Oschersleben",
       "file": "layouts/motorsport-arena-oschersleben.geojson",
+      "referenceId": "Germany/Motorsport Arena Oschersleben",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3663.9 m. Difference from the supplied layout distance 3.1 m. Course configuration still requires visual review."
     }
   ],
@@ -50,6 +50,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T18:06:55.611Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:22:23.574Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

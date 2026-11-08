@@ -22,15 +22,15 @@
     {
       "id": "achna-speedway",
       "name": "Achna Speedway",
-      "referenceId": "Cyprus/Achna Speedway",
       "file": "layouts/achna-speedway.geojson",
+      "referenceId": "Cyprus/Achna Speedway",
       "description": "Combined mapped configurations: Achna main course, Achna inner alternative. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "achna-speedway-full-runway",
       "name": "Achna Speedway Full Runway",
-      "referenceId": "Cyprus/Achna Speedway Full Runway",
       "file": "layouts/achna-speedway-full-runway.geojson",
+      "referenceId": "Cyprus/Achna Speedway Full Runway",
       "description": "Combined mapped configurations: Achna main course, Achna inner alternative, Achna full straight. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -124,6 +124,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-02T07:01:03.189Z",
       "evidenceNote": "The supplied full-straight configuration adds the cross-course straight's real southern open extension to the same main course and inner alternative. The operator plan independently identifies this physical straight. Preserve its actual open end, separately from the two other paths. This unique branch length is not an exact timed lap or a measured drag distance; current alignment and timing extent remain draft. The independent unique branch distance is 2768.5 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T09:57:20.353Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

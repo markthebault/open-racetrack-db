@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "trackId": "us-autobahn-country-club-42852101",
+  "layoutId": "main",
+  "baselineCommit": "0a84b7b6b9e0dcc7bdf52fd85c828077b8d8c9fe",
+  "previousRecipe": {
+    "schemaVersion": 1,
+    "trackId": "us-autobahn-country-club-42852101",
+    "layoutId": "main",
+    "sourceId": "osm-snapshot",
+    "snapshotSha256": "dced0a8a6ce16db158a3bf1af5da989fb577d94d8495ce175b6e6e8291f0883c",
+    "closed": true,
+    "timingMode": "shared",
+    "geometryStatus": "draft",
+    "reviewedAt": null,
+    "notes": [
+      "Connected OSM course candidate. The selected loop is the longest simple source-node cycle after explicit exclusions; its association with a named circuit configuration requires review.",
+      "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
+      "Some source ways lack one-way direction tags. Travel direction is provisional."
+    ],
+    "segments": [
+      {
+        "wayId": 42852101,
+        "wayVersion": 3,
+        "fromIndex": 2,
+        "toIndex": 6
+      },
+      {
+        "wayId": 42853481,
+        "wayVersion": 4,
+        "fromIndex": 106,
+        "toIndex": 126
+      },
+      {
+        "wayId": 42853481,
+        "wayVersion": 4,
+        "fromIndex": 0,
+        "toIndex": 83
+      },
+      {
+        "wayId": 42852104,
+        "wayVersion": 3,
+        "fromIndex": 0,
+        "toIndex": 18
+      },
+      {
+        "wayId": 42853481,
+        "wayVersion": 4,
+        "fromIndex": 96,
+        "toIndex": 104
+      },
+      {
+        "wayId": 42852103,
+        "wayVersion": 3,
+        "fromIndex": 5,
+        "toIndex": 0
+      }
+    ],
+    "gates": []
+  },
+  "previousTraceSha256": "0280d2a401c06014879b0aad0c61d30b81015cff52ac286c94fe3e3672b662b9",
+  "reason": "The generic longest-cycle hypothesis includes the southeast North-course pit lane and an internal western connector. The operator full-course map identifies the direct racing road and long western connection, confirmed on native licensed imagery. Replace only the generic fallback with the exact registered full-course chain. Coordinates and traversal direction follow that pinned named source, without diagram tracing or fitting a stated distance. Generic source direction was provisional.",
+  "excludedWayIds": [
+    42852101,
+    42852104,
+    42852103
+  ],
+  "replacement": {
+    "sourceLayoutId": "autobahn-country-club",
+    "sourceId": "osm-selection-42852101",
+    "snapshotFile": "selected-network-42852101.json",
+    "snapshotSha256": "611ee846c7ebd0ddf0db984353d12a7e1df6fa9f15764ac1c87903c7e721ba27",
+    "traceSha256": "474bfd454ae8769e31ea3ec4c52778e3af793d5d053d8b9af2eb6d2106ad9034"
+  },
+  "identityEvidence": {
+    "operatorMapUrl": "https://autobahnmembers.com/wp-content/uploads/2024/05/TRACK-ORIENTATION-.pdf",
+    "mapSha256": "56971afb1012e2bcf0c1d24af95ce75a4bd1c6c212c088e7840e5edebaff18ee",
+    "page": 7,
+    "use": "Full-course identity and branch selection only. No diagram coordinates or stated widths are extracted or fitted."
+  },
+  "imageryReview": {
+    "identityImageSha256": "4f8670df95cc7dfab5ae00d1d70dbb4698ad0546c2413467a4311d1621b8e196",
+    "borderImageSha256": "b8c84368268a7cd039b751eea0e94f5440e2278851336d2b59c0a07777d4be7b",
+    "finding": "Native MapTiler overlay distinguishes the generic pit lane and internal connector from the named racing chain. Four original native NAIP border-overlay regions were inspected. Close-up width checks then found RGB estimates cutting outer corners across dark asphalt patches; the original automatic candidate is rejected for main."
+  },
+  "borderReplay": {
+    "method": "rgb-cross-sections-v2",
+    "imageSha256": "b8c84368268a7cd039b751eea0e94f5440e2278851336d2b59c0a07777d4be7b",
+    "traceSha256": "474bfd454ae8769e31ea3ec4c52778e3af793d5d053d8b9af2eb6d2106ad9034",
+    "borderGeometrySha256": "29860e0f1f155d71f11d1312896da853fd734a0a1373a88aee203799b8af5a3e",
+    "stations": 1898,
+    "license": "public-domain",
+    "finding": "The sibling automatic pair replays exactly, but is not reused for main because close-up review exposed false corner limits. That published sibling remains unchanged."
+  },
+  "preservation": "All other layouts, previous border pairs, timing and original terrain remain unchanged. Main timing remains missing; sibling timing GPS is not copied.",
+  "limitations": "RGB edge estimates remain unverified; shadows, aprons and source age affect positions. Shared-pavement joins interpolate estimates. Curbs are illustrative. Raster elevations are estimated and unknown banking is represented as zero. Travel direction remains provisional.",
+  "measurement": {
+    "method": "paired-image-edge-anchors-v1",
+    "resultSha256": "8c741708e95b438f244f3d8c0b8e4946b3fd685c9420449d0445c5e41166a3d8",
+    "imageSha256": "b8c84368268a7cd039b751eea0e94f5440e2278851336d2b59c0a07777d4be7b",
+    "anchors": 650,
+    "pairsIncludingClosure": 325,
+    "review": "All 11 native cross-section proposal sheets, three selected detail sheets and four final full-course native overlays visually inspected. Selected proposal positions are rounded image observations; 21 edge observations are adjusted at documented corners and openings. Complete paired observations interpolate linearly with source order, image coverage and width guards. Main differs from the preserved automatic sibling.",
+    "limitations": "Shared pavement and shadows remain estimated route limits. Not a survey; curbs illustrative, unknown banking zero."
+  }
+}

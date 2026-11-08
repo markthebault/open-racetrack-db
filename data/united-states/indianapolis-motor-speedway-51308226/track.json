@@ -28,22 +28,22 @@
     {
       "id": "ims-sro-practice",
       "name": "IMS SRO Practice",
-      "referenceId": "United States/IMS SRO Practice",
       "file": "layouts/ims-sro-practice.geojson",
+      "referenceId": "United States/IMS SRO Practice",
       "description": "Draft configuration selected from the independently named circuit relation 20573734. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "indianapolis-motor-speedway-indy",
       "name": "Indianapolis Motor Speedway - Indy",
-      "referenceId": "United States/Indianapolis Motor Speedway - Indy",
       "file": "layouts/indianapolis-motor-speedway-indy.geojson",
+      "referenceId": "United States/Indianapolis Motor Speedway - Indy",
       "description": "Draft configuration selected from the independently named circuit relation 20573734. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     },
     {
       "id": "indianapolis-scca",
       "name": "Indianapolis SCCA",
-      "referenceId": "United States/Indianapolis SCCA",
       "file": "layouts/indianapolis-scca.geojson",
+      "referenceId": "United States/Indianapolis SCCA",
       "description": "Draft configuration: Road-course northern hooked section, long western straight and southern infield shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4170.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -83,6 +83,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9600158.115784463%2C4835121.70333144%2C-9599101.915624818%2C4837184.803956173&bboxSR=3857&imageSR=3857&size=1083%2C2114&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:49:20.861Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -27,9 +27,9 @@
     {
       "id": "talladega-gran-prix",
       "name": "Talladega Gran Prix",
-      "referenceId": "United States/Talladega Gran Prix",
       "file": "layouts/talladega-gran-prix.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2310.2 m. Difference from the supplied layout distance 17.8 m. Course configuration still requires visual review."
+      "referenceId": "United States/Talladega Gran Prix",
+      "description": "Full course selected from the complete closed OpenStreetMap way1061184414v1, compared with native satellite imagery and the operator facility map. Internal circulation shortcuts in the prior provisional cycle are excluded. Coordinates remain exact retained source nodes; no nominal length or width fit. Direction follows the operator map. Source geometry remains draft; border and terrain limits remain estimates."
     }
   ],
   "sources": [
@@ -50,6 +50,24 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9573897.635304669%2C3961788.6477086484%2C-9573181.462718908%2C3962665.003992685&bboxSR=3857&imageSR=3857&size=797%2C975&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:57.533Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-07T19:14:19.938Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -28,15 +28,15 @@
     {
       "id": "aintree",
       "name": "Aintree",
-      "referenceId": "United Kingdom/Aintree",
       "file": "layouts/aintree.geojson",
+      "referenceId": "United Kingdom/Aintree",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2450 m. Difference from the supplied layout distance 5.0 m. Course configuration still requires visual review."
     },
     {
       "id": "aintree-sprint",
       "name": "Aintree Sprint",
-      "referenceId": "United Kingdom/Aintree Sprint",
       "file": "layouts/aintree-sprint.geojson",
+      "referenceId": "United Kingdom/Aintree Sprint",
       "description": "Draft open course. Operator identifies the Aintree sprint on the Club Circuit. The connected open route is the only path close to the supplied sprint distance between the timing endpoints. Approximate planar OSM trace distance 1762.3 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
     }
   ],
@@ -76,6 +76,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T14:41:34.792Z",
       "evidenceNote": "Operator identifies the Aintree sprint on the Club Circuit. The connected open route is the only path close to the supplied sprint distance between the timing endpoints. Identification only; no coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T14:47:35.033Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

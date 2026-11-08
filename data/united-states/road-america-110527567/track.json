@@ -29,29 +29,29 @@
     {
       "id": "briggs-stratton-motorplex",
       "name": "Briggs & Stratton Motorplex",
-      "referenceId": "United States/Briggs & Stratton Motorplex",
       "file": "layouts/briggs-stratton-motorplex.geojson",
+      "referenceId": "United States/Briggs & Stratton Motorplex",
       "description": "Draft configuration: The operator Motorplex track plan identifies the full paved course with two southern hairpins, the middle return and northern inner dogleg. The northeast staging shortcut and unpaved branch are excluded. Independent public nodes supply the trace; the archive image is used only to distinguish the named course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1109.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "road-america",
       "name": "Road America",
-      "referenceId": "United States/Road America",
       "file": "layouts/road-america.geojson",
+      "referenceId": "United States/Road America",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 6437.9 m. Difference from the supplied layout distance 4.1 m. Course configuration still requires visual review."
     },
     {
       "id": "road-america-short",
       "name": "Road America Short",
-      "referenceId": "United States/Road America Short",
       "file": "layouts/road-america-short.geojson",
+      "referenceId": "United States/Road America Short",
       "description": "Draft configuration: The historical school short course retains turns 5 through 13, Carousel, Kink, Canada Corner and Thunder Valley, closing through the independently mapped internal return before turn 14. The operator fan map identifies the named corners and internal return; the supplied layout identity selects this historical short-course connection. The main front straight and turns 1 through 4 are excluded. Source direction follows the published main-course arrows; historical barrier placement remains draft. The measured 3498.6 m route is unscaled. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3498.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "road-america-sro-practice",
       "name": "Road America SRO Practice",
-      "referenceId": "United States/Road America SRO Practice",
       "file": "layouts/road-america-sro-practice.geojson",
+      "referenceId": "United States/Road America SRO Practice",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 6437.9 m. Difference from the supplied layout distance 4.1 m. Course configuration still requires visual review."
     }
   ],
@@ -109,6 +109,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T23:43:46.767Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9796577.864428455%2C5433124.859513269%2C-9794853.530674472%2C5435406.103762677&bboxSR=3857&imageSR=3857&size=1660%2C2196&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:55:08.331Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

@@ -22,14 +22,14 @@
       "id": "main",
       "name": "Hedge Hollow Circuit",
       "file": "layouts/main.geojson",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United States/Hedge Hollow Circuit"
+      "referenceId": "United States/Hedge Hollow Circuit",
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
     },
     {
       "id": "hedge-hollow-outer",
       "name": "Hedge Hollow Outer",
-      "referenceId": "United States/Hedge Hollow Outer",
       "file": "layouts/hedge-hollow-outer.geojson",
+      "referenceId": "United States/Hedge Hollow Outer",
       "description": "Draft configuration: Outer course with north shoulder, concave eastern bend and direct western straight; excludes the extra western notch. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4621.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -60,6 +60,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:14:40.851Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Reusable aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-10483924.808142688%2C4634717.136162471%2C-10482408.463655537%2C4636331.131182686&bboxSR=3857&imageSR=3857&size=1585%2C1687&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-05T23:48:41.851Z",
+      "evidenceNote": "Derived edge coordinates; reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
