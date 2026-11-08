@@ -642,6 +642,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
                 patches: old.refinement.patches,
                 note: old.refinement.note,
                 ...(old.refinement.interpolation ? { interpolation: old.refinement.interpolation } : {}),
+                ...(old.refinement.sourceContainment ? { sourceContainment: old.refinement.sourceContainment } : {}),
               }
             : undefined;
       const detectorOptions = {

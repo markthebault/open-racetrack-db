@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T17:50:19.391Z",
+  "generatedAt": "2026-11-08T18:54:52.196Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -5283,8 +5283,8 @@
       "trackId": "us-inde-motorsports-b9c30311",
       "layoutId": "inde-motorsports-combo",
       "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-combo.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 7
     },
     {
       "trackId": "us-inde-motorsports-b9c30311",
@@ -5313,8 +5313,24 @@
       "trackId": "us-inde-motorsports-b9c30311",
       "layoutId": "inde-motorsports-ranch-full-north-2",
       "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-full-north-2.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Inferred boundary crosses itself; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9703,
+          0.8965
+        ],
+        "medianInteriorDifference": [
+          0.0276,
+          0.0224
+        ],
+        "samplingStepM": 2.9986707133425696,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f63584dc2928b4fc989b12cd663da0a8e6b38103244cd64e598900e6ee760891"
     },
     {
       "trackId": "us-inde-motorsports-b9c30311",
@@ -5412,25 +5428,24 @@
       "trackId": "us-inde-motorsports-b9c30311",
       "layoutId": "inde-motorsports-ranch-north-4",
       "file": "data/united-states/us-inde-motorsports-b9c30311/layouts/inde-motorsports-ranch-north-4.geojson",
-      "status": "needs-imagery-review",
+      "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.9164,
-          0.8733
+          0.9596,
+          0.9407
         ],
         "medianInteriorDifference": [
-          0.0313,
-          0.029
+          0.0266,
+          0.023
         ],
         "samplingStepM": 2.9945352604176,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
-      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
-      "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc",
-      "reason": "The source alignment crosses unpaved infield in this image; route interpretation or a different capture is needed."
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f63584dc2928b4fc989b12cd663da0a8e6b38103244cd64e598900e6ee760891"
     },
     {
       "trackId": "us-inde-motorsports-b9c30311",
@@ -5459,25 +5474,24 @@
       "trackId": "us-inde-motorsports-ranch-8dbe7597",
       "layoutId": "inde-motorsports-ranch-north-4",
       "file": "data/united-states/us-inde-motorsports-ranch-8dbe7597/layouts/inde-motorsports-ranch-north-4.geojson",
-      "status": "needs-imagery-review",
+      "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.9164,
-          0.8733
+          0.9596,
+          0.9407
         ],
         "medianInteriorDifference": [
-          0.0313,
-          0.029
+          0.0266,
+          0.023
         ],
         "samplingStepM": 2.9945352604176,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
-      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12246571.221195085%2C3793157.966319642%2C-12246041.38259159%2C3793764.8744392064&bboxSR=3857&imageSR=3857&size=598%2C685&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
-      "imageSha256": "7aed6fabdb134741121dd1b48ac79c584557a8ec4e8e9aa2575025a64322c0bc",
-      "reason": "The source alignment crosses unpaved infield in this image; route interpretation or a different capture is needed."
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "f63584dc2928b4fc989b12cd663da0a8e6b38103244cd64e598900e6ee760891"
     },
     {
       "trackId": "us-indianapolis-motor-speedway-51308226",
