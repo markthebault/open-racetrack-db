@@ -20,6 +20,8 @@ export function measuredImageBorders(
   gradeInput?: GradeSeparation,
 ) {
   const recipe = borderMeasurementInputSchema.parse(input);
+  if (gradeInput && recipe.linearIntervals?.some((r) => r.gapMetric))
+    throw new Error("Edge-length gaps cannot be used with grade-separated measurements");
   const run = recipe.routeKind === "run";
   if (recipe.imageSha256 !== imageSha256)
     throw new Error("Measurement image hash mismatch");
@@ -95,18 +97,33 @@ export function measuredImageBorders(
         throw new Error(
           "Complete measurements cannot preserve automatic seed joins",
         );
-      const linear =
-        recipe.interpolation === "edge-linear-v1" ||
-        (j > 0 &&
-          recipe.linearIntervals?.some(
+      const interval = j > 0
+        ? recipe.linearIntervals?.find(
             (range) =>
               range.edge === patch.edge &&
               patch.anchors[j - 1].station >= range.startStation &&
               a.station <= range.endStation,
-          ));
-      const maximumGapM = linear ? 50 : 100;
+          )
+        : undefined;
+      const linear = recipe.interpolation === "edge-linear-v1" || !!interval;
+      const edgeLengthGap = interval?.gapMetric === "edge-length-v1";
+      const maximumGapM = linear && !edgeLengthGap ? 50 : 100;
       if (j && (a.station - patch.anchors[j - 1].station) * step > maximumGapM)
         throw new Error(`Image measurement gap exceeds ${maximumGapM} metres`);
+      if (edgeLengthGap) {
+        const previous = patch.anchors[j - 1];
+        if (distance(previous.coordinate, a.coordinate) > 50)
+          throw new Error("Image edge gap exceeds 50 metres");
+        const start = projection.to(previous.coordinate), end = projection.to(a.coordinate),
+          dx = end[0] - start[0], dy = end[1] - start[1], size = Math.hypot(dx, dy);
+        if (size < 0.03) throw new Error("Degenerate observed edge gap");
+        // A short edge chord must not skip a source hairpin or a complete source pass.
+        for (let i = previous.station + 1; i <= a.station; i++) {
+          const p = smooth[index(i - 1)], q = smooth[index(i)];
+          if (((q[0] - p[0]) * dx + (q[1] - p[1]) * dy) / size < -0.03)
+            throw new Error("Edge-length interval reverses its source progression");
+        }
+      }
       covered(a.coordinate);
       const q = projection.to(a.coordinate),
         p = smooth[index(a.station)],
