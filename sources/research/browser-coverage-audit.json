@@ -3785,7 +3785,7 @@
     "newAcceptedLayouts": 0
   },
   "remaining": {
-    "mappedLayoutsWithoutBorders": 221,
+    "mappedLayoutsWithoutBorders": 220,
     "unmappedEntries": 11,
     "standaloneSurfaceOnlyLayouts": 7,
     "unavailableEmbeddedRoutes": 1,
@@ -3867,6 +3867,48 @@
       "exactDownload": true,
       "normalSpeedFullLapRecordedAndSampled": true,
       "researchRecord": "road-limit-measurement-reviews.json",
+      "installedPreviewParity": {
+        "checkedFiles": 2141,
+        "allCatalogueTrackAndLayoutBytesMatch": true,
+        "htmlMatches": true
+      }
+    },
+    {
+      "scope": "One newly prepared GSI-image layout and provider-specific checks, separate from preserved baseline catalogue sweeps. No new catalogue-wide physical-accuracy or video claim.",
+      "trackId": "jp-hsr-134862680",
+      "layoutId": "main",
+      "layoutSha256": "556cddff5a20b3a36d87c9cf4a97fbd2a64fac116e62b7006a0b9b2b64d737be",
+      "preservation": {
+        "otherLayoutsByteIdentical": 1376,
+        "timingUnchanged": 1377,
+        "terrainSidecarsByteIdentical": 164,
+        "originalTraceVerticesPreserved": 175,
+        "originalMetadataPreserved": true,
+        "embeddedTerrainMatchesRetainedGrid": true,
+        "layoutSha256": "556cddff5a20b3a36d87c9cf4a97fbd2a64fac116e62b7006a0b9b2b64d737be",
+        "baselineCommit": "c29b47293e4e974b6c59a3e21980fc96d22ab97c"
+      },
+      "currentPreparedLayouts": 1157,
+      "currentIndependentPlayableLayouts": 1110,
+      "realImageLoaded": true,
+      "localAndLiveViewportWidths": [
+        1440,
+        390,
+        320
+      ],
+      "exactDownload": true,
+      "normalSpeedFullLapRecordedAndSampled": true,
+      "researchRecord": "road-limit-measurement-reviews.json",
+      "applicationChange": "GSI256px tile assembly without a MapTiler key; existing MapTiler512px texture plan retained.",
+      "providerChecks": {
+        "gsiActualTilesLoaded": 40,
+        "maptilerRequestsDuringBlockedCheck": 0,
+        "existingMaptilerPlaybackRegressionWidths": [
+          1440,
+          390,
+          320
+        ]
+      },
       "installedPreviewParity": {
         "checkedFiles": 2141,
         "allCatalogueTrackAndLayoutBytesMatch": true,

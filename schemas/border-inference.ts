@@ -74,7 +74,8 @@ export const borderInferenceSchema = z
             message: "Tile manifest evidence needs licensed XYZ imagery",
           });
         if (image.license === "LicenseRef-MapTiler-Derived-Borders") {
-          if (image.rightsBasis !== "source-specific-agreement" || !image.tiles)
+          if (image.rightsBasis !== "source-specific-agreement" ||
+              image.tiles?.provider !== "maptiler-satellite-v4")
             ctx.addIssue({
               code: "custom",
               message:
@@ -84,6 +85,13 @@ export const borderInferenceSchema = z
           ctx.addIssue({
             code: "custom",
             message: "Open imagery needs reuse evidence",
+          });
+        if (image.tiles?.provider === "gsi-seamless-photo" &&
+            (image.license !== "CC-BY-4.0" || image.rightsBasis ||
+              image.url !== "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"))
+          ctx.addIssue({
+            code: "custom",
+            message: "GSI photos need their public tile source and CC BY attribution",
           });
         for (const value of [image.url, image.reuseEvidenceUrl, image.termsUrl])
           if (value && /[?&](key|token|access_token|api_key)=/i.test(value))

@@ -143,6 +143,35 @@ test("imagery provenance requires a usable resolution and an explicit unreviewed
     }).success,
     false,
   );
+  const gsi = {
+    ...record,
+    imagery: {
+      ...record.imagery,
+      url: "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+      license: "CC-BY-4.0",
+      tiles: { provider: "gsi-seamless-photo", zoom: 18, bounds: [100, 110, 107, 114] },
+    },
+  };
+  assert.ok(borderInferenceSchema.safeParse(gsi).success);
+  for (const imagery of [
+    { ...gsi.imagery, url: "https://example.com/unrelated-photo.jpg" },
+    { ...gsi.imagery, license: "LicenseRef-MapTiler-Derived-Borders", rightsBasis: "source-specific-agreement" },
+    { ...gsi.imagery, tiles: { ...gsi.imagery.tiles, zoom: 19 } },
+  ]) assert.equal(borderInferenceSchema.safeParse({ ...record, imagery }).success, false);
+});
+
+test("GSI photos retain native 256px tiles while preserving the MapTiler texture limit", () => {
+  const tiles = { zoom: 18, bounds: [100, 110, 107, 114] as [number, number, number, number] };
+  const gsi = displayTilePlan({ ...tiles, provider: "gsi-seamless-photo" });
+  assert.equal(gsi.zoom, 18);
+  assert.equal(gsi.width, 2048);
+  assert.equal(gsi.height, 1280);
+  assert.equal(gsi.cells.length, 40);
+  assert.equal(gsi.cells[0].left, 0);
+  assert.equal(gsi.cells[0].top, 0);
+  const maptiler = displayTilePlan({ ...tiles, provider: "maptiler-satellite-v4" });
+  assert.ok(maptiler.zoom < 18 && maptiler.cells.length < 40);
+  assert.ok(maptiler.width <= 2048 && maptiler.height <= 2048);
 });
 
 test("display tiles crop parent imagery to the saved extent without shifting the road", () => {
