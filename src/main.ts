@@ -106,6 +106,20 @@ app.innerHTML = `
 
 const get = <T extends HTMLElement>(id: string) =>
   document.getElementById(id) as T;
+// Keep interface chrome outside the draggable map surface.
+const mapArea = document.querySelector<HTMLElement>(".map-area")!;
+const viewBar = document.createElement("div");
+viewBar.className = "view-bar";
+mapArea.before(viewBar);
+viewBar.append(document.querySelector(".stage-heading")!, document.querySelector(".stage-toolbar")!);
+const options = document.createElement("details");
+options.className = "map-options";
+options.innerHTML = '<summary>Track tools <span>Save, share &amp; display</span></summary><div class="map-options-content"></div>';
+mapArea.after(options);
+const optionsContent = options.querySelector("div")!;
+for (const selector of ["#save-track", "#share-track", ".border-controls", "#height-scale", "#rotate-view"]) {
+  optionsContent.append(document.querySelector(selector)!);
+}
 const preferences = readPreferences();
 const saved = new Set(preferences.saved);
 const initialParams = new URLSearchParams(location.search);
@@ -116,7 +130,7 @@ let savedOnly = false,
   unavailable3D = false;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const mobile = window.matchMedia(
-  "(max-width: 760px), (max-width: 1100px) and (max-height: 550px)",
+  "(max-width: 1023px), (max-width: 1100px) and (max-height: 550px)",
 );
 const config = {
   tiles: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -532,7 +546,7 @@ function fitMap() {
       [b[3], b[2]],
     ],
     {
-      paddingTopLeft: [45, mobile.matches ? 115 : 160],
+      paddingTopLeft: [24, 24],
       paddingBottomRight: [65, 60],
       maxZoom: 17,
       animate: false,
