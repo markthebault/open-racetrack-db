@@ -159,6 +159,7 @@ export function projectSharedImageMeasurements(
     trace: Position[];
     imageSha256: string;
     direction?: "same" | "reverse";
+    sourceStationOffset?: number;
   },
 ) {
   const stored = borderMeasurementInputSchema
@@ -172,6 +173,10 @@ export function projectSharedImageMeasurements(
     patches: stored.patches,
     note: stored.note,
     ...(stored.interpolation ? { interpolation: stored.interpolation } : {}),
+    ...(stored.linearIntervals ? { linearIntervals: stored.linearIntervals } : {}),
+    ...(stored.sourceStationOffset !== undefined
+      ? { sourceStationOffset: stored.sourceStationOffset }
+      : {}),
   });
   if (input.imageSha256 !== target.imageSha256)
     throw new Error("Shared measurements require the same pinned image");
@@ -181,8 +186,8 @@ export function projectSharedImageMeasurements(
     replay.measurement.resultSha256 !== stored.resultSha256
   )
     throw new Error("Source measurement reconstruction hash mismatch");
-  const a = imageCrossSections(source.trace),
-    b = imageCrossSections(target.trace),
+  const a = imageCrossSections(source.trace, false, stored.sourceStationOffset),
+    b = imageCrossSections(target.trace, false, target.sourceStationOffset),
     paired = stored.method === "paired-image-edge-anchors-v1",
     rejected: {
       edge: string;

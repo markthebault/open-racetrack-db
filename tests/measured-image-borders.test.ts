@@ -217,6 +217,44 @@ test("linear measurement projection verifies its interpolation-specific reconstr
     /reconstruction hash/,
   );
 });
+
+test("shared measurements replay rotated grids and local straight joins before projection", async () => {
+  const { projectSharedImageMeasurements } = await import(
+    "../scripts/project-border-refinement"
+  );
+  const { trace, input } = fixture(), offset = 30,
+    frames = imageCrossSections(trace, false, offset),
+    recipe = {
+      ...input,
+      sourceStationOffset: offset,
+      linearIntervals: [{ edge: "inner" as const, startStation: 0, endStation: 10 }],
+      patches: input.patches.map((patch, side) => ({
+        ...patch,
+        anchors: patch.anchors.map((anchor) => {
+          const i = frames.index(anchor.station), p = frames.smooth[i], n = frames.normals[i],
+            across = side === 0 ? 6 : -6;
+          return { ...anchor, coordinate: frames.projection.from([
+            p[0] + n[0] * across, p[1] + n[1] * across,
+          ]) };
+        }),
+      })),
+    },
+    built = measuredImageBorders(trace, recipe, hash),
+    before = structuredClone(built.measurement),
+    projected = projectSharedImageMeasurements(
+      { trace, input: built.measurement },
+      { trace, imageSha256: hash, sourceStationOffset: offset },
+    );
+  assert.equal(projected.rejected.length, 0);
+  assert.ok(projected.mappings.every((m) => m.sourceStation === m.station));
+  assert.deepEqual(built.measurement, before);
+  assert.equal(measuredImageBorders(trace, { ...recipe, patches: projected.patches }, hash)
+    .measurement.resultSha256, built.measurement.resultSha256);
+  assert.throws(() => projectSharedImageMeasurements(
+    { trace, input: { ...built.measurement, linearIntervals: undefined } },
+    { trace, imageSha256: hash, sourceStationOffset: offset },
+  ), /reconstruction hash/);
+});
 test("complete measurements reject wrong images, open routes, incomplete ranges, seed joins and long unmeasured gaps", () => {
   const { trace, image, input } = fixture();
   assert.throws(
