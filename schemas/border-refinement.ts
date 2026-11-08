@@ -91,6 +91,7 @@ const completeRecipe = recipe.omit({ seedSha256: true }).extend({
     edge: z.enum(["inner", "outer"]),
     startStation: z.number().int().min(0).max(199999),
     endStation: z.number().int().min(0).max(199999),
+    gapMetric: z.literal("edge-length-v1").optional(),
   })).min(1).max(1000).optional(),
   routeKind: z.literal("run").optional(),
   sourceStationOffset: z.number().int().nonnegative().max(199999).optional(),
@@ -105,6 +106,8 @@ function checkComplete(
   if (value.routeKind === "run" && value.sourceStationOffset !== undefined)
     ctx.addIssue({ code: "custom", message: "Open measurements cannot rotate their source station grid" });
   if (value.linearIntervals) {
+    if (value.routeKind === "run" && value.linearIntervals.some((r) => r.gapMetric))
+      ctx.addIssue({ code: "custom", message: "Edge-length gaps require closed source-frame measurements" });
     if (value.interpolation || value.method !== "cross-section-image-anchors-v1")
       ctx.addIssue({ code: "custom", message: "Local linear intervals require source-frame measurements without global interpolation" });
     for (const edge of ["inner", "outer"] as const) {

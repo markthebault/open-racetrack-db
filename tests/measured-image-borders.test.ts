@@ -8,12 +8,12 @@ import {
 import { plane } from "../src/geo";
 import { borderMeasurementInputSchema } from "../schemas/border-refinement";
 const hash = "b".repeat(64);
-function fixture() {
+function fixture(radius = 100, anchorStep = 10) {
   const p = plane([0, 0]),
     trace = Array.from({ length: 181 }, (_, i) =>
       p.from([
-        100 * Math.cos((i * Math.PI) / 90),
-        100 * Math.sin((i * Math.PI) / 90),
+        radius * Math.cos((i * Math.PI) / 90),
+        radius * Math.sin((i * Math.PI) / 90),
       ]),
     );
   trace[180] = trace[0];
@@ -31,7 +31,7 @@ function fixture() {
     patches: (["inner", "outer"] as const).map((edge, side) => ({
       edge,
       anchors: [
-        ...Array.from({ length: Math.ceil(f.count / 10) }, (_, i) => i * 10),
+        ...Array.from({ length: Math.ceil(f.count / anchorStep) }, (_, i) => i * anchorStep),
         f.count,
       ].map((station) => {
         const k = f.index(station),
@@ -112,6 +112,40 @@ test("the stricter 50 metre gap applies inside local straight intervals only", (
   measuredImageBorders(trace, {
     ...sparse, linearIntervals: [{ edge: "outer", startStation: 30, endStation: 40 }],
   }, hash);
+});
+
+test("edge-length gaps retain independent source and physical-edge limits and replay exactly", () => {
+  const { trace, input, image } = fixture(30, 5);
+  const recipe = structuredClone(input);
+  recipe.patches[0].anchors = recipe.patches[0].anchors.filter((a) => a.station === 0 || a.station >= 30);
+  const range = { edge: "inner" as const, startStation: 0, endStation: 30 };
+  assert.throws(() => measuredImageBorders(trace, { ...recipe, linearIntervals: [range] }, hash, image), /gap exceeds 50/);
+  const bounded = { ...recipe, linearIntervals: [{ ...range, gapMetric: "edge-length-v1" as const }] };
+  const result = measuredImageBorders(trace, bounded, hash, image);
+  const { resultSha256, ...saved } = result.measurement;
+  assert.equal(saved.linearIntervals![0].gapMetric, "edge-length-v1");
+  const replay = measuredImageBorders(trace, saved, hash, image);
+  assert.equal(replay.measurement.resultSha256, resultSha256);
+  assert.deepEqual(replay, result);
+  const longEdge = structuredClone(input);
+  longEdge.patches[1].anchors = longEdge.patches[1].anchors.filter((a) => a.station === 0 || a.station >= 30);
+  assert.throws(() => measuredImageBorders(trace, {
+    ...longEdge, linearIntervals: [{ ...range, edge: "outer", gapMetric: "edge-length-v1" }],
+  }, hash, image), /Image edge gap exceeds 50/);
+  const longSource = structuredClone(input);
+  longSource.patches[0].anchors = longSource.patches[0].anchors.filter((a) => a.station === 0 || a.station >= 35);
+  assert.throws(() => measuredImageBorders(trace, {
+    ...longSource, linearIntervals: [{ ...range, endStation: 35, gapMetric: "edge-length-v1" }],
+  }, hash, image), /gap exceeds 100/);
+  assert.throws(() => borderMeasurementInputSchema.parse({ ...bounded, routeKind: "run" }), /require closed/);
+});
+
+test("a short edge chord cannot skip a source hairpin", () => {
+  const { trace, input, image } = fixture(20, 5);
+  input.patches[0].anchors = input.patches[0].anchors.filter((a) => a.station === 0 || a.station >= 30);
+  assert.throws(() => measuredImageBorders(trace, {
+    ...input, linearIntervals: [{ edge: "inner", startStation: 0, endStation: 30, gapMetric: "edge-length-v1" }],
+  }, hash, image), /reverses its source progression/);
 });
 
 test("local straight reconstruction still checks pixels between its observed anchors", () => {
