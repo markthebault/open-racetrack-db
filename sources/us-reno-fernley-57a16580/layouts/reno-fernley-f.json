@@ -10,7 +10,8 @@
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "This component reuses the existing pinned independent course recipe from us-reno-fernley-f-411d3126/reno-fernley-f without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "This component reuses the existing pinned independent course recipe from us-reno-fernley-f-411d3126/reno-fernley-f without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional.",
+    "Supplemental borders reviewed against USDA NAIP capture 2010-06-14, including layout-specific connectors and shared original edges. Approximate historical paving limits; shared-paving branch closures remain estimated and direction provisional. Original trace, border rights and timing are retained. Driving reconstruction uses the boundary-normal midpoint path to avoid sharp source-trace departures; no nominal widths or modified source nodes. Curbs illustrative, terrain approximate, banking unknown."
   ],
   "segments": [
     {
@@ -44,5 +45,11 @@
       "toIndex": 149
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "reno-fernley-f",
+    "traceSha256": "ffe4d8bbaf527032d843cce20d3555ee26a155cb2cf12a718067e736a5486441",
+    "bordersSha256": "e0b68673a93a65818141c2740373ac161a2ad0fea074c7dd3cc425385bfae879",
+    "sourceTrackId": "us-reno-fernley-f-411d3126"
+  }
 }

@@ -10,7 +10,8 @@
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "This component reuses the existing pinned independent course recipe from us-reno-fernley-g-77c6a7ab/reno-fernley-g without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "This component reuses the existing pinned independent course recipe from us-reno-fernley-g-77c6a7ab/reno-fernley-g without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional.",
+    "Supplemental borders reviewed against USDA NAIP capture 2010-06-14, including layout-specific connectors and shared original edges. Approximate historical paving limits; shared-paving branch closures remain estimated and direction provisional. Original trace, border rights and timing are retained. Driving reconstruction uses the boundary-normal midpoint path to avoid sharp source-trace departures; no nominal widths or modified source nodes. Curbs illustrative, terrain approximate, banking unknown."
   ],
   "segments": [
     {
@@ -56,5 +57,11 @@
       "toIndex": 149
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "reno-fernley-g",
+    "traceSha256": "6b367b11696b1e9389abca7bcc35785cd0baca0353994413afd0dbbde603e0e5",
+    "bordersSha256": "5531b1d8a9d9dd3f3a1c0fad20fbeaee9572be0af712a489800182a1c8ecec97",
+    "sourceTrackId": "us-reno-fernley-g-77c6a7ab"
+  }
 }
