@@ -17,6 +17,7 @@ import {
 import { bounds, type Position } from "../src/geo";
 import {
   inferImageBorders,
+  assertSourceContainedBorders,
   decodeRaster,
   type Raster,
 } from "./infer-image-borders";
@@ -47,8 +48,11 @@ if (!args.includes("--all") && !option("--track"))
   throw new Error(
     "Use --all or --track <id>; --write saves supported estimated borders in each existing GeoJSON.",
   );
-const localAppearance = args.includes("--local-appearance"),
+const sourceContained = args.includes("--source-contained"),
+  localAppearance = sourceContained || args.includes("--local-appearance"),
   appearance = localAppearance || args.includes("--appearance");
+if (sourceContained && (!option("--track") || !option("--layout") || !option("--cached-image") || args.includes("--all") || option("--measurements") || option("--grade-separation")))
+  throw new Error("--source-contained requires one image-reviewed --track, --layout and --cached-image without grade separation or complete measurements");
 const replacementHash = option("--replace-border-hash");
 if (
   args.includes("--replace-border-hash") &&
@@ -631,7 +635,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           : old?.gradeSeparation,
         ...(appearance
           ? {
-              method: localAppearance
+              method: sourceContained
+                ? ("road-source-contained-v5" as const)
+                : localAppearance
                 ? ("road-local-appearance-v4" as const)
                 : ("road-appearance-v3" as const),
             }
@@ -700,13 +706,16 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           )
         : undefined;
       if (refined) result = refined.result;
+      if (sourceContained) assertSourceContainedBorders(geometryPaths(trace.geometry)[0], result, !layout.metadata.closed);
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
         method: measured
           ? measured.measurement.method === "paired-image-edge-anchors-v1"
             ? "image-measured-paired-edges-v1"
             : "image-measured-cross-sections-v1"
-          : localAppearance
+          : sourceContained
+            ? "rgb-road-source-contained-v5"
+            : localAppearance
             ? "rgb-road-local-appearance-v4"
             : appearance
               ? "rgb-road-appearance-v3"
@@ -734,7 +743,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
                   (e) => e.interior,
                 ),
                 samplingStepM: result.step,
-                searchRangeM: [appearance ? -10 : 2, 25],
+                searchRangeM: [sourceContained ? 0 : appearance ? -10 : 2, 25],
               },
             }),
         note: measured
@@ -742,6 +751,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
             ? "Road-border estimates reconstructed from complete pairs of sparse image-edge measurements. Each pair defines its own road section; the original trace is preserved and constrains station displacement and route order. Linear intervals, junction openings and curbs remain estimates, not surveyed racing limits. Every saved edge station and anchor requires pinned-image coverage during authoring. No automatic evidence scores are claimed."
             : "Road-border estimates reconstructed directly from complete, sparse image measurements on the existing trace cross-sections. All intervals interpolate between image anchors; they are not automatic detections or a continuous edge survey. Every saved edge station and anchor requires pinned-image coverage during authoring. Isolated missing pixels inside the road are not filled or used as boundary evidence. Imagery resolution is not survey accuracy. These borders have not been formally verified."
           : "Automatically inferred from RGB differences along cross-sections of the existing trace. Evidence scores are not calibrated positional confidence. Borders are estimates and have not been formally verified; shadows, trees, aprons, paint and imagery age can move the detected edge. Imagery resolution is not survey accuracy." +
+            (sourceContained ? " The source centreline was checked against this image; candidate edges must bracket its smoothed cross-sections. This opt-in constraint does not set a road width or establish positional accuracy. It is unsuitable for an unaligned source trace." : "") +
             (refined
               ? " Sparse edge anchors measured on the pinned image correct the documented sections. Evidence scores describe the original automatic proposal, not the corrected borders. The seed and final border hashes and correction recipe are retained."
               : ""),

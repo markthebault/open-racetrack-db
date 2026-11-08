@@ -15,7 +15,9 @@
   "sourceIds": [
     "osm-snapshot",
     "osm-components-168247376",
-    "osm-network-moscow-raceway"
+    "osm-network-moscow-raceway",
+    "osm-components-20261108",
+    "osm-network-components-20261108"
   ],
   "defaultLayoutId": "moscow-raceway",
   "layouts": [
@@ -94,8 +96,8 @@
       "title": "Moscow Raceway Grand Prix 2 identification",
       "url": "https://moscowraceway.ru/map",
       "license": "reference-only",
-      "retrievedAt": "2026-09-30T18:21:42.431Z",
-      "evidenceNote": "The operator Grand Prix 2 highlighted configuration identifies the full western course and Mercedes Arena with both back-straight chicanes. The pinned independent source route measures 4099.2 m; the operator states 4070 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+      "retrievedAt": "2026-11-08T12:44:38Z",
+      "evidenceNote": "The operator Grand Prix 2 highlighted configuration identifies the full western course and Mercedes Arena with both back-straight chicanes. The pinned independent source route measures 4099.2 m; the operator states 4070 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied. Rechecked 8 November 2026: the operator explicitly specifies counterclockwise travel. Exact pinned source segments now follow that direction. Diagram pixels and stated lengths/widths supply no coordinates."
     },
     {
       "id": "component-identity-moscow-gp1",
@@ -121,8 +123,8 @@
       "title": "Moscow Raceway Sprint 1 identification",
       "url": "https://moscowraceway.ru/map",
       "license": "reference-only",
-      "retrievedAt": "2026-09-30T18:21:42.431Z",
-      "evidenceNote": "The operator Sprint 1 highlighted configuration identifies the eastern Mercedes Arena course, both back-straight chicanes and the complete Sprint connector. The pinned independent source route measures 2695.3 m; the operator states 2664 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied."
+      "retrievedAt": "2026-11-08T12:44:38Z",
+      "evidenceNote": "The operator Sprint 1 highlighted configuration identifies the eastern Mercedes Arena course, both back-straight chicanes and the complete Sprint connector. The pinned independent source route measures 2695.3 m; the operator states 2664 m. Parallel pit and service routes are excluded. Identification only; no diagram coordinates copied. Rechecked 8 November 2026: the operator explicitly specifies counterclockwise travel. Exact pinned source segments now follow that direction. Diagram pixels and stated lengths/widths supply no coordinates."
     },
     {
       "id": "component-identity-moscow-gp5",
@@ -168,6 +170,24 @@
       "license": "LicenseRef-MapTiler-Derived-Borders",
       "retrievedAt": "2026-11-06T08:24:53.757Z",
       "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "osm-components-20261108",
+      "type": "osm",
+      "title": "OpenStreetMap Moscow source geometry updated 11 October 2026",
+      "url": "https://api.openstreetmap.org/api/0.6/way/168247376/full.json",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-11-08T12:57:49.988Z",
+      "evidenceNote": "Exact current API geometry from all five pinned source ways, including source-node IDs and versions. Original branch endpoint IDs retained. No fitting to diagram, width or stated length."
+    },
+    {
+      "id": "osm-network-components-20261108",
+      "type": "osm",
+      "title": "OpenStreetMap independently pinned Moscow course components",
+      "url": "https://www.openstreetmap.org/way/168247376",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-11-08T12:57:49.988Z",
+      "evidenceNote": "Six independently rebuilt named routes pinned to one coherent current source snapshot, with shared source node coordinates verified exact. No synthetic connector or join."
     }
   ]
 }

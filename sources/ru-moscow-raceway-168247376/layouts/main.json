@@ -2,23 +2,25 @@
   "schemaVersion": 1,
   "trackId": "ru-moscow-raceway-168247376",
   "layoutId": "main",
-  "sourceId": "osm-snapshot",
-  "snapshotSha256": "108df824874e421102be297adfde9fd82962661f8b24be59ed45e42109297435",
+  "sourceId": "osm-components-20261108",
+  "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
     "Closed named OSM raceway retained as a course candidate. Named-layout association requires review.",
-    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read."
+    "Source way order and shared node IDs are retained. No nearby endpoints are joined and no reference boundaries are read.",
+    "Current source update: exact OSM way coordinates and existing shared endpoint node IDs from the 8 November 2026 API retrieval. The main source is version 13 dated 11 October 2026. No snapping, nominal-length fitting or diagram coordinates. Source alignment remains draft and imagery-derived borders remain estimates."
   ],
   "segments": [
     {
       "wayId": 168247376,
-      "wayVersion": 12,
+      "wayVersion": 13,
       "fromIndex": 0,
-      "toIndex": 182
+      "toIndex": 172
     }
   ],
-  "gates": []
+  "gates": [],
+  "snapshotFile": "components-osm-20261108.json"
 }

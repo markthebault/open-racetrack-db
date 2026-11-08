@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T12:00:14.603Z",
+  "generatedAt": "2026-11-08T14:24:48.078Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
   "records": [
     {
@@ -4313,16 +4313,16 @@
       "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.9172,
-          0.8855
+          0.9484,
+          0.9499
         ],
         "medianInteriorDifference": [
-          0.0451,
-          0.0397
+          0.0346,
+          0.0288
         ],
-        "samplingStepM": 2.9999911882527375,
+        "samplingStepM": 2.9984490286675447,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
@@ -4336,16 +4336,16 @@
       "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.9181,
-          0.8787
+          0.9503,
+          0.9518
         ],
         "medianInteriorDifference": [
-          0.0424,
-          0.0383
+          0.0346,
+          0.0297
         ],
-        "samplingStepM": 2.9991723481260806,
+        "samplingStepM": 2.9984620857653272,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
@@ -4359,16 +4359,16 @@
       "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.9172,
-          0.8855
+          0.9484,
+          0.9499
         ],
         "medianInteriorDifference": [
-          0.0451,
-          0.0397
+          0.0346,
+          0.0288
         ],
-        "samplingStepM": 2.9999911882527375,
+        "samplingStepM": 2.9984490286675447,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
@@ -4379,8 +4379,24 @@
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-gp2",
       "file": "data/russia/moscow-raceway-168247376/layouts/moscow-gp2.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.941,
+          0.9469
+        ],
+        "medianInteriorDifference": [
+          0.035,
+          0.0296
+        ],
+        "samplingStepM": 2.9983047123670867,
+        "searchRangeM": [
+          0,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
@@ -4389,16 +4405,16 @@
       "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.924,
-          0.9079
+          0.9358,
+          0.9662
         ],
         "medianInteriorDifference": [
-          0.0432,
-          0.0389
+          0.0332,
+          0.0292
         ],
-        "samplingStepM": 2.9975249178420382,
+        "samplingStepM": 2.999796936989901,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
@@ -4409,15 +4425,31 @@
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-raceway",
       "file": "data/russia/moscow-raceway-168247376/layouts/moscow-raceway.geojson",
-      "status": "needs-route-review",
-      "reason": "Open routes and branch networks need left/right edge semantics and a reviewed driving order."
+      "status": "composed-estimate",
+      "componentRoutes": 6
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
       "layoutId": "moscow-sprint1",
       "file": "data/russia/moscow-raceway-168247376/layouts/moscow-sprint1.geojson",
-      "status": "needs-imagery-review",
-      "reason": "Too many sections hit the search limit; image needs manual review"
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9615,
+          0.9389
+        ],
+        "medianInteriorDifference": [
+          0.0377,
+          0.0304
+        ],
+        "samplingStepM": 2.9995254045135837,
+        "searchRangeM": [
+          0,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
     },
     {
       "trackId": "ru-moscow-raceway-168247376",
@@ -4426,21 +4458,21 @@
       "status": "inferred-estimate",
       "evidence": {
         "strongEdgeFraction": [
-          0.9577,
-          0.9488
+          0.9161,
+          0.9492
         ],
         "medianInteriorDifference": [
-          0.0463,
-          0.0541
+          0.0313,
+          0.0281
         ],
-        "samplingStepM": 2.9960597059030087,
+        "samplingStepM": 2.9956674606753797,
         "searchRangeM": [
-          -10,
+          0,
           25
         ]
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
-      "imageSha256": "f4017eefad97cbd6d2f4db291ce9d2de9b1e83a60805634ffef1eaebc6c69b9b"
+      "imageSha256": "7ebf348e22c1aeee9c31cae3289f24ecce8e1db1349bf2b52bb564fbc86973fd"
     },
     {
       "trackId": "ru-osm-156001847",

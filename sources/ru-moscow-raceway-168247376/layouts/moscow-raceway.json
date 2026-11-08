@@ -1,162 +1,55 @@
 {
   "schemaVersion": 2,
   "geometryKind": "network",
+  "geometrySource": "components",
   "trackId": "ru-moscow-raceway-168247376",
   "layoutId": "moscow-raceway",
-  "sourceId": "osm-network-moscow-raceway",
-  "snapshotFile": "network-moscow-raceway.json",
-  "snapshotSha256": "45004b186ffacaaec1c15eeb4ee25afbba9eb625f47ebc5cd79174979d32a83d",
+  "sourceId": "osm-network-components-20261108",
+  "snapshotFile": "component-network-moscow-raceway-20261108.json",
+  "snapshotSha256": "af5cf50a2b9d3032faea0311b188b9c54079363b657aa236a6272981947e3df6",
   "geometryStatus": "draft",
   "timingMode": "shared",
   "reviewedAt": null,
-  "notes": [],
-  "gates": [],
-  "paths": [
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 182,
-          "toIndex": 3
-        },
-        {
-          "wayId": 168247379,
-          "wayVersion": 8,
-          "fromIndex": 33,
-          "toIndex": 8
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 0,
-          "toIndex": 182
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 0,
-          "toIndex": 120
-        },
-        {
-          "wayId": 171408790,
-          "wayVersion": 2,
-          "fromIndex": 0,
-          "toIndex": 2
-        },
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 135,
-          "toIndex": 182
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 168247379,
-          "wayVersion": 8,
-          "fromIndex": 8,
-          "toIndex": 0
-        },
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 117,
-          "toIndex": 3
-        },
-        {
-          "wayId": 168247379,
-          "wayVersion": 8,
-          "fromIndex": 33,
-          "toIndex": 8
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 0,
-          "toIndex": 37
-        },
-        {
-          "wayId": 171389432,
-          "wayVersion": 3,
-          "fromIndex": 0,
-          "toIndex": 7
-        },
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 99,
-          "toIndex": 182
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 168247376,
-          "wayVersion": 12,
-          "fromIndex": 180,
-          "toIndex": 119
-        },
-        {
-          "wayId": 171389437,
-          "wayVersion": 3,
-          "fromIndex": 8,
-          "toIndex": 0
-        }
-      ]
-    }
+  "notes": [
+    "Each named route uses the same exact current OSM source snapshot. The six leaves retain shared node IDs without snapping or invented connectors. The aggregate is not one driving lap. Borders, road elevation and curbs retain their documented estimation limits."
   ],
+  "gates": [],
   "components": [
     {
       "layoutId": "moscow-gp2",
-      "snapshotFile": "components-osm-168247376.json",
-      "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
+      "traceSha256": "d5b0593e2bff132aaf87b2b95b029fcef357c420e50a9376105490ee7f07e4a4"
     },
     {
       "layoutId": "moscow-gp1",
-      "snapshotFile": "components-osm-168247376.json",
-      "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
+      "traceSha256": "6cc14042dede3857ec0be9cdb63dfc5fb398c325562b255905d211daf68b452f"
     },
     {
       "layoutId": "moscow-fim",
-      "snapshotFile": "components-osm-168247376.json",
-      "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
+      "traceSha256": "c5749840423bbaa7ba2d4d92806f79f4a88ca95f3b58b3f4461e16e13116c23b"
     },
     {
       "layoutId": "moscow-sprint1",
-      "snapshotFile": "components-osm-168247376.json",
-      "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
+      "traceSha256": "36b141c675a6306314345e4c924e0869dfd47b16f1aeab11dd9945d9f6eb8d34"
     },
     {
       "layoutId": "moscow-gp5",
-      "snapshotFile": "components-osm-168247376.json",
-      "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
+      "traceSha256": "960c9978aec2c08964c9ea93a1fe4d7856e9ba8554ffe080d3374e48d9b7dd81"
     },
     {
       "layoutId": "moscow-supersprint",
-      "snapshotFile": "components-osm-168247376.json",
-      "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
+      "traceSha256": "83638c2ffbecf3f6046b34a2577320f1ed067d14ba288c9578c8cb4c2bd19f50"
     }
   ]
 }
