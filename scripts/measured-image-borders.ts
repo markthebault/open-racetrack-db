@@ -30,7 +30,10 @@ export function measuredImageBorders(
   const grade = gradeInput
     ? gradeSeparationSchema.parse(gradeInput)
     : undefined;
-  const frames = imageCrossSections(trace, run, grade?.sourceStationOffset),
+  if (grade && recipe.sourceStationOffset !== undefined &&
+      recipe.sourceStationOffset !== (grade.sourceStationOffset ?? 0))
+    throw new Error("Measurement and bridge source station offsets disagree");
+  const frames = imageCrossSections(trace, run, recipe.sourceStationOffset ?? grade?.sourceStationOffset),
     { projection, normals, smooth, count, index, step } = frames,
     lastStation = run ? count - 1 : count,
     paired = recipe.method === "paired-image-edge-anchors-v1";

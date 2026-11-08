@@ -603,6 +603,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
               ...(old.measurement.routeKind
                 ? { routeKind: old.measurement.routeKind }
                 : {}),
+              ...(old.measurement.sourceStationOffset !== undefined
+                ? { sourceStationOffset: old.measurement.sourceStationOffset }
+                : {}),
               ...(old.measurement.interpolation
                 ? { interpolation: old.measurement.interpolation }
                 : {}),

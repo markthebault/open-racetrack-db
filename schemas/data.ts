@@ -478,6 +478,11 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       source = track.sources.find((s) => s.id === info.sourceId);
     if (m.borderInference.measurement) {
       const measurement = m.borderInference.measurement;
+      const stationCount = geometryPaths(borders[0].geometry)[0].length - 1;
+      if ((measurement.sourceStationOffset ?? 0) >= stationCount ||
+          (m.borderInference.gradeSeparation && measurement.sourceStationOffset !== undefined &&
+            measurement.sourceStationOffset !== (m.borderInference.gradeSeparation.sourceStationOffset ?? 0)))
+        throw new Error("borderInference: invalid or conflicting measurement source station offset");
       if (
         m.closed === (measurement.routeKind === "run") ||
         isNetwork ||

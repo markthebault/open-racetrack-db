@@ -67,6 +67,20 @@ test("compaction rejects unsupported semantics, invalid tolerances and absent pr
   assert.throws(() => compactPairedImageMeasurements(trace, { ...input, method: "cross-section-image-anchors-v1" }, image, { maximumErrorM: .1 }), /closed paired/);
 });
 
+test("compaction preserves an explicitly rotated measurement grid and its geographic controls", () => {
+  const { trace, input, image, frames } = fixture(), offset = 30,
+    shifted = { ...input, sourceStationOffset: offset, patches: input.patches.map((p) => ({
+      ...p, anchors: p.anchors.map((a) => ({ ...a,
+        coordinate: p.anchors[(a.station + offset) % frames.count].coordinate,
+      })),
+    })) }, compact = compactPairedImageMeasurements(trace, shifted, image, { maximumErrorM: .1 });
+  assert.equal(compact.input.sourceStationOffset, offset);
+  assert.deepEqual(compact.input.patches[0].anchors[0], shifted.patches[0].anchors[0]);
+  assert.ok(compact.afterPairs < compact.beforePairs);
+  assert.ok(compact.maximumErrorM <= .1);
+  assert.equal(measuredImageBorders(trace, compact.input, input.imageSha256, image).measurement.sourceStationOffset, offset);
+});
+
 test("compaction checks new interpolated pixels even when every original observation and edge pixel is covered", () => {
   const { trace, input, image } = fixture(),
     compacted = compactPairedImageMeasurements(trace, input, image, { maximumErrorM: .1 }),

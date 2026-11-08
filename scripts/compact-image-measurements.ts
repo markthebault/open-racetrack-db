@@ -35,7 +35,7 @@ export function compactPairedImageMeasurements(
     frames = imageCrossSections(
       trace,
       false,
-      options.gradeSeparation?.sourceStationOffset,
+      recipe.sourceStationOffset ?? options.gradeSeparation?.sourceStationOffset,
     ),
     inner = recipe.patches.find((p) => p.edge === "inner")!,
     outer = recipe.patches.find((p) => p.edge === "outer")!,

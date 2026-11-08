@@ -49,6 +49,23 @@ function fixture() {
   return { trace, image, input, f };
 }
 
+test("a closed image measurement grid can start at a visible source section and replay that rotation", () => {
+  const { trace, image, input, f } = fixture(), before = structuredClone(trace),
+    offset = 30, rotated = imageCrossSections(trace, false, offset),
+    recipe = { ...input, sourceStationOffset: offset,
+      patches: input.patches.map((patch, side) => ({ ...patch, anchors: patch.anchors.map((a) => {
+        const i = rotated.index(a.station), p = rotated.smooth[i], n = rotated.normals[i], d = side === 0 ? 6 : -6;
+        return { ...a, coordinate: rotated.projection.from([p[0] + n[0] * d, p[1] + n[1] * d]) };
+      }) })) }, result = measuredImageBorders(trace, recipe, hash, image);
+  assert.deepEqual(rotated.smooth[0], f.smooth[offset]);
+  assert.deepEqual(trace, before);
+  assert.equal(result.measurement.sourceStationOffset, offset);
+  const { resultSha256, ...saved } = result.measurement;
+  assert.equal(measuredImageBorders(trace, saved, hash, image).measurement.resultSha256, resultSha256);
+  assert.throws(() => measuredImageBorders(trace, { ...recipe, sourceStationOffset: f.count }, hash), /valid closed source grid/);
+  assert.throws(() => borderMeasurementInputSchema.parse({ ...recipe, routeKind: "run" }), /cannot rotate/);
+});
+
 test("local straight interpolation changes only the selected edge interval and replays exactly", () => {
   const { trace, image, input } = fixture();
   const recipe = { ...input, linearIntervals: [{ edge: "outer" as const, startStation: 10, endStation: 20 }] };

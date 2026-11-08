@@ -92,6 +92,14 @@ function fixture() {
   };
   return { trace: trace as Position[], grade, input, image };
 }
+test("measurement rotation cannot move a bridge away from its source-backed station grid", () => {
+  const { trace, grade, input, image } = fixture();
+  assert.throws(() => measuredImageBorders(trace, { ...input, sourceStationOffset: 1 }, input.imageSha256, image, grade), /offsets disagree/);
+  assert.deepEqual(
+    measuredImageBorders(trace, { ...input, sourceStationOffset: 0 }, input.imageSha256, image, grade).result,
+    measuredImageBorders(trace, input, input.imageSha256, image, grade).result,
+  );
+});
 test("complete measured bridge edges retain level separation, source direction and deterministic replay", () => {
   const { trace, grade, input, image } = fixture();
   assert.throws(

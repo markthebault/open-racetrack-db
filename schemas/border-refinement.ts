@@ -74,12 +74,15 @@ const completeRecipe = recipe.omit({ seedSha256: true }).extend({
     endStation: z.number().int().min(0).max(199999),
   })).min(1).max(1000).optional(),
   routeKind: z.literal("run").optional(),
+  sourceStationOffset: z.number().int().nonnegative().max(199999).optional(),
 });
 function checkComplete(
   value: z.infer<typeof completeRecipe>,
   ctx: z.RefinementCtx,
 ) {
   check(value, ctx);
+  if (value.routeKind === "run" && value.sourceStationOffset !== undefined)
+    ctx.addIssue({ code: "custom", message: "Open measurements cannot rotate their source station grid" });
   if (value.linearIntervals) {
     if (value.interpolation || value.method !== "cross-section-image-anchors-v1")
       ctx.addIssue({ code: "custom", message: "Local linear intervals require source-frame measurements without global interpolation" });
