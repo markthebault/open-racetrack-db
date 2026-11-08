@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "missingLayoutSetSha256": "e6443a25e8faf60c8be9e95669e6a8f07c9a504d18698723cd93bf6635ab4905",
+  "missingLayoutSetSha256": "3d541ce44a750131e54ab219f6580af31ef909badcf1b2b85f8a87c1be4a5932",
   "note": "Diagnostic source-topology audit only. No boundaries, elevation profiles or models are accepted or changed. Explicit source bridge matches still require imagery review, separate road levels and crossing-aware runtime reconstruction. Collinear retraces and unexplained intersections stay unresolved. Source turns of at least 145 degrees flag possible needle joins before image authoring; real hairpins can also trigger this diagnostic. They require identity and image review, never automatic route replacement, border acceptance or rejection. Coordinates come only from public mapped traces; no timing data is read.",
   "summary": {
-    "missingLayouts": 225,
-    "singlePathsAudited": 202,
+    "missingLayouts": 224,
+    "singlePathsAudited": 201,
     "networksSkipped": 23,
     "layoutsWithCrossings": 5,
     "layoutsWithSharpSourceTurns": 36,
