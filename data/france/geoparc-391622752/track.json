@@ -17,7 +17,8 @@
     "osm-network-391622752",
     "osm-components-391622752",
     "osm-network-geoparc-long",
-    "osm-network-geoparc-short"
+    "osm-network-geoparc-short",
+    "osm-geoparc-20261108"
   ],
   "defaultLayoutId": "geoparc-long",
   "layouts": [
@@ -45,13 +46,13 @@
       "id": "geoparc-outer-long",
       "name": "Long outer configuration",
       "file": "layouts/geoparc-outer-long.geojson",
-      "description": "The complete outer main-course perimeter shown in the operator plan, retaining the northern extension and southern return. The western paddock link, eastern pit access and interior variants are excluded."
+      "description": "The complete outer main-course perimeter shown in the operator plan, retaining the northern extension and southern return. The western paddock link, eastern pit access and interior variants are excluded. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft."
     },
     {
       "id": "geoparc-outer-short",
       "name": "Short outer configuration",
       "file": "layouts/geoparc-outer-short.geojson",
-      "description": "The outer perimeter closes through the direct central northern connection shown among the operator modular variants; the northern extension is excluded. This is a branch description, with lap direction remaining draft."
+      "description": "The outer perimeter closes through the direct central northern connection shown among the operator modular variants; the northern extension is excluded. This is a branch description, with lap direction remaining draft. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft."
     },
     {
       "id": "geoparc-crossed-infield",
@@ -75,7 +76,7 @@
       "id": "geoparc-curved-short",
       "name": "Curved short configuration",
       "file": "layouts/geoparc-curved-short.geojson",
-      "description": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded."
+      "description": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft."
     }
   ],
   "sources": [
@@ -204,6 +205,15 @@
       "license": "LicenseRef-MapTiler-Derived-Borders",
       "retrievedAt": "2026-11-06T08:23:10.977Z",
       "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
+    },
+    {
+      "id": "osm-geoparc-20261108",
+      "type": "osm",
+      "title": "OpenStreetMap Géoparc car-course return and exact branch joins",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=6.913,48.2985,6.9196,48.3067",
+      "license": "ODbL-1.0",
+      "retrievedAt": "2026-11-08T22:02:02.763565Z",
+      "evidenceNote": "Eight pinned mapped ways from the bounded OSM map API response. Exact node joins correct the car-course layouts that previously detoured through the independent karting infield. Operator plan and licensed imagery identify branch use only; no diagram or image coordinates are copied into these traces. Historical alignment and direction remain draft."
     }
   ]
 }

@@ -1,210 +1,55 @@
 {
-  "schemaVersion": 2,
-  "geometryKind": "network",
   "trackId": "fr-geoparc-391622752",
   "layoutId": "geoparc-long",
   "sourceId": "osm-network-geoparc-long",
   "snapshotFile": "network-geoparc-long.json",
-  "snapshotSha256": "c81799abb396bb1bc2226512813af08d7140299368ba5e4e92fc33a864f925fe",
   "geometryStatus": "draft",
   "timingMode": "shared",
   "reviewedAt": null,
-  "notes": [],
-  "gates": [],
-  "paths": [
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 26,
-          "toIndex": 0
-        },
-        {
-          "wayId": 391622752,
-          "wayVersion": 5,
-          "fromIndex": 25,
-          "toIndex": 0
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 44,
-          "toIndex": 26
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 26,
-          "toIndex": 0
-        },
-        {
-          "wayId": 391622752,
-          "wayVersion": 5,
-          "fromIndex": 25,
-          "toIndex": 26
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 45,
-          "toIndex": 26
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 391622756,
-          "wayVersion": 6,
-          "fromIndex": 3,
-          "toIndex": 2
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 27,
-          "toIndex": 38
-        },
-        {
-          "wayId": 391622756,
-          "wayVersion": 6,
-          "fromIndex": 0,
-          "toIndex": 1
-        },
-        {
-          "wayId": 690484240,
-          "wayVersion": 3,
-          "fromIndex": 1,
-          "toIndex": 0
-        },
-        {
-          "wayId": 690484238,
-          "wayVersion": 2,
-          "fromIndex": 1,
-          "toIndex": 0
-        },
-        {
-          "wayId": 391622756,
-          "wayVersion": 6,
-          "fromIndex": 14,
-          "toIndex": 3
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 391622753,
-          "wayVersion": 3,
-          "fromIndex": 1,
-          "toIndex": 0
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 28,
-          "toIndex": 38
-        },
-        {
-          "wayId": 391622756,
-          "wayVersion": 6,
-          "fromIndex": 0,
-          "toIndex": 2
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 27,
-          "toIndex": 26
-        },
-        {
-          "wayId": 391622756,
-          "wayVersion": 6,
-          "fromIndex": 12,
-          "toIndex": 3
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 45,
-          "toIndex": 62
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 40,
-          "toIndex": 45
-        }
-      ]
-    },
-    {
-      "closed": true,
-      "segments": [
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 48,
-          "toIndex": 62
-        },
-        {
-          "wayId": 391622754,
-          "wayVersion": 5,
-          "fromIndex": 40,
-          "toIndex": 2
-        },
-        {
-          "wayId": 391622757,
-          "wayVersion": 3,
-          "fromIndex": 7,
-          "toIndex": 0
-        }
-      ]
-    }
+  "schemaVersion": 2,
+  "geometryKind": "network",
+  "geometrySource": "components",
+  "snapshotSha256": "6a84b2c9b5fb458aab0008eb64e5a6bc88af6a28774af2fc259465c33ce64f12",
+  "notes": [
+    "Union of independently pinned component routes; corrected car configurations use the eastern return and keep karting variants separately selectable. No connecting lap is invented. Historical identity/direction remain draft."
   ],
+  "gates": [],
   "components": [
     {
       "layoutId": "geoparc-outer-long",
-      "snapshotFile": "components-osm-391622752.json",
-      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "65746043188f966f043a5161bd50b505fe8900d32e4a578056bd7ed4b54fee57",
+      "traceSha256": "e6a2e5c0b8f3685617cfff008fc9af965e9beca7513602b2a9eb795dcf0e5d25"
     },
     {
       "layoutId": "geoparc-outer-short",
-      "snapshotFile": "components-osm-391622752.json",
-      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "65746043188f966f043a5161bd50b505fe8900d32e4a578056bd7ed4b54fee57",
+      "traceSha256": "19ca975d0537ce1d28b84c5a7dc883dace3ef58db0db699c06c1ef54aa49a722"
     },
     {
       "layoutId": "geoparc-crossed-infield",
       "snapshotFile": "components-osm-391622752.json",
-      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f"
+      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f",
+      "traceSha256": "417bc18c5acc9595447912afc21f910fa6d37b640f1306e156c58bd81617ab2d"
     },
     {
       "layoutId": "geoparc-direct-infield",
       "snapshotFile": "components-osm-391622752.json",
-      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f"
+      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f",
+      "traceSha256": "a3f25aedb4295e9d7aa90b21201005c80d99f4bd6967e937cabf6ea2496a2608"
     },
     {
       "layoutId": "geoparc-central-curved",
       "snapshotFile": "components-osm-391622752.json",
-      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f"
+      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f",
+      "traceSha256": "058d4dcd7f21db9bbb66dde39812a32e0c5edaf3bb24b909aa97fe80460960bf"
     },
     {
       "layoutId": "geoparc-curved-short",
-      "snapshotFile": "components-osm-391622752.json",
-      "snapshotSha256": "1ea0dff90209401c43f51afd373c9ded0395d2ddfbdeb38a11b1b1df92d5d19f"
+      "snapshotFile": "components-osm-20261108.json",
+      "snapshotSha256": "65746043188f966f043a5161bd50b505fe8900d32e4a578056bd7ed4b54fee57",
+      "traceSha256": "e067f51040a955be6610e9f2347a758f0c9f915ed9d5b1a6c2ef4ac11aef8f0b"
     }
   ]
 }
