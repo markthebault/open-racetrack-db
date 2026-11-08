@@ -25,7 +25,7 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Unconfirmed course combining car, karting and paddock-side sections. Its complete route and road limits are not established by the available evidence. Retained as a draft; 3D playback is unavailable."
     },
     {
       "id": "geoparc-long",
@@ -55,9 +55,9 @@
     },
     {
       "id": "geoparc-crossed-infield",
-      "name": "Infield crossing configuration",
+      "name": "Infield diagonal configuration",
       "file": "layouts/geoparc-crossed-infield.geojson",
-      "description": "The southern infield circuit retains its independently mapped grade-separated diagonal crossing, shown as the karting configuration within the operator main-course plan. The parallel eastern access loop is excluded."
+      "description": "Southern karting infield variant using the mapped diagonal connector and eastern return. The tunnel-tagged eastern segment lies at the paddock pedestrian walkway; it does not establish a crossing between two driving roads. The operator identifies karting and auto/moto as independent circuits. Fine route/road-edge alignment, direction and covered limits remain draft."
     },
     {
       "id": "geoparc-direct-infield",
@@ -131,7 +131,7 @@
       "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
       "license": "reference-only",
       "retrievedAt": "2026-10-01T23:31:05.004Z",
-      "evidenceNote": "The Short entry is the southern configuration network: the curved central return and western modular connector close the short main course, with the southern infield crossing variants also represented. The far northern extension, its direct triangular return and parallel eastern access loop are excluded. The operator modular-course and karting plan identifies those branches. This is not a single lap; fine historical alignment remains draft. The independent unique branch distance is 1689.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
+      "evidenceNote": "The Short entry is the southern configuration network: the curved central return and western modular connector close the short main course, with the southern karting diagonal/direct variants also represented. The far northern extension, its direct triangular return and parallel eastern access loop are excluded. The operator modular-course and karting plan identifies those branches. This is not a single lap; fine historical alignment remains draft. The independent unique branch distance is 1689.7 m; no coordinates are adjusted to a catalogue scalar distance. Identification only; no image coordinates copied."
     },
     {
       "id": "osm-components-391622752",
@@ -163,11 +163,11 @@
     {
       "id": "component-identity-geoparc-crossed-infield",
       "type": "reference",
-      "title": "Infield crossing configuration identification",
+      "title": "Infield diagonal configuration identification",
       "url": "https://www.geoparc.com/wp-content/uploads/2024/02/circuit-geo-complet-e1708680471726.png",
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:06:20.403Z",
-      "evidenceNote": "The southern infield circuit retains its independently mapped grade-separated diagonal crossing, shown as the karting configuration within the operator main-course plan. The parallel eastern access loop is excluded. Identification only; no diagram coordinates copied."
+      "evidenceNote": "The operator plan identifies a separate southern karting facility. Native imagery and pinned source nodes locate the selected diagonal and eastern return. The tunnel-tagged segment is beside the pedestrian access walkway, not evidence of two crossing driving roads. Variant name, exact road-edge correspondence and direction remain draft. Identification only; no diagram coordinates copied."
     },
     {
       "id": "component-identity-geoparc-direct-infield",
