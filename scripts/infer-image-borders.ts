@@ -168,20 +168,41 @@ export function imageCrossSections(
   return { closed, projection, count, step, smooth, normals, index };
 }
 
+/** Opt-in for a source centreline already checked against the image; never a width prior. */
+export function assertSourceContainedBorders(
+  trace: Position[], pair: {inner: Position[]; outer: Position[]}, open = false,
+) {
+  const f = imageCrossSections(trace, open);
+  const count = f.count + (open ? 0 : 1);
+  if (pair.inner.length !== count || pair.outer.length !== count)
+    throw new Error("Source-contained edges require matching source stations");
+  for (let i = 0; i < f.count; i++) {
+    const across = [pair.inner[i], pair.outer[i]].map(p => {
+      const q = f.projection.to(p), c = f.smooth[i], n = f.normals[i];
+      return (q[0] - c[0]) * n[0] + (q[1] - c[1]) * n[1];
+    }).sort((a,b) => a-b);
+    if (across[0] > 0.03 || across[1] < -0.03)
+      throw new Error("Proposed edges do not contain the reviewed source centreline");
+  }
+}
+
 /** Image-driven proposals only. Evidence metrics are not calibrated positional confidence. */
 export function inferImageBorders(
   trace: Position[],
   image: Raster,
   options: {
     open?: boolean;
-    method?: "road-appearance-v3" | "road-local-appearance-v4";
+    method?: "road-appearance-v3" | "road-local-appearance-v4" | "road-source-contained-v5";
     gradeSeparation?: GradeSeparation;
   } = {},
 ) {
   const gradeSeparation = options.gradeSeparation,
-    localAppearance = options.method === "road-local-appearance-v4",
+    sourceContained = options.method === "road-source-contained-v5",
+    localAppearance = sourceContained || options.method === "road-local-appearance-v4",
     appearance = localAppearance || options.method === "road-appearance-v3",
-    minOffset = appearance ? -10 : 2;
+    minOffset = sourceContained ? 0 : appearance ? -10 : 2;
+  if (sourceContained && gradeSeparation)
+    throw new Error("Source containment requires a separately reviewed simple road");
   const { closed, projection, count, step, smooth, normals, index } =
     imageCrossSections(
       trace,
@@ -261,7 +282,7 @@ export function inferImageBorders(
     evidence: { strong: number; interior: number }[] = [],
     widths: number[][] = [];
   for (const sign of [1, -1]) {
-    const options = appearance ? 71 : 47,
+    const options = sourceContained ? 51 : appearance ? 71 : 47,
       contrast: number[][] = [],
       interior: number[][] = [],
       scores: number[][] = [];
@@ -433,5 +454,7 @@ export function inferImageBorders(
     options.gradeSeparation || !closed || area(borders[0]) < area(borders[1])
       ? 0
       : 1;
-  return { inner: borders[inner], outer: borders[1 - inner], evidence, step };
+  const result = { inner: borders[inner], outer: borders[1 - inner], evidence, step };
+  if (sourceContained) assertSourceContainedBorders(trace, result, options.open);
+  return result;
 }

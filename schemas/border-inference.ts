@@ -27,6 +27,7 @@ export const borderInferenceSchema = z
       "rgb-cross-sections-v2",
       "rgb-road-appearance-v3",
       "rgb-road-local-appearance-v4",
+      "rgb-road-source-contained-v5",
       "image-measured-cross-sections-v1",
       "image-measured-paired-edges-v1",
     ]),
@@ -117,6 +118,8 @@ export const borderInferenceSchema = z
     note: z.string().min(1),
   })
   .superRefine((value, ctx) => {
+    if (value.method === "rgb-road-source-contained-v5" && (value.gradeSeparation || value.evidence?.searchRangeM[0] !== 0 || value.evidence?.searchRangeM[1] !== 25))
+      ctx.addIssue({code: "custom", message: "Source-contained proposals require their zero-to-25m search and no grade separation"});
     const measured =
       value.method === "image-measured-cross-sections-v1" ||
       value.method === "image-measured-paired-edges-v1";

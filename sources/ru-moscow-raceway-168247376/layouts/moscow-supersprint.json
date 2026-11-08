@@ -2,28 +2,29 @@
   "schemaVersion": 1,
   "trackId": "ru-moscow-raceway-168247376",
   "layoutId": "moscow-supersprint",
-  "sourceId": "osm-components-168247376",
-  "snapshotFile": "components-osm-168247376.json",
-  "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab",
+  "sourceId": "osm-components-20261108",
+  "snapshotFile": "components-osm-20261108.json",
+  "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "The operator Supersprint highlighted configuration identifies the western circuit closed by the short Supersprint return, retaining the full western bend. The pinned independent source route measures 1345.2 m; the operator states 1357 m. Parallel pit and service routes are excluded. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "The operator Supersprint highlighted configuration identifies the western circuit closed by the short Supersprint return, retaining the full western bend. The current pinned independent source route measures 1357 m; the operator states 1357 m. Parallel pit and service routes are excluded. Exact current source coordinates are retained; historical alignment remains provisional.",
+    "Current source update: exact OSM way coordinates and existing shared endpoint node IDs from the 8 November 2026 API retrieval. The main source is version 13 dated 11 October 2026. No snapping, nominal-length fitting or diagram coordinates. Source alignment remains draft and imagery-derived borders remain estimates. Source segment order is reversed to the operator counterclockwise direction."
   ],
   "segments": [
     {
-      "wayId": 168247376,
-      "wayVersion": 12,
-      "fromIndex": 180,
-      "toIndex": 119
+      "wayId": 171389437,
+      "wayVersion": 4,
+      "fromIndex": 0,
+      "toIndex": 8
     },
     {
-      "wayId": 171389437,
-      "wayVersion": 3,
-      "fromIndex": 8,
-      "toIndex": 0
+      "wayId": 168247376,
+      "wayVersion": 13,
+      "fromIndex": 98,
+      "toIndex": 170
     }
   ],
   "gates": []

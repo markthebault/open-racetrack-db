@@ -528,7 +528,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     if (m.borderInference.refinement) {
       const refinement = m.borderInference.refinement;
       if (
-        m.borderInference.method !== "rgb-road-local-appearance-v4" ||
+        !["rgb-road-local-appearance-v4", "rgb-road-source-contained-v5"].includes(m.borderInference.method) ||
         refinement.imageSha256 !== info.sha256
       )
         throw new Error(
@@ -602,6 +602,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       m.model3d.pathMethod === "paired-border-midpoints" &&
       m.borderInference?.method !== "rgb-road-appearance-v3" &&
       m.borderInference?.method !== "rgb-road-local-appearance-v4" &&
+      m.borderInference?.method !== "rgb-road-source-contained-v5" &&
       m.borderInference?.method !== "image-measured-cross-sections-v1" &&
       m.borderInference?.method !== "image-measured-paired-edges-v1" &&
       m.borderInference?.edgeConvention !== "left-right-along-trace"

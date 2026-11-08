@@ -2,22 +2,23 @@
   "schemaVersion": 1,
   "trackId": "ru-moscow-raceway-168247376",
   "layoutId": "moscow-gp1",
-  "sourceId": "osm-components-168247376",
-  "snapshotFile": "components-osm-168247376.json",
-  "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab",
+  "sourceId": "osm-components-20261108",
+  "snapshotFile": "components-osm-20261108.json",
+  "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "The operator Grand Prix 1 highlighted configuration identifies the full western course and Mercedes Arena with the plain back straight. The pinned independent source route measures 3984 m; the operator states 3955 m. Parallel pit and service routes are excluded. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "The operator Grand Prix 1 highlighted configuration identifies the full western course and Mercedes Arena with the plain back straight. The current pinned independent source route measures 3952 m; the operator states 3955 m. Parallel pit and service routes are excluded. Exact current source coordinates are retained; historical alignment remains provisional.",
+    "Current source update: exact OSM way coordinates and existing shared endpoint node IDs from the 8 November 2026 API retrieval. The main source is version 13 dated 11 October 2026. No snapping, nominal-length fitting or diagram coordinates. Source alignment remains draft and imagery-derived borders remain estimates."
   ],
   "segments": [
     {
       "wayId": 168247376,
-      "wayVersion": 12,
+      "wayVersion": 13,
       "fromIndex": 0,
-      "toIndex": 182
+      "toIndex": 172
     }
   ],
   "gates": []

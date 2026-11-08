@@ -2,28 +2,29 @@
   "schemaVersion": 1,
   "trackId": "ru-moscow-raceway-168247376",
   "layoutId": "moscow-gp2",
-  "sourceId": "osm-components-168247376",
-  "snapshotFile": "components-osm-168247376.json",
-  "snapshotSha256": "c22959ef13b053a88fbaf6f21b33ad4ac54ecfaf5d8abf327569c0b458de17ab",
+  "sourceId": "osm-components-20261108",
+  "snapshotFile": "components-osm-20261108.json",
+  "snapshotSha256": "01b91f857c2141a18b1bd56780d6617515bf7cdeec28fc5c824ccdb162c0f05d",
   "closed": true,
   "timingMode": "shared",
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "The operator Grand Prix 2 highlighted configuration identifies the full western course and Mercedes Arena with both back-straight chicanes. The pinned independent source route measures 4099.2 m; the operator states 4070 m. Parallel pit and service routes are excluded. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "The operator Grand Prix2 configuration identifies the full western course and Mercedes Arena with both back-straight chicanes. Source ways168247376 v13 and168247379 v9 retain the original branch endpoint node IDs and exact current OSM coordinates. The route follows the operator counterclockwise direction. Its independent source length is4062.7m; the operator states4070m, without fitting. Parallel pit/service roads are excluded. Historical alignment remains draft; timing is missing.",
+    "Current source update: exact OSM way coordinates and existing shared endpoint node IDs from the 8 November 2026 API retrieval. The main source is version 13 dated 11 October 2026. No snapping, nominal-length fitting or diagram coordinates. Source alignment remains draft and imagery-derived borders remain estimates."
   ],
   "segments": [
     {
-      "wayId": 168247376,
-      "wayVersion": 12,
-      "fromIndex": 182,
-      "toIndex": 3
+      "wayId": 168247379,
+      "wayVersion": 9,
+      "fromIndex": 10,
+      "toIndex": 36
     },
     {
-      "wayId": 168247379,
-      "wayVersion": 8,
-      "fromIndex": 33,
-      "toIndex": 8
+      "wayId": 168247376,
+      "wayVersion": 13,
+      "fromIndex": 3,
+      "toIndex": 172
     }
   ],
   "gates": []

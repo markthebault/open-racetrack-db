@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { inferImageBorders, type Raster } from "../scripts/infer-image-borders";
+import { inferImageBorders, assertSourceContainedBorders, type Raster } from "../scripts/infer-image-borders";
 import { plane, type Position } from "../src/geo";
 import { borderInferenceSchema } from "../schemas/border-inference";
 import { displayTilePlan } from "../src/imagery";
@@ -347,5 +347,27 @@ test("a missing stripe through the road still prevents border extraction", () =>
       () => inferImageBorders(trace, image, { method }),
       /coverage|evidence|interval|review/,
     );
+  }
+});
+
+
+test("source-contained proposals follow image widths and reject borders on one side of the source", () => {
+  for (const nominal of [9, 17]) {
+    const width = (a: number) => nominal + 2 * Math.sin(3 * a),
+      {image, trace} = circleImage(width),
+      result = inferImageBorders(trace, image, {method: "road-source-contained-v5"});
+    for (const [points, sign] of [[result.inner, -1], [result.outer, 1]] as const) {
+      const errors = points.map(p => {
+        const [x,y] = project.to(p), angle = Math.atan2(y,x);
+        return Math.abs(Math.hypot(x,y) - (100 + sign * width(angle)/2));
+      }).sort((a,b) => a-b);
+      assert.ok(errors[Math.floor(errors.length * .95)] < 2);
+    }
+    assertSourceContainedBorders(trace, result);
+    const displaced = {...result, inner: result.outer};
+    assert.throws(() => assertSourceContainedBorders(trace, displaced), /contain/);
+    image.data.fill(130);
+    for (let i = 3; i < image.data.length; i += 4) image.data[i] = 255;
+    assert.throws(() => inferImageBorders(trace, image, {method: "road-source-contained-v5"}), /review|evidence|interval/);
   }
 });
