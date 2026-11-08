@@ -347,4 +347,10 @@ The rendering check covers every bordered layout, including static surfaces and 
 
 Reports are saved in each test's output directory and attached to the test result. Playback tests use raster fixtures to isolate controls and generation from provider availability. Real image loading, capture-date correspondence, road accuracy and recorded-video smoothness require separate checks; a passing browser sweep does not establish complete or surveyed track coverage.
 
-The [browser coverage audit](../sources/research/browser-coverage-audit.json) binds the current results to a public-data snapshot. It also records real browser image-decoding observations and five unmocked player checks separately from the fixture-based sweeps. Earlier inconclusive metadata requests are preserved as historical observations, rather than treated as proof that their images cannot load.
+The [browser coverage audit](../sources/research/browser-coverage-audit.json) binds the current results to a public-data snapshot. It also records real browser image-decoding observations and unmocked player checks separately from the fixture-based sweeps. Earlier inconclusive metadata requests are preserved as historical observations, rather than treated as proof that their images cannot load.
+
+## Ouest Parisien road limits
+
+The `main` course uses 68 observations on each edge of a pinned IGN BD ORTHO image, with Licence Ouverte 2.0 attribution. The existing trace stays exact. A compact cross-section recipe rebuilds 517 paired stations; hidden edges and shared-pavement joins interpolate between visible observations. The image capture date is unknown.
+
+The existing terrain grid is embedded unchanged. The approximately 5 KB model recipe recreates a 1,548 m road and a 62.39-second flying lap, using the default 300 hp car. A full normal-speed recording was decoded and sampled across 40 frames; local and Tailscale controls, imagery and exact downloads were checked at 1440, 390 and 320 px. Limits and terrain remain estimates, curbs illustrative and banking unknown. The layout GeoJSON contains the reconstruction data; meshes, authoring images and movies are generated or fetched when used. Evidence is retained in the shared [measurement review](../sources/research/road-limit-measurement-reviews.json).

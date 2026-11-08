@@ -504,6 +504,8 @@
     top: 12px;
     padding: 10px;
     gap: 10px;
+    max-width: calc(100% - 120px);
+    box-sizing: border-box;
   }
   .lap-speed {
     min-width: 53px;
@@ -514,6 +516,7 @@
   .lap-telemetry-detail {
     font-size: 9px;
     gap: 5px;
+    min-width: 0;
   }
   .lap-telemetry-detail strong {
     font-size: 19px;

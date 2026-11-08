@@ -3676,7 +3676,47 @@
           }
         ]
       }
-    ]
+    ],
+    "playerFollowup": {
+      "scope": "The two prior 15/30-second image-download timeouts subsequently loaded in the unmocked player. Original timeout observations are retained. Near-start screenshots were reviewed; no full-lap or road-accuracy claim.",
+      "resolvedReferences": 2,
+      "remainingUnconfirmedFromThisSet": 0,
+      "currentLoadingConfirmedReferences": 201,
+      "results": [
+        {
+          "trackId": "gb-rockingham-int-circuit-fb42d36b",
+          "layoutId": "rockingham-int-circuit-short",
+          "file": "data/united-kingdom/gb-rockingham-int-circuit-fb42d36b/layouts/rockingham-int-circuit-short.geojson",
+          "layoutSha256": "26ebdc5684bef7e8b9f49ba9501fa5df39d28db74c8769b665848c5821c24ea7",
+          "referenceSha256": "c12ccd0431dd6be4a977cac02fee873a43461516a8d07a9aad4c8d5d71a7cac9",
+          "checkedAt": "2026-11-08T06:35:03.360Z",
+          "waitedMs": 21324,
+          "actualImageLoaded": true,
+          "clockAdvanced": true,
+          "recordingControlEnabled": true,
+          "imageHttpStatus": 200,
+          "imageContentType": "image/jpeg",
+          "screenshotSha256": "e0ce9dda616f696e8aa5ce40dff7449e69b05f4b4fe4b6d34a12100e1e1fbd38",
+          "screenshotViewed": true
+        },
+        {
+          "trackId": "us-thunderhill-raceway-park-28825115",
+          "layoutId": "thunderhill-raceway-park-5mile",
+          "file": "data/united-states/thunderhill-raceway-park-28825115/layouts/thunderhill-raceway-park-5mile.geojson",
+          "layoutSha256": "8ddd59987f296e46107651d1f3e218e9e79ed72f5d4aca653e49d433dabca4b9",
+          "referenceSha256": "afd0a7f46230509034a0924b2c3c83980f68925a78ddeb9c3e34b4de93a85b78",
+          "checkedAt": "2026-11-08T06:35:15.932Z",
+          "waitedMs": 12435,
+          "actualImageLoaded": true,
+          "clockAdvanced": true,
+          "recordingControlEnabled": true,
+          "imageHttpStatus": 200,
+          "imageContentType": "image/jpeg",
+          "screenshotSha256": "aeefbede46d9270484b5b0026360fff1fb81c132a75567c8e850b0ff25c25d24",
+          "screenshotViewed": true
+        }
+      ]
+    }
   },
   "actualPlaybackSamples": {
     "scope": "Five unmocked player checks with reviewed screenshots near the start. Not full-lap video or geometric validation.",
@@ -3745,12 +3785,13 @@
     "newAcceptedLayouts": 0
   },
   "remaining": {
-    "mappedLayoutsWithoutBorders": 223,
+    "mappedLayoutsWithoutBorders": 222,
     "unmappedEntries": 11,
     "standaloneSurfaceOnlyLayouts": 7,
     "unavailableEmbeddedRoutes": 1,
     "physicalBoundaryAndElevationAccuracy": "Unverified estimates remain; the model crossing audit and individual source reviews still apply.",
-    "fullCatalogueVideoSmoothness": "Not established by these tests."
+    "fullCatalogueVideoSmoothness": "Not established by these tests.",
+    "countsScope": "After subsequentLayoutChecks; baseline inputSnapshot and sweeps are retained unchanged."
   },
   "validation": {
     "unitTests": 287,
@@ -3765,5 +3806,38 @@
     "htmlMatches": true,
     "applicationAndDataChanges": false,
     "previewDeploymentRequired": false
+  },
+  "subsequentLayoutChecks": {
+    "scope": "One newly prepared layout checked separately from the preserved baseline catalogue sweeps. No new catalogue-wide video or physical-accuracy claim.",
+    "trackId": "fr-circuits-de-l-ouest-parisien-297738878",
+    "layoutId": "main",
+    "layoutSha256": "187202e64abc08255bb9bdadb858d10c347ad8b21ace83c90f221bf2f12985c4",
+    "preservation": {
+      "otherLayoutsByteIdentical": 1376,
+      "timingUnchanged": 1377,
+      "terrainSidecarsByteIdentical": 164,
+      "originalTraceVerticesPreserved": 139,
+      "originalMetadataPreserved": true,
+      "embeddedTerrainMatchesRetainedGrid": true,
+      "layoutSha256": "187202e64abc08255bb9bdadb858d10c347ad8b21ace83c90f221bf2f12985c4",
+      "baselineCommit": "77f69bb7e3d74aa3211cc20d1b0f715635a56302"
+    },
+    "currentPreparedLayouts": 1155,
+    "currentIndependentPlayableLayouts": 1108,
+    "realImageLoaded": true,
+    "localAndLiveViewportWidths": [
+      1440,
+      390,
+      320
+    ],
+    "exactDownload": true,
+    "normalSpeedFullLapRecordedAndSampled": true,
+    "researchRecord": "road-limit-measurement-reviews.json",
+    "applicationChange": "Small-screen telemetry now fits beside the minimap; local and live screenshots reviewed.",
+    "installedPreviewParity": {
+      "checkedFiles": 2141,
+      "allCatalogueTrackAndLayoutBytesMatch": true,
+      "htmlMatches": true
+    }
   }
 }
