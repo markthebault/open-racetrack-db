@@ -36,7 +36,7 @@ Enrique Quique Freile, `ar-autodromo-municipal-enrique-quique-freile-1160575442`
 
 Los Golondrinas, `ar-los-golondrinas-917054622` / `main`, is skipped. Its pinned description names an XCO MTB event while `sport=motor`; this conflict is unresolved. Six native source sections show narrow paths, vegetation and shared bare ground without a continuous pair of road limits. Retain the trace; consider future removal or reclassification after an independent venue/event review. A nominal car-width corridor would not establish a real road.
 
-The current catalogue has 210 mapped border gaps, including these eight exclusions; 202 remain in the current border task. They are separate from the eleven unmapped exclusions above. A detector failure alone does not justify skipping a layout.
+The current catalogue has 208 mapped border gaps, including these eight exclusions; 200 remain in the current border task. They are separate from the eleven unmapped exclusions above. A detector failure alone does not justify skipping a layout.
 
 Existing evidence includes the [bounded GPS review](../sources/research/public-gps-gap-search/review.md), [Elvington coverage](../sources/research/elvington-historical-coverage/review.md), [Thoresway historical review](../sources/research/thoresway-historical-coverage/review.md), [Arlington connectors](../sources/research/arlington-public-course-evidence/review.md), [Charlotte identity](../sources/research/charlotte-short-identity/review.md), [Rosario imagery](../sources/research/rosario-public-imagery/review.md) and [Huangtupo bands](../sources/research/huangtupo-historical-bands/review.md).
 
