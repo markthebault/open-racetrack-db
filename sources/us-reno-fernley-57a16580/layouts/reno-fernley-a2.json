@@ -10,7 +10,8 @@
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "This component reuses the existing pinned independent course recipe from us-reno-fernley-a2-ee03ab77/reno-fernley-a2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "This component reuses the existing pinned independent course recipe from us-reno-fernley-a2-ee03ab77/reno-fernley-a2 without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional.",
+    "Supplemental borders reviewed against USDA NAIP capture 2010-06-14, including layout-specific connectors and shared original edges. Approximate historical paving limits; shared-paving branch closures remain estimated and direction provisional. Original trace, border rights and timing are retained. Driving reconstruction uses the boundary-normal midpoint path to avoid sharp source-trace departures; no nominal widths or modified source nodes. Curbs illustrative, terrain approximate, banking unknown."
   ],
   "segments": [
     {
@@ -44,5 +45,11 @@
       "toIndex": 149
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "reno-fernley-a2",
+    "traceSha256": "6fe2271c1e18ab4528c26e7c572aeee7e116a326c1fa6727d1c9a2f8c9295a3b",
+    "bordersSha256": "7bd0bccc041a1436f6ea382ab2427d1d15b95754f5fe5a69cec86319087c04fb",
+    "sourceTrackId": "us-reno-fernley-a2-ee03ab77"
+  }
 }

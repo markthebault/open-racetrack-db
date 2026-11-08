@@ -10,7 +10,8 @@
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "This component reuses the existing pinned independent course recipe from us-reno-fernley-b-a1497233/reno-fernley-b without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "This component reuses the existing pinned independent course recipe from us-reno-fernley-b-a1497233/reno-fernley-b without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional.",
+    "Supplemental borders reviewed against USDA NAIP capture 2010-06-14, including layout-specific connectors and shared original edges. Approximate historical paving limits; shared-paving branch closures remain estimated and direction provisional. Original trace, border rights and timing are retained. Driving reconstruction uses the boundary-normal midpoint path to avoid sharp source-trace departures; no nominal widths or modified source nodes. Curbs illustrative, terrain approximate, banking unknown."
   ],
   "segments": [
     {
@@ -50,5 +51,11 @@
       "toIndex": 149
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "reno-fernley-b",
+    "traceSha256": "5be48218ff55f5398a44baf29287948a83278ea4f296e57bf4b57aead1b3a37b",
+    "bordersSha256": "a6245eae3d5880cd27b3cdeef7b2478ecd20e91ae5cc24092ae227d135142c76",
+    "sourceTrackId": "us-reno-fernley-b-a1497233"
+  }
 }
