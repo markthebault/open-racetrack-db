@@ -10,7 +10,8 @@
   "geometryStatus": "draft",
   "reviewedAt": null,
   "notes": [
-    "This component reuses the existing pinned independent course recipe from us-reno-fernley-c-0e7035d4/reno-fernley-c without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional."
+    "This component reuses the existing pinned independent course recipe from us-reno-fernley-c-0e7035d4/reno-fernley-c without changing any source nodes or branch selections. It is included in the aggregate entry for the same venue. The existing draft branch identification, historical alignment and distance limitations remain in force; the identification URL establishes the venue and is not a claim of a current certified lap. Exact source coordinates are unchanged; historical alignment and direction remain provisional.",
+    "Original supplemental borders reviewed against USDA NAIP capture 2010-06-14. Historical approximate paving limits, not surveyed current boundaries. The source trace cuts the inside of the north loop; it is retained unchanged. Shared-paving branch closures are estimated. Border rights remain LicenseRef-Track-Borders; source timing and 3D model are not inherited."
   ],
   "segments": [
     {
@@ -38,5 +39,11 @@
       "toIndex": 149
     }
   ],
-  "gates": []
+  "gates": [],
+  "originalBorderReuse": {
+    "sourceLayoutId": "reno-fernley-c",
+    "traceSha256": "2ae6f112d1125ee454c465de09485ae32804a21efd6e661078b719e504f05f38",
+    "bordersSha256": "e055c0e4368a09740da6d343b38aa334a84f85c6fea9e4c0d202395c9f75d5b2",
+    "sourceTrackId": "us-reno-fernley-c-0e7035d4"
+  }
 }

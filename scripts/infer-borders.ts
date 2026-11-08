@@ -24,7 +24,7 @@ import {
 } from "./infer-image-borders";
 import { preserveDisplayImageryOnBorderRefresh, serializeLayout } from "./layout-borders";
 import { borderReplacement } from "./border-replacement";
-import { reuseOriginalBorders } from "./reuse-original-borders";
+import { reuseOriginalBorders, originalBorderSource } from "./reuse-original-borders";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
 import {
@@ -460,16 +460,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       }
       if (recipe?.originalBorderReuse) {
         const pin = recipe.originalBorderReuse,
-          sibling = track.layouts.find(
-            (candidate) => candidate.id === pin.sourceLayoutId,
-          );
-        if (!sibling?.file)
-          throw new Error("Reused border source layout is unavailable");
-        const source = validateLayout(
-          await read(`${dirname(trackFile)}/${sibling.file}`),
-          track,
-          sibling.id,
-        );
+          source = await originalBorderSource(track, trackFile, pin);
         reuseOriginalBorders(layout, source, pin);
         report.push({
           trackId: track.id,
