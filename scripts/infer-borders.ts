@@ -17,6 +17,7 @@ import {
 import { bounds, type Position } from "../src/geo";
 import {
   inferImageBorders,
+  inferRefinedImageBorders,
   assertSourceContainedBorders,
   decodeRaster,
   type Raster,
@@ -30,7 +31,7 @@ import {
   borderRefinementInputSchema,
   borderMeasurementInputSchema,
 } from "../schemas/border-refinement";
-import { borderPairHash, refineImageBorders } from "./refine-image-borders";
+import { borderPairHash } from "./refine-image-borders";
 import { measuredImageBorders } from "./measured-image-borders";
 import { gradeSeparationSchema } from "../schemas/grade-separation";
 import { verifyGradeSource } from "./verify-grade-source";
@@ -593,7 +594,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         track.id + ":" + JSON.stringify(layout.bbox) + ":" + inputHash;
       let acquired: Acquired | undefined,
         result: ReturnType<typeof inferImageBorders>,
-        measured: ReturnType<typeof measuredImageBorders> | undefined;
+        measured: ReturnType<typeof measuredImageBorders> | undefined,
+        refined: ReturnType<typeof inferRefinedImageBorders> | undefined;
       const measurementInput = option("--measurements")
         ? borderMeasurementInputSchema.parse(
             await read(option("--measurements")!),
@@ -626,6 +628,22 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
         throw new Error(
           "Complete image measurements require matching closed-route or open-run semantics",
         );
+      const refinementInput = measurementInput
+        ? undefined
+        : option("--edge-refinement")
+          ? borderRefinementInputSchema.parse(
+              await read(option("--edge-refinement")!),
+            )
+          : old?.refinement
+            ? {
+                method: old.refinement.method,
+                imageSha256: old.refinement.imageSha256,
+                seedSha256: old.refinement.seedSha256,
+                patches: old.refinement.patches,
+                note: old.refinement.note,
+                ...(old.refinement.interpolation ? { interpolation: old.refinement.interpolation } : {}),
+              }
+            : undefined;
       const detectorOptions = {
         open: !layout.metadata.closed,
         gradeSeparation: option("--grade-separation")
@@ -645,6 +663,16 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       };
       if (detectorOptions.gradeSeparation)
         await verifyGradeSource(layout, detectorOptions.gradeSeparation);
+      const infer = (input: Acquired) => {
+        if (refinementInput) {
+          refined = inferRefinedImageBorders(
+            geometryPaths(trace.geometry)[0], input.image,
+            refinementInput, input.info.sha256, detectorOptions,
+          );
+          return refined.result;
+        }
+        return inferImageBorders(geometryPaths(trace.geometry)[0], input.image, detectorOptions);
+      };
       // Start acquisition only when its rejection can immediately be awaited.
       if (!imagery.has(key)) imagery.set(key, acquire(track, layout));
       if (measurementInput) {
@@ -660,52 +688,15 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       } else
         try {
           acquired = await imagery.get(key)!;
-          result = inferImageBorders(
-            geometryPaths(trace.geometry)[0],
-            acquired.image,
-            detectorOptions,
-          );
+          result = infer(acquired);
         } catch (error) {
           // A second image source can resolve shadows, old coverage or a failed export.
           if (!licensed || acquired?.info.tiles) throw error;
           const fallback = key + ":licensed";
           if (!imagery.has(fallback)) imagery.set(fallback, licensed(layout));
           acquired = await imagery.get(fallback)!;
-          result = inferImageBorders(
-            geometryPaths(trace.geometry)[0],
-            acquired.image,
-            detectorOptions,
-          );
+          result = infer(acquired);
         }
-      const refinementInput = measured
-        ? undefined
-        : option("--edge-refinement")
-          ? borderRefinementInputSchema.parse(
-              await read(option("--edge-refinement")!),
-            )
-          : old?.refinement
-            ? {
-                method: old.refinement.method,
-                imageSha256: old.refinement.imageSha256,
-                seedSha256: old.refinement.seedSha256,
-                patches: old.refinement.patches,
-                note: old.refinement.note,
-              }
-            : undefined;
-      const refined = refinementInput
-        ? refineImageBorders(
-            result,
-            geometryPaths(trace.geometry)[0],
-            refinementInput,
-            acquired.image,
-            acquired.info.sha256,
-            {
-              open: !layout.metadata.closed,
-              gradeSeparation: detectorOptions.gradeSeparation,
-            },
-          )
-        : undefined;
-      if (refined) result = refined.result;
       if (sourceContained) assertSourceContainedBorders(geometryPaths(trace.geometry)[0], result, !layout.metadata.closed);
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,

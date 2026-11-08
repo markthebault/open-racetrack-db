@@ -2,6 +2,8 @@ import { PNG } from "pngjs";
 import type { GradeSeparation } from "../schemas/grade-separation";
 import { assertGradeRibbon } from "../src/grade-separation";
 import { plane, equal, type Position } from "../src/geo";
+import { borderRefinementInputSchema, type BorderRefinementInput } from "../schemas/border-refinement";
+import { refineImageBorders } from "./refine-image-borders";
 type RasterExtent = {
   width: number;
   height: number;
@@ -187,14 +189,42 @@ export function assertSourceContainedBorders(
 }
 
 /** Image-driven proposals only. Evidence metrics are not calibrated positional confidence. */
+type ImageBorderOptions = {
+  open?: boolean;
+  method?: "road-appearance-v3" | "road-local-appearance-v4" | "road-source-contained-v5";
+  gradeSeparation?: GradeSeparation;
+};
 export function inferImageBorders(
   trace: Position[],
   image: Raster,
-  options: {
-    open?: boolean;
-    method?: "road-appearance-v3" | "road-local-appearance-v4" | "road-source-contained-v5";
-    gradeSeparation?: GradeSeparation;
-  } = {},
+  options: ImageBorderOptions = {},
+) {
+  return imageBorderProposal(trace, image, options);
+}
+
+/** A rejected seed is usable only inside this measured correction and validation operation. */
+export function inferRefinedImageBorders(
+  trace: Position[],
+  image: Raster,
+  input: BorderRefinementInput,
+  imageSha256: string,
+  options: ImageBorderOptions = {},
+) {
+  const recipe = borderRefinementInputSchema.parse(input);
+  if (recipe.imageSha256 !== imageSha256)
+    throw new Error("Refinement image hash mismatch");
+  const seed = imageBorderProposal(trace, image, options, true);
+  const refined = refineImageBorders(seed, trace, recipe, image, imageSha256, options);
+  if (options.method === "road-source-contained-v5")
+    assertSourceContainedBorders(trace, refined.result, options.open);
+  return refined;
+}
+
+function imageBorderProposal(
+  trace: Position[],
+  image: Raster,
+  options: ImageBorderOptions,
+  topologyPendingRefinement = false,
 ) {
   const gradeSeparation = options.gradeSeparation,
     sourceContained = options.method === "road-source-contained-v5",
@@ -395,7 +425,7 @@ export function inferImageBorders(
       p[1] + normals[i][1] * filtered[i] * sign,
     ]);
     if (closed) planar.push(planar[0]);
-    if (!gradeSeparation && selfCrosses(planar, closed))
+    if (!topologyPendingRefinement && !gradeSeparation && selfCrosses(planar, closed))
       throw new Error(
         "Inferred boundary crosses itself; image needs manual review",
       );

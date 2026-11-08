@@ -18,11 +18,12 @@ const patch = z.strictObject({
     .max(1000),
 });
 const recipe = z.strictObject({
-  method: z.literal("cross-section-image-anchors-v1"),
+  method: z.enum(["cross-section-image-anchors-v1", "paired-image-edge-anchors-v1"]),
   imageSha256: hash,
   seedSha256: hash,
   patches: z.array(patch).min(1).max(200),
   note: z.string().min(1),
+  interpolation: z.literal("edge-linear-v1").optional(),
 });
 function check(
   value: Pick<z.infer<typeof recipe>, "patches">,
@@ -56,10 +57,25 @@ function check(
       });
   }
 }
-export const borderRefinementInputSchema = recipe.superRefine(check);
+function checkPartial(value: z.infer<typeof recipe>, ctx: z.RefinementCtx) {
+  check(value, ctx);
+  if (value.method !== "paired-image-edge-anchors-v1") {
+    if (value.interpolation)
+      ctx.addIssue({ code: "custom", message: "Source-frame refinements cannot change interpolation" });
+    return;
+  }
+  const stations = (edge: "inner" | "outer") => value.patches
+    .filter(p => p.edge === edge)
+    .map(p => p.anchors.map(a => a.station))
+    .sort((a, b) => a[0] - b[0]);
+  if (value.interpolation !== "edge-linear-v1" ||
+      JSON.stringify(stations("inner")) !== JSON.stringify(stations("outer")))
+    ctx.addIssue({ code: "custom", message: "Paired refinements require linear interpolation and matching edge patch stations" });
+}
+export const borderRefinementInputSchema = recipe.superRefine(checkPartial);
 export const borderRefinementSchema = recipe
   .extend({ resultSha256: hash })
-  .superRefine(check);
+  .superRefine(checkPartial);
 export type BorderRefinementInput = z.infer<typeof borderRefinementInputSchema>;
 // Complete image measurements reconstruct independently of an automatic seed.
 const completeRecipe = recipe.omit({ seedSha256: true }).extend({

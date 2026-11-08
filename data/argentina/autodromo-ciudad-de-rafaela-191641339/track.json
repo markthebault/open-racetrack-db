@@ -27,15 +27,15 @@
     {
       "id": "autodromo-de-rafaela",
       "name": "Autodromo de Rafaela",
-      "referenceId": "Argentina/Autodromo de Rafaela",
       "file": "layouts/autodromo-de-rafaela.geojson",
+      "referenceId": "Argentina/Autodromo de Rafaela",
       "description": "Draft configuration: Full oval configuration with the three catalogue chicanes; historical chicane placement differs from some current event configurations. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4795.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "autodromo-de-rafaela-bascolo",
       "name": "Autodromo de Rafaela Bascolo",
-      "referenceId": "Argentina/Autodromo de Rafaela Bascolo",
       "file": "layouts/autodromo-de-rafaela-bascolo.geojson",
+      "referenceId": "Argentina/Autodromo de Rafaela Bascolo",
       "description": "Draft configuration: Northern half-oval configuration uses the cross-track return and two eastern chicanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3133.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -75,6 +75,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:16:32.523Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:20:25.374Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
