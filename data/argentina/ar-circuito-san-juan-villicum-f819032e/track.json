@@ -20,8 +20,8 @@
     {
       "id": "circuito-san-juan-villicum",
       "name": "Circuito San Juan Villicum",
-      "referenceId": "Argentina/Circuito San Juan Villicum",
       "file": "layouts/circuito-san-juan-villicum.geojson",
+      "referenceId": "Argentina/Circuito San Juan Villicum",
       "description": "Draft full racing configuration using connected pinned OSM roads. Source alignment and timing remain estimated."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-11-08T08:47:28.538432Z",
       "evidenceNote": "Configuration identity only. Distinguishes the racing course from pit and long-lap penalty branches. No diagram coordinates, GPS table values or official distance are imported."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:21:10.892Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
