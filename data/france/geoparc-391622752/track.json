@@ -30,15 +30,15 @@
     {
       "id": "geoparc-long",
       "name": "Geoparc Long",
-      "referenceId": "France/Geoparc Long",
       "file": "layouts/geoparc-long.geojson",
+      "referenceId": "France/Geoparc Long",
       "description": "Combined mapped configurations: Long outer configuration, Short outer configuration, Infield crossing configuration, Infield direct configuration, Central curved configuration, Curved short configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "geoparc-short",
       "name": "Geoparc Short",
-      "referenceId": "France/Geoparc Short",
       "file": "layouts/geoparc-short.geojson",
+      "referenceId": "France/Geoparc Short",
       "description": "Combined mapped configurations: Curved short configuration, Infield crossing configuration, Infield direct configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
@@ -195,6 +195,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T18:06:20.403Z",
       "evidenceNote": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded. Identification only; no diagram coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-06T08:23:10.977Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
