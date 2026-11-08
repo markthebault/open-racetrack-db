@@ -1,0 +1,3769 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "0b9c06f1e118f6de108bef9f1b4cb30d789e4d02",
+  "checkedAt": "2026-11-08T06:19:35.113Z",
+  "status": "incomplete-catalogue-coverage",
+  "scope": "Functional UI checks for existing prepared models and browser image decoding. No new road geometry, physical accuracy or full-lap video validation is claimed.",
+  "inputSnapshot": {
+    "mappedLayouts": 1377,
+    "catalogueEntries": 1388,
+    "circuits": 763,
+    "files": 2141,
+    "sha256": "4ade273eb2ec2bed08a5df08e746e9135e9c79b25fc3f6806958f4e6b4488ea2",
+    "format": "SHA-256 of JSON array of {file,sha256}, ordered by file.localeCompare."
+  },
+  "rendering": {
+    "layouts": 1154,
+    "circuits": 649,
+    "reportSha256": "11673cc6d3c210dcfc496c9fbe6a252f20f66b2cd223101447625beafe1d9fac",
+    "result": "passed",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  "playback": {
+    "independentLayouts": 1107,
+    "closedLaps": 1095,
+    "runs": 12,
+    "parts": [
+      554,
+      553
+    ],
+    "result": "passed",
+    "exactDeliveredGeoJSON": true,
+    "checks": [
+      "Player generated",
+      "Canvas visible",
+      "Seek",
+      "Clock advances",
+      "Finite speed",
+      "Recording control enabled",
+      "Close releases dialog"
+    ],
+    "imagery": "Mock raster. Not a real imagery or recorded-video check.",
+    "reportSha256": "a2b0b5864c492c37995c68b95f07b12406602e67fb4b76da65dd71dffcd04364"
+  },
+  "networks": {
+    "networks": 40,
+    "playableEmbeddedRoutes": 129,
+    "unavailableEmbeddedRoutes": 1,
+    "tests": 3,
+    "result": "passed",
+    "imagery": "Mock raster. Includes route choices, exact embedded composition download and phone/deep-link unavailable states."
+  },
+  "realImageChecks": {
+    "scope": "Real same-origin browser CORS fetch and image decoding of current references whose earlier metadata checks were inconclusive. Decoding does not establish visual georegistration, date, road quality or lap smoothness.",
+    "uniqueReferences": 201,
+    "summary": {
+      "decoded-browser-image": 199,
+      "request-or-decode-failed": 2
+    },
+    "records": [
+      {
+        "referenceSha256": "b3b6648a704b645b0992d4153ea45c526362969b85d30a9ad90897f67ac0c9da",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:53:24.146Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "16929bfc22b0a6ed40b744ab2b0a5a2c185b4815723db17e3004c26e031c0580",
+        "width": 2048,
+        "height": 1529,
+        "bytes": 1242448,
+        "locations": [
+          {
+            "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-hill.geojson",
+            "type": "model",
+            "layoutSha256": "e65066dfcedc7b0076891738fae03aa60fd5d321ab17670e9b3658e1f302efc7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a25f9d5431b075c1f3f1fd4a643f048f4e46bc2b90b180c29836854c80cfd69c",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:53:21.528Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "52e6f7f6c8af2d9764d3dda07f7d9e86c84ba2d36a32ede069fcf5d43f0a481d",
+        "width": 2048,
+        "height": 1730,
+        "bytes": 1260022,
+        "locations": [
+          {
+            "file": "data/united-arab-emirates/ae-yas-marina-south2-0b195e11/layouts/yas-marina-south2.geojson",
+            "type": "model",
+            "layoutSha256": "314836f23c739025458e9d58e2cb09ce575cc863024899d9eef5dcd7ab72cf78"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "9e0a811c7e09224237fc4df89d21b923b7d8e28b81284b667dea3d87d272f348",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:53:30.040Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f7e583783a6a5176aa4aa699f9c1c0283e609adcd8c0ad7cabc83c596f592301",
+        "width": 1914,
+        "height": 2048,
+        "bytes": 994799,
+        "locations": [
+          {
+            "file": "data/argentina/autodromo-ciudad-de-concordia-261993714/layouts/autodromo-de-concordia-combo.geojson",
+            "type": "model",
+            "layoutSha256": "bf29badca32c0dfe4004bcff364e30de151d5db6bf724ac2b68c950155b72c2e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "11b85acac308f38156ba57bd960025dad869f9871f8ade353fc0261278281bf8",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:53:38.985Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "21a0f5f6d49044854efc1f4a0d75dbf520f95a7178007433c31d35fdbf638389",
+        "width": 1400,
+        "height": 2048,
+        "bytes": 815164,
+        "locations": [
+          {
+            "file": "data/argentina/autodromo-juan-manuel-fangio-293583938/layouts/rosario-short-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "b06d8ed87834d309e8834aff0b96085a34308b6ac13c89204767f112e15e35ca"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4bc7cf3c9d359ddd319622ce9301c4eedd522c2c54e1133b2910e32392e48778",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:53:34.538Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "3b3f13bfd17c4ce9328f0f2aaf5eb541914b72b0eee624613c446e3b5c307a13",
+        "width": 2048,
+        "height": 2029,
+        "bytes": 1485800,
+        "locations": [
+          {
+            "file": "data/argentina/autodromo-oscar-y-juan-galvez-48743061/layouts/buenos-aires-combo.geojson",
+            "type": "component:buenos-aires-g",
+            "layoutSha256": "d5df5b9d652af08cc5b0a8cfcba2845963b33d4248ced024896789963e956646"
+          },
+          {
+            "file": "data/argentina/autodromo-oscar-y-juan-galvez-48743061/layouts/buenos-aires-g.geojson",
+            "type": "model",
+            "layoutSha256": "5073e802063323731077e6fa1e3eb22e37d547726003947bc38f3472fa523501"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "9e02501325fad7423b8a22480be4baafc07912310039eb45fe0138dc7c36e7fd",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:06.688Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "172ac494435086c2ca4915bad7868425cceb71adf8f9c1a75c25232bd590b76e",
+        "width": 2048,
+        "height": 2029,
+        "bytes": 1484386,
+        "locations": [
+          {
+            "file": "data/argentina/autodromo-oscar-y-juan-galvez-48743061/layouts/buenos-aires-combo.geojson",
+            "type": "component:oscar-and-juan-circuit-no-15",
+            "layoutSha256": "d5df5b9d652af08cc5b0a8cfcba2845963b33d4248ced024896789963e956646"
+          },
+          {
+            "file": "data/argentina/autodromo-oscar-y-juan-galvez-48743061/layouts/oscar-and-juan-circuit-no-15.geojson",
+            "type": "model",
+            "layoutSha256": "c530f5168003dccfa564d43d24a9277e505ac2a420d5928fc71fc01985eddbba"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ef1e4c77098d15f0f446315fccd75d784961f0dacde103980dd12aa34b8d6a2d",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:53:50.419Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5e57520a39d14b310750b311c421d4928c1775b33ef363657aa22393b9839ae0",
+        "width": 2048,
+        "height": 1870,
+        "bytes": 1394504,
+        "locations": [
+          {
+            "file": "data/argentina/autodromo-parque-provincia-del-neuquen-191818361/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "a8ab5eb59c03c34dbc03c312ba0ec569e328123351535b7d1cf398b495230f0f"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "bc9a0b33bbe8fa45c65f89a529add71726e2d1a7b60a086f1192c5450f4a6f3f",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:00.951Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a10c223624216a4bd9740e5177ed914c68537f2927a94c6ab148cb8cb7511de5",
+        "width": 2048,
+        "height": 1516,
+        "bytes": 705837,
+        "locations": [
+          {
+            "file": "data/austria/at-fuglau-69fd1d4f/layouts/fuglau.geojson",
+            "type": "model",
+            "layoutSha256": "6ed9624fe9d04eb0458d911f8817d50adbb8ba34942507ad60ef78d326d88a82"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "1e2eacd0b9dea6d446cc7a5cbc6bb8b2dec160755acb1400583cb41d65174266",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:08.227Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "ebecdbdcf5f72324bdc293cc6f9b7d858e3c6f5a41b892b6579c3d64caef0f54",
+        "width": 2048,
+        "height": 1740,
+        "bytes": 1260525,
+        "locations": [
+          {
+            "file": "data/australia/au-adelaide-parklands-circuit-8073f56a/layouts/adelaide-parklands-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "4acdfaa9bd8ddb95b3ccb84c1f5e1b3c4588da34d55c79d17a3278ad1169f004"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "18e1dd9682d06ef5b85bc6ed3d56966d1ec40ff0c5cd254339c3f59368cf2ea6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:17.824Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "26cc2d01dbbc5fe73fbc2af6602f19ffb847658d92ab59237c2edfc4e2174006",
+        "width": 2048,
+        "height": 1751,
+        "bytes": 771031,
+        "locations": [
+          {
+            "file": "data/australia/luddenham-raceway-560049277/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "5660b97793861014cad3b7bff47b70213915dbbb29cbe1ae14135d87418fa41e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "37020afaabef1ba965a382db403dfc6d7e839068931e3587dd14b119f65a3e73",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:13.463Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "63cf6f3745c7c709a23d2d5408e7288371c4f883468ca3923985544b0644b278",
+        "width": 1124,
+        "height": 2048,
+        "bytes": 793301,
+        "locations": [
+          {
+            "file": "data/australia/sandown-international-raceway-25927060/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "820bddd402a200726e597ad9b2da0e46319043ce173efa3c4adf0ba3ed4ff124"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c169f167e4a287f536f4351f45c12f89a934ba09cf4cfa50f00b9f470cb2f3db",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:23.899Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "b5a3a761e4f531365d98d8818fdbdef4f85843ccf65c461db04bcaf485dd0055",
+        "width": 1702,
+        "height": 2048,
+        "bytes": 762250,
+        "locations": [
+          {
+            "file": "data/australia/the-bend-motorsport-park-542888894/layouts/tailem-bend-gt.geojson",
+            "type": "model",
+            "layoutSha256": "8d51c97fc9b308b1e346624ae8a4ba4a809d36f283c506b102ac2ea06a3fb2b0"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "43c10be787bf2b6d117807f8651d7072167a68158b7c9454ddb11803aa91deab",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:16.878Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "87ecd6bec251bff025ed81c2b106162cc4752b5e12f38de5f280f336be4246a9",
+        "width": 1568,
+        "height": 2048,
+        "bytes": 696919,
+        "locations": [
+          {
+            "file": "data/australia/the-bend-motorsport-park-542888894/layouts/tailem-bend-international.geojson",
+            "type": "model",
+            "layoutSha256": "44e58fbb13deef701b34b68fb422f59d3f0d8cb3b7437a5bc58abb887e531c2a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f03d22102716f47fb57ee16fc494b552204171c9da564610ccffcf29b3b02016",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:29.973Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "8f0ac851c6568d8b9578c95ae7f15dae6aef5e016e35fd55eaa34b92fe568065",
+        "width": 1042,
+        "height": 2048,
+        "bytes": 482065,
+        "locations": [
+          {
+            "file": "data/australia/the-bend-motorsport-park-542888894/layouts/tailem-bend-west-plus.geojson",
+            "type": "model",
+            "layoutSha256": "5c03a61189d46dba3f5272c805fca5697f4c62ae7f398410ac477bd32c8b6089"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "3f1f473732894964e102ae832fab98cac6218b089e02e39c2c1b6e6be13de2e4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:27.650Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "46be9be535f25828fb0828c18d9c7f679119f2cb66c7a76722de71861222ffec",
+        "width": 1543,
+        "height": 2048,
+        "bytes": 1215394,
+        "locations": [
+          {
+            "file": "data/bahrain/bahrain-international-circuit-4818385/layouts/bahrain-international-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "cf495a77ac7d8410ff2ece9eb58d8778564582f8c679eb25c09092529c3682cb"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e1b2e92b4114208d7c14e6cc382e3b9c5c404e7f50df74cfed005533be7674fd",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:39.512Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "05ca55785a49c4d742f154cc36b1d4ab2dd4fec88f614fcf68c66ab66115c731",
+        "width": 1418,
+        "height": 2048,
+        "bytes": 1118429,
+        "locations": [
+          {
+            "file": "data/bahrain/bahrain-international-circuit-4818385/layouts/bahrain-paddock-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "7268948b3989797654fbe8707c1320b621be95440bb2dd20b777f06b008b2a6a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "2807e421c464873efc58ca0a81d17609c498e117ab6450806ab08af0ea67b7cd",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:53.076Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "54db4e21cfa8cc63f130be7606fb8c8185bb523fe49c07efcd294e12ae5cea08",
+        "width": 2048,
+        "height": 1655,
+        "bytes": 767525,
+        "locations": [
+          {
+            "file": "data/brazil/autodromo-fazenda-capuava-394182409/layouts/autodromo-capuava.geojson",
+            "type": "model",
+            "layoutSha256": "e1f3350401b09a05eb4525e2ba3bcef93ab64591669f6783181f5130b2d78210"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e6ec7dd5de23524a584d61f841a33358cf5fd090d77643e18db72e709668d7a2",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:54:58.628Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "95f5c6946dbbbce06eb1a98f267b891b10dc54176fbace6c6a861a96e0f8d9f6",
+        "width": 1828,
+        "height": 2048,
+        "bytes": 907062,
+        "locations": [
+          {
+            "file": "data/canada/area-27-526010213/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "b4c46fa5d46822fa795bfb61140ef80274055a13b678c6c5d47a38affc17af33"
+          },
+          {
+            "file": "data/canada/area-27-526010213/layouts/area-27.geojson",
+            "type": "model",
+            "layoutSha256": "7c3674e2823e5bbbf043e04bc2527664f361fd617cd5ce01f40c60c534e181df"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8817c22b99a7415803ffc7dcf4333b64de4a665a0df914fea536788c86a56bc6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:02.542Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5938692c94c62d6aa571683f5a240d29ef5148b00ac6886ea14e49d80c4ccce5",
+        "width": 2048,
+        "height": 1898,
+        "bytes": 1452189,
+        "locations": [
+          {
+            "file": "data/canada/calabogie-motorsports-park-279357480/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "bdee60312f5441c5800862b37d070b745d241bce2ec59cf054b9e2d715079bc5"
+          },
+          {
+            "file": "data/canada/calabogie-motorsports-park-279357480/layouts/calabogie.geojson",
+            "type": "model",
+            "layoutSha256": "340b157214908c907a49da7d1e15e37e86e7c3beddf4153eb62c38e149b59c27"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "7722196c8f36fe13ce99043b4b885393d728df1843fe2d5c808fa71cb5ffbb9f",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:07.982Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "492b9d18504adaf47b74a4b59bdf66c140357fd15e9faf8a58aef8d825315ee6",
+        "width": 2048,
+        "height": 1952,
+        "bytes": 996009,
+        "locations": [
+          {
+            "file": "data/canada/canadian-tire-motorsport-park-37059242/layouts/mosport-kartways.geojson",
+            "type": "model",
+            "layoutSha256": "b414eb33e2d80b2ebb7e18b4cfce63679bb079cc58c50f5f8a4438cbbd83d622"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "3557801981255d4a9e6adbfc0f4765d748f0b86656edbefb9c82844c6e8f99ba",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:16.769Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "d02bcf62e1b738382e10e6f8995fbd9b970046e2c874f206f02e417ebe32aa8f",
+        "width": 1986,
+        "height": 2048,
+        "bytes": 983494,
+        "locations": [
+          {
+            "file": "data/canada/circuit-icar-1043569622/layouts/icar-mirabel-long-chicane.geojson",
+            "type": "model",
+            "layoutSha256": "bb6cdedc05ce4950550ef8f2cb5b7d2a783cee2ad3a17ff95646473f21a85c59"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4f820dc05435dabc24269540c1da88bb88f2430a9372f4a150a49227982e1e3c",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:20.268Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "02e5783e76166463837ccfbf07e6482aeb3f56cad753bed4608cca64b641d7ac",
+        "width": 2048,
+        "height": 2035,
+        "bytes": 1374104,
+        "locations": [
+          {
+            "file": "data/canada/sanair-super-speedway-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "f75cd2f44428afcc1914a6add35b1bdba7244d8eda3e369ff47b5ac9d0b4049d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f8d573de9570ed9e4f021b59467bb7f72c655fb3c00288781bce21667525872d",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:22.215Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f49273873c0707d3874c98e5635a5a437213a478e8cc99e8b7046d059c6bea43",
+        "width": 2048,
+        "height": 1499,
+        "bytes": 681911,
+        "locations": [
+          {
+            "file": "data/canada/shannonville-motorsports-park-404430658/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "87793ed361373ff6dd483502a4324cb53f07c184ab94c0a18986004dab34e71d"
+          },
+          {
+            "file": "data/canada/shannonville-motorsports-park-404430658/layouts/shannonville-pro.geojson",
+            "type": "model",
+            "layoutSha256": "8998818a4bac85d7103c847c8ae3c96315a61065b4bba811a0850fe77fdcfa27"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "851f54e35321ccfd3e16edaf936b159729f080857a5ed149120ab9c14e730daa",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:27.732Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a69cff9b82665f3e1f38fbe6130b3b80d87e8d3eee756c2b91c939e9f120740a",
+        "width": 2048,
+        "height": 1811,
+        "bytes": 891977,
+        "locations": [
+          {
+            "file": "data/canada/ca-strawberry-creek-raceway-2f57a75c/layouts/strawberry-creek-raceway.geojson",
+            "type": "model",
+            "layoutSha256": "1b07b7c90c4f42742e9d7926b505dbf4aa0fadec6b33a47d1b76b6dce2387ed8"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a035e48fa9b8ad9864f4744b1a9cb2543db27e0a08073e348bed09d92da025d2",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:55:28.131Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "8ccb1598626d3ae4d0d9d4661388dcc113b19691b953d8281c23f7553bb7f770",
+        "width": 2048,
+        "height": 1844,
+        "bytes": 1040104,
+        "locations": [
+          {
+            "file": "data/canada/ca-trois-rivieres-7cef196a/layouts/trois-rivieres.geojson",
+            "type": "model",
+            "layoutSha256": "2f77feaf38c7b5f0d0df75da7e4d2a4eadaa314c3f99cc29d2502af6b6d94407"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "b4fd7a72aef5e7fec7dfe4d38f62389c1cbdd0b935ae70d9a142d458be272bbc",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:31.385Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "26e96b7eacc1c9b15888fa6097e35662557988f958021ac52d24dd12f217934b",
+        "width": 2048,
+        "height": 1795,
+        "bytes": 1413604,
+        "locations": [
+          {
+            "file": "data/canada/ca-vancouver-island-motorsport-circuit-a0cce5d8/layouts/vancouver-island-motorsport-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "b36b26c4fd547703e2a7cb81efc62ff867e5a5410ced93928ec3dd9becb0f989"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "393c7ee6e36d5a844e152e830f82ce66dc36a9c7e78d084a15bc57ab612975ec",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:56:35.093Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "73e81ec3cfc424d5bd0b371a14ad51f208c5a731f101bf4f15e7fc9ed22ceafb",
+        "width": 1833,
+        "height": 2048,
+        "bytes": 1321415,
+        "locations": [
+          {
+            "file": "data/chile/huachalalume-505109409/layouts/huachalalume-chica.geojson",
+            "type": "model",
+            "layoutSha256": "3d8856d96c01c2e936aedea30554f640843d2bf9c689511d20afda09dcb57ad7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8a210807f47bb31d6be7701e4ac09a38588dd1f8990d68accb729b01d417dc89",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:44.436Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "1b7927f93966d8043b18e06f9bee7ece1264b59e340f6d031a2454d591338ebd",
+        "width": 2048,
+        "height": 2044,
+        "bytes": 1444503,
+        "locations": [
+          {
+            "file": "data/china/beijing-goldenport-motor-park-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "4591190ac76bc9801ac434d4e8bf6641133f506ff0be49a09dc48e96cbb2f6df"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "63c8f3cbd87d7dfd46cf19e33d702ffc7cd33299b9ee12da628bbd7bf7b4c142",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:56:46.698Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "24b471f510956688d6942c6d76a2587febb43ed3f1746b63b1a084eebb057cff",
+        "width": 1737,
+        "height": 2048,
+        "bytes": 737178,
+        "locations": [
+          {
+            "file": "data/china/cn-fugang-3292d1c6/layouts/fugang.geojson",
+            "type": "model",
+            "layoutSha256": "fdc3a1ad5e2965272e9f25203208bdd032af0af49fd8c009e3899caacf1e20a1"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "0cd2f594fc454f85f6da5e17fb5e4c799b611a773b36d94048303448a7347900",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:46.599Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "665340229e9a569c647cfb18875929baf1d548dc4f7f23d1631a66378321b92d",
+        "width": 2048,
+        "height": 1971,
+        "bytes": 1433301,
+        "locations": [
+          {
+            "file": "data/china/cn-macau-ae92acb1/layouts/macau-grand-prix.geojson",
+            "type": "model",
+            "layoutSha256": "3bc919ecbefc684a4c93ce5c90a23e97cbcc9da8b5cbdf2fb85978db318a145b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "677508f912d3a74bb6e58d94fbeef3327cfd08bd25e8f8fa49ed3785d8956e3c",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:56:59.774Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "e88a10a58c547464537f386c925b4dc918ffdd28308187547693034cf39559c7",
+        "width": 1384,
+        "height": 2048,
+        "bytes": 560524,
+        "locations": [
+          {
+            "file": "data/china/cn-nanjing-wantrack-0e4e86a7/layouts/nanjing-wantrack.geojson",
+            "type": "model",
+            "layoutSha256": "a238a5c70eb08a7442953e93452df271e069b266d55eadf0d09eb1405f7f9e6a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "9c90e35a815207ba3d00bc04d4d8387452126e211277e24d519f34ce78629462",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:10.260Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "fe8df7d986555b2378dec66d07ed05c04a760de69153ae449660eb7b3b967ffc",
+        "width": 1945,
+        "height": 2048,
+        "bytes": 1218829,
+        "locations": [
+          {
+            "file": "data/china/osm-953311514/layouts/zhejiang-east.geojson",
+            "type": "model",
+            "layoutSha256": "1ebbad37064b26de2c78328062edf4ea55b4afc3b1961b66fc4a0248d0212f80"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "d21675c1693cfa2177cd65a70de27eb9a5004215992425a90eee63be692a2931",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:13.367Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "865df78ec3fc0169c023daef617b35b0dc39d593905960a5dbea162ddb78a5a6",
+        "width": 1554,
+        "height": 2048,
+        "bytes": 1047224,
+        "locations": [
+          {
+            "file": "data/china/osm-953311514/layouts/zhejiang-west.geojson",
+            "type": "model",
+            "layoutSha256": "d742ab4e14a3e305e4e20a37e30d3f6ef5572442c4aa4fc06379f8ea23ada6ec"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e09b4ed2deb37877fd6e7f20c25428b228eafc67e9aac09382d564a5d9a17a55",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:18.012Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "227b0e5bf291e84efe07b8dc7d95d8675fac26b5abc88c4d1bedf4063109a3d9",
+        "width": 2048,
+        "height": 1859,
+        "bytes": 1131293,
+        "locations": [
+          {
+            "file": "data/china/shanghai-international-circuit-107371138/layouts/shanghai-gp.geojson",
+            "type": "model",
+            "layoutSha256": "b8a5cc949670e72ea2e3eae5b64a2a3a76bbcf8f6613884db16b26d305af7e7b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6bbe49d033b4438778aca0c670bc3b5001a05d72e0e19e655045f723f112a7fc",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:24.295Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "02d97358f8b0bf0a415d8642da161eec106edcd0af7b6fee45c0bf9a105ef51f",
+        "width": 2030,
+        "height": 2048,
+        "bytes": 1107027,
+        "locations": [
+          {
+            "file": "data/china/cn-shanghai-tianma-efe72916/layouts/shanghai-tianma.geojson",
+            "type": "model",
+            "layoutSha256": "247d17d31c2e1ce52ce7402f34441bf9007fc5c9c49e8521ca9ea29f26ab341e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "59f28b5829e66f534237031cdba776496019e4741af375e319c2bc26157446bc",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:25.855Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "e870aaee59ed9f5950abc785c348f8af552f53cb1da2bdd14201208e60fbbe84",
+        "width": 2048,
+        "height": 2036,
+        "bytes": 1252230,
+        "locations": [
+          {
+            "file": "data/china/cn-xiamen-9d5cdb21/layouts/xiamen-international-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "26b76d575b7c1ef30c9bcd5e458cba982ecb8c6ca9eaa7d66b1fe18990e705b2"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ff6bd313f617cd7074216e29cd1d0937eb82fff55b580a670e08fb93f1262151",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:32.389Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "19af4006d1cf2112e5fc86b4b500a15246fab3ded781d36b726df5376d3a0ed8",
+        "width": 1476,
+        "height": 2048,
+        "bytes": 862381,
+        "locations": [
+          {
+            "file": "data/costa-rica/cr-parque-viva-a2145eb2/layouts/parque-viva.geojson",
+            "type": "model",
+            "layoutSha256": "67b2135bee9e68e0bf697c1b004da391dd89b85232b4329f0ad368d2d6fa293a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "906b744e63f9725c845fe53daea5017990546ac965ad5097699f3e29eb42f491",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:01.666Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "969a87d972938f5c970845ea9aab157dceda80d6f412316a1b7b73dd597962b9",
+        "width": 2048,
+        "height": 1935,
+        "bytes": 758051,
+        "locations": [
+          {
+            "file": "data/germany/de-adac-schlusselfeld-1d190ba0/layouts/adac-schlusselfeld.geojson",
+            "type": "model",
+            "layoutSha256": "bb41c63cd0081a5e5813376f015276fd845abf31b88e5fdb169ff02cf75a5c3a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6d451d951e1042642eaa6cf47db29e82238b11d1a230a4d559efd5a8122f5564",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:42.636Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "9a77650acb780a1cf323e75739f1255c886f062688208860e46d4aaa79d101b8",
+        "width": 1785,
+        "height": 2048,
+        "bytes": 780408,
+        "locations": [
+          {
+            "file": "data/germany/de-estering-f9d6a5de/layouts/estering-combo.geojson",
+            "type": "model",
+            "layoutSha256": "5296c8922fb1880d626e77131cb83a8d6fbb6b8238aef68862e32f36cb878b67"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "2a4692ce126b256bb33707128eb67d10784f547599c5d5c0fa7f9df0e5c7c8e4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:14:54.892Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "fb524269079ce2285e8d2a9c247b707c6dfd02c17999ad7a4e4f23fbae2f5969",
+        "width": 1693,
+        "height": 2048,
+        "bytes": 980269,
+        "locations": [
+          {
+            "file": "data/germany/harzring-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "cbc553115be34f7bb43a15be4a5726a10e1da6355a1fe26c8e5a1412db6a91a1"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "dba392bb6708ba2345dcc5187588b5f196bb0369ac45790e65c14952c2531c51",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:57:54.149Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "3e7c9f3aced0103baaec17f23bc1a58527d2417dc6be9adb42cbb458c4e017b6",
+        "width": 2048,
+        "height": 1853,
+        "bytes": 1150401,
+        "locations": [
+          {
+            "file": "data/germany/hockenheimring/layouts/national.geojson",
+            "type": "model",
+            "layoutSha256": "c4c4793781ab4a4df3649e9dc4761944f4846eb1f8fe5424ca6204be00b79759"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "895c9949ede57232b8a1f6cc7b2143192d1b9c79dda9969abe0dd2b267b12a32",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:06.754Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "0b696fe462fb5ae9f9fae55809416c135b30b1ad90ec7ffc2e9b6d79b58ce222",
+        "width": 2048,
+        "height": 1753,
+        "bytes": 1001101,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-2-mile.geojson",
+            "type": "model",
+            "layoutSha256": "1d0f10fa9695cf7ca1abc24030ad5e39b5488d133180f5f5e77adab1907da1ca"
+          },
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "component:lausitzring-2-mile",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "84d3383c7432d1e4abe22c90da0d98470cf6b1ae3c83cf65d5ff5e2c98420f2c",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:06.917Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "041462a78398cd62caa70d90710f4b3f5f68bbd0240d5fa44c57280efdcfbc8a",
+        "width": 2048,
+        "height": 1753,
+        "bytes": 1000924,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "model",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e21302b4afde30d3b45ba3582d2bffff5b5168501463503d5f9965d64b3c5157",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:16.431Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "976d0774dd33c43739ef8da0cad010e738f15e631fb273dc3f56266ba1052a01",
+        "width": 2048,
+        "height": 1760,
+        "bytes": 880999,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "component:lausitzring-gp-3-2km",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          },
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-gp-3-2km.geojson",
+            "type": "model",
+            "layoutSha256": "91cfcb50ef5860d84f88cb47a9a73e12b85258dc1d45c7008b90717c6b23dc20"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "987ac7715d34621abdb32a8c968fc764360264b94fa1a4c3f1a7907603e580e2",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:16.002Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "cb84dc3e6ce9058bf4d8c4b7e2c9dc969ef9f0e64816c98d096f5de860e4aaf0",
+        "width": 2048,
+        "height": 1735,
+        "bytes": 887590,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "component:lausitzring-gp-3-4km",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          },
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-gp-3-4km.geojson",
+            "type": "model",
+            "layoutSha256": "bb46047d650ac5edde4499425ea9e8743da302d58998e083a7e44ae7a5b4fc78"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "53cba0052133795e5a3e9e06ac63ff0d43c8d4c698a4f74f5129c1b61f661339",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:29.251Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "fc3c616564836c43fb41700ae13c576851c69a63d9db67142852308161705863",
+        "width": 2048,
+        "height": 1587,
+        "bytes": 840250,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "component:lausitzring-gp-3-4km-inc-turn-1",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          },
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-gp-3-4km-inc-turn-1.geojson",
+            "type": "model",
+            "layoutSha256": "6952bc4e03906795082f44308418ac45a40eed1b13a6596beab0278fd06fa664"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6bc098b153d1fb3856a2615fc4c6059676b7eb8a8f62ebcb31e8a74fae0d93cc",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:07.741Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "a643d3c426ac4db458312a0424fdcb9c52c6d21c1e8c315e1774358ec1e62886",
+        "width": 2048,
+        "height": 1929,
+        "bytes": 1018271,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "component:lausitzring-gp-4-3km",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          },
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-gp-4-3km.geojson",
+            "type": "model",
+            "layoutSha256": "220f8a43df818368fc6e0d9920b3478643494b9ae7de718890d6580f59d2af05"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "b9394ce1148603d0ef5d768b2b66fd7e966ba8af5f54b60a287f23432c4f3b02",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:14.062Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "d608b26a07da68f560cc0bed45714dd2eb2455c3a18992f0148d9b342389efcf",
+        "width": 2048,
+        "height": 1801,
+        "bytes": 986183,
+        "locations": [
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-combo.geojson",
+            "type": "component:lausitzring-gp-4-5km-inc-turn-1",
+            "layoutSha256": "decaafe8571298044b9c9ba7d9a9c1b2371044a951794f81edd20a2e0a251ce9"
+          },
+          {
+            "file": "data/germany/de-lausitzring-7a32e980/layouts/lausitzring-gp-4-5km-inc-turn-1.geojson",
+            "type": "model",
+            "layoutSha256": "5ba1a3aab7917e195794c3979da198fc02c1d5b96142d1ba1d9b80207b443405"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ffb5d2b1f11533971b0daeb73856bc694b0ce561573c912a78cce0cde7ee3a36",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:39.585Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "84bea1652085f7f5d20b22d0c0b3f9b23766e25a26109c535c2c375d5e847fed",
+        "width": 2048,
+        "height": 1959,
+        "bytes": 1332352,
+        "locations": [
+          {
+            "file": "data/germany/de-norisring-e3447005/layouts/norisring.geojson",
+            "type": "model",
+            "layoutSha256": "c348d2cc06782bcb4ce14039e55312ea2dc1c13529a05d0334925cdd68880c6d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a167d78f8bc94ea6ed49ec0ebe6d47783916cb7e27530c2ba7134e7a87aca09a",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:20.248Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "504ade05da5bd759832276d501f1c6d41473ebb18eac729cfcee0f7b59b5b744",
+        "width": 2048,
+        "height": 2006,
+        "bytes": 1370306,
+        "locations": [
+          {
+            "file": "data/germany/nurburgring/layouts/sprintstrecke.geojson",
+            "type": "model",
+            "layoutSha256": "92c000ad4d67e528f569e7bcc0164ac3388ae503a4435e96138bee2385fd7da2"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "381e2a75aeda5e91d7881cd106119684ad189060ac77bbaa12762b3965e4d781",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:58:57.836Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "d62ddf00bc2d93446be09c0c11fce442d65f2e1c701cd67a39d5a99211ad7984",
+        "width": 1816,
+        "height": 2048,
+        "bytes": 1234477,
+        "locations": [
+          {
+            "file": "data/estonia/porsche-ring-45482078/layouts/sauga-circuit-audruring.geojson",
+            "type": "model",
+            "layoutSha256": "00092d45813885999b26b02dcc205cf20f20330248cf8ec288c15db8e2e13de7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "71656c458ae2c01a25d1903d80ae172c993e9c24526abd042962a3e8562d6a00",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:03.003Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "00a71b24a189a64e8cf383783d8888b29ebcdbfe44c6d5ac1f0edca46fc3221f",
+        "width": 1370,
+        "height": 2048,
+        "bytes": 926375,
+        "locations": [
+          {
+            "file": "data/estonia/porsche-ring-45482078/layouts/sauga-circuit-combo.geojson",
+            "type": "model",
+            "layoutSha256": "d9cb98bd8af1190bb5b00694d904e99cd7d0f15fd9478df1f8ec3add611d35c8"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "78d89e757972f54ebea86dbaa25b9c5297fe8eb20e8c6de6e9628fb25006ff5d",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:03.604Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "e24432703397ea4f520e2cb198132525f6a30001cf8baffb016fdd448e28d5be",
+        "width": 1836,
+        "height": 2048,
+        "bytes": 1069910,
+        "locations": [
+          {
+            "file": "data/estonia/porsche-ring-45482078/layouts/sauga-circuit-combo.geojson",
+            "type": "component:sauga-circuit-short",
+            "layoutSha256": "d9cb98bd8af1190bb5b00694d904e99cd7d0f15fd9478df1f8ec3add611d35c8"
+          },
+          {
+            "file": "data/estonia/porsche-ring-45482078/layouts/sauga-circuit-short.geojson",
+            "type": "model",
+            "layoutSha256": "6a207faad96e1eeff1658bada70216412531bbcbcb19b60165cb8b9234aeaa9b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "dd9e8a27039f6426da77fdd56d0d967dabae656478de74d48bf3bd8297c0a305",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:16.737Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "8f22f7b34f881bd85987f7ea2ef09a862a29f5d045dc7bc7c67faaed2d7765dc",
+        "width": 2048,
+        "height": 1404,
+        "bytes": 1014439,
+        "locations": [
+          {
+            "file": "data/spain/circuit-mallorca-59850344/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "7eb48628531696191c20d1e1500d8895b43e4cbfaef150ea0965a05cd113f855"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c00b05eb32bb6b3393bcc3485e3f72bf18e4058c337de3ada37fdf3d545f3de5",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:15.059Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "90e1e59b0083187f2746dcc0c7057ce71fde3f6f9aff65c9cc578dd0a0ed5961",
+        "width": 1834,
+        "height": 2048,
+        "bytes": 1268504,
+        "locations": [
+          {
+            "file": "data/spain/circuito-ascari-169907092/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "8265c526dea829339e0b3cf4865619dd1889f419d1fa69492bbcd42818f8f5dc"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a84a09556ef030cd28e2ec73ffcf270ff76bee6498927f406f774c7d7e317935",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:20.489Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "aa78c9803aff46e9804fc6dc742fec66511cd714bfd4995abdc88f55b36b9c70",
+        "width": 2048,
+        "height": 1502,
+        "bytes": 1059416,
+        "locations": [
+          {
+            "file": "data/spain/circuito-costa-de-almeria-29362442/layouts/andalucia-layout-1-5k.geojson",
+            "type": "model",
+            "layoutSha256": "fa6c0edb0cb242d8c7190b51dbc9bdfe7ec61f9837ecc806f176934aa4890d83"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "abca02a526ae3ab719d11393ae2936d55c580ec9a2e2844aa67e5fe4bc33d2ea",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:29.522Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f37f164303586022f7e50d00ff47676c4ebc7b1e1717d901c16029aab4b29a93",
+        "width": 1852,
+        "height": 2048,
+        "bytes": 1446071,
+        "locations": [
+          {
+            "file": "data/spain/es-circuito-kotarr-b46397b8/layouts/circuito-kotarr.geojson",
+            "type": "model",
+            "layoutSha256": "12c73953c22a6958bcbdfe0f80e922e6beefbe1c2a1f36dc8b7c11204791254b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "d3d4f75034b298562b65b2342e9482cae92161e781c07ddeeb5ded718a335c92",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:28.556Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "bba652810a63c7f05d2ff157d392c3bc059f873825704f17ae38a9cd0dd41354",
+        "width": 2048,
+        "height": 1903,
+        "bytes": 1341056,
+        "locations": [
+          {
+            "file": "data/spain/circuito-monteblanco-55494165/layouts/monteblanco-variant-1.geojson",
+            "type": "model",
+            "layoutSha256": "61c63e941e470ccac7fd6bcb2d57788420ecbf01a748d9afb900a9720c5d75e3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "373b9bcb756bbd6fc8eecf06bb83fdf18de9154371d151886e4b27e980ce02ba",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:42.343Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "731fa416cbe8ea510e53ff3b5f9437e235386cdd9076e192799cb0d64fa73058",
+        "width": 2048,
+        "height": 1980,
+        "bytes": 1144604,
+        "locations": [
+          {
+            "file": "data/spain/es-navarra-c-65c5ebaa/layouts/navarra-c.geojson",
+            "type": "model",
+            "layoutSha256": "0dbefcdd68207833c6f59cfd73a7930cab4aa9cc24770c0d9f77f091ff82ace7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "214e272c675024a0e733c2f51d3b83b43ba9578c1956593c67559f9feb8d6913",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:37.210Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "bed224e74bc3849f9ea55684e8c2b325a4fdd41194bf606cb14ebd5d9f68f6d8",
+        "width": 1907,
+        "height": 2048,
+        "bytes": 1431636,
+        "locations": [
+          {
+            "file": "data/spain/valencia/layouts/circuit-ricardo-tormo-national.geojson",
+            "type": "model",
+            "layoutSha256": "d92e615b3dccea2d663b62741073f9d6d674b23cd8afa4980b9bbe5a61bb7238"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "efeb144f02e5d20456690a9b29db281081337f908eddc247b0250f3f8a7a4bb1",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:23.998Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "3464a84ba697678fabe3aba94ee7fe405df827943d4b0e6965702705a9397c68",
+        "width": 2048,
+        "height": 1643,
+        "bytes": 772038,
+        "locations": [
+          {
+            "file": "data/finland/alastaro-circuit-350221251/layouts/alastaro.geojson",
+            "type": "model",
+            "layoutSha256": "008ae9c73165a709c4ba9f0bc9d7bc7d34b70a3cfedc51c29ef3f00904561f7b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "77d90d73b29f26db25eb65c0f92f740b12b640fbc34f811a733f2508c922a03f",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T05:59:53.108Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "7f3c2d5bc9469ba0a9bc9358589c792576e68d86ba5bb2f83a8ded666db4a285",
+        "width": 1842,
+        "height": 2048,
+        "bytes": 1015929,
+        "locations": [
+          {
+            "file": "data/finland/fi-seinajoki-238ed6cf/layouts/seinajoki.geojson",
+            "type": "model",
+            "layoutSha256": "d6c0d52ccf8145d787d9f73c1e132c181a853ebaaa8b943f2494280f8aa16e4d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "45bbd5a5685c8bade10e65e639767b42da9619f45a53266ae1b6b058e48c1cbf",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:06.850Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "cdd80021951363ffdb89a1ced1b177ade53b83c8717539202c9ef4ac55b48590",
+        "width": 2048,
+        "height": 1812,
+        "bytes": 1065342,
+        "locations": [
+          {
+            "file": "data/france/anneau-du-rhin/layouts/anneau-du-rhin-c.geojson",
+            "type": "model",
+            "layoutSha256": "5eccd5846258839ccfaf31cdc1e60d2bc042d078f84f31dffb43a4d28a8abaad"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "aca629c2efb31f4510fd39ad6d3307239b59e84e19b48a6abc1219d02f049732",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:06.751Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "fe6b2a22d2aa7121bc66cce0418543152e03cdf189f06e4c1a888d302a8ed4b6",
+        "width": 1572,
+        "height": 2048,
+        "bytes": 838796,
+        "locations": [
+          {
+            "file": "data/france/ceerta-circuit-d-issoire-86413454/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "f38e6235726677928c15100f7bc27daac96fecffbd032dc8080b48ce9cd5afe4"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "abdaaf583ccc70bc121984433d74a125c59725f1fb88a0e950cbe3ebd3443001",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:14.840Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "4a9c050db26f3f406f445c6f9d74cfdc6d1754341006b31fb6a1fdf3a1ad3a8f",
+        "width": 2048,
+        "height": 1742,
+        "bytes": 844199,
+        "locations": [
+          {
+            "file": "data/france/fr-chambley-45254edd/layouts/chambley.geojson",
+            "type": "model",
+            "layoutSha256": "b8d804e0ac2caa0f3d27bac1872ed71ee4fa9423ee5a30e73a72b64ff93904eb"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "33583400bb7865b6e21b814a7e94734885a70577e57e65cb21f75fefd1767df7",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:13.690Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "def01f8cfa4d0728af46448de985f624f9406cb076f054870da6d824c07d9fa7",
+        "width": 1578,
+        "height": 2048,
+        "bytes": 751996,
+        "locations": [
+          {
+            "file": "data/france/circuit-de-chenevieres-215200884/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "2304a095d77c96f02a04ea149f486ac3947bc5a11961bcf545002307a5ff4c27"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c59e16d5b07552ca88e6552bc543dc263806f3b78d9a8c0d8f45462e421121ae",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:33.021Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "80022802f70f3c80c1bbf814150ba2354f8796153c3bc0074fe820c80b0b257f",
+        "width": 2022,
+        "height": 2048,
+        "bytes": 946459,
+        "locations": [
+          {
+            "file": "data/france/circuit-de-ledenon-43165485/layouts/ledenon-club.geojson",
+            "type": "model",
+            "layoutSha256": "a3719f992fe3fd05ea01ca2b6563042e09de2efc09a40937cfec62217ba87ab9"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "335f26346b34ff21a9ac865648ba1b5039543d1012e1eb6a097f7fa5cc987049",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:32.620Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "c6d4da605ccfa7205ca1b5b59759632a0da183e9eeece75ad52618693d2607e8",
+        "width": 2048,
+        "height": 1052,
+        "bytes": 473447,
+        "locations": [
+          {
+            "file": "data/france/circuit-de-mirecourt-1150785576/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "e1e721b29f8e8fbf66e22c44bccf2163e7bf4b7eaff48e30e55167a3a2e1d4a0"
+          },
+          {
+            "file": "data/france/circuit-de-mirecourt-1150785576/layouts/circuit-de-mirecourt-juvaincourt.geojson",
+            "type": "model",
+            "layoutSha256": "17c2239b130da2648d026b8813c0b215b031f797eb7b26d0f42f5c7ca99a9f7d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "7c9780192959523b8d15453110ab55e5fe758f1115d9c309b5bcbd27b87fb204",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:40.355Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "c60343b16d12a3c7d3961781135d09e45e2f702ecef7267ff265647b87e9df4e",
+        "width": 2048,
+        "height": 1034,
+        "bytes": 537108,
+        "locations": [
+          {
+            "file": "data/france/circuit-de-vitesse-du-vigeant-37918062/layouts/val-de-vienne-main.geojson",
+            "type": "model",
+            "layoutSha256": "2b04659c31a1b02f600a7f35b8d59d47f7dbfcaf9df98b0b0ed1fa065e04ec42"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "d0c1f138b1b836954df51b8b66702d4c54377baf23fa7e94de8f237c2e12c38f",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:42.095Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "cf657518b8f98e971f41a7be2f47216eb44ab59cad9724830ad1bfab1a78ba36",
+        "width": 2048,
+        "height": 1709,
+        "bytes": 1620883,
+        "locations": [
+          {
+            "file": "data/france/fr-circuit-des-remparts-1c159f88/layouts/circuit-des-remparts.geojson",
+            "type": "model",
+            "layoutSha256": "b951530d040a54d21b33e8e5c14cf970a7fff91ca971a2bd969097f94f09bfea"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "328c6647f735c7831b0c42c508c6391d647f6ba18f821cbf21a60d0ec50d7df6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:00:50.363Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a6b8aa9b71cdbe0ca881b7e50c0b583bc1de1a28eab77dd2fa45f78a6ad544cf",
+        "width": 1921,
+        "height": 2048,
+        "bytes": 1108674,
+        "locations": [
+          {
+            "file": "data/france/circuit-dijon-prenois-29699123/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "23448780b25363321dc2ab9df3ebc7f35906212d3d0d6c6f315324d4151c4532"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4553dd4d9cfaf0e40483a8f8b43a9e2c3499a0dee3925d5a1081f367fe7a216b",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:42.973Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "c25bd22034112e1b1d1cbf6a48b5003b7577d2d3a19954b96c09a1e912df770e",
+        "width": 1544,
+        "height": 2048,
+        "bytes": 757893,
+        "locations": [
+          {
+            "file": "data/france/circuits-de-l-ouest-parisien-297738878/layouts/dreux.geojson",
+            "type": "model",
+            "layoutSha256": "013e0e7754bbacf8481c0226ead898a584e6ecd4429eaa386a501394046eecdf"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "70ba41e492d9167c7465dfb4267255747ba098f85c2e211ebb7e167acb53020e",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:01.890Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "51e8a855aedb6781583b47efd4472baeb6725e8da0c23cc7fabdedb3c34213c2",
+        "width": 2048,
+        "height": 1647,
+        "bytes": 819750,
+        "locations": [
+          {
+            "file": "data/france/fr-lessay-cb1c18d5/layouts/lessay.geojson",
+            "type": "model",
+            "layoutSha256": "7e402a04ce28d297253ddc34adcb84a7e5c1099453e0cb3e5c895a5f4cb2d738"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "1485097deb02620c205c537820eae085fe2d67f6d9e7d5b37f7e2531ca4039b0",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:42.636Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "36add1b4623a8c19b26c4e972d05f5edf1ecbcb4f86d2901e1cd92acdb8f82c9",
+        "width": 1564,
+        "height": 2048,
+        "bytes": 909877,
+        "locations": [
+          {
+            "file": "data/france/magny-cours/layouts/grand-prix.geojson",
+            "type": "model",
+            "layoutSha256": "7a2691a3f1fc6d710aecc43a2e8f902e9215b6b9f8f78892816f04f71839d0c1"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f26247a18f1d70635f5826cdaabcc4f68d172ffa888612ecd8f9528ea851ab82",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:07.772Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "dcf5a01327718ff27115e94076f9512867662d43b1fd6cc224bc5f168511b380",
+        "width": 2048,
+        "height": 1394,
+        "bytes": 1154380,
+        "locations": [
+          {
+            "file": "data/france/paul-ricard/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "da7a49be34afa63df8c849e394fa06db2d5d8fa42eaf77c954f75aa264686c84"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ff5f2e969fb6ac0b9d4023dae7f5f77cef355059d937a34acdaeef13f8412708",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:50.974Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "13766025126e07afe8b3c982822eb6cb777d380515a03b9371a9c9bc85d387a2",
+        "width": 2048,
+        "height": 1534,
+        "bytes": 1273501,
+        "locations": [
+          {
+            "file": "data/france/paul-ricard/layouts/paul-ricard-short-without-chicane.geojson",
+            "type": "model",
+            "layoutSha256": "7e8bd952895f67707b33dbb81f07b74d4548ce466173825f0ea4f3953e40e515"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "16b9824007e85b33314fbc4082400520bf92d9ccb38d118951f95997e44cc5c0",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:22.804Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "28667f01d416a09797a1e8bfcaadce5973954fea382ad8c5a11fe27a3d79f166",
+        "width": 1675,
+        "height": 2048,
+        "bytes": 867276,
+        "locations": [
+          {
+            "file": "data/france/verze-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "0df84bc7a649e686bff17344987b2690ddafad62a3bf227db3085b5ebf44e83d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "9b0a2df48e73bef07849b0ac73a78a4a303b6a66de2938569faf018521626f90",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:30.203Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "88ac3af08d1995677f8246580de21d7aca48b245d7f3507c8dfc5529dd84f06c",
+        "width": 2048,
+        "height": 1259,
+        "bytes": 682558,
+        "locations": [
+          {
+            "file": "data/united-kingdom/aintree-motor-racing-circuit-121110221/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "4b33d07549d30dfe576a6c2949cff50ebef53c8209143b97a3b92d1b076ab10b"
+          },
+          {
+            "file": "data/united-kingdom/aintree-motor-racing-circuit-121110221/layouts/aintree.geojson",
+            "type": "model",
+            "layoutSha256": "b13876e7e645e5663fa2232586ee8cd3795868050774a932f3c34e1c122d32f5"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "b18cc24c1e37d55169cb3cccffa6ea828f85cf532603da6547590d7690b1928c",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:30.013Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "bc8276bf564d9da37fde2dfde7d5a50ebbb931ac6670955c582d51d0130d2cd2",
+        "width": 2048,
+        "height": 1749,
+        "bytes": 770948,
+        "locations": [
+          {
+            "file": "data/united-kingdom/anglesey-circuit-108374689/layouts/anglesey-combo.geojson",
+            "type": "model",
+            "layoutSha256": "a8eb14091967a4ba2296e51d5ac15b436ab18c80509e505b80855b9d7543fecd"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "86f8177fd602439923c8f6b7e42205a5b94f15adc33d3b682771520abcd2205e",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:39.022Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "543b92d7afcba8dc424219f65504b8fd3f58f17d7a4006bdc9051f7f11149c4a",
+        "width": 2048,
+        "height": 1901,
+        "bytes": 942337,
+        "locations": [
+          {
+            "file": "data/united-kingdom/bedford-autodrome-27782784/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "4ba3d5e41c41d6e17865d3edc729156a09194791001854fc8fe491b33e3eb5ae"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "06c80a8aa8c85d1b0c05bdaa1650b6482415e303e7e2f4ca908010243eb6d379",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:15:52.889Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "fa5060bbc3dc5769ba49b7b8ea39e5e0fb74f810b4b845bb952ae67d46617174",
+        "width": 1888,
+        "height": 2048,
+        "bytes": 1166903,
+        "locations": [
+          {
+            "file": "data/united-kingdom/brands-hatch-circuit-4906929/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "1934c7fb8c1e659c65ae7aca041be8c1629de0191b8a7f5419017f6fc40e7910"
+          },
+          {
+            "file": "data/united-kingdom/brands-hatch-circuit-4906929/layouts/brands-hatch-gp.geojson",
+            "type": "model",
+            "layoutSha256": "fea1d3e347881cc12398a89dcb9dc605b629cfa875ab7909e82456af4ed1104a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "94d6ec4b09ddda97cc0ffeec7c2eb13eed0169f0b7b6e87f7a747e0a3d7fdeb4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:16:06.171Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "481f16668c43388d55e9c2d287253c252603e42f196fc715d691bd3ece4f13cc",
+        "width": 2048,
+        "height": 1880,
+        "bytes": 1041791,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-buckmore-park-95fca565/layouts/buckmore-park.geojson",
+            "type": "model",
+            "layoutSha256": "c3157f014d6130be19abe89befaf69a0caa342e64c79331f3c5366e9d4ecd78e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6d9b6630509b350ccfa0110c5cc5a829b6855963dd9c74da5c4fc3c78b8acabf",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:01:58.957Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "696ded1b8c8b40779840e9394e307031155ced2819b756389198aee19606aac1",
+        "width": 1916,
+        "height": 2048,
+        "bytes": 828974,
+        "locations": [
+          {
+            "file": "data/united-kingdom/cadwell-park-117987847/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "80b185ea17eb66fd64cfce2c43ff1ab382333699c21518a6ebc8dbf4a55938a3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e92040f668ad05856f3f4ce5a6c8dd0e4fca8b8ab80e05a3ee16b210f5b0c6b0",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:04.640Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "ecb3b1df9f7a21d99c8fe73aa41521e81b9b713eeec42229c24ab558d0d6db01",
+        "width": 1682,
+        "height": 2048,
+        "bytes": 825491,
+        "locations": [
+          {
+            "file": "data/united-kingdom/clay-pigeon-raceway-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "67b24523b4b9a225e4f317b05ac1ecbdcdc158fc134b411038ac0227f3d85a1c"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "df67195f0efe6ea5b53db27a0a58c839afb43a060b85162e80cc18c371b48172",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:09.837Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "2ba752518b321720a910af80141f4e1c0b2eabc9285f90bf33dd868f2e0b73fa",
+        "width": 2048,
+        "height": 1977,
+        "bytes": 679238,
+        "locations": [
+          {
+            "file": "data/united-kingdom/croft-circuit-25805724/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "78426236e6667f8c229ab04052998a184f0ed1922111d357984df4d10bc44163"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8125a27bc587ac1db69adfadd62164d6de91d4a11759455b008f00338ee9a36a",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:14.731Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "472fe96737f37bf55bc6108a6abf0c04fa2d121cb05080f5389362fd9b3c1e2e",
+        "width": 2048,
+        "height": 1652,
+        "bytes": 608415,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-fulbeck-kart-circuit-15a721dc/layouts/fulbeck-kart-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "98865797e017f5f72b72cc7df78d221ed30c83a05cd8449f301511dbb0d47e3f"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "56a2a3d90b11d11c1094f1b7769eb0780f55931156ef0e0a33ba718fb08b004f",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:23.986Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "8fa54a5044e0cbd727c337264d76dd394c9c8a984ba81ca878b380e75486b75e",
+        "width": 2008,
+        "height": 2048,
+        "bytes": 671820,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-glan-y-gors-kart-circuit-c97af463/layouts/glan-y-gors-kart-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "cc4e65f323c22093d9ac1d611e143386c5e31fc0ce057568049255610a604b56"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "54c2094df02d8d7a9c16860c5d85789e84853b6c5abbf10bba584b90763fc6d6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:27.234Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "894258bfa11ebb4e92a5b87f9a9733008d6baf77fc246aedc78c1ae1d34ff456",
+        "width": 2046,
+        "height": 2048,
+        "bytes": 920580,
+        "locations": [
+          {
+            "file": "data/united-kingdom/goodwood-motor-circuit-171558326/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "82f3390bd1127595ffa5c7fb1f9b2fc12980c3ae9c033956ad540ff2a30f91e2"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "1706897e37573d76471d51ed0073be38216eb0a76d8c889d681b2e87715b163b",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:16:04.581Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "5afc507c3f001fa2b099fef3cd619cdc1ca02386aa155e6025f415832552af16",
+        "width": 1906,
+        "height": 2048,
+        "bytes": 626768,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-kimbolton-kart-circuit-0a2425c0/layouts/kimbolton-kart-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "d9ada8f6b7a484c0eaeb260cf9ae6273cb4e8d48d49b139e0c0650abbcf63368"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "aa58872440809ef4e186812b06e2f170b00a3a88bde620e4b173755bd5ab4a98",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:39.816Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "9bd551ecd573395b6655e1ff035b0e8cccab5fdc8ddc4b22c93b25997b103c0d",
+        "width": 1901,
+        "height": 2048,
+        "bytes": 929288,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-larkhall-kart-circuit-2b78a780/layouts/larkhall-kart-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "4772a85bcbe8b0fec9a5b2a6b181f6e67414fcf48398c1559046e91ee6f93c78"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e1bb94d5c0899a1feb3d34e4b424dc6b403d81ce320cf81f821857d83f2103f7",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:54.004Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "28bb190179fcd252edd3702a300b559ca88f6028a3a3cbd8a6f3a161c23cb288",
+        "width": 2043,
+        "height": 2048,
+        "bytes": 1197034,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-millbrook-high-speed-circuit-cefbea72/layouts/millbrook-high-speed-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "f448a5280009e487a0843e0657984fcc3a0576901a205e7f432346b154f88f48"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6c388799911b0e33e3257b3d39ccf842b3711e074ab576d65a85785f362f2ef6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:02:49.858Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "6fe67b043a6148554d9f09bcb965a726cf438a06b43b7c6539571037e1844725",
+        "width": 1951,
+        "height": 2048,
+        "bytes": 861320,
+        "locations": [
+          {
+            "file": "data/united-kingdom/pembrey-circuit-177186595/layouts/pembrey-clubman.geojson",
+            "type": "model",
+            "layoutSha256": "3ff5982527af913882e8086d0c8e405750c6930b27f20e7b250f399436ce18e2"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "9f6a5ed6800f01e17bc7df33051998f15d19b876eb9eeff8626b67bd7f583ea1",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:16:15.267Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "9832136b325ee35609b34e8ca2cb732dd90a0f8abd8cd19316d4b7246e8bfd2a",
+        "width": 2033,
+        "height": 2048,
+        "bytes": 749387,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-kart-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "434a1ffff68ccc1081eeb45322b7631ab6f7b5dbd4b58498610df4baf150069d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "0df4043775a1c4e4828aaa4d0fe97b517fb8ed02c18003453e42fe1304e0ba86",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:03.351Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "ecbd658b6d84dcb4203af240bd6218f4878380de20318a67680b555f01d9be02",
+        "width": 2004,
+        "height": 2048,
+        "bytes": 924715,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-rockingham-bdd27703/layouts/rockingham-combo.geojson",
+            "type": "component:rockingham-international-circuit",
+            "layoutSha256": "09470b86c35478faba8c4c2bd7f195df0e39b18cb9daaf2a0366e8bfcb74d9b5"
+          },
+          {
+            "file": "data/united-kingdom/gb-rockingham-bdd27703/layouts/rockingham-international-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "2b4a42c5575fad8e0a4f66e8a22b00ecd5cd7297fd81df43677252c5256df9d4"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c12ccd0431dd6be4a977cac02fee873a43461516a8d07a9aad4c8d5d71a7cac9",
+        "status": "request-or-decode-failed",
+        "checkedAt": "2026-11-08T06:16:36.187Z",
+        "requestTimeoutMs": 30000,
+        "error": "TimeoutError: signal timed out",
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-rockingham-int-circuit-fb42d36b/layouts/rockingham-int-circuit-short.geojson",
+            "type": "model",
+            "layoutSha256": "26ebdc5684bef7e8b9f49ba9501fa5df39d28db74c8769b665848c5821c24ea7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8bf53536d3a51837cf67606d3547e88d3f5dd9022c22b472de997d59dbc3bf23",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:12.801Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f51cfe3a77a81cb713b4f1f8c68a7b0c885ec459b3603b9bce59200b417053b4",
+        "width": 2048,
+        "height": 1881,
+        "bytes": 856848,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-rockingham-int-supersport-ee9dd109/layouts/rockingham-int-supersport-long.geojson",
+            "type": "model",
+            "layoutSha256": "0f05df39732e310b968fd54c16f5849e5db34d355e85075b3ec889443442cc84"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "5411c5c3896bb340d7624cb3c4e43d1010353ce2cf5ba56c21d8237298f50a10",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:26.760Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "6da24f6905cfdf8a19407e2b9e810a898970a137ce625630bf6b019b47704c61",
+        "width": 1581,
+        "height": 2048,
+        "bytes": 685486,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-rowrah-kart-circuit-100f6eed/layouts/rowrah-kart-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "469b4224baae6e019e5562e88955068b26b0ef36191bb4d8a916cab371950db7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8a71bbfe7c53f7699a4fc9f0af7d3d586a758bace3fd780a12b8e78bb359da74",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:23.103Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "e559fd6679eeeb931ee9eebb1728791e63f80d66fe12b61d072759b32c95ea62",
+        "width": 1374,
+        "height": 2048,
+        "bytes": 696356,
+        "locations": [
+          {
+            "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-gp-old-sf.geojson",
+            "type": "model",
+            "layoutSha256": "f3bb769aa71b27e44c122d7d2aa93636931238dd56014c31d5f2f1858b993afc"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f601a72aae43c4c5c7064807b867e5fa785de0827075a22e7115555c1ced48fb",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:34.848Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "bc31e9c065a2996fa7b8016738838aa5ef6d242d88ad4f5c7fb0a8d4fbbd931c",
+        "width": 1954,
+        "height": 2048,
+        "bytes": 1002305,
+        "locations": [
+          {
+            "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-international.geojson",
+            "type": "model",
+            "layoutSha256": "fbc5838ea4275fc8fe3d39c8e1c8df7ac7da9856fe84e0e827186a9bf90c4e6e"
+          },
+          {
+            "file": "data/united-kingdom/silverstone-circuit-3571477/layouts/silverstone-combo.geojson",
+            "type": "component:silverstone-international",
+            "layoutSha256": "1da1d27dcc3ce3890f674216fb40b21f2a57c36367e5e07096596b051727c47c"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "3f793b962d4bb2974ef0c79e4d904b7a8e7d5f1b30bf722d3c6721b504180c63",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:16:35.104Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "1aac252bd74f4c59986716d28889e23da3cbe70fa8e50f8208102673366c6ef4",
+        "width": 2048,
+        "height": 1771,
+        "bytes": 981861,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-three-sisters-d8b843ac/layouts/three-sisters.geojson",
+            "type": "model",
+            "layoutSha256": "80aa01771991bc5d2e352bb85c9f62c3753224cb0bc8b59d56ed7a19b47cf939"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ca0011245534809f9726577dfdeaba2949d16860217ee729cfc8edf60116a384",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:46.561Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5947d6efa3db073456fcdcda4a3c6ac6f0bc755618d2c19b71aec81b3f3ab13c",
+        "width": 1866,
+        "height": 2048,
+        "bytes": 819205,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-whilton-mill-8610510a/layouts/whilton-mill-international.geojson",
+            "type": "model",
+            "layoutSha256": "3baa4ed3a8a91c0a4a526a816daa2ed2f836ae46d5a528fa0fe0663a599a95ef"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "29df3571b232fda011d79c9c444d83b7cc35dc95be628315b570cd978785e4e4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:53.775Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "6393b09501a3ac23f0cd0a7e2090ff7b5cbc24b02019edc82e54109a7b335627",
+        "width": 1864,
+        "height": 2048,
+        "bytes": 817156,
+        "locations": [
+          {
+            "file": "data/united-kingdom/gb-whilton-mill-8610510a/layouts/whilton-mill-national.geojson",
+            "type": "model",
+            "layoutSha256": "b76e72a8935ff73de39338f9890eab97648e9e6838054c2d8766ce600581e4a3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "98715110f442bc9422b171c725d07087c55a35d6b8aaf62455b3f3a347796bef",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:03:58.790Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "cd4683b2c3d489b93647a0a5a2796b71c26719b07d1ceea853b23a647ba36fd1",
+        "width": 2048,
+        "height": 1828,
+        "bytes": 728661,
+        "locations": [
+          {
+            "file": "data/hungary/hu-balaton-park-dba456ce/layouts/balaton-park.geojson",
+            "type": "model",
+            "layoutSha256": "eae6c5c92394150224c384bfc0a9b3e078e811c1a7133e84623ab7fa9a94e480"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a7779b370b1701029bcc315a7a350772a56e1e9ffad28c1751f7edcb2eeb5fb2",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:08.186Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "594be41d2b4679a60e4490408e50224a7a1166743c10b308e360e0006ab9be7a",
+        "width": 1874,
+        "height": 2048,
+        "bytes": 1234188,
+        "locations": [
+          {
+            "file": "data/hungary/hungaroring-231328650/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "a19b2d2d226493c6657a8638f319e1c5127b333c8f1b5578eb4d97f9af855e11"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f95790e338c4c74d1663c291c11ef2aa66273b0aa2f0931e9728b6de73839df9",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:06.405Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5d01c7ea12b89f925a255fd4552f755cd820c8dae33437196db6416423144088",
+        "width": 1225,
+        "height": 2048,
+        "bytes": 851990,
+        "locations": [
+          {
+            "file": "data/italy/it-balocco-alfa-romeo-89d7992f/layouts/balocco-alfa-romeo.geojson",
+            "type": "model",
+            "layoutSha256": "cd2aa8f245ff0d2cb148bca4b4a64727e68f548e10cdb391e269e0b25e4cc894"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "55f7f6d9f84e4519664622bfd7e6fcf8aca87a061eabe3fc2397dbcd8a9f85e1",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:14.248Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "becb5bb240ac5058ef4bb330dd97a1917de34e73a7d152c83e0d81480943d724",
+        "width": 1311,
+        "height": 2048,
+        "bytes": 988378,
+        "locations": [
+          {
+            "file": "data/italy/monza/layouts/grand-prix.geojson",
+            "type": "model",
+            "layoutSha256": "529ff221b4419048d6130b65fcbc234d2fb5fca737bba884468afd3e60e4c77e"
+          },
+          {
+            "file": "data/italy/monza/layouts/monza-combo.geojson",
+            "type": "component:grand-prix",
+            "layoutSha256": "1074f8a417da665ba4f490a1a7af24cc750758a2b7e86b9d65a22f4765ee21fe"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "31c39278b96b18d1e1fbba25a742931a7c61e6c7b2af590119ac0c0ec36cbf3a",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:21.278Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "541d1eeb0fc66a65514d6b929fb9f24ef70c82539b7300b34ade4011e55e8ed4",
+        "width": 1571,
+        "height": 2048,
+        "bytes": 843938,
+        "locations": [
+          {
+            "file": "data/italy/motodromo-castelletto-di-branduzzo-209135489/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "142d9e493421cada0e76a9c8c87c2186c84919100d2ecb70804f5334ea976409"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "565c3ea41f50d2f0227955eb749e91fa57f70b8046ee42c1ed7a4e10ce5c9314",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:27.606Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "0e4492553b01d63a04cabb41125bd166ccbba927c0e4a8a8b122101724e381b7",
+        "width": 2048,
+        "height": 1528,
+        "bytes": 824957,
+        "locations": [
+          {
+            "file": "data/italy/it-nardo-handling-c15106fb/layouts/nardo-handling-track.geojson",
+            "type": "model",
+            "layoutSha256": "5f04fbfea4a8f21d48f23ac0848f3930ea6627165b00acd2019d50a374b3dc4b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6d63a7559d691752c0b9b610c2f60fab2b4f9a29a38d8d36156d1af2b0d9d973",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:31.478Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "7d5e3803278bbb605d177deccfdb6da954657f524ed1b15179771cbfe2282ab2",
+        "width": 2048,
+        "height": 1792,
+        "bytes": 871046,
+        "locations": [
+          {
+            "file": "data/italy/it-pista-tolmezzo-outside-9bd26f45/layouts/pista-tolmezzo-outside.geojson",
+            "type": "model",
+            "layoutSha256": "2a308540970886bc34c75bc8c616f7f951b1327444e7582fca1a6b9efe4d91a2"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "5ecde5fff1e889ae7a09c2324689eda07079d46736d2c1ea72036fb666f40695",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:32.957Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "d2e329b2712c0b5ea03e75f62b59ba53db4eb4db181d32d1fc6a3eaa8e1e9474",
+        "width": 1798,
+        "height": 2048,
+        "bytes": 847964,
+        "locations": [
+          {
+            "file": "data/italy/it-tazio-nuvolari-circuit-b98cfecf/layouts/tazio-nuvolari-circuit-5260.geojson",
+            "type": "model",
+            "layoutSha256": "64150cb901fde8c3eb2760494afeabb89e9c9df072ef6b387b0eb919fc197ed3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "419b6b5630c497c2dfe589b3c8b57adf0d0f047fc3e1232b799961e8643c9b5a",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:40.405Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f739439f224833296c10a037c531e91b2923cca33f83e41d93c9e5a41b231a75",
+        "width": 1126,
+        "height": 2048,
+        "bytes": 679522,
+        "locations": [
+          {
+            "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "9622c3ca03681452e52390e453420bfa98ba3fe3259cfb0b3f7df5da27fc3242"
+          },
+          {
+            "file": "data/italy/vallelunga-circuit-piero-taruffi-48683097/layouts/vallelunga-outer.geojson",
+            "type": "model",
+            "layoutSha256": "3cd34467170083129d0ebfac53663e93cdb2f3d84abf2784b25035963cf17871"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8a549fe3f82260bd466b5f2adfe642b090eb01e2573d24ef9ccecbaf2ef273ff",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:41.764Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a532108d1daa6b5e5d4c9566d24d77db55e25430d64df2a6b24b7f2edbeb1f00",
+        "width": 2048,
+        "height": 1588,
+        "bytes": 916139,
+        "locations": [
+          {
+            "file": "data/japan/jp-autopolis-f9b919b2/layouts/autopolis.geojson",
+            "type": "model",
+            "layoutSha256": "ef88827af1752465bd08abebcf674ed76b403354a6bc45c6cf01fd1167143b47"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "d1653df46de2c7c594c633bba913e7824ccfaf22a60b88b5b4940298a592d759",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:16:50.716Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "3740563658c17dbea537b3e4847d4338a869d8b9602d1413643490c92ec53e3e",
+        "width": 2006,
+        "height": 2048,
+        "bytes": 1218819,
+        "locations": [
+          {
+            "file": "data/japan/fuji-speedway-148622740/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "05d2af33cee67742048c68e3fa04155d41992de2454435c783c2e49c8cdd414d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a12aea45a88c3dd386495bd48fd353a3adae07040c5920f01d45f6b76020bbeb",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:52.826Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "db3f885780d2358c6a3cb971c7f89c1ec2e621968cb246aed13f21daa2b97ba9",
+        "width": 1968,
+        "height": 2048,
+        "bytes": 1521232,
+        "locations": [
+          {
+            "file": "data/japan/jp-sodegaura-forest-raceway-402eaab1/layouts/sodegaura-forest-raceway.geojson",
+            "type": "model",
+            "layoutSha256": "498d1d3acf58806816688ba7583bfbc9bc920b140729b3d00745f462e5f7d7c4"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "111a95aa7116e07837e1f7fe5187ad1cff409dcbae5ee7cc5caa08106061ab63",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:04:59.592Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "47df5a422ba9eb8bdf8d9b030dc0cea7178c56bbdbd95b68f73e08cfb25050d7",
+        "width": 2048,
+        "height": 1280,
+        "bytes": 796385,
+        "locations": [
+          {
+            "file": "data/japan/sportsland-sugo-107580358/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "ead2a00af92be40d6345924fb6a189f2707ee0a7d682856b6b454b60d89bd1cf"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4e3964bb846d65d116221572d2f3d61bd9ab080d39e2d7ce125b8223e68c6ea1",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:07.168Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "6e428662c5e07b498bb4b37b233d778897bec09a74ec5486d2fb734735c3f78a",
+        "width": 1754,
+        "height": 2048,
+        "bytes": 926435,
+        "locations": [
+          {
+            "file": "data/south-korea/inje-speedium-651693293/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "1af051f1be2217da76791bcea9e615a30e898ecdb49ec077e35a6d161ae0521d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "aa1ae6b47d0b9b5aaa10072e1720d54dea25a4212607f9ef232fe50af543ce09",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:07.413Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "1da96789150a0d95d9f443cd5d67b98e277fdf6773dae27b9e06fa055307e014",
+        "width": 2048,
+        "height": 1514,
+        "bytes": 996586,
+        "locations": [
+          {
+            "file": "data/south-korea/korea-international-circuit-234764328/layouts/korea-international-short-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "a515e878a5c0290f1f3d06eb61486baac73f2b4c05fc87094b725fe413702248"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "dbd2fb2e3282e7e15fdfd2d6b3625381edd3dc8c9f316f35052d3b430fe53eb4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:17.206Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "4dedd53182c97f41577fcaca6034aed3f67a47b39ea727cb956da1c6e2cfc010",
+        "width": 1373,
+        "height": 2048,
+        "bytes": 1155956,
+        "locations": [
+          {
+            "file": "data/kuwait/kuwait-motor-town-807928887/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "75f114fa62768a59b6a4b2bf4eeb02ff466dae8a788054bce67b284a1de15065"
+          },
+          {
+            "file": "data/kuwait/kuwait-motor-town-807928887/layouts/kuwait-motor-town-gp.geojson",
+            "type": "model",
+            "layoutSha256": "e7e244f587b4261cdad57fca50373ed73a305d5752301c09fc441b081297129e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "2fbf560a2a58982ee282242f7647b26a3381debaae5737c7ecc796b18813c1a0",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:17.448Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "8c04c5901255f5ee534d27b0fa494d56bb78ba1c2c9ec07085530c45488bcded",
+        "width": 1373,
+        "height": 2048,
+        "bytes": 1155853,
+        "locations": [
+          {
+            "file": "data/kuwait/kuwait-motor-town-807928887/layouts/kuwait-motor-town-gp-chicane.geojson",
+            "type": "model",
+            "layoutSha256": "cd8fb6373554e9efc4c5c57a6a02ef6c1f824109bfe17ddb5a8d884dd16541a7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "7c8f27265f82aefae94b1fd10198354f3d65e9fa60151b8bec43029e72eaeaee",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:25.141Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "920811927fd5f4a95e91c21a302b31bfb977f9c3e60cf393e40b7cb8fea9060c",
+        "width": 2048,
+        "height": 1825,
+        "bytes": 1067644,
+        "locations": [
+          {
+            "file": "data/mexico/dorado-speedway-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "ebf81c487cd3bf680936c5c2fb214b92adabcf52f20518a46b69d5237853fe54"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6375efe76059f1f64c6c89dc15f9c71462cdd888b89e70122b9ccee974982591",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:28.770Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "cbcc7fdd6e2fe3c1f1c9045c163b4c74a1c7ce13170ef670e843a30c5395af76",
+        "width": 2048,
+        "height": 1957,
+        "bytes": 1153408,
+        "locations": [
+          {
+            "file": "data/mexico/mx-ovalo-aguscaliente-9c6010c1/layouts/ovalo-aguscaliente.geojson",
+            "type": "model",
+            "layoutSha256": "aeae4e08367fa37479bd5666de91f3753a28acc5311a36858c46bc569a034f0f"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "32ed3bf28d3f12b451f51aa8a607d7806e9e7286053ee07347308ef177e94388",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:16:43.477Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "c0b2752dc17b14096efc35829a174a1ce54accd85e5e5c847380145f766b2d0a",
+        "width": 2048,
+        "height": 1767,
+        "bytes": 931683,
+        "locations": [
+          {
+            "file": "data/malaysia/sepang-international-circuit-23410503/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "74c6917bc295b6af316d37977ce561720b8d9be8b7e85601758c2cb7970795ff"
+          },
+          {
+            "file": "data/malaysia/sepang-international-circuit-23410503/layouts/sepang.geojson",
+            "type": "model",
+            "layoutSha256": "771ee225e6671d0ffca99ed5ba69fdfe462a222c6e057531543913c5a41e6f83"
+          },
+          {
+            "file": "data/malaysia/sepang-international-circuit-23410503/layouts/sepang-combo.geojson",
+            "type": "component:sepang",
+            "layoutSha256": "0341729714218aead35b35ff83bdf0bab506cf694179147e3874d0ae0e912af2"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "631271098b59a4249c93986eb6d711104f2cd0fa4db84c0ff05fb6bf041645aa",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:41.461Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "ac7d9723367e4e87085aec08a183375cedc34c0775d60ab1ea219c9f33eb59b7",
+        "width": 2048,
+        "height": 1831,
+        "bytes": 1352459,
+        "locations": [
+          {
+            "file": "data/netherlands/zandvoort/layouts/grand-prix.geojson",
+            "type": "model",
+            "layoutSha256": "ba0146941164801de9310daca5accbc32a8624129c3efd66047521976a91acc0"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a5e5b3179039741c99e7d03b1d0ba35e1e8c60320191c2e09f92a1feaf6dbf10",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:52.067Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "381be14b06a782e900d21762ca89ac1505656cec017e79bd5e0359036b2682eb",
+        "width": 1513,
+        "height": 2048,
+        "bytes": 866373,
+        "locations": [
+          {
+            "file": "data/norway/rudskogen-motorsenter-229179235/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "2b0ba36dfe62dd30adaec2f26f047ab3a24a670e368bdf888aa7cbe0c6d97ff1"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c264be399d87d027ca81adf3190dd951fb55239737ee07616efcf8737d9c4493",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:01.644Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "59e64bbad6be7a00751c7600a1ab8b61e1d6aa29bea0c203ec26cf08ced7364c",
+        "width": 1838,
+        "height": 2048,
+        "bytes": 779980,
+        "locations": [
+          {
+            "file": "data/norway/valerbanen-837348585/layouts/valerbanen.geojson",
+            "type": "model",
+            "layoutSha256": "a31eaa8d436619e0dc74743005e8dd5e491e8090c6ae8c60bd4389a8fd80c40b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a48348cfafa35011e0e56a5eef0dc48ec8e1afc99dc51152f460443134a63ea2",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:05:58.347Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "4cb30c39cc80e752f10723f83929aa551ac5053a21f8cd14a37db56ae86fe5e8",
+        "width": 1261,
+        "height": 2048,
+        "bytes": 776477,
+        "locations": [
+          {
+            "file": "data/new-zealand/hampton-downs-international-circuit-352414652/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "e0b61fa2a890f717c04f3a97aa06da3b90f44467e78f74a8b94d52bc040d5290"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "751bd9ba10f086912253e19397ecb63a93cf9f081e00e45c4270d66091acd103",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:07.662Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "483b1e29770d8b4b757ec2119d10c956515251223ec2b68ddb880306c66284ee",
+        "width": 1949,
+        "height": 2048,
+        "bytes": 967567,
+        "locations": [
+          {
+            "file": "data/new-zealand/hampton-downs-international-circuit-352414652/layouts/hampton-downs-club.geojson",
+            "type": "model",
+            "layoutSha256": "f1f025b18d6fcf453a773e64d142f035443c751b595766a33a9baca07e204a75"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "815b062e7a0e69940c9925cc483e9c437fd39d2b2a19fee4fbc018ea9716e1db",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:13.107Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "e629dfac7555260cf169b78f271ae6b94444c60626a9838ee2444da95950c78f",
+        "width": 1550,
+        "height": 2048,
+        "bytes": 1031423,
+        "locations": [
+          {
+            "file": "data/new-zealand/nz-highlands-motorsports-park-b-1fe943d1/layouts/highlands-motorsports-park-b.geojson",
+            "type": "model",
+            "layoutSha256": "bb4013cbc70397d613ba52d8709f73c5a0c1433b4798dd21aadd21b98e1d1cba"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e1d3e9c1f5185eba251e3ee08cd1f2b7f39da958f0c1f15afeb9f9f691de7160",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:14.633Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f548e0a3b1f1172d877a7b030b1e0bf9ac9f10a7c6ed9eb79e4a39b2c05274e3",
+        "width": 2048,
+        "height": 1504,
+        "bytes": 839169,
+        "locations": [
+          {
+            "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna.geojson",
+            "type": "model",
+            "layoutSha256": "32b3ac094e11d8fdcb3fe5a3c67d0b76499b1e77725e847fc0c319082f0e939d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "080cbb8741534feb57507ae796dcb17baa82ed069b3018540a1a8625217a1c94",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:26.693Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "1f7bb3ce4e43b8992f8e34dd7b7eeecd5645a8e5fd56e7a5e4eccbdf640a2f06",
+        "width": 2048,
+        "height": 1722,
+        "bytes": 967668,
+        "locations": [
+          {
+            "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna.geojson",
+            "type": "component:ruapuna-eastern-course",
+            "layoutSha256": "32b3ac094e11d8fdcb3fe5a3c67d0b76499b1e77725e847fc0c319082f0e939d"
+          },
+          {
+            "file": "data/new-zealand/nz-ruapuna-e0b8962a/layouts/ruapuna-eastern-course.geojson",
+            "type": "model",
+            "layoutSha256": "4030518acd95acf0b88f4b6260c02f3d6086b59cc1cad0c9086abe1ecfb70899"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ad921a13b1dcda2326e3c48845b1de2f0aaef6873bfcff48e8074775f3ce5d37",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:17.910Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "ba0efa72176312d8f295862bad98cceec453d97c7f43fd33565b89711d6c6bb0",
+        "width": 1716,
+        "height": 2048,
+        "bytes": 999644,
+        "locations": [
+          {
+            "file": "data/new-zealand/taupo-international-motorsport-park-90114324/layouts/taupo-motorsport-park-combo.geojson",
+            "type": "component:taupo-motorsport-park-track-2",
+            "layoutSha256": "c15bf8256817522df3ea6dafb745b67a7fc240c2917d314c8609af639d2c1f90"
+          },
+          {
+            "file": "data/new-zealand/taupo-international-motorsport-park-90114324/layouts/taupo-motorsport-park-track-2.geojson",
+            "type": "model",
+            "layoutSha256": "0df37e201ae1af1e18f0e7d229efd7419fbe1a138bed3dd6cd689354d9197a38"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "b4e4500f747f422808f53b64f683c231cd7e02c682814e5a26ccac8a2f4e10a4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:34.712Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "c4c089dc2d171ff546022304283a4932c3bd9f65e130abdb9409757c5df02990",
+        "width": 1257,
+        "height": 2048,
+        "bytes": 690582,
+        "locations": [
+          {
+            "file": "data/new-zealand/teretonga-park-101183053/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "d5c8a1292987e2fbc8a65a4c971dca27e2ce27c5e39b42d539422818f789f268"
+          },
+          {
+            "file": "data/new-zealand/teretonga-park-101183053/layouts/teretonga.geojson",
+            "type": "model",
+            "layoutSha256": "a8e0c691b21fccecaca03f4c158b16a18de9135187aaef5b97c59aa09f674892"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "248056fc107a6edaac06a51a3fa13c3d827919e4c1a663e220975cb748e3b950",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:40.057Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "8f67207ffa84cb973b52c95de2504c0681f3e714c9bd18d5deef93df96c872db",
+        "width": 2048,
+        "height": 1585,
+        "bytes": 1041957,
+        "locations": [
+          {
+            "file": "data/poland/tor-poznan-172188975/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "e24d294647274d0d88f90974e2c3135aa17d991d348174f071e86e2624e9b5ec"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "cc8f5df40464f460b18df77951ca5561056b83b2e0f72105f48e2f0dacf3758a",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:41.913Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "242420d13eb24e80d0363d15bdb610a991b93d8211c8a519cf0f8e9fb8480949",
+        "width": 1399,
+        "height": 2048,
+        "bytes": 1031707,
+        "locations": [
+          {
+            "file": "data/portugal/autodromo-do-estoril-38160756/layouts/estoril.geojson",
+            "type": "model",
+            "layoutSha256": "2946efeb95df5e8acd444d867f2965f66b215812e441ab3418b8218852ab3994"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "499bf62502a5846d4df035912072e42c91ddb4563a38a6b17cd81d80713d91e7",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:22.073Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "67569f7f29d85b598fac6899811cdc407641037920f0450ca211d35e2a303002",
+        "width": 1400,
+        "height": 2048,
+        "bytes": 1031728,
+        "locations": [
+          {
+            "file": "data/portugal/autodromo-do-estoril-38160756/layouts/estoril-no-chicane.geojson",
+            "type": "model",
+            "layoutSha256": "dae6178f6c8d4cb98590daab12bd31b7142dfdf638297fb25f960952ce1f75c5"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ed5fbd948f17b962fe5123a0d7914a0526ec421cb94fac3f7fb21be73633bd66",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:06:49.998Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "c0f1c31118b8e6cf679798e13fdee1b8c168fa081e3756d5993fc2de2449c7ec",
+        "width": 1631,
+        "height": 2048,
+        "bytes": 999698,
+        "locations": [
+          {
+            "file": "data/portugal/pt-sever-do-vouga-6461caa5/layouts/sever-do-vouga.geojson",
+            "type": "model",
+            "layoutSha256": "4f163cea221671738acb284f5de92d90e21c8d33301032db240ff434c6c2dadd"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "5e9c03b45300454352c6e2eddfa843ff61e079c490c9f4730ba2cce55cd9cbbe",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:00.493Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "c906891c84e18cb157cb9e8548126df88d064a9a78c4d98cb668f33782e60082",
+        "width": 1800,
+        "height": 2048,
+        "bytes": 1391586,
+        "locations": [
+          {
+            "file": "data/qatar/lusail-international-circuit-152483595/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "74e4536326a101b7ad41a3e84e7af91a52398f2fa74e98cc3e9426ef4958b1e9"
+          },
+          {
+            "file": "data/qatar/lusail-international-circuit-152483595/layouts/losail.geojson",
+            "type": "model",
+            "layoutSha256": "f3484e7c2d5b717994970ac6aee080ae279cfc2c53fee3a17696ecee0f86c480"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "622f2665c4f3c56283239d3e9c402a313db8c294685cb3ae977bf47a32658122",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:04.862Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "3f31572b0b6697cf7d52a6010eb75b5e398bb9ceea69c9c2676f691631e8ab11",
+        "width": 1715,
+        "height": 2048,
+        "bytes": 490295,
+        "locations": [
+          {
+            "file": "data/romania/motor-park-romania-333031200/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "a6b587cc8fab24badef49517c2e6131f3b73c4b685bb0d1b41bfc4049b184db4"
+          },
+          {
+            "file": "data/romania/motor-park-romania-333031200/layouts/motorpark-romania.geojson",
+            "type": "model",
+            "layoutSha256": "5cbf2ac72c5f03df65c230e3931fc2f5fd90ee5d7c9a80a4de5bef0681a023ba"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ebb0f10fa262de4b6c8367c06d28e0f2c1aa966110b736ae393bff25f02a253d",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:29.275Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "bb01b1bbaba9d80c6ce9eaf935215b4e8f0291f73eddf0407e4e53e93647a6c8",
+        "width": 2048,
+        "height": 1882,
+        "bytes": 852201,
+        "locations": [
+          {
+            "file": "data/russia/kartdrom-gbu-talisman-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "f4950135a40479589cf0ce3ba586e5eded320d35aa94f3e7d8d4a1a04cdaf176"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4b778413e5e8ae246c58eb93ac73072bf45fa9b6240c611f1558c5432e939da1",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:19.156Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "c1778376e91c66f060944b4d58d59fc4bfd24cecb317064d88e09c3374f5816b",
+        "width": 1724,
+        "height": 2048,
+        "bytes": 1052261,
+        "locations": [
+          {
+            "file": "data/russia/kazanring-152579094/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "169f49e9aef2d9d9da95c6ae367466b2da579be3cdcc2479a49f16d840c0f489"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c4a5681bb74c0f9f4536f0da5841d517a911fb8901c160ffa7767bd44b819a25",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:26.122Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f8ec2d88b9a3bc2913fb2c2b87e65d784374568c878e8f08c76fcfad136d15be",
+        "width": 2048,
+        "height": 1504,
+        "bytes": 689326,
+        "locations": [
+          {
+            "file": "data/russia/osm-74887032/layouts/n-ring-b.geojson",
+            "type": "model",
+            "layoutSha256": "760db3618969de95eeb18965dd0b52753f8e31d0ce92a77cec4118737a9adbec"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "af7d72d2de565523b4d3670847c62e134569d5fe0652154826d660fdc561cd8b",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:29.955Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "056f01642c1ebc1f0de69e86a6bd9773fb1214bf8a501ecf8a34321074546ae9",
+        "width": 1769,
+        "height": 2048,
+        "bytes": 993528,
+        "locations": [
+          {
+            "file": "data/sweden/se-drive-centre-arena-09bd002c/layouts/drive-centre-arena.geojson",
+            "type": "model",
+            "layoutSha256": "ace34d22c023ec0f5b3491541963a94257bb6f8ba283db201ff62e08ea7e8a84"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "5179d610e8794fb01f427f58b08f0d64228b9f9b3b25cbf5aeddbb5a3b2d679e",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:35.876Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "93963a2075c7893984c5fa739f49bc56f5c3311500e5d8b1974c387109773843",
+        "width": 2048,
+        "height": 1478,
+        "bytes": 728141,
+        "locations": [
+          {
+            "file": "data/sweden/gotland-ring-311644846/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "63eb48ea20d39251bb491a05d5ff43b280fd5bcb2b2eb344961feff0623c17a0"
+          },
+          {
+            "file": "data/sweden/gotland-ring-311644846/layouts/gotland-ring-3-1.geojson",
+            "type": "model",
+            "layoutSha256": "4f5e7287042f6c1dc9cf636d3cf09a1d5cbff7e576737abd1cb108093e1a4ae1"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "93051751629eb14bdb2990e45eaff831cb810838c87c4d88ee9d75299c8f6611",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:41.912Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a5308e1f241820d28ffbd7bc1fa70b5032371a26a88eb7b9850d427601e40988",
+        "width": 2048,
+        "height": 1792,
+        "bytes": 973628,
+        "locations": [
+          {
+            "file": "data/sweden/mantorp-park-42957116/layouts/mantorp.geojson",
+            "type": "model",
+            "layoutSha256": "9da47a2eb8376af4582c563e69fdf36b7f947bb400924f818ab4dafbf4a58f6e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4cafaf3c1eeec11b488908ebd094501982a78a6388de896f8bd7038bbc9e1571",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:37.572Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "03cc3960b1e03713264ea234865ab750a5e49904318949761172854cafd2ec55",
+        "width": 2048,
+        "height": 1888,
+        "bytes": 879732,
+        "locations": [
+          {
+            "file": "data/sweden/se-mittsverigebanan-61bbca06/layouts/mittsverigebanan.geojson",
+            "type": "model",
+            "layoutSha256": "f24336d66b6f9db2db5eb99de6e998e37f62c7d14bcca5576e0a1a6e0ad71e61"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8241c289e76164fd7505fa63bdf1cb26a268c7893e91b02b1724019549ba6b4d",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:07:52.267Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "4ecfd9d5a1d9ef75ae181f454ed920c2a34d5825e13cf21df5e043bd58c8d7d9",
+        "width": 2048,
+        "height": 1820,
+        "bytes": 724774,
+        "locations": [
+          {
+            "file": "data/sweden/se-sviestad-f8832c27/layouts/sviestad.geojson",
+            "type": "model",
+            "layoutSha256": "12f02f890d19cb3d2f3de8f3d8d2a1cd491ef91ad61047df8e751c202ff4ee1c"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f9c7291e441937802df7ed6718bb70ed75ac4ef48c51c0e35d033fb5c645dee9",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:04.367Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "9946ff7bd5a37af9eb3e0be6cf177f1c3d78fbd15d01d61f9dd0c8c18f876f12",
+        "width": 2048,
+        "height": 1528,
+        "bytes": 944570,
+        "locations": [
+          {
+            "file": "data/el-salvador/pista-el-jabali-37713353/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "c4294c6fb3a459f0b17dd351279c0e7734ee10bf424cf757f754f28c8f49ffe0"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f769294716922d9fc1e5cce833b2ede50d8a5023be6bac751058e7be0d756574",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:01.275Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "76e10b60b0894dfd6b6c1f5a635916c06a6710455346e5ac4e21c851c2b82649",
+        "width": 2048,
+        "height": 1236,
+        "bytes": 1029295,
+        "locations": [
+          {
+            "file": "data/thailand/bira-circuit-107684749/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "d19e4e2b99b2ebe60db6a0610fd5bd2e07ba242761dd347f9e21fac44db4a39e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ff543bf83c530227aec3d74ea0924f95ae15591715ca67fab0f72666e68e11f6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:40.045Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "118ff968c70f3cfbed3a6c97694ee2912f3fa979811add52474497c4ddfcb387",
+        "width": 2048,
+        "height": 1828,
+        "bytes": 1436225,
+        "locations": [
+          {
+            "file": "data/turkiye/tr-pinarbasi-a1cd89d9/layouts/pinarbasi.geojson",
+            "type": "model",
+            "layoutSha256": "d5091b78487dddc9cf071bd0833b3819a5e3aa37016b268ca0a0591cd0311af3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a67edccc11d40914bf059526663e8eec92f5f6b5784b374a82edab77b82fc256",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:50.813Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "bc5beade968be2985c725d284d2861770ae6fdde639977c76d3db5cb5153d988",
+        "width": 2048,
+        "height": 1195,
+        "bytes": 930503,
+        "locations": [
+          {
+            "file": "data/united-states/us-belle-isle-c12938f2/layouts/belle-isle-gp.geojson",
+            "type": "model",
+            "layoutSha256": "18aee6cde35ce18346ac0a249eb8f5b8e75cbd10062200aefaebbc7174a3a5b9"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "36e7db0f09fcc91fb100f86486320b6b8ba8b7ead2a7e032539b0c46f00ab7a7",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:31.286Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "b685e71fe0535472617808e3456a55f611a6a12879b8298703d1c3db06e35f17",
+        "width": 2048,
+        "height": 1751,
+        "bytes": 1030183,
+        "locations": [
+          {
+            "file": "data/united-states/brainerd-international-raceway-137243010/layouts/brainerd-competition-road.geojson",
+            "type": "model",
+            "layoutSha256": "034915f3c57a14f5b1e34a275d0b306160570dc7abd3dfcb2cf688bad639b12a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "7f6ddb803a0fb004b5666f752214e5c912af3ce1a57be824ed0c691009083ee8",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:29.886Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "1a384f6e6c8201863b85fe5dfb796ba6dd8bee12e504f0b03cdee08b1a770bd6",
+        "width": 1906,
+        "height": 2048,
+        "bytes": 1023228,
+        "locations": [
+          {
+            "file": "data/united-states/us-buttonwillow-500521b7/layouts/buttonwillow-25a.geojson",
+            "type": "model",
+            "layoutSha256": "f9c94aa7623810369c018d9d2631ab62a3df2f5e9f9e75e14be8ee446f387d5a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "21a33a07737437f25c9705d9eb78f918fe909b26c1daa3066a507f1a44b6c163",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:38.360Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5ae09ac370274cea23fd97c9cbe7e30ec2dfea8acaf5aefb90dabf4388517f23",
+        "width": 1906,
+        "height": 2048,
+        "bytes": 1023897,
+        "locations": [
+          {
+            "file": "data/united-states/us-buttonwillow-race-44479961/layouts/buttonwillow-race-01.geojson",
+            "type": "model",
+            "layoutSha256": "f573a6ff40e786b6cfed00eebe3ba6f305951714ac5e676c389aa19ba5750e18"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "9b843f2e366f9ce288858f56888a9d76e32765b31fbe022d697ce155cbde33c0",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:45.567Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "da2e5ee244e41d6f2e1b55741e380d739c823b6995479ab966471aa3e095723f",
+        "width": 2048,
+        "height": 1490,
+        "bytes": 727969,
+        "locations": [
+          {
+            "file": "data/united-states/us-buttonwillow-race-44479961/layouts/buttonwillow-race-03.geojson",
+            "type": "model",
+            "layoutSha256": "c385ecbf8be65f3ab03d1cdea460e7636d6d39e7070e768bf18b8a71e6a67382"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ea8a55294b1ba3788b4116ac8374a2f7ac30f2078738282ec65ca916814aa638",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:46.285Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f6d652162406b722e3d74fa648b43b5a3fbc7ff12bcea9b506f214ed64fdbbdb",
+        "width": 2048,
+        "height": 2004,
+        "bytes": 1034756,
+        "locations": [
+          {
+            "file": "data/united-states/us-buttonwillow-race-44479961/layouts/buttonwillow-race-13.geojson",
+            "type": "model",
+            "layoutSha256": "be4233c99182ce85d60be364dcb39b9ca72464d23c265e32aa690c5a0aa51c30"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ecd0f10fabf97687b2471ec2b1119255bdea29a6cdf2141d381ab14de53d8c74",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:54.231Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "92063b08773a20a2bd69b1dfd6983351686b3ba8c52c317653a5af4678e31569",
+        "width": 1802,
+        "height": 2048,
+        "bytes": 974160,
+        "locations": [
+          {
+            "file": "data/united-states/us-buttonwillow-race-44479961/layouts/buttonwillow-race-18.geojson",
+            "type": "model",
+            "layoutSha256": "8b53b4211b1699b6d26525ca3abf16b1ba704d14db066da50836f5ff84fecf23"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "f279194f9052dad20ea9c319a17b0fad85ec82337224043e068b11541412e6a1",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:08:56.736Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "01998643132088ecd2e5871b9400af629a1e815bb90ac7a1085575016eceb1de",
+        "width": 1662,
+        "height": 2048,
+        "bytes": 1081328,
+        "locations": [
+          {
+            "file": "data/united-states/charlotte-motor-speedway-116034341/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "259529c7028d1595fbac67792e3948b353deac6164dc6b28a4a115d25192ba47"
+          },
+          {
+            "file": "data/united-states/charlotte-motor-speedway-116034341/layouts/charlotte-motor-speedway-infield.geojson",
+            "type": "model",
+            "layoutSha256": "b9a9d9088528851d150dcc457665e808201d904de1b85cba0455f7def535d36b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "3be0416bd3b947e201c9aa770ede8e6ccee18d9fe0950c6f7512c5a398cee3fe",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:06.700Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f102e4299f32f4bac1398229ab8066255b3a72958d0ad140720f5c58798a839f",
+        "width": 1788,
+        "height": 2048,
+        "bytes": 1241575,
+        "locations": [
+          {
+            "file": "data/united-states/daytona-international-speedway-11371365/layouts/daytona-24-hour.geojson",
+            "type": "model",
+            "layoutSha256": "496877242d79fb7cc5311bc0d4ef21ee4f27d26c40a6c536fc40fa2e043b0dba"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "074be28e6ec8a7f6e4f088d20187d00d796c566b08102670ae404c263355abf2",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:09.376Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "0f661af59019e427194fda901208870433012bfda463b22d0825ff76f68f46a6",
+        "width": 1973,
+        "height": 2048,
+        "bytes": 1012937,
+        "locations": [
+          {
+            "file": "data/united-states/g2-motorsports-park-1538039260/layouts/g2-motorsports-park-west.geojson",
+            "type": "model",
+            "layoutSha256": "19f6beb89453dbcd526c1e04af242648a9e7a96701a1c39f073d8ea357ca7c32"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "2bbc446daaa66a74bbfd8701f72aed7e33ef5131d0954a1a2753e4b421d4bf93",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:18.962Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "b4e123bc599f97953e8a0629ba954825948427e3600553cfcf367d1f42295894",
+        "width": 1315,
+        "height": 2048,
+        "bytes": 635168,
+        "locations": [
+          {
+            "file": "data/united-states/grandsport-speedway-rl/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "ee7012d6ba13255caf1c14ab7a9806980f84c94236ebb4172bbf468e4946873d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "8223bc6e08433388ec26c470ad33a85355bc5f7813772d0e77c613853c9f4f81",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:16.135Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "7a7c4d150a7fad63224c6a2d2f319d97c0ee7a349e73cbbd7ca06db035385f36",
+        "width": 2048,
+        "height": 1966,
+        "bytes": 1004571,
+        "locations": [
+          {
+            "file": "data/united-states/harris-hill-raceway-172310552/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "25b89598c1e754ad643813a4279e2833060198ba12eb97ba408d4d3937b87b4f"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "5c331704075a649a6bed87d51dd82531d0ab2097c2f557a24d222096b9273e3b",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:24.465Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "9be2fc45571af8fe3c92bf2477419bee9431eb845e4c0c584f5ed3219b55bf70",
+        "width": 1947,
+        "height": 2048,
+        "bytes": 965352,
+        "locations": [
+          {
+            "file": "data/united-states/hedge-hollow-raceway-914202229/layouts/hedge-hollow-outer.geojson",
+            "type": "model",
+            "layoutSha256": "449a7459d5d4722aa4ef9c7a9096a236c998d1373bd30fa151aad0b01a13b367"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "1f97910bd93cba2bb065751b905addb6696d21ea0ec3f73c75a780df28d2a0da",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:28.095Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "dc2240ec1914abd8ca11337b694b091c90ac58749521b9609bdebadf3f3a2197",
+        "width": 2048,
+        "height": 1292,
+        "bytes": 814811,
+        "locations": [
+          {
+            "file": "data/united-states/high-plains-raceway-132189631/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "3333c27846b7d2eef26c19960ce5f0d867a5f9d2859b4e02168884f051be12de"
+          },
+          {
+            "file": "data/united-states/high-plains-raceway-132189631/layouts/high-plains-raceway.geojson",
+            "type": "model",
+            "layoutSha256": "26760ac33b473029da8ab0b2aec46ec03ac54c4c50ecf39be2f432b36f3d5a32"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "b841c580a4ff4a006a5b5bbac92b8175a587c321d44519c7fef882978be8f5cb",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:37.301Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5cdc90496db65d690bab348f95e4454cfc2a48aa5fc015d60cb255c9e9b3fe39",
+        "width": 1844,
+        "height": 2048,
+        "bytes": 979089,
+        "locations": [
+          {
+            "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-infield-road-course.geojson",
+            "type": "model",
+            "layoutSha256": "85362ac98f472509318d006372808f75d9f39c39d3da3b971b01e30e0c058af4"
+          },
+          {
+            "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-super-speedway.geojson",
+            "type": "component:lvms-infield-road-course",
+            "layoutSha256": "3c4402d7233b513a935921b1310be45e8255ac8890b8bc65fffd1eddd3f21ee9"
+          },
+          {
+            "file": "data/united-states/las-vegas-motor-speedway-27545411/layouts/lvms-super-speedway-infield.geojson",
+            "type": "component:lvms-infield-road-course",
+            "layoutSha256": "2293f95e18712461c7428d8759453bd31c3f91000f0ffd471bc85202dafd16ba"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "55335f58ce69ef48c814ea280b4b37c137e75531098426b8591eff50c8f29e04",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:42.296Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "2236c82eff9ef84ac7a98aa715c8c36967c5e4b48e207daf8417888e403259d6",
+        "width": 2001,
+        "height": 2048,
+        "bytes": 1083346,
+        "locations": [
+          {
+            "file": "data/united-states/us-lvms-exotics-racing-dd5324f3/layouts/lvms-exotics-racing.geojson",
+            "type": "model",
+            "layoutSha256": "dc0cb2619a08893f714128b53f0f3ade7d9aea11cf22228d0ef2d2e3a16e09a9"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4334e7e95f7894a04fda05040adf878077d2c18f59d5059f050f49280e1ac813",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:17:51.400Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "faf50eddf67d7a930ed58e3c187a5428a78539f4d7963520ef528ee5e9b57725",
+        "width": 1564,
+        "height": 2048,
+        "bytes": 735699,
+        "locations": [
+          {
+            "file": "data/united-states/m1-concourse-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "97aa14915f4b16b41b137a50c5a46421927014e1b8be3d6d276365dbac43e239"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "ef7fb38985db40150a7254bfabbee324c8a1c4154cbfde2a688f2e05f0060b99",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:50.118Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a0e4c75c36843a9869f2209b99f5e19a51100cb7e75cc8de67cd7156d828c304",
+        "width": 1359,
+        "height": 2048,
+        "bytes": 532178,
+        "locations": [
+          {
+            "file": "data/united-states/michigan-international-speedway-205025102/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "69b3a2de8c00e5ddee3168ad288c927317102827f9de5ea531ce29a0be8cc738"
+          },
+          {
+            "file": "data/united-states/michigan-international-speedway-205025102/layouts/michigan-int-speedway-oval.geojson",
+            "type": "model",
+            "layoutSha256": "677ced0f8528e6c0a2d9409006ee041cb059a8cb33dd60d952ab7f1c1c5caf5b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "31c5cab2d719d1755b6a6360a034d346b4c076671fe9e4a9f3bd053e114a0397",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:09:57.030Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "93790a3763f7cb84723fa0ec0ec66c8a0c9f51a95360cfde612b76f5f4a8d871",
+        "width": 1400,
+        "height": 2048,
+        "bytes": 482293,
+        "locations": [
+          {
+            "file": "data/united-states/michigan-international-speedway-205025102/layouts/michigan-int-speedway-infield-short.geojson",
+            "type": "model",
+            "layoutSha256": "82b1bcafa32a310c316cdea0ca7f63e2ae10fa68185c49d9d631830bbb756309"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "3e93f3515d8cb8bf14cf3513e1ec70ac0c7897a0b221c5c03924808881ce1f75",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:02.641Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "d6252cd2f6651e07bf108a08e21b975b98b16b845498c950fe3b7797da5c5ce7",
+        "width": 1181,
+        "height": 2048,
+        "bytes": 1096407,
+        "locations": [
+          {
+            "file": "data/united-states/monticello-motor-club-235166661/layouts/monticello-motor-club-combo.geojson",
+            "type": "model",
+            "layoutSha256": "3e46fc3eb474e179ba68a83932e46bdcb9f2d3b5300502d1ce615dfc83b51c20"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "583d03f041ca84d6b23af2ea5a66f6b0f7b1ae681a567bcfb09d1f82f19a1067",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:09.208Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "71deacbe4b5ba0f83aeb990c1828e0bfd0f9ed1b71fa9ffcb86e024bdec66330",
+        "width": 2048,
+        "height": 1539,
+        "bytes": 865557,
+        "locations": [
+          {
+            "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-corvette-race-loop.geojson",
+            "type": "model",
+            "layoutSha256": "58864992dd277d32433741bdcdaff66b6c4b5753dea3f2977e060259d45ebf29"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "2561d9be925c8d7f04efdc7fc2f914ef38bdcee835b8ae8fc316e3de1260ad96",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:09.859Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "400e585423159c042072cfb183b67e0668dfa255a5ddc7ac9519f88159f3182a",
+        "width": 2048,
+        "height": 1529,
+        "bytes": 856509,
+        "locations": [
+          {
+            "file": "data/united-states/ncm-motorsports-park-326452603/layouts/ncm-full.geojson",
+            "type": "model",
+            "layoutSha256": "f0468ef9bebb2e7d1289aeec865de25b02cbaee48738bafc642cf48efb5f9924"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "94915a59c6cffa99d1e2056f8530acba7337823efe844f7eea36fd2758604a57",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:19.394Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a1109e5394b71fcee6ad7da258344d896c6c80aec2eaf6fd04b29474d0d4d445",
+        "width": 1987,
+        "height": 2048,
+        "bytes": 1715547,
+        "locations": [
+          {
+            "file": "data/united-states/us-new-york-safety-7dd4ad33/layouts/new-york-safety-track.geojson",
+            "type": "model",
+            "layoutSha256": "ff4089c3d1de01201d3ceec01cd0fc4ecd98e182a5a50d8f07a563bcc1e7faaa"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "3699abf66206f52a24e0c0efbcdc3a41d0185bd063c622fe4c0344084a360d57",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:18.619Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "0e45e624bd61b45889d5ba47ccca5c267fa4d2c3a6edec9e38c7e460a46e5a9a",
+        "width": 2001,
+        "height": 2048,
+        "bytes": 887542,
+        "locations": [
+          {
+            "file": "data/united-states/us-norway-speedway-28bd57a2/layouts/norway-speedway.geojson",
+            "type": "model",
+            "layoutSha256": "feb9bec4940cd3dcb533b23c8059e1e129f18425b6218e657415ad7d90646387"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "23bb46e5ea9c4d18b141a0d48136bcb0c52b6d047c427aea25ac3bd3543f38c4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:26.618Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "bc74c2116184a9bed169ded76790b6446b0c4f4ce2bfeb3690cf1159adbb30f2",
+        "width": 1731,
+        "height": 2048,
+        "bytes": 1078612,
+        "locations": [
+          {
+            "file": "data/united-states/palmer-motorsports-park-reference/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "4a9c12fbb4c376083b45b31c75546d3224e89f407136923a3a5b0b910c0059da"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "a1b7a9c7a43a0579aa496a8cb290b32b5d851e6bf23caca67a3a568fe7acef73",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:16.305Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "2c8acf7a1d14440bb3d2db087b9eb588575b306b1b875932c20d760c2ca2046d",
+        "width": 1873,
+        "height": 2048,
+        "bytes": 970646,
+        "locations": [
+          {
+            "file": "data/united-states/pikes-peak-international-raceway-1134026181/layouts/pikes-peak-international-raceway.geojson",
+            "type": "model",
+            "layoutSha256": "133c8f6a2548b29c6456d0e592d7ef49adbf182253d0ef2e7fb73ad0b6d824a1"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "6c8a955965a3f76450cf8ace33119f4e26ce5b6025285e8ab08237a78b7db0dc",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:08.445Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "e549e2120ff683dd22b6a543a10b7fbd579e201cda397188f81dfba0f0cc9e9c",
+        "width": 2048,
+        "height": 1979,
+        "bytes": 1263074,
+        "locations": [
+          {
+            "file": "data/united-states/pocono-raceway-109767460/layouts/pocono-2-5-mile-road-course.geojson",
+            "type": "model",
+            "layoutSha256": "56bff57139575073244edda1ee26a59138836e39742179b6f25e2a2ffbfc2082"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "56532fd6b698276c21a5d7ba9765c8d0376cc944c5a905aea2505863194f0ad3",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:19.862Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "a9c74b5d2f48bfcb369b80e70e8f94157c5cb83a672bcdb4efda2b84d8ae6ffe",
+        "width": 1583,
+        "height": 2048,
+        "bytes": 1048685,
+        "locations": [
+          {
+            "file": "data/united-states/qlispe-raceway-park-93067101/layouts/spokane-county-raceway.geojson",
+            "type": "model",
+            "layoutSha256": "d94705fdbc77ff3d4ad74914a07652fc7af858478077404655159c8f5bc167bf"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "44a6c41abb4113a067afd4f1a58eb48bc2deb3b8c6ded0a90b4cdc13c60af2ad",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:26.217Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "e2f6ced091b6b8abad19af28dfaa3c234254de1881d906d900c34b1b5fc8dcd1",
+        "width": 1441,
+        "height": 2048,
+        "bytes": 995934,
+        "locations": [
+          {
+            "file": "data/united-states/us-reno-fernley-b-a1497233/layouts/reno-fernley-b.geojson",
+            "type": "model",
+            "layoutSha256": "0cf94b7533db0489e376b547bf76f9d6abbce4948270bfeb8e2dbaec0f090f7c"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "92582b91309f59775c000f11b341d83670fa2c36c268af2164b8f95073f6cc44",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:10:59.858Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5f62ac23f7fc70264a715044d006e0cf53240084fa7d9446601ec2ae2afd220c",
+        "width": 1441,
+        "height": 2048,
+        "bytes": 995896,
+        "locations": [
+          {
+            "file": "data/united-states/us-reno-fernley-c-0e7035d4/layouts/reno-fernley-c.geojson",
+            "type": "model",
+            "layoutSha256": "d4f7bc888d62c7c2033eec5fec5ef8c2fb6f97562cc6a3f076308eca71688de3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "bd5528d60d88da164220b86bc31b0b82322f695e67637d88756141b2938235c7",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:11:07.674Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "b9f75e95fb5b1928793768914734f7c9988fbdb4ff7a1ed5e1d34c53b7443f08",
+        "width": 1436,
+        "height": 2048,
+        "bytes": 991120,
+        "locations": [
+          {
+            "file": "data/united-states/us-reno-fernley-d-e723a41c/layouts/reno-fernley-d.geojson",
+            "type": "model",
+            "layoutSha256": "7fb9e1daf4636bb84a26e9f5b4d5cae1ed260d6b9f6ba2ec7a69ff9ebc8bdcad"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "061e5de2dc4268ac24fee044ec7158e1c02eaf2bb5a8b145adcc20540b961599",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:11:10.457Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "d82967271557e28844c75d9a4cbb741d9bbf7ace4093bf233759201dc4b7ce7c",
+        "width": 1436,
+        "height": 2048,
+        "bytes": 990899,
+        "locations": [
+          {
+            "file": "data/united-states/us-reno-fernley-f-411d3126/layouts/reno-fernley-f.geojson",
+            "type": "model",
+            "layoutSha256": "7ece4504f876d7d7d9593ed629e165f02a22085b5f54b6972cb0d277cd90dd0a"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "d0b61a92df5ac8801330fc80157caa2ee3f466758251fd3eeea7704f8fd337f6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:11:19.153Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "384772dc29ecd67d727782888e34045f3cc3975ca128333775ed83639e0a2a02",
+        "width": 1629,
+        "height": 2048,
+        "bytes": 1102357,
+        "locations": [
+          {
+            "file": "data/united-states/us-reno-fernley-g-77c6a7ab/layouts/reno-fernley-g.geojson",
+            "type": "model",
+            "layoutSha256": "5f307aebefce01ee1fc5be833c532928dcdf5775566a43848bbe0ff3f734c065"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "cc949f2cd85a238cdd8d5ad157473d7ab274331a07d46882a1536a2f55518776",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:11:20.005Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "c99dcecb520e81b1bb141d59fbff8e3b9655bfe604ecdd4919ed072bd64de528",
+        "width": 2040,
+        "height": 2048,
+        "bytes": 1345852,
+        "locations": [
+          {
+            "file": "data/united-states/road-america-110527567/layouts/briggs-stratton-motorplex.geojson",
+            "type": "model",
+            "layoutSha256": "a09cc30b6b93ac9e08cc2fc085d92ba086f1d093de1a7f1558edc1348b14130b"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "4334a6ea6a3dfafc3c564a81a203f60777d37231cd947f1a3ae74c219baad749",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:32.155Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "6c282015889eec4d5549e065429d2c089281bf24e1f788faba0101664db0276f",
+        "width": 1558,
+        "height": 2048,
+        "bytes": 1281401,
+        "locations": [
+          {
+            "file": "data/united-states/road-america-110527567/layouts/road-america-short.geojson",
+            "type": "model",
+            "layoutSha256": "3f2b4590e06b2ea7e33d52bbb2136046e750e7c6f3dced567ee9ff1dbe177614"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "fef358dfac1b9504369d995d7a87c7a6391b37a2aae9330479eae9940d06862e",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:11:30.204Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "6db313f3883df95c263210f96d3d695223aef64926e1610db1609f6328b0599f",
+        "width": 1186,
+        "height": 2048,
+        "bytes": 799291,
+        "locations": [
+          {
+            "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta.geojson",
+            "type": "model",
+            "layoutSha256": "e37468be9aa67c21f98b24a10ed94906ba71dd457bece8eec409725962cb235e"
+          },
+          {
+            "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
+            "type": "component:road-atlanta",
+            "layoutSha256": "fbf32d5bd55bdd45a3a9c2d199c8a1e54f8e877536c3efe5179b006a57b08fa3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "0c976670162f9cb2428409fb973abe387a9b5a5599501797076467946d6bec13",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:35.677Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "92fbd0ca5b952a71ae4a12f896796b316e262203c6517184bedf3fff2b15c5ff",
+        "width": 1186,
+        "height": 2048,
+        "bytes": 799151,
+        "locations": [
+          {
+            "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
+            "type": "model",
+            "layoutSha256": "fbf32d5bd55bdd45a3a9c2d199c8a1e54f8e877536c3efe5179b006a57b08fa3"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e0a19007908ab5f5fb6ca6fc075669a4409fade7f2292a723b70888433911298",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:40.476Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "aab7aa8ae2e36ed7c5188c5dd0c71a97dd9ac4a892d71180c619178487582d33",
+        "width": 1186,
+        "height": 2048,
+        "bytes": 799354,
+        "locations": [
+          {
+            "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
+            "type": "component:road-atlanta-sro-practice",
+            "layoutSha256": "fbf32d5bd55bdd45a3a9c2d199c8a1e54f8e877536c3efe5179b006a57b08fa3"
+          },
+          {
+            "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-sro-practice.geojson",
+            "type": "model",
+            "layoutSha256": "0d5384b235e430592ef1dc04afed2488393cbc1495faebaa774fc4459352d277"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "58f3248058d18da29830c817df55e80edd16ec65eef95024df8ae358aa91708b",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:11:59.034Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "1b2231cebb9d783b56fcd20a7eb412b80905287af02512a5c64d239bbe8207d1",
+        "width": 1610,
+        "height": 2048,
+        "bytes": 946671,
+        "locations": [
+          {
+            "file": "data/united-states/us-sandia-motor-speedway-2915dd70/layouts/sandia-motor-speedway.geojson",
+            "type": "model",
+            "layoutSha256": "60d7ba8c5c2933503bc40bc1639f9d78e5375b4689968c9bef0591c955908534"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "40a0303b7efba7de27297e94bb64a33abb2817f8ae4f7534163706ed289928b4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:51.087Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "f6d1becb0db4459e20684bd53cba5ad3311a796da637be81b899e698689c4783",
+        "width": 2048,
+        "height": 1298,
+        "bytes": 771598,
+        "locations": [
+          {
+            "file": "data/united-states/sebring-international-raceway-426154257/layouts/sebring-combo.geojson",
+            "type": "component:sebring-johnson-club",
+            "layoutSha256": "dd3b727299f5819ddd8d7c69772c2fbda082db4384b4c01c2e1183ebed0571d6"
+          },
+          {
+            "file": "data/united-states/sebring-international-raceway-426154257/layouts/sebring-johnson-club.geojson",
+            "type": "model",
+            "layoutSha256": "51e10f22cf66f0aa92d91b33111b86e15b9ca887a69657c4b487a2f6188223d5"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "67edb5b2aa13b0524b533ad04a79fada9a89c3579e31f22f9abb1ae248665ccc",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:12:06.127Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "33e7642de2101ff544d77650ae7ece3f7ea9b0ae7dabe5c54fa452e7d268faff",
+        "width": 2048,
+        "height": 1852,
+        "bytes": 845606,
+        "locations": [
+          {
+            "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway-combo.geojson",
+            "type": "model",
+            "layoutSha256": "d55c2ed0b7814604cea0d599d2bc3394d1001fa3e105862b0c2a342b6bd8c8f6"
+          },
+          {
+            "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway-combo.geojson",
+            "type": "component:sonoma-raceway-stock-car",
+            "layoutSha256": "d55c2ed0b7814604cea0d599d2bc3394d1001fa3e105862b0c2a342b6bd8c8f6"
+          },
+          {
+            "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway-stock-car.geojson",
+            "type": "model",
+            "layoutSha256": "ac55254828ee00d2c550b95cd9bf1bbc8bd112abe905d16a29802adcace9f37d"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "cbfac4ebd86bc5fee80e44b331d516869e6236c8ab8c9c82aa343ec99c3dd3fe",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:18:51.346Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "4fb9a4b1013bc9f5f279e9f8cacc5b68be83d28654009dacfd40133b3d2d7da1",
+        "width": 2048,
+        "height": 1919,
+        "bytes": 871123,
+        "locations": [
+          {
+            "file": "data/united-states/sonoma-raceway-2020-28825444/layouts/sonoma-raceway-with-7a.geojson",
+            "type": "model",
+            "layoutSha256": "415508f582b3c20bf71d377593b4d991ae8ca8fee2f73f0c1d9d989ee8041637"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "e8a147af1f05925dfd678c4da4d7ad95831c74567bf1ff6c1cce7cf61fd5c77e",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:12:17.316Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "5058dd48591488a04b2c14545cc0677d4d47aa14d2c7f79685c500bfa27bef2e",
+        "width": 2048,
+        "height": 1627,
+        "bytes": 1059338,
+        "locations": [
+          {
+            "file": "data/united-states/spring-mountain-motorsports-ranch-127683895/layouts/spring-mountain-raceway.geojson",
+            "type": "component:spring-mtn-raceway-west",
+            "layoutSha256": "e3d692a4a3814671828b2415ac10001a812da63acd0c283301f0ec82fabb221b"
+          },
+          {
+            "file": "data/united-states/spring-mountain-motorsports-ranch-127683895/layouts/spring-mtn-raceway-west.geojson",
+            "type": "model",
+            "layoutSha256": "3497d0fad756269c57aa18e986ab8edbb41c40b3271d67c48a2973a82a6218ab"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "c089857008dd8c55219efcdf0f9f42b2cf7388cfcbdc36f3a5f9718ea8a486e4",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:19:06.378Z",
+        "requestTimeoutMs": 30000,
+        "payloadSha256": "f1afaccc850f1bd3f9501a9d09cb3765be204845b5315a2d516fd852f9662e1a",
+        "width": 1431,
+        "height": 2048,
+        "bytes": 955296,
+        "locations": [
+          {
+            "file": "data/united-states/us-summit-point-motorsports-park-2c6ffeaf/layouts/summit-point-motorsports-park.geojson",
+            "type": "model",
+            "layoutSha256": "fe44d9e129ac13f07e2050de69feff210fefa9391f2b338e33c73df6082c26be"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "237dc90fa452c09b242155810b89e19354c1af65c266ecb8a43cb31e10de74b6",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:12:29.697Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "080974690e0462435f6e3dc92c98acbfe36d6339c4d6fd956c97c704221c3a0b",
+        "width": 1455,
+        "height": 2048,
+        "bytes": 995031,
+        "locations": [
+          {
+            "file": "data/united-states/the-firm-rl/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "cee09d9e38daf241f5543c0278ee4965cdede8376a64a0a94e19ddf2aa72b2ae"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "44642d37a24f3aafc93fb2323bf808526820aa8b2d3b8a8cdc96e7d487075aaf",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:12:35.358Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "a68c173d7bdb4c62cf64250d3c264bab5e3f052fad05f024e43be9494ea929c9",
+        "width": 2048,
+        "height": 1473,
+        "bytes": 1007507,
+        "locations": [
+          {
+            "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-twin-palms.geojson",
+            "type": "model",
+            "layoutSha256": "d5d1f13077f6905970a35aa9eec183a8af002133581b87f19f33eff281e0e36e"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "afd0a7f46230509034a0924b2c3c83980f68925a78ddeb9c3e34b4de93a85b78",
+        "status": "request-or-decode-failed",
+        "checkedAt": "2026-11-08T06:19:21.360Z",
+        "requestTimeoutMs": 30000,
+        "error": "TimeoutError: signal timed out",
+        "locations": [
+          {
+            "file": "data/united-states/thunderhill-raceway-park-28825115/layouts/thunderhill-raceway-park-5mile.geojson",
+            "type": "model",
+            "layoutSha256": "8ddd59987f296e46107651d1f3e218e9e79ed72f5d4aca653e49d433dabca4b9"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "2b9094624dee2a02148558fad294466ba9179a2a38bf2d182329d725439f0e18",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:12:50.206Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "23a26e35f35cf139a49078235dcbb835b6abdb25257f85fc1f2aacaff4c08e25",
+        "width": 2048,
+        "height": 1342,
+        "bytes": 931981,
+        "locations": [
+          {
+            "file": "data/united-states/utah-motorsports-campus-343796175/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "54b90568088cbaa3ea5a8aa87c37ef76dfd96e37fc46a0629220f8d938a92e7b"
+          },
+          {
+            "file": "data/united-states/utah-motorsports-campus-343796175/layouts/miller-motorsports-park-combo.geojson",
+            "type": "component:miller-motorsports-park-full",
+            "layoutSha256": "37655757187786059bbc791a2448783e866eb6b209f766eae8e7a2c09c78841d"
+          },
+          {
+            "file": "data/united-states/utah-motorsports-campus-343796175/layouts/miller-motorsports-park-full.geojson",
+            "type": "model",
+            "layoutSha256": "1ef6a72a00f727707cb5b0b1c439ed3897799933ef1ff4ff9f573f1d282c80a0"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "18533e65880cdc6b7ec1efc2edef253c867202693f8748a13c22bfc1ced88506",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:12:58.588Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "f1794698aba263016a5b931bbea2c00b1df0ee9b53272b900fdcf6c3c9308746",
+        "width": 2048,
+        "height": 1962,
+        "bytes": 1483238,
+        "locations": [
+          {
+            "file": "data/united-states/willow-springs-international-raceway-10440074/layouts/willow-springs-horse-thief-mile.geojson",
+            "type": "model",
+            "layoutSha256": "574eba1cdfb5f61c929faf7f27fb3e2fcac7ef4b2f25084fa42357fcc9add8ed"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "25e91f8c5874e7535cf98e18328eff56003b6b440d4472a087e1038c72c3efab",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:13:01.220Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "2b21ee1d00c33a205e0d879be86638d2d6b11153db7e5b2632e02a34c800c452",
+        "width": 1878,
+        "height": 2048,
+        "bytes": 1213472,
+        "locations": [
+          {
+            "file": "data/vietnam/vn-hanoi-442f2f18/layouts/hanoi.geojson",
+            "type": "model",
+            "layoutSha256": "82354bc90e5b819f49afc6712d68c0248146007e0d2fc84ef3d97ddeb15906b7"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "db6bac1b72d841628cfb532c7ec3266d7be46a307e69493dd9b764bf6c2a52dd",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:13:08.004Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "bb4d7f1700825fb65b87387d076bc216c45bf2a01d2a14022c62075abf019616",
+        "width": 2048,
+        "height": 1657,
+        "bytes": 798596,
+        "locations": [
+          {
+            "file": "data/south-africa/prince-george-circuit-677195345/layouts/east-london-gp-circuit.geojson",
+            "type": "model",
+            "layoutSha256": "f7e3f642833efe925f42997d6973f66d2efc406697113455b28f2169df7e1c18"
+          }
+        ]
+      },
+      {
+        "referenceSha256": "d4978c86e3bcc842789d95ee3a3f3c345d0cabaa8cafafd0fc7f78d0a4b322ea",
+        "status": "decoded-browser-image",
+        "checkedAt": "2026-11-08T06:13:11.731Z",
+        "requestTimeoutMs": 15000,
+        "payloadSha256": "77d226b9f19d475ae7963ec728a5dc777288fdb9a8dcdfd53bc71872a76c1370",
+        "width": 2048,
+        "height": 2021,
+        "bytes": 1009700,
+        "locations": [
+          {
+            "file": "data/south-africa/zwartkops-raceway-14047742/layouts/main.geojson",
+            "type": "model",
+            "layoutSha256": "fa3bea76aec3f956f51826746d0dc539e893deb73e1745f48518c82870f10c30"
+          }
+        ]
+      }
+    ]
+  },
+  "actualPlaybackSamples": {
+    "scope": "Five unmocked player checks with reviewed screenshots near the start. Not full-lap video or geometric validation.",
+    "results": [
+      {
+        "trackId": "ae-yas-marina-south2-0b195e11",
+        "layoutId": "yas-marina-south2",
+        "layoutSha256": "314836f23c739025458e9d58e2cb09ce575cc863024899d9eef5dcd7ab72cf78",
+        "referenceSha256": "a25f9d5431b075c1f3f1fd4a643f048f4e46bc2b90b180c29836854c80cfd69c",
+        "actualImageLoaded": true,
+        "clockAdvanced": true,
+        "recordingControlEnabled": true,
+        "screenshotSha256": "4d6993ee3ba5694f6ab24d0234e944077f2a140a7a4366c98cc547ac85d9f588",
+        "screenshotViewed": true
+      },
+      {
+        "trackId": "ae-dubai-autodrome-87272771",
+        "layoutId": "dubai-autodrome-hill",
+        "layoutSha256": "e65066dfcedc7b0076891738fae03aa60fd5d321ab17670e9b3658e1f302efc7",
+        "referenceSha256": "b3b6648a704b645b0992d4153ea45c526362969b85d30a9ad90897f67ac0c9da",
+        "actualImageLoaded": true,
+        "clockAdvanced": true,
+        "recordingControlEnabled": true,
+        "screenshotSha256": "4318c439b34a8f9b9b71ab47d2c5a597573b8b7bc4edc9fbeed721e2e2b1dc94",
+        "screenshotViewed": true
+      },
+      {
+        "trackId": "ar-autodromo-oscar-y-juan-galvez-48743061",
+        "layoutId": "buenos-aires-g",
+        "layoutSha256": "5073e802063323731077e6fa1e3eb22e37d547726003947bc38f3472fa523501",
+        "referenceSha256": "4bc7cf3c9d359ddd319622ce9301c4eedd522c2c54e1133b2910e32392e48778",
+        "actualImageLoaded": true,
+        "clockAdvanced": true,
+        "recordingControlEnabled": true,
+        "screenshotSha256": "02cbff4e6826e4294dde05f0f325f565b01b3e23b2a822860eec712206688645",
+        "screenshotViewed": true
+      },
+      {
+        "trackId": "ar-autodromo-juan-manuel-fangio-293583938",
+        "layoutId": "rosario-short-circuit",
+        "layoutSha256": "b06d8ed87834d309e8834aff0b96085a34308b6ac13c89204767f112e15e35ca",
+        "referenceSha256": "11b85acac308f38156ba57bd960025dad869f9871f8ade353fc0261278281bf8",
+        "actualImageLoaded": true,
+        "clockAdvanced": true,
+        "recordingControlEnabled": true,
+        "screenshotSha256": "e369cca698c7d5307a50707cc5d35837556b69d012d38cc147189f1139412a6b",
+        "screenshotViewed": true
+      },
+      {
+        "trackId": "ar-autodromo-parque-provincia-del-neuquen-191818361",
+        "layoutId": "main",
+        "layoutSha256": "a8ab5eb59c03c34dbc03c312ba0ec569e328123351535b7d1cf398b495230f0f",
+        "referenceSha256": "ef1e4c77098d15f0f446315fccd75d784961f0dacde103980dd12aa34b8d6a2d",
+        "actualImageLoaded": true,
+        "clockAdvanced": true,
+        "recordingControlEnabled": true,
+        "screenshotSha256": "a505848486f39ee3039589f60b2237dd54a37ed6d8fd81476a967bafacdce53f",
+        "screenshotViewed": true
+      }
+    ]
+  },
+  "preservation": {
+    "canonicalDataUnchanged": true,
+    "applicationCodeUnchanged": true,
+    "geometryTimingBordersTerrainUnchanged": true,
+    "newAcceptedLayouts": 0
+  },
+  "remaining": {
+    "mappedLayoutsWithoutBorders": 223,
+    "unmappedEntries": 11,
+    "standaloneSurfaceOnlyLayouts": 7,
+    "unavailableEmbeddedRoutes": 1,
+    "physicalBoundaryAndElevationAccuracy": "Unverified estimates remain; the model crossing audit and individual source reviews still apply.",
+    "fullCatalogueVideoSmoothness": "Not established by these tests."
+  },
+  "validation": {
+    "unitTests": 287,
+    "unitTestsResult": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "canonicalSourceReplay": "passed"
+  },
+  "installedPreviewParity": {
+    "checkedFiles": 2141,
+    "allCatalogueTrackAndLayoutBytesMatch": true,
+    "htmlMatches": true,
+    "applicationAndDataChanges": false,
+    "previewDeploymentRequired": false
+  }
+}

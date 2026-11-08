@@ -334,3 +334,17 @@ Ahvenisto uses 51 control stations: 35 visible cross-section reads and 16 inferr
 The surrounding NLS ground uses 4,096 values in the same existing GeoJSON, about 24 KB of JSON. Its approximately 12.9 m sample spacing is separate from the native 2 m raster and the more detailed road profile. The first movie was rejected because retaining the old coarse background produced exaggerated walls around the new road heights. The native-ground replacement records in 104.40 seconds and decodes all 2,301 VP9 frames; 40 samples cover the full lap, both crossing branches and dense underpass views. The car remains visible. Original borders, model and terrain remain in [shared correction evidence](../sources/research/ahvenisto-bridge-correction.json); other tracks and sidecars are unchanged. Borders and road levels remain estimates, curbs illustrative and banking unknown. No mesh, raw raster or video is shipped in the layout.
 
 Complete closed-loop measurements can set `measurement.sourceStationOffset` to start the measurement grid at a visible section of the retained source. This rotates station correspondence without changing the trace, travel direction or full route extent. The offset must be inside the source grid; open runs cannot use it, and bridge measurements must keep the offset of their source-backed height profile. Compaction, embedded-recipe checks and later reconstruction preserve the offset. This does not label obscured edges as observations: unmeasured intervals still interpolate between visible endpoints under the existing spacing, width, topology and raster-coverage checks.
+
+## Catalogue-wide browser checks
+
+The browser checks discover layouts from the current catalogue, so new prepared tracks enter the checks automatically. Against a built preview, run:
+
+```sh
+RACETRACK_TEST_URL=http://127.0.0.1:5193 npx playwright test tests/all-models.spec.ts tests/all-playback.spec.ts tests/network-routes.spec.ts --workers=2
+```
+
+The rendering check covers every bordered layout, including static surfaces and composed networks. Its JSON report lists layout IDs, rendered road triangles and curb sections; shared-ground curbs are generated from physical boundaries rather than read from the stored interval list. The two playback parts cover every independently playable prepared layout, verify exact GeoJSON bytes, open the player, seek, advance the clock and check recording controls. Their JSON reports include each layout's SHA-256 and simulated duration. The network check covers embedded driving choices and keeps unavailable components disabled.
+
+Reports are saved in each test's output directory and attached to the test result. Playback tests use raster fixtures to isolate controls and generation from provider availability. Real image loading, capture-date correspondence, road accuracy and recorded-video smoothness require separate checks; a passing browser sweep does not establish complete or surveyed track coverage.
+
+The [browser coverage audit](../sources/research/browser-coverage-audit.json) binds the current results to a public-data snapshot. It also records real browser image-decoding observations and five unmocked player checks separately from the fixture-based sweeps. Earlier inconclusive metadata requests are preserved as historical observations, rather than treated as proof that their images cannot load.
