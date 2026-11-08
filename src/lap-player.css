@@ -1,0 +1,607 @@
+.lap-player {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: #111c21;
+  color: #ecf0eb;
+  font:
+    14px "Manrope Variable",
+    sans-serif;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.lap-player::backdrop {
+  background: #111c21;
+}
+.lap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid #ffffff15;
+  flex-shrink: 0;
+}
+.lap-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #a7bbb8;
+}
+.lap-header h2 {
+  font-size: 23px;
+  letter-spacing: -0.7px;
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+.lap-header h2 span {
+  color: #ff905f;
+}
+.lap-player button,
+.lap-player input {
+  font: inherit;
+}
+.lap-player button {
+  border: 1px solid #ffffff25;
+  border-radius: 5px;
+  padding: 9px 12px;
+  background: #203139;
+  color: #edf3ed;
+  cursor: pointer;
+}
+.lap-player button:hover {
+  background: #344951;
+}
+.lap-player button:disabled {
+  opacity: 0.4;
+  cursor: wait;
+}
+.lap-player button:focus-visible,
+.lap-player a:focus-visible,
+.lap-player input:focus-visible {
+  outline: 2px solid #ff9d68;
+  outline-offset: 3px;
+}
+.lap-player .lap-close {
+  border: none;
+  font-size: 30px;
+  line-height: 1;
+  padding: 4px 12px;
+  background: transparent;
+}
+.lap-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  flex: 1;
+  min-height: 0;
+}
+.lap-stage {
+  position: relative;
+  min-width: 0;
+  min-height: 350px;
+  isolation: isolate;
+  overflow: hidden;
+  background: #263a40;
+}
+.lap-canvas,
+.lap-imagery {
+  position: absolute;
+  inset: 0;
+}
+.lap-canvas > canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.lap-telemetry {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 15px 20px;
+  background: #102128e8;
+  border: 1px solid #ffffff18;
+  border-radius: 7px;
+  pointer-events: none;
+  z-index: 450;
+  backdrop-filter: blur(8px);
+}
+.lap-speed {
+  display: flex;
+  flex-direction: column;
+  min-width: 72px;
+}
+.lap-speed strong {
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.lap-speed span {
+  font-size: 11px;
+  color: #acbebb;
+  margin-top: 3px;
+}
+.lap-telemetry-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  color: #c5d4d1;
+}
+.lap-telemetry-detail strong {
+  font-size: 23px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.lap-telemetry-detail > span:first-child {
+  color: #ffac7f;
+  font-size: 12px;
+}
+.lap-map-card {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 180px;
+  border-radius: 7px;
+  background: #102128bb;
+  text-align: center;
+  z-index: 450;
+}
+.lap-minimap {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+}
+.lap-map-card > span {
+  display: block;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  margin-top: -12px;
+  padding-bottom: 12px;
+  color: #d5ded8;
+}
+.lap-camera {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
+  z-index: 450;
+  background: #102128e8;
+  border-radius: 7px;
+  padding: 4px;
+  max-width: calc(100% - 20px);
+  white-space: nowrap;
+}
+.lap-player .lap-camera button {
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  padding: 9px 10px;
+}
+.lap-player .lap-camera button[aria-pressed="true"] {
+  background: #e9eee6;
+  color: #17242a;
+}
+.lap-scale {
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  font-size: 10px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+  z-index: 450;
+  pointer-events: none;
+}
+.lap-imagery-credit {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  font-size: 9px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+  z-index: 450;
+  pointer-events: none;
+}
+.lap-sidebar {
+  background: #152229;
+  overflow: auto;
+  border-left: 1px solid #ffffff15;
+  scrollbar-width: thin;
+}
+.lap-section {
+  padding: 22px;
+}
+.lap-section h3 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin: 7px 0;
+}
+.lap-section p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #9eb3b5;
+  margin: 8px 0;
+}
+.lap-specs {
+  margin-top: 20px;
+}
+.lap-specs label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  min-height: 40px;
+  border-bottom: 1px solid #ffffff0d;
+  color: #bdcccb;
+}
+.lap-specs label span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #8da7aa;
+  width: 95px;
+}
+.lap-specs input {
+  appearance: textfield;
+  background: #21343c;
+  color: #f2f3ed;
+  border: 1px solid #ffffff14;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: right;
+  width: 63px;
+  font-size: 12px;
+}
+.lap-specs input::-webkit-inner-spin-button {
+  appearance: none;
+}
+.lap-specs button {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 11px;
+}
+.lap-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-block: 1px solid #ffffff15;
+  padding: 20px 22px;
+  gap: 20px;
+}
+.lap-results span {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #91a9ac;
+  display: block;
+}
+.lap-results strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  margin-top: 7px;
+}
+.lap-profile {
+  margin-top: 16px;
+}
+.lap-profile svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.lap-profile-caption {
+  font-size: 10px !important;
+}
+.lap-evidence {
+  border-top: 1px solid #ffffff17;
+  padding: 12px 0;
+}
+.lap-evidence:first-of-type {
+  margin-top: 16px;
+}
+.lap-evidence summary {
+  cursor: pointer;
+  font-size: 11px;
+  color: #c5d6d3;
+}
+.lap-evidence a {
+  color: #ffb68d;
+}
+.lap-playback {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 28px;
+  gap: 9px;
+  border-top: 1px solid #ffffff1a;
+  flex-shrink: 0;
+  background: #111c21;
+}
+.lap-transport {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.lap-player .lap-play {
+  background: #ff9866;
+  color: #17242a;
+  min-width: 100px;
+  border: 0;
+  font-weight: 700;
+}
+.lap-rate {
+  font-size: 10px;
+  margin-left: 10px;
+  color: #a2bab9;
+}
+.lap-transport [data-lap-time] {
+  margin-left: auto;
+  font: 12px monospace;
+  color: #c5d4d1;
+}
+.lap-timeline {
+  display: block;
+}
+.lap-timeline input {
+  display: block;
+  width: 100%;
+  accent-color: #ff9866;
+  cursor: pointer;
+  height: 16px;
+}
+.lap-export {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 30px;
+}
+.lap-player .lap-record {
+  padding: 5px 9px;
+  font-size: 10px;
+}
+.lap-download {
+  font-size: 11px;
+  color: #ffb182;
+}
+.lap-status {
+  font-size: 10px;
+  color: #9db4b7;
+}
+.lap-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #15252ee8;
+  z-index: 500;
+  font-size: 13px;
+  padding: 25px;
+  text-align: center;
+}
+.lap-player [hidden] {
+  display: none !important;
+}
+.lap-imagery .leaflet-control-zoom {
+  margin-top: 160px;
+}
+.lap-launch {
+  background: #ffb347;
+  color: #17242a;
+  border: 0;
+  border-radius: 5px;
+  font:
+    600 12px "Manrope Variable",
+    sans-serif;
+  padding: 10px 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+@media (max-width: 1000px) {
+  .lap-layout {
+    grid-template-columns: minmax(0, 1fr) 250px;
+  }
+  .lap-section {
+    padding: 17px;
+  }
+  .lap-map-card {
+    width: 130px;
+  }
+  .lap-telemetry {
+    padding: 12px;
+    gap: 12px;
+    left: 12px;
+    top: 12px;
+  }
+  .lap-speed strong {
+    font-size: 36px;
+  }
+  .lap-imagery-credit {
+    bottom: 30px;
+    right: 12px;
+  }
+  .lap-camera {
+    bottom: 54px;
+  }
+}
+@media (max-width: 700px) {
+  .lap-player {
+    height: 100dvh;
+  }
+  .lap-header {
+    padding: 14px 16px;
+  }
+  .lap-header h2 {
+    font-size: 18px;
+  }
+  .lap-kicker {
+    font-size: 8px;
+  }
+  .lap-layout {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    min-height: 0;
+  }
+  .lap-stage {
+    height: 60dvh;
+    min-height: 390px;
+    flex: none;
+  }
+  .lap-sidebar {
+    border: 0;
+    overflow: visible;
+  }
+  .lap-section {
+    padding: 20px;
+  }
+  .lap-sidebar > .lap-section:first-child {
+    padding-bottom: 12px;
+  }
+  .lap-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+    margin-top: 10px;
+  }
+  .lap-specs label {
+    font-size: 11px;
+  }
+  .lap-specs label span {
+    width: 85px;
+  }
+  .lap-specs button {
+    align-self: center;
+    margin: 10px 0;
+  }
+  .lap-results {
+    padding: 16px 20px;
+  }
+  .lap-profile {
+    max-width: 450px;
+  }
+  .lap-map-card {
+    width: 96px;
+    right: 8px;
+    top: 12px;
+  }
+  .lap-telemetry {
+    left: 8px;
+    top: 12px;
+    padding: 10px;
+    gap: 10px;
+  }
+  .lap-speed {
+    min-width: 53px;
+  }
+  .lap-speed strong {
+    font-size: 32px;
+  }
+  .lap-telemetry-detail {
+    font-size: 9px;
+    gap: 5px;
+  }
+  .lap-telemetry-detail strong {
+    font-size: 19px;
+  }
+  .lap-telemetry-detail > span:first-child {
+    font-size: 10px;
+  }
+  .lap-camera {
+    bottom: 53px;
+  }
+  .lap-player .lap-camera button {
+    font-size: 10px;
+    padding: 8px;
+  }
+  .lap-scale {
+    left: 10px;
+    bottom: 30px;
+    font-size: 9px;
+  }
+  .lap-imagery-credit {
+    left: 10px;
+    bottom: 14px;
+    right: auto;
+    font-size: 8px;
+  }
+  .lap-playback {
+    position: sticky;
+    bottom: 0;
+    padding: 11px 14px;
+    z-index: 600;
+    margin-top: auto;
+  }
+  .lap-rate {
+    margin-left: 0;
+    font-size: 9px;
+  }
+  .lap-transport [data-lap-time] {
+    font-size: 10px;
+  }
+  .lap-playback .lap-play {
+    min-width: 80px;
+    font-size: 12px;
+  }
+  .lap-status {
+    font-size: 9px;
+  }
+  .lap-launch {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .lap-stage .leaflet-control-attribution {
+    font-size: 8px;
+  }
+}
+
+.lap-data-quality {
+  color: #ffc193 !important;
+  font-size: 10px !important;
+}
+.lap-imagery-credit {
+  max-width: calc(100% - 36px);
+  text-align: right;
+  line-height: 1.25;
+}
+@media (max-width: 700px) {
+  .lap-imagery-credit {
+    max-width: calc(100% - 20px);
+    text-align: left;
+    bottom: 7px;
+  }
+  .lap-scale {
+    bottom: 39px;
+  }
+  .lap-camera {
+    bottom: 64px;
+  }
+}
+
+.lap-scale {
+  max-width: 45%;
+  line-height: 1.25;
+}
+.lap-imagery-credit {
+  max-width: 50%;
+}
+@media (max-width: 700px) {
+  .lap-scale,
+  .lap-imagery-credit {
+    max-width: calc(100% - 20px);
+  }
+}

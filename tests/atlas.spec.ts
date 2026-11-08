@@ -193,10 +193,15 @@ test("terrain is served statically and height exaggeration changes the model wit
 test("a missing elevation file keeps the course usable and clearly labels the flat fallback", async ({
   page,
 }) => {
+  await page.route("**/layouts/grand-prix.geojson", async (route) => {
+    const data = await (await route.fetch()).json();
+    delete data.metadata.model3d;
+    await route.fulfill({ json: data });
+  });
   await page.route("**/data/elevation/*.json", (route) =>
     route.fulfill({ status: 404, body: "Unavailable" }),
   );
-  await page.goto("/?track=be-spa-francorchamps&view=3d");
+  await page.goto("/?track=at-salzburgring&layout=grand-prix&view=3d");
   await expect(page.locator("#track-3d canvas")).toBeVisible();
   await expect(page.locator("#model-note")).toHaveText(
     "Mapped course · Elevation unavailable",
@@ -383,7 +388,9 @@ test("desktop and phone controls pass automated accessibility checks", async ({
   page,
 }) => {
   await page.goto("/?track=be-spa-francorchamps&view=3d");
-  await expect(page.locator("#track-3d canvas")).toBeVisible({ timeout: 45000 });
+  await expect(page.locator("#track-3d canvas")).toBeVisible({
+    timeout: 45000,
+  });
   const audit = () =>
     new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])

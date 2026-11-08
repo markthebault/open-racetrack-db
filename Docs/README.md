@@ -8,6 +8,8 @@ The original pilot specification below records the initial scope. The implemente
 
 Track-border options, OSM findings for Spa and Meppen, and example reproduction steps are in [12-osm-track-borders.md](12-osm-track-borders.md).
 
+The requested Spa playback prototype, compact storage format, physics assumptions and accuracy limits are in [13-spa-lap.md](13-spa-lap.md). The complete 534-circuit / 882-layout coverage and repeatable preparation workflow are in [14-popular-3d-models.md](14-popular-3d-models.md).
+
 ## Purpose
 
 Build a public database of racetracks and a small map viewer. Store the data in static files. Organize it by country, venue, and layout. Show each layout on an OpenStreetMap background with its start and finish lines.

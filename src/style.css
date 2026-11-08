@@ -716,8 +716,18 @@ select {
 .timing-label.is-finish strong {
   color: #ffb1ac;
 }
-#map .leaflet-tile-pane {
+#map:not(.is-satellite) .leaflet-tile-pane {
   filter: grayscale(1) invert(1) brightness(0.8) contrast(0.84);
+}
+#maptiler-logo {
+  position: absolute;
+  left: 10px;
+  bottom: 37px;
+  z-index: 700;
+  line-height: 0;
+}
+#maptiler-logo img {
+  display: block;
 }
 .stage-heading {
   position: absolute;
@@ -898,6 +908,7 @@ select {
   box-shadow: 0 3px 16px #0002;
 }
 .is-3d .border-controls { bottom: 101px; }
+.map-area.is-satellite:not(.is-3d) .border-controls { bottom: 80px; }
 #border-toggle {
   display: flex;
   align-items: center;
@@ -1992,7 +2003,7 @@ select {
     right: 16px;
     gap: 5px;
   }
-  .view-switch button span {
+  .view-switch.has-satellite .icon {
     display: none;
   }
   .stage-heading,
@@ -2029,3 +2040,7 @@ select {
     animation: none !important;
   }
 }
+
+.lap-launch { background: #ffb347; color: #17242a; border: 0; border-radius: 5px; font: 600 12px 'Manrope Variable', sans-serif; padding: 10px 13px; cursor: pointer; white-space: nowrap; }
+.map-area.is-3d #view-notice { bottom: 158px; }
+@media (max-width: 700px) { .lap-launch { font-size: 10px; padding: 10px 8px; } .stage-toolbar:has(.lap-launch:not([hidden])) { flex-wrap: wrap; justify-content: flex-end; max-width: 210px; } }

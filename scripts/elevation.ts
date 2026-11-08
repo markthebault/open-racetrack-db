@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import { dirname } from "node:path";
 import { createHash } from "node:crypto";
 import { setTimeout as delay } from "node:timers/promises";
@@ -10,6 +10,7 @@ import {
   type ElevationGrid,
 } from "../src/elevation";
 import { planarCourse } from "../src/track-preview";
+import { serializeLayout } from "./layout-borders";
 import { plane, type Position } from "../src/geo";
 
 const args = process.argv.slice(2),
@@ -33,27 +34,26 @@ const venues: {
   file: string;
   country: string;
   layouts: Layout[];
+  layoutFiles: string[];
   points: Position[];
 }[] = [];
 for (const entry of catalogue.tracks) {
   if (!entry.traceCount) continue;
   const track = JSON.parse(await readFile(`data/${entry.file}`, "utf8"));
-  const layouts: Layout[] = [];
+  const layouts: Layout[] = [],
+    layoutFiles: string[] = [];
   for (const l of track.layouts)
-    if (l.file)
-      layouts.push(
-        JSON.parse(
-          await readFile(
-            `data/${entry.file.replace(/track\.json$/, "")}${l.file}`,
-            "utf8",
-          ),
-        ),
-      );
+    if (l.file) {
+      const file = `data/${entry.file.replace(/track\.json$/, "")}${l.file}`;
+      layouts.push(JSON.parse(await readFile(file, "utf8")));
+      layoutFiles.push(file);
+    }
   venues.push({
     id: entry.id,
     file: `data/elevation/${entry.id}.json`,
     country: entry.country.code,
     layouts,
+    layoutFiles,
     points: layouts.flatMap((l) =>
       geometryPaths(
         l.features.find((f) => f.properties.role === "trace")!.geometry,
@@ -64,12 +64,15 @@ for (const entry of catalogue.tracks) {
 if (validate) {
   let count = 0;
   for (const venue of venues) {
-    const grid = elevationSchema.parse(
-      JSON.parse(await readFile(venue.file, "utf8")),
-    );
-    if (grid.trackId !== venue.id)
-      throw new Error(`${venue.id}: incorrect elevation identity`);
+    const fallback = venue.layouts.some((layout) => !layout.metadata.model3d)
+      ? elevationSchema.parse(JSON.parse(await readFile(venue.file, "utf8")))
+      : undefined;
     for (const layout of venue.layouts) {
+      const grid = elevationSchema.parse(
+        layout.metadata.model3d?.terrain ?? fallback,
+      );
+      if (grid.trackId !== venue.id)
+        throw new Error(`${venue.id}: incorrect elevation identity`);
       if (!courseElevation(layout, grid))
         throw new Error(
           `${venue.id}/${layout.metadata.layoutId}: terrain coverage missing`,
@@ -281,7 +284,14 @@ if (validate) {
     for (const layout of venue.layouts)
       if (!courseElevation(layout, grid))
         throw new Error(`${venue.id}: incomplete source terrain coverage`);
-    await writeFile(venue.file, JSON.stringify(grid) + "\n");
+    for (const [i, layout] of venue.layouts.entries())
+      if (layout.metadata.model3d) {
+        layout.metadata.model3d.terrain = grid;
+        await writeFile(venue.layoutFiles[i], serializeLayout(layout));
+      }
+    if (venue.layouts.every((layout) => layout.metadata.model3d))
+      await rm(venue.file, { force: true });
+    else await writeFile(venue.file, JSON.stringify(grid) + "\n");
     completed++;
     if (completed % 25 === 0 || completed === venues.length)
       console.log(
