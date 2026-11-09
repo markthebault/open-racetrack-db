@@ -34,14 +34,14 @@
     },
     "note": "Hashes use layoutContentHash: parsed layout JSON with the display-only ideal feature excluded. Exact embedded old component hashes and superseded old border hashes are checked before propagation. Original network trace, timing and terrain are retained."
   },
-  "heldLayouts": [
+  "physicalQualificationUnresolved": [
     {
       "layoutId": "road-atlanta-short",
-      "reason": "The pinned image shows grass along source connector stations approximately 20 through 100. Modern road-edge measurements cannot supply this provisional or historical branch; matching historical limits or a source-route review are needed."
+      "reason": "2010, 2017 and 2023 NAIP imagery and a separately acquired licensed image show grass along the saved connector. Short now has an explicitly unverified source-geometry estimate; matching physical road limits remain unverified."
     },
     {
       "layoutId": "road-atlanta-combo",
-      "reason": "No complete ideal line until every embedded component, including Short, is supported."
+      "reason": "The complete three-component ideal feature inherits Short\u2019s unverified-source-geometry qualification. All original component source data remains unchanged."
     }
   ]
 }

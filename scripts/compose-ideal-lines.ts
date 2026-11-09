@@ -1,3 +1,4 @@
+import {sourceGeometryIdealFeature} from './ideal-source-geometry';
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { isDeepStrictEqual } from "node:util";
@@ -19,7 +20,10 @@ export function composeIdealLine(network: Layout, sources: Layout[]) {
     if (!isDeepStrictEqual(networkRouteLayout(network, i), original))
       return undefined;
     const ideal = source.features.find((f) => f.properties.role === "ideal");
-    return ideal?.properties.role === "ideal" && !ideal.properties.boundaryModel &&
+    if(ideal?.properties.role==='ideal'&&ideal.properties.boundaryModel==='reviewed-source-corridor-v1'){
+      try{if(!isDeepStrictEqual(ideal,sourceGeometryIdealFeature(source,ideal.properties.sourceGeometryReview)))return undefined;}catch{return undefined;}
+    }
+    return ideal?.properties.role === "ideal" && (!ideal.properties.boundaryModel||ideal.properties.boundaryModel==='reviewed-source-corridor-v1') &&
       ideal.geometry.type === "LineString"
       ? { ...ideal, properties: ideal.properties }
       : undefined;
@@ -29,6 +33,7 @@ export function composeIdealLine(network: Layout, sources: Layout[]) {
   const licenses = network.features
     .filter((f) => f.properties.role === "inner" || f.properties.role === "outer")
     .flatMap((f) => "license" in f.properties ? [f.properties.license] : []);
+  const sourceGeometryReviews=available.flatMap(f=>f.properties.sourceGeometryReview?[f.properties.sourceGeometryReview]:[]);
   return {
     type: "Feature" as const,
     id: "ideal",
@@ -38,6 +43,7 @@ export function composeIdealLine(network: Layout, sources: Layout[]) {
       estimated: true as const,
       method: "bounded-minimum-curvature-local-time-v1" as const,
       edgeMarginM: Math.min(...available.map((f) => f.properties.edgeMarginM)),
+      ...(sourceGeometryReviews.length?{qualification:'unverified-source-geometry' as const,sourceGeometryReviews}:{}),
       borderLicenses: [...new Set(licenses)],
     },
     geometry: {
