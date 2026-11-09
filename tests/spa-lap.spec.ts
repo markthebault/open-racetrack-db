@@ -132,5 +132,6 @@ test("one downloaded Spa GeoJSON supplies the lap and terrain without sidecar re
   expect(sidecars).toEqual([]);
   await page.getByRole("button", { name: "Close lap simulator" }).click();
   await page.locator("#view-3d").click();
+  await page.locator(".map-options summary").click();
   await expect(page.locator("#height-scale")).toBeVisible();
 });
