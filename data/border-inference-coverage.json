@@ -1,14 +1,60 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T15:09:09.970Z",
+  "generatedAt": "2026-11-09T15:25:05.634Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved except for explicitly pinned, image-reviewed replacements.",
   "records": [
     {
       "trackId": "ae-dubai-autodrome-87272771",
       "layoutId": "dubai-autodrome-combo",
       "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-combo.geojson",
-      "status": "composed-existing",
+      "status": "composed-estimate",
       "componentRoutes": 2
+    },
+    {
+      "trackId": "ae-dubai-autodrome-87272771",
+      "layoutId": "dubai-autodrome-gp-circuit",
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-gp-circuit.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9745,
+          0.96
+        ],
+        "medianInteriorDifference": [
+          0.0735,
+          0.0626
+        ],
+        "samplingStepM": 2.999927606131948,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "771a64f0e87e9f0f8afe2493af71239983631f51aa91937b6e52c8d669ec434b"
+    },
+    {
+      "trackId": "ae-dubai-autodrome-87272771",
+      "layoutId": "main",
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9745,
+          0.96
+        ],
+        "medianInteriorDifference": [
+          0.0735,
+          0.0626
+        ],
+        "samplingStepM": 2.999927606131948,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "771a64f0e87e9f0f8afe2493af71239983631f51aa91937b6e52c8d669ec434b"
     },
     {
       "trackId": "ae-yas-marina-e2656e19",
@@ -778,6 +824,52 @@
       "imageSha256": "94411bfa62dd55f37aca409cfd5adf46e52d9eccc3c8ec5b412ffe2311fdde21"
     },
     {
+      "trackId": "au-mallala-motor-sport-park-182649697",
+      "layoutId": "main",
+      "file": "data/australia/mallala-motor-sport-park-182649697/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9214,
+          0.9331
+        ],
+        "medianInteriorDifference": [
+          0.0343,
+          0.0353
+        ],
+        "samplingStepM": 2.9986165706722936,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "82af275b8dd74f879a8ccc611c30f0e1240aca46cfc0aece2951c93a292cc2f2"
+    },
+    {
+      "trackId": "au-mallala-motor-sport-park-182649697",
+      "layoutId": "mallala",
+      "file": "data/australia/mallala-motor-sport-park-182649697/layouts/mallala.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9214,
+          0.9331
+        ],
+        "medianInteriorDifference": [
+          0.0343,
+          0.0353
+        ],
+        "samplingStepM": 2.9986165706722936,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "82af275b8dd74f879a8ccc611c30f0e1240aca46cfc0aece2951c93a292cc2f2"
+    },
+    {
       "trackId": "au-marulan-pheasant-wood-dcdb4abd",
       "layoutId": "marulan-pheasant-wood",
       "file": "data/australia/au-marulan-pheasant-wood-dcdb4abd/layouts/marulan-pheasant-wood.geojson",
@@ -848,10 +940,56 @@
     },
     {
       "trackId": "au-queensland-raceway-26175772",
+      "layoutId": "main",
+      "file": "data/australia/queensland-raceway-26175772/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.949,
+          0.8759
+        ],
+        "medianInteriorDifference": [
+          0.0881,
+          0.0709
+        ],
+        "samplingStepM": 2.9978801360292673,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "c3058df451d86e867014d8aacd42b7289ed4fe6b320e8ed650eafa05e917a541"
+    },
+    {
+      "trackId": "au-queensland-raceway-26175772",
       "layoutId": "queensland-raceway-combo-circuit",
       "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-combo-circuit.geojson",
-      "status": "composed-existing",
+      "status": "composed-estimate",
       "componentRoutes": 4
+    },
+    {
+      "trackId": "au-queensland-raceway-26175772",
+      "layoutId": "queensland-raceway-sportsman",
+      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sportsman.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9462,
+          0.8717
+        ],
+        "medianInteriorDifference": [
+          0.0862,
+          0.0692
+        ],
+        "samplingStepM": 2.997897008173284,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "c3058df451d86e867014d8aacd42b7289ed4fe6b320e8ed650eafa05e917a541"
     },
     {
       "trackId": "au-surfer-s-paradise-ee3387d5",
@@ -905,6 +1043,29 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "2438c964f503f3f7e0f8d0225755f2f525abac9ef8216453c32bd558771ced94"
+    },
+    {
+      "trackId": "au-wanneroo-raceway-44191932",
+      "layoutId": "main",
+      "file": "data/australia/wanneroo-raceway-44191932/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9976,
+          0.9903
+        ],
+        "medianInteriorDifference": [
+          0.0462,
+          0.0518
+        ],
+        "samplingStepM": 2.997098352801432,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "561efb8c341e406d0d69106d3edfd4caa11421908474d412297cd3040423e1a1"
     },
     {
       "trackId": "bg-pautalia-f5a0fa61",

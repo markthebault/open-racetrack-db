@@ -3,9 +3,9 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 25,
+    "unavailableLayouts": 17,
     "insufficientWidth": 7,
-    "topologyOrOrderReview": 18,
+    "topologyOrOrderReview": 10,
     "solverCandidates": 0
   },
   "records": [
@@ -33,63 +33,9 @@
       ]
     },
     {
-      "file": "data/australia/mallala-motor-sport-park-182649697/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "408982e76163ab770e3a2c29e4ad1f7dfb2f3c9a0bfd168db5fb8dfa37717041",
-      "traceGeometrySha256": "ba901a4efa880e1c2050091ce1115628ac1a1c7fb9d1d6ce1c2dbe72f359bb3c",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/australia/mallala-motor-sport-park-182649697/layouts/mallala.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "408982e76163ab770e3a2c29e4ad1f7dfb2f3c9a0bfd168db5fb8dfa37717041",
-      "traceGeometrySha256": "ba901a4efa880e1c2050091ce1115628ac1a1c7fb9d1d6ce1c2dbe72f359bb3c",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/australia/queensland-raceway-26175772/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "b7bf82f650b0de465824c5a9e6d52a1d1313ed3036d534fd36bbbd33092b853f",
-      "traceGeometrySha256": "13a420e2a88c3eb6f3070940be38e9750734331b8d31050deb93d7990451c12d",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
       "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-combo-circuit.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "7bec4436bdf05bc9cace50f137cbf1d63d70298391edf10e894171c1b7902ebf",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "ab3737d01b47a68696099c72db88e9fba72e7fd6694bdf1cb1d99b59ce530571",
       "traceGeometrySha256": "bb5931ac9691b8eb338774d97bd211825fc61441f052d8ec80339e9a78d02964",
       "borderPathCounts": [
         4,
@@ -124,8 +70,13 @@
           "index": 2,
           "sourceLayoutId": "queensland-raceway-sportsman",
           "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+          "nested": true,
+          "minimumGapM": 3.901,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 26
+          }
         },
         {
           "index": 3,
@@ -138,24 +89,6 @@
             "role": "outer",
             "index": 108
           }
-        }
-      ]
-    },
-    {
-      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sportsman.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "b7bf82f650b0de465824c5a9e6d52a1d1313ed3036d534fd36bbbd33092b853f",
-      "traceGeometrySha256": "e485bcedef41daa79bf5cbe8e128e57e1e1aeca5d34325cffe297a7b48117fb3",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
         }
       ]
     },
@@ -178,29 +111,6 @@
           "bottleneckVertex": {
             "role": "outer",
             "index": 108
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/australia/wanneroo-raceway-44191932/layouts/main.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "2ecbdde15674274715a620ba71e348362ef814218fd1a40d250cc9a8f386b248",
-      "traceGeometrySha256": "c44857d935ca2be16a553059508086f2b6c65c2b590096393e58690bf81004cd",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.615,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "inner",
-            "index": 1052
           }
         }
       ]
@@ -341,73 +251,6 @@
       "classification": "topology-or-order-review",
       "borderFeaturesSha256": "c9a8cb0db9d63000eb2edad274132ae2a0371930b572cd5b991e2d17dba1a68d",
       "traceGeometrySha256": "7e5c6856df62913d6b3eef264a55c43ba339677f011347eef710eeebb2a7bb48",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-combo.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "a51f3ba85abc61d94ec0cc4ba38e96d0f7aa90277a12dff9ce6734b10817b796",
-      "traceGeometrySha256": "e302b4dc198b88300a7470cd7d2494b7c3e075e2c8e133dbdd9133dbd57741a5",
-      "borderPathCounts": [
-        2,
-        2
-      ],
-      "components": [
-        {
-          "index": 0,
-          "sourceLayoutId": "dubai-autodrome-club-circuit",
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 4.411,
-          "belowVehicleWidth": false,
-          "bottleneckVertex": {
-            "role": "outer",
-            "index": 1159
-          }
-        },
-        {
-          "index": 1,
-          "sourceLayoutId": "dubai-autodrome-gp-circuit",
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-gp-circuit.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "0d49ea8943712241caf54345d05cb12fd6cd30f31be57aebc736f31abe628504",
-      "traceGeometrySha256": "c04ece9806e318fb8d796f99428e2863741b88cfc727d066b0e9c22527b38556",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "0d49ea8943712241caf54345d05cb12fd6cd30f31be57aebc736f31abe628504",
-      "traceGeometrySha256": "c04ece9806e318fb8d796f99428e2863741b88cfc727d066b0e9c22527b38556",
       "borderPathCounts": [
         1,
         1

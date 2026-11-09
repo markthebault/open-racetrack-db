@@ -6,11 +6,13 @@ import { bounds } from "../src/geo";
 import { borderPairHash } from "../scripts/refine-image-borders";
 import { layoutContentHash, reviewedNetworkBorders } from "../scripts/reviewed-network-borders";
 
-function fixture() {
-  const source = layoutSchema.parse(JSON.parse(readFileSync("data/united-states/pittsburgh-international-race-complex-225264359/layouts/pittsburgh-int-race-complex-south.geojson", "utf8")));
+function fixture(file = "data/united-states/pittsburgh-international-race-complex-225264359/layouts/pittsburgh-int-race-complex-south.geojson") {
+  const source = layoutSchema.parse(JSON.parse(readFileSync(file, "utf8")));
   source.features = source.features.filter(f => f.properties.role !== "ideal");
   const old = structuredClone(source);
   delete old.metadata.borderInference;
+  for (const edge of old.features.filter(f => ["inner", "outer"].includes(f.properties.role)))
+    edge.properties = { role: edge.properties.role as "inner" | "outer", sourceIds: [], license: "LicenseRef-Track-Borders" };
   const roles = ["trace", "inner", "outer"];
   old.features = [...roles.flatMap(role => old.features.filter(f => f.properties.role === role)), ...old.features.filter(f => !roles.includes(f.properties.role))];
   const outer = old.features.find(f => f.properties.role === "outer")!;
@@ -18,6 +20,7 @@ function fixture() {
   old.bbox = bounds(old.features.flatMap(f => geometryPaths(f.geometry).flat()));
   const pair = Object.fromEntries(["inner", "outer"].map(role => [role, geometryPaths(old.features.find(f => f.properties.role === role)!.geometry)[0]])) as Parameters<typeof borderPairHash>[0];
   source.metadata.borderInference!.supersedes!.borderSha256 = borderPairHash(pair);
+  if(source.metadata.borderInference!.supersedes!.imageReview)source.metadata.borderInference!.supersedes!.imageReview.originalBorderSha256=borderPairHash(pair);
   const { terrain, ...recipe } = old.metadata.model3d!;
   const metadata = Object.fromEntries(Object.entries(old.metadata).filter(([key]) => key !== "model3d")) as Omit<Layout["metadata"], "model3d">;
   const borderProperties = ["inner", "outer"].map(role => old.features.find(f => f.properties.role === role)!.properties);
@@ -67,4 +70,18 @@ test("reviewed network propagation preserves source features, metadata, terrain 
   const f = fixture();
   assert.throws(() => reviewedNetworkBorders(f.network, f.hash, []), /every existing/);
   assert.throws(() => reviewedNetworkBorders(f.network, f.hash, [f.old]), /No reviewed/);
+});
+
+
+test("pinned automatic image reviews propagate only their exact original route, imagery and result", () => {
+  const file="data/united-states/us-norway-speedway-28bd57a2/layouts/norway-speedway.geojson";
+  const f=fixture(file),before=structuredClone(f);
+  assert.equal(reviewedNetworkBorders(f.network,f.hash,[f.source]).components.length,1);
+  assert.deepEqual(f,before);
+  for(const field of ["traceSha256","imageSha256","resultBorderSha256"] as const){
+    const g=fixture(file);g.source.metadata.borderInference!.supersedes!.imageReview![field]="0".repeat(64);
+    assert.throws(()=>reviewedNetworkBorders(g.network,g.hash,[g.source]));
+  }
+  const g=fixture(file);delete g.source.metadata.borderInference!.supersedes!.imageReview;
+  assert.throws(()=>reviewedNetworkBorders(g.network,g.hash,[g.source]));
 });
