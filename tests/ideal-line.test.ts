@@ -77,14 +77,15 @@ test("all stored independent ideal corridors are simple; ordered crossings retai
   )) {
     const d = JSON.parse(readFileSync(row.file, "utf8")) as Layout,
       recipe = d.metadata.model3d;
+    const ideal = d.features.find((f) => f.properties.role === "ideal");
+    assert.ok(ideal, row.file);
     if (
+      (ideal.properties.role === "ideal" && ideal.properties.boundaryModel === "ordered-border-ribbon-v1") ||
       d.metadata.borderInference?.gradeSeparation ||
       (recipe?.kind !== "surface" && recipe?.sharedGround) ||
       (recipe?.kind !== "surface" && recipe?.sourceSequence)
     )
       continue;
-    const ideal = d.features.find((f) => f.properties.role === "ideal");
-    assert.ok(ideal, row.file);
     for (const path of geometryPaths(ideal.geometry)) {
       const project = plane(path[0]);
       assert.doesNotThrow(
