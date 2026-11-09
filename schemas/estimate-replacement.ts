@@ -27,6 +27,6 @@ export const sourceSpurReviewSchema=z.strictObject({
   schemaVersion:z.literal(1),method:z.literal("image-reviewed-source-spur-removal-v1"),
   trackId:id,targetLayoutId:id,originalBorderSha256:hash,traceSha256:hash,imageSha256:hash,resultBorderSha256:hash,
   borderProperties:z.tuple([originalBorderProperties,originalBorderProperties]),
-  removed:z.array(z.strictObject({edge:z.enum(["inner","outer"]),index:z.number().int().positive(),coordinate:z.tuple([z.number().min(-180).max(180),z.number().min(-90).max(90)])})).min(1).max(20),
+  removed:z.array(z.strictObject({edge:z.enum(["inner","outer"]),index:z.number().int().positive(),coordinate:z.tuple([z.number().min(-180).max(180),z.number().min(-90).max(90)]),kind:z.enum(["paint-line-spur","sub-metre-self-crossing"]).optional()})).min(1).max(256),
   defectCropViewed:z.literal(true),remainingCoordinatesPreserved:z.literal(true),note:z.string().trim().min(30),
 });

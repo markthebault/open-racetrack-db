@@ -3,9 +3,9 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 10,
+    "unavailableLayouts": 9,
     "insufficientWidth": 3,
-    "topologyOrOrderReview": 7,
+    "topologyOrOrderReview": 6,
     "solverCandidates": 0
   },
   "records": [
@@ -14,24 +14,6 @@
       "classification": "topology-or-order-review",
       "borderFeaturesSha256": "e73ae1a63adee93c358bdb640f20938cc99a51f78d0b4c176f6291c8015cb808",
       "traceGeometrySha256": "2dc3149e44215e56bdd0dfbfbc420f86852ab53bd9535e273c5f5ba4fad76b6d",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/japan/osm-155926409/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "2e320c66aa91f4923300a547864dd2db336d7903edab8d1e343f525bd5a7eb36",
-      "traceGeometrySha256": "d2b657030e6f1df9c3cad4278d496673ace05405604667e20eeded80dbe5cf3f",
       "borderPathCounts": [
         1,
         1

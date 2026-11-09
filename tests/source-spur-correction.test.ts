@@ -1,7 +1,7 @@
 import {test} from "node:test";import assert from "node:assert/strict";import {readFileSync} from "node:fs";
 import type {Layout} from "../schemas/data";import {borderPairHash} from "../scripts/refine-image-borders";import {applySourceSpurCorrection,verifySourceSpurResult} from "../scripts/source-spur-correction";import {borderInferenceSchema} from "../schemas/border-inference";
-const file="data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sprint-circuit.geojson",load=()=>JSON.parse(readFileSync(file,"utf8")) as Layout;
-function fixture(){const current=load(),{original,pin}=verifySourceSpurResult(current),before=structuredClone(current),info=current.metadata.borderInference!.imagery;delete before.metadata.borderInference;before.features=before.features.filter(f=>f.properties.role!=="ideal");for(const role of ["inner","outer"] as const){const edge=before.features.find(f=>f.properties.role===role)!;edge.geometry={type:"LineString",coordinates:original[role]};}return{before,current,pin,info};}
+const file="data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sprint-circuit.geojson",load=(path=file)=>JSON.parse(readFileSync(path,"utf8")) as Layout;
+function fixture(path=file){const current=load(path),{original,pin}=verifySourceSpurResult(current),before=structuredClone(current),info=current.metadata.borderInference!.imagery;delete before.metadata.borderInference;before.features=before.features.filter(f=>f.properties.role!=="ideal");for(const role of ["inner","outer"] as const){const edge=before.features.find(f=>f.properties.role===role)!;edge.geometry={type:"LineString",coordinates:original[role]};}return{before,current,pin,info};}
 test("source-spur review replays only exact deletions and preserves every retained coordinate and property",()=>{
  const {before,current,pin,info}=fixture(),untouched=structuredClone(before),result=applySourceSpurCorrection(before,pin,info);
  assert.deepEqual(before,untouched);assert.deepEqual(verifySourceSpurResult(result).pin,pin);
@@ -37,4 +37,18 @@ test("a spur immediately before ring closure reconstructs at its original index"
  const review={...pin,removed:[{...pin.removed[0],index:rotated.length-1}],originalBorderSha256:borderPairHash(pair(before)),resultBorderSha256:borderPairHash(pair(expected))};
  const result=applySourceSpurCorrection(before,review,info);
  assert.deepEqual(verifySourceSpurResult(result).original,pair(before));
+});
+
+
+test("dense paint groups and a bounded numerical loop restore every original Asan vertex",()=>{
+ const {before,current,pin,info}=fixture("data/japan/osm-155926409/layouts/main.geojson"),beforeCopy=structuredClone(before);
+ assert.equal(pin.removed.length,47);assert.equal(pin.removed.filter(p=>p.kind==="sub-metre-self-crossing").length,6);
+ const result=applySourceSpurCorrection(before,pin,info);assert.deepEqual(before,beforeCopy);assert.deepEqual(verifySourceSpurResult(result).original,verifySourceSpurResult(current).original);
+ for(const role of ["inner","outer"])assert.deepEqual(result.features.find(f=>f.properties.role===role),current.features.find(f=>f.properties.role===role));
+ const wrongKind=structuredClone(pin);for(const p of wrongKind.removed)delete p.kind;
+ assert.throws(()=>applySourceSpurCorrection(before,wrongKind,info),/return within/);
+ const bad=structuredClone(before),review=structuredClone(pin),point=review.removed.find(p=>p.kind==="sub-metre-self-crossing")!,edge=bad.features.find(f=>f.properties.role===point.edge)!;
+ if(edge.geometry.type!=="LineString")throw new Error("Expected edge");edge.geometry.coordinates[point.index][0]+=.0001;point.coordinate=[...edge.geometry.coordinates[point.index]];
+ const pair=Object.fromEntries(["inner","outer"].map(role=>[role,(bad.features.find(f=>f.properties.role===role)!.geometry as {coordinates:[number,number][]}).coordinates])) as Parameters<typeof borderPairHash>[0];review.originalBorderSha256=borderPairHash(pair);
+ assert.throws(()=>applySourceSpurCorrection(bad,review,info),/deviation bound/);
 });
