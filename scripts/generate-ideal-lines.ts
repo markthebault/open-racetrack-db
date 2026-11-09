@@ -1,3 +1,5 @@
+import { removeIdealLoops } from "./ideal-path-topology";
+import { repairIdealPath } from "./ideal-path-repair";
 import { serializeLayout } from "./layout-borders";
 import { idealCorridor } from "./ideal-corridor";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
@@ -117,7 +119,16 @@ for (const [i, file] of files.entries()) {
           });
       const car = IDEAL_CAR,
         result = optimizeLine(stations, closed, car, 100),
-        points = result.points;
+        points =
+          direct && closed
+            ? repairIdealPath(
+                result.points,
+                closed,
+                rings,
+                clearance,
+                car.widthM / 2 + 0.52,
+              )
+            : result.points;
       for (let j = 0; j < (closed ? points.length : points.length - 1); j++) {
         const u = points[j],
           v = points[(j + 1) % points.length],
@@ -131,7 +142,11 @@ for (const [i, file] of files.entries()) {
             throw new Error("Line leaves saved road surface");
         }
       }
-      const path = points.map(
+      const inner = insideRing(rings[0][0], rings[1]) ? rings[0] : rings[1];
+      const cleaned = closed
+        ? removeIdealLoops(points, [inner[0][0], -inner[0][1]])
+        : points;
+      const path = cleaned.map(
         (p) =>
           [
             Number(

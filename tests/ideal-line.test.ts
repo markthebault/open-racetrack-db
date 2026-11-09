@@ -64,3 +64,36 @@ test("constant-radius speed respects aero-dependent lateral grip and combined tr
   assert.ok(r.duration > 0);
   assert.ok(Math.abs(r.speed[0] - r.speed.at(-1)!) < 0.01);
 });
+
+test("all stored independent ideal corridors are simple; ordered crossings retain their explicit source model", async () => {
+  const { geometryPaths } = await import("../schemas/data");
+  const { plane, equal } = await import("../src/geo");
+  const { assertSeparateSimpleRings } = await import("../src/boundary-path");
+  const report = JSON.parse(
+    readFileSync("data/ideal-lines-coverage.json", "utf8"),
+  );
+  for (const row of report.records.filter(
+    (r: { status: string }) => r.status === "generated",
+  )) {
+    const d = JSON.parse(readFileSync(row.file, "utf8")) as Layout,
+      recipe = d.metadata.model3d;
+    if (
+      d.metadata.borderInference?.gradeSeparation ||
+      (recipe?.kind !== "surface" && recipe?.sourceSequence)
+    )
+      continue;
+    const ideal = d.features.find((f) => f.properties.role === "ideal");
+    assert.ok(ideal, row.file);
+    for (const path of geometryPaths(ideal.geometry)) {
+      const project = plane(path[0]);
+      assert.doesNotThrow(
+        () =>
+          assertSeparateSimpleRings(
+            [path.map(project.to)],
+            equal(path[0], path.at(-1)!),
+          ),
+        row.file,
+      );
+    }
+  }
+});

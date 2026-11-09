@@ -27,25 +27,32 @@ export function idealCorridor(layout: Layout, a: Position[], b: Position[]) {
       nx = dz / norm,
       nz = -dx / norm;
     const section = borderSection(index, p[0], p[1], nx, nz);
+    const inside = (x: number, z: number) =>
+      insideRing([x, -z], rings[0]) !== insideRing([x, -z], rings[1]);
+    // The boundary midpoint is known to be on the road. Never replace it with
+    // an off-road normal intersection merely because that point is far from an edge.
     let x = p[0],
-      z = p[1];
-    if (section) {
-      x += (nx * (section[0] - section[1])) / 2;
-      z += (nz * (section[0] - section[1])) / 2;
-    }
-    let width = clearance([x, -z]);
-    for (let shift = -2; shift <= 2; shift += 0.25) {
-      const cx = p[0] + nx * shift,
-        cz = p[1] + nz * shift,
-        c = clearance([cx, -cz]);
-      if (
-        c > width &&
-        insideRing([cx, -cz], rings[0]) !== insideRing([cx, -cz], rings[1])
-      ) {
+      z = p[1],
+      width = clearance([x, -z]);
+    const consider = (cx: number, cz: number) => {
+      const c = clearance([cx, -cz]);
+      if (c > width && inside(cx, cz)) {
         x = cx;
         z = cz;
         width = c;
       }
+    };
+    if (section)
+      consider(
+        p[0] + (nx * (section[0] - section[1])) / 2,
+        p[1] + (nz * (section[0] - section[1])) / 2,
+      );
+    for (let shift = -2; shift <= 2; shift += 0.25)
+      consider(p[0] + nx * shift, p[1] + nz * shift);
+    if (width < 1.6) {
+      // Local two-dimensional clearance search handles acute source-edge vertices.
+      for (let dx = -4; dx <= 4; dx += 0.5)
+        for (let dz = -4; dz <= 4; dz += 0.5) consider(p[0] + dx, p[1] + dz);
     }
     return { x, z, y: 0, nx, nz, halfWidth: width };
   });

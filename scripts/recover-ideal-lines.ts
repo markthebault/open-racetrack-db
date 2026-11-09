@@ -1,3 +1,4 @@
+import { removeIdealLoops } from "./ideal-path-topology";
 import { readFile, writeFile } from "node:fs/promises";
 import { geometryPaths, type Layout } from "../schemas/data";
 import { buildRoad } from "../src/lap-simulation";
@@ -29,7 +30,8 @@ for (const [i, item] of files.entries()) {
     if (rings.length !== 2)
       throw new Error("Unordered multi-surface boundaries");
 
-    if (!narrow && road.interpolatedSections) throw new Error("Source corridor has missing measured cross-sections");
+    if (!narrow && road.interpolatedSections)
+      throw new Error("Source corridor has missing measured cross-sections");
     const layered = !!layout.metadata.borderInference?.gradeSeparation;
     const clearance = edgeChecker(rings);
     const stations = road.points.map((p) => {
@@ -46,7 +48,17 @@ for (const [i, item] of files.entries()) {
           : Math.min((p.left + p.right) / 2, clearance([x, -z])),
       };
     });
-    const { points } = optimizeLine(stations, closed, IDEAL_CAR, 100, narrow ? 0.35 : 1.15);
+    let { points } = optimizeLine(
+      stations,
+      closed,
+      IDEAL_CAR,
+      100,
+      narrow ? 0.35 : 1.15,
+    );
+    if (closed && !layered) {
+      const inner = insideRing(rings[0][0], rings[1]) ? rings[0] : rings[1];
+      points = removeIdealLoops(points, [inner[0][0], -inner[0][1]]);
+    }
     for (let j = 0; j < (closed ? points.length : points.length - 1); j++) {
       const u = points[j],
         v = points[(j + 1) % points.length],
