@@ -2095,3 +2095,8 @@ select {
 .view-bar .stage-toolbar:has(.lap-launch:not([hidden])) { flex-wrap:nowrap; max-width:none; justify-content:space-between; }
 .view-bar .view-switch { min-width:0; }
 .view-bar .view-switch button { min-width:0; }
+
+.ideal-controls {display:flex;align-items:center;gap:12px;padding:10px 24px;background:#f5f6f2;color:#23343b;font-size:11px;flex-shrink:0}
+.ideal-controls button {font:inherit;font-weight:700;border:1px solid #b8c4ba;border-radius:6px;background:white;color:#23343b;padding:10px 16px;cursor:pointer}
+.ideal-controls button[aria-pressed=true] {background:#23343b;color:#ffbc45}
+.ideal-controls[hidden] {display:none}

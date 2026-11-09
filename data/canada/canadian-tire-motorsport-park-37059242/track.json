@@ -22,14 +22,14 @@
       "id": "main",
       "name": "Canadian Tire Motorsports Park",
       "file": "layouts/main.geojson",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Canada/Canadian Tire Motorsports Park"
+      "referenceId": "Canada/Canadian Tire Motorsports Park",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
     },
     {
       "id": "mosport-kartways",
       "name": "Mosport Kartways",
-      "referenceId": "Canada/Mosport Kartways",
       "file": "layouts/mosport-kartways.geojson",
+      "referenceId": "Canada/Mosport Kartways",
       "description": "Draft configuration: Full kart course with central parallel straight and both southern hooked hairpins. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1386.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     }
   ],
@@ -60,6 +60,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-09-30T21:15:02.761Z",
       "evidenceNote": "Supports circuit identification only. Catalogue layout facts identify historical branch choices. No diagram coordinates are extracted, traced or copied."
+    },
+    {
+      "id": "ontario-scoop2023-border-imagery",
+      "type": "imagery",
+      "title": "Imagery review of a source-border paint-line artifact",
+      "url": "https://ws.geoservices.lrc.gov.on.ca/arcgis5/rest/services/AerialImagery/GEO_Imagery_Data_Service_2023to2027/ImageServer/exportImage?f=json&bbox=-8758774.690178055%2C5471862.00246863%2C-8757292.0652711%2C5474015.165592571&bboxSR=3857&imageSR=3857&size=4066%2C5904&format=png&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22where%22%3A%22Project%3D%27SCOOP2023%27%22%2C%22sortField%22%3A%22LowPS%22%2C%22sortValue%22%3A0%2C%22ascending%22%3Atrue%7D",
+      "license": "OGL-ON-1.0",
+      "retrievedAt": "2026-11-09T15:21:17.983Z",
+      "evidenceNote": "Imagery supports the documented local vertex deletion. Retained coordinates and their original border rights are unchanged. Review-image identity and its rights are embedded in the layout."
     }
   ]
 }

@@ -42,7 +42,7 @@ test("every composed network recreates each exact source route from a standalone
         source: Layout = read(
           `${directory}/layouts/${c.sourceLayoutId}.geojson`,
         );
-      assert.deepEqual(route.features, source.features, c.name);
+      assert.deepEqual(route.features.filter(f=>f.properties.role!=="ideal"), source.features.filter(f=>f.properties.role!=="ideal"), c.name);
       assert.deepEqual(route.metadata, source.metadata, c.name);
       if (c.recipe.kind === "surface") {
         assert.equal(route.metadata.model3d?.kind, "surface");
@@ -129,7 +129,7 @@ test("first-time network composition writes canonical GeoJSON without a regenera
     );
     const draft: Layout = read(networkFile);
     draft.features = draft.features.filter(
-      (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
+      (f) => f.properties.role !== "inner" && f.properties.role !== "outer" && f.properties.role !== "ideal",
     );
     delete draft.metadata.model3d;
     delete draft.metadata.borderComposition;

@@ -30,7 +30,7 @@ test('Ruapuna Eastern corrects the false Northern OSM spur with independently pi
  assert.equal(combined.metadata.borderComposition!.length,5);
  for(let i=0;i<5;i++){
   const embedded=networkRouteLayout(combined,i),leaf=await read(dir+'/layouts/'+networkRecipe.components[i].layoutId+'.geojson');
-  assert.deepEqual(embedded.features,leaf.features);assert.deepEqual(embedded.metadata,leaf.metadata);
+  assert.deepEqual(embedded.features.filter((f:any)=>f.properties.role!=="ideal"),leaf.features.filter((f:any)=>f.properties.role!=="ideal"));assert.deepEqual(embedded.metadata,leaf.metadata);
  }
  assert.deepEqual(eastern.metadata.model3d.terrain,combined.metadata.model3d!.terrain);
 });

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { reviewedEstimateSchema, roadEstimateReviewSchema, sourceSpurReviewSchema } from "./estimate-replacement";
 import { imageryTilesSchema } from "./imagery-tiles";
 import {
   borderRefinementSchema,
@@ -23,6 +24,7 @@ export const borderInferenceSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
     method: z.enum([
+      "image-reviewed-source-spur-removal-v1",
       "rgb-cross-sections-v1",
       "rgb-cross-sections-v2",
       "rgb-road-appearance-v3",
@@ -41,6 +43,9 @@ export const borderInferenceSchema = z
       .strictObject({
         borderSha256: z.string().regex(/^[a-f0-9]{64}$/),
         reason: z.string().trim().min(20),
+        sameCycleReview: reviewedEstimateSchema.optional(),
+        imageReview: roadEstimateReviewSchema.optional(),
+        sourceSpurReview: sourceSpurReviewSchema.optional(),
       })
       .optional(),
     refinement: borderRefinementSchema.optional(),
@@ -123,11 +128,25 @@ export const borderInferenceSchema = z
     const measured =
       value.method === "image-measured-cross-sections-v1" ||
       value.method === "image-measured-paired-edges-v1";
-    if (value.supersedes && !measured)
+    if (value.supersedes && !measured && !value.supersedes.sameCycleReview && !value.supersedes.imageReview && !value.supersedes.sourceSpurReview)
       ctx.addIssue({
         code: "custom",
-        message: "Replacement borders require complete image measurements",
+        message: "Replacement borders require complete image measurements or a pinned image review",
       });
+    const spur=value.supersedes?.sourceSpurReview;
+    if ((value.method==="image-reviewed-source-spur-removal-v1") !== !!spur || (spur &&
+      (value.supersedes!.sameCycleReview||value.supersedes!.imageReview||value.refinement||value.measurement||value.gradeSeparation||value.evidence||value.edgeConvention||
+       spur.originalBorderSha256!==value.supersedes!.borderSha256||spur.note!==value.supersedes!.reason||spur.traceSha256!==value.traceSha256||spur.imageSha256!==value.imagery.sha256)))
+      ctx.addIssue({code:"custom",message:"Source-spur removal requires its exact deletion review and cannot claim inferred edges or measurements"});
+    const review=value.supersedes?.sameCycleReview;
+    const imageReview=value.supersedes?.imageReview;
+    if(imageReview && (review||value.method!==(imageReview.estimatorMethod??"rgb-road-appearance-v3")||value.refinement||value.measurement||value.gradeSeparation||
+      imageReview.originalBorderSha256!==value.supersedes!.borderSha256||imageReview.note!==value.supersedes!.reason||
+      imageReview.imageSha256!==value.imagery.sha256||imageReview.traceSha256!==value.traceSha256))
+      ctx.addIssue({code:"custom",message:"Image-reviewed replacement requires its exact pinned appearance estimate, source and image"});
+    if(review && (value.method!=="rgb-road-appearance-v3"||value.refinement||value.measurement||value.gradeSeparation||
+      review.originalBorderSha256!==value.supersedes!.borderSha256||review.note!==value.supersedes!.reason||review.imageSha256!==value.imagery.sha256))
+      ctx.addIssue({code:"custom",message:"Same-cycle replacement requires its pinned appearance estimate and image review"});
     if (
       measured
         ? !value.measurement ||
@@ -139,7 +158,7 @@ export const borderInferenceSchema = z
           (value.measurement?.routeKind === "run" || value.gradeSeparation
             ? value.edgeConvention !== "left-right-along-trace"
             : !!value.edgeConvention)
-        : !value.evidence || value.measurement
+        : spur ? !!value.evidence || !!value.measurement : !value.evidence || value.measurement
     )
       ctx.addIssue({
         code: "custom",

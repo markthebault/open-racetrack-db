@@ -20,8 +20,8 @@
     {
       "id": "everland-speedway",
       "name": "Everland Speedway",
-      "referenceId": "South Korea/Everland Speedway",
       "file": "layouts/everland-speedway.geojson",
+      "referenceId": "South Korea/Everland Speedway",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4353.4 m. Difference from the supplied layout distance 26.6 m. Course configuration still requires visual review."
     }
   ],
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:38.772Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Imagery review of a source-border paint-line artifact",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-07T18:56:57.256Z",
+      "evidenceNote": "Imagery supports the documented local vertex deletion. Retained coordinates and their original border rights are unchanged. Review-image identity and its rights are embedded in the layout."
     }
   ]
 }

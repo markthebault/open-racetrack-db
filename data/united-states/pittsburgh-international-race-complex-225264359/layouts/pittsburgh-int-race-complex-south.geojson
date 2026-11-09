@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
   "bbox": [
-    -80.35137758992649,
-    40.8424874663988,
-    -80.34359125060755,
-    40.847681745703845
+    -80.3513781,
+    40.8424879,
+    -80.3436004,
+    40.8476804
   ],
   "metadata": {
     "schemaVersion": 1,
@@ -32,7 +32,1079 @@
     "notes": [
       "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1872.4 m. Difference from the supplied layout distance 12.6 m. Course configuration still requires visual review."
     ],
-    "model3d": {"schemaVersion":1,"startOffsetM":0,"referenceLengthM":1872.4,"elevationMethod":"periodic-monotone-cubic","elevation":[[0,361.667],[38.94592,359.792],[116.83776,359.871],[194.7296,363.653],[272.62144,365.918],[428.40512,360.349],[584.1888,357.133],[623.13472,358.376],[701.02656,359.375],[739.97248,360.28],[817.8643200000001,358.978],[856.81024,359.663],[934.70208,363.804],[1012.5939199999999,366.078],[1051.5398400000001,364.289],[1090.48576,363.463],[1207.3235200000001,357.488],[1285.2153600000001,349.156],[1324.1612800000003,344.222],[1363.1072,344.59],[1402.05312,347.624],[1479.94496,351.515],[1518.8908800000002,354.701],[1557.8368,357.201],[1635.7286400000003,364.045],[1674.67456,367.012],[1713.62048,366.31],[1791.51232,367.305],[1830.4582400000002,364.59],[1872.4,361.667]],"bankingDeg":0,"quality":{"stationing":"mapped-trace","elevation":"terrain-raster","curbs":"geometry-estimated","borders":"supplemental-unverified"},"preparation":{"version":2,"inputSha256":"13fce904e6a1d94660dfe3d310733e97643a3a0ba2f086064bf89e9aefa3f797","elevationToleranceM":0.5,"curbMethod":"curvature-intervals-v1"},"corners":[{"distanceM":0,"name":"Start / finish"},{"distanceM":298.09,"name":"Bend 1"},{"distanceM":456.87,"name":"Bend 2"},{"distanceM":618.64,"name":"Bend 3"},{"distanceM":738.47,"name":"Bend 4"},{"distanceM":1256.76,"name":"Bend 5"},{"distanceM":1418.53,"name":"Bend 6"},{"distanceM":1592.29,"name":"Bend 7"},{"distanceM":1679.17,"name":"Bend 8"}],"curbs":[{"startM":216.69,"endM":379.48,"side":"left","widthM":1,"heightM":0.08},{"startM":414.41,"endM":499.32,"side":"left","widthM":1,"heightM":0.08},{"startM":561.21,"endM":676.07,"side":"right","widthM":1,"heightM":0.08},{"startM":687.03,"endM":789.91,"side":"left","widthM":1,"heightM":0.08},{"startM":1142.4,"endM":1371.11,"side":"left","widthM":1,"heightM":0.08},{"startM":1358.1,"endM":1478.96,"side":"right","widthM":1,"heightM":0.08},{"startM":1546.84,"endM":1637.74,"side":"left","widthM":1,"heightM":0.08},{"startM":1636.72,"endM":1721.62,"side":"right","widthM":1,"heightM":0.08}],"curbStyle":{"colors":["#f2f2e7","#c73732"],"stripeLengthM":2},"imagery":{"url":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-8944912.3818%2C4988898.276%2C-8943569.7226%2C4990138.6624&bboxSR=3857&imageSR=3857&size=2048%2C1892&format=jpg&f=image","extent3857":[-8944912.3818,4988898.276,-8943569.7226,4990138.6624],"attribution":"Esri, Vantor, Earthstar Geographics, and the GIS User Community","termsUrl":"https://www.esri.com/en-us/legal/terms/web-site-service"},"terrain":{"schemaVersion":1,"trackId":"us-pittsburgh-international-race-complex-225264359","bounds":[-80.355874,40.8411492,-80.3402174,40.8539796],"columns":18,"rows":19,"heights":[368,374,380,380,378,375,375,372,364,356,348,335,332,331,321,310,308,309,368,376,367,379,374,375,373,369,364,357,354,341,349,351,338,333,332,334,366,365,372,372,371,371,368,367,361,356,352,352,356,355,352,355,355,348,359,360,366,371,381,366,361,360,358,358,360,362,363,363,358,360,360,346,357,359,361,380,372,366,363,361,360,362,366,369,370,370,371,369,363,356,355,356,371,372,371,365,365,364,363,366,367,369,370,369,371,367,364,356,360,367,364,369,367,363,365,366,368,368,367,366,366,366,366,364,361,353,358,360,363,358,361,362,368,371,371,369,366,365,364,364,362,357,343,339,359,355,362,358,358,363,371,373,370,367,363,364,363,363,362,360,349,327,358,354,358,356,359,365,366,366,365,366,361,360,360,361,360,361,354,333,358,347,356,352,358,362,362,360,362,365,361,357,358,359,362,362,355,337,350,346,341,344,354,358,358,357,360,365,362,357,355,358,361,361,352,334,358,358,347,334,351,352,351,358,362,368,366,357,352,357,361,358,347,321,363,361,354,338,334,340,354,360,362,365,367,361,349,352,352,337,321,311,362,359,352,338,329,327,348,356,357,363,368,363,349,340,333,322,323,322,359,352,344,346,345,327,334,346,355,363,366,364,354,344,337,333,327,324,357,357,358,358,356,335,319,336,349,356,359,363,359,353,345,342,344,344,367,366,365,363,358,349,324,317,333,344,354,357,355,357,354,354,357,359,372,369,364,359,350,337,329,325,313,327,340,346,344,350,353,358,363,361],"source":{"name":"Mapzen Terrain Tiles","url":"https://registry.opendata.aws/terrain-tiles/","zoom":12,"sampledAt":"2026-10-03T22:19:15.943Z","sampleSpacingM":79,"attribution":["Mapzen Terrain Tiles","Global elevation data courtesy of the U.S. Geological Survey and NOAA."]}},"sources":{"elevation":"https://registry.opendata.aws/terrain-tiles/","imagery":"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer","imageryCredit":"Esri, Vantor, Earthstar Geographics, and the GIS User Community","notes":"Road height is sampled from the existing approximately 79 m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the mapped trace, not an official length measurement. The saved start gate sets the simulation origin. Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included."}}
+    "model3d": {"schemaVersion":1,"pathMethod":"paired-border-midpoints","startOffsetM":0,"referenceLengthM":1872,"elevationMethod":"periodic-monotone-cubic","elevation":[[0,361.655],[38.937599999999996,359.741],[116.8128,359.811],[194.688,363.616],[272.5632,365.939],[428.3136,360.457],[584.064,357.123],[623.0015999999999,358.307],[700.8768,359.347],[739.8144,360.241],[817.6896,359.038],[856.6272,359.675],[934.5024,363.775],[1012.3775999999999,366.135],[1051.3152,364.37],[1090.2528,363.485],[1207.0656000000001,357.593],[1284.9408,349.328],[1323.8784,344.373],[1362.816,344.476],[1401.7536,347.504],[1479.6288,351.385],[1518.5664000000002,354.584],[1557.504,357.122],[1635.3792,363.996],[1674.3168,367.015],[1713.2544,366.31],[1791.1296,367.31],[1830.0672,364.593],[1872,361.655]],"bankingDeg":0,"quality":{"stationing":"border-midline","elevation":"terrain-raster","curbs":"geometry-estimated","borders":"supplemental-unverified"},"preparation":{"version":2,"inputSha256":"59305b8b951171ebf9b8749be2466c8e9e0602eaf1e7294098451ba5fea4930b","elevationToleranceM":0.5,"curbMethod":"curvature-intervals-v1"},"corners":[{"distanceM":0,"name":"Start / finish"},{"distanceM":283.05,"name":"Bend 1"},{"distanceM":456.76,"name":"Bend 2"},{"distanceM":614.01,"name":"Bend 3"},{"distanceM":741.32,"name":"Bend 4"},{"distanceM":1257.99,"name":"Bend 5"},{"distanceM":1412.24,"name":"Bend 6"},{"distanceM":1590.45,"name":"Bend 7"},{"distanceM":1678.8,"name":"Bend 8"}],"curbs":[{"startM":189.68,"endM":376.41,"side":"left","widthM":1,"heightM":0.08},{"startM":414.32,"endM":499.21,"side":"left","widthM":1,"heightM":0.08},{"startM":555.1,"endM":672.93,"side":"right","widthM":1,"heightM":0.08},{"startM":692.88,"endM":789.75,"side":"left","widthM":1,"heightM":0.08},{"startM":1145.15,"endM":1370.82,"side":"left","widthM":1,"heightM":0.08},{"startM":1357.81,"endM":1466.66,"side":"right","widthM":1,"heightM":0.08},{"startM":1546.51,"endM":1634.39,"side":"left","widthM":1,"heightM":0.08},{"startM":1636.36,"endM":1721.25,"side":"right","widthM":1,"heightM":0.08}],"curbStyle":{"colors":["#f2f2e7","#c73732"],"stripeLengthM":2},"imagery":{"url":"https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8945057.52137302%2C4989057.046650628%2C-8943549.545744326%2C4990709.772076685&bboxSR=3857&imageSR=3857&size=1521%2C1667&format=png&f=image&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D","extent3857":[-8945057.52137302,4989057.046650628,-8943549.545744326,4990709.772076685],"attribution":"USGS, USDA, The National Map: NAIP orthoimagery","termsUrl":"https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip"},"terrain":{"schemaVersion":1,"trackId":"us-pittsburgh-international-race-complex-225264359","bounds":[-80.355874,40.8411492,-80.3402174,40.8539796],"columns":18,"rows":19,"heights":[368,374,380,380,378,375,375,372,364,356,348,335,332,331,321,310,308,309,368,376,367,379,374,375,373,369,364,357,354,341,349,351,338,333,332,334,366,365,372,372,371,371,368,367,361,356,352,352,356,355,352,355,355,348,359,360,366,371,381,366,361,360,358,358,360,362,363,363,358,360,360,346,357,359,361,380,372,366,363,361,360,362,366,369,370,370,371,369,363,356,355,356,371,372,371,365,365,364,363,366,367,369,370,369,371,367,364,356,360,367,364,369,367,363,365,366,368,368,367,366,366,366,366,364,361,353,358,360,363,358,361,362,368,371,371,369,366,365,364,364,362,357,343,339,359,355,362,358,358,363,371,373,370,367,363,364,363,363,362,360,349,327,358,354,358,356,359,365,366,366,365,366,361,360,360,361,360,361,354,333,358,347,356,352,358,362,362,360,362,365,361,357,358,359,362,362,355,337,350,346,341,344,354,358,358,357,360,365,362,357,355,358,361,361,352,334,358,358,347,334,351,352,351,358,362,368,366,357,352,357,361,358,347,321,363,361,354,338,334,340,354,360,362,365,367,361,349,352,352,337,321,311,362,359,352,338,329,327,348,356,357,363,368,363,349,340,333,322,323,322,359,352,344,346,345,327,334,346,355,363,366,364,354,344,337,333,327,324,357,357,358,358,356,335,319,336,349,356,359,363,359,353,345,342,344,344,367,366,365,363,358,349,324,317,333,344,354,357,355,357,354,354,357,359,372,369,364,359,350,337,329,325,313,327,340,346,344,350,353,358,363,361],"source":{"name":"Mapzen Terrain Tiles","url":"https://registry.opendata.aws/terrain-tiles/","zoom":12,"sampledAt":"2026-10-03T22:19:15.943Z","sampleSpacingM":79,"attribution":["Mapzen Terrain Tiles","Global elevation data courtesy of the U.S. Geological Survey and NOAA."]}},"sources":{"elevation":"https://registry.opendata.aws/terrain-tiles/","imagery":"https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8945057.52137302%2C4989057.046650628%2C-8943549.545744326%2C4990709.772076685&bboxSR=3857&imageSR=3857&size=1521%2C1667&format=png&f=image&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D","imageryCredit":"USGS, USDA, The National Map: NAIP orthoimagery","notes":"Road height is sampled from the existing approximately 79 m terrain raster and compressed to a 0.5 m interpolation tolerance relative to those samples; this is not road-surface survey accuracy. Station distances use the midpoint of corresponding border stations, not an official length measurement. The saved start gate sets the simulation origin. Curbs and bend labels are geometry-based illustrations, not extracted from imagery or verified real curb locations; widths, heights and colours are assumed. Banking is unknown and assumed zero. Source border coordinates retain their separate feature-level licence; invalid cross-sections are interpolated. Imagery is an external display resource subject to provider terms; no image bytes are included."}},
+    "borderInference": {
+      "schemaVersion": 1,
+      "method": "image-measured-cross-sections-v1",
+      "status": "estimated",
+      "reviewedAt": null,
+      "traceSha256": "d5cbf0fae72f46e01e2fbf3215d3fea20568b818029dfbf0c3f0e9db5d2b067c",
+      "supersedes": {
+        "borderSha256": "6df1832ca449083e69dd472f8d239a71b9e11173d76380f80dd4be6626eb37a2",
+        "reason": "The original outer border has an inward spur across the paved south straight beside the paddock. Independent sparse observations of the pinned NAIP asphalt edges replace the complete pair; junction openings and intervals remain interpolated estimates."
+      },
+      "measurement": {
+        "method": "cross-section-image-anchors-v1",
+        "imageSha256": "ada3304d9dd36d33851d38b90ef94e1e665b4778aad66665ecdf584300e05bc2",
+        "patches": [
+          {
+            "edge": "inner",
+            "anchors": [
+              {
+                "station": 0,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3469389,
+                  40.8447231
+                ]
+              },
+              {
+                "station": 10,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3471964,
+                  40.8449198
+                ]
+              },
+              {
+                "station": 20,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3474358,
+                  40.8451192
+                ]
+              },
+              {
+                "station": 30,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3476752,
+                  40.8453187
+                ]
+              },
+              {
+                "station": 40,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3479147,
+                  40.8455181
+                ]
+              },
+              {
+                "station": 50,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3481497,
+                  40.8457206
+                ]
+              },
+              {
+                "station": 60,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3483935,
+                  40.8459171
+                ]
+              },
+              {
+                "station": 70,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3486373,
+                  40.8461135
+                ]
+              },
+              {
+                "station": 80,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3488723,
+                  40.846316
+                ]
+              },
+              {
+                "station": 90,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3491073,
+                  40.8465185
+                ]
+              },
+              {
+                "station": 100,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3493467,
+                  40.8467179
+                ]
+              },
+              {
+                "station": 110,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3495862,
+                  40.8469174
+                ]
+              },
+              {
+                "station": 120,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.34983,
+                  40.8471138
+                ]
+              },
+              {
+                "station": 130,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3500684,
+                  40.847305
+                ]
+              },
+              {
+                "station": 140,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3503402,
+                  40.8474745
+                ]
+              },
+              {
+                "station": 150,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3506351,
+                  40.8475734
+                ]
+              },
+              {
+                "station": 160,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3509442,
+                  40.8475391
+                ]
+              },
+              {
+                "station": 170,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3511714,
+                  40.8473735
+                ]
+              },
+              {
+                "station": 180,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3512292,
+                  40.8471477
+                ]
+              },
+              {
+                "station": 190,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3511587,
+                  40.8468842
+                ]
+              },
+              {
+                "station": 200,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3510824,
+                  40.8466216
+                ]
+              },
+              {
+                "station": 210,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3509473,
+                  40.8464036
+                ]
+              },
+              {
+                "station": 220,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3506809,
+                  40.8462869
+                ]
+              },
+              {
+                "station": 230,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3503385,
+                  40.8462239
+                ]
+              },
+              {
+                "station": 240,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3499911,
+                  40.8461646
+                ]
+              },
+              {
+                "station": 250,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3496396,
+                  40.846099
+                ]
+              },
+              {
+                "station": 260,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3493091,
+                  40.8459564
+                ]
+              },
+              {
+                "station": 270,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3491154,
+                  40.8457036
+                ]
+              },
+              {
+                "station": 280,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.349123,
+                  40.8454183
+                ]
+              },
+              {
+                "station": 290,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.34921,
+                  40.8451543
+                ]
+              },
+              {
+                "station": 300,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3492606,
+                  40.8449061
+                ]
+              },
+              {
+                "station": 310,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3491406,
+                  40.8446796
+                ]
+              },
+              {
+                "station": 320,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3488904,
+                  40.8445236
+                ]
+              },
+              {
+                "station": 330,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3485949,
+                  40.8443732
+                ]
+              },
+              {
+                "station": 340,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3482994,
+                  40.8442227
+                ]
+              },
+              {
+                "station": 350,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3479974,
+                  40.8440798
+                ]
+              },
+              {
+                "station": 360,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3477019,
+                  40.8439294
+                ]
+              },
+              {
+                "station": 370,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3474032,
+                  40.8437827
+                ]
+              },
+              {
+                "station": 380,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3471012,
+                  40.8436398
+                ]
+              },
+              {
+                "station": 390,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3468025,
+                  40.8434931
+                ]
+              },
+              {
+                "station": 400,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3465005,
+                  40.8433502
+                ]
+              },
+              {
+                "station": 410,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.346205,
+                  40.8431998
+                ]
+              },
+              {
+                "station": 420,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.345903,
+                  40.8430569
+                ]
+              },
+              {
+                "station": 430,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3456043,
+                  40.8429102
+                ]
+              },
+              {
+                "station": 440,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3453058,
+                  40.8427645
+                ]
+              },
+              {
+                "station": 450,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.345009,
+                  40.8426409
+                ]
+              },
+              {
+                "station": 460,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3446789,
+                  40.8425842
+                ]
+              },
+              {
+                "station": 470,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3443528,
+                  40.8426109
+                ]
+              },
+              {
+                "station": 480,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3440361,
+                  40.8427193
+                ]
+              },
+              {
+                "station": 490,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3437831,
+                  40.8428573
+                ]
+              },
+              {
+                "station": 500,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3437239,
+                  40.8430874
+                ]
+              },
+              {
+                "station": 510,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3438938,
+                  40.8432697
+                ]
+              },
+              {
+                "station": 520,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3442054,
+                  40.8433963
+                ]
+              },
+              {
+                "station": 530,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3445025,
+                  40.8435549
+                ]
+              },
+              {
+                "station": 540,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3447616,
+                  40.8437485
+                ]
+              },
+              {
+                "station": 550,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3449779,
+                  40.8439692
+                ]
+              },
+              {
+                "station": 560,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3451707,
+                  40.8441996
+                ]
+              },
+              {
+                "station": 570,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3453496,
+                  40.8444332
+                ]
+              },
+              {
+                "station": 580,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3455143,
+                  40.8446718
+                ]
+              },
+              {
+                "station": 590,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.345748,
+                  40.8448113
+                ]
+              },
+              {
+                "station": 600,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3460485,
+                  40.8447773
+                ]
+              },
+              {
+                "station": 610,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3463763,
+                  40.8446672
+                ]
+              },
+              {
+                "station": 620,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3467639,
+                  40.8446537
+                ]
+              },
+              {
+                "station": 625,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3469389,
+                  40.8447231
+                ]
+              }
+            ]
+          },
+          {
+            "edge": "outer",
+            "anchors": [
+              {
+                "station": 0,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3468621,
+                  40.8447975
+                ]
+              },
+              {
+                "station": 10,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.347104,
+                  40.8449832
+                ]
+              },
+              {
+                "station": 20,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3473434,
+                  40.8451827
+                ]
+              },
+              {
+                "station": 30,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.347574,
+                  40.8453882
+                ]
+              },
+              {
+                "station": 40,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.347809,
+                  40.8455907
+                ]
+              },
+              {
+                "station": 50,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3480529,
+                  40.8457871
+                ]
+              },
+              {
+                "station": 60,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3482923,
+                  40.8459866
+                ]
+              },
+              {
+                "station": 70,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3485317,
+                  40.846186
+                ]
+              },
+              {
+                "station": 80,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3487755,
+                  40.8463825
+                ]
+              },
+              {
+                "station": 90,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3490149,
+                  40.8465819
+                ]
+              },
+              {
+                "station": 100,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3492587,
+                  40.8467784
+                ]
+              },
+              {
+                "station": 110,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3494982,
+                  40.8469778
+                ]
+              },
+              {
+                "station": 120,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3497376,
+                  40.8471773
+                ]
+              },
+              {
+                "station": 130,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3499917,
+                  40.8473737
+                ]
+              },
+              {
+                "station": 140,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3502553,
+                  40.8475613
+                ]
+              },
+              {
+                "station": 150,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3506155,
+                  40.8476712
+                ]
+              },
+              {
+                "station": 160,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3510103,
+                  40.8476348
+                ]
+              },
+              {
+                "station": 170,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3513166,
+                  40.847435
+                ]
+              },
+              {
+                "station": 180,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3513519,
+                  40.8471302
+                ]
+              },
+              {
+                "station": 190,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3512869,
+                  40.8468646
+                ]
+              },
+              {
+                "station": 200,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3512219,
+                  40.846599
+                ]
+              },
+              {
+                "station": 210,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3510515,
+                  40.8463366
+                ]
+              },
+              {
+                "station": 220,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.350716,
+                  40.8461916
+                ]
+              },
+              {
+                "station": 230,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3503673,
+                  40.8461274
+                ]
+              },
+              {
+                "station": 240,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3500212,
+                  40.8460637
+                ]
+              },
+              {
+                "station": 250,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3496811,
+                  40.8460004
+                ]
+              },
+              {
+                "station": 260,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3494001,
+                  40.8458792
+                ]
+              },
+              {
+                "station": 270,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3492497,
+                  40.8456842
+                ]
+              },
+              {
+                "station": 280,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3492629,
+                  40.8454393
+                ]
+              },
+              {
+                "station": 290,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3493308,
+                  40.8451782
+                ]
+              },
+              {
+                "station": 300,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3493732,
+                  40.8448993
+                ]
+              },
+              {
+                "station": 310,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3492454,
+                  40.8446282
+                ]
+              },
+              {
+                "station": 320,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3489649,
+                  40.8444368
+                ]
+              },
+              {
+                "station": 330,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3486661,
+                  40.8442902
+                ]
+              },
+              {
+                "station": 340,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3483674,
+                  40.8441435
+                ]
+              },
+              {
+                "station": 350,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3480686,
+                  40.8439968
+                ]
+              },
+              {
+                "station": 360,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3477667,
+                  40.8438539
+                ]
+              },
+              {
+                "station": 370,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3474679,
+                  40.8437073
+                ]
+              },
+              {
+                "station": 380,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3471659,
+                  40.8435644
+                ]
+              },
+              {
+                "station": 390,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3468672,
+                  40.8434177
+                ]
+              },
+              {
+                "station": 400,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3465684,
+                  40.843271
+                ]
+              },
+              {
+                "station": 410,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3462729,
+                  40.8431206
+                ]
+              },
+              {
+                "station": 420,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3459742,
+                  40.8429739
+                ]
+              },
+              {
+                "station": 430,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3456787,
+                  40.8428235
+                ]
+              },
+              {
+                "station": 440,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3453756,
+                  40.8426808
+                ]
+              },
+              {
+                "station": 450,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3450541,
+                  40.8425433
+                ]
+              },
+              {
+                "station": 460,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3446902,
+                  40.8424902
+                ]
+              },
+              {
+                "station": 470,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3443163,
+                  40.8425253
+                ]
+              },
+              {
+                "station": 480,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3439822,
+                  40.8426341
+                ]
+              },
+              {
+                "station": 490,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3436752,
+                  40.8428098
+                ]
+              },
+              {
+                "station": 500,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3436061,
+                  40.8430996
+                ]
+              },
+              {
+                "station": 510,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3438246,
+                  40.8433483
+                ]
+              },
+              {
+                "station": 520,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3441347,
+                  40.8434795
+                ]
+              },
+              {
+                "station": 530,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3444177,
+                  40.8436302
+                ]
+              },
+              {
+                "station": 540,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3446637,
+                  40.8438141
+                ]
+              },
+              {
+                "station": 550,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3448701,
+                  40.8440251
+                ]
+              },
+              {
+                "station": 560,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3450575,
+                  40.8442492
+                ]
+              },
+              {
+                "station": 570,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3452357,
+                  40.8444818
+                ]
+              },
+              {
+                "station": 580,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3454007,
+                  40.8447207
+                ]
+              },
+              {
+                "station": 590,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3457167,
+                  40.844898
+                ]
+              },
+              {
+                "station": 600,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.346109,
+                  40.84488
+                ]
+              },
+              {
+                "station": 610,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3464293,
+                  40.8447674
+                ]
+              },
+              {
+                "station": 620,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3467265,
+                  40.8447438
+                ]
+              },
+              {
+                "station": 625,
+                "kind": "image-measured",
+                "coordinate": [
+                  -80.3468621,
+                  40.8447975
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "Pittsburgh South: 126 sparse road-edge observations and two repeated closure anchors, independently located on raw pinned NAIP cross-sections at roughly 30 m spacing. Offsets read to 0.5 m; this is not surveyed accuracy. Limits follow visible asphalt transitions and exclude curbs; unmeasured intervals and access openings are interpolated estimates. Source route identity remains draft. No automatic border proposal coordinates were used.",
+        "resultSha256": "ff700f01a7323c87bee4aa90b65728d802dc7fb53a8c5f393a39f91b0b7869d4"
+      },
+      "imagery": {
+        "sourceId": "usgs-naip-border-imagery",
+        "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8945057.288868962%2C4989057.046650628%2C-8943549.778248385%2C4990709.772076685&bboxSR=3857&imageSR=3857&size=1521%2C1667&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+        "reuseEvidenceUrl": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip",
+        "license": "public-domain",
+        "attribution": "USGS, USDA, The National Map: NAIP orthoimagery",
+        "retrievedAt": "2026-11-06T00:18:25.640Z",
+        "sha256": "ada3304d9dd36d33851d38b90ef94e1e665b4778aad66665ecdf584300e05bc2",
+        "width": 1521,
+        "height": 1667,
+        "extent3857": [
+          -8945057.52137302,
+          4989057.046650628,
+          -8943549.545744326,
+          4990709.772076685
+        ],
+        "groundPixelSizeM": 0.75
+      },
+      "note": "Road-border estimates reconstructed directly from complete, sparse image measurements on the existing trace cross-sections. All intervals interpolate between image anchors; they are not automatic detections or a continuous edge survey. Every saved edge station and anchor requires pinned-image coverage during authoring. Isolated missing pixels inside the road are not filled or used as boundary evidence. Imagery resolution is not survey accuracy. These borders have not been formally verified."
+    }
   },
   "features": [
     {
@@ -382,7 +1454,8 @@
         ]
       }
     },
-    {"type":"Feature","id":"inner","properties":{"role":"inner","sourceIds":[],"license":"LicenseRef-Track-Borders"},"geometry":{"type":"LineString","coordinates":[[-80.35006435195784,40.84617626060526],[-80.35002719510801,40.84616973357079],[-80.34999970409457,40.8461654046086],[-80.34996125406799,40.84615897768987],[-80.34993871146814,40.846154688223706],[-80.34991502855834,40.84615077714168],[-80.34987319830242,40.84614303405715],[-80.34983331945861,40.84613707110454],[-80.34980759750218,40.84613264241872],[-80.34976232289995,40.84612498077711],[-80.34972349521718,40.846117996755396],[-80.34968907823219,40.84611106701417],[-80.34963997794246,40.84610286534581],[-80.34961233863561,40.846096774515686],[-80.34957835830825,40.84608956249352],[-80.34953882497312,40.846078497318636],[-80.34951056310885,40.84606962299569],[-80.34949082766148,40.84606136096617],[-80.34946319736625,40.846049298858716],[-80.34944325576875,40.84604035715373],[-80.34942037069005,40.846028163393704],[-80.34940988445938,40.84602311022839],[-80.34938543195736,40.84600964303104],[-80.34935481095414,40.84599165876655],[-80.34933327673579,40.845977133729654],[-80.34931912445244,40.84596696580399],[-80.34930559631964,40.84595689413869],[-80.34928807786922,40.845942951899005],[-80.3492759142065,40.8459321267554],[-80.34925902620363,40.84591717063376],[-80.34924430556251,40.84590244628177],[-80.34923296674162,40.84589085468996],[-80.34921785989786,40.84587362137102],[-80.34920666619449,40.845858468875534],[-80.34919812495652,40.84584905203858],[-80.34919120620812,40.8458397333125],[-80.34918329782931,40.84582859262609],[-80.34917540038478,40.845815677689],[-80.34916358751377,40.845797799442224],[-80.34915612493734,40.84578662742528],[-80.34914753373153,40.84577111938335],[-80.34913908823879,40.845755482167206],[-80.34913179568814,40.845738035294616],[-80.34912630004894,40.845719819889965],[-80.34912050641064,40.8457069015943],[-80.34911642845717,40.84569082294033],[-80.34911002502669,40.84566513434438],[-80.34910668065801,40.845650670489576],[-80.34910432530971,40.84562686912362],[-80.3491018315329,40.845607718769884],[-80.34909948897977,40.84558386393723],[-80.34909948753136,40.845568421100886],[-80.3491006045276,40.84554550221689],[-80.34910132813008,40.84552658569647],[-80.34910378486394,40.84550507502724],[-80.34910802559025,40.845478563669126],[-80.34911432383882,40.84545173491992],[-80.34912277590497,40.84542620063117],[-80.34912982336522,40.845404838810225],[-80.34914040933504,40.84537350821461],[-80.3491555960764,40.84532844566801],[-80.34916719741106,40.84529435015397],[-80.34918275771383,40.845255088207274],[-80.3491929163053,40.84522640424493],[-80.34920638725664,40.845192511540404],[-80.34921462799699,40.8451706800875],[-80.34922180112899,40.84514995455256],[-80.34922732174422,40.84513439634506],[-80.34923626203935,40.845113919339646],[-80.34924248518746,40.845096553901676],[-80.34925225182158,40.84506879157998],[-80.3492561015024,40.84505708484297],[-80.34926159901369,40.845036289176306],[-80.34926449819703,40.845022153523814],[-80.34926671481767,40.84500320997108],[-80.34926848817274,40.84498390298109],[-80.34926910634421,40.84496627379987],[-80.34926996575648,40.844955878324065],[-80.349268972459,40.84493417754052],[-80.34926738475889,40.84491842525761],[-80.34926644348319,40.8449058527019],[-80.34926269539821,40.84488320767984],[-80.34925942166234,40.84487248347497],[-80.34925756284346,40.84486540199278],[-80.34925412355048,40.84485402165461],[-80.3492521624153,40.844846382359854],[-80.34924849010986,40.84483513730922],[-80.34923866771395,40.84481122199945],[-80.34922434775476,40.844782316437914],[-80.34920719244457,40.84475461834602],[-80.34919769820767,40.84473859122034],[-80.34917323288462,40.844706922522214],[-80.34915161099411,40.84468401147716],[-80.34913755714494,40.84467053714498],[-80.34911073789739,40.844646724243454],[-80.34907693030796,40.84462127950199],[-80.3490495723817,40.844603096097046],[-80.3490274274728,40.84458995095475],[-80.3490090809169,40.84458054464565],[-80.34897648260791,40.8445624521948],[-80.34895130169176,40.84454848132218],[-80.34892344772808,40.84453506816694],[-80.34885001744445,40.8444975726619],[-80.34880681401138,40.84447826636533],[-80.34874030526873,40.84444625464827],[-80.34868271646056,40.84442027011199],[-80.34862158750076,40.844390365780214],[-80.34858242327353,40.84436995742977],[-80.34852912045748,40.844343176984275],[-80.34850901591078,40.84433291635066],[-80.34845377907266,40.84430525665721],[-80.34835353662417,40.84425649030407],[-80.34832807379995,40.844243835651646],[-80.34829857623025,40.84422906324127],[-80.34828565546091,40.84422302218814],[-80.34822727562498,40.84419490688535],[-80.3481738110743,40.844169476109826],[-80.34814760384518,40.84415610152621],[-80.34811737218922,40.844141484420916],[-80.34807780341337,40.844123079593636],[-80.34806521981943,40.84411665267851],[-80.34801725175456,40.84409262311425],[-80.3479707116445,40.844069192418004],[-80.34792836942933,40.84405014271754],[-80.34788329293013,40.84402737462927],[-80.3478446537344,40.84400997317189],[-80.34782866819135,40.84400196674772],[-80.34779376988402,40.84398431599092],[-80.34777301639232,40.84397351118348],[-80.34773336835396,40.84395395065129],[-80.34772563505909,40.843950110303446],[-80.34768110843531,40.84392888931134],[-80.34766751234925,40.84392235781683],[-80.34760457111437,40.84389159320729],[-80.34756634782867,40.843872676256154],[-80.34754638888907,40.8438631864611],[-80.34752041316685,40.84385051715565],[-80.3474932126374,40.84383658127527],[-80.34745459784047,40.843818102670134],[-80.34743238119117,40.84380782208493],[-80.34738834076697,40.84378712415215],[-80.34734894230638,40.84376507580333],[-80.34731505578596,40.84374866855693],[-80.34728896704294,40.8437355069187],[-80.34725139852388,40.84371808677156],[-80.347211732174,40.84369971977057],[-80.34717097405816,40.84368014067683],[-80.34711118974126,40.843651368544855],[-80.34708461587353,40.843638228833186],[-80.34704611313639,40.843619747319885],[-80.34700466805752,40.843598921000286],[-80.34699281821575,40.84359326602507],[-80.34694542753039,40.84356882994883],[-80.34690681204152,40.843549666845334],[-80.34687277672617,40.8435334412105],[-80.34681865376875,40.84350799797206],[-80.34678691864116,40.843492706504804],[-80.34673514274421,40.84346697549927],[-80.34671903429366,40.84345954702596],[-80.34667353708483,40.84343597003069],[-80.34665650770658,40.843427750948365],[-80.34660384061903,40.8434028305178],[-80.34656997551794,40.84338586414124],[-80.34653497818128,40.843368594582415],[-80.34650128845861,40.84335207641873],[-80.34646790922076,40.84333693788634],[-80.34644459459037,40.84332562316274],[-80.34638721194298,40.84329784395691],[-80.34633907873187,40.84327419876629],[-80.34631721261971,40.8432638506894],[-80.34629222565704,40.843252209484724],[-80.34624515638119,40.843229249267566],[-80.34622511663252,40.843219712998966],[-80.34621214391815,40.84321313624663],[-80.34617649979435,40.84319484731737],[-80.3461468037324,40.84318047705233],[-80.34612464664224,40.843168995298946],[-80.34612247128234,40.84316783792903],[-80.34611970036457,40.84316636370085],[-80.34609141699477,40.84315294257343],[-80.34607434781095,40.843144585234704],[-80.34602650414753,40.84312143576106],[-80.34601209548516,40.84311435983143],[-80.34598614703421,40.843101377664226],[-80.34597849335472,40.84309744639824],[-80.34595009473409,40.84308347267357],[-80.34591831739147,40.8430685182038],[-80.34588466610678,40.84305127871958],[-80.34587876127384,40.843048436306695],[-80.34587273860417,40.843045537170674],[-80.34583246810078,40.84302586597083],[-80.34582735448333,40.84302346369468],[-80.34578753093008,40.84300408310761],[-80.3457616876026,40.84299182355936],[-80.34573142006239,40.84297649774905],[-80.34568707013092,40.84295536883282],[-80.34568268981235,40.842953226043704],[-80.34567400350691,40.8429489038292],[-80.3456326951362,40.84292858697507],[-80.34562197222303,40.84292341679543],[-80.34558436041864,40.84290484448411],[-80.34552695003724,40.84287630286973],[-80.34551242976065,40.842868993331344],[-80.34545611550031,40.84284151512202],[-80.34543231406059,40.842829653708314],[-80.34541789792249,40.842822754354245],[-80.34538430414626,40.842805598804375],[-80.34535461127162,40.842791737561654],[-80.34532804759287,40.842779038628635],[-80.34529628238437,40.84276203684871],[-80.34527080468244,40.842749224320194],[-80.34525123426911,40.84274002740148],[-80.3452149870514,40.84272300006533],[-80.34518788862106,40.84270934676224],[-80.3451473766133,40.842690379832206],[-80.3451226973735,40.84267949679248],[-80.34508788476049,40.84266743843517],[-80.3450549013885,40.84265567424835],[-80.34501972025322,40.842644425592205],[-80.34499209709114,40.84263550239342],[-80.34496552018362,40.84262818803913],[-80.34493914670328,40.84262244273778],[-80.34490255016907,40.84261504837994],[-80.34487872174893,40.842609871845056],[-80.34484606682996,40.842605429245154],[-80.34482349687255,40.84260154917972],[-80.34480210234939,40.84259826019737],[-80.34478268317012,40.8425963398109],[-80.34476132685243,40.84259494903509],[-80.34473773206194,40.84259400326698],[-80.34472387357224,40.84259274781591],[-80.34470646770133,40.84259209900559],[-80.3446802464583,40.84259224868177],[-80.34465425126585,40.84259217426387],[-80.34461524817262,40.84259176939325],[-80.34457779273721,40.842593300026245],[-80.3445177709918,40.84259717996976],[-80.34448503894819,40.84260021202641],[-80.34445494714035,40.84260402393381],[-80.34441390469188,40.842610312900845],[-80.3443691092635,40.84261979601915],[-80.34433342353462,40.84262988482713],[-80.34429998974603,40.84264021177038],[-80.34427380427162,40.842648536105536],[-80.34424242576038,40.84265778476665],[-80.34421089735605,40.842666391804634],[-80.34418854045109,40.84267403925039],[-80.34415876915128,40.842684243760324],[-80.34413376175779,40.842692175311775],[-80.34411289156314,40.84269860731694],[-80.34409787642154,40.84270330993476],[-80.3440727097285,40.84271305574707],[-80.34406025232465,40.842717572852195],[-80.34402660873815,40.84273023571704],[-80.3440068584526,40.84273733170978],[-80.34398978190987,40.84274321716111],[-80.34396823557985,40.84275220406679],[-80.34395183066772,40.84275884163956],[-80.3439396111244,40.84276358796173],[-80.34391875588312,40.84277233721242],[-80.34389551613208,40.842782900978236],[-80.34387484256587,40.84279318673572],[-80.34385816755878,40.84280220803445],[-80.34383310007779,40.842817914970794],[-80.34381710106507,40.84283129374164],[-80.34379838571805,40.84284828696269],[-80.34378736592026,40.84286220046668],[-80.3437769233389,40.84287959755994],[-80.34376368893322,40.84289754679202],[-80.34375354175457,40.84291041136993],[-80.34374610366675,40.842928699875124],[-80.343734686593,40.842953334374194],[-80.34372755304983,40.8429753737972],[-80.34372488486596,40.84299127093471],[-80.34372194821074,40.84301414415372],[-80.3437223413298,40.84304172849213],[-80.34372298868611,40.843052984697124],[-80.34372558586465,40.84306976709666],[-80.3437288164091,40.84308750333969],[-80.34373395174515,40.84310179175166],[-80.34374011559483,40.843119186987145],[-80.34374869422159,40.843137234677144],[-80.34376160118798,40.84315705542643],[-80.34377000828466,40.8431676088067],[-80.34377734615494,40.84317981229349],[-80.34379853957529,40.8432027506904],[-80.34381248644704,40.84321465730378],[-80.3438295756487,40.84322812200339],[-80.34385923140448,40.843249919909496],[-80.34388380097622,40.84326596652136],[-80.3439152479027,40.8432823662153],[-80.34394458532195,40.84329252010007],[-80.34396661288072,40.84329793488927],[-80.3439914151888,40.84330530504558],[-80.34403358139434,40.84332260010754],[-80.34407736762203,40.84333964648788],[-80.34410046356281,40.84334808126798],[-80.34412682460862,40.84335917513553],[-80.34416097156942,40.843373530018],[-80.34419428433993,40.84338947306644],[-80.3442139371084,40.84339869070412],[-80.34424947850351,40.8434152178398],[-80.34427427919368,40.84342746602556],[-80.34429387602216,40.843437694724294],[-80.34432941036006,40.84345549591486],[-80.34435420364032,40.84346884243116],[-80.3443789714646,40.84348143404778],[-80.34440668380198,40.843499304889725],[-80.34444541768667,40.843521986665],[-80.3444710827771,40.84353662986445],[-80.34448753275109,40.843546229709816],[-80.34451834894439,40.84356892207297],[-80.34455016383475,40.84358736570368],[-80.34458226655354,40.843608505408724],[-80.34460389133604,40.84362603335704],[-80.34462812923519,40.84364505425848],[-80.34466017352898,40.8436700788696],[-80.34467912009397,40.84368585555857],[-80.34469856590505,40.84370160801929],[-80.34471721087435,40.843716659041284],[-80.34473788654181,40.84373562876296],[-80.34476064804976,40.84375549391689],[-80.34478810611809,40.843779510339736],[-80.34480605013087,40.84379591329133],[-80.34483176568416,40.8438204422731],[-80.34485236843928,40.843839836041305],[-80.34487810927396,40.84386575342502],[-80.3449014878836,40.843888824218496],[-80.34493116499603,40.84392177184255],[-80.3449488315614,40.8439411387837],[-80.34497482080754,40.84396644826862],[-80.34500065129394,40.84399959551033],[-80.34503135624145,40.84403504261589],[-80.34505784671046,40.84406622793398],[-80.3450767383435,40.844092635679594],[-80.34511034565594,40.84413004530797],[-80.34514221284088,40.84416428299752],[-80.34516332692614,40.8441913309699],[-80.34519029819754,40.844224108755846],[-80.34521813896359,40.84425691328309],[-80.34524360982688,40.844288726429426],[-80.34526400200052,40.84432099095903],[-80.34528617410571,40.84434796682609],[-80.34530768000783,40.844377927107764],[-80.34533110822511,40.84440972987912],[-80.3453555435849,40.84444356027773],[-80.34539524370321,40.84449131401627],[-80.34543102644987,40.84453712781904],[-80.34545839371361,40.8445752052314],[-80.34547471085499,40.84459668007317],[-80.34549915565917,40.84463103229324],[-80.34552318131396,40.844665612623224],[-80.345547029273,40.844695774158915],[-80.34555344640026,40.844704626632904],[-80.34557862505683,40.844729012973254],[-80.34559990211936,40.844748178920206],[-80.34562068621193,40.84476316738846],[-80.34564728456645,40.84477914738778],[-80.34567485105647,40.84479262659447],[-80.34570138379553,40.84480357331099],[-80.34572265960837,40.84481103487245],[-80.34575041236114,40.844817976965345],[-80.34578965997119,40.84482562810193],[-80.34582123794725,40.84482898436227],[-80.34585313385631,40.8448301976412],[-80.34587495323592,40.844830321010285],[-80.34590336824839,40.84482776998572],[-80.34591184819186,40.84482667737742],[-80.34593697608248,40.84482110609155],[-80.34596051826128,40.84481617243624],[-80.34597924865915,40.84481240261474],[-80.34599820264346,40.84480741265786],[-80.34601754595522,40.84480249130732],[-80.34604193832067,40.84479603234079],[-80.34606183135946,40.84478870515817],[-80.3460891789785,40.84477959994466],[-80.34610103384597,40.84477489338775],[-80.3461260181035,40.844766850937134],[-80.34615541201588,40.844756517303125],[-80.34618009944406,40.844747830122984],[-80.34621918679328,40.844734135091244],[-80.3462510912197,40.84472329824672],[-80.34627785109276,40.84471306598026],[-80.34629588144652,40.844706800954995],[-80.3463321755312,40.844694192434204],[-80.34636185251141,40.84468322537807],[-80.34639220181361,40.84467318608314],[-80.3464210589582,40.844663308814056],[-80.34645566864758,40.84465610979102],[-80.34648691549378,40.84464979277391],[-80.34652653306992,40.84464250575681],[-80.34657269982571,40.84463793072891],[-80.34660903289475,40.84463556392341],[-80.34664884035523,40.84463620083497],[-80.3466840326451,40.844638444453714],[-80.34671651945729,40.84464213609724],[-80.34674203540031,40.84464663295162],[-80.34676979422098,40.84465277223047],[-80.34679770775593,40.84466016954982],[-80.34683097933006,40.84467156829746],[-80.3468652487302,40.84468528570161],[-80.34688699427114,40.84469382825859],[-80.34691093358558,40.844704387945704],[-80.34693499927216,40.84471635127696],[-80.34695841442954,40.84473156565908],[-80.34697999571617,40.84474261239152],[-80.34701243479753,40.84476640274404],[-80.34704736640296,40.84479793169806],[-80.34709483638177,40.84483688937497],[-80.34711958629539,40.84485801306596],[-80.34715252182346,40.84488466508541],[-80.34719738253455,40.84492146088421],[-80.34727961025607,40.84499008249841],[-80.34732841905662,40.845029206683],[-80.34736057706058,40.84505629742606],[-80.34739860058927,40.84508995041509],[-80.34745277937866,40.8451337919818],[-80.34749702573568,40.845169959658776],[-80.34752074333359,40.845189674671175],[-80.34756795314347,40.845227874976715],[-80.3476256046406,40.84527397004083],[-80.34765147301047,40.845297343066484],[-80.34768145596952,40.845321811441295],[-80.34770688093582,40.84534297028765],[-80.34773464697938,40.845366862123115],[-80.34777297275694,40.84539944898188],[-80.34778897251988,40.845412313221615],[-80.3478244164218,40.84544350975682],[-80.34788849540253,40.84549736002842],[-80.34793958814153,40.845541764818584],[-80.34797727289708,40.84557374881001],[-80.34801784467614,40.84560926997789],[-80.34805660251025,40.84564184246177],[-80.34808388499431,40.84566295507735],[-80.34811074368132,40.84568648932059],[-80.34814675325003,40.845719876578855],[-80.3481768124265,40.84574437666163],[-80.34820416899119,40.84576615325842],[-80.34823276148475,40.845790719030425],[-80.3482528628649,40.845806836023876],[-80.34828067981371,40.84583081299153],[-80.34831821962368,40.84586176281008],[-80.34833944159793,40.845878794688296],[-80.34838347694657,40.845917029449744],[-80.34843438842559,40.845960033846396],[-80.3484812019975,40.84599895397265],[-80.34852403849774,40.84603485385978],[-80.34857530155496,40.84607692439124],[-80.34860340506427,40.846098065633626],[-80.3486465833543,40.846131807997985],[-80.34870821008701,40.84618119302267],[-80.34875691732262,40.846225125495465],[-80.34880572184258,40.846265744481165],[-80.34884707064701,40.84629914217638],[-80.34886988161264,40.84631835311439],[-80.34888367175316,40.84633012099959],[-80.34892785590237,40.84636886023597],[-80.34896386562193,40.84639999930658],[-80.34902184595089,40.846448159331615],[-80.34903975749289,40.846464155498346],[-80.34907705298667,40.846498488584864],[-80.34910263448934,40.84652242809411],[-80.34913168720263,40.84654466569945],[-80.34917078851726,40.84657680499311],[-80.34925111255082,40.84664482527295],[-80.3493432345113,40.84672094472795],[-80.34942599529916,40.84678862100116],[-80.34947923953841,40.846831883002274],[-80.34953673623059,40.84687827995292],[-80.34960931452952,40.846941425251394],[-80.34968647771531,40.84700686881205],[-80.34976258188132,40.84706778050087],[-80.34981658153214,40.84711567964367],[-80.3498582892243,40.84714850280806],[-80.34992292796085,40.84720439142011],[-80.34996449954689,40.84723872822862],[-80.35000854259437,40.847271674132784],[-80.35004823048926,40.847300364629206],[-80.35010153052708,40.847337576636455],[-80.35014677252691,40.8473650601581],[-80.35017861325841,40.84738496775478],[-80.35020865837052,40.84740249997069],[-80.35024390961048,40.84742322818254],[-80.35028456917576,40.84744505283092],[-80.35031808149057,40.84746417155007],[-80.3503496113392,40.84748152373951],[-80.35038263414039,40.84750014915007],[-80.35041392667269,40.847517704816504],[-80.35043285900872,40.84752794976325],[-80.35045404922577,40.84753743245387],[-80.35046830023798,40.847543965064155],[-80.35049601145448,40.847554332096834],[-80.35051379964183,40.84756052654879],[-80.3505326601775,40.84756661246434],[-80.3505587009167,40.84757218678748],[-80.35058570933971,40.84757661836606],[-80.35061113572296,40.84758031191612],[-80.35063581226659,40.847584695926066],[-80.35065617939553,40.84758557164874],[-80.35067441618334,40.84758602711196],[-80.35070005800902,40.847586336228645],[-80.35071987252195,40.84758676575875],[-80.35074086307931,40.84758626082126],[-80.3507636385195,40.84758531418607],[-80.35078646637045,40.84758390034509],[-80.3507956453336,40.84758247887184],[-80.35080901204562,40.847580571690955],[-80.35081696658231,40.84757922971038],[-80.35082930535538,40.847577292568246],[-80.3508462573603,40.84757307672263],[-80.35086349652656,40.84756950533268],[-80.35090256630025,40.847560036187566],[-80.35091635120405,40.84755581143655],[-80.35093935854833,40.847548314580905],[-80.35096296452095,40.84753898646064],[-80.35098205333806,40.84753200229989],[-80.35100512240851,40.84752076739726],[-80.3510255211701,40.84750958225515],[-80.35105669718865,40.84749097913016],[-80.3510791061076,40.84747521621127],[-80.35109092362941,40.84746551416994],[-80.35110478750633,40.84745361943068],[-80.3511185952013,40.847442379677226],[-80.35113211446118,40.8474293438897],[-80.35114506103082,40.847415937699836],[-80.35116285083723,40.84739381501634],[-80.35117346415163,40.84737967348006],[-80.35118714056364,40.84735830784028],[-80.35119957056035,40.84733548629931],[-80.35120774986815,40.847317538338736],[-80.35121770175421,40.84729477227752],[-80.3512245386338,40.847273144185834],[-80.35122981090095,40.84725282381671],[-80.35123414856152,40.84723454429596],[-80.35123714182401,40.84722421227479],[-80.35123862800182,40.84720452287216],[-80.35123872636902,40.84719373323905],[-80.35123728057873,40.847182625519764],[-80.35123513784613,40.847169024295575],[-80.35123195301385,40.847155048002094],[-80.35122724323023,40.84713561339108],[-80.35122233980198,40.84712035044001],[-80.35121700683952,40.84709950963507],[-80.35121378130665,40.84708883492181],[-80.35120830180436,40.84707213117938],[-80.35120219276612,40.84705064181979],[-80.35119235347575,40.84702033973854],[-80.35118310635005,40.84698585210909],[-80.35117596481743,40.846960647314404],[-80.35117167728026,40.84694696354545],[-80.35116450507039,40.84691953672045],[-80.35115292381708,40.84688237040228],[-80.35114520776197,40.8468548852155],[-80.35113633892833,40.84682721372992],[-80.35112594473271,40.84678709754127],[-80.35111544620437,40.846753789305],[-80.35110807803827,40.84672373642542],[-80.35110162339964,40.846698459620754],[-80.35109387679248,40.84666010693736],[-80.35108622608436,40.84662696203272],[-80.35107770840084,40.84660174297862],[-80.35107211532343,40.84657652183185],[-80.3510603143426,40.846543959388676],[-80.35105786931648,40.84653600434256],[-80.35105277711727,40.84652230908306],[-80.35104780787135,40.846512356736056],[-80.35104302439281,40.8465040683697],[-80.3510354066089,40.84649215516049],[-80.35102534700812,40.84647808178031],[-80.35101544921099,40.8464649247659],[-80.35100141634864,40.84644760149161],[-80.35099149574788,40.84643584216079],[-80.35097196624983,40.84641649988392],[-80.35096053183376,40.84640690003524],[-80.35093852378098,40.84638774737617],[-80.35092267619328,40.84637636510427],[-80.35089837438365,40.84636119409363],[-80.35086967894783,40.84634721140855],[-80.35085405322252,40.84634175213232],[-80.3508383168929,40.84633353746029],[-80.35081549171029,40.84632470873357],[-80.35080060151452,40.84632008503991],[-80.35076598605026,40.846306743491574],[-80.35073808114133,40.84629823759655],[-80.35071110200447,40.84629152731758],[-80.35067113446551,40.8462828920585],[-80.35064441586168,40.84627763349082],[-80.35061976824674,40.846273313101115],[-80.35058903602209,40.8462670636071],[-80.35053414658937,40.84625751678378],[-80.35050406494186,40.84625287732108],[-80.3504900569421,40.84625082809335],[-80.35045077587942,40.8462439704765],[-80.350391920183,40.846234418924965],[-80.35037245042363,40.84623093078271],[-80.35031097331124,40.846220238406275],[-80.35027853039325,40.846214568626195],[-80.35023488022208,40.846206917750344],[-80.35019143361043,40.84619917390925],[-80.35017559195728,40.84619614395113],[-80.35010952937523,40.84618426750718],[-80.35010829043365,40.84618406394081],[-80.35006501326822,40.84617636530362],[-80.35006435195784,40.84617626060526]]}},
-    {"type":"Feature","id":"outer","properties":{"role":"outer","sourceIds":[],"license":"LicenseRef-Track-Borders"},"geometry":{"type":"LineString","coordinates":[[-80.3488424772213,40.846297468270514],[-80.34874759370301,40.84636582643633],[-80.34872698177601,40.846348066277024],[-80.34870429208638,40.84632922213949],[-80.3486880622566,40.84631578772397],[-80.34867184563096,40.8463013733211],[-80.34865461427964,40.84628714263881],[-80.34863484627974,40.84627087741118],[-80.34861008394958,40.846248825987],[-80.3485881973852,40.8462301964425],[-80.34856829069179,40.84621291639731],[-80.34855122097083,40.84619801783011],[-80.34851257237253,40.846166869873834],[-80.34847684686746,40.84613667747224],[-80.34842647291428,40.84609462839809],[-80.34840580581162,40.84607812496512],[-80.3483926951475,40.846066773971785],[-80.34835378321976,40.846034248610685],[-80.34832946644823,40.84601387988009],[-80.34830341879074,40.84599122096707],[-80.34826998139782,40.84596398907491],[-80.34825008003831,40.845947276161],[-80.34822310444017,40.845926872273154],[-80.34820456337363,40.845909409879354],[-80.34816733485091,40.84587869392303],[-80.34816241088099,40.84587446510448],[-80.3481446864529,40.845859381150746],[-80.34811551934368,40.84583465847305],[-80.34809136560793,40.8458136279108],[-80.34807604769357,40.84580104328425],[-80.34806394513159,40.84579030177523],[-80.34804710320793,40.84577779196062],[-80.34802630879318,40.8457605176993],[-80.3479985908104,40.845737004209525],[-80.34796493711664,40.84570753970425],[-80.34794234207061,40.84568901414647],[-80.34792252828734,40.84567398035154],[-80.34790208033237,40.845655186118684],[-80.3478759584441,40.84563459470157],[-80.34784178421998,40.84560475228164],[-80.34781634358791,40.845582508311956],[-80.34779946635439,40.84556760650399],[-80.34778951517832,40.84555913249576],[-80.34777484173948,40.845546362838604],[-80.34773097641005,40.84550811125075],[-80.34772091863309,40.8454998636682],[-80.34769020240445,40.84547329052052],[-80.34767779319735,40.845463463910946],[-80.3476413658972,40.84543138031005],[-80.3476106367672,40.84540566114039],[-80.34756137523756,40.845366483458086],[-80.34754497931341,40.84535347482676],[-80.34752325811803,40.84533556914242],[-80.34748835054347,40.84530826070029],[-80.34744590128275,40.84527433574156],[-80.34740627702766,40.84524205898184],[-80.34735472012093,40.84520166771891],[-80.34731354235242,40.8451683593239],[-80.34727815397817,40.84513950549079],[-80.34723763136843,40.84510541375011],[-80.34719272213268,40.84506922760914],[-80.34716043503676,40.84504255137936],[-80.3471320483033,40.84501831687015],[-80.34711817927318,40.84500682048323],[-80.34708592064352,40.844979386240695],[-80.3470538228355,40.844951637195976],[-80.34702998510676,40.84493041097179],[-80.34700664587463,40.84490960665532],[-80.3469830384057,40.844888340743225],[-80.34696261365508,40.844870768989324],[-80.34695090189884,40.84485996995662],[-80.34693646416369,40.84484816831924],[-80.34692777582335,40.84484106786117],[-80.34691492643955,40.844831265609756],[-80.34690445218985,40.84482409809833],[-80.34689437957049,40.84481664281389],[-80.34688075347927,40.84480762988073],[-80.34685513733729,40.84479258767777],[-80.34682887792187,40.8447777921657],[-80.3468149809166,40.844770661792865],[-80.34679511449966,40.84476237078194],[-80.34677378471042,40.84475521333684],[-80.34675733023339,40.844750119168815],[-80.34673039315233,40.84474456998195],[-80.34670374452061,40.844739232174],[-80.34669072016986,40.84473726734085],[-80.34667073733432,40.84473441779772],[-80.34664769785815,40.8447321838383],[-80.3466293205243,40.84473118821398],[-80.34661188141125,40.84473113538568],[-80.34658848212516,40.84473239707231],[-80.34656065998246,40.84473376221952],[-80.34653422982917,40.844736022877015],[-80.34651653129218,40.84473904808701],[-80.34650646128065,40.84474180257093],[-80.34648609904524,40.84474567455944],[-80.3464776557167,40.844747772568816],[-80.3464572229049,40.84475265810112],[-80.34644206827178,40.8447574102292],[-80.34642689746717,40.84476425260751],[-80.3463962451463,40.84477628699914],[-80.34638660741763,40.844779867342666],[-80.3463711000432,40.844786586906075],[-80.34635957971953,40.84479143142664],[-80.34634276606643,40.844797878120154],[-80.34633452382937,40.84480083846164],[-80.34631135107789,40.84480871937854],[-80.34629623453272,40.84481468210537],[-80.34626268796109,40.84482587297295],[-80.34624124234793,40.844833093350374],[-80.34621530335427,40.84484196197957],[-80.34620736013134,40.84484460049144],[-80.34619778522507,40.844847725697605],[-80.34618527105023,40.844852574462614],[-80.3461783711291,40.844855409236665],[-80.34616348182723,40.84486013792146],[-80.34615167227739,40.84486395092202],[-80.346135350063,40.84486951803266],[-80.34612759886893,40.84487194450755],[-80.34610999226062,40.84487801443657],[-80.34609794362487,40.84488116456564],[-80.34607867919215,40.84488882471597],[-80.3460582519981,40.84489428540569],[-80.34603486608444,40.84489997394727],[-80.34601232327117,40.84490475014253],[-80.34599805427463,40.844908201884316],[-80.3459839270596,40.844911164576125],[-80.34596616462022,40.84491474074787],[-80.34594855047737,40.844917652900705],[-80.34592006389433,40.84492207957793],[-80.34589420066773,40.84492449172666],[-80.34586941051724,40.84492645234135],[-80.34585575116597,40.844926799061206],[-80.34583524575929,40.844926574858256],[-80.34582310582984,40.84492577370673],[-80.3458044079952,40.84492528941734],[-80.3457850182248,40.84492419678257],[-80.34577269011346,40.84492315519715],[-80.34576033502086,40.8449220964594],[-80.34574107015484,40.84492030245507],[-80.34573169732751,40.844919336118664],[-80.34571233228795,40.844914984403054],[-80.34570210768332,40.84491299825781],[-80.34569155812993,40.844910594005434],[-80.34567959010322,40.84490807395417],[-80.34566912143316,40.84490516602301],[-80.34565787123196,40.84490169820231],[-80.34564271130884,40.844895885907114],[-80.34562525199767,40.84488575376897],[-80.3456042468288,40.844874413462215],[-80.34558208100175,40.844862752798846],[-80.34556152878991,40.844850357361054],[-80.34554341421529,40.84483836945602],[-80.34552302873277,40.84482591144275],[-80.34550696479029,40.84481433708915],[-80.34548342279227,40.84479338448967],[-80.34546703149223,40.844776323191475],[-80.34546204595975,40.84477068237977],[-80.34544202170338,40.844750068939],[-80.34543004959288,40.84473451479646],[-80.34541561721953,40.84471661440315],[-80.34539295404132,40.844686634665734],[-80.34536069702169,40.84464617252013],[-80.34533409758883,40.84460833614718],[-80.34530992268186,40.8445756028441],[-80.34527957670335,40.8445329992838],[-80.34525265572877,40.84449832172747],[-80.34522350242823,40.84445756253412],[-80.34518024484717,40.84440186720355],[-80.34514918098353,40.844359578860384],[-80.34512629908674,40.84432765534823],[-80.34510282062861,40.84430049825338],[-80.34508441283003,40.844278036034076],[-80.3450566817873,40.844244610114515],[-80.3450431929538,40.84422846881176],[-80.34502694940767,40.84421066291584],[-80.34500522239446,40.84418206017659],[-80.34498293729123,40.844154730144545],[-80.34495628903186,40.844122584409995],[-80.34492805447243,40.84409042417223],[-80.34491677855254,40.844076963075146],[-80.34489682433032,40.84405382781965],[-80.34487878239479,40.844034568596115],[-80.34485691224944,40.844007118802466],[-80.34482894605331,40.8439756781307],[-80.34480623841606,40.8439511816679],[-80.34477140754336,40.84391600288349],[-80.34474766747424,40.84389220430291],[-80.34471956291048,40.84386616653795],[-80.34469032422984,40.84383942195841],[-80.34467826649903,40.84382929068622],[-80.34464876838396,40.84380341369583],[-80.34462740618059,40.84378394713508],[-80.3446040549181,40.84376379955994],[-80.34457248892349,40.84374068304073],[-80.34454151336533,40.843715255154784],[-80.34450829514061,40.843688690581494],[-80.34446234418887,40.843660594599186],[-80.3444304881422,40.8436405967175],[-80.34441150271701,40.843628196463904],[-80.34439016954192,40.84361495445033],[-80.34436413582759,40.84359971153569],[-80.34434772869949,40.84358991819753],[-80.34432632001301,40.8435782911463],[-80.3443047805794,40.84356648935941],[-80.34428613477263,40.843554258654],[-80.34427479852451,40.84354701999073],[-80.34425086770732,40.843532394457505],[-80.34421298359496,40.84351293659682],[-80.34417519060553,40.84349429441195],[-80.34413266015527,40.843472736472386],[-80.34409949723351,40.843456153932294],[-80.34407234835923,40.84344432203831],[-80.344031738949,40.843429363459535],[-80.34398182106322,40.84340946887327],[-80.34393759340131,40.843393710425964],[-80.34388733196117,40.84337797095431],[-80.34384919575297,40.84336558122668],[-80.34380995954817,40.84334740144936],[-80.34376731472037,40.84332354377647],[-80.34373602499043,40.84329574776483],[-80.34371186464406,40.84327543635907],[-80.343680857422,40.84324523050747],[-80.34365764749379,40.84321944722009],[-80.34364879909046,40.84320678119611],[-80.34363552683965,40.843187346147374],[-80.3436317315283,40.843178706783974],[-80.3436194478316,40.84315565906271],[-80.3436074432328,40.84313406389752],[-80.34359780410338,40.843101629097504],[-80.34359263214756,40.84307321105964],[-80.34359125060755,40.84304414858035],[-80.3435925447058,40.84301096143076],[-80.34359316200211,40.84298097219446],[-80.34360073840276,40.84294360557301],[-80.34360694748807,40.84292394836103],[-80.34361349922466,40.842907843286014],[-80.343629043263,40.842881461028156],[-80.34364097830903,40.842859850064045],[-80.3436614467767,40.84282939581898],[-80.34367881784159,40.84280724706763],[-80.34370214366034,40.84278430291006],[-80.34371782005165,40.84277015056886],[-80.34373278522378,40.84275703497436],[-80.34375052023768,40.8427408017967],[-80.34377065355864,40.84272980833655],[-80.34379048695448,40.84271847425443],[-80.34380945434769,40.84270612223719],[-80.34382116916463,40.842699172265945],[-80.34384247007056,40.84268889596203],[-80.34385536720708,40.84268231706938],[-80.34387918912176,40.84267286646233],[-80.34389103398762,40.842668342389295],[-80.34390377683809,40.84266393096234],[-80.34392278579915,40.84265646941964],[-80.34395417724186,40.84264598296616],[-80.34398105637719,40.842635541402124],[-80.34400407110718,40.842627345246946],[-80.34402742863053,40.842621302992576],[-80.34406342711863,40.842610089202076],[-80.34409253428444,40.84259715975594],[-80.34411650939896,40.842588789476174],[-80.34415165419892,40.84257693680542],[-80.34418352161295,40.84256662664238],[-80.34421187243484,40.84255778697449],[-80.34424442687389,40.84254669323527],[-80.34426906594541,40.84253845531423],[-80.34431445090846,40.84252761792755],[-80.34435826063522,40.84251848334855],[-80.3443971593007,40.842509992673335],[-80.34442609333219,40.84250540049962],[-80.34445273683691,40.84250136096103],[-80.34448614035776,40.84249740459938],[-80.34451810884038,40.842494210734934],[-80.34455918449976,40.84249004820268],[-80.34461390012302,40.8424874663988],[-80.34463944354013,40.84248843747675],[-80.34467075315331,40.84248980157485],[-80.3447009433921,40.84249121861212],[-80.34472577152745,40.84249154252],[-80.34476798779475,40.84249386938775],[-80.34479458082474,40.842495730256516],[-80.34482730646258,40.84249994667322],[-80.34487340946521,40.8425082326916],[-80.34491009872575,40.84251368732282],[-80.34494533977337,40.842520916795976],[-80.34498190555219,40.8425294292398],[-80.34500870528579,40.8425350942358],[-80.34506065406487,40.84254846110067],[-80.34510563862878,40.84256182382642],[-80.34514430790641,40.84257664394156],[-80.34518128391751,40.84259100815981],[-80.34522045711496,40.842610120261874],[-80.34527282388746,40.8426360566048],[-80.34531380757191,40.84265682566666],[-80.3453700590883,40.84268434878989],[-80.34540365219837,40.84270185252741],[-80.34541337567119,40.84270628680447],[-80.34545190116846,40.84272416246948],[-80.34547128694872,40.8427344344161],[-80.34550350032454,40.842750016315755],[-80.34552051977295,40.84275814341061],[-80.34555890909257,40.8427775916101],[-80.34559085865773,40.842793063354584],[-80.34562260556474,40.84280949235214],[-80.34564038261479,40.84281795519381],[-80.34565701637892,40.84282539291187],[-80.34568439060527,40.84283845642549],[-80.34572752287411,40.84285865853445],[-80.3457588208093,40.842874497557595],[-80.34579403418773,40.842891500485],[-80.34581938086961,40.842904189946786],[-80.34583998964993,40.842914925267785],[-80.34587732475235,40.8429336383218],[-80.34590576050913,40.8429486732013],[-80.34593680817065,40.84296293031274],[-80.3459930656358,40.842991329800874],[-80.34600473197979,40.84299740512509],[-80.34604346701718,40.843015970295816],[-80.34606402724566,40.84302614149734],[-80.34609089606131,40.84304120825923],[-80.34612973765778,40.8430604739117],[-80.34616254684767,40.84307710468247],[-80.3461907429659,40.84309113157675],[-80.34622052032628,40.84310684959093],[-80.34624440929771,40.84311786552962],[-80.34627102609747,40.84312880113335],[-80.34631612471738,40.8431520602442],[-80.34633627871071,40.843162167196134],[-80.34637822554791,40.84318104028643],[-80.34641686571317,40.84320027174485],[-80.3464469662859,40.84321433675071],[-80.3464871346935,40.843233144778765],[-80.34651570595105,40.8432470425397],[-80.34655145325831,40.84326384078819],[-80.34660837267955,40.84329185737838],[-80.34663148970351,40.84330297889948],[-80.34666999879529,40.84332160956285],[-80.34669141924577,40.843331853415705],[-80.34672034819744,40.843345018858884],[-80.34674658696633,40.8433574076396],[-80.34678520693551,40.843375412793726],[-80.34681062640502,40.8433882766403],[-80.3468548606303,40.843410864161534],[-80.34690964875901,40.84343699920264],[-80.3469466255153,40.84345496972767],[-80.34697781568588,40.843470148428935],[-80.34702142166158,40.84349090958706],[-80.34706101410771,40.843510408548305],[-80.34707908505942,40.8435184086102],[-80.3471093278489,40.84353391739706],[-80.34715433877592,40.84355651931874],[-80.34718678086438,40.843572198440725],[-80.34722530131103,40.843590563095],[-80.34725557161272,40.843605203209556],[-80.3472893259845,40.8436220748394],[-80.34734026774855,40.843646825962765],[-80.34738098655184,40.84366503818372],[-80.34742321732863,40.843686611643236],[-80.34745287231331,40.843701450708956],[-80.34749738913234,40.84372373864901],[-80.34751350348738,40.843732078998556],[-80.34753546475689,40.843742978109056],[-80.34756791871395,40.84375948012821],[-80.34758640052222,40.843768705520326],[-80.34763046856595,40.843790661727475],[-80.34765094661682,40.84380060310579],[-80.34768385710393,40.84381625448716],[-80.3477284556796,40.84383843983125],[-80.34774280450235,40.84384577459847],[-80.34779028051537,40.84386946930871],[-80.34781754102005,40.84388257638521],[-80.34785628900438,40.84390097495942],[-80.34789169684807,40.843918352860854],[-80.34792764533115,40.84393628576982],[-80.34796270048444,40.84395415838743],[-80.34799698651109,40.84397066445494],[-80.34803606766212,40.8439896079846],[-80.34808515803967,40.8440123039323],[-80.34809609217714,40.844017729486104],[-80.34815528326358,40.84404618768911],[-80.34817452197738,40.84405522065841],[-80.34821335591506,40.84407484268656],[-80.34827290124606,40.84410384192466],[-80.34831940249028,40.84412576012373],[-80.3483354410884,40.84413377416299],[-80.3483713153195,40.84415167418348],[-80.3484022739476,40.84416709179622],[-80.34846290072139,40.84419899465847],[-80.34851008457517,40.84422292797231],[-80.34854572904506,40.844240182140595],[-80.34859598636993,40.844263910644884],[-80.34864924793396,40.84428854575293],[-80.34868406533921,40.84430554568619],[-80.34870877317968,40.84431682260922],[-80.34873520511071,40.844329174636904],[-80.34875076620435,40.84433686041209],[-80.3487753633704,40.84434993785671],[-80.34879898933602,40.84436140407725],[-80.34881857962355,40.844370634922015],[-80.34886179665114,40.8443907147321],[-80.34888797438722,40.84440438228525],[-80.34892123422037,40.84441954201216],[-80.34894595806409,40.844431151421624],[-80.34897783600817,40.844448243099976],[-80.34900561899892,40.844462353692464],[-80.34904152389548,40.8444796671227],[-80.34906213547181,40.84448958484854],[-80.34908312553229,40.844499339286244],[-80.34909722195461,40.844506687626726],[-80.34911832570837,40.844519301292316],[-80.34913483234568,40.84452975530858],[-80.34914839327175,40.84453949054772],[-80.3491603122209,40.8445468491357],[-80.34917930259897,40.84456196161815],[-80.34919253573251,40.8445719056943],[-80.34921287671709,40.844589043690775],[-80.34922834511451,40.8446035238179],[-80.34924584840488,40.844619931542944],[-80.34925572746084,40.84463133995172],[-80.34926691516594,40.8446420341894],[-80.34927989443105,40.84465789911766],[-80.34928992371246,40.84466950411397],[-80.34930185011117,40.8446838711934],[-80.34931446956719,40.844702917574594],[-80.34932466998877,40.84472280825642],[-80.34933680059059,40.84474710136201],[-80.34934720092483,40.84476684487871],[-80.34936369862214,40.844801639860755],[-80.34937752001117,40.84484893852136],[-80.34938251256493,40.844863484385435],[-80.34938375912947,40.84487448133984],[-80.34938713011461,40.84488757094054],[-80.34938887809244,40.84490480005982],[-80.34939019113095,40.8449198583241],[-80.34939116555752,40.844936997381616],[-80.34939121978216,40.844957311594314],[-80.34939158286747,40.84497129295937],[-80.34939219114145,40.8449873729187],[-80.34939207022342,40.84500695978477],[-80.3493900902698,40.845021468071884],[-80.34938783447078,40.84503850704991],[-80.3493846828306,40.84505465955177],[-80.34938019517968,40.8450679616604],[-80.3493748975531,40.84508540822233],[-80.34937023479792,40.84510190114441],[-80.34936673706493,40.84511172911201],[-80.34936064025491,40.84512844020179],[-80.34935600487432,40.845143952892265],[-80.34934894356563,40.84516222750131],[-80.34934085612022,40.845186301192456],[-80.34933157162384,40.84521149205785],[-80.3493263761579,40.84522539984671],[-80.34932063985214,40.84523909463333],[-80.34931084492376,40.845266910240504],[-80.34929905754404,40.845296152511665],[-80.34929436223227,40.845310336631734],[-80.34928520802882,40.84533540307026],[-80.34927858253207,40.84535191474516],[-80.34926986403651,40.84537913624691],[-80.34926143471549,40.845406146537584],[-80.3492518863079,40.84543416352159],[-80.3492441564262,40.845457504298054],[-80.34923574590891,40.84548406462349],[-80.34923128988937,40.845503834474606],[-80.34922775567145,40.845528027764615],[-80.34922473411972,40.84554339986568],[-80.34922293195831,40.84556610392008],[-80.34922328941418,40.84557786530297],[-80.34922297728104,40.8455930929717],[-80.34922417184097,40.845609204433295],[-80.34922577371078,40.84562692207545],[-80.3492288762717,40.84564500513038],[-80.34923131184595,40.845656722293526],[-80.3492361357591,40.84567544145782],[-80.3492389650884,40.84568422355591],[-80.34924482687987,40.84570224019402],[-80.349250842039,40.84571687878066],[-80.34925782208025,40.84572991325865],[-80.34926203616267,40.84573762145171],[-80.34927241439635,40.845754980309486],[-80.34927857839845,40.84576604556987],[-80.34928930978782,40.84578154866119],[-80.34929701905388,40.84579360303122],[-80.3493083440705,40.845808263274876],[-80.34932478932816,40.8458267761594],[-80.34934157779807,40.84584534772463],[-80.3493600789626,40.84586357236324],[-80.34937816206214,40.84587880602542],[-80.34939165515819,40.84588978888176],[-80.34940695216542,40.84590051828467],[-80.34943664750129,40.84592109738343],[-80.34944943831454,40.84592908873463],[-80.34947244715288,40.84594318072136],[-80.34950249209965,40.84595846121018],[-80.34952216540245,40.8459679529384],[-80.34954238794158,40.84597643135009],[-80.34956832380705,40.845985579886516],[-80.34959334742027,40.845995014917776],[-80.34961263587891,40.845999465893826],[-80.34963541498541,40.846004594362455],[-80.34965278868214,40.84600780850998],[-80.34967933809452,40.84601072432466],[-80.34969699861902,40.84601371716377],[-80.34972011212774,40.84601574065286],[-80.34974082214919,40.846018745842514],[-80.34976177583513,40.84602262355129],[-80.34979121541498,40.8460265539375],[-80.34981099353823,40.84603011994288],[-80.34984193808897,40.846036871297656],[-80.34987263615525,40.84604082012264],[-80.34989718956597,40.84604572970821],[-80.34991888679701,40.84604967674554],[-80.34994824471353,40.8460542559308],[-80.34998182907323,40.846060245217224],[-80.35002283025476,40.84606679204862],[-80.35005112612225,40.84607226426087],[-80.35008991024512,40.84608028086967],[-80.3501262796989,40.84608809229678],[-80.35017208902751,40.84609611060466],[-80.350211944434,40.84610155113076],[-80.35023678323687,40.84610660565182],[-80.35026621743653,40.84611198918047],[-80.35030791772098,40.846119744181344],[-80.35034388802393,40.84612609032436],[-80.35037262331736,40.84613137886675],[-80.35041445401679,40.846138559768555],[-80.35043807144632,40.84614215326559],[-80.35045434513542,40.84614603351569],[-80.35049542970557,40.84615218596307],[-80.35052567888273,40.846158301989036],[-80.3505362885748,40.846159913063225],[-80.35054902136432,40.846162158735225],[-80.35057202116391,40.84616646784616],[-80.35059836332454,40.84617111933838],[-80.35060718573216,40.846171651322614],[-80.35062028407168,40.84617521799537],[-80.35063370586568,40.846178046200606],[-80.35065874149704,40.84618197133572],[-80.35067152352539,40.84618490871779],[-80.35068523445436,40.84618561029231],[-80.35070386828558,40.84618794475181],[-80.35072958297401,40.84619229769041],[-80.35075431270687,40.846198836090835],[-80.35078191076538,40.84620588187593],[-80.3508116757034,40.846214642109494],[-80.350845469083,40.84622586176564],[-80.35087965455011,40.84623881366994],[-80.35090428357732,40.846250106500186],[-80.3509399349149,40.846269323333814],[-80.35096357275489,40.8462805070002],[-80.350978414842,40.84629045059943],[-80.35100574250245,40.84630838030319],[-80.35102616741334,40.84632367301734],[-80.35104698442504,40.84633946604689],[-80.35106939354587,40.84636087358985],[-80.35110447290754,40.84639627718379],[-80.35111400251536,40.84640895401442],[-80.35113110308949,40.84642938632753],[-80.35114763668128,40.8464482134821],[-80.35115539520092,40.84646185129311],[-80.35116486652144,40.84647698336103],[-80.3511748857858,40.84649845829226],[-80.35118529480162,40.84652960965664],[-80.35119794813728,40.84656843456245],[-80.35120321747095,40.84658762985865],[-80.35120964331537,40.846612117449844],[-80.35121714746485,40.846630983801276],[-80.35122222887257,40.84665053419854],[-80.35123343120122,40.84669433839583],[-80.35124190300589,40.8467256994063],[-80.35124876162128,40.846751532466875],[-80.35125787797674,40.84678757598973],[-80.35126372364522,40.84680641908674],[-80.35127322469623,40.84683801731811],[-80.35128426444817,40.8468760202274],[-80.35129305011658,40.84691041343648],[-80.35129928022685,40.84693416137761],[-80.35131115816057,40.84697166422011],[-80.35131591758228,40.84698987385902],[-80.35132756281664,40.84702795355185],[-80.35133267887308,40.84704385567444],[-80.35133939400079,40.84706981389168],[-80.35134796529334,40.84709800954753],[-80.35135824512825,40.84713138662197],[-80.35136675145246,40.847167449885085],[-80.35137116048068,40.84718669256001],[-80.35137361787099,40.847200020924106],[-80.35137709206197,40.84722116199063],[-80.35137758992649,40.847235886412555],[-80.35137711375518,40.84724649250756],[-80.35137698275386,40.84725866626037],[-80.35137558775608,40.84726830138632],[-80.3513709929616,40.847282710523125],[-80.35136738022678,40.84729194499199],[-80.35136109396198,40.84730711940047],[-80.35135759552139,40.84731452408351],[-80.35135096782793,40.84732697990305],[-80.351345305366,40.847335821964045],[-80.35134048984312,40.84734300113552],[-80.35133429438895,40.847352355998446],[-80.3513284918964,40.847361016425225],[-80.35132372407661,40.84736797406269],[-80.35131624075078,40.84738072466754],[-80.35130672956443,40.84739455742505],[-80.35129660490475,40.84740932219454],[-80.35128785563958,40.847421461620876],[-80.35128179848546,40.84743192315741],[-80.3512680279261,40.84744899434506],[-80.35125053233399,40.847467898808176],[-80.35123478232542,40.84748434622625],[-80.35121916822644,40.84750141013859],[-80.35120972517305,40.847511267172806],[-80.35118960933426,40.847526799660834],[-80.35117071173296,40.84754213861194],[-80.35114761861523,40.847556549544116],[-80.35113535496308,40.84756553207776],[-80.35111637875879,40.84757977564479],[-80.35110385025641,40.8475867748151],[-80.35109109491603,40.8475940685931],[-80.35107736158861,40.8476012342786],[-80.35106388141843,40.84760775407065],[-80.3510511464983,40.84761438109319],[-80.3510335704708,40.847621166350244],[-80.35101961390099,40.847627247356385],[-80.35099716952219,40.84763460407657],[-80.35096999239127,40.847641870435034],[-80.35095490417322,40.84764597234078],[-80.35094488062347,40.84764959847669],[-80.35093389536566,40.84765302728301],[-80.3509236498554,40.84765537112659],[-80.35090565990754,40.84765952528471],[-80.35088687185072,40.84766326811533],[-80.35084589882628,40.84767125346108],[-80.35082607418269,40.8476739899741],[-80.35081393749259,40.847675469949834],[-80.35080468956873,40.84767580750859],[-80.35078800053155,40.84767770285053],[-80.35078181437176,40.84767795754605],[-80.35076652819994,40.847679915905445],[-80.35075589022046,40.84768055346967],[-80.35074473843584,40.847681169930134],[-80.35073282584342,40.84768136874878],[-80.3507242698782,40.84768165889193],[-80.35070726899536,40.84768129075721],[-80.3506977446519,40.847681745703845],[-80.35068530687852,40.84768150009862],[-80.3506703337767,40.84768122792963],[-80.35065136562108,40.84768082648821],[-80.3506383417636,40.84768004713632],[-80.35062426539244,40.847678862571414],[-80.3505979232251,40.84767607849114],[-80.35057137832739,40.84767219069572],[-80.35055602526029,40.847669716312865],[-80.3505441265706,40.84766687682751],[-80.35053727454552,40.8476657150945],[-80.35052314171148,40.84766281861694],[-80.35050624639501,40.84765855079665],[-80.35048480683952,40.8476535348077],[-80.35046588739432,40.84764839949534],[-80.35045925104478,40.84764645058616],[-80.35044892108965,40.84764369378956],[-80.35043355823863,40.847639511049145],[-80.35041854416211,40.847635875953436],[-80.35040890570548,40.847633106382375],[-80.35039254876209,40.84762954181142],[-80.35037573637285,40.847625055990164],[-80.35036116673075,40.847620918645575],[-80.3503408485538,40.84761468823288],[-80.35033233510322,40.84761174176079],[-80.35031444148697,40.84760590665696],[-80.35029704355956,40.847600004138535],[-80.35027263087092,40.84759138143078],[-80.35025467390116,40.84758505392228],[-80.35022882939444,40.84757584935478],[-80.350218083799,40.84757207882915],[-80.3502062833523,40.847566728417675],[-80.35019709886792,40.84756217642262],[-80.35017688031998,40.847552879775165],[-80.3501599474252,40.84754266559062],[-80.35014461773659,40.84753363526204],[-80.3501280958539,40.84751943302496],[-80.3501082506438,40.84750098126301],[-80.3500975079942,40.84749101279514],[-80.35008360802259,40.84747890269308],[-80.35006397179025,40.84746250757225],[-80.35005307024628,40.84745210899725],[-80.35003783031729,40.84743945989076],[-80.35001806153616,40.84742549077007],[-80.35000193711014,40.84741289110215],[-80.34998286374237,40.84739588757067],[-80.34994687434808,40.84736707401475],[-80.3499296676446,40.84735225429944],[-80.34988916412826,40.84731973719774],[-80.34985129614668,40.84728869238608],[-80.34981959373087,40.84726286383378],[-80.34979157209966,40.84723815537583],[-80.34975717199048,40.84720715430276],[-80.34972264050666,40.84717700517692],[-80.34969984521224,40.84715905591309],[-80.3496758534869,40.847140525283244],[-80.34965415303827,40.847123605885415],[-80.3496198739513,40.84709337220961],[-80.3495655391274,40.847048798100744],[-80.34951514266876,40.847006611913294],[-80.349476397095,40.84697404302801],[-80.34943393016015,40.84693857848153],[-80.34938570010726,40.84689973385937],[-80.34935643235082,40.84687529588878],[-80.34933444188849,40.84685812621966],[-80.3493123509638,40.846841422751936],[-80.34928608798953,40.846819373182015],[-80.34926124831145,40.84679832307603],[-80.34923540227562,40.8467745891077],[-80.3491978607505,40.846741912559025],[-80.34916709825389,40.846716569041654],[-80.34912862366447,40.846684218267356],[-80.34909828425259,40.84665962735737],[-80.34906880429152,40.846636844599416],[-80.34903377603257,40.846606283700524],[-80.34901520501364,40.84659067895597],[-80.34898811335633,40.84656865665467],[-80.34897244517087,40.84655532799598],[-80.34893887999557,40.8465284500386],[-80.34889702018377,40.84649327659315],[-80.34885550241177,40.84645958224152],[-80.34883019292644,40.84643653041966],[-80.34879117046837,40.84640451997378],[-80.34875073765592,40.84636972498365],[-80.34884482306084,40.84629835510847],[-80.3488424772213,40.846297468270514]]}}
+    {"type":"Feature","id":"inner","properties":{"role":"inner","sourceIds":["usgs-naip-border-imagery"],"license":"public-domain","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[-80.3469389,40.8447231],[-80.3469691,40.8447419],[-80.3469968,40.8447621],[-80.3470235,40.8447819],[-80.347049,40.8448014],[-80.3470741,40.8448213],[-80.3470988,40.8448411],[-80.3471233,40.8448609],[-80.3471476,40.8448805],[-80.347172,40.8449002],[-80.3471964,40.8449198],[-80.3472203,40.8449397],[-80.3472443,40.8449597],[-80.3472682,40.8449796],[-80.3472922,40.8449996],[-80.3473161,40.8450195],[-80.34734,40.8450394],[-80.347364,40.8450594],[-80.3473879,40.8450793],[-80.3474119,40.8450993],[-80.3474358,40.8451192],[-80.3474597,40.8451392],[-80.3474837,40.8451591],[-80.3475076,40.845179],[-80.3475316,40.845199],[-80.3475555,40.8452189],[-80.3475794,40.8452389],[-80.3476034,40.8452589],[-80.3476273,40.8452788],[-80.3476513,40.8452987],[-80.3476752,40.8453187],[-80.3476991,40.8453386],[-80.3477231,40.8453586],[-80.347747,40.8453785],[-80.347771,40.8453985],[-80.347795,40.8454184],[-80.3478189,40.8454383],[-80.3478429,40.8454583],[-80.3478668,40.8454782],[-80.3478908,40.8454982],[-80.3479147,40.8455181],[-80.3479382,40.8455383],[-80.3479617,40.8455586],[-80.3479852,40.8455789],[-80.3480087,40.8455991],[-80.3480322,40.8456193],[-80.3480557,40.8456396],[-80.3480792,40.8456598],[-80.3481027,40.8456801],[-80.3481262,40.8457004],[-80.3481497,40.8457206],[-80.3481741,40.8457402],[-80.3481985,40.8457599],[-80.3482228,40.8457796],[-80.3482472,40.8457992],[-80.3482716,40.8458189],[-80.348296,40.8458385],[-80.3483204,40.8458581],[-80.3483447,40.8458778],[-80.3483691,40.8458975],[-80.3483935,40.8459171],[-80.3484179,40.8459367],[-80.3484423,40.8459564],[-80.3484666,40.845976],[-80.348491,40.8459957],[-80.3485154,40.8460153],[-80.3485398,40.8460349],[-80.3485642,40.8460546],[-80.3485885,40.8460742],[-80.3486129,40.8460939],[-80.3486373,40.8461135],[-80.3486608,40.8461337],[-80.3486843,40.846154],[-80.3487078,40.8461743],[-80.3487313,40.8461945],[-80.3487548,40.8462148],[-80.3487783,40.846235],[-80.3488018,40.8462552],[-80.3488253,40.8462755],[-80.3488488,40.8462958],[-80.3488723,40.846316],[-80.3488958,40.8463363],[-80.3489193,40.8463565],[-80.3489428,40.8463768],[-80.3489663,40.846397],[-80.3489898,40.8464173],[-80.3490133,40.8464375],[-80.3490368,40.8464577],[-80.3490603,40.846478],[-80.3490838,40.8464983],[-80.3491073,40.8465185],[-80.3491312,40.8465384],[-80.3491552,40.8465584],[-80.3491791,40.8465783],[-80.3492031,40.8465983],[-80.349227,40.8466182],[-80.3492509,40.8466381],[-80.3492749,40.8466581],[-80.3492988,40.846678],[-80.3493228,40.846698],[-80.3493467,40.8467179],[-80.3493706,40.8467379],[-80.3493946,40.8467578],[-80.3494185,40.8467778],[-80.3494425,40.8467977],[-80.3494664,40.8468177],[-80.3494904,40.8468376],[-80.3495144,40.8468576],[-80.3495383,40.8468775],[-80.3495623,40.8468975],[-80.3495862,40.8469174],[-80.3496106,40.846937],[-80.349635,40.8469567],[-80.3496593,40.8469763],[-80.3496837,40.846996],[-80.3497081,40.8470156],[-80.3497325,40.8470352],[-80.3497569,40.8470549],[-80.3497812,40.8470745],[-80.3498056,40.8470942],[-80.34983,40.8471138],[-80.3498535,40.847134],[-80.349877,40.8471543],[-80.3499005,40.8471745],[-80.349924,40.8471948],[-80.3499472,40.8472148],[-80.3499699,40.8472344],[-80.3499928,40.847253],[-80.3500168,40.8472707],[-80.3500422,40.8472878],[-80.3500684,40.847305],[-80.3500956,40.8473222],[-80.3501229,40.8473395],[-80.3501502,40.8473568],[-80.3501774,40.8473741],[-80.3502047,40.8473913],[-80.350232,40.8474086],[-80.3502591,40.8474256],[-80.350286,40.8474426],[-80.350313,40.8474589],[-80.3503402,40.8474745],[-80.3503675,40.8474895],[-80.3503951,40.8475037],[-80.3504235,40.8475169],[-80.3504522,40.8475288],[-80.3504809,40.8475402],[-80.35051,40.8475497],[-80.35054,40.8475574],[-80.3505712,40.8475635],[-80.3506027,40.8475691],[-80.3506351,40.8475734],[-80.3506673,40.8475762],[-80.3506994,40.8475782],[-80.3507311,40.8475787],[-80.3507624,40.8475774],[-80.3507937,40.8475741],[-80.3508251,40.8475695],[-80.3508567,40.8475636],[-80.3508872,40.8475566],[-80.3509166,40.8475489],[-80.3509442,40.8475391],[-80.3509708,40.847527],[-80.3509973,40.8475129],[-80.3510244,40.847498],[-80.3510514,40.8474824],[-80.3510768,40.847467],[-80.3511001,40.8474516],[-80.3511202,40.8474349],[-80.3511378,40.847416],[-80.3511543,40.8473951],[-80.3511714,40.8473735],[-80.3511875,40.8473513],[-80.3512018,40.8473295],[-80.3512141,40.8473074],[-80.3512239,40.8472848],[-80.3512314,40.8472618],[-80.3512373,40.847239],[-80.3512409,40.8472169],[-80.3512405,40.8471949],[-80.3512358,40.8471721],[-80.3512292,40.8471477],[-80.3512223,40.8471219],[-80.3512152,40.8470955],[-80.3512082,40.8470691],[-80.3512011,40.8470427],[-80.351194,40.8470162],[-80.351187,40.8469898],[-80.3511799,40.8469634],[-80.3511728,40.846937],[-80.3511658,40.8469106],[-80.3511587,40.8468842],[-80.3511511,40.8468579],[-80.3511434,40.8468316],[-80.3511358,40.8468052],[-80.3511281,40.8467789],[-80.3511205,40.8467526],[-80.3511128,40.8467263],[-80.3511052,40.8467],[-80.3510975,40.8466737],[-80.3510899,40.8466473],[-80.3510824,40.8466216],[-80.3510757,40.8465964],[-80.3510677,40.8465723],[-80.3510579,40.8465487],[-80.3510464,40.8465256],[-80.3510351,40.8465031],[-80.3510223,40.8464818],[-80.3510069,40.8464621],[-80.3509881,40.8464428],[-80.3509677,40.8464233],[-80.3509473,40.8464036],[-80.3509262,40.8463857],[-80.3509038,40.8463702],[-80.3508795,40.8463566],[-80.350853,40.8463438],[-80.3508256,40.8463312],[-80.350797,40.8463195],[-80.3507684,40.8463092],[-80.35074,40.8462999],[-80.3507112,40.8462926],[-80.3506809,40.8462869],[-80.3506489,40.846281],[-80.3506154,40.8462749],[-80.3505808,40.8462685],[-80.3505462,40.8462621],[-80.3505116,40.8462558],[-80.350477,40.8462494],[-80.3504423,40.846243],[-80.3504077,40.8462366],[-80.3503731,40.8462303],[-80.3503385,40.8462239],[-80.3503038,40.846218],[-80.350269,40.846212],[-80.3502343,40.8462061],[-80.3501995,40.8462002],[-80.3501648,40.8461942],[-80.3501301,40.8461883],[-80.3500953,40.8461824],[-80.3500606,40.8461765],[-80.3500258,40.8461705],[-80.3499911,40.8461646],[-80.3499564,40.8461587],[-80.3499216,40.8461527],[-80.3498869,40.8461468],[-80.3498522,40.8461409],[-80.3498172,40.8461349],[-80.3497818,40.8461288],[-80.3497461,40.8461223],[-80.3497104,40.8461151],[-80.3496749,40.8461072],[-80.3496396,40.846099],[-80.3496046,40.84609],[-80.3495696,40.8460802],[-80.3495341,40.8460695],[-80.3494984,40.8460577],[-80.3494636,40.8460441],[-80.3494298,40.8460285],[-80.3493975,40.8460117],[-80.3493665,40.8459941],[-80.3493372,40.8459757],[-80.3493091,40.8459564],[-80.3492811,40.8459371],[-80.3492543,40.8459172],[-80.3492277,40.8458958],[-80.3492009,40.8458727],[-80.3491764,40.845847],[-80.3491567,40.8458186],[-80.3491426,40.8457889],[-80.3491317,40.8457596],[-80.3491228,40.8457315],[-80.3491154,40.8457036],[-80.3491083,40.8456758],[-80.3491022,40.8456479],[-80.3490969,40.8456189],[-80.3490929,40.8455888],[-80.3490929,40.845558],[-80.3490967,40.8455277],[-80.3491036,40.8454988],[-80.3491103,40.8454712],[-80.3491166,40.8454448],[-80.349123,40.8454183],[-80.3491316,40.8453922],[-80.3491402,40.8453661],[-80.3491487,40.84534],[-80.3491572,40.8453138],[-80.3491657,40.8452876],[-80.3491742,40.8452614],[-80.3491827,40.8452352],[-80.3491913,40.8452087],[-80.3492001,40.8451817],[-80.34921,40.8451543],[-80.3492204,40.8451268],[-80.3492326,40.8451003],[-80.3492451,40.8450758],[-80.3492558,40.8450529],[-80.3492622,40.8450307],[-80.3492647,40.8450077],[-80.3492646,40.8449833],[-80.3492641,40.8449579],[-80.3492628,40.8449317],[-80.3492606,40.8449061],[-80.3492569,40.8448813],[-80.3492516,40.8448577],[-80.3492433,40.844835],[-80.3492317,40.8448126],[-80.3492186,40.8447898],[-80.3492045,40.8447663],[-80.3491897,40.8447433],[-80.3491746,40.844721],[-80.3491584,40.8446998],[-80.3491406,40.8446796],[-80.3491219,40.8446604],[-80.3491028,40.844642],[-80.3490819,40.8446252],[-80.3490588,40.8446098],[-80.3490332,40.8445952],[-80.3490067,40.8445804],[-80.3489787,40.8445658],[-80.3489499,40.8445517],[-80.3489204,40.8445378],[-80.3488904,40.8445236],[-80.3488608,40.8445086],[-80.3488313,40.8444935],[-80.3488018,40.8444785],[-80.3487722,40.8444634],[-80.3487426,40.8444484],[-80.3487131,40.8444334],[-80.3486836,40.8444183],[-80.348654,40.8444033],[-80.3486244,40.8443882],[-80.3485949,40.8443732],[-80.3485654,40.8443581],[-80.3485358,40.8443431],[-80.3485062,40.8443281],[-80.3484767,40.844313],[-80.3484471,40.844298],[-80.3484176,40.8442829],[-80.348388,40.8442679],[-80.3483585,40.8442528],[-80.3483289,40.8442378],[-80.3482994,40.8442227],[-80.3482692,40.8442084],[-80.348239,40.8441941],[-80.3482088,40.8441798],[-80.3481786,40.8441655],[-80.3481484,40.8441513],[-80.3481182,40.844137],[-80.348088,40.8441227],[-80.3480578,40.8441084],[-80.3480276,40.8440941],[-80.3479974,40.8440798],[-80.3479679,40.8440648],[-80.3479383,40.8440497],[-80.3479088,40.8440347],[-80.3478792,40.8440196],[-80.3478497,40.8440046],[-80.3478201,40.8439896],[-80.3477905,40.8439745],[-80.347761,40.8439595],[-80.3477314,40.8439444],[-80.3477019,40.8439294],[-80.347672,40.8439147],[-80.3476422,40.8439001],[-80.3476123,40.8438854],[-80.3475824,40.8438707],[-80.3475526,40.843856],[-80.3475227,40.8438414],[-80.3474928,40.8438267],[-80.3474629,40.843812],[-80.3474331,40.8437974],[-80.3474032,40.8437827],[-80.347373,40.8437684],[-80.3473428,40.8437541],[-80.3473126,40.8437398],[-80.3472824,40.8437255],[-80.3472522,40.8437112],[-80.347222,40.843697],[-80.3471918,40.8436827],[-80.3471616,40.8436684],[-80.3471314,40.8436541],[-80.3471012,40.8436398],[-80.3470713,40.8436251],[-80.3470415,40.8436105],[-80.3470116,40.8435958],[-80.3469817,40.8435811],[-80.3469518,40.8435664],[-80.346922,40.8435518],[-80.3468921,40.8435371],[-80.3468622,40.8435224],[-80.3468324,40.8435078],[-80.3468025,40.8434931],[-80.3467723,40.8434788],[-80.3467421,40.8434645],[-80.3467119,40.8434502],[-80.3466817,40.8434359],[-80.3466515,40.8434217],[-80.3466213,40.8434074],[-80.3465911,40.8433931],[-80.3465609,40.8433788],[-80.3465307,40.8433645],[-80.3465005,40.8433502],[-80.346471,40.8433352],[-80.3464414,40.8433201],[-80.3464118,40.8433051],[-80.3463823,40.84329],[-80.3463527,40.843275],[-80.3463232,40.84326],[-80.3462936,40.8432449],[-80.3462641,40.8432299],[-80.3462345,40.8432148],[-80.346205,40.8431998],[-80.3461748,40.8431855],[-80.3461446,40.8431712],[-80.3461144,40.8431569],[-80.3460842,40.8431426],[-80.346054,40.8431284],[-80.3460238,40.8431141],[-80.3459936,40.8430998],[-80.3459634,40.8430855],[-80.3459332,40.8430712],[-80.345903,40.8430569],[-80.3458731,40.8430422],[-80.3458433,40.8430276],[-80.3458134,40.8430129],[-80.3457835,40.8429982],[-80.3457537,40.8429835],[-80.3457238,40.8429689],[-80.3456939,40.8429542],[-80.345664,40.8429395],[-80.3456342,40.8429249],[-80.3456043,40.8429102],[-80.3455744,40.8428955],[-80.3455445,40.8428809],[-80.3455147,40.8428662],[-80.3454848,40.8428516],[-80.3454549,40.8428369],[-80.3454251,40.8428223],[-80.3453953,40.8428077],[-80.3453656,40.8427932],[-80.3453358,40.8427788],[-80.3453058,40.8427645],[-80.3452758,40.8427502],[-80.3452459,40.842736],[-80.345216,40.8427219],[-80.3451859,40.842708],[-80.3451561,40.8426945],[-80.3451271,40.8426813],[-80.3450985,40.8426692],[-80.3450694,40.8426587],[-80.3450395,40.8426496],[-80.345009,40.8426409],[-80.3449782,40.8426326],[-80.3449467,40.8426253],[-80.3449142,40.8426192],[-80.3448809,40.8426134],[-80.3448471,40.8426076],[-80.344813,40.8426022],[-80.3447787,40.8425971],[-80.3447448,40.8425924],[-80.3447116,40.8425877],[-80.3446789,40.8425842],[-80.3446462,40.8425821],[-80.3446135,40.8425814],[-80.3445807,40.842581],[-80.3445482,40.8425818],[-80.3445158,40.8425842],[-80.3444831,40.8425882],[-80.3444502,40.8425923],[-80.3444174,40.8425974],[-80.344385,40.8426035],[-80.3443528,40.8426109],[-80.3443208,40.8426194],[-80.344289,40.8426287],[-80.3442574,40.8426387],[-80.344226,40.8426495],[-80.3441944,40.8426604],[-80.3441628,40.8426717],[-80.3441312,40.8426833],[-80.3440997,40.8426953],[-80.344068,40.8427073],[-80.3440361,40.8427193],[-80.3440038,40.8427305],[-80.3439724,40.8427414],[-80.3439418,40.8427521],[-80.3439129,40.8427639],[-80.3438862,40.8427762],[-80.3438608,40.8427891],[-80.3438384,40.8428034],[-80.3438184,40.8428196],[-80.3438003,40.842838],[-80.3437831,40.8428573],[-80.3437681,40.8428784],[-80.3437555,40.8429002],[-80.3437437,40.8429221],[-80.3437347,40.8429445],[-80.3437284,40.8429676],[-80.3437246,40.8429914],[-80.3437215,40.8430154],[-80.3437205,40.84304],[-80.3437217,40.8430642],[-80.3437239,40.8430874],[-80.3437273,40.8431088],[-80.3437353,40.8431281],[-80.3437485,40.8431468],[-80.3437656,40.8431658],[-80.3437833,40.8431859],[-80.343803,40.843205],[-80.3438246,40.843223],[-80.3438478,40.8432396],[-80.3438702,40.8432559],[-80.3438938,40.8432697],[-80.3439194,40.843281],[-80.3439492,40.8432904],[-80.3439812,40.8433006],[-80.3440147,40.8433124],[-80.3440479,40.8433252],[-80.3440805,40.8433387],[-80.3441127,40.8433524],[-80.3441443,40.8433667],[-80.3441751,40.8433814],[-80.3442054,40.8433963],[-80.3442354,40.8434109],[-80.3442652,40.8434254],[-80.3442955,40.84344],[-80.3443262,40.8434548],[-80.3443567,40.8434704],[-80.3443866,40.8434866],[-80.3444158,40.8435033],[-80.3444449,40.8435201],[-80.344474,40.843537],[-80.3445025,40.8435549],[-80.3445302,40.8435734],[-80.3445569,40.8435922],[-80.3445834,40.8436108],[-80.3446099,40.8436294],[-80.3446363,40.8436484],[-80.3446623,40.8436681],[-80.3446875,40.8436881],[-80.3447121,40.8437081],[-80.3447367,40.8437282],[-80.3447616,40.8437485],[-80.3447861,40.8437696],[-80.3448095,40.8437915],[-80.3448317,40.8438139],[-80.3448532,40.8438361],[-80.3448744,40.843858],[-80.3448956,40.8438799],[-80.3449166,40.8439021],[-80.3449373,40.8439245],[-80.3449576,40.8439469],[-80.3449779,40.8439692],[-80.3449982,40.8439916],[-80.3450185,40.8440141],[-80.3450385,40.844037],[-80.345058,40.8440601],[-80.3450771,40.8440831],[-80.3450961,40.8441061],[-80.3451152,40.8441292],[-80.3451341,40.8441525],[-80.3451526,40.844176],[-80.3451707,40.8441996],[-80.3451885,40.8442232],[-80.3452062,40.8442466],[-80.3452238,40.84427],[-80.3452415,40.8442932],[-80.3452592,40.8443164],[-80.3452771,40.8443396],[-80.3452952,40.8443627],[-80.3453133,40.844386],[-80.3453315,40.8444095],[-80.3453496,40.8444332],[-80.3453672,40.8444572],[-80.3453843,40.8444813],[-80.3454011,40.8445053],[-80.3454179,40.8445292],[-80.3454346,40.8445532],[-80.3454512,40.8445773],[-80.3454676,40.8446015],[-80.3454837,40.8446256],[-80.3454992,40.8446491],[-80.3455143,40.8446718],[-80.3455309,40.844693],[-80.3455487,40.8447126],[-80.3455675,40.8447311],[-80.3455873,40.8447477],[-80.3456094,40.8447621],[-80.345634,40.8447744],[-80.3456604,40.8447856],[-80.3456887,40.8447956],[-80.3457181,40.844804],[-80.345748,40.8448113],[-80.3457786,40.8448164],[-80.3458092,40.8448196],[-80.3458398,40.8448212],[-80.3458698,40.8448211],[-80.3458992,40.8448186],[-80.3459286,40.8448139],[-80.3459577,40.8448073],[-80.3459873,40.8447989],[-80.3460174,40.8447883],[-80.3460485,40.8447773],[-80.3460809,40.8447663],[-80.3461134,40.8447553],[-80.3461459,40.8447443],[-80.3461784,40.8447333],[-80.3462109,40.8447223],[-80.3462435,40.8447113],[-80.3462761,40.8447002],[-80.3463089,40.8446893],[-80.3463422,40.8446783],[-80.3463763,40.8446672],[-80.3464118,40.8446569],[-80.3464484,40.8446482],[-80.3464869,40.8446408],[-80.3465265,40.8446346],[-80.346567,40.8446314],[-80.3466078,40.8446313],[-80.3466482,40.8446344],[-80.3466875,40.8446389],[-80.3467257,40.8446453],[-80.3467639,40.8446537],[-80.3468016,40.8446636],[-80.3468376,40.8446757],[-80.3468725,40.84469],[-80.3469067,40.8447056],[-80.3469389,40.8447231]]}},
+    {"type":"Feature","id":"outer","properties":{"role":"outer","sourceIds":["usgs-naip-border-imagery"],"license":"public-domain","borderStatus":"estimated"},"geometry":{"type":"LineString","coordinates":[[-80.3468621,40.8447975],[-80.3468863,40.8448125],[-80.3469097,40.8448297],[-80.3469338,40.8448475],[-80.3469583,40.8448662],[-80.3469825,40.8448853],[-80.3470066,40.8449047],[-80.3470309,40.8449243],[-80.3470552,40.8449439],[-80.3470796,40.8449636],[-80.347104,40.8449832],[-80.3471279,40.8450032],[-80.3471519,40.8450231],[-80.3471758,40.8450431],[-80.3471998,40.845063],[-80.3472237,40.845083],[-80.3472476,40.8451029],[-80.3472716,40.8451229],[-80.3472955,40.8451428],[-80.3473195,40.8451628],[-80.3473434,40.8451827],[-80.3473665,40.8452033],[-80.3473895,40.8452238],[-80.3474126,40.8452444],[-80.3474356,40.8452649],[-80.3474587,40.8452854],[-80.3474818,40.845306],[-80.3475048,40.8453266],[-80.3475279,40.8453471],[-80.3475509,40.8453677],[-80.347574,40.8453882],[-80.3475975,40.8454085],[-80.347621,40.8454287],[-80.3476445,40.845449],[-80.347668,40.8454692],[-80.3476915,40.8454895],[-80.347715,40.8455097],[-80.3477385,40.8455299],[-80.347762,40.8455502],[-80.3477855,40.8455705],[-80.347809,40.8455907],[-80.3478334,40.8456103],[-80.3478578,40.84563],[-80.3478822,40.8456496],[-80.3479066,40.8456693],[-80.347931,40.8456889],[-80.3479553,40.8457085],[-80.3479797,40.8457282],[-80.3480041,40.8457478],[-80.3480285,40.8457675],[-80.3480529,40.8457871],[-80.3480768,40.8458071],[-80.3481008,40.845827],[-80.3481247,40.845847],[-80.3481487,40.8458669],[-80.3481726,40.8458868],[-80.3481965,40.8459068],[-80.3482205,40.8459268],[-80.3482444,40.8459467],[-80.3482684,40.8459667],[-80.3482923,40.8459866],[-80.3483162,40.8460065],[-80.3483402,40.8460265],[-80.3483641,40.8460464],[-80.3483881,40.8460664],[-80.348412,40.8460863],[-80.3484359,40.8461062],[-80.3484599,40.8461262],[-80.3484838,40.8461461],[-80.3485078,40.8461661],[-80.3485317,40.846186],[-80.3485561,40.8462057],[-80.3485805,40.8462253],[-80.3486048,40.8462449],[-80.3486292,40.8462646],[-80.3486536,40.8462842],[-80.348678,40.8463039],[-80.3487024,40.8463236],[-80.3487267,40.8463432],[-80.3487511,40.8463628],[-80.3487755,40.8463825],[-80.3487994,40.8464024],[-80.3488234,40.8464224],[-80.3488473,40.8464423],[-80.3488713,40.8464623],[-80.3488952,40.8464822],[-80.3489191,40.8465021],[-80.3489431,40.8465221],[-80.348967,40.846542],[-80.348991,40.846562],[-80.3490149,40.8465819],[-80.3490393,40.8466015],[-80.3490637,40.8466212],[-80.349088,40.8466409],[-80.3491124,40.8466605],[-80.3491368,40.8466801],[-80.3491612,40.8466998],[-80.3491856,40.8467194],[-80.3492099,40.8467391],[-80.3492343,40.8467587],[-80.3492587,40.8467784],[-80.3492826,40.8467983],[-80.3493066,40.8468183],[-80.3493305,40.8468382],[-80.3493545,40.8468582],[-80.3493784,40.8468781],[-80.3494024,40.846898],[-80.3494264,40.846918],[-80.3494503,40.8469379],[-80.3494743,40.8469579],[-80.3494982,40.8469778],[-80.3495221,40.8469977],[-80.3495461,40.8470177],[-80.34957,40.8470376],[-80.349594,40.8470576],[-80.3496179,40.8470775],[-80.3496418,40.8470975],[-80.3496658,40.8471174],[-80.3496897,40.8471374],[-80.3497137,40.8471573],[-80.3497376,40.8471773],[-80.3497615,40.8471972],[-80.3497855,40.8472172],[-80.3498094,40.8472371],[-80.3498333,40.8472571],[-80.3498576,40.8472773],[-80.3498823,40.8472978],[-80.3499083,40.8473181],[-80.3499356,40.8473376],[-80.3499637,40.847356],[-80.3499917,40.8473737],[-80.3500176,40.8473925],[-80.3500434,40.8474112],[-80.3500692,40.8474298],[-80.350095,40.8474485],[-80.3501208,40.8474672],[-80.3501467,40.8474859],[-80.3501728,40.8475048],[-80.3501994,40.8475238],[-80.3502268,40.8475427],[-80.3502553,40.8475613],[-80.3502869,40.8475775],[-80.3503195,40.8475931],[-80.3503529,40.8476076],[-80.350388,40.8476211],[-80.3504239,40.8476342],[-80.3504613,40.8476453],[-80.3504997,40.8476543],[-80.3505386,40.8476612],[-80.3505773,40.8476671],[-80.3506155,40.8476712],[-80.3506544,40.8476755],[-80.350694,40.8476789],[-80.3507341,40.8476804],[-80.3507746,40.8476795],[-80.350815,40.8476763],[-80.3508547,40.8476715],[-80.3508933,40.8476652],[-80.3509324,40.8476571],[-80.350972,40.8476474],[-80.3510103,40.8476348],[-80.3510471,40.8476203],[-80.3510815,40.8476045],[-80.3511142,40.8475888],[-80.3511459,40.8475727],[-80.3511789,40.8475548],[-80.3512123,40.8475346],[-80.3512435,40.8475112],[-80.3512705,40.8474859],[-80.3512941,40.8474599],[-80.3513166,40.847435],[-80.3513318,40.8474074],[-80.3513462,40.8473782],[-80.3513585,40.8473478],[-80.3513676,40.8473169],[-80.3513736,40.8472856],[-80.3513775,40.8472534],[-80.3513781,40.8472208],[-80.3513734,40.8471888],[-80.3513636,40.8471584],[-80.3513519,40.8471302],[-80.3513452,40.847103],[-80.3513388,40.8470766],[-80.3513323,40.8470501],[-80.3513258,40.8470236],[-80.3513193,40.8469971],[-80.3513128,40.8469706],[-80.3513063,40.8469441],[-80.3512999,40.8469176],[-80.3512934,40.8468911],[-80.3512869,40.8468646],[-80.3512804,40.8468381],[-80.3512739,40.8468116],[-80.3512675,40.8467851],[-80.351261,40.8467586],[-80.3512545,40.8467321],[-80.351248,40.8467056],[-80.3512415,40.8466792],[-80.351235,40.8466527],[-80.3512286,40.8466262],[-80.3512219,40.846599],[-80.3512138,40.8465712],[-80.3512038,40.8465431],[-80.3511917,40.8465153],[-80.3511775,40.8464877],[-80.3511625,40.8464598],[-80.351145,40.8464323],[-80.3511238,40.8464059],[-80.3511,40.8463819],[-80.3510758,40.8463592],[-80.3510515,40.8463366],[-80.3510248,40.8463146],[-80.3509948,40.8462942],[-80.3509624,40.846276],[-80.3509289,40.8462599],[-80.3508956,40.846245],[-80.3508619,40.8462316],[-80.3508267,40.8462191],[-80.3507906,40.8462077],[-80.3507534,40.8461985],[-80.350716,40.8461916],[-80.3506796,40.8461849],[-80.3506442,40.8461784],[-80.3506096,40.846172],[-80.350575,40.8461656],[-80.3505403,40.8461593],[-80.3505057,40.8461529],[-80.3504711,40.8461465],[-80.3504365,40.8461401],[-80.3504019,40.8461338],[-80.3503673,40.8461274],[-80.3503327,40.846121],[-80.3502981,40.8461147],[-80.3502635,40.8461083],[-80.3502289,40.8461019],[-80.3501943,40.8460956],[-80.3501596,40.8460892],[-80.350125,40.8460828],[-80.3500904,40.8460764],[-80.3500558,40.8460701],[-80.3500212,40.8460637],[-80.3499865,40.8460578],[-80.3499517,40.8460518],[-80.349917,40.8460459],[-80.3498823,40.8460399],[-80.3498477,40.846034],[-80.3498136,40.8460282],[-80.3497801,40.8460221],[-80.3497469,40.8460154],[-80.3497139,40.8460081],[-80.3496811,40.8460004],[-80.3496486,40.8459921],[-80.3496167,40.8459831],[-80.3495861,40.8459738],[-80.3495564,40.845964],[-80.3495284,40.845953],[-80.3495016,40.8459405],[-80.3494754,40.8459267],[-80.3494497,40.845912],[-80.3494245,40.8458961],[-80.3494001,40.8458792],[-80.3493756,40.8458624],[-80.3493518,40.8458446],[-80.3493299,40.845827],[-80.3493097,40.8458101],[-80.3492932,40.8457933],[-80.3492809,40.8457755],[-80.3492719,40.8457553],[-80.3492638,40.845733],[-80.3492562,40.845709],[-80.3492497,40.8456842],[-80.3492438,40.8456592],[-80.3492388,40.845634],[-80.3492349,40.8456098],[-80.349232,40.8455865],[-80.3492323,40.8455642],[-80.3492358,40.8455415],[-80.3492422,40.8455175],[-80.3492489,40.8454922],[-80.3492559,40.8454658],[-80.3492629,40.8454393],[-80.3492698,40.8454128],[-80.3492767,40.8453863],[-80.3492835,40.8453598],[-80.3492902,40.8453333],[-80.349297,40.8453068],[-80.3493038,40.8452804],[-80.3493106,40.8452539],[-80.3493172,40.8452279],[-80.3493237,40.8452025],[-80.3493308,40.8451782],[-80.3493385,40.8451544],[-80.3493485,40.8451302],[-80.3493605,40.845104],[-80.3493722,40.8450754],[-80.3493796,40.8450448],[-80.3493821,40.8450139],[-80.3493811,40.844984],[-80.3493794,40.8449552],[-80.3493768,40.8449275],[-80.3493732,40.8448993],[-80.3493702,40.8448703],[-80.3493648,40.8448408],[-80.3493556,40.8448116],[-80.349343,40.8447835],[-80.3493291,40.8447565],[-80.3493149,40.8447305],[-80.3492998,40.8447047],[-80.3492836,40.8446787],[-80.3492656,40.844653],[-80.3492454,40.8446282],[-80.3492232,40.8446037],[-80.3491997,40.8445795],[-80.3491734,40.8445569],[-80.3491448,40.8445363],[-80.3491146,40.8445177],[-80.3490848,40.8444999],[-80.3490551,40.8444832],[-80.3490248,40.8444673],[-80.3489947,40.844452],[-80.3489649,40.8444368],[-80.348935,40.8444221],[-80.3489051,40.8444075],[-80.3488753,40.8443928],[-80.3488454,40.8443782],[-80.3488155,40.8443635],[-80.3487856,40.8443488],[-80.3487557,40.8443342],[-80.3487259,40.8443195],[-80.348696,40.8443049],[-80.3486661,40.8442902],[-80.3486362,40.8442755],[-80.3486064,40.8442609],[-80.3485765,40.8442462],[-80.3485466,40.8442315],[-80.3485168,40.8442169],[-80.3484869,40.8442022],[-80.348457,40.8441875],[-80.3484271,40.8441728],[-80.3483973,40.8441582],[-80.3483674,40.8441435],[-80.3483375,40.8441288],[-80.3483076,40.8441142],[-80.3482778,40.8440995],[-80.3482479,40.8440848],[-80.348218,40.8440702],[-80.3481881,40.8440555],[-80.3481582,40.8440408],[-80.3481284,40.8440261],[-80.3480985,40.8440115],[-80.3480686,40.8439968],[-80.3480384,40.8439825],[-80.3480082,40.8439682],[-80.347978,40.8439539],[-80.3479478,40.8439396],[-80.3479176,40.8439253],[-80.3478875,40.8439111],[-80.3478573,40.8438968],[-80.3478271,40.8438825],[-80.3477969,40.8438682],[-80.3477667,40.8438539],[-80.3477368,40.8438392],[-80.3477069,40.8438246],[-80.3476771,40.8438099],[-80.3476472,40.8437953],[-80.3476173,40.8437806],[-80.3475874,40.8437659],[-80.3475575,40.8437513],[-80.3475277,40.8437366],[-80.3474978,40.843722],[-80.3474679,40.8437073],[-80.3474377,40.843693],[-80.3474075,40.8436787],[-80.3473773,40.8436644],[-80.3473471,40.8436501],[-80.3473169,40.8436358],[-80.3472867,40.8436216],[-80.3472565,40.8436073],[-80.3472263,40.843593],[-80.3471961,40.8435787],[-80.3471659,40.8435644],[-80.347136,40.8435497],[-80.3471062,40.8435351],[-80.3470763,40.8435204],[-80.3470464,40.8435057],[-80.3470166,40.843491],[-80.3469867,40.8434764],[-80.3469568,40.8434617],[-80.3469269,40.843447],[-80.3468971,40.8434324],[-80.3468672,40.8434177],[-80.3468373,40.843403],[-80.3468074,40.8433884],[-80.3467776,40.8433737],[-80.3467477,40.843359],[-80.3467178,40.8433444],[-80.3466879,40.8433297],[-80.346658,40.843315],[-80.3466282,40.8433003],[-80.3465983,40.8432857],[-80.3465684,40.843271],[-80.3465389,40.843256],[-80.3465093,40.8432409],[-80.3464798,40.8432259],[-80.3464502,40.8432108],[-80.3464206,40.8431958],[-80.3463911,40.8431808],[-80.3463615,40.8431657],[-80.346332,40.8431507],[-80.3463024,40.8431356],[-80.3462729,40.8431206],[-80.346243,40.8431059],[-80.3462132,40.8430913],[-80.3461833,40.8430766],[-80.3461534,40.8430619],[-80.3461236,40.8430472],[-80.3460937,40.8430326],[-80.3460638,40.8430179],[-80.3460339,40.8430032],[-80.3460041,40.8429886],[-80.3459742,40.8429739],[-80.3459447,40.8429589],[-80.3459151,40.8429438],[-80.3458855,40.8429288],[-80.345856,40.8429137],[-80.3458265,40.8428987],[-80.3457969,40.8428837],[-80.3457674,40.8428686],[-80.3457378,40.8428536],[-80.3457083,40.8428385],[-80.3456787,40.8428235],[-80.3456485,40.8428092],[-80.3456183,40.8427949],[-80.3455881,40.8427806],[-80.3455579,40.8427663],[-80.3455277,40.842752],[-80.3454974,40.8427377],[-80.3454671,40.8427234],[-80.3454367,40.8427091],[-80.3454062,40.8426949],[-80.3453756,40.8426808],[-80.3453456,40.842666],[-80.3453156,40.8426512],[-80.3452854,40.8426365],[-80.345255,40.8426219],[-80.3452242,40.8426074],[-80.3451925,40.8425925],[-80.3451596,40.8425782],[-80.3451252,40.8425653],[-80.3450898,40.8425539],[-80.3450541,40.8425433],[-80.3450178,40.8425345],[-80.3449811,40.8425272],[-80.3449445,40.8425212],[-80.3449082,40.8425158],[-80.3448725,40.8425106],[-80.3448367,40.8425058],[-80.3448009,40.8425015],[-80.3447646,40.8424974],[-80.3447278,40.8424932],[-80.3446902,40.8424902],[-80.3446523,40.8424883],[-80.3446141,40.8424879],[-80.3445758,40.842488],[-80.3445376,40.8424896],[-80.3444997,40.8424929],[-80.3444622,40.8424979],[-80.344425,40.8425031],[-80.3443884,40.8425092],[-80.3443521,40.8425166],[-80.3443163,40.8425253],[-80.3442809,40.8425342],[-80.3442461,40.8425438],[-80.3442118,40.8425542],[-80.3441781,40.8425652],[-80.3441447,40.8425762],[-80.3441117,40.8425875],[-80.344079,40.842599],[-80.3440466,40.8426108],[-80.3440143,40.8426225],[-80.3439822,40.8426341],[-80.3439497,40.8426454],[-80.3439165,40.8426569],[-80.3438826,40.842669],[-80.3438491,40.8426827],[-80.3438153,40.8426985],[-80.3437818,40.842716],[-80.3437506,40.8427363],[-80.3437224,40.8427592],[-80.3436977,40.8427842],[-80.3436752,40.8428098],[-80.3436571,40.8428362],[-80.3436414,40.8428641],[-80.3436271,40.8428925],[-80.3436161,40.8429215],[-80.3436085,40.8429511],[-80.3436041,40.842981],[-80.343601,40.8430105],[-80.3436004,40.8430396],[-80.3436024,40.8430691],[-80.3436061,40.8430996],[-80.3436114,40.8431309],[-80.3436237,40.8431616],[-80.3436422,40.84319],[-80.3436642,40.8432161],[-80.3436858,40.8432412],[-80.3437093,40.8432647],[-80.343735,40.8432868],[-80.3437633,40.8433078],[-80.3437924,40.8433292],[-80.3438246,40.8433483],[-80.3438597,40.8433644],[-80.3438953,40.8433766],[-80.3439287,40.8433877],[-80.3439592,40.843399],[-80.3439889,40.843411],[-80.3440183,40.8434236],[-80.3440477,40.8434367],[-80.3440768,40.8434503],[-80.3441056,40.8434647],[-80.3441347,40.8434795],[-80.3441646,40.8434941],[-80.3441947,40.8435087],[-80.3442244,40.843523],[-80.3442537,40.8435371],[-80.344282,40.8435515],[-80.3443097,40.8435666],[-80.3443371,40.8435823],[-80.3443645,40.8435981],[-80.3443916,40.8436139],[-80.3444177,40.8436302],[-80.3444432,40.8436472],[-80.3444685,40.8436651],[-80.3444941,40.843683],[-80.3445197,40.843701],[-80.3445447,40.843719],[-80.344569,40.8437374],[-80.3445928,40.8437563],[-80.3446165,40.8437757],[-80.3446403,40.843795],[-80.3446637,40.8438141],[-80.3446859,40.8438333],[-80.344707,40.8438529],[-80.3447274,40.8438736],[-80.3447479,40.8438948],[-80.3447688,40.8439162],[-80.3447896,40.8439377],[-80.34481,40.8439593],[-80.3448301,40.8439811],[-80.3448501,40.844003],[-80.3448701,40.8440251],[-80.3448901,40.8440471],[-80.3449098,40.844069],[-80.344929,40.844091],[-80.3449478,40.8441132],[-80.3449664,40.8441358],[-80.3449851,40.8441584],[-80.3450038,40.844181],[-80.3450221,40.8442036],[-80.34504,40.8442263],[-80.3450575,40.8442492],[-80.345075,40.8442724],[-80.3450926,40.8442957],[-80.3451104,40.8443192],[-80.3451282,40.8443427],[-80.3451462,40.8443662],[-80.3451643,40.8443895],[-80.3451824,40.8444128],[-80.3452004,40.844436],[-80.3452183,40.8444589],[-80.3452357,40.8444818],[-80.3452526,40.8445048],[-80.3452692,40.8445281],[-80.3452857,40.8445517],[-80.3453022,40.8445753],[-80.3453188,40.844599],[-80.3453351,40.8446226],[-80.3453511,40.8446463],[-80.345367,40.8446703],[-80.3453834,40.8446951],[-80.3454007,40.8447207],[-80.3454216,40.8447456],[-80.3454452,40.8447701],[-80.3454715,40.8447941],[-80.3455004,40.8448167],[-80.3455328,40.8448365],[-80.3455681,40.8448535],[-80.3456044,40.8448679],[-80.3456409,40.8448799],[-80.3456785,40.8448897],[-80.3457167,40.844898],[-80.3457546,40.8449067],[-80.3457938,40.8449132],[-80.3458344,40.8449178],[-80.3458755,40.8449199],[-80.3459172,40.8449189],[-80.3459587,40.8449148],[-80.3459994,40.8449082],[-80.3460378,40.8448998],[-80.3460741,40.8448898],[-80.346109,40.84488],[-80.3461414,40.8448685],[-80.3461737,40.8448571],[-80.3462059,40.8448457],[-80.3462382,40.8448343],[-80.3462705,40.8448229],[-80.3463026,40.8448115],[-80.3463347,40.8448001],[-80.3463668,40.8447889],[-80.3463985,40.8447779],[-80.3464293,40.8447674],[-80.3464592,40.8447573],[-80.3464892,40.8447488],[-80.3465185,40.8447419],[-80.3465475,40.8447359],[-80.346576,40.8447323],[-80.3466049,40.8447311],[-80.3466348,40.8447324],[-80.3466654,40.8447346],[-80.3466964,40.8447385],[-80.3467265,40.8447438],[-80.3467554,40.8447513],[-80.3467836,40.8447608],[-80.3468106,40.844772],[-80.3468371,40.844784],[-80.3468621,40.8447975]]}},
+    {"type":"Feature","id":"ideal","properties":{"role":"ideal","sourceIds":[],"estimated":true,"method":"bounded-minimum-curvature-local-time-v1","edgeMarginM":0.5,"borderLicenses":["public-domain"]},"geometry":{"type":"LineString","coordinates":[[-80.3468883071,40.8447728263],[-80.3469159924,40.8447844878],[-80.3469443097,40.8447975594],[-80.3469727916,40.8448118689],[-80.3470015934,40.8448274284],[-80.347029927,40.8448435466],[-80.3470578811,40.8448602733],[-80.3470853901,40.8448775562],[-80.3471123901,40.8448953426],[-80.3471387891,40.8449135432],[-80.3471645071,40.8449320666],[-80.3471896815,40.8449509957],[-80.3472143562,40.8449703203],[-80.3472386046,40.8449900402],[-80.3472624777,40.8450101141],[-80.3472859733,40.8450303952],[-80.3473091976,40.8450508248],[-80.3473323058,40.8450714225],[-80.3473551211,40.8450920998],[-80.3473776988,40.8451131467],[-80.347399847,40.8451344317],[-80.3474217862,40.8451559138],[-80.3474435268,40.845177353],[-80.3474653465,40.8451987901],[-80.3474872595,40.8452200533],[-80.3475096653,40.8452411463],[-80.3475324866,40.8452618969],[-80.3475556846,40.8452824028],[-80.3475791783,40.8453025953],[-80.3476030799,40.8453226159],[-80.3476272349,40.8453424207],[-80.3476515908,40.8453620858],[-80.3476759706,40.8453817818],[-80.3477000895,40.8454015834],[-80.3477239984,40.84542171],[-80.3477473797,40.8454420251],[-80.3477703731,40.845462662],[-80.3477929251,40.8454835372],[-80.3478151804,40.845504685],[-80.3478368962,40.8455259463],[-80.3478582523,40.8455472939],[-80.3478796407,40.8455686672],[-80.3479012245,40.8455899866],[-80.3479232623,40.8456112657],[-80.3479456229,40.8456322209],[-80.3479685742,40.8456529459],[-80.347992164,40.8456732267],[-80.348016287,40.8456929717],[-80.3480410111,40.8457124811],[-80.3480663626,40.8457318971],[-80.348092101,40.8457511833],[-80.3481180496,40.8457703855],[-80.3481439616,40.8457895057],[-80.3481696168,40.8458083903],[-80.3481953676,40.8458271763],[-80.3482212339,40.8458459086],[-80.3482468649,40.8458645468],[-80.3482723826,40.8458834262],[-80.348297637,40.8459025915],[-80.3483223605,40.8459219501],[-80.3483465545,40.845941753],[-80.3483702107,40.845961997],[-80.3483933616,40.8459824671],[-80.3484162135,40.8460032129],[-80.3484388883,40.8460241743],[-80.3484613879,40.8460451638],[-80.3484839047,40.8460661377],[-80.3485065266,40.8460869702],[-80.3485293469,40.8461077351],[-80.3485520341,40.8461281766],[-80.348574769,40.8461483046],[-80.3485978462,40.8461682544],[-80.3486212221,40.8461879213],[-80.3486453499,40.8462076586],[-80.3486699447,40.8462272547],[-80.3486946782,40.8462466816],[-80.3487193998,40.8462660841],[-80.3487441352,40.8462855811],[-80.348768682,40.8463051357],[-80.3487929435,40.8463247858],[-80.3488170573,40.8463447067],[-80.3488408646,40.8463647995],[-80.3488645019,40.8463850079],[-80.3488880471,40.8464052111],[-80.3489115961,40.8464254797],[-80.3489351333,40.8464457905],[-80.3489585756,40.8464660633],[-80.3489820444,40.8464863897],[-80.3490054524,40.8465066865],[-80.3490290164,40.8465271254],[-80.349052651,40.8465476255],[-80.3490762709,40.8465681072],[-80.3490998906,40.8465885749],[-80.3491233746,40.8466089098],[-80.3491468505,40.8466292122],[-80.3491703553,40.8466495077],[-80.3491938727,40.8466697788],[-80.3492174199,40.8466900361],[-80.3492410192,40.8467103484],[-80.3492643914,40.8467305352],[-80.3492878887,40.8467509012],[-80.3493112291,40.8467712252],[-80.3493345882,40.8467916419],[-80.3493578021,40.8468120035],[-80.3493811079,40.8468324912],[-80.3494043836,40.8468529873],[-80.3494275861,40.8468734377],[-80.3494508553,40.8468939382],[-80.3494740216,40.8469143271],[-80.3494974914,40.8469349198],[-80.3495209916,40.8469554671],[-80.3495445052,40.8469760392],[-80.3495679693,40.8469966661],[-80.3495911777,40.8470171475],[-80.34961445,40.8470377156],[-80.349637635,40.8470582093],[-80.3496608689,40.8470787031],[-80.3496840907,40.8470991073],[-80.3497074387,40.8471194964],[-80.3497305546,40.8471395353],[-80.3497536596,40.8471593689],[-80.3497769923,40.8471791573],[-80.3498004525,40.8471987442],[-80.3498245376,40.8472184674],[-80.3498491159,40.8472380804],[-80.3498744502,40.8472576676],[-80.3499009771,40.8472775536],[-80.349928664,40.8472976661],[-80.3499569187,40.8473175107],[-80.3499853218,40.8473367846],[-80.3500133705,40.8473551332],[-80.3500410749,40.8473725895],[-80.3500689302,40.8473895281],[-80.3500971846,40.8474061309],[-80.3501259094,40.8474224512],[-80.3501549586,40.8474383812],[-80.3501844869,40.8474540115],[-80.350214761,40.8474693855],[-80.3502458904,40.8474843769],[-80.3502778694,40.8474988693],[-80.3503105742,40.8475127312],[-80.3503440679,40.8475259338],[-80.3503779897,40.847538254],[-80.3504125226,40.8475497344],[-80.3504480347,40.8475604467],[-80.3504839125,40.8475700984],[-80.3505200888,40.8475786401],[-80.3505566817,40.8475860679],[-80.3505936901,40.8475923183],[-80.350630551,40.8475972646],[-80.3506680444,40.8476009265],[-80.3507060936,40.8476030505],[-80.3507440368,40.8476034689],[-80.350782184,40.8476021387],[-80.350820083,40.8475990174],[-80.3508574342,40.8475941068],[-80.3508947877,40.8475872733],[-80.3509322766,40.8475783273],[-80.3509689129,40.8475672514],[-80.3510042387,40.8475540036],[-80.3510371966,40.8475390676],[-80.3510676611,40.8475227364],[-80.3510967504,40.8475044869],[-80.35112516,40.8474837135],[-80.3511519983,40.8474610203],[-80.3511762188,40.8474373301],[-80.3511974079,40.8474131531],[-80.3512157707,40.8473887645],[-80.3512319404,40.847363625],[-80.3512462718,40.8473371306],[-80.3512587248,40.8473092411],[-80.3512689758,40.8472808801],[-80.3512774029,40.847251402],[-80.3512841037,40.8472208727],[-80.351288981,40.8471898161],[-80.3512920386,40.847158604],[-80.3512935682,40.8471287207],[-80.3512940471,40.8471007093],[-80.3512935291,40.8470735135],[-80.3512918086,40.8470462564],[-80.3512890459,40.8470191782],[-80.3512853504,40.8469922235],[-80.351280727,40.846965524],[-80.351275103,40.8469388567],[-80.3512684745,40.84691219],[-80.3512609067,40.8468856532],[-80.3512525757,40.8468590988],[-80.3512439108,40.8468326921],[-80.351235087,40.8468063254],[-80.3512261221,40.8467802217],[-80.3512169669,40.8467541286],[-80.3512076246,40.8467279597],[-80.3511980518,40.8467019511],[-80.3511880775,40.8466759915],[-80.3511773928,40.8466501476],[-80.3511656228,40.8466243117],[-80.3511524199,40.8465980753],[-80.3511375078,40.8465713779],[-80.3511210298,40.8465450508],[-80.3511027997,40.8465190319],[-80.351082663,40.8464933455],[-80.3510608295,40.8464684937],[-80.3510376711,40.8464448111],[-80.3510133768,40.8464223916],[-80.350987964,40.8464012198],[-80.3509614185,40.8463811479],[-80.3509333068,40.8463617795],[-80.3509041551,40.8463433056],[-80.3508741168,40.8463257621],[-80.3508432843,40.8463092875],[-80.3508118244,40.846293908],[-80.3507786642,40.8462791748],[-80.3507445057,40.8462653968],[-80.3507099061,40.8462527149],[-80.3506751737,40.8462410054],[-80.3506412031,40.8462303428],[-80.3506075699,40.8462206254],[-80.350573772,40.8462117324],[-80.350539753,40.8462036298],[-80.3505053637,40.8461962641],[-80.3504708329,40.8461896385],[-80.3504360568,40.8461838032],[-80.3504008303,40.8461787696],[-80.3503652315,40.8461744405],[-80.3503294501,40.8461707041],[-80.3502935164,40.846167399],[-80.3502578538,40.8461644092],[-80.3502221391,40.8461614981],[-80.3501863618,40.8461585559],[-80.3501506598,40.8461555936],[-80.3501149927,40.8461525322],[-80.3500794116,40.8461492353],[-80.3500439731,40.8461455301],[-80.3500088685,40.8461412906],[-80.3499738294,40.8461363987],[-80.3499389786,40.8461308289],[-80.3499043382,40.846124691],[-80.3498697814,40.8461180849],[-80.3498353853,40.8461110269],[-80.3498014353,40.8461035723],[-80.3497678326,40.8460957007],[-80.3497345406,40.8460873165],[-80.34970173,40.8460784284],[-80.3496693842,40.8460689488],[-80.3496374202,40.8460586849],[-80.3496061162,40.8460476665],[-80.3495756409,40.8460359155],[-80.3495462261,40.8460234949],[-80.3495181609,40.8460105207],[-80.3494913308,40.8459969887],[-80.3494652997,40.8459827459],[-80.3494399587,40.8459677305],[-80.3494151886,40.8459518449],[-80.3493907197,40.8459348569],[-80.349367101,40.8459170453],[-80.3493444737,40.8458984104],[-80.3493228678,40.8458788209],[-80.3493032685,40.845859104],[-80.3492858226,40.8458396109],[-80.3492707976,40.8458209778],[-80.3492582052,40.8458038326],[-80.3492464614,40.8457866503],[-80.349234761,40.8457680814],[-80.3492230838,40.845747426],[-80.349211786,40.8457244993],[-80.3492016026,40.8457004192],[-80.3491928041,40.8456757808],[-80.3491855185,40.8456507211],[-80.3491800089,40.8456260849],[-80.3491762174,40.845602223],[-80.3491737652,40.8455792044],[-80.3491723158,40.8455567641],[-80.3491719375,40.8455333229],[-80.3491728389,40.8455083921],[-80.3491751162,40.8454823967],[-80.3491786716,40.8454562313],[-80.3491833802,40.8454302248],[-80.3491891548,40.8454043951],[-80.349195941,40.8453787174],[-80.3492039043,40.8453524652],[-80.349212695,40.845326271],[-80.3492220152,40.8453001414],[-80.3492315594,40.8452741636],[-80.3492412212,40.8452480884],[-80.3492506137,40.8452223927],[-80.3492596467,40.8451967299],[-80.349267986,40.8451714597],[-80.3492755104,40.8451464013],[-80.3492822762,40.8451207161],[-80.3492882269,40.8450935581],[-80.3492931053,40.8450644871],[-80.3492963417,40.8450348253],[-80.3492978121,40.8450054434],[-80.3492976231,40.8449766665],[-80.349295838,40.8449487837],[-80.3492925171,40.8449210643],[-80.3492875245,40.8448930042],[-80.34928071,40.8448647583],[-80.3492720729,40.8448368202],[-80.3492616439,40.8448093954],[-80.3492495067,40.8447826744],[-80.349235886,40.8447569383],[-80.3492206093,40.844731693],[-80.3492035205,40.8447067367],[-80.3491847873,40.8446823141],[-80.3491644785,40.8446582715],[-80.3491427005,40.8446343983],[-80.3491196019,40.8446108466],[-80.3490953074,40.844587825],[-80.3490697543,40.8445652883],[-80.3490435909,40.8445436686],[-80.3490171399,40.8445230859],[-80.3489902649,40.8445032265],[-80.3489636509,40.844484285],[-80.3489371871,40.8444661558],[-80.3489104809,40.8444486302],[-80.3488833388,40.8444316274],[-80.3488551832,40.844414878],[-80.3488265946,40.8443986744],[-80.3487975633,40.8443829902],[-80.3487681866,40.8443677581],[-80.3487385269,40.8443528738],[-80.348708494,40.8443382215],[-80.3486784285,40.8443238778],[-80.3486480444,40.8443096102],[-80.3486176823,40.8442954868],[-80.3485872962,40.8442813918],[-80.348556739,40.8442673094],[-80.348526285,40.8442534343],[-80.3484956869,40.8442395615],[-80.3484650768,40.8442256741],[-80.3484345417,40.8442117427],[-80.3484040071,40.8441976707],[-80.3483732117,40.8441833296],[-80.3483422886,40.8441689467],[-80.3483113196,40.8441546879],[-80.3482802792,40.8441405207],[-80.3482496376,40.8441266524],[-80.348219032,40.8441128793],[-80.348188255,40.8440990725],[-80.348157601,40.8440853482],[-80.3481269451,40.8440716175],[-80.3480963361,40.844057846],[-80.3480662049,40.8440441879],[-80.3480362331,40.8440304674],[-80.3480062461,40.8440165829],[-80.3479764211,40.8440026946],[-80.3479460563,40.8439885369],[-80.3479156319,40.843974336],[-80.3478852836,40.8439601514],[-80.3478549575,40.8439459516],[-80.3478247081,40.8439317591],[-80.3477944182,40.8439175138],[-80.3477639502,40.8439031465],[-80.3477334993,40.8438887521],[-80.347703072,40.8438743336],[-80.3476727264,40.8438599199],[-80.3476425426,40.8438455507],[-80.3476123799,40.8438311578],[-80.3475822366,40.8438167406],[-80.3475521141,40.8438023001],[-80.3475220021,40.8437878309],[-80.3474919922,40.8437733766],[-80.347461663,40.843758732],[-80.3474314709,40.8437441479],[-80.34740123,40.8437295635],[-80.347370975,40.8437149924],[-80.3473409102,40.8437005292],[-80.3473107075,40.843686012],[-80.3472806303,40.8436715633],[-80.3472505385,40.8436571112],[-80.3472204593,40.843642665],[-80.3471904553,40.843628251],[-80.3471605886,40.8436138958],[-80.3471306696,40.8435995056],[-80.3471008515,40.8435851519],[-80.3470709789,40.8435707582],[-80.3470409106,40.8435562549],[-80.3470108516,40.8435417399],[-80.346980803,40.843527213],[-80.3469508257,40.8435127032],[-80.3469207987,40.8434981513],[-80.3468907826,40.8434835859],[-80.3468605788,40.8434689097],[-80.346830389,40.8434542196],[-80.3468001895,40.8434395027],[-80.3467700829,40.8434247764],[-80.3467401795,40.8434100621],[-80.3467103168,40.8433952801],[-80.3466805655,40.8433804654],[-80.3466508775,40.8433655958],[-80.3466211682,40.8433506319],[-80.3465916498,40.8433356816],[-80.3465625143,40.8433208448],[-80.3465333788,40.8433059386],[-80.3465043966,40.8432910457],[-80.3464753154,40.8432760492],[-80.3464458989,40.8432608402],[-80.3464165138,40.8432456108],[-80.3463871369,40.8432303599],[-80.3463577054,40.8432150672],[-80.3463283436,40.8431998055],[-80.3462989055,40.8431845127],[-80.3462690282,40.8431690189],[-80.3462391201,40.8431535371],[-80.3462092019,40.8431380865],[-80.346179328,40.8431227012],[-80.3461497921,40.8431075315],[-80.3461202646,40.8430924513],[-80.34609061,40.8430774283],[-80.3460609062,40.8430625576],[-80.3460310813,40.8430478491],[-80.3460011598,40.843033285],[-80.3459713137,40.843018903],[-80.3459415431,40.8430046442],[-80.3459116743,40.8429903566],[-80.3458818127,40.8429760235],[-80.3458517828,40.8429614947],[-80.3458218615,40.8429468538],[-80.3457919868,40.8429320335],[-80.34576238,40.8429171268],[-80.3457327684,40.842902005],[-80.3457033418,40.8428867918],[-80.3456740059,40.8428714931],[-80.3456444994,40.8428560504],[-80.345615211,40.8428407459],[-80.3455857044,40.842825459],[-80.3455561878,40.8428103944],[-80.3455264015,40.842795522],[-80.3454963566,40.8427809378],[-80.3454660012,40.8427667231],[-80.3454351972,40.8427528988],[-80.3454040172,40.8427393955],[-80.3453726492,40.8427261885],[-80.3453410839,40.8427132973],[-80.345309159,40.8427006699],[-80.3452769132,40.8426883928],[-80.3452443185,40.8426765199],[-80.34521126,40.8426650273],[-80.3451773961,40.8426538106],[-80.3451425521,40.8426428576],[-80.3451071912,40.842632395],[-80.345071652,40.842622568],[-80.3450361295,40.8426134453],[-80.3450006021,40.8426050203],[-80.3449650969,40.842597305],[-80.3449294167,40.8425902579],[-80.344893697,40.8425839199],[-80.3448582348,40.8425783428],[-80.3448227144,40.8425733681],[-80.3447871615,40.8425689995],[-80.3447512014,40.8425652853],[-80.3447146005,40.8425623091],[-80.3446777272,40.8425601916],[-80.3446405627,40.8425589538],[-80.3446034,40.842558601],[-80.3445662439,40.8425591296],[-80.3445292618,40.8425605156],[-80.3444922508,40.8425627643],[-80.3444553916,40.8425658505],[-80.3444187088,40.8425697574],[-80.3443818061,40.8425745365],[-80.3443449999,40.8425801375],[-80.3443083801,40.842586538],[-80.344272022,40.8425937125],[-80.344236374,40.8426015422],[-80.3442012882,40.8426100414],[-80.3441667452,40.8426192095],[-80.3441328032,40.8426290342],[-80.3440992893,40.8426395872],[-80.3440665503,40.8426507842],[-80.3440349056,40.8426625319],[-80.3440039066,40.8426750268],[-80.3439732657,40.842688463],[-80.3439422838,40.8427032545],[-80.3439111962,40.8427195307],[-80.3438804854,40.842737313],[-80.3438502826,40.8427567861],[-80.3438215897,40.8427775953],[-80.3437947407,40.8427997084],[-80.3437700291,40.8428231026],[-80.3437479374,40.8428475319],[-80.3437287669,40.8428727797],[-80.3437122017,40.8428994457],[-80.343698728,40.8429271842],[-80.3436886829,40.8429555597],[-80.3436821411,40.8429845529],[-80.3436792422,40.8430137351],[-80.343679825,40.8430424109],[-80.3436839801,40.8430716093],[-80.3436921068,40.8431012669],[-80.3437039847,40.8431303553],[-80.343719125,40.8431582417],[-80.3437373332,40.8431850054],[-80.3437575692,40.8432099947],[-80.3437792496,40.8432333427],[-80.3438033978,40.8432562648],[-80.343829969,40.8432787314],[-80.3438591047,40.8433007903],[-80.3438897246,40.8433218123],[-80.3439209228,40.8433415057],[-80.343950839,40.843359236],[-80.3439780514,40.8433746665],[-80.3440054258,40.8433892538],[-80.3440331664,40.8434031683],[-80.3440615512,40.8434166288],[-80.3440905779,40.8434297542],[-80.3441203026,40.8434427123],[-80.3441507007,40.843455791],[-80.3441816246,40.843469223],[-80.3442126127,40.8434829455],[-80.3442428416,40.8434966846],[-80.3442721576,40.8435104308],[-80.3443007439,40.8435243024],[-80.3443288889,40.8435384584],[-80.3443570583,40.8435532011],[-80.3443849015,40.8435682363],[-80.3444125296,40.8435834604],[-80.3444395788,40.8435987112],[-80.3444663532,40.843614245],[-80.344493246,40.8436303615],[-80.3445201949,40.8436471008],[-80.3445468469,40.8436643079],[-80.3445727671,40.843681751],[-80.3445979,40.8436994572],[-80.3446224484,40.8437176559],[-80.3446466621,40.843736631],[-80.3446701725,40.8437561578],[-80.3446928469,40.8437760487],[-80.3447145598,40.8437958926],[-80.3447357211,40.8438156487],[-80.3447567671,40.8438355188],[-80.3447780306,40.8438558573],[-80.3447995028,40.8438767315],[-80.3448208788,40.8438979194],[-80.3448419426,40.84391927],[-80.344862524,40.8439406617],[-80.3448828573,40.8439623881],[-80.3449028669,40.8439844034],[-80.344922509,40.8440066675],[-80.3449417062,40.8440291292],[-80.3449601744,40.8440515286],[-80.3449782205,40.8440741905],[-80.3449956945,40.8440970395],[-80.3450128297,40.8441204159],[-80.3450294898,40.8441439539],[-80.3450457769,40.8441675335],[-80.3450618451,40.8441910813],[-80.3450778262,40.8442145001],[-80.3450940308,40.8442379451],[-80.3451105926,40.8442616316],[-80.3451271796,40.844285444],[-80.3451437514,40.8443094152],[-80.3451604323,40.8443334842],[-80.3451773204,40.8443575662],[-80.3451943893,40.8443814982],[-80.3452116367,40.8444051701],[-80.3452289493,40.8444286015],[-80.3452460492,40.8444515712],[-80.3452631998,40.8444743731],[-80.345280435,40.8444969632],[-80.345298072,40.8445197042],[-80.3453161783,40.8445426067],[-80.3453346442,40.8445653908],[-80.3453535692,40.8445880389],[-80.3453731284,40.8446103679],[-80.3453936404,40.8446323273],[-80.3454154944,40.8446541821],[-80.3454392598,40.844676376],[-80.3454649533,40.8446985536],[-80.3454923398,40.8447201397],[-80.3455215712,40.8447409819],[-80.3455524479,40.8447605083],[-80.3455846456,40.8447782268],[-80.3456180533,40.844794064],[-80.3456522738,40.8448078478],[-80.3456872402,40.8448196163],[-80.3457235355,40.8448295872],[-80.3457605958,40.8448375824],[-80.3457986206,40.8448435213],[-80.3458375383,40.8448471758],[-80.3458768785,40.8448485015],[-80.3459166222,40.8448475993],[-80.3459566771,40.8448445503],[-80.3459958315,40.8448396431],[-80.3460331295,40.8448332353],[-80.3460687848,40.8448255375],[-80.3461028479,40.8448168914],[-80.346135906,40.8448074486],[-80.3461688704,40.8447971855],[-80.3462015445,40.8447864393],[-80.3462340727,40.8447754508],[-80.3462666005,40.8447644629],[-80.3462991237,40.844753806],[-80.3463320089,40.8447436988],[-80.3463647165,40.8447345992],[-80.3463970972,40.8447267147],[-80.3464290713,40.8447201622],[-80.3464604569,40.8447150212],[-80.3464913959,40.8447112442],[-80.346521622,40.8447088272],[-80.346550804,40.8447077088],[-80.3465782656,40.8447077612],[-80.3466058737,40.8447086965],[-80.3466340336,40.8447105135],[-80.346662886,40.8447132974],[-80.3466927749,40.8447172637],[-80.3467217621,40.8447222947],[-80.3467501487,40.8447283974],[-80.3467780253,40.8447355234],[-80.3468059176,40.8447436677],[-80.3468334821,40.8447525634],[-80.3468610013,40.8447623065],[-80.3468883071,40.8447728263]]}}
   ]
 }

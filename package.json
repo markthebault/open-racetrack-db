@@ -17,7 +17,7 @@
     "lint": "eslint .",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "build": "npm run validate:data && npm run validate:europe && npm run validate:world && npm run generate:data -- --check && npm run validate:layouts && npm run validate:elevation && npm run validate:models && npm run validate:networks && npm run validate:border-inference && npm run validate:crossings && npm run validate:model-crossings && npm run generate:previews && npm run typecheck && vite build && tsx scripts/copy-data.ts",
+    "build": "npm run validate:data && npm run validate:europe && npm run validate:world && npm run generate:data -- --check && npm run validate:layouts && npm run validate:elevation && npm run validate:models && npm run validate:networks && npm run validate:border-inference && npm run validate:crossings && npm run validate:model-crossings && npm run validate:ideal-networks && npm run generate:previews && npm run typecheck && vite build && tsx scripts/copy-data.ts",
     "preview": "vite preview --host 0.0.0.0",
     "serve": "node scripts/serve.mjs",
     "discover:europe": "tsx scripts/discover-europe.ts",
@@ -61,7 +61,9 @@
     "imagery:quebec": "tsx scripts/quebec-imagery.ts",
     "imagery:niedersachsen": "tsx scripts/niedersachsen-imagery.ts",
     "audit:model-crossings": "tsx scripts/audit-model-crossings.ts --output sources/research/model-crossing-audit.json",
-    "validate:model-crossings": "tsx scripts/audit-model-crossings.ts --output sources/research/model-crossing-audit.json --check"
+    "validate:model-crossings": "tsx scripts/audit-model-crossings.ts --output sources/research/model-crossing-audit.json --check",
+    "ideal:generate": "tsx scripts/prepare-ideal-lines.ts",
+    "validate:ideal-networks": "tsx scripts/recover-network-ideal-lines.ts --check"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",

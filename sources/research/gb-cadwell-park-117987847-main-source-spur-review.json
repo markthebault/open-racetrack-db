@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-source-spur-removal-v1",
+  "trackId": "gb-cadwell-park-117987847",
+  "targetLayoutId": "main",
+  "originalBorderSha256": "e29623149fd4bfa99cbcc49e6ce2581678b5299b22979feb4f4a1e6f79180c62",
+  "traceSha256": "e307baf445892a36e85255d62873f191794c21a921c631877c5d9d542835e61e",
+  "imageSha256": "1f6b708d87095a83f790ca6bfd16f638f15cfeb5385ccce2d67925fd829ed755",
+  "resultBorderSha256": "e49ecb5dbdcb2b0c721175b321be05d7d23e367be5326b050e5cb63c7caa5cb8",
+  "borderProperties": [
+    {
+      "role": "inner",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    },
+    {
+      "role": "outer",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    }
+  ],
+  "removed": [
+    {
+      "edge": "inner",
+      "coordinate": [
+        -0.05939987858417102,
+        53.31023145839529
+      ],
+      "index": 579
+    },
+    {
+      "edge": "inner",
+      "coordinate": [
+        -0.05940463303088262,
+        53.310230302912245
+      ],
+      "index": 0
+    }
+  ],
+  "defectCropViewed": true,
+  "remainingCoordinatesPreserved": true,
+  "note": "The two pinned vertices form one transverse paint-line spur across the closing seam of the original boundary ring. The native review image and original/corrected local overlay show continuous road surface at this location. Their retained neighbours are within 1.1 m in the saved coordinates. Remove only these source vertices, retaining every other coordinate and original feature property. The closing duplicate follows the new first retained point; the exact original start point and full old ring reconstruct from the proof. The image has separate review rights. Remaining road limits and provisional route identity are unchanged and unverified."
+}

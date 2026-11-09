@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-source-spur-removal-v1",
+  "trackId": "nz-highlands-motorsports-park-full-2952eb45",
+  "targetLayoutId": "highlands-motorsports-park-full",
+  "originalBorderSha256": "9aeaaa631f327d57ed9c67cffbc24bbf581b1c4dba88d66b24af25afff273911",
+  "traceSha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
+  "imageSha256": "d0332f985821ee4d11dfee2df7c000ba4036a608e8ac7b69974d78a521544cc2",
+  "resultBorderSha256": "811b6ef34e69b6ea94bbe826d8c28183f513dbeb04a2546c97d45a4a5a2882da",
+  "borderProperties": [
+    {
+      "role": "inner",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    },
+    {
+      "role": "outer",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    }
+  ],
+  "removed": [
+    {
+      "edge": "inner",
+      "index": 29,
+      "coordinate": [
+        169.1708319086733,
+        -45.05763597601958
+      ],
+      "kind": "bridge-occlusion-detour"
+    },
+    {
+      "edge": "inner",
+      "index": 30,
+      "coordinate": [
+        169.1707073986625,
+        -45.05760280190337
+      ],
+      "kind": "bridge-occlusion-detour"
+    }
+  ],
+  "bridgeReview": {
+    "sourceCrossingSegments": [
+      57,
+      102
+    ],
+    "sourceEvidenceUrl": "https://www.openstreetmap.org/way/677363476",
+    "gradeSeparationConfirmed": true,
+    "nativeImageViewed": true
+  },
+  "defectCropViewed": true,
+  "remainingCoordinatesPreserved": true,
+  "note": "At the independently documented crossover bridge, inner vertices 29 and 30 follow the opposite edge of the lower road across the bridge footprint, producing an approximately 8.35 m excursion. Delete only these two pinned coordinates to connect the retained lower-road edge endpoints across the occluded 10.65 m interval. The native crop and original/corrected overlays were inspected. Every other coordinate and original border property remains exact. This is an estimated 2D continuation beneath the bridge, not a measured hidden edge or bridge elevation."
+}

@@ -22,13 +22,13 @@ test("Spa's single GeoJSON contains its complete 3D parameters without changing 
   const layout = validate(raw),
     model = layout.metadata.model3d!;
   assert.equal(
-    createHash("sha256").update(JSON.stringify(layout.features)).digest("hex"),
+    createHash("sha256").update(JSON.stringify(layout.features.filter(f=>f.properties.role!=="ideal"))).digest("hex"),
     "57c193a16a4482f6d3552b4eeae1cf9c167e4699adb90cfe815731867a3dc38b",
   );
   assert.equal(layout.metadata.lengthM, 6994.7);
   assert.equal(layout.metadata.licenseScope, "trace-and-timing");
   assert.deepEqual(
-    layout.features.map((f) => f.properties.role),
+    layout.features.filter(f=>f.properties.role!=="ideal").map((f) => f.properties.role),
     ["trace", "inner", "outer"],
   );
   assert.ok(model.kind !== "surface");
@@ -118,7 +118,7 @@ test("the extension remains optional and requires appropriate route and licensin
   assert.equal(validate(legacy).metadata.model3d, undefined);
   assert.throws(() => buildRoad(validate(legacy)), /no embedded/);
   const missingBorder = structuredClone(raw);
-  missingBorder.features.pop();
+  missingBorder.features = missingBorder.features.filter((f: any) => f.properties.role !== "outer");
   assert.throws(() => validate(missingBorder));
   const noAnchor = structuredClone(raw);
   delete noAnchor.metadata.timing;

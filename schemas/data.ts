@@ -1,13 +1,15 @@
+import {idealNetworkReviewSchema} from './ideal-network-review';
 import {
   borderInferenceSchema,
   inferredBorderLicenses,
 } from "./border-inference";
 import { z } from "zod";
 import { assertGradeRibbon } from "../src/grade-separation";
+import { pathCrossings } from "../src/path-crossings";
 import { trackModelSchema, networkRecipeSchema } from "./track-model";
 import { sequenceTrace } from "../src/source-sequence-plan";
 import { sharedGroundBoundaries } from "../src/shared-ground-data";
-import { assertCompleteRoadSource } from "../src/boundary-path";
+import { assertCompleteRoadSource, roadRings } from "../src/boundary-path";
 import {
   bounds,
   distance,
@@ -192,7 +194,14 @@ export const layoutSchema = z.strictObject({
       z.strictObject({
         type: z.literal("Feature"),
         id: slug,
-        properties: z.union([traceProps, gateProps, borderProps]),
+        properties: z.union([traceProps, gateProps, borderProps, z.strictObject({
+          role: z.literal("ideal"), sourceIds: z.array(slug).length(0), estimated: z.literal(true),
+          method: z.literal("bounded-minimum-curvature-local-time-v1"),
+          edgeMarginM: z.number().nonnegative(),
+          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1", "reviewed-network-ground-v1"]).optional(),
+          networkReview: idealNetworkReviewSchema.optional(),
+          borderLicenses: z.array(z.string()).min(1),
+        })]),
         geometry: z.union([line, network]),
       }),
     )
@@ -298,6 +307,42 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("borders: expected both inner and outer");
   if (borders.length && m.licenseScope !== "trace-and-timing")
     throw new Error("borders: trace license scope must be explicit");
+  const sameCycleReview=m.borderInference?.supersedes?.sameCycleReview;
+  if(sameCycleReview&&(sameCycleReview.trackId!==m.trackId||sameCycleReview.targetLayoutId!==m.layoutId||!m.closed||m.geometryKind==="network"))
+    throw new Error("borders: same-cycle replacement review has a different target identity");
+  const ideals = data.features.filter(f => f.properties.role === "ideal");
+  if (ideals.length > 1 || (ideals.length && borders.length !== 2)) throw new Error("ideal: requires one derived feature and both source boundaries");
+  for (const ideal of ideals) {
+    if (ideal.properties.role !== "ideal") continue;
+    const sharedGround = m.model3d?.kind !== "surface" ? m.model3d?.sharedGround : undefined;
+    const groundIdeal = ideal.properties.boundaryModel === "shared-ground-v1";
+    if (groundIdeal && !sharedGround) throw new Error("ideal: shared-ground boundary model is unavailable");
+    if (ideal.properties.boundaryModel === "continuous-planar-v1") {
+      if (!m.closed || m.geometryKind === "network") throw new Error("ideal: continuous planar model requires a closed independent annulus");
+      roadRings(data);
+    }
+    if (ideal.properties.boundaryModel === "ordered-border-ribbon-v1") {
+      const trace = data.features.find(f => f.properties.role === "trace")!.geometry;
+      if (!m.closed || m.geometryKind === "network" || trace.type !== "LineString" ||
+        !pathCrossings(trace.coordinates.map(plane(trace.coordinates[0]).to), true).some(c => c.kind === "crossing"))
+        throw new Error("ideal: ordered ribbon requires a closed projected source crossing");
+    }
+    const networkReview=ideal.properties.networkReview;
+    if(ideal.properties.boundaryModel==='reviewed-network-ground-v1') {
+      if(!networkReview||m.geometryKind!=='network'||m.closed||ideal.geometry.type!=='MultiLineString'||
+        networkReview.trackId!==m.trackId||networkReview.layoutId!==m.layoutId||
+        geometryPaths(ideal.geometry).length!==geometryPaths(traces[0].geometry).length)
+        throw new Error('ideal: reviewed network ground requires matching branch geometry and review');
+      for(const [i,p] of geometryPaths(ideal.geometry).entries()) {
+        const source=geometryPaths(traces[0].geometry)[i];
+        if(equal(p[0],p.at(-1)!)!==equal(source[0],source.at(-1)!))throw new Error('ideal: network branch closure changed');
+      }
+    }else if(networkReview)throw new Error('ideal: network review requires its boundary model');
+    const licenses = [...new Set([...borders.map(b => "license" in b.properties ? b.properties.license : ""),
+      ...(groundIdeal && sharedGround ? [sharedGround.imagery.license] : []),
+      ...(networkReview ? [networkReview.imagery.license] : [])])].sort();
+    if (JSON.stringify([...ideal.properties.borderLicenses].sort()) !== JSON.stringify(licenses)) throw new Error("ideal: source border licences disagree");
+  }
   for (const f of data.features) {
     if (f.properties.role === "inner" || f.properties.role === "outer") {
       const paths = geometryPaths(f.geometry);
@@ -471,7 +516,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       );
     if (
       borders.length !== 2 ||
-      borders.some((f) => !("borderStatus" in f.properties))
+      (!m.borderInference.supersedes?.sourceSpurReview && borders.some((f) => !("borderStatus" in f.properties)))
     )
       throw new Error(
         "borderInference: requires two estimated imagery borders",
@@ -571,11 +616,17 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       borders.some(
         (f) =>
           !("license" in f.properties) ||
-          f.properties.license !== info.license ||
-          f.properties.sourceIds[0] !== info.sourceId,
+          (m.borderInference!.supersedes?.sourceSpurReview
+            ? f.properties.license !== "LicenseRef-Track-Borders" || "borderStatus" in f.properties
+            : f.properties.license !== info.license || f.properties.sourceIds[0] !== info.sourceId),
       )
     )
       throw new Error("borderInference: feature licence/source mismatch");
+    const spur=m.borderInference.supersedes?.sourceSpurReview;
+    if(spur && (isNetwork||!m.closed||spur.trackId!==m.trackId||spur.targetLayoutId!==m.layoutId||
+       borders.some(f=>f.geometry.type!=="LineString")||
+       ["inner","outer"].some((role,i)=>JSON.stringify(borders.find(f=>f.properties.role===role)!.properties)!==JSON.stringify(spur.borderProperties[i]))))
+      throw new Error("borderInference: source-spur review must preserve its independent route identity and original border properties");
     const [w, s, e, n] = info.extent3857;
     if (w >= e || s >= n)
       throw new Error("borderInference: invalid image extent");

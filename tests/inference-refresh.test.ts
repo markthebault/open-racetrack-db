@@ -140,7 +140,7 @@ test("original-border correction preserves failed attempts and commits only comp
     assert.match(accepted.stdout, /inferred-estimate/);
     const corrected = JSON.parse(await readFile(join(root, layoutPath), "utf8"));
     assert.equal(corrected.metadata.borderInference.supersedes.borderSha256, hash);
-    assert.deepEqual(corrected.features.filter((f: { properties: { role: string } }) => !["inner", "outer"].includes(f.properties.role)), layout.features.filter((f: { properties: { role: string } }) => !["inner", "outer"].includes(f.properties.role)));
+    assert.deepEqual(corrected.features.filter((f: { properties: { role: string } }) => !["inner", "outer", "ideal"].includes(f.properties.role)), layout.features.filter((f: { properties: { role: string } }) => !["inner", "outer", "ideal"].includes(f.properties.role)));
     assert.equal(corrected.metadata.model3d, undefined);
     assert.deepEqual(JSON.parse(await readFile(join(root, `data/elevation/${entry.id}.json`), "utf8")), layout.metadata.model3d.terrain);
     const acceptedBytes = await readFile(join(root, layoutPath));

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-source-spur-removal-v1",
+  "trackId": "us-norway-speedway-dirt-9c2cf7b0",
+  "targetLayoutId": "norway-speedway-dirt-track",
+  "originalBorderSha256": "d72d3d5eb368403d7ed5216b678435210d537cc48d5d920bf775e88cab34b0cc",
+  "traceSha256": "3286df918b63696dbdd207c7fe8cb9e85fcbee07034d16cf67a211fe6c727845",
+  "imageSha256": "d8f928395cee5ed418e1fb6462580a5a8ec947546f03267629bedf1bbcb2c655",
+  "resultBorderSha256": "f5a27835fc9f7a41947a31095b5e4a33857dee77c11958a7bac6f0d6e7ceda8c",
+  "borderProperties": [
+    {
+      "role": "inner",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    },
+    {
+      "role": "outer",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    }
+  ],
+  "removed": [
+    {
+      "edge": "outer",
+      "coordinate": [
+        -87.90825221177819,
+        45.77078520015385
+      ],
+      "index": 80
+    },
+    {
+      "edge": "outer",
+      "coordinate": [
+        -87.90825496364069,
+        45.7707812853985
+      ],
+      "index": 0
+    }
+  ],
+  "defectCropViewed": true,
+  "remainingCoordinatesPreserved": true,
+  "note": "The two pinned vertices form one transverse paint-line spur across the closing seam of the original boundary ring. The native review image and original/corrected local overlay show continuous road surface at this location. Their retained neighbours are within 1.1 m in the saved coordinates. Remove only these source vertices, retaining every other coordinate and original feature property. The closing duplicate follows the new first retained point; the exact original start point and full old ring reconstruct from the proof. The image has separate review rights. Remaining road limits and provisional route identity are unchanged and unverified."
+}

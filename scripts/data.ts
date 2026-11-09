@@ -33,6 +33,7 @@ async function enrich(data:Layout,track:Track,id:string,existingFile:string,orig
   result.metadata.notes.push(reused.note);
  }
  if(result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
+ if(extras.ideal)result.features.push(extras.ideal);
  result.bbox=bounds(result.features.flatMap(f=>geometryPaths(f.geometry).flat()));
  if(result.metadata.model3d?.kind!=='surface'&&result.metadata.model3d?.sharedGround)await verifySharedGroundSource(result,result.metadata.model3d.sharedGround);
  return validateLayout(result,track,id);

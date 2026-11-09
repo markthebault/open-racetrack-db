@@ -33,13 +33,13 @@ test("border refresh rebuilds geometry while retaining an explicit display sourc
   assert.ok(model.preparation!.preserveImageryReference);
   assert.deepEqual(model.imagery, previous.imagery);
   assert.deepEqual(model.terrain, previous.terrain);
-  assert.deepEqual(refreshed.features, layout.features);
+  assert.deepEqual(refreshed.features, layout.features.filter(f=>f.properties.role!=="ideal"));
   assert.equal(model.preparation!.inputSha256, modelInputHash(refreshed, model.terrain));
   assert.notEqual(model.preparation!.inputSha256, previous.preparation!.inputSha256);
   assert.deepEqual(layout, before);
   assert.deepEqual(previous, oldModel);
   delete previous.preparation!.preserveImageryReference;
-  assert.equal(preserveDisplayImageryOnBorderRefresh(layout, previous), layout);
+  assert.deepEqual(preserveDisplayImageryOnBorderRefresh(layout, previous).features, layout.features.filter(f=>f.properties.role!=="ideal"));
 });
 
 test("original border correction pins both old edges and never mutates the source during preflight", () => {
@@ -68,7 +68,7 @@ test("replacement refuses ambiguous scope, inferred edges, missing edges and und
   }
 });
 
-test("replacement provenance requires complete measured geometry rather than an automatic proposal", () => {
+test("unreviewed automatic proposals cannot claim replacement provenance", () => {
   const d = JSON.parse(readFileSync("data/united-kingdom/gb-gurston-down-hillclimb-ade02267/layouts/gurston-down-hillclimb.geojson", "utf8"));
   const evidence = { ...d.metadata.borderInference, supersedes: { borderSha256: "a".repeat(64), reason: "Pinned native imagery shows a different paved branch." } };
   assert.deepEqual(borderInferenceSchema.parse(evidence).supersedes, evidence.supersedes);

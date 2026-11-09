@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "note": "Propagates only exact pinned original components with complete measured, pinned image-estimated or exact source-spur-deletion review evidence. Original network traces, timing, metadata and terrain are preserved; display-only ideal lines do not participate in content hashes.",
+  "networks": [
+    {
+      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-combo-circuit.geojson",
+      "originalLayoutSha256": "24d28dcb8507e7df4410b36b7b50adb88a7ecc34689294fa5dee2f52267bedb4",
+      "components": [
+        {
+          "layoutId": "queensland-raceway-sportsman",
+          "sourceSha256": "efc526007185de0559cb7182d05c6203a8a69bad6c997d1ef24c0d6bf5d1c196",
+          "oldBorderSha256": "4723288ec323a018f2a4f4a2d33c5410b2b23274d430c4cc8a2aa3d8d9475ff6",
+          "resultBorderSha256": "2703dbcba578fd8a2669466c90191aea4d0e9c64f09cc5f358f03a55e56292d8"
+        },
+        {
+          "layoutId": "queensland-raceway-sprint-circuit",
+          "sourceSha256": "2cc165c98be43452390a29fcf2e902190cb9382d50a323bc0e973487e142e420",
+          "oldBorderSha256": "8581810d97592fe8542fedf5757d6aec773eab70e73403dc552749c316214983",
+          "resultBorderSha256": "d9a328ebaf230f3d537a008924abce3d3adeff46d2e93c047c108ff04ed7fbc5"
+        }
+      ],
+      "previousResultLayoutSha256": "65511dc842a325e50e41367e17625814e8c4084f9b45f53f9c97384e03509fe5",
+      "resultLayoutSha256": "3ba9d36932e38aa14f5a4d12e5fa87ce5c28ac9d891e054929d455bd72efb3c6",
+      "unchangedComponents": [
+        {
+          "layoutId": "queensland-raceway-club-circuit",
+          "sourceSha256": "1bf719e85864cf2997d22e932bc686edd1daa31fd695512f5d3e85b65c2daafe"
+        },
+        {
+          "layoutId": "queensland-raceway-national-circuit",
+          "sourceSha256": "5c1987805ae84ee6b0ba49cdf72ca8bb6f2ca703ad3cbe849ce8697f2c3f5aca"
+        }
+      ]
+    },
+    {
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-combo.geojson",
+      "originalLayoutSha256": "538ffba416b542c6d3c770588bffbdfd765e9be8ff1f5ba79471653d5622acba",
+      "components": [
+        {
+          "layoutId": "dubai-autodrome-gp-circuit",
+          "sourceSha256": "c3ab733e02959b84e8f06f0cd8092ccac8fdf4f993492ce6811d1d94d4eab813",
+          "oldBorderSha256": "d13af05825050250e4f86e7e06dc310caa651b293fd71540b9ac9227ec6fa7c3",
+          "resultBorderSha256": "591048ba03ea24bb175ff3932c53b780fb35df3aee8c78b54d88c99c90dc4930"
+        }
+      ],
+      "resultLayoutSha256": "37c8ca1167ff5c6c0f654e2b042189f7338a8d14d63ca87a1ba4e9f788983e81",
+      "unchangedComponents": [
+        {
+          "layoutId": "dubai-autodrome-club-circuit",
+          "sourceSha256": "94c4fdd2a4796d00622c5c89361c9df51688a4d4af53f06846adc20b888f0046"
+        }
+      ]
+    }
+  ]
+}

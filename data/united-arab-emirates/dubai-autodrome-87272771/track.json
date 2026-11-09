@@ -31,43 +31,43 @@
     {
       "id": "dubai-autodrome-club-circuit",
       "name": "Dubai Autodrome Club Circuit",
-      "referenceId": "United Arab Emirates/Dubai Autodrome Club Circuit",
       "file": "layouts/dubai-autodrome-club-circuit.geojson",
+      "referenceId": "United Arab Emirates/Dubai Autodrome Club Circuit",
       "description": "Draft configuration: Club course with northern stepped hairpin, direct eastern turnaround and long southern straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2555.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
     },
     {
       "id": "dubai-autodrome-combo",
       "name": "Dubai Autodrome Combo",
-      "referenceId": "United Arab Emirates/Dubai Autodrome Combo",
       "file": "layouts/dubai-autodrome-combo.geojson",
+      "referenceId": "United Arab Emirates/Dubai Autodrome Combo",
       "description": "Combined mapped configurations: Dubai Autodrome Club Circuit, Dubai Autodrome GP Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
     },
     {
       "id": "dubai-autodrome-gp-circuit",
       "name": "Dubai Autodrome GP Circuit",
-      "referenceId": "United Arab Emirates/Dubai Autodrome GP Circuit",
       "file": "layouts/dubai-autodrome-gp-circuit.geojson",
+      "referenceId": "United Arab Emirates/Dubai Autodrome GP Circuit",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5405.9 m. Difference from the supplied layout distance 37.9 m. Course configuration still requires visual review."
     },
     {
       "id": "dubai-autodrome-hill",
       "name": "Dubai Autodrome Hill",
-      "referenceId": "United Arab Emirates/Dubai Autodrome Hill",
       "file": "layouts/dubai-autodrome-hill.geojson",
+      "referenceId": "United Arab Emirates/Dubai Autodrome Hill",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1772.6 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
     },
     {
       "id": "dubai-autodrome-international",
       "name": "Dubai Autodrome International",
-      "referenceId": "United Arab Emirates/Dubai Autodrome International",
       "file": "layouts/dubai-autodrome-international.geojson",
+      "referenceId": "United Arab Emirates/Dubai Autodrome International",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4368 m. Difference from the supplied layout distance 19.0 m. Course configuration still requires visual review."
     },
     {
       "id": "dubai-autodrome-national",
       "name": "Dubai Autodrome National",
-      "referenceId": "United Arab Emirates/Dubai Autodrome National",
       "file": "layouts/dubai-autodrome-national.geojson",
+      "referenceId": "United Arab Emirates/Dubai Autodrome National",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3593.6 m. Difference from the supplied layout distance 8.4 m. Course configuration still requires visual review."
     }
   ],
@@ -125,6 +125,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T17:29:04.932Z",
       "evidenceNote": "Aggregate diagram combines the club and full GP perimeter through the central north-south connector. Later additional hill/national shortcuts are excluded. The retained component recipes identify all pictured course branches independently. Identification only; no image coordinates copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-09T15:18:15.523Z",
+      "evidenceNote": "Derived edge coordinates. Source-specific extraction and derived-coordinate redistribution agreement confirmed by the dataset operator; agreement held separately. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

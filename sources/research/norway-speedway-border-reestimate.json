@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-road-reestimate-v1",
+  "trackId": "us-norway-speedway-28bd57a2",
+  "targetLayoutId": "norway-speedway",
+  "originalBorderSha256": "42815c7125afa50f177f7c27781190b297bef0e325ca7ae6e42f73e34686ca11",
+  "traceSha256": "5868f0bd0800d250d8f27371b50ff196144c3058b01214844b3e9c66c0b1f766",
+  "imageSha256": "d8f928395cee5ed418e1fb6462580a5a8ec947546f03267629bedf1bbcb2c655",
+  "resultBorderSha256": "6cd3f87d49617fb35fbc32503b745cfc6e5debdd22f4425bbc017fee031c01d0",
+  "defectVertices": [
+    {
+      "edge": "outer",
+      "index": 10
+    }
+  ],
+  "nativeImageViewed": true,
+  "completeOverlayViewed": true,
+  "defectCropViewed": true,
+  "sourceRouteMatchesPavement": true,
+  "note": "The original outer border spikes across the paved oval to its inner edge at vertex 10. Native NAIP imagery and the complete candidate overlay show continuous pavement at this location. Replace the defective pair with pinned image-derived estimates following the paved oval; these are approximate road edges, not surveyed barriers or complete manual measurements."
+}

@@ -12,6 +12,8 @@ The requested Spa playback prototype, compact storage format, physics assumption
 
 The image-based estimation workflow, source rights, compact provenance and remaining coverage gaps are described in [15-imagery-border-inference.md](15-imagery-border-inference.md).
 
+The requested ideal-line overlay, solver assumptions and validation are described in [27-estimated-racing-lines.md](27-estimated-racing-lines.md). This explicitly requested extension supersedes the original exclusion of racing lines below.
+
 ## Purpose
 
 Build a public database of racetracks and a small map viewer. Store the data in static files. Organize it by country, venue, and layout. Show each layout on an OpenStreetMap background with its start and finish lines.

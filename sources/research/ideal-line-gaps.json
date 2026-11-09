@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "vehicleWidthM": 2.05,
+  "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
+  "summary": {
+    "unavailableLayouts": 3,
+    "insufficientWidth": 2,
+    "topologyOrOrderReview": 1,
+    "solverCandidates": 0
+  },
+  "records": [
+    {
+      "file": "data/united-kingdom/gb-prodrive-bf598a18/layouts/prodrive.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "48fa20e25640e30551d34f9b8c37545cdc29071d5be8e5a292c5a7a970e7633d",
+      "traceGeometrySha256": "2b9cecb6a88aa2a8662226635a75b0d2b9b8e460e0676b3681128390e153e56d",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "61c818030138c7fc512703174705b288e48711845b5ccd9be6bf776ef5973125",
+      "traceGeometrySha256": "d6639bd6006e5c7a47cdaa403b0a4b6c9993ede3fcee85a30116c28486f7a89e",
+      "borderPathCounts": [
+        3,
+        3
+      ],
+      "components": [
+        {
+          "index": 0,
+          "sourceLayoutId": "road-atlanta",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 10.494,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 1057
+          }
+        },
+        {
+          "index": 1,
+          "sourceLayoutId": "road-atlanta-short",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.164,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 125
+          }
+        },
+        {
+          "index": 2,
+          "sourceLayoutId": "road-atlanta-sro-practice",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 9.479,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 1190
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-short.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "1bbee8d7e5759c90225527c0330ceebcd72941e576e690aae0d89e5b047a00ed",
+      "traceGeometrySha256": "99cf30e3dcb940e8cdf26521d38fbab4ee97e20ba60d3f0e5ed8bfc4b321d48b",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.164,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 125
+          }
+        }
+      ]
+    }
+  ]
+}

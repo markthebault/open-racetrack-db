@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Asan Circuit",
       "file": "layouts/main.geojson",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Japan/Asan Circuit"
+      "referenceId": "Japan/Asan Circuit",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:18:13.081Z",
       "evidenceNote": "Venue identity and trace coordinates come from the pinned OSM extract. The source identity identifies the facility; course configuration is provisional. No privately sourced coordinates enter the public database."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Imagery review of a source-border paint-line artifact",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-09T15:18:02.631Z",
+      "evidenceNote": "Imagery supports the documented local vertex deletion. Retained coordinates and their original border rights are unchanged. Review-image identity and its rights are embedded in the layout."
     }
   ]
 }

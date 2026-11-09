@@ -37,7 +37,7 @@ export function modelInputHash(
         ...(boundaryPath ? { pathMethod: "boundary-normal-midpoints-v1" } : {}),
         ...(plan ? { sourceSequencePlan: plan } : {}),
         ...(ground ? { sharedGroundPlan: ground } : {}),
-        features: layout.features,
+        features: layout.features.filter(f => f.properties.role !== "ideal"),
         ...(layout.metadata.borderComposition
           ? { borderComposition: layout.metadata.borderComposition }
           : {}),

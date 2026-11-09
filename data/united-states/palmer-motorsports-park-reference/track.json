@@ -21,8 +21,8 @@
       "id": "main",
       "name": "Palmer Motorsports Park",
       "file": "layouts/main.geojson",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "United States/Palmer Motorsports Park"
+      "referenceId": "United States/Palmer Motorsports Park",
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
     }
   ],
   "sources": [
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Single reference course at a unique connected OSM source cycle, with private timing proximity."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8042742.613755784%2C5195696.436158656%2C-8041592.580609646%2C5197123.015490765&bboxSR=3857&imageSR=3857&size=1136%2C1409&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-09T15:04:33.455Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

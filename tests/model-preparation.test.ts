@@ -63,9 +63,12 @@ test("all 20 popular circuits have a self-contained validated model and a finite
   for (const selection of popularModels) {
     const { layout } = load(selection.trackId, selection.layoutId),
       model = layout.metadata.model3d!;
+    assert.ok(model.kind !== "surface");
+    const pairedBorders = layout.metadata.borderInference?.measurement || layout.metadata.borderInference?.supersedes?.imageReview;
     assert.equal(model.quality.elevation, "terrain-raster");
     assert.equal(model.quality.curbs, "geometry-estimated");
-    assert.equal(model.quality.stationing, "mapped-trace");
+    assert.equal(model.quality.stationing, pairedBorders ? "border-midline" : "mapped-trace");
+    if (pairedBorders) assert.equal(model.pathMethod, "paired-border-midpoints");
     assert.equal(model.terrain.trackId, selection.trackId);
     assert.ok(model.curbs.length > 0);
     assert.ok(model.sources.notes.includes("not extracted from imagery"));
@@ -73,10 +76,13 @@ test("all 20 popular circuits have a self-contained validated model and a finite
       .update(
         JSON.stringify({
           version: PREPARATION_VERSION,
-          features: layout.features,
+          features: layout.features.filter(f=>f.properties.role!=="ideal"),
           timing: layout.metadata.timing,
           lengthM: layout.metadata.lengthM,
           terrain: model.terrain,
+          ...(layout.metadata.borderInference
+            ? { borderInference: layout.metadata.borderInference }
+            : {}),
         }),
       )
       .digest("hex");

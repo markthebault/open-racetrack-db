@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-road-reestimate-v1",
+  "trackId": "es-circuito-ascari-169907092",
+  "targetLayoutId": "main",
+  "originalBorderSha256": "97f779b16b0f0652df6c67288a9080ca36d21da870a8fd21979b14db8da61b9b",
+  "traceSha256": "7e5c6856df62913d6b3eef264a55c43ba339677f011347eef710eeebb2a7bb48",
+  "imageSha256": "fffbb4d4b19b5c974526f947db6dc010730c15f51042c67d46b6729eb36b64b7",
+  "resultBorderSha256": "598f81afaa0299d4749d407cbe3de7f65161f2458cc550ca4abf1c9b9bc2178c",
+  "defectVertices": [
+    {
+      "edge": "outer",
+      "index": 267
+    },
+    {
+      "edge": "outer",
+      "index": 268
+    }
+  ],
+  "nativeImageViewed": true,
+  "completeOverlayViewed": true,
+  "defectCropViewed": true,
+  "sourceRouteMatchesPavement": true,
+  "estimatorMethod": "rgb-road-local-appearance-v4",
+  "note": "Original borders contain pavement-crossing spikes or local self-crossings at the pinned defect vertices. The native licensed image, full appearance-estimator overlay and original defect crop were reviewed against the retained source route. The complete automatic replacement remains estimated, with image sampling, shadows, shoulders, paint and access-opening uncertainty. It is not a surveyed barrier or an independent manual measurement recipe."
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "schemaVersion": 1,
+    "method": "image-reviewed-network-islands-v1",
+    "trackId": "us-belle-isle-c12938f2",
+    "layoutId": "belle-isle-gp",
+    "sourceBorderSha256": "63079e41ebccc46f79fd81d4fb3149f960f9d34bc1e22e964e1ca9555574561a",
+    "traceSha256": "1bded7006d67a27a9faaead1ce575f0844e324ace136776c0a70e9565064a165",
+    "innerRings": [
+      [
+        [
+          108,
+          439
+        ]
+      ],
+      [
+        [
+          440,
+          445
+        ],
+        [
+          0,
+          106
+        ]
+      ]
+    ],
+    "discardedInnerVertices": [
+      107
+    ],
+    "imagery": {
+      "sourceId": "maptiler-licensed-border-imagery",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "rightsBasis": "source-specific-agreement",
+      "termsUrl": "https://www.maptiler.com/copyright/",
+      "tiles": {
+        "provider": "maptiler-satellite-v4",
+        "zoom": 17,
+        "bounds": [
+          35315,
+          48489,
+          35321,
+          48492
+        ]
+      },
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "attribution": "© MapTiler © OpenStreetMap contributors",
+      "retrievedAt": "2026-11-09T15:18:24.674Z",
+      "sha256": "bdff1c073779fe5ae7c89f3d1492f5d63166f734e53d500a08d93133211ef9fc",
+      "width": 3584,
+      "height": 2048,
+      "extent3857": [
+        -9240013.727225246,
+        5210865.092257036,
+        -9237873.49043326,
+        5212088.084709598
+      ],
+      "groundPixelSizeM": 0.4414
+    },
+    "nativeImageViewed": true,
+    "junctionOverlayViewed": true,
+    "completeOverlayViewed": true,
+    "note": "The original inner contour stitches two grass-island outlines together across the paved Picnic Way junction. Native imagery and complete/cropped overlays support treating them as separate islands. Reuse exact original source slices: vertices 108–439 and 440–445 followed by 0–106. Close the resulting rings over approximately 0.22 m and 1.92 m. Omit vertex 107, a sub-metre excursion beyond the adjoining source edge that otherwise leaves a numerical crossing. All original GeoJSON boundaries, source branches, timing and terrain remain unchanged. This is an estimated local planar reconstruction for independent ideal branch lines, not historical race-barrier measurement or a unique network lap."
+  },
+  {
+    "schemaVersion": 2,
+    "method": "image-reviewed-network-pavement-v2",
+    "trackId": "de-porsche-leipzig-a-1a7399b8",
+    "layoutId": "porsche-leipzig-a",
+    "sourceBorderSha256": "9ee8338da610f97e9a96bcaa7ba6875a5a3e621e37b605cdcffe7d022e338bcf",
+    "traceSha256": "2dc3149e44215e56bdd0dfbfbc420f86852ab53bd9535e273c5f5ba4fad76b6d",
+    "outerRing": [
+      [
+        0,
+        31
+      ],
+      [
+        75,
+        170
+      ]
+    ],
+    "islands": [
+      {
+        "edge": "inner",
+        "ranges": [
+          [
+            0,
+            26
+          ],
+          [
+            241,
+            293
+          ]
+        ]
+      },
+      {
+        "edge": "inner",
+        "ranges": [
+          [
+            27,
+            28
+          ],
+          [
+            230,
+            240
+          ]
+        ]
+      },
+      {
+        "edge": "inner",
+        "ranges": [
+          [
+            31,
+            57
+          ],
+          [
+            150,
+            150
+          ],
+          [
+            152,
+            229
+          ]
+        ]
+      },
+      {
+        "edge": "inner",
+        "ranges": [
+          [
+            60,
+            61
+          ],
+          [
+            115,
+            148
+          ]
+        ]
+      },
+      {
+        "edge": "inner",
+        "ranges": [
+          [
+            63,
+            114
+          ]
+        ]
+      },
+      {
+        "edge": "outer",
+        "ranges": [
+          [
+            36,
+            70
+          ]
+        ]
+      }
+    ],
+    "discarded": [
+      {
+        "edge": "inner",
+        "index": 29,
+        "kind": "duplicate-junction"
+      },
+      {
+        "edge": "inner",
+        "index": 30,
+        "kind": "duplicate-junction"
+      },
+      {
+        "edge": "inner",
+        "index": 58,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "inner",
+        "index": 59,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "inner",
+        "index": 62,
+        "kind": "duplicate-junction"
+      },
+      {
+        "edge": "inner",
+        "index": 149,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "inner",
+        "index": 151,
+        "kind": "paint-line-spur"
+      },
+      {
+        "edge": "outer",
+        "index": 32,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 33,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 34,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 35,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 71,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 72,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 73,
+        "kind": "pavement-stitch"
+      },
+      {
+        "edge": "outer",
+        "index": 74,
+        "kind": "pavement-stitch"
+      }
+    ],
+    "imagery": {
+      "sourceId": "geosn-2012-leipzig-a",
+      "url": "https://geodienste.sachsen.de/wms_geosn_dop_2012_2014/guest?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=dop_2012_2014_rgb&STYLES=&CRS=EPSG%3A3857&BBOX=1367731.4538356063%2C6691917.529099679%2C1370485.3543209431%2C6694671.429585015&WIDTH=2400&HEIGHT=2400&FORMAT=image%2Fpng",
+      "reuseEvidenceUrl": "https://www.geodaten.sachsen.de/rechtsgrundlagen-und-nutzungsbedingungen-4509.html",
+      "license": "DL-DE-BY-2.0",
+      "attribution": "GeoSN, dl-de/by-2-0; historical DOP 2012–2014, capture year 2012. Original source slices interpreted as paved perimeter and six grass islands; ideal branch paths calculated.",
+      "retrievedAt": "2026-10-02T06:28:19.093396Z",
+      "sha256": "9e48ff442b657dc9c62236c9b61d346a55929f046746135f3f710c7a39688b96",
+      "width": 2400,
+      "height": 2400,
+      "extent3857": [
+        1367731.4538356063,
+        6691917.529099679,
+        1370485.3543209431,
+        6694671.429585015
+      ],
+      "groundPixelSizeM": 0.715748899573445
+    },
+    "nativeImageViewed": true,
+    "junctionOverlayViewed": true,
+    "completeOverlayViewed": true,
+    "sourceJunctionCrossingsConfirmed": true,
+    "note": "The pinned 2012 GeoSN image supports an unchanged outer pavement perimeter and six separate grass islands assembled from exact original boundary slices. Saved contours stitch across paved junctions and duplicate parts of adjoining edges. Every source vertex is accounted for; omitted junction duplicates, pavement stitches and one near-return paint spur are listed explicitly. New joins are at most 2 m, or at most 60 m and within a 0.1 m capsule of an existing source segment. The source branches, original GeoJSON boundaries, timing and terrain remain unchanged. The closed source branch crosses itself at the western paved junction; its calculated path preserves that crossing and visit order instead of deleting a route section. The two alternatives stay open and disconnected. Native image, full overlays and local junctions were reviewed. This is a 2D estimated pavement interpretation, not a unique timed lap, present-day course qualification or surveyed edge measurement."
+  }
+]
