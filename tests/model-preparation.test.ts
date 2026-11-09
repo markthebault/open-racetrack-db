@@ -73,7 +73,7 @@ test("all 20 popular circuits have a self-contained validated model and a finite
       .update(
         JSON.stringify({
           version: PREPARATION_VERSION,
-          features: layout.features,
+          features: layout.features.filter(f=>f.properties.role!=="ideal"),
           timing: layout.metadata.timing,
           lengthM: layout.metadata.lengthM,
           terrain: model.terrain,

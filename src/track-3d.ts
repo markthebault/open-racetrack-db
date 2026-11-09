@@ -324,6 +324,7 @@ export class Track3D {
   private controls: OrbitControls;
   private course = new THREE.Group();
   private borders = new THREE.Group();
+  private ideal = new THREE.Group();
   private traceHighlights: THREE.Mesh[] = [];
   private borderProject?: (point: Position, station?: number) => THREE.Vector3;
   private active = false;
@@ -387,6 +388,7 @@ export class Track3D {
     this.scene.add(edge);
     this.scene.add(this.course);
     this.scene.add(this.borders);
+    this.scene.add(this.ideal);
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(container);
     canvas.addEventListener("keydown", this.keyboard);
@@ -569,8 +571,25 @@ export class Track3D {
     this.requestRender();
   }
 
+  setIdeal(layout?: Layout) {
+    for (const child of this.ideal.children) {
+      const line = child as THREE.Line<THREE.BufferGeometry, THREE.LineBasicMaterial>;
+      line.geometry.dispose(); line.material.dispose();
+    }
+    this.ideal.clear();
+    const feature = layout?.features.find(f => f.properties.role === "ideal");
+    if (feature && this.borderProject) for (const path of geometryPaths(feature.geometry)) {
+      const points = path.map(p => { const v = this.borderProject!(p); v.y += 0.55; return v; });
+      const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), new THREE.LineBasicMaterial({color:0xe6a318, toneMapped:false, depthTest:false}));
+      line.renderOrder=25; this.ideal.add(line);
+    }
+    for (const mesh of this.traceHighlights) mesh.visible = !feature && !this.borders.children.length;
+    this.container.dataset.idealLines=String(this.ideal.children.length);
+    this.requestRender();
+  }
+
   setBorders(data?: TrackBorders) {
-    for (const mesh of this.traceHighlights) mesh.visible = !data;
+    for (const mesh of this.traceHighlights) mesh.visible = !data && !this.ideal.children.length;
     this.container.dataset.traceVisible = String(!data);
     for (const child of this.borders.children) {
       const line = child as THREE.Line<
@@ -611,6 +630,7 @@ export class Track3D {
   }
 
   clear() {
+    this.setIdeal();
     this.setBorders();
     this.borderProject = undefined;
     this.labelLayer.replaceChildren();

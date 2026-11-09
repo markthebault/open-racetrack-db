@@ -9,6 +9,7 @@ export function preserveDisplayImageryOnBorderRefresh(
   layout: Layout,
   previous?: TrackModel3D,
 ): Layout {
+  layout = {...layout, features: layout.features.filter(f=>f.properties.role!=="ideal")};
   if (!previous?.preparation?.preserveImageryReference) return layout;
   const input = { ...layout, metadata: { ...layout.metadata, model3d: previous } },
     model3d = prepareModel(input, previous.terrain, modelInputHash(input, previous.terrain));
@@ -20,6 +21,7 @@ export async function existingLayoutExtras(
   allowMissing = false,
 ): Promise<{
   borders: Layout["features"];
+  ideal?: Layout["features"][number];
   model3d?: Layout["metadata"]["model3d"];
   borderInference?: Layout["metadata"]["borderInference"];
   borderComposition?: Layout["metadata"]["borderComposition"];
@@ -39,6 +41,7 @@ export async function existingLayoutExtras(
         feature.properties.role === "inner" ||
         feature.properties.role === "outer",
     ),
+    ideal: data.features.find(f=>f.properties.role === "ideal"),
     model3d: data.metadata.model3d,
     borderInference: data.metadata.borderInference,
     borderComposition: data.metadata.borderComposition,
@@ -52,10 +55,10 @@ export async function existingBorders(file: string, allowMissing = false) {
 // Preserve existing trace formatting; keep dense source borders and 3D parameters compact.
 export function serializeLayout(data: Layout) {
   const supplemental = data.features.filter(
-    (f) => f.properties.role === "inner" || f.properties.role === "outer",
+    (f) => f.properties.role === "inner" || f.properties.role === "outer" || f.properties.role === "ideal",
   );
   const primary = data.features.filter(
-    (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
+    (f) => f.properties.role !== "inner" && f.properties.role !== "outer" && f.properties.role !== "ideal",
   );
   const metadata = {
     ...data.metadata,

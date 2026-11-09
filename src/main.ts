@@ -1,3 +1,4 @@
+import { IdealOverlay } from "./ideal-overlay";
 import { networkRouteLayout } from "./network-routes";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -183,6 +184,16 @@ for (const layer of [streetTiles, satelliteTiles]) {
 }
 const markers = L.layerGroup().addTo(map),
   selectedLayers = L.layerGroup().addTo(map);
+const idealRoot = document.createElement("section");
+idealRoot.setAttribute("aria-label", "Ideal line");
+mapArea.before(idealRoot);
+let idealActive = false;
+const idealOverlay = new IdealOverlay(idealRoot, map, (active) => {
+  idealActive = active;
+  viewer?.setIdeal(active ? layout : undefined);
+  if (active || currentBorders) traceLayers.remove();
+  else traceLayers.addTo(map);
+});
 const borderLayers = L.layerGroup().addTo(map);
 const traceLayers = L.layerGroup().addTo(map);
 let layoutCoverage: LayoutCoverage | undefined,
@@ -272,7 +283,7 @@ const borderOverlay = new BorderOverlay(
   (data) => {
     currentBorders = data;
     borderLayers.clearLayers();
-    if (data) traceLayers.remove();
+    if (data || idealActive) traceLayers.remove();
     else traceLayers.addTo(map);
     if (data)
       L.geoJSON(data, {
@@ -568,6 +579,7 @@ function unavailable() {
   urlState(track?.id, selectedLayoutId, true);
 }
 async function applyView() {
+  idealOverlay.setView(view === "3d");
   const is3d = view === "3d" && !!layout && !unavailable3D;
   const satellite = tiles === satelliteTiles;
   get("view-2d").setAttribute("aria-pressed", String(!is3d && !satellite));
@@ -717,6 +729,7 @@ async function applyView() {
   viewer.setActive(true);
   viewer.setLayout(modelLayout ?? layout, currentGates, terrain, heightScale);
   viewer.setBorders(currentBorders);
+  viewer.setIdeal(idealActive ? layout : undefined);
   viewer.setRotating(rotating);
 }
 function setView(next: "2d" | "3d") {
@@ -750,6 +763,7 @@ function worldMap(push = true) {
   layoutFile = undefined;
   selectedLayoutId = undefined;
   borderOverlay.setLayout();
+  void idealOverlay.setLayout();
   currentGates = [];
   terrain = undefined;
   selectedLayers.clearLayers();
@@ -814,6 +828,7 @@ function draw(data: Layout, privateGates: typeof currentGates = []) {
   traceLayers.clearLayers();
   for (const feature of data.features) {
     if (
+      feature.properties.role === "ideal" ||
       feature.properties.role === "inner" ||
       feature.properties.role === "outer"
     )
@@ -1220,6 +1235,7 @@ async function select(id: string, requested?: string, push = true) {
   selectedLayers.clearLayers();
   traceLayers.clearLayers();
   borderOverlay.setLayout();
+  void idealOverlay.setLayout();
   viewer?.clear();
   layout = undefined;
   modelLayout = undefined;
@@ -1368,6 +1384,7 @@ async function select(id: string, requested?: string, push = true) {
       terrain = elevation;
     draw(layout, privateLines);
     borderOverlay.setLayout(layout);
+    idealOverlay.setLayout(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
     if (data.metadata.model3d?.kind !== "surface" && data.metadata.model3d?.sharedGround) {

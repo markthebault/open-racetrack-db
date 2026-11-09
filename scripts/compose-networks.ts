@@ -28,7 +28,7 @@ if (!check && !write)
   );
 const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
   hash = (v: unknown) =>
-    createHash("sha256").update(JSON.stringify(v)).digest("hex");
+    createHash("sha256").update(JSON.stringify(v && typeof v === "object" && "features" in v ? {...v, features: (v as Layout).features.filter(f=>f.properties.role!=="ideal")} : v)).digest("hex");
 const catalogue = indexSchema.parse(await read("data/index.json")),
   report: {
     trackId: string;

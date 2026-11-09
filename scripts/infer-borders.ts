@@ -557,7 +557,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       preservedTerrain = preservedModel?.terrain;
     if (old || replacement) {
       layout.features = layout.features.filter(
-        (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
+        (f) => f.properties.role !== "inner" && f.properties.role !== "outer" && f.properties.role !== "ideal",
       );
       delete layout.metadata.borderInference;
       delete layout.metadata.model3d;
