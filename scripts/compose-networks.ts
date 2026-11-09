@@ -1,6 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { createHash } from "node:crypto";
 import {
   indexSchema,
   validateTrack,
@@ -15,6 +14,7 @@ import { prepareSurfaceModel } from "../src/model-preparation";
 import { serializeLayout } from "./layout-borders";
 import { bounds } from "../src/geo";
 import { modelInputHash } from "./model-input";
+import { layoutContentHash as hash, reviewedNetworkBorders } from "./reviewed-network-borders";
 const args = process.argv.slice(2),
   check = args.includes("--check"),
   write = args.includes("--write"),
@@ -26,9 +26,10 @@ if (!check && !write)
   throw new Error(
     "Use --write to compose exact existing driving layouts, or --check to verify compositions",
   );
-const read = async (p: string) => JSON.parse(await readFile(p, "utf8")),
-  hash = (v: unknown) =>
-    createHash("sha256").update(JSON.stringify(v && typeof v === "object" && "features" in v ? {...v, features: (v as Layout).features.filter(f=>f.properties.role!=="ideal")} : v)).digest("hex");
+const replacementHash = option("--replace-legacy-layout-hash");
+if (args.includes("--replace-legacy-layout-hash") && (!replacementHash || !write || check || !option("--track") || !option("--layout") || !/^[a-f0-9]{64}$/.test(replacementHash)))
+  throw new Error("Reviewed legacy propagation requires --write, one --track, one --layout and its exact layout hash");
+const read = async (p: string) => JSON.parse(await readFile(p, "utf8"));
 const catalogue = indexSchema.parse(await read("data/index.json")),
   report: {
     trackId: string;
@@ -38,6 +39,7 @@ const catalogue = indexSchema.parse(await read("data/index.json")),
     unavailableRoutes?: number;
     file?: string;
     legacyBorders?: boolean;
+    reviewedBorderPropagation?: ReturnType<typeof reviewedNetworkBorders>;
   }[] = [];
 for (const entry of catalogue.tracks) {
   if (option("--track") && entry.id !== option("--track")) continue;
@@ -56,6 +58,7 @@ for (const entry of catalogue.tracks) {
       })),
   );
   for (const { item, layout } of layouts) {
+    if (option("--layout") && item.id !== option("--layout")) continue;
     if (layout.metadata.geometryKind !== "network") continue;
     const sourceRecipe = await read(
       `sources/${track.id}/layouts/${item.id}.json`,
@@ -184,13 +187,16 @@ for (const entry of catalogue.tracks) {
     const originalBorders = layout.features.filter(
       (f) => f.properties.role === "inner" || f.properties.role === "outer",
     );
-    const legacyBorders =
+    let reviewedBorderPropagation: ReturnType<typeof reviewedNetworkBorders> | undefined;
+    let legacyBorders =
       originalBorders.length === 2 &&
       originalBorders.every(
         (f) =>
           "license" in f.properties &&
           f.properties.license !== "LicenseRef-Component-Borders",
       );
+    if (replacementHash && !legacyBorders)
+      throw new Error("Selected network no longer has original legacy borders");
     if (
       legacyBorders &&
       originalBorders.some(
@@ -207,13 +213,20 @@ for (const entry of catalogue.tracks) {
           ),
       )
     ) {
-      report.push({
-        trackId: track.id,
-        layoutId: item.id,
-        status: "existing-border-mismatch",
-      });
-      continue;
+      if (replacementHash) {
+        reviewedBorderPropagation = reviewedNetworkBorders(layout, replacementHash, matches.map(m => m!.layout));
+        legacyBorders = false;
+      } else {
+        report.push({
+          trackId: track.id,
+          layoutId: item.id,
+          status: "existing-border-mismatch",
+        });
+        continue;
+      }
     }
+    if (replacementHash && !reviewedBorderPropagation)
+      throw new Error("No changed reviewed legacy component borders to propagate");
     if (!legacyBorders) {
       composed.features = composed.features.filter(
         (f) => f.properties.role !== "inner" && f.properties.role !== "outer",
@@ -259,6 +272,7 @@ for (const entry of catalogue.tracks) {
         : {}),
       file: `${directory}/${item.file}`,
       legacyBorders,
+      ...(reviewedBorderPropagation ? { reviewedBorderPropagation } : {}),
     });
   }
 }
