@@ -3,9 +3,9 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 7,
+    "unavailableLayouts": 5,
     "insufficientWidth": 2,
-    "topologyOrOrderReview": 5,
+    "topologyOrOrderReview": 3,
     "solverCandidates": 0
   },
   "records": [
@@ -14,42 +14,6 @@
       "classification": "topology-or-order-review",
       "borderFeaturesSha256": "e73ae1a63adee93c358bdb640f20938cc99a51f78d0b4c176f6291c8015cb808",
       "traceGeometrySha256": "2dc3149e44215e56bdd0dfbfbc420f86852ab53bd9535e273c5f5ba4fad76b6d",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/new-zealand/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "1fd61b6d8c4013a6e9f8d8cc237535318bd2e10b126414f0434b3b0ab20f55c5",
-      "traceGeometrySha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "e5fbdbdd486acefeee80f8b683a445217b17d22acc6c41c4798759b67be21367",
-      "traceGeometrySha256": "6b112045fbcbfc4265f2b9075bd3191b239fa3f5982b2d6f4e3be02b36c86802",
       "borderPathCounts": [
         1,
         1

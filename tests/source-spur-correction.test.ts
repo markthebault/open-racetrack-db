@@ -65,3 +65,16 @@ test("closing-seam groups preserve retained coordinates and restore the original
   assert.throws(()=>applySourceSpurCorrection(before,closing,info),/closure endpoint/);
  }
 });
+
+test("bridge occlusion repairs require reviewed crossings and preserve complete ordered edges",()=>{
+ for(const path of ["data/new-zealand/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.geojson","data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson"]){
+  const {before,current,pin,info}=fixture(path),untouched=structuredClone(before);
+  assert.ok(pin.bridgeReview);assert.ok(pin.removed.every(p=>p.kind==="bridge-occlusion-detour"));
+  const result=applySourceSpurCorrection(before,pin,info);assert.deepEqual(before,untouched);
+  assert.deepEqual(verifySourceSpurResult(result).original,verifySourceSpurResult(current).original);
+  for(const role of ["inner","outer"])assert.deepEqual(result.features.find(f=>f.properties.role===role),current.features.find(f=>f.properties.role===role));
+  const missing=structuredClone(pin);delete missing.bridgeReview;assert.throws(()=>applySourceSpurCorrection(before,missing,info),/reviewed grade-separated/);
+  const wrongCrossing=structuredClone(pin);wrongCrossing.bridgeReview!.sourceCrossingSegments=[0,1];assert.throws(()=>applySourceSpurCorrection(before,wrongCrossing,info),/pinned source crossing/);
+  const wrongKind=structuredClone(pin);for(const p of wrongKind.removed)delete p.kind;assert.throws(()=>applySourceSpurCorrection(before,wrongKind,info),/Bridge review requires/);
+ }
+});

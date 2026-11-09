@@ -7,6 +7,7 @@ import { groundSegmentClearanceM } from "../src/ribbon-surface";
 import { pathCrossings } from "../src/path-crossings";
 import { IDEAL_CAR } from "../src/ideal-line-model";
 import type { Position } from "../src/geo";
+import { verifySourceSpurResult } from "../scripts/source-spur-correction";
 const file = "data/australia/au-oran-park-raceway-692abacd/layouts/oran-park-raceway.geojson";
 const load = (file: string) => JSON.parse(readFileSync(file,"utf8")) as Layout;
 const original = load(file);
@@ -42,6 +43,12 @@ test("every stored ordered-ribbon ideal clears its complete local segments and p
   assert.ok(count>0);
 });
 test("ordered ribbons reject source pinches, folds and routes without projected crossings", () => {
-  for(const f of ["data/new-zealand/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.geojson","data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson"])assert.throws(()=>orderedIdealLine(load(f)),/alignment|width|cross-section/);
+  for(const f of ["data/new-zealand/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.geojson","data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson"]){
+    // Reconstruct the exact rejected source; the reviewed correction now has a
+    // stored line and is covered by the full-segment validation above.
+    const d=load(f),{original:edges}=verifySourceSpurResult(d);
+    for(const role of ["inner","outer"] as const)d.features.find(f=>f.properties.role===role)!.geometry={type:"LineString",coordinates:edges[role]};
+    assert.throws(()=>orderedIdealLine(d),/alignment|width|cross-section/);
+  }
   assert.throws(()=>orderedBorderCorridor(load("data/belgium/spa-francorchamps/layouts/grand-prix.geojson")),/source crossing/);
 });

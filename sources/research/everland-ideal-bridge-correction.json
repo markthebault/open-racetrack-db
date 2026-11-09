@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-source-spur-removal-v1",
+  "trackId": "kr-everland-speedway-6b81a616",
+  "targetLayoutId": "everland-speedway",
+  "originalBorderSha256": "b66c8ef61b33502b84d303ace3d36d0c45c350f5153305ba693ccd4daf88078b",
+  "traceSha256": "6b112045fbcbfc4265f2b9075bd3191b239fa3f5982b2d6f4e3be02b36c86802",
+  "imageSha256": "a3be7d7027a795aa03ec903f85a4a0d17f222afe62548089fe44b3f7e7815d6e",
+  "resultBorderSha256": "3bb3440cce5f45624d90c814ae844ee5969c0b2a80d71ecb5db21fa95b64f2bf",
+  "borderProperties": [
+    {
+      "role": "inner",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    },
+    {
+      "role": "outer",
+      "sourceIds": [],
+      "license": "LicenseRef-Track-Borders"
+    }
+  ],
+  "removed": [
+    {
+      "edge": "outer",
+      "index": 911,
+      "coordinate": [
+        127.21459175903165,
+        37.29680511261932
+      ],
+      "kind": "bridge-occlusion-detour"
+    },
+    {
+      "edge": "outer",
+      "index": 912,
+      "coordinate": [
+        127.21453408098417,
+        37.296709183697196
+      ],
+      "kind": "bridge-occlusion-detour"
+    },
+    {
+      "edge": "outer",
+      "index": 913,
+      "coordinate": [
+        127.21466821116269,
+        37.29672912960816
+      ],
+      "kind": "bridge-occlusion-detour"
+    }
+  ],
+  "bridgeReview": {
+    "sourceCrossingSegments": [
+      36,
+      72
+    ],
+    "sourceEvidenceUrl": "https://www.openstreetmap.org/way/671420804",
+    "gradeSeparationConfirmed": true,
+    "nativeImageViewed": true
+  },
+  "defectCropViewed": true,
+  "remainingCoordinatesPreserved": true,
+  "note": "At the independently documented crossover bridge, outer vertices 911 to 913 divert onto the two transverse lower-road edges, creating an approximately 8.61 m excursion in the elevated branch boundary. Delete only these three pinned coordinates to connect the retained elevated-road edge endpoints over 25.62 m. The native crop and original/corrected overlays were inspected. All other coordinates and original border properties remain exact. The chord is an estimated local edge continuation, not a measured bridge profile or inferred deck height."
+}
