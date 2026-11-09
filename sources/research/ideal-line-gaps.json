@@ -3,30 +3,12 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 4,
+    "unavailableLayouts": 3,
     "insufficientWidth": 2,
-    "topologyOrOrderReview": 2,
+    "topologyOrOrderReview": 1,
     "solverCandidates": 0
   },
   "records": [
-    {
-      "file": "data/germany/de-porsche-leipzig-a-1a7399b8/layouts/porsche-leipzig-a.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "e73ae1a63adee93c358bdb640f20938cc99a51f78d0b4c176f6291c8015cb808",
-      "traceGeometrySha256": "2dc3149e44215e56bdd0dfbfbc420f86852ab53bd9535e273c5f5ba4fad76b6d",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
     {
       "file": "data/united-kingdom/gb-prodrive-bf598a18/layouts/prodrive.geojson",
       "classification": "topology-or-order-review",

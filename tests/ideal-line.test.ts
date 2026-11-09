@@ -69,6 +69,9 @@ test("all stored independent ideal corridors are simple; ordered crossings retai
   const { geometryPaths } = await import("../schemas/data");
   const { plane, equal } = await import("../src/geo");
   const { assertSeparateSimpleRings } = await import("../src/boundary-path");
+  const { pathCrossings } = await import("../src/path-crossings");
+  const { reviewedNetworkGround } = await import("../scripts/ideal-network-ground");
+  const { groundSegmentClearanceM } = await import("../src/ribbon-surface");
   const report = JSON.parse(
     readFileSync("data/ideal-lines-coverage.json", "utf8"),
   );
@@ -86,8 +89,27 @@ test("all stored independent ideal corridors are simple; ordered crossings retai
       (recipe?.kind !== "surface" && recipe?.sourceSequence)
     )
       continue;
-    for (const path of geometryPaths(ideal.geometry)) {
+    const networkGround=ideal.properties.role==='ideal'&&ideal.properties.networkReview?.method==='image-reviewed-network-pavement-v2'
+      ? reviewedNetworkGround(d,ideal.properties.networkReview):undefined;
+    for (const [index,path] of geometryPaths(ideal.geometry).entries()) {
       const project = plane(path[0]);
+      if(networkGround){
+        const source=networkGround.source[index],closed=equal(source[0],source.at(-1)!),
+          expected=pathCrossings(source.map(project.to),closed),actual=pathCrossings(path.map(project.to),closed);
+        assert.equal(actual.length,expected.length,row.file);
+        const points=path.map(networkGround.project.to);
+        for(let i=1;i<points.length;i++)assert.ok(groundSegmentClearanceM(networkGround.footprint,points[i-1],points[i])>=IDEAL_CAR.widthM/2+.5,row.file);
+        if(expected.length){
+          const length=(p:[number,number][])=>p.slice(1).reduce((s,q,i)=>s+Math.hypot(q[0]-p[i][0],q[1]-p[i][1]),0),
+            a=length(source.map(project.to)),b=length(path.map(project.to));
+          for(const [i,c] of actual.entries()){
+            assert.equal(c.kind,'crossing',row.file);assert.equal(expected[i].kind,'crossing',row.file);
+            assert.ok(Math.hypot(c.point[0]-expected[i].point[0],c.point[1]-expected[i].point[1])<=20,row.file);
+            assert.ok(c.stations.every((s,j)=>Math.abs(s/b-expected[i].stations[j]/a)*a<=50),row.file);
+          }
+          continue;
+        }
+      }
       assert.doesNotThrow(
         () =>
           assertSeparateSimpleRings(
