@@ -1,4 +1,5 @@
 import { nearestBorderCorridor } from "./ideal-nearest-corridor";
+import { assertIdealSeparation } from "./ideal-separation";
 import { removeIdealLoops } from "./ideal-path-topology";
 import { repairIdealPath } from "./ideal-path-repair";
 import { serializeLayout } from "./layout-borders";
@@ -173,6 +174,7 @@ for (const [i, file] of files.entries()) {
       const cleaned = closed
         ? removeIdealLoops(points, [inner[0][0], -inner[0][1]])
         : points;
+      if (nearest && closed) assertIdealSeparation(cleaned, rings);
       if (
         closed &&
         !insideRing(

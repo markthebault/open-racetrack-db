@@ -1,12 +1,40 @@
 import type { Layout } from "../schemas/data";
 import { roadRings, insideRing } from "../src/boundary-path";
-import { type Position } from "../src/geo";
+import { equal, plane, type Position } from "../src/geo";
 import { edgeChecker } from "./ideal-clearance";
 import type { Station } from "./ideal-line-solver";
 
-/** A second correspondence strategy for valid rings whose normal rays hit a distant branch. */
+/** Keep raw self-crossing edges as obstacles; the final cycle must separate every edge vertex. */
+function sourceRings(layout: Layout) {
+  try {
+    return roadRings(layout);
+  } catch {
+    const trace = layout.features.find((f) => f.properties.role === "trace");
+    if (trace?.geometry.type !== "LineString")
+      throw new Error("Nearest-boundary corridor requires a single ordered route");
+    const project = plane(trace.geometry.coordinates[0]);
+    const rings = ["inner", "outer"].map((role) => {
+      const edge = layout.features.find((f) => f.properties.role === role);
+      if (edge?.geometry.type !== "LineString" ||
+        !equal(edge.geometry.coordinates[0], edge.geometry.coordinates.at(-1)!))
+        throw new Error("Nearest-boundary corridor requires closed source edges");
+      return edge.geometry.coordinates.map(project.to);
+    });
+    const area = (r: Position[]) => Math.abs(r.slice(1).reduce(
+      (sum, p, i) => sum + r[i][0] * p[1] - p[0] * r[i][1], 0,
+    ));
+    rings.sort((a, b) => area(a) - area(b));
+    const [inner, outer] = rings;
+    if (inner.some((p) => !insideRing(p, outer)) ||
+      outer.some((p) => insideRing(p, inner)))
+      throw new Error("Raw source edges cannot form a nested footprint");
+    return { project, inner, outer };
+  }
+}
+
+/** A second correspondence strategy for rings whose normal rays hit a distant branch. */
 export function nearestBorderCorridor(layout: Layout) {
-  const { project, inner, outer } = roadRings(layout),
+  const { project, inner, outer } = sourceRings(layout),
     rings = [inner, outer],
     clearance = edgeChecker(rings);
   const lengths = inner
