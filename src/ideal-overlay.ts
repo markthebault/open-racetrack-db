@@ -40,9 +40,7 @@ export class IdealOverlay {
     const button = this.root.querySelector("button")!;
     button.setAttribute("aria-pressed", String(active));
     button.disabled = false;
-    const unverified=feature?.properties.role==='ideal'&&feature.properties.qualification==='unverified-source-geometry';
-    this.root.querySelector('span')!.textContent=unverified?'Unverified source geometry':'Estimated · dry conditions';
-    button.title = unverified?'Estimated from draft source geometry; physical road edges are unverified':'Show the estimated ideal line';
+    button.title = "Show the estimated ideal line";
     this.changed(active);
     if (active && feature && !this.in3D) {
       for (const path of geometryPaths(feature.geometry))
@@ -50,7 +48,7 @@ export class IdealOverlay {
           path.map((p) => [p[1], p[0]] as L.LatLngTuple),
           { color: "#e6a318", weight: 3, className: "ideal-line" },
         )
-          .bindTooltip(unverified?'Ideal line · unverified source geometry':'Ideal line · estimated')
+          .bindTooltip("Ideal line · estimated")
           .addTo(this.group);
       this.group.addTo(this.map);
     }

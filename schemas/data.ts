@@ -1,4 +1,3 @@
-import {idealSourceGeometryReviewSchema} from './ideal-source-geometry';
 import {idealNetworkReviewSchema} from './ideal-network-review';
 import {
   borderInferenceSchema,
@@ -199,11 +198,8 @@ export const layoutSchema = z.strictObject({
           role: z.literal("ideal"), sourceIds: z.array(slug).length(0), estimated: z.literal(true),
           method: z.literal("bounded-minimum-curvature-local-time-v1"),
           edgeMarginM: z.number().nonnegative(),
-          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1", "reviewed-network-ground-v1", "reviewed-source-corridor-v1"]).optional(),
+          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1", "reviewed-network-ground-v1"]).optional(),
           networkReview: idealNetworkReviewSchema.optional(),
-          qualification: z.literal("unverified-source-geometry").optional(),
-          sourceGeometryReview: idealSourceGeometryReviewSchema.optional(),
-          sourceGeometryReviews: z.array(idealSourceGeometryReviewSchema).min(1).optional(),
           borderLicenses: z.array(z.string()).min(1),
         })]),
         geometry: z.union([line, network]),
@@ -331,12 +327,6 @@ export function validateLayout(input: unknown, track: Track, id: string) {
         !pathCrossings(trace.coordinates.map(plane(trace.coordinates[0]).to), true).some(c => c.kind === "crossing"))
         throw new Error("ideal: ordered ribbon requires a closed projected source crossing");
     }
-    const sourceReview=ideal.properties.sourceGeometryReview,sourceReviews=ideal.properties.sourceGeometryReviews;
-    if(ideal.properties.boundaryModel==='reviewed-source-corridor-v1'){
-      if(!sourceReview||sourceReviews||!m.closed||m.geometryKind==='network'||ideal.geometry.type!=='LineString'||sourceReview.trackId!==m.trackId||sourceReview.layoutId!==m.layoutId||!ideal.properties.qualification)throw new Error('ideal: source corridor needs its qualified independent review');
-    }else if(sourceReview)throw new Error('ideal: source review needs its boundary model');
-    if(sourceReviews&&(!m.borderComposition||ideal.geometry.type!=='MultiLineString'||!ideal.properties.qualification||sourceReviews.some(p=>p.trackId!==m.trackId||!m.borderComposition!.some(c=>c.sourceLayoutId===p.layoutId))))throw new Error('ideal: composed qualification needs exact reviewed components');
-    if(ideal.properties.qualification&&!sourceReview&&!sourceReviews)throw new Error('ideal: unverified qualification needs a source geometry review');
     const networkReview=ideal.properties.networkReview;
     if(ideal.properties.boundaryModel==='reviewed-network-ground-v1') {
       if(!networkReview||m.geometryKind!=='network'||m.closed||ideal.geometry.type!=='MultiLineString'||

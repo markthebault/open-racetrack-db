@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "method": "bounded-minimum-curvature-local-time-v1",
   "borderedLayouts": 1186,
-  "generated": 1186,
-  "unavailable": 0,
+  "generated": 1183,
+  "unavailable": 3,
   "records": [
     {
       "file": "data/argentina/ar-autodromo-de-san-jorge-76618655/layouts/autodromo-de-san-jorge.geojson",
@@ -3263,7 +3263,8 @@
     },
     {
       "file": "data/united-kingdom/gb-prodrive-bf598a18/layouts/prodrive.geojson",
-      "status": "generated"
+      "status": "unavailable",
+      "reason": "Error: Raw source edges cannot form a nested footprint"
     },
     {
       "file": "data/united-kingdom/gb-rissington-kart-circuit-12acd2fe/layouts/rissington-gearbox.geojson",
@@ -4003,11 +4004,13 @@
     },
     {
       "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
-      "status": "generated"
+      "status": "unavailable",
+      "reason": "Error: No vehicle-width local route through the saved footprint"
     },
     {
       "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-short.geojson",
-      "status": "generated"
+      "status": "unavailable",
+      "reason": "Error: No vehicle-width local route through the saved footprint"
     },
     {
       "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-sro-practice.geojson",

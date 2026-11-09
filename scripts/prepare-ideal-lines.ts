@@ -90,12 +90,9 @@ await phase("scripts/recover-continuous-ideal-lines.ts", "continuous");
 const continuous = await records("continuous");
 await writeFile(`${directory}/final-unavailable.json`, JSON.stringify(continuous.filter(r => r.status === "unavailable"), null, 2));
 await phase("scripts/recover-network-ideal-lines.ts", "network");
-const network = await records("network");
-await writeFile(`${directory}/final-unavailable.json`, JSON.stringify(network.filter(r => r.status === "unavailable"), null, 2));
-await phase("scripts/recover-source-geometry-ideals.ts", "source-geometry");
-const qualified = await records("source-geometry"),
+const network = await records("network"),
   merged = new Map(
-    [...coarse, ...fine, ...nearest, ...ordered, ...narrow, ...ribbon, ...continuous, ...network, ...qualified].map((r) => [
+    [...coarse, ...fine, ...nearest, ...ordered, ...narrow, ...ribbon, ...continuous, ...network].map((r) => [
       r.file,
       r,
     ]),
