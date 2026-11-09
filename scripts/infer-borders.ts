@@ -24,6 +24,7 @@ import {
 } from "./infer-image-borders";
 import { preserveDisplayImageryOnBorderRefresh, serializeLayout } from "./layout-borders";
 import { borderReplacement } from "./border-replacement";
+import { reviewedEstimateReplacement, verifyReviewedEstimateResult } from "./reviewed-estimate-replacement";
 import { reuseOriginalBorders, originalBorderSource } from "./reuse-original-borders";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
@@ -60,7 +61,7 @@ if (
   (!replacementHash ||
     !/^[a-f0-9]{64}$/.test(replacementHash) ||
     !option("--replacement-reason") ||
-    !option("--measurements") ||
+    (!option("--measurements") && !option("--same-cycle-estimate")) ||
     !option("--track") ||
     !option("--layout") ||
     !option("--cached-image") ||
@@ -68,8 +69,10 @@ if (
     check)
 )
   throw new Error(
-    "Original border replacement requires one --track, --layout, --cached-image, complete --measurements, --replace-border-hash and --replacement-reason; never --all or --check",
+    "Original border replacement requires one --track, --layout, --cached-image, complete --measurements or a pinned --same-cycle-estimate, --replace-border-hash and --replacement-reason; never --all or --check",
   );
+if(option("--same-cycle-estimate")&&(!replacementHash||!appearance||localAppearance||option("--measurements")||option("--edge-refinement")||option("--grade-separation")))
+  throw new Error("--same-cycle-estimate requires an explicit appearance-only original-border replacement");
 if (
   option("--measurements") &&
   (!option("--track") ||
@@ -411,13 +414,23 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     const file = `${dirname(trackFile)}/${item.file}`,
       layout = validateLayout(await read(file), track, item.id),
       old = layout.metadata.borderInference;
-    const replacement = replacementHash
+    let reviewedEstimate: ReturnType<typeof reviewedEstimateReplacement> | undefined;
+    if(option("--same-cycle-estimate")){
+      const pin=await read(option("--same-cycle-estimate")!);
+      const sourceEntry=track.layouts.find(l=>l.id===pin.sourceLayoutId);
+      if(!sourceEntry?.file)throw new Error("Reviewed estimate source is not a registered layout");
+      const source=validateLayout(await read(`${dirname(trackFile)}/${sourceEntry.file}`),track,sourceEntry.id);
+      const image=await read(option("--cached-image")!);
+      reviewedEstimate=reviewedEstimateReplacement(layout,source,pin,image.sha256);
+      if(pin.originalBorderSha256!==replacementHash)throw new Error("Reviewed estimate target hash differs from replacement option");
+    }
+    const replacement = reviewedEstimate?.replacement ?? (replacementHash
       ? borderReplacement(
           layout,
           replacementHash,
           option("--replacement-reason")!,
         )
-      : undefined;
+      : undefined);
     if (layout.metadata.borderComposition) {
       report.push({
         trackId: track.id,
@@ -489,6 +502,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     if (check) {
+      if(old?.supersedes?.sameCycleReview){
+        const review=old.supersedes.sameCycleReview;
+        const sourceEntry=track.layouts.find(l=>l.id===review.sourceLayoutId);
+        if(!sourceEntry?.file)throw new Error("Reviewed estimate source is no longer registered");
+        const source=validateLayout(await read(`${dirname(trackFile)}/${sourceEntry.file}`),track,sourceEntry.id);
+        verifyReviewedEstimateResult(layout,source,review);
+      }
       if (old?.gradeSeparation)
         await verifyGradeSource(layout, old.gradeSeparation);
       if (old?.refinement) {
@@ -690,6 +710,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
           result = infer(acquired);
         }
       if (sourceContained) assertSourceContainedBorders(geometryPaths(trace.geometry)[0], result, !layout.metadata.closed);
+      if(reviewedEstimate && borderPairHash(result)!==reviewedEstimate.pin.resultBorderSha256)
+        throw new Error("Reviewed estimate result differs from the pinned candidate");
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
         method: measured
@@ -880,7 +902,7 @@ if (write) {
   const result = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
-    note: "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
+    note: "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved except for explicitly pinned, image-reviewed replacements.",
     records: records.sort((a, b) =>
       (a.trackId + "/" + a.layoutId).localeCompare(
         b.trackId + "/" + b.layoutId,

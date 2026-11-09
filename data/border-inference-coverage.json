@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08T23:14:15.063Z",
-  "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved.",
+  "generatedAt": "2026-11-09T12:23:40.491Z",
+  "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved except for explicitly pinned, image-reviewed replacements.",
   "records": [
     {
       "trackId": "ae-dubai-autodrome-87272771",
@@ -2210,6 +2210,29 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "3392cf5a0729d7adbc43b13e0be2776b9798bb3833bc6f7d442950eae2d130a2"
+    },
+    {
+      "trackId": "fi-botniaring-111368167",
+      "layoutId": "botniaringfull",
+      "file": "data/finland/botniaring-111368167/layouts/botniaringfull.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8688,
+          0.8853
+        ],
+        "medianInteriorDifference": [
+          0.0417,
+          0.0477
+        ],
+        "samplingStepM": 2.997835435503887,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "d435959094f940166c053d7ca7e2fc03a063e82e83b61e6c7649298ab36d9796"
     },
     {
       "trackId": "fi-botniaring-111368167",

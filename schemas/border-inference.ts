@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { reviewedEstimateSchema } from "./estimate-replacement";
 import { imageryTilesSchema } from "./imagery-tiles";
 import {
   borderRefinementSchema,
@@ -41,6 +42,7 @@ export const borderInferenceSchema = z
       .strictObject({
         borderSha256: z.string().regex(/^[a-f0-9]{64}$/),
         reason: z.string().trim().min(20),
+        sameCycleReview: reviewedEstimateSchema.optional(),
       })
       .optional(),
     refinement: borderRefinementSchema.optional(),
@@ -123,11 +125,15 @@ export const borderInferenceSchema = z
     const measured =
       value.method === "image-measured-cross-sections-v1" ||
       value.method === "image-measured-paired-edges-v1";
-    if (value.supersedes && !measured)
+    if (value.supersedes && !measured && !value.supersedes.sameCycleReview)
       ctx.addIssue({
         code: "custom",
         message: "Replacement borders require complete image measurements",
       });
+    const review=value.supersedes?.sameCycleReview;
+    if(review && (value.method!=="rgb-road-appearance-v3"||value.refinement||value.measurement||value.gradeSeparation||
+      review.originalBorderSha256!==value.supersedes!.borderSha256||review.note!==value.supersedes!.reason||review.imageSha256!==value.imagery.sha256))
+      ctx.addIssue({code:"custom",message:"Same-cycle replacement requires its pinned appearance estimate and image review"});
     if (
       measured
         ? !value.measurement ||

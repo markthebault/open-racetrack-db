@@ -68,7 +68,7 @@ test("replacement refuses ambiguous scope, inferred edges, missing edges and und
   }
 });
 
-test("replacement provenance requires complete measured geometry rather than an automatic proposal", () => {
+test("unreviewed automatic proposals cannot claim replacement provenance", () => {
   const d = JSON.parse(readFileSync("data/united-kingdom/gb-gurston-down-hillclimb-ade02267/layouts/gurston-down-hillclimb.geojson", "utf8"));
   const evidence = { ...d.metadata.borderInference, supersedes: { borderSha256: "a".repeat(64), reason: "Pinned native imagery shows a different paved branch." } };
   assert.deepEqual(borderInferenceSchema.parse(evidence).supersedes, evidence.supersedes);

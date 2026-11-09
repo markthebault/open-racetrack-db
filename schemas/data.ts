@@ -305,6 +305,9 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("borders: expected both inner and outer");
   if (borders.length && m.licenseScope !== "trace-and-timing")
     throw new Error("borders: trace license scope must be explicit");
+  const sameCycleReview=m.borderInference?.supersedes?.sameCycleReview;
+  if(sameCycleReview&&(sameCycleReview.trackId!==m.trackId||sameCycleReview.targetLayoutId!==m.layoutId||!m.closed||m.geometryKind==="network"))
+    throw new Error("borders: same-cycle replacement review has a different target identity");
   const ideals = data.features.filter(f => f.properties.role === "ideal");
   if (ideals.length > 1 || (ideals.length && borders.length !== 2)) throw new Error("ideal: requires one derived feature and both source boundaries");
   for (const ideal of ideals) {
