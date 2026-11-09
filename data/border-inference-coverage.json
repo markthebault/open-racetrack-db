@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T14:07:55.840Z",
+  "generatedAt": "2026-11-09T15:00:39.127Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved except for explicitly pinned, image-reviewed replacements.",
   "records": [
     {
@@ -5941,6 +5941,29 @@
       "file": "data/united-states/nola-motorsports-park-298904844/layouts/north-western-connecting-branches-2014.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-norway-speedway-28bd57a2",
+      "layoutId": "norway-speedway",
+      "file": "data/united-states/us-norway-speedway-28bd57a2/layouts/norway-speedway.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9551,
+          0.8526
+        ],
+        "medianInteriorDifference": [
+          0.0305,
+          0.0236
+        ],
+        "samplingStepM": 2.99606862168693,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9786050.694544772%2C5743370.299489777%2C-9785480.237640485%2C5743961.407852048&bboxSR=3857&imageSR=3857&size=531%2C550&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "d8f928395cee5ed418e1fb6462580a5a8ec947546f03267629bedf1bbcb2c655"
     },
     {
       "trackId": "us-ozarks-international-raceway-1112103055",

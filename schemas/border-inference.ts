@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { reviewedEstimateSchema } from "./estimate-replacement";
+import { reviewedEstimateSchema, roadEstimateReviewSchema } from "./estimate-replacement";
 import { imageryTilesSchema } from "./imagery-tiles";
 import {
   borderRefinementSchema,
@@ -43,6 +43,7 @@ export const borderInferenceSchema = z
         borderSha256: z.string().regex(/^[a-f0-9]{64}$/),
         reason: z.string().trim().min(20),
         sameCycleReview: reviewedEstimateSchema.optional(),
+        imageReview: roadEstimateReviewSchema.optional(),
       })
       .optional(),
     refinement: borderRefinementSchema.optional(),
@@ -125,12 +126,17 @@ export const borderInferenceSchema = z
     const measured =
       value.method === "image-measured-cross-sections-v1" ||
       value.method === "image-measured-paired-edges-v1";
-    if (value.supersedes && !measured && !value.supersedes.sameCycleReview)
+    if (value.supersedes && !measured && !value.supersedes.sameCycleReview && !value.supersedes.imageReview)
       ctx.addIssue({
         code: "custom",
-        message: "Replacement borders require complete image measurements",
+        message: "Replacement borders require complete image measurements or a pinned image review",
       });
     const review=value.supersedes?.sameCycleReview;
+    const imageReview=value.supersedes?.imageReview;
+    if(imageReview && (review||value.method!=="rgb-road-appearance-v3"||value.refinement||value.measurement||value.gradeSeparation||
+      imageReview.originalBorderSha256!==value.supersedes!.borderSha256||imageReview.note!==value.supersedes!.reason||
+      imageReview.imageSha256!==value.imagery.sha256||imageReview.traceSha256!==value.traceSha256))
+      ctx.addIssue({code:"custom",message:"Image-reviewed replacement requires its exact pinned appearance estimate, source and image"});
     if(review && (value.method!=="rgb-road-appearance-v3"||value.refinement||value.measurement||value.gradeSeparation||
       review.originalBorderSha256!==value.supersedes!.borderSha256||review.note!==value.supersedes!.reason||review.imageSha256!==value.imagery.sha256))
       ctx.addIssue({code:"custom",message:"Same-cycle replacement requires its pinned appearance estimate and image review"});

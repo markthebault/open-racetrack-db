@@ -20,8 +20,8 @@
     {
       "id": "norway-speedway",
       "name": "Norway Speedway",
-      "referenceId": "United States/Norway Speedway",
       "file": "layouts/norway-speedway.geojson",
+      "referenceId": "United States/Norway Speedway",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 467.4 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
     }
   ],
@@ -34,6 +34,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9786050.694544772%2C5743370.299489777%2C-9785480.237640485%2C5743961.407852048&bboxSR=3857&imageSR=3857&size=531%2C550&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-09T14:48:18.149Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

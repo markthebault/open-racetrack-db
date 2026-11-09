@@ -25,6 +25,7 @@ import {
 import { preserveDisplayImageryOnBorderRefresh, serializeLayout } from "./layout-borders";
 import { borderReplacement } from "./border-replacement";
 import { reviewedEstimateReplacement, verifyReviewedEstimateResult } from "./reviewed-estimate-replacement";
+import { reviewedRoadEstimateReplacement, verifyReviewedRoadEstimateResult } from "./reviewed-road-estimate";
 import { reuseOriginalBorders, originalBorderSource } from "./reuse-original-borders";
 import { loadEnv } from "vite";
 import { ImageryQuotaError, licensedImagery } from "./licensed-imagery";
@@ -61,7 +62,7 @@ if (
   (!replacementHash ||
     !/^[a-f0-9]{64}$/.test(replacementHash) ||
     !option("--replacement-reason") ||
-    (!option("--measurements") && !option("--same-cycle-estimate")) ||
+    (!option("--measurements") && !option("--same-cycle-estimate") && !option("--image-reviewed-estimate")) ||
     !option("--track") ||
     !option("--layout") ||
     !option("--cached-image") ||
@@ -69,8 +70,10 @@ if (
     check)
 )
   throw new Error(
-    "Original border replacement requires one --track, --layout, --cached-image, complete --measurements or a pinned --same-cycle-estimate, --replace-border-hash and --replacement-reason; never --all or --check",
+    "Original border replacement requires one --track, --layout, --cached-image, complete --measurements or a pinned --same-cycle-estimate / --image-reviewed-estimate, --replace-border-hash and --replacement-reason; never --all or --check",
   );
+if(option("--image-reviewed-estimate")&&(!replacementHash||!appearance||localAppearance||option("--measurements")||option("--edge-refinement")||option("--grade-separation")||option("--same-cycle-estimate")))
+  throw new Error("--image-reviewed-estimate requires an explicit appearance-only original-border replacement");
 if(option("--same-cycle-estimate")&&(!replacementHash||!appearance||localAppearance||option("--measurements")||option("--edge-refinement")||option("--grade-separation")))
   throw new Error("--same-cycle-estimate requires an explicit appearance-only original-border replacement");
 if (
@@ -424,7 +427,13 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       reviewedEstimate=reviewedEstimateReplacement(layout,source,pin,image.sha256);
       if(pin.originalBorderSha256!==replacementHash)throw new Error("Reviewed estimate target hash differs from replacement option");
     }
-    const replacement = reviewedEstimate?.replacement ?? (replacementHash
+    let reviewedRoadEstimate: ReturnType<typeof reviewedRoadEstimateReplacement> | undefined;
+    if(option("--image-reviewed-estimate")){
+      const pin=await read(option("--image-reviewed-estimate")!),image=await read(option("--cached-image")!);
+      reviewedRoadEstimate=reviewedRoadEstimateReplacement(layout,pin,image.sha256);
+      if(pin.originalBorderSha256!==replacementHash||pin.note!==option("--replacement-reason"))throw new Error("Reviewed road estimate pin differs from replacement options");
+    }
+    const replacement = reviewedEstimate?.replacement ?? reviewedRoadEstimate?.replacement ?? (replacementHash
       ? borderReplacement(
           layout,
           replacementHash,
@@ -502,6 +511,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     if (check) {
+      if(old?.supersedes?.imageReview)verifyReviewedRoadEstimateResult(layout,old.supersedes.imageReview);
       if(old?.supersedes?.sameCycleReview){
         const review=old.supersedes.sameCycleReview;
         const sourceEntry=track.layouts.find(l=>l.id===review.sourceLayoutId);
@@ -712,6 +722,9 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       if (sourceContained) assertSourceContainedBorders(geometryPaths(trace.geometry)[0], result, !layout.metadata.closed);
       if(reviewedEstimate && borderPairHash(result)!==reviewedEstimate.pin.resultBorderSha256)
         throw new Error("Reviewed estimate result differs from the pinned candidate");
+      const roadReview=reviewedRoadEstimate?.pin??old?.supersedes?.imageReview;
+      if(roadReview && borderPairHash(result)!==roadReview.resultBorderSha256)
+        throw new Error("Reviewed road estimate result differs from the pinned candidate");
       const evidence = borderInferenceSchema.parse({
         schemaVersion: 1,
         method: measured

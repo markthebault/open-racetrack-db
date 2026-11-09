@@ -2,7 +2,7 @@ import type { Layout } from "../schemas/data";
 import { borderPairHash } from "./refine-image-borders";
 import type { Position } from "../src/geo";
 
-/** Explicitly pin the old pair before replacing it with complete image measurements. */
+/** Explicitly pin the old pair before replacing it with reviewed image-derived boundaries. */
 export function borderReplacement(
   layout: Layout,
   expectedHash: string,
