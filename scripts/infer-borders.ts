@@ -1,3 +1,4 @@
+import {assertMeasuredBorderReplay} from './measured-border-replay';
 import { verifySourceSpurResult } from "./source-spur-correction";
 import { loadTiledRaster } from "./tiled-raster";
 import { readFile, writeFile, mkdir, rename, readdir } from "node:fs/promises";
@@ -556,13 +557,8 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
               )[0],
             ]),
           ) as { inner: Position[]; outer: Position[] };
-        if (
-          borderPairHash(pair) !== resultSha256 ||
-          replay.measurement.resultSha256 !== resultSha256
-        )
-          throw new Error(
-            `${track.id}/${item.id}: measured border reconstruction mismatch`,
-          );
+        try { assertMeasuredBorderReplay(pair,resultSha256,replay); }
+        catch(error){throw new Error(`${track.id}/${item.id}: measured border reconstruction mismatch: ${error instanceof Error?error.message:error}`);}
       }
       if (old)
         report.push({

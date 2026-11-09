@@ -1,9 +1,9 @@
+import {buildPlaybackRoad} from './ideal-playback';
 import L from "leaflet";
 import type { Layout } from "../schemas/data";
 import { traceCredit } from "./trace-credit";
 import { plane } from "./geo";
 import {
-  buildRoad,
   DEFAULT_CAR,
   formatLapTime,
   simulateLap,
@@ -581,7 +581,12 @@ export function openLap(
         note.append(" ", credit);
         find(".lap-evidence").append(note);
       }
-      const road = buildRoad(layout);
+      const road = buildPlaybackRoad(layout);
+      dialog.dataset.drivingPath = road.pathSource ?? "centre";
+      if (road.pathSource === "ideal") find(".lap-section h3 + p").textContent = `Generic car · ${road.recipe.kind === "run" ? "Standing start" : "Flying lap"} · Ideal line`;
+      find("[data-solver-note]").nextElementSibling!.textContent = road.pathSource === "ideal"
+        ? "The car follows the saved estimated ideal line. Its speed is recalculated for the selected car, without gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time."
+        : road.recipe.sourceSequence ? "No matching ideal line is available for this run. The car follows the complete saved mapped route. The result is an estimate, not a predicted real-car lap time." : "No matching ideal line is available for this route. The car follows the road centre. The result is an estimate, not a predicted real-car lap time.";
       lap = simulateLap(road);
       if (closed) return;
       const xs = road.points.map((p) => p.x),
@@ -669,7 +674,7 @@ export function openLap(
           ? `Road height follows ${recipe.elevation.length} published altitude anchors at natural scale. Stationing uses a venue reference; start alignment is approximate (${recipe.startOffsetM} m from the saved timing anchor).`
           : recipe.sharedGround
             ? `Road and car heights sample the same approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster at each position, including both visits to the shared junction. The full mapped route is preserved. Original borders have a local image-reviewed junction correction; road positions and elevations remain estimates.`
-            : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${recipe.sourceSequence ? "the complete saved source sequence, with measured approach edges and one shared circuit elevation profile reused on each pass" : recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
+            : `Road height is estimated from the approximately ${recipe.terrain.source.sampleSpacingM} m terrain raster, using ${recipe.elevation.length} compressed samples. It is not a survey of the road surface. Distances follow ${road.pathSource === "ideal" ? "the saved ideal line, with elevations interpolated from the corresponding road sections" : recipe.sourceSequence ? "the complete saved source sequence, with measured approach edges and one shared circuit elevation profile reused on each pass" : recipe.pathMethod === "boundary-normal-midpoints-v1" ? "midpoints of cross-sections from the inner boundary to the outer boundary; the source trace is preserved" : recipe.pathMethod ? "the midpoint of corresponding border stations; the source trace is preserved" : "the mapped trace"}.`;
       find("[data-curb-note]").textContent = estimatedCurbs
         ? recipe.sharedGround ? "Curbs illustrate curved physical road boundaries. Their positions, widths, heights and colours are unverified." : "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";

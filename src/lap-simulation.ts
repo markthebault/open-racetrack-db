@@ -46,6 +46,8 @@ export interface RoadPoint {
   elevated?: boolean;
 }
 export interface Road {
+  surfaceRoad?: Road;
+  pathSource?: "ideal";
   points: RoadPoint[];
   length: number;
   step: number;

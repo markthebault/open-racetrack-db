@@ -132,13 +132,16 @@ export class LapScene {
   private renderState?: ReturnType<typeof sampleLap>;
   private groundGeometry: THREE.PlaneGeometry;
   private overviewPath?: THREE.Line;
+  private road: Road;
   constructor(
     private container: HTMLElement,
-    private road: Road,
+    drivingRoad: Road,
     grid: ElevationGrid | undefined,
     private imageryStatus: (ready: boolean) => void,
   ) {
-    this.cameraRig = new LapCameraRig(road);
+    this.road = drivingRoad;
+    this.cameraRig = new LapCameraRig(drivingRoad);
+    const road = drivingRoad.surfaceRoad ?? drivingRoad;
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,
       preserveDrawingBuffer: true,
@@ -238,17 +241,17 @@ export class LapScene {
       this.scene.add(m);
     }
     this.scene.add(this.car);
-    if (road.length > 15000) {
+    if (drivingRoad.length > 15000) {
       this.overviewPath = new (
-        road.recipe.kind === "run" ? THREE.Line : THREE.LineLoop
+        drivingRoad.recipe.kind === "run" ? THREE.Line : THREE.LineLoop
       )(
         new THREE.BufferGeometry().setFromPoints(
-          road.points.map(
+          drivingRoad.points.map(
             (p) =>
               new THREE.Vector3(
-                p.x + (road.ground ? 0 : (p.nx * (p.left - p.right)) / 2),
+                p.x + (drivingRoad.pathSource === "ideal" || drivingRoad.ground ? 0 : (p.nx * (p.left - p.right)) / 2),
                 p.y + 0.2,
-                p.z + (road.ground ? 0 : (p.nz * (p.left - p.right)) / 2),
+                p.z + (drivingRoad.pathSource === "ideal" || drivingRoad.ground ? 0 : (p.nz * (p.left - p.right)) / 2),
               ),
           ),
         ),
@@ -432,7 +435,7 @@ export class LapScene {
   update(lap: Lap, time: number, resetCamera = false) {
     const s = sampleLap(lap, time);
     this.renderState = s;
-    const offset = this.road.ground ? 0 : (s.left - s.right) / 2;
+    const offset = this.road.ground || this.road.pathSource === "ideal" ? 0 : (s.left - s.right) / 2;
     this.car.position.set(s.x + s.nx * offset, s.y + 0.15, s.z + s.nz * offset);
     const forward = this.cameraRig.course.direction(s.distance, 3);
     this.car.rotation.set(

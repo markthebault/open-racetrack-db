@@ -13,7 +13,7 @@ export class CameraCourse {
   private underpasses: { start: number; end: number; height: number }[] = [];
   constructor(private road: Road) {
     this.centres = road.points.map((p) => {
-      const offset = road.ground ? 0 : (p.left - p.right) / 2;
+      const offset = road.ground || road.pathSource === "ideal" ? 0 : (p.left - p.right) / 2;
       return new Vector3(p.x + p.nx * offset, p.y + 0.15, p.z + p.nz * offset);
     });
     // Only explicitly elevated road sections can constrain the camera. Nearby

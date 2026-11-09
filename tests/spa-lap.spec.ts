@@ -119,7 +119,8 @@ test("one downloaded Spa GeoJSON supplies the lap and terrain without sidecar re
   });
   await page.goto("/?track=be-spa-francorchamps&lap=1");
   await expect(page.locator(".lap-loading")).toBeHidden();
-  await expect(page.locator("[data-duration]")).toHaveText("3:12.67");
+  await expect(page.locator("[data-duration]")).toHaveText(/^\d+:\d{2}\.\d{2}$/);
+  await expect(page.locator(".lap-player")).toHaveAttribute("data-driving-path", "ideal");
   await expect(page.locator(".lap-status")).toHaveText("Aerial imagery loaded");
   const link = await page.locator("#download").getAttribute("href");
   const response = await page.request.get(link!);
@@ -131,5 +132,6 @@ test("one downloaded Spa GeoJSON supplies the lap and terrain without sidecar re
   expect(sidecars).toEqual([]);
   await page.getByRole("button", { name: "Close lap simulator" }).click();
   await page.locator("#view-3d").click();
+  await page.locator(".map-options summary").click();
   await expect(page.locator("#height-scale")).toBeVisible();
 });

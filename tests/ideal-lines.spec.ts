@@ -15,6 +15,7 @@ test("ideal line remains opt-in, is embedded in download and renders in both vie
     "aria-pressed",
     "false",
   );
+  await page.locator(".map-options summary").click();
   await page.locator("#ideal-toggle").click();
   await expect(page.locator(".ideal-line")).toHaveCount(1);
   await expect(page.locator(".course-trace")).toHaveCount(0);
@@ -50,6 +51,7 @@ test("mobile control fits and switching layouts clears stale data", async ({
     await route.fulfill({ response, json: d });
   });
   await page.goto("/?track=es-barcelona-catalunya");
+  await page.locator(".map-options summary").click();
   await expect(page.locator("#ideal-toggle")).toBeVisible();
   await page.locator("#ideal-toggle").click();
   await expect(page.locator(".ideal-line")).toHaveCount(1);
@@ -62,4 +64,8 @@ test("mobile control fits and switching layouts clears stale data", async ({
   await expect(page.locator("#message")).toHaveText("Layout ready");
   await expect(page.locator(".ideal-line")).toHaveCount(0);
   await expect(page.locator("#ideal-toggle")).toBeHidden();
+});
+
+test('ideal control sits beside border controls and playback uses it even when the overlay is off',async({page})=>{
+ await page.goto('/?track=be-spa-francorchamps');await expect(page.locator('#message')).toHaveText('Layout ready');await page.locator('.map-options summary').click();await expect(page.locator('.map-options-content #border-toggle')).toBeVisible();await expect(page.locator('.map-options-content #ideal-toggle')).toBeVisible();await expect(page.locator('#ideal-toggle')).toHaveAttribute('aria-pressed','false');await page.locator('#play-lap').click();await expect(page.locator('.lap-loading')).toBeHidden();await expect(page.locator('.lap-player')).toHaveAttribute('data-driving-path','ideal');await expect(page.locator('.lap-section h3 + p')).toContainText('Ideal line');await expect(page.locator('[data-solver-note] + p')).toContainText('follows the saved estimated ideal line');await page.locator('.lap-play').click();await expect(page.locator('[data-clock]')).not.toHaveText('0:00.00');await page.getByRole('button',{name:'Close lap simulator',exact:true}).click();
 });

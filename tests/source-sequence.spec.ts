@@ -8,6 +8,8 @@ const track = "gb-castle-combe-circuit-35406015", layout = "castle-combe-western
 
 for (const width of [1440, 390, 320])
   test(`complete Western Sprint road, approach borders and playback at ${width}px`, async ({ page, request }) => {
+    const image = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64");
+    await page.route("**/api.maptiler.com/**", route => route.fulfill({body:image,contentType:"image/png",headers:{"access-control-allow-origin":"*"}}));
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.setViewportSize({ width, height: width > 500 ? 900 : 844 });
@@ -17,6 +19,7 @@ for (const width of [1440, 390, 320])
     await expect(page.locator(".inferred-border-note")).toContainText("approach limits");
     await page.locator("#view-satellite").click();
     await expect(page.locator("#view-satellite")).toHaveAttribute("aria-pressed", "true");
+    await page.locator(".map-options summary").click();
     await page.locator("#border-toggle").click();
     await expect(page.locator("#border-toggle")).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator(".border-inner")).toBeVisible();
