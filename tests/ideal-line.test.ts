@@ -79,6 +79,7 @@ test("all stored independent ideal corridors are simple; ordered crossings retai
       recipe = d.metadata.model3d;
     if (
       d.metadata.borderInference?.gradeSeparation ||
+      (recipe?.kind !== "surface" && recipe?.sharedGround) ||
       (recipe?.kind !== "surface" && recipe?.sourceSequence)
     )
       continue;

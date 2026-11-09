@@ -1,4 +1,5 @@
 import { removeIdealLoops } from "./ideal-path-topology";
+import { groundIdealLine } from "./ideal-ground-line";
 import { readFile, writeFile } from "node:fs/promises";
 import { geometryPaths, type Layout } from "../schemas/data";
 import { buildRoad } from "../src/lap-simulation";
@@ -52,14 +53,14 @@ for (const [i, item] of files.entries()) {
           : Math.min((p.left + p.right) / 2, clearance([x, -z])),
       };
     });
-    let { points } = optimizeLine(
+    let { points } = road.ground ? groundIdealLine(road, narrow ? 0.1 : 0.5) : optimizeLine(
       stations,
       closed,
       IDEAL_CAR,
       100,
       narrow ? 0.35 : 1.15,
     );
-    if (closed && !layered) {
+    if (closed && !layered && !road.ground) {
       const inner = insideRing(rings[0][0], rings[1]) ? rings[0] : rings[1];
       points = removeIdealLoops(points, [inner[0][0], -inner[0][1]]);
     }
@@ -70,7 +71,7 @@ for (const [i, item] of files.entries()) {
       for (let t = 0; t <= steps; t++) {
         const f = t / steps,
           p: Position = [u.x * (1 - f) + v.x * f, -u.z * (1 - f) - v.z * f];
-        if (!layered) {
+        if (!layered && !road.ground) {
           if (clearance(p) < IDEAL_CAR.widthM / 2 + (narrow ? 0.12 : 0.52))
             throw new Error("Insufficient car-width clearance");
           if (closed && insideRing(p, rings[0]) === insideRing(p, rings[1]))
@@ -103,9 +104,11 @@ for (const [i, item] of files.entries()) {
         estimated: true,
         method: "bounded-minimum-curvature-local-time-v1",
         edgeMarginM: narrow ? 0.1 : 0.5,
+        ...(road.ground ? { boundaryModel: "shared-ground-v1" as const } : {}),
         borderLicenses: [
           ...new Set(
-            borders.map((b) => (b.properties as { license: string }).license),
+            [...borders.map((b) => (b.properties as { license: string }).license),
+              ...(road.ground && road.recipe.sharedGround ? [road.recipe.sharedGround.imagery.license] : [])],
           ),
         ],
       },

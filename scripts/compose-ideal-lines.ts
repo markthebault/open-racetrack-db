@@ -19,7 +19,7 @@ export function composeIdealLine(network: Layout, sources: Layout[]) {
     if (!isDeepStrictEqual(networkRouteLayout(network, i), original))
       return undefined;
     const ideal = source.features.find((f) => f.properties.role === "ideal");
-    return ideal?.properties.role === "ideal" &&
+    return ideal?.properties.role === "ideal" && !ideal.properties.boundaryModel &&
       ideal.geometry.type === "LineString"
       ? { ...ideal, properties: ideal.properties }
       : undefined;

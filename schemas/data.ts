@@ -196,6 +196,7 @@ export const layoutSchema = z.strictObject({
           role: z.literal("ideal"), sourceIds: z.array(slug).length(0), estimated: z.literal(true),
           method: z.literal("bounded-minimum-curvature-local-time-v1"),
           edgeMarginM: z.number().nonnegative(),
+          boundaryModel: z.literal("shared-ground-v1").optional(),
           borderLicenses: z.array(z.string()).min(1),
         })]),
         geometry: z.union([line, network]),
@@ -307,7 +308,10 @@ export function validateLayout(input: unknown, track: Track, id: string) {
   if (ideals.length > 1 || (ideals.length && borders.length !== 2)) throw new Error("ideal: requires one derived feature and both source boundaries");
   for (const ideal of ideals) {
     if (ideal.properties.role !== "ideal") continue;
-    const licenses = [...new Set(borders.map(b => "license" in b.properties ? b.properties.license : ""))].sort();
+    const sharedGround = m.model3d?.kind !== "surface" ? m.model3d?.sharedGround : undefined;
+    if (ideal.properties.boundaryModel && !sharedGround) throw new Error("ideal: shared-ground boundary model is unavailable");
+    const licenses = [...new Set([...borders.map(b => "license" in b.properties ? b.properties.license : ""),
+      ...(ideal.properties.boundaryModel && sharedGround ? [sharedGround.imagery.license] : [])])].sort();
     if (JSON.stringify([...ideal.properties.borderLicenses].sort()) !== JSON.stringify(licenses)) throw new Error("ideal: source border licences disagree");
   }
   for (const f of data.features) {
