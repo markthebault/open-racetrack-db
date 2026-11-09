@@ -1,3 +1,4 @@
+import {idealNetworkReviewSchema} from './ideal-network-review';
 import {
   borderInferenceSchema,
   inferredBorderLicenses,
@@ -197,7 +198,8 @@ export const layoutSchema = z.strictObject({
           role: z.literal("ideal"), sourceIds: z.array(slug).length(0), estimated: z.literal(true),
           method: z.literal("bounded-minimum-curvature-local-time-v1"),
           edgeMarginM: z.number().nonnegative(),
-          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1"]).optional(),
+          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1", "reviewed-network-ground-v1"]).optional(),
+          networkReview: idealNetworkReviewSchema.optional(),
           borderLicenses: z.array(z.string()).min(1),
         })]),
         geometry: z.union([line, network]),
@@ -325,8 +327,20 @@ export function validateLayout(input: unknown, track: Track, id: string) {
         !pathCrossings(trace.coordinates.map(plane(trace.coordinates[0]).to), true).some(c => c.kind === "crossing"))
         throw new Error("ideal: ordered ribbon requires a closed projected source crossing");
     }
+    const networkReview=ideal.properties.networkReview;
+    if(ideal.properties.boundaryModel==='reviewed-network-ground-v1') {
+      if(!networkReview||m.geometryKind!=='network'||m.closed||ideal.geometry.type!=='MultiLineString'||
+        networkReview.trackId!==m.trackId||networkReview.layoutId!==m.layoutId||
+        geometryPaths(ideal.geometry).length!==geometryPaths(traces[0].geometry).length)
+        throw new Error('ideal: reviewed network ground requires matching branch geometry and review');
+      for(const [i,p] of geometryPaths(ideal.geometry).entries()) {
+        const source=geometryPaths(traces[0].geometry)[i];
+        if(equal(p[0],p.at(-1)!)!==equal(source[0],source.at(-1)!))throw new Error('ideal: network branch closure changed');
+      }
+    }else if(networkReview)throw new Error('ideal: network review requires its boundary model');
     const licenses = [...new Set([...borders.map(b => "license" in b.properties ? b.properties.license : ""),
-      ...(groundIdeal && sharedGround ? [sharedGround.imagery.license] : [])])].sort();
+      ...(groundIdeal && sharedGround ? [sharedGround.imagery.license] : []),
+      ...(networkReview ? [networkReview.imagery.license] : [])])].sort();
     if (JSON.stringify([...ideal.properties.borderLicenses].sort()) !== JSON.stringify(licenses)) throw new Error("ideal: source border licences disagree");
   }
   for (const f of data.features) {

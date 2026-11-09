@@ -3,9 +3,9 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 5,
+    "unavailableLayouts": 4,
     "insufficientWidth": 2,
-    "topologyOrOrderReview": 3,
+    "topologyOrOrderReview": 2,
     "solverCandidates": 0
   },
   "records": [
@@ -113,24 +113,6 @@
             "role": "outer",
             "index": 125
           }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/us-belle-isle-c12938f2/layouts/belle-isle-gp.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "8bbcd71518c1aaf8c290c32ff61faf99d76d9d4d5c0d7972b7f4a2a2e6e756a3",
-      "traceGeometrySha256": "1bded7006d67a27a9faaead1ce575f0844e324ace136776c0a70e9565064a165",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
         }
       ]
     }

@@ -1,0 +1,64 @@
+[
+  {
+    "schemaVersion": 1,
+    "method": "image-reviewed-network-islands-v1",
+    "trackId": "us-belle-isle-c12938f2",
+    "layoutId": "belle-isle-gp",
+    "sourceBorderSha256": "63079e41ebccc46f79fd81d4fb3149f960f9d34bc1e22e964e1ca9555574561a",
+    "traceSha256": "1bded7006d67a27a9faaead1ce575f0844e324ace136776c0a70e9565064a165",
+    "innerRings": [
+      [
+        [
+          108,
+          439
+        ]
+      ],
+      [
+        [
+          440,
+          445
+        ],
+        [
+          0,
+          106
+        ]
+      ]
+    ],
+    "discardedInnerVertices": [
+      107
+    ],
+    "imagery": {
+      "sourceId": "maptiler-licensed-border-imagery",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "rightsBasis": "source-specific-agreement",
+      "termsUrl": "https://www.maptiler.com/copyright/",
+      "tiles": {
+        "provider": "maptiler-satellite-v4",
+        "zoom": 17,
+        "bounds": [
+          35315,
+          48489,
+          35321,
+          48492
+        ]
+      },
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "attribution": "© MapTiler © OpenStreetMap contributors",
+      "retrievedAt": "2026-11-09T15:18:24.674Z",
+      "sha256": "bdff1c073779fe5ae7c89f3d1492f5d63166f734e53d500a08d93133211ef9fc",
+      "width": 3584,
+      "height": 2048,
+      "extent3857": [
+        -9240013.727225246,
+        5210865.092257036,
+        -9237873.49043326,
+        5212088.084709598
+      ],
+      "groundPixelSizeM": 0.4414
+    },
+    "nativeImageViewed": true,
+    "junctionOverlayViewed": true,
+    "completeOverlayViewed": true,
+    "note": "The original inner contour stitches two grass-island outlines together across the paved Picnic Way junction. Native imagery and complete/cropped overlays support treating them as separate islands. Reuse exact original source slices: vertices 108–439 and 440–445 followed by 0–106. Close the resulting rings over approximately 0.22 m and 1.92 m. Omit vertex 107, a sub-metre excursion beyond the adjoining source edge that otherwise leaves a numerical crossing. All original GeoJSON boundaries, source branches, timing and terrain remain unchanged. This is an estimated local planar reconstruction for independent ideal branch lines, not historical race-barrier measurement or a unique network lap."
+  }
+]
