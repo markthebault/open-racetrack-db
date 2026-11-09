@@ -27,7 +27,12 @@ async function phase(script: string, label: string, args: string[] = []) {
           child.on("exit", (code) => {
             log.end();
             if (code === 0) resolve();
-            else reject(new Error(`${label}/${i} failed; see ${directory}/${label}-${i}.log`));
+            else
+              reject(
+                new Error(
+                  `${label}/${i} failed; see ${directory}/${label}-${i}.log`,
+                ),
+              );
           });
         }),
     ),
@@ -54,12 +59,34 @@ await writeFile(
     2,
   ),
 );
+await phase("scripts/generate-ideal-lines.ts", "nearest", ["--nearest"]);
+const nearest = await records("nearest");
+await writeFile(
+  `${directory}/final-unavailable.json`,
+  JSON.stringify(
+    nearest.filter((r) => r.status === "unavailable"),
+    null,
+    2,
+  ),
+);
 await phase("scripts/recover-ideal-lines.ts", "ordered");
 const ordered = await records("recovery");
-await writeFile(`${directory}/final-unavailable.json`, JSON.stringify(ordered.filter(r=>r.status==='unavailable'), null, 2));
+await writeFile(
+  `${directory}/final-unavailable.json`,
+  JSON.stringify(
+    ordered.filter((r) => r.status === "unavailable"),
+    null,
+    2,
+  ),
+);
 await phase("scripts/recover-ideal-lines.ts", "narrow", ["--narrow"]);
 const narrow = await records("narrow"),
-  merged = new Map([...coarse, ...fine, ...ordered, ...narrow].map((r) => [r.file, r]));
+  merged = new Map(
+    [...coarse, ...fine, ...nearest, ...ordered, ...narrow].map((r) => [
+      r.file,
+      r,
+    ]),
+  );
 const rows = [...merged.values()].sort((a, b) => a.file.localeCompare(b.file));
 const report = {
   schemaVersion: 1,

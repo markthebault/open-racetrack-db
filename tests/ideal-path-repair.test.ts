@@ -75,3 +75,95 @@ test("a local backtracking loop is removed while retaining the circuit around th
   assert.equal(insideRing([0, 0], ring), true);
   assertSeparateSimpleRings([ring]);
 });
+
+test("multi-corner detours use a bounded footprint search when a single bend cannot fit", () => {
+  const rings = [square(3), square(10)],
+    clearance = edgeChecker(rings),
+    p = [
+      { x: -5, z: 0, y: 0 },
+      { x: 5, z: 0, y: 0 },
+    ];
+  const result = repairIdealPath(p, false, rings, clearance, 0.5);
+  assert.ok(result.length > 3);
+  for (let i = 1; i < result.length; i++) {
+    const a = result[i - 1],
+      b = result[i];
+    for (let t = 0; t <= 1; t += 0.05) {
+      const q: Position = [a.x * (1 - t) + b.x * t, -a.z * (1 - t) - b.z * t];
+      assert.ok(clearance(q) >= 0.5 - 1e-6);
+      assert.notEqual(insideRing(q, rings[0]), insideRing(q, rings[1]));
+    }
+  }
+});
+
+test("a long source divider can be routed around without crossing or removing it", () => {
+  const outer: Position[] = [
+      [-8, -100],
+      [8, -100],
+      [8, 100],
+      [-8, 100],
+      [-8, -100],
+    ],
+    inner: Position[] = [
+      [-1, -75],
+      [1, -75],
+      [1, 75],
+      [-1, 75],
+      [-1, -75],
+    ],
+    rings = [inner, outer],
+    clearance = edgeChecker(rings);
+  const result = repairIdealPath(
+    [
+      { x: -2, z: 0, y: 0 },
+      { x: 2, z: 0, y: 0 },
+    ],
+    false,
+    rings,
+    clearance,
+    0.5,
+  );
+  assert.ok(result.some((p) => Math.abs(p.z) > 75));
+  for (let i = 1; i < result.length; i++) {
+    const a = result[i - 1],
+      b = result[i];
+    for (let t = 0; t <= 1; t += 0.1) {
+      const p: Position = [a.x * (1 - t) + b.x * t, -a.z * (1 - t) - b.z * t];
+      assert.ok(clearance(p) >= 0.5 - 1e-6);
+      assert.notEqual(insideRing(p, inner), insideRing(p, outer));
+    }
+  }
+});
+
+test("valid endpoints separated by a complete source divider remain disconnected", () => {
+  const outer: Position[] = [
+      [-8, -100],
+      [8, -100],
+      [8, 100],
+      [-8, 100],
+      [-8, -100],
+    ],
+    inner: Position[] = [
+      [-1, -100],
+      [1, -100],
+      [1, 100],
+      [-1, 100],
+      [-1, -100],
+    ],
+    rings = [inner, outer],
+    clearance = edgeChecker(rings);
+  assert.throws(
+    () =>
+      repairIdealPath(
+        [
+          { x: -2, z: 0, y: 0 },
+          { x: 2, z: 0, y: 0 },
+        ],
+        false,
+        rings,
+        clearance,
+        0.5,
+      ),
+    /No vehicle-width local route/,
+  );
+});

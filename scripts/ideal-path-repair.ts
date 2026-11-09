@@ -1,3 +1,4 @@
+import { idealLocalRoute } from "./ideal-local-route";
 import type { PathPoint } from "./ideal-line-solver";
 import { insideRing } from "../src/boundary-path";
 import type { Position } from "../src/geo";
@@ -30,7 +31,7 @@ export function repairIdealPath(
     if (!valid(a.x, a.z) || !valid(b.x, b.z))
       throw new Error("Repair endpoints do not fit the source corridor");
     const direct = Math.hypot(a.x - b.x, a.z - b.z);
-    if (direct > 45)
+    if (direct > 120)
       throw new Error(
         "Source corridor has a discontinuity exceeding local repair limits",
       );
@@ -60,8 +61,11 @@ export function repairIdealPath(
       }
       if (best && radius > direct / 2 + 2) break;
     }
-    if (!best)
-      throw new Error("No width-checked local path around the source corner");
+    if (!best) {
+      const routed = idealLocalRoute(a, b, valid, segment);
+      result.push(...routed.slice(1, -1));
+      continue;
+    }
     // Round the repair through its control point when that entire curve also fits.
     const control = { x: 2 * best.x - mx, z: 2 * best.z - mz, y: best.y },
       n = Math.max(4, Math.ceil(bestCost / 1));

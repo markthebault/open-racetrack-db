@@ -1,3 +1,4 @@
+import { nearestBorderCorridor } from "./ideal-nearest-corridor";
 import { removeIdealLoops } from "./ideal-path-topology";
 import { repairIdealPath } from "./ideal-path-repair";
 import { serializeLayout } from "./layout-borders";
@@ -19,9 +20,15 @@ for (const entry of index.tracks) {
     if (l.file)
       files.push("data/" + entry.file.replace(/track.json$/, "") + l.file);
 }
-const retry = process.argv.includes("--retry");
+const nearest = process.argv.includes("--nearest");
+const retry = process.argv.includes("--retry") || nearest;
 const retryFiles = new Set<string>();
-if (retry) {
+if (nearest) {
+  const rows = JSON.parse(
+    await readFile(".local/ideal-generation/final-unavailable.json", "utf8"),
+  );
+  rows.forEach((r: { file: string }) => retryFiles.add(r.file));
+} else if (retry) {
   for (let j = 0; j < count; j++) {
     const r = JSON.parse(
       await readFile(`.local/ideal-generation/shard-${j}.json`, "utf8"),
@@ -33,6 +40,10 @@ if (retry) {
 }
 const report: { file: string; status: string; reason?: string }[] = [];
 await mkdir(".local/ideal-generation", { recursive: true });
+await writeFile(
+  `.local/ideal-generation/${nearest ? "nearest" : retry ? "retry" : "shard"}-${shard}.json`,
+  "[]",
+);
 for (const [i, file] of files.entries()) {
   if (i % count !== shard || (retry && !retryFiles.has(file))) continue;
   const raw = await readFile(file, "utf8"),
@@ -92,7 +103,12 @@ for (const [i, file] of files.entries()) {
         } as any;
       } else if (child.metadata.model3d?.kind !== "run")
         throw new Error("Open borders need an ordered paired route");
-      const direct = retry && closed ? idealCorridor(child, a, b) : undefined;
+      const direct =
+        retry && closed
+          ? nearest
+            ? nearestBorderCorridor(child)
+            : idealCorridor(child, a, b)
+          : undefined;
       const road = direct
           ? { origin: direct.origin, points: [] }
           : buildRoad(child),
@@ -100,7 +116,11 @@ for (const [i, file] of files.entries()) {
         rings = direct?.rings ?? [a, b].map((r) => r.map(project.to)),
         clearance = direct?.clearance ?? edgeChecker(rings);
       const stations =
-        direct?.stations ??
+        (nearest
+          ? direct?.stations.filter(
+              (p) => p.halfWidth >= IDEAL_CAR.widthM / 2 + 0.25,
+            )
+          : direct?.stations) ??
         road.points
           .filter(
             (_, j) => j % 3 === 0 || (!closed && j === road.points.length - 1),
@@ -117,8 +137,15 @@ for (const [i, file] of files.entries()) {
               halfWidth: Math.min((p.left + p.right) / 2, clearance([x, -z])),
             };
           });
+      const edgeMargin = nearest ? 0.1 : 0.5;
       const car = IDEAL_CAR,
-        result = optimizeLine(stations, closed, car, 100),
+        result = optimizeLine(
+          stations,
+          closed,
+          car,
+          100,
+          nearest ? 0.35 : 1.15,
+        ),
         points =
           direct && closed
             ? repairIdealPath(
@@ -126,7 +153,7 @@ for (const [i, file] of files.entries()) {
                 closed,
                 rings,
                 clearance,
-                car.widthM / 2 + 0.52,
+                car.widthM / 2 + edgeMargin + 0.02,
               )
             : result.points;
       for (let j = 0; j < (closed ? points.length : points.length - 1); j++) {
@@ -136,7 +163,7 @@ for (const [i, file] of files.entries()) {
         for (let t = 0; t <= steps; t++) {
           const f = t / steps,
             p: Position = [u.x * (1 - f) + v.x * f, -u.z * (1 - f) - v.z * f];
-          if (clearance(p) < car.widthM / 2 + 0.52)
+          if (clearance(p) < car.widthM / 2 + edgeMargin + 0.02)
             throw new Error("Insufficient car-width clearance");
           if (closed && insideRing(p, rings[0]) === insideRing(p, rings[1]))
             throw new Error("Line leaves saved road surface");
@@ -146,6 +173,19 @@ for (const [i, file] of files.entries()) {
       const cleaned = closed
         ? removeIdealLoops(points, [inner[0][0], -inner[0][1]])
         : points;
+      if (
+        closed &&
+        !insideRing(
+          [inner[0][0], -inner[0][1]],
+          [
+            ...cleaned.map((p) => [p.x, p.z] as Position),
+            [cleaned[0].x, cleaned[0].z],
+          ],
+        )
+      )
+        throw new Error(
+          "Ideal route does not complete a circuit around the source island",
+        );
       const path = cleaned.map(
         (p) =>
           [
@@ -169,7 +209,7 @@ for (const [i, file] of files.entries()) {
         sourceIds: [],
         estimated: true,
         method: "bounded-minimum-curvature-local-time-v1",
-        edgeMarginM: 0.5,
+        edgeMarginM: nearest ? 0.1 : 0.5,
         borderLicenses: [
           ...new Set(
             borders.map((b) => (b!.properties as { license: string }).license),
@@ -185,10 +225,12 @@ for (const [i, file] of files.entries()) {
     await writeFile(file, serializeLayout(data));
     report.push({ file, status: "generated" });
   } catch (e) {
+    data.features = features;
+    await writeFile(file, serializeLayout(data));
     report.push({ file, status: "unavailable", reason: String(e) });
   }
   await writeFile(
-    `.local/ideal-generation/${retry ? "retry" : "shard"}-${shard}.json`,
+    `.local/ideal-generation/${nearest ? "nearest" : retry ? "retry" : "shard"}-${shard}.json`,
     JSON.stringify(report, null, 2),
   );
   console.log(`${shard}: ${report.length} ${file}: ${report.at(-1)!.status}`);

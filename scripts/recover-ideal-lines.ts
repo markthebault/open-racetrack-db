@@ -14,6 +14,10 @@ const [shard, count] = (process.argv[2] ?? "0/1").split("/").map(Number),
     await readFile(".local/ideal-generation/final-unavailable.json", "utf8"),
   );
 const report = [];
+await writeFile(
+  `.local/ideal-generation/${narrow ? "narrow" : "recovery"}-${shard}.json`,
+  "[]",
+);
 for (const [i, item] of files.entries()) {
   if (i % count !== shard) continue;
   const file = item.file,
@@ -110,6 +114,10 @@ for (const [i, item] of files.entries()) {
     await writeFile(file, serializeLayout(layout));
     report.push({ file, status: "generated" });
   } catch (e) {
+    layout.features = layout.features.filter(
+      (f) => f.properties.role !== "ideal",
+    );
+    await writeFile(file, serializeLayout(layout));
     report.push({ file, status: "unavailable", reason: String(e) });
   }
   await writeFile(
