@@ -46,6 +46,12 @@ The combined layout propagates these two corrections from its exact embedded old
 
 Nürburgring GP's original inner border followed unused shortcut and chicane branches across the retained full-course corridor. Its complete replacement uses 345 sparse observations plus two closure anchors on the pinned licensed image (approximately 0.38 m ground-pixel sampling). Readings are rounded to 0.5 m, normally at 30 m station intervals, with additional 15 m observations around the final chicane. The full overlay, arena and final chicane were reviewed against the image. Denser chicane observations constrain the curb shape between the regular stations. Selected limits follow visible paint, curb/asphalt and surface/grass transitions while excluding adjoining runoff, pit and service roads. Unobserved openings, two shadowed sections, two bridge occlusions and all other intervals interpolate. Neither image sampling nor rounding establishes surveyed accuracy. The original trace, timing, draft identity and terrain are retained, the complete recipe and superseded border hash are embedded, and the road model is refreshed.
 
+## Remaining source constraints
+
+[The reproducible gap audit](../sources/research/ideal-line-gaps.json) covers the 35 layouts still without a line: 15 have a closed nested saved corridor with a gap below the 2.05 m vehicle width, and 20 need projected-topology or driving-order review. No remaining layout has a simple nested corridor with sufficient width throughout. These are diagnostics of the saved geometry, not surveyed road widths or physical barriers; a projected crossing may represent separate road levels. The report pins each input border pair and trace geometry and identifies narrow-gap source vertices. It makes no claim that every crossing case is impossible for another solver.
+
+Regenerate the report after changing coverage or boundaries with `npx tsx scripts/audit-ideal-line-gaps.ts`; verify it with the same command plus `--check`. Neither command changes track geometry.
+
 ## Validation
 
 ```sh

@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "vehicleWidthM": 2.05,
+  "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
+  "summary": {
+    "unavailableLayouts": 35,
+    "insufficientWidth": 15,
+    "topologyOrOrderReview": 20,
+    "solverCandidates": 0
+  },
+  "records": [
+    {
+      "file": "data/australia/au-albert-park-3785d160/layouts/albert-park.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "a92bd8c1f7831e7f70bb175b99dd749e29c48bc782aa4a99487f0969de7f3eaa",
+      "traceGeometrySha256": "5ebc66c67f071927036011ae995969d165f721ec5a611751f53cbf018aa5b2bc",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.257,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 17
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/australia/mallala-motor-sport-park-182649697/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "408982e76163ab770e3a2c29e4ad1f7dfb2f3c9a0bfd168db5fb8dfa37717041",
+      "traceGeometrySha256": "ba901a4efa880e1c2050091ce1115628ac1a1c7fb9d1d6ce1c2dbe72f359bb3c",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/australia/mallala-motor-sport-park-182649697/layouts/mallala.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "408982e76163ab770e3a2c29e4ad1f7dfb2f3c9a0bfd168db5fb8dfa37717041",
+      "traceGeometrySha256": "ba901a4efa880e1c2050091ce1115628ac1a1c7fb9d1d6ce1c2dbe72f359bb3c",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/australia/queensland-raceway-26175772/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "b7bf82f650b0de465824c5a9e6d52a1d1313ed3036d534fd36bbbd33092b853f",
+      "traceGeometrySha256": "13a420e2a88c3eb6f3070940be38e9750734331b8d31050deb93d7990451c12d",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-combo-circuit.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "7bec4436bdf05bc9cace50f137cbf1d63d70298391edf10e894171c1b7902ebf",
+      "traceGeometrySha256": "bb5931ac9691b8eb338774d97bd211825fc61441f052d8ec80339e9a78d02964",
+      "borderPathCounts": [
+        4,
+        4
+      ],
+      "components": [
+        {
+          "index": 0,
+          "sourceLayoutId": "queensland-raceway-club-circuit",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 9.814,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 407
+          }
+        },
+        {
+          "index": 1,
+          "sourceLayoutId": "queensland-raceway-national-circuit",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 8.622,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 1941
+          }
+        },
+        {
+          "index": 2,
+          "sourceLayoutId": "queensland-raceway-sportsman",
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        },
+        {
+          "index": 3,
+          "sourceLayoutId": "queensland-raceway-sprint-circuit",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.105,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 108
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sportsman.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "b7bf82f650b0de465824c5a9e6d52a1d1313ed3036d534fd36bbbd33092b853f",
+      "traceGeometrySha256": "e485bcedef41daa79bf5cbe8e128e57e1e1aeca5d34325cffe297a7b48117fb3",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sprint-circuit.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "e3e76a2c732cfe78799d53582692fa9e15f1d97e05645730df8fe70890fa7a6d",
+      "traceGeometrySha256": "39689d2c928961a8bd39a5c58e6254d901c783dea6b9831418f0519a526bc092",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.105,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 108
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/australia/wanneroo-raceway-44191932/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "2ecbdde15674274715a620ba71e348362ef814218fd1a40d250cc9a8f386b248",
+      "traceGeometrySha256": "c44857d935ca2be16a553059508086f2b6c65c2b590096393e58690bf81004cd",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.615,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 1052
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/canada/canadian-tire-motorsport-park-37059242/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "667384048103d304d13751f74b08b4672c33f917e6b5d318d77aceeb8a284c87",
+      "traceGeometrySha256": "82dee83323300ec625121376545e3a53cf64e2b661009c066a8d17b66b2e68f3",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.163,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 171
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/germany/de-norisring-e3447005/layouts/norisring.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "0465bfd2f1b6c17878b77f7ce89f78ac99bcb7cc87159fa6993f5ea1d9508eac",
+      "traceGeometrySha256": "909dd490c2492a4f9da47b3cb84dacc4ca58565123b73f4c44faa59f5c226a4e",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/germany/de-porsche-leipzig-a-1a7399b8/layouts/porsche-leipzig-a.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "e73ae1a63adee93c358bdb640f20938cc99a51f78d0b4c176f6291c8015cb808",
+      "traceGeometrySha256": "2dc3149e44215e56bdd0dfbfbc420f86852ab53bd9535e273c5f5ba4fad76b6d",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/japan/osm-155926409/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "2e320c66aa91f4923300a547864dd2db336d7903edab8d1e343f525bd5a7eb36",
+      "traceGeometrySha256": "d2b657030e6f1df9c3cad4278d496673ace05405604667e20eeded80dbe5cf3f",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/new-zealand/nz-highlands-motorsports-park-full-2952eb45/layouts/highlands-motorsports-park-full.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "1fd61b6d8c4013a6e9f8d8cc237535318bd2e10b126414f0434b3b0ab20f55c5",
+      "traceGeometrySha256": "dd33d88cadc63b51f95b7067e5b87f6ab5641609b9bc918ff8f366bd548d80b0",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/poland/tor-poznan-172188975/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "992d93c94f1582c10f3d059fe0b0f47ae4313eb0533f485207f041d6f7783a78",
+      "traceGeometrySha256": "7ea0cc38400acb8884c65a8fb1bbcc355e68a1eb32971b9dc8b87b2afe368e66",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "e5fbdbdd486acefeee80f8b683a445217b17d22acc6c41c4798759b67be21367",
+      "traceGeometrySha256": "6b112045fbcbfc4265f2b9075bd3191b239fa3f5982b2d6f4e3be02b36c86802",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/spain/circuito-ascari-169907092/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "c9a8cb0db9d63000eb2edad274132ae2a0371930b572cd5b991e2d17dba1a68d",
+      "traceGeometrySha256": "7e5c6856df62913d6b3eef264a55c43ba339677f011347eef710eeebb2a7bb48",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-combo.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "a51f3ba85abc61d94ec0cc4ba38e96d0f7aa90277a12dff9ce6734b10817b796",
+      "traceGeometrySha256": "e302b4dc198b88300a7470cd7d2494b7c3e075e2c8e133dbdd9133dbd57741a5",
+      "borderPathCounts": [
+        2,
+        2
+      ],
+      "components": [
+        {
+          "index": 0,
+          "sourceLayoutId": "dubai-autodrome-club-circuit",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 4.411,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 1159
+          }
+        },
+        {
+          "index": 1,
+          "sourceLayoutId": "dubai-autodrome-gp-circuit",
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/dubai-autodrome-gp-circuit.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "0d49ea8943712241caf54345d05cb12fd6cd30f31be57aebc736f31abe628504",
+      "traceGeometrySha256": "c04ece9806e318fb8d796f99428e2863741b88cfc727d066b0e9c22527b38556",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-arab-emirates/dubai-autodrome-87272771/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "0d49ea8943712241caf54345d05cb12fd6cd30f31be57aebc736f31abe628504",
+      "traceGeometrySha256": "c04ece9806e318fb8d796f99428e2863741b88cfc727d066b0e9c22527b38556",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-kingdom/cadwell-park-117987847/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "c6f5802ed1a874d43ef9d11741d016ad0c5cd46a426dab81b537d670ad687ef9",
+      "traceGeometrySha256": "e307baf445892a36e85255d62873f191794c21a921c631877c5d9d542835e61e",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-kingdom/gb-prodrive-bf598a18/layouts/prodrive.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "48fa20e25640e30551d34f9b8c37545cdc29071d5be8e5a292c5a7a970e7633d",
+      "traceGeometrySha256": "2b9cecb6a88aa2a8662226635a75b0d2b9b8e460e0676b3681128390e153e56d",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/chelsea-handling-track-reference/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "9a93177441930073da38caf28559aeb39b554eb16ff5548e93644f4ce2ffe2f9",
+      "traceGeometrySha256": "a126cd07e022d37d1447a30f5905518d937e4f676255764aa8e622979383dd93",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.187,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 184
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/hallett-reference/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "c25349d86cbc8445e91ae8ed8b1d5f4546c28a38f0d41eae341421e4fe34dc04",
+      "traceGeometrySha256": "aa36a362c8feda85c77cb0cfef7eaf775fa93f8dacac74d8b679839a577a824a",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.117,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/palmer-motorsports-park-reference/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "d6e081c5fd3a2203b9a14e4bad807371b3a5ea643b3fcdd4303e7673729cfcac",
+      "traceGeometrySha256": "135a52ecad83b2ef72c7646245ae0a3f93f91b2076c174db1c1ccb26507790a8",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.047,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/putnam-park-road-course-669531024/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "d3f05e9ca5d282be8dc048224c68dd04d8e2b394ebd9b4ffa7085ea7843d95bf",
+      "traceGeometrySha256": "0903bcf27e82a16193cee3f5e716677a2fc691ceac8b115b7ffb71667dd767cc",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.249,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 184
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/putnam-park-road-course-669531024/layouts/putnam-park.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "d3f05e9ca5d282be8dc048224c68dd04d8e2b394ebd9b4ffa7085ea7843d95bf",
+      "traceGeometrySha256": "0903bcf27e82a16193cee3f5e716677a2fc691ceac8b115b7ffb71667dd767cc",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.249,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 184
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "61c818030138c7fc512703174705b288e48711845b5ccd9be6bf776ef5973125",
+      "traceGeometrySha256": "d6639bd6006e5c7a47cdaa403b0a4b6c9993ede3fcee85a30116c28486f7a89e",
+      "borderPathCounts": [
+        3,
+        3
+      ],
+      "components": [
+        {
+          "index": 0,
+          "sourceLayoutId": "road-atlanta",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 10.494,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 1057
+          }
+        },
+        {
+          "index": 1,
+          "sourceLayoutId": "road-atlanta-short",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.164,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 125
+          }
+        },
+        {
+          "index": 2,
+          "sourceLayoutId": "road-atlanta-sro-practice",
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 9.479,
+          "belowVehicleWidth": false,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 1190
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-short.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "1bbee8d7e5759c90225527c0330ceebcd72941e576e690aae0d89e5b047a00ed",
+      "traceGeometrySha256": "99cf30e3dcb940e8cdf26521d38fbab4ee97e20ba60d3f0e5ed8bfc4b321d48b",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.164,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 125
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/the-thermal-club-443108132/layouts/main.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "fde071df98a725eea8ee4df00ee993a54314b810a0b64a7ea7f68d6c6323a786",
+      "traceGeometrySha256": "8133194ffc843b0a09b3484e2c48dea00f35f884e30aa366f201607b296ea7fe",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-full-track.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "fde071df98a725eea8ee4df00ee993a54314b810a0b64a7ea7f68d6c6323a786",
+      "traceGeometrySha256": "8133194ffc843b0a09b3484e2c48dea00f35f884e30aa366f201607b296ea7fe",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/us-belle-isle-c12938f2/layouts/belle-isle-gp.geojson",
+      "classification": "topology-or-order-review",
+      "borderFeaturesSha256": "8bbcd71518c1aaf8c290c32ff61faf99d76d9d4d5c0d7972b7f4a2a2e6e756a3",
+      "traceGeometrySha256": "1bded7006d67a27a9faaead1ce575f0844e324ace136776c0a70e9565064a165",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": false,
+          "topologyReason": "Boundary rings cross or touch; driving order needs review"
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/us-norway-speedway-28bd57a2/layouts/norway-speedway.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "585db8ece547bd3380ce99674f0b9f8fc2b6ee14d7b960b18f8450d386a57ff0",
+      "traceGeometrySha256": "5868f0bd0800d250d8f27371b50ff196144c3058b01214844b3e9c66c0b1f766",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.04,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 10
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/us-norway-speedway-dirt-9c2cf7b0/layouts/norway-speedway-dirt-track.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "46bdc438c673cc43099afe7df9219089558ad5bfa86db55bf59a0116dd0e0fe9",
+      "traceGeometrySha256": "3286df918b63696dbdd207c7fe8cb9e85fcbee07034d16cf67a211fe6c727845",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.039,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "outer",
+            "index": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/watkins-glen-international-20163576/layouts/main.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "19e0147c9c31aa6d2883e3c14e1fde688a1d0c34806176e1d8cbbe234ddf4232",
+      "traceGeometrySha256": "c5f8c165dcf98578ed0da0b807a3856559efb4f69c38630a91e74d61cfcaba4f",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.185,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 225
+          }
+        }
+      ]
+    },
+    {
+      "file": "data/united-states/watkins-glen-international-20163576/layouts/watkins-glen.geojson",
+      "classification": "insufficient-width",
+      "borderFeaturesSha256": "19e0147c9c31aa6d2883e3c14e1fde688a1d0c34806176e1d8cbbe234ddf4232",
+      "traceGeometrySha256": "c5f8c165dcf98578ed0da0b807a3856559efb4f69c38630a91e74d61cfcaba4f",
+      "borderPathCounts": [
+        1,
+        1
+      ],
+      "components": [
+        {
+          "index": 0,
+          "closed": true,
+          "nested": true,
+          "minimumGapM": 0.185,
+          "belowVehicleWidth": true,
+          "bottleneckVertex": {
+            "role": "inner",
+            "index": 225
+          }
+        }
+      ]
+    }
+  ]
+}
