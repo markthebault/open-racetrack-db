@@ -3,9 +3,9 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 9,
-    "insufficientWidth": 3,
-    "topologyOrOrderReview": 6,
+    "unavailableLayouts": 7,
+    "insufficientWidth": 2,
+    "topologyOrOrderReview": 5,
     "solverCandidates": 0
   },
   "records": [
@@ -50,24 +50,6 @@
       "classification": "topology-or-order-review",
       "borderFeaturesSha256": "e5fbdbdd486acefeee80f8b683a445217b17d22acc6c41c4798759b67be21367",
       "traceGeometrySha256": "6b112045fbcbfc4265f2b9075bd3191b239fa3f5982b2d6f4e3be02b36c86802",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/united-kingdom/cadwell-park-117987847/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "c6f5802ed1a874d43ef9d11741d016ad0c5cd46a426dab81b537d670ad687ef9",
-      "traceGeometrySha256": "e307baf445892a36e85255d62873f191794c21a921c631877c5d9d542835e61e",
       "borderPathCounts": [
         1,
         1
@@ -185,29 +167,6 @@
           "closed": true,
           "nested": false,
           "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/us-norway-speedway-dirt-9c2cf7b0/layouts/norway-speedway-dirt-track.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "46bdc438c673cc43099afe7df9219089558ad5bfa86db55bf59a0116dd0e0fe9",
-      "traceGeometrySha256": "3286df918b63696dbdd207c7fe8cb9e85fcbee07034d16cf67a211fe6c727845",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.039,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "outer",
-            "index": 0
-          }
         }
       ]
     }

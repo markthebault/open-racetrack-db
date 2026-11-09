@@ -52,3 +52,16 @@ test("dense paint groups and a bounded numerical loop restore every original Asa
  const pair=Object.fromEntries(["inner","outer"].map(role=>[role,(bad.features.find(f=>f.properties.role===role)!.geometry as {coordinates:[number,number][]}).coordinates])) as Parameters<typeof borderPairHash>[0];review.originalBorderSha256=borderPairHash(pair);
  assert.throws(()=>applySourceSpurCorrection(bad,review,info),/deviation bound/);
 });
+
+test("closing-seam groups preserve retained coordinates and restore the original first and last points",()=>{
+ for(const path of ["data/united-kingdom/cadwell-park-117987847/layouts/main.geojson","data/united-states/us-norway-speedway-dirt-9c2cf7b0/layouts/norway-speedway-dirt-track.geojson"]){
+  const {before,current,pin,info}=fixture(path),original=verifySourceSpurResult(current).original,role=pin.removed[0].edge;
+  assert.equal(pin.removed.length,2);assert.ok(pin.removed.some(p=>p.index===0));
+  const result=applySourceSpurCorrection(before,pin,info);assert.deepEqual(verifySourceSpurResult(result).original,original);
+  for(const edgeRole of ["inner","outer"])assert.deepEqual(result.features.find(f=>f.properties.role===edgeRole),current.features.find(f=>f.properties.role===edgeRole));
+  const ring=(result.features.find(f=>f.properties.role===role)!.geometry as {coordinates:[number,number][]}).coordinates;
+  assert.deepEqual(ring[0],ring.at(-1));assert.notDeepEqual(ring[0],original[role][0]);
+  const closing={...pin,removed:[{...pin.removed[0],index:original[role].length-1,coordinate:original[role][0]}]};
+  assert.throws(()=>applySourceSpurCorrection(before,closing,info),/closure endpoint/);
+ }
+});

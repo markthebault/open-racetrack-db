@@ -29,16 +29,20 @@ function checkRemoved(original:ReturnType<typeof pair>,pin:ReturnType<typeof sou
   for(const role of roles){
     const entries=pin.removed.filter(p=>p.edge===role).sort((a,b)=>a.index-b.index),groups:typeof entries[]=[];
     for(const p of entries){const previous=groups.at(-1);if(previous&&p.index===previous.at(-1)!.index+1&&(p.kind??"paint-line-spur")===(previous[0].kind??"paint-line-spur"))previous.push(p);else groups.push([p]);}
+    const ring=original[role],uniqueCount=ring.length-1;
+    if(groups.length>1&&groups[0][0].index===0&&groups.at(-1)!.at(-1)!.index===uniqueCount-1&&(groups[0][0].kind??"paint-line-spur")===(groups.at(-1)![0].kind??"paint-line-spur")){
+      const first=groups.shift()!;groups[groups.length-1]=[...groups.at(-1)!,...first];
+    }
     for(const group of groups){
-      const ring=original[role],first=group[0].index,last=group.at(-1)!.index,a=ring[first-1],c=ring[last+1],join=distance(a,c),project=plane(a),end=project.to(c),lengthSquared=end[0]**2+end[1]**2;
-      let detour=-join,maxDeviation=0;for(let i=first;i<=last+1;i++)detour+=distance(ring[i-1],ring[i]);
+      const first=group[0].index,last=group.at(-1)!.index,a=ring[(first+uniqueCount-1)%uniqueCount],c=ring[(last+1)%uniqueCount],path=[a,...group.map(p=>p.coordinate),c],join=distance(a,c),project=plane(a),end=project.to(c),lengthSquared=end[0]**2+end[1]**2;
+      let detour=-join,maxDeviation=0;for(let i=1;i<path.length;i++)detour+=distance(path[i-1],path[i]);
       for(const point of group){const p=project.to(point.coordinate),t=Math.max(0,Math.min(1,(p[0]*end[0]+p[1]*end[1])/(lengthSquared||1)));maxDeviation=Math.max(maxDeviation,Math.hypot(p[0]-t*end[0],p[1]-t*end[1]));}
       if(group[0].kind==="sub-metre-self-crossing"){
         if(join>2||maxDeviation>.1)throw new Error("Numerical-loop correction exceeds its two-metre chord or ten-centimetre deviation bound");
-        let crossed=false;try{assertSeparateSimpleRings([ring.slice(first-1,last+2).map(project.to)],false);}catch{crossed=true;}
+        let crossed=false;try{assertSeparateSimpleRings([path.map(project.to)],false);}catch{crossed=true;}
         if(!crossed)throw new Error("Numerical-loop correction requires an actual local source self-crossing");
-      }else if(join>1||detour<5||detour>100||maxDeviation>45)
-        throw new Error("Source-spur deletion requires a return within one metre, five to 100 metres of excess detour and a local excursion within 45 metres");
+      }else if(join>1.1||detour<5||detour>100||maxDeviation>45)
+        throw new Error("Source-spur deletion requires a return within 1.1 metres, five to 100 metres of excess detour and a local excursion within 45 metres");
     }
   }
 }
@@ -48,7 +52,9 @@ export function applySourceSpurCorrection(layout:Layout,input:unknown,imagery:Bo
   const replacement=borderReplacement(layout,pin.originalBorderSha256,pin.note);checkRemoved(original,pin);
   const result=structuredClone(layout);result.features=result.features.filter(f=>f.properties.role!=="ideal");
   for(const role of roles){const edge=result.features.find(f=>f.properties.role===role)!;if(edge.geometry.type!=="LineString")throw new Error("Expected line");
-    const indices=new Set(pin.removed.filter(p=>p.edge===role).map(p=>p.index));edge.geometry.coordinates=edge.geometry.coordinates.filter((_,i)=>!indices.has(i));}
+    const indices=new Set(pin.removed.filter(p=>p.edge===role).map(p=>p.index)),retained=edge.geometry.coordinates.slice(0,-1).filter((_,i)=>!indices.has(i));
+    if(retained.length<3)throw new Error("Source-spur correction must retain a complete ring");
+    edge.geometry.coordinates=[...retained,retained[0]];}
   if(borderPairHash(pair(result))!==pin.resultBorderSha256)throw new Error("Source-spur result hash changed");
   roadRings(result);
   result.metadata.borderInference=borderInferenceSchema.parse({schemaVersion:1,method:pin.method,status:"estimated",reviewedAt:null,traceSha256:pin.traceSha256,supersedes:{...replacement,sourceSpurReview:pin},imagery,note:"Reviewed deletion of the pinned source vertices only. Every retained coordinate and original border property is unchanged. Each paint-line group has a near return and bounded local excursion. Any numerical-loop group replaces an actual self-crossing with a chord at most two metres long and at most ten centimetres from every deleted point. The image supports local pavement interpretation but cannot resolve subpixel loops; this is not a new edge extraction or validation of the remaining source geometry."});
@@ -59,8 +65,13 @@ export function verifySourceSpurResult(layout:Layout){
   const inference=borderInferenceSchema.parse(layout.metadata.borderInference),pin=source(layout,inference.supersedes?.sourceSpurReview,inference.imagery.sha256),current=pair(layout);
   if(borderPairHash(current)!==pin.resultBorderSha256)throw new Error("Source-spur result hash changed");
   const original=structuredClone(current);
-  for(const role of roles)for(const p of pin.removed.filter(p=>p.edge===role).sort((a,b)=>a.index-b.index)){
-    if(p.index>=original[role].length)throw new Error("Source-spur restored vertex index is invalid");original[role].splice(p.index,0,p.coordinate);}
+  for(const role of roles){
+    const restored=current[role].slice(0,-1);
+    for(const p of pin.removed.filter(p=>p.edge===role).sort((a,b)=>a.index-b.index)){
+      if(p.index>restored.length)throw new Error("Source-spur restored vertex index is invalid");restored.splice(p.index,0,p.coordinate);
+    }
+    original[role]=[...restored,restored[0]];
+  }
   if(borderPairHash(original)!==pin.originalBorderSha256)throw new Error("Source-spur original reconstruction hash changed");
   checkRemoved(original,pin);roadRings(layout);return{pin,original};
 }
