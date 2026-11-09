@@ -4,7 +4,7 @@ Layouts with a calculated `ideal` GeoJSON feature have an **Ideal line** display
 
 ## Data
 
-The optional feature uses `id: "ideal"`, `properties.role: "ideal"`, `estimated: true`, the method version, an edge margin in metres and the source border licence identifiers. A LineString represents a single corridor; MultiLineString represents independently calculated component corridors in a network. Network lines do not assert a unique racing order through junctions. No meshes or duplicated border arrays are added.
+The optional feature uses `id: "ideal"`, `properties.role: "ideal"`, `estimated: true`, the method version, an edge margin in metres and the source border licence identifiers. A LineString represents a single corridor; MultiLineString represents independently calculated component corridors in a network. Network lines do not assert a unique racing order through junctions. When every exact embedded source component already has a validated ideal line, the generator can reuse those paths in component order, preserving open endpoints and lap closures. It rejects missing lines or changed source components. The composed feature records the minimum edge margin guaranteed by all its components. No meshes or duplicated border arrays are added.
 
 The line is derived from the saved boundaries, so their separate licences continue to apply. It is not relabelled as an OSM source trace. Existing route/model fingerprints exclude this display-only derived feature; the crossing audit still fingerprints complete layout files.
 

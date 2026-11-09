@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { createWriteStream } from "node:fs";
+import { composeAvailableIdealLines } from "./compose-ideal-lines";
 const directory = ".local/ideal-generation";
 await mkdir(directory, { recursive: true });
 async function phase(script: string, label: string, args: string[] = []) {
@@ -88,6 +89,7 @@ const narrow = await records("narrow"),
     ]),
   );
 const rows = [...merged.values()].sort((a, b) => a.file.localeCompare(b.file));
+await composeAvailableIdealLines(rows);
 const report = {
   schemaVersion: 1,
   method: "bounded-minimum-curvature-local-time-v1",
