@@ -3,35 +3,12 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 17,
-    "insufficientWidth": 7,
-    "topologyOrOrderReview": 10,
+    "unavailableLayouts": 14,
+    "insufficientWidth": 6,
+    "topologyOrOrderReview": 8,
     "solverCandidates": 0
   },
   "records": [
-    {
-      "file": "data/australia/au-albert-park-3785d160/layouts/albert-park.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "a92bd8c1f7831e7f70bb175b99dd749e29c48bc782aa4a99487f0969de7f3eaa",
-      "traceGeometrySha256": "5ebc66c67f071927036011ae995969d165f721ec5a611751f53cbf018aa5b2bc",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.257,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "outer",
-            "index": 17
-          }
-        }
-      ]
-    },
     {
       "file": "data/australia/queensland-raceway-26175772/layouts/queensland-raceway-combo-circuit.geojson",
       "classification": "insufficient-width",
@@ -211,46 +188,10 @@
       ]
     },
     {
-      "file": "data/poland/tor-poznan-172188975/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "992d93c94f1582c10f3d059fe0b0f47ae4313eb0533f485207f041d6f7783a78",
-      "traceGeometrySha256": "7ea0cc38400acb8884c65a8fb1bbcc355e68a1eb32971b9dc8b87b2afe368e66",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
       "file": "data/south-korea/kr-everland-speedway-6b81a616/layouts/everland-speedway.geojson",
       "classification": "topology-or-order-review",
       "borderFeaturesSha256": "e5fbdbdd486acefeee80f8b683a445217b17d22acc6c41c4798759b67be21367",
       "traceGeometrySha256": "6b112045fbcbfc4265f2b9075bd3191b239fa3f5982b2d6f4e3be02b36c86802",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/spain/circuito-ascari-169907092/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "c9a8cb0db9d63000eb2edad274132ae2a0371930b572cd5b991e2d17dba1a68d",
-      "traceGeometrySha256": "7e5c6856df62913d6b3eef264a55c43ba339677f011347eef710eeebb2a7bb48",
       "borderPathCounts": [
         1,
         1

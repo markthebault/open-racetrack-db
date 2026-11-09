@@ -51,3 +51,16 @@ test("published reviewed estimate rejects altered output, provider rights and un
   const wrongMethod=structuredClone(target.metadata.borderInference!);wrongMethod.method="rgb-cross-sections-v2";
   assert.equal(borderInferenceSchema.safeParse(wrongMethod).success,false);
 });
+
+test("local-appearance review pins its estimator and cannot be replayed as the default method",()=>{
+  const target=load("data/australia/au-albert-park-3785d160/layouts/albert-park.geojson") as Layout;
+  const pin=target.metadata.borderInference!.supersedes!.imageReview!;
+  assert.equal(pin.estimatorMethod,"rgb-road-local-appearance-v4");
+  assert.equal(target.metadata.borderInference!.method,pin.estimatorMethod);
+  assert.doesNotThrow(()=>verifyReviewedRoadEstimateResult(target,pin));
+  const defaultPin={...pin};delete defaultPin.estimatorMethod;
+  assert.throws(()=>verifyReviewedRoadEstimateResult(target,defaultPin),/estimator changed/);
+  const otherMethod=structuredClone(target);otherMethod.metadata.borderInference!.method="rgb-road-appearance-v3";
+  assert.equal(borderInferenceSchema.safeParse(otherMethod.metadata.borderInference).success,false);
+  assert.throws(()=>verifyReviewedRoadEstimateResult(otherMethod,pin),/estimator changed/);
+});

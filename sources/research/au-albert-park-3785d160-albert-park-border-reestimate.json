@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-road-reestimate-v1",
+  "trackId": "au-albert-park-3785d160",
+  "targetLayoutId": "albert-park",
+  "originalBorderSha256": "23b3793c02411903588f709e735f5190c504bc37144ff97e8c0d98172027ad0e",
+  "traceSha256": "5ebc66c67f071927036011ae995969d165f721ec5a611751f53cbf018aa5b2bc",
+  "imageSha256": "e3644b0e44bc6d2107dfa3f618268a73dc7afa8672dd8fbc70029142857de8a0",
+  "resultBorderSha256": "f2382938aa9b57152f7180fd802b5e0c9e700f2d1d57793b38c68081f4dcc847",
+  "defectVertices": [
+    {
+      "edge": "outer",
+      "index": 17
+    }
+  ],
+  "nativeImageViewed": true,
+  "completeOverlayViewed": true,
+  "defectCropViewed": true,
+  "sourceRouteMatchesPavement": true,
+  "estimatorMethod": "rgb-road-local-appearance-v4",
+  "note": "Original borders contain pavement-crossing spikes or local self-crossings at the pinned defect vertices. The native licensed image, full appearance-estimator overlay and original defect crop were reviewed against the retained source route. The complete automatic replacement remains estimated, with image sampling, shadows, shoulders, paint and access-opening uncertainty. It is not a surveyed barrier or an independent manual measurement recipe."
+}

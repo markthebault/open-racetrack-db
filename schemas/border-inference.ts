@@ -133,7 +133,7 @@ export const borderInferenceSchema = z
       });
     const review=value.supersedes?.sameCycleReview;
     const imageReview=value.supersedes?.imageReview;
-    if(imageReview && (review||value.method!=="rgb-road-appearance-v3"||value.refinement||value.measurement||value.gradeSeparation||
+    if(imageReview && (review||value.method!==(imageReview.estimatorMethod??"rgb-road-appearance-v3")||value.refinement||value.measurement||value.gradeSeparation||
       imageReview.originalBorderSha256!==value.supersedes!.borderSha256||imageReview.note!==value.supersedes!.reason||
       imageReview.imageSha256!==value.imagery.sha256||imageReview.traceSha256!==value.traceSha256))
       ctx.addIssue({code:"custom",message:"Image-reviewed replacement requires its exact pinned appearance estimate, source and image"});

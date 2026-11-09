@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T15:25:05.634Z",
+  "generatedAt": "2026-11-09T15:36:32.625Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved except for explicitly pinned, image-reviewed replacements.",
   "records": [
     {
@@ -777,6 +777,29 @@
       "file": "data/australia/adelaide-international-raceway-326840502/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "au-albert-park-3785d160",
+      "layoutId": "albert-park",
+      "file": "data/australia/au-albert-park-3785d160/layouts/albert-park.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9497,
+          0.935
+        ],
+        "medianInteriorDifference": [
+          0.0555,
+          0.0543
+        ],
+        "samplingStepM": 2.999252037042746,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "e3644b0e44bc6d2107dfa3f618268a73dc7afa8672dd8fbc70029142857de8a0"
     },
     {
       "trackId": "au-calder-park-raceway-45249213",
@@ -2195,6 +2218,29 @@
       },
       "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
       "imageSha256": "83c76ce844bc4cd9fd6b96e87426e12f91fe9bbc7c3c231c51da118a33bb0e85"
+    },
+    {
+      "trackId": "es-circuito-ascari-169907092",
+      "layoutId": "main",
+      "file": "data/spain/circuito-ascari-169907092/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.995,
+          0.9956
+        ],
+        "medianInteriorDifference": [
+          0.0495,
+          0.0507
+        ],
+        "samplingStepM": 2.9985910641905282,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "fffbb4d4b19b5c974526f947db6dc010730c15f51042c67d46b6729eb36b64b7"
     },
     {
       "trackId": "es-circuito-costa-de-almeria-29362442",
@@ -4341,6 +4387,29 @@
       "file": "data/poland/tor-modlin-668285054/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Too many sections hit the search limit; image needs manual review"
+    },
+    {
+      "trackId": "pl-tor-poznan-172188975",
+      "layoutId": "main",
+      "file": "data/poland/tor-poznan-172188975/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.989,
+          0.964
+        ],
+        "medianInteriorDifference": [
+          0.0466,
+          0.0499
+        ],
+        "samplingStepM": 2.9979460180753983,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "imageSha256": "4aac327952bcf9d53cde7d84042e8aed7167aaee371f5163b7f4913302b276dc"
     },
     {
       "trackId": "pt-autodromo-do-estoril-38160756",

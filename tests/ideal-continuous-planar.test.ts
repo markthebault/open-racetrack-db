@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { geometryPaths, type Layout, validateLayout, validateTrack } from "../schemas/data";
+import { plane } from "../src/geo";
 import { roadRings, insideRing } from "../src/boundary-path";
 import { groundFootprintFromRings, groundSegmentClearanceM } from "../src/ribbon-surface";
 import { IDEAL_CAR } from "../src/ideal-line-model";
@@ -31,7 +32,14 @@ test("continuous recovery reproduces its stored result and actually optimizes th
   assert.deepEqual(d,before);
 });
 test("recovery rejects a source gap narrower than the vehicle and the planar marker cannot hide a projected crossing",()=>{
-  assert.throws(()=>continuousPlanarIdealLine(load("data/australia/au-albert-park-3785d160/layouts/albert-park.geojson")),/too narrow/);
+  const narrow=load(files[0]),project=plane([0,0]);
+  for(const feature of narrow.features){
+    const radius=feature.properties.role==="inner"?58.5:feature.properties.role==="outer"?60:feature.properties.role==="trace"?59.25:undefined;
+    if(radius===undefined)continue;
+    feature.geometry={type:"LineString",coordinates:[[-radius,-radius],[radius,-radius],[radius,radius],[-radius,radius],[-radius,-radius]].map(p=>project.from(p as [number,number]))};
+  }
+  // A fixed 1.5 m annulus remains narrower than the vehicle after catalogue repairs.
+  assert.throws(()=>continuousPlanarIdealLine(narrow),/too narrow/);
   const dir="data/australia/au-oran-park-raceway-692abacd/",d=load(dir+"layouts/oran-park-raceway.geojson"),track=validateTrack(JSON.parse(readFileSync(dir+"track.json","utf8")));
   const ideal=d.features.find(f=>f.properties.role==="ideal")!;if(ideal.properties.role!=="ideal")throw new Error("Missing ideal line");
   ideal.properties.boundaryModel="continuous-planar-v1";

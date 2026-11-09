@@ -72,7 +72,7 @@ if (
   throw new Error(
     "Original border replacement requires one --track, --layout, --cached-image, complete --measurements or a pinned --same-cycle-estimate / --image-reviewed-estimate, --replace-border-hash and --replacement-reason; never --all or --check",
   );
-if(option("--image-reviewed-estimate")&&(!replacementHash||!appearance||localAppearance||option("--measurements")||option("--edge-refinement")||option("--grade-separation")||option("--same-cycle-estimate")))
+if(option("--image-reviewed-estimate")&&(!replacementHash||!appearance||sourceContained||option("--measurements")||option("--edge-refinement")||option("--grade-separation")||option("--same-cycle-estimate")))
   throw new Error("--image-reviewed-estimate requires an explicit appearance-only original-border replacement");
 if(option("--same-cycle-estimate")&&(!replacementHash||!appearance||localAppearance||option("--measurements")||option("--edge-refinement")||option("--grade-separation")))
   throw new Error("--same-cycle-estimate requires an explicit appearance-only original-border replacement");
@@ -431,6 +431,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
     if(option("--image-reviewed-estimate")){
       const pin=await read(option("--image-reviewed-estimate")!),image=await read(option("--cached-image")!);
       reviewedRoadEstimate=reviewedRoadEstimateReplacement(layout,pin,image.sha256);
+      if((pin.estimatorMethod??"rgb-road-appearance-v3")!==(localAppearance?"rgb-road-local-appearance-v4":"rgb-road-appearance-v3"))throw new Error("Reviewed road estimate estimator differs from the requested method");
       if(pin.originalBorderSha256!==replacementHash||pin.note!==option("--replacement-reason"))throw new Error("Reviewed road estimate pin differs from replacement options");
     }
     const replacement = reviewedEstimate?.replacement ?? reviewedRoadEstimate?.replacement ?? (replacementHash

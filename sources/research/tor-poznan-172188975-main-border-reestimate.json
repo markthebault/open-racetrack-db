@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-road-reestimate-v1",
+  "trackId": "pl-tor-poznan-172188975",
+  "targetLayoutId": "main",
+  "originalBorderSha256": "f518ff800faa32889e6043affa10b6ccf6307da85d392f5bf45b2249c13cc06d",
+  "traceSha256": "7ea0cc38400acb8884c65a8fb1bbcc355e68a1eb32971b9dc8b87b2afe368e66",
+  "imageSha256": "4aac327952bcf9d53cde7d84042e8aed7167aaee371f5163b7f4913302b276dc",
+  "resultBorderSha256": "7a0c7d658ef651f481d6084356173dd7f17e8b0a6f34e3cd3a161e1f1a7c50ed",
+  "defectVertices": [
+    {
+      "edge": "inner",
+      "index": 5
+    },
+    {
+      "edge": "inner",
+      "index": 5
+    },
+    {
+      "edge": "inner",
+      "index": 6
+    },
+    {
+      "edge": "inner",
+      "index": 6
+    }
+  ],
+  "nativeImageViewed": true,
+  "completeOverlayViewed": true,
+  "defectCropViewed": true,
+  "sourceRouteMatchesPavement": true,
+  "estimatorMethod": "rgb-road-local-appearance-v4",
+  "note": "Original borders contain pavement-crossing spikes or local self-crossings at the pinned defect vertices. The native licensed image, full appearance-estimator overlay and original defect crop were reviewed against the retained source route. The complete automatic replacement remains estimated, with image sampling, shadows, shoulders, paint and access-opening uncertainty. It is not a surveyed barrier or an independent manual measurement recipe."
+}

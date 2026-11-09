@@ -18,5 +18,6 @@ export const roadEstimateReviewSchema=z.strictObject({
   defectVertices:z.array(z.strictObject({edge:z.enum(["inner","outer"]),index:z.number().int().nonnegative()})).min(1).max(20),
   nativeImageViewed:z.literal(true),completeOverlayViewed:z.literal(true),defectCropViewed:z.literal(true),
   sourceRouteMatchesPavement:z.literal(true),
+  estimatorMethod:z.enum(["rgb-road-appearance-v3","rgb-road-local-appearance-v4"]).optional(),
   note:z.string().trim().min(30),
 });

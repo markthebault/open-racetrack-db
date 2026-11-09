@@ -32,6 +32,7 @@ export function verifyReviewedRoadEstimateResult(layout:Layout,input:unknown){
   const inference=layout.metadata.borderInference;
   if(!inference)throw new Error("Reviewed road estimate result is missing inference evidence");
   const pin=verifySource(layout,input,inference.imagery.sha256);
+  if(inference.method!==(pin.estimatorMethod??"rgb-road-appearance-v3"))throw new Error("Reviewed road estimate estimator changed");
   if(inference.supersedes?.borderSha256!==pin.originalBorderSha256||borderPairHash(pair(layout))!==pin.resultBorderSha256)
     throw new Error("Reviewed road estimate result border hash changed");
   for(const role of ["inner","outer"]){const edge=layout.features.find(f=>f.properties.role===role)!;
