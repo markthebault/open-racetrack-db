@@ -34,6 +34,8 @@ Botniaring Full's original inner border cut across open pavement on the western 
 
 [The review pin](../sources/research/botniaring-border-reestimate.json) records the original pair hash, source layout/trace/border hashes, image hash, expected output hash and exact cycle correspondence. The same proof is embedded under `borderInference.supersedes.sameCycleReview`. Changed nodes, a different route order, altered source borders, different imagery or a changed candidate stop replacement. The target's trace, timing and terrain remain unchanged; its boundary features now carry the image-provider rights, and its road model is refreshed. Raw working imagery is excluded from the repository and public build.
 
+Pittsburgh South's original outer border contained an inward spur across the paved straight beside the paddock. A complete sparse reconstruction uses 126 independently located asphalt-edge observations plus two closure anchors on the pinned public-domain NAIP image (0.75 m ground-pixel sampling). Cross-section offsets were read to 0.5 m, excluding curbs; this rounding does not establish measurement accuracy. Intervals between observations and access openings remain interpolated estimates. The embedded measurement recipe and superseded border hash reproduce and identify the correction. The complete overlay was reviewed against the native image. Source trace, timing and terrain remain unchanged; the road model is refreshed. The source layout identity remains draft.
+
 ## Validation
 
 ```sh

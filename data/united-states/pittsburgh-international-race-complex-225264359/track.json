@@ -27,22 +27,22 @@
     {
       "id": "pittsburgh-int-race-complex-full",
       "name": "Pittsburgh Int Race Complex Full",
-      "referenceId": "United States/Pittsburgh Int Race Complex Full",
       "file": "layouts/pittsburgh-int-race-complex-full.geojson",
+      "referenceId": "United States/Pittsburgh Int Race Complex Full",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4381.3 m. Difference from the supplied layout distance 0.7 m. Course configuration still requires visual review."
     },
     {
       "id": "pittsburgh-int-race-complex-north",
       "name": "Pittsburgh Int Race Complex North",
-      "referenceId": "United States/Pittsburgh Int Race Complex North",
       "file": "layouts/pittsburgh-int-race-complex-north.geojson",
+      "referenceId": "United States/Pittsburgh Int Race Complex North",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2454.8 m. Difference from the supplied layout distance 4.2 m. Course configuration still requires visual review."
     },
     {
       "id": "pittsburgh-int-race-complex-south",
       "name": "Pittsburgh Int Race Complex South",
-      "referenceId": "United States/Pittsburgh Int Race Complex South",
       "file": "layouts/pittsburgh-int-race-complex-south.geojson",
+      "referenceId": "United States/Pittsburgh Int Race Complex South",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1872.4 m. Difference from the supplied layout distance 12.6 m. Course configuration still requires visual review."
     }
   ],
@@ -64,6 +64,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-09-30T21:14:41.023Z",
       "evidenceNote": "Exact source-node geometry from the pinned country extract. Configuration is a draft match using a private timing position and nominal layout distance."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8945057.288868962%2C4989057.046650628%2C-8943549.778248385%2C4990709.772076685&bboxSR=3857&imageSR=3857&size=1521%2C1667&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-06T00:18:25.640Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }
