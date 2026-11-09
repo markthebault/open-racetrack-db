@@ -99,3 +99,11 @@ RACETRACK_TEST_URL=http://127.0.0.1:5194 npx playwright test tests/ideal-lines.s
 ```
 
 Tests cover optional schema and licence scope, canonical serialization/regeneration, unchanged model fingerprints, the speed envelope, opt-in display, embedded download, 2D/3D toggle behavior, mobile overflow and stale-line clearing on layout changes. Catalogue generation preserves the derived feature while rebuilding the independently sourced geometry.
+
+## Lap playback
+
+Track tools places the Ideal line toggle beside Inner & outer lines. The overlay remains optional. Lap playback independently follows the matching saved ideal polyline, preserving its vertices, and recomputes speed for the selected car. Cameras and telemetry use that driving path; the physical road mesh and source geometry remain unchanged.
+
+Selected network routes use their own saved line. Where the network has none, an exactly matching standalone component may provide it. Missing lines, and closed lines that do not match an open run, retain the original driving route. This does not add estimates to excluded layouts.
+
+Measured border validation retains an exact hash of stored geometry. Replay on different JavaScript platforms may choose opposite seven-decimal roundings at a numerical midpoint; only that demonstrated rounding tie is accepted, with identical point counts. Other coordinate changes remain errors.

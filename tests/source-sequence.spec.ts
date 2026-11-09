@@ -17,6 +17,7 @@ for (const width of [1440, 390, 320])
     await expect(page.locator(".inferred-border-note")).toContainText("approach limits");
     await page.locator("#view-satellite").click();
     await expect(page.locator("#view-satellite")).toHaveAttribute("aria-pressed", "true");
+    await page.locator(".map-options summary").click();
     await page.locator("#border-toggle").click();
     await expect(page.locator("#border-toggle")).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator(".border-inner")).toBeVisible();

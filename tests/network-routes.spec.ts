@@ -46,7 +46,8 @@ test("every composed network exposes all embedded routes, exact download and usa
         `${entry.id}/${item.id}`,
       );
       await expect(page.locator("#border-toggle")).toBeEnabled();
-      await page.locator("#border-toggle").click();
+      await page.locator(".map-options summary").click();
+    await page.locator("#border-toggle").click();
       await expect(page.locator("#border-toggle")).toHaveAttribute(
         "aria-pressed",
         "true",

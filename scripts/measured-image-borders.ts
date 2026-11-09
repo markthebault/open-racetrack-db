@@ -5,7 +5,7 @@ import {
 import { imageCrossSections, type Raster } from "./infer-image-borders";
 import { borderPairHash } from "./refine-image-borders";
 import { assertSeparateSimpleRings, insideRing } from "../src/boundary-path";
-import { distance, equal, type Position } from "../src/geo";
+import { distance, equal, R, rad, type Position } from "../src/geo";
 import {
   gradeSeparationSchema,
   type GradeSeparation,
@@ -52,6 +52,7 @@ export function measuredImageBorders(
     inner: Position[];
     outer: Position[];
   } = { inner: [], outer: [] };
+  const unrounded: {inner:Position[];outer:Position[]} = {inner:[],outer:[]};
   const covered = (p: Position) => {
     if (!image) return;
     const [w, s, e, n] = image.extent,
@@ -159,8 +160,7 @@ export function measuredImageBorders(
           normal = normals[index(i)],
           across = a.across * (1 - t) + b.across * t,
           along = a.along * (1 - t) + b.along * t;
-        const point = projection.from(
-          linear
+        const local:Position = linear
             ? [
                 a.point[0] + (b.point[0] - a.point[0]) * t,
                 a.point[1] + (b.point[1] - a.point[1]) * t,
@@ -168,8 +168,9 @@ export function measuredImageBorders(
             : [
                 p[0] + normal[0] * across + normal[1] * along,
                 p[1] + normal[1] * across - normal[0] * along,
-              ],
-        );
+              ];
+        const point=projection.from(local);
+        unrounded[patch.edge][i]=[trace[0][0]+local[0]/(R*rad*Math.cos(trace[0][1]*rad)),trace[0][1]+local[1]/(R*rad)];
         covered(point);
         result[patch.edge][i] = point;
       }
@@ -289,6 +290,7 @@ export function measuredImageBorders(
     );
   return {
     result,
+    unrounded,
     step,
     measurement: { ...recipe, resultSha256: borderPairHash(result) },
   };

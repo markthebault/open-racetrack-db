@@ -1,5 +1,5 @@
 import { IdealOverlay } from "./ideal-overlay";
-import { networkRouteLayout } from "./network-routes";
+import { networkRouteLayout, withMatchingComponentIdeal } from "./network-routes";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "@fontsource-variable/manrope";
@@ -186,7 +186,7 @@ const markers = L.layerGroup().addTo(map),
   selectedLayers = L.layerGroup().addTo(map);
 const idealRoot = document.createElement("section");
 idealRoot.setAttribute("aria-label", "Ideal line");
-mapArea.before(idealRoot);
+optionsContent.insertBefore(idealRoot, document.querySelector(".border-controls")!.nextSibling);
 let idealActive = false;
 const idealOverlay = new IdealOverlay(idealRoot, map, (active) => {
   idealActive = active;
@@ -220,6 +220,12 @@ async function launchPlayback(
   const button = get<HTMLButtonElement>("play-lap");
   button.disabled = true;
   try {
+    if(routeId&&!selected.features.some(f=>f.properties.role==='ideal')){
+      const entry=catalogue.tracks.find(t=>t.id===track!.id),item=track.layouts.find(l=>l.id===routeId);
+      if(entry&&item?.file){
+        try{const source=validateLayout(await load(entry.file.replace(/track\.json$/, '')+item.file, AbortSignal.timeout(3000)),track,routeId);selected=withMatchingComponentIdeal(selected,source);}catch{/* Keep the embedded route available when its optional source download fails. */}
+      }
+    }
     const { openLap } = await import("./lap-player");
     if ((modelLayout ?? layout) !== owner) return;
     const url = new URL(location.href);
@@ -262,7 +268,7 @@ function launchNetworkRoute(index: number) {
   if (!owner || !component || component.recipe.kind === "surface") return;
   chosenNetworkRoute = component.sourceLayoutId;
   void launchPlayback(
-    networkRouteLayout(owner, index),
+    networkRouteLayout(owner, index, {includeIdeal:true}),
     component.name,
     component.sourceLayoutId,
   );
