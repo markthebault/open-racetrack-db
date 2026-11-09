@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-09T15:00:39.127Z",
+  "generatedAt": "2026-11-09T15:09:09.970Z",
   "note": "Image-derived borders are unreviewed estimates. Remaining layouts need suitable reusable imagery, image review or route identification. Existing borders are preserved except for explicitly pinned, image-reviewed replacements.",
   "records": [
     {
@@ -4962,6 +4962,29 @@
       "reason": "Aerial imagery shows the frontstretch pavement and several branches, but the historical short-course sequence still needs to be identified."
     },
     {
+      "trackId": "us-chelsea-handling-track-reference",
+      "layoutId": "main",
+      "file": "data/united-states/chelsea-handling-track-reference/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9819,
+          0.9865
+        ],
+        "medianInteriorDifference": [
+          0.0718,
+          0.0582
+        ],
+        "samplingStepM": 2.9985631330044136,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9357397.29399189%2C5199683.25678881%2C-9356276.59888525%2C5201074.888677258&bboxSR=3857&imageSR=3857&size=1106%2C1374&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "831e3bcf43704228fd66aa03b647b0262a98ab3d4f5f058b1cfca23ba695a772"
+    },
+    {
       "trackId": "us-chicagoland-speedway-33119599",
       "layoutId": "main",
       "file": "data/united-states/chicagoland-speedway-33119599/layouts/main.geojson",
@@ -5268,6 +5291,29 @@
       "status": "inferred-estimate",
       "source": "https://services.nconemap.gov/secure/rest/services/Imagery/Orthoimagery_2020_2023_4band_analysis/ImageServer/exportImage?f=json&bbox=-8993807.561190087%2C4251129.284994392%2C-8993452.753363501%2C4251495.254391696&bboxSR=3857&imageSR=3857&size=1893%2C1952&format=png32&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22date%22%2C+%22sortValue%22%3A+%223000%2F01%2F01%22%2C+%22ascending%22%3A+true%7D",
       "imageSha256": "7a334200febc39266ce0da5dd8831ff7f16c1404597f5f5c98732176800dcd96"
+    },
+    {
+      "trackId": "us-hallett-reference",
+      "layoutId": "main",
+      "file": "data/united-states/hallett-reference/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9799,
+          0.9926
+        ],
+        "medianInteriorDifference": [
+          0.0551,
+          0.0373
+        ],
+        "samplingStepM": 2.9977316599418127,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-10753282.170231255%2C4330646.251077439%2C-10752291.431285718%2C4331551.388267689&bboxSR=3857&imageSR=3857&size=1066%2C974&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "718c528d67e1edd51e79984cdb510f69845b851dc9ce0b77f0f308879df816e9"
     },
     {
       "trackId": "us-heartland-park-raceway-137283766",
@@ -5979,6 +6025,29 @@
       "status": "cached-estimate"
     },
     {
+      "trackId": "us-palmer-motorsports-park-reference",
+      "layoutId": "main",
+      "file": "data/united-states/palmer-motorsports-park-reference/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9935,
+          0.9558
+        ],
+        "medianInteriorDifference": [
+          0.028,
+          0.0298
+        ],
+        "samplingStepM": 2.997871025507018,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8042742.613755784%2C5195696.436158656%2C-8041592.580609646%2C5197123.015490765&bboxSR=3857&imageSR=3857&size=1136%2C1409&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "f30d142d10330c1af9439ba30eb2778cc932b741c146e108965899ea16a05776"
+    },
+    {
       "trackId": "us-phoenix-raceway-29333335",
       "layoutId": "main",
       "file": "data/united-states/phoenix-raceway-29333335/layouts/main.geojson",
@@ -6061,6 +6130,52 @@
       "file": "data/united-states/putnam-county-speedway-1083517671/layouts/main.geojson",
       "status": "needs-imagery-review",
       "reason": "Inferred boundary crosses itself; image needs manual review"
+    },
+    {
+      "trackId": "us-putnam-park-road-course-669531024",
+      "layoutId": "main",
+      "file": "data/united-states/putnam-park-road-course-669531024/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9662,
+          0.9778
+        ],
+        "medianInteriorDifference": [
+          0.0278,
+          0.0291
+        ],
+        "samplingStepM": 2.9999705547796176,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9657024.295246204%2C4805297.221163023%2C-9655709.570797773%2C4806101.182842546&bboxSR=3857&imageSR=3857&size=1352%2C827&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "8271e4836f8a871fc8d6387b8ca2efa69f0b6b275a97a1d48429eb34f7a204d1"
+    },
+    {
+      "trackId": "us-putnam-park-road-course-669531024",
+      "layoutId": "putnam-park",
+      "file": "data/united-states/putnam-park-road-course-669531024/layouts/putnam-park.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9662,
+          0.9778
+        ],
+        "medianInteriorDifference": [
+          0.0278,
+          0.0291
+        ],
+        "samplingStepM": 2.9999705547796176,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-9657024.295246204%2C4805297.221163023%2C-9655709.570797773%2C4806101.182842546&bboxSR=3857&imageSR=3857&size=1352%2C827&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "8271e4836f8a871fc8d6387b8ca2efa69f0b6b275a97a1d48429eb34f7a204d1"
     },
     {
       "trackId": "us-qlispe-raceway-park-93067101",
@@ -6525,6 +6640,52 @@
     },
     {
       "trackId": "us-the-thermal-club-443108132",
+      "layoutId": "main",
+      "file": "data/united-states/the-thermal-club-443108132/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8653,
+          0.9126
+        ],
+        "medianInteriorDifference": [
+          0.0373,
+          0.0381
+        ],
+        "samplingStepM": 2.9990092301760267,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12930713.65008173%2C3975077.64123288%2C-12929538.502668178%2C3976883.336603886&bboxSR=3857&imageSR=3857&size=1306%2C2006&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "d490ead91e870e5145837e695c7a5f3b62c02c0d8d253624cd4c35497e3973f7"
+    },
+    {
+      "trackId": "us-the-thermal-club-443108132",
+      "layoutId": "thermal-club-full-track",
+      "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-full-track.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.8653,
+          0.9126
+        ],
+        "medianInteriorDifference": [
+          0.0373,
+          0.0381
+        ],
+        "samplingStepM": 2.9990092301760267,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-12930713.65008173%2C3975077.64123288%2C-12929538.502668178%2C3976883.336603886&bboxSR=3857&imageSR=3857&size=1306%2C2006&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "d490ead91e870e5145837e695c7a5f3b62c02c0d8d253624cd4c35497e3973f7"
+    },
+    {
+      "trackId": "us-the-thermal-club-443108132",
       "layoutId": "thermal-club-north-desert",
       "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-north-desert.geojson",
       "status": "inferred-estimate",
@@ -6773,6 +6934,52 @@
       "status": "inferred-estimate",
       "source": "https://planetarycomputer.microsoft.com/api/data/v1/item/bbox/-9283355.35133619,5267411.421804621,-9282701.004197175,5268217.619932853/802x988.png?collection=naip&item=mi_m_4208321_ne_17_060_20200705&assets=image&bidx=1&bidx=2&bidx=3&coord_crs=EPSG%3A3857&dst_crs=EPSG%3A3857&return_mask=true&resampling=nearest&reproject=nearest",
       "imageSha256": "2543928ebc99fb2149444fea455886e0f2f6423464212b91db0b41b9b5402697"
+    },
+    {
+      "trackId": "us-watkins-glen-international-20163576",
+      "layoutId": "main",
+      "file": "data/united-states/watkins-glen-international-20163576/layouts/main.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9748,
+          0.9195
+        ],
+        "medianInteriorDifference": [
+          0.0809,
+          0.0795
+        ],
+        "samplingStepM": 2.9988632808230338,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8563793.856081197%2C5210222.712088921%2C-8562643.65642251%2C5212777.3261508895&bboxSR=3857&imageSR=3857&size=1134%2C2518&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "13f46f32a87f9d5db7d8c3548e7815635d75c35508bcbd4f708853317972b2ea"
+    },
+    {
+      "trackId": "us-watkins-glen-international-20163576",
+      "layoutId": "watkins-glen",
+      "file": "data/united-states/watkins-glen-international-20163576/layouts/watkins-glen.geojson",
+      "status": "inferred-estimate",
+      "evidence": {
+        "strongEdgeFraction": [
+          0.9748,
+          0.9195
+        ],
+        "medianInteriorDifference": [
+          0.0809,
+          0.0795
+        ],
+        "samplingStepM": 2.9988632808230338,
+        "searchRangeM": [
+          -10,
+          25
+        ]
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8563793.856081197%2C5210222.712088921%2C-8562643.65642251%2C5212777.3261508895&bboxSR=3857&imageSR=3857&size=1134%2C2518&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "imageSha256": "13f46f32a87f9d5db7d8c3548e7815635d75c35508bcbd4f708853317972b2ea"
     },
     {
       "trackId": "us-willow-springs-international-raceway-10440074",

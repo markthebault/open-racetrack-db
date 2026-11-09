@@ -28,15 +28,15 @@
     {
       "id": "watkins-glen",
       "name": "Watkins Glen",
-      "referenceId": "United States/Watkins Glen",
       "file": "layouts/watkins-glen.geojson",
+      "referenceId": "United States/Watkins Glen",
       "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
     },
     {
       "id": "watkins-glen-short",
       "name": "Watkins Glen Short",
-      "referenceId": "United States/Watkins Glen Short",
       "file": "layouts/watkins-glen-short.geojson",
+      "referenceId": "United States/Watkins Glen Short",
       "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3935.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
     }
   ],
@@ -67,6 +67,15 @@
       "license": "ODbL-1.0",
       "retrievedAt": "2026-10-01T12:24:45.256Z",
       "evidenceNote": "Circuit identity and exact source-node geometry from a pinned named route relation, including any public-road sections."
+    },
+    {
+      "id": "usgs-naip-border-imagery",
+      "type": "imagery",
+      "title": "Aerial imagery for estimated road borders",
+      "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8563793.856081197%2C5210222.712088921%2C-8562643.65642251%2C5212777.3261508895&bboxSR=3857&imageSR=3857&size=1134%2C2518&format=png&f=json&renderingRule=%7B%22rasterFunction%22%3A%22NaturalColor%22%7D",
+      "license": "public-domain",
+      "retrievedAt": "2026-11-09T15:05:00.207Z",
+      "evidenceNote": "Derived edge coordinates. Reusable imagery evidence: https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-national-agriculture-imagery-program-naip. Image hashes, extents and extraction evidence are stored in the layout. Estimates remain unreviewed."
     }
   ]
 }

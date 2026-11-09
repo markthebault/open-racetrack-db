@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "method": "image-reviewed-road-reestimate-v1",
+  "trackId": "us-hallett-reference",
+  "targetLayoutId": "main",
+  "originalBorderSha256": "2c14a836a6a386fa22d858168a28a83857046aeb00243d512b3c01cbd3547c56",
+  "traceSha256": "aa36a362c8feda85c77cb0cfef7eaf775fa93f8dacac74d8b679839a577a824a",
+  "imageSha256": "718c528d67e1edd51e79984cdb510f69845b851dc9ce0b77f0f308879df816e9",
+  "resultBorderSha256": "b0879dffa38250308aa42e39e143b571821d154a10d328cd2bf54e060ace563e",
+  "defectVertices": [
+    {
+      "edge": "outer",
+      "index": 1
+    }
+  ],
+  "nativeImageViewed": true,
+  "completeOverlayViewed": true,
+  "defectCropViewed": true,
+  "sourceRouteMatchesPavement": true,
+  "note": "The original outer border spikes across continuous pavement at vertex 1, nearly closing the road corridor. The native NAIP image, full automatic candidate overlay and original defect crop were reviewed. The replacement follows the retained source route on visible pavement. Edges remain automatic image-derived estimates, with unresolved pixel, shadow, shoulder and access-opening interpretation uncertainty; they are not surveyed barriers or complete manual measurements."
+}

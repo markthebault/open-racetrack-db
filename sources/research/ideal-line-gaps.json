@@ -3,9 +3,9 @@
   "vehicleWidthM": 2.05,
   "note": "Diagnostics of saved geometry, not measured physical track widths or barriers. Insufficient-width cases have a closed nested polygon corridor with an opposing-edge gap below the vehicle width, before adding clearance margins. Projected crossings may be grade separated and require route/layer interpretation. Topology cases are not a proof that no alternative solver can recover them. No geometry is changed. Vertex indices refer to the hashed source border features.",
   "summary": {
-    "unavailableLayouts": 34,
-    "insufficientWidth": 14,
-    "topologyOrOrderReview": 20,
+    "unavailableLayouts": 25,
+    "insufficientWidth": 7,
+    "topologyOrOrderReview": 18,
     "solverCandidates": 0
   },
   "records": [
@@ -458,121 +458,6 @@
       ]
     },
     {
-      "file": "data/united-states/chelsea-handling-track-reference/layouts/main.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "9a93177441930073da38caf28559aeb39b554eb16ff5548e93644f4ce2ffe2f9",
-      "traceGeometrySha256": "a126cd07e022d37d1447a30f5905518d937e4f676255764aa8e622979383dd93",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.187,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "inner",
-            "index": 184
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/hallett-reference/layouts/main.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "c25349d86cbc8445e91ae8ed8b1d5f4546c28a38f0d41eae341421e4fe34dc04",
-      "traceGeometrySha256": "aa36a362c8feda85c77cb0cfef7eaf775fa93f8dacac74d8b679839a577a824a",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.117,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "outer",
-            "index": 1
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/palmer-motorsports-park-reference/layouts/main.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "d6e081c5fd3a2203b9a14e4bad807371b3a5ea643b3fcdd4303e7673729cfcac",
-      "traceGeometrySha256": "135a52ecad83b2ef72c7646245ae0a3f93f91b2076c174db1c1ccb26507790a8",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.047,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "inner",
-            "index": 0
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/putnam-park-road-course-669531024/layouts/main.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "d3f05e9ca5d282be8dc048224c68dd04d8e2b394ebd9b4ffa7085ea7843d95bf",
-      "traceGeometrySha256": "0903bcf27e82a16193cee3f5e716677a2fc691ceac8b115b7ffb71667dd767cc",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.249,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "outer",
-            "index": 184
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/putnam-park-road-course-669531024/layouts/putnam-park.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "d3f05e9ca5d282be8dc048224c68dd04d8e2b394ebd9b4ffa7085ea7843d95bf",
-      "traceGeometrySha256": "0903bcf27e82a16193cee3f5e716677a2fc691ceac8b115b7ffb71667dd767cc",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.249,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "outer",
-            "index": 184
-          }
-        }
-      ]
-    },
-    {
       "file": "data/united-states/road-atlanta-9292566/layouts/road-atlanta-combo.geojson",
       "classification": "insufficient-width",
       "borderFeaturesSha256": "61c818030138c7fc512703174705b288e48711845b5ccd9be6bf776ef5973125",
@@ -644,42 +529,6 @@
       ]
     },
     {
-      "file": "data/united-states/the-thermal-club-443108132/layouts/main.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "fde071df98a725eea8ee4df00ee993a54314b810a0b64a7ea7f68d6c6323a786",
-      "traceGeometrySha256": "8133194ffc843b0a09b3484e2c48dea00f35f884e30aa366f201607b296ea7fe",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/the-thermal-club-443108132/layouts/thermal-club-full-track.geojson",
-      "classification": "topology-or-order-review",
-      "borderFeaturesSha256": "fde071df98a725eea8ee4df00ee993a54314b810a0b64a7ea7f68d6c6323a786",
-      "traceGeometrySha256": "8133194ffc843b0a09b3484e2c48dea00f35f884e30aa366f201607b296ea7fe",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": false,
-          "topologyReason": "Boundary rings cross or touch; driving order needs review"
-        }
-      ]
-    },
-    {
       "file": "data/united-states/us-belle-isle-c12938f2/layouts/belle-isle-gp.geojson",
       "classification": "topology-or-order-review",
       "borderFeaturesSha256": "8bbcd71518c1aaf8c290c32ff61faf99d76d9d4d5c0d7972b7f4a2a2e6e756a3",
@@ -716,52 +565,6 @@
           "bottleneckVertex": {
             "role": "outer",
             "index": 0
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/watkins-glen-international-20163576/layouts/main.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "19e0147c9c31aa6d2883e3c14e1fde688a1d0c34806176e1d8cbbe234ddf4232",
-      "traceGeometrySha256": "c5f8c165dcf98578ed0da0b807a3856559efb4f69c38630a91e74d61cfcaba4f",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.185,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "inner",
-            "index": 225
-          }
-        }
-      ]
-    },
-    {
-      "file": "data/united-states/watkins-glen-international-20163576/layouts/watkins-glen.geojson",
-      "classification": "insufficient-width",
-      "borderFeaturesSha256": "19e0147c9c31aa6d2883e3c14e1fde688a1d0c34806176e1d8cbbe234ddf4232",
-      "traceGeometrySha256": "c5f8c165dcf98578ed0da0b807a3856559efb4f69c38630a91e74d61cfcaba4f",
-      "borderPathCounts": [
-        1,
-        1
-      ],
-      "components": [
-        {
-          "index": 0,
-          "closed": true,
-          "nested": true,
-          "minimumGapM": 0.185,
-          "belowVehicleWidth": true,
-          "bottleneckVertex": {
-            "role": "inner",
-            "index": 225
           }
         }
       ]
