@@ -84,9 +84,12 @@ await phase("scripts/recover-ideal-lines.ts", "narrow", ["--narrow"]);
 const narrow = await records("narrow");
 await writeFile(`${directory}/final-unavailable.json`, JSON.stringify(narrow.filter(r => r.status === "unavailable"), null, 2));
 await phase("scripts/recover-ordered-ideal-lines.ts", "ordered-ribbon");
-const ribbon = await records("ribbon"),
+const ribbon = await records("ribbon");
+await writeFile(`${directory}/final-unavailable.json`, JSON.stringify(ribbon.filter(r => r.status === "unavailable"), null, 2));
+await phase("scripts/recover-continuous-ideal-lines.ts", "continuous");
+const continuous = await records("continuous"),
   merged = new Map(
-    [...coarse, ...fine, ...nearest, ...ordered, ...narrow, ...ribbon].map((r) => [
+    [...coarse, ...fine, ...nearest, ...ordered, ...narrow, ...ribbon, ...continuous].map((r) => [
       r.file,
       r,
     ]),

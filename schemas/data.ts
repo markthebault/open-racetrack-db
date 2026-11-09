@@ -8,7 +8,7 @@ import { pathCrossings } from "../src/path-crossings";
 import { trackModelSchema, networkRecipeSchema } from "./track-model";
 import { sequenceTrace } from "../src/source-sequence-plan";
 import { sharedGroundBoundaries } from "../src/shared-ground-data";
-import { assertCompleteRoadSource } from "../src/boundary-path";
+import { assertCompleteRoadSource, roadRings } from "../src/boundary-path";
 import {
   bounds,
   distance,
@@ -197,7 +197,7 @@ export const layoutSchema = z.strictObject({
           role: z.literal("ideal"), sourceIds: z.array(slug).length(0), estimated: z.literal(true),
           method: z.literal("bounded-minimum-curvature-local-time-v1"),
           edgeMarginM: z.number().nonnegative(),
-          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1"]).optional(),
+          boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1"]).optional(),
           borderLicenses: z.array(z.string()).min(1),
         })]),
         geometry: z.union([line, network]),
@@ -312,6 +312,10 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     const sharedGround = m.model3d?.kind !== "surface" ? m.model3d?.sharedGround : undefined;
     const groundIdeal = ideal.properties.boundaryModel === "shared-ground-v1";
     if (groundIdeal && !sharedGround) throw new Error("ideal: shared-ground boundary model is unavailable");
+    if (ideal.properties.boundaryModel === "continuous-planar-v1") {
+      if (!m.closed || m.geometryKind === "network") throw new Error("ideal: continuous planar model requires a closed independent annulus");
+      roadRings(data);
+    }
     if (ideal.properties.boundaryModel === "ordered-border-ribbon-v1") {
       const trace = data.features.find(f => f.properties.role === "trace")!.geometry;
       if (!m.closed || m.geometryKind === "network" || trace.type !== "LineString" ||

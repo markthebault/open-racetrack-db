@@ -6,15 +6,13 @@ import { groundFootprintFromRings, groundSegmentClearanceM } from '../src/ribbon
 import type { MultiPolygon } from 'polygon-clipping';
 import { IDEAL_CAR } from '../src/ideal-line-model';
 import { optimizeLine } from './ideal-line-solver';
-export function orderedBorderCorridor(layout: Layout, minimumWidthM = IDEAL_CAR.widthM + 1.04) {
+export function alignClosedBorders(layout: Layout, minimumWidthM = IDEAL_CAR.widthM + 1.04, maximumAlignmentCells = 20000000) {
   if (!layout.metadata.closed || layout.metadata.geometryKind === 'network')
     throw Error('Ordered ribbon requires a closed independent route');
   if (['trace', 'inner', 'outer'].some(role => layout.features.find(f => f.properties.role === role)?.geometry.type !== 'LineString'))
     throw Error('Ordered ribbon requires single continuous source paths');
   const trace = geometryPaths(layout.features.find(f => f.properties.role === 'trace')!.geometry)[0], project = plane(trace[0]), source = trace.map(project.to), tangent = [source[1][0] - source.at(-2)![0], source[1][1] - source.at(-2)![1]];
   if (!equal(trace[0], trace.at(-1)!)) throw Error('Ordered source route is not closed');
-  if (!pathCrossings(source, true).some(c => c.kind === 'crossing'))
-    throw Error('Ordered ribbon requires a projected source crossing');
   // Rotate each complete edge to the source start and retain its travel order.
   // Densification inserts points on original segments and retains every vertex.
   const edges = ['inner', 'outer'].map(role => {
@@ -54,7 +52,7 @@ export function orderedBorderCorridor(layout: Layout, minimumWidthM = IDEAL_CAR.
       (side(a,b,c)*side(a,b,d)<0 && side(c,d,a)*side(c,d,b)<0) || on(a,b,c)||on(a,b,d)||on(c,d,a)||on(c,d,b);
     return q.length===3 || (q.length===4 && !hit(q[0],q[1],q[2],q[3]) && !hit(q[1],q[2],q[3],q[0]));
   };
-  if (n * m > 20000000)
+  if (n * m > maximumAlignmentCells)
     throw Error('Alignment too large');
   // Monotonic dynamic alignment consumes every sample of both borders. The
   // 120 m station band prevents matching the other visit to a distant crossing.
@@ -111,6 +109,12 @@ export function orderedBorderCorridor(layout: Layout, minimumWidthM = IDEAL_CAR.
   pairs.reverse();
   pairs.pop();
   return { pairs, project, origin: trace[0], source };
+}
+export function orderedBorderCorridor(layout: Layout, minimumWidthM = IDEAL_CAR.widthM + 1.04) {
+  const trace = layout.features.find(f => f.properties.role === 'trace')?.geometry;
+  if (trace?.type !== 'LineString' || !pathCrossings(trace.coordinates.map(plane(trace.coordinates[0]).to), true).some(c => c.kind === 'crossing'))
+    throw Error('Ordered ribbon requires a projected source crossing');
+  return alignClosedBorders(layout, minimumWidthM);
 }
 /** Two-dimensional source-order ribbon; no bridge heights are inferred. */
 export function orderedIdealLine(layout: Layout, edgeMarginM = 0.5) {
