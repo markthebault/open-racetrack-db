@@ -502,7 +502,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       );
     if (
       borders.length !== 2 ||
-      borders.some((f) => !("borderStatus" in f.properties))
+      (!m.borderInference.supersedes?.sourceSpurReview && borders.some((f) => !("borderStatus" in f.properties)))
     )
       throw new Error(
         "borderInference: requires two estimated imagery borders",
@@ -602,11 +602,17 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       borders.some(
         (f) =>
           !("license" in f.properties) ||
-          f.properties.license !== info.license ||
-          f.properties.sourceIds[0] !== info.sourceId,
+          (m.borderInference!.supersedes?.sourceSpurReview
+            ? f.properties.license !== "LicenseRef-Track-Borders" || "borderStatus" in f.properties
+            : f.properties.license !== info.license || f.properties.sourceIds[0] !== info.sourceId),
       )
     )
       throw new Error("borderInference: feature licence/source mismatch");
+    const spur=m.borderInference.supersedes?.sourceSpurReview;
+    if(spur && (isNetwork||!m.closed||spur.trackId!==m.trackId||spur.targetLayoutId!==m.layoutId||
+       borders.some(f=>f.geometry.type!=="LineString")||
+       ["inner","outer"].some((role,i)=>JSON.stringify(borders.find(f=>f.properties.role===role)!.properties)!==JSON.stringify(spur.borderProperties[i]))))
+      throw new Error("borderInference: source-spur review must preserve its independent route identity and original border properties");
     const [w, s, e, n] = info.extent3857;
     if (w >= e || s >= n)
       throw new Error("borderInference: invalid image extent");

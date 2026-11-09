@@ -1,3 +1,4 @@
+import { verifySourceSpurResult } from "./source-spur-correction";
 import { loadTiledRaster } from "./tiled-raster";
 import { readFile, writeFile, mkdir, rename, readdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -512,6 +513,7 @@ async function processEntry(entry: (typeof catalogue.tracks)[number]) {
       continue;
     }
     if (check) {
+      if(old?.supersedes?.sourceSpurReview)verifySourceSpurResult(layout);
       if(old?.supersedes?.imageReview)verifyReviewedRoadEstimateResult(layout,old.supersedes.imageReview);
       if(old?.supersedes?.sameCycleReview){
         const review=old.supersedes.sameCycleReview;

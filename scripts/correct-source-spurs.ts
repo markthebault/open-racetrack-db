@@ -1,0 +1,34 @@
+import {readFile,writeFile} from "node:fs/promises";
+import {createHash} from "node:crypto";
+import {dirname} from "node:path";
+import {indexSchema,validateTrack,validateLayout} from "../schemas/data";
+import {borderInferenceSchema} from "../schemas/border-inference";
+import {sourceSpurReviewSchema} from "../schemas/estimate-replacement";
+import {decodeRaster} from "./infer-image-borders";
+import {applySourceSpurCorrection,verifySourceSpurResult} from "./source-spur-correction";
+import {serializeLayout} from "./layout-borders";
+const args=process.argv.slice(2),option=(key:string)=>{const i=args.indexOf(key);return i<0?undefined:args[i+1];};
+if(!option("--track")||!option("--layout")||!option("--review")||!option("--cached-image")||args.includes("--all"))throw new Error("Use one --track, --layout, --review and --cached-image; add --write to save the reviewed correction");
+const load=async(p:string)=>JSON.parse(await readFile(p,"utf8")),index=indexSchema.parse(await load("data/index.json")),entry=index.tracks.find(t=>t.id===option("--track"));
+if(!entry)throw new Error("Unknown track");
+const trackFile="data/"+entry.file,track=validateTrack(await load(trackFile)),item=track.layouts.find(l=>l.id===option("--layout"));
+if(!item?.file)throw new Error("Unknown mapped layout");
+const file=dirname(trackFile)+"/"+item.file,layout=validateLayout(await load(file),track,item.id),pin=sourceSpurReviewSchema.parse(await load(option("--review")!)),info=borderInferenceSchema.shape.imagery.parse(await load(option("--cached-image")!));
+if(info.rightsBasis&&!args.includes("--licensed-imagery"))throw new Error("Source-specific review imagery requires --licensed-imagery authorization");
+if(info.encoding)throw new Error("Source-spur review currently requires a complete PNG review image");
+const bytes=await readFile(option("--cached-image")!.replace(/\.json$/,".png"));
+if(createHash("sha256").update(bytes).digest("hex")!==info.sha256)throw new Error("Source-spur review image hash changed");
+const image=decodeRaster(bytes,info.extent3857);
+if(image.width!==info.width||image.height!==info.height)throw new Error("Source-spur review image dimensions changed");
+for(const point of pin.removed){const [lon,lat]=point.coordinate,[w,s,e,n]=info.extent3857,mx=6378137*lon*Math.PI/180,my=6378137*Math.asinh(Math.tan(lat*Math.PI/180)),x=Math.round((mx-w)/(e-w)*image.width-.5),y=Math.round((n-my)/(n-s)*image.height-.5);
+ if(x<0||y<0||x>=image.width||y>=image.height||image.data![4*(y*image.width+x)+3]<128)throw new Error("Reviewed source-spur vertex lacks pinned-image coverage");}
+const corrected=applySourceSpurCorrection(layout,pin,info),candidateTrack=structuredClone(track);
+if(!candidateTrack.sources.some(s=>s.id===info.sourceId))candidateTrack.sources.push({id:info.sourceId,type:"imagery",title:"Imagery review of a source-border paint-line artifact",url:info.url,license:info.license,retrievedAt:info.retrievedAt,evidenceNote:"Imagery supports the documented local vertex deletion. Retained coordinates and their original border rights are unchanged. Review-image identity and its rights are embedded in the layout."});
+validateLayout(corrected,candidateTrack,item.id);verifySourceSpurResult(corrected);
+if(args.includes("--write")){await writeFile(file,serializeLayout(corrected));await writeFile(trackFile,JSON.stringify(candidateTrack,null,2)+"\n");
+ const coverage=await load("data/border-inference-coverage.json"),row={trackId:track.id,layoutId:item.id,file,status:"source-spur-correction",removedVertices:pin.removed.length,imageSha256:info.sha256};
+ const previous=coverage.records.findIndex((r:{trackId:string;layoutId:string})=>r.trackId===track.id&&r.layoutId===item.id);
+ if(previous<0)coverage.records.push(row);else coverage.records[previous]=row;
+ coverage.records.sort((a:{trackId:string;layoutId:string},b:{trackId:string;layoutId:string})=>(a.trackId+"/"+a.layoutId).localeCompare(b.trackId+"/"+b.layoutId));
+ coverage.generatedAt=new Date().toISOString();await writeFile("data/border-inference-coverage.json",JSON.stringify(coverage,null,2)+"\n");}
+console.log(JSON.stringify({file,removedVertices:pin.removed.length,status:args.includes("--write")?"corrected":"reviewed-dry-run"}));

@@ -4,6 +4,7 @@ import { geometryPaths, type Layout } from "../schemas/data";
 import { borderInferenceSchema } from "../schemas/border-inference";
 import { networkRouteLayout } from "../src/network-routes";
 import { borderPairHash } from "./refine-image-borders";
+import { verifySourceSpurResult } from "./source-spur-correction";
 import { reviewedRoadEstimateReplacement, verifyReviewedRoadEstimateResult } from "./reviewed-road-estimate";
 import type { Position } from "../src/geo";
 
@@ -37,12 +38,17 @@ export function reviewedNetworkBorders(network: Layout, expectedHash: string, so
     if (layoutContentHash(source) === component.sourceSha256) return undefined;
     const evidence = borderInferenceSchema.parse(source.metadata.borderInference),
       oldHash = borderPairHash(pair(old)), resultHash = borderPairHash(pair(source));
-    const imageReview = evidence.supersedes?.imageReview;
+    const imageReview = evidence.supersedes?.imageReview, spurReview = evidence.supersedes?.sourceSpurReview;
+    if (spurReview) {
+      const restored=verifySourceSpurResult(source);
+      if(!isDeepStrictEqual(restored.original,pair(old))||["inner","outer"].some(role=>!isDeepStrictEqual(source.features.find(f=>f.properties.role===role)!.properties,old.features.find(f=>f.properties.role===role)!.properties)))
+        throw new Error("Source-spur component must restore its exact original vertices and properties");
+    }
     if (imageReview) {
       reviewedRoadEstimateReplacement(old, imageReview, evidence.imagery.sha256);
       verifyReviewedRoadEstimateResult(source, imageReview);
     }
-    if (evidence.supersedes?.borderSha256 !== oldHash || (evidence.measurement?.resultSha256 ?? imageReview?.resultBorderSha256) !== resultHash)
+    if (evidence.supersedes?.borderSha256 !== oldHash || (evidence.measurement?.resultSha256 ?? imageReview?.resultBorderSha256 ?? spurReview?.resultBorderSha256) !== resultHash)
       throw new Error("Changed component needs reviewed image evidence pinned to its exact old borders");
     const keptFeatures = (d: Layout) => d.features.filter(f => !["ideal", "inner", "outer"].includes(f.properties.role));
     const keptMetadata = (d: Layout) => Object.fromEntries(Object.entries(d.metadata).filter(([key]) => !["model3d", "borderInference"].includes(key)));

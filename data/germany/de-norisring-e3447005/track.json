@@ -20,8 +20,8 @@
     {
       "id": "norisring",
       "name": "Norisring",
-      "referenceId": "Germany/Norisring",
       "file": "layouts/norisring.geojson",
+      "referenceId": "Germany/Norisring",
       "description": "Event results identify the single 2.3 km Norisring street course. The independent named source course is shorter; the discrepancy is retained for review. Draft configuration selected from the independently named circuit relation 1889538. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
     }
   ],
@@ -43,6 +43,15 @@
       "license": "reference-only",
       "retrievedAt": "2026-10-01T13:46:25.959Z",
       "evidenceNote": "Event results identify the single 2.3 km Norisring street course. The independent named source course is shorter; the discrepancy is retained for review. Identification only; no coordinates are copied."
+    },
+    {
+      "id": "maptiler-licensed-border-imagery",
+      "type": "imagery",
+      "title": "Imagery review of a source-border paint-line artifact",
+      "url": "https://api.maptiler.com/maps/satellite-v4/tiles.json",
+      "license": "LicenseRef-MapTiler-Derived-Borders",
+      "retrievedAt": "2026-11-09T15:18:00.326Z",
+      "evidenceNote": "Imagery supports the documented local vertex deletion. Retained coordinates and their original border rights are unchanged. Review-image identity and its rights are embedded in the layout."
     }
   ]
 }

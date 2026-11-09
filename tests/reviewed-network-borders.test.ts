@@ -1,3 +1,4 @@
+import { verifySourceSpurResult } from "../scripts/source-spur-correction";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -9,14 +10,15 @@ import { layoutContentHash, reviewedNetworkBorders } from "../scripts/reviewed-n
 function fixture(file = "data/united-states/pittsburgh-international-race-complex-225264359/layouts/pittsburgh-int-race-complex-south.geojson") {
   const source = layoutSchema.parse(JSON.parse(readFileSync(file, "utf8")));
   source.features = source.features.filter(f => f.properties.role !== "ideal");
-  const old = structuredClone(source);
+  const old = structuredClone(source), spur=source.metadata.borderInference!.supersedes!.sourceSpurReview;
+  if(spur){const restored=verifySourceSpurResult(source).original;for(const role of ["inner","outer"] as const)old.features.find(f=>f.properties.role===role)!.geometry={type:"LineString",coordinates:restored[role]};}
   delete old.metadata.borderInference;
   for (const edge of old.features.filter(f => ["inner", "outer"].includes(f.properties.role)))
     edge.properties = { role: edge.properties.role as "inner" | "outer", sourceIds: [], license: "LicenseRef-Track-Borders" };
   const roles = ["trace", "inner", "outer"];
   old.features = [...roles.flatMap(role => old.features.filter(f => f.properties.role === role)), ...old.features.filter(f => !roles.includes(f.properties.role))];
   const outer = old.features.find(f => f.properties.role === "outer")!;
-  if (outer.geometry.type === "LineString") outer.geometry.coordinates[0][0] += 0.000001;
+  if (!spur && outer.geometry.type === "LineString") outer.geometry.coordinates[0][0] += 0.000001;
   old.bbox = bounds(old.features.flatMap(f => geometryPaths(f.geometry).flat()));
   const pair = Object.fromEntries(["inner", "outer"].map(role => [role, geometryPaths(old.features.find(f => f.properties.role === role)!.geometry)[0]])) as Parameters<typeof borderPairHash>[0];
   source.metadata.borderInference!.supersedes!.borderSha256 = borderPairHash(pair);
@@ -84,4 +86,14 @@ test("pinned automatic image reviews propagate only their exact original route, 
   }
   const g=fixture(file);delete g.source.metadata.borderInference!.supersedes!.imageReview;
   assert.throws(()=>reviewedNetworkBorders(g.network,g.hash,[g.source]));
+});
+
+
+test("source-spur component propagation reconstructs exact old vertices and rejects altered deletions",()=>{
+  const file="data/australia/queensland-raceway-26175772/layouts/queensland-raceway-sprint-circuit.geojson",f=fixture(file),before=structuredClone(f);
+  assert.equal(reviewedNetworkBorders(f.network,f.hash,[f.source]).components.length,1);assert.deepEqual(f,before);
+  const g=fixture(file);g.source.metadata.borderInference!.supersedes!.sourceSpurReview!.removed[0].coordinate[0]+=.000001;
+  assert.throws(()=>reviewedNetworkBorders(g.network,g.hash,[g.source]),/reconstruction hash changed/);
+  const h=fixture(file);delete h.source.metadata.borderInference!.supersedes!.sourceSpurReview;
+  assert.throws(()=>reviewedNetworkBorders(h.network,h.hash,[h.source]));
 });

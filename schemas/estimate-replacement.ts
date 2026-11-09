@@ -21,3 +21,12 @@ export const roadEstimateReviewSchema=z.strictObject({
   estimatorMethod:z.enum(["rgb-road-appearance-v3","rgb-road-local-appearance-v4"]).optional(),
   note:z.string().trim().min(30),
 });
+
+const originalBorderProperties=z.strictObject({role:z.enum(["inner","outer"]),sourceIds:z.array(z.string()),license:z.literal("LicenseRef-Track-Borders")});
+export const sourceSpurReviewSchema=z.strictObject({
+  schemaVersion:z.literal(1),method:z.literal("image-reviewed-source-spur-removal-v1"),
+  trackId:id,targetLayoutId:id,originalBorderSha256:hash,traceSha256:hash,imageSha256:hash,resultBorderSha256:hash,
+  borderProperties:z.tuple([originalBorderProperties,originalBorderProperties]),
+  removed:z.array(z.strictObject({edge:z.enum(["inner","outer"]),index:z.number().int().positive(),coordinate:z.tuple([z.number().min(-180).max(180),z.number().min(-90).max(90)])})).min(1).max(20),
+  defectCropViewed:z.literal(true),remainingCoordinatesPreserved:z.literal(true),note:z.string().trim().min(30),
+});
