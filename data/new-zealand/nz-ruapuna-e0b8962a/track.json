@@ -25,37 +25,115 @@
       "name": "Ruapuna",
       "file": "layouts/ruapuna.geojson",
       "referenceId": "New Zealand/Ruapuna",
-      "description": "Combined Grand Prix, Dipper, outer and Eastern configurations. Four exact OSM routes and one independently digitized image route. Coordinate-distinct overlapping paths remain separate in the mapped branch length; this is not one lap."
+      "description": "Combined Grand Prix, Dipper, outer and Eastern configurations. Four exact OSM routes and one independently digitized image route. Coordinate-distinct overlapping paths remain separate in the mapped branch length; this is not one lap.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.849055034096946,
+        "lengthM": 12246.164452479761,
+        "sampleCount": 1357,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d076f03fa690512f2b2d75a307c5ce2b98e3b844b7d6ec9473e4897e32688f7b",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "ruapuna-grand-prix",
       "name": "Grand Prix",
       "file": "layouts/ruapuna-grand-prix.geojson",
-      "description": "The federation circuit map identifies the full Grand Prix branch sequence, including the Western technical return and central Northern U. Its independent 3282.1 m measured distance differs from the published 3.33 km. Fine corner alignment and direction remain draft."
+      "description": "The federation circuit map identifies the full Grand Prix branch sequence, including the Western technical return and central Northern U. Its independent 3282.1 m measured distance differs from the published 3.33 km. Fine corner alignment and direction remain draft.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.87069524000578,
+        "lengthM": 3282.1201614615984,
+        "sampleCount": 294,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "97d0e82f10b9ef56cd9d15508cbc617af033eed00f6faf7c6d7c9be54d2e9c14",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "ruapuna-grand-prix-dipper",
       "name": "Grand Prix with dipper",
       "file": "layouts/ruapuna-grand-prix-dipper.geojson",
-      "description": "The operator test-day rules explicitly distinguish the motorcycle Grand Prix with dipper. This route retains the Southern central dipper and every Grand Prix branch. Independent measured length is 3387.5 m; alignment remains draft."
+      "description": "The operator test-day rules explicitly distinguish the motorcycle Grand Prix with dipper. This route retains the Southern central dipper and every Grand Prix branch. Independent measured length is 3387.5 m; alignment remains draft.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.879109513230597,
+        "lengthM": 3387.5366194025355,
+        "sampleCount": 308,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ca215c30ef9820ae9cdaff3529d7d330b4d1eb4e6d72c8f089c122ead207a057",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "ruapuna-outer-dipper",
       "name": "Outer course with dipper",
       "file": "layouts/ruapuna-outer-dipper.geojson",
-      "description": "A draft component of the operator multi-configuration facility: the complete Western outer return, central shortcut and Eastern loop with the Southern dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2287.8 m."
+      "description": "A draft component of the operator multi-configuration facility: the complete Western outer return, central shortcut and Eastern loop with the Southern dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2287.8 m.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.018016232796704,
+        "lengthM": 2287.814442104824,
+        "sampleCount": 201,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1a0d3f1465c7ef0c88c49431463345062cf59495f249f842f57a77299380b36d",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "ruapuna-outer-course",
       "name": "Outer course",
       "file": "layouts/ruapuna-outer-course.geojson",
-      "description": "A draft component retaining the complete Western outer return, central shortcut and Eastern loop, without the dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2182.4 m."
+      "description": "A draft component retaining the complete Western outer return, central shortcut and Eastern loop, without the dipper. Branch names are descriptive, not homologation labels. Exact independent mapped distance is 2182.4 m.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.267596459809287,
+        "lengthM": 2182.397984163889,
+        "sampleCount": 187,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6b29dd408f27451ee4fe0a7e49d66ed2a2c111706272468f74a422d476e7fc55",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "ruapuna-eastern-course",
       "name": "Eastern course",
       "file": "layouts/ruapuna-eastern-course.geojson",
-      "description": "Draft short Eastern course independently digitized from March 2025 LINZ aerial imagery. Northern return junction corrected; historical alignment and direction remain provisional."
+      "description": "Draft short Eastern course independently digitized from March 2025 LINZ aerial imagery. Northern return junction corrected; historical alignment and direction remain provisional.",
+      "roadWidthM": 18.5,
+      "roadWidthSource": {
+        "meanWidthM": 18.587250999140135,
+        "lengthM": 1106.2920304470176,
+        "sampleCount": 367,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6edf267061d88339811389f87cf579a072c5859471e35aba2fde7e2e11a28d81",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

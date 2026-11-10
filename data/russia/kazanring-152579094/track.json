@@ -22,7 +22,20 @@
       "name": "Kazan Ring",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Russia/Kazan Ring"
+      "referenceId": "Russia/Kazan Ring",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.150928140732741,
+        "lengthM": 3459.888938381286,
+        "sampleCount": 276,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "792fa4879875e21a7ee3825c3d8b09097093691adf300b44bc83e2c3cf5e32fc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

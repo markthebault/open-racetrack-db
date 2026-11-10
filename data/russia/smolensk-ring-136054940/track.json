@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.957821881914754,
+        "lengthM": 3334.381388099955,
+        "sampleCount": 275,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "488f848ab015fd94a228ca476cfa33d9f39015b1a34e7938ef8bd06d218e90a0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "smolensk",
       "name": "Smolensk",
       "referenceId": "Russia/Smolensk",
       "file": "layouts/smolensk.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3343.2 m. Difference from the supplied layout distance 0.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3343.2 m. Difference from the supplied layout distance 0.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.957821881914754,
+        "lengthM": 3334.381388099955,
+        "sampleCount": 275,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "488f848ab015fd94a228ca476cfa33d9f39015b1a34e7938ef8bd06d218e90a0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

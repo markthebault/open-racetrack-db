@@ -22,7 +22,20 @@
       "name": "Monaco",
       "referenceId": "France/Monaco",
       "file": "layouts/monaco.geojson",
-      "description": "Draft configuration: Grand Prix course follows the harbour, tunnel and Casino sections. The separately mapped Avenue de Monte-Carlo connector completes the named relation at exact source nodes; the small Casino-only loop is excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3309.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Grand Prix course follows the harbour, tunnel and Casino sections. The separately mapped Avenue de Monte-Carlo connector completes the named relation at exact source nodes; the small Casino-only loop is excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3309.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.257610855740412,
+        "lengthM": 3309.306418436071,
+        "sampleCount": 492,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a1ddcea952fe1d6f7ab5c7cc59f524abd16ce5b7fb85519ba9b6ef5bc43b69ce",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

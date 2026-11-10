@@ -22,7 +22,20 @@
       "id": "main",
       "name": "Image-mapped paved loop",
       "file": "layouts/main.geojson",
-      "description": "Continuous paved loop independently digitized from licensed native satellite imagery. Approximate geometry and direction remain draft. Its approximately 1.19 km driving path has not been verified as the operator's nominal 1.28 km configuration; timing is unavailable."
+      "description": "Continuous paved loop independently digitized from licensed native satellite imagery. Approximate geometry and direction remain draft. Its approximately 1.19 km driving path has not been verified as the operator's nominal 1.28 km configuration; timing is unavailable.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.668117218064896,
+        "lengthM": 1196.9345106264311,
+        "sampleCount": 226,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bbe90b9662fd6ac4d9991aa37439077381916c930e4197877b57e9496253a17a",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

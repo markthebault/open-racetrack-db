@@ -24,42 +24,120 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.829505989572459,
+        "lengthM": 2173.4630986212183,
+        "sampleCount": 181,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "78097558ed6b066c17962ab7943869e124fe28fd867d50a6f9582d71df542669",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "queensland-raceway-club-circuit",
       "name": "Queensland Raceway Club Circuit",
       "file": "layouts/queensland-raceway-club-circuit.geojson",
       "referenceId": "Australia/Queensland Raceway Club Circuit",
-      "description": "Draft configuration: Southern club configuration uses the curved infield crossover and excludes the northern loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2164.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Southern club configuration uses the curved infield crossover and excludes the northern loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2164.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.559869923888469,
+        "lengthM": 2164.335869145295,
+        "sampleCount": 180,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "433aefcc6cdba72bb3bd3241fe611db5a7795618493286681132c65b8851363c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "queensland-raceway-combo-circuit",
       "name": "Queensland Raceway Combo Circuit",
       "file": "layouts/queensland-raceway-combo-circuit.geojson",
       "referenceId": "Australia/Queensland Raceway Combo Circuit",
-      "description": "Combined mapped configurations: Queensland Raceway Club Circuit, Queensland Raceway National Circuit, Queensland Raceway Sportsman, Queensland Raceway Sprint Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Queensland Raceway Club Circuit, Queensland Raceway National Circuit, Queensland Raceway Sportsman, Queensland Raceway Sprint Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.605312438913334,
+        "lengthM": 9436.578720964191,
+        "sampleCount": 775,
+        "interpolatedSections": 6,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6ae652af966ca1badfdfc504e558198db4c2aec6e97ccf6979207c384af9bb06",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "queensland-raceway-national-circuit",
       "name": "Queensland Raceway National Circuit",
       "file": "layouts/queensland-raceway-national-circuit.geojson",
       "referenceId": "Australia/Queensland Raceway National Circuit",
-      "description": "Draft configuration: Full paperclip configuration excludes both infield shortcut detours. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3157.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full paperclip configuration excludes both infield shortcut detours. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3157.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.540016883833374,
+        "lengthM": 3157.691436217646,
+        "sampleCount": 252,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7bec35cbeee96d051080e7af91f84bca8bd387f94c66b6565bcb3d39a97454c8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "queensland-raceway-sportsman",
       "name": "Queensland Raceway Sportsman",
       "file": "layouts/queensland-raceway-sportsman.geojson",
       "referenceId": "Australia/Queensland Raceway Sportsman",
-      "description": "Draft configuration: Full western straight and northern infield crossover; excludes the southern shortcut. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2173.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full western straight and northern infield crossover; excludes the southern shortcut. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2173.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.730684035120333,
+        "lengthM": 2173.475330925634,
+        "sampleCount": 181,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9465554d1e81f67afc83b15cc7338bedfea710ad905f376db75d39909a141000",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "queensland-raceway-sprint-circuit",
       "name": "Queensland Raceway Sprint Circuit",
       "file": "layouts/queensland-raceway-sprint-circuit.geojson",
       "referenceId": "Australia/Queensland Raceway Sprint Circuit",
-      "description": "Draft configuration: Compact configuration uses both curved crossovers. The historical catalogue distance differs from the source trace by 139 m; the route is identified by its two crossover branches. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2014.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Compact configuration uses both curved crossovers. The historical catalogue distance differs from the source trace by 139 m; the route is identified by its two crossover branches. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2014.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.746256278769392,
+        "lengthM": 1941.0760846756345,
+        "sampleCount": 162,
+        "interpolatedSections": 6,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ba7dc0bd0f822aa1e2a678b21c07847c4469cfb06ee3e6a1e48dfef4a4ef662a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

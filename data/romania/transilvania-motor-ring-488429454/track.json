@@ -22,7 +22,20 @@
       "name": "Transilvania Motor Ring",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Romania/Transilvania Motor Ring"
+      "referenceId": "Romania/Transilvania Motor Ring",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.865174512137234,
+        "lengthM": 3706.471878110359,
+        "sampleCount": 311,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c62bbaf41204f305a459a93fab0f098ba0986ca9afa30c5efad41f2509236ba",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

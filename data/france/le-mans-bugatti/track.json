@@ -25,28 +25,80 @@
       "name": "Le Mans Bugatti",
       "file": "layouts/main.geojson",
       "referenceId": "France/Le Mans Bugatti",
-      "description": "Closed Bugatti course through Dunlop, La Chapelle, Musée, Garage Vert, Chemin aux Bœufs, Garage Bleu and Raccordement. The 24-hour circuit branches, Porsche Center roads, pit entries/exits and long-lap penalty detour are excluded."
+      "description": "Closed Bugatti course through Dunlop, La Chapelle, Musée, Garage Vert, Chemin aux Bœufs, Garage Bleu and Raccordement. The 24-hour circuit branches, Porsche Center roads, pit entries/exits and long-lap penalty detour are excluded.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.735030108620325,
+        "lengthM": 4163.6126856628125,
+        "sampleCount": 736,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "69bb0b169c0073932695c2c0b3b860792a21bbaf20542a5d7125298cd419ba03",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "le-mans-full",
       "name": "Le Mans Full",
       "file": "layouts/le-mans-full.geojson",
       "referenceId": "France/Le Mans Full",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.01743850852543,
+        "lengthM": 13611.005727885993,
+        "sampleCount": 1557,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8f07120197c9deb75e7a147588c7f542c90750cb8a37e9961a7b8af848debd83",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "maison-blanche-1",
       "name": "Maison Blanche 1",
       "file": "layouts/maison-blanche-1.geojson",
       "referenceId": "France/Maison Blanche 1",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2822.6 m. Difference from the supplied layout distance 2.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2822.6 m. Difference from the supplied layout distance 2.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.945384817721555,
+        "lengthM": 2822.6479629353053,
+        "sampleCount": 288,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "19edea15fa73ae3beb268813cc54d0705bb1d2ea5570e3e762a3b26d0fc3a1ab",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "maison-blanche-2",
       "name": "Maison Blanche 2",
       "file": "layouts/maison-blanche-2.geojson",
       "referenceId": "France/Maison Blanche 2",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1751.6 m. Difference from the supplied layout distance 2.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1751.6 m. Difference from the supplied layout distance 2.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.935478042911901,
+        "lengthM": 1751.6377945373545,
+        "sampleCount": 183,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2e7dcc91c1c31757ed1bec4c06899d22fd17996a3d91890b8de541c85070d34c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

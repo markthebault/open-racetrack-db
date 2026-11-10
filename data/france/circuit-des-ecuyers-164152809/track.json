@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.210539745165736,
+        "lengthM": 3300.6850377180826,
+        "sampleCount": 266,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6275597281d11ec30886e85ef3e2c9e669d460bd3acc6cadc1ff442613c66d3e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ecuyers",
       "name": "Ecuyers",
       "referenceId": "France/Ecuyers",
       "file": "layouts/ecuyers.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3300.6 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3300.6 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.21054052868584,
+        "lengthM": 3300.6853226222524,
+        "sampleCount": 266,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6275597281d11ec30886e85ef3e2c9e669d460bd3acc6cadc1ff442613c66d3e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

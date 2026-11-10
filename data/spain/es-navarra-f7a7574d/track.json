@@ -24,32 +24,97 @@
       "name": "Navarra Combo",
       "file": "layouts/navarra-combo.geojson",
       "referenceId": "Spain/Navarra Combo",
-      "description": "Combined mapped configurations: Historical main course, Historical western course, Historical eastern course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Historical main course, Historical western course, Historical eastern course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.925789535326176,
+        "lengthM": 7885.776489038142,
+        "sampleCount": 662,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7d6824ad77d8288ea19e131c2f4279e1477afd08af0e4d9cc8c2cc943d6368bd",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "navarra-gp-2024",
       "name": "Navarra GP 2024",
       "file": "layouts/navarra-gp-2024.geojson",
       "referenceId": "Spain/Navarra GP 2024",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4296.1 m. Difference from the supplied layout distance 17.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4296.1 m. Difference from the supplied layout distance 17.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.294352619169889,
+        "lengthM": 4296.07729913554,
+        "sampleCount": 374,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "168fc85a21d76a2e9f6ca29279f08dcec9ba6acd1b7046fc7ea5b541004e1084",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "navarra-historical-main",
       "name": "Historical main course",
       "file": "layouts/navarra-historical-main.geojson",
-      "description": "The operator identifies the former 3.9 km main course before the 2024 reconstruction. This 3924.9 m pinned 2023 source route retains the Northern narrow return, central hairpin, Eastern technical return and Southern triangular sector. Later extensions, pit access and adjacent karting are excluded. Direction and fine historical corner alignment remain draft."
+      "description": "The operator identifies the former 3.9 km main course before the 2024 reconstruction. This 3924.9 m pinned 2023 source route retains the Northern narrow return, central hairpin, Eastern technical return and Southern triangular sector. Later extensions, pit access and adjacent karting are excluded. Direction and fine historical corner alignment remain draft.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.831468081095128,
+        "lengthM": 3924.8825225741625,
+        "sampleCount": 334,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2ab268ddf85b6bb1991b089ee1bbfd098f12adffbf621d5d9452e5f235b6263b",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     },
     {
       "id": "navarra-historical-western",
       "name": "Historical western course",
       "file": "layouts/navarra-historical-western.geojson",
-      "description": "The independent 2023 Western closure joins the Northern narrow loop to the Southern triangular sector through the central connection. The 2641 m source route remains a descriptively named historical draft; current operator Medium course distances follow later reconstruction and are not substituted for this trace."
+      "description": "The independent 2023 Western closure joins the Northern narrow loop to the Southern triangular sector through the central connection. The 2641 m source route remains a descriptively named historical draft; current operator Medium course distances follow later reconstruction and are not substituted for this trace.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.207107728147449,
+        "lengthM": 2640.9732826155337,
+        "sampleCount": 206,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ac21318ef0048400142328600716974ca3ce6f3a931f41d89874fb0322171c8e",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "navarra-historical-eastern",
       "name": "Historical eastern course",
       "file": "layouts/navarra-historical-eastern.geojson",
-      "description": "The independent 2023 Eastern closure retains the central hairpin, Eastern technical return and diagonal closure. The 1320 m source route excludes the small additional central chicane. The name is descriptive; historical barriers, direction and fine alignment remain provisional."
+      "description": "The independent 2023 Eastern closure retains the central hairpin, Eastern technical return and diagonal closure. The 1320 m source route excludes the small additional central chicane. The name is descriptive; historical barriers, direction and fine alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.64345309897717,
+        "lengthM": 1319.9674265189567,
+        "sampleCount": 122,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8af85fc909ee7f754e085803fc1128986b7173ade28a6c6a92e02aca49aa99b7",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

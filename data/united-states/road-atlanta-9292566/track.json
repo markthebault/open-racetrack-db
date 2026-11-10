@@ -23,35 +23,76 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.026978033802726,
+        "lengthM": 4203.786377887118,
+        "sampleCount": 415,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6809baa5fed8d499f20b7a6c3727a505ebf4e1a7663c93ca6b661b340a1d7b21",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "road-atlanta",
       "name": "Road Atlanta",
       "file": "layouts/road-atlanta.geojson",
       "referenceId": "United States/Road Atlanta",
-      "description": "Draft configuration: Full course with direct northern corner and southeastern linked bends; excludes the extra northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4090.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course with direct northern corner and southeastern linked bends; excludes the extra northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4090.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.032204064228013,
+        "lengthM": 4090.072269655031,
+        "sampleCount": 388,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0b7c2e91d411ca759792d4c2a580809916aa868e17f9d7de5a25a7cf362c6eb6",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "road-atlanta-combo",
       "name": "Road Atlanta Combo",
       "file": "layouts/road-atlanta-combo.geojson",
       "referenceId": "United States/Road Atlanta Combo",
-      "description": "Combined mapped configurations: Road Atlanta, Road Atlanta Short, Road Atlanta SRO Practice. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Road Atlanta, Road Atlanta Short, Road Atlanta SRO Practice. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "lineUnavailableReason": "A component route has unverified connector boundaries."
     },
     {
       "id": "road-atlanta-short",
       "name": "Road Atlanta Short",
       "file": "layouts/road-atlanta-short.geojson",
       "referenceId": "United States/Road Atlanta Short",
-      "description": "Draft configuration: Short course closing through the southern curved connector; excludes the long southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2855.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Short course closing through the southern curved connector; excludes the long southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2855.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "lineUnavailableReason": "The short-layout connector and road boundaries remain unverified."
     },
     {
       "id": "road-atlanta-sro-practice",
       "name": "Road Atlanta SRO Practice",
       "file": "layouts/road-atlanta-sro-practice.geojson",
       "referenceId": "United States/Road Atlanta SRO Practice",
-      "description": "Draft configuration: Full course with direct northern corner and southeastern linked bends; excludes the extra northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4092.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course with direct northern corner and southeastern linked bends; excludes the extra northern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4092.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.961852766843068,
+        "lengthM": 4092.3006425230674,
+        "sampleCount": 395,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a365f6484c9761f32276ff22c15e257ac21a099196bfa6a5c6aec85dcad87cc1",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

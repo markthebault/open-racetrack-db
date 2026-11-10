@@ -22,7 +22,20 @@
       "name": "Detroit Street Circuit",
       "referenceId": "United States/Detroit Street Circuit",
       "file": "layouts/detroit-street-circuit.geojson",
-      "description": "Draft configuration: Downtown street circuit follows Jefferson Avenue and the southern riverfront section. Independently mapped way 46380295 connects the named relation at exact source nodes; pit roads are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2684.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Downtown street circuit follows Jefferson Avenue and the southern riverfront section. Independently mapped way 46380295 connects the named relation at exact source nodes; pit roads are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2684.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.999342300107703,
+        "lengthM": 2585.1652706340224,
+        "sampleCount": 246,
+        "interpolatedSections": 13,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7df912c9b9b9144b5c29044511212c65d65db5da12bc97d3858f345580ed2211",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

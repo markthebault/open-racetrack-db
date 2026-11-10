@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.452472077554644,
+        "lengthM": 3321.7643207590977,
+        "sampleCount": 271,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6bd892d98956b9d42164d812a56de5ca39d2deef854bc2d7cc05f7ff16ce30ed",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "lafertegaucher",
       "name": "LaFerteGaucher",
       "file": "layouts/lafertegaucher.geojson",
       "referenceId": "France/LaFerteGaucher",
-      "description": "Draft configuration: Combined course joins both northern and southern circuits, retaining both internal hairpins and excluding short-course connectors. The coarse historical source measures 3321.7 m; the operator lists 3.6 km. Coordinates remain unchanged. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3321.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Combined course joins both northern and southern circuits, retaining both internal hairpins and excluding short-course connectors. The coarse historical source measures 3321.7 m; the operator lists 3.6 km. Coordinates remain unchanged. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3321.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.643439024789295,
+        "lengthM": 3321.7266528820687,
+        "sampleCount": 271,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c566711e8d383776b1ccb653a66e3860b11f399927d45b41a847a458633f6ea",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     }
   ],
   "sources": [

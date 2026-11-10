@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.950873426766174,
+        "lengthM": 1667.4499654717708,
+        "sampleCount": 133,
+        "interpolatedSections": 13,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "63060220e0fbdd4e3f2580c32b96698494d4882cd6c14417427296d3aca99da4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "croix-en-ternois",
       "name": "Croix-en-Ternois",
       "referenceId": "France/Croix-en-Ternois",
       "file": "layouts/croix-en-ternois.geojson",
-      "description": "Draft configuration: Full configuration uses the continuous main straight and southern hairpin. The mapped trace differs from the historical scalar distance by 69 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1804.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full configuration uses the continuous main straight and southern hairpin. The mapped trace differs from the historical scalar distance by 69 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1804.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.950873426766174,
+        "lengthM": 1667.4499654717708,
+        "sampleCount": 133,
+        "interpolatedSections": 13,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "63060220e0fbdd4e3f2580c32b96698494d4882cd6c14417427296d3aca99da4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

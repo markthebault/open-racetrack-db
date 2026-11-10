@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 19.5,
+      "roadWidthSource": {
+        "meanWidthM": 19.593327586112544,
+        "lengthM": 4057.9178891476517,
+        "sampleCount": 304,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "56dd1263563a789b6518f2440be18940f9882cd1dce11332893375fec06c5979",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "pocono-2-5-mile-road-course",
       "name": "Pocono - 2.5 Mile Road Course",
       "referenceId": "United States/Pocono - 2.5 Mile Road Course",
       "file": "layouts/pocono-2-5-mile-road-course.geojson",
-      "description": "Draft configuration: Operator All Course 2020 document, North/South Option 1 named 2.51 Mile, identifies the complete western north-course S bends joined to the full northern, eastern and front oval sections. Southeast infield options, the upper oval shortcut and pit lane are excluded. Exact independent source nodes form this draft route. Mapped distance and catalogue scalar remain separate; fine alignment, travel direction and historical timing correspondence are provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4122.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Operator All Course 2020 document, North/South Option 1 named 2.51 Mile, identifies the complete western north-course S bends joined to the full northern, eastern and front oval sections. Southeast infield options, the upper oval shortcut and pit lane are excluded. Exact independent source nodes form this draft route. Mapped distance and catalogue scalar remain separate; fine alignment, travel direction and historical timing correspondence are provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4122.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 17.5,
+      "roadWidthSource": {
+        "meanWidthM": 17.2985866781397,
+        "lengthM": 4037.3196471143424,
+        "sampleCount": 311,
+        "interpolatedSections": 7,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "03f85c7ef84b2f53b2d61346c5b9a59761a29782b0225264e76f0d2e31a53607",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "pocono-outer",
       "name": "Pocono - Outer",
       "referenceId": "United States/Pocono - Outer",
       "file": "layouts/pocono-outer.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4058.1 m. Difference from the supplied layout distance 8.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4058.1 m. Difference from the supplied layout distance 8.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 19.5,
+      "roadWidthSource": {
+        "meanWidthM": 19.593327586112544,
+        "lengthM": 4057.9178891476517,
+        "sampleCount": 304,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "56dd1263563a789b6518f2440be18940f9882cd1dce11332893375fec06c5979",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

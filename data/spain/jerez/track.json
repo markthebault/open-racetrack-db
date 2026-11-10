@@ -23,13 +23,39 @@
       "name": "Jerez",
       "file": "layouts/grand-prix.geojson",
       "referenceId": "Spain/Jerez",
-      "description": "Full course through the mapped Chicane Senna on way 773658478; the Alex Criville bypass is excluded."
+      "description": "Full course through the mapped Chicane Senna on way 773658478; the Alex Criville bypass is excluded.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.779089921219615,
+        "lengthM": 4430.029183196822,
+        "sampleCount": 380,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "58767e58df0f004ba364ff177c6c626ef1527a8268af2fdfa10df1e5593ac67a",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     },
     {
       "id": "motorcycle",
       "name": "Motorcycle circuit, without chicane",
       "file": "layouts/motorcycle.geojson",
-      "description": "Full course through Curva Alex Criville on way 2497152 instead of the mapped Senna chicane."
+      "description": "Full course through Curva Alex Criville on way 2497152 instead of the mapped Senna chicane.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.840422776903369,
+        "lengthM": 4425.713008004656,
+        "sampleCount": 374,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "53ee6c23f167dedbed7badf8cf70c639cae7b66c6ac174385d12de1cf1d96353",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

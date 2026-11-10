@@ -24,14 +24,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.800701149273495,
+        "lengthM": 5425.669179686888,
+        "sampleCount": 505,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9bbaa5878aa735b82ac8f05badc35aa2577d6b044efd07f87ed0b00287761b3a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "losail",
       "name": "Losail",
       "referenceId": "Qatar/Losail",
       "file": "layouts/losail.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5425.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5425.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.800483877989969,
+        "lengthM": 5425.58057592268,
+        "sampleCount": 505,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9bbaa5878aa735b82ac8f05badc35aa2577d6b044efd07f87ed0b00287761b3a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

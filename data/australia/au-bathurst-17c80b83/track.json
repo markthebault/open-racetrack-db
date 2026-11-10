@@ -22,7 +22,20 @@
       "name": "Bathurst",
       "referenceId": "Australia/Bathurst",
       "file": "layouts/bathurst.geojson",
-      "description": "Draft configuration selected from the independently named circuit relation 6942508. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 6942508. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 6,
+      "roadWidthSource": {
+        "meanWidthM": 6.089577008167438,
+        "lengthM": 6162.309478825745,
+        "sampleCount": 626,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5de0fce883e040c50b63e408e83481c2c20d80b0e3a4edce7cf24195a1451d1d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

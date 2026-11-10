@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.97361200032478,
+        "lengthM": 4811.863100255138,
+        "sampleCount": 398,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "54d81d3ab349f7de4825f7e124021d228efa1e9f9062d22fdaa203da42728a40",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "motegi",
       "name": "Motegi",
       "referenceId": "Japan/Motegi",
       "file": "layouts/motegi.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4811.8 m. Difference from the supplied layout distance 11.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4811.8 m. Difference from the supplied layout distance 11.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.97361200032478,
+        "lengthM": 4811.863100255138,
+        "sampleCount": 398,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "54d81d3ab349f7de4825f7e124021d228efa1e9f9062d22fdaa203da42728a40",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Macau Grand Prix",
       "referenceId": "China/Macau Grand Prix",
       "file": "layouts/macau-grand-prix.geojson",
-      "description": "Draft configuration selected from the independently named circuit relation 8877949. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 8877949. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.964672664231934,
+        "lengthM": 6087.80845061896,
+        "sampleCount": 652,
+        "interpolatedSections": 6,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d06aaea40fa2eb2b3808f61f64b0c72e0a0e17ded714417dcab5a6a2b330b592",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

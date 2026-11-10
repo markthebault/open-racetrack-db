@@ -22,7 +22,20 @@
       "name": "Folembray",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuit de Folembray. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2029.2 m; supplied distance 2030 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "France/Folembray"
+      "referenceId": "France/Folembray",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.707362100096828,
+        "lengthM": 2029.2101347363239,
+        "sampleCount": 193,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9fb42ff3f7eab34e462ed19b2359d7c2894e2321413030b3e90f4716811aba44",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

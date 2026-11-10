@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.465895028080375,
+        "lengthM": 2686.3584571249567,
+        "sampleCount": 220,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1f5c9617127a96f36dc6214bffe4e8114fa6a58900ce040a8be660b5da370d3b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "kemora",
       "name": "Kemora",
       "referenceId": "Finland/Kemora",
       "file": "layouts/kemora.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2686.4 m. Difference from the supplied layout distance 0.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2686.4 m. Difference from the supplied layout distance 0.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.465895028080375,
+        "lengthM": 2686.3584571249567,
+        "sampleCount": 220,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1f5c9617127a96f36dc6214bffe4e8114fa6a58900ce040a8be660b5da370d3b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

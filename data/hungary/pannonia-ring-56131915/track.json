@@ -22,7 +22,20 @@
       "name": "Pannonia-Ring",
       "file": "layouts/main.geojson",
       "referenceId": "Hungary/Pannonia-Ring",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.27488276998403,
+        "lengthM": 4733.112352367765,
+        "sampleCount": 372,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cda6623112b42047744c4819ef9462534c13b857784abea5fb190325d8beb0fa",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

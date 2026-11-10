@@ -23,28 +23,80 @@
       "id": "main",
       "name": "Full course",
       "file": "layouts/main.geojson",
-      "description": "Draft full course with the racing straight and long western connection. Public timing and direction confirmation remain required."
+      "description": "Draft full course with the racing straight and long western connection. Public timing and direction confirmation remain required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.489320751383978,
+        "lengthM": 5688.507855695198,
+        "sampleCount": 444,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0d74eed25c01d8e41b69e94ab5befcf357fb8add13f5f15129f9886b5bfead9b",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "autobahn-country-club",
       "name": "Autobahn Country Club",
       "file": "layouts/autobahn-country-club.geojson",
       "referenceId": "United States/Autobahn Country Club",
-      "description": "Draft configuration: Combined north and south courses, with the long western straight and both infield returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5688.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Combined north and south courses, with the long western straight and both infield returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5688.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.324883468945172,
+        "lengthM": 5688.507855695198,
+        "sampleCount": 444,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "77fb4676654f6c1b3145d542e7a1a63f9794b04ccbd9bb6b124515041d2a4054",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "autobahn-country-club-north",
       "name": "Autobahn Country Club North",
       "file": "layouts/autobahn-country-club-north.geojson",
       "referenceId": "United States/Autobahn Country Club North",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2406.8 m. Difference from the supplied layout distance 10.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2406.8 m. Difference from the supplied layout distance 10.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.426579891588073,
+        "lengthM": 2406.8179774221376,
+        "sampleCount": 190,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ad51a0d73dd3d4668a00dc18a9703abb16bc863ade05bc9c23418413cc247b0c",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autobahn-country-club-south",
       "name": "Autobahn Country Club South",
       "file": "layouts/autobahn-country-club-south.geojson",
       "referenceId": "United States/Autobahn Country Club South",
-      "description": "Draft configuration: South course with its short northern connector, eastern turnaround and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3312.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: South course with its short northern connector, eastern turnaround and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3312.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.609386829807338,
+        "lengthM": 3312.7421766572643,
+        "sampleCount": 256,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5a5d7534159b871409b2226595046db317cd4501fb739a3a6e97e985d89810e0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

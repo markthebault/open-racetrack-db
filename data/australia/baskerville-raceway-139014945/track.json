@@ -22,7 +22,20 @@
       "name": "Baskerville",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Australia/Baskerville"
+      "referenceId": "Australia/Baskerville",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.22435077878855,
+        "lengthM": 1979.7673396980128,
+        "sampleCount": 183,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0edcdb0ee58b0e79423623ff967c39c38f5a1c9c93caf394501e08a3fb90e459",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

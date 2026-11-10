@@ -24,35 +24,100 @@
       "id": "main",
       "name": "Modified road course",
       "file": "layouts/main.geojson",
-      "description": "Draft modified road course with the direct oval join. Public timing confirmation is still required."
+      "description": "Draft modified road course with the direct oval join. Public timing confirmation is still required.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.890289333211859,
+        "lengthM": 3666.076473561185,
+        "sampleCount": 291,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dc74e51582473d5a514448cbb3e63060cab6e100ee2f2a6c0b08ba0e784a2287",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "homestead-combo",
       "name": "Homestead Combo",
       "referenceId": "United States/Homestead Combo",
       "file": "layouts/homestead-combo.geojson",
-      "description": "Combined mapped configurations: Homestead Modified Road Course, Homestead Oval Course, Homestead Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Homestead Modified Road Course, Homestead Oval Course, Homestead Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 15.156771160019217,
+        "lengthM": 9602.28377471442,
+        "sampleCount": 762,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dceb4387c063fd600934d618e6155a42411aefbe66b782eaf4c5ad0d275157b3",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "homestead-modified-road-course",
       "name": "Homestead Modified Road Course",
       "referenceId": "United States/Homestead Modified Road Course",
       "file": "layouts/homestead-modified-road-course.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3666.1 m. Difference from the supplied layout distance 5.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3666.1 m. Difference from the supplied layout distance 5.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.890289333211859,
+        "lengthM": 3666.076473561185,
+        "sampleCount": 291,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dc74e51582473d5a514448cbb3e63060cab6e100ee2f2a6c0b08ba0e784a2287",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "homestead-oval-course",
       "name": "Homestead Oval Course",
       "referenceId": "United States/Homestead Oval Course",
       "file": "layouts/homestead-oval-course.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2417.2 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2417.2 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 17,
+      "roadWidthSource": {
+        "meanWidthM": 16.81036736724731,
+        "lengthM": 2417.236948872715,
+        "sampleCount": 190,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "63f4f13d6b1928618c17103fef963768e6d53c515ea36e7fd9bd8d884877fa90",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "homestead-road-course",
       "name": "Homestead Road Course",
       "referenceId": "United States/Homestead Road Course",
       "file": "layouts/homestead-road-course.geojson",
-      "description": "Draft configuration: Road course using the northern outer shoulder and inner diagonal return; excludes the full banked oval. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3519.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Road course using the northern outer shoulder and inner diagonal return; excludes the full banked oval. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3519.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.298511273635096,
+        "lengthM": 3518.970352280502,
+        "sampleCount": 281,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "32d74b89d8964d0a734fdc0f94f24f998ba3bd093c916f9c465923e4332d92d7",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

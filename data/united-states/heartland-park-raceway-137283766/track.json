@@ -24,49 +24,140 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.832011202601675,
+        "lengthM": 3857.6956383595602,
+        "sampleCount": 282,
+        "interpolatedSections": 10,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1e3a8544d7d71192c25a073d05f62821d70e344995b7b025da85ab8e9217803d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "heartland-motorsport-park",
       "name": "Heartland Motorsport Park",
       "referenceId": "United States/Heartland Motorsport Park",
       "file": "layouts/heartland-motorsport-park.geojson",
-      "description": "Draft configuration: Full northern S bend and southern inner hairpin, with direct western return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3925.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full northern S bend and southern inner hairpin, with direct western return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3925.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.973764301449808,
+        "lengthM": 3925.1537829131107,
+        "sampleCount": 288,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fc72b0423d97952cff67f09c15564b18777b80084bfd66670a948252e43a1f90",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "heartland-park-of-topeka-a",
       "name": "Heartland Park of Topeka A",
       "referenceId": "United States/Heartland Park of Topeka A",
       "file": "layouts/heartland-park-of-topeka-a.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2801.8 m. Difference from the supplied layout distance 2.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2801.8 m. Difference from the supplied layout distance 2.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.624734145304078,
+        "lengthM": 2752.9617484948003,
+        "sampleCount": 200,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "69b44ef516b748313adc5b4b2ab6efc720a94173d6dddefbb296f32713024942",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "heartland-park-of-topeka-b",
       "name": "Heartland Park of Topeka B",
       "referenceId": "United States/Heartland Park of Topeka B",
       "file": "layouts/heartland-park-of-topeka-b.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3302.2 m. Difference from the supplied layout distance 11.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3302.2 m. Difference from the supplied layout distance 11.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.568515583500346,
+        "lengthM": 3253.4003448554017,
+        "sampleCount": 238,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b41fbf6f057488091945dac27de34245487fd5e75bc7da9ba1be256078333717",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "heartland-park-of-topeka-c",
       "name": "Heartland Park of Topeka C",
       "referenceId": "United States/Heartland Park of Topeka C",
       "file": "layouts/heartland-park-of-topeka-c.geojson",
-      "description": "Draft configuration: Northern S bend and direct southern diagonal connector, omitting the extra southeast hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3467.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Northern S bend and direct southern diagonal connector, omitting the extra southeast hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3467.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.919412997083732,
+        "lengthM": 3357.257041998959,
+        "sampleCount": 244,
+        "interpolatedSections": 10,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "edd1a0994182806341dada97172a901e0ec37e9944319e99dfcc27ed7cb85efb",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "heartland-park-of-topeka-combo",
       "name": "Heartland Park of Topeka Combo",
       "referenceId": "United States/Heartland Park of Topeka Combo",
       "file": "layouts/heartland-park-of-topeka-combo.geojson",
-      "description": "Combined mapped configurations: Heartland Motorsport Park, Heartland Park of Topeka A, Heartland Park of Topeka B, Heartland Park of Topeka C, Heartland Park of Topeka D. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Heartland Motorsport Park, Heartland Park of Topeka A, Heartland Park of Topeka B, Heartland Park of Topeka C, Heartland Park of Topeka D. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.569379669234715,
+        "lengthM": 17146.468556621807,
+        "sampleCount": 1252,
+        "interpolatedSections": 30,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a6d21cba3b3fe33b578c08b6a76154a91f5ab7396891d6a6593051d68fd15342",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "heartland-park-of-topeka-d",
       "name": "Heartland Park of Topeka D",
       "referenceId": "United States/Heartland Park of Topeka D",
       "file": "layouts/heartland-park-of-topeka-d.geojson",
-      "description": "Draft configuration: Northern S bend and southeast hairpin, with the extended western shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3967.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Northern S bend and southeast hairpin, with the extended western shoulder. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3967.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.832011202601675,
+        "lengthM": 3857.6956383595602,
+        "sampleCount": 282,
+        "interpolatedSections": 10,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1e3a8544d7d71192c25a073d05f62821d70e344995b7b025da85ab8e9217803d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

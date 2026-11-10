@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.63701233244173,
+        "lengthM": 5011.2390814284345,
+        "sampleCount": 387,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5fe44a1ca286d3819e8ebc89b7ebb67b2e389cc3382287582b5761c4882dd6b6",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-rosendo-hernandez",
       "name": "Autodromo Rosendo Hernandez",
       "file": "layouts/autodromo-rosendo-hernandez.geojson",
       "referenceId": "Argentina/Autodromo Rosendo Hernandez",
-      "description": "Draft configuration: Southern infield return with the outer northeastern sweeper; excludes the additional northwestern hairpin detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4524.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Southern infield return with the outer northeastern sweeper; excludes the additional northwestern hairpin detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4524.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.706272424902076,
+        "lengthM": 4524.705376914635,
+        "sampleCount": 342,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7dd5194c05a35a267b555bb9d67159214f7281380e582404b8d784a12ac01173",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

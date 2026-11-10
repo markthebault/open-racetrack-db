@@ -24,7 +24,20 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.820957196586752,
+        "lengthM": 4442.529744601666,
+        "sampleCount": 355,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b1f5d92bb6938e4ed3ba89a3ba3e00bd0f672beb30f6670388e665750249fd39",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "nola-motorsports-park",
@@ -38,13 +51,39 @@
       "name": "Nola Motorsports Park Course A",
       "file": "layouts/nola-motorsports-park-course-a.geojson",
       "referenceId": "United States/Nola Motorsports Park Course A",
-      "description": "Draft configuration: Course A with western inner hairpin and direct northeastern return bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4434.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Course A with western inner hairpin and direct northeastern return bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4434.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.074796986650659,
+        "lengthM": 4434.770888495351,
+        "sampleCount": 354,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f18086d8b5628d47349b546df6d5712936ab14845584dcd1d42e34b89ea58820",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "north-long-course-2014",
       "name": "North long course, 2014",
       "file": "layouts/north-long-course-2014.geojson",
-      "description": "The AMA Pro operator plan identifies the 2.75-mile North long course with its complete Western outer return and inner hairpin, Northern esses, Eastern terminal turns and long front straight. The complete independently mapped 2014 road loop follows those branches. Historical alignment remains draft."
+      "description": "The AMA Pro operator plan identifies the 2.75-mile North long course with its complete Western outer return and inner hairpin, Northern esses, Eastern terminal turns and long front straight. The complete independently mapped 2014 road loop follows those branches. Historical alignment remains draft.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.821553096187833,
+        "lengthM": 4441.7124951741525,
+        "sampleCount": 353,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "53db874fc98c1f13b98cb9ba485f2a1a6a9e2352c6c95b3490ff9a8842b01f88",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "north-western-connecting-branches-2014",

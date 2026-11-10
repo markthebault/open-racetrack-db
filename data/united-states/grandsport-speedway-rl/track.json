@@ -22,7 +22,20 @@
       "name": "GrandSport Speedway",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "United States/GrandSport Speedway"
+      "referenceId": "United States/GrandSport Speedway",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.003659720341787,
+        "lengthM": 1620.561308053793,
+        "sampleCount": 137,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8d173c7c56e1bb815cebdd46235fb0a935190a94092e79d2e597e198e04b8ec5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

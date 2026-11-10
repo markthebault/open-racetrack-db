@@ -22,7 +22,20 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 17,
+      "roadWidthSource": {
+        "meanWidthM": 17.09440303636723,
+        "lengthM": 3236.160510695307,
+        "sampleCount": 275,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3de78f9939bbc66c47c1ace13aa9edeca2b41457add542c7cad6e86e9b5b654a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "michigan-int-speedway-infield-long",
@@ -36,14 +49,40 @@
       "name": "Michigan Int Speedway Infield Short",
       "referenceId": "United States/Michigan Int Speedway Infield Short",
       "file": "layouts/michigan-int-speedway-infield-short.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2225.6 m. Difference from the supplied layout distance 11.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2225.6 m. Difference from the supplied layout distance 11.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.788693478742145,
+        "lengthM": 2225.648281208934,
+        "sampleCount": 197,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "33b6b38ba265aeadc7c640ba7cd670a5a6842883031fd983ae7d603c38073663",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "michigan-int-speedway-oval",
       "name": "Michigan Int Speedway Oval",
       "referenceId": "United States/Michigan Int Speedway Oval",
       "file": "layouts/michigan-int-speedway-oval.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3236.2 m. Difference from the supplied layout distance 8.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3236.2 m. Difference from the supplied layout distance 8.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 17,
+      "roadWidthSource": {
+        "meanWidthM": 17.095123960576643,
+        "lengthM": 3236.217828757301,
+        "sampleCount": 275,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3de78f9939bbc66c47c1ace13aa9edeca2b41457add542c7cad6e86e9b5b654a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "GIC",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "China/GIC"
+      "referenceId": "China/GIC",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.700414423474982,
+        "lengthM": 2808.313170658979,
+        "sampleCount": 239,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7575452d3efec202d2434c24a3f41878263cbffe253ba420d9420b9f8a50c4b8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

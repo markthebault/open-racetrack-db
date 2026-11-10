@@ -22,7 +22,20 @@
       "name": "Interlomas",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Autódromo Interlomas. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2295.8 m; supplied distance 2287 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Chile/Interlomas"
+      "referenceId": "Chile/Interlomas",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.02761841135941,
+        "lengthM": 2295.7629457868766,
+        "sampleCount": 192,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7427ada1e118552e8f14c47e8523420d369160866dbaa36e8fcded50d443e0c5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.716170524191726,
+        "lengthM": 2277.5439335041146,
+        "sampleCount": 199,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2436bdaf614b4a7dff88177a3cad4e465320a7e124702b4447d097a84205a267",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "mas-du-clos",
       "name": "Mas du Clos",
       "file": "layouts/mas-du-clos.geojson",
       "referenceId": "France/Mas du Clos",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3073.6 m. Difference from the supplied layout distance 8.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3073.6 m. Difference from the supplied layout distance 8.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.458932193038827,
+        "lengthM": 3073.644289547902,
+        "sampleCount": 295,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5d01b242e01af32f7b094729c31926ac534da7ecafc41158d7d33bd9de30f005",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

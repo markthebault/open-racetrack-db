@@ -22,7 +22,20 @@
       "name": "Grattan",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United States/Grattan"
+      "referenceId": "United States/Grattan",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.82519956396675,
+        "lengthM": 2903.4805186650055,
+        "sampleCount": 243,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c4577ea79cbe38dfd5cdd255e4b890e0d856e70cfd0153619c6947e12080444e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

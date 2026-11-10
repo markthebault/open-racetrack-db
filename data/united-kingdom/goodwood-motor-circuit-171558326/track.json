@@ -22,7 +22,20 @@
       "name": "Goodwood",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Goodwood Motor Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3813.7 m; supplied distance 3862 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United Kingdom/Goodwood"
+      "referenceId": "United Kingdom/Goodwood",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.942368572056353,
+        "lengthM": 3813.577102310268,
+        "sampleCount": 312,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9d3a001573b4fb6c670d662f9404c65fcd4ee569c6bcb802395500d649abfc35",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

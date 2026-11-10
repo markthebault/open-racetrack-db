@@ -22,7 +22,20 @@
       "name": "Kirkistown",
       "referenceId": "United Kingdom/Kirkistown",
       "file": "layouts/kirkistown.geojson",
-      "description": "Draft configuration: Road circuit includes the northern shoulder and southern chicane; pit and infield branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2403.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Road circuit includes the northern shoulder and southern chicane; pit and infield branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2403.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.703850464500986,
+        "lengthM": 2403.5557552615205,
+        "sampleCount": 207,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f13b2697f1521a8b2788d88ea61a94f7b84ef8fc97e53f8cde753ce3fd9a9c06",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

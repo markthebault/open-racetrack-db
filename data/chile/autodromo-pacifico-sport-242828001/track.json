@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.327386319785054,
+        "lengthM": 1582.361909716951,
+        "sampleCount": 158,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "389e968b56b51eaf91db355e5bdf3a4f0b8d106c9f2f6490374d9b9353e215a5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "leydaring",
       "name": "Leydaring",
       "referenceId": "Chile/Leydaring",
       "file": "layouts/leydaring.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1582.3 m. Difference from the supplied layout distance 11.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1582.3 m. Difference from the supplied layout distance 11.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.327306732625395,
+        "lengthM": 1582.341696162095,
+        "sampleCount": 158,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "389e968b56b51eaf91db355e5bdf3a4f0b8d106c9f2f6490374d9b9353e215a5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

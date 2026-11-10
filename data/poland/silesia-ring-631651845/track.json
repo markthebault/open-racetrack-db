@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.08620177281078,
+        "lengthM": 3638.010887004731,
+        "sampleCount": 306,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e368fc3c459b478afde27c4e893eb8d3c3217df2560b0def0f35a2155f7fba3d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silesia-ring",
       "name": "Silesia Ring",
       "referenceId": "Poland/Silesia Ring",
       "file": "layouts/silesia-ring.geojson",
-      "description": "Draft configuration: The catalogue configuration retains the northwestern perimeter, the northern S bend, southeastern hairpin and the inner southern return. The actual connecting service way is present in the independently acquired venue snapshot. The route is measured at 2677.4 m versus the catalogue distance of 2686 m; the longer southwestern extension and short-cut branches are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2677.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The catalogue configuration retains the northwestern perimeter, the northern S bend, southeastern hairpin and the inner southern return. The actual connecting service way is present in the independently acquired venue snapshot. The route is measured at 2677.4 m versus the catalogue distance of 2686 m; the longer southwestern extension and short-cut branches are excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2677.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.243098195829328,
+        "lengthM": 2677.2961440402078,
+        "sampleCount": 227,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "36fc01b7a7c9ee377fbf935d0ea5439612144124e044d6627d1f9a95cc573f5e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silesia-ring-long",
       "name": "Silesia Ring Long",
       "referenceId": "Poland/Silesia Ring Long",
       "file": "layouts/silesia-ring-long.geojson",
-      "description": "Draft configuration: Full long circuit including the southwestern parallel extension and eastern hooked return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3638.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full long circuit including the southwestern parallel extension and eastern hooked return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3638.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.08620177281078,
+        "lengthM": 3638.010887004731,
+        "sampleCount": 306,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e368fc3c459b478afde27c4e893eb8d3c3217df2560b0def0f35a2155f7fba3d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

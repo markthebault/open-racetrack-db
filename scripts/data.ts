@@ -26,14 +26,18 @@ async function enrich(data:Layout,track:Track,id:string,existingFile:string,orig
  if(extras.model3d)result.metadata.model3d=extras.model3d;
  if(extras.borderInference)result.metadata.borderInference=extras.borderInference;
  if(extras.borderComposition)result.metadata.borderComposition=extras.borderComposition;
- if(originalBorderReuse!==undefined){
+ if(originalBorderReuse!==undefined&&!track.layouts.find(l=>l.id===id)?.roadWidthM&&!track.layouts.find(l=>l.id===id)?.lineUnavailableReason){
   const source=await originalBorderSource(track,`${dirname(dirname(existingFile))}/track.json`,originalBorderReuse);
   const reused=reuseOriginalBorders(result,source,originalBorderReuse);
   result.features=result.features.filter(f=>f.properties.role!=='inner'&&f.properties.role!=='outer').concat(reused.borders);
   result.metadata.notes.push(reused.note);
  }
- if(result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
+ if(result.metadata.model3d||result.features.some(f=>f.properties.role==='inner'||f.properties.role==='outer'))result.metadata.licenseScope='trace-and-timing';
  if(extras.ideal)result.features.push(extras.ideal);
+ if(track.layouts.find(l=>l.id===id)?.lineUnavailableReason){result.features=result.features.filter(f=>!["inner","outer","ideal"].includes(f.properties.role));delete result.metadata.model3d;delete result.metadata.borderComposition;delete result.metadata.borderInference;}
+ const config=track.layouts.find(l=>l.id===id);
+ if(config?.roadWidthM){result.metadata.notes.push("Estimated constant-width corridor: width is stored in track.json; inner, outer and ideal lines are calculated in the browser from the mapped trace. Local widening and earlier boundary corrections are not retained by this approximation.");}
+ if(config?.lineUnavailableReason)result.metadata.notes.push("Boundary and ideal lines unavailable: "+config.lineUnavailableReason);
  result.bbox=bounds(result.features.flatMap(f=>geometryPaths(f.geometry).flat()));
  if(result.metadata.model3d?.kind!=='surface'&&result.metadata.model3d?.sharedGround)await verifySharedGroundSource(result,result.metadata.model3d.sharedGround);
  return validateLayout(result,track,id);

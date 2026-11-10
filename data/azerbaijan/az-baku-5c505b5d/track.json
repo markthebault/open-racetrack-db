@@ -22,7 +22,20 @@
       "name": "Baku",
       "referenceId": "Azerbaijan/Baku",
       "file": "layouts/baku.geojson",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.386049119178718,
+        "lengthM": 5968.484108032966,
+        "sampleCount": 522,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5628cdc38832fc1d5765d5169ce607ccc0738863be20a3560e17dd0e14bc44dd",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

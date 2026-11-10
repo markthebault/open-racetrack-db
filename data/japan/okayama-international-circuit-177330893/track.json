@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.073261791158263,
+        "lengthM": 3699.5528836548424,
+        "sampleCount": 304,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2595d40531c6640b9a741aeea59e0992d6f1d3a7e0c5a92c1ddacc0390eb7980",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "okayama",
       "name": "Okayama",
       "referenceId": "Japan/Okayama",
       "file": "layouts/okayama.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3699.6 m. Difference from the supplied layout distance 15.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3699.6 m. Difference from the supplied layout distance 15.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.07375633796326,
+        "lengthM": 3699.608043448223,
+        "sampleCount": 304,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2595d40531c6640b9a741aeea59e0992d6f1d3a7e0c5a92c1ddacc0390eb7980",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

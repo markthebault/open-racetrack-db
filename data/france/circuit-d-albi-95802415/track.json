@@ -22,7 +22,20 @@
       "name": "Circuit d'Albi",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "France/Circuit d'Albi"
+      "referenceId": "France/Circuit d'Albi",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.753770444511048,
+        "lengthM": 3562.5360619632397,
+        "sampleCount": 310,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d26841f283a1a034cd4c264e68bb01fd00b6035805cb51d4df07f9ecb3395d47",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

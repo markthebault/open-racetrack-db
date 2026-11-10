@@ -22,7 +22,20 @@
       "name": "Verze",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "France/Verze"
+      "referenceId": "France/Verze",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.846043364319339,
+        "lengthM": 919.8537073473259,
+        "sampleCount": 86,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f663d2f7e6c13c49059c42f77efb4844b1bdc4d11d663289df9efeef4efdc26e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

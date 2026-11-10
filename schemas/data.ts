@@ -63,6 +63,7 @@ const source = z.strictObject({
   retrievedAt: z.iso.datetime(),
   evidenceNote: text,
 });
+const roadWidthSourceSchema=z.strictObject({method:z.enum(["length-weighted-cross-sections-v1","nearest-edge-separation-v1"]),meanWidthM:z.number().positive(),roundingM:z.literal(.5),sampleCount:z.number().int().positive(),interpolatedSections:z.number().int().nonnegative(),lengthM:z.number().positive(),borderSha256:z.string().regex(/^[a-f0-9]{64}$/),licenses:z.array(text).min(1)});
 const entry = z.strictObject({
   id: slug,
   name: text,
@@ -70,6 +71,9 @@ const entry = z.strictObject({
   referenceId: text.optional(),
   missingGeometryReason: text.optional(),
   description: z.string().optional(),
+  lineUnavailableReason: text.optional(),
+  roadWidthM:z.number().min(3).max(45).multipleOf(.5).optional(),
+  roadWidthSource:roadWidthSourceSchema.optional(),
 });
 export const trackSchema = z.strictObject({
   schemaVersion: z.literal(1),
@@ -104,7 +108,9 @@ const traceProps = z.strictObject({
   role: z.literal("trace"),
   sourceIds: z.array(slug).min(1),
 });
+const localImageCorrection = z.strictObject({license:z.enum(["LicenseRef-MapTiler-Derived-Borders","dl-de/by-2-0"]),imagerySha256:text,note:text});
 const borderProps = z.union([
+  z.strictObject({role:z.enum(["inner","outer"]),sourceIds:z.array(slug).length(0),license:z.literal("LicenseRef-Trace-Width-Corridor"),estimated:z.literal(true),method:z.literal("constant-width-trace-v1"),widthM:z.number().positive(),componentWidthsM:z.array(z.number().positive()).optional(),side:z.enum(["left","right"]),edgeConvention:z.enum(["inner-outer","left-right"]),sourceLicenses:z.array(text).min(1)}),
   z.strictObject({
     role: z.enum(["inner", "outer"]),
     sourceIds: z.array(slug).length(0),
@@ -114,6 +120,8 @@ const borderProps = z.union([
     role: z.enum(["inner", "outer"]),
     sourceIds: z.array(slug).length(0),
     license: z.literal("LicenseRef-Track-Borders"),
+    imageCorrection: localImageCorrection.optional(),
+    imageCorrections: z.array(localImageCorrection).max(8).optional(),
   }),
   z.strictObject({
     role: z.enum(["inner", "outer"]),
@@ -158,6 +166,7 @@ const baseLayoutMetadataSchema = z.strictObject({
   lengthM: z.number().positive(),
   reviewedAt: z.iso.date().nullable(),
   notes: z.array(z.string()),
+  lineUnavailableReason: text.optional(),
   model3d: trackModelSchema.optional(),
   borderInference: borderInferenceSchema.optional(),
 });
@@ -196,8 +205,9 @@ export const layoutSchema = z.strictObject({
         id: slug,
         properties: z.union([traceProps, gateProps, borderProps, z.strictObject({
           role: z.literal("ideal"), sourceIds: z.array(slug).length(0), estimated: z.literal(true),
-          method: z.literal("bounded-minimum-curvature-local-time-v1"),
+          method: z.enum(["bounded-minimum-curvature-local-time-v1","trace-width-iterative-qp-time-v1","trace-width-lap-time-v2"]),
           edgeMarginM: z.number().nonnegative(),
+          localRefinement: z.strictObject({bounds:z.tuple([z.number(),z.number(),z.number(),z.number()]),maximumStepM:z.number().positive(),curvatureWindowM:z.number().positive()}).optional(),
           boundaryModel: z.enum(["shared-ground-v1", "ordered-border-ribbon-v1", "continuous-planar-v1", "reviewed-network-ground-v1"]).optional(),
           networkReview: idealNetworkReviewSchema.optional(),
           borderLicenses: z.array(z.string()).min(1),
@@ -338,7 +348,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
         if(equal(p[0],p.at(-1)!)!==equal(source[0],source.at(-1)!))throw new Error('ideal: network branch closure changed');
       }
     }else if(networkReview)throw new Error('ideal: network review requires its boundary model');
-    const licenses = [...new Set([...borders.map(b => "license" in b.properties ? b.properties.license : ""),
+    const licenses = [...new Set([...borders.flatMap(b => ["license" in b.properties ? b.properties.license : "", ...("imageCorrection" in b.properties && b.properties.imageCorrection ? [b.properties.imageCorrection.license] : []), ...("imageCorrections" in b.properties ? (b.properties.imageCorrections??[]).map(c=>c.license):[]), ...("sourceLicenses" in b.properties?b.properties.sourceLicenses:[])]),
       ...(groundIdeal && sharedGround ? [sharedGround.imagery.license] : []),
       ...(networkReview ? [networkReview.imagery.license] : [])])].sort();
     if (JSON.stringify([...ideal.properties.borderLicenses].sort()) !== JSON.stringify(licenses)) throw new Error("ideal: source border licences disagree");
@@ -379,7 +389,14 @@ export function validateLayout(input: unknown, track: Track, id: string) {
     throw new Error("bbox: antimeridian unsupported");
   if (m.geometryStatus === "reviewed" && !m.reviewedAt)
     throw new Error("metadata.reviewedAt: required for reviewed geometry");
-  if (m.borderComposition) {
+  const widthMode=track.layouts.find(l=>l.id===id)?.roadWidthM!==undefined;
+  if (m.borderComposition && widthMode) {
+    if(!isNetwork||m.borderComposition.length!==paths.length)throw Error("Width routes must match the source network");
+    for(const [i,c] of m.borderComposition.entries()){
+      if(c.tracePathIndex!==i||c.metadata.trackId!==track.id||c.metadata.layoutId!==c.sourceLayoutId)throw Error("Width route identity mismatch");
+      if(!track.layouts.some(l=>l.id===c.sourceLayoutId&&l.roadWidthM))throw Error("Width component needs its source width");
+    }
+  } else if (m.borderComposition) {
     if (
       !isNetwork ||
       m.borderInference ||
@@ -673,7 +690,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       throw new Error(
         "Paired driving paths require correspondence-preserving border inference",
       );
-    if (borders.length !== 2) throw new Error("model3d: requires both borders");
+    if (borders.length !== 2 && !widthMode) throw new Error("model3d: requires both borders or a configured trace-width corridor");
     if (
       m.model3d.kind !== "surface" &&
       m.model3d.kind !== "run" &&
@@ -684,7 +701,7 @@ export function validateLayout(input: unknown, track: Track, id: string) {
       m.model3d.kind === "run" &&
       (m.closed ||
         isNetwork ||
-        (m.model3d.pathMethod !== "source-sequence-v1" &&
+        (m.model3d.pathMethod !== "source-sequence-v1" && m.model3d.pathMethod !== "constant-width-trace-v1" &&
           m.borderInference?.edgeConvention !== "left-right-along-trace"))
     )
       throw new Error(

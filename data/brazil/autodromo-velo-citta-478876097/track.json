@@ -22,7 +22,20 @@
       "name": "Velo Citta",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Brazil/Velo Citta"
+      "referenceId": "Brazil/Velo Citta",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.552574400829288,
+        "lengthM": 3113.897775580851,
+        "sampleCount": 299,
+        "interpolatedSections": 28,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a3e02dc5751f5125e22faad2422ef7e3ae15ce3e13dbd9ea91646c050cf359a6",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

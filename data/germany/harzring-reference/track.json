@@ -22,7 +22,20 @@
       "name": "Harzring",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Germany/Harzring"
+      "referenceId": "Germany/Harzring",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.477529068483799,
+        "lengthM": 1034.87545792129,
+        "sampleCount": 144,
+        "interpolatedSections": 7,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7f7a6e8eae9127400949a0b5a94504bd25cb7474be46d50d46cc27466af3bd84",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

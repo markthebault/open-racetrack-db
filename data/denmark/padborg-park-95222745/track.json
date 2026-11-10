@@ -22,7 +22,20 @@
       "name": "Padborg Park",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Padborg Park. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2080.9 m; supplied distance 2091 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Denmark/Padborg Park"
+      "referenceId": "Denmark/Padborg Park",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.133023709571482,
+        "lengthM": 2080.8594111847005,
+        "sampleCount": 212,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1b93d35e69e2d3b83d8bd53c7ab4189dc081539ebe6bc1799906d42f9fd33e46",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

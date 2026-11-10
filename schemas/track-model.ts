@@ -1,3 +1,4 @@
+import {gradeSeparationSchema} from "./grade-separation";
 import { z } from "zod";
 import { elevationSchema } from "./elevation";
 import { imageryTilesSchema } from "./imagery-tiles";
@@ -17,9 +18,10 @@ const lapModelSchema = z
     schemaVersion: z.literal(1),
     kind: z.enum(["lap", "run"]).optional(),
     pathMethod: z
-      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1", "source-sequence-v1", "source-ground-boundaries-v1"])
+      .enum(["paired-border-midpoints", "boundary-normal-midpoints-v1", "source-sequence-v1", "source-ground-boundaries-v1", "constant-width-trace-v1"])
       .optional(),
     sourceSequence: sourceSequenceSchema.optional(),
+    gradeSeparation:gradeSeparationSchema.optional(),
     sharedGround: sharedGroundSchema.optional(),
     startOffsetM: metres,
     referenceLengthM: z.number().positive(),
@@ -33,7 +35,7 @@ const lapModelSchema = z
       stationing: z.enum(["venue-reference", "mapped-trace", "border-midline"]),
       elevation: z.enum(["venue-anchors", "terrain-raster"]),
       curbs: z.enum(["imagery-reviewed", "geometry-estimated"]),
-      borders: z.literal("supplemental-unverified"),
+      borders: z.enum(["supplemental-unverified","width-estimated"]),
     }),
     preparation: z
       .strictObject({
@@ -112,7 +114,7 @@ const lapModelSchema = z
       model.kind === "run" &&
       (model.elevationMethod !== "monotone-cubic" ||
         model.startOffsetM !== 0 ||
-        (model.pathMethod !== "paired-border-midpoints" && model.pathMethod !== "source-sequence-v1"))
+        (model.pathMethod !== "paired-border-midpoints" && model.pathMethod !== "source-sequence-v1" && model.pathMethod !== "constant-width-trace-v1"))
     )
       issue(
         ["kind"],
@@ -158,6 +160,7 @@ export const networkLapRecipeSchema = z.strictObject({
   kind: lapModelSchema.shape.kind,
   pathMethod: lapModelSchema.shape.pathMethod,
   sourceSequence: lapModelSchema.shape.sourceSequence,
+  gradeSeparation: lapModelSchema.shape.gradeSeparation,
   sharedGround: lapModelSchema.shape.sharedGround,
   startOffsetM: lapModelSchema.shape.startOffsetM,
   referenceLengthM: lapModelSchema.shape.referenceLengthM,
@@ -201,7 +204,7 @@ const surfaceModelSchema = z
       elevationToleranceM: z.number().positive(),
       curbMethod: z.literal("boundary-curvature-v1"),
       preserveImageryReference: z.literal(true).optional(),
-    }),
+    }).optional(),
   })
   .superRefine((model, ctx) => {
     model.curbs.forEach((curb, i) => {

@@ -22,7 +22,20 @@
       "name": "Roebling Road",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Roebling Road Raceway. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3243.4 m; supplied distance 3187 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United States/Roebling Road"
+      "referenceId": "United States/Roebling Road",
+      "roadWidthM": 6.5,
+      "roadWidthSource": {
+        "meanWidthM": 6.696226228301234,
+        "lengthM": 3171.8338576296255,
+        "sampleCount": 264,
+        "interpolatedSections": 8,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "33b33a7ed840b932824e5d890f64f4a2052aad2c64602ca1452f0736bb1b9d06",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Kyalami",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "South Africa/Kyalami"
+      "referenceId": "South Africa/Kyalami",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.954395206988538,
+        "lengthM": 4525.053376193383,
+        "sampleCount": 386,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3f4e08673cbf8dcf8e4bf8d4007ea9860227be6b14ece685f619e39ac364d19f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

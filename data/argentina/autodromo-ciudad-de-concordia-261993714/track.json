@@ -24,27 +24,79 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.466406530525168,
+        "lengthM": 4706.557420052673,
+        "sampleCount": 370,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1cdde9162fc05ae4bcb14c641068a5f3eb451644094cb5a7013d7f8a811ca7a0",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-de-concordia",
       "name": "Autodromo de Concordia",
       "file": "layouts/autodromo-de-concordia.geojson",
       "referenceId": "Argentina/Autodromo de Concordia",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4546.9 m. Difference from the supplied layout distance 12.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4546.9 m. Difference from the supplied layout distance 12.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.555502359656195,
+        "lengthM": 4546.949629996776,
+        "sampleCount": 352,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "01840cf7bc18626fe022eccd97c66ce4a7e9640ba116f4241f0de6d7c5cdb31d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-de-concordia-combo",
       "name": "Autodromo de Concordia Combo",
       "file": "layouts/autodromo-de-concordia-combo.geojson",
       "referenceId": "Argentina/Autodromo de Concordia Combo",
-      "description": "Combined mapped configurations: Autodromo de Concordia, Historical short course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Autodromo de Concordia, Historical short course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.859290636145193,
+        "lengthM": 7596.041490042979,
+        "sampleCount": 596,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4d376fa1914f14b38e7aef96b44c33c0b22d1724ddaf147293417a5543a15ff0",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "historical-short-course",
       "name": "Historical short course",
       "file": "layouts/historical-short-course.geojson",
-      "description": "Historical short-course draft retains the complete southern S and eastern short closing bend from exact OSM way 261993714 version 8. The northern extension and alternate parallel western return are excluded. The championship organizer confirms a separately raced Circuito Chico in its 2017 event schedule. The independent source measures 3,049.0 m, versus the published 3,120 m short-course distance; exact event-year corner placement and direction remain unverified. No points are fitted or extended to meet that distance."
+      "description": "Historical short-course draft retains the complete southern S and eastern short closing bend from exact OSM way 261993714 version 8. The northern extension and alternate parallel western return are excluded. The championship organizer confirms a separately raced Circuito Chico in its 2017 event schedule. The independent source measures 3,049.0 m, versus the published 3,120 m short-course distance; exact event-year corner placement and direction remain unverified. No points are fitted or extended to meet that distance.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.821066868570648,
+        "lengthM": 3049.091860046223,
+        "sampleCount": 244,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6253a31e43fd7bdda5c7b0ad315fc251e676083417bec5a5233b67d6e831bac4",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

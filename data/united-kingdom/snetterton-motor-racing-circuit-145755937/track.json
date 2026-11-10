@@ -24,35 +24,100 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.92801799540212,
+        "lengthM": 4789.1806364896665,
+        "sampleCount": 382,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "496427d1173835fb72d8a0c2dea45d5224f4f66b3ff1ccd060800a27271981b1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "snetterton-combo",
       "name": "Snetterton Combo",
       "file": "layouts/snetterton-combo.geojson",
       "referenceId": "United Kingdom/Snetterton Combo",
-      "description": "Combined mapped configurations: Snetterton100, Snetterton200, Snetterton300. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Snetterton100, Snetterton200, Snetterton300. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.612318740770563,
+        "lengthM": 9544.509519962587,
+        "sampleCount": 765,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b1d68d5a51555f6665d3bab15aca5ac5e5c9a1b4b5101a898609366b63086ac4",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "snetterton100",
       "name": "Snetterton100",
       "file": "layouts/snetterton100.geojson",
       "referenceId": "United Kingdom/Snetterton100",
-      "description": "Draft configuration: Compact inner triangular 100 circuit uses the short northwestern hairpin. The closing connector runs opposite its source one-way tag in this configuration; source tags and coordinates remain unchanged, and race-day direction is provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1562.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Compact inner triangular 100 circuit uses the short northwestern hairpin. The closing connector runs opposite its source one-way tag in this configuration; source tags and coordinates remain unchanged, and race-day direction is provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1562.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.501107270070005,
+        "lengthM": 1561.988459602123,
+        "sampleCount": 128,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c699dda0c20f062f947f8f1fd28d59c84cd7bb24c7ab08afb8fb87bed71cc97f",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "snetterton200",
       "name": "Snetterton200",
       "file": "layouts/snetterton200.geojson",
       "referenceId": "United Kingdom/Snetterton200",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3193.6 m. Difference from the supplied layout distance 5.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3193.6 m. Difference from the supplied layout distance 5.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.171971180085798,
+        "lengthM": 3193.654899135245,
+        "sampleCount": 255,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "00c6b8edcb9b87f6a3e547a1f46f9c8078ace0303e19ee2bb5fede77201d2370",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "snetterton300",
       "name": "Snetterton300",
       "file": "layouts/snetterton300.geojson",
       "referenceId": "United Kingdom/Snetterton300",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4789.1 m. Difference from the supplied layout distance 2.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4789.1 m. Difference from the supplied layout distance 2.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.92801799540212,
+        "lengthM": 4789.1806364896665,
+        "sampleCount": 382,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "496427d1173835fb72d8a0c2dea45d5224f4f66b3ff1ccd060800a27271981b1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

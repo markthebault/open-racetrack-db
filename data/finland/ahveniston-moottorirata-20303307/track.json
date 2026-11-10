@@ -22,7 +22,20 @@
       "name": "Ahvenisto",
       "file": "layouts/main.geojson",
       "referenceId": "Finland/Ahvenisto",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.102552171932176,
+        "lengthM": 2793.1393164537353,
+        "sampleCount": 259,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4d702d640473273384c55b059fec8b4d8776ec463641be839cbccb57fa640aec",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

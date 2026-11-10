@@ -22,21 +22,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.86972383372648,
+        "lengthM": 4803.9467752167775,
+        "sampleCount": 348,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "18bbf053cd2398af22464b80c7c94a358e14e25bccef3ef9640ff2448474e6c2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "brainerd-competition-road",
       "name": "Brainerd Competition Road",
       "referenceId": "United States/Brainerd Competition Road",
       "file": "layouts/brainerd-competition-road.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3892 m. Difference from the supplied layout distance 8.0 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3892 m. Difference from the supplied layout distance 8.0 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.992918739397794,
+        "lengthM": 3891.964361836411,
+        "sampleCount": 282,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c9579f0e925d3c3224888b46e8e60e2f4bc47aa911c49edd85addbf7cee548c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "brainerd-main",
       "name": "Brainerd Main",
       "referenceId": "United States/Brainerd Main",
       "file": "layouts/brainerd-main.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4804.1 m. Difference from the supplied layout distance 22.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4804.1 m. Difference from the supplied layout distance 22.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.870126433183982,
+        "lengthM": 4804.082370348456,
+        "sampleCount": 348,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "18bbf053cd2398af22464b80c7c94a358e14e25bccef3ef9640ff2448474e6c2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

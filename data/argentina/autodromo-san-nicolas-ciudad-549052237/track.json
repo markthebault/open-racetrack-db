@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.971737681614789,
+        "lengthM": 4014.713546209945,
+        "sampleCount": 351,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b55126cb4059d74aafea6225374ccc13bf5c008558757ae7c67b1f0417da44ee",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-de-san-nicolas",
       "name": "Autodromo de San Nicolas",
       "file": "layouts/autodromo-de-san-nicolas.geojson",
       "referenceId": "Argentina/Autodromo de San Nicolas",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4014.8 m. Difference from the supplied layout distance 22.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4014.8 m. Difference from the supplied layout distance 22.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.971737681614789,
+        "lengthM": 4014.713546209945,
+        "sampleCount": 351,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b55126cb4059d74aafea6225374ccc13bf5c008558757ae7c67b1f0417da44ee",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

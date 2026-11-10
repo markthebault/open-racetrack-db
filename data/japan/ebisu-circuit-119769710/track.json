@@ -22,7 +22,20 @@
       "name": "Ebisu East",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Ebisu Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2029 m; supplied distance 2040 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Japan/Ebisu East"
+      "referenceId": "Japan/Ebisu East",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.32188255585679,
+        "lengthM": 2029.0134529988802,
+        "sampleCount": 169,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9bc152edca72d6c82487e097da7768aebb60f9f7d621e78b8ae88bf2c8960a08",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

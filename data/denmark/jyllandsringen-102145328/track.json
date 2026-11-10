@@ -24,7 +24,20 @@
       "id": "main",
       "name": "Full racing circuit",
       "file": "layouts/main.geojson",
-      "description": "Draft combined Bane 1 and outer Bane 2 racing circuit. Fine alignment, direction and public timing remain provisional."
+      "description": "Draft combined Bane 1 and outer Bane 2 racing circuit. Fine alignment, direction and public timing remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.327550336119216,
+        "lengthM": 2363.7817804510423,
+        "sampleCount": 231,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3eaa8df842b30fcc6372e6b9e60dc193934fecb334fbac27018da6c10076a605",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "jyllands-ringen-combo",
@@ -38,7 +51,20 @@
       "name": "Jyllands-Ringen-GL",
       "file": "layouts/jyllands-ringen-gl.geojson",
       "referenceId": "Denmark/Jyllands-Ringen-GL",
-      "description": "Draft configuration: Original short course with smooth eastern outer return and triangular inner hairpin; excludes the extra eastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1474.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Original short course with smooth eastern outer return and triangular inner hairpin; excludes the extra eastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1474.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.284610178069054,
+        "lengthM": 1390.8212529610273,
+        "sampleCount": 131,
+        "interpolatedSections": 9,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6d3e3593a20d243feb3c51b19d6a7ee929f44b5288284363c7ee6e16adcf6766",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "jyllands-ringen-ny",

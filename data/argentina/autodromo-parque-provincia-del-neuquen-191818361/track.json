@@ -25,7 +25,20 @@
       "name": "Autodromo Centenario",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Autódromo Parque Provincia del Neuquén. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4319.1 m; supplied distance 4324 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Argentina/Autodromo Centenario"
+      "referenceId": "Argentina/Autodromo Centenario",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.388223488612642,
+        "lengthM": 4319.078376130023,
+        "sampleCount": 331,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5ffcdbd9d02dc2f44e916d9a75398cbf9de3b3cd091735451e5dc449e0f6f742",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

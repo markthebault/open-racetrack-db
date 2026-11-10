@@ -26,49 +26,140 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.675973258484644,
+        "lengthM": 5405.869546249757,
+        "sampleCount": 502,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "10603f0d30030bc1e493ba824cbb0374881ec08bf8722a003528a3690d516e67",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "dubai-autodrome-club-circuit",
       "name": "Dubai Autodrome Club Circuit",
       "file": "layouts/dubai-autodrome-club-circuit.geojson",
       "referenceId": "United Arab Emirates/Dubai Autodrome Club Circuit",
-      "description": "Draft configuration: Club course with northern stepped hairpin, direct eastern turnaround and long southern straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2555.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Club course with northern stepped hairpin, direct eastern turnaround and long southern straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2555.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.780642772714579,
+        "lengthM": 2555.6338223514335,
+        "sampleCount": 236,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6013405fdee4198d945586ef4ce02e43a35f85dec0d8302e36f7aa9c3fecb005",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "dubai-autodrome-combo",
       "name": "Dubai Autodrome Combo",
       "file": "layouts/dubai-autodrome-combo.geojson",
       "referenceId": "United Arab Emirates/Dubai Autodrome Combo",
-      "description": "Combined mapped configurations: Dubai Autodrome Club Circuit, Dubai Autodrome GP Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Dubai Autodrome Club Circuit, Dubai Autodrome GP Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.351569857068132,
+        "lengthM": 7961.50336860119,
+        "sampleCount": 738,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9fe629a2159f3664367c3c3d5f1ea73af97067707657f237b68af6a3ac7c68db",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "dubai-autodrome-gp-circuit",
       "name": "Dubai Autodrome GP Circuit",
       "file": "layouts/dubai-autodrome-gp-circuit.geojson",
       "referenceId": "United Arab Emirates/Dubai Autodrome GP Circuit",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5405.9 m. Difference from the supplied layout distance 37.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5405.9 m. Difference from the supplied layout distance 37.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.675973258484644,
+        "lengthM": 5405.869546249757,
+        "sampleCount": 502,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "10603f0d30030bc1e493ba824cbb0374881ec08bf8722a003528a3690d516e67",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "dubai-autodrome-hill",
       "name": "Dubai Autodrome Hill",
       "file": "layouts/dubai-autodrome-hill.geojson",
       "referenceId": "United Arab Emirates/Dubai Autodrome Hill",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1772.6 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1772.6 m. Difference from the supplied layout distance 10.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.337556794383719,
+        "lengthM": 1772.5593539297129,
+        "sampleCount": 183,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fa6104599d87db1c2315a870437b91eacea9b089483df249aaf2db4cb720cd31",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "dubai-autodrome-international",
       "name": "Dubai Autodrome International",
       "file": "layouts/dubai-autodrome-international.geojson",
       "referenceId": "United Arab Emirates/Dubai Autodrome International",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4368 m. Difference from the supplied layout distance 19.0 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4368 m. Difference from the supplied layout distance 19.0 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.191374613651346,
+        "lengthM": 4367.950284799781,
+        "sampleCount": 385,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "11e3395ca0a7041893ab17c9edbb7ebfde710ad99323fa91a65e486de206c543",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "dubai-autodrome-national",
       "name": "Dubai Autodrome National",
       "file": "layouts/dubai-autodrome-national.geojson",
       "referenceId": "United Arab Emirates/Dubai Autodrome National",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3593.6 m. Difference from the supplied layout distance 8.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3593.6 m. Difference from the supplied layout distance 8.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.707841805782413,
+        "lengthM": 3593.553083801418,
+        "sampleCount": 353,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "17d7858c2c7c4b4421e943449d9f200ce5075aeb8f87da5b43e49803e79b840d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

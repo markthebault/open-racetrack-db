@@ -22,7 +22,20 @@
       "name": "Ring Djursland",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Denmark/Ring Djursland"
+      "referenceId": "Denmark/Ring Djursland",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.919020275377068,
+        "lengthM": 1738.3312054629282,
+        "sampleCount": 169,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "040e011a7db11345e348eca1c95f4c789bd90b28de6bddaee3a5d73058bca3a5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

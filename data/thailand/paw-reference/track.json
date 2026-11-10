@@ -22,7 +22,20 @@
       "name": "Paw",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Thailand/Paw"
+      "referenceId": "Thailand/Paw",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.37771346968386,
+        "lengthM": 2569.7138174953343,
+        "sampleCount": 201,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f5d38cdcf7a51fb7a8a759affbd1357119dd8d8d71298c9fad2f66bfd4e9e4aa",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

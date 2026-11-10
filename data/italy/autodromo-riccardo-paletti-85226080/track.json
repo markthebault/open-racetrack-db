@@ -29,14 +29,40 @@
       "name": "Varano de Melegari",
       "referenceId": "Italy/Varano de Melegari",
       "file": "layouts/varano-de-melegari.geojson",
-      "description": "Draft configuration: Full eastern extension, western hooked hairpin and both northern chicanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2306.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full eastern extension, western hooked hairpin and both northern chicanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2306.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.631977888104423,
+        "lengthM": 2306.299210966576,
+        "sampleCount": 193,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6b2be29e4c792eeaf6b03d6cbbe2d0ff0bfe4896ac5294f858e149c90850e052",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "varano-de-melegari-short",
       "name": "Varano de Melegari Short",
       "referenceId": "Italy/Varano de Melegari Short",
       "file": "layouts/varano-de-melegari-short.geojson",
-      "description": "Draft configuration: Western hooked hairpin, northern chicane and short eastern turnaround; excludes the long eastern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1634.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Western hooked hairpin, northern chicane and short eastern turnaround; excludes the long eastern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1634.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.838528511621567,
+        "lengthM": 1580.4910027717774,
+        "sampleCount": 139,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5957465ca31a6290c1feb13e91cf4fdcf6a58dbbb3c569e7e4fee0cd7ef1aa8a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

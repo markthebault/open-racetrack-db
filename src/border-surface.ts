@@ -44,6 +44,7 @@ export function borderFootprint(layout: Layout) {
     triangles: number[] = [];
   for (let i = 0; i < outer.length; i++) {
     if (
+      layout.features.some(f=>f.properties.role==="inner"&&"method"in f.properties&&f.properties.method==="constant-width-trace-v1") ||
       layout.metadata.borderInference?.edgeConvention ===
         "left-right-along-trace" ||
       layout.metadata.borderComposition?.[i].metadata.borderInference

@@ -22,7 +22,20 @@
       "id": "main",
       "name": "Image-guided course",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM-derived course with lower outer bend corrected against PNOA2024. Road limits estimated from aerial imagery; configuration and direction remain provisional."
+      "description": "Draft OSM-derived course with lower outer bend corrected against PNOA2024. Road limits estimated from aerial imagery; configuration and direction remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.808652327955052,
+        "lengthM": 1280.2415458385658,
+        "sampleCount": 203,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "33991fb5406ce9e9abd7e84f0c9ae9f3becbbc416b8d6edc79b655e9d04bceaa",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

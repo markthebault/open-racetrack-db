@@ -23,21 +23,60 @@
       "name": "Rockingham Combo",
       "referenceId": "United Kingdom/Rockingham Combo",
       "file": "layouts/rockingham-combo.geojson",
-      "description": "Combined mapped configurations: Rockingham International Circuit, Rockingham National Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Rockingham International Circuit, Rockingham National Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.689001430019804,
+        "lengthM": 6802.709447874494,
+        "sampleCount": 565,
+        "interpolatedSections": 7,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "304b36f46ae2ef916861a085c07288ebac31bd4cfbcd067196123fcabbd6fd4a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "rockingham-international-circuit",
       "name": "Rockingham International Circuit",
       "referenceId": "United Kingdom/Rockingham International Circuit",
       "file": "layouts/rockingham-international-circuit.geojson",
-      "description": "Draft configuration: Historical international course uses the outer oval arc, extended northeastern infield return and southern hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4128.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical international course uses the outer oval arc, extended northeastern infield return and southern hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4128.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.909112587161832,
+        "lengthM": 4069.1182185627918,
+        "sampleCount": 335,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e8f4a77618d0deb49779b5e481e3881b902c0fe9c045857dcd2dc5d19c83559c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "rockingham-national-circuit",
       "name": "Rockingham National Circuit",
       "referenceId": "United Kingdom/Rockingham National Circuit",
       "file": "layouts/rockingham-national-circuit.geojson",
-      "description": "Draft configuration: Historical national course excludes the outer oval arc and retains the northern shoulder and rounded northeastern infield loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2754.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical national course excludes the outer oval arc and retains the northern shoulder and rounded northeastern infield loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2754.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.872270449329527,
+        "lengthM": 2733.488885990616,
+        "sampleCount": 230,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "080e809dcacdb547430cda9e62c4c4e6c618688556a7894a2e776ff16a881066",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Sachsenring",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Germany/Sachsenring"
+      "referenceId": "Germany/Sachsenring",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.972676785105106,
+        "lengthM": 3648.9799043612356,
+        "sampleCount": 429,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cea3485d52605fb62de23840ed3061e3119b4fbf17f0657581eb9d865cca2c35",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -23,13 +23,39 @@
       "name": "Misano",
       "file": "layouts/main.geojson",
       "referenceId": "Italy/Misano",
-      "description": "Long course through Curva del Carro on way 624263857. The mapped short-course connector and MotoGP long-lap penalty detour are excluded."
+      "description": "Long course through Curva del Carro on way 624263857. The mapped short-course connector and MotoGP long-lap penalty detour are excluded.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.148996604684452,
+        "lengthM": 4218.185763589217,
+        "sampleCount": 492,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d6184eb680164d4c39348f615fca8c70eb9af6e2e93ed19b0c5452bb25e7ee20",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "short",
       "name": "International, short circuit",
       "file": "layouts/short.geojson",
-      "description": "Short course uses the mapped connector on way 230406260 in place of Curva del Carro. The MotoGP long-lap penalty detour is excluded."
+      "description": "Short course uses the mapped connector on way 230406260 in place of Curva del Carro. The MotoGP long-lap penalty detour is excluded.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.326383327392387,
+        "lengthM": 4038.4493586028625,
+        "sampleCount": 472,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1ccd17d4729a9223cbb49d006dc5319480527f9c5d470aa80847fecb142a5461",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

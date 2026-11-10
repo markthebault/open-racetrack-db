@@ -22,21 +22,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 18.5,
+      "roadWidthSource": {
+        "meanWidthM": 18.286015094009752,
+        "lengthM": 2635.435247145814,
+        "sampleCount": 240,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3cccb42ec9bd3a825b9e8656033d589baebe96dae40093e35c977b3f04c531bf",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "new-hampshire-motor-speedway",
       "name": "New Hampshire Motor Speedway",
       "file": "layouts/new-hampshire-motor-speedway.geojson",
       "referenceId": "United States/New Hampshire Motor Speedway",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 20,
+      "roadWidthSource": {
+        "meanWidthM": 19.90668519864635,
+        "lengthM": 1667.4768570916688,
+        "sampleCount": 145,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "aa15c0be19447234977b48672962b7c9cb1a6602607c56f2aafd3cce21d9cfe7",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "new-hampshire-motor-spdwy-chicane",
       "name": "New Hampshire Motor Spdwy Chicane",
       "file": "layouts/new-hampshire-motor-spdwy-chicane.geojson",
       "referenceId": "United States/New Hampshire Motor Spdwy Chicane",
-      "description": "Draft configuration selected from the independently named circuit relation 10625003. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 10625003. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 17,
+      "roadWidthSource": {
+        "meanWidthM": 17.174027281993595,
+        "lengthM": 2533.352651760627,
+        "sampleCount": 243,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c704657b2b798a40f0ca8c65e226d722b71d9c118eba60b076f9880b889e2a8b",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

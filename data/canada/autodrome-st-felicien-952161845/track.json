@@ -21,7 +21,20 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.745657990396477,
+        "lengthM": 1564.4847113000997,
+        "sampleCount": 141,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "74bec9b5f7c9e579e803a70ed52a758481477c71f1e3e8417e7f0b020127f44d",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

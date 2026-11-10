@@ -22,7 +22,20 @@
       "name": "ADAC Schlusselfeld",
       "referenceId": "Germany/ADAC Schlusselfeld",
       "file": "layouts/adac-schlusselfeld.geojson",
-      "description": "Draft configuration: The complete handling course follows all three arms and the central return bend shown in the published ADAC Schluesselfeld course plan. The pinned independent road loop is 826.6 m, compared with the catalogue scalar distance of 826 m. The skid circles, training-area access roads and shortcuts are excluded. Direction remains provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 826.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The complete handling course follows all three arms and the central return bend shown in the published ADAC Schluesselfeld course plan. The pinned independent road loop is 826.6 m, compared with the catalogue scalar distance of 826 m. The skid circles, training-area access roads and shortcuts are excluded. Direction remains provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 826.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.741156932787934,
+        "lengthM": 826.6373151540222,
+        "sampleCount": 73,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0499c6420102e311274b1f6419c8a3c8cd6de7567562a8402163ecae4a026115",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

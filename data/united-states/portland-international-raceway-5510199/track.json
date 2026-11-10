@@ -22,7 +22,20 @@
       "name": "Portland International Raceway",
       "file": "layouts/main.geojson",
       "referenceId": "United States/Portland International Raceway",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.760951126469081,
+        "lengthM": 3085.6438435579635,
+        "sampleCount": 245,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "25d796613b9d9297ca40a206fd86c01c7ea4214cd080afc205a16aa072ffda77",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

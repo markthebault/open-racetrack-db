@@ -22,7 +22,20 @@
       "name": "Barbagallo",
       "file": "layouts/main.geojson",
       "referenceId": "Australia/Barbagallo",
-      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Wanneroo Raceway. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2469.6 m; supplied distance 2467 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ."
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Wanneroo Raceway. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2469.6 m; supplied distance 2467 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.864874654343852,
+        "lengthM": 2469.6090427083814,
+        "sampleCount": 198,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f64718bad4cffd514917eaa2eb33f2c29e012d7adc43548097b245e4307ec0fd",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

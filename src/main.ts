@@ -1,3 +1,6 @@
+import {WorldTrackLayer} from "./world-track-layer";
+import {materializeTraceWidth,manualWidthConfiguration} from "./trace-width-runtime";
+import {gradeForLayout} from "./grade-separation";
 import { IdealOverlay } from "./ideal-overlay";
 import { networkRouteLayout, withMatchingComponentIdeal } from "./network-routes";
 import L from "leaflet";
@@ -118,6 +121,32 @@ options.className = "map-options";
 options.innerHTML = '<summary>Track tools <span>Save, share &amp; display</span></summary><div class="map-options-content"></div>';
 mapArea.after(options);
 const optionsContent = options.querySelector("div")!;
+const lineDisclaimer=document.createElement("p");lineDisclaimer.id="line-disclaimer";lineDisclaimer.className="line-disclaimer";lineDisclaimer.hidden=true;
+lineDisclaimer.textContent="These lines use estimated track boundaries. Boundary errors can affect line placement and simulated lap results.";
+options.after(lineDisclaimer);
+const manualWidths=new Map<string,number>();
+const manualWidthForm=document.createElement("form");manualWidthForm.id="manual-width-controls";manualWidthForm.hidden=true;
+manualWidthForm.innerHTML='<label for="manual-road-width">Road width (m)</label><input id="manual-road-width" type="number" min="3" max="45" step="0.1" required placeholder="e.g. 10"><button type="submit">Calculate lines</button><button id="manual-width-reset" type="button" hidden>Reset</button><small>Estimate lines from the mapped centreline using your width. This does not verify the real road boundaries. Saved for this session only.</small>';
+optionsContent.append(manualWidthForm);
+const manualWidthStatus=document.createElement("small");manualWidthStatus.id="manual-width-status";manualWidthStatus.setAttribute("role","status");manualWidthForm.append(manualWidthStatus);
+let manualWidthPending=false;
+function setManualWidthPending(pending:boolean){manualWidthPending=pending;const submit=manualWidthForm.querySelector<HTMLButtonElement>('button[type="submit"]')!;submit.disabled=pending;submit.textContent=pending?"Calculating…":"Calculate lines";get<HTMLButtonElement>("manual-width-reset").disabled=pending;get<HTMLInputElement>("manual-road-width").readOnly=pending;manualWidthForm.setAttribute("aria-busy",String(pending));}
+manualWidthForm.onsubmit=async event=>{
+ event.preventDefault();if(manualWidthPending||!track||!selectedLayoutId||!manualWidthForm.reportValidity())return;
+ const id=track.id,lid=selectedLayoutId,key=`${id}/${lid}`,previous=manualWidths.get(key);
+ manualWidths.set(key,get<HTMLInputElement>("manual-road-width").valueAsNumber);manualWidthStatus.textContent="";setManualWidthPending(true);
+ try{const ok=await select(id,lid,false,true);if(ok===false){if(previous===undefined)manualWidths.delete(key);else manualWidths.set(key,previous);}}
+ finally{setManualWidthPending(false);}
+};
+get("manual-width-reset").onclick=()=>{if(manualWidthPending||!track||!selectedLayoutId)return;manualWidths.delete(`${track.id}/${selectedLayoutId}`);manualWidthStatus.textContent="";void select(track.id,selectedLayoutId,false,true);};
+function updateLineDisclaimer(){lineDisclaimer.hidden=!idealActive&&!currentBorders;}
+function updateManualWidthForm(data?:Layout){
+ const value=track&&selectedLayoutId?manualWidths.get(`${track.id}/${selectedLayoutId}`):undefined;
+ manualWidthForm.hidden=!data||value===undefined&&data.features.some(f=>f.properties.role==="inner");
+ get<HTMLInputElement>("manual-road-width").value=value===undefined?"":String(value);
+ get("manual-width-reset").hidden=value===undefined;
+}
+
 for (const selector of ["#save-track", "#share-track", ".border-controls", "#height-scale", "#rotate-view"]) {
   optionsContent.append(document.querySelector(selector)!);
 }
@@ -140,10 +169,11 @@ const config = {
   trace: { color: "#ffb347", weight: 4.5, lineCap: "round" as const },
   outline: { color: "#29201b", weight: 9, opacity: 0.9 },
 };
-const map = L.map("map", { zoomControl: false }).setView([25, 12], 2);
+const map = L.map("map", { zoomControl: false, maxZoom:22 }).setView([25, 12], 2);
 const streetTiles = L.tileLayer(config.tiles, {
   attribution: config.attribution,
-  maxZoom: 19,
+  maxZoom: 22,
+  maxNativeZoom: 19,
   crossOrigin: true,
 });
 const satelliteTiles = maptilerKey
@@ -190,10 +220,12 @@ optionsContent.insertBefore(idealRoot, document.querySelector(".border-controls"
 let idealActive = false;
 const idealOverlay = new IdealOverlay(idealRoot, map, (active) => {
   idealActive = active;
+  updateLineDisclaimer();
   viewer?.setIdeal(active ? layout : undefined);
   if (active || currentBorders) traceLayers.remove();
   else traceLayers.addTo(map);
 });
+L.control.scale({imperial:false,maxWidth:120}).addTo(map);
 const borderLayers = L.layerGroup().addTo(map);
 const traceLayers = L.layerGroup().addTo(map);
 let layoutCoverage: LayoutCoverage | undefined,
@@ -288,6 +320,7 @@ const borderOverlay = new BorderOverlay(
   get("border-legend"),
   (data) => {
     currentBorders = data;
+    updateLineDisclaimer();
     borderLayers.clearLayers();
     if (data || idealActive) traceLayers.remove();
     else traceLayers.addTo(map);
@@ -296,6 +329,7 @@ const borderOverlay = new BorderOverlay(
         style: (feature) => ({
           color: feature?.properties.role === "inner" ? "#f4775c" : "#42c6df",
           weight: 2.5,
+          smoothFactor: 0,
           opacity: 1,
           className: `track-border border-${feature?.properties.role}`,
         }),
@@ -319,6 +353,9 @@ let heightScale: 1 | 3 = initialParams.has("track")
 let currentGates: { role: string; coordinates: Position[]; note: string }[] =
   [];
 const cache = new Map<string, unknown>();
+const worldTracks=new WorldTrackLayer(map,load,(id,lid)=>void select(id,lid));
+let inWorldMap=false,worldMapView:{center:L.LatLng;zoom:number}|undefined;
+map.on("moveend",()=>{if(inWorldMap)worldMapView={center:map.getCenter(),zoom:map.getZoom()};});
 let previews: Record<string, string> = {};
 const venueButtons = new Map<string, HTMLButtonElement>();
 const featured = [
@@ -502,6 +539,7 @@ function renderCatalogue() {
     if (t.location) {
       const marker = L.circleMarker([t.location[1], t.location[0]], {
         radius: 4,
+        className:"world-track-pin",
         color: "#ffc68f",
         weight: 1,
         fillColor: "#ee8853",
@@ -535,6 +573,7 @@ function renderCatalogue() {
   }
   list.replaceChildren(fragment);
   updateActive();
+  worldTracks.setTracks(found);
 }
 function resetFilters() {
   get<HTMLInputElement>("search").value = "";
@@ -584,7 +623,7 @@ function unavailable() {
   void applyView();
   urlState(track?.id, selectedLayoutId, true);
 }
-async function applyView() {
+async function applyView({fit2d=true}:{fit2d?:boolean}={}) {
   idealOverlay.setView(view === "3d");
   const is3d = view === "3d" && !!layout && !unavailable3D;
   const satellite = tiles === satelliteTiles;
@@ -706,7 +745,7 @@ async function applyView() {
     credit.title = terrain.source.attribution.join(" ");
     get("course-credit").append(" · Terrain: ", credit);
   }
-  const grade = layout?.metadata.borderInference?.gradeSeparation;
+  const grade = gradeForLayout(layout);
   if (is3d && grade) {
     const credit = element("a", grade.elevation.source);
     credit.href = grade.elevation.url;
@@ -720,7 +759,7 @@ async function applyView() {
     viewer?.setActive(false);
     if (!map.hasLayer(tiles)) tiles.addTo(map);
     map.invalidateSize({ animate: false });
-    fitMap();
+    if(fit2d)fitMap();
     return;
   }
   tiles.remove();
@@ -733,7 +772,7 @@ async function applyView() {
   await viewerPromise;
   if (view !== "3d" || !layout || !viewer || unavailable3D) return;
   viewer.setActive(true);
-  viewer.setLayout(modelLayout ?? layout, currentGates, terrain, heightScale);
+  viewer.setLayout(modelLayout ?? layout, currentGates, terrain, heightScale, !fit2d);
   viewer.setBorders(currentBorders);
   viewer.setIdeal(idealActive ? layout : undefined);
   viewer.setRotating(rotating);
@@ -754,11 +793,15 @@ function setBasemap(next: L.TileLayer) {
     tiles = next;
     tileErrors = false;
   }
-  if (view === "2d") void applyView();
+  if (view === "2d") void applyView({fit2d:false});
   else setView("2d");
 }
 function worldMap(push = true) {
   if (!catalogue) return;
+  const previousWorldView=worldMapView;
+  get<HTMLInputElement>("search").value="";
+  renderCatalogue();
+  updateManualWidthForm();
   closeLap?.();
   get("play-lap").hidden = true;
   sequence++;
@@ -776,23 +819,26 @@ function worldMap(push = true) {
   traceLayers.clearLayers();
   viewer?.clear();
   markers.addTo(map);
+  inWorldMap=true;
+  worldTracks.setActive(true);
   view = "2d";
   get("map-name").textContent = "Explore the world.";
   get("stage-country").textContent = "THE OPEN TRACK ATLAS";
   get("stage-layout").textContent =
-    `${catalogue.tracks.length} tracks across ${new Set(catalogue.tracks.map((t) => t.country.code)).size} countries`;
+    `${visible().filter(t=>t.location).length} mapped locations · Zoom in for track outlines`;
   get("stage-empty").hidden = true;
   get("selection").replaceChildren(
     element("h2", "Where do you want to drive?"),
     element(
       "p",
-      "Choose a pin on the map, or search the catalogue to explore a circuit.",
+      "Zoom in to see nearby track outlines, or choose a point to open a track.",
       "world-intro",
     ),
   );
   updateActive();
   message("");
-  void applyView();
+  void applyView({fit2d:!previousWorldView});
+  if(previousWorldView)map.setView(previousWorldView.center,previousWorldView.zoom,{animate:false});
   closeBrowse();
   if (push) urlState();
 }
@@ -829,7 +875,7 @@ function drawGate(
     )
     .addTo(selectedLayers);
 }
-function draw(data: Layout, privateGates: typeof currentGates = []) {
+function draw(data: Layout, privateGates: typeof currentGates = [], fitView=true) {
   selectedLayers.clearLayers();
   traceLayers.clearLayers();
   for (const feature of data.features) {
@@ -885,7 +931,7 @@ function draw(data: Layout, privateGates: typeof currentGates = []) {
   }
   for (const gate of privateGates)
     drawGate(gate.role, gate.coordinates, gate.note, true);
-  fitMap();
+  if(fitView)fitMap();
 }
 function sourceLinks(parent: HTMLElement, selected: Track, data?: Layout) {
   const details = element("details", "", "source-details");
@@ -1025,6 +1071,8 @@ function panel(
   field.append(label, control);
   row.append(field);
   root.append(row);
+  const widthEntry=selected.layouts.find(l=>l.id===requested);
+  if(widthEntry?.roadWidthM){const note=element("p",`Estimated constant width: ${widthEntry.roadWidthM.toFixed(1)} m · Edges and ideal line calculated in this browser from the smoothed mapped trace.`,"inferred-border-note");const trackData=element("a"," Track data (width)");trackData.href="data/"+catalogue.tracks.find(t=>t.id===selected.id)!.file;trackData.target="_blank";trackData.rel="noreferrer";note.append(trackData);root.append(note);}
   if (state === "loading")
     root.append(
       element(
@@ -1231,13 +1279,18 @@ function panel(
   root.append(notes);
 }
 
-async function select(id: string, requested?: string, push = true) {
+async function select(id: string, requested?: string, push = true, preserveViewport=false) {
+  const keepCurrent=preserveViewport&&track?.id===id&&selectedLayoutId===requested&&!!layout;
+  if(inWorldMap){worldMapView={center:map.getCenter(),zoom:map.getZoom()};inWorldMap=false;}
+  worldTracks.setActive(false);
+  if(!keepCurrent)updateManualWidthForm();
   closeLap?.();
-  get("play-lap").hidden = true;
+  if(!keepCurrent)get("play-lap").hidden = true;
   const current = ++sequence;
   abort?.abort();
   abort = new AbortController();
   const signal = abort.signal;
+  if(!keepCurrent){
   selectedLayers.clearLayers();
   traceLayers.clearLayers();
   borderOverlay.setLayout();
@@ -1252,7 +1305,9 @@ async function select(id: string, requested?: string, push = true) {
   selectedLayoutId = undefined;
   get("stage-empty").hidden = true;
   get<HTMLButtonElement>("view-3d").disabled = true;
-  message("Loading track…");
+
+  }
+  message(keepCurrent?"Calculating lines…":"Loading track…");
   const entry = catalogue.tracks.find((t) => t.id === id);
   if (!entry) {
     worldMap(false);
@@ -1260,13 +1315,12 @@ async function select(id: string, requested?: string, push = true) {
     message("Unknown track. Choose one from the catalogue.");
     return;
   }
-  track = undefined;
-  markers.remove();
-  updateActive();
-  get("selection").replaceChildren(element("p", "Loading track…", "loading"));
-  get("map-name").textContent = shortNames[id] ?? entry.name;
-  get("stage-country").textContent = entry.country.name.toUpperCase();
-  get("stage-layout").textContent = "";
+  if(!keepCurrent){
+    track = undefined;markers.remove();updateActive();
+    get("selection").replaceChildren(element("p", "Loading track…", "loading"));
+    get("map-name").textContent=shortNames[id]??entry.name;
+    get("stage-country").textContent=entry.country.name.toUpperCase();get("stage-layout").textContent="";
+  }
   try {
     const selected = validateTrack(await load(entry.file, signal));
     if (current !== sequence) return;
@@ -1280,7 +1334,7 @@ async function select(id: string, requested?: string, push = true) {
       toast("Unknown layout. Showing the default layout.");
     }
     const selectedLayout = selected.layouts.find((l) => l.id === layoutId)!;
-    panel(selected, layoutId, "loading");
+    if(!keepCurrent)panel(selected, layoutId, "loading");
     get("stage-layout").textContent = selectedLayout.name;
     updateActive();
     remember();
@@ -1319,8 +1373,14 @@ async function select(id: string, requested?: string, push = true) {
     }
     const file = entry.file.replace(/track\.json$/, "") + selectedLayout.file;
     const raw = await load(file, signal);
-    const data = validateLayout(raw, selected, layoutId);
+    const savedData = validateLayout(raw, selected, layoutId);
+    const widthOverride=manualWidths.get(`${id}/${layoutId}`);
+    const effectiveTrack=widthOverride===undefined?selected:manualWidthConfiguration(selected,savedData,widthOverride);
+    const inputData=structuredClone(savedData);
+    if(widthOverride!==undefined){delete inputData.metadata.lineUnavailableReason;inputData.metadata.notes=inputData.metadata.notes.filter(n=>!n.startsWith("Boundary and ideal lines unavailable:"));inputData.metadata.notes.push(`User-defined road width: ${widthOverride.toFixed(1)} m. Lines are estimates from the mapped centreline, saved in this browser session only.`);}
+    const data = await materializeTraceWidth(inputData, effectiveTrack, text=>{if(current===sequence)message(text);});
     if (current !== sequence) return;
+    if(keepCurrent&&widthOverride!==undefined&&!data.features.some(f=>f.properties.role==="ideal"))throw Error(data.metadata.lineUnavailableReason??"Could not calculate a usable line for this width");
     const elevation =
       data.metadata.model3d?.terrain ??
       (await load(`elevation/${id}.json`, signal)
@@ -1388,9 +1448,11 @@ async function select(id: string, requested?: string, push = true) {
     modelLayout = data.metadata.model3d ? data : undefined;
     if (elevation?.trackId === id && courseElevation(layout, elevation))
       terrain = elevation;
-    draw(layout, privateLines);
+    draw(layout, privateLines, !preserveViewport);
     borderOverlay.setLayout(layout);
     idealOverlay.setLayout(layout);
+    if(preserveViewport&&widthOverride!==undefined){borderOverlay.setEnabled(true);idealOverlay.setEnabled(true);manualWidthStatus.textContent="Lines calculated and displayed.";}
+    updateManualWidthForm(layout);
     panel(selected, layoutId, "ready", undefined, notes);
     message("Layout ready");
     if (data.metadata.model3d?.kind !== "surface" && data.metadata.model3d?.sharedGround) {
@@ -1423,7 +1485,7 @@ async function select(id: string, requested?: string, push = true) {
       get("selection").append(
         element(
           "p",
-          `Combined road limits · Component-specific licences and imagery evidence are included in this GeoJSON. ${credits.join(" · ")}`,
+          `Combined routes · Estimated road limits and ideal lines are calculated in this browser. Source licences are retained in the track data. ${credits.join(" · ")}`,
           "inferred-border-note",
         ),
       );
@@ -1445,10 +1507,12 @@ async function select(id: string, requested?: string, push = true) {
         launchNetworkRoute(routeIndex);
       else get<HTMLButtonElement>("play-lap").click();
     }
-    void applyView();
+    await applyView({fit2d:!preserveViewport});
     remember();
+    return true;
   } catch (error) {
     if (current !== sequence || signal.aborted) return;
+    if(keepCurrent){manualWidthStatus.textContent=`Could not calculate lines: ${error instanceof Error?error.message:String(error)}. Previous view kept.`;message("Line calculation unavailable");return false;}
     selectedLayers.clearLayers();
     traceLayers.clearLayers();
     viewer?.clear();
@@ -1563,6 +1627,8 @@ get("saved-tracks").onclick = () => {
 };
 get("world-map").onclick = () => worldMap();
 get("surprise").onclick = () => {
+  get<HTMLInputElement>("search").value="";
+  renderCatalogue();
   const candidates = visible().filter(
     (t) => t.traceCount > 0 && t.id !== track?.id,
   );

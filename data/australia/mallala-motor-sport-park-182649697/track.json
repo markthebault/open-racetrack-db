@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.944049663360445,
+        "lengthM": 2554.8213182127993,
+        "sampleCount": 207,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ae6e9d926c0b44a23694b66d1e84aa24c52031a67ca05f91008843616b92e2ac",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "mallala",
       "name": "Mallala",
       "file": "layouts/mallala.geojson",
       "referenceId": "Australia/Mallala",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2554.8 m. Difference from the supplied layout distance 18.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2554.8 m. Difference from the supplied layout distance 18.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.944049663360445,
+        "lengthM": 2554.8213182127993,
+        "sampleCount": 207,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ae6e9d926c0b44a23694b66d1e84aa24c52031a67ca05f91008843616b92e2ac",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

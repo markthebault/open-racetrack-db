@@ -21,11 +21,20 @@ export class IdealOverlay {
   }
   setLayout(layout?: Layout) {
     this.layout = layout;
-    this.root.hidden = !layout?.features.some(
-      (f) => f.properties.role === "ideal",
+    const width = layout?.features.find(
+      (f) => f.properties.role === "inner" && "widthM" in f.properties,
     );
+    this.root.querySelector("span")!.textContent =
+      width && "widthM" in width.properties
+        ? `Width ${width.properties.widthM.toFixed(1)} m · Calculated in browser`
+        : "Estimated · dry conditions";
+    this.root.hidden = !layout;
+    if (layout && !layout.features.some((f) => f.properties.role === "ideal"))
+      this.root.querySelector("span")!.textContent =
+        layout.metadata.lineUnavailableReason ?? "Unavailable for this layout";
     this.draw();
   }
+  setEnabled(enabled:boolean){this.enabled=enabled;this.draw();}
   setView(is3D: boolean) {
     this.in3D = is3D;
     this.draw();
@@ -39,14 +48,22 @@ export class IdealOverlay {
     const active = this.enabled && !!feature;
     const button = this.root.querySelector("button")!;
     button.setAttribute("aria-pressed", String(active));
-    button.disabled = false;
-    button.title = "Show the estimated ideal line";
+    button.disabled = !feature;
+    button.title = feature
+      ? "Show the estimated ideal line"
+      : (this.layout?.metadata.lineUnavailableReason ??
+        "Ideal line unavailable for this layout");
     this.changed(active);
     if (active && feature && !this.in3D) {
       for (const path of geometryPaths(feature.geometry))
         L.polyline(
           path.map((p) => [p[1], p[0]] as L.LatLngTuple),
-          { color: "#e6a318", weight: 3, className: "ideal-line" },
+          {
+            color: "#e6a318",
+            weight: 3,
+            smoothFactor: 0,
+            className: "ideal-line",
+          },
         )
           .bindTooltip("Ideal line · estimated")
           .addTo(this.group);

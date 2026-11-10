@@ -22,7 +22,20 @@
       "name": "Timaru",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Timaru International Motor Raceway. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2402.7 m; supplied distance 2403 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "New Zealand/Timaru"
+      "referenceId": "New Zealand/Timaru",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.389926334825908,
+        "lengthM": 2402.719843683063,
+        "sampleCount": 213,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5eaa51c9bdc7a981aa0733ae552970aefad2e3d8516d2bbc0ab455a5256cb896",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

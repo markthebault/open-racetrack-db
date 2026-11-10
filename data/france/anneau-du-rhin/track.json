@@ -26,21 +26,60 @@
       "name": "Anneau Du Rhin - 3.0 km",
       "file": "layouts/3-0-km.geojson",
       "description": "Draft route uses the OSM Biltzheim connector to replace the shorter 835 m arc of the closed alternative loop. The OSM trace measures about 2.80 km, below the nominal 3.0 km name. Confirm the exact historical layout before review.",
-      "referenceId": "France/Anneau Du Rhin - 3.0 km"
+      "referenceId": "France/Anneau Du Rhin - 3.0 km",
+      "roadWidthM": 7,
+      "roadWidthSource": {
+        "meanWidthM": 7.026254539352411,
+        "lengthM": 2797.7634014444907,
+        "sampleCount": 255,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a41aa417e158dcf333424ac7098ca7ec89946f0df44b795358df0e33270ef097",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "3-7-km",
       "name": "Anneau Du Rhin - 3.7 km",
       "file": "layouts/3-7-km.geojson",
       "description": "Draft route follows OSM way 40816550, tagged as the Alternative circuit. The trace measures about 3.47 km against the nominal 3.7 km label. Visual review is still required.",
-      "referenceId": "France/Anneau Du Rhin - 3.7 km"
+      "referenceId": "France/Anneau Du Rhin - 3.7 km",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.987354669734598,
+        "lengthM": 3474.610449501675,
+        "sampleCount": 323,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0eef8da4c9ddb8ec7aa8b2b923f315f6da872e94fcbe0d168923436f6bd09c55",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "anneau-du-rhin-c",
       "name": "Anneau Du Rhin_C",
       "referenceId": "France/Anneau Du Rhin_C",
       "file": "layouts/anneau-du-rhin-c.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1871.9 m. Difference from the supplied layout distance 1.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1871.9 m. Difference from the supplied layout distance 1.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.271766818230216,
+        "lengthM": 1871.9324239661362,
+        "sampleCount": 174,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c9b06be59902d853a15bfbaa3373d2327a385d8d7a082e1e4c260b6a61b9cf20",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -23,7 +23,20 @@
       "name": "Spa Francorchamps",
       "file": "layouts/grand-prix.geojson",
       "description": "Full course through the car Speaker’s Corner on way 126807106. The separately mapped motorcycle alternative, karting course and pit lanes are excluded.",
-      "referenceId": "Belgium/Spa Francorchamps"
+      "referenceId": "Belgium/Spa Francorchamps",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 10.147648833264956,
+        "roundingM": 0.5,
+        "sampleCount": 2332,
+        "interpolatedSections": 4,
+        "lengthM": 6992.73856203717,
+        "borderSha256": "e043474aa5d3f304bf8d4471db2ce4d049986ec3ee2ff9ac25f575bca8151434",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

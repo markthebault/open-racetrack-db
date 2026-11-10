@@ -24,32 +24,97 @@
       "name": "Achna Speedway",
       "file": "layouts/achna-speedway.geojson",
       "referenceId": "Cyprus/Achna Speedway",
-      "description": "Combined mapped configurations: Achna main course, Achna inner alternative. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Achna main course, Achna inner alternative. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 6.5,
+      "roadWidthSource": {
+        "meanWidthM": 6.466270592139204,
+        "lengthM": 2344.8515919860715,
+        "sampleCount": 194,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a962f814a2cff006d0ff218588022f8a4a40a46d5d8c6d7774aadb5eceac0244",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "achna-speedway-full-runway",
       "name": "Achna Speedway Full Runway",
       "file": "layouts/achna-speedway-full-runway.geojson",
       "referenceId": "Cyprus/Achna Speedway Full Runway",
-      "description": "Combined mapped configurations: Achna main course, Achna inner alternative, Achna full straight. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Achna main course, Achna inner alternative, Achna full straight. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 7,
+      "roadWidthSource": {
+        "meanWidthM": 6.9420238399213146,
+        "lengthM": 2885.190096779491,
+        "sampleCount": 233,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0a847a7710f05919cec33ac163e9f06873dae8e3f52a9560a5a944a4d3e22a77",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "achna-main-course",
       "name": "Achna main course",
       "file": "layouts/achna-main-course.geojson",
-      "description": "The operator's published course plan identifies the closed main circuit with the northern and southern hairpins and western return. Exact independent source way 734690065 indices 5 through 64 retain its closed paved course, excluding the straight's southern extension. Public satellite imagery independently confirms these physical course branches. Fine corner alignment and direction remain draft."
+      "description": "The operator's published course plan identifies the closed main circuit with the northern and southern hairpins and western return. Exact independent source way 734690065 indices 5 through 64 retain its closed paved course, excluding the straight's southern extension. Public satellite imagery independently confirms these physical course branches. Fine corner alignment and direction remain draft.",
+      "roadWidthM": 6.5,
+      "roadWidthSource": {
+        "meanWidthM": 6.482288197878356,
+        "lengthM": 1978.468792207635,
+        "sampleCount": 161,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8fc2b844f55452aaabdbb19da9edacc9dd4ce90b171226d3be5a2e7c54bd23c6",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "achna-inner-alternative",
       "name": "Achna inner alternative",
       "file": "layouts/achna-inner-alternative.geojson",
-      "description": "The operator course plan identifies the inner hairpin alternative connecting the northern cross-course section to the western return. Exact independent source way 734690066 preserves both real mapped junction endpoints. This connecting branch is not a separately timed lap."
+      "description": "The operator course plan identifies the inner hairpin alternative connecting the northern cross-course section to the western return. Exact independent source way 734690066 preserves both real mapped junction endpoints. This connecting branch is not a separately timed lap.",
+      "roadWidthM": 6.5,
+      "roadWidthSource": {
+        "meanWidthM": 6.37978030600118,
+        "lengthM": 366.3829323098786,
+        "sampleCount": 33,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ce85e24772ac8254428dbc0032428ac1625588006a594bae78d79d3572da903f",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "achna-full-straight",
       "name": "Achna full straight",
       "file": "layouts/achna-full-straight.geojson",
-      "description": "The operator course plan shows the long cross-course straight continuing beyond the closed circuit. Independent source way 734690065 indices 0 through 6 retain the real southern open end and northern hairpin junction. This physical straight is a component of the full-straight configuration, not an invented closed lap or a surveyed timed drag distance."
+      "description": "The operator course plan shows the long cross-course straight continuing beyond the closed circuit. Independent source way 734690065 indices 0 through 6 retain the real southern open end and northern hairpin junction. This physical straight is a component of the full-straight configuration, not an invented closed lap or a surveyed timed drag distance.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.006994029064458,
+        "lengthM": 540.3395291103263,
+        "sampleCount": 39,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "15210cac2adacda1f2f947bc46b9f4251f4a816dfdfe3f377cf1c306240fadf9",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

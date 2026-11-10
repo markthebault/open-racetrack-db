@@ -22,7 +22,20 @@
       "name": "Castelletto",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Motodromo Castelletto di Branduzzo. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 1788.4 m; supplied distance 1796 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Italy/Castelletto"
+      "referenceId": "Italy/Castelletto",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.716999661640951,
+        "lengthM": 1788.4176908719166,
+        "sampleCount": 258,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a7a39f58d924f2569dfab1925b6969ee83d54080bfc22dd1ef21ddc29544071d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

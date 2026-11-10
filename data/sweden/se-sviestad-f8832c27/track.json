@@ -22,7 +22,20 @@
       "name": "Sviestad",
       "referenceId": "Sweden/Sviestad",
       "file": "layouts/sviestad.geojson",
-      "description": "Draft configuration: Full circuit with northwestern corner notch, northern inner bend and rounded southeastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2093.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full circuit with northwestern corner notch, northern inner bend and rounded southeastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2093.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.172370091857898,
+        "lengthM": 1677.3875834357386,
+        "sampleCount": 134,
+        "interpolatedSections": 35,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5465a9555f52f272b78108132ddf20636da5eadd756708471810df5acaa9e1cf",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

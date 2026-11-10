@@ -25,35 +25,100 @@
       "name": "Penbay Combo",
       "referenceId": "Taiwan/Penbay Combo",
       "file": "layouts/penbay-combo.geojson",
-      "description": "Combined mapped configurations: Penbay International Circuit, Penbay North Oval, Penbay South Oval. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Penbay International Circuit, Penbay North Oval, Penbay South Oval. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 18,
+      "roadWidthSource": {
+        "meanWidthM": 17.944372184729904,
+        "lengthM": 4903.857982713878,
+        "sampleCount": 409,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "93341f3d4d0f69c1d55b280daa4b57259171d6836d5abc8a92493990ffc49642",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "penbay-international-circuit",
       "name": "Penbay International Circuit",
       "referenceId": "Taiwan/Penbay International Circuit",
       "file": "layouts/penbay-international-circuit.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3520.1 m. Difference from the supplied layout distance 6.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3520.1 m. Difference from the supplied layout distance 6.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 18.5,
+      "roadWidthSource": {
+        "meanWidthM": 18.262352578500156,
+        "lengthM": 3520.0802226023106,
+        "sampleCount": 289,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1cae1b09e7e1aedd7953872e2b70d1e539c30ea718a4835e18f11bb985e9fbec",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "penbay-national",
       "name": "Penbay National",
       "referenceId": "Taiwan/Penbay National",
       "file": "layouts/penbay-national.geojson",
-      "description": "The National course retains the full northern outer loop, western main straight and middle eastern hairpin, closing through the short western U-return. The public all-roads snapshot supplies every course section except the short junction from way 645849365 index 55 to way 645849366 index 4. That junction is independently digitized from continuous pavement in the pinned June 18, 2026 image. The southern outer loop, southern oval, northern shortcut and separate eastern karting circuit are excluded. Junction precision is limited to native 10 m imagery; operating direction and final corner placement require review. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1964.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
+      "description": "The National course retains the full northern outer loop, western main straight and middle eastern hairpin, closing through the short western U-return. The public all-roads snapshot supplies every course section except the short junction from way 645849365 index 55 to way 645849366 index 4. That junction is independently digitized from continuous pavement in the pinned June 18, 2026 image. The southern outer loop, southern oval, northern shortcut and separate eastern karting circuit are excluded. Junction precision is limited to native 10 m imagery; operating direction and final corner placement require review. Native satellite ground resolution is 10 m. Nearest-neighbor rendering does not add resolution. Fine corner alignment and historical direction remain draft; no vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1964.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue.",
+      "roadWidthM": 17,
+      "roadWidthSource": {
+        "meanWidthM": 16.80730340484439,
+        "lengthM": 1964.487104572805,
+        "sampleCount": 175,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d1d057ab217d84c884fb281d4ed11b11f22283d5440b94047bafe3f7632c0bf8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "penbay-north-oval",
       "name": "Penbay North Oval",
       "referenceId": "Taiwan/Penbay North Oval",
       "file": "layouts/penbay-north-oval.geojson",
-      "description": "Draft configuration: Separate northern oval with rounded western corner and direct eastern outer return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 948.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Separate northern oval with rounded western corner and direct eastern outer return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 948.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 19.5,
+      "roadWidthSource": {
+        "meanWidthM": 19.455054593647795,
+        "lengthM": 948.1375468078706,
+        "sampleCount": 81,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "10f95cdbf6fbc14c75716bdcc9573c20810daaef5e76a24c73ea7ad6f3e851b9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "penbay-south-oval",
       "name": "Penbay South Oval",
       "referenceId": "Taiwan/Penbay South Oval",
       "file": "layouts/penbay-south-oval.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 435.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 435.6 m. Difference from the supplied layout distance 0.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.086999236298015,
+        "lengthM": 435.6421630204699,
+        "sampleCount": 39,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7e2a15a732995710b75659ea86e8c8245446dc454cefc0a4e64676cc2b706158",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

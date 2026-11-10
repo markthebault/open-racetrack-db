@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.433246014505835,
+        "lengthM": 4982.455597977799,
+        "sampleCount": 398,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4b9e85c4469161dcc02a81bf45a8c55e8ff08e798e6e3d1a2c1d4a6d0556675b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "pergusa",
       "name": "Pergusa",
       "referenceId": "Italy/Pergusa",
       "file": "layouts/pergusa.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4982.7 m. Difference from the supplied layout distance 8.3 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4982.7 m. Difference from the supplied layout distance 8.3 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.433603186458178,
+        "lengthM": 4982.570200384052,
+        "sampleCount": 398,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4b9e85c4469161dcc02a81bf45a8c55e8ff08e798e6e3d1a2c1d4a6d0556675b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -23,14 +23,40 @@
       "name": "Catalunya GP",
       "file": "layouts/grand-prix.geojson",
       "referenceId": "Spain/Catalunya GP",
-      "description": "Full course uses the mapped Turn 10 arc on way 893732520 and the direct final corners on way 1560896066. The final-sector chicane, Nissan alternative, short-course connector and long-lap penalty detour are excluded."
+      "description": "Full course uses the mapped Turn 10 arc on way 893732520 and the direct final corners on way 1560896066. The final-sector chicane, Nissan alternative, short-course connector and long-lap penalty detour are excluded.",
+      "roadWidthM": 16,
+      "roadWidthSource": {
+        "meanWidthM": 16.015796378606144,
+        "lengthM": 4661.015239226456,
+        "sampleCount": 403,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "25ddd5bd6761d150e31d25ca74a7be4a93586726b45890d63b481086a55b85dc",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     },
     {
       "id": "with-chicane",
       "name": "Catalunya",
       "file": "layouts/with-chicane.geojson",
       "referenceId": "Spain/Catalunya",
-      "description": "Same Turn 10 arc as the main course, with the mapped final-sector chicane on ways 1057826347 and 967275593. The Nissan alternative and long-lap penalty detour are excluded."
+      "description": "Same Turn 10 arc as the main course, with the mapped final-sector chicane on ways 1057826347 and 967275593. The Nissan alternative and long-lap penalty detour are excluded.",
+      "roadWidthM": 16,
+      "roadWidthSource": {
+        "meanWidthM": 15.979848479622413,
+        "lengthM": 4634.734431142129,
+        "sampleCount": 400,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8636417be1bfb32e6679e6e808676aaf76e87e22413af7f3a2bd138bbf1f85b7",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

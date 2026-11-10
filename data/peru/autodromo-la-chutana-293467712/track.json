@@ -23,14 +23,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.800850339124443,
+        "lengthM": 2417.451790111442,
+        "sampleCount": 207,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "308c18917f74aef01c2ebee509dcd0c089aa00ccbfddd9c0b7bd920927c138ef",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-la-chutana",
       "name": "Autodromo La Chutana",
       "file": "layouts/autodromo-la-chutana.geojson",
       "referenceId": "Peru/Autodromo La Chutana",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2414.9 m. Difference from the supplied layout distance 4.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2414.9 m. Difference from the supplied layout distance 4.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.346481695213713,
+        "lengthM": 2414.913221994265,
+        "sampleCount": 202,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "892b1dc2abff496cdb0b8013cea281f3f5ee0f40ddfd1d3c54537d120a1a7410",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

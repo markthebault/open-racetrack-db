@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.750054885401902,
+        "lengthM": 5183.514206058523,
+        "sampleCount": 438,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3fb63071912788236981cb6da6fc20e7a56b70537bb753a6cea413bcbd1de6d6",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "buddh-international-circuit",
       "name": "Buddh International Circuit",
       "file": "layouts/buddh-international-circuit.geojson",
       "referenceId": "India/Buddh International Circuit",
-      "description": "Draft configuration selected from the independently named circuit relation 2532569. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 2532569. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.026448922213254,
+        "lengthM": 5130.634114098109,
+        "sampleCount": 421,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5fa9ab015345049ac89093e606f6ec24f755e6b76d54ece879c597eea87b7997",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

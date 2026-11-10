@@ -22,7 +22,20 @@
       "name": "Wodonga Tafe",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Australia/Wodonga Tafe"
+      "referenceId": "Australia/Wodonga Tafe",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.835439811856014,
+        "lengthM": 1602.6274007899456,
+        "sampleCount": 146,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a5bda76a387905e1e5acda3098ce52a0f291079fffeb3cda8b2754acf8dd5c1b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

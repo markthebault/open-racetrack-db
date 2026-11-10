@@ -32,3 +32,13 @@ The layout catalogue includes all supplied categories. The older country-discove
 Use the registration and recovery commands in the README for the complete catalogue. New courses must use independent source-node coordinates. Keep ambiguous layouts registered with `file: null` and a reason. A route selected by timing position and declared length is a draft hypothesis, not reviewed evidence of a named configuration.
 
 Alternate OSM snapshots must be registered with their SHA-256 and source ID in the venue import manifest. Do not replace a source snapshot without preserving the versions required by existing recipes.
+
+## Compact runtime data
+
+Public layout GeoJSON stores source traces and timing, with optional compact terrain and road recipes. Do not save generated inner, outer or ideal coordinates. Configured widths and their former-boundary measurement provenance live in track.json. Uncertain layouts have an explicit unavailable reason; do not assign them an automatic width.
+
+`npm run build` validates source recipes, reproducible generation, catalogue coverage, elevation and the compact-data/network contract. The saved-boundary authoring validators remain available for historical authoring work; they require their corresponding saved-geometry dataset, not the compact public format.
+
+`npm test` runs current compact-runtime tests, then runs the retained authoring tests with current code against the pinned pre-migration data/source commit listed in tests/legacy-authoring-tests.json. These temporary fixtures are extracted from Git history, never shipped in the database. Fetch full Git history before running the complete test suite. Historical authoring tests establish compatibility with that format, not the physical accuracy of current estimated boundaries.
+
+The one-way `scripts/migrate-width-corridors.ts` measures existing saved edges without fetching imagery. It archives originals under .local, remaps bridge profiles onto source-trace stations (including cyclic seam crossings), then removes derived coordinates. `scripts/sync-width-networks.ts` synchronizes component metadata with current child layouts; `--check` verifies without writing. Normal canonical source regeneration preserves compact metadata and never reintroduces saved edges.

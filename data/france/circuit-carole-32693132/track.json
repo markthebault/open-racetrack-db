@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 7,
+      "roadWidthSource": {
+        "meanWidthM": 7.141943135169807,
+        "lengthM": 2094.0818337188684,
+        "sampleCount": 256,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "23d6629f3eba96f56f29625647b0cda1cdd35c89cc3deb29d68e9bf662a31ab3",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "carole",
       "name": "Carole",
       "file": "layouts/carole.geojson",
       "referenceId": "France/Carole",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2073.7 m. Difference from the supplied layout distance 3.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2073.7 m. Difference from the supplied layout distance 3.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.340453048846403,
+        "lengthM": 2073.7049159572985,
+        "sampleCount": 234,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7486d6d535d038625d47a0fda6831b372585103a0ce2e388ea6f67aaf923576f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

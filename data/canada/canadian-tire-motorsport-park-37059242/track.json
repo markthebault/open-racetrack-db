@@ -23,14 +23,40 @@
       "name": "Canadian Tire Motorsports Park",
       "file": "layouts/main.geojson",
       "referenceId": "Canada/Canadian Tire Motorsports Park",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.435845353737673,
+        "lengthM": 3943.2190009417936,
+        "sampleCount": 317,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d158b29f026daf405cae013af78974099f125cf71ed5759ceceb4f51537fc0fb",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "mosport-kartways",
       "name": "Mosport Kartways",
       "file": "layouts/mosport-kartways.geojson",
       "referenceId": "Canada/Mosport Kartways",
-      "description": "Draft configuration: Full kart course with central parallel straight and both southern hooked hairpins. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1386.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full kart course with central parallel straight and both southern hooked hairpins. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1386.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.24037895336632,
+        "lengthM": 1378.4130127989115,
+        "sampleCount": 123,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c81d9f3eaa182bf0b7c75c0b664d9758310c70470f88b5c42b17e16f092a7c4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -24,21 +24,60 @@
       "name": "Willow Springs",
       "file": "layouts/main.geojson",
       "referenceId": "United States/Willow Springs",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.122378877855722,
+        "lengthM": 3944.0203647826975,
+        "sampleCount": 423,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b592582fe8e7cb90f2cb79b7b447700e2ef9868e2745cf59681cd99014e5610f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "streets-of-willow-springs",
       "name": "Streets of Willow Springs",
       "file": "layouts/streets-of-willow-springs.geojson",
       "referenceId": "United States/Streets of Willow Springs",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2551.7 m. Difference from the supplied layout distance 0.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2551.7 m. Difference from the supplied layout distance 0.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.460618238721713,
+        "lengthM": 2551.679044642593,
+        "sampleCount": 235,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fcaec2fab785c8845f38ca7a85384d59032900ebff099e408f460dd68041494c",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "willow-springs-horse-thief-mile",
       "name": "Willow Springs Horse Thief Mile",
       "file": "layouts/willow-springs-horse-thief-mile.geojson",
       "referenceId": "United States/Willow Springs Horse Thief Mile",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1633.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1633.3 m. Difference from the supplied layout distance 13.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.307982895250676,
+        "lengthM": 1592.2450257140933,
+        "sampleCount": 151,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e5d790826fb79b261b8522ff76ca6cac595ff4c489be16aec692c3770eda0d47",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

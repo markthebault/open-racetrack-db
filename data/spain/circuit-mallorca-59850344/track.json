@@ -22,7 +22,20 @@
       "name": "RennarenaMallorca",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuit Mallorca. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2567.6 m; supplied distance 2547 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Spain/RennarenaMallorca"
+      "referenceId": "Spain/RennarenaMallorca",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.087167786625598,
+        "lengthM": 2511.6413930993544,
+        "sampleCount": 306,
+        "interpolatedSections": 15,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "59cbfd47bf1ad845b3f346498c01055b51e3db289dc78f144ce0160fc2269448",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

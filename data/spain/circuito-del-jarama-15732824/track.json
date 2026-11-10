@@ -22,7 +22,20 @@
       "name": "Jarama",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Spain/Jarama"
+      "referenceId": "Spain/Jarama",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.083237582764816,
+        "lengthM": 3905.9111074237126,
+        "sampleCount": 421,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e655182f94d055ac95a1055673430b346841a792b60a1ca4e5532eddedbb51fa",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

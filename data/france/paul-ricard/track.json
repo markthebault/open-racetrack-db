@@ -23,56 +23,160 @@
       "name": "Paul Ricard 1C-V2",
       "file": "layouts/main.geojson",
       "referenceId": "France/Paul Ricard 1C-V2",
-      "description": "Full course through the complete mapped Chicane Nord on way 229454180, the rounded Courbe de Signes on way 23463089 and the named Verrerie, Sainte-Baume, Beausset, Bendor and Pont sections. Pit ways, driving-center roads and connecting alternatives are excluded."
+      "description": "Full course through the complete mapped Chicane Nord on way 229454180, the rounded Courbe de Signes on way 23463089 and the named Verrerie, Sainte-Baume, Beausset, Bendor and Pont sections. Pit ways, driving-center roads and connecting alternatives are excluded.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.716862016277497,
+        "lengthM": 5774.567607163476,
+        "sampleCount": 641,
+        "interpolatedSections": 22,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2886b6a1c1157ddde3fba47887de2c953771bd91067188a0f9e388f746973b2e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "mistral-straight",
       "name": "Paul Ricard 1A-V2",
       "file": "layouts/mistral-straight.geojson",
       "referenceId": "France/Paul Ricard 1A-V2",
-      "description": "Full course uses the complete Mistral straight on way 686705519, bypassing Chicane Nord. The rounded Courbe de Signes and the remaining main-course sections are retained."
+      "description": "Full course uses the complete Mistral straight on way 686705519, bypassing Chicane Nord. The rounded Courbe de Signes and the remaining main-course sections are retained.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.71635582354031,
+        "lengthM": 5764.2589880916685,
+        "sampleCount": 607,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "aceef09358640e91c6d84d7fc0fb2911ead4a56570805fe345286fe8fa8b2419",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "paul-ricard-1c-v2-blancpain",
       "name": "Paul Ricard 1C-V2 Blancpain",
       "file": "layouts/paul-ricard-1c-v2-blancpain.geojson",
       "referenceId": "France/Paul Ricard 1C-V2 Blancpain",
-      "description": "The supplied label is retained. Independent championship briefings identify the GT/Blancpain course as the full Mistral-straight 1A-V2 configuration. This trace follows that documented course rather than inferring a chicane from the catalogue label. Historical naming and measured-length differences still require review."
+      "description": "The supplied label is retained. Independent championship briefings identify the GT/Blancpain course as the full Mistral-straight 1A-V2 configuration. This trace follows that documented course rather than inferring a chicane from the catalogue label. Historical naming and measured-length differences still require review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.786212798471178,
+        "lengthM": 5758.063860889158,
+        "sampleCount": 604,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "674a971c3c87d823b742c447b81e69f7e70ef40a7a4d03587708255679675954",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "paul-ricard-gtdrive",
       "name": "Paul Ricard GtDrive",
       "file": "layouts/paul-ricard-gtdrive.geojson",
       "referenceId": "France/Paul Ricard GtDrive",
-      "description": "The independently named Driving Center course is identified by its complete connected OSM route and operator evidence. The current mapped route is approximately 1.56 km; the supplied 1.497 km course distance differs, so historical configuration and travel direction remain draft. No route is shortened to force the stated length."
+      "description": "The independently named Driving Center course is identified by its complete connected OSM route and operator evidence. The current mapped route is approximately 1.56 km; the supplied 1.497 km course distance differs, so historical configuration and travel direction remain draft. No route is shortened to force the stated length.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.870452331522891,
+        "lengthM": 1558.9624253588263,
+        "sampleCount": 250,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "de155a8e36ef7b9b74620e35da550ad8d0f24eebd1b6009cb19644d01509dd3e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "paul-ricard-le-castellet",
       "name": "Paul Ricard Le Castellet",
       "file": "layouts/paul-ricard-le-castellet.geojson",
       "referenceId": "France/Paul Ricard Le Castellet",
-      "description": "The Le Castellet entry uses the independently documented full Grand Prix configuration with the Mistral chicane. Coordinates reuse the pinned full-course OSM recipe; the separate catalogue name and private timing convention are retained. Configuration remains draft."
+      "description": "The Le Castellet entry uses the independently documented full Grand Prix configuration with the Mistral chicane. Coordinates reuse the pinned full-course OSM recipe; the separate catalogue name and private timing convention are retained. Configuration remains draft.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.88767977050973,
+        "lengthM": 5839.863301229298,
+        "sampleCount": 660,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7f64c4675cc616e0006228f879fd64fda5c77324ede165fe69ab4d3aa2bf2def",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "paul-ricard-piste-gt",
       "name": "Paul Ricard Piste GT",
       "file": "layouts/paul-ricard-piste-gt.geojson",
       "referenceId": "France/Paul Ricard Piste GT",
-      "description": "Draft western school-course association. The circuit operator identifies a separate 1.8 km school configuration. The pinned 1804.2 m connected route uses the Hôtel and Sainte-Baume corners and the short connection between the Mistral and western return section. The supplied course distance is 1786 m. Contemporary driving-school offers also call a longer 2.0 km configuration Piste GT, so the historical name and exact configuration remain provisional. All geometry is unchanged independent OSM data."
+      "description": "Draft western school-course association. The circuit operator identifies a separate 1.8 km school configuration. The pinned 1804.2 m connected route uses the Hôtel and Sainte-Baume corners and the short connection between the Mistral and western return section. The supplied course distance is 1786 m. Contemporary driving-school offers also call a longer 2.0 km configuration Piste GT, so the historical name and exact configuration remain provisional. All geometry is unchanged independent OSM data.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.992528955656606,
+        "lengthM": 1804.1928406534153,
+        "sampleCount": 220,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5c2426f81a9d509051604d5e363f029b6e92252ad86290d35c083519f0f8750c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "paul-ricard-short",
       "name": "Paul Ricard Short",
       "file": "layouts/paul-ricard-short.geojson",
       "referenceId": "France/Paul Ricard Short",
-      "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The full Chicane Nord is included. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3848.4 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance."
+      "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The full Chicane Nord is included. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3848.4 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.270884333566613,
+        "lengthM": 3848.4501884271795,
+        "sampleCount": 453,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c30ad679c9009472577dd6cd83c9d3aaadb8464d10d63e59a2b5d3573ce9b523",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "paul-ricard-short-without-chicane",
       "name": "Paul Ricard Short_without chicane",
       "file": "layouts/paul-ricard-short-without-chicane.geojson",
       "referenceId": "France/Paul Ricard Short_without chicane",
-      "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The Mistral straight bypasses Chicane Nord. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3766.6 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance."
+      "description": "Short eastern configuration uses the Pinède connection (ways 229207932, 158010780 and 370529774), Signes, Beausset, Bendor and the stand straight. The Mistral straight bypasses Chicane Nord. Independent layout diagrams distinguish the short routes from the full GP course. The pinned source trace measures 3766.6 m; historical diagram distances and timing-catalogue distances differ. Association remains draft, with no coordinates adjusted to fit a distance.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.306076062443335,
+        "lengthM": 3766.656787561567,
+        "sampleCount": 397,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c6a14d326c1e076a1a0957ff325d5bae4be29dcab555a6382310bc3d0269d257",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

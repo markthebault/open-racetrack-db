@@ -22,7 +22,20 @@
       "id": "main",
       "name": "Full circuit",
       "file": "layouts/main.geojson",
-      "description": "Full racing course with the western dogleg, upper straight chicane and complete eastern S. Trace coordinates come from licensed satellite imagery and remain estimates; timing is unavailable."
+      "description": "Full racing course with the western dogleg, upper straight chicane and complete eastern S. Trace coordinates come from licensed satellite imagery and remain estimates; timing is unavailable.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.372396007784742,
+        "lengthM": 2221.738116356613,
+        "sampleCount": 284,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4bab16978b6cdc5695e2d677fb3a6ccac70ce8b5912eb438709d4b8ecf36aec2",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

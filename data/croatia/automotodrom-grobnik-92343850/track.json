@@ -22,7 +22,20 @@
       "name": "Rijeka Grobnik",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Automotodrom Grobnik. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4159 m; supplied distance 4154 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Croatia/Rijeka Grobnik"
+      "referenceId": "Croatia/Rijeka Grobnik",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.634722840924526,
+        "lengthM": 4159.014845862599,
+        "sampleCount": 371,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "22a3cafe5de6144c05834f3a95a12ba0ace94ecfa31f2aa59c43c27b2fb9327b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

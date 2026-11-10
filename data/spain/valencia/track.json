@@ -25,21 +25,60 @@
       "name": "Circuit Ricardo Tormo Valencia",
       "file": "layouts/grand-prix.geojson",
       "description": "Complete main loop on ways 1336518434, 51765219 and 1007068425. Formula E connectors, Shortcut 1, pit lane and MotoGP long-lap detour are excluded. Route order is counterclockwise; OSM direction tags are absent.",
-      "referenceId": "Spain/Circuit Ricardo Tormo Valencia"
+      "referenceId": "Spain/Circuit Ricardo Tormo Valencia",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.879670081571597,
+        "lengthM": 3999.8191601911,
+        "sampleCount": 333,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "48acf5d3c2b1f2a7d581b439e2c7cb4b51a0d01c6015d947cda682756464f8a9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "circuit-ricardo-tormo-national",
       "name": "Circuit Ricardo Tormo National",
       "referenceId": "Spain/Circuit Ricardo Tormo National",
       "file": "layouts/circuit-ricardo-tormo-national.geojson",
-      "description": "Draft configuration: National shortcut omitting the western long infield hairpin; retains the pointed eastern turn and small western notch. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3136.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: National shortcut omitting the western long infield hairpin; retains the pointed eastern turn and small western notch. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3136.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.969311777800861,
+        "lengthM": 3136.878529565586,
+        "sampleCount": 262,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b3146680c0529a80ca0f2d6b8613da071e3b8dbd0a97a353d5c7d607e72d8c09",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "circuit-ricardo-tormo-school",
       "name": "Circuit Ricardo Tormo School",
       "referenceId": "Spain/Circuit Ricardo Tormo School",
       "file": "layouts/circuit-ricardo-tormo-school.geojson",
-      "description": "The regional tourism authority identifies an independently usable 1,300 m inner School course and a separate 3,100 m exterior course. The School selection retains the inner northern hairpin, diagonal return, southern training straight and narrow western connector. Exact public OSM course nodes on ways 51765218, 1007068425 and 51765219 retain the inner northern hairpin and southern training return. The missing western connector is independently digitized from the Spanish national PNOA MA orthophoto WMS. The independent OSM snapshot hash and selected way indices, image bytes, exact Web Mercator extent and request are pinned. The image acquisition year is not asserted. The Grand Prix exterior, National shortcut, pits, southeastern training skidpad and northeastern karting area are excluded. Fine alignment, travel direction and historical changes remain draft. No vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1213.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
+      "description": "The regional tourism authority identifies an independently usable 1,300 m inner School course and a separate 3,100 m exterior course. The School selection retains the inner northern hairpin, diagonal return, southern training straight and narrow western connector. Exact public OSM course nodes on ways 51765218, 1007068425 and 51765219 retain the inner northern hairpin and southern training return. The missing western connector is independently digitized from the Spanish national PNOA MA orthophoto WMS. The independent OSM snapshot hash and selected way indices, image bytes, exact Web Mercator extent and request are pinned. The image acquisition year is not asserted. The Grand Prix exterior, National shortcut, pits, southeastern training skidpad and northeastern karting area are excluded. Fine alignment, travel direction and historical changes remain draft. No vertices are fitted to private diagrams, timing positions or nominal distance. Independently digitized aerial centerline: 1213.8 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.674620922561967,
+        "lengthM": 1213.7572192315897,
+        "sampleCount": 98,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "259888392e06353567c33261283916624516e0bd19b263ff787dadee524f6776",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

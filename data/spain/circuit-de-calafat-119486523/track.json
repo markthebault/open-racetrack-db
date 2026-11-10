@@ -22,7 +22,20 @@
       "name": "Calafat",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuit de Calafat. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3342.9 m; supplied distance 3254 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Spain/Calafat"
+      "referenceId": "Spain/Calafat",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.664122621516361,
+        "lengthM": 3254.2326890391882,
+        "sampleCount": 341,
+        "interpolatedSections": 21,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "842bb4b60ff22be90e6b8021b9bb1f6dbebba2cecc5d5524e8dcbcf19d68da0d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

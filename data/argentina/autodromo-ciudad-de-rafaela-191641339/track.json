@@ -22,21 +22,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 17.5,
+      "roadWidthSource": {
+        "meanWidthM": 17.31290639379,
+        "lengthM": 4802.11321885489,
+        "sampleCount": 384,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9a82fcadd4f00dfbbc1df62ce4d58f974cec105e534ee9ce0de1d65087b9ae1b",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-de-rafaela",
       "name": "Autodromo de Rafaela",
       "file": "layouts/autodromo-de-rafaela.geojson",
       "referenceId": "Argentina/Autodromo de Rafaela",
-      "description": "Draft configuration: Full oval configuration with the three catalogue chicanes; historical chicane placement differs from some current event configurations. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4795.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full oval configuration with the three catalogue chicanes; historical chicane placement differs from some current event configurations. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4795.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.349233980435205,
+        "lengthM": 4684.648429874124,
+        "sampleCount": 373,
+        "interpolatedSections": 9,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6b378adfce6be29870a7e2dc19c973c6d00b3956641748b61b3434ed5c27c505",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-de-rafaela-bascolo",
       "name": "Autodromo de Rafaela Bascolo",
       "file": "layouts/autodromo-de-rafaela-bascolo.geojson",
       "referenceId": "Argentina/Autodromo de Rafaela Bascolo",
-      "description": "Draft configuration: Northern half-oval configuration uses the cross-track return and two eastern chicanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3133.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Northern half-oval configuration uses the cross-track return and two eastern chicanes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3133.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.065594446867516,
+        "lengthM": 3133.555205266401,
+        "sampleCount": 256,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "31c57692c53699dff50bfabe8ba5fb76fcf6027fb4b654efdf60749ba4774b99",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

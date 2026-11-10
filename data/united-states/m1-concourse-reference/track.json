@@ -22,7 +22,20 @@
       "name": "M1 Concourse",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "United States/M1 Concourse"
+      "referenceId": "United States/M1 Concourse",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.970261450386723,
+        "lengthM": 2292.131243826969,
+        "sampleCount": 208,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "599fc6423a064ed6074c9a30ceffa717f4185bddcee051aa09f852df7a887b87",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

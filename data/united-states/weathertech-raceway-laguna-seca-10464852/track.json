@@ -22,7 +22,20 @@
       "name": "Laguna Seca",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "United States/Laguna Seca"
+      "referenceId": "United States/Laguna Seca",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.140124014984947,
+        "lengthM": 3600.83410130884,
+        "sampleCount": 350,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7e27dad8def3eabb03c0430441e9ca8e66e0a55b7bb069084bb0f8a96c5e0092",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "New Jersey Lightning",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "United States/New Jersey Lightning"
+      "referenceId": "United States/New Jersey Lightning",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.826256069499095,
+        "lengthM": 2999.386381595945,
+        "sampleCount": 228,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f2c9d423553301db699de2360f737fd29cd73e8282cf41875149bf1e0acdf3ba",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

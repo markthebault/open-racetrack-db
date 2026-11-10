@@ -23,14 +23,40 @@
       "name": "FujiSpeedWay",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Japan/FujiSpeedWay"
+      "referenceId": "Japan/FujiSpeedWay",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.014551378359585,
+        "lengthM": 4553.466617996276,
+        "sampleCount": 426,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "122a34c07a0584dd6ff575e8d27e1427175b635f10415c8768ab1c7a24a19d25",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "fuji-driftcourse",
       "name": "Fuji Driftcourse",
       "referenceId": "Japan/Fuji Driftcourse",
       "file": "layouts/fuji-driftcourse.geojson",
-      "description": "Draft configuration: Drift loop including the southern inner kink; excludes the straight southern bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 641.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Drift loop including the southern inner kink; excludes the straight southern bypass. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 641.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 8.245190453158843,
+        "lengthM": 641.8172633566404,
+        "sampleCount": 72,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6ce021c26a0ecb725a5a245c3ec99d92f1364ce59d035b127a9c6e0f8d0c09d0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

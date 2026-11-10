@@ -22,7 +22,20 @@
       "name": "Fay de Bretagne",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "France/Fay de Bretagne"
+      "referenceId": "France/Fay de Bretagne",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.736162144401115,
+        "lengthM": 3082.561283849423,
+        "sampleCount": 302,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7ea4bba2bdd0d25b7b397d7ee6c86fbe3acfc1d5b206f5baf98aa974a470ddbc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

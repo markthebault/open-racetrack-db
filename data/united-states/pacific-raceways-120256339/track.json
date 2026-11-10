@@ -22,7 +22,20 @@
       "name": "Pacific Raceways Road Course",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Pacific Raceways. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3622 m; supplied distance 3628 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United States/Pacific Raceways Road Course"
+      "referenceId": "United States/Pacific Raceways Road Course",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.241560489460984,
+        "lengthM": 3621.9642507846575,
+        "sampleCount": 287,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "04e9743429763bd14b5becf1686fa6df8bff40451375d90f4cbd5bb6b578d425",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

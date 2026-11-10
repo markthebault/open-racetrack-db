@@ -23,14 +23,40 @@
       "name": "Lihpao G2",
       "file": "layouts/lihpao-g2.geojson",
       "referenceId": "Taiwan/Lihpao G2",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3560.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3560.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.11959302318637,
+        "lengthM": 3560.844557889969,
+        "sampleCount": 302,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cdff04ad3f99e2c37e31cfa91a3bc0f062ef75b2fbc6f31cd3425661b461fb94",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "lihpao-g2-track-day",
       "name": "Lihpao G2 Track Day",
       "file": "layouts/lihpao-g2-track-day.geojson",
       "referenceId": "Taiwan/Lihpao G2 Track Day",
-      "description": "Draft configuration: Full circuit with western hooked return, northern linked bends and eastern parallel infield hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3560.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full circuit with western hooked return, northern linked bends and eastern parallel infield hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3560.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.57053505464458,
+        "lengthM": 3560.844557889969,
+        "sampleCount": 302,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0ab95935ea005b3755e58fcd07f84b15af2d12f4aa1ccbed486577a8080a094f",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

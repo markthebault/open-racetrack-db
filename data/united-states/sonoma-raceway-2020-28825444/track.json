@@ -24,56 +24,160 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.97237947273036,
+        "lengthM": 4124.420220813106,
+        "sampleCount": 402,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cf2744781c9f5e07d6667cd40fa1d0e7d877fbf2773bd2ac25202314b7ac081b",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway",
       "name": "Sonoma Raceway",
       "file": "layouts/sonoma-raceway.geojson",
       "referenceId": "United States/Sonoma Raceway",
-      "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 8.163049864568109,
+        "lengthM": 4048.871878047965,
+        "sampleCount": 393,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7c703227ad42363d154189e898a60847d3b516decc968cb212faaa5de951285d",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway-combo",
       "name": "Sonoma Raceway Combo",
       "file": "layouts/sonoma-raceway-combo.geojson",
       "referenceId": "United States/Sonoma Raceway Combo",
-      "description": "Combined mapped configurations: Sonoma Raceway, Sonoma Raceway Stock Car. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Sonoma Raceway, Sonoma Raceway Stock Car. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.255040522684583,
+        "lengthM": 7182.854111491664,
+        "sampleCount": 692,
+        "interpolatedSections": 7,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1b6f466a3e98b5af4c0c9928a7e864353eb4d51e893039a04dd472c29eff9923",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway-indy",
       "name": "Sonoma Raceway Indy",
       "file": "layouts/sonoma-raceway-indy.geojson",
       "referenceId": "United States/Sonoma Raceway Indy",
-      "description": "Draft configuration: Full road course with rounded Turn 7 return and eastern chicane connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4069.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full road course with rounded Turn 7 return and eastern chicane connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4069.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.285055478468319,
+        "lengthM": 4057.339045912584,
+        "sampleCount": 394,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "309c273edd842a6d3f19312d5f40c52ef1fe6de2817269eb95d12c8458ac4c55",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway-short",
       "name": "Sonoma Raceway Short",
       "file": "layouts/sonoma-raceway-short.geojson",
       "referenceId": "United States/Sonoma Raceway Short",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3582.8 m. Difference from the supplied layout distance 16.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3582.8 m. Difference from the supplied layout distance 16.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.196150759386455,
+        "lengthM": 3554.79903304251,
+        "sampleCount": 342,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ae66a52ecd481c82cb7b4a0def6f731dfdc1cc90e5136b11b1c7c9bdaa47438a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway-sro-practice",
       "name": "Sonoma Raceway SRO Practice",
       "file": "layouts/sonoma-raceway-sro-practice.geojson",
       "referenceId": "United States/Sonoma Raceway SRO Practice",
-      "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full road course with rounded Turn 7 return and direct eastern connector, without the extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4048.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 8.163049864568109,
+        "lengthM": 4048.871878047965,
+        "sampleCount": 393,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7c703227ad42363d154189e898a60847d3b516decc968cb212faaa5de951285d",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway-stock-car",
       "name": "Sonoma Raceway Stock Car",
       "file": "layouts/sonoma-raceway-stock-car.geojson",
       "referenceId": "United States/Sonoma Raceway Stock Car",
-      "description": "Draft configuration: Stock-car shortcut omitting the full western infield loop, with direct eastern return and no extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3181.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Stock-car shortcut omitting the full western infield loop, with direct eastern return and no extra eastern chicane. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3181.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.95773680934468,
+        "lengthM": 3133.982233443693,
+        "sampleCount": 299,
+        "interpolatedSections": 7,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "de1a40c21b6d9e1e089518a265020c5c50c9b73c1b8c0ed805d179d133d7335d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sonoma-raceway-with-7a",
       "name": "Sonoma Raceway with 7A",
       "file": "layouts/sonoma-raceway-with-7a.geojson",
       "referenceId": "United States/Sonoma Raceway with 7A",
-      "description": "Draft configuration: Full course using the angled Turn 7A return and direct eastern connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4074.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course using the angled Turn 7A return and direct eastern connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4074.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.817727528942084,
+        "lengthM": 4010.988787400226,
+        "sampleCount": 382,
+        "interpolatedSections": 9,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "59980231101a5741f9ce51ea629e2da6aa92722fad3eb52e0206a0d5b63f8c13",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

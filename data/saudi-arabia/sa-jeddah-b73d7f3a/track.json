@@ -22,7 +22,20 @@
       "name": "Jeddah",
       "referenceId": "Saudi Arabia/Jeddah",
       "file": "layouts/jeddah.geojson",
-      "description": "Draft configuration: Full street circuit including the southern elongated loop and northern linked bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6227.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full street circuit including the southern elongated loop and northern linked bends. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6227.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.794511138934503,
+        "lengthM": 6185.510669396893,
+        "sampleCount": 557,
+        "interpolatedSections": 13,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2151cd6ec316982806855562d583375edc335672ac6dbd7b3e5cc9ebba03297e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.145065987657453,
+        "lengthM": 3944.0480786597195,
+        "sampleCount": 340,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cb753899f8eed69d4a696fd92d14b392797d306c0dc8d4bc3ecc48a0d7c086c6",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "ridge-motorsport-park",
       "name": "Ridge Motorsport Park",
       "file": "layouts/ridge-motorsport-park.geojson",
       "referenceId": "United States/Ridge Motorsport Park",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3905 m. Difference from the supplied layout distance 0.0 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3905 m. Difference from the supplied layout distance 0.0 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.347452824749892,
+        "lengthM": 3890.4934043185226,
+        "sampleCount": 332,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bfa7643171bc18965ab9cc76548d062fb0e208e68c5939c28470aec4acac6e08",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

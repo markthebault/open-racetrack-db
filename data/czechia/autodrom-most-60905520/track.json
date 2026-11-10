@@ -22,7 +22,20 @@
       "name": "Autodrom Most",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Czech Republic/Autodrom Most"
+      "referenceId": "Czech Republic/Autodrom Most",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.170847239322113,
+        "lengthM": 4208.240800132001,
+        "sampleCount": 347,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a9c8bb8850625a0921241fd910bf6bb3a63bacc4d1770e482066c71fb59a185f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Full circuit (variant 4)",
       "file": "layouts/main.geojson",
-      "description": "Draft full circuit using the rounded turns and southern infield returns. Public timing confirmation is still required."
+      "description": "Draft full circuit using the rounded turns and southern infield returns. Public timing confirmation is still required.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.538818071028492,
+        "lengthM": 5921.416177412076,
+        "sampleCount": 479,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3d3d4d567024a419bb12b14609daa8b04a985c3f396b2f1dad03dcacc99230eb",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "slovakia-ring",
       "name": "Slovakia-Ring",
       "file": "layouts/slovakia-ring.geojson",
       "referenceId": "Slovakia/Slovakia-Ring",
-      "description": "Draft configuration: Full circuit using the rounded northeastern turnaround and southern infield returns; excludes the extra northeastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5921.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full circuit using the rounded northeastern turnaround and southern infield returns; excludes the extra northeastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5921.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.307590755103725,
+        "lengthM": 5921.416177412076,
+        "sampleCount": 479,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9328bdfb565de220f28f8a4d8241c57b55d2d2f4c5c761f173ab632cf6bf7d41",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,21 +22,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.055884698100602,
+        "lengthM": 3240.14745396652,
+        "sampleCount": 280,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4163fb69262647dbb5b011557d7cc7fb849c0aaa2ca645fe3feb6a42643881cf",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "adm-myachkovo-sprint",
       "name": "ADM Myachkovo Sprint",
       "file": "layouts/adm-myachkovo-sprint.geojson",
       "referenceId": "Russia/ADM Myachkovo Sprint",
-      "description": "Draft configuration: Sprint course with northern rounded return, southeastern linked bends and direct diagonal southwestern corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2101.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Sprint course with northern rounded return, southeastern linked bends and direct diagonal southwestern corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2101.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.826726775934459,
+        "lengthM": 2101.6630390260057,
+        "sampleCount": 189,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2c76221644db6d763b2b9d8c87b085112f100672f9f64aa77cfb08a591851c05",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "miachkovo",
       "name": "Miachkovo",
       "file": "layouts/miachkovo.geojson",
       "referenceId": "Russia/Miachkovo",
-      "description": "Draft configuration: Full course with long eastern extension and rounded eastern closing corner; excludes the extra eastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3237.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course with long eastern extension and rounded eastern closing corner; excludes the extra eastern spur. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3237.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.614804591631446,
+        "lengthM": 3157.059222713633,
+        "sampleCount": 276,
+        "interpolatedSections": 9,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3c581b55e9a3091b2399ee47306aa4bb7b71fe03dd0d6fc26148f4c1361fa103",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

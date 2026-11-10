@@ -46,13 +46,39 @@
       "id": "geoparc-outer-long",
       "name": "Long outer configuration",
       "file": "layouts/geoparc-outer-long.geojson",
-      "description": "The complete outer main-course perimeter shown in the operator plan, retaining the northern extension and southern return. The western paddock link, eastern pit access and interior variants are excluded. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft."
+      "description": "The complete outer main-course perimeter shown in the operator plan, retaining the northern extension and southern return. The western paddock link, eastern pit access and interior variants are excluded. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.829828754371544,
+        "lengthM": 1886.6247768872006,
+        "sampleCount": 153,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2654e3a84091e0bd6a572647074c1f5a18e1c08db846dfdd026e65c2d7395287",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "geoparc-outer-short",
       "name": "Short outer configuration",
       "file": "layouts/geoparc-outer-short.geojson",
-      "description": "The outer perimeter closes through the direct central northern connection shown among the operator modular variants; the northern extension is excluded. This is a branch description, with lap direction remaining draft. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft."
+      "description": "The outer perimeter closes through the direct central northern connection shown among the operator modular variants; the northern extension is excluded. This is a branch description, with lap direction remaining draft. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.629653880624762,
+        "lengthM": 1184.864333320686,
+        "sampleCount": 98,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1791c5814f7fa0d40efb4662051ffb910d272dd2d34caf82afcc90d95dd13860",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "geoparc-crossed-infield",
@@ -70,13 +96,39 @@
       "id": "geoparc-central-curved",
       "name": "Central curved configuration",
       "file": "layouts/geoparc-central-curved.geojson",
-      "description": "The operator modular plan retains the central curved return, connecting the western middle-course branch to the eastern main straight. Exact repeated source-node joins close this course; the western short-course connector remains a separate variant."
+      "description": "The operator modular plan retains the central curved return, connecting the western middle-course branch to the eastern main straight. Exact repeated source-node joins close this course; the western short-course connector remains a separate variant.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.555891829286852,
+        "lengthM": 439.6810528494452,
+        "sampleCount": 41,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "25e50aadca345cff9027415e6e95e8b909e3a2c2a7a66bbcce6a4445d63ec11b",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "geoparc-curved-short",
       "name": "Curved short configuration",
       "file": "layouts/geoparc-curved-short.geojson",
-      "description": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft."
+      "description": "The shorter southern main-course loop retains the central curved return and western modular connector shown in the operator plan. Both the far northern extension and its direct triangular return are excluded. Parallel eastern pit access is excluded. Corrected eastern return excludes the karting diagonal and upper arc; exact OSM node joins, historical alignment and direction remain draft.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.307146507437237,
+        "lengthM": 1156.5897153619574,
+        "sampleCount": 102,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "74a8d4b115fc2700492e62722b6bd885310898970839ade9587c6c7a96f1b090",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

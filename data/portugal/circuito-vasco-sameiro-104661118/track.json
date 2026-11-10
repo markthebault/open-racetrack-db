@@ -22,7 +22,20 @@
       "name": "Circuito Vasco Sameiro",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuito Vasco Sameiro. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2871 m; supplied distance 2855 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Portugal/Circuito Vasco Sameiro"
+      "referenceId": "Portugal/Circuito Vasco Sameiro",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.815031385017562,
+        "lengthM": 2871.0095866570614,
+        "sampleCount": 222,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "15dc30392b11b5a657c939eed8e3e4d9c5ca30ad30db2608945e85ec95dbe255",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

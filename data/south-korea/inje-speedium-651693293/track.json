@@ -22,7 +22,20 @@
       "name": "Inje Speedium",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Inje Speedium. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3973.4 m; supplied distance 3950 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "South Korea/Inje Speedium"
+      "referenceId": "South Korea/Inje Speedium",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.830915195818786,
+        "lengthM": 3874.4936559889034,
+        "sampleCount": 324,
+        "interpolatedSections": 11,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "215fef722c0ffe3abd9a6290f3259f6e4f09df1caef222111529c4cfd2241adc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

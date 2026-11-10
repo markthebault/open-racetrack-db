@@ -27,7 +27,20 @@
       "name": "Las Vegas Motor Speedway",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United States/Las Vegas Motor Speedway"
+      "referenceId": "United States/Las Vegas Motor Speedway",
+      "roadWidthM": 17,
+      "roadWidthSource": {
+        "meanWidthM": 16.872316223841764,
+        "lengthM": 2476.8991139087084,
+        "sampleCount": 262,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f4cfc4efcefe77e95f2b995a5f459a077f5eb109990205f1e5a866f9c4f7b134",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "lvms-combo",
@@ -41,7 +54,20 @@
       "name": "LVMS Infield Road Course",
       "referenceId": "United States/LVMS Infield Road Course",
       "file": "layouts/lvms-infield-road-course.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1745 m. Difference from the supplied layout distance 10.0 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1745 m. Difference from the supplied layout distance 10.0 m. Course configuration still requires visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.204126959901867,
+        "lengthM": 1744.9628526849035,
+        "sampleCount": 185,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bff1de5fb8dec5b24a933eeddeb95f629aa86136ab8b1d05501bc2803a480062",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "lvms-outfield-road-course",
@@ -62,14 +88,40 @@
       "name": "LVMS Super Speedway",
       "referenceId": "United States/LVMS Super Speedway",
       "file": "layouts/lvms-super-speedway.geojson",
-      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.942841859006403,
+        "lengthM": 4221.84605310974,
+        "sampleCount": 447,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5ae538f7754f6c94e50a3543867d56bc1e1dfa93103d23c9c72a644c74ecada4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "lvms-super-speedway-infield",
       "name": "LVMS Super Speedway Infield",
       "referenceId": "United States/LVMS Super Speedway Infield",
       "file": "layouts/lvms-super-speedway-infield.geojson",
-      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Las Vegas Motor Speedway, LVMS Infield Road Course. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.942841859006403,
+        "lengthM": 4221.84605310974,
+        "sampleCount": 447,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5ae538f7754f6c94e50a3543867d56bc1e1dfa93103d23c9c72a644c74ecada4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

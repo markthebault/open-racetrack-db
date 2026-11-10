@@ -22,21 +22,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.217753040821378,
+        "lengthM": 3800.6630939228,
+        "sampleCount": 304,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b023769063fd9e50ccff94225f144f0c7d67dadf4a6c3ec960e8a1ac190d67af",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "val-de-vienne-main",
       "name": "Val de Vienne Main",
       "file": "layouts/val-de-vienne-main.geojson",
       "referenceId": "France/Val de Vienne Main",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3735.9 m. Difference from the supplied layout distance 2.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3735.9 m. Difference from the supplied layout distance 2.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.481353788567612,
+        "lengthM": 3735.844191015695,
+        "sampleCount": 296,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "89871f86b01cbed3b0783a9940eee0f3b416fe9671e2526359d7068f0ca6a31d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "val-de-vienne-motorcycle",
       "name": "Val de Vienne Motorcycle",
       "file": "layouts/val-de-vienne-motorcycle.geojson",
       "referenceId": "France/Val de Vienne Motorcycle",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3775.6 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3775.6 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.49406672325724,
+        "lengthM": 3775.5739530500127,
+        "sampleCount": 299,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7190e5147c949f4c6a175db8a1a2a870df2d778a173976a2c940eaf9d4ad5b35",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

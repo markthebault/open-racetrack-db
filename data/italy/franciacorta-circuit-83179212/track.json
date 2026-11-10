@@ -22,7 +22,20 @@
       "name": "Franciacorta",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Franciacorta Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2524.5 m; supplied distance 2516 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Italy/Franciacorta"
+      "referenceId": "Italy/Franciacorta",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.832305831373931,
+        "lengthM": 2524.4842113165414,
+        "sampleCount": 202,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f6297b084c3dc9ad6a7bf839246ae846706e1b1dba6edda2542f68c406b73719",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

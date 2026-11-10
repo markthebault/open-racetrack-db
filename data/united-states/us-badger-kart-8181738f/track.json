@@ -23,25 +23,77 @@
       "name": "Badger Kart Club",
       "file": "layouts/badger-kart-club.geojson",
       "referenceId": "United States/Badger Kart Club",
-      "description": "Combined mapped configurations: Badger Classic Track, Badger National Track, Badger Bus-Stop Track. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Badger Classic Track, Badger National Track, Badger Bus-Stop Track. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.07383351482894,
+        "lengthM": 2569.1264909319875,
+        "sampleCount": 237,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dce3f914a8089c2aa8dd47460ba43582c7396f2841e7aa1e3f6ba3b952e793f9",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "badger-classic",
       "name": "Badger Classic Track",
       "file": "layouts/badger-classic.geojson",
-      "description": "The club published Classic diagram identifies the full inner esses, plain eastern return and short southern return; it excludes the National southern extension and the eastern Bus-Stop."
+      "description": "The club published Classic diagram identifies the full inner esses, plain eastern return and short southern return; it excludes the National southern extension and the eastern Bus-Stop.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.890509687514609,
+        "lengthM": 789.5592199968872,
+        "sampleCount": 72,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ae5046b8b9aa82aaf5e6752457b3f3c5c16566d0a031960953b585ff4453fe3d",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "badger-national",
       "name": "Badger National Track",
       "file": "layouts/badger-national.geojson",
-      "description": "The club published National diagram identifies the full inner esses, plain eastern return and complete southern hairpin extension; the diagonal southern shortcut is excluded."
+      "description": "The club published National diagram identifies the full inner esses, plain eastern return and complete southern hairpin extension; the diagonal southern shortcut is excluded.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.590028066808822,
+        "lengthM": 1004.5409209970483,
+        "sampleCount": 92,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d6ec0b6cc730f298a9cbf20cf6ad218ad9c7c5e12576245db64c134b7be5a470",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "badger-bus-stop",
       "name": "Badger Bus-Stop Track",
       "file": "layouts/badger-bus-stop.geojson",
-      "description": "The club published Bus-Stop diagram identifies the full inner esses, eastern Bus-Stop and short southern return; it excludes the National extension and its diagonal shortcut."
+      "description": "The club published Bus-Stop diagram identifies the full inner esses, eastern Bus-Stop and short southern return; it excludes the National extension and its diagonal shortcut.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.591542464315589,
+        "lengthM": 775.0271027288155,
+        "sampleCount": 73,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6683eba5171358841a50336f7abfcdfd1391b68a77344f0ce89f706a7a403bcf",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

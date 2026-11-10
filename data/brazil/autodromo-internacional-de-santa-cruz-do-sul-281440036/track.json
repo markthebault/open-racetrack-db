@@ -22,7 +22,20 @@
       "name": "Santa Cruz do Sul",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Brazil/Santa Cruz do Sul"
+      "referenceId": "Brazil/Santa Cruz do Sul",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.003302937322513,
+        "lengthM": 3459.2820939809885,
+        "sampleCount": 280,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "42c373700389f62af7e788ef3c3eb0c089b3ee3a66e9cf25820cf45ffa5a43e2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

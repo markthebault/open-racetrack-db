@@ -22,7 +22,20 @@
       "name": "Sandown Raceway",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Australia/Sandown Raceway"
+      "referenceId": "Australia/Sandown Raceway",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.690129447689461,
+        "lengthM": 3153.8986820712435,
+        "sampleCount": 262,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bd39e02ef4062ed60e484301e95ace170905d8b579c93f7f946cea14bb23b8bb",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

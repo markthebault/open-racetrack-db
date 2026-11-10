@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.046874575162462,
+        "lengthM": 4305.178137103523,
+        "sampleCount": 594,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c8267d8b8f091e1550392bfa0d8a670c93e4fe9b0bcf471f479663cde3dc95e6",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "mont-tremblant",
       "name": "Mont Tremblant",
       "file": "layouts/mont-tremblant.geojson",
       "referenceId": "Canada/Mont Tremblant",
-      "description": "The operator identifies the full 4.26 km configuration and separately describes the north loop. The catalogue distance and independent source distance are closest to the full course; no north-loop geometry is substituted. Draft configuration selected from the independently named circuit relation 17620722. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "The operator identifies the full 4.26 km configuration and separately describes the north loop. The catalogue distance and independent source distance are closest to the full course; no north-loop geometry is substituted. Draft configuration selected from the independently named circuit relation 17620722. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 18.5,
+      "roadWidthSource": {
+        "meanWidthM": 18.633784198331014,
+        "lengthM": 4193.613222541013,
+        "sampleCount": 557,
+        "interpolatedSections": 16,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "74c398ac25f00549663690329b16d7275faa1ffeb720d005aff5d77e2ca33958",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

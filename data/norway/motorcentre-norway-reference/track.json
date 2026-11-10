@@ -22,7 +22,20 @@
       "name": "Motorcentre Norway",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Norway/Motorcentre Norway"
+      "referenceId": "Norway/Motorcentre Norway",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.216570909780636,
+        "lengthM": 2340.843441339926,
+        "sampleCount": 196,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8ed3cbc29bc3f3e97db668a6be8888c43df9c190ba1f441bbaf281efe1c5d456",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

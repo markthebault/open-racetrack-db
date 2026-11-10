@@ -22,7 +22,20 @@
       "name": "Euroring",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Hungary/Euroring"
+      "referenceId": "Hungary/Euroring",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.0042735615284,
+        "lengthM": 2288.256800439526,
+        "sampleCount": 236,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "68f8907d278596244aa378ad15543e4ec556abac32adcaa2a6654357f5e078ba",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

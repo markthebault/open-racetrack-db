@@ -24,7 +24,20 @@
       "name": "Mandalika",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Indonesia/Mandalika"
+      "referenceId": "Indonesia/Mandalika",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.209344965336612,
+        "lengthM": 4312.499308506627,
+        "sampleCount": 340,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fc8562056183fc8ae80a49c32204e91515906347fda1294dca2a4ae9ddb7a8b5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

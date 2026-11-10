@@ -29,49 +29,140 @@
       "id": "main",
       "name": "Grand Prix",
       "file": "layouts/main.geojson",
-      "description": "Draft Grand Prix course from the pinned named OSM relation. Public timing confirmation is still required."
+      "description": "Draft Grand Prix course from the pinned named OSM relation. Public timing confirmation is still required.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.635023954847078,
+        "lengthM": 5880.420809151163,
+        "sampleCount": 699,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cbb39a0dc5063df04007e56ce13a386d803e9ead38a4b5e3b8500612749e8b03",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silverstone-gp-wing-sf",
       "name": "Silverstone GP Wing SF",
       "file": "layouts/silverstone-gp-wing-sf.geojson",
       "referenceId": "United Kingdom/Silverstone GP Wing SF",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.635023954847078,
+        "lengthM": 5880.420809151163,
+        "sampleCount": 699,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cbb39a0dc5063df04007e56ce13a386d803e9ead38a4b5e3b8500612749e8b03",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silverstone-gp-old-sf",
       "name": "Silverstone GP Old SF",
       "file": "layouts/silverstone-gp-old-sf.geojson",
       "referenceId": "United Kingdom/Silverstone GP Old SF",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.640163794684762,
+        "lengthM": 5880.420809151163,
+        "sampleCount": 699,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c3d6395ad7d0829d3900872691bbc8e87e5d7df2e7784e9594aabb89e62eb8b5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silverstone-stowe",
       "name": "Silverstone Stowe",
       "file": "layouts/silverstone-stowe.geojson",
       "referenceId": "United Kingdom/Silverstone Stowe",
-      "description": "Draft configuration: Stowe course includes the northern kink and full southern projecting hairpin; short straight-return variants excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1742.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Stowe course includes the northern kink and full southern projecting hairpin; short straight-return variants excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1742.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.510926769155876,
+        "lengthM": 1742.8852268594985,
+        "sampleCount": 238,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7b0edaf8b83a71d9de8ccae667c98f5875011c49ba07a5db0549684cf628aa41",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silverstone-gp-historic",
       "name": "Silverstone GP Historic",
       "file": "layouts/silverstone-gp-historic.geojson",
       "referenceId": "United Kingdom/Silverstone GP Historic",
-      "description": "Draft configuration selected from the independently named circuit relation 51160. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 51160. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.656462325106727,
+        "lengthM": 5801.777249146053,
+        "sampleCount": 687,
+        "interpolatedSections": 12,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2177d92eeb5764cb723910db6fc1a3aff4aa4ca339cfba6cdd8eeb04b00f97f9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silverstone-national",
       "name": "Silverstone National",
       "file": "layouts/silverstone-national.geojson",
       "referenceId": "United Kingdom/Silverstone National",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2635.1 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2635.1 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.454483820006601,
+        "lengthM": 2635.146747735684,
+        "sampleCount": 325,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3e4f8951e293e633bc14d0a9aa0edf2595acdb28ada669676e93def707f01817",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "silverstone-international",
       "name": "Silverstone International",
       "file": "layouts/silverstone-international.geojson",
       "referenceId": "United Kingdom/Silverstone International",
-      "description": "Draft configuration: Historical southern international configuration uses the rounded southern outer corner and northern shoulder; the additional northern zigzag branch is excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2975.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical southern international configuration uses the rounded southern outer corner and northern shoulder; the additional northern zigzag branch is excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2975.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.539145929770383,
+        "lengthM": 2975.854814008843,
+        "sampleCount": 333,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c52faf5f2395f9f56432dbcffabff5e7ca395f6654e77eb3594bbeaee14627aa",
+        "licenses": [
+          "OGL-3.0"
+        ]
+      }
     },
     {
       "id": "silverstone-rx",
@@ -85,7 +176,20 @@
       "name": "Silverstone Combo",
       "file": "layouts/silverstone-combo.geojson",
       "referenceId": "United Kingdom/Silverstone Combo",
-      "description": "Combined mapped configurations: Silverstone GP Wing SF, Silverstone GP Old SF, Silverstone GP Historic, Silverstone National, Silverstone International. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Silverstone GP Wing SF, Silverstone GP Old SF, Silverstone GP Historic, Silverstone National, Silverstone International. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.568489232349991,
+        "lengthM": 11491.233017594579,
+        "sampleCount": 1357,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b4eacf335c18f56c3e11113fe56aa1ce19b82a7908c97b019f4ca7a52d9796ee",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "rallycross-standard",

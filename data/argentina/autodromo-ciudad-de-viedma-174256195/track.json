@@ -22,7 +22,20 @@
       "name": "Autodromo Viedma",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Autódromo Ciudad de Viedma. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4115.2 m; supplied distance 4108 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Argentina/Autodromo Viedma"
+      "referenceId": "Argentina/Autodromo Viedma",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.719910773900683,
+        "lengthM": 4115.363557192628,
+        "sampleCount": 315,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7e53ac9302e85f6c5f5530edfe281353d895548fcfa65408e0d975c049bc8937",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

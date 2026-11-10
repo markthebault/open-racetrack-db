@@ -22,7 +22,20 @@
       "name": "Breedon Everard Raceway",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "Zimbabwe/Breedon Everard Raceway"
+      "referenceId": "Zimbabwe/Breedon Everard Raceway",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.383216844701916,
+        "lengthM": 3480.429462562787,
+        "sampleCount": 255,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "50d6210fd1f7c7257359332a9550d94135fca07542bbf96869e11b4e0bdcb7f5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

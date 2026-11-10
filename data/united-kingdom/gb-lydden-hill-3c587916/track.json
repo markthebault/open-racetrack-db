@@ -22,7 +22,20 @@
       "name": "Lydden Hill",
       "referenceId": "United Kingdom/Lydden Hill",
       "file": "layouts/lydden-hill.geojson",
-      "description": "Draft configuration: Full road circuit includes the northern outer loop and eastern hairpin. Source distance differs from the historical scalar distance by 151 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1457.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full road circuit includes the northern outer loop and eastern hairpin. Source distance differs from the historical scalar distance by 151 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1457.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.675225567038753,
+        "lengthM": 1457.939114048217,
+        "sampleCount": 126,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b327aadf6ad76b9d6e2525ff193d61927c7c6a170b6bb199eded2fd272b4b8a5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

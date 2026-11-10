@@ -22,7 +22,20 @@
       "name": "Kinnekulle",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Sweden/Kinnekulle"
+      "referenceId": "Sweden/Kinnekulle",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.607063176391657,
+        "lengthM": 2057.304302559666,
+        "sampleCount": 192,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "998834c838179dddf497281ddb78144caca18b5dd1fa8c49c672c5a25f0a3e8b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

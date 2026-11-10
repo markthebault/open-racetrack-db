@@ -22,7 +22,20 @@
       "name": "Castrol Raceway",
       "file": "layouts/main.geojson",
       "referenceId": "Canada/Castrol Raceway",
-      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private."
+      "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.232648680735789,
+        "lengthM": 2682.214601345122,
+        "sampleCount": 226,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "db6987e124e21bbb6d9ffcf3b33dacce59075b1ba8793d315828535a76c89918",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [
