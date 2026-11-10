@@ -23,35 +23,100 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.366243878974998,
+        "lengthM": 2121.097055915206,
+        "sampleCount": 176,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b705cc3cbbad0da3c476899aceebf6045d629f40e8990382fe22a8b0fb471084",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sauga-circuit-audruring",
       "name": "Sauga Circuit Audruring",
       "referenceId": "Estonia/Sauga Circuit Audruring",
       "file": "layouts/sauga-circuit-audruring.geojson",
-      "description": "Draft configuration: Full expanded circuit using the smooth northeastern return and southern outer extension; excludes the extra northeastern detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3165.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full expanded circuit using the smooth northeastern return and southern outer extension; excludes the extra northeastern detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3165.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.595005575272396,
+        "lengthM": 3165.820764748563,
+        "sampleCount": 260,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "39d2d55bb4579356c9e03c8a1a3709a5836182e2868ab484f6f7c80239e366ba",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sauga-circuit-combo",
       "name": "Sauga Circuit Combo",
       "referenceId": "Estonia/Sauga Circuit Combo",
       "file": "layouts/sauga-circuit-combo.geojson",
-      "description": "Combined mapped configurations: Sauga Circuit Long, Sauga Circuit short. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Sauga Circuit Long, Sauga Circuit short. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.077057526471489,
+        "lengthM": 3335.3101367771023,
+        "sampleCount": 279,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d7efcde6d8a610d9c359cde3d8eb3dab13a0e2b0fcea19e9557cea05cab84a4d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sauga-circuit-long",
       "name": "Sauga Circuit Long",
       "referenceId": "Estonia/Sauga Circuit Long",
       "file": "layouts/sauga-circuit-long.geojson",
-      "description": "Draft configuration: Original long circuit with smooth northeastern return and southern elongated connector; excludes the extra northeastern detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2121.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Original long circuit with smooth northeastern return and southern elongated connector; excludes the extra northeastern detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2121.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.366468253698498,
+        "lengthM": 2121.1268233419705,
+        "sampleCount": 176,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b705cc3cbbad0da3c476899aceebf6045d629f40e8990382fe22a8b0fb471084",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sauga-circuit-short",
       "name": "Sauga Circuit short",
       "referenceId": "Estonia/Sauga Circuit short",
       "file": "layouts/sauga-circuit-short.geojson",
-      "description": "Draft configuration: Original short circuit with southwestern rounded hairpin and direct northeastern turn; excludes the northern infield loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1263.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Original short circuit with southwestern rounded hairpin and direct northeastern turn; excludes the northern infield loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1263.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.571469243638582,
+        "lengthM": 1214.1833134351264,
+        "sampleCount": 103,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ed20005f2028e242391a00dd45b6e9bcbeb849db27a1d67ad62ae03b75caf90d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

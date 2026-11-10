@@ -31,7 +31,20 @@
       "name": "Autodromo Rosamonte",
       "referenceId": "Argentina/Autodromo Rosamonte",
       "file": "layouts/autodromo-rosamonte.geojson",
-      "description": "Draft configuration selected from the independently named circuit relation 3510494. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 3510494. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.072514485126113,
+        "lengthM": 4223.797993433616,
+        "sampleCount": 329,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e2ef8a2970534b4ac1622dcd4df9fc906de5e8c167afc465257bcbd64ddc29c5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

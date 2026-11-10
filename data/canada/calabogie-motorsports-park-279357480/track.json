@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 17.5,
+      "roadWidthSource": {
+        "meanWidthM": 17.251495000184796,
+        "lengthM": 4988.504947059399,
+        "sampleCount": 406,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d7d012c469f9c40b0cbbac9f98675ba8cd398fa3f2275261c27a026cf657a716",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "calabogie",
       "name": "Calabogie",
       "referenceId": "Canada/Calabogie",
       "file": "layouts/calabogie.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4988.5 m. Difference from the supplied layout distance 8.5 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4988.5 m. Difference from the supplied layout distance 8.5 m. Course configuration still requires visual review.",
+      "roadWidthM": 17.5,
+      "roadWidthSource": {
+        "meanWidthM": 17.251495000184796,
+        "lengthM": 4988.504947059399,
+        "sampleCount": 406,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d7d012c469f9c40b0cbbac9f98675ba8cd398fa3f2275261c27a026cf657a716",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

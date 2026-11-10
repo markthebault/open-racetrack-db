@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.70989613879531,
+        "lengthM": 1549.766981262321,
+        "sampleCount": 193,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d3f2030cd22c72ba65778f91059f5f2f421eb63434d934b7d128b04a7d73461d",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "dreux",
       "name": "Dreux",
       "file": "layouts/dreux.geojson",
       "referenceId": "France/Dreux",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 944.4 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 944.4 m. Difference from the supplied layout distance 1.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.014687151245905,
+        "lengthM": 944.3584836625458,
+        "sampleCount": 146,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e4322a3790d50f6a6e6f6f982863a9d7654f5ddea578c7f04943eea6ea3f3884",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

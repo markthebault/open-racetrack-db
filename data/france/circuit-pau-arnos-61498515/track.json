@@ -22,7 +22,20 @@
       "name": "Pau Arnos",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "France/Pau Arnos"
+      "referenceId": "France/Pau Arnos",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.828886739496065,
+        "lengthM": 2978.094113307585,
+        "sampleCount": 244,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "34390fd2352c49d25069434275e26486ec6c6998f74649a0e8d2b60a980e5478",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

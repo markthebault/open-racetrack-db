@@ -22,7 +22,20 @@
       "name": "Ningbo International Circuit",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Ningbo International Speedpark. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3968.1 m; supplied distance 4016 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "China/Ningbo International Circuit"
+      "referenceId": "China/Ningbo International Circuit",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.253946164596238,
+        "lengthM": 3968.12390928365,
+        "sampleCount": 293,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c00a2b0bb62f386c8f8294f2c1ac76db5a668802b534187ff2147b0011a8146d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

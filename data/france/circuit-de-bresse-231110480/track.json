@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Standard circuit",
       "file": "layouts/main.geojson",
-      "description": "Standard full speed course with the direct upper return, lower chicane and southern S, checked against the operator map and satellite imagery. Boundaries and elevation are estimates; no timing position is available."
+      "description": "Standard full speed course with the direct upper return, lower chicane and southern S, checked against the operator map and satellite imagery. Boundaries and elevation are estimates; no timing position is available.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.335431840159329,
+        "lengthM": 2878.53643879407,
+        "sampleCount": 241,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "973745fdd71bcaecb3191992bd1658394fbcfd5e3f79da142aabeefe7c0d5fbf",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "bresse",
       "name": "Bresse",
       "referenceId": "France/Bresse",
       "file": "layouts/bresse.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2878.5 m. Difference from the supplied layout distance 7.5 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2878.5 m. Difference from the supplied layout distance 7.5 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.335431840159329,
+        "lengthM": 2878.53643879407,
+        "sampleCount": 241,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "973745fdd71bcaecb3191992bd1658394fbcfd5e3f79da142aabeefe7c0d5fbf",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

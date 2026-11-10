@@ -22,7 +22,20 @@
       "name": "Polecat Driving Academy",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "United States/Polecat Driving Academy"
+      "referenceId": "United States/Polecat Driving Academy",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.608545942709982,
+        "lengthM": 3227.1053897777815,
+        "sampleCount": 271,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d0726abe4333f1374a879a97807a7748ca9f2c2c6323217d8882f6167f8cfa67",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

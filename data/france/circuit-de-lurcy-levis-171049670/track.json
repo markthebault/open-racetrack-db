@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.37980600059634,
+        "lengthM": 2590.811141782786,
+        "sampleCount": 237,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c7a55d628373af15827802666b3d2896f15286fd916e1a9e8b8c173cd61f4a82",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "circuit-de-lurcy-levis",
       "name": "Circuit de Lurcy Levis",
       "referenceId": "France/Circuit de Lurcy Levis",
       "file": "layouts/circuit-de-lurcy-levis.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2590.8 m. Difference from the supplied layout distance 5.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2590.8 m. Difference from the supplied layout distance 5.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.37980600059634,
+        "lengthM": 2590.811141782786,
+        "sampleCount": 237,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c7a55d628373af15827802666b3d2896f15286fd916e1a9e8b8c173cd61f4a82",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

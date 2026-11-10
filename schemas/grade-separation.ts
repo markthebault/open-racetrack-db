@@ -13,7 +13,7 @@ import {
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const range = z.tuple([
   z.number().int().nonnegative(),
-  z.number().int().positive(),
+  z.number().int().nonnegative(),
 ]);
 const profile = {
   sampling: z.literal("bilinear-pixel-centres"),
@@ -114,6 +114,7 @@ export const gradeSeparationSchema = z
     method: z.literal("source-bridge-ground-approaches-v1"),
     stationCount: z.number().int().min(12).max(199999),
     sourceStationOffset: z.number().int().nonnegative().optional(),
+    cyclicRanges: z.literal(true).optional(),
     crossings: z
       .array(
         z.strictObject({
@@ -152,11 +153,25 @@ export const gradeSeparationSchema = z
     const spans: [number, number][] = [];
     for (const crossing of value.crossings) {
       for (const r of [crossing.upper, crossing.lower]) {
-        if (r[0] >= r[1] || r[1] >= value.stationCount)
+        if (
+          r[0] === r[1] ||
+          r[0] >= value.stationCount ||
+          r[1] >= value.stationCount ||
+          (!value.cyclicRanges && r[0] > r[1])
+        )
           issue("Crossing intervals must be ordered inside the paired path");
-        if (spans.some((s) => r[0] <= s[1] && r[1] >= s[0]))
-          issue("Crossing intervals must not overlap");
-        spans.push(r);
+        const pieces: [number, number][] =
+          r[0] < r[1]
+            ? [r]
+            : [
+                [r[0], value.stationCount],
+                [0, r[1]],
+              ];
+        for (const piece of pieces) {
+          if (spans.some((s) => piece[0] <= s[1] && piece[1] >= s[0]))
+            issue("Crossing intervals must not overlap");
+          spans.push(piece);
+        }
       }
       // An occluded lower road must not inherit the deck's raster height.
       const interpolated = value.elevation.crossingInterpolation
@@ -166,7 +181,16 @@ export const gradeSeparationSchema = z
         for (const station of span)
           if (!a.some((p) => p[0] === station))
             issue("Bridge interpolation must retain both approach anchors");
-        if (a.some((p) => p[0] > span[0] && p[0] < span[1]))
+        if (
+          a.some(
+            (p) =>
+              p[0] !== 0 &&
+              p[0] !== value.stationCount &&
+              (span[0] < span[1]
+                ? p[0] > span[0] && p[0] < span[1]
+                : p[0] > span[0] || p[0] < span[1]),
+          )
+        )
           issue(
             "Bridge spans must interpolate only between their two approach anchors",
           );

@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.35510991080306,
+        "lengthM": 4327.1395590762395,
+        "sampleCount": 365,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b544be15c023691d6c621c997bd5fb74adddb8eab9b6803a0136ddb79cf6ac60",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "alastaro",
       "name": "Alastaro",
       "file": "layouts/alastaro.geojson",
       "referenceId": "Finland/Alastaro",
-      "description": "Draft configuration: Original circuit with northern and western hairpins, using the direct southeastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2739.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Original circuit with northern and western hairpins, using the direct southeastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2739.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.579305331294263,
+        "lengthM": 2712.0699944194976,
+        "sampleCount": 224,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a753ffefc3d53fe9e65734c6a65933514554e2aa3e77e43ca588b64517622145",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "alastaro-longer",
       "name": "Alastaro Longer",
       "file": "layouts/alastaro-longer.geojson",
       "referenceId": "Finland/Alastaro Longer",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2826.7 m. Difference from the supplied layout distance 2.3 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2826.7 m. Difference from the supplied layout distance 2.3 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.521776015466756,
+        "lengthM": 2826.830708423879,
+        "sampleCount": 233,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e87cec0ff98b3d1f1f27c760f5d7d56db0751b75c7eb6bf1c560c3ea69207c67",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

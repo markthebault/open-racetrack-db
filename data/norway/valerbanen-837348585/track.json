@@ -29,7 +29,20 @@
       "name": "Valerbanen",
       "referenceId": "Norway/Valerbanen",
       "file": "layouts/valerbanen.geojson",
-      "description": "Draft configuration: Main circuit with direct northwestern bend and southeastern outer loop; excludes the northwestern skid-pad detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2255.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Main circuit with direct northwestern bend and southeastern outer loop; excludes the northwestern skid-pad detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2255.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.384926718410611,
+        "lengthM": 2255.089635235701,
+        "sampleCount": 174,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d2f6b440cf894af0c20e91f74f99611bb8d16f1a7deca4e94f75afa6b61bbe9d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

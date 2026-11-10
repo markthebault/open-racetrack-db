@@ -25,63 +25,192 @@
       "name": "Nurburgring GP",
       "file": "layouts/grand-prix.geojson",
       "referenceId": "Germany/Nurburgring GP",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Full GP route includes the arena and Müllenbach loop. This replaces the incorrectly labelled Sprint preview."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Full GP route includes the arena and Müllenbach loop. This replaces the incorrectly labelled Sprint preview.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 12.921986017978153,
+        "roundingM": 0.5,
+        "sampleCount": 1710,
+        "interpolatedSections": 0,
+        "lengthM": 5130.546147180009,
+        "borderSha256": "ae377513d15b2fe63a10b59c9f627a177c4ff1f51d08a090ab07d6de6b8a9bd5",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "gp-without-mb-arena",
       "name": "Nurburgring GP without MB Arena",
       "file": "layouts/gp-without-mb-arena.geojson",
       "referenceId": "Germany/Nurburgring GP without MB Arena",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 12.774581985260022,
+        "roundingM": 0.5,
+        "sampleCount": 1538,
+        "interpolatedSections": 0,
+        "lengthM": 4614.426770149115,
+        "borderSha256": "d492ec448489ef8ca6501801ab150dd5a071639488e5151dc01867b3d5bb1056",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "sprintstrecke",
       "name": "Nurburgring Sprintstrecke",
       "file": "layouts/sprintstrecke.geojson",
       "referenceId": "Germany/Nurburgring Sprintstrecke",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 13.134408918877158,
+        "roundingM": 0.5,
+        "sampleCount": 1205,
+        "interpolatedSections": 23,
+        "lengthM": 3619.597974552213,
+        "borderSha256": "3a255f12d22861162094c6e1dbacb5d6c6ba366370ff115c9b073a3ec9c1fcfb",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "24hr",
       "name": "Nurburgring 24Hr",
       "file": "layouts/24hr.geojson",
       "referenceId": "Germany/Nurburgring 24Hr",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Arena bypass uses OSM way 31010602, whose source note says its connection was estimated. This draft needs visual review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.306607585342999,
+        "roundingM": 0.5,
+        "sampleCount": 8445,
+        "interpolatedSections": 24,
+        "lengthM": 25381.367611416004,
+        "borderSha256": "59aa512e082c0259b16b272d453d63a110c050fce9b1276ebe289bb6f1c8b79d",
+        "licenses": [
+          "LicenseRef-Track-Borders",
+          "LicenseRef-MapTiler-Derived-Borders",
+          "dl-de/by-2-0"
+        ]
+      }
     },
     {
       "id": "nls",
       "name": "Nurburgring NLS Circuit",
       "file": "layouts/nls.geojson",
       "referenceId": "Germany/Nurburgring NLS Circuit",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.926937787182515,
+        "roundingM": 0.5,
+        "sampleCount": 8112,
+        "interpolatedSections": 23,
+        "lengthM": 24367.672955828137,
+        "borderSha256": "9cd8ae43303fa3997d6a127c26a2b63ed60d365766aee8015f197786dcdd8857",
+        "licenses": [
+          "LicenseRef-Track-Borders",
+          "LicenseRef-MapTiler-Derived-Borders",
+          "dl-de/by-2-0"
+        ]
+      }
     },
     {
       "id": "nordschleife",
       "name": "Nurburgring Nordschleife",
       "file": "layouts/nordschleife.geojson",
       "referenceId": "Germany/Nurburgring Nordschleife",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.742448840531436,
+        "roundingM": 0.5,
+        "sampleCount": 6919,
+        "interpolatedSections": 0,
+        "lengthM": 20796.54178728147,
+        "borderSha256": "5ed176a86737fe044ffe6046f1e5eaaefe5aa9e4b129baf590d7d9bf9d5835c1",
+        "licenses": [
+          "LicenseRef-Track-Borders",
+          "LicenseRef-MapTiler-Derived-Borders",
+          "dl-de/by-2-0"
+        ]
+      }
     },
     {
       "id": "nordschleife-btg",
       "name": "Nurburgring BTG",
       "file": "layouts/nordschleife-btg.geojson",
       "referenceId": "Germany/Nurburgring BTG",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.743018955575632,
+        "roundingM": 0.5,
+        "sampleCount": 6919,
+        "interpolatedSections": 0,
+        "lengthM": 20795.492273319884,
+        "borderSha256": "0bbf35bf0ae75714fbcfed729693859fca12cb13a72bfd47b9696ef9335090a0",
+        "licenses": [
+          "LicenseRef-Track-Borders",
+          "LicenseRef-MapTiler-Derived-Borders",
+          "dl-de/by-2-0"
+        ]
+      }
     },
     {
       "id": "industry-pool",
       "name": "Nurburgring Industry Pool",
       "file": "layouts/industry-pool.geojson",
       "referenceId": "Germany/Nurburgring Industry Pool",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Public data is the supporting Nordschleife loop. The private preview trims it between the local start and finish projections. Independently reusable public endpoints are still missing.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.743120623311519,
+        "roundingM": 0.5,
+        "sampleCount": 6919,
+        "interpolatedSections": 0,
+        "lengthM": 20796.494494213366,
+        "borderSha256": "2b35f678b9ebedd33d26d77d7e32a31984dfde8fb261b9d4c004b077406745aa",
+        "licenses": [
+          "LicenseRef-Track-Borders",
+          "LicenseRef-MapTiler-Derived-Borders",
+          "dl-de/by-2-0"
+        ]
+      }
     },
     {
       "id": "lap-record",
       "name": "Nurburgring Lap Record",
       "file": "layouts/lap-record.geojson",
       "referenceId": "Germany/Nurburgring Lap Record",
-      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Timing variant of the Nordschleife, using a distinct private start/finish convention."
+      "description": "Draft route follows connected, pinned OSM raceway nodes. reference supplies the expected layout name and private timing reference only. Timing variant of the Nordschleife, using a distinct private start/finish convention.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.740060296134084,
+        "roundingM": 0.5,
+        "sampleCount": 6919,
+        "interpolatedSections": 0,
+        "lengthM": 20796.652445199477,
+        "borderSha256": "765e9dcfff43d029990591953e7fc4d19051b3ba0f5860eee3fd079d10697fe1",
+        "licenses": [
+          "LicenseRef-Track-Borders",
+          "LicenseRef-MapTiler-Derived-Borders",
+          "dl-de/by-2-0"
+        ]
+      }
     }
   ],
   "sources": [

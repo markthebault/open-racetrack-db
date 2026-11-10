@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Grand Prix course",
       "file": "layouts/main.geojson",
-      "description": "Draft corrected racing course. Public timing and travel direction still require confirmation."
+      "description": "Draft corrected racing course. Public timing and travel direction still require confirmation.",
+      "roadWidthM": 16,
+      "roadWidthSource": {
+        "meanWidthM": 15.84809204156458,
+        "lengthM": 5459.166072161766,
+        "sampleCount": 490,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fdf303ce7f932b630f67b60c19e6f29bee34c43e8ae6e5f1cff885d5d0ec7214",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "shanghai-gp",
       "name": "Shanghai GP",
       "file": "layouts/shanghai-gp.geojson",
       "referenceId": "China/Shanghai GP",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.99254310973954,
+        "lengthM": 5303.806953293461,
+        "sampleCount": 471,
+        "interpolatedSections": 19,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4ea55c5037516f5e36c881f76cfd732006f5bf3994ef347e9f4f45465686a8d0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "shanghai-ext-turn4",
       "name": "Shanghai Ext Turn4",
       "file": "layouts/shanghai-ext-turn4.geojson",
       "referenceId": "China/Shanghai Ext Turn4",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5409.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5409.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 18,
+      "roadWidthSource": {
+        "meanWidthM": 18.24310658099266,
+        "lengthM": 5409.406311866958,
+        "sampleCount": 493,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d24ccbc06fc6d9f50f438ad629a5e9ff525057d13369b8b71b468a2de82498df",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

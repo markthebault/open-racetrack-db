@@ -22,7 +22,20 @@
       "name": "Circuito de Sevilla",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Spain/Circuito de Sevilla"
+      "referenceId": "Spain/Circuito de Sevilla",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.142313634240073,
+        "lengthM": 4100.906740636634,
+        "sampleCount": 311,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "350d7810805f8e902b159248c5f7add240083cc3f1f81a2f33ba03c701a3cc56",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

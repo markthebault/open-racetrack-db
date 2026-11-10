@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.309912750841562,
+        "lengthM": 3696.167512010619,
+        "sampleCount": 416,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ea87014b9ae5f221040aa8df07b19b90d1a093ad34470a6baada67a0656549ec",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "oregon-raceway-park",
       "name": "Oregon Raceway Park",
       "referenceId": "United States/Oregon Raceway Park",
       "file": "layouts/oregon-raceway-park.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3696.1 m. Difference from the supplied layout distance 2.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3696.1 m. Difference from the supplied layout distance 2.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.309912750841562,
+        "lengthM": 3696.167512010619,
+        "sampleCount": 416,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ea87014b9ae5f221040aa8df07b19b90d1a093ad34470a6baada67a0656549ec",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

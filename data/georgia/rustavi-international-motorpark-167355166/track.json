@@ -24,7 +24,20 @@
       "name": "Rustavi International Motodrom",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Rustavi International Motorpark. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4163.9 m; supplied distance 4139 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Georgia/Rustavi International Motodrom"
+      "referenceId": "Georgia/Rustavi International Motodrom",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.50547369000975,
+        "lengthM": 3957.3682219719535,
+        "sampleCount": 311,
+        "interpolatedSections": 19,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2bb03b45ce5dd9ae66eea68eba84793c598f3984a78e7e0b6570af93e717158e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

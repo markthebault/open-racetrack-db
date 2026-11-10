@@ -22,7 +22,20 @@
       "name": "Knockhill",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Knockhill Racing Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2034.9 m; supplied distance 2092 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United Kingdom/Knockhill"
+      "referenceId": "United Kingdom/Knockhill",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.703675789401698,
+        "lengthM": 2034.859746736647,
+        "sampleCount": 173,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3f4269dcf0dc47fabb060fae27dd265973c9fecfa735b839cdfdae88415a1bc0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

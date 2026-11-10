@@ -22,7 +22,20 @@
       "name": "Texas Motorspeedway Road Course",
       "referenceId": "United States/Texas Motorspeedway Road Course",
       "file": "layouts/texas-motorspeedway-road-course.geojson",
-      "description": "Draft configuration: Road course using the full outer oval and kinked southern infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3719.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Road course using the full outer oval and kinked southern infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3719.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 16.5,
+      "roadWidthSource": {
+        "meanWidthM": 16.316670614753136,
+        "lengthM": 3719.7331292193126,
+        "sampleCount": 336,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "53f9ad174ebf3efc18ee52a6a7432e0379510af8b0e185fddedeab795ef04d96",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

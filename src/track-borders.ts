@@ -37,6 +37,8 @@ export const bordersSchema = z
   );
 export type TrackBorders = z.infer<typeof bordersSchema>;
 export function borderLabels(layout?: Layout) {
+  const width=layout?.features.find(f=>f.properties.role==="inner"&&"edgeConvention"in f.properties);
+  if(width&&"edgeConvention"in width.properties&&width.properties.edgeConvention==="left-right")return {inner:"Left",outer:"Right"};
   return layout?.metadata.borderComposition ||
     (layout?.metadata.model3d?.kind === "run" && layout.metadata.model3d.sourceSequence)
     ? { inner: "Inner / left", outer: "Outer / right" }
@@ -71,6 +73,8 @@ export class BorderOverlay {
   private data?: TrackBorders;
   private enabled = false;
   private estimated = false;
+  private widthBased=false;
+  private unavailableReason?:string;
   private sharedGround = false;
 
   constructor(
@@ -86,9 +90,11 @@ export class BorderOverlay {
 
   setLayout(layout?: Layout) {
     this.data = layout ? bordersFromLayout(layout) : undefined;
+    this.unavailableReason=layout?.metadata.lineUnavailableReason;
     this.estimated =
       !!layout?.metadata.borderInference ||
       !!layout?.metadata.borderComposition || !!(layout && sequenceApproachEdges(layout).length);
+    this.widthBased=!!layout?.features.some(f=>f.properties.role==='inner'&&'widthM'in f.properties);
     this.sharedGround = layout?.metadata.model3d?.kind !== "surface" && !!layout?.metadata.model3d?.sharedGround;
     const labels = borderLabels(layout);
     this.button.querySelector("[data-border-label]")!.textContent = layout
@@ -101,13 +107,14 @@ export class BorderOverlay {
     this.refresh();
   }
 
+  setEnabled(enabled:boolean){this.enabled=enabled;this.refresh();}
   private refresh() {
     this.button.disabled = !this.data;
     this.button.title = this.data
-      ? this.sharedGround ? "Original borders with an image-reviewed junction correction; positions remain estimates" : this.estimated
+      ? this.widthBased ? "Estimated constant-width offsets from the mapped trace; not measured road edges" : this.sharedGround ? "Original borders with an image-reviewed junction correction; positions remain estimates" : this.estimated
         ? "Estimated aerial-image borders; not manually reviewed"
         : "Show or hide inner and outer lines"
-      : "Lines unavailable for this layout";
+      : this.unavailableReason ?? "Lines unavailable for this layout";
     this.button.setAttribute(
       "aria-pressed",
       String(this.enabled && !!this.data),

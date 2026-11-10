@@ -1,3 +1,4 @@
+import type { Layout } from "../schemas/data";
 import type { GradeSeparation } from "../schemas/grade-separation";
 import { equal, plane, type Position } from "./geo";
 import { pathCrossings } from "./path-crossings";
@@ -19,8 +20,11 @@ export function gradeProfileHeight(recipe: GradeSeparation, station: number) {
   return a[1] * (1 - t) + b[1] * t;
 }
 
+const insideRange = (s: number, r: [number, number]) =>
+  r[0] <= r[1] ? s >= r[0] && s <= r[1] : s >= r[0] || s <= r[1];
+
 export const onBridge = (recipe: GradeSeparation, station: number) =>
-  recipe.crossings.some((c) => station >= c.upper[0] && station <= c.upper[1]);
+  recipe.crossings.some((c) => insideRange(station, c.upper));
 
 /** All four ribbon intersections must belong to explicit, separated source stations. */
 export function assertGradeRibbon(
@@ -61,7 +65,7 @@ export function assertGradeRibbon(
   const totals = recipe.crossings.map(() => [0, 0, 0]);
   const check = (a: number, b: number, kind: string, edge: number) => {
     const matches = recipe.crossings.flatMap((crossing, i) => {
-      const inside = (s: number, r: [number, number]) => s >= r[0] && s <= r[1];
+      const inside = insideRange;
       return (inside(a, crossing.upper) && inside(b, crossing.lower)) ||
         (inside(b, crossing.upper) && inside(a, crossing.lower))
         ? [i]
@@ -70,7 +74,7 @@ export function assertGradeRibbon(
     if (kind === "overlap" || matches.length !== 1)
       throw new Error("Unexplained crossing in grade-separated ribbon");
     const crossing = recipe.crossings[matches[0]],
-      aIsUpper = a >= crossing.upper[0] && a <= crossing.upper[1];
+      aIsUpper = insideRange(a, crossing.upper);
     if (
       gradeProfileHeight(recipe, aIsUpper ? a : b) -
         gradeProfileHeight(recipe, aIsUpper ? b : a) <
@@ -105,4 +109,12 @@ export function assertGradeRibbon(
     throw new Error(
       "Every declared bridge must explain one crossing per edge and two between edges",
     );
+}
+
+export function gradeForLayout(layout?: Layout) {
+  const model = layout?.metadata.model3d;
+  return (
+    (model && model.kind !== "surface" ? model.gradeSeparation : undefined) ??
+    layout?.metadata.borderInference?.gradeSeparation
+  );
 }

@@ -22,7 +22,20 @@
       "name": "Charade Circuit",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "France/Charade Circuit"
+      "referenceId": "France/Charade Circuit",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.56407115737271,
+        "lengthM": 3939.001017421104,
+        "sampleCount": 427,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2cd2d55ec350ce164b55c2c121428f7ce32c42ebce854de28cada064ae4f0679",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

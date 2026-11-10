@@ -24,28 +24,80 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.999340037629564,
+        "lengthM": 1262.3094801731459,
+        "sampleCount": 109,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "30ca5672cea060ec3221074d066e20e238791e4c20ef4cdb1592c2a8feb5ee1e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "charlotte-motor-speedway-full",
       "name": "Charlotte Motor Speedway Full",
       "file": "layouts/charlotte-motor-speedway-full.geojson",
       "referenceId": "United States/Charlotte Motor Speedway Full",
-      "description": "Draft configuration: The operator identifies the complete 1.5-mile superspeedway oval. The catalogue Full configuration follows the whole outer oval; its depicted parallel pit access is excluded from the driving course. The independently mapped oval uses neither the frontstretch nor backstretch ROVAL chicane and excludes the infield road course. Its exact source-node distance is 2365.1 m against the catalogue scalar of 2322 m; centreline and advertised race distances remain separate. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2365.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The operator identifies the complete 1.5-mile superspeedway oval. The catalogue Full configuration follows the whole outer oval; its depicted parallel pit access is excluded from the driving course. The independently mapped oval uses neither the frontstretch nor backstretch ROVAL chicane and excludes the infield road course. Its exact source-node distance is 2365.1 m against the catalogue scalar of 2322 m; centreline and advertised race distances remain separate. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2365.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.46230325770434,
+        "lengthM": 2365.0592625192303,
+        "sampleCount": 213,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "75064fd8174f1e2258fcb70d14d0fd83f779700703afb06b285bd37b32f9a3e7",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "charlotte-motor-speedway-infield",
       "name": "Charlotte Motor Speedway Infield",
       "file": "layouts/charlotte-motor-speedway-infield.geojson",
       "referenceId": "United States/Charlotte Motor Speedway Infield",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1262.3 m. Difference from the supplied layout distance 18.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1262.3 m. Difference from the supplied layout distance 18.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.999401634763943,
+        "lengthM": 1262.315473076093,
+        "sampleCount": 109,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "30ca5672cea060ec3221074d066e20e238791e4c20ef4cdb1592c2a8feb5ee1e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "charlotte-motor-speedway-roval",
       "name": "Charlotte Motor Speedway ROVAL",
       "file": "layouts/charlotte-motor-speedway-roval.geojson",
       "referenceId": "United States/Charlotte Motor Speedway ROVAL",
-      "description": "Draft configuration: Operator September 2018 event course plan identifies the earlier infield horseshoe and both frontstretch and backstretch chicanes. Exact nodes from the consistent 2020 independent snapshot retain those earlier branches; the later expanded backstretch and 2024 infield extension are excluded. The source frontstretch and backstretch ways are separately named and retain their pinned versions. This is a draft earlier course centreline, with coarse corner alignment and catalogue distance retained separately; travel direction and historical timing correspondence remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3600.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Operator September 2018 event course plan identifies the earlier infield horseshoe and both frontstretch and backstretch chicanes. Exact nodes from the consistent 2020 independent snapshot retain those earlier branches; the later expanded backstretch and 2024 infield extension are excluded. The source frontstretch and backstretch ways are separately named and retain their pinned versions. This is a draft earlier course centreline, with coarse corner alignment and catalogue distance retained separately; travel direction and historical timing correspondence remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3600.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.390355284306194,
+        "lengthM": 3369.1547373192307,
+        "sampleCount": 295,
+        "interpolatedSections": 20,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dcd4e7f528154e7350631c41ae35fc3162ef150f9549bbd24fd555f98178d825",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "charlotte-motor-speedway-short",

@@ -22,28 +22,80 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.373869950844348,
+        "lengthM": 5632.482120290074,
+        "sampleCount": 617,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8468683617ddc1c5cf115652c0d73788758c17db42735511783abc7c07c57df4",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     },
     {
       "id": "motorland-aragon",
       "name": "Motorland Aragon",
       "file": "layouts/motorland-aragon.geojson",
       "referenceId": "Spain/Motorland Aragon",
-      "description": "Draft configuration: Full course with direct western return, unbroken long straight and pointed eastern closing corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5188.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course with direct western return, unbroken long straight and pointed eastern closing corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5188.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.841463955000238,
+        "lengthM": 5188.681793072802,
+        "sampleCount": 525,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4d49a0d75882a1fb6ed4e35cd7f6fdacf4785fd14d3390abc2f2bc4ac69f7948",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "motorland-aragon-with-chicane",
       "name": "Motorland Aragon with Chicane",
       "file": "layouts/motorland-aragon-with-chicane.geojson",
       "referenceId": "Spain/Motorland Aragon with Chicane",
-      "description": "Draft configuration: Western return chicane, unbroken long straight and pointed eastern closing corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5378.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Western return chicane, unbroken long straight and pointed eastern closing corner. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5378.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.853964186726405,
+        "lengthM": 5362.236367455115,
+        "sampleCount": 563,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9cc2a6ae23b50f2dfe885e9b18d6088b9cff781a8885d6c4aac9de4fee7d385e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "motorland-aragongp",
       "name": "Motorland AragonGP",
       "file": "layouts/motorland-aragongp.geojson",
       "referenceId": "Spain/Motorland AragonGP",
-      "description": "Draft configuration: Western return chicane and rounded eastern closing corner; excludes the small extra kink on the long straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5112.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Western return chicane and rounded eastern closing corner; excludes the small extra kink on the long straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5112.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.790687335562184,
+        "lengthM": 5096.9036607450025,
+        "sampleCount": 534,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a76dacb302bc61e2aafe69ad5fd56fcce25bf5ab4b3405ef7e01dbb72161bced",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Ortona",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Italy/Ortona"
+      "referenceId": "Italy/Ortona",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.70064062585665,
+        "lengthM": 1555.0485751492965,
+        "sampleCount": 172,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ca44c5699fedb62e6d42a2f067610fac64ab58266b30cc28b1d93e5438497741",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

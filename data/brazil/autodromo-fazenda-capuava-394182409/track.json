@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.889008080959611,
+        "lengthM": 2595.7377711487593,
+        "sampleCount": 213,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3bd6d1d3d332a2ff08a355fac55232ecfe1e9eb3e782e88ebbef7c1c46e87a9f",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-capuava",
       "name": "Autodromo Capuava",
       "file": "layouts/autodromo-capuava.geojson",
       "referenceId": "Brazil/Autodromo Capuava",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2673.3 m. Difference from the supplied layout distance 8.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2673.3 m. Difference from the supplied layout distance 8.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.957279123353992,
+        "lengthM": 2673.301043560342,
+        "sampleCount": 221,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bd6809f07430fba29fccf0c26da0a668fa212056abe9157408615e24bc95ba13",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

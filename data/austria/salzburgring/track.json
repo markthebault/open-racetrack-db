@@ -24,7 +24,20 @@
       "name": "Salzburgring",
       "file": "layouts/grand-prix.geojson",
       "description": "Draft route assembled from the connected main raceway ways. OSM one-way directions are retained. The pit lane, training loop, and mapped area are excluded. Visual review is still required.",
-      "referenceId": "Austria/Salzburgring"
+      "referenceId": "Austria/Salzburgring",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.334148206865923,
+        "lengthM": 4213.350387210647,
+        "sampleCount": 333,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "35e8ae1657bd2e9bbb493e16145307e5f782588241e7270a594d3089833cd7f1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

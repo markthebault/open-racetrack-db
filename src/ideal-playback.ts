@@ -1,3 +1,5 @@
+import {gradeForLayout} from "./grade-separation";
+import {pathCurvatures} from "./path-curvature";
 import {geometryPaths,type Layout} from '../schemas/data';
 import {equal,plane,type Position} from './geo';
 import {buildRoad,type Road,type RoadPoint} from './lap-simulation';
@@ -24,12 +26,13 @@ export function withIdealPlayback(road:Road,layout:Layout):Road{
  const points:RoadPoint[]=xy.map((p,i)=>{
   const expected=planarStation/total*road.length,candidates=new Set<number>(),cx=Math.floor(p[0]/size),cz=Math.floor(p[1]/size);for(let x=-1;x<=1;x++)for(let z=-1;z<=1;z++)for(const j of cells.get((cx+x)+','+(cz+z))??[])candidates.add(j);
   let best:{index:number;t:number;score:number}|undefined;
-  for(const j of candidates){const a=road.points[j],c=nearest(p,centres[j],centres[(j+1)%n]);let phase=Math.abs(a.s+c.t*a.ds-expected);if(closed)phase=Math.min(phase,road.length-phase);if(phase>120&&(layout.metadata.borderInference?.gradeSeparation||road.recipe.sourceSequence))continue;const score=(c.p[0]-p[0])**2+(c.p[1]-p[1])**2+phase*phase*1e-6;if(!best||score<best.score)best={index:j,t:c.t,score};}
+  for(const j of candidates){const a=road.points[j],c=nearest(p,centres[j],centres[(j+1)%n]);let phase=Math.abs(a.s+c.t*a.ds-expected);if(closed)phase=Math.min(phase,road.length-phase);if(phase>120&&(gradeForLayout(layout)||road.recipe.sourceSequence))continue;const score=(c.p[0]-p[0])**2+(c.p[1]-p[1])**2+phase*phase*1e-6;if(!best||score<best.score)best={index:j,t:c.t,score};}
   if(!best)throw Error('Ideal line cannot be matched to the selected road in source order');
   const a=road.points[best.index],b=road.points[(best.index+1)%n],t=best.t;planarStation+=lengths[i];return{...a,x:p[0],z:p[1],y:a.y+(b.y-a.y)*t,s:0,ds:0,curvature:0,grade:0,elevated:t<.5?a.elevated:b.elevated};
  });
  const at=(i:number)=>points[closed?(i+points.length)%points.length:Math.max(0,Math.min(points.length-1,i))];let travelled=0;
  for(let i=0;i<points.length;i++){const p=points[i],q=at(i+1),a=at(i-4),b=at(i+4),dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz);p.nx=dz/(d||1);p.nz=-dx/(d||1);p.s=travelled;p.ds=!closed&&i===points.length-1?0:Math.hypot(q.x-p.x,q.z-p.z,q.y-p.y);travelled+=p.ds;const ab=Math.hypot(p.x-a.x,p.z-a.z),bc=Math.hypot(b.x-p.x,b.z-p.z),ac=Math.hypot(b.x-a.x,b.z-a.z);p.curvature=2*((p.x-a.x)*(b.z-p.z)-(p.z-a.z)*(b.x-p.x))/Math.max(1e-6,ab*bc*ac);}
+ if(feature.properties.role==='ideal'&&feature.properties.localRefinement){const curvature=pathCurvatures(points,closed,feature.properties.localRefinement.curvatureWindowM);points.forEach((p,i)=>{p.curvature=curvature[i];});}
  for(let i=0;i<points.length;i++){const p=points[i],a=at(i-1),b=at(i+1);p.grade=(b.y-a.y)/Math.max(1e-8,(i===0&&!closed?0:a.ds)+p.ds);}
  return{...road,points,length:travelled,step:travelled/(closed?points.length:points.length-1),surfaceRoad:road,pathSource:'ideal'};
 }

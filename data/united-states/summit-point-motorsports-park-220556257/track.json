@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.2429442584974,
+        "lengthM": 3379.853522190781,
+        "sampleCount": 299,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9b31b5f297d7b8bab28afc207943feaeb41ed33a75fa6c521c0508d53226fb5f",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "summit-point-shenandoah",
       "name": "Summit Point Shenandoah",
       "file": "layouts/summit-point-shenandoah.geojson",
       "referenceId": "United States/Summit Point Shenandoah",
-      "description": "Draft configuration: The complete independently mapped main Shenandoah loop follows the long outer return, both terminal hairpins and the inner Karussell section identified by the operator full-configuration plan. The two optional crossover connectors and unrelated service or training roads are excluded. The actual source centreline is 3379.8 m; the operator describes the full course as 2.2 miles, while the catalogue scalar is 3794 m. These differences are recorded without scaling or warping coordinates. Alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3379.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The complete independently mapped main Shenandoah loop follows the long outer return, both terminal hairpins and the inner Karussell section identified by the operator full-configuration plan. The two optional crossover connectors and unrelated service or training roads are excluded. The actual source centreline is 3379.8 m; the operator describes the full course as 2.2 miles, while the catalogue scalar is 3794 m. These differences are recorded without scaling or warping coordinates. Alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3379.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.101000823264362,
+        "lengthM": 3379.815413143723,
+        "sampleCount": 299,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f3a18f637fbfd8e42fed01dda27c81f3665ec44b06c9916e44428822ecfb88ad",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

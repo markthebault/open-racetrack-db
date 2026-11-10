@@ -25,28 +25,80 @@
       "id": "main",
       "name": "Grand Full",
       "file": "layouts/main.geojson",
-      "description": "Draft Grand Full course on the racing straight, western chicane and northeastern extension. Public timing confirmation is still required."
+      "description": "Draft Grand Full course on the racing straight, western chicane and northeastern extension. Public timing confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.188832142956286,
+        "lengthM": 5038.136650803294,
+        "sampleCount": 522,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "98f1ab590d0259d6735278d3cb0afca944b53efadecf0d1f4d157460dd1433c1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ncm-corvette-race-loop",
       "name": "NCM Corvette Race Loop",
       "file": "layouts/ncm-corvette-race-loop.geojson",
       "referenceId": "United States/NCM Corvette Race Loop",
-      "description": "Draft configuration: Outer race loop with direct long straight and northern linked bends; excludes the parallel infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3247.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Outer race loop with direct long straight and northern linked bends; excludes the parallel infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3247.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.221104301972622,
+        "lengthM": 3247.153257816828,
+        "sampleCount": 297,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "df1ee3ad2da62e0441124f6cc1c769678c0917cbac7f364f6f554ec4e18cbbbd",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "ncm-full",
       "name": "NCM Full",
       "file": "layouts/ncm-full.geojson",
       "referenceId": "United States/NCM Full",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5003.9 m. Difference from the supplied layout distance 10.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5003.9 m. Difference from the supplied layout distance 10.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.262675444101738,
+        "lengthM": 5003.998650316689,
+        "sampleCount": 507,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ad21a4f3aa02d717e756e9347c65c95045d5c38833b5b4015a58ce7187210b0b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ncm-grand-full",
       "name": "NCM Grand Full",
       "file": "layouts/ncm-grand-full.geojson",
       "referenceId": "United States/NCM Grand Full",
-      "description": "Draft configuration: Full course combining the western inner return and northeastern hooked extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5038.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course combining the western inner return and northeastern hooked extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5038.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.188832142956286,
+        "lengthM": 5038.136650803294,
+        "sampleCount": 522,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "98f1ab590d0259d6735278d3cb0afca944b53efadecf0d1f4d157460dd1433c1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ncm-grand-straight",
@@ -74,7 +126,20 @@
       "name": "NCM West",
       "file": "layouts/ncm-west.geojson",
       "referenceId": "United States/NCM West",
-      "description": "Draft configuration: The independently mapped West circuit follows its complete northern return, central inner loop, eastern West-course hairpin and southern chicane. The operator separate-circuit plan identifies these West branches and a nominal two-mile course; the actual source route is 3234.3 m. The East circuit, long alternative straight, pit and paddock roads are excluded. The catalogue distance of 3385 m is retained without changing source coordinates; alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3234.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The independently mapped West circuit follows its complete northern return, central inner loop, eastern West-course hairpin and southern chicane. The operator separate-circuit plan identifies these West branches and a nominal two-mile course; the actual source route is 3234.3 m. The East circuit, long alternative straight, pit and paddock roads are excluded. The catalogue distance of 3385 m is retained without changing source coordinates; alignment date and direction remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3234.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.14835362671284,
+        "lengthM": 3234.388316124152,
+        "sampleCount": 332,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "89e5937942381f46194c0ecb9c2a05323a1f9f8fb1f54110934a3bbb64a18524",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

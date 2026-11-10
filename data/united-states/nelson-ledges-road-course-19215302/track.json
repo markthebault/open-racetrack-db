@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 6.5,
+      "roadWidthSource": {
+        "meanWidthM": 6.366544044616107,
+        "lengthM": 2916.1898063876693,
+        "sampleCount": 260,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dd32e613b7ed1876559ce496f1c95d889cb3cb182caa4b6b5f5a9e7e36d07ee2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "nelson-ledges",
       "name": "Nelson Ledges",
       "referenceId": "United States/Nelson Ledges",
       "file": "layouts/nelson-ledges.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2916.2 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2916.2 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 6.5,
+      "roadWidthSource": {
+        "meanWidthM": 6.366544044616107,
+        "lengthM": 2916.1898063876693,
+        "sampleCount": 260,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dd32e613b7ed1876559ce496f1c95d889cb3cb182caa4b6b5f5a9e7e36d07ee2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

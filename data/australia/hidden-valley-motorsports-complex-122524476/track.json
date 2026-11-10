@@ -22,7 +22,20 @@
       "name": "Hidden Valley Raceway",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Australia/Hidden Valley Raceway"
+      "referenceId": "Australia/Hidden Valley Raceway",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.711650751383075,
+        "lengthM": 2867.1388187797693,
+        "sampleCount": 312,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "375e7fcdf300ffcbfbcdf6ff9102df0f3e677b8717e60f3ccb00b01b3f603810",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Black Forest Long",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Germany/Black Forest Long"
+      "referenceId": "Germany/Black Forest Long",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.790891588964426,
+        "lengthM": 4672.370235735169,
+        "sampleCount": 387,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9d705ba177af46e32eff20045626fa1e219422ebf3d2546d0c0c7ce2accc98e5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

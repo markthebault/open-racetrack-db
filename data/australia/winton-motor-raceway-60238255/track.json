@@ -23,14 +23,40 @@
       "name": "Winton",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Australia/Winton"
+      "referenceId": "Australia/Winton",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.046427753958694,
+        "lengthM": 3000.741462040908,
+        "sampleCount": 247,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8456a8ac16f9a14a17dcba000ffe064d00801628efa27b894342a4fdbc821d99",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "winton-short",
       "name": "Winton Short",
       "referenceId": "Australia/Winton Short",
       "file": "layouts/winton-short.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2035.6 m. Difference from the supplied layout distance 5.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2035.6 m. Difference from the supplied layout distance 5.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.376967499521387,
+        "lengthM": 2035.6032509910167,
+        "sampleCount": 173,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a1c73a79be8bd2ccd3d9222ef757a6bcbc795e0bdade41ae40d32bbd756feae3",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

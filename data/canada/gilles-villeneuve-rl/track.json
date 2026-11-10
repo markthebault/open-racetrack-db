@@ -22,7 +22,20 @@
       "name": "Gilles Villeneuve",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "Canada/Gilles Villeneuve"
+      "referenceId": "Canada/Gilles Villeneuve",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.626046685303525,
+        "lengthM": 4362.161121733152,
+        "sampleCount": 414,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2a83e4f64d3fba14993751671483830829eff571c73cca84957776410e71be4a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

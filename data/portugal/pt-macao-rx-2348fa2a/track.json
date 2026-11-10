@@ -29,7 +29,20 @@
       "id": "macao-standard",
       "name": "Standard lap",
       "file": "layouts/macao-standard.geojson",
-      "description": "Standard lap follows the outer southern return in the federation event plan, retaining the eastern infield hairpin. Public mapping is coarse; distance and direction remain draft."
+      "description": "Standard lap follows the outer southern return in the federation event plan, retaining the eastern infield hairpin. Public mapping is coarse; distance and direction remain draft.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.305294971183772,
+        "lengthM": 784.1749800531528,
+        "sampleCount": 68,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7164a7c256cf0188214329895125bfa99122b9e9743ec72f1d1b575591372c6c",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "macao-joker",

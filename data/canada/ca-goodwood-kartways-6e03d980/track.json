@@ -23,19 +23,58 @@
       "name": "Goodwood Kartways",
       "file": "layouts/goodwood-kartways.geojson",
       "referenceId": "Canada/Goodwood Kartways",
-      "description": "Combined mapped configurations: Goodwood Standard Long Track, Goodwood Long Track with Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Goodwood Standard Long Track, Goodwood Long Track with Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.863508416768878,
+        "lengthM": 1609.9036263062262,
+        "sampleCount": 160,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "afbde26407404479efba3ced4e694f110f25672c278aa68250c0b0d318c510a4",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "goodwood-standard-long",
       "name": "Goodwood Standard Long Track",
       "file": "layouts/goodwood-standard-long.geojson",
-      "description": "The operator event identifies Goodwood Standard Long Track. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern straight. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied."
+      "description": "The operator event identifies Goodwood Standard Long Track. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern straight. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.043829835310067,
+        "lengthM": 794.4019798543453,
+        "sampleCount": 78,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f34f05e1d3b17c53acb975efecc38214a6e6bd42b4a66beca6107aea59a7bb21",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "goodwood-long-chicane",
       "name": "Goodwood Long Track with Chicane",
       "file": "layouts/goodwood-long-chicane.geojson",
-      "description": "The operator event identifies Goodwood Long Track with Chicane. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern bus-stop alternative. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied."
+      "description": "The operator event identifies Goodwood Long Track with Chicane. The facility site plan supplies branch identification for the full northern loop and both central hairpins, with the southern bus-stop alternative. The independently pinned source-node course excludes the northern training shortcuts and paddock access. Contemporary alignment remains draft; no aerial or diagram coordinates are copied.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.68785249685439,
+        "lengthM": 815.5016464518826,
+        "sampleCount": 82,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f6cdafaa6d99f047d332d0e5c44df24e3cc9f95ad88a7d9f60465977a872fa0a",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

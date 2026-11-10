@@ -22,7 +22,20 @@
       "name": "Motopark",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Finland/Motopark"
+      "referenceId": "Finland/Motopark",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.00269582088327,
+        "lengthM": 3495.038793258615,
+        "sampleCount": 284,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b8f03c821aefb23eca24e9f7e012a753d9c5fa750014097d3417ab1cf9d99aa1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

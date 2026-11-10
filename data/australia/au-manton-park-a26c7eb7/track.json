@@ -22,7 +22,20 @@
       "name": "Manton Park",
       "referenceId": "Australia/Manton Park",
       "file": "layouts/manton-park.geojson",
-      "description": "Draft configuration: Full outer loop and southern hairpin; avoids the additional eastern service detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2769.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full outer loop and southern hairpin; avoids the additional eastern service detour. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2769.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.712834411641953,
+        "lengthM": 2769.56033477273,
+        "sampleCount": 200,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bf60948399e902f2dfee3e24c0f3b27e6c5a289b66814cf2f9715576647ffc10",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

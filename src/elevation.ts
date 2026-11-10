@@ -1,3 +1,4 @@
+import {gradeForLayout} from "./grade-separation";
 import { geometryPaths, type Layout } from "../schemas/data";
 import { distance, type Position } from "./geo";
 import { pairedBorderMidline } from "./border-midline";
@@ -34,7 +35,11 @@ export function sampleElevation(
 
 export function courseElevation(layout: Layout, grid: ElevationGrid) {
   const trace = layout.features.find((f) => f.properties.role === "trace")!;
-  const grade = layout.metadata.borderInference?.gradeSeparation;
+  // Compact layouts have no paired station grid until their corridor is built.
+  // Validate their terrain against the unchanged source trace instead.
+  const grade = layout.features.some(f => f.properties.role === "inner") &&
+    layout.features.some(f => f.properties.role === "outer")
+    ? gradeForLayout(layout) : undefined;
   const paths = (
     grade ? [pairedBorderMidline(layout)] : geometryPaths(trace.geometry)
   ).map((path) => {

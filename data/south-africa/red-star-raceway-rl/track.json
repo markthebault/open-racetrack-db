@@ -22,7 +22,20 @@
       "name": "Red Star Raceway",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "South Africa/Red Star Raceway"
+      "referenceId": "South Africa/Red Star Raceway",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.845796756580576,
+        "lengthM": 3985.8435582976435,
+        "sampleCount": 322,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "abc4a85a8d433785ee09cfcba0db47b4def6b9791f2ffe8eb8f242edae2e5ed8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

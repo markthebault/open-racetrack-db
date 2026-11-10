@@ -22,7 +22,20 @@
       "name": "Brno",
       "referenceId": "Czech Republic/Brno",
       "file": "layouts/brno.geojson",
-      "description": "Draft configuration: Full Grand Prix course with both southeastern return bends and northern inner hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5401.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full Grand Prix course with both southeastern return bends and northern inner hairpin. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5401.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.371328801136748,
+        "lengthM": 5401.28763945187,
+        "sampleCount": 453,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "63c5a544837a86e898e77f4c1e56578a6d25987b3b874b2a078a0e39eddd3416",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

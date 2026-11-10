@@ -22,7 +22,20 @@
       "name": "Zwartkops",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "South Africa/Zwartkops"
+      "referenceId": "South Africa/Zwartkops",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.019487180281782,
+        "lengthM": 2401.684834365109,
+        "sampleCount": 200,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "92cfea3b3033a04ab5606618e2f010a680b1df97642e4bd27eea6a487f35c514",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -23,28 +23,80 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.72374004335156,
+        "lengthM": 3026.6186815336523,
+        "sampleCount": 316,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8e73d2de7767b06cdd4b93b3bcc99394929744fb15e9ef954167918c970554ff",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "korea-int-circuit-national",
       "name": "Korea Int Circuit National",
       "file": "layouts/korea-int-circuit-national.geojson",
       "referenceId": "South Korea/Korea Int Circuit National",
-      "description": "Draft configuration: National northern road course with direct southern closing straight, western shoulder and eastern hooked return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3026.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: National northern road course with direct southern closing straight, western shoulder and eastern hooked return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3026.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.723857953931695,
+        "lengthM": 3026.696143477766,
+        "sampleCount": 316,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8e73d2de7767b06cdd4b93b3bcc99394929744fb15e9ef954167918c970554ff",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "korea-international-circuit",
       "name": "Korea International Circuit",
       "file": "layouts/korea-international-circuit.geojson",
       "referenceId": "South Korea/Korea International Circuit",
-      "description": "Draft configuration: Full GP course follows the entire closed portion of the independently named YEONGAM F1 Track way, retaining both the northern GP sector and southern permanent sector. The source way includes a short overlapping prefix outside its closed portion; the recipe uses the actual repeated source node as its closure. The operator identifies the same full configuration at 5.615 km; this independent source measures 5,594.4 m against the catalogue 5,666 m. No coordinates are adjusted. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5594.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full GP course follows the entire closed portion of the independently named YEONGAM F1 Track way, retaining both the northern GP sector and southern permanent sector. The source way includes a short overlapping prefix outside its closed portion; the recipe uses the actual repeated source node as its closure. The operator identifies the same full configuration at 5.615 km; this independent source measures 5,594.4 m against the catalogue 5,666 m. No coordinates are adjusted. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5594.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.805365587777208,
+        "lengthM": 5594.624993539424,
+        "sampleCount": 513,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c8bbae3aaac2d5d7fb8c916b9b9942f7c286672e21453494bb8b61039ddb4c84",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "korea-international-short-circuit",
       "name": "Korea International Short Circuit",
       "file": "layouts/korea-international-short-circuit.geojson",
       "referenceId": "South Korea/Korea International Short Circuit",
-      "description": "Draft configuration: Northern short course uses the independently named GP Circuit branch and B Course connector, excluding the Permanent Circuit southern loop and overlapping duplicate course way. The catalogue diagram identifies the same northern perimeter and infield return. The operator distinguishes the 3.29 km B Course from the 3.04 km A Course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3306.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Northern short course uses the independently named GP Circuit branch and B Course connector, excluding the Permanent Circuit southern loop and overlapping duplicate course way. The catalogue diagram identifies the same northern perimeter and infield return. The operator distinguishes the 3.29 km B Course from the 3.04 km A Course. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3306.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.483539492890987,
+        "lengthM": 3306.3398274295773,
+        "sampleCount": 291,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ee3eee45c6a7c915b80fae6be6b9de288c9833786e09222191000f0880af49bb",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

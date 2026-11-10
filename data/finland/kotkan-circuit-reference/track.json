@@ -22,7 +22,20 @@
       "name": "Kotkan Circuit",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Finland/Kotkan Circuit"
+      "referenceId": "Finland/Kotkan Circuit",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.261624308025022,
+        "lengthM": 1034.2440897426843,
+        "sampleCount": 126,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "82d2a088262fb3124ecce36ed20c2875b4a21ba83a30b69a26e6d4481bb446a3",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

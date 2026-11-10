@@ -24,26 +24,78 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.800642444462271,
+        "lengthM": 4188.651182718898,
+        "sampleCount": 355,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2ac3756cd374aeb9b0c0e79879e73ddc82e469de9e1f3c610c1b0ab570546655",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "autodromo-de-la-pampa",
       "name": "Autodromo de La Pampa",
       "file": "layouts/autodromo-de-la-pampa.geojson",
       "referenceId": "Argentina/Autodromo de La Pampa",
-      "description": "Combined mapped configurations: Full course with both chicanes, Northern short-course return. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Full course with both chicanes, Northern short-course return. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.776930903754169,
+        "lengthM": 7588.012004717005,
+        "sampleCount": 622,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f8896ba90681c85ecacb6e86e159474bf0fd0aa20429a980b86217777f9318a4",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "full-course-chicanes",
       "name": "Full course with both chicanes",
       "file": "layouts/full-course-chicanes.geojson",
-      "description": "The operator identifies its full circuit, zonal alternatives and two chicanes, with 5222 m total asphalt. Its published aerial views identify the northern loop and northern short-course return. This exact independent public-node route retains the full northern loop and both small straight chicanes. The separately mapped Sector Boxes pit route is excluded. Configuration identity, timing choice and direction remain draft."
+      "description": "The operator identifies its full circuit, zonal alternatives and two chicanes, with 5222 m total asphalt. Its published aerial views identify the northern loop and northern short-course return. This exact independent public-node route retains the full northern loop and both small straight chicanes. The separately mapped Sector Boxes pit route is excluded. Configuration identity, timing choice and direction remain draft.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 13.800642444462271,
+        "lengthM": 4188.651182718898,
+        "sampleCount": 355,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2ac3756cd374aeb9b0c0e79879e73ddc82e469de9e1f3c610c1b0ab570546655",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "northern-short-course",
       "name": "Northern short-course return",
       "file": "layouts/northern-short-course.geojson",
-      "description": "This exact independent public-node course uses the northern short-course return and bypasses the two straight chicanes. The operator identifies zonal alternatives and its aerial photograph independently confirms the paved northern shortcut. Descriptive naming does not assert an official layout name. The pit route is excluded."
+      "description": "This exact independent public-node course uses the northern short-course return and bypasses the two straight chicanes. The operator identifies zonal alternatives and its aerial photograph independently confirms the paved northern shortcut. Descriptive naming does not assert an official layout name. The pit route is excluded.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.747236078527433,
+        "lengthM": 3399.3198702801988,
+        "sampleCount": 267,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ed764c9592004e32281138a8a587b6ffd30dffe5e7436ddec7f626b38e75ac7e",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

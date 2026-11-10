@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.764391959283534,
+        "lengthM": 2777.3946430504006,
+        "sampleCount": 234,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "27d7a7b228d83a39879d60afe903a567f4991f6aee7e73b330afc3d1a0046449",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "manfeild",
       "name": "Manfeild",
       "referenceId": "New Zealand/Manfeild",
       "file": "layouts/manfeild.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2777.4 m. Difference from the supplied layout distance 3.6 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2777.4 m. Difference from the supplied layout distance 3.6 m. Course configuration still requires visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.764483717796383,
+        "lengthM": 2777.432297636931,
+        "sampleCount": 234,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "27d7a7b228d83a39879d60afe903a567f4991f6aee7e73b330afc3d1a0046449",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

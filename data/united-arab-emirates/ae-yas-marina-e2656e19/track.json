@@ -35,7 +35,20 @@
       "name": "Yas Marina GP",
       "file": "layouts/yas-marina-gp.geojson",
       "referenceId": "United Arab Emirates/Yas Marina GP",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.492052025182776,
+        "lengthM": 5296.828963911061,
+        "sampleCount": 494,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4592b64010597524675bbb53c5dd148b473af199d3e22d336febf8fdeeba859b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-marina-gp-corkscrew",
@@ -49,21 +62,60 @@
       "name": "Yas Marina North",
       "file": "layouts/yas-marina-north.geojson",
       "referenceId": "United Arab Emirates/Yas Marina North",
-      "description": "Draft configuration: Historical northern configuration retains the top hairpin and smooth western straight, excluding the western chicane and GP southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3119.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical northern configuration retains the top hairpin and smooth western straight, excluding the western chicane and GP southern extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3119.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 18,
+      "roadWidthSource": {
+        "meanWidthM": 18.04221248314921,
+        "lengthM": 3119.4424134973547,
+        "sampleCount": 277,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "71825138f7a7f56334deeafae7b8d19aa456ee8df65d6c3f7f91bec904d3852d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-marina-north-chicane",
       "name": "Yas Marina North Chicane",
       "file": "layouts/yas-marina-north-chicane.geojson",
       "referenceId": "United Arab Emirates/Yas Marina North Chicane",
-      "description": "Draft configuration: Historical northern configuration retains the top hairpin and adds the western straight chicane, excluding the southern GP extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3144.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical northern configuration retains the top hairpin and adds the western straight chicane, excluding the southern GP extension. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3144.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.365768848945352,
+        "lengthM": 3144.2750041677873,
+        "sampleCount": 289,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fbd4b8df10174059fd8d43e0932988c8d59ee9666e9e73739cd5d0310d1a6aa8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-marina-north-corkscrew",
       "name": "Yas Marina North Corkscrew",
       "file": "layouts/yas-marina-north-corkscrew.geojson",
       "referenceId": "United Arab Emirates/Yas Marina North Corkscrew",
-      "description": "Draft configuration: Northern short course closing through the central corkscrew connector and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2300.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Northern short course closing through the central corkscrew connector and long western straight. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2300.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.629551066152658,
+        "lengthM": 2294.183744670473,
+        "sampleCount": 218,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "940c3ad2b6735ad43dd881149dda7226e7e27e1ca0a8bd2e3672f341a43589bc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-marina-north-handling",
@@ -77,7 +129,20 @@
       "name": "Yas Marina South",
       "file": "layouts/yas-marina-south.geojson",
       "referenceId": "United Arab Emirates/Yas Marina South",
-      "description": "Draft configuration: The operator historical brochure identifies the Southern course through the South and Marina sectors and hotel turns, returning via the independent short connection. The pinned 2019 public-node route retains the long Western curve, two Southern direction changes, Eastern hotel notch and short Northern connection, excluding both pit lanes and North/Corkscrew alternatives. The 2694.4 m independent length differs from the 2583 m timing scalar and 2.35 km operator description; fine historical corner alignment and short-connection mapping remain draft, without scaling the route. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2694.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The operator historical brochure identifies the Southern course through the South and Marina sectors and hotel turns, returning via the independent short connection. The pinned 2019 public-node route retains the long Western curve, two Southern direction changes, Eastern hotel notch and short Northern connection, excluding both pit lanes and North/Corkscrew alternatives. The 2694.4 m independent length differs from the 2583 m timing scalar and 2.35 km operator description; fine historical corner alignment and short-connection mapping remain draft, without scaling the route. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2694.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 18,
+      "roadWidthSource": {
+        "meanWidthM": 17.81975083754132,
+        "lengthM": 2566.0078739059413,
+        "sampleCount": 234,
+        "interpolatedSections": 16,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "36d2e14a5d293eba78ea3f7a6983547de146abd94e215ca94cff2ea314ed048d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-historical-grand-prix",
@@ -89,37 +154,115 @@
       "id": "yas-historical-grand-prix-corkscrew",
       "name": "Historical Grand Prix Corkscrew",
       "file": "layouts/yas-historical-grand-prix-corkscrew.geojson",
-      "description": "The independently mapped Northern corkscrew connection joins the complete historical Southern course, excluding the long Northern hairpin. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft."
+      "description": "The independently mapped Northern corkscrew connection joins the complete historical Southern course, excluding the long Northern hairpin. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.375321622775605,
+        "lengthM": 4728.975501721589,
+        "sampleCount": 435,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4b661efce7e2c3ca4eaf64b908d05f1fc98e00b43e133c570db0f202d7b85eac",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-historical-north",
       "name": "Historical North course",
       "file": "layouts/yas-historical-north.geojson",
-      "description": "The historical North route retains the full Northern hairpin and direct Southern short connection, excluding the back-straight chicane. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft."
+      "description": "The historical North route retains the full Northern hairpin and direct Southern short connection, excluding the back-straight chicane. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft.",
+      "roadWidthM": 18,
+      "roadWidthSource": {
+        "meanWidthM": 18.04221248314921,
+        "lengthM": 3119.4424134973547,
+        "sampleCount": 277,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "71825138f7a7f56334deeafae7b8d19aa456ee8df65d6c3f7f91bec904d3852d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-historical-north-chicane",
       "name": "Historical North with Chicane",
       "file": "layouts/yas-historical-north-chicane.geojson",
-      "description": "The historical North route includes the Western back-straight chicane in addition to the full Northern hairpin and short Southern connection. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft."
+      "description": "The historical North route includes the Western back-straight chicane in addition to the full Northern hairpin and short Southern connection. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.365768848945352,
+        "lengthM": 3144.2750041677873,
+        "sampleCount": 289,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fbd4b8df10174059fd8d43e0932988c8d59ee9666e9e73739cd5d0310d1a6aa8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-historical-north-corkscrew",
       "name": "Historical North Corkscrew",
       "file": "layouts/yas-historical-north-corkscrew.geojson",
-      "description": "The historical North Corkscrew combines the internal Northern return with the Southern short connection, excluding the outer hairpin. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft."
+      "description": "The historical North Corkscrew combines the internal Northern return with the Southern short connection, excluding the outer hairpin. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.514523243321392,
+        "lengthM": 2292.9647165357064,
+        "sampleCount": 211,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9b3c29a7e2f32d5ac2e4506dcbfc077f42221b50d8c446f059687e1e00b909d0",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "yas-historical-handling",
       "name": "Historical North Handling",
       "file": "layouts/yas-historical-handling.geojson",
-      "description": "The independent Handling loop retains the Northern hairpin, Western step, middle Eastern return and Southern small notch. The main course and small Northern shortcut are excluded. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft."
+      "description": "The independent Handling loop retains the Northern hairpin, Western step, middle Eastern return and Southern small notch. The main course and small Northern shortcut are excluded. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.126716866384491,
+        "lengthM": 984.2566071339204,
+        "sampleCount": 123,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "efc7c6c96a51edeab877eb2265a4f5fdd1496b63a6139637f54cc65459cd8cd4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "yas-historical-south",
       "name": "Historical South course",
       "file": "layouts/yas-historical-south.geojson",
-      "description": "The historical Southern course retains the long Western curve, Southern direction changes and hotel notch, returning through the short Northern connection. Pit lanes are excluded. Its independent length remains unscaled against differing catalogue and operator distances. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft."
+      "description": "The historical Southern course retains the long Western curve, Southern direction changes and hotel notch, returning through the short Northern connection. Pit lanes are excluded. Its independent length remains unscaled against differing catalogue and operator distances. Coordinates retain exact independent 2019 OSM nodes; direction, detailed corner and historical barrier alignment remain draft.",
+      "roadWidthM": 18,
+      "roadWidthSource": {
+        "meanWidthM": 17.81975083754132,
+        "lengthM": 2566.0078739059413,
+        "sampleCount": 234,
+        "interpolatedSections": 16,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "36d2e14a5d293eba78ea3f7a6983547de146abd94e215ca94cff2ea314ed048d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Nardo Handling Track",
       "referenceId": "Italy/Nardo Handling Track",
       "file": "layouts/nardo-handling-track.geojson",
-      "description": "Draft configuration: Full handling course with southern spur and eastern elongated loop; excludes internal shortcuts. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6230.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full handling course with southern spur and eastern elongated loop; excludes internal shortcuts. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6230.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.787860451165052,
+        "lengthM": 6230.220460740344,
+        "sampleCount": 532,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cfbcfe01af5de8f5c73e6c619bc943ef0bc1a8548be231cec137a9cacc7a3dcc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

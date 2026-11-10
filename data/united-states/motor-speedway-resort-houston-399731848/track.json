@@ -22,7 +22,20 @@
       "name": "Motorsports Ranch Houston",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Motor Speedway Resort Houston. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3794.7 m; supplied distance 3796 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United States/Motorsports Ranch Houston"
+      "referenceId": "United States/Motorsports Ranch Houston",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.261936595355252,
+        "lengthM": 3794.685066499177,
+        "sampleCount": 319,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d5b5ad021e1de588f994a910080483cb2654f5bf8b58d22fb161c5299b5cfd9f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

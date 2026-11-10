@@ -22,7 +22,20 @@
       "name": "Trois Rivieres",
       "referenceId": "Canada/Trois Rivieres",
       "file": "layouts/trois-rivieres.geojson",
-      "description": "The organizer 2026 programme, pages 8 and 9, identifies the full road racing route: Avenue Gilles-Villeneuve, pool return, Boulevard du Carmel, Rue de Calonne and Rue Papineau with the Ryan hairpin. Pavement and painted race curbs are independently digitized from the licensed 2019 Quebec orthophoto. The oval, rallycross course, parking roads and pit lane are excluded. Historical road alignment and the western carriageway of Boulevard du Carmel are retained; current street widening is not substituted. The independently measured centerline is approximately 2.374 km versus the supplied 2.437 km nominal value; the difference is retained rather than scaling the course. The source image has 20 cm native resolution but this bounded WMS render samples approximately 0.78 m on the ground. Fine corner alignment and direction remain draft. No vertices are fitted to private diagrams, timing coordinates or nominal length. Independently digitized aerial centerline: 2374.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
+      "description": "The organizer 2026 programme, pages 8 and 9, identifies the full road racing route: Avenue Gilles-Villeneuve, pool return, Boulevard du Carmel, Rue de Calonne and Rue Papineau with the Ryan hairpin. Pavement and painted race curbs are independently digitized from the licensed 2019 Quebec orthophoto. The oval, rallycross course, parking roads and pit lane are excluded. Historical road alignment and the western carriageway of Boulevard du Carmel are retained; current street widening is not substituted. The independently measured centerline is approximately 2.374 km versus the supplied 2.437 km nominal value; the difference is retained rather than scaling the course. The source image has 20 cm native resolution but this bounded WMS render samples approximately 0.78 m on the ground. Fine corner alignment and direction remain draft. No vertices are fitted to private diagrams, timing coordinates or nominal length. Independently digitized aerial centerline: 2374.1 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.320521883513724,
+        "lengthM": 2236.1207207962398,
+        "sampleCount": 210,
+        "interpolatedSections": 13,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b3902699135371f06341a885c0e6d90ea651f707c151ebdae9e88ee7d69f58a8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

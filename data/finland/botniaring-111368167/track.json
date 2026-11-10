@@ -23,14 +23,40 @@
       "name": "Botniaring",
       "file": "layouts/main.geojson",
       "referenceId": "Finland/Botniaring",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.762859950549643,
+        "lengthM": 3999.1024935630844,
+        "sampleCount": 332,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1082fc96baec36c91d7972d4e8a8742228c9cab549117552adf8f128243ff22d",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "botniaringfull",
       "name": "BotniaringFull",
       "file": "layouts/botniaringfull.geojson",
       "referenceId": "Finland/BotniaringFull",
-      "description": "Draft configuration: Full expanded circuit with western parallel inner return and southeastern outer loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3999.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full expanded circuit with western parallel inner return and southeastern outer loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3999.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.870953696641878,
+        "lengthM": 3999.112470962188,
+        "sampleCount": 332,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "097f921c1c57e09139bfed13603c0181748f71e70781f825c2faeeff2af4c58d",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

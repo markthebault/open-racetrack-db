@@ -22,7 +22,20 @@
       "name": "Lombardore",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Italy/Lombardore"
+      "referenceId": "Italy/Lombardore",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.162107704272175,
+        "lengthM": 1084.5057865537713,
+        "sampleCount": 88,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d807d2030c5855a0cb46cefff88e18609ecd4896e63833ed38ba32f3d59e6b2c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -23,25 +23,77 @@
       "name": "Three Sisters",
       "file": "layouts/three-sisters.geojson",
       "referenceId": "United Kingdom/Three Sisters",
-      "description": "Combined mapped configurations: Three Sisters Full Circuit, Three Sisters Perimeter Circuit, Three Sisters Club Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Three Sisters Full Circuit, Three Sisters Perimeter Circuit, Three Sisters Club Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.3838694770033575,
+        "lengthM": 3618.226565387819,
+        "sampleCount": 326,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cdb950d40bc39b77f0bb674e6a4da6efe828d3a82a43af35a151e6dbb6c42448",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "three-sisters-full",
       "name": "Three Sisters Full Circuit",
       "file": "layouts/three-sisters-full.geojson",
-      "description": "The operator Full Circuit diagram identifies the full outer Conrod and Coward's Summit, western Lunar Bend, Rogerson's Straight and Lucy's Valley loop, with the smooth Esses crossover. The inner Penrith climb, Joey Dunlop return and angular pit detour are excluded. Independent mapped distance is 1450.5 m; the operator states 1473 m."
+      "description": "The operator Full Circuit diagram identifies the full outer Conrod and Coward's Summit, western Lunar Bend, Rogerson's Straight and Lucy's Valley loop, with the smooth Esses crossover. The inner Penrith climb, Joey Dunlop return and angular pit detour are excluded. Independent mapped distance is 1450.5 m; the operator states 1473 m.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.306559232852857,
+        "lengthM": 1450.5093094692352,
+        "sampleCount": 131,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "131b60d84da61c633905b5a3f0ea2914ce9b579fb6792bca165cb27fde7d0d5e",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "three-sisters-perimeter",
       "name": "Three Sisters Perimeter Circuit",
       "file": "layouts/three-sisters-perimeter.geojson",
-      "description": "The operator Perimeter Circuit diagram identifies full outer Conrod and Coward's Summit, western Lunar Bend and the Rogerson's Straight return, bypassing Lucy's Valley and the Joey Dunlop hairpin. The pinned source loop measures 1122.4 m; pit roads are excluded."
+      "description": "The operator Perimeter Circuit diagram identifies full outer Conrod and Coward's Summit, western Lunar Bend and the Rogerson's Straight return, bypassing Lucy's Valley and the Joey Dunlop hairpin. The pinned source loop measures 1122.4 m; pit roads are excluded.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.321567651716741,
+        "lengthM": 1122.4176116015399,
+        "sampleCount": 98,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4608bc5f2d3ff2fa4afc4fb89b006be5071be86adb5355683e284c4c49e7a693",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "three-sisters-club",
       "name": "Three Sisters Club Circuit",
       "file": "layouts/three-sisters-club.geojson",
-      "description": "The operator Club Circuit diagram identifies Lunar Bend, Rogerson's Straight, the inner Penrith climb and complete Joey Dunlop hairpin, bypassing the outer Coward's Summit and Lucy's Valley. The pinned source loop measures 1045.3 m; pit and angular service connectors are excluded."
+      "description": "The operator Club Circuit diagram identifies Lunar Bend, Rogerson's Straight, the inner Penrith climb and complete Joey Dunlop hairpin, bypassing the outer Coward's Summit and Lucy's Valley. The pinned source loop measures 1045.3 m; pit and angular service connectors are excluded.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.558047183639083,
+        "lengthM": 1045.2996443170434,
+        "sampleCount": 97,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c34c90d54c8fad089dd4839f338706f906d5b0a33e4cde902510a844a97bde72",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

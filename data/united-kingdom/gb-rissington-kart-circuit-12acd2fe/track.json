@@ -23,19 +23,58 @@
       "name": "Rissington Kart Circuit",
       "file": "layouts/rissington-kart-circuit.geojson",
       "referenceId": "United Kingdom/Rissington Kart Circuit",
-      "description": "Combined mapped configurations: Rissington Inner Circuit, Rissington Gearbox Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Rissington Inner Circuit, Rissington Gearbox Circuit. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 7,
+      "roadWidthSource": {
+        "meanWidthM": 7.086510184530707,
+        "lengthM": 1849.197122847903,
+        "sampleCount": 229,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ac7558ae60f77863747d58f12c3ca45df8a4e9dd5e708e23f9a295b08ad6b1af",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "rissington-inner",
       "name": "Rissington Inner Circuit",
       "file": "layouts/rissington-inner.geojson",
-      "description": "The club Inner Circuit plan identifies the full northern hairpin, inner southern loop and eastern dog-leg. The independently mapped centreline measures 983.7 m, compared with the club rounded distance of 970 m. The outer gearbox shortcut and pit roads are excluded."
+      "description": "The club Inner Circuit plan identifies the full northern hairpin, inner southern loop and eastern dog-leg. The independently mapped centreline measures 983.7 m, compared with the club rounded distance of 970 m. The outer gearbox shortcut and pit roads are excluded.",
+      "roadWidthM": 7,
+      "roadWidthSource": {
+        "meanWidthM": 7.2109509589616145,
+        "lengthM": 981.0330847505132,
+        "sampleCount": 129,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f272a0307be3a04efa770159fe335b27163a65ee0f8d0d6bebd3cb1a955a3c6f",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "rissington-gearbox",
       "name": "Rissington Gearbox Circuit",
       "file": "layouts/rissington-gearbox.geojson",
-      "description": "The club Gearbox Circuit plan identifies the full northern hairpin and long outer southern return, bypassing the inner loop and eastern dog-leg. The pinned source loop measures 868.2 m, while the published plan states 970 m. This discrepancy remains recorded; coordinates are not adjusted."
+      "description": "The club Gearbox Circuit plan identifies the full northern hairpin and long outer southern return, bypassing the inner loop and eastern dog-leg. The pinned source loop measures 868.2 m, while the published plan states 970 m. This discrepancy remains recorded; coordinates are not adjusted.",
+      "roadWidthM": 7,
+      "roadWidthSource": {
+        "meanWidthM": 6.945891002611759,
+        "lengthM": 868.1640380973921,
+        "sampleCount": 100,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "26cb870ebedbd16279be931bea5c8d18a8fcf1957c6b01ab96e10509db6f8610",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

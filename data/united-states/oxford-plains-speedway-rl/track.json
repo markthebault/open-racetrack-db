@@ -22,7 +22,20 @@
       "name": "Oxford Plains Speedway",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "United States/Oxford Plains Speedway"
+      "referenceId": "United States/Oxford Plains Speedway",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.76171245291264,
+        "lengthM": 583.861185874673,
+        "sampleCount": 59,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1f459552aa38429e0b0b412cfcaa32d9ac46c35b51a2233eb2423a972ac1c449",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Philip Island",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Australia/Philip Island"
+      "referenceId": "Australia/Philip Island",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.191941298030232,
+        "lengthM": 4453.7713468182465,
+        "sampleCount": 404,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0eccd2e4e0cdb5433e1b0abaadc0e348c6758f59b80c0585b3e19a53d87fcc6e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

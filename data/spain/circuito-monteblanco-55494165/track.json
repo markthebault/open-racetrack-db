@@ -23,14 +23,40 @@
       "name": "Monteblanco",
       "file": "layouts/main.geojson",
       "referenceId": "Spain/Monteblanco",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.558385214265138,
+        "lengthM": 3838.846763010525,
+        "sampleCount": 295,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d87d67b1c37dd7a1a0e923dcfb1bcaaaa33e6357dedf02f9a5244af0d6c174c5",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     },
     {
       "id": "monteblanco-variant-1",
       "name": "Monteblanco Variant 1",
       "file": "layouts/monteblanco-variant-1.geojson",
       "referenceId": "Spain/Monteblanco Variant 1",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3838.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3838.8 m. Difference from the supplied layout distance 7.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.808614322692112,
+        "lengthM": 3838.7732769640597,
+        "sampleCount": 295,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1658bd755fe38e26398e8410e389c6730f46e14283f02d83479c4bc7aa993820",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

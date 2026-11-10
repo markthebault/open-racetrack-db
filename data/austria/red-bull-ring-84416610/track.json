@@ -22,7 +22,20 @@
       "name": "RedBullRing",
       "file": "layouts/main.geojson",
       "referenceId": "Austria/RedBullRing",
-      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Red Bull Ring. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4329 m; supplied distance 4324 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ."
+      "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Red Bull Ring. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4329 m; supplied distance 4324 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.513291637788228,
+        "lengthM": 4328.923865911712,
+        "sampleCount": 428,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c6278ff77a890364a70863db95412014a770449283d78bf9cf8b0dd5d635639",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

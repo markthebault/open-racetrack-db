@@ -25,21 +25,60 @@
       "name": "Monza",
       "file": "layouts/grand-prix.geojson",
       "description": "Main road course through Variante del Rettifilo, Variante della Roggia, both Lesmo corners, Variante Ascari and Curva Alboreto. The historic banked oval, Junior loop and chicane bypasses are excluded.",
-      "referenceId": "Italy/Monza"
+      "referenceId": "Italy/Monza",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.016447230085822,
+        "lengthM": 5794.211406510352,
+        "sampleCount": 578,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a095b06e5621a10f8215420c11d3871f6d09e1af2751aeb65216d1812a98f008",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "monza-combo",
       "name": "Monza Combo",
       "referenceId": "Italy/Monza Combo",
       "file": "layouts/monza-combo.geojson",
-      "description": "Combined mapped configurations: Monza, Monza without Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Monza, Monza without Chicane. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.001133769486307,
+        "lengthM": 11545.635872862395,
+        "sampleCount": 1133,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a86dd2c023382468f0a53a5552b578c2773299dd174fa7b7cd1d8280602cf3cc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "monza-without-chicane",
       "name": "Monza without Chicane",
       "referenceId": "Italy/Monza without Chicane",
       "file": "layouts/monza-without-chicane.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5751.3 m. Difference from the supplied layout distance 26.3 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5751.3 m. Difference from the supplied layout distance 26.3 m. Course configuration still requires visual review.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.985706386479261,
+        "lengthM": 5751.424466352021,
+        "sampleCount": 555,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "49cee9f9ae60c22be9cbbc514a7e5b73758b8d17fb986fa6af8d8da81a1ab845",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

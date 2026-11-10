@@ -29,7 +29,20 @@
       "name": "Sochi racetrack",
       "file": "layouts/sochi-racetrack.geojson",
       "referenceId": "Russia/Sochi racetrack",
-      "description": "Draft configuration: Historical Grand Prix circuit retains the northern extension and the complete Olympic Park loop, excluding the short-circuit connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5841.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical Grand Prix circuit retains the northern extension and the complete Olympic Park loop, excluding the short-circuit connector. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5841.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.921960618725802,
+        "lengthM": 5841.766573290599,
+        "sampleCount": 463,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a9fb2f2a4d5dc59935733948fd9327a4a63aa0b50c6f574d856a111d238b401b",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

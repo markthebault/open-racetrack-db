@@ -22,7 +22,20 @@
       "name": "Dominion Raceway",
       "referenceId": "United States/Dominion Raceway",
       "file": "layouts/dominion-raceway.geojson",
-      "description": "Draft configuration: Full road circuit with long diagonal straight and northern infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3183.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full road circuit with long diagonal straight and northern infield return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3183.5 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.886904698962939,
+        "lengthM": 3183.598243409578,
+        "sampleCount": 269,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "07317255712f29addb9b32925e6437b0908be5772675c26888c2973ec487ad60",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

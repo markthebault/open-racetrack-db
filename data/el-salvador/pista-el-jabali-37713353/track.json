@@ -22,7 +22,20 @@
       "name": "Autodromo el Jabali",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Pista El Jabalí. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3238.1 m; supplied distance 3217 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "El Salvador/Autodromo el Jabali"
+      "referenceId": "El Salvador/Autodromo el Jabali",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.043206124852656,
+        "lengthM": 3238.1423048084503,
+        "sampleCount": 289,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2c4b5635a34ba8944e2250e5776dda892f88ba061362f3bdf2ee6fe2ab38c550",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

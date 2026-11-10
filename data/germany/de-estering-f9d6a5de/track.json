@@ -23,19 +23,58 @@
       "name": "Estering Combo",
       "file": "layouts/estering-combo.geojson",
       "referenceId": "Germany/Estering Combo",
-      "description": "Combined mapped configurations: Estering Standard Course, Estering Joker Lap. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Estering Standard Course, Estering Joker Lap. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.491766707184226,
+        "lengthM": 1834.1271771168035,
+        "sampleCount": 187,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dff6d3e0c6fc513d05ff95a969d1b7c7f6a0a1bfd5062ed3b80edb94992afe39",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "estering-standard",
       "name": "Estering Standard Course",
       "file": "layouts/estering-standard.geojson",
-      "description": "The operator general circuit plan identifies the outer northern course through the right-angle return before the finish. This follows the closed independent main raceway; the source lap measures 928.7 m. Paddock access and the sports-centre perimeter polygon are excluded."
+      "description": "The operator general circuit plan identifies the outer northern course through the right-angle return before the finish. This follows the closed independent main raceway; the source lap measures 928.7 m. Paddock access and the sports-centre perimeter polygon are excluded.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.674931803809763,
+        "lengthM": 928.6779931381458,
+        "sampleCount": 91,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "09f9fc4a48174505076ccdbf7bc58886614b09992b07b00c506c25d0e5e64aca",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     },
     {
       "id": "estering-joker",
       "name": "Estering Joker Lap",
       "file": "layouts/estering-joker.geojson",
-      "description": "The operator plan names the Joker branch inside the northern final complex. Independently named OSM Joker way 282853377 reconnects exact source nodes to the main raceway. The source lap measures 905.4 m; no paddock or venue perimeter edges are included."
+      "description": "The operator plan names the Joker branch inside the northern final complex. Independently named OSM Joker way 282853377 reconnects exact source nodes to the main raceway. The source lap measures 905.4 m; no paddock or venue perimeter edges are included.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.303902609058134,
+        "lengthM": 905.4491839786573,
+        "sampleCount": 96,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6879393d427f04ffb0494ef5fa4fdae0685a1ee4326b7fb9d1c073d22594f89c",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

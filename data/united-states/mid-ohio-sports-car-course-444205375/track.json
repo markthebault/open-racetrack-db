@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.564757306107293,
+        "lengthM": 3646.089229153546,
+        "sampleCount": 318,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "76b1357f460c4b0064b86d1cc0f536d2b772f56f7c237bd09f967a4a42af5348",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "mid-ohio-raceway",
       "name": "Mid Ohio Raceway",
       "file": "layouts/mid-ohio-raceway.geojson",
       "referenceId": "United States/Mid Ohio Raceway",
-      "description": "Draft configuration: Full course including the southwestern chicane and northern linked bends; excludes the shortened southwestern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3646.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full course including the southwestern chicane and northern linked bends; excludes the shortened southwestern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3646.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.564757306107293,
+        "lengthM": 3646.089229153546,
+        "sampleCount": 318,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "76b1357f460c4b0064b86d1cc0f536d2b772f56f7c237bd09f967a4a42af5348",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "mid-ohio-raceway-without-chicane",
       "name": "Mid Ohio Raceway - without chicane",
       "file": "layouts/mid-ohio-raceway-without-chicane.geojson",
       "referenceId": "United States/Mid Ohio Raceway - without chicane",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3616.1 m. Difference from the supplied layout distance 25.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3616.1 m. Difference from the supplied layout distance 25.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.98982046614319,
+        "lengthM": 3616.2581794722355,
+        "sampleCount": 310,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f6a0b34f1a156cbc00fc0cbfba7cf82ee3da4d2494d010969e8efec59493f123",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

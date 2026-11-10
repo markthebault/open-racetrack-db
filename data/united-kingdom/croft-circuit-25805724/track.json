@@ -22,7 +22,20 @@
       "name": "Croft",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Croft Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3295.4 m; supplied distance 3379 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United Kingdom/Croft"
+      "referenceId": "United Kingdom/Croft",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.57688608206213,
+        "lengthM": 3295.4590951675523,
+        "sampleCount": 267,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4bbd455402dcac208641b48500909d1dfd4eb21b828c0994c601839e574a42c2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

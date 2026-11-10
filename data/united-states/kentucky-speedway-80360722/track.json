@@ -22,7 +22,20 @@
       "name": "Kentucky Speedway",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "United States/Kentucky Speedway"
+      "referenceId": "United States/Kentucky Speedway",
+      "roadWidthM": 18.5,
+      "roadWidthSource": {
+        "meanWidthM": 18.428940712236937,
+        "lengthM": 2356.4995229044557,
+        "sampleCount": 189,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "58c238586c6a0a9ad6fde3f9ccf125ad9d4eb6a7dd491d5096c136bb0a6e021e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -1,3 +1,4 @@
+import { pathCurvatures } from "../src/path-curvature";
 import { G, lateralLimit, type CarProfile } from "../src/ideal-line-model";
 export interface Station {
   x: number;
@@ -13,13 +14,19 @@ export interface PathPoint {
   z: number;
 }
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
-export function geometry(points: PathPoint[], closed: boolean) {
+export function geometry(
+  points: PathPoint[],
+  closed: boolean,
+  curvatureWindowM = 0,
+) {
   const n = points.length,
     index = (i: number) => (closed ? (i + n) % n : clamp(i, 0, n - 1));
   const ds = points.map((p, i) => {
     const q = points[index(i + 1)];
     return Math.hypot(q.x - p.x, q.z - p.z, q.y - p.y);
   });
+  if (curvatureWindowM)
+    return { ds, curvature: pathCurvatures(points, closed, curvatureWindowM) };
   const curvature = points.map((b, i) => {
     const a = points[index(i - 1)],
       c = points[index(i + 1)];
@@ -44,8 +51,15 @@ export function speedProfile(
   car: CarProfile,
   precise = true,
   entrySpeedKph = 100,
+  curvatureWindowM = 0,
+  rootMethod: "bisect" | "newton" = "bisect",
+  options?: {
+    exitSpeedKph?: number;
+    geometry?: { ds: number[]; curvature: number[] };
+  },
 ) {
-  const { ds, curvature } = geometry(points, closed),
+  const { ds, curvature } =
+      options?.geometry ?? geometry(points, closed, curvatureWindowM),
     n = points.length,
     edges = closed ? n : n - 1;
   const cornerSpeed = (k: number) => {
@@ -65,6 +79,8 @@ export function speedProfile(
     ),
   );
   if (!closed) speed[0] = Math.min(speed[0], entrySpeedKph / 3.6);
+  if (!closed && options?.exitSpeedKph !== undefined)
+    speed[n - 1] = Math.min(speed[n - 1], options.exitSpeedKph / 3.6);
   function available(v: number, k: number, grade: number, braking: boolean) {
     const aeroFactor = lateralLimit(v, car) / car.mechanicalG;
     const lateral = (v * v * k) / (G * lateralLimit(v, car));
@@ -84,6 +100,32 @@ export function speedProfile(
       G * grade
     );
   }
+  function availableDerivative(v: number, k: number, braking: boolean) {
+    const aero = car.aeroGAt200 / (200 / 3.6) ** 2,
+      uncapped = car.mechanicalG + aero * v * v;
+    const grip = Math.min(car.maxLateralG, uncapped),
+      dg = uncapped < car.maxLateralG ? 2 * aero * v : 0;
+    const factor = grip / car.mechanicalG,
+      df = dg / car.mechanicalG,
+      lateral = (v * v * k) / (G * grip),
+      dl = (2 * v * k) / (G * grip) - (v * v * k * dg) / (G * grip * grip);
+    const ellipse = Math.sqrt(Math.max(0, 1 - lateral * lateral)),
+      de = (-lateral * dl) / Math.max(ellipse, 1e-12);
+    if (braking) {
+      const b = Math.min(car.maxBrakingG, car.brakingG * factor),
+        db = car.brakingG * factor < car.maxBrakingG ? car.brakingG * df : 0;
+      return G * (db * ellipse + b * de);
+    }
+    const traction = car.driveG * factor * G * ellipse,
+      power = (car.powerKw * 1000 * 0.9) / (car.massKg * Math.max(v, 8));
+    const derivative =
+      traction <= power
+        ? car.driveG * G * (df * ellipse + factor * de)
+        : v > 8
+          ? -power / v
+          : 0;
+    return derivative - (1.225 * car.dragArea * v) / car.massKg;
+  }
   for (let pass = 0; pass < (precise ? 80 : 5); pass++) {
     let change = 0;
     for (const braking of [false, true])
@@ -101,14 +143,54 @@ export function speedProfile(
           available(Math.max(high, speed[other]), k, grade, braking)
         )
           continue;
-        for (let b = 0; b < (precise ? 26 : 9); b++) {
-          const mid = (low + high) / 2;
-          const demand = (mid * mid - speed[other] ** 2) / (2 * ds[i]);
-          if (
-            demand <= available(Math.max(mid, speed[other]), k, grade, braking)
-          )
-            low = mid;
-          else high = mid;
+        if (precise && rootMethod === "newton") {
+          const otherV = speed[other],
+            distance = ds[i];
+          const value = (v: number) =>
+            (v * v - otherV * otherV) / (2 * distance) -
+            available(Math.max(v, otherV), k, grade, braking);
+          let x = Math.min(
+            high,
+            Math.sqrt(
+              Math.max(
+                0,
+                otherV * otherV +
+                  2 * distance * available(otherV, k, grade, braking),
+              ),
+            ),
+          );
+          if (x <= low || x >= high) x = (low + high) / 2;
+          for (let iteration = 0; iteration < 40; iteration++) {
+            const f = value(x);
+            if (f <= 0) low = x;
+            else high = x;
+            if (Math.abs(f) < 1e-7 || high - low < 1e-7) {
+              const safe = Math.max(low, x - 1e-8);
+              if (value(safe) <= 0) {
+                low = safe;
+                break;
+              }
+            }
+            const derivative =
+              x / distance -
+              (x > otherV ? availableDerivative(x, k, braking) : 0);
+            const next = x - f / Math.max(1e-9, derivative);
+            x =
+              next > low && next < high && Math.abs(next - x) > 1e-10
+                ? next
+                : (low + high) / 2;
+          }
+        } else {
+          for (let b = 0; b < (precise ? 26 : 9); b++) {
+            const mid = (low + high) / 2;
+            const demand = (mid * mid - speed[other] ** 2) / (2 * ds[i]);
+            if (
+              demand <=
+              available(Math.max(mid, speed[other]), k, grade, braking)
+            )
+              low = mid;
+            else high = mid;
+          }
         }
         const v = Math.min(speed[target], Math.max(0.5, low));
         change = Math.max(change, speed[target] - v);
@@ -142,12 +224,27 @@ export function optimizeLine(
   closed: boolean,
   car: CarProfile,
   entrySpeedKph?: number,
-  edgeAllowanceM = 1.15,
+  edgeAllowanceM = 0.12,
+  refinement?: {
+    initialOffsets?: number[];
+    maxSweeps?: number;
+    localTimeRefinement?: boolean;
+    feasible?: (
+      index: number,
+      point: PathPoint,
+      previous: PathPoint,
+      next: PathPoint,
+    ) => boolean;
+  },
 ) {
   const n = stations.length,
     offset = new Float64Array(n),
     margin = car.widthM / 2 + edgeAllowanceM;
   const limits = stations.map((p) => Math.max(0, p.halfWidth - margin));
+  if (refinement?.initialOffsets)
+    offset.set(
+      refinement.initialOffsets.map((v, i) => clamp(v, -limits[i], limits[i])),
+    );
   const point = (i: number): PathPoint => ({
     x: stations[i].x + stations[i].nx * offset[i],
     z: stations[i].z + stations[i].nz * offset[i],
@@ -171,7 +268,7 @@ export function optimizeLine(
     }
     return cost;
   };
-  for (let sweep = 0; sweep < 1100; sweep++) {
+  for (let sweep = 0; sweep < (refinement?.maxSweeps ?? 1100); sweep++) {
     let change = 0;
     for (let step = 0; step < n; step++) {
       const i = sweep % 2 ? step : n - 1 - step;
@@ -191,7 +288,20 @@ export function optimizeLine(
         limits[i],
       );
       offset[i] = next;
-      if (localCost(i) > f) offset[i] = old;
+      if (
+        localCost(i) > f ||
+        (refinement?.feasible &&
+          [-1, 0, 1].some((d) => {
+            const j = index(i + d);
+            return !refinement.feasible!(
+              j,
+              point(j),
+              point(index(j - 1)),
+              point(index(j + 1)),
+            );
+          }))
+      )
+        offset[i] = old;
       change = Math.max(change, Math.abs(offset[i] - old));
     }
     if (change < 1e-5) break;
@@ -215,7 +325,9 @@ export function optimizeLine(
         0,
       ) /
     (n - 1);
-  for (const spanM of [100, 60, 35]) {
+  for (const spanM of refinement?.localTimeRefinement === false
+    ? []
+    : [100, 60, 35]) {
     const radius = Math.max(3, Math.round(spanM / avgStep));
     for (let sweep = 0; sweep < 2; sweep++)
       for (

@@ -22,7 +22,20 @@
       "name": "Las Vegas GP",
       "referenceId": "United States/Las Vegas GP",
       "file": "layouts/las-vegas-gp.geojson",
-      "description": "Draft configuration: Main named circuit relation follows the Strip, Sands and Harmon course. Alternative relation members and pit lanes are excluded; ordinary-road direction tags do not define race-day direction. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6210.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Main named circuit relation follows the Strip, Sands and Harmon course. Alternative relation members and pit lanes are excluded; ordinary-road direction tags do not define race-day direction. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 6210.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.19002961972336,
+        "lengthM": 6161.099576307113,
+        "sampleCount": 530,
+        "interpolatedSections": 5,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "57443f62849a1ca087cb52cdef40e0b347d177e50ae8797dc88aff1308c8a5d4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

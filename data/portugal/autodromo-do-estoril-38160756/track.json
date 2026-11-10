@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.57505041479943,
+        "lengthM": 4323.125116714185,
+        "sampleCount": 646,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b3114a037aec598eabb914280e884b9c30c4b92240ccb79447b2e4b1d7b85842",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "estoril",
       "name": "Estoril",
       "file": "layouts/estoril.geojson",
       "referenceId": "Portugal/Estoril",
-      "description": "Draft configuration selected from the independently named circuit relation 11266675. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 11266675. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.765714406606934,
+        "lengthM": 4191.160933925948,
+        "sampleCount": 631,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0427cb5a8a03b946d5c93baa7ec47b236312c47f76820f625668afeb308b31a4",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "estoril-no-chicane",
       "name": "Estoril No Chicane",
       "file": "layouts/estoril-no-chicane.geojson",
       "referenceId": "Portugal/Estoril No Chicane",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4165 m. Difference from the supplied layout distance 6.0 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4165 m. Difference from the supplied layout distance 6.0 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.342511211146464,
+        "lengthM": 4165.11082316798,
+        "sampleCount": 590,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ed31d690d118139abb79804d9959651e11cd158a9c799dd134b3a5879ebadd0a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

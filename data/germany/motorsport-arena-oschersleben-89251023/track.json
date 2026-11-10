@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.478597222662405,
+        "lengthM": 3687.2923569058107,
+        "sampleCount": 303,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1ca0341f255f0cdcf88fbff644c0a701b3f042d8819f6f5ec052b6fc04e7d5eb",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "motorsport-arena-oschersleben",
       "name": "Motorsport Arena Oschersleben",
       "file": "layouts/motorsport-arena-oschersleben.geojson",
       "referenceId": "Germany/Motorsport Arena Oschersleben",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3663.9 m. Difference from the supplied layout distance 3.1 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3663.9 m. Difference from the supplied layout distance 3.1 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.772432343944626,
+        "lengthM": 3663.851383355839,
+        "sampleCount": 302,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c9ba132cfe6ce3b395d954ba4182333e6acaada3f513880dfd4133ef8b67de4",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

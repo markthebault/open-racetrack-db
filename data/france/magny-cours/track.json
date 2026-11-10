@@ -24,14 +24,40 @@
       "name": "Magny Cours",
       "file": "layouts/grand-prix.geojson",
       "description": "Complete closed main-course way 63951656. Separate Club circuit ways and pit lanes are excluded. Its approximate OSM length is 4.46 km; the FIA nominal length is 4.411 km, so geometry remains a draft.",
-      "referenceId": "France/Magny Cours"
+      "referenceId": "France/Magny Cours",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.675019321366031,
+        "lengthM": 4457.922314729002,
+        "sampleCount": 509,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f48bed583c8b119052e1cf6e4deae14ee5d0a735921b2b128e38d90f71772d8e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "magny-cours-club",
       "name": "Magny Cours Club",
       "referenceId": "France/Magny Cours Club",
       "file": "layouts/magny-cours-club.geojson",
-      "description": "Draft configuration: Club configuration retains the northern kink, eastern tight turn and southern curved return; straight shortcuts excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2547.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Club configuration retains the northern kink, eastern tight turn and southern curved return; straight shortcuts excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2547.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.624914639880492,
+        "lengthM": 2547.7199377190586,
+        "sampleCount": 405,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dce6c0ab2e1c6244e5a9e96ce7340b1ca70ef4a52b3a4259d874bda81417d5e9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

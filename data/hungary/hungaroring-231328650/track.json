@@ -22,7 +22,20 @@
       "name": "Hungaroring",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Hungary/Hungaroring"
+      "referenceId": "Hungary/Hungaroring",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.331311494113006,
+        "lengthM": 4366.813119710764,
+        "sampleCount": 608,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "44dff5e4d66b7cfcf04108ffdef612d5835f577c61f069fa76ab55170214aef8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

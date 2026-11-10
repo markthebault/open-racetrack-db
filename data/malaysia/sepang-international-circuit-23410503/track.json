@@ -24,28 +24,80 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.664677391584028,
+        "lengthM": 5546.211759251973,
+        "sampleCount": 456,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "14d451fc57f50f13c7241550741d8cb9415f84cba2cfca7547011e8268b89dae",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sepang",
       "name": "Sepang",
       "referenceId": "Malaysia/Sepang",
       "file": "layouts/sepang.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5546.2 m. Difference from the supplied layout distance 3.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 5546.2 m. Difference from the supplied layout distance 3.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.664677391584028,
+        "lengthM": 5546.211759251973,
+        "sampleCount": 456,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "14d451fc57f50f13c7241550741d8cb9415f84cba2cfca7547011e8268b89dae",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sepang-combo",
       "name": "Sepang Combo",
       "referenceId": "Malaysia/Sepang Combo",
       "file": "layouts/sepang-combo.geojson",
-      "description": "Combined mapped configurations: Sepang, Sepang North Loop. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Sepang, Sepang North Loop. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 16,
+      "roadWidthSource": {
+        "meanWidthM": 15.760048791645639,
+        "lengthM": 8336.971607353968,
+        "sampleCount": 698,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "eea9996179b31ce2156b8b35b78a4580efac6cd7a7620661bae863bdafb2f48d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "sepang-north-loop",
       "name": "Sepang North Loop",
       "referenceId": "Malaysia/Sepang North Loop",
       "file": "layouts/sepang-north-loop.geojson",
-      "description": "Draft configuration: North course with short southern closing straight, western hooked corner and eastern outer return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2790.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: North course with short southern closing straight, western hooked corner and eastern outer return. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2790.8 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 16,
+      "roadWidthSource": {
+        "meanWidthM": 15.949566755608327,
+        "lengthM": 2790.7533150453214,
+        "sampleCount": 242,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e0659ed5ab02af61ca7f23b439e73c524e7fc5f5b98feb421336832d6e60ad53",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

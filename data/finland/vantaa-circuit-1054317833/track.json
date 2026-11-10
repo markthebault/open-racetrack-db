@@ -29,7 +29,20 @@
       "name": "Vantaa Kart Circuit",
       "referenceId": "Finland/Vantaa Kart Circuit",
       "file": "layouts/vantaa-kart-circuit.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1288.2 m. Difference from the supplied layout distance 4.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1288.2 m. Difference from the supplied layout distance 4.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.917357647416848,
+        "lengthM": 1288.2534871236653,
+        "sampleCount": 168,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4c77c619eb0699e9a1db5778b7782d0c7258ba44c4099bccbc11d74246bd9ba9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.764409441513142,
+        "lengthM": 2338.4111436312205,
+        "sampleCount": 182,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6e255623268cb65363d304c125d653123d416ec72fc4296001be0a76506ff3b5",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "circuit-de-fontenay-le-comte",
       "name": "Circuit De Fontenay Le Comte",
       "file": "layouts/circuit-de-fontenay-le-comte.geojson",
       "referenceId": "France/Circuit De Fontenay Le Comte",
-      "description": "Draft configuration: Full configuration keeps the triangular eastern return and continuous western bends, excluding the rounded extension and short internal loop. Its branches match the catalogue configuration picture. The circuit operator information identifies a 2.346 km circuit, consistent with the independent 2,338.4 m course; the catalogue scalar 2,491 m uses a different extent. The historical branch choice remains a draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2338.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full configuration keeps the triangular eastern return and continuous western bends, excluding the rounded extension and short internal loop. Its branches match the catalogue configuration picture. The circuit operator information identifies a 2.346 km circuit, consistent with the independent 2,338.4 m course; the catalogue scalar 2,491 m uses a different extent. The historical branch choice remains a draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2338.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 8.059191289576244,
+        "lengthM": 2338.4102925188427,
+        "sampleCount": 182,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "53ebc25c0727be2db8bdb91dbc1bfad0513cbc2deb798724aabce8fec70b4484",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

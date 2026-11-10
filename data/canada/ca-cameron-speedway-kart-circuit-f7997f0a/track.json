@@ -23,25 +23,77 @@
       "name": "Cameron Speedway Kart Circuit",
       "file": "layouts/cameron-speedway-kart-circuit.geojson",
       "referenceId": "Canada/Cameron Speedway Kart Circuit",
-      "description": "Combined mapped configurations: Historical southern course A, Historical southern course B, Historical southern course C. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Historical southern course A, Historical southern course B, Historical southern course C. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.523214501232731,
+        "lengthM": 2244.197576893895,
+        "sampleCount": 251,
+        "interpolatedSections": 8,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a6c3c349389f5f2de4020dedd03928775c76ed2b7c3c42e27f6282c3145102f7",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "historical-southern-course-a",
       "name": "Historical southern course A",
       "file": "layouts/historical-southern-course-a.geojson",
-      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This course retains both main inner hairpins and the shorter northeastern return."
+      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This course retains both main inner hairpins and the shorter northeastern return.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.96262004205182,
+        "lengthM": 802.6328637113276,
+        "sampleCount": 93,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6367cadc754ae5038e731d30ca0e58e1598e0fb83f5cf78a72c2d1fce8154dba",
+        "licenses": [
+          "OGL-ON-1.0"
+        ]
+      }
     },
     {
       "id": "historical-southern-course-b",
       "name": "Historical southern course B",
       "file": "layouts/historical-southern-course-b.geojson",
-      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the northeastern hairpin spur and middle cross-course return."
+      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the northeastern hairpin spur and middle cross-course return.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.724854683383194,
+        "lengthM": 549.8997913211945,
+        "sampleCount": 60,
+        "interpolatedSections": 6,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c0089cef4fb3780d6038067ed80f622e1167d2dc25445b7b463d0bbe0a05c0c9",
+        "licenses": [
+          "OGL-ON-1.0"
+        ]
+      }
     },
     {
       "id": "historical-southern-course-c",
       "name": "Historical southern course C",
       "file": "layouts/historical-southern-course-c.geojson",
-      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the southern outer bend and the lower connecting alternative."
+      "description": "The operator identifies the karting facility at 2633 Upper James Street. Independently georeferenced Ontario SWOOP2020 government orthophotography confirms the supplied historical southern-course footprint and its real paved alternatives before the later rebuild. Exact pinned public source nodes preserve the historical course; the adjacent northern track, its linking stem and the separate pit approach are excluded. This descriptive component name does not assert an official configuration name, and historical timed choice and direction remain draft. This complementary course retains the southern outer bend and the lower connecting alternative.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 9.00332949703509,
+        "lengthM": 891.6649218613765,
+        "sampleCount": 98,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c20952d01d7e1e903ed8af7f88d2d7cd65ba9f41b134de3a1d356f4b4022121d",
+        "licenses": [
+          "OGL-ON-1.0"
+        ]
+      }
     }
   ],
   "sources": [

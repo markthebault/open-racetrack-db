@@ -23,14 +23,40 @@
       "name": "Imola - without chicane",
       "file": "layouts/grand-prix.geojson",
       "description": "Main car course bypassing the mapped Variante Bassa chicane on way 1021771403. Tamburello, Villeneuve, Acque Minerali, Gresini and Rivazza are retained.",
-      "referenceId": "Italy/Imola - without chicane"
+      "referenceId": "Italy/Imola - without chicane",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.672427379266217,
+        "lengthM": 4904.430051927068,
+        "sampleCount": 453,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ed1d5fc4dd51a6f60d00f98339d4f365c226e62a2c3b45099264772c0099557c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "variante-bassa",
       "name": "Imola",
       "file": "layouts/variante-bassa.geojson",
       "description": "Mapped alternative through the Variante Bassa chicane using ways 1025616647, 1025616646 and 176764793.",
-      "referenceId": "Italy/Imola"
+      "referenceId": "Italy/Imola",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.692221571753722,
+        "lengthM": 4926.822632885564,
+        "sampleCount": 463,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0be65c47af7f3d5b18f1e841920d2b25ed83d91d9007911e190927c6f6648128",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

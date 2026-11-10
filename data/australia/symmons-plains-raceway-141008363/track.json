@@ -22,7 +22,20 @@
       "name": "Symmons Plains",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Australia/Symmons Plains"
+      "referenceId": "Australia/Symmons Plains",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 8.152485822011506,
+        "lengthM": 2386.9616268621526,
+        "sampleCount": 205,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9d3a6ba021cd656ae54c5f91467a106b7fa31b59c30de151f33241248f3377f9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

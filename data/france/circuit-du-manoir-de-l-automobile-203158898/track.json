@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.860516820392826,
+        "lengthM": 2081.8318890241244,
+        "sampleCount": 249,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d7708d5c05fb1b031804470d37fccf32e2819e0129ed978b4fe34591fa10a760",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "loheac",
       "name": "Loheac",
       "file": "layouts/loheac.geojson",
       "referenceId": "France/Loheac",
-      "description": "Draft configuration: Full paved road circuit uses the northern triangle, internal hairpin and rounded southern outer curve; service and shortened branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2014.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full paved road circuit uses the northern triangle, internal hairpin and rounded southern outer curve; service and shortened branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2014.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.467451577898945,
+        "lengthM": 2014.1460601193508,
+        "sampleCount": 240,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c8e7b9cfc97ed0e0f9ef577b70967eb2e55a442928f8f90c39ae84c9584b1452",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "loheac-rallycross",
       "name": "Loheac Rallycross",
       "file": "layouts/loheac-rallycross.geojson",
       "referenceId": "France/Loheac Rallycross",
-      "description": "Draft configuration: Rallycross main course uses the full northern straight and broad eastern return, excluding the shorter northern alternative. The event regulations identify a 1,088 m main lap and 1,070 m alternative lap; the independently mapped longer branch measures 1,079.2 m. The catalogue scalar 1,409 m differs. Course branches agree with the configuration picture; all coordinates remain exact source nodes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1079.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Rallycross main course uses the full northern straight and broad eastern return, excluding the shorter northern alternative. The event regulations identify a 1,088 m main lap and 1,070 m alternative lap; the independently mapped longer branch measures 1,079.2 m. The catalogue scalar 1,409 m differs. Course branches agree with the configuration picture; all coordinates remain exact source nodes. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1079.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 20.5,
+      "roadWidthSource": {
+        "meanWidthM": 20.288515141506693,
+        "lengthM": 1079.1875612591448,
+        "sampleCount": 140,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "111e7f09ca447d749aa548b939af186c3763a13314266b7da5f2e528d18f2624",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     }
   ],
   "sources": [

@@ -21,7 +21,20 @@
       "id": "main",
       "name": "Mapped course via pit lane",
       "file": "layouts/main.geojson",
-      "description": "This provisional source route follows the western pit lane, not an operator-confirmed racing configuration. Estimated road-limit joins at the pit merges, northern forecourt and inner branch remain inferred. No operator nominal dimensions or bank angles are fitted."
+      "description": "This provisional source route follows the western pit lane, not an operator-confirmed racing configuration. Estimated road-limit joins at the pit merges, northern forecourt and inner branch remain inferred. No operator nominal dimensions or bank angles are fitted.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.448414357334391,
+        "lengthM": 2225.170839453433,
+        "sampleCount": 202,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d3149568e262a9cc09d9eccbd44e47158f2bc4cf9e11dffbd3ed3b42f94269ff",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

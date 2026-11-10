@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.35873349816108,
+        "lengthM": 2411.3789282105417,
+        "sampleCount": 196,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3a45de0e288fc083e4ca7bb0e2f7d9804cda4df555f45c1f18560b692ba4e2d5",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "lime-rock",
       "name": "Lime Rock",
       "file": "layouts/lime-rock.geojson",
       "referenceId": "United States/Lime Rock",
-      "description": "Draft configuration: Classic route follows Big Bend, Lefthander, Righthander, Paul Newman Straight, the original Climbing Turn, West Bend, Diving Turn and Sam Posey Straight. Optional South and West chicane branches are excluded, as shown by the operator classic-course map. The independently mapped length 2371.7 m is retained despite the supplied scalar-distance discrepancy. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2371.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Classic route follows Big Bend, Lefthander, Righthander, Paul Newman Straight, the original Climbing Turn, West Bend, Diving Turn and Sam Posey Straight. Optional South and West chicane branches are excluded, as shown by the operator classic-course map. The independently mapped length 2371.7 m is retained despite the supplied scalar-distance discrepancy. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2371.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.431441426573134,
+        "lengthM": 2371.733840435656,
+        "sampleCount": 191,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "38322878c54b0a0ae03c26409dcf0c8f3e0ad4d5dc8687f757074c80d4aeebd1",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "the FIRM",
       "file": "layouts/main.geojson",
       "description": "Draft course identified by matching the expected reference name to uniquely connected OSM raceway ways. Private timing GPS supports the association. Geometry, travel convention and operating status need review.",
-      "referenceId": "United States/the FIRM"
+      "referenceId": "United States/the FIRM",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.564019169703707,
+        "lengthM": 2470.4818045628394,
+        "sampleCount": 208,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "fcb67a882a03ed61cad1688b0ab5aa219b7cc664db52cd0221957e3eb74c2c89",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

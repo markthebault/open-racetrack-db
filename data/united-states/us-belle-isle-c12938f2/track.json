@@ -23,14 +23,40 @@
       "name": "Belle Isle",
       "referenceId": "United States/Belle Isle",
       "file": "layouts/belle-isle.geojson",
-      "description": "Draft configuration: The series 2016 event course description and official track map identifies the full Belle Isle street course, including the Northeastern outer extension and Southern fountain return. The pinned 2022 named raceway retains this complete loop, excluding pit access and the older inner Northeastern closure. The independently mapped 3765.4 m length remains unscaled against the 3813 m catalogue scalar; historical barrier and fine corner alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3765.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The series 2016 event course description and official track map identifies the full Belle Isle street course, including the Northeastern outer extension and Southern fountain return. The pinned 2022 named raceway retains this complete loop, excluding pit access and the older inner Northeastern closure. The independently mapped 3765.4 m length remains unscaled against the 3813 m catalogue scalar; historical barrier and fine corner alignment remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 3765.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.321486000633094,
+        "lengthM": 3765.3251103693333,
+        "sampleCount": 333,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "70705bf646c182a50352cf2c3b087b802c87b5ad2721694a33e203d9c5cd46f5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "belle-isle-gp",
       "name": "Belle Isle GP",
       "referenceId": "United States/Belle Isle GP",
       "file": "layouts/belle-isle-gp.geojson",
-      "description": "The supplied GP entry identifies the extended Belle Isle course together with the historical Picnic Way alternative across its northeastern section. The series documents the former shorter course and 2013 northeastern extension. The full course retains its exact pinned 2022 public raceway nodes. The 477.3 m alternative retains exact 2018 Picnic Way and Loiter Way road nodes, ending at the first mapped point entering the extended course corridor. Later Loiter Way points overlap the full course and are excluded. Independent snapshot endpoints lie 0.35 m and 1.72 m from the full course; these source offsets remain open and no connecting line or forced closure is invented. The displayed 4,242.7 m source branch network differs from the supplied 4,276 m by 33.3 m. This configuration set is not a single lap. Historical barrier alignment and travel direction remain draft."
+      "description": "The supplied GP entry identifies the extended Belle Isle course together with the historical Picnic Way alternative across its northeastern section. The series documents the former shorter course and 2013 northeastern extension. The full course retains its exact pinned 2022 public raceway nodes. The 477.3 m alternative retains exact 2018 Picnic Way and Loiter Way road nodes, ending at the first mapped point entering the extended course corridor. Later Loiter Way points overlap the full course and are excluded. Independent snapshot endpoints lie 0.35 m and 1.72 m from the full course; these source offsets remain open and no connecting line or forced closure is invented. The displayed 4,242.7 m source branch network differs from the supplied 4,276 m by 33.3 m. This configuration set is not a single lap. Historical barrier alignment and travel direction remain draft.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.530161725597829,
+        "lengthM": 3771.2941254530997,
+        "sampleCount": 333,
+        "interpolatedSections": 42,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8bbcd71518c1aaf8c290c32ff61faf99d76d9d4d5c0d7972b7f4a2a2e6e756a3",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

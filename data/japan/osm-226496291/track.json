@@ -22,7 +22,20 @@
       "name": "Maze",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at 日本海間瀬サーキット. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2038.8 m; supplied distance 2009 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Japan/Maze"
+      "referenceId": "Japan/Maze",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.079966309731127,
+        "lengthM": 1841.5771644386382,
+        "sampleCount": 159,
+        "interpolatedSections": 17,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2d948dee89bf399689fe1c50be7558ba5f9926ad89573a6211f6fb472eb3f5f6",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

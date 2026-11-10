@@ -22,7 +22,20 @@
       "name": "Istanbul Park",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Turkey/Istanbul Park"
+      "referenceId": "Turkey/Istanbul Park",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.178609508038809,
+        "lengthM": 5344.899375401362,
+        "sampleCount": 478,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "02dd00ef4d640754912a27be15b7ebd5c7c5886e1ecad62a9bddf92689fc6489",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

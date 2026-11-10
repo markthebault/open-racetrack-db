@@ -25,52 +25,156 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.444529014678126,
+        "lengthM": 2506.5277268375876,
+        "sampleCount": 310,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3bb17010b29cf0d8e6156640415ef139b3f1dc5aca2f89f44b7ba225d3c2f7e5",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "ales",
       "name": "Ales",
       "file": "layouts/ales.geojson",
       "referenceId": "France/Ales",
-      "description": "Combined mapped configurations: Technical circuit, North loop, South loop, Central bypass configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Technical circuit, North loop, South loop, Central bypass configuration. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.45753224828019,
+        "lengthM": 7156.538440380452,
+        "sampleCount": 870,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "65391b245e9bb1021d1a0a56824f343216dd7c561b52c5fe9c30b690527decfb",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "ales-rapide",
       "name": "Ales Rapide",
       "file": "layouts/ales-rapide.geojson",
       "referenceId": "France/Ales Rapide",
-      "description": "Draft configuration: Fast configuration uses the northern hairpin, direct western curve and southern infield hairpin; central training branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2240.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Fast configuration uses the northern hairpin, direct western curve and southern infield hairpin; central training branches excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2240.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.625013818556061,
+        "lengthM": 2240.4821938488612,
+        "sampleCount": 249,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cf96dfc9a1a5f1332354509969ccf29913aadfed56f488fc4ec137063f53cb7a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ales1-rally-stage",
       "name": "Ales1 Rally Stage",
       "file": "layouts/ales1-rally-stage.geojson",
       "referenceId": "France/Ales1 Rally Stage",
-      "description": "Draft configuration: Historical outer rally loop retains both long-side winding branches and outer terminal turns. The operator 2015 modular rally plan identifies these outer branches; the supplied configuration selects the outer loop without infield shortcuts. Current source/aerial conditions differ at the southern alignment, which is retained only as a historical draft rather than replaced with the shorter contemporary paved turnaround. The 1823.9 m independent source route remains unscaled; terminal-turn details and historical surface condition remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1823.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical outer rally loop retains both long-side winding branches and outer terminal turns. The operator 2015 modular rally plan identifies these outer branches; the supplied configuration selects the outer loop without infield shortcuts. Current source/aerial conditions differ at the southern alignment, which is retained only as a historical draft rather than replaced with the shorter contemporary paved turnaround. The 1823.9 m independent source route remains unscaled; terminal-turn details and historical surface condition remain provisional. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1823.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 5.5,
+      "roadWidthSource": {
+        "meanWidthM": 5.6262525052556445,
+        "lengthM": 1686.8084501789813,
+        "sampleCount": 238,
+        "interpolatedSections": 19,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1f3888041545d773152fb3badd8842fed6d2b4b73ed00b463d67bab1c3198f31",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ales-technical",
       "name": "Technical circuit",
       "file": "layouts/ales-technical.geojson",
-      "description": "Full northern Parabolica, central return and southern infield hairpin shown in the operator plan; pit and access branches excluded."
+      "description": "Full northern Parabolica, central return and southern infield hairpin shown in the operator plan; pit and access branches excluded.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.473627329903556,
+        "lengthM": 2506.532723858722,
+        "sampleCount": 310,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "50b0db2559bc5f953250862db1dc27e6398364c8d89e6d74a1ae55f285b8b8f8",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "ales-north-loop",
       "name": "North loop",
       "file": "layouts/ales-north-loop.geojson",
-      "description": "Northern Parabolica loop closes using the eastern mid-course return shown in the operator plan."
+      "description": "Northern Parabolica loop closes using the eastern mid-course return shown in the operator plan.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.699309268453261,
+        "lengthM": 1048.0930638311347,
+        "sampleCount": 121,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c1901eaf0be55e56c2fd7b97ccb18a043f5340fdce7efbd37e3432a3311e56ac",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "ales-south-loop",
       "name": "South loop",
       "file": "layouts/ales-south-loop.geojson",
-      "description": "Southern infield hairpin and western main straight close through the mid-course northern return shown in the operator plan."
+      "description": "Southern infield hairpin and western main straight close through the mid-course northern return shown in the operator plan.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.735619161679951,
+        "lengthM": 1361.4076593442871,
+        "sampleCount": 190,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3483b4ac4d34284c1c5447e1b477244d322a6a7775b9241d8b84b2ec9c82cce4",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "ales-central-bypass",
       "name": "Central bypass configuration",
       "file": "layouts/ales-central-bypass.geojson",
-      "description": "Full northern Parabolica and southern infield hairpin use the direct central eastern connection shown in the operator plan. This branch-description label identifies the mapped route; direction remains draft."
+      "description": "Full northern Parabolica and southern infield hairpin use the direct central eastern connection shown in the operator plan. This branch-description label identifies the mapped route; direction remains draft.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.625013818556061,
+        "lengthM": 2240.4821938488612,
+        "sampleCount": 249,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "cf96dfc9a1a5f1332354509969ccf29913aadfed56f488fc4ec137063f53cb7a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

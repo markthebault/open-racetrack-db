@@ -22,21 +22,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.727339961171884,
+        "lengthM": 3002.9055491455515,
+        "sampleCount": 246,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "b65ebd612d4c81430e2dc05e513d3abf779e0cd691b58c63f638d394c07c3f8f",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "castle-combe",
       "name": "Castle Combe",
       "file": "layouts/castle-combe.geojson",
       "referenceId": "United Kingdom/Castle Combe",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.429597814083607,
+        "lengthM": 2905.3273531677746,
+        "sampleCount": 231,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5dad57f079dafa59bc8c92314b8e41ba470b846490ec43f8f5ce639fdcb2f71e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "castle-combe-western-sprint",
       "name": "Castle Combe Western Sprint",
       "file": "layouts/castle-combe-western-sprint.geojson",
       "referenceId": "United Kingdom/Castle Combe Western Sprint",
-      "description": "Draft configuration: The organizer's 2025 regulations explicitly start the Great Western Sprint at the pit lane exit and finish at Westway on the second lap, over one and three-quarter laps. The independent route retains the 188.9 m initial mapped pit-exit section and complete circuit before returning to the mapped finish. Every join and repeated lap section uses exact pinned source nodes. The 5360.4 m timed route differs from the catalogue scalar of 3006 m; the organizer describes 3.3 miles. Fine timing extent and historical lap count remain draft, without scaling or replacing the sprint with a closed venue loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5360.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The organizer's 2025 regulations explicitly start the Great Western Sprint at the pit lane exit and finish at Westway on the second lap, over one and three-quarter laps. The independent route retains the 188.9 m initial mapped pit-exit section and complete circuit before returning to the mapped finish. Every join and repeated lap section uses exact pinned source nodes. The 5360.4 m timed route differs from the catalogue scalar of 3006 m; the organizer describes 3.3 miles. Fine timing extent and historical lap count remain draft, without scaling or replacing the sprint with a closed venue loop. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5360.4 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.479666711293724,
+        "lengthM": 5360.23324393314,
+        "sampleCount": 445,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bbf8736f643c74d4b25d3d49a5314714687a16312d826379c4ceb683bf9ca5b2",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

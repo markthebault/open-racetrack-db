@@ -22,7 +22,20 @@
       "name": "Norisring",
       "file": "layouts/norisring.geojson",
       "referenceId": "Germany/Norisring",
-      "description": "Event results identify the single 2.3 km Norisring street course. The independent named source course is shorter; the discrepancy is retained for review. Draft configuration selected from the independently named circuit relation 1889538. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Event results identify the single 2.3 km Norisring street course. The independent named source course is shorter; the discrepancy is retained for review. Draft configuration selected from the independently named circuit relation 1889538. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.535989552239778,
+        "lengthM": 2153.926094936812,
+        "sampleCount": 188,
+        "interpolatedSections": 16,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d90bbbd9613690d29a3b4f58c55291ee2121cf46d1180dc5b447e4324bede63f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -23,14 +23,40 @@
       "name": "Circuit Of The Americas",
       "file": "layouts/main.geojson",
       "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
-      "referenceId": "United States/Circuit Of The Americas"
+      "referenceId": "United States/Circuit Of The Americas",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.10676711551559,
+        "lengthM": 5502.169221743086,
+        "sampleCount": 567,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "7e538e8be5bc0005a85036c5cf7e80e9a789c2863403a341a85375d2d10b186d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "circuit-of-the-americas-sro-pract",
       "name": "Circuit Of The Americas SRO Pract.",
       "referenceId": "United States/Circuit Of The Americas SRO Pract.",
       "file": "layouts/circuit-of-the-americas-sro-pract.geojson",
-      "description": "Draft configuration selected from the independently named circuit relation 6537729. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 6537729. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 14,
+      "roadWidthSource": {
+        "meanWidthM": 14.105243581230297,
+        "lengthM": 5502.169221743093,
+        "sampleCount": 567,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1b664302099103dcbf84ca944076c020be4c01dce38bf8bfcf3548995c98b91b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

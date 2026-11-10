@@ -24,42 +24,120 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.9703991354845645,
+        "lengthM": 5513.471368713179,
+        "sampleCount": 499,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c96168fda941a94f92dff1a91671dfb4f20af6655b5edc01e4c25aa08bbbb4b9",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "monticello-motor-club-combo",
       "name": "Monticello Motor Club Combo",
       "file": "layouts/monticello-motor-club-combo.geojson",
       "referenceId": "United States/Monticello Motor Club Combo",
-      "description": "Combined mapped configurations: Monticello Motor Club Full, Monticello Motor Club Mushroom, Monticello Motor Club North, Monticello Motor Club South. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Monticello Motor Club Full, Monticello Motor Club Mushroom, Monticello Motor Club North, Monticello Motor Club South. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.893263704378404,
+        "lengthM": 11998.92312133939,
+        "sampleCount": 1090,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1c9b983eafd309e65ba2054df4106cad9f239a489a9236bbf8c88ddc316dc03b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "monticello-motor-club-full",
       "name": "Monticello Motor Club Full",
       "file": "layouts/monticello-motor-club-full.geojson",
       "referenceId": "United States/Monticello Motor Club Full",
-      "description": "Draft configuration: Full north and south circuits with direct western straight and diagonal connecting section. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5492.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Full north and south circuits with direct western straight and diagonal connecting section. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 5492.7 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.67301808370083,
+        "lengthM": 5482.29775453661,
+        "sampleCount": 494,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "81be3949d722f0e26efe5fb2fa6198729db50ab12f09387a597c0a5d60d10f1e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "monticello-motor-club-mushroom",
       "name": "Monticello Motor Club Mushroom",
       "file": "layouts/monticello-motor-club-mushroom.geojson",
       "referenceId": "United States/Monticello Motor Club Mushroom",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1052.4 m. Difference from the supplied layout distance 13.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1052.4 m. Difference from the supplied layout distance 13.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.766023363283951,
+        "lengthM": 1052.4040937095915,
+        "sampleCount": 97,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3a7bd5e553bcb10776a2227961ac2dd3895d5a82b11ade29b9b84a32115a2e60",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "monticello-motor-club-north",
       "name": "Monticello Motor Club North",
       "file": "layouts/monticello-motor-club-north.geojson",
       "referenceId": "United States/Monticello Motor Club North",
-      "description": "Draft configuration: Northern course with short western shoulder and both hooked southern returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2922.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Northern course with short western shoulder and both hooked southern returns. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2922.1 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.44755877815072,
+        "lengthM": 2914.1192253253025,
+        "sampleCount": 275,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c594a566db6cd7fce494e747224a8ec45b4184cb065f786f2ef7d40ff63facfa",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "monticello-motor-club-south",
       "name": "Monticello Motor Club South",
       "file": "layouts/monticello-motor-club-south.geojson",
       "referenceId": "United States/Monticello Motor Club South",
-      "description": "Draft configuration: Southern course with direct western straight, central hairpin and eastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2560.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Southern course with direct western straight, central hairpin and eastern turnaround. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2560.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.785276141697135,
+        "lengthM": 2550.0660234590696,
+        "sampleCount": 224,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1e12b8c2d7a71df20e1028f705714aa4ff3e6d824b78e7e9e9429bde26a3033c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

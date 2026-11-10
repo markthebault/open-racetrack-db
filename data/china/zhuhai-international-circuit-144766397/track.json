@@ -22,7 +22,20 @@
       "name": "Zhuhai",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "China/Zhuhai"
+      "referenceId": "China/Zhuhai",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 11.816158900202424,
+        "lengthM": 4310.14206513204,
+        "sampleCount": 311,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "88da5d8e208c8cb299c387c9731add8e5f8e13e4bf2831ca84f3ffc8e9bd1e1b",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

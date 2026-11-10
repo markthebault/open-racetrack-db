@@ -22,7 +22,20 @@
       "name": "Singapore GP",
       "referenceId": "Singapore/Singapore GP",
       "file": "layouts/singapore-gp.geojson",
-      "description": "Draft configuration selected from the independently named circuit relation 421263. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 421263. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.705616090022351,
+        "lengthM": 4877.071734270967,
+        "sampleCount": 436,
+        "interpolatedSections": 10,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "14d0528471b0a6ba2e9488df56a14a7e1f3f229b1c5bffb8eea72018f0b87b47",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

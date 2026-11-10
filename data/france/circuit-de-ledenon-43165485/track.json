@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.475965087321473,
+        "lengthM": 3148.6876821232754,
+        "sampleCount": 323,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2b02c4467a263d35f3c9fe2d04d18bf73b9141ba544ea357f5f14176ad31d242",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ledenon",
       "name": "Ledenon",
       "referenceId": "France/Ledenon",
       "file": "layouts/ledenon.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3148.7 m. Difference from the supplied layout distance 22.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3148.7 m. Difference from the supplied layout distance 22.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.476646029136516,
+        "lengthM": 3148.7652365640247,
+        "sampleCount": 323,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2b02c4467a263d35f3c9fe2d04d18bf73b9141ba544ea357f5f14176ad31d242",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "ledenon-club",
       "name": "Ledenon Club",
       "referenceId": "France/Ledenon Club",
       "file": "layouts/ledenon-club.geojson",
-      "description": "Draft configuration: Club configuration uses the short northeast hairpin and northern kink; long northern tip excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1204.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Club configuration uses the short northeast hairpin and northern kink; long northern tip excluded. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 1204.0 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.971632280862702,
+        "lengthM": 1198.7232179593357,
+        "sampleCount": 122,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "00cf249ec53acb39240f57e5b5fae96f9f9130410522efd9a0db960793c6b226",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

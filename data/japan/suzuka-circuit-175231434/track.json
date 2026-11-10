@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.722523844780875,
+        "roundingM": 0.5,
+        "sampleCount": 1944,
+        "interpolatedSections": 0,
+        "lengthM": 5838.747789378501,
+        "borderSha256": "dc22f6e0235e73167fa5d8131d153667cc0081280cce7dffa93f66d3618d6eea",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "suzuka",
       "name": "Suzuka",
       "file": "layouts/suzuka.geojson",
       "referenceId": "Japan/Suzuka",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "method": "length-weighted-cross-sections-v1",
+        "meanWidthM": 9.735291892699237,
+        "roundingM": 0.5,
+        "sampleCount": 1939,
+        "interpolatedSections": 0,
+        "lengthM": 5824.627208460233,
+        "borderSha256": "3ad9bf5f0d963433e2cccab5a42ed6f43fa5eb4e5fae9b5c31be9aa497a10f39",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

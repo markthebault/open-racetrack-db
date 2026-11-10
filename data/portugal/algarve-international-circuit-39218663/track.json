@@ -22,7 +22,20 @@
       "name": "Portimao",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Algarve International Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 4681.6 m; supplied distance 4658 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Portugal/Portimao"
+      "referenceId": "Portugal/Portimao",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.55876630554861,
+        "lengthM": 4587.672972203146,
+        "sampleCount": 383,
+        "interpolatedSections": 11,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "39c6374e36febcd65531847dc5e6ba3b24c919ac22cf2c5edbbf2bc0cc46a009",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

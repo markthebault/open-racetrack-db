@@ -1,3 +1,4 @@
+import {gradeForLayout} from "./grade-separation";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
@@ -665,11 +666,12 @@ export class Track3D {
     gates: { role: string; coordinates: Position[] }[] = [],
     grid?: ElevationGrid,
     heightScale = 1,
+    preserveView = false,
   ) {
     this.clear();
     const trace = layout.features.find((f) => f.properties.role === "trace")!;
     const model = layout.metadata.model3d,
-      grade = layout.metadata.borderInference?.gradeSeparation,
+      grade = gradeForLayout(layout),
       gradeRoad =
         (grade || (model?.kind === "run" && model.sourceSequence)) && model && model.kind !== "surface"
           ? buildRoad(layout)
@@ -1087,7 +1089,7 @@ export class Track3D {
       this.gateLabels.push({ element: label, anchor });
     }
     this.container.dataset.layoutKey = `${layout.metadata.trackId}/${layout.metadata.layoutId}`;
-    this.fit();
+    if(!preserveView)this.fit();
     this.requestRender();
   }
 }

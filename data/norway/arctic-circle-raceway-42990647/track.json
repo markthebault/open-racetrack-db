@@ -22,7 +22,20 @@
       "name": "Arctic Circle Raceway",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Norway/Arctic Circle Raceway"
+      "referenceId": "Norway/Arctic Circle Raceway",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.15511124742047,
+        "lengthM": 3734.530447118444,
+        "sampleCount": 304,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "34e59269dbbb5ec6df10c9a04487d8456b9c9131d8d80bdf09be9c08103eb394",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

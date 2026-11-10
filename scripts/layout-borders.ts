@@ -54,6 +54,7 @@ export async function existingBorders(file: string, allowMissing = false) {
 
 // Preserve existing trace formatting; keep dense source borders and 3D parameters compact.
 export function serializeLayout(data: Layout) {
+  if(!data.features.some(f=>["inner","outer","ideal"].includes(f.properties.role)))return JSON.stringify(data)+"\n";
   const supplemental = data.features.filter(
     (f) => f.properties.role === "inner" || f.properties.role === "outer" || f.properties.role === "ideal",
   );

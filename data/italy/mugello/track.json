@@ -23,7 +23,20 @@
       "name": "Mugello",
       "file": "layouts/grand-prix.geojson",
       "description": "Full course through San Donato, Luco, Poggio Secco, both Arrabbiata corners, Correntaio, Biondetti and Bucine. Separate Mugellino ways, bypasses and pit lanes are excluded.",
-      "referenceId": "Italy/Mugello"
+      "referenceId": "Italy/Mugello",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.623014153357811,
+        "lengthM": 5244.598348919784,
+        "sampleCount": 808,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6bdd8f329483ff0581f84d53ca7f7cae96dcce30533de32d5d06f21e7c9c1537",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 8.182598266359843,
+        "lengthM": 3961.4292117742175,
+        "sampleCount": 316,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6e415204ef93ebb4b7c93c82ab4ad32e3655ad86531a370a9ab50bdebd2648a1",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "spokane-county-raceway",
       "name": "Spokane County Raceway",
       "file": "layouts/spokane-county-raceway.geojson",
       "referenceId": "United States/Spokane County Raceway",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3555.6 m. Difference from the supplied layout distance 4.4 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3555.6 m. Difference from the supplied layout distance 4.4 m. Course configuration still requires visual review.",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.22368276390829,
+        "lengthM": 3555.4981190592225,
+        "sampleCount": 283,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5e790cf21480172ba0901951c134b1bd3d802cfb10a9c3aa1815e637df05a3df",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

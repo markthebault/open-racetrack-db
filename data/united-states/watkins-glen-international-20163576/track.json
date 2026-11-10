@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.017122424069969,
+        "lengthM": 5472.9254875020415,
+        "sampleCount": 445,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "587a24bd7cd0ea44680ac48472ef5f73abd94408b811e332fc0665ab4c1a5520",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "watkins-glen",
       "name": "Watkins Glen",
       "file": "layouts/watkins-glen.geojson",
       "referenceId": "United States/Watkins Glen",
-      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally."
+      "description": "Draft course from an independently named OSM circuit relation. Timing variants retain separate catalogue entries; private start/finish GPS is displayed locally.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.017122424069969,
+        "lengthM": 5472.9254875020415,
+        "sampleCount": 445,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "587a24bd7cd0ea44680ac48472ef5f73abd94408b811e332fc0665ab4c1a5520",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "watkins-glen-short",
       "name": "Watkins Glen Short",
       "file": "layouts/watkins-glen-short.geojson",
       "referenceId": "United States/Watkins Glen Short",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3935.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3935.3 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.346955682532494,
+        "lengthM": 3935.4439921550115,
+        "sampleCount": 316,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "49b18bceaa2b303a8f29cc24cd34d90dd4ac58046dc10dcf2b02e2b5a370be44",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

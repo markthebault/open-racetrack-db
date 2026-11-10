@@ -22,7 +22,20 @@
       "name": "Nogaro",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuit Paul Armagnac. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3514 m; supplied distance 3514 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "France/Nogaro"
+      "referenceId": "France/Nogaro",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.506649793771308,
+        "lengthM": 3514.0506221278565,
+        "sampleCount": 288,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c13ff79c46b215e5643b2b6321b60200b6224fbeac494ab13fc16f3d4cd267f9",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

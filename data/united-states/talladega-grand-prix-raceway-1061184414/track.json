@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.03249836213546,
+        "lengthM": 2233.5619914563836,
+        "sampleCount": 166,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8e048f5c62f91fac9b03b85eecfb76da99aa1cbc645b97b150d6faa1167cd2f2",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "talladega-gran-prix",
       "name": "Talladega Gran Prix",
       "file": "layouts/talladega-gran-prix.geojson",
       "referenceId": "United States/Talladega Gran Prix",
-      "description": "Full course selected from the complete closed OpenStreetMap way1061184414v1, compared with native satellite imagery and the operator facility map. Internal circulation shortcuts in the prior provisional cycle are excluded. Coordinates remain exact retained source nodes; no nominal length or width fit. Direction follows the operator map. Source geometry remains draft; border and terrain limits remain estimates."
+      "description": "Full course selected from the complete closed OpenStreetMap way1061184414v1, compared with native satellite imagery and the operator facility map. Internal circulation shortcuts in the prior provisional cycle are excluded. Coordinates remain exact retained source nodes; no nominal length or width fit. Direction follows the operator map. Source geometry remains draft; border and terrain limits remain estimates.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.335054559215738,
+        "lengthM": 2233.5619914563836,
+        "sampleCount": 166,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8973da26af92e00cc33fe28f9b0572433fe1a0d9f4c40e00d8a13a6d3c6fe71d",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

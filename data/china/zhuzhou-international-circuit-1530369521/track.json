@@ -22,7 +22,20 @@
       "name": "Zhuzhou International Circuit",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "China/Zhuzhou International Circuit"
+      "referenceId": "China/Zhuzhou International Circuit",
+      "roadWidthM": 14.5,
+      "roadWidthSource": {
+        "meanWidthM": 14.367356178207187,
+        "lengthM": 3720.083577735059,
+        "sampleCount": 307,
+        "interpolatedSections": 2,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c7ba1541cef8a77b1fcc3bc921d1372a500cddc9f49336b5a0e4753d5cd8937c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

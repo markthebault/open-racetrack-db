@@ -22,7 +22,20 @@
       "name": "Dijon",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Circuit Dijon-Prenois. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3722.6 m; supplied distance 3801 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "France/Dijon"
+      "referenceId": "France/Dijon",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.441972256385878,
+        "lengthM": 3722.446450936381,
+        "sampleCount": 314,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6cf917afa3021445925e3cd38dff0d164bfd480a23e161556358c9e0e9481dbd",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

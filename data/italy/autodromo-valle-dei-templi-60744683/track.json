@@ -22,7 +22,20 @@
       "name": "Autodromo Valle dei Templi",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "Italy/Autodromo Valle dei Templi"
+      "referenceId": "Italy/Autodromo Valle dei Templi",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 10.916123933740973,
+        "lengthM": 2250.978282309627,
+        "sampleCount": 222,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2b6589993cea3d8dc8dc4d681481b76b6b1eaada37b0d9f69bf3fdf741c1fb9f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

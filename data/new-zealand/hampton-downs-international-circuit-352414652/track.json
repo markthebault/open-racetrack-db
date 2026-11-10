@@ -23,21 +23,60 @@
       "name": "Hampton Downs National",
       "file": "layouts/main.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "New Zealand/Hampton Downs National"
+      "referenceId": "New Zealand/Hampton Downs National",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.643602510721541,
+        "lengthM": 2613.8542993319143,
+        "sampleCount": 212,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1e184e4dcfb547e56ca5cb8364181dd05074377340f466e83781aa8a69e44cec",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "hampton-downs-club",
       "name": "Hampton Downs Club",
       "file": "layouts/hampton-downs-club.geojson",
       "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
-      "referenceId": "New Zealand/Hampton Downs Club"
+      "referenceId": "New Zealand/Hampton Downs Club",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.033582276733522,
+        "lengthM": 1192.4012756803056,
+        "sampleCount": 107,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "178dc15c494d591b5adf85aa7dbc277215a3258f53431dbfd78870b6b0506859",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "hampton-downs-international",
       "name": "Hampton Downs International",
       "referenceId": "New Zealand/Hampton Downs International",
       "file": "layouts/hampton-downs-international.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3837.9 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 3837.9 m. Difference from the supplied layout distance 3.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 13.163878191672197,
+        "lengthM": 3812.7923766970894,
+        "sampleCount": 323,
+        "interpolatedSections": 3,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e2d85f355449928abbc0f69f0fc8f6270d03afd8d792fcbd9966d04296e0817d",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

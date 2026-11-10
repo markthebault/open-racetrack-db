@@ -23,21 +23,60 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.801907469365911,
+        "lengthM": 2449.9829923394714,
+        "sampleCount": 209,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "674ac496b1ce994d9bd94dcde8e4fdabe2922322edf8a02544b0e52282d0dac8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "aintree",
       "name": "Aintree",
       "file": "layouts/aintree.geojson",
       "referenceId": "United Kingdom/Aintree",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2450 m. Difference from the supplied layout distance 5.0 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2450 m. Difference from the supplied layout distance 5.0 m. Course configuration still requires visual review.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.801907469365911,
+        "lengthM": 2449.9829923394714,
+        "sampleCount": 209,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "674ac496b1ce994d9bd94dcde8e4fdabe2922322edf8a02544b0e52282d0dac8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "aintree-sprint",
       "name": "Aintree Sprint",
       "file": "layouts/aintree-sprint.geojson",
       "referenceId": "United Kingdom/Aintree Sprint",
-      "description": "Draft open course. Operator identifies the Aintree sprint on the Club Circuit. The connected open route is the only path close to the supplied sprint distance between the timing endpoints. Approximate planar OSM trace distance 1762.3 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional."
+      "description": "Draft open course. Operator identifies the Aintree sprint on the Club Circuit. The connected open route is the only path close to the supplied sprint distance between the timing endpoints. Approximate planar OSM trace distance 1762.3 m. Both private timing positions agree with existing source endpoints. No artificial closure or missing connector is invented; one-way source tags remain unchanged and event direction remains provisional.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.215350628881158,
+        "lengthM": 1762.2948666720379,
+        "sampleCount": 146,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3882027b3ef61029473df46579216278c60b8555f767d24558ce44addc6c6f47",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

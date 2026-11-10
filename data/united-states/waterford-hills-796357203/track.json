@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.717658339519506,
+        "lengthM": 2279.9429544905533,
+        "sampleCount": 212,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5b4399658a4705e5e54d90652962e10bd6398a5f59b3f501a670b147e0f3919f",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "waterford-hills",
       "name": "Waterford Hills",
       "file": "layouts/waterford-hills.geojson",
       "referenceId": "United States/Waterford Hills",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2287.8 m. Difference from the supplied layout distance 0.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2287.8 m. Difference from the supplied layout distance 0.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.717658339519506,
+        "lengthM": 2279.9429544905533,
+        "sampleCount": 212,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "5b4399658a4705e5e54d90652962e10bd6398a5f59b3f501a670b147e0f3919f",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     }
   ],
   "sources": [

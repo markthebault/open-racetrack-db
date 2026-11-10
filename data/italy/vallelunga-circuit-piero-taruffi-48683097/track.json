@@ -24,33 +24,98 @@
       "id": "main",
       "name": "International car circuit",
       "file": "layouts/main.geojson",
-      "description": "International car course with the full northern loop, direct western junctions, central hairpin and southern main straight, checked against the operator map and satellite imagery. Boundaries and elevation are estimates; no timing position is available."
+      "description": "International car course with the full northern loop, direct western junctions, central hairpin and southern main straight, checked against the operator map and satellite imagery. Boundaries and elevation are estimates; no timing position is available.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.34244310400369,
+        "lengthM": 4085.9163672134678,
+        "sampleCount": 477,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4b95446b2c99400ea9e06552dfb0a3d13077626d00ea3771aca23d51303504a8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "vallelunga-full",
       "name": "Vallelunga Full",
       "file": "layouts/vallelunga-full.geojson",
       "referenceId": "Italy/Vallelunga Full",
-      "description": "Combined mapped configurations: Historical international course, direct junctions, Historical international course, junction chicanes. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review."
+      "description": "Combined mapped configurations: Historical international course, direct junctions, Historical international course, junction chicanes. Shared sections count once in the mapped branch length. Branch identity and historical alignment still need review.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.902300689605504,
+        "lengthM": 8200.248062103603,
+        "sampleCount": 658,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8725906d5d0c5b2c3c9857b3a9dee8ac76c287e4c477846b8a7c580ddb40f3e5",
+        "licenses": [
+          "LicenseRef-Component-Borders"
+        ]
+      }
     },
     {
       "id": "vallelunga-outer",
       "name": "Vallelunga Outer",
       "file": "layouts/vallelunga-outer.geojson",
       "referenceId": "Italy/Vallelunga Outer",
-      "description": "Draft configuration: International outer circuit follows the long northern bend, northeastern extension, inner central hairpin and full southern loop. The named operator course is 4085 m and the pinned independent route is 4085.9 m. Pit lanes, small western junction detours and shortened northern branches are excluded. Historical alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4085.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: International outer circuit follows the long northern bend, northeastern extension, inner central hairpin and full southern loop. The named operator course is 4085 m and the pinned independent route is 4085.9 m. Pit lanes, small western junction detours and shortened northern branches are excluded. Historical alignment and direction remain draft. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4085.9 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 11.5,
+      "roadWidthSource": {
+        "meanWidthM": 11.34244310400369,
+        "lengthM": 4085.9163672134678,
+        "sampleCount": 477,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "4b95446b2c99400ea9e06552dfb0a3d13077626d00ea3771aca23d51303504a8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "historical-international-car",
       "name": "Historical international course, direct junctions",
       "file": "layouts/historical-international-car.geojson",
-      "description": "International car configuration retains the complete northern course, northeastern extension, central hairpin and southern main straight. Exact 2018 public coordinates give 4,081.6 m; the operator identifies a 4,085 m car circuit. Western junction chicanes, pit-lane way 48683141, club closing alternatives and the separate training center are excluded. The 2020 licensed regional orthophoto confirms the paved course."
+      "description": "International car configuration retains the complete northern course, northeastern extension, central hairpin and southern main straight. Exact 2018 public coordinates give 4,081.6 m; the operator identifies a 4,085 m car circuit. Western junction chicanes, pit-lane way 48683141, club closing alternatives and the separate training center are excluded. The 2020 licensed regional orthophoto confirms the paved course.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.92197091741788,
+        "lengthM": 4081.63256582146,
+        "sampleCount": 327,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a5bda18b27623b2d286f7b6402abe3067d5b4e0d45918b758088f0292abf6429",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "historical-international-junction-chicanes",
       "name": "Historical international course, junction chicanes",
       "file": "layouts/historical-international-junction-chicanes.geojson",
-      "description": "International configuration retains both separately mapped western junction chicanes on ways 48682967 and 48682968/187046503. The operator documents a distinct motorcycle international circuit, 4,110 m; these historical public-node branches measure 4,118.6 m. The 2020 regional orthophoto independently confirms both paved triangular alternatives. Pit-lane way 48683141, club closing alternatives and training-center roads are excluded. Historical direction and detailed alignment remain draft."
+      "description": "International configuration retains both separately mapped western junction chicanes on ways 48682967 and 48682968/187046503. The operator documents a distinct motorcycle international circuit, 4,110 m; these historical public-node branches measure 4,118.6 m. The 2020 regional orthophoto independently confirms both paved triangular alternatives. Pit-lane way 48683141, club closing alternatives and training-center roads are excluded. Historical direction and detailed alignment remain draft.",
+      "roadWidthM": 9,
+      "roadWidthSource": {
+        "meanWidthM": 8.882807089756596,
+        "lengthM": 4118.615496282138,
+        "sampleCount": 331,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "87e8c685a10ff2b0b0e6665041da5d84e88cc6df3e52f5f6e4c8649d372b5b60",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     }
   ],
   "sources": [

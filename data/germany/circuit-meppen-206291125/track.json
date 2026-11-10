@@ -22,7 +22,20 @@
       "name": "Meppen",
       "file": "layouts/main.geojson",
       "referenceId": "Germany/Meppen",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.385863147498291,
+        "lengthM": 2131.0925359043395,
+        "sampleCount": 256,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "a2b9ffbcefd86662439d1847c3166a546438c7f048a2fc44070d60250b201da3",
+        "licenses": [
+          "CC-BY-4.0"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "Shelsley Walsh Hillclimb",
       "file": "layouts/shelsley-walsh-hillclimb.geojson",
       "referenceId": "United Kingdom/Shelsley Walsh Hillclimb",
-      "description": "Draft configuration: The course follows the named, one-way raceway from existing start-area node 2537296479 through Kennel bend and the upper Esses. The previous selection incorrectly travelled east on service way 1066055853 and returned west on a nearly coincident raceway, adding 77.7 m of duplicated approach. The geolocated start photograph (Geograph 8009693, looking west) and pinned raceway direction support removing that out-and-back; no coordinates are fitted to a target length. The corrected source route measures 939.4 m. The operator specifies a 1,000-yard (914.4 m) timed course, whereas the legacy catalogue scalar is 1163 m. The sparse final raceway segment ends 38.5 m beyond the supplied finish along the same road, with under 2 m perpendicular displacement. The existing 40 m endpoint allowance is retained; the source extent remains provisional and is not an exact timed-run distance. No interpolated finish vertex is added. All retained coordinates are exact pinned OpenStreetMap nodes. Boundaries and timing extent require review."
+      "description": "Draft configuration: The course follows the named, one-way raceway from existing start-area node 2537296479 through Kennel bend and the upper Esses. The previous selection incorrectly travelled east on service way 1066055853 and returned west on a nearly coincident raceway, adding 77.7 m of duplicated approach. The geolocated start photograph (Geograph 8009693, looking west) and pinned raceway direction support removing that out-and-back; no coordinates are fitted to a target length. The corrected source route measures 939.4 m. The operator specifies a 1,000-yard (914.4 m) timed course, whereas the legacy catalogue scalar is 1163 m. The sparse final raceway segment ends 38.5 m beyond the supplied finish along the same road, with under 2 m perpendicular displacement. The existing 40 m endpoint allowance is retained; the source extent remains provisional and is not an exact timed-run distance. No interpolated finish vertex is added. All retained coordinates are exact pinned OpenStreetMap nodes. Boundaries and timing extent require review.",
+      "roadWidthM": 5,
+      "roadWidthSource": {
+        "meanWidthM": 5.1108261082089355,
+        "lengthM": 939.364395726464,
+        "sampleCount": 77,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dabcf94fad0a30a781d9d7be1cf5ca84db58af6bd0064f0d4a16e2a20491f423",
+        "licenses": [
+          "OGL-3.0"
+        ]
+      }
     }
   ],
   "sources": [

@@ -22,7 +22,20 @@
       "name": "RA Hanno",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Japan/RA Hanno"
+      "referenceId": "Japan/RA Hanno",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.359496772527658,
+        "lengthM": 544.4586203262396,
+        "sampleCount": 74,
+        "interpolatedSections": 1,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "dd9278b870d22c236ed4f60578cfa14b75556708c8da7c43613801429bb96c4e",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

@@ -2103,3 +2103,13 @@ select {
 
 .map-options-content .ideal-controls {padding:0;background:transparent;gap:8px;flex-wrap:wrap}
 .map-options-content .ideal-controls button {padding:9px 12px}
+
+
+
+.line-disclaimer {margin:8px 0 0;font-size:12px;line-height:1.5;color:var(--muted)}
+#manual-width-controls {display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex-basis:100%;padding:10px 0;font-size:12px}
+#manual-width-controls[hidden] {display:none}
+#manual-width-controls input {width:90px;padding:8px;border:1px solid var(--line);border-radius:5px;background:var(--paper);color:inherit}
+#manual-width-controls button {padding:8px 10px;border:1px solid var(--line);border-radius:5px;background:var(--paper);color:inherit;font:inherit;cursor:pointer}
+#manual-width-controls small {flex-basis:100%;max-width:620px;line-height:1.5;color:var(--muted)}
+.world-track-outline,.world-track-pin {cursor:pointer}

@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 9.5,
+      "roadWidthSource": {
+        "meanWidthM": 9.622627879149999,
+        "lengthM": 2357.754975305679,
+        "sampleCount": 220,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "1fb48c931a9c30aeeba08f6d9cbf30ece6ed7ba24602d4f5bd63ef18800297cc",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "lakeside-queensland",
       "name": "Lakeside Queensland",
       "file": "layouts/lakeside-queensland.geojson",
       "referenceId": "Australia/Lakeside Queensland",
-      "description": "Draft configuration selected from the independently named circuit relation 16233647. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review."
+      "description": "Draft configuration selected from the independently named circuit relation 16233647. The source route passes timing and course-distance checks. Layout identity and travel direction still require visual review.",
+      "roadWidthM": 10.5,
+      "roadWidthSource": {
+        "meanWidthM": 10.598946114385097,
+        "lengthM": 2330.4005990691808,
+        "sampleCount": 207,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c6515c9f09fefee6a7e91a581e85becbe729d3f58215159bdcfcf8338efc3c43",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

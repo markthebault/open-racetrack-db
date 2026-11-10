@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.54012599900189,
+        "lengthM": 1908.3559099474116,
+        "sampleCount": 177,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "f754b8b2ad11888370d442e596254fed6fd382a2ab902fce05ba67ae7cb19fe1",
+        "licenses": [
+          "Etalab-2.0"
+        ]
+      }
     },
     {
       "id": "circuit-de-clastres",
       "name": "Circuit de Clastres",
       "file": "layouts/circuit-de-clastres.geojson",
       "referenceId": "France/Circuit de Clastres",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2389.8 m. Difference from the supplied layout distance 5.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2389.8 m. Difference from the supplied layout distance 5.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.917641803480601,
+        "lengthM": 2389.7682931862814,
+        "sampleCount": 200,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8c10d540862162521ceb1f9a604c7fa2278ae752fad6f3c19e5b652f3066a0d0",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

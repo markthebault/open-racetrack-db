@@ -23,21 +23,60 @@
       "name": "Hockenheim GP",
       "file": "layouts/grand-prix.geojson",
       "description": "Full course through Spitzkehre and the stadium; shortcut, rallycross, drag-strip and pit ways excluded.",
-      "referenceId": "Germany/Hockenheim GP"
+      "referenceId": "Germany/Hockenheim GP",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.694807928883273,
+        "lengthM": 4564.5974057469475,
+        "sampleCount": 449,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "bffb5f449156758bc956f4b21422b09e43b4d62c743d545fa95f520e418ee0b1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "national",
       "name": "Hockenheimring National",
       "file": "layouts/national.geojson",
       "description": "Mapped Parabolika shortcut on way 339948104; the long Spitzkehre loop is excluded.",
-      "referenceId": "Germany/Hockenheimring National"
+      "referenceId": "Germany/Hockenheimring National",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.607953326597936,
+        "lengthM": 3687.959572986745,
+        "sampleCount": 370,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3b45625edee04c4d3e9416fddb028148d1a5b9ae661abf605fac66159bd5a29c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "short",
       "name": "Hockenheimring Short Track",
       "file": "layouts/short.geojson",
       "description": "Mapped Kleiner Kurs Kurzanbindung on way 22940941; optional Schikanenvariante excluded.",
-      "referenceId": "Germany/Hockenheimring Short Track"
+      "referenceId": "Germany/Hockenheimring Short Track",
+      "roadWidthM": 11,
+      "roadWidthSource": {
+        "meanWidthM": 11.08184261664294,
+        "lengthM": 2604.1963644258967,
+        "sampleCount": 260,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ebe00c71813cbb6c790afb530faeb14415e82a7ae50f2c9c174c2039c2812cf5",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

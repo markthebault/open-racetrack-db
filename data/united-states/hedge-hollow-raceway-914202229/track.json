@@ -23,14 +23,40 @@
       "name": "Hedge Hollow Circuit",
       "file": "layouts/main.geojson",
       "referenceId": "United States/Hedge Hollow Circuit",
-      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review."
+      "description": "Draft identification from a uniquely connected OSM course with a matching layout name. Private reference start/finish GPS supports the venue association. Named source geometry and configuration still require visual review.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.476984858966217,
+        "lengthM": 4613.627031424429,
+        "sampleCount": 363,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "36605f277036b7fb6b3e0c6edbce7ed9d3021d9862c0e1ff98bc530bf8359f1c",
+        "licenses": [
+          "public-domain"
+        ]
+      }
     },
     {
       "id": "hedge-hollow-outer",
       "name": "Hedge Hollow Outer",
       "file": "layouts/hedge-hollow-outer.geojson",
       "referenceId": "United States/Hedge Hollow Outer",
-      "description": "Draft configuration: Outer course with north shoulder, concave eastern bend and direct western straight; excludes the extra western notch. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4621.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Outer course with north shoulder, concave eastern bend and direct western straight; excludes the extra western notch. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4621.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.327493547196186,
+        "lengthM": 4621.07540525802,
+        "sampleCount": 368,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "06707c522f52901504c21f0f93d966f3997f62744f1c098a3b8f507791364e49",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

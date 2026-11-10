@@ -22,7 +22,20 @@
       "name": "Falkenberg Raceway",
       "file": "layouts/main.geojson",
       "description": "Single reference course at a unique connected OSM source cycle, with private timing proximity. Draft geometry; course identity and operating status require review. Timing coordinates remain private.",
-      "referenceId": "Sweden/Falkenberg Raceway"
+      "referenceId": "Sweden/Falkenberg Raceway",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.058089807529743,
+        "lengthM": 1835.1016317431483,
+        "sampleCount": 155,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "6882fb2bcb3937439e351bce1e8d16c2a8a3291748f6a27926a31e5edc8b2af8",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

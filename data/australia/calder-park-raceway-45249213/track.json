@@ -23,14 +23,40 @@
       "name": "Calder",
       "file": "layouts/main.geojson",
       "referenceId": "Australia/Calder",
-      "description": "Draft northern-return course on the unchanged OSM trace. Image-estimated borders follow the visible paved return; this configuration is not verified as the operator National Circuit. Eastern shared drag/forecourt pavement, access joins and blurred edges remain estimates. No nominal width or length is fitted."
+      "description": "Draft northern-return course on the unchanged OSM trace. Image-estimated borders follow the visible paved return; this configuration is not verified as the operator National Circuit. Eastern shared drag/forecourt pavement, access joins and blurred edges remain estimates. No nominal width or length is fitted.",
+      "roadWidthM": 16,
+      "roadWidthSource": {
+        "meanWidthM": 15.865592581113445,
+        "lengthM": 2448.6346583507097,
+        "sampleCount": 194,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "e247b8ec43577cc0d18ed6a363425091a6ac5d7024cb357d9fcf8b83b4765c02",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "calder-short",
       "name": "Calder Short",
       "file": "layouts/calder-short.geojson",
       "referenceId": "Australia/Calder Short",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1483.7 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 1483.7 m. Difference from the supplied layout distance 2.7 m. Course configuration still requires visual review.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.494578261437544,
+        "lengthM": 1483.6736977180299,
+        "sampleCount": 122,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "73e597b2a5e57c2561b3f8cd7ca61fdbb22e1c7da17fc5f604b8aa7af883f31c",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

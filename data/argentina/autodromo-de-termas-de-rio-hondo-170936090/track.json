@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 13.5,
+      "roadWidthSource": {
+        "meanWidthM": 13.36396211156803,
+        "lengthM": 4504.384502004117,
+        "sampleCount": 357,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c6d99ece9f6f76ec445500f5182b40a78cbfe59fe7a4f9b822a116ec2492cb8a",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "termas-de-rio-hondo",
       "name": "Termas de Rio Hondo",
       "file": "layouts/termas-de-rio-hondo.geojson",
       "referenceId": "Argentina/Termas de Rio Hondo",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4819.9 m. Difference from the supplied layout distance 5.9 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4819.9 m. Difference from the supplied layout distance 5.9 m. Course configuration still requires visual review.",
+      "roadWidthM": 15,
+      "roadWidthSource": {
+        "meanWidthM": 14.975010003143497,
+        "lengthM": 4819.826180276604,
+        "sampleCount": 388,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "2b26c597452605fd0be19bb49b1cee8ce67e1ad62b505c82f7ac5b3c54cf8fcc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

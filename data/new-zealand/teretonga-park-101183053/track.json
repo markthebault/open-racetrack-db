@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.480628894110938,
+        "lengthM": 2623.2594260621763,
+        "sampleCount": 215,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d40a40b9c5a5e1244bcd0fc0a43aa765e4f1543ec281ff762e7d206d8b61f090",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "teretonga",
       "name": "Teretonga",
       "referenceId": "New Zealand/Teretonga",
       "file": "layouts/teretonga.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2623.2 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 2623.2 m. Difference from the supplied layout distance 1.2 m. Course configuration still requires visual review.",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.480628894110938,
+        "lengthM": 2623.2594260621763,
+        "sampleCount": 215,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "d40a40b9c5a5e1244bcd0fc0a43aa765e4f1543ec281ff762e7d206d8b61f090",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

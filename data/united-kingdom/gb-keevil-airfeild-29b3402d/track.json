@@ -22,7 +22,20 @@
       "name": "Keevil Airfeild",
       "referenceId": "United Kingdom/Keevil Airfeild",
       "file": "layouts/keevil-airfeild.geojson",
-      "description": "Draft configuration: The identified airfield perimeter follows the western rectangular taxiway, northern eastbound return, broad northeastern turn and southeast-to-southwest perimeter. Interior runway shortcuts are excluded. Exact mapped runway/taxiway and road nodes measure 4772.6 m against the catalogue distance of 4795 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4772.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The identified airfield perimeter follows the western rectangular taxiway, northern eastbound return, broad northeastern turn and southeast-to-southwest perimeter. Interior runway shortcuts are excluded. Exact mapped runway/taxiway and road nodes measure 4772.6 m against the catalogue distance of 4795 m. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4772.6 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 15.5,
+      "roadWidthSource": {
+        "meanWidthM": 15.395135095557114,
+        "lengthM": 4772.788048623559,
+        "sampleCount": 353,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "0495ead0bfc7e08afa61567705c852685f08600098f933920d9b391ea992fc5a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

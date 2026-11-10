@@ -22,7 +22,20 @@
       "name": "Llandow",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Llandow Circuit. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 1438.8 m; supplied distance 1466 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "United Kingdom/Llandow"
+      "referenceId": "United Kingdom/Llandow",
+      "roadWidthM": 8.5,
+      "roadWidthSource": {
+        "meanWidthM": 8.720004203444947,
+        "lengthM": 1438.780364429527,
+        "sampleCount": 124,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "ebf2fd26d2c5b4c71eb522867217c59dfa81e0786b7e50bbd17ea7d7b69f2dbc",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

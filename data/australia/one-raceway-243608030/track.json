@@ -22,14 +22,40 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 7.5,
+      "roadWidthSource": {
+        "meanWidthM": 7.732948758440069,
+        "lengthM": 2200.9629976406914,
+        "sampleCount": 190,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "16f1b6b9b6cba0ec6909a2da3fca46ac4ad99af28edf8c672fc0d71b9c9f7472",
+        "licenses": [
+          "LicenseRef-MapTiler-Derived-Borders"
+        ]
+      }
     },
     {
       "id": "one-raceway-goulburn",
       "name": "One Raceway Goulburn",
       "file": "layouts/one-raceway-goulburn.geojson",
       "referenceId": "Australia/One Raceway Goulburn",
-      "description": "Draft configuration: Historical Wakefield Park main circuit retains the Northern cap, Eastern outer turn, inner hairpin and Southern return from a pinned 2018 independent source. The ride-day organizer identifies the former 2.2 km circuit and its ten-corner plan. The exact mapped route measures 2203.3 m against the catalogue scalar of 2321 m. This entry preserves that historical course; the venue was subsequently rebuilt and reopened with reprofiled corners in 2024. Modern alignment and direction remain unverified. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2203.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: Historical Wakefield Park main circuit retains the Northern cap, Eastern outer turn, inner hairpin and Southern return from a pinned 2018 independent source. The ride-day organizer identifies the former 2.2 km circuit and its ten-corner plan. The exact mapped route measures 2203.3 m against the catalogue scalar of 2321 m. This entry preserves that historical course; the venue was subsequently rebuilt and reopened with reprofiled corners in 2024. Modern alignment and direction remain unverified. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 2203.3 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 10.234966146862341,
+        "lengthM": 2153.7839814293043,
+        "sampleCount": 195,
+        "interpolatedSections": 7,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "375725b5373d74f43100ded7ccfa32602f8a546601abb69321f2b0e423019fb1",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

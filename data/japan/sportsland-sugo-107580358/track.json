@@ -22,7 +22,20 @@
       "name": "Sugo",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at Sportsland SUGO. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 3617.4 m; supplied distance 3649 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "Japan/Sugo"
+      "referenceId": "Japan/Sugo",
+      "roadWidthM": 10,
+      "roadWidthSource": {
+        "meanWidthM": 9.956316668062202,
+        "lengthM": 3537.0609950729963,
+        "sampleCount": 315,
+        "interpolatedSections": 14,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "3362b559846786b22c3d9fe1604471fe96a14730e6a1a791275c6d986e001766",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

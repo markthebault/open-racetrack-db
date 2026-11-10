@@ -22,7 +22,20 @@
       "name": "Issoire Circuit",
       "file": "layouts/main.geojson",
       "description": "Draft association of the supplied venue-level entry to the existing independently mapped full course at CEERTA Circuit d'Issoire. This venue has one supplied entry and one retained independent course, with a timing point on that course. Source trace distance 2465.6 m; supplied distance 2466 m. The association preserves the independent source geometry and remains provisional where corner configurations or historical distances differ.",
-      "referenceId": "France/Issoire Circuit"
+      "referenceId": "France/Issoire Circuit",
+      "roadWidthM": 8,
+      "roadWidthSource": {
+        "meanWidthM": 7.922331994203671,
+        "lengthM": 2465.6791675982395,
+        "sampleCount": 236,
+        "interpolatedSections": 0,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "95e09d5282e1753b17e68aac1166c47fe56bf91848308034a2554f9ba89b0a2a",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

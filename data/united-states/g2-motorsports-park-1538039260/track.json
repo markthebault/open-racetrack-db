@@ -24,28 +24,80 @@
       "id": "main",
       "name": "Connected course candidate",
       "file": "layouts/main.geojson",
-      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required."
+      "description": "Draft OSM course selection. Named-layout and direction confirmation is still required.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.26351595120708,
+        "lengthM": 4712.514672685696,
+        "sampleCount": 395,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9cb5975808100d233127407a77eaf6f945ebdd422a6d3286251b898f54e7d8db",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "g2-motorsports-park-3-1-mile",
       "name": "G2 Motorsports Park 3.1 mile",
       "referenceId": "United States/G2 Motorsports Park 3.1 mile",
       "file": "layouts/g2-motorsports-park-3-1-mile.geojson",
-      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4772.2 m. Difference from the supplied layout distance 8.8 m. Course configuration still requires visual review."
+      "description": "Draft route hypothesis: the source cycle is the unique closest nominal-distance match within conservative timing and distance checks. Approximate OSM trace length 4772.2 m. Difference from the supplied layout distance 8.8 m. Course configuration still requires visual review.",
+      "roadWidthM": 12.5,
+      "roadWidthSource": {
+        "meanWidthM": 12.26351595120708,
+        "lengthM": 4712.514672685696,
+        "sampleCount": 395,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "9cb5975808100d233127407a77eaf6f945ebdd422a6d3286251b898f54e7d8db",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "g2-motorsports-park-combined",
       "name": "G2 Motorsports Park Combined",
       "referenceId": "United States/G2 Motorsports Park Combined",
       "file": "layouts/g2-motorsports-park-combined.geojson",
-      "description": "Draft configuration: The operator Combined course plan identifies the complete western technical circuit, the large eastern circuit and their northern connection. The independently mapped full closed raceway follows these branches and excludes the facility access and paddock roads. Its unchanged public source-node length is 4772.2 m against the catalogue scalar of 4877 m. The source centreline remains a draft and does not certify fine chicane alignment or the advertised race distance. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4772.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional."
+      "description": "Draft configuration: The operator Combined course plan identifies the complete western technical circuit, the large eastern circuit and their northern connection. The independently mapped full closed raceway follows these branches and excludes the facility access and paddock roads. Its unchanged public source-node length is 4772.2 m against the catalogue scalar of 4877 m. The source centreline remains a draft and does not certify fine chicane alignment or the advertised race distance. Branch identity was checked against catalogue layout facts and circuit identification references. Independent source distance 4772.2 m; no coordinates are changed to match a diagram or distance. Travel direction and historical alignment remain provisional.",
+      "roadWidthM": 12,
+      "roadWidthSource": {
+        "meanWidthM": 12.197550385818277,
+        "lengthM": 4712.514672685696,
+        "sampleCount": 395,
+        "interpolatedSections": 4,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "c25922d8acddf1513580fbad9064c634370b791a671cba39b4a03b802a83561f",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     },
     {
       "id": "g2-motorsports-park-west",
       "name": "G2 Motorsports Park West",
       "referenceId": "United States/G2 Motorsports Park West",
       "file": "layouts/g2-motorsports-park-west.geojson",
-      "description": "The operator identifies the 1.9-mile Western course. Its published plan includes the Western Northern turnaround, central diagonal and inner Southern hairpin, Northern carousel, short Northeastern return and Eastern closing straight. These branches follow the independently inspected graded road alignment in public-domain July 2022 NAIP imagery. The operator construction history dates this period before final paving. The trace is a historical construction-alignment draft; finished pavement centerline, temporary barriers and fine corner alignment are unverified. It excludes the separate Eastern circuit, paddock and access roads. No operator or comparison diagram pixels supply course coordinates, and no coordinates are scaled to a nominal distance. Independently digitized aerial centerline: 3064.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue."
+      "description": "The operator identifies the 1.9-mile Western course. Its published plan includes the Western Northern turnaround, central diagonal and inner Southern hairpin, Northern carousel, short Northeastern return and Eastern closing straight. These branches follow the independently inspected graded road alignment in public-domain July 2022 NAIP imagery. The operator construction history dates this period before final paving. The trace is a historical construction-alignment draft; finished pavement centerline, temporary barriers and fine corner alignment are unverified. It excludes the separate Eastern circuit, paddock and access roads. No operator or comparison diagram pixels supply course coordinates, and no coordinates are scaled to a nominal distance. Independently digitized aerial centerline: 3064.5 m. Direction, historical configuration and fine corner alignment remain draft; no course coordinates come from the comparison catalogue.",
+      "roadWidthM": 13,
+      "roadWidthSource": {
+        "meanWidthM": 12.77795483223643,
+        "lengthM": 2923.2524828000455,
+        "sampleCount": 303,
+        "interpolatedSections": 16,
+        "method": "length-weighted-cross-sections-v1",
+        "roundingM": 0.5,
+        "borderSha256": "8cbf808441c5f1ba5aa3de4abf505a3f9154fc8907d2b97db9087a02aed02c34",
+        "licenses": [
+          "LicenseRef-Track-Borders"
+        ]
+      }
     }
   ],
   "sources": [

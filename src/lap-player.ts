@@ -1,3 +1,5 @@
+import {runtimeWidth} from "./trace-width-road";
+import {gradeForLayout} from "./grade-separation";
 import {buildPlaybackRoad} from './ideal-playback';
 import L from "leaflet";
 import type { Layout } from "../schemas/data";
@@ -25,7 +27,7 @@ export function openLap(
   const approachEvidence = layout.metadata.model3d?.kind === "run"
     ? layout.metadata.model3d.sourceSequence?.plan.approach : undefined;
   const elevationCredit =
-    layout.metadata.borderInference?.gradeSeparation?.elevation.attribution;
+    gradeForLayout(layout)?.elevation.attribution;
   const previousFocus = document.activeElement as HTMLElement | null;
   const dialog = document.createElement("dialog");
   dialog.className = "lap-player";
@@ -137,7 +139,9 @@ export function openLap(
       `${s.acceleration < -0.3 ? "Braking" : s.acceleration > 0.3 ? "Accelerating" : "Coasting"} · ${Math.abs(s.acceleration / 9.80665).toFixed(2)} g · Lat ${Math.abs(s.lateralG).toFixed(2)} g`;
     find("[data-distance]").textContent =
       `${(s.distance / 1000).toFixed(2)} / ${(lap.road.length / 1000).toFixed(2)} km`;
-    find("[data-road-detail]").textContent = lap.road.ground
+    find("[data-road-detail]").textContent = runtimeWidth(layout)!==undefined
+      ? `Estimated constant width · ${runtimeWidth(layout)!.toFixed(1)} m · ${s.y.toFixed(1)} m altitude · ${(s.grade*100).toFixed(1)}% grade`
+      : lap.road.ground
       ? `Mapped source path · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`
       : `Here: ${(s.left + s.right).toFixed(1)} m wide · ${s.y.toFixed(1)} m altitude · ${(s.grade * 100).toFixed(1)}% grade`;
     timeline.value = String(time);
@@ -582,10 +586,13 @@ export function openLap(
         find(".lap-evidence").append(note);
       }
       const road = buildPlaybackRoad(layout);
+      const width=runtimeWidth(layout);
+      if(width!==undefined){find("[data-road-detail]").textContent=`Estimated constant width · ${width.toFixed(1)} m`;find(".lap-evidence p").textContent="Road edges are estimated offsets from the mapped trace using the rounded average width of previous borders. Local widening and exact kerb positions are not preserved.";find("[data-storage]").textContent="track.json stores the rounded road width. The layout GeoJSON stores the mapped trace, timing and elevation/imagery data. Edges and the ideal line are calculated in the browser; no edge or ideal coordinates are saved in the layout.";}
+
       dialog.dataset.drivingPath = road.pathSource ?? "centre";
       if (road.pathSource === "ideal") find(".lap-section h3 + p").textContent = `Generic car · ${road.recipe.kind === "run" ? "Standing start" : "Flying lap"} · Ideal line`;
       find("[data-solver-note]").nextElementSibling!.textContent = road.pathSource === "ideal"
-        ? "The car follows the saved estimated ideal line. Its speed is recalculated for the selected car, without gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time."
+        ? (width!==undefined?"The car follows the estimated ideal line calculated in this browser from the mapped trace and constant width. Speed is recalculated for the selected car. Banking and vehicle dynamics are uncalibrated.":"The car follows the saved estimated ideal line. Its speed is recalculated for the selected car, without gears, downforce, suspension or transient tyre dynamics. The result is an estimate, not a predicted real-car lap time.")
         : road.recipe.sourceSequence ? "No matching ideal line is available for this run. The car follows the complete saved mapped route. The result is an estimate, not a predicted real-car lap time." : "No matching ideal line is available for this route. The car follows the road centre. The result is an estimate, not a predicted real-car lap time.";
       lap = simulateLap(road);
       if (closed) return;
@@ -658,7 +665,7 @@ export function openLap(
       find(".lap-profile").innerHTML =
         `<svg viewBox="0 0 240 90" role="img" aria-label="Road elevation profile"><path d="M0,82 L${path.replaceAll(" ", " L")} L240,82 Z" fill="#f38a4d22"/><polyline points="${path}" fill="none" stroke="#f08c56" stroke-width="2"/><line class="lap-profile-cursor" x1="0" y1="5" x2="0" y2="82" stroke="#f1f4ec" stroke-width="1"/></svg>`;
       const published = recipe.quality.elevation === "venue-anchors";
-      const grade = layout.metadata.borderInference?.gradeSeparation;
+      const grade = gradeForLayout(layout);
       const estimatedCurbs = recipe.quality.curbs === "geometry-estimated";
       find(".lap-scale").textContent = estimatedCurbs
         ? "1× elevation · Terrain estimate · Illustrative curbs"
@@ -679,7 +686,7 @@ export function openLap(
         ? recipe.sharedGround ? "Curbs illustrate curved physical road boundaries. Their positions, widths, heights and colours are unverified." : "Curbs and bend labels are generated from road curvature. Positions, widths, heights and colours are illustrative and have not been checked against imagery."
         : "Curb locations were reviewed against imagery; their dimensions and heights remain estimates.";
       find("[data-source-credit]").textContent =
-        `${traceCredit(layout)}. Supplemental borders: ${layout.metadata.borderInference?.imagery.license ?? "LicenseRef-Track-Borders"}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""}${approachEvidence ? ` Approach estimates: ${approachEvidence.imagery.license} (${approachEvidence.imagery.attribution}).` : ""}${recipe.sharedGround ? ` Junction estimates: ${recipe.sharedGround.imagery.license} (${recipe.sharedGround.imagery.attribution}).` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
+        `${traceCredit(layout)}. Supplemental borders: ${[...new Set(layout.features.filter(f=>f.properties.role === "inner" || f.properties.role === "outer").flatMap(f=>["license" in f.properties?f.properties.license:"", ...("imageCorrection" in f.properties && f.properties.imageCorrection ? [f.properties.imageCorrection.license] : []), ...("imageCorrections" in f.properties ? (f.properties.imageCorrections??[]).map(c=>c.license):[])]))].join(", ")}.${layout.metadata.borderInference ? ` ${layout.metadata.borderInference.imagery.attribution}` : ""}${approachEvidence ? ` Approach estimates: ${approachEvidence.imagery.license} (${approachEvidence.imagery.attribution}).` : ""}${recipe.sharedGround ? ` Junction estimates: ${recipe.sharedGround.imagery.license} (${recipe.sharedGround.imagery.attribution}).` : ""} Imagery: ${recipe.imagery.attribution}.${grade ? ` Road elevations edited from ${grade.elevation.attribution}.` : ""} No additional rights granted.`;
       const links: [string, string][] = [
         [
           published ? "Elevation reference" : "Terrain source",
